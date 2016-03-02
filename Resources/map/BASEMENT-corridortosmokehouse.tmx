@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="36">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+  <image source="lower.png" trans="201c30" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16">
+  <image source="chip10e_glas.png" trans="0000ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="20" height="34">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztjkEKgCAQRf8coHbVIbJVdojsqh6ykRIdN2mroHnw+KD4EJBsBHS8PdJGyvOV8EjozbwGaSPleWsvuLCeLg2ktb2d190eWc9BWtvzlWpPe9rTnva0p71/9AIjJafs/UDyrhVL8r/hP/ZF50ucAOfIjQ==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="34">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYCAM2pkgmFpgKRMED1bzDjNB8CgYBaNgFIyCUTAKRsEooD8AAA/MBTk=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="240" y="64" width="32" height="416"/>
+  <object id="3" x="48" y="64" width="32" height="416"/>
+  <object id="4" x="176" y="16" width="96" height="48"/>
+  <object id="5" x="48" y="16" width="96" height="48"/>
+  <object id="6" x="176" y="480" width="96" height="64"/>
+  <object id="7" x="48" y="480" width="96" height="64"/>
+  <object id="8" x="48" y="0" width="96" height="16"/>
+  <object id="9" x="176" y="0" width="96" height="16"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)">
+  <object id="14" x="80" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1041"/>
+   </properties>
+  </object>
+  <object id="15" x="144" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1042"/>
+   </properties>
+  </object>
+  <object id="16" x="192" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1043"/>
+   </properties>
+  </object>
+  <object id="17" x="112" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1044"/>
+   </properties>
+  </object>
+  <object id="18" x="96" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1045"/>
+   </properties>
+  </object>
+  <object id="19" x="176" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1046"/>
+   </properties>
+  </object>
+  <object id="20" x="224" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1047"/>
+   </properties>
+  </object>
+  <object id="21" x="208" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1048"/>
+   </properties>
+  </object>
+  <object id="22" x="128" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1049"/>
+   </properties>
+  </object>
+  <object id="23" x="160" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1051"/>
+   </properties>
+  </object>
+  <object id="24" x="96" y="448" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1050"/>
+   </properties>
+  </object>
+  <object id="25" x="192" y="448" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1052"/>
+   </properties>
+  </object>
+  <object id="26" x="144" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1053"/>
+   </properties>
+  </object>
+  <object id="27" x="128" y="448" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1054"/>
+   </properties>
+  </object>
+  <object id="28" x="176" y="464" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1055"/>
+   </properties>
+  </object>
+  <object id="29" x="160" y="448" width="16" height="16">
+   <properties>
+    <property name="img" value="G.png"/>
+    <property name="objID" value="1056"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Chara(object)">
+  <object id="30" x="176" y="64" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="17"/>
+    <property name="direction" value="DOWN"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1063"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="10" x="144" y="512" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="11" x="144" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="13" x="80" y="384" width="160" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="32" x="240" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="33" x="240" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="0"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="34" x="176" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,20 @@
+{
+	"1":[
+		{
+			"type":"changeMap",
+			"mapID":"13",
+			"x":16,
+			"y":31
+		},
+        {
+          "type": "playSE",
+          "file": "bus-door1.mp3"
+        }
+	],
+	"2":[
+		{
+			"type":"systemMsg",
+			"text":["カーテンは何かに引っかかって動かない"]
+		}
+	]
+}

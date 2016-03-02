@@ -1,0 +1,10 @@
+{
+	"stats":false,
+	"debug_mask":false,
+	"invincible_mode":false,
+    "crypt":{
+        "save":false,
+        "event_script":false,
+        "csv":false
+    }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="9">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
+ </tileset>
+ <layer name="Base" width="10" height="40">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYECADnYEuxuJjQ5IUdcJxF3so+pG1Y2qG1U3qo4e6mYgqZuNR90KoNxMIJ4FxKvxqNuBRw4APfBXDA==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="96" y="0" width="80" height="592"/>
+  <object id="2" x="96" y="560" width="80" height="64"/>
+  <object id="3" x="32" y="0" width="32" height="560"/>
+  <object id="4" x="32" y="560" width="32" height="64"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)"/>
+ <objectgroup name="Chara(object)"/>
+ <objectgroup name="event">
+  <object id="5" x="64" y="608" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="6" x="64" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="8" x="64" y="352" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="96">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+  <image source="lower.png" trans="201c30" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="barrel-option" tilewidth="16" tileheight="16">
+  <image source="barrel-option.png" trans="201c30" width="256" height="224"/>
+ </tileset>
+ <layer name="Base" width="22" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztj0sKgDAQQ9MDqCv1EOrKegg9aw/plGFgCN34AV00EDJtw2u7BaAB0ELTzz5N3OVeJ16FuYknmWdo+tmnibvcW4hb4vn9FNS2Lt1tadwd6oPS7xvX1tz1adz0siu3ciu3cr/gZg3hukfH6ensriL9M78vPuD9QSdyA9jB
+  </data>
+ </layer>
+ <layer name="MonoShita" width="22" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBi8gJmJgYGFCUFTCwgDzRJhQtD0MlcRKKZEhn2EzDUEihnRwFxiAD4/ketfEMDnJ3L9O1gBJeGEDwy2cKKXPwnZQ647CIXnQIX3SEk/IwEAALJkBt8=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="272" y="288" width="64" height="64"/>
+  <object id="3" x="336" y="0" width="16" height="352"/>
+  <object id="4" x="16" y="288" width="224" height="64"/>
+  <object id="5" x="0" y="0" width="16" height="352"/>
+  <object id="7" x="48" y="64" width="32" height="32"/>
+  <object id="8" x="272" y="64" width="64" height="32"/>
+  <object id="9" x="304" y="96" width="32" height="32"/>
+  <object id="10" x="304" y="192" width="32" height="32"/>
+  <object id="12" x="272" y="256" width="32" height="32"/>
+  <object id="14" x="144" y="224" width="32" height="32"/>
+  <object id="15" x="16" y="224" width="32" height="32"/>
+  <object id="16" x="80" y="160" width="32" height="32"/>
+  <object id="18" x="192" y="96" width="32" height="32"/>
+  <object id="19" x="16" y="0" width="144" height="64"/>
+  <object id="20" x="192" y="0" width="144" height="64"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)"/>
+ <objectgroup name="Chara(object)"/>
+ <objectgroup name="event">
+  <object id="21" x="160" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="22" x="240" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="26" x="48" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="27" x="192" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="28" x="80" y="160" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="29" x="16" y="224" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="30" x="144" y="224" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="31" x="272" y="256" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="32" x="304" y="192" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="33" x="304" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="34" x="272" y="64" width="64" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="35" x="80" y="288" width="32" height="32">
+   <properties>
+    <property name="EventID" value="0"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="36" x="16" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="37" x="96" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="38" x="128" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="39" x="160" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="40" x="192" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="41" x="224" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="42" x="256" y="64" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="43" x="32" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="44" x="64" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="45" x="96" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="46" x="128" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="47" x="160" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="48" x="240" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="49" x="272" y="96" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="50" x="16" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="51" x="48" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="52" x="80" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="53" x="112" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="54" x="144" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="55" x="176" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="56" x="208" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="57" x="240" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="58" x="272" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="59" x="304" y="128" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="60" x="32" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="61" x="64" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="62" x="112" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="63" x="144" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="64" x="176" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="65" x="208" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="66" x="240" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="67" x="272" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="68" x="304" y="160" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="69" x="16" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="70" x="48" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="71" x="80" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="72" x="112" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="73" x="144" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="74" x="176" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="75" x="208" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="76" x="240" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="77" x="272" y="192" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="78" x="64" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="79" x="96" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="80" x="128" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="81" x="176" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="82" x="208" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="83" x="240" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="84" x="272" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="85" x="304" y="224" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="86" x="48" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="87" x="16" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="88" x="80" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="89" x="112" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="90" x="144" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="91" x="176" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="92" x="208" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="93" x="240" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="94" x="304" y="256" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="95" x="240" y="304" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="12">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
+  <image source="youkan.png" trans="007575" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
+  <tile id="1674">
+   <properties>
+    <property name="cc_vertexz" value="-1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Base" width="10" height="10">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgSAfiDDwYBlqBuA0PRlfXigUjq1sMxEugNDpegqTuIiN+PFTVYQMAKk00yw==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="10" height="10">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBh5IJMTFXdyMDB0IWFc6mYC5WYhYUrVYQMAKU8Odg==
+  </data>
+ </layer>
+ <layer name="MonoUe" width="10" height="10">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBh5oJoDwa7gwOTDQDcSu4MDk08LdQDH7gjZ
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="144" y="0" width="16" height="160"/>
+  <object id="3" x="128" y="96" width="16" height="64"/>
+  <object id="4" x="64" y="96" width="32" height="64"/>
+  <object id="6" x="16" y="96" width="16" height="64"/>
+  <object id="7" x="0" y="0" width="16" height="160"/>
+  <object id="8" x="16" y="0" width="128" height="64"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)"/>
+ <objectgroup name="Chara(object)"/>
+ <layer name="CharaUe" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg+IJsDwc7gwOQPBQAARGcBxw==
+  </data>
+ </layer>
+ <objectgroup name="event">
+  <object id="9" x="96" y="144" width="32" height="16">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="10" x="32" y="144" width="32" height="16">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
