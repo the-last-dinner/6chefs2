@@ -1,0 +1,15 @@
+.DS_Store
+project.xcworkspace
+xcuserdata
+Debug.win32/
+Release.win32/
+*.sdf
+
+local.properties
+.classpath
+.project
+.cproject
+*.class
+*.apk
+.metadata
+*.opensdf
