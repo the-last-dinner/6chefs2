@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>cm_frame.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{774,189}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{4,4},{774,189}}</string>
+				<key>sourceSize</key>
+				<string>{782,198}</string>
+			</dict>
+
+			<key>cm_frame_s.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,311},{252,64}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{4,2},{252,64}}</string>
+				<key>sourceSize</key>
+				<string>{260,68}</string>
+			</dict>
+
+			<key>save_frame.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,190},{400,120}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{400,120}}</string>
+				<key>sourceSize</key>
+				<string>{400,120}</string>
+			</dict>
+
+		</dict>
+
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>size</key>
+			<string>{1024,512}</string>
+			<key>textureFileName</key>
+			<string>frame.png</string>
+			</dict>
+		</dict>
+</plist>

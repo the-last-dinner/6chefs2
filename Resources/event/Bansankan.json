@@ -1,0 +1,267 @@
+{
+  "0":[
+    {
+      "type":"setAmbient",
+      "ambient":"night"
+    }
+  ],
+  "1": [
+    {
+      "type":"if",
+      "condition":[
+        {
+          "event":["2","2"]
+        }
+      ],
+      "action":[
+        {
+          "type": "charaMsg",
+          "charaID":"9",
+          "text": ["どうぞ、中へ。"],
+          "name": "執事服の老人"
+        }
+      ]
+    },
+    {
+      "type":"if",
+      "condition":[
+        {
+          "Nevent":["2","2"]
+        }
+      ],
+      "action":[
+        {
+          "type": "charaMsg",
+          "charaID":"9",
+          "text": ["お待ちしておりました。"],
+          "name": "執事服の老人"
+        }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "type": "sequence",
+      "action": [
+        {
+          "type":"already"
+        },
+        {
+          "type":"changeDirection",
+          "objID":"101",
+          "direction":"RIGHT"
+        },
+        {
+          "type": "reaction",
+          "objID": "101"
+        },
+        {
+          "type": "charaMsg",
+          "charaID":"9",
+          "text": ["佐々木様！お待ちしておりました。"]
+        },
+        {
+          "type":"addProfile",
+          "charaID":"9",
+          "infoID":"0"
+        },
+        {
+          "type": "reaction",
+          "objID": "hero"
+        },
+        {
+          "type":"wait",
+          "time":1.0
+        },
+        {
+          "type": "changeDirection",
+          "direction": "LEFT",
+          "objID": "hero"
+        },
+        {
+          "type": "charaWalkTo",
+          "x": 62,
+          "y": 57,
+          "objID": "hero"
+        },
+        {
+          "type":"changeDirection",
+          "objID":"hero",
+          "direction":"LEFT"
+        },
+        {
+          "type":"wait",
+          "time":0.5
+        },
+        {
+          "type": "charaMsg",
+          "charaID":"9",
+          "text": ["皆様既にお揃いです。","お料理のしやすい格好にお着替えになって\n食堂でお待ちください。"],
+          "name": "執事服の老人"
+        }
+      ]
+    }
+  ],
+  "3": [
+    {
+      "type": "changeMap",
+      "mapID": "1",
+      "x": 50,
+      "y": 22
+    }
+  ],
+  "4": [
+    {
+      "type": "changeMap",
+      "mapID": "1",
+      "x": 50,
+      "y": 27
+    }
+  ],
+  "5": [
+    {
+      "type": "changeMap",
+      "mapID": "1",
+      "x": 50,
+      "y": 33
+    }
+  ],
+  "6": [
+    {
+      "type": "changeMap",
+      "mapID": "39",
+      "x": 14,
+      "y": 23
+    }
+  ],
+  "7":[
+    {
+      "type":"createChara",
+      "objID":"101"
+    },
+    {
+      "type":"if",
+      "condition":[
+        {
+          "event":["2","9"]
+        }
+      ],
+      "action":[
+        {
+          "type":"removeChara",
+          "objID":"1923"
+        }
+      ]
+    }
+  ],
+  "8":[
+    {
+      "type":"sequence",
+      "action":[
+        {
+          "type":"spawn",
+          "action":[
+            {
+              "type":"wait",
+              "time":1.0
+            },
+            {
+              "type":"removeLayer",
+              "layer":"door"
+            },
+            {
+              "type":"playSE",
+              "file":"door2.mp3"
+            }
+          ]
+        },
+        {
+          "type":"fadeout"
+        },
+        {
+          "type":"wait",
+          "time":3.0
+        },
+        {
+          "type": "changeMap",
+          "mapID": "3",
+          "x": 20,
+          "y": 39,
+          "eventID":"48"
+        }
+      ]
+    }
+  ],
+  "9":[
+    {
+      "type":"getItem",
+      "itemID":"1522",
+      "name":"猪肉"
+    },
+    {
+      "type":"removeChara",
+      "objID":"1923"
+    },
+    {
+      "type":"already"
+    }
+  ],
+  "10":[
+    {
+      "type":"setLight",
+      "objID":"1"
+    },
+    {
+      "type":"setLight",
+      "objID":"2"
+    },
+    {
+      "type":"setLight",
+      "objID":"3"
+    },
+    {
+      "type":"setLight",
+      "objID":"4"
+    },
+    {
+      "type":"setLight",
+      "objID":"5"
+    },
+    {
+      "type":"setLight",
+      "objID":"6"
+    },
+    {
+      "type":"setLight",
+      "objID":"7"
+    },
+    {
+      "type":"setLight",
+      "objID":"8"
+    },
+    {
+      "type":"setLight",
+      "objID":"9"
+    },
+    {
+      "type":"setLight",
+      "objID":"10"
+    },
+    {
+      "type":"setLight",
+      "objID":"11"
+    },
+    {
+      "type":"setLight",
+      "objID":"12"
+    },
+    {
+      "type":"setLight",
+      "objID":"13"
+    },
+    {
+      "type":"setLight",
+      "objID":"14"
+    }
+  ]
+}

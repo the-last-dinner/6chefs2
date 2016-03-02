@@ -1,0 +1,162 @@
+{
+  "0":[
+    {
+      "type":"setAmbient",
+      "ambient":"night"
+    }
+  ],
+  "1": [
+    {
+      "type": "sequence",
+      "action": [
+        {
+          "type":"displayImg",
+          "file":"warning.png",
+          "time":3.0
+        },
+        {
+          "type":"displayImg",
+          "file":"fiction.png",
+          "time":3.0
+        },
+        {
+          "type":"storyMsg",
+          "title":"操作説明",
+          "text":["←↑↓→,awsd・・・移動\nShiftキー　　・・・走る\nxキー　　　　・・・メニュー\nスペースキー ・・・決定,選択"]
+        },
+        {
+          "type":"addProfile",
+          "charaID":"0",
+          "infoID":"2"
+        },
+        {
+          "type":"addProfile",
+          "charaID":"7",
+          "infoID":"2"
+        },
+        {
+          "type": "playBGM",
+          "file": "car-idling1.mp3"
+        },
+        {
+          "type":"wait",
+          "time":3.0
+        },
+        {
+          "type": "storyMsg",
+          "title":"ー晩餐会ー",
+          "text": ["年に一度開催される料理人の登竜門。\n料理界の巨匠・希崎　夜道シェフが\n毎年主催者として、\nシェフの住まいでもある晩餐館に\n将来有望とされる料理人を招いてきた。","シェフの死後は、\n美食家としても有名な希崎夫人が\n主催者を引き継いでいる。","この会で夫人の納得のいく料理を出せた者は、\nその後の料理人としての人生の成功は約束され、\n夫人に料理を認められなかった者は、\n二度と表に出てくることはないという…"]
+        },
+        {
+          "type":"wait",
+          "time":1.0
+        },
+        {
+          "type": "playSE",
+          "file": "bus-door1.mp3"
+        },
+        {
+          "type":"wait",
+          "time":2.0
+        },
+        {
+          "type": "playSE",
+          "file": "bus-start1.mp3"
+        },
+        {
+          "type":"wait",
+          "time":4.0
+        },
+        {
+          "type":"stopBGM"
+        },
+        {
+          "type":"spawn",
+          "action":[
+            {
+              "type":"playBGM",
+              "file":"prologue.mp3"
+            },
+            {
+              "type":"displayImg",
+              "file":"prologue.png",
+              "time":10.0
+            }
+          ]
+        },
+        {
+          "type": "stopBGM"
+        },
+        {
+          "type": "fadein"
+        },
+        {
+          "type":"charaMsg",
+          "text":["ふぅ・・・やっと着いた・・・"],
+          "charaID":"0",
+          "imgID":"1"
+        },
+        {
+          "type":"wait",
+          "time":1.0
+        },
+        {
+          "type":"changeDirection",
+          "direction":"RIGHT",
+          "objID":"hero"
+        },
+        {
+          "type":"wait",
+          "time":1.0
+        },
+        {
+          "type":"charaMsg",
+          "text":["会場はあっちかな？"],
+          "charaID":"0",
+          "imgID":"1"
+        },
+        {
+          "type": "already"
+        }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "type": "systemMsg",
+      "text": ["今日のバスはもう終わってしまったようだ"]
+    }
+  ],
+  "3": [
+    {
+      "type": "changeMap",
+      "mapID": "2",
+      "x": 2,
+      "y": 75
+    }
+  ],
+  "4": [
+    {
+      "type": "changeMap",
+      "mapID": "2",
+      "x": 2,
+      "y": 77
+    }
+  ],
+  "5": [
+    {
+      "type": "changeMap",
+      "mapID": "2",
+      "x": 2,
+      "y": 79
+    }
+  ],
+  "6":[
+    {
+      "type":"fadeout"
+    },
+    {
+      "type":"already"
+    }
+  ]
+}

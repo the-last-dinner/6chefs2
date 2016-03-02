@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>G.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{48,0},{12,15}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{2,1},{12,15}}</string>
+				<key>sourceSize</key>
+				<string>{16,16}</string>
+			</dict>
+
+			<key>dShituji.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{24,28},{23,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{4,1},{23,35}}</string>
+				<key>sourceSize</key>
+				<string>{32,36}</string>
+			</dict>
+
+			<key>item_blue_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{27,27}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{2,2},{27,27}}</string>
+				<key>sourceSize</key>
+				<string>{32,32}</string>
+			</dict>
+
+			<key>item_blue_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,28},{23,24}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{4,4},{23,24}}</string>
+				<key>sourceSize</key>
+				<string>{32,32}</string>
+			</dict>
+
+			<key>item_blue_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{28,0},{19,19}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{6,6},{19,19}}</string>
+				<key>sourceSize</key>
+				<string>{32,32}</string>
+			</dict>
+
+			<key>mes.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,53},{14,4}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{1,6},{14,4}}</string>
+				<key>sourceSize</key>
+				<string>{16,16}</string>
+			</dict>
+
+		</dict>
+
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>size</key>
+			<string>{64,64}</string>
+			<key>textureFileName</key>
+			<string>map_object.png</string>
+			</dict>
+		</dict>
+</plist>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="8" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="32">
+ <tileset firstgid="1" name="situnai" tilewidth="16" tileheight="16">
+  <image source="situnai.png" trans="007575" width="960" height="511"/>
+ </tileset>
+ <tileset firstgid="1861" name="ST-Bath-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Bath-I01.png" trans="ffffff" width="256" height="838"/>
+ </tileset>
+ <layer name="Base" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-17"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYEAFT9kx8TN2BgzwlR0Tf8Oi7jg7djzQ6q6zQzCy3HUkjK4OGwbpAQDbmyxj
+  </data>
+ </layer>
+ <layer name="MonoShita" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-16"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYMAPBLkYGIy4MMWXczAwrOBA8B2BapywqCMWeAD1eiJhLyD2xmJeBFAsEglHAXE0FnUZQLFMJJwFxNl43PeRk4HhEyfp7gYATQQLPw==
+  </data>
+ </layer>
+ <layer name="bathtub" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgcwJeLgcEPiv2hOIALU10sUCwOiuOhOAGLulygWB4U50NxARZ1lAIAut0HWg==
+  </data>
+ </layer>
+ <layer name="open" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYKAt4OdgYBAAYkEoDcPoQB5NHp86BSBWxCKHDPSB8gZAbEhAnT1Q3gGIHQmowwUAm28DKA==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYKAtEObAxCIcmOqUObBjYtSpYFFnzIGJTbCooxQAAEIKBAw=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="10" height="8">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFyKAciCuIULcZiN8DMQA1hAKS
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="16" x="0" y="128" width="160" height="32"/>
+  <object id="17" x="128" y="96" width="32" height="32"/>
+  <object id="18" x="0" y="0" width="64" height="96"/>
+  <object id="19" x="64" y="64" width="96" height="32"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)">
+  <properties>
+   <property name="cc_vertexz" value="0"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="Chara(object)">
+  <properties>
+   <property name="cc_vertexz" value="0"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="event" visible="0">
+  <properties>
+   <property name="EventID" value="1223"/>
+  </properties>
+  <object id="20" x="0" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="21" x="64" y="48" width="96" height="48">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="22" x="32" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="25" x="32" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="27" x="32" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="28" x="128" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="31" x="96" y="48" width="32" height="32">
+   <properties>
+    <property name="objID" value="191"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

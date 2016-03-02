@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="50">
+ <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16">
+  <image source="set-mansion-in.png" trans="ffffff" width="1440" height="1760"/>
+ </tileset>
+ <tileset firstgid="9901" name="set-mansion-in" tilewidth="16" tileheight="16">
+  <image source="set-mansion-in.png" trans="fefefe" width="1440" height="1760"/>
+ </tileset>
+ <tileset firstgid="19801" name="ST-Room-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Room-I01.png" trans="fefefe" width="256" height="1120"/>
+ </tileset>
+ <tileset firstgid="20921" name="situnai" tilewidth="16" tileheight="16">
+  <image source="situnai.png" trans="fefefe" width="960" height="511"/>
+ </tileset>
+ <tileset firstgid="22781" name="death" tilewidth="16" tileheight="16">
+  <image source="death.png" trans="fefefe" width="384" height="256"/>
+ </tileset>
+ <tileset firstgid="23165" name="tidamari" tilewidth="16" tileheight="16">
+  <image source="tidamari.png" trans="fefefe" width="96" height="128"/>
+ </tileset>
+ <tileset firstgid="23213" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="fefefe" width="256" height="1990"/>
+ </tileset>
+ <layer name="Base" width="30" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzLV2dgkNVgYJCjMZaHYgUgzgfaeRKIy4HsCjrgSiCu0oDYqQykLwLxJSi+jMSmNgaZfUUDYicIa2tCsA4Q60JpWmCQ2XqaCHs3qjEwbFKjHw2zlxsY3jzqtKfR7aWXP2H209u/6PaO+nfUv6P+HfXvYCyf0cOZ1gDmR3oDmB9HOgAAL74Tiw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="30" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B2YG0iA8M6IF5PQ7wpEdPevUCxfUB8gYb4EBZ7zwLFzg2QvbS0c9TeUXuHm72PBsjeT1js/QsU+0dF/B8LnykJ095RMAqoCQDyJHOi
+  </data>
+ </layer>
+ <layer name="MonoChu" width="30" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0r1OwlAYxvH3BhB00UT8RFxVdGChttVE70QSvQMEXAV19dtEb0Fwh8QvdBWRVQRWBZn9J0SdTktswKVP8kuTnr7nyWkr0s6lLpJBFle6/GQlLLIaFssssb5s84wqHkOkD174jN/75+x3YbPnKetnHfT2s++AYf+cKmvMRi3mZyIis5hDCPNYwDozGw56c8zmLea36UghjR3sYg/XzNw46B02Rfymev2VjgreUEUNdYwxM24x5zQRTUTDInQYMDX7uUHexZCD9/Ff2edsBzjEEY5xojjvLee7wz0KeMDjH8/8TscHGmjiEy1F7wTfexIBTCGI6S7+A9+J0bGJOBJIYqsHvU90FPGMEl5Q7kGvGzfdygj/76ipvrpx02m+AOTUR+c=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="30" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjILhDRZGMTAsiqK/vcuBdq4YAHthYN4ItXsUjIJRQH8AALDoBes=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="16" height="288"/>
+  <object id="2" x="0" y="288" width="384" height="64"/>
+  <object id="3" x="416" y="288" width="64" height="64"/>
+  <object id="4" x="464" y="0" width="16" height="288"/>
+  <object id="5" x="48" y="272" width="128" height="16"/>
+  <object id="17" x="48" y="128" width="64" height="32"/>
+  <object id="18" x="80" y="160" width="32" height="32"/>
+  <object id="19" x="208" y="32" width="32" height="48"/>
+  <object id="20" x="336" y="112" width="96" height="32"/>
+  <object id="23" x="336" y="48" width="96" height="16"/>
+  <object id="24" x="432" y="32" width="32" height="48"/>
+  <object id="25" x="16" y="48" width="448" height="16"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)">
+  <properties>
+   <property name="cc_vertexz" value="0"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="Chara(object)">
+  <properties>
+   <property name="cc_vertexz" value="0"/>
+  </properties>
+  <object id="37" x="192" y="160" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="2"/>
+    <property name="EventID" value="9"/>
+    <property name="direction" value="RIGHT"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1017"/>
+    <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="38" x="384" y="288" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="8"/>
+    <property name="direction" value="UP"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1018"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="CharaUe1" width="30" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2D4AWFHBgYRIBYFYjEgFgdiCUfa25sLtCMPiPOBuACIC4G4iA72joJRMAqoAzKB+TXLETdNK3AYaPYRR9z0KBgFgx0AAOW6E6M=
+  </data>
+ </layer>
+ <objectgroup name="event">
+  <object id="26" x="384" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="27" x="48" y="128" width="64" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="28" x="432" y="48" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="30" x="48" y="272" width="128" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="31" x="208" y="32" width="32" height="48">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="33" x="48" y="16" width="32" height="48">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="34" x="128" y="16" width="32" height="48">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="35" x="272" y="16" width="32" height="48">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="36" x="0" y="288" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="48" x="32" y="288" width="32" height="32">
+   <properties>
+    <property name="EventID" value="11"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="path">
+  <object id="39" x="160" y="224" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="43" x="288" y="224" width="32" height="32">
+   <properties>
+    <property name="nextID" value="3"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+  <object id="44" x="288" y="128" width="32" height="32">
+   <properties>
+    <property name="nextID" value="4"/>
+    <property name="pathID" value="3"/>
+    <property name="previousID" value="2"/>
+   </properties>
+  </object>
+  <object id="45" x="160" y="96" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="4"/>
+    <property name="previousID" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="46" x="64" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="10"/>
+    <property name="objID" value="1921"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

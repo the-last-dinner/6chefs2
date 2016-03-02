@@ -1,0 +1,697 @@
+﻿ー使いそうなスクリプトリストー
+
+
+●キャラメッセージウインドウの表示
+・type名...charaMsg
+・必要なもの...表示するテキスト
+　　　　　　　 キャラ画像のファイル名
+　　　　　　　 キャラ名
+               nameをつけたら???に 
+               optionでリアクションに（ブワってやつ）
+（例）
+{
+  "type": "charaMsg",
+  "talk": [
+    {
+      "text": [],
+      "charaID": "",#
+      "imgID": "",#
+      "name": "",#
+      "option": “reaction”#
+    },
+    {
+      "text": [],
+      "charaID": "",#
+      "imgID": "",#
+      "name": "",#
+      "option": “reaction”#
+    }
+  ]
+}
+
+発言が一人によるものであれば
+        {
+          "type": "charaMsg",
+          "text": [],
+          "charaID": "",#
+          "imgID": ""#
+        }
+でOK
+
+●画像表示
+・type名...displayImg
+・必要なもの...表示する画像ファイル名
+　　　　　　　　表示する時間
+
+※画像はフェードインで表示、でフェードアウトしていくように
+※フェードインに0.5秒かける、フェードアウトにも0.5秒かける
+※表示する時間に、フェードイン、アウトの時間は含まない
+※
+（例）
+	{
+  	"type":"displayImg",
+	"file":"ファイル名",
+	"time":表示する時間（秒)#,
+	"option":
+	}
+
+●マップ移動
+・type名...changeMap
+・必要なもの...移動先のマップ名
+　　　　　　　 移動先のx座標
+　　　　　　　 移動先のy座標,
+	       移動先マップの発動イベント#
+（例）
+	{
+	"type":"changeMap",
+	"mapID":"移動先のマップ番号",
+	"x":移動先のx座標(int),
+	"y":移動先のy座標(int),
+	"EventID":"イベントID"#
+	}
+
+
+●システムメッセージウインドウの表示
+・type名...systemMsg
+・必要なもの...表示するテキスト
+
+（例）
+	{
+	"type":"syetemMsg",
+	"text":"テキスト(String)"
+  "align":""<-left, center, rightのいずれか#
+	}
+
+●キャラの向きを変更
+・type名...changeDirection
+・必要なもの...向き(UP,DOWN,RIGHT,LEFT)
+               誰の？
+（例）
+	{
+  "type":"changeDirection",
+	"direction":"向き",
+  "objID":"オブジェクトID or hero(主人公)"
+	}
+
+
+●キャラが勝手に歩く
+・type名...charaWalk
+・必要なもの...歩く向き
+　　　　　　　 歩数
+　　　　　　　 歩く速さ
+　　　　　　　 歩くキャラのID
+		方向転換しないならoption:back
+		
+（例）
+	{
+	"type":"charaWalk",
+	"direction":"歩く向き",
+  "objID":"歩くキャラのID or hero",
+	"steps":歩数(int),#
+	"speed":歩く早さ(float)#
+  "option":"back"#
+	}
+
+
+●キャラが勝手に歩く（目的地で指定）
+・type名...charaWalkto
+・必要なもの...目的地のx座標, y座標, 歩くキャラのID
+（例）
+	{
+	"type":"charaWalkTo",
+	"x":x座標,
+	"y":y座標,
+	"objID":"歩くキャラのID, or hero",
+	"speed":"歩く速さ"
+	}
+  
+
+●キャラがワープする）
+・type名...charaWarp
+・必要なもの...目的地のx座標, y座標, キャラのID, 出現する向き
+（例）
+	{
+	"type":"charaWarp",
+	"x":x座標,
+	"y":y座標,
+	"objID":"歩くキャラのID(int) or hero",
+	"direction":"出現する向き"#
+	}
+
+
+●リアクションアイコン表示
+・type名...reaction
+・必要なもの...すべてデフォ
+※何か発見した時とかのビックリマークとか(ポケモンのトレーナーに気づかれた時の！のイメージ)
+
+（例）
+	{
+	"type":"reaction",
+  "objID":"出すキャラのオブジェクトID or hero"
+	}  
+
+●鬼を生み出す
+・type名...createEnemy
+・必要なもの...出現させた鬼の鬼番号, 鬼を出現させるx座標, 出現させるy座標, 鬼の動きパターン, 消えるまでに必要なマップ移動の回数
+
+（例）
+	{
+	"type":"createEnemy",
+	"enemyID":"ID",
+  "charaID":"キャラチップID(int)",
+	"x":出現させるx座標(int),
+	"y":出現させるy座標(int),
+	"movePattern":"鬼の動きパターン番号(int)",#
+	"times":消えるまでに必要なマップ移動の回数#
+	"speed":鬼の速さ#
+	}
+
+●キャラを生み出す
+・type名...createChara
+・必要なもの...出現させるキャラのオブジェクトID
+	　　　 キャラメッセージ画像
+	　　　 話す内容　　　　　　　 
+　　　　　　　 動きパターン　　　　　　　　
+（例）
+	{
+	"type":"createChara",
+	"objID":"出すもののオブジェクトID",
+  	"charaID":"キャラチップID",
+  	"text":["", "", ...],#
+  	"movePattern":"ID"#
+	}
+
+
+●オブジェクトを消す
+・type名...removeChara
+・必要なもの...消すオブジェクトID
+（例）
+	{
+	"type":"removeChara",
+	"objID":"ID"
+	}
+
+
+●鬼を消す
+・type名...removeEnemy
+・必要なもの...消す鬼ID
+（例）
+	{
+	"type":"removeEnemy",
+	"enemyID":"ID"
+	}
+
+
+●ストーリーメッセージウインドウ表示
+・type名...storyMsg
+・必要なもの...表示するテキスト
+           背景のアルファ値
+※冒頭とかは真っ黒いウインドウを表示するけど、日記を表示するのは半透明のウインドウ
+
+
+※titleは中央寄せ
+　textは中央寄せで、分は中央の中の左寄せ
+
+（例）
+	{
+	"type":"storyMsg",
+ 	 "title":""#
+	"text":["表示するテキスト", "", ...],
+	"alpha":不透明度(0 ~ 255 0で見えなくなる)#
+	}
+
+
+
+●主人公の周りだけcoverを解除して明かりがつくように見せる
+・type名...lamp
+・必要なもの...光の色 ※できれば、要相談
+（例）
+	{
+	"type":"lamp",
+	"color":R,G,B,α(double)
+	}
+
+
+●モノを動かす
+・type名...move
+・必要なもの...eagingで加速度指定    
+（例）
+	{
+	"type":"move",
+  	"objID":"オブジェクトID",
+	"easing":"in（はやくなる）、out(遅くなる)"#
+	}
+  
+
+●連打イベント
+・type名...barrage
+・必要なもの...連打する回数, 制限時間
+※typeというより連打成功したら次のスクリプトに入るかというやつ
+（例）
+	{
+	"type":"barrage",
+	"times":連打する回数(int),
+	"limit":制限時間（double）,
+	"false":[失敗した時のaction] or "EventID",
+	"true":[成功した時のaction] or "EventID"
+	}
+●暗号イベント
+・type名...passward
+・必要なもの...入力するもの, 失敗した時のアクション, 正解したときのアクション　　　　　　　
+（例）
+	{
+	"type":"passward",
+	"pass":"入力するもの",
+	"false":[ミスった時のアクション] or "EventID",
+	"true":[正解の時のアクション] or "EventID"
+  }
+  
+
+●レイヤーを消す
+・type型...removeLayer
+・必要なもの...消すレイヤー名
+（例）
+　{
+	"type":"removeLayer",
+	"layer":"消すレイヤー名"
+  }
+
+
+●SE鳴らす
+・type名...playSE
+・必要なもの...ファイル名, ループ回数, ボリューム
+（例）
+	{
+	"type":"playSE",
+	"file":"ファイル名",
+	"times":回数,#
+	"volume":"ボリューム",#
+	}
+
+
+●カウントダウンをする
+・type名...countDown
+・必要なもの...秒数, カウントダウンID　　　　　　
+（例）
+	{
+	"type":"countDown",
+	"second":秒数
+	"condition":[
+		{		
+			"event":["{マップ番号、イベントID}"],
+			"item":["アイテムID,アイテムID,,,,"],
+			"flg":"固有のフラグ",
+			"equip":["アイテムID,アイテムID,,,,"],
+			"status":["{キャラID,好感度}"],
+			"Nevent":[],
+			"Nitem":[],
+			・・・	
+		}
+	],
+	"true":[クリアした時のアクション(String)]またはイベントID(int): "7"
+	"false":[カウントが0になった時のアクション]#,
+	}
+
+  
+●カウントダウンを止める
+・type名...stopCount
+・必要なもの...カウントダウンID
+（例）
+	{
+	"type":"stopCount"
+	}
+  
+
+●アイテム入手
+・type名...getItem
+・必要なもの...入手アイテムID, アイテム名
+※システムメッセージと入手SEがデフォルトで鳴るように　　　
+「、、、を手に入れた」
+（例）
+	{
+		"type":"getItem",
+		"itemID":"アイテムID"
+		"name":"アイテム名"
+	}
+
+●クエスチョンメッセージウインドウの表示
+(外した場合はイベント強制終了)
+・type名...questionMsg
+・必要なもの...表示するテキスト
+               選択肢
+　　　　　　　　正解の選択肢
+　　　　　　　　正解した場合のaction
+（例）
+	{
+	"type":"questionMsg",
+	"text":"テキスト(String)”,
+	“choices”:[
+		{
+			“choice”:”選択肢１”,
+			“action”:[],#
+			“eventID”:ID#
+		},
+		{
+			“choice”:”選択肢２”,
+			“action”:[],#
+      “eventID”:ID#
+		}…
+	]
+	}
+
+
+
+●レイヤーを揺らす
+・type名...swingLayer
+・必要なもの...揺らすレイヤー
+※酒影が牢の格子を揺らすときに使う
+　上下に0.2マスずつ揺らす
+　を1秒間に2回位のペースで
+
+  デフォルトは永遠に揺らし続ける
+　数回揺らすだけならオプション
+（例）
+	{
+	"type":"swingLayer",
+	"layer":"揺らすレイヤー名",
+	"option":"揺らす回数"#←なければ永遠に
+	}
+
+
+●フェードイン
+・type名...fadeIn
+・必要なもの...必要ならばフェードインにかかる時間
+（例）
+	{
+	"type":"fadeIn",
+	"time":時間指定する場合秒数
+	}
+  
+●フェードアウト
+・type名...fadeOut
+・必要なもの...必要ならばフェードアウトにかかる時間
+
+※スクリプト「フェードイン」が発動しない限り何があっても真っ暗なまま
+	
+（例）
+	{
+	"type":"fadeout",
+	"time":時間指定する場合秒数,#
+	"color":["r","g","b"]#
+	}
+
+
+●イベントを見たことにする
+・type?名...already
+・必要なもの...マップ番号, イベントID
+
+例）
+	{
+	"type":"already"
+	"event":["",""]ほかのイベントを見たことにする場合#
+	}
+
+
+●待機
+・type?名...wait
+・必要なもの...時間
+例）
+	{
+	"type":"wait",
+	"time":待機する時間(float)
+	}
+
+
+●カメラ
+・type名、、、createCamera
+・必要なもの、、、マップ番号
+　　　　　　　　　当てるマスの左下の座標
+　　　　　　　　　ゴール地点の座標（動かす場合）
+　　　　　　　　　何秒かけて動かすか（動かす場合）
+                  主人公に戻すコマンド
+                  別のキャラを追いかける場合は追いかけるやつのobjID
+（例）
+	{
+	"type" 　　:"createCamera",
+	"mapID"　　:"マップ番号",#
+	"x"　　　　:x座標,#
+	"y"　　　　:y座標,#
+	"return"   :"hero"←主人公に戻る,#
+	"objID"    :"追いかけるキャラのオブジェクトID"#
+	},
+
+
+●マップまたぐカメラ
+type名,,,camera,
+必要なもの,,,nextX
+	     nextY
+	     timeだけ
+	
+
+
+(例){  
+			"type":"camera",
+			"nextX"　　:カメラが向かうx座標,#
+			"nextY"　　:カメラが向かうy座標,#
+			"time"　　 :"かかる秒数",#
+}
+	
+	
+  
+
+●キャラが主人公（別キャラ）についてくるように
+・type名、、、chase
+・必要なもの、、、追いかける奴のオブジェクトID,  追いかけられる奴のオブジェクトID（主人公ならhero）
+（例）
+	{
+	"type":"chase",
+	"chaser":"追いかける奴のobjID",
+	"target":"追いかけられるやつのobjID or hero"
+	}
+
+  
+●ついてくるの解除
+・type名、、、releaseChase
+・必要なもの、、、解除する追いかける奴オブジェクトID
+（例）
+	{
+	"type":"releaseChase",
+  "chaser":"追いかける奴のobjID"
+	}
+
+
+●チャプターチェンジ画像を表示、チャプターを変える
+
+・type名、、、changeChapter
+・必要なもの、、、チャプター番号
+(例)
+　　{
+    "type":"changeChapter",
+    "chapterID":"チャプターID"
+    }　　
+
+
+    　　
+●ゲームオーバー
+・type名,,,gameOver
+(例)
+　　{
+	  "type":"gameOver"
+    }　　
+
+●フラグを変えるヤツ
+・type名、、、changeFlg
+・必要なもの、、、変えるフラグ
+
+
+(例)
+　　{
+	  "type":"changeFlg",
+	  "flg":1 (int)
+    }　
+
+●強制的にアイテムを捨てる
+・type名、、、removeItem,
+・必要なもの、、、手持ちから消すアイテムID
+
+※装備しているアイテムの場合は、装備を解除しつつアイテムを手持ちから消す
+
+(例)
+　　{
+	  "type":"removeItem",
+	  "itemID":"消すアイテムID"Fcount
+    }　
+
+とりあえず、
+必要に応じて追加
+
+●if文
+
+(例)
+	{
+		"type":"if",
+		"condition":[
+			{
+				"event":["マップ番号"、"イベントID"],
+						
+				"item":["アイテムID,アイテムID,,,,"],
+				"flg":"固有のフラグ",
+				"equip":["アイテムID,アイテムID,,,,"],
+				"status":["{キャラID,好感度}"],
+				"Nevent":[],
+				"Nitem":[],
+				・・・
+			}
+		],
+		"action":[
+
+		]または
+		"eventID":"イベントID"
+	}
+
+●アニメーション
+・type,,,animation
+・必要なもの、、、かかる時間
+		　画像配列
+		 必要ならば、座標(デフォルトは真ん中)
+
+（例）
+{
+	"type":"animation",
+	"time":0.5,
+	"imgs":[
+		"1.png",
+		"2.png",
+		...
+	]
+}
+●好感度を変える
+・type,,,changeStatus
+・必要なもの、、、キャラID
+		　好感度
+
+（例）
+{
+	"type":"changeStatus",
+	"charaID":"キャラID",
+	"favorite":"好感度"
+}
+
+●キャラが勝手に歩く（目的地で指定）
+・type名...charaMoveTo
+・必要なもの...目的地のx座標, y座標, 歩くキャラのID
+
+（例）
+	{
+	"type":"charaMoveTo",
+	"x":x座標,
+	"y":y座標,
+	"objID":"歩くオブジェクトのID(int), or hero"
+	}
+
+
+●charaMove
+・type名・・・charaMove
+・必要なもの,,,オブジェクトID
+		向き
+		歩数
+		速さ（主人公の走る速さの何倍か）
+		hit:false
+
+※hitは当たり判定を無効にしたいときに書く
+
+(例)
+MAIN-Ohiromaの19
+
+
+
+
+●SEを鳴らす
+・type名、、、playSE
+・必要なもの,,,SEのファイル名
+　　　　　　　　鳴らす時間#
+
+(例)
+{
+	"type":"playSE",
+	"file":"ファイル名",
+	"time":鳴らす時間(float)
+}
+
+●キャラプロファイルに追加
+・type名...addProfile
+・必要なもの...キャラID
+               情報番号
+
+（例）
+	{
+		"type":"addProfile",
+		"charaID":"キャラID",
+		"infoID":"情報番号"#
+	}
+
+●ゲームを終了させてタイトル画面に戻す
+・type名・・・end
+・必要なもの・・・画像ファイル名
+
+（例）
+	{
+		"type":"end",
+		"file":"表示する画像ファイル名"
+	}
+
+●stopBGM(file名指定で指定したBGMだけ止める 何も指定しなければ全て
+・type名・・・stopBGM
+・必要なもの・・・止めるBGMfile名
+（例）
+	{
+		"type":"stopBGM",
+		"file":"止めるBGMファイル名"#
+	}
+
+●swingLayerを止める
+・type名・・・stopSwing
+
+（例）
+	{
+		"type":"stopSwing",
+	}
+
+●環境光設定
+・type名・・・setAmbient
+・必要なもの・・・昼間　day
+		　室内　light
+		　夜　　night
+                  真っ暗　basement
+
+（例）
+	{
+		"type":"setAmbient",
+		"ambient":"環境名"
+	}
+
+
+TODO >>>>>>>>>>>>>>>>>>
+
+show〜やhide〜、create〜やremove〜の時は出現させる時に、アニメーションようのオプションがあるといいかも
+例
+"option":"fade"
+とか
+
+>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

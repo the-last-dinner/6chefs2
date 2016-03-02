@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="32">
+ <tileset firstgid="1" name="chip10e_glas" tilewidth="16" tileheight="16">
+  <image source="chip10e_glas.png" trans="674c56" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="Skull" tilewidth="16" tileheight="16">
+  <image source="Skull.png" trans="674c56" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="497" name="object_bone01" tilewidth="16" tileheight="16">
+  <image source="object_bone01.png" trans="c1a5c8" width="288" height="256"/>
+ </tileset>
+ <tileset firstgid="785" name="kitchen3" tilewidth="16" tileheight="16">
+  <image source="kitchen3.png" trans="ffffff" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1809" name="set-mansion-in" tilewidth="16" tileheight="16">
+  <image source="set-mansion-in.png" trans="007575" width="1440" height="1760"/>
+ </tileset>
+ <layer name="Base" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-17"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYICAMkbaYHQwas+oPaP2jNozas+oPaP2DB17iAWbGCGY1mDUHggAAMG/0iE=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-16"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYICAh4wMDI8YqU+jg6dAsWeM1KfRwah/Rv0z6p9R/4z6Z9Q/o/6h3D+jYHACAJVMiMw=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-15"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYICA5TTAKxgwwVEa4GM0sucYEfY8pgF+gsWexUC8hAY0OtAGYh0a0OjAE4i9aECjg3QgzqABjQ5agbiNBjQ6GE0Ho+kABEbTwWg6AAF6pYNRMDgBAHpZ1zY=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFxIAvjAwMXxkxxZuYGBiamahnDxvQLHYs5k0Bik2loj2jYBSMglEwCkbBKBi6AABawwQz
+  </data>
+ </layer>
+ <layer name="MonoUe2" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0U0OwUAYgOGPtgdgrwlbvxdoE7Z+L8C19CZcgw1V7R3Y+al41xIhHWb1fcmzms68k46I+TQdkRba6KCLnvODg19myJkjjDHBFLMPnQ3r2zfflDyRMpauSOSa3e1E44wYByQ4IkWdRgMrGmvDToX9VVw494ob7sjRpzHAjvV9wU7Kvszwjt9MTuNhoVPjf/je/zsBjdBCR9+n2Nh6nzmNhYWOjo6OzhOs+B9B
+  </data>
+ </layer>
+ <layer name="dialy" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzUEBAAAEBMELoSo1iUQJ99opMBIAtwyp4v/pO8bwAAC8FjUvAts=
+  </data>
+ </layer>
+ <layer name="hide" width="26" height="24">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU0BtoA7EOHezxBGIvOtgzCkbBKBgFo4C+AACKSwDr
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="6" x="0" y="0" width="32" height="384"/>
+  <object id="7" x="32" y="320" width="160" height="64"/>
+  <object id="9" x="224" y="320" width="160" height="64"/>
+  <object id="10" x="384" y="0" width="48" height="384"/>
+  <object id="11" x="32" y="80" width="32" height="128"/>
+  <object id="12" x="64" y="64" width="176" height="16"/>
+  <object id="13" x="240" y="32" width="144" height="32"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)"/>
+ <objectgroup name="Chara(object)">
+  <object id="21" x="192" y="192" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="1"/>
+    <property name="direction" value="UP"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1058"/>
+   </properties>
+  </object>
+  <object id="22" x="192" y="128" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="6"/>
+    <property name="direction" value="DOWN"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1059"/>
+   </properties>
+  </object>
+  <object id="25" x="192" y="128" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="6"/>
+    <property name="direction" value="DOWN"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="1024"/>
+   </properties>
+  </object>
+  <object id="30" x="192" y="352" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="5"/>
+    <property name="direction" value="UP"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="10100"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="CharaUe" width="26" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYIAAXSDWowGNDryB2IcGNDrIBOIsGtDooB2IO2hAo4OlQLyMBjQ6GE0Ho+kABEbTwWg6AIHRdDCaDogF+OKX2gBX/I40AAB1CLZ1
+  </data>
+ </layer>
+ <objectgroup name="event">
+  <object id="14" x="192" y="352" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="15" x="224" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="16" x="384" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="18" x="224" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="19" x="352" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="23" x="384" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="28" x="384" y="336" width="32" height="32">
+   <properties>
+    <property name="EventID" value="9"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="29" x="352" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="11"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="31" x="96" y="48" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="objID" value="1928"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
