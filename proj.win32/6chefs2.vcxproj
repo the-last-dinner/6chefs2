@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot);$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -110,7 +110,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <Inputs>$(TargetFileName)</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
@@ -147,18 +146,250 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\Algorithm\PathFinder.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Datas\Message\CharacterMessageData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Message\MessageData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Message\StoryMessageData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Message\SystemMessageData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\DungeonCameraSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\DungeonSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\EndingSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\GameOverSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\SceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\StartUpSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\TitleSceneData.cpp" />
+    <ClCompile Include="..\Classes\Effects\AmbientLightLayer.cpp" />
+    <ClCompile Include="..\Classes\Effects\Fog.cpp" />
+    <ClCompile Include="..\Classes\Effects\Light.cpp" />
+    <ClCompile Include="..\Classes\Event\CharacterEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\EffectEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\EnemyEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\EventFactory.cpp" />
+    <ClCompile Include="..\Classes\Event\EventScript.cpp" />
+    <ClCompile Include="..\Classes\Event\EventScriptValidator.cpp" />
+    <ClCompile Include="..\Classes\Event\FlagEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\GameEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\MapEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\MapObjectEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\MiniGameEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\ModalLayerEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\SceneEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\SoundEvent.cpp" />
+    <ClCompile Include="..\Classes\Layers\Dungeon\ButtonMashingLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Dungeon\DisplayImageLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Dungeon\PasswordEventLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Dungeon\SelectEventLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Dungeon\TiledMapLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\EventListener\EventListenerKeyboardLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\LoadingLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\CharacterMenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\DungeonMainMenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\ItemMenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\MenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\MiniSelector.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\NumberSelector.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\SaveDataSelector.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\TitleMainMenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\TrophyListLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Message\CharacterMessageLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Message\MessageLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Message\StoryMessageLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Message\SystemMessageLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Shader\ShaderLayer.cpp" />
+    <ClCompile Include="..\Classes\Managers\CsvDataManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\DebugManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\DungeonSceneManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\NotificationManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\PlayerDataManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\SoundManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\TextureManager.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Character.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Enemy.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\EventObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\GhostObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\ItemObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MapObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MapObjectFactory.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MapObjectList.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\Chaser.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\CheapChaser.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\MobRandom.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\MovePattern.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\MovePatternFactory.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\RandomMove.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\Scouter.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Party.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\PathObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainObject\PlainArea.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainObject\SlipFloor.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainObject\TerrainObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainObject\WaterArea.cpp" />
+    <ClCompile Include="..\Classes\Models\ChangeMapHistory.cpp" />
+    <ClCompile Include="..\Classes\Models\Direction.cpp" />
+    <ClCompile Include="..\Classes\Models\GlobalPlayerData.cpp" />
+    <ClCompile Include="..\Classes\Models\LocalPlayerData.cpp" />
+    <ClCompile Include="..\Classes\Models\Sight.cpp" />
+    <ClCompile Include="..\Classes\Models\Stamina.cpp" />
+    <ClCompile Include="..\Classes\Models\StopWatch.cpp" />
+    <ClCompile Include="..\Classes\Scenes\BaseScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\DungeonCameraScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\DungeonMenuScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\DungeonScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\EndingScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\GameOverScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\StartUpScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\TitleScene.cpp" />
+    <ClCompile Include="..\Classes\Tasks\CameraTask.cpp" />
+    <ClCompile Include="..\Classes\Tasks\EnemyTask.cpp" />
+    <ClCompile Include="..\Classes\Tasks\EventTask.cpp" />
+    <ClCompile Include="..\Classes\Tasks\FollowType\BothFollow.cpp" />
+    <ClCompile Include="..\Classes\Tasks\FollowType\FollowType.cpp" />
+    <ClCompile Include="..\Classes\Tasks\FollowType\HorizontalFollow.cpp" />
+    <ClCompile Include="..\Classes\Tasks\FollowType\NeverFollow.cpp" />
+    <ClCompile Include="..\Classes\Tasks\FollowType\VerticalFollow.cpp" />
+    <ClCompile Include="..\Classes\Tasks\GameTask.cpp" />
+    <ClCompile Include="..\Classes\Tasks\PlayerControlTask.cpp" />
+    <ClCompile Include="..\Classes\UI\Cloud.cpp" />
+    <ClCompile Include="..\Classes\UI\NotificationBand.cpp" />
+    <ClCompile Include="..\Classes\UI\Notification\MapNameNotification.cpp" />
+    <ClCompile Include="..\Classes\UI\Notification\NotificationNode.cpp" />
+    <ClCompile Include="..\Classes\UI\Notification\TrophyNotification.cpp" />
+    <ClCompile Include="..\Classes\UI\SlideNode.cpp" />
+    <ClCompile Include="..\Classes\UI\StaminaBar.cpp" />
+    <ClCompile Include="..\Classes\Utils\JsonUtils.cpp" />
+    <ClCompile Include="..\Classes\Utils\MapUtils.cpp" />
+    <ClCompile Include="..\Classes\Utils\SpriteUtils.cpp" />
+    <ClCompile Include="..\Classes\Utils\StringUtils.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Algorithm\PathFinder.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Common.h" />
+    <ClInclude Include="..\Classes\Datas\MapObject\CharacterData.h" />
+    <ClInclude Include="..\Classes\Datas\MapObject\EnemyData.h" />
+    <ClInclude Include="..\Classes\Datas\Message\CharacterMessageData.h" />
+    <ClInclude Include="..\Classes\Datas\Message\MessageData.h" />
+    <ClInclude Include="..\Classes\Datas\Message\StoryMessageData.h" />
+    <ClInclude Include="..\Classes\Datas\Message\SystemMessageData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\DungeonCameraSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\DungeonSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\EndingSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\GameOverSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\SceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\StartUpSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\TitleSceneData.h" />
+    <ClInclude Include="..\Classes\define.h" />
+    <ClInclude Include="..\Classes\Effects\AmbientLightLayer.h" />
+    <ClInclude Include="..\Classes\Effects\Fog.h" />
+    <ClInclude Include="..\Classes\Effects\Light.h" />
+    <ClInclude Include="..\Classes\Event\CharacterEvent.h" />
+    <ClInclude Include="..\Classes\Event\EffectEvent.h" />
+    <ClInclude Include="..\Classes\Event\EnemyEvent.h" />
+    <ClInclude Include="..\Classes\Event\EventFactory.h" />
+    <ClInclude Include="..\Classes\Event\EventScript.h" />
+    <ClInclude Include="..\Classes\Event\EventScriptMember.h" />
+    <ClInclude Include="..\Classes\Event\EventScriptValidator.h" />
+    <ClInclude Include="..\Classes\Event\FlagEvent.h" />
+    <ClInclude Include="..\Classes\Event\GameEvent.h" />
+    <ClInclude Include="..\Classes\Event\MapEvent.h" />
+    <ClInclude Include="..\Classes\Event\MapObjectEvent.h" />
+    <ClInclude Include="..\Classes\Event\MiniGameEvent.h" />
+    <ClInclude Include="..\Classes\Event\ModalLayerEvent.h" />
+    <ClInclude Include="..\Classes\Event\SceneEvent.h" />
+    <ClInclude Include="..\Classes\Event\SoundEvent.h" />
+    <ClInclude Include="..\Classes\Layers\Dungeon\ButtonMashingLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Dungeon\DisplayImageLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Dungeon\PasswordEventLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Dungeon\SelectEventLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Dungeon\TiledMapLayer.h" />
+    <ClInclude Include="..\Classes\Layers\EventListener\EventListenerKeyboardLayer.h" />
+    <ClInclude Include="..\Classes\Layers\LoadingLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\CharacterMenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\DungeonMainMenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\ItemMenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\MenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\MiniSelector.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\NumberSelector.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\SaveDataSelector.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\TitleMainMenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\TrophyListLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Message\CharacterMessageLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Message\MessageLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Message\StoryMessageLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Message\SystemMessageLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Shader\ShaderLayer.h" />
+    <ClInclude Include="..\Classes\Managers\CsvDataManager.h" />
+    <ClInclude Include="..\Classes\Managers\DebugManager.h" />
+    <ClInclude Include="..\Classes\Managers\DungeonSceneManager.h" />
+    <ClInclude Include="..\Classes\Managers\NotificationManager.h" />
+    <ClInclude Include="..\Classes\Managers\PlayerDataManager.h" />
+    <ClInclude Include="..\Classes\Managers\SoundManager.h" />
+    <ClInclude Include="..\Classes\Managers\TextureManager.h" />
+    <ClInclude Include="..\Classes\MapObjects\Character.h" />
+    <ClInclude Include="..\Classes\MapObjects\Enemy.h" />
+    <ClInclude Include="..\Classes\MapObjects\EventObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\GhostObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\ItemObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\MapObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\MapObjectFactory.h" />
+    <ClInclude Include="..\Classes\MapObjects\MapObjectList.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\Chaser.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\CheapChaser.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\MobRandom.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\MovePattern.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\MovePatternFactory.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\RandomMove.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\Scouter.h" />
+    <ClInclude Include="..\Classes\MapObjects\Party.h" />
+    <ClInclude Include="..\Classes\MapObjects\PathObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainObject\PlainArea.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainObject\SlipFloor.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainObject\TerrainObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainObject\WaterArea.h" />
+    <ClInclude Include="..\Classes\Models\ChangeMapHistory.h" />
+    <ClInclude Include="..\Classes\Models\Direction.h" />
+    <ClInclude Include="..\Classes\Models\GlobalPlayerData.h" />
+    <ClInclude Include="..\Classes\Models\LocalPlayerData.h" />
+    <ClInclude Include="..\Classes\Models\Sight.h" />
+    <ClInclude Include="..\Classes\Models\Stamina.h" />
+    <ClInclude Include="..\Classes\Models\StopWatch.h" />
+    <ClInclude Include="..\Classes\resources.h" />
+    <ClInclude Include="..\Classes\Scenes\BaseScene.h" />
+    <ClInclude Include="..\Classes\Scenes\DungeonCameraScene.h" />
+    <ClInclude Include="..\Classes\Scenes\DungeonMenuScene.h" />
+    <ClInclude Include="..\Classes\Scenes\DungeonScene.h" />
+    <ClInclude Include="..\Classes\Scenes\EndingScene.h" />
+    <ClInclude Include="..\Classes\Scenes\GameOverScene.h" />
+    <ClInclude Include="..\Classes\Scenes\StartUpScene.h" />
+    <ClInclude Include="..\Classes\Scenes\TitleScene.h" />
+    <ClInclude Include="..\Classes\Tasks\CameraTask.h" />
+    <ClInclude Include="..\Classes\Tasks\EnemyTask.h" />
+    <ClInclude Include="..\Classes\Tasks\EventTask.h" />
+    <ClInclude Include="..\Classes\Tasks\FollowType\BothFollow.h" />
+    <ClInclude Include="..\Classes\Tasks\FollowType\FollowType.h" />
+    <ClInclude Include="..\Classes\Tasks\FollowType\HorizontalFollow.h" />
+    <ClInclude Include="..\Classes\Tasks\FollowType\NeverFollow.h" />
+    <ClInclude Include="..\Classes\Tasks\FollowType\VerticalFollow.h" />
+    <ClInclude Include="..\Classes\Tasks\GameTask.h" />
+    <ClInclude Include="..\Classes\Tasks\PlayerControlTask.h" />
+    <ClInclude Include="..\Classes\UI\Cloud.h" />
+    <ClInclude Include="..\Classes\UI\NotificationBand.h" />
+    <ClInclude Include="..\Classes\UI\Notification\MapNameNotification.h" />
+    <ClInclude Include="..\Classes\UI\Notification\NotificationNode.h" />
+    <ClInclude Include="..\Classes\UI\Notification\TrophyNotification.h" />
+    <ClInclude Include="..\Classes\UI\SlideNode.h" />
+    <ClInclude Include="..\Classes\UI\StaminaBar.h" />
+    <ClInclude Include="..\Classes\Utils\JsonUtils.h" />
+    <ClInclude Include="..\Classes\Utils\MapUtils.h" />
+    <ClInclude Include="..\Classes\Utils\SpriteUtils.h" />
+    <ClInclude Include="..\Classes\Utils\StringUtils.h" />
     <ClInclude Include="main.h" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ResourceCompile Include="game.rc" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
