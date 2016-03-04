@@ -1777,7 +1777,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/extensions",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/chipmunk/include/chipmunk",
-					"$(SRCROOT)/../Classes/",
+					"$(SRCROOT)/../Classes",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1808,7 +1808,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/extensions",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/chipmunk/include/chipmunk",
-					"$(SRCROOT)/../Classes/",
+					"$(SRCROOT)/../Classes",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
