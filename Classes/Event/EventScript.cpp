@@ -23,7 +23,7 @@ bool EventScript::init(const string& jsonFileName)
 }
 
 //リソースのプリロード関数
-vector<string> EventScript::getPreLoadList(string type){
+vector<string> EventScript::getPreLoadList(const string& type){
     vector<string> list {};
     const char* typec = type.c_str();
     if (!this->json.HasMember(typec)) return list;
@@ -36,9 +36,19 @@ vector<string> EventScript::getPreLoadList(string type){
 }
 
 // 該当idのスクリプトを取得
-rapidjson::Value& EventScript::getScriptJson(int eventId)
+rapidjson::Value& EventScript::getScriptJson(const int eventId)
 {
-    rapidjson::Value::MemberIterator itr {this->json.FindMember(to_string(eventId).c_str())};
+    return getScriptJson(to_string(eventId).c_str());
+}
+
+rapidjson::Value& EventScript::getScriptJson(const string& eventId)
+{
+    return getScriptJson(eventId.c_str());
+}
+
+rapidjson::Value& EventScript::getScriptJson(const char* eventId)
+{
+    rapidjson::Value::MemberIterator itr {this->json.FindMember(eventId)};
     if(itr == this->json.MemberEnd())
     {
         static rapidjson::Value nullValue;
