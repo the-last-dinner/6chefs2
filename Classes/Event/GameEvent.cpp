@@ -221,3 +221,49 @@ void EventIf::update(float delta)
         CC_SAFE_RELEASE_NULL(this->event);
     }
 }
+
+#pragma mark -
+#pragma mark CallEvent
+
+bool CallEvent::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+    
+    if (this->validator->hasMember(json, member::EVENT_ID))
+    {
+        this->event = this->factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetString()));
+        CC_SAFE_RETAIN(this->event);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void CallEvent::run(){
+    if(!this->event)
+    {
+        this->setDone();
+        return;
+    }
+    
+    this->event->run();
+}
+
+void CallEvent::update(float delta)
+{
+    if (!this->event)
+    {
+        this->setDone();
+        return;
+    }
+    
+    this->event->update(delta);
+    
+    if (this->event->isDone())
+    {
+        this->setDone();
+        CC_SAFE_RELEASE_NULL(this->event);
+    }
+}

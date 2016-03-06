@@ -97,4 +97,19 @@ private:
     virtual void update(float delta);
 };
 
+// CallEvent
+class CallEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(CallEvent, rapidjson::Value&)
+private:
+    GameEvent* event {nullptr};
+private:
+    CallEvent() {FUNCLOG};
+    ~CallEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+    virtual void update(float delta);
+};
+
 #endif /* defined(__LastSupper__GameEvent__) */
