@@ -22,7 +22,8 @@ const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
     {EventKeyboard::KeyCode::KEY_D, Key::RIGHT},
     {EventKeyboard::KeyCode::KEY_X, Key::MENU},
     {EventKeyboard::KeyCode::KEY_UNDERSCORE, Key::MENU},
-    {EventKeyboard::KeyCode::KEY_SHIFT, Key::DASH},
+    {EventKeyboard::KeyCode::KEY_LEFT_SHIFT, Key::DASH},
+    {EventKeyboard::KeyCode::KEY_RIGHT_SHIFT, Key::DASH},
     {EventKeyboard::KeyCode::KEY_SPACE, Key::SPACE},
 };
 
