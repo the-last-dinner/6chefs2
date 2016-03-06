@@ -111,4 +111,18 @@ private:
     virtual void run() override;
 };
 
+// トロフィーの取得
+class GetTrophyEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(GetTrophyEvent, rapidjson::Value&)
+private:
+    int trophyId {0};
+private:
+    GetTrophyEvent() {FUNCLOG};
+    ~GetTrophyEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__FlagEvent__) */
