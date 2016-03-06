@@ -6,9 +6,9 @@
 AppDelegate::AppDelegate()
 {
 	FUNCLOG
+
     SoundManager::getInstance();
 	TextureManager::getInstance();
-	this->init();
 }
 
 // デストラクタ
@@ -16,16 +16,12 @@ AppDelegate::AppDelegate()
 AppDelegate::~AppDelegate() 
 {
 	FUNCLOG
+    
     CsvDataManager::destroy();
 	SoundManager::destory();
     PlayerDataManager::destroy();
 	TextureManager::destory();
-}
-
-// 初期化関連
-void AppDelegate::init()
-{
-	return;
+    GameController::destroy();
 }
 
 bool AppDelegate::applicationDidFinishLaunching()
@@ -53,6 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	
 	// シーンを指定してゲーム開始
 	director->runWithScene(StartUpScene::create());
+    
 	return true;
 }
 
