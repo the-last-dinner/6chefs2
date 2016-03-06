@@ -125,13 +125,28 @@ bool EventScriptValidator::detectFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
-    // 現在のmap_idとevent_idを取得
-    int map_id {DungeonSceneManager::getInstance()->getLocation().map_id};
-    int event_id {DungeonSceneManager::getInstance()->getPushingEventid()};
     
-    // 一つのイベントに対してステータスを確認
-    detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(map_id, event_id, json.GetInt());
-    if(negative) detection = !detection;
+    if (!json.IsArray())
+    {
+        // 自分自身のステータスを確認
+        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(DungeonSceneManager::getInstance()->getLocation().map_id, DungeonSceneManager::getInstance()->getPushingEventid(), json.GetInt());
+        if(negative) detection = !detection;
+    }
+    else if (!json[0].IsArray())
+    {
+        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(stoi(json[0].GetString()), stoi(json[1].GetString()), json[2].GetInt());
+        if(negative) detection = !detection;
+    }
+    else
+    {
+        // 複数の場合
+        for(int i { 0 }; i < json.Size(); i++)
+        {
+            detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(stoi(json[i][0].GetString()), stoi(json[i][1].GetString()), json[i][2].GetInt());
+            if(negative) detection = !detection;
+            if(!detection) break;
+        }
+    }
     
     return detection;
 }
