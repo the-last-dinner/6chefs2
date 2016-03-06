@@ -23,6 +23,7 @@ class PlayerControlTask;
 class LoadingLayer;
 class Party;
 class StaminaBar;
+class EventListenerKeyboardLayer;
 
 class DungeonScene : public BaseScene
 {
