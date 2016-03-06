@@ -94,7 +94,7 @@ private:
     ~EventIf() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
-    virtual void update(float delta);
+    virtual void update(float delta) override;
 };
 
 // CallEvent
@@ -109,7 +109,7 @@ private:
     ~CallEvent() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
-    virtual void update(float delta);
+    virtual void update(float delta) override;
 };
 
 #endif /* defined(__LastSupper__GameEvent__) */
