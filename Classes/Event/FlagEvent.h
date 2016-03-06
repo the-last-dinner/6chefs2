@@ -104,6 +104,8 @@ public:
     CREATE_FUNC_WITH_PARAM(ChangeEventStatusEvent, rapidjson::Value&)
 private:
     int status {0};
+    int map_id {-1};
+    int event_id {-1};
 private:
     ChangeEventStatusEvent() {FUNCLOG};
     ~ChangeEventStatusEvent() {FUNCLOG};

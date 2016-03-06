@@ -181,14 +181,37 @@ bool ChangeEventStatusEvent::init(rapidjson::Value& json)
     if(!this->validator->hasMember(json, member::FLAG)) return false;
     this->status = json[member::FLAG].GetInt();
     
+    // map_id
+    if(this->validator->hasMember(json, member::MAP_ID))
+    {
+        this->map_id = stoi(json[member::MAP_ID].GetString());
+    }
+    
+    // event_id
+    if(this->validator->hasMember(json, member::EVENT_ID))
+    {
+        this->event_id = stoi(json[member::EVENT_ID].GetString());
+    }
+    
     return true;
 }
 
 void ChangeEventStatusEvent::run()
 {
-    int map_id {DungeonSceneManager::getInstance()->getLocation().map_id};
-    int event_id {DungeonSceneManager::getInstance()->getRunningEventId()};
-    PlayerDataManager::getInstance()->getLocalData()->setEventStatus(map_id, event_id, this->status);
+    // map_id
+    if(this->map_id < 0)
+    {
+        this->map_id = DungeonSceneManager::getInstance()->getLocation().map_id;
+    }
+    
+    // event_id
+    if(this->event_id < 0)
+    {
+        this->event_id = DungeonSceneManager::getInstance()->getRunningEventId();
+    }
+    
+    // 変更
+    PlayerDataManager::getInstance()->getLocalData()->setEventStatus(this->map_id, this->event_id, this->status);
     this->setDone();
 }
 
