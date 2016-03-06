@@ -11,7 +11,6 @@
 
 #include "Common.h"
 
-class EventListenerKeyboardLayer;
 class LoadingLayer;
 class SceneData;
 
