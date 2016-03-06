@@ -19,7 +19,6 @@
 #include "Event/ModalLayerEvent.h"
 #include "Event/SoundEvent.h"
 #include "Event/SceneEvent.h"
-#include "Event/CommonEvent.h"
 
 #include "Event/EventScriptMember.h"
 
@@ -116,8 +115,6 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"changeFlg", ChangeEventStatusEvent::create},          // イベントステータス(固有フラグ)を変更
 
         {"getTrophy", GetTrophyEvent::create},                  // トロフィーを取得
-        // イベントクラス系
-        {"CommonEvent", CommonEvent::create}, // 共通イベントスクリプトを呼び出し
     };
     
     // イベントタイプがなければ同時実行を生成して返す

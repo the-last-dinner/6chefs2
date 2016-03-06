@@ -123,8 +123,9 @@
   ],
   "2": [
     {
-      "type": "CommonEvent",
-      "functionID": "2"
+      "type": "callEvent",
+      "eventID": "2",
+      "className": "CommonEvent"
     }
   ],
   "3": [

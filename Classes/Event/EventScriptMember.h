@@ -31,7 +31,7 @@ namespace member
     static const char* FAVORITE = "favorite";
     static const char* FLAG = "flg";
     static const char* FILE = "file";
-    static const char* FUNCTION_ID = "functionID";
+    static const char* CLASS_NAME = "className";
     static const char* ID = "id";
     static const char* IMGS = "imgs";
     static const char* IMG_ID = "imgID";
