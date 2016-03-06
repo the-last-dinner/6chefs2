@@ -43,6 +43,7 @@ bool EventScriptValidator::detectCondition(rapidjson::Value& json)
         {"flg", &EventScriptValidator::detectFlg},
         {"item", &EventScriptValidator::detectItemFlg},
         {"status", &EventScriptValidator::detectStatusFlg},
+        {"trophy", &EventScriptValidator::detectTrophyFlg},
     };
     
     rapidjson::Value& conditions {json[member::CONDITION]};
@@ -182,6 +183,29 @@ bool EventScriptValidator::detectStatusFlg(rapidjson::Value& json, bool negative
         if(negative) detection = !detection;
     }
     
+    return detection;
+}
+
+// トロフィー所持確認
+bool EventScriptValidator::detectTrophyFlg(rapidjson::Value& json, bool negative)
+{
+    bool detection { false };
+    
+    // 複数のトロフィー
+    if (json.IsArray())
+    {
+        for (int i { 0 }; i < json.Size(); i++)
+        {
+            detection = PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(stoi(json[i].GetString()));
+            if (negative) detection = !detection;
+            if (!detection) break;
+        }
+    }
+    else
+    {
+        detection = PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(stoi(json.GetString()));
+        if(negative) detection = !detection;
+    }
     return detection;
 }
 

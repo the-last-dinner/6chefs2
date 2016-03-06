@@ -32,6 +32,7 @@ private:
     bool detectFlg(rapidjson::Value& json, bool negative);
     bool detectItemFlg(rapidjson::Value& json, bool negative);
     bool detectStatusFlg(rapidjson::Value& json, bool negative);
+    bool detectTrophyFlg(rapidjson::Value& json, bool negative);
     
 public:
     bool hasMember(rapidjson::Value& json, const char* member) const;
