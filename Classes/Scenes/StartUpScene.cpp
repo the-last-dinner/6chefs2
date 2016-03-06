@@ -101,6 +101,10 @@ void StartUpScene::encryptSaveFiles()
 void StartUpScene::encryptEventScripts()
 {
     vector<string> fileNames = CsvDataManager::getInstance()->getMapFileNameAll();
+    for(string fileName : Resource::EventScript::FILE_NAMES)
+    {
+        fileNames.push_back(fileName);
+    }
     string path = "";
     for(string file : fileNames)
     {

@@ -13,6 +13,7 @@
 
 #include "Event/EventFactory.h"
 #include "Event/EventScriptValidator.h"
+#include "Event/EventScript.h"
 
 #include "Layers/Dungeon/TiledMapLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
@@ -31,6 +32,7 @@
 #include "Tasks/EnemyTask.h"
 #include "Tasks/EventTask.h"
 #include "Tasks/PlayerControlTask.h"
+
 
 #include "UI/StaminaBar.h"
 
@@ -71,6 +73,12 @@ DungeonSceneManager::DungeonSceneManager()
     Stamina* stamina {Stamina::create()};
     CC_SAFE_RETAIN(stamina);
     this->stamina = stamina;
+    
+    // 共通イベントスクリプト生成
+    EventScript* commonEventScript {EventScript::create("CommonEvent")};
+    CC_SAFE_RETAIN(commonEventScript);
+    this->commonEventScript = commonEventScript;
+    
 };
 
 // デストラクタ
@@ -100,6 +108,9 @@ EventFactory* DungeonSceneManager::getEventFactory() const { return this->eventF
 
 // イベントスクリプトを取得
 EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->eventTask->getEventScript(); }
+
+// 共通イベントスクリプトを取得
+EventScript* DungeonSceneManager::getCommonEventScript() const { return this->commonEventScript; }
 
 // スクリプトバリデータを取得
 EventScriptValidator* DungeonSceneManager::getScriptValidator() const { return this->scriprtValidator; }

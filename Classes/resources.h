@@ -11,6 +11,13 @@
 
 namespace Resource
 {
+    namespace EventScript
+    {
+        static const std::vector<std::string> FILE_NAMES
+        {
+            "CommonEvent"
+        };
+    }
     namespace Font
     {
         static const std::string BASE_PATH = "fonts/";
