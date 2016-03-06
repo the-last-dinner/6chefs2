@@ -251,6 +251,9 @@ void EventTask::run()
     this->runningEvent = this->eventQueue.front();
     this->eventQueue.pop_front();
     this->getGameEvent(this->runningEvent)->run();
+    
+    // イベント開始をコールバック
+    if(this->onRunEvent) this->onRunEvent();
 }
 
 // IDからイベントを生成
@@ -265,8 +268,6 @@ GameEvent* EventTask::createEventById(int eventId)
     GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId))};
     
     CC_SAFE_RETAIN(event);
-    
-    if(event && this->onRunEvent) this->onRunEvent();
     
     return event;
 }
