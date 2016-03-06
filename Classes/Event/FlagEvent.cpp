@@ -191,3 +191,23 @@ void ChangeEventStatusEvent::run()
     PlayerDataManager::getInstance()->getLocalData()->setEventStatus(map_id, event_id, this->status);
     this->setDone();
 }
+
+#pragma mark -
+#pragma mark GetTrophyEvent
+
+bool GetTrophyEvent::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    // trophyId
+    if (!this->validator->hasMember(json, member::TROPHY_ID)) return false;
+    this->trophyId = json[member::TROPHY_ID].GetInt();
+    
+    return true;
+}
+
+void GetTrophyEvent::run()
+{
+    PlayerDataManager::getInstance()->getGlobalData()->setTrophy(this->trophyId);
+    this->setDone();
+}

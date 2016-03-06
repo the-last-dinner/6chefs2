@@ -63,6 +63,7 @@ namespace member
     static const char* VOLUME = "volume";
     static const char* X = "x";
     static const char* Y = "y";
+    static const char* TROPHY_ID = "trophyID";
 }
 
 #endif /* defined(__LastSupper__EventScriptMember__) */

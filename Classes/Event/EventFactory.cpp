@@ -112,6 +112,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"changeChapter", ChangeChapterEvent::create},          // チャプターを切り替える
         {"changeStatus", ChangeLikabilityRatingEvent::create},  // キャラクタの好感度を変更
         {"changeFlg", ChangeEventStatusEvent::create},          // イベントステータス(固有フラグ)を変更
+        {"getTrophy", GetTrophyEvent::create},                  // トロフィーを取得
     };
     
     // イベントタイプがなければ同時実行を生成して返す
