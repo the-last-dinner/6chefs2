@@ -47,6 +47,7 @@ void LastSupper::JsonUtils::writeJsonFile(const string& path, const rapidjson::D
     FileWriteStream ws(fp, buf, sizeof(buf));
     Writer<FileWriteStream> writerf(ws);
     doc.Accept(writerf);
+    fflush(fp);
     fclose(fp);
     
     return;
@@ -87,6 +88,7 @@ rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 
 void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::Document &doc)
 {
+    LastSupper::JsonUtils::writeJsonFile(path, doc);
     // ファイル読み込み
     ifstream ifs(path);
     if (ifs.fail())
