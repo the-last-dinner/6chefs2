@@ -69,10 +69,6 @@ rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
     string jsonStr;
     getline(ifs, jsonStr);
     LastSupper::StringUtils::encryptXor(jsonStr);
-//    for(int i = 0; i < strlen(jsonStr.c_str()); i++)
-//    {
-//        jsonStr[i] ^= C_KEY;
-//    }
     doc.Parse(jsonStr.c_str());
     ifs.close();
     
@@ -91,7 +87,6 @@ rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 
 void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::Document &doc)
 {
-    LastSupper::JsonUtils::writeJsonFile(path, doc);
     // ファイル読み込み
     ifstream ifs(path);
     if (ifs.fail())
@@ -104,16 +99,13 @@ void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::
     string jsonStr;
     getline(ifs, jsonStr);
     LastSupper::StringUtils::encryptXor(jsonStr);
-//    for(int i = 0; i < strlen(jsonStr.c_str()); i++)
-//    {
-//        jsonStr[i] ^= C_KEY;
-//    }
     ifs.close();
     
     // ファイル書き出し
     ofstream ofs;
     ofs.open(path);
     ofs << jsonStr << endl;
+    ofs.flush();
     ofs.close();
 }
 
