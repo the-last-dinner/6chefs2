@@ -52,7 +52,7 @@ private:
     virtual void run() override;
 };
 
-// 靄発生
+// 雨降る
 class CreateRainEvent : public GameEvent
 {
 public:
