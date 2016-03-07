@@ -123,9 +123,8 @@
   ],
   "2": [
     {
-      "type": "callEvent",
-      "eventID": "2",
-      "className": "CommonEvent"
+        "type": "systemMsg",
+        "text": ["今日のバスはもう終わってしまったようだ"]
     }
   ],
   "3": [

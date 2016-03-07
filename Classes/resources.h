@@ -15,7 +15,6 @@ namespace Resource
     {
         static const std::vector<std::string> FILE_NAMES
         {
-            "CommonEvent"
         };
     }
     namespace Font
