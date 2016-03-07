@@ -52,4 +52,17 @@ private:
     virtual void run() override;
 };
 
+// 雨降る
+class CreateRainEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(CreateRainEvent, rapidjson::Value&)
+private:
+    CreateRainEvent() {FUNCLOG};
+    ~CreateRainEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
+
 #endif /* EffectEvent_h */

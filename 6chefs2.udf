@@ -25,14 +25,5 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="HelloWorld/MainScene.csd" />
-          <FilePathData Path="TestNode.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="TestNode.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

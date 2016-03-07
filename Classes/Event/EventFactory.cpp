@@ -97,6 +97,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"setAmbient", SetAmbientLightEvent::create},       // 環境光設定
         {"animation", AnimationEvent::create},              // アニメーション
         {"createFog", CreateFogEvent::create},              // 靄を発生させる
+        {"createRain", CreateRainEvent::create},            // 雨を降らせる
         
         // ミニゲーム系
         {"barrage", ButtonMashingEvent::create},        // 連打イベント
