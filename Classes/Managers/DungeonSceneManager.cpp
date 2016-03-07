@@ -75,9 +75,12 @@ DungeonSceneManager::DungeonSceneManager()
     this->stamina = stamina;
     
     // 共通イベントスクリプト生成
-    EventScript* commonEventScript {EventScript::create("CommonEvent")};
-    CC_SAFE_RETAIN(commonEventScript);
-    this->commonEventScript = commonEventScript;
+    for(string fileName : Resource::EventScript::FILE_NAMES)
+    {
+        EventScript* commonEventScript {EventScript::create(fileName)};
+        CC_SAFE_RETAIN(commonEventScript);
+        this->commonEventScripts[fileName] = commonEventScript;
+    }
     
 };
 
@@ -110,7 +113,7 @@ EventFactory* DungeonSceneManager::getEventFactory() const { return this->eventF
 EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->eventTask->getEventScript(); }
 
 // 共通イベントスクリプトを取得
-EventScript* DungeonSceneManager::getCommonEventScript() const { return this->commonEventScript; }
+map<string, EventScript*> DungeonSceneManager::getCommonEventScripts() const { return this->commonEventScripts; }
 
 // スクリプトバリデータを取得
 EventScriptValidator* DungeonSceneManager::getScriptValidator() const { return this->scriprtValidator; }

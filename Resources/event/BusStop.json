@@ -123,8 +123,8 @@
   ],
   "2": [
     {
-      "type": "CommonEvent",
-      "functionID": "2"
+        "type": "systemMsg",
+        "text": ["今日のバスはもう終わってしまったようだ"]
     }
   ],
   "3": [

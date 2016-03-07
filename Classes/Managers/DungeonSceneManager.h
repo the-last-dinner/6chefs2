@@ -44,7 +44,7 @@ private:
     vector<SummonData> summonDatas {};
     StopWatch* stopWatch { nullptr };
     Stamina* stamina { nullptr };
-    EventScript* commonEventScript { nullptr };
+    map<string, EventScript*> commonEventScripts{};
     
 // インスタンスメソッド
 private:
@@ -59,7 +59,7 @@ public:
     EventFactory* getEventFactory() const;
     EventScriptValidator* getScriptValidator() const;
     EventScript* getEventScript() const;
-    EventScript* getCommonEventScript() const;
+    map<string, EventScript*> getCommonEventScripts() const;
     Party* getParty();
     AmbientLightLayer* getAmbientLayer() const;
     
