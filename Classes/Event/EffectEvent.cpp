@@ -109,3 +109,26 @@ void CreateFogEvent::run()
     
     DungeonSceneManager::getInstance()->getScene()->addChild(fog);
 }
+
+#pragma mark -
+#pragma mark CreateRainEvent
+
+bool CreateRainEvent::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    return true;
+}
+
+void CreateRainEvent::run()
+{
+    this->setDone();
+    
+    Size size = Director::getInstance()->getVisibleSize();
+    
+    auto rain = ParticleRain::createWithTotalParticles(5000);
+    rain->setPosition(Vec2(size.width/2,size.height));
+    
+    DungeonSceneManager::getInstance()->getScene()->addChild(rain);
+}
+
