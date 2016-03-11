@@ -69,7 +69,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         
         // マップ系
         {"removeLayer", HideLayerEvent::create},        // マップの指定レイヤを非表示
-        {"createLayer", ShowLayerEvent::create},        // マップの指定レイヤを非表示
+        {"createLayer", ShowLayerEvent::create},        // マップの指定レイヤを表示
         {"swingLayer", SwingLayerEvent::create},        // マップの指定レイヤを揺らす
         {"stopSwing", StopLayerActionEvent::create},    // マップレイヤのアクションを止める
         
