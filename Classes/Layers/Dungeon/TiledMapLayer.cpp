@@ -92,6 +92,16 @@ void TiledMapLayer::hideLayer(const string& layerName)
     }
 }
 
+// マップの指定レイヤを表示する
+void TiledMapLayer::showLayer(const string& layerName)
+{
+    if(TMXLayer* layer { this->tiledMap->getLayer(layerName) })
+    {
+        layer->setVisible(true);
+    }
+}
+
+
 // マップの指定レイヤを揺らす
 void TiledMapLayer::swingLayer(const string& layerName)
 {

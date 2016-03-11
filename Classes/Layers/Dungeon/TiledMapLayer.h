@@ -39,6 +39,7 @@ public:
     Size getMapSize() const;
     // Layer
     void hideLayer(const string& layerName);
+    void showLayer(const string& layerName);
     void swingLayer(const string& layerName);
     void stopLayerActions();
     // MapObject

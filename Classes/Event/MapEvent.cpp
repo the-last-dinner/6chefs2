@@ -32,6 +32,23 @@ void HideLayerEvent::run()
     DungeonSceneManager::getInstance()->getMapLayer()->hideLayer(this->layerName);
 }
 
+#pragma mark ShowLayerEvent
+
+bool ShowLayerEvent::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    this->layerName = json[member::LAYER].GetString();
+    
+    return true;
+}
+
+void ShowLayerEvent::run()
+{
+    this->setDone();
+    DungeonSceneManager::getInstance()->getMapLayer()->showLayer(this->layerName);
+}
+
 #pragma mark -
 #pragma mark SwingLayerEvent
 
