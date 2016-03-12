@@ -18,7 +18,7 @@ public:
 	void preloadResources(function<void(float)> callback);
 protected:
 	SceneData();
-	~SceneData();
+	virtual ~SceneData();
 private:
 	void calcPercentage();
 	void preloadTextureAsync(vector<string> filePaths, function<void()> callback);

@@ -19,7 +19,7 @@ public:
     virtual const string getMessage() = 0;
 protected:
     MessageData();
-    ~MessageData();
+    virtual ~MessageData();
 };
 
 #endif /* defined(__LastSupper__MessageData__) */

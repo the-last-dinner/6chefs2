@@ -36,7 +36,7 @@ public:
 	virtual void hide() = 0;
 protected:
 	MenuLayer();
-	~MenuLayer();
+	virtual ~MenuLayer();
     virtual bool init(const Size& size, const int page_size);
 	virtual bool init(const Point& index, const Size& size);
 	virtual bool init(int sizeX, int sizeY);

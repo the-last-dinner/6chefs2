@@ -21,7 +21,7 @@ private:
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) = 0;
 protected:
 	BaseScene();
-	~BaseScene();
+	virtual ~BaseScene();
 	bool init(SceneData* data);
     virtual void onEnter() override;
 	

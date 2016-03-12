@@ -51,7 +51,7 @@ protected:
 // インスタンスメソッド
 protected:
     DungeonScene();
-    ~DungeonScene();
+    virtual ~DungeonScene();
     
 protected:
 	virtual bool init(DungeonSceneData* data);

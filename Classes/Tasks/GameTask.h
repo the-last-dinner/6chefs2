@@ -20,7 +20,7 @@ protected:
 // インスタンスメソッド
 protected:
     GameTask();
-    ~GameTask();
+    virtual ~GameTask();
     virtual bool init();
 };
 

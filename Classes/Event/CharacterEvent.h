@@ -24,7 +24,7 @@ protected:
 // インスタンスメソッド
 protected:
     CharacterEvent() {};
-    ~CharacterEvent() {};
+    virtual ~CharacterEvent() {};
     virtual bool init(rapidjson::Value& json);
     bool onRun();
 };

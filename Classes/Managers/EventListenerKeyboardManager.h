@@ -11,7 +11,7 @@
 
 #include "define.h"
 
-#include "Layers/EventListener/EventListenerKeyboardLayer.h"
+class EventListenerKeyboardLayer;
 
 class EventListenerKeyboardManager
 {
@@ -22,7 +22,7 @@ public:
     
 // インスタンス変数
 private:
-    Vector<EventListenerKeyboardLayer*> listeners {};
+    vector<EventListenerKeyboardLayer*> listeners {};
     
 // シングルトンであるためにprivateに
 private:

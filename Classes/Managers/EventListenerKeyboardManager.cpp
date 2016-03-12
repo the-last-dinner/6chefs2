@@ -8,6 +8,8 @@
 
 #include "Managers/EventListenerKeyboardManager.h"
 
+#include "Layers/EventListener/EventListenerKeyboardLayer.h"
+
 // 唯一のインスタンス
 static EventListenerKeyboardManager* _instance { nullptr };
 
@@ -34,13 +36,13 @@ EventListenerKeyboardManager::~EventListenerKeyboardManager() { FUNCLOG };
 // リスナーを追加
 void EventListenerKeyboardManager::addEventListener(EventListenerKeyboardLayer* listener)
 {
-    this->listeners.pushBack(listener);
+    this->listeners.push_back(listener);
 }
 
 // リスナーを削除
 void EventListenerKeyboardManager::removeEventListener(EventListenerKeyboardLayer* listener)
 {
-    this->listeners.eraseObject(listener);
+    this->listeners.erase(remove(this->listeners.begin(), this->listeners.end(), listener));
 }
 
 // 登録されているリスナーを全て一時停止
