@@ -27,6 +27,19 @@ private:
     virtual void run() override;
 };
 
+class ShowLayerEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(ShowLayerEvent, rapidjson::Value&)
+private:
+    string layerName {};
+private:
+    ShowLayerEvent() {FUNCLOG};
+    ~ShowLayerEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 // マップの指定レイヤを揺らす
 class SwingLayerEvent : public GameEvent
 {
