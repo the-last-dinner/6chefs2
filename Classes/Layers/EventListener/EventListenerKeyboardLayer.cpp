@@ -8,6 +8,8 @@
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/KeyconfigManager.h"
+
 // 定数
 // キー変換用連想配列
 const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
@@ -24,7 +26,7 @@ const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
     {EventKeyboard::KeyCode::KEY_UNDERSCORE, Key::MENU},
     {EventKeyboard::KeyCode::KEY_LEFT_SHIFT, Key::DASH},
     {EventKeyboard::KeyCode::KEY_RIGHT_SHIFT, Key::DASH},
-    {EventKeyboard::KeyCode::KEY_SPACE, Key::SPACE},
+    {EventKeyboard::KeyCode::KEY_SPACE, Key::ENTER},
 };
 
 // コンストラクタ
@@ -102,7 +104,7 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             this->scheduleIntervalCheck();
             break;
             
-        case Key::SPACE:
+        case Key::ENTER:
             if(this->onSpaceKeyPressed && !this->paused) this->onSpaceKeyPressed();
             break;
             
@@ -157,7 +159,9 @@ void EventListenerKeyboardLayer::intervalCheck(float duration)
 
 // キーコードを変換。ゲームで使わないキーが与えられた場合はSIZEを返す
 Key EventListenerKeyboardLayer::convertKeyCode(const EventKeyboard::KeyCode& keyCode)
-{return (keyMap.count(keyCode) == 0)?Key::SIZE:keyMap.at(keyCode);}
+{
+    return KeyconfigManager::getInstance()->convertKeyCode(keyCode);
+}
 
 // 指定のキーが押し状態か判別
 bool EventListenerKeyboardLayer::isPressed(const Key& key)

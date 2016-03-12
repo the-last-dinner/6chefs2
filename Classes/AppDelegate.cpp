@@ -1,18 +1,20 @@
 #include "AppDelegate.h"
+
+#include "Managers/KeyconfigManager.h"
+
 #include "Scenes/StartUpScene.h"
 
 // コンストタクタ
-// シングルトンクラスのインスタンスを生成しておく
 AppDelegate::AppDelegate()
 {
 	FUNCLOG
 
     SoundManager::getInstance();
 	TextureManager::getInstance();
+    KeyconfigManager::getInstance();
 }
 
 // デストラクタ
-// メモリリークを防ぐため、シングルトンクラスのインスタンスを破棄する
 AppDelegate::~AppDelegate() 
 {
 	FUNCLOG
@@ -21,7 +23,6 @@ AppDelegate::~AppDelegate()
 	SoundManager::destory();
     PlayerDataManager::destroy();
 	TextureManager::destory();
-    GameController::destroy();
 }
 
 bool AppDelegate::applicationDidFinishLaunching()
