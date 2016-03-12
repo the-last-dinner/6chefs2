@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 
 #include "Managers/KeyconfigManager.h"
+#include "Managers/EventListenerKeyboardManager.h"
 
 #include "Scenes/StartUpScene.h"
 
@@ -23,6 +24,7 @@ AppDelegate::~AppDelegate()
 	SoundManager::destory();
     PlayerDataManager::destroy();
 	TextureManager::destory();
+    EventListenerKeyboardManager::destroy();
 }
 
 bool AppDelegate::applicationDidFinishLaunching()

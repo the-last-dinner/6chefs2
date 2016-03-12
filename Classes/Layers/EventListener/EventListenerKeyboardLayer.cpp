@@ -8,6 +8,7 @@
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/EventListenerKeyboardManager.h"
 #include "Managers/KeyconfigManager.h"
 
 // 定数
@@ -33,7 +34,12 @@ const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
 EventListenerKeyboardLayer::EventListenerKeyboardLayer(){ FUNCLOG }
 
 // デストラクタ
-EventListenerKeyboardLayer::~EventListenerKeyboardLayer(){ FUNCLOG }
+EventListenerKeyboardLayer::~EventListenerKeyboardLayer()
+{
+    FUNCLOG
+    
+    EventListenerKeyboardManager::getInstance()->removeEventListener(this);
+}
 
 // 初期化
 bool EventListenerKeyboardLayer::init()
@@ -45,6 +51,9 @@ bool EventListenerKeyboardLayer::init()
     listenerKeyboard->onKeyReleased = CC_CALLBACK_1(EventListenerKeyboardLayer::onKeyReleased, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerKeyboard, this);
     this->listenerKeyboard = listenerKeyboard;
+    
+    // 管理クラスに登録
+    EventListenerKeyboardManager::getInstance()->addEventListener(this);
     
     return true;
 }
