@@ -20,7 +20,7 @@ class ModalLayerEvent : public GameEvent
 // インスタンスメソッド
 protected:
     ModalLayerEvent() {};
-    ~ModalLayerEvent() {};
+    virtual ~ModalLayerEvent() {};
     virtual bool init() override;
 };
 

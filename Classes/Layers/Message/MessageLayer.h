@@ -31,10 +31,10 @@ private:
  
 // インスタンスメソッド
 public:
-    void onSpacekeyPressed();
+    void onEnterKeyPressed();
 protected:
     MessageLayer();
-    ~MessageLayer();
+    virtual ~MessageLayer();
     virtual bool init(function<void()> onCloseCallback);
 private:
     virtual Label* createMessage() = 0;

@@ -23,7 +23,7 @@ public:
     // インスタンスメソッド
 private:
     virtual void onIndexChanged(int newIdx, bool sound) override;
-    virtual void onSpacePressed(int idx) override;
+    virtual void onEnterKeyPressed(int idx) override;
     virtual void onMenuKeyPressed() override;
     void changeCharaImage(const int idx);
 protected:

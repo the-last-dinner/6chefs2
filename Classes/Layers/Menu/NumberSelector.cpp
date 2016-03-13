@@ -88,7 +88,7 @@ void NumberSelector::onIndexChanged(int newIdx, bool sound)
 }
 
 // 数字が選ばれた時
-void NumberSelector::onSpacePressed(int idx)
+void NumberSelector::onEnterKeyPressed(int idx)
 {
     if (this->onNumberSelectorSelected)
     {

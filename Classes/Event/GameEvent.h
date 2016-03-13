@@ -31,7 +31,7 @@ public:
     virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
 protected:
     GameEvent();
-    ~GameEvent();
+    virtual ~GameEvent();
     virtual bool init();
     void setDone();
     GameEvent* createSpawnFromIdOrAction(rapidjson::Value& json);   // イベントIDもしくはaction配列からspawnを生成

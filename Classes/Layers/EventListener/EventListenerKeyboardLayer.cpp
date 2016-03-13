@@ -8,6 +8,9 @@
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/EventListenerKeyboardManager.h"
+#include "Managers/KeyconfigManager.h"
+
 // 定数
 // キー変換用連想配列
 const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
@@ -22,15 +25,21 @@ const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
     {EventKeyboard::KeyCode::KEY_D, Key::RIGHT},
     {EventKeyboard::KeyCode::KEY_X, Key::MENU},
     {EventKeyboard::KeyCode::KEY_UNDERSCORE, Key::MENU},
-    {EventKeyboard::KeyCode::KEY_SHIFT, Key::DASH},
-    {EventKeyboard::KeyCode::KEY_SPACE, Key::SPACE},
+    {EventKeyboard::KeyCode::KEY_LEFT_SHIFT, Key::DASH},
+    {EventKeyboard::KeyCode::KEY_RIGHT_SHIFT, Key::DASH},
+    {EventKeyboard::KeyCode::KEY_SPACE, Key::ENTER},
 };
 
 // コンストラクタ
 EventListenerKeyboardLayer::EventListenerKeyboardLayer(){ FUNCLOG }
 
 // デストラクタ
-EventListenerKeyboardLayer::~EventListenerKeyboardLayer(){ FUNCLOG }
+EventListenerKeyboardLayer::~EventListenerKeyboardLayer()
+{
+    FUNCLOG
+    
+    EventListenerKeyboardManager::getInstance()->removeEventListener(this);
+}
 
 // 初期化
 bool EventListenerKeyboardLayer::init()
@@ -42,6 +51,9 @@ bool EventListenerKeyboardLayer::init()
     listenerKeyboard->onKeyReleased = CC_CALLBACK_1(EventListenerKeyboardLayer::onKeyReleased, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerKeyboard, this);
     this->listenerKeyboard = listenerKeyboard;
+    
+    // 管理クラスに登録
+    EventListenerKeyboardManager::getInstance()->addEventListener(this);
     
     return true;
 }
@@ -101,8 +113,8 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             this->scheduleIntervalCheck();
             break;
             
-        case Key::SPACE:
-            if(this->onSpaceKeyPressed && !this->paused) this->onSpaceKeyPressed();
+        case Key::ENTER:
+            if(this->onEnterKeyPressed && !this->paused) this->onEnterKeyPressed();
             break;
             
         case Key::MENU:
@@ -111,6 +123,13 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             
         case Key::DASH:
             if(this->onDashKeyPressed && !this->paused) this->onDashKeyPressed();
+            break;
+            
+        case Key::KEY_CONF:
+            if(this->onKeyConfKeyPressed && !this->paused) this->onKeyConfKeyPressed();
+            if(KeyconfigManager::getInstance()->isKeyconfigOpened()) return;
+            EventListenerKeyboardManager::getInstance()->pauseAllEventListener(true);
+            KeyconfigManager::getInstance()->openKeyconfigMenu([]{EventListenerKeyboardManager::getInstance()->pauseAllEventListener(false);});
             break;
             
         default:
@@ -156,7 +175,9 @@ void EventListenerKeyboardLayer::intervalCheck(float duration)
 
 // キーコードを変換。ゲームで使わないキーが与えられた場合はSIZEを返す
 Key EventListenerKeyboardLayer::convertKeyCode(const EventKeyboard::KeyCode& keyCode)
-{return (keyMap.count(keyCode) == 0)?Key::SIZE:keyMap.at(keyCode);}
+{
+    return KeyconfigManager::getInstance()->convertKeyCode(keyCode);
+}
 
 // 指定のキーが押し状態か判別
 bool EventListenerKeyboardLayer::isPressed(const Key& key)

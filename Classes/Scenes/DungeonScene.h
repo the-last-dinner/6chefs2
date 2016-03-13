@@ -23,6 +23,7 @@ class PlayerControlTask;
 class LoadingLayer;
 class Party;
 class StaminaBar;
+class EventListenerKeyboardLayer;
 
 class DungeonScene : public BaseScene
 {
@@ -50,7 +51,7 @@ protected:
 // インスタンスメソッド
 protected:
     DungeonScene();
-    ~DungeonScene();
+    virtual ~DungeonScene();
     
 protected:
 	virtual bool init(DungeonSceneData* data);

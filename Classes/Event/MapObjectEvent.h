@@ -25,7 +25,7 @@ protected:
 // インスタンスメソッド
 protected:
     MapObjectEvent() {};
-    ~MapObjectEvent() {};
+    virtual ~MapObjectEvent() {};
     virtual bool init(rapidjson::Value& json);
 };
 

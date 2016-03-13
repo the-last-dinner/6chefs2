@@ -259,13 +259,14 @@ void EventTask::run()
 // IDからイベントを生成
 GameEvent* EventTask::createEventById(int eventId)
 {
-    if(eventId == static_cast<int>(EventID::UNDIFINED) || PlayerDataManager::getInstance()->getLocalData()->checkEventIsDone(DungeonSceneManager::getInstance()->getLocation().map_id, eventId)) return nullptr;
+    if(eventId == static_cast<int>(EventID::UNDIFINED)) return nullptr;
+    if(PlayerDataManager::getInstance()->getLocalData()->checkEventIsDone(DungeonSceneManager::getInstance()->getLocation().map_id, eventId)) return nullptr;
     
     this->setPushingEventId(eventId);
     
     DungeonSceneManager* manager {DungeonSceneManager::getInstance()};
     
-    GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId))};
+    GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId)) };
     
     CC_SAFE_RETAIN(event);
     

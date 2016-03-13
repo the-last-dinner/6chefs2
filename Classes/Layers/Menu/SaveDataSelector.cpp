@@ -179,7 +179,7 @@ void SaveDataSelector::onIndexChanged(int newIdx, bool sound)
 }
 
 // 決定キーを押した時
-void SaveDataSelector::onSpacePressed(int idx)
+void SaveDataSelector::onEnterKeyPressed(int idx)
 {
     // インクリメント
     idx++;

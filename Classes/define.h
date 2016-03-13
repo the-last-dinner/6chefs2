@@ -87,7 +87,9 @@ enum struct Key
     UP,
     MENU,
     DASH,
-    SPACE,
+    ENTER,
+    KEY_CONF,
+    WIN_SIZE,
     
     SIZE,
 };

@@ -29,7 +29,7 @@ bool MessageLayer::init(function<void()> onCloseCallback)
     
     // イベントリスナ生成
     EventListenerKeyboardLayer* listener {EventListenerKeyboardLayer::create()};
-    listener->onSpaceKeyPressed = CC_CALLBACK_0(MessageLayer::onSpacekeyPressed, this);
+    listener->onEnterKeyPressed = CC_CALLBACK_0(MessageLayer::onEnterKeyPressed, this);
     this->addChild(listener);
     this->listener = listener;
     
@@ -41,8 +41,8 @@ bool MessageLayer::init(function<void()> onCloseCallback)
     return true;
 }
 
-// スペースキーを押した時
-void MessageLayer::onSpacekeyPressed()
+// 決定キーを押した時
+void MessageLayer::onEnterKeyPressed()
 {
     // ページ内ですべての文字を表示し終えていたら
     if(this->allLetterDisplayed)

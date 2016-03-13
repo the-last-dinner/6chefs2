@@ -160,7 +160,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     // リスナにコールバック設定
     this->listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
-    this->listener->onSpaceKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
+    this->listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
     this->listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
     
     // Trigger::INITを実行

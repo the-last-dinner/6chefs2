@@ -44,7 +44,7 @@ public:
 // インスタンスメソッド
 public:
 	MapObject();
-	~MapObject();
+	virtual ~MapObject();
 	void setGridPosition(const Point& gridPosition);
     virtual void setDirection(const Direction direction);
     void setObjectId(int objectId);

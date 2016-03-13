@@ -59,7 +59,7 @@ private:
     void confirmTitleback();
 
 	virtual void onIndexChanged(int newIdx, bool sound = true);
-	virtual void onSpacePressed(int idx);
+	virtual void onEnterKeyPressed(int idx);
 	virtual void onMenuKeyPressed();
     void onConfirmSelected(int idx);
     void onConfirmCanceled();

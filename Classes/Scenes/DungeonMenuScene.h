@@ -50,7 +50,7 @@ private:
     virtual void onEnter() override { Scene::onEnter();};
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onCursorKeyPressed(const Key& key);
-    virtual void onSpaceKeyPressed();
+    virtual void onEnterKeyPressed();
     virtual void onMenuKeyPressed();
     virtual void intervalInputCheck(const vector<Key>& keys);
     void createMainMenu();

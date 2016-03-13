@@ -22,7 +22,7 @@ public:
     CREATE_FUNC_WITH_TWO_PARAM(SlideNode, const Point&, const Point&)
 protected:
     SlideNode(){FUNCLOG};
-    ~SlideNode(){FUNCLOG};
+    virtual ~SlideNode(){FUNCLOG};
     
     // インスタンス変数
 protected:

@@ -52,7 +52,7 @@ bool ButtonMashingLayer::init(int time, float limit, ResultCallback callback)
     
     // イベントリスナ生成
     EventListenerKeyboardLayer* listener { EventListenerKeyboardLayer::create() };
-    listener->onSpaceKeyPressed = CC_CALLBACK_0(ButtonMashingLayer::onSpaceKeyPressed, this);
+    listener->onEnterKeyPressed = CC_CALLBACK_0(ButtonMashingLayer::onEnterKeyPressed, this);
     this->addChild(listener);
     
     // 指定時間後に失敗通知
@@ -61,8 +61,8 @@ bool ButtonMashingLayer::init(int time, float limit, ResultCallback callback)
     return true;
 }
 
-// スペースキーが押された時
-void ButtonMashingLayer::onSpaceKeyPressed()
+// 決定キーが押された時
+void ButtonMashingLayer::onEnterKeyPressed()
 {
     this->count--;
     

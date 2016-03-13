@@ -24,7 +24,7 @@ private:
 // インスタンスメソッド
 protected:
     NotificationNode();
-    ~NotificationNode();
+    virtual ~NotificationNode();
     void setDefaultPosition(const Point& position);
     Point getDefaultPosition() const;
 public:

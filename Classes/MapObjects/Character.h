@@ -35,7 +35,7 @@ protected:
 // インスタンスメソッド
 public:
 	Character();
-	~Character();
+	virtual ~Character();
     bool init(const CharacterData& data);
     
     int getCharacterId() const;

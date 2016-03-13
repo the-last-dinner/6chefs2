@@ -38,7 +38,7 @@ private:
 	virtual bool init();
     void onEnterAnimationFinished();
 	virtual void onIndexChanged(int newIdx, bool sound = false);
-	virtual void onSpacePressed(int idx);
+	virtual void onEnterKeyPressed(int idx);
 	virtual void onMenuKeyPressed(){};
     void trophyNotification();
 public:
