@@ -126,6 +126,7 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             break;
             
         case Key::KEY_CONF:
+            if(this->onKeyConfKeyPressed && !this->paused) this->onKeyConfKeyPressed();
             if(KeyconfigManager::getInstance()->isKeyconfigOpened()) return;
             EventListenerKeyboardManager::getInstance()->pauseAllEventListener(true);
             KeyconfigManager::getInstance()->openKeyconfigMenu([]{EventListenerKeyboardManager::getInstance()->pauseAllEventListener(false);});

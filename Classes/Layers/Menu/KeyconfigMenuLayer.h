@@ -64,6 +64,7 @@ public:
     
 private:
     void onConfigIdxChanged(MenuType type, int newIdx);
+    void close();
     Sprite* createFrame(const Size& size, int idx) const;
     void setConfigNameLabel(const MenuType type, int idx);
     Color3B getFrameColor(int idx) const;

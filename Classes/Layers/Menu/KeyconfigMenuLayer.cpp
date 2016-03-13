@@ -34,6 +34,8 @@ bool KeyconfigMenuLayer::init()
 {
     if(!MenuLayer::init(1, etoi(MenuType::SIZE))) return false;
     
+    this->listenerKeyboard->onKeyConfKeyPressed = CC_CALLBACK_0(KeyconfigMenuLayer::close, this);
+    
     Sprite* cover {Sprite::create()};
     cover->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
     cover->setColor(Color3B::WHITE);
@@ -184,11 +186,11 @@ void KeyconfigMenuLayer::onEnterKeyPressed(int idx)
             KeyconfigManager::getInstance()->setCursorKey(static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]));
             KeyconfigManager::getInstance()->setEnterKey(static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]));
             KeyconfigManager::getInstance()->setDashKey(static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH]));
-            this->onMenuKeyPressed();
+            this->close();
             break;
         
         case MenuType::CANCEL:
-            this->onMenuKeyPressed();
+            this->close();
             break;
             
         default:
@@ -197,10 +199,7 @@ void KeyconfigMenuLayer::onEnterKeyPressed(int idx)
 }
 
 // メニューキーを押した時
-void KeyconfigMenuLayer::onMenuKeyPressed()
-{
-    this->hideWithAnimation(this->onClose);
-}
+void KeyconfigMenuLayer::onMenuKeyPressed() {}
 
 // 表示
 void KeyconfigMenuLayer::show() {}
@@ -212,6 +211,12 @@ void KeyconfigMenuLayer::hide() {}
 void KeyconfigMenuLayer::onConfigIdxChanged(MenuType type, int newIdx)
 {
     this->setConfigNameLabel(type, newIdx);
+}
+
+// 閉じる
+void KeyconfigMenuLayer::close()
+{
+    this->hideWithAnimation(this->onClose);
 }
 
 // アニメーションしながら表示

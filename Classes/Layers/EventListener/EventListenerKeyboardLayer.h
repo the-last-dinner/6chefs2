@@ -29,6 +29,7 @@ public:
     function<void()> onEnterKeyPressed { nullptr };
     function<void()> onMenuKeyPressed { nullptr };
     function<void()> onDashKeyPressed { nullptr };
+    function<void()> onKeyConfKeyPressed { nullptr };
     function<void(const vector<Key>&)> intervalInputCheck { nullptr };
 private:
     EventListenerKeyboard* listenerKeyboard { nullptr };
