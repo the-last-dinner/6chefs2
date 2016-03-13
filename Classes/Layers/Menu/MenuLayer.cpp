@@ -45,7 +45,7 @@ bool MenuLayer::init(int sizeX, int sizeY)
     EventListenerKeyboardLayer* listenerKeyboard { EventListenerKeyboardLayer::create() };
     this->addChild(listenerKeyboard);
     listenerKeyboard->onCursorKeyPressed = CC_CALLBACK_1(MenuLayer::onCursorKeyPressed, this);
-    listenerKeyboard->onSpaceKeyPressed = CC_CALLBACK_0(MenuLayer::onSpaceKeyPressed, this);
+    listenerKeyboard->onEnterKeyPressed = CC_CALLBACK_0(MenuLayer::onEnterPressed, this);
     listenerKeyboard->onMenuKeyPressed = CC_CALLBACK_0(MenuLayer::onMenuKeyPressed, this);
     listenerKeyboard->intervalInputCheck = CC_CALLBACK_1(MenuLayer::intervalInputCheck, this);
     listenerKeyboard->setInputCheckDelay(0.3f);
@@ -122,10 +122,10 @@ void MenuLayer::onCursorKeyPressed(const Key& key)
     //cout << "page>>" << this->page << endl <<"indexX>>" << indexX << endl << "indexY>>" << indexY << endl;
 }
 
-// スペースを押した時
-void MenuLayer::onSpaceKeyPressed()
+// 決定キーを押した時
+void MenuLayer::onEnterPressed()
 {
-    this->onSpacePressed(this->getSelectedIndex());
+    this->onEnterKeyPressed(this->getSelectedIndex());
 }
 
 // 現在選ばれているメニューのINDEXを取得(現時点では横優先配置の場合のみ)

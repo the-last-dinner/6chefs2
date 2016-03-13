@@ -40,7 +40,7 @@ private:
     ~ButtonMashingLayer();
     bool init(int time, float limit, ResultCallback callback);
     
-    void onSpaceKeyPressed();
+    void onEnterKeyPressed();
 };
 
 #endif /* defined(__LastSupper__ButtonMashingLayer__) */

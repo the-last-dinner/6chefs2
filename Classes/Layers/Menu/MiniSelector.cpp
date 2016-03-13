@@ -140,8 +140,8 @@ void MiniSelector::onIndexChanged(int newIdx, bool sound)
     }
 }
 
-// スペースキーが押された時
-void MiniSelector::onSpacePressed(int idx){
+// 決定キーが押された時
+void MiniSelector::onEnterKeyPressed(int idx){
     if(this->onMiniIndexSelected)
     {
       this->onMiniIndexSelected(idx);

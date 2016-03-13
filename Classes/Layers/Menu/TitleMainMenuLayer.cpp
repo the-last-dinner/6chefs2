@@ -179,7 +179,7 @@ void TitleMainMenuLayer::onIndexChanged(int newIdx, bool sound)
 }
 
 // 決定キーを押した時
-void TitleMainMenuLayer::onSpacePressed(int idx)
+void TitleMainMenuLayer::onEnterKeyPressed(int idx)
 {
 	map<MenuType, function<void()>> typeMap
 	{

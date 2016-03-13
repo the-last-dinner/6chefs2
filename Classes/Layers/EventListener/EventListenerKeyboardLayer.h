@@ -26,7 +26,7 @@ public:
 // インスタンス変数
 public:
     function<void(const Key&)> onCursorKeyPressed { nullptr };
-    function<void()> onSpaceKeyPressed { nullptr };
+    function<void()> onEnterKeyPressed { nullptr };
     function<void()> onMenuKeyPressed { nullptr };
     function<void()> onDashKeyPressed { nullptr };
     function<void(const vector<Key>&)> intervalInputCheck { nullptr };

@@ -70,7 +70,7 @@ bool DisplayImageLayer::init(const string& imageFileName, const float duration, 
         {
             // リスナ生成
             EventListenerKeyboardLayer* listener { EventListenerKeyboardLayer::create() };
-            listener->onSpaceKeyPressed = [this, callback]{this->remove(callback);};
+            listener->onEnterKeyPressed = [this, callback]{this->remove(callback);};
             this->addChild(listener);
             
             return;

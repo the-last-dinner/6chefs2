@@ -208,7 +208,7 @@ void CharacterMenuLayer::onMenuKeyPressed()
     // キャラ説明が出ている場合は消すだけ
     if (this->isDiscription)
     {
-        this->onSpacePressed(0);
+        this->onEnterKeyPressed(0);
         return;
     }
     
@@ -219,8 +219,8 @@ void CharacterMenuLayer::onMenuKeyPressed()
     }
 }
 
-// スペースキー
-void CharacterMenuLayer::onSpacePressed(int idx)
+// 決定キー
+void CharacterMenuLayer::onEnterKeyPressed(int idx)
 {
     // 見れないレベルのキャラの時
     if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->characters[idx]) < 0)

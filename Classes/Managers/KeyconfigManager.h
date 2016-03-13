@@ -11,6 +11,8 @@
 
 #include "define.h"
 
+class KeyconfigMenuLayer;
+
 class KeyconfigManager
 {
 // エイリアス
@@ -44,9 +46,9 @@ public:
         SIZE
     };
 private:
-    static const map<string, EnterKeyType> strToEnterKeyType;
-    static const map<string, DashKeyType> strToDashKeyType;
-    static const map<string, CursorKeyType> strToCursorKeyType;
+    static const map<EnterKeyType, string> EnterKeyTypeToStr;
+    static const map<DashKeyType, string> DashKeyTypeToStr;
+    static const map<CursorKeyType, string> CursorKeyTypeToStr;
     static const map<EnterKeyType, EventKeyboard::KeyCode> enterKeys; // 決定キー
     static const map<DashKeyType, EventKeyboard::KeyCode> dashKeys;  // ダッシュキー
     static const map<CursorKeyType, Keyconfig> cursorKeys;             // 方向キー
@@ -59,6 +61,10 @@ public:
 // インスタンス変数
 private:
     Keyconfig keyconfig {};
+    KeyconfigMenuLayer* menuLayer { nullptr };
+    EnterKeyType enterKeyType { EnterKeyType::SIZE };
+    DashKeyType dashKeyType { DashKeyType::SIZE };
+    CursorKeyType cursorKeyType { CursorKeyType::SIZE };
     
 // シングルトンであるためにprivateに
 private:
@@ -67,12 +73,19 @@ private:
     KeyconfigManager& operator = (const KeyconfigManager& other);	// 代入演算子
     ~KeyconfigManager();											// デストラクタ
 // インスタンスメソッド
-private:
+public:
     void setEnterKey(const EnterKeyType keyType);
     void setDashKey(const DashKeyType keyType);
     void setCursorKey(const CursorKeyType keyType);
-public:
     Key convertKeyCode(const EventKeyboard::KeyCode keyCode) const;
+    bool isKeyconfigOpened() const;
+    void openKeyconfigMenu(function<void()> onClose);
+    string typeToDispName(const EnterKeyType keyType);
+    string typeToDispName(const DashKeyType keyType);
+    string typeToDispName(const CursorKeyType keyType);
+    EnterKeyType getEnterKeyType() const {return this->enterKeyType;};
+    DashKeyType getDashKeyType() const {return this->dashKeyType;};
+    CursorKeyType getCursorKeyType() const {return this->cursorKeyType;};
 };
 
 #endif /* KeyconfigManager_h */

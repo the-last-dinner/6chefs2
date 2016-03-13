@@ -8,24 +8,26 @@
 
 #include "Managers/KeyconfigManager.h"
 
+#include "Layers/Menu/KeyconfigMenuLayer.h"
+
 // 定数
-const map<string, KeyconfigManager::EnterKeyType> KeyconfigManager::strToEnterKeyType
+const map<KeyconfigManager::EnterKeyType, string> KeyconfigManager::EnterKeyTypeToStr
 {
-    {"space", EnterKeyType::SPACE},
-    {"z", EnterKeyType::Z},
-    {"enter", EnterKeyType::ENTER},
+    {EnterKeyType::SPACE, "スペース"},
+    {EnterKeyType::Z, "z"},
+    {EnterKeyType::ENTER, "enter"},
 };
 
-const map<string, KeyconfigManager::DashKeyType> KeyconfigManager::strToDashKeyType
+const map<KeyconfigManager::DashKeyType, string> KeyconfigManager::DashKeyTypeToStr
 {
-    {"left", DashKeyType::LEFT_SHIFT},
-    {"right", DashKeyType::RIGHT_SHIFT},
+    {DashKeyType::LEFT_SHIFT, "左shift"},
+    {DashKeyType::RIGHT_SHIFT, "右shift"},
 };
 
-const map<string, KeyconfigManager::CursorKeyType> KeyconfigManager::strToCursorKeyType
+const map<KeyconfigManager::CursorKeyType, string> KeyconfigManager::CursorKeyTypeToStr
 {
-    {"arrow", CursorKeyType::ARROW},
-    {"wasd", CursorKeyType::WASD},
+    {CursorKeyType::ARROW, "カーソルキー"},
+    {CursorKeyType::WASD, "WASD"},
 };
 
 const map<KeyconfigManager::EnterKeyType, EventKeyboard::KeyCode> KeyconfigManager::enterKeys
@@ -113,6 +115,7 @@ void KeyconfigManager::setEnterKey(const EnterKeyType keyType)
         this->keyconfig.erase(typeToKey.second);
     }
     
+    this->enterKeyType = keyType;
     this->keyconfig[enterKeys.at(keyType)] = Key::ENTER;
 }
 
@@ -124,6 +127,7 @@ void KeyconfigManager::setDashKey(const DashKeyType keyType)
         this->keyconfig.erase(typeToKey.second);
     }
     
+    this->dashKeyType = keyType;
     this->keyconfig[dashKeys.at(keyType)] = Key::DASH;
 }
 
@@ -138,6 +142,7 @@ void KeyconfigManager::setCursorKey(const CursorKeyType keyType)
         }
     }
     
+    this->cursorKeyType = keyType;
     Keyconfig config { cursorKeys.at(keyType) };
     
     for(auto conf : config)
@@ -150,4 +155,42 @@ void KeyconfigManager::setCursorKey(const CursorKeyType keyType)
 Key KeyconfigManager::convertKeyCode(const EventKeyboard::KeyCode keyCode) const
 {
     return (keyconfig.count(keyCode) == 0)? Key::SIZE : keyconfig.at(keyCode);
+}
+
+// キーコンフィグが開かれているかどうか
+bool KeyconfigManager::isKeyconfigOpened() const
+{
+    return this->menuLayer;
+}
+
+// キーコンフィグを開く
+void KeyconfigManager::openKeyconfigMenu(function<void()> onClose)
+{
+    if(this->menuLayer) return;
+    
+    KeyconfigMenuLayer* menuLayer { KeyconfigMenuLayer::create() };
+    menuLayer->onClose = [this, onClose](KeyconfigMenuLayer* layer)
+    {
+        if(onClose) onClose();
+        layer->removeFromParent();
+        this->menuLayer = nullptr;
+    };
+    Director::getInstance()->getRunningScene()->addChild(menuLayer);
+    this->menuLayer = menuLayer;
+}
+
+// 表示用
+string KeyconfigManager::typeToDispName(const EnterKeyType keyType)
+{
+    return EnterKeyTypeToStr.at(keyType);
+}
+
+string KeyconfigManager::typeToDispName(const DashKeyType keyType)
+{
+    return DashKeyTypeToStr.at(keyType);
+}
+
+string KeyconfigManager::typeToDispName(const CursorKeyType keyType)
+{
+    return CursorKeyTypeToStr.at(keyType);
 }

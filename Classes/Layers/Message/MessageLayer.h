@@ -31,7 +31,7 @@ private:
  
 // インスタンスメソッド
 public:
-    void onSpacekeyPressed();
+    void onEnterKeyPressed();
 protected:
     MessageLayer();
     virtual ~MessageLayer();

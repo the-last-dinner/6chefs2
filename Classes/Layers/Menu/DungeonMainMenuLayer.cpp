@@ -226,7 +226,7 @@ void DungeonMainMenuLayer::onIndexChanged(int newIdx, bool sound)
 }
 
 // 決定キー入力時
-void DungeonMainMenuLayer::onSpacePressed(int idx)
+void DungeonMainMenuLayer::onEnterKeyPressed(int idx)
 {
     switch (static_cast<Type>(idx)) {
         case Type::ITEM:

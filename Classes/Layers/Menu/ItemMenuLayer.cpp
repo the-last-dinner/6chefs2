@@ -313,8 +313,8 @@ void ItemMenuLayer::onMenuKeyPressed()
     }
 }
 
-// スペースキーを押した時
-void ItemMenuLayer::onSpacePressed(int idx)
+// 決定キーを押した時
+void ItemMenuLayer::onEnterKeyPressed(int idx)
 {
     if(this->items[idx] < 0)
     {

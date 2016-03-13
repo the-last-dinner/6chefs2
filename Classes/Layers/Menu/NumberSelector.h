@@ -26,7 +26,7 @@ public:
     // インスタンスメソッド
 private:
     virtual void onIndexChanged(int newIdx, bool sound);
-    virtual void onSpacePressed(int idx);
+    virtual void onEnterKeyPressed(int idx);
     virtual void onMenuKeyPressed();
     int indexToLabel(int idx);
 protected:

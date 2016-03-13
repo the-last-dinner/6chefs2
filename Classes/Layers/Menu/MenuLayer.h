@@ -41,9 +41,9 @@ protected:
 	virtual bool init(const Point& index, const Size& size);
 	virtual bool init(int sizeX, int sizeY);
 	virtual void onIndexChanged(int newIdx, bool sound = true) = 0;
-    void onCursorKeyPressed(const Key& key);
-    void onSpaceKeyPressed();
-	virtual void onSpacePressed(int idx) = 0;
+    virtual void onCursorKeyPressed(const Key& key);
+    void onEnterPressed();
+	virtual void onEnterKeyPressed(int idx) = 0;
 	virtual void onMenuKeyPressed() = 0;
 	virtual int getSelectedIndex();
     virtual void setSelectedIndex(const int index);

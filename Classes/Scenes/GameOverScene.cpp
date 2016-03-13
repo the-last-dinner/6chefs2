@@ -96,5 +96,5 @@ void GameOverScene::onAnimationFinished()
     EventListenerKeyboardLayer* listener {EventListenerKeyboardLayer::create()};
     this->addChild(listener);
     
-    listener->onSpaceKeyPressed = []{SoundManager::getInstance()->stopBGMAll(); Director::getInstance()->replaceScene(TitleScene::create());};
+    listener->onEnterKeyPressed = []{SoundManager::getInstance()->stopBGMAll(); Director::getInstance()->replaceScene(TitleScene::create());};
 }

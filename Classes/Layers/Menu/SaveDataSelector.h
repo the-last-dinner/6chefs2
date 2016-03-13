@@ -48,7 +48,7 @@ public:
 private:
     vector<SaveIndex> getSaveList();
 	virtual void onIndexChanged(int newIdx, bool sound);
-	virtual void onSpacePressed(int idx);
+	virtual void onEnterKeyPressed(int idx);
 	virtual void onMenuKeyPressed();
 protected:
 	SaveDataSelector();

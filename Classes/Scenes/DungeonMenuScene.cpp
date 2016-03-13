@@ -123,8 +123,8 @@ void DungeonMenuScene::onPreloadFinished(LoadingLayer* loadingLayer){}
 // 方向キーを押した時
 void DungeonMenuScene::onCursorKeyPressed(const Key& key){}
 
-// スペースキーを押した時
-void DungeonMenuScene::onSpaceKeyPressed(){}
+// 決定キーを押した時
+void DungeonMenuScene::onEnterKeyPressed(){}
 
 
 // キーを押し続けている時

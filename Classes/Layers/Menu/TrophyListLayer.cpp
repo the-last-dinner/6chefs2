@@ -191,7 +191,7 @@ void TrophyListLayer::onMenuKeyPressed()
 }
 
 // スペースキーを押した時
-void TrophyListLayer::onSpacePressed(int idx)
+void TrophyListLayer::onEnterKeyPressed(int idx)
 {
 }
 

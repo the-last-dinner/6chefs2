@@ -20,6 +20,7 @@ namespace Resource
     namespace Font
     {
         static const std::string BASE_PATH = "fonts/";
+        static const std::string CONFIG = BASE_PATH + "mgenplus-1c-regular.ttf";
         static const std::string SYSTEM = BASE_PATH + "aoyagireisyosimo_ttf_2_01.ttf";
         static const std::string MESSAGE = BASE_PATH + "cinecaption2.28.ttf";
     };

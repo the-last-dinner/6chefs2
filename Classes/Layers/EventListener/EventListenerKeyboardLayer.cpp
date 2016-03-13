@@ -114,7 +114,7 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             break;
             
         case Key::ENTER:
-            if(this->onSpaceKeyPressed && !this->paused) this->onSpaceKeyPressed();
+            if(this->onEnterKeyPressed && !this->paused) this->onEnterKeyPressed();
             break;
             
         case Key::MENU:
@@ -123,6 +123,12 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             
         case Key::DASH:
             if(this->onDashKeyPressed && !this->paused) this->onDashKeyPressed();
+            break;
+            
+        case Key::KEY_CONF:
+            if(KeyconfigManager::getInstance()->isKeyconfigOpened()) return;
+            EventListenerKeyboardManager::getInstance()->pauseAllEventListener(true);
+            KeyconfigManager::getInstance()->openKeyconfigMenu([]{EventListenerKeyboardManager::getInstance()->pauseAllEventListener(false);});
             break;
             
         default:

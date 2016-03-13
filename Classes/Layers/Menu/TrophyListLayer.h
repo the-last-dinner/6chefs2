@@ -21,7 +21,7 @@ public:
     // インスタンスメソッド
 private:
     virtual void onIndexChanged(int newIdx, bool sound);
-    virtual void onSpacePressed(int idx);
+    virtual void onEnterKeyPressed(int idx);
     virtual void onMenuKeyPressed();
     void changeTrophyDiscription(const int idx);
 protected:
