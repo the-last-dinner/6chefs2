@@ -269,3 +269,20 @@ void CallEvent::update(float delta)
         CC_SAFE_RELEASE_NULL(this->event);
     }
 }
+
+#pragma mark -
+#pragma mark EventRepeat
+
+// Repeat
+bool EventRepeat::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    if(!this->validator->hasMember(json, member::TIMES)) return false;
+    
+    this->events = this->factory->createEventQueue(json, json[member::TIMES].GetInt());
+    
+    if(this->events.empty()) return false;
+    
+    return true;
+}
