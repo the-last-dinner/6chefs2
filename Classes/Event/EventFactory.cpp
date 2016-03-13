@@ -44,6 +44,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"spawn", EventSpawn::create},          // 同時に処理を実行
         {"if", EventIf::create},                // 場合分け処理
         {"callEvent", CallEvent::create},       // 別イベントの呼び出し
+        {"repeat", EventRepeat::create},        // 繰り返し処理を実行
         
         // 音系
         {"playBGM", PlayBGMEvent::create},           // BGM再生
@@ -152,21 +153,22 @@ Vector<GameEvent*> EventFactory::createEventVector(rapidjson::Value& json)
     return events;
 }
 
-// イベントキューを生成
-queue<GameEvent*> EventFactory::createEventQueue(rapidjson::Value& json)
+// イベントキューを生成(第二引数で繰り返しで生成)
+queue<GameEvent*> EventFactory::createEventQueue(rapidjson::Value& json, int times)
 {
     queue<GameEvent*> events {};
     
     rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
-    
-    for (int i { 0 }; i < eventJson.Size(); i++)
+    for(int i { 0 }; i < times; i++)
     {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) })
+        for (int j { 0 }; j < eventJson.Size(); j++)
         {
-            CC_SAFE_RETAIN(event);
-            events.push(event);
+            if(GameEvent* event { this->createGameEvent(eventJson[j]) })
+            {
+                CC_SAFE_RETAIN(event);
+                events.push(event);
+            }
         }
     }
-    
     return events;
 }
