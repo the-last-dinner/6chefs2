@@ -44,6 +44,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"spawn", EventSpawn::create},          // 同時に処理を実行
         {"if", EventIf::create},                // 場合分け処理
         {"callEvent", CallEvent::create},       // 別イベントの呼び出し
+        {"repeat", EventRepeat::create},        // 繰り返し処理を実行
         
         // 音系
         {"playBGM", PlayBGMEvent::create},           // BGM再生
