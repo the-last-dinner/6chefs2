@@ -28,7 +28,7 @@ private:
 public:
     GameEvent* createGameEvent(rapidjson::Value& json);
     Vector<GameEvent*> createEventVector(rapidjson::Value& json);
-    queue<GameEvent*> createEventQueue(rapidjson::Value& json, int times = 1);
+    queue<GameEvent*> createEventQueue(rapidjson::Value& json);
 };
 
 #endif /* defined(__LastSupper__EventFactory__) */
