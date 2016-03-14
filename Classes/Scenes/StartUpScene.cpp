@@ -37,6 +37,11 @@ bool StartUpScene::init()
         this->encryptEventScripts();
     }
     
+    // キーコンフィグの取得
+    KeyconfigManager::getInstance()->setCursorKey(PlayerDataManager::getInstance()->getGlobalData()->getCursorKey());
+    KeyconfigManager::getInstance()->setEnterKey(PlayerDataManager::getInstance()->getGlobalData()->getEnterKey());
+    KeyconfigManager::getInstance()->setDashKey(PlayerDataManager::getInstance()->getGlobalData()->getDashKey());
+    
     return true;
 }
 

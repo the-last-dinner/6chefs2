@@ -10,6 +10,7 @@
 #define GlobalPlayerData_h
 
 #include "define.h"
+#include "Managers/KeyconfigManager.h"
 
 class GlobalPlayerData : public Ref
 {
@@ -28,6 +29,9 @@ public:
     static const char* TOKENS;
     static const char* BGM_VOLUME;
     static const char* SE_VOLUME;
+    static const char* CURSOR_KEY;
+    static const char* ENTER_KEY;
+    static const char* DASH_KEY;
     
     // Record
     static const int CHIKEN_SAVE_COUNT;
@@ -81,6 +85,15 @@ public:
     float getBgmVolume();
     void setSeVolume(const float& volume);
     float getSeVolume();
+    
+    // KeyConfig
+    void setCursorKey(const KeyconfigManager::CursorKeyType keyType);
+    KeyconfigManager::CursorKeyType getCursorKey();
+    void setEnterKey(const KeyconfigManager::EnterKeyType keyType);
+    KeyconfigManager::EnterKeyType getEnterKey();
+    void setDashKey(const KeyconfigManager::DashKeyType keyType);
+    KeyconfigManager::DashKeyType getDashKey();
+    
 };
 
 #endif /* GlobalPlayerData_h */
