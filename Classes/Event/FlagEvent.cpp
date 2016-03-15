@@ -79,7 +79,7 @@ void GetItemEvent::run()
 {
     PlayerDataManager::getInstance()->getLocalData()->setItem(this->itemId);
     SoundManager::getInstance()->playSE(Resource::SE::GET_ITEM, 1.4f);
-    DungeonSceneManager::getInstance()->getScene()->addChild(SystemMessageLayer::create(SystemMessageData::create(CsvDataManager::getInstance()->getItemName(this->itemId) + "　を手に入れた"), [this]{this->setDone();}), Priority::SYSTEM_MESSAGE);
+    DungeonSceneManager::getInstance()->getScene()->addChild(SystemMessageLayer::create(SystemMessageData::create(CsvDataManager::getInstance()->getItemData()->getItemName(this->itemId) + "　を手に入れた"), [this]{this->setDone();}), Priority::SYSTEM_MESSAGE);
 }
 
 #pragma mark -

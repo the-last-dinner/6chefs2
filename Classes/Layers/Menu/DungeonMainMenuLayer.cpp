@@ -53,7 +53,7 @@ bool DungeonMainMenuLayer::init()
     
     // チャプター表示
     int chapter_id = PlayerDataManager::getInstance()->getLocalData()->getChapterId();
-    Label* chapter_name = Label::createWithTTF(CsvDataManager::getInstance()->getChapterName(chapter_id), "fonts/cinecaption2.28.ttf", 30);
+    Label* chapter_name = Label::createWithTTF(CsvDataManager::getInstance()->getChapterData()->getName(chapter_id), "fonts/cinecaption2.28.ttf", 30);
     float chapter_name_y = WINDOW_HEIGHT - hBg->getContentSize().height - chapter_name->getContentSize().height / 2 - 15;
     inPosition = Point(chapter_name->getContentSize().width/2 + 15, chapter_name_y);
     outPosition = Point(-1 * chapter_name->getContentSize().width / 2, chapter_name_y);
@@ -62,7 +62,7 @@ bool DungeonMainMenuLayer::init()
     cover->addChild(chap1);
     this->slideNodes.push_back(chap1);
     
-    Label* chapter_title = Label::createWithTTF(CsvDataManager::getInstance()->getChapterTitle(chapter_id), "fonts/cinecaption2.28.ttf", 30);
+    Label* chapter_title = Label::createWithTTF(CsvDataManager::getInstance()->getChapterData()->getTitle(chapter_id), "fonts/cinecaption2.28.ttf", 30);
     float chapter_title_y = WINDOW_HEIGHT - hBg->getContentSize().height - chapter_name->getContentSize().height - chapter_title->getContentSize().height / 2 - 30;
     inPosition = Point(chapter_title->getContentSize().width / 2 + 45, chapter_title_y);
     outPosition = Point(-1 * chapter_title->getContentSize().width / 2, chapter_title_y);
@@ -93,7 +93,7 @@ bool DungeonMainMenuLayer::init()
     }
     
     // マップ名表示
-    Label* mapName = Label::createWithTTF(CsvDataManager::getInstance()->getMapName(PlayerDataManager::getInstance()->getLocalData()->getLocation().map_id), "fonts/cinecaption2.28.ttf", 26);
+    Label* mapName = Label::createWithTTF(CsvDataManager::getInstance()->getMapData()->getName(PlayerDataManager::getInstance()->getLocalData()->getLocation().map_id), "fonts/cinecaption2.28.ttf", 26);
     mapName->setPosition(mapName->getContentSize().width / 2 + 15, hBg->getContentSize().height - mapName->getContentSize().height / 2 - 15);
     hBg->addChild(mapName);
     
@@ -117,8 +117,8 @@ bool DungeonMainMenuLayer::init()
     // 装備品表示
     int right_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::RIGHT);
     int left_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::LEFT);
-    string right = (right_id != 0) ? CsvDataManager::getInstance()->getItemName(right_id) : "なし";
-    string left = (left_id != 0) ? CsvDataManager::getInstance()->getItemName(left_id) : "なし";
+    string right = (right_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(right_id) : "なし";
+    string left = (left_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(left_id) : "なし";
     Label* equipment = Label::createWithTTF("装備\n右手 : " + right + "\n左手 : " + left, "fonts/cinecaption2.28.ttf", 26);
     equipment->setPosition(equipment->getContentSize().width / 2 + 15, fBg->getContentSize().height - equipment->getContentSize().height / 2 - 15);
     fBg->addChild(equipment);
@@ -139,12 +139,12 @@ bool DungeonMainMenuLayer::init()
         fBg->addChild(chara_panel);
         
         // 通り名
-        Label* street= Label::createWithTTF("-" + CsvDataManager::getInstance()->getCharaStreetName(charas[i].chara_id) + "-", "fonts/cinecaption2.28.ttf", 24);
+        Label* street= Label::createWithTTF("-" + CsvDataManager::getInstance()->getCharacterData()->getStreetName(charas[i].chara_id) + "-", "fonts/cinecaption2.28.ttf", 24);
         street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 10);
         chara_panel->addChild(street);
         
         // キャラ名
-        Label* name = Label::createWithTTF(CsvDataManager::getInstance()->getCharaName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 24);
+        Label* name = Label::createWithTTF(CsvDataManager::getInstance()->getCharacterData()->getName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 24);
         name->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height - name->getContentSize().height /2 - 20);
         chara_panel->addChild(name);
         

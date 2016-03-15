@@ -85,9 +85,9 @@ Label* CharacterMessageLayer::createMessage()
         this->charaImg = nullptr;
     }
     
-	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(CsvDataManager::getInstance()->getCharaFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png"))
+	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png"))
     {
-        Sprite* img { Sprite::createWithSpriteFrameName(CsvDataManager::getInstance()->getCharaFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png")};
+        Sprite* img { Sprite::createWithSpriteFrameName(CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png")};
         img->setPosition(Point(WINDOW_WIDTH * 3 / 4, 0));
         img->setLocalZOrder(-1);
         this->addChild(img);

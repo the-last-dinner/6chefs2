@@ -93,6 +93,7 @@ public:
     KeyconfigManager::EnterKeyType getEnterKey();
     void setDashKey(const KeyconfigManager::DashKeyType keyType);
     KeyconfigManager::DashKeyType getDashKey();
+    void saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::EnterKeyType enterKey, const KeyconfigManager::DashKeyType dashKey);
     
 };
 

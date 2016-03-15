@@ -34,7 +34,7 @@ void NotificationManager::destroy()
 // マップ名を通知
 void NotificationManager::notifyMapName(const int mapId)
 {
-    MapNameNotification* n { MapNameNotification::create(CsvDataManager::getInstance()->getMapName(mapId)) };
+    MapNameNotification* n { MapNameNotification::create(CsvDataManager::getInstance()->getMapData()->getName(mapId)) };
     Director::getInstance()->getRunningScene()->addChild(n, Priority::NOTIFICATION);
     n->notify(CC_CALLBACK_1(NotificationManager::onNotifyEnterAnimationFinished, this));
 }
@@ -42,7 +42,7 @@ void NotificationManager::notifyMapName(const int mapId)
 // トロフィ獲得を通知
 void NotificationManager::notifyTrophy(const int trophyId)
 {
-    TrophyNotification* n { TrophyNotification::create(CsvDataManager::getInstance()->getTrophyName(trophyId)) };
+    TrophyNotification* n { TrophyNotification::create(CsvDataManager::getInstance()->getTrophyData()->getName(trophyId)) };
     this->notifications.pushBack(n);
     this->notifyInQueue(n);
 }

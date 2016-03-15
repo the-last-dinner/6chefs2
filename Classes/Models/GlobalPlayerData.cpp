@@ -191,7 +191,7 @@ bool GlobalPlayerData::hasTrophy(const int trophy_id)
 // トロフィーコンプリート処理
 void GlobalPlayerData::setTrophyComplete()
 {
-    vector<int> trophies = CsvDataManager::getInstance()->getTrophyIdAll();
+    vector<int> trophies = CsvDataManager::getInstance()->getTrophyData()->getIdAll();
     int trophy_count {0};
     for(int trophy_id : trophies)
     {
@@ -275,7 +275,6 @@ void GlobalPlayerData::setCursorKey(const KeyconfigManager::CursorKeyType keyTyp
         kid.SetString(CURSOR_KEY, strlen(CURSOR_KEY), this->globalData.GetAllocator());
         this->globalData.AddMember(kid, rapidjson::Value(keyNum), this->globalData.GetAllocator());
     }
-    this->saveGlobalData();
 }
 
 // 移動キーを取得 (デフォルト矢印)
@@ -299,7 +298,6 @@ void GlobalPlayerData::setEnterKey(const KeyconfigManager::EnterKeyType keyType)
         kid.SetString(ENTER_KEY, strlen(ENTER_KEY), this->globalData.GetAllocator());
         this->globalData.AddMember(kid, rapidjson::Value(keyNum), this->globalData.GetAllocator());
     }
-    this->saveGlobalData();
 }
 
 // 決定キーを取得 (デフォルトSPACE)
@@ -323,7 +321,6 @@ void GlobalPlayerData::setDashKey(const KeyconfigManager::DashKeyType keyType)
         kid.SetString(DASH_KEY, strlen(DASH_KEY), this->globalData.GetAllocator());
         this->globalData.AddMember(kid, rapidjson::Value(keyNum), this->globalData.GetAllocator());
     }
-    this->saveGlobalData();
 }
 
 // ダッシュキーを取得 (デフォルト左SHIFT)
@@ -331,4 +328,13 @@ KeyconfigManager::DashKeyType GlobalPlayerData::getDashKey()
 {
     if (!this->globalData.HasMember(DASH_KEY)) return KeyconfigManager::DashKeyType::LEFT_SHIFT;
     return static_cast<KeyconfigManager::DashKeyType>(this->globalData[DASH_KEY].GetInt());
+}
+
+// キーコンフィグのセーブ
+void GlobalPlayerData::saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::EnterKeyType enterKey, const KeyconfigManager::DashKeyType dashKey)
+{
+    this->setCursorKey(cursorKey);
+    this->setEnterKey(enterKey);
+    this->setDashKey(dashKey);
+    this->saveGlobalData();
 }

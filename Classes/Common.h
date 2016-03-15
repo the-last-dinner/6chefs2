@@ -18,5 +18,6 @@
 #include "Utils/StringUtils.h"
 #include "Utils/SpriteUtils.h"
 #include "Utils/JsonUtils.h"
+#include "Utils/CsvUtils.h"
 
 #endif // __COMMON_H__

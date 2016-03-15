@@ -8,6 +8,7 @@
 
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
+#include "Managers/DebugManager.h"
 
 // JSONファイルの読み込み
 rapidjson::Document LastSupper::JsonUtils::readJsonFile(const string& path)
@@ -56,6 +57,12 @@ void LastSupper::JsonUtils::writeJsonFile(const string& path, const rapidjson::D
 // JSONファイルの読み込み
 rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 {
+    // 暗号化の必要がない場合は通常の読み込み
+    if (DebugManager::getInstance()->isPlainData())
+    {
+        return LastSupper::JsonUtils::readJsonFile(path);
+    }
+    
     rapidjson::Document doc {nullptr};
     
     // ファイル読み込み
@@ -89,6 +96,9 @@ rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::Document &doc)
 {
     LastSupper::JsonUtils::writeJsonFile(path, doc);
+    
+    if (DebugManager::getInstance()->isPlainData()) return;
+    
     // ファイル読み込み
     ifstream ifs(path);
     if (ifs.fail())

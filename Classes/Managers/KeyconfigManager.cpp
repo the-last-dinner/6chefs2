@@ -108,8 +108,6 @@ void KeyconfigManager::setEnterKey(const EnterKeyType keyType)
     
     this->enterKeyType = keyType;
     this->keyconfig[enterKeys.at(keyType)] = Key::ENTER;
-    
-    PlayerDataManager::getInstance()->getGlobalData()->setEnterKey(keyType);
 }
 
 // ダッシュキーを設定
@@ -122,8 +120,6 @@ void KeyconfigManager::setDashKey(const DashKeyType keyType)
     
     this->dashKeyType = keyType;
     this->keyconfig[dashKeys.at(keyType)] = Key::DASH;
-    
-    PlayerDataManager::getInstance()->getGlobalData()->setDashKey(keyType);
 }
 
 // 方向キーを設定
@@ -144,8 +140,6 @@ void KeyconfigManager::setCursorKey(const CursorKeyType keyType)
     {
         this->keyconfig.insert(conf);
     }
-    
-    PlayerDataManager::getInstance()->getGlobalData()->setCursorKey(keyType);
 }
 
 // cocos2d上でのキーをゲーム上のキーに変換

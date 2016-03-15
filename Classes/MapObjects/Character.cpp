@@ -16,6 +16,7 @@
 #include "MapObjects/TerrainObject/TerrainObject.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/CsvDataManager.h"
 
 // キャラのプロパティリストのディレクトリ
 const string Character::basePath = "img/character/";
@@ -40,7 +41,7 @@ bool Character::init(const CharacterData& data)
     this->charaId = data.chara_id;
 	this->location = data.location;
     this->setObjectId(data.obj_id);
-    this->texturePrefix = CsvDataManager::getInstance()->getCharaFileName(charaId);
+    this->texturePrefix = CsvDataManager::getInstance()->getCharacterData()->getFileName(charaId);
     
     if(!this->movePattern)
     {

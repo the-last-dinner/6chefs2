@@ -184,16 +184,21 @@ void KeyconfigMenuLayer::onEnterKeyPressed(int idx)
     MenuType type { static_cast<MenuType>(idx) };
     switch (type) {
         case MenuType::SAVE:
+            // なぜかKeyConfigManagerのCursorKeyTypeとかを変数に代入できない！後で検討
             KeyconfigManager::getInstance()->setCursorKey(static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]));
             KeyconfigManager::getInstance()->setEnterKey(static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]));
             KeyconfigManager::getInstance()->setDashKey(static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH]));
+            PlayerDataManager::getInstance()->getGlobalData()->saveKeyConfig
+            (
+                static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]),
+                static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]),
+                static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH])
+            );
             this->close();
             break;
-        
         case MenuType::CANCEL:
             this->close();
             break;
-            
         default:
             break;
     }

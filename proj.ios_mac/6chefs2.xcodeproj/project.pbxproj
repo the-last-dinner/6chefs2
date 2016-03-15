@@ -10,6 +10,18 @@
 		1BA14E61BFBE7D2B1AD88962 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 01F741B993AED8B544209AD5 /* res */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
+		26FBED351C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
+		26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED361C98514A002FAFF7 /* CsvUtils.cpp */; };
+		26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED361C98514A002FAFF7 /* CsvUtils.cpp */; };
+		26FBED3C1C98619E002FAFF7 /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED3A1C98619E002FAFF7 /* MapData.cpp */; };
+		26FBED3D1C98619E002FAFF7 /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED3A1C98619E002FAFF7 /* MapData.cpp */; };
+		26FBED401C9861F1002FAFF7 /* TrophyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED3E1C9861F1002FAFF7 /* TrophyData.cpp */; };
+		26FBED411C9861F1002FAFF7 /* TrophyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED3E1C9861F1002FAFF7 /* TrophyData.cpp */; };
+		26FBED441C986CBB002FAFF7 /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED421C986CBB002FAFF7 /* ChapterData.cpp */; };
+		26FBED451C986CBB002FAFF7 /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED421C986CBB002FAFF7 /* ChapterData.cpp */; };
+		26FBED481C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */; };
+		26FBED491C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -323,6 +335,18 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6chefs2-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26FBED321C984A73002FAFF7 /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
+		26FBED331C984A73002FAFF7 /* ItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemData.h; sourceTree = "<group>"; };
+		26FBED361C98514A002FAFF7 /* CsvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvUtils.cpp; sourceTree = "<group>"; };
+		26FBED371C98514A002FAFF7 /* CsvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvUtils.h; sourceTree = "<group>"; };
+		26FBED3A1C98619E002FAFF7 /* MapData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapData.cpp; sourceTree = "<group>"; };
+		26FBED3B1C98619E002FAFF7 /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
+		26FBED3E1C9861F1002FAFF7 /* TrophyData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrophyData.cpp; sourceTree = "<group>"; };
+		26FBED3F1C9861F1002FAFF7 /* TrophyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrophyData.h; sourceTree = "<group>"; };
+		26FBED421C986CBB002FAFF7 /* ChapterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChapterData.cpp; sourceTree = "<group>"; };
+		26FBED431C986CBB002FAFF7 /* ChapterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterData.h; sourceTree = "<group>"; };
+		26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterMasterData.cpp; sourceTree = "<group>"; };
+		26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterMasterData.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -444,7 +468,7 @@
 		DC03909D1C871E1000C50E8E /* PasswordEventLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEventLayer.h; sourceTree = "<group>"; };
 		DC03909E1C871E1000C50E8E /* SelectEventLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectEventLayer.cpp; sourceTree = "<group>"; };
 		DC03909F1C871E1000C50E8E /* SelectEventLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectEventLayer.h; sourceTree = "<group>"; };
-		DC0390A01C871E1000C50E8E /* TiledMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TiledMapLayer.cpp; sourceTree = "<group>"; };
+		DC0390A01C871E1000C50E8E /* TiledMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = TiledMapLayer.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		DC0390A11C871E1000C50E8E /* TiledMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledMapLayer.h; sourceTree = "<group>"; };
 		DC0390A31C871E1000C50E8E /* EventListenerKeyboardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventListenerKeyboardLayer.cpp; sourceTree = "<group>"; };
 		DC0390A41C871E1000C50E8E /* EventListenerKeyboardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerKeyboardLayer.h; sourceTree = "<group>"; };
@@ -561,7 +585,7 @@
 		DC0391391C871E1000C50E8E /* EndingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndingScene.h; sourceTree = "<group>"; };
 		DC03913A1C871E1000C50E8E /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
 		DC03913B1C871E1000C50E8E /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
-		DC03913C1C871E1000C50E8E /* StartUpScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartUpScene.cpp; sourceTree = "<group>"; };
+		DC03913C1C871E1000C50E8E /* StartUpScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = StartUpScene.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		DC03913D1C871E1000C50E8E /* StartUpScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUpScene.h; sourceTree = "<group>"; };
 		DC03913E1C871E1000C50E8E /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
 		DC03913F1C871E1000C50E8E /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
@@ -569,7 +593,7 @@
 		DC0391421C871E1000C50E8E /* CameraTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTask.h; sourceTree = "<group>"; };
 		DC0391431C871E1000C50E8E /* EnemyTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyTask.cpp; sourceTree = "<group>"; };
 		DC0391441C871E1000C50E8E /* EnemyTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyTask.h; sourceTree = "<group>"; };
-		DC0391451C871E1000C50E8E /* EventTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventTask.cpp; sourceTree = "<group>"; };
+		DC0391451C871E1000C50E8E /* EventTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = EventTask.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		DC0391461C871E1000C50E8E /* EventTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTask.h; sourceTree = "<group>"; };
 		DC0391481C871E1000C50E8E /* BothFollow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BothFollow.cpp; sourceTree = "<group>"; };
 		DC0391491C871E1000C50E8E /* BothFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BothFollow.h; sourceTree = "<group>"; };
@@ -1153,6 +1177,16 @@
 				DC03910E1C871E1000C50E8E /* Stamina.h */,
 				DC03910F1C871E1000C50E8E /* StopWatch.cpp */,
 				DC0391101C871E1000C50E8E /* StopWatch.h */,
+				26FBED321C984A73002FAFF7 /* ItemData.cpp */,
+				26FBED331C984A73002FAFF7 /* ItemData.h */,
+				26FBED3A1C98619E002FAFF7 /* MapData.cpp */,
+				26FBED3B1C98619E002FAFF7 /* MapData.h */,
+				26FBED3E1C9861F1002FAFF7 /* TrophyData.cpp */,
+				26FBED3F1C9861F1002FAFF7 /* TrophyData.h */,
+				26FBED421C986CBB002FAFF7 /* ChapterData.cpp */,
+				26FBED431C986CBB002FAFF7 /* ChapterData.h */,
+				26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */,
+				26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1255,6 +1289,8 @@
 				DC03916C1C871E1000C50E8E /* SpriteUtils.h */,
 				DC03916D1C871E1000C50E8E /* StringUtils.cpp */,
 				DC03916E1C871E1000C50E8E /* StringUtils.h */,
+				26FBED361C98514A002FAFF7 /* CsvUtils.cpp */,
+				26FBED371C98514A002FAFF7 /* CsvUtils.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1390,6 +1426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0391BF1C871E1000C50E8E /* MenuLayer.cpp in Sources */,
+				26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03916F1C871E1000C50E8E /* PathFinder.cpp in Sources */,
 				DC0391EF1C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
 				DC0391B31C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
@@ -1426,6 +1463,7 @@
 				DC03919B1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DC03921F1C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
+				26FBED481C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DC0392511C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -1441,6 +1479,7 @@
 				DC03922F1C871E1000C50E8E /* EventTask.cpp in Sources */,
 				DC0391FD1C871E1000C50E8E /* RandomMove.cpp in Sources */,
 				DC0391F51C871E1000C50E8E /* CheapChaser.cpp in Sources */,
+				26FBED441C986CBB002FAFF7 /* ChapterData.cpp in Sources */,
 				DC0392211C871E1000C50E8E /* DungeonScene.cpp in Sources */,
 				DC0391831C871E1000C50E8E /* SceneData.cpp in Sources */,
 				DC0392471C871E1000C50E8E /* NotificationBand.cpp in Sources */,
@@ -1481,6 +1520,7 @@
 				DC0392491C871E1000C50E8E /* SlideNode.cpp in Sources */,
 				DC0391B91C871E1000C50E8E /* CharacterMenuLayer.cpp in Sources */,
 				DC03924F1C871E1000C50E8E /* MapUtils.cpp in Sources */,
+				26FBED401C9861F1002FAFF7 /* TrophyData.cpp in Sources */,
 				DC0391891C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
 				DC0391931C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
 				DC0391ED1C871E1000C50E8E /* MapObject.cpp in Sources */,
@@ -1505,8 +1545,10 @@
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
 				DC0391A31C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
+				26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				DC0391A11C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
+				26FBED3C1C98619E002FAFF7 /* MapData.cpp in Sources */,
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391951C871E1000C50E8E /* EventFactory.cpp in Sources */,
 				DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
@@ -1525,6 +1567,7 @@
 				DC0391E41C871E1000C50E8E /* Character.cpp in Sources */,
 				DC0391961C871E1000C50E8E /* EventFactory.cpp in Sources */,
 				DC0391F41C871E1000C50E8E /* Chaser.cpp in Sources */,
+				26FBED3D1C98619E002FAFF7 /* MapData.cpp in Sources */,
 				DC0391B01C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
 				DC0391C41C871E1000C50E8E /* NumberSelector.cpp in Sources */,
 				DC0391A01C871E1000C50E8E /* MapEvent.cpp in Sources */,
@@ -1559,7 +1602,9 @@
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
+				26FBED491C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
+				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,
 				DC0392401C871E1000C50E8E /* Cloud.cpp in Sources */,
 				DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
@@ -1572,6 +1617,7 @@
 				DC0391801C871E1000C50E8E /* EndingSceneData.cpp in Sources */,
 				DC0391AA1C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */,
+				26FBED451C986CBB002FAFF7 /* ChapterData.cpp in Sources */,
 				DC0391DC1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
 				DC0392441C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC0391B41C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
@@ -1587,6 +1633,7 @@
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
 				DC0392021C871E1000C50E8E /* Party.cpp in Sources */,
+				26FBED351C984A73002FAFF7 /* ItemData.cpp in Sources */,
 				DC03923A1C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC0391E81C871E1000C50E8E /* EventObject.cpp in Sources */,
 				DC0391EC1C871E1000C50E8E /* ItemObject.cpp in Sources */,
@@ -1611,6 +1658,7 @@
 				DC0391B21C871E1000C50E8E /* SelectEventLayer.cpp in Sources */,
 				DC0392161C871E1000C50E8E /* Sight.cpp in Sources */,
 				DC0391941C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
+				26FBED411C9861F1002FAFF7 /* TrophyData.cpp in Sources */,
 				DC03920A1C871E1000C50E8E /* TerrainObject.cpp in Sources */,
 				DC0391AE1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0392501C871E1000C50E8E /* MapUtils.cpp in Sources */,
