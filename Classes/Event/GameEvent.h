@@ -45,11 +45,11 @@ public:
     CREATE_FUNC_WITH_PARAM(EventSequence, rapidjson::Value&)
     
 // インスタンス変数
-protected:
+private:
     queue<GameEvent*> events {};
     
 // インスタンスメソッド
-protected:
+private:
     EventSequence() {FUNCLOG};
     ~EventSequence() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
@@ -113,7 +113,7 @@ private:
 };
 
 // Repeat
-class EventRepeat : public EventSequence
+class EventRepeat : public GameEvent
 {
 // クラスメソッド
 public:
@@ -122,13 +122,14 @@ public:
 // インスタンス変数
 private:
     int times { 0 };
+    GameEvent* event {nullptr};
     rapidjson::Value json {};
     
 // インスタンスメソッド
 private:
     EventRepeat() {FUNCLOG};
     ~EventRepeat() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json) override;
+    virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
 };

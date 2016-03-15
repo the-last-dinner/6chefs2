@@ -276,11 +276,16 @@ void CallEvent::update(float delta)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
-    if(!EventSequence::init(json)) return false;
+    if (!GameEvent::init()) return false;
     
     if(!this->validator->hasMember(json, member::TIMES)) return false;
     
     this->times = json[member::TIMES].GetInt();
+    
+    if (!this->validator->hasMember(json, member::ACTION)) return false;
+    
+    this->event = this->factory->createGameEvent(json[member::ACTION]);
+    CC_SAFE_RETAIN(this->event);
     this->json = json;
     
     return true;
@@ -288,47 +293,42 @@ bool EventRepeat::init(rapidjson::Value& json)
 
 void EventRepeat::run()
 {
-    if(this->times == 0) return;
     
-    // 最初のイベントを開始
-    EventSequence::run();
+    if(!this->event || this->times == 0)
+    {
+        this->setDone();
+        return;
+    }
+    
+    this->event->run();
 }
 
 void EventRepeat::update(float delta)
 {
-    if(this->events.empty())
+    
+    if (!this->event || this->times == 0)
     {
         this->setDone();
-        
         return;
     }
     
-    this->events.front()->update(delta);
+    this->event->update(delta);
     
-    if(this->events.front()->isDone())
+    if (this->event->isDone())
     {
-        CC_SAFE_RELEASE(this->events.front());
-        this->events.pop();
-        
-        // 次のイベントがあればを開始
-        if(!this->events.empty())
+        this->times--;
+        if(this->times == 0)
         {
-            this->events.front()->run();
+            this->setDone();
+            CC_SAFE_RELEASE_NULL(this->event);
+            return;
         }
-        // 次のイベントがなければデクリメントして0なら終了
-        else
-        {
-            this->times--;
-            if(this->times == 0)
-            {
-                this->setDone();
-                
-                return;
-            }
-            // 0でないので再生成
-            this->events = this->factory->createEventQueue(this->json);
-            EventSequence::run();
-        }
+        // 0でないので再実行
+        CC_SAFE_RELEASE_NULL(this->event);
+        this->event = this->factory->createGameEvent(this->json[member::ACTION]);
+        CC_SAFE_RETAIN(this->event);
+        this->event->run();
     }
+    
 }
 
