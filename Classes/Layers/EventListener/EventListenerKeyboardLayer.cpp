@@ -132,8 +132,11 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             KeyconfigManager::getInstance()->openKeyconfigMenu([]{EventListenerKeyboardManager::getInstance()->pauseAllEventListener(false);});
             break;
             
-        default:
+        case Key::WIN_SIZE:
+            this->switchWinSize();
             break;
+            
+        default: break;
     }
 }
 
@@ -211,4 +214,32 @@ void EventListenerKeyboardLayer::scheduleIntervalCheck()
 {
     if(this->isScheduled(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck))) this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
     if(this->intervalInputCheck) this->schedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck), this->interval, CC_REPEAT_FOREVER, this->delay);
+}
+
+// 画面サイズを切り替え
+void EventListenerKeyboardLayer::switchWinSize()
+{
+    vector<Size> winSizeConfig
+    {
+        Size(WINDOW_WIDTH * 0.5, WINDOW_HEIGHT * 0.5),
+        Size(WINDOW_WIDTH, WINDOW_HEIGHT),
+        Size(WINDOW_WIDTH * 1.5, WINDOW_HEIGHT * 1.5),
+    };
+    
+    int currentConfIdx { 0 };
+    GLView* glView { Director::getInstance()->getOpenGLView() };
+    Size currentWinSize { glView->getFrameSize() };
+    
+    for(int i {0}; i < winSizeConfig.size(); i++)
+    {
+        if(winSizeConfig.at(i).width != currentWinSize.width) continue;
+        currentConfIdx = i;
+        break;
+    }
+    
+    Size size { winSizeConfig.at(currentConfIdx == winSizeConfig.size() - 1 ? 0 : currentConfIdx + 1) };
+    
+    glView->setFrameSize(size.width, size.height);
+    glView->setDesignResolutionSize(WINDOW_WIDTH, WINDOW_HEIGHT, ResolutionPolicy::NO_BORDER);
+    Director::getInstance()->setOpenGLView(glView);
 }
