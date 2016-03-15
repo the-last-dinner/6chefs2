@@ -22,7 +22,7 @@ public:
 private:
     GhostObject();
     ~GhostObject();
-    bool init();
+    bool init() override;
     
 public:
     virtual vector<Rect> getWorldGridCollisionRects() override;

@@ -222,24 +222,12 @@ void Character::lookAround(function<void()> callback, Direction direction)
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]{this->setDirection(this->convertToWorldDir(Direction::BACK));}), DelayTime::create(1.f), CallFunc::create([callback]{callback();}), nullptr));
 }
 
-// 動き開始
-void Character::moveStart()
-{
-    if(this->movePattern && this->movePattern->isPaused()) this->movePattern->start();
-}
-
-// 動き停止
-void Character::moveStop()
-{
-    if(this->movePattern) this->movePattern->setPaused(true);
-}
-
 // マップに配置された時
 void Character::onEnterMap()
 {
     this->setDirection(this->getDirection());
     
-    if(!DungeonSceneManager::getInstance()->isEventRunning()) this->moveStart();
+    if(this->movePattern) this->movePattern->start();
 }
 
 // 主人公一行が動いた時
@@ -253,4 +241,16 @@ void Character::onSearched(MapObject* mainChara)
 {
     // 主人公の反対の方向を向かせる（向かいあわせる）
     this->setDirection(MapUtils::oppositeDirection(mainChara->getDirection()));
+}
+
+// イベント開始時
+void Character::onEventStart()
+{
+    this->getActionManager()->pauseTarget(this);
+}
+
+// イベント終了時
+void Character::onEventFinished()
+{
+    this->getActionManager()->resumeTarget(this);
 }

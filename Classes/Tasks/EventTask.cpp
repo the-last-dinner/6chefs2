@@ -198,7 +198,7 @@ void EventTask::update(float delta)
     // キューが空になったらコールバック
     if(this->eventQueue.empty() && !this->getGameEvent(this->runningEvent))
     {
-        if(this->onAllEventFinished) this->onAllEventFinished();
+        if(this->onEventFinished) this->onEventFinished();
     }
     
     // イベントを実行
@@ -253,7 +253,7 @@ void EventTask::run()
     this->getGameEvent(this->runningEvent)->run();
     
     // イベント開始をコールバック
-    if(this->onRunEvent) this->onRunEvent();
+    if(this->onEventStart) this->onEventStart();
 }
 
 // IDからイベントを生成

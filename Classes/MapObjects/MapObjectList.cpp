@@ -380,33 +380,33 @@ PathObject* MapObjectList::getPathObjectById(const int pathId)
 }
 
 #pragma mark -
-#pragma mark Move
+#pragma mark Event
 
-// 全オブジェクトを自動移動開始
-void MapObjectList::moveStartAllObjects()
+// 全オブジェクトにイベント開始を通知
+void MapObjectList::onEventStart()
 {
     for(MapObject* obj : this->availableObjects)
     {
-        obj->moveStart();
+        obj->onEventStart();
     }
     
     for(Enemy* enemy : this->enemies)
     {
-        enemy->moveStart();
+        enemy->onEventStart();
     }
 }
 
-// 全オブジェクトの自動移動を停止
-void MapObjectList::moveStopAllObjects()
+// 全オブジェクトにイベント終了を通知
+void MapObjectList::onEventFinished()
 {
     for(MapObject* obj : this->availableObjects)
     {
-        obj->moveStop();
+        obj->onEventFinished();
     }
     
     for(Enemy* enemy : this->enemies)
     {
-        enemy->moveStop();
+        enemy->onEventFinished();
     }
 }
 

@@ -149,8 +149,8 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     if(enemyTask->existsEnemy()) staminaBar->slideIn();
     
     // イベント処理クラスにコールバック設定
-    eventTask->onRunEvent = CC_CALLBACK_0(DungeonScene::onRunEvent, this);
-    eventTask->onAllEventFinished = CC_CALLBACK_0(DungeonScene::onAllEventFinished, this);
+    eventTask->onEventStart = CC_CALLBACK_0(DungeonScene::onEventStart, this);
+    eventTask->onEventFinished = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
     // 敵処理クラスにコールバック設定
     enemyTask->onAllEnemyRemoved = CC_CALLBACK_0(DungeonScene::onAllEnemyRemoved, this);
@@ -293,26 +293,26 @@ void DungeonScene::setLight()
 }
 
 // イベントを実行する時
-void DungeonScene::onRunEvent()
+void DungeonScene::onEventStart()
 {
     // プレイヤーの操作を無効に
     this->playerControlTask->setControlEnable(false, party);
     
-    // 全てのオブジェクトの動きを止める
-    this->mapLayer->getMapObjectList()->moveStopAllObjects();
+    // 全てのオブジェクトにイベント開始を通知
+    this->mapLayer->getMapObjectList()->onEventStart();
     
     // スタミナの増減を一時停止
     DungeonSceneManager::getInstance()->getStamina()->setPaused(true);
 }
 
 // イベントキューが空になった時
-void DungeonScene::onAllEventFinished()
+void DungeonScene::onEventFinished()
 {
     // プレイヤーの操作を有効に
     this->playerControlTask->setControlEnable(true, party);
     
-    // 全てのオブジェクトの自動移動を開始する
-    this->mapLayer->getMapObjectList()->moveStartAllObjects();
+    // 全てのオブジェクトにイベント終了を通知
+    this->mapLayer->getMapObjectList()->onEventFinished();
     
     // スタミナの増減を再開
     DungeonSceneManager::getInstance()->getStamina()->setPaused(false);

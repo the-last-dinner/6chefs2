@@ -101,10 +101,8 @@ public:
     // イベント関数
     virtual void onEnterMap() {};                               // マップに追加された時
     virtual void onSearched(MapObject* mainChara) {};           // 調べられた時
-    
-    // ポリモーフィック用
-    virtual void moveStart() {};                                // 動き開始
-    virtual void moveStop() {};                                 // 動き停止
+    virtual void onEventStart() {};                                // イベント開始時
+    virtual void onEventFinished() {};                                 // イベント終了時
     
     Direction convertToWorldDir(const Direction direcction);
 

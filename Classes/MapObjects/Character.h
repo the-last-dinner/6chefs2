@@ -53,12 +53,11 @@ public:
     
     void lookAround(function<void()> callback, Direction direction = Direction::SIZE);
     
-    virtual void moveStart() override;
-    virtual void moveStop() override;
-    
     virtual void onEnterMap() override;
     virtual void onPartyMoved();
     virtual void onSearched(MapObject* mainChara) override;
+    virtual void onEventStart() override;
+    virtual void onEventFinished() override;
     
     friend class TerrainObject;
 };
