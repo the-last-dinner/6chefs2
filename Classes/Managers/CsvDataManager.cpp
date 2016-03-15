@@ -84,11 +84,7 @@ map<int, vector<string>> CsvDataManager::readCsvFile(string file_name)
     //csvデータ格納
     while(getline(file, str)){
         // 複合化
-        //LastSupper::StringUtils::encryptXor(str);
-        for (int j = 0; j < strlen(str.c_str()); j++)
-        {
-            str[j] ^= C_KEY;
-        }
+        LastSupper::StringUtils::encryptXor(str);
         
         //コメント箇所は除く
         if( (p = str.find("//")) != str.npos ) continue;
