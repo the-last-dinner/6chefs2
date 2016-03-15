@@ -8,13 +8,13 @@
 
 #include "Managers/CsvDataManager.h"
 #include "Utils/StringUtils.h"
+#include "Utils/CsvUtils.h"
 
 // 唯一のインスタンスを初期化
 static CsvDataManager* _instance = nullptr;
 
 const map<CsvDataManager::DataType, string> CsvDataManager::file_type = {
     {CsvDataManager::DataType::MAP, "map"},
-    {CsvDataManager::DataType::ITEM, "item"},
     {CsvDataManager::DataType::CHARACTER, "character"},
     {CsvDataManager::DataType::CHAPTER, "chapter"},
     {CsvDataManager::DataType::TROPHY, "trophy"},
@@ -53,58 +53,19 @@ CsvDataManager::CsvDataManager()
             {
                 file_name = itr.second + to_string(i);
                 map<int, vector<string>> charas;
-                charas = this->readCsvFile(file_name);
+                charas = CsvUtils::readCsvFile(FileUtils::getInstance()->fullPathForFilename("csv/" + file_name + CSV_EXTENSION));
                 for(pair<int, vector<string>> chara : charas)
                 {
-                    this->CsvDataManager::csv_data[itr.first][chara.first] = chara.second;
+                    this->csv_data[itr.first][chara.first] = chara.second;
                 }
                 
             }
         }
         else
         {
-            this->csv_data[itr.first] = this->readCsvFile(itr.second);
+            this->csv_data[itr.first] = CsvUtils::readCsvFile(FileUtils::getInstance()->fullPathForFilename("csv/" + itr.second + CSV_EXTENSION));
         }
     }
-}
-
-//CSV読み取り
-map<int, vector<string>> CsvDataManager::readCsvFile(string file_name)
-{
-    //ファイル読み込み
-    ifstream file(FileUtils::getInstance()->fullPathForFilename("csv/" + file_name + CSV_EXTENSION));
-    map<int, vector<string>> values;
-    string str;
-    int p, i, data_id;
-    //ファイル読み込み失敗時
-    if(file.fail()){
-        CCLOG("Reading csv file of %s is failed.", file_name.c_str());
-        return values;
-    }
-    //csvデータ格納
-    while(getline(file, str)){
-        // 複合化
-        LastSupper::StringUtils::encryptXor(str);
-        
-        //コメント箇所は除く
-        if( (p = str.find("//")) != str.npos ) continue;
-        vector<string> inner;
-        i = 0;
-        //カンマがあるかを探し、そこまでをvaluesに格納
-        while( (p = str.find(",")) != str.npos ){
-            if (i == 0)
-            {
-                data_id = stoi(str.substr(0, p));
-            }
-            inner.push_back(str.substr(0, p));
-            //strの中身は","の1文字を飛ばす
-            str = str.substr(p+1);
-            i++;
-        }
-        inner.push_back(str);
-        values[data_id] = inner;
-    }
-    return values;
 }
 
 #pragma mark -
@@ -133,19 +94,10 @@ vector<string> CsvDataManager::getMapFileNameAll()
     return fileNames;
 }
 
-#pragma mark -
-#pragma mark Item
-
-// アイテム名を取得
-string CsvDataManager::getItemName(const int item_id)
+// アイテムデータインスタンスの取得
+ItemData* CsvDataManager::getItemData()
 {
-    return (item_id >= 0) ? this->csv_data[DataType::ITEM][item_id][etoi(CsvItem::NAME)] : "アイテムがありません";
-}
-
-// アイテムの説明を取得
-string CsvDataManager::getItemDiscription(const int item_id)
-{
-    return (item_id >= 0) ? this->csv_data[DataType::ITEM][item_id][etoi(CsvItem::DISCRIPTION)] : "アイテムがありません";
+    return this->itemData;
 }
 
 #pragma mark -

@@ -117,8 +117,8 @@ bool DungeonMainMenuLayer::init()
     // 装備品表示
     int right_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::RIGHT);
     int left_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::LEFT);
-    string right = (right_id != 0) ? CsvDataManager::getInstance()->getItemName(right_id) : "なし";
-    string left = (left_id != 0) ? CsvDataManager::getInstance()->getItemName(left_id) : "なし";
+    string right = (right_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(right_id) : "なし";
+    string left = (left_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(left_id) : "なし";
     Label* equipment = Label::createWithTTF("装備\n右手 : " + right + "\n左手 : " + left, "fonts/cinecaption2.28.ttf", 26);
     equipment->setPosition(equipment->getContentSize().width / 2 + 15, fBg->getContentSize().height - equipment->getContentSize().height / 2 - 15);
     fBg->addChild(equipment);

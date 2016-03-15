@@ -10,6 +10,7 @@
 #define LastSupper_CsvDataManager_h
 
 #include "define.h"
+#include "Models/ItemData.h"
 
 class CsvDataManager
 {
@@ -65,6 +66,7 @@ public:
 private:
     static const map<DataType, string> file_type;
     map<DataType, map<int, vector<string>>> csv_data;
+    ItemData* itemData {nullptr};
     
 // singleton用関数
 public:
@@ -76,19 +78,13 @@ private:
     CsvDataManager(const CsvDataManager& other){}; // コピーコンストラクタ
     CsvDataManager& operator = (const CsvDataManager& other); // 代入演算子
     
-// 関数
-private:
-    map<int, vector<string>> readCsvFile(string file_name);
-    
 public:
+    ItemData* getItemData();
+    
     // map
     string getMapName(const int map_id);
     string getMapFileName(const int map_id);
     vector<string> getMapFileNameAll();
-    
-    // item
-    string getItemName(const int item_id);
-    string getItemDiscription(const int item_id);
     
     // chapter
     string getChapterName(const int chapter_id);

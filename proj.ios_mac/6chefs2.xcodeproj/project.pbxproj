@@ -10,6 +10,10 @@
 		1BA14E61BFBE7D2B1AD88962 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 01F741B993AED8B544209AD5 /* res */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
+		26FBED351C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
+		26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED361C98514A002FAFF7 /* CsvUtils.cpp */; };
+		26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED361C98514A002FAFF7 /* CsvUtils.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -323,6 +327,10 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6chefs2-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26FBED321C984A73002FAFF7 /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
+		26FBED331C984A73002FAFF7 /* ItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemData.h; sourceTree = "<group>"; };
+		26FBED361C98514A002FAFF7 /* CsvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvUtils.cpp; sourceTree = "<group>"; };
+		26FBED371C98514A002FAFF7 /* CsvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvUtils.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1153,6 +1161,8 @@
 				DC03910E1C871E1000C50E8E /* Stamina.h */,
 				DC03910F1C871E1000C50E8E /* StopWatch.cpp */,
 				DC0391101C871E1000C50E8E /* StopWatch.h */,
+				26FBED321C984A73002FAFF7 /* ItemData.cpp */,
+				26FBED331C984A73002FAFF7 /* ItemData.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1255,6 +1265,8 @@
 				DC03916C1C871E1000C50E8E /* SpriteUtils.h */,
 				DC03916D1C871E1000C50E8E /* StringUtils.cpp */,
 				DC03916E1C871E1000C50E8E /* StringUtils.h */,
+				26FBED361C98514A002FAFF7 /* CsvUtils.cpp */,
+				26FBED371C98514A002FAFF7 /* CsvUtils.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1390,6 +1402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0391BF1C871E1000C50E8E /* MenuLayer.cpp in Sources */,
+				26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03916F1C871E1000C50E8E /* PathFinder.cpp in Sources */,
 				DC0391EF1C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
 				DC0391B31C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
@@ -1505,6 +1518,7 @@
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
 				DC0391A31C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
+				26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				DC0391A11C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
@@ -1560,6 +1574,7 @@
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
+				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,
 				DC0392401C871E1000C50E8E /* Cloud.cpp in Sources */,
 				DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
@@ -1587,6 +1602,7 @@
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
 				DC0392021C871E1000C50E8E /* Party.cpp in Sources */,
+				26FBED351C984A73002FAFF7 /* ItemData.cpp in Sources */,
 				DC03923A1C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC0391E81C871E1000C50E8E /* EventObject.cpp in Sources */,
 				DC0391EC1C871E1000C50E8E /* ItemObject.cpp in Sources */,

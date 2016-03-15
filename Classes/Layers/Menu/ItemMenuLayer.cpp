@@ -78,8 +78,8 @@ bool ItemMenuLayer::init()
     
     int right_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::RIGHT);
     int left_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::LEFT);
-    string right_equip = (right_id != 0) ? CsvDataManager::getInstance()->getItemName(right_id) : "なし";
-    string left_equip = (left_id != 0) ? CsvDataManager::getInstance()->getItemName(left_id) : "なし";
+    string right_equip = (right_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(right_id) : "なし";
+    string left_equip = (left_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(left_id) : "なし";
     Label* equip_title = Label::createWithTTF("装備", "fonts/cinecaption2.28.ttf", 26);
     equip_title->setPosition(equip_title->getContentSize().width/2 + 30, rightTop->getContentSize().height - equip_title->getContentSize().height/2 - 15);
     equip_title->setColor(Color3B::WHITE);
@@ -141,7 +141,7 @@ bool ItemMenuLayer::init()
         
         // アイテム
         this->items.push_back(itr);
-        Label* item = Label::createWithTTF(CsvDataManager::getInstance()->getItemName(itr), "fonts/cinecaption2.28.ttf", 22);
+        Label* item = Label::createWithTTF(CsvDataManager::getInstance()->getItemData()->getItemName(itr), "fonts/cinecaption2.28.ttf", 22);
         item->setPosition(panel_size.width/2 , panel_size.height/2);
         item->setColor(Color3B::WHITE);
         item->setTag(i);
@@ -173,7 +173,7 @@ void ItemMenuLayer::changeItemDiscription(const int idx)
     if (bottom->getChildByName(labelName)){
         bottom->removeChildByName(labelName);
     }
-    string str = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getItemDiscription(this->items[idx]));
+    string str = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getItemData()->getItemDiscription(this->items[idx]));
     Label* discription = Label::createWithTTF(str, "fonts/cinecaption2.28.ttf", 24);
     //discription->setPosition(bottom->getContentSize().width / 2, leftBottom->getContentSize().height / 2);
     int margin = 15;
@@ -256,7 +256,7 @@ void ItemMenuLayer::onMiniIndexSelected(const int idx)
     
     // 完了メッセージ表示帯
     string equipMsg = this->isEquip ? "装備しました" : "外しました";
-    NotificationBand* notification = NotificationBand::create(CsvDataManager::getInstance()->getItemName(this->selected_item) + "を\n" + equipMsg);
+    NotificationBand* notification = NotificationBand::create(CsvDataManager::getInstance()->getItemData()->getItemName(this->selected_item) + "を\n" + equipMsg);
     notification->setBandColor(Color3B(64,0,0));
     this->addChild(notification);
     notification->show();

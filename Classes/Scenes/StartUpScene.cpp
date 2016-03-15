@@ -11,6 +11,7 @@
 #include "Datas/Scene/StartUpSceneData.h"
 #include "Layers/LoadingLayer.h"
 #include "Utils/JsonUtils.h"
+#include "Utils/CsvUtils.h"
 
 // 初期化
 bool StartUpScene::init()
@@ -135,30 +136,7 @@ void StartUpScene::ecnryptCsvFiles()
     for(string file : files)
     {
         path = FileUtils::getInstance()->fullPathForFilename("csv/" + file + CSV_EXTENSION);
-        // ファイル読み込み
-        ifstream ifs(path);
-        if (ifs.fail())
-        {
-            CCLOG("%s is missing.", path.c_str());
-            return;
-        }
-        
-        // 文字列を暗号化
-        string str;
-        getline(ifs, str);
-        ofstream ofs;
-        ofs.open(path);
-        while(getline(ifs, str))
-        {
-            //LastSupper::StringUtils::encryptXor(jsonStr);
-            for(int i = 0; i < strlen(str.c_str()); i++)
-            {
-                str[i] ^= C_KEY;
-            }
-            ofs << str << endl;
-        }
-        ifs.close();
-        ofs.close();
+        CsvUtils::encryptCsvFile(path);
     }
     DebugManager::getInstance()->setCryptedCsvData();
 }
