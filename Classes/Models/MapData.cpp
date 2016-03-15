@@ -13,7 +13,6 @@ bool MapData::init()
 {
     string path = FileUtils::getInstance()->fullPathForFilename("csv/map.csv");
     if (path == "") return false;
-    cout << "mapsapfoidjsafksja;lfkjas;fkjsal;fkjas;lkdfjas ;lkdfj;alskjfd;laskjdfa" << endl;
     this->data = CsvUtils::readCsvFile(path);
     return true;
 }

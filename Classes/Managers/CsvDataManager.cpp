@@ -48,6 +48,7 @@ CsvDataManager::CsvDataManager()
     this->trophyData = TrophyData::create();
     this->mapData = MapData::create();
     this->chapterData = ChapterData::create();
+    this->characterData = CharacterMasterData::create();
     
     // 参照カウントアップ
     CC_SAFE_RETAIN(this->itemData);

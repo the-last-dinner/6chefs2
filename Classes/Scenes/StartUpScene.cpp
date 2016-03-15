@@ -124,13 +124,11 @@ void StartUpScene::encryptEventScripts()
 void StartUpScene::ecnryptCsvFiles()
 {
     vector<string> files = {
+        "character",
         "chapter",
         "item",
         "map",
         "trophy",
-        "character1",
-        "character2",
-        "character3"
     };
     string path = "";
     for(string file : files)
