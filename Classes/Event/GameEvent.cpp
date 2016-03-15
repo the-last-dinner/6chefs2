@@ -269,3 +269,66 @@ void CallEvent::update(float delta)
         CC_SAFE_RELEASE_NULL(this->event);
     }
 }
+
+#pragma mark -
+#pragma mark EventRepeat
+
+// Repeat
+bool EventRepeat::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+    
+    if(!this->validator->hasMember(json, member::TIMES)) return false;
+    
+    this->times = json[member::TIMES].GetInt();
+    
+    if (!this->validator->hasMember(json, member::ACTION)) return false;
+    
+    this->event = this->factory->createGameEvent(json[member::ACTION]);
+    CC_SAFE_RETAIN(this->event);
+    this->json = json;
+    
+    return true;
+}
+
+void EventRepeat::run()
+{
+    
+    if(!this->event || this->times == 0)
+    {
+        this->setDone();
+        return;
+    }
+    
+    this->event->run();
+}
+
+void EventRepeat::update(float delta)
+{
+    
+    if (!this->event || this->times == 0)
+    {
+        this->setDone();
+        return;
+    }
+    
+    this->event->update(delta);
+    
+    if (this->event->isDone())
+    {
+        this->times--;
+        if(this->times == 0)
+        {
+            this->setDone();
+            CC_SAFE_RELEASE_NULL(this->event);
+            return;
+        }
+        // 0でないので再実行
+        CC_SAFE_RELEASE_NULL(this->event);
+        this->event = this->factory->createGameEvent(this->json[member::ACTION]);
+        CC_SAFE_RETAIN(this->event);
+        this->event->run();
+    }
+    
+}
+
