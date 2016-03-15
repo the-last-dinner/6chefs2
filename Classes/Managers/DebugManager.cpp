@@ -13,10 +13,8 @@
 const char* DebugManager::STATS {"stats"};
 const char* DebugManager::DEBUG_MASK {"debug_mask"};
 const char* DebugManager::INVINCIBLE_MODE {"invincible_mode"};
-const char* DebugManager::CRYPT {"crypt"};
-const char* DebugManager::SAVE {"save"};
-const char* DebugManager::CSV {"csv"};
-const char* DebugManager::EVENT_SCRIPT {"event_script"};
+const char* DebugManager::PLAIN_DATA {"plain_data"};
+const char* DebugManager::CRYPT_TRIGGER {"crypt_trigger"};
 
 // 唯一のインスタンスを初期化
 static DebugManager* _instance = nullptr;
@@ -79,59 +77,27 @@ bool DebugManager::isInvincibleMode()
     return this->debugConfig[INVINCIBLE_MODE].GetBool();
 }
 
-// セーブデータの暗号化状態かどうか
-bool DebugManager::isCryptedSaveData()
+// データが平文かどうか
+bool DebugManager::isPlainData()
 {
-    if (!this->hasDebugConfig) return true;
-    if (!this->debugConfig.HasMember(CRYPT)) return true;
-    if (!this->debugConfig[CRYPT].HasMember(SAVE)) return true;
-    return this->debugConfig[CRYPT][SAVE].GetBool();
+    if (!this->hasDebugConfig) return false;
+    if (!this->debugConfig.HasMember(PLAIN_DATA)) return false;
+    return this->debugConfig[PLAIN_DATA].GetBool();
 }
 
-// セーブデータの暗号化済みをセット
-void DebugManager::setCryptedSaveData()
+// 暗号化トリガーが立っているかどうか
+bool DebugManager::getCryptTrigger()
+{
+    if (!this->hasDebugConfig) return false;
+    if (!this->debugConfig.HasMember(CRYPT_TRIGGER)) return false;
+    return this->debugConfig[CRYPT_TRIGGER].GetBool();
+}
+
+// 暗号化トリガーをオフに設定
+void DebugManager::setOffCryptTrigger()
 {
     if (!this->hasDebugConfig) return;
-    if (!this->debugConfig.HasMember(CRYPT)) return;
-    if (!this->debugConfig[CRYPT].HasMember(SAVE)) return;
-    this->debugConfig[CRYPT][SAVE].SetBool(true);
-    this->writeConfig();
-}
-
-// イベントスクリプトが暗号化状態かどうか
-bool DebugManager::isCryptedEventScript()
-{
-    if (!this->hasDebugConfig) return true;
-    if (!this->debugConfig.HasMember(CRYPT)) return true;
-    if (!this->debugConfig[CRYPT].HasMember(EVENT_SCRIPT)) return true;
-    return this->debugConfig[CRYPT][EVENT_SCRIPT].GetBool();
-}
-
-// イベントスクリプトの暗号化済みをセット
-void DebugManager::setCryptedEventScript()
-{
-    if (!this->hasDebugConfig) return;
-    if (!this->debugConfig.HasMember(CRYPT)) return;
-    if (!this->debugConfig[CRYPT].HasMember(EVENT_SCRIPT)) return;
-    this->debugConfig[CRYPT][EVENT_SCRIPT].SetBool(true);
-    this->writeConfig();
-}
-
-// CSVデータが暗号化状態かどうか
-bool DebugManager::isCryptedCsvData()
-{
-    if (!this->hasDebugConfig) return true;
-    if (!this->debugConfig.HasMember(CRYPT)) return true;
-    if (!this->debugConfig[CRYPT].HasMember(CSV)) return true;
-    return this->debugConfig[CRYPT][CSV].GetBool();
-}
-
-// CSVデータの暗号化済みをセット
-void DebugManager::setCryptedCsvData()
-{
-    if (!this->hasDebugConfig) return;
-    if (!this->debugConfig.HasMember(CRYPT)) return;
-    if (!this->debugConfig[CRYPT].HasMember(CSV)) return;
-    this->debugConfig[CRYPT][CSV].SetBool(true);
+    if (!this->debugConfig.HasMember(CRYPT_TRIGGER)) return;
+    this->debugConfig[CRYPT_TRIGGER].SetBool(true);
     this->writeConfig();
 }

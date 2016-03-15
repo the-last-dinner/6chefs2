@@ -28,10 +28,8 @@ private:
     static const char* DEBUG_MASK;
     static const char* STATS;
     static const char* INVINCIBLE_MODE;
-    static const char* CRYPT;
-    static const char* SAVE;
-    static const char* CSV;
-    static const char* EVENT_SCRIPT;
+    static const char* PLAIN_DATA;
+    static const char* CRYPT_TRIGGER;
     
     // インスタンス変数
 private:
@@ -44,13 +42,9 @@ public:
     bool displayDebugMask();
     bool displayStats();
     bool isInvincibleMode();
-    bool isCryptedSaveData();
-    void setCryptedSaveData();
-    bool isCryptedEventScript();
-    void setCryptedEventScript();
-    bool isCryptedCsvData();
-    void setCryptedCsvData();
-    
+    bool isPlainData();
+    bool getCryptTrigger();
+    void setOffCryptTrigger();
 private:
     void writeConfig();
 };

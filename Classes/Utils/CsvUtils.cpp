@@ -8,6 +8,7 @@
 
 #include "Utils/CsvUtils.h"
 #include "Utils/StringUtils.h"
+#include "Managers/DebugManager.h"
 
 CsvUtils::CsvMap CsvUtils::readCsvFile(const string& file_name)
 {
@@ -16,15 +17,20 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& file_name)
     CsvUtils::CsvMap values;
     string str;
     int p, i, data_id;
+    
     //ファイル読み込み失敗時
-    if(file.fail()){
+    if(file.fail())
+    {
         CCLOG("Reading csv file of %s is failed.", file_name.c_str());
         return values;
     }
     //csvデータ格納
     while(getline(file, str)){
         // 複合化
-        LastSupper::StringUtils::encryptXor(str);
+        if (!DebugManager::getInstance()->isPlainData())
+        {
+            LastSupper::StringUtils::encryptXor(str);
+        }
         
         //コメント箇所は除く
         if( (p = str.find("//")) != str.npos ) continue;

@@ -18,25 +18,16 @@ bool StartUpScene::init()
 {
     if (!BaseScene::init(StartUpSceneData::create())) return false;
     
-    // CSVデータの作成
-    if (!DebugManager::getInstance()->isCryptedCsvData())
+    // 暗号化が必要な場合は暗号化
+    if (DebugManager::getInstance()->getCryptTrigger())
     {
         this->ecnryptCsvFiles();
+        this->encryptSaveFiles();
+        this->encryptEventScripts();
+        DebugManager::getInstance()->setOffCryptTrigger();
     }
     CsvDataManager::getInstance();
-    
-    // セーブデータの生成
-    if (!DebugManager::getInstance()->isCryptedSaveData())
-    {
-        this->encryptSaveFiles();
-    }
     PlayerDataManager::getInstance();
-    
-    // イベントスクリプトの暗号化
-    if (!DebugManager::getInstance()->isCryptedEventScript())
-    {
-        this->encryptEventScripts();
-    }
     
     // キーコンフィグの取得
     KeyconfigManager::getInstance()->setCursorKey(PlayerDataManager::getInstance()->getGlobalData()->getCursorKey());
@@ -100,7 +91,6 @@ void StartUpScene::encryptSaveFiles()
         path = FileUtils::getInstance()->fullPathForFilename("save/" + file + SAVE_EXTENSION);
         if (path != "") LastSupper::JsonUtils::enctyptJsonFile(path);
     }
-    DebugManager::getInstance()->setCryptedSaveData();
 }
 
 // イベントスクリプトの暗号化
@@ -117,7 +107,6 @@ void StartUpScene::encryptEventScripts()
         path = FileUtils::getInstance()->fullPathForFilename("event/" + file + ES_EXTENSION);
         LastSupper::JsonUtils::enctyptJsonFile(path);
     }
-    DebugManager::getInstance()->setCryptedEventScript();
 }
 
 // CSVの暗号化
@@ -136,5 +125,4 @@ void StartUpScene::ecnryptCsvFiles()
         path = FileUtils::getInstance()->fullPathForFilename("csv/" + file + CSV_EXTENSION);
         CsvUtils::encryptCsvFile(path);
     }
-    DebugManager::getInstance()->setCryptedCsvData();
 }
