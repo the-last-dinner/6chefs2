@@ -139,12 +139,12 @@ bool DungeonMainMenuLayer::init()
         fBg->addChild(chara_panel);
         
         // 通り名
-        Label* street= Label::createWithTTF("-" + CsvDataManager::getInstance()->getCharaStreetName(charas[i].chara_id) + "-", "fonts/cinecaption2.28.ttf", 24);
+        Label* street= Label::createWithTTF("-" + CsvDataManager::getInstance()->getCharacterData()->getStreetName(charas[i].chara_id) + "-", "fonts/cinecaption2.28.ttf", 24);
         street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 10);
         chara_panel->addChild(street);
         
         // キャラ名
-        Label* name = Label::createWithTTF(CsvDataManager::getInstance()->getCharaName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 24);
+        Label* name = Label::createWithTTF(CsvDataManager::getInstance()->getCharacterData()->getName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 24);
         name->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height - name->getContentSize().height /2 - 20);
         chara_panel->addChild(name);
         

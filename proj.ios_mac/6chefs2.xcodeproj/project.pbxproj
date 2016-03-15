@@ -20,6 +20,8 @@
 		26FBED411C9861F1002FAFF7 /* TrophyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED3E1C9861F1002FAFF7 /* TrophyData.cpp */; };
 		26FBED441C986CBB002FAFF7 /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED421C986CBB002FAFF7 /* ChapterData.cpp */; };
 		26FBED451C986CBB002FAFF7 /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED421C986CBB002FAFF7 /* ChapterData.cpp */; };
+		26FBED481C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */; };
+		26FBED491C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -343,6 +345,8 @@
 		26FBED3F1C9861F1002FAFF7 /* TrophyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrophyData.h; sourceTree = "<group>"; };
 		26FBED421C986CBB002FAFF7 /* ChapterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChapterData.cpp; sourceTree = "<group>"; };
 		26FBED431C986CBB002FAFF7 /* ChapterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterData.h; sourceTree = "<group>"; };
+		26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterMasterData.cpp; sourceTree = "<group>"; };
+		26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterMasterData.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1181,6 +1185,8 @@
 				26FBED3F1C9861F1002FAFF7 /* TrophyData.h */,
 				26FBED421C986CBB002FAFF7 /* ChapterData.cpp */,
 				26FBED431C986CBB002FAFF7 /* ChapterData.h */,
+				26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */,
+				26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1457,6 +1463,7 @@
 				DC03919B1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DC03921F1C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
+				26FBED481C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DC0392511C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -1595,6 +1602,7 @@
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
+				26FBED491C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
 				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,

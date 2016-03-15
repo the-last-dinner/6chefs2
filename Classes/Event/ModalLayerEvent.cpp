@@ -82,7 +82,7 @@ bool CharacterMessage::init(rapidjson::Value& json)
             }
             else
             {
-                charaName = CsvDataManager::getInstance()->getCharaName(data->getCharaId());
+                charaName = CsvDataManager::getInstance()->getCharacterData()->getName(data->getCharaId());
             }
             
             data->setCharaName(charaName);
@@ -123,7 +123,7 @@ bool CharacterMessage::init(rapidjson::Value& json)
         }
         else
         {
-            charaName = CsvDataManager::getInstance()->getCharaName(data->getCharaId());
+            charaName = CsvDataManager::getInstance()->getCharacterData()->getName(data->getCharaId());
         }
         data->setCharaName(charaName);
         
