@@ -53,7 +53,7 @@ bool DungeonMainMenuLayer::init()
     
     // チャプター表示
     int chapter_id = PlayerDataManager::getInstance()->getLocalData()->getChapterId();
-    Label* chapter_name = Label::createWithTTF(CsvDataManager::getInstance()->getChapterName(chapter_id), "fonts/cinecaption2.28.ttf", 30);
+    Label* chapter_name = Label::createWithTTF(CsvDataManager::getInstance()->getChapterData()->getName(chapter_id), "fonts/cinecaption2.28.ttf", 30);
     float chapter_name_y = WINDOW_HEIGHT - hBg->getContentSize().height - chapter_name->getContentSize().height / 2 - 15;
     inPosition = Point(chapter_name->getContentSize().width/2 + 15, chapter_name_y);
     outPosition = Point(-1 * chapter_name->getContentSize().width / 2, chapter_name_y);
@@ -62,7 +62,7 @@ bool DungeonMainMenuLayer::init()
     cover->addChild(chap1);
     this->slideNodes.push_back(chap1);
     
-    Label* chapter_title = Label::createWithTTF(CsvDataManager::getInstance()->getChapterTitle(chapter_id), "fonts/cinecaption2.28.ttf", 30);
+    Label* chapter_title = Label::createWithTTF(CsvDataManager::getInstance()->getChapterData()->getTitle(chapter_id), "fonts/cinecaption2.28.ttf", 30);
     float chapter_title_y = WINDOW_HEIGHT - hBg->getContentSize().height - chapter_name->getContentSize().height - chapter_title->getContentSize().height / 2 - 30;
     inPosition = Point(chapter_title->getContentSize().width / 2 + 45, chapter_title_y);
     outPosition = Point(-1 * chapter_title->getContentSize().width / 2, chapter_title_y);

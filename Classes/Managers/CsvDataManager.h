@@ -13,6 +13,7 @@
 #include "Models/ItemData.h"
 #include "Models/TrophyData.h"
 #include "Models/MapData.h"
+#include "Models/ChapterData.h"
 
 class CsvDataManager
 {
@@ -24,12 +25,6 @@ public:
         CHARACTER,
         CHAPTER,
         TROPHY
-    };
-    enum struct CsvChapter
-    {
-        ID,
-        NAME,
-        TITLE
     };
     enum struct CsvCharacter
     {
@@ -52,6 +47,7 @@ private:
     ItemData* itemData {nullptr};
     TrophyData* trophyData {nullptr};
     MapData* mapData {nullptr};
+    ChapterData* chapterData {nullptr};
     
 // singleton用関数
 public:
@@ -67,10 +63,7 @@ public:
     ItemData* getItemData();
     TrophyData* getTrophyData();
     MapData* getMapData();
-    
-    // chapter
-    string getChapterName(const int chapter_id);
-    string getChapterTitle(const int chapter_id);
+    ChapterData* getChapterData();
     
     // character
     string getCharaName(const int chara_id);

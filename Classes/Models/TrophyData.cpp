@@ -8,6 +8,7 @@
 
 #include "TrophyData.h"
 
+// 初期化
 bool TrophyData::init()
 {
     string path = FileUtils::getInstance()->fullPathForFilename("csv/trophy.csv");

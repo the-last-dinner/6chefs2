@@ -14,7 +14,6 @@ static CsvDataManager* _instance = nullptr;
 
 const map<CsvDataManager::DataType, string> CsvDataManager::file_type = {
     {CsvDataManager::DataType::CHARACTER, "character"},
-    {CsvDataManager::DataType::CHAPTER, "chapter"},
 };
 
 #pragma mark Core
@@ -39,6 +38,7 @@ CsvDataManager::~CsvDataManager()
     CC_SAFE_RELEASE_NULL(this->itemData);
     CC_SAFE_RELEASE_NULL(this->trophyData);
     CC_SAFE_RELEASE_NULL(this->mapData);
+    CC_SAFE_RELEASE_NULL(this->chapterData);
 }
 
 // コンストラクタ
@@ -49,10 +49,12 @@ CsvDataManager::CsvDataManager()
     this->itemData = ItemData::create();
     this->trophyData = TrophyData::create();
     this->mapData = MapData::create();
+    this->chapterData = ChapterData::create();
     
     CC_SAFE_RETAIN(this->itemData);
     CC_SAFE_RETAIN(this->trophyData);
     CC_SAFE_RETAIN(this->mapData);
+    CC_SAFE_RETAIN(this->chapterData);
     
     string file_name = "";
     for(auto itr:this->file_type)
@@ -96,19 +98,10 @@ MapData* CsvDataManager::getMapData()
     return this->mapData;
 }
 
-#pragma mark -
-#pragma mark Chapter
-
-// チャプター名を取得
-string CsvDataManager::getChapterName(const int chapter_id)
+// チャプターデータインスタンスの取得
+ChapterData* CsvDataManager::getChapterData()
 {
-    return this->csv_data[DataType::CHAPTER][chapter_id][etoi(CsvChapter::NAME)];
-}
-
-// チャプターのタイトルを取得
-string CsvDataManager::getChapterTitle(const int chapter_id)
-{
-    return this->csv_data[DataType::CHAPTER][chapter_id][etoi(CsvChapter::TITLE)];
+    return this->chapterData;
 }
 
 #pragma mark -

@@ -124,7 +124,7 @@ vector<SaveDataSelector::SaveIndex> SaveDataSelector::getSaveList()
             this->existsSaveData[i-1] = true;
             save = SaveIndex(
                              i,
-                             "--- " + CsvDataManager::getInstance()->getChapterName(local->getChapterId()) + " ---",
+                             "--- " + CsvDataManager::getInstance()->getChapterData()->getName(local->getChapterId()) + " ---",
                              LastSupper::StringUtils::getSprintf("%15s", CsvDataManager::getInstance()->getMapData()->getName(local->getLocation().map_id)),
                              local->getPlayTimeForDisplay(),
                              LastSupper
