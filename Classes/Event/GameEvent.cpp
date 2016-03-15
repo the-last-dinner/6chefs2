@@ -269,3 +269,66 @@ void CallEvent::update(float delta)
         CC_SAFE_RELEASE_NULL(this->event);
     }
 }
+
+#pragma mark -
+#pragma mark EventRepeat
+
+// Repeat
+bool EventRepeat::init(rapidjson::Value& json)
+{
+    if(!EventSequence::init(json)) return false;
+    
+    if(!this->validator->hasMember(json, member::TIMES)) return false;
+    
+    this->times = json[member::TIMES].GetInt();
+    this->json = json;
+    
+    return true;
+}
+
+void EventRepeat::run()
+{
+    if(this->times == 0) return;
+    
+    // 最初のイベントを開始
+    EventSequence::run();
+}
+
+void EventRepeat::update(float delta)
+{
+    if(this->events.empty())
+    {
+        this->setDone();
+        
+        return;
+    }
+    
+    this->events.front()->update(delta);
+    
+    if(this->events.front()->isDone())
+    {
+        CC_SAFE_RELEASE(this->events.front());
+        this->events.pop();
+        
+        // 次のイベントがあればを開始
+        if(!this->events.empty())
+        {
+            this->events.front()->run();
+        }
+        // 次のイベントがなければデクリメントして0なら終了
+        else
+        {
+            this->times--;
+            if(this->times == 0)
+            {
+                this->setDone();
+                
+                return;
+            }
+            // 0でないので再生成
+            this->events = this->factory->createEventQueue(this->json);
+            EventSequence::run();
+        }
+    }
+}
+
