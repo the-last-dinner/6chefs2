@@ -85,20 +85,11 @@ KeyconfigManager::KeyconfigManager()
 {
     FUNCLOG
     
-    // 決定キー
-    //this->setEnterKey(EnterKeyType::SPACE);
-    
-    // ダッシュキー
-    //this->setDashKey(DashKeyType::LEFT_SHIFT);
-    
-    // 方向キー
-    //this->setCursorKey(CursorKeyType::ARROW);
-    
     // メニューキー
     this->keyconfig[EventKeyboard::KeyCode::KEY_X] = Key::MENU;
     
     // キーコンフィグキー
-    this->keyconfig[EventKeyboard::KeyCode::KEY_F8] = Key::KEY_CONF;
+    this->keyconfig[EventKeyboard::KeyCode::KEY_F1] = Key::KEY_CONF;
     
     // 画面設定キー
     this->keyconfig[EventKeyboard::KeyCode::KEY_F4] = Key::WIN_SIZE;
