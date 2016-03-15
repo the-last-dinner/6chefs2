@@ -125,7 +125,7 @@ vector<SaveDataSelector::SaveIndex> SaveDataSelector::getSaveList()
             save = SaveIndex(
                              i,
                              "--- " + CsvDataManager::getInstance()->getChapterName(local->getChapterId()) + " ---",
-                             LastSupper::StringUtils::getSprintf("%15s", CsvDataManager::getInstance()->getMapName(local->getLocation().map_id)),
+                             LastSupper::StringUtils::getSprintf("%15s", CsvDataManager::getInstance()->getMapData()->getName(local->getLocation().map_id)),
                              local->getPlayTimeForDisplay(),
                              LastSupper
                              ::StringUtils::getSprintf("%3s", to_string(local->getSaveCount())) + "回",

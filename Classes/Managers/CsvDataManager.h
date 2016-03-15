@@ -11,6 +11,8 @@
 
 #include "define.h"
 #include "Models/ItemData.h"
+#include "Models/TrophyData.h"
+#include "Models/MapData.h"
 
 class CsvDataManager
 {
@@ -23,23 +25,11 @@ public:
         CHAPTER,
         TROPHY
     };
-    enum struct CsvMap
-    {
-        ID,
-        NAME,
-        FILE_NAME
-    };
     enum struct CsvChapter
     {
         ID,
         NAME,
         TITLE
-    };
-    enum struct CsvItem
-    {
-        ID,
-        NAME,
-        DISCRIPTION,
     };
     enum struct CsvCharacter
     {
@@ -54,19 +44,14 @@ public:
         PROFILE1,
         PROFILE2
     };
-    enum struct CsvTrophy
-    {
-        ID,
-        NAME,
-        CONDITION,
-        COMMENT
-    };
     
 // インスタンス変数
 private:
     static const map<DataType, string> file_type;
     map<DataType, map<int, vector<string>>> csv_data;
     ItemData* itemData {nullptr};
+    TrophyData* trophyData {nullptr};
+    MapData* mapData {nullptr};
     
 // singleton用関数
 public:
@@ -80,11 +65,8 @@ private:
     
 public:
     ItemData* getItemData();
-    
-    // map
-    string getMapName(const int map_id);
-    string getMapFileName(const int map_id);
-    vector<string> getMapFileNameAll();
+    TrophyData* getTrophyData();
+    MapData* getMapData();
     
     // chapter
     string getChapterName(const int chapter_id);
@@ -101,11 +83,5 @@ public:
     string getCharaDiscription(const int chara_id, const int level);
     bool isDisplayChara(const int chara_id);
     vector<int> getDisplayCharacters();
-    
-    // trophy
-    string getTrophyName(const int trophy_id);
-    string getTrophyCondition(const int trophy_id);
-    string getTrophyComment(const int trophy_id);
-    vector<int> getTrophyIdAll();
 };
 #endif

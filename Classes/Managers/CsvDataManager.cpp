@@ -13,10 +13,8 @@
 static CsvDataManager* _instance = nullptr;
 
 const map<CsvDataManager::DataType, string> CsvDataManager::file_type = {
-    {CsvDataManager::DataType::MAP, "map"},
     {CsvDataManager::DataType::CHARACTER, "character"},
     {CsvDataManager::DataType::CHAPTER, "chapter"},
-    {CsvDataManager::DataType::TROPHY, "trophy"},
 };
 
 #pragma mark Core
@@ -36,13 +34,26 @@ void CsvDataManager::destroy()
 
 // デストラクタ
 CsvDataManager::~CsvDataManager()
-{FUNCLOG}
+{
+    FUNCLOG
+    CC_SAFE_RELEASE_NULL(this->itemData);
+    CC_SAFE_RELEASE_NULL(this->trophyData);
+    CC_SAFE_RELEASE_NULL(this->mapData);
+}
 
 // コンストラクタ
 CsvDataManager::CsvDataManager()
 {
     FUNCLOG
     //各CSVデータの取得
+    this->itemData = ItemData::create();
+    this->trophyData = TrophyData::create();
+    this->mapData = MapData::create();
+    
+    CC_SAFE_RETAIN(this->itemData);
+    CC_SAFE_RETAIN(this->trophyData);
+    CC_SAFE_RETAIN(this->mapData);
+    
     string file_name = "";
     for(auto itr:this->file_type)
     {
@@ -67,36 +78,22 @@ CsvDataManager::CsvDataManager()
     }
 }
 
-#pragma mark -
-#pragma mark Map
-
-// マップ名を取得
-string CsvDataManager::getMapName(const int map_id)
-{
-    return this->csv_data[DataType::MAP][map_id][etoi(CsvMap::NAME)];
-}
-
-// マップのファイル名を取得
-string CsvDataManager::getMapFileName(const int map_id)
-{
-    return this->csv_data[DataType::MAP][map_id][etoi(CsvMap::FILE_NAME)];
-}
-
-// マップのファイル名を全取得
-vector<string> CsvDataManager::getMapFileNameAll()
-{
-    vector<string> fileNames {};
-    for (auto itr:this->csv_data[DataType::MAP])
-    {
-        fileNames.push_back(itr.second[etoi(CsvMap::FILE_NAME)]);
-    }
-    return fileNames;
-}
-
 // アイテムデータインスタンスの取得
 ItemData* CsvDataManager::getItemData()
 {
     return this->itemData;
+}
+
+// トロフィーデータインスタンスの取得
+TrophyData* CsvDataManager::getTrophyData()
+{
+    return this->trophyData;
+}
+
+// マップデータインスタンスの取得
+MapData* CsvDataManager::getMapData()
+{
+    return this->mapData;
 }
 
 #pragma mark -
@@ -186,36 +183,4 @@ vector<int> CsvDataManager::getDisplayCharacters()
         }
     }
     return charas;
-}
-
-#pragma mark -
-#pragma mark Trophy
-
-// トロフィーの名前を取得
-string CsvDataManager::getTrophyName(const int trophy_id)
-{
-    return this->csv_data[DataType::TROPHY][trophy_id][etoi(CsvTrophy::NAME)];
-}
-
-// トロフィーの条件を取得
-string CsvDataManager::getTrophyCondition(const int trophy_id)
-{
-    return this->csv_data[DataType::TROPHY][trophy_id][etoi(CsvTrophy::CONDITION)];
-}
-
-// トロフィーのコメントを取得
-string CsvDataManager::getTrophyComment(const int trophy_id)
-{
-    return this->csv_data[DataType::TROPHY][trophy_id][etoi(CsvTrophy::COMMENT)];
-}
-
-// トロフィーを全て取得
-vector<int> CsvDataManager::getTrophyIdAll()
-{
-    vector<int> trophies;
-    for (auto itr:this->csv_data[DataType::TROPHY])
-    {
-        trophies.push_back(itr.first);
-    }
-    return trophies;
 }

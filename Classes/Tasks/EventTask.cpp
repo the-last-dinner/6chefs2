@@ -45,7 +45,7 @@ bool EventTask::init()
     if(!GameTask::init()) return false;
     
     // イベントスクリプト生成
-    EventScript* eventScript {EventScript::create(CsvDataManager::getInstance()->getMapFileName(DungeonSceneManager::getInstance()->getLocation().map_id))};
+    EventScript* eventScript {EventScript::create(CsvDataManager::getInstance()->getMapData()->getFileName(DungeonSceneManager::getInstance()->getLocation().map_id))};
     CC_SAFE_RETAIN(eventScript);
     this->eventScript = eventScript;
     

@@ -191,7 +191,7 @@ bool GlobalPlayerData::hasTrophy(const int trophy_id)
 // トロフィーコンプリート処理
 void GlobalPlayerData::setTrophyComplete()
 {
-    vector<int> trophies = CsvDataManager::getInstance()->getTrophyIdAll();
+    vector<int> trophies = CsvDataManager::getInstance()->getTrophyData()->getIdAll();
     int trophy_count {0};
     for(int trophy_id : trophies)
     {

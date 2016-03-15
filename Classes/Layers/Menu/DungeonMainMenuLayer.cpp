@@ -93,7 +93,7 @@ bool DungeonMainMenuLayer::init()
     }
     
     // マップ名表示
-    Label* mapName = Label::createWithTTF(CsvDataManager::getInstance()->getMapName(PlayerDataManager::getInstance()->getLocalData()->getLocation().map_id), "fonts/cinecaption2.28.ttf", 26);
+    Label* mapName = Label::createWithTTF(CsvDataManager::getInstance()->getMapData()->getName(PlayerDataManager::getInstance()->getLocalData()->getLocation().map_id), "fonts/cinecaption2.28.ttf", 26);
     mapName->setPosition(mapName->getContentSize().width / 2 + 15, hBg->getContentSize().height - mapName->getContentSize().height / 2 - 15);
     hBg->addChild(mapName);
     

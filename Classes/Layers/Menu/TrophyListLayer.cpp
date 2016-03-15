@@ -75,7 +75,7 @@ bool TrophyListLayer::init()
     center->setName("itemList");
     this->addChild(center);
     
-    vector<int> trophies = CsvDataManager::getInstance()->getTrophyIdAll();
+    vector<int> trophies = CsvDataManager::getInstance()->getTrophyData()->getIdAll();
     int i = 0;
     int page = 0;
     int upDownMargin = 40;
@@ -105,7 +105,7 @@ bool TrophyListLayer::init()
         string trophy_name = "? ? ? ? ?";
         if (PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(trophy_id))
         {
-            trophy_name = CsvDataManager::getInstance()->getTrophyName(trophy_id);
+            trophy_name = CsvDataManager::getInstance()->getTrophyData()->getName(trophy_id);
             
             // トロフィー画像
             panel->addChild(trophy_img);
@@ -149,14 +149,14 @@ void TrophyListLayer::changeTrophyDiscription(const int idx)
     
     // 条件
     int margin = 15;
-    string str = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getTrophyCondition(this->trophies[idx]));
+    string str = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getTrophyData()->getCondition(this->trophies[idx]));
     Label* condition = Label::createWithTTF(str, "fonts/cinecaption2.28.ttf", 28);
     condition->setPosition(bottom->getContentSize().width / 2, bottom->getContentSize().height - condition->getContentSize().height / 2 - margin);
     condition->setColor(Color3B::WHITE);
     label_panel->addChild(condition);
     
     // コメント
-    string comment_str = PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(idx + 1) ? "\n  「" + LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getTrophyComment(this->trophies[idx])) + "」" : "";
+    string comment_str = PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(idx + 1) ? "\n  「" + LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getTrophyData()->getComment(this->trophies[idx])) + "」" : "";
     Label* comment = Label::createWithTTF(comment_str, "fonts/cinecaption2.28.ttf", 28);
     comment->setPosition(bottom->getContentSize().width / 2, bottom->getContentSize().height - condition->getContentSize().height - comment->getContentSize().height / 2 - margin / 2);
     comment->setColor(Color3B::WHITE);

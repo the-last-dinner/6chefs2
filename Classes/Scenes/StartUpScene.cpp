@@ -106,7 +106,7 @@ void StartUpScene::encryptSaveFiles()
 // イベントスクリプトの暗号化
 void StartUpScene::encryptEventScripts()
 {
-    vector<string> fileNames = CsvDataManager::getInstance()->getMapFileNameAll();
+    vector<string> fileNames = CsvDataManager::getInstance()->getMapData()->getFileNameAll();
     for(string fileName : Resource::EventScript::FILE_NAMES)
     {
         fileNames.push_back(fileName);
