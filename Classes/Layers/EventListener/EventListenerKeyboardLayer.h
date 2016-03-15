@@ -59,6 +59,7 @@ private:
     void intervalCheck(float duration);                            // キーを押し続けている時
     Key convertKeyCode(const EventKeyboard::KeyCode& keyCode);     // cococs上でのキーコードをゲーム内キーに変換
     void scheduleIntervalCheck();
+    void switchWinSize();
 };
 
 #endif /* defined(_EventListenerKeyboardLayer__) */
