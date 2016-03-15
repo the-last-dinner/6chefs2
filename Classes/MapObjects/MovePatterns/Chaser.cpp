@@ -93,7 +93,7 @@ void Chaser::move()
     
     this->cutPath(path);
     
-    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false, CC_CALLBACK_0(Chaser::isPaused, this));
+    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false);
 }
 
 // サブアルゴリズムから自身へ移行
@@ -105,7 +105,7 @@ void Chaser::shiftFromSubPattern()
     // 経路をカット
     this->cutPath(path);
  
-    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false, CC_CALLBACK_0(Chaser::isPaused, this));
+    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false);
 }
 
 // サブアルゴリズムへ移行

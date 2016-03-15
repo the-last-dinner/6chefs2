@@ -35,6 +35,7 @@ bool KeyconfigMenuLayer::init()
     if(!MenuLayer::init(1, etoi(MenuType::SIZE))) return false;
     
     this->listenerKeyboard->onKeyConfKeyPressed = CC_CALLBACK_0(KeyconfigMenuLayer::close, this);
+    this->setLocalZOrder(Priority::KEY_CONFIG);
     
     Sprite* cover {Sprite::create()};
     cover->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));

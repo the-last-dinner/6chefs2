@@ -26,8 +26,8 @@ public:
 
 // インスタンス変数
 public:
-    function<void()> onRunEvent { nullptr };
-    function<void()> onAllEventFinished { nullptr };
+    function<void()> onEventStart { nullptr };
+    function<void()> onEventFinished { nullptr };
 private:
     EventScript* eventScript { nullptr };
     deque<EventWithId> eventQueue {};

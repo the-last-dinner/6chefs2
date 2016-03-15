@@ -68,8 +68,8 @@ protected:
     void onAllEnemyRemoved();
     void onExitDungeon();
     void setLight();
-    void onRunEvent();
-    void onAllEventFinished();
+    void onEventStart();
+    void onEventFinished();
     
     DungeonSceneData* getData() const;
     

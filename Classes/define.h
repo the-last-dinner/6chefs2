@@ -62,6 +62,7 @@ using namespace std;
 // レイヤーのZORDER値
 enum Priority
 {
+    KEY_CONFIG = 2000,
     TOP_COVER = 1000,
     LOADING_LAYER = 999,
     NOTIFICATION = 1000,

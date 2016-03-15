@@ -34,6 +34,7 @@ private:
     bool _isMoving { false };
     Sprite* sprite { nullptr };
     Vector<SpriteFrame*> spriteFrames {};
+    bool paused { false };
 protected:
     MapObjectList* objectList { nullptr };
     deque<vector<Direction>> directionsQueue {};
@@ -55,6 +56,7 @@ public:
     void setMapObjectList(MapObjectList* objectList);
     void setSprite(Sprite* sprite);
     void addSpriteFrame(SpriteFrame* spriteFrame);
+    void setPaused(bool paused);
     
 	void setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
 	void removeLight(function<void()> callback = nullptr);
@@ -70,6 +72,7 @@ public:
     Direction getDirection() const;
     Sprite* getSprite() const;
     Vector<SpriteFrame*> getSpriteFrames() const;
+    bool isPaused() const;
     
     // collision
     virtual vector<Rect> getWorldGridCollisionRects();
@@ -101,10 +104,8 @@ public:
     // イベント関数
     virtual void onEnterMap() {};                               // マップに追加された時
     virtual void onSearched(MapObject* mainChara) {};           // 調べられた時
-    
-    // ポリモーフィック用
-    virtual void moveStart() {};                                // 動き開始
-    virtual void moveStop() {};                                 // 動き停止
+    virtual void onEventStart() {};                                // イベント開始時
+    virtual void onEventFinished() {};                                 // イベント終了時
     
     Direction convertToWorldDir(const Direction direcction);
 
