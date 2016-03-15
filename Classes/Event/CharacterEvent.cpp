@@ -94,7 +94,16 @@ void WalkByEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
+    this->target->getActionManager()->resumeTarget(this->target);
+}
+
+void WalkByEvent::update(float delta)
+{
+    if(this->target->isMoving() || this->isCommandSent) return;
+    
     this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio, this->back);
+    
+    this->isCommandSent = true;
 }
 
 #pragma mark -
@@ -117,9 +126,18 @@ void WalkToEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
+    this->target->getActionManager()->resumeTarget(this->target);
+}
+
+void WalkToEvent::update(float delta)
+{
+    if(this->target->isMoving() || this->isCommandSent) return;
+    
     // 経路探索開始
     PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
     deque<Direction> directions { pathFinder->getPath(this->target->getGridRect(), this->target->getWorldGridCollisionRects(), this->destPosition) };
     
     this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
+    
+    this->isCommandSent = true;
 }

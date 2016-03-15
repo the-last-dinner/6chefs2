@@ -53,11 +53,13 @@ private:
     int gridNum {0};
     float speedRatio {1.f};
     bool back { false };
+    bool isCommandSent { false };
 private:
     WalkByEvent() {FUNCLOG};
     ~WalkByEvent() {FUNCLOG};
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
+    virtual void update(float delta) override;
 };
 
 // 移動先座標指定歩行
@@ -68,11 +70,13 @@ public:
 private:
     Point destPosition { Point::ZERO };
     float speedRatio {1.f};
+    bool isCommandSent { false };
 private:
     WalkToEvent() {FUNCLOG};
     ~WalkToEvent() {FUNCLOG};
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
+    virtual void update(float delta) override;
 };
 
 #endif /* defined(__LastSupper__CharacterEvent__) */

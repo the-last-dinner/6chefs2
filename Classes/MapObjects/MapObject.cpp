@@ -77,6 +77,9 @@ void MapObject::addSpriteFrame(SpriteFrame* spriteFrame)
     this->spriteFrames.pushBack(spriteFrame);
 }
 
+// 一時停止状態を設定
+void MapObject::setPaused(bool paused) { this->paused = paused; }
+
 // ライトをセット
 void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
@@ -126,6 +129,9 @@ Sprite* MapObject::getSprite() const { return this->sprite;};
 
 // SpriteFrameを取得
 Vector<SpriteFrame*> MapObject::getSpriteFrames() const { return this->spriteFrames; };
+
+// 一時停止状態か
+bool MapObject::isPaused() const { return this->paused; };
 
 // マップ上にある格子Rectを取得
 vector<Rect> MapObject::getWorldGridCollisionRects()
@@ -372,11 +378,9 @@ void MapObject::reaction(function<void()> callback)
 Direction MapObject::convertToWorldDir(const Direction direction)
 {
     switch (this->getDirection()) {
-        case Direction::FRONT:
-            return MapUtils::oppositeDirection(direction);
+        case Direction::FRONT: return MapUtils::oppositeDirection(direction);
             
-        case Direction::BACK:
-            return direction;
+        case Direction::BACK: return direction;
         
         case Direction::RIGHT:
             if(direction == Direction::BACK) return Direction::LEFT;

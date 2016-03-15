@@ -48,8 +48,8 @@ public:
     bool walkBy(const vector<Direction>& directions, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
     void walkBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
     void walkBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
-    void walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false, function<bool()> isPaused = nullptr);
-    void walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false, function<bool()> isPaused = nullptr);
+    void walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
+    void walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
     
     void lookAround(function<void()> callback, Direction direction = Direction::SIZE);
     

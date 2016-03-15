@@ -156,7 +156,7 @@ void Character::walkBy(const vector<Direction>& directions, const int gridNum, f
 }
 
 // キューで歩行させる
-void Character::walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio, const bool back, function<bool()> isPaused)
+void Character::walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio, const bool back)
 {
     if(directionQueue.empty())
     {
@@ -172,11 +172,11 @@ void Character::walkByQueue(deque<Direction> directionQueue, function<void(bool)
         directionsQueue.push_back(vector<Direction>({direction}));
     }
     
-    this->walkByQueue(directionsQueue, callback, ratio, back, isPaused);
+    this->walkByQueue(directionsQueue, callback, ratio, back);
 }
 
 // キューで歩行させる
-void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio, const bool back, function<bool()> isPaused)
+void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio, const bool back)
 {
     // 初回のみ中身が存在するため、空でない時は格納する
     if(!directionsQueue.empty()) this->directionsQueue = directionsQueue;
@@ -189,8 +189,8 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
         return;
     }
     
-    // 停止中かチェック
-    if(isPaused && isPaused())
+    // 一時停止中かチェック
+    if(this->isPaused())
     {
         this->clearDirectionsQueue();
         
@@ -202,7 +202,7 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
     this->directionsQueue.pop_front();
     
     // 移動開始。失敗時はコールバックを失敗として呼び出し
-    if(this->walkBy(directions, [callback, ratio, back, isPaused, this]{this->walkByQueue(deque<vector<Direction>>({}), callback, ratio, back, isPaused);}, ratio, back)) return;
+    if(this->walkBy(directions, [callback, ratio, back, this]{this->walkByQueue(deque<vector<Direction>>({}), callback, ratio, back);}, ratio, back)) return;
     
     if(callback) callback(false);
 }
@@ -228,6 +228,7 @@ void Character::onEnterMap()
     this->setDirection(this->getDirection());
     
     if(this->movePattern) this->movePattern->start();
+    if(DungeonSceneManager::getInstance()->isEventRunning()) this->onEventStart();
 }
 
 // 主人公一行が動いた時
@@ -246,11 +247,13 @@ void Character::onSearched(MapObject* mainChara)
 // イベント開始時
 void Character::onEventStart()
 {
+    this->setPaused(true);
     this->getActionManager()->pauseTarget(this);
 }
 
 // イベント終了時
 void Character::onEventFinished()
 {
+    this->setPaused(false);
     this->getActionManager()->resumeTarget(this);
 }
