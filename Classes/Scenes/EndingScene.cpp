@@ -14,6 +14,7 @@
 #include "Scenes/DungeonScene.h"
 #include "Scenes/TitleScene.h"
 #include "Layers/LoadingLayer.h"
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 
 // コンストラクタ
 EndingScene::EndingScene() {FUNCLOG};
@@ -24,8 +25,12 @@ EndingScene::~EndingScene() {FUNCLOG};
 // 初期化
 bool EndingScene::init(const int endingId)
 {
+    if(!BaseScene::init(EndingSceneData::create())) return false;
+    
+    this->configListener->setKeyconfigEnabled(false);
     this->end_id = endingId;
-    return BaseScene::init(EndingSceneData::create());
+    
+    return true;
 }
 
 // シーン切り替え終了時

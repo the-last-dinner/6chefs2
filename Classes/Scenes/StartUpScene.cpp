@@ -9,6 +9,7 @@
 #include "Scenes/StartUpScene.h"
 #include "Scenes/TitleScene.h"
 #include "Datas/Scene/StartUpSceneData.h"
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/CsvUtils.h"
@@ -17,6 +18,8 @@
 bool StartUpScene::init()
 {
     if (!BaseScene::init(StartUpSceneData::create())) return false;
+    
+    this->configListener->setKeyconfigEnabled(false);
     
     // 暗号化が必要な場合は暗号化
     if (DebugManager::getInstance()->getCryptTrigger())

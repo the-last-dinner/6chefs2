@@ -11,6 +11,7 @@
 #include "Datas/Scene/SceneData.h"
 
 #include "Layers/LoadingLayer.h"
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 
 #include "Managers/NotificationManager.h"
 
@@ -27,6 +28,11 @@ BaseScene::~BaseScene()
 bool BaseScene::init(SceneData* data)
 {
 	if(!Scene::init()) return false;
+    
+    // コンフィグ用のイベントリスナーを登録
+    ConfigEventListenerLayer* configListener { ConfigEventListenerLayer::create() };
+    this->addChild(configListener);
+    this->configListener = configListener;
 	
 	// データクラスをセットしretain
 	this->data = data;

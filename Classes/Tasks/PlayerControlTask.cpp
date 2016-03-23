@@ -149,7 +149,7 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party)
     // キューにあるイベントを実行
     DungeonSceneManager::getInstance()->runEventQueue();
     
-    this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(this->enableControl) this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か設定

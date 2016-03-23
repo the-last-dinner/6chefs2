@@ -124,10 +124,27 @@ void CreateRainEvent::run()
 {
     this->setDone();
     
-    Size size = Director::getInstance()->getVisibleSize();
+    ParticleRain* rain { ParticleRain::createWithTotalParticles(1000) };
     
-    auto rain = ParticleRain::createWithTotalParticles(5000);
-    rain->setPosition(Vec2(size.width/2,size.height));
+    rain->setPositionY(WINDOW_HEIGHT + 50);
+    
+    rain->setEmissionRate(200);
+    
+    rain->setStartSize(10.f);
+    rain->setStartSizeVar(10.f);
+    
+    rain->setEndSize(5.f);
+    rain->setEndSizeVar(10.f);
+    
+    rain->setLife(0.5f);
+    rain->setLifeVar(0.3f);
+    
+    rain->setAngle(-100.f);
+    rain->setAngleVar(2.f);
+    
+    rain->setSpeed(1000);
+    
+    rain->setBlendFunc({GL_SRC_ALPHA, GL_ONE});
     
     DungeonSceneManager::getInstance()->getScene()->addChild(rain);
 }

@@ -5,7 +5,7 @@
         <LuaIsEncrypt Value="False" />
         <LuaEncryptKey Value="" />
         <LuaEncryptSign Value="" />
-        <Android_PackageName Value="org.cocos.6chefs2" />
+        <Android_PackageName Value="org.cocos.d6chefs2" />
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="" />
         <iOS_Target Value="6chefs2-mobile" />
@@ -14,6 +14,9 @@
         <RunPlatform Value="Mac" />
         <FrameworkVersion Value="cocos2d-x-3.10" />
         <IsDebugKeystore Value="True" />
+        <KeystorePassword Value="" />
+        <KeystoreAliasName Value="" />
+        <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
       </Value>
