@@ -27,7 +27,12 @@ const int KeyconfigMenuLayer::LEFT_ARROW_TAG {2};
 KeyconfigMenuLayer::KeyconfigMenuLayer() { FUNCLOG };
 
 // デストラクタ
-KeyconfigMenuLayer::~KeyconfigMenuLayer() { FUNCLOG };
+KeyconfigMenuLayer::~KeyconfigMenuLayer()
+{
+    FUNCLOG
+    
+    if(this->onClose) this->onClose(this);
+};
 
 // 初期化
 bool KeyconfigMenuLayer::init()

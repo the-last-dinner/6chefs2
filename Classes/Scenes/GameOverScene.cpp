@@ -11,6 +11,7 @@
 #include "Datas/Scene/GameOverSceneData.h"
 
 #include "Layers/LoadingLayer.h"
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
 #include "Scenes/TitleScene.h"
@@ -37,7 +38,11 @@ bool GameOverScene::init(const Type type)
     this->addChild(blood, Priority::TOP_COVER);
     this->bloodCover = blood;
     
-    return BaseScene::init(GameOverSceneData::create());
+    if(!BaseScene::init(GameOverSceneData::create())) return false;
+    
+    this->configListener->setKeyconfigEnabled(false);
+    
+    return true;
 }
 
 // シーン切り替え完了時

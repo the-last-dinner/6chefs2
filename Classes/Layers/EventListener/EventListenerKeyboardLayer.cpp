@@ -11,25 +11,6 @@
 #include "Managers/EventListenerKeyboardManager.h"
 #include "Managers/KeyconfigManager.h"
 
-// 定数
-// キー変換用連想配列
-const map<EventKeyboard::KeyCode, Key> EventListenerKeyboardLayer::keyMap =
-{
-    {EventKeyboard::KeyCode::KEY_UP_ARROW, Key::UP},
-    {EventKeyboard::KeyCode::KEY_W, Key::UP},
-    {EventKeyboard::KeyCode::KEY_DOWN_ARROW, Key::DOWN},
-    {EventKeyboard::KeyCode::KEY_S, Key::DOWN},
-    {EventKeyboard::KeyCode::KEY_LEFT_ARROW, Key::LEFT},
-    {EventKeyboard::KeyCode::KEY_A, Key::LEFT},
-    {EventKeyboard::KeyCode::KEY_RIGHT_ARROW, Key::RIGHT},
-    {EventKeyboard::KeyCode::KEY_D, Key::RIGHT},
-    {EventKeyboard::KeyCode::KEY_X, Key::MENU},
-    {EventKeyboard::KeyCode::KEY_UNDERSCORE, Key::MENU},
-    {EventKeyboard::KeyCode::KEY_LEFT_SHIFT, Key::DASH},
-    {EventKeyboard::KeyCode::KEY_RIGHT_SHIFT, Key::DASH},
-    {EventKeyboard::KeyCode::KEY_SPACE, Key::ENTER},
-};
-
 // コンストラクタ
 EventListenerKeyboardLayer::EventListenerKeyboardLayer(){ FUNCLOG }
 
@@ -127,13 +108,6 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
             
         case Key::KEY_CONF:
             if(this->onKeyConfKeyPressed && !this->paused) this->onKeyConfKeyPressed();
-            if(KeyconfigManager::getInstance()->isKeyconfigOpened()) return;
-            EventListenerKeyboardManager::getInstance()->pauseAllEventListener(true);
-            KeyconfigManager::getInstance()->openKeyconfigMenu([]{EventListenerKeyboardManager::getInstance()->pauseAllEventListener(false);});
-            break;
-            
-        case Key::WIN_SIZE:
-            this->switchWinSize();
             break;
             
         default: break;
@@ -214,32 +188,4 @@ void EventListenerKeyboardLayer::scheduleIntervalCheck()
 {
     if(this->isScheduled(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck))) this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
     if(this->intervalInputCheck) this->schedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck), this->interval, CC_REPEAT_FOREVER, this->delay);
-}
-
-// 画面サイズを切り替え
-void EventListenerKeyboardLayer::switchWinSize()
-{
-    vector<Size> winSizeConfig
-    {
-        Size(WINDOW_WIDTH * 0.5, WINDOW_HEIGHT * 0.5),
-        Size(WINDOW_WIDTH, WINDOW_HEIGHT),
-        Size(WINDOW_WIDTH * 1.5, WINDOW_HEIGHT * 1.5),
-    };
-    
-    int currentConfIdx { 0 };
-    GLView* glView { Director::getInstance()->getOpenGLView() };
-    Size currentWinSize { glView->getFrameSize() };
-    
-    for(int i {0}; i < winSizeConfig.size(); i++)
-    {
-        if(winSizeConfig.at(i).width != currentWinSize.width) continue;
-        currentConfIdx = i;
-        break;
-    }
-    
-    Size size { winSizeConfig.at(currentConfIdx == winSizeConfig.size() - 1 ? 0 : currentConfIdx + 1) };
-    
-    glView->setFrameSize(size.width, size.height);
-    glView->setDesignResolutionSize(WINDOW_WIDTH, WINDOW_HEIGHT, ResolutionPolicy::NO_BORDER);
-    Director::getInstance()->setOpenGLView(glView);
-}
+} 

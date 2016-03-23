@@ -13,6 +13,7 @@
 #include "Effects/AmbientLightLayer.h"
 
 #include "Layers/Dungeon/TiledMapLayer.h"
+#include "Layers/EventListener/ConfigEventListenerlayer.h"
 #include "Layers/LoadingLayer.h"
 
 #include "MapObjects/MapObjectList.h"
@@ -52,6 +53,8 @@ bool DungeonCameraScene::init(DungeonCameraSceneData* data, GameEvent* event, Ev
     
     this->callback = callback;
     this->event = event;
+    
+    this->configListener->setKeyconfigEnabled(false);
     
     return true;
 }

@@ -11,11 +11,18 @@
 
 #include "Common.h"
 
+class ConfigEventListenerLayer;
 class LoadingLayer;
 class SceneData;
 
 class BaseScene : public Scene
 {
+// インスタンス変数
+protected:
+    SceneData* data { nullptr };
+    ConfigEventListenerLayer* configListener { nullptr };
+    bool preloaded { false };
+    
 // インスタンスメソッド
 private:
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) = 0;
@@ -24,11 +31,6 @@ protected:
 	virtual ~BaseScene();
 	bool init(SceneData* data);
     virtual void onEnter() override;
-	
-// インスタンス変数
-protected:
-	SceneData* data { nullptr };
-    bool preloaded { false };
 };
 
 #endif // __BASE_SCENE_H__

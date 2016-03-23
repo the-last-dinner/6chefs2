@@ -94,6 +94,7 @@ void WalkByEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
+    this->target->setPaused(false);
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
@@ -126,6 +127,7 @@ void WalkToEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
+    this->target->setPaused(false);
     this->target->getActionManager()->resumeTarget(this->target);
 }
 

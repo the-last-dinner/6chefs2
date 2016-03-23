@@ -16,6 +16,7 @@
 
 #include "Layers/Dungeon/TiledMapLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
 
 #include "MapObjects/MapObjectList.h"
@@ -52,14 +53,10 @@ DungeonScene::~DungeonScene()
 // 初期化
 bool DungeonScene::init(DungeonSceneData* data)
 {
-    if(!BaseScene::init(data)) return false;
-    
     // イベントリスナ生成
     EventListenerKeyboardLayer* listener { EventListenerKeyboardLayer::create() };
-    this->addChild(listener);
-    this->listener = listener;
     
-    return true;
+    return this->init(data, listener);
 }
 
 // 初期化
@@ -69,6 +66,9 @@ bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* list
     
     this->addChild(listener);
     this->listener = listener;
+    
+    this->configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
+    this->configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
     return true;
 }
@@ -303,6 +303,12 @@ void DungeonScene::onEventStart()
     
     // スタミナの増減を一時停止
     DungeonSceneManager::getInstance()->getStamina()->setPaused(true);
+    
+    // キーコンフィグを無効
+    this->configListener->setKeyconfigEnabled(false);
+    
+    // カウントダウンしてれば停止
+    DungeonSceneManager::getInstance()->pauseStopWatch();
 }
 
 // イベントキューが空になった時
@@ -316,6 +322,12 @@ void DungeonScene::onEventFinished()
     
     // スタミナの増減を再開
     DungeonSceneManager::getInstance()->getStamina()->setPaused(false);
+    
+    // キーコンフィグを有効
+    this->configListener->setKeyconfigEnabled(true);
+    
+    // カウントダウンをしれてば再開
+    DungeonSceneManager::getInstance()->startStopWatch();
 }
 
 // データクラスを取得
