@@ -215,22 +215,18 @@ void DungeonScene::onMenuKeyPressed()
     // パーティの位置をセット
     PlayerDataManager::getInstance()->getLocalData()->setLocation(DungeonSceneManager::getInstance()->getParty()->getMembersData());
     
-    // スクショをとって、ダンジョンメニューシーンをプッシュ
-    string path = LastSupper::StringUtils::strReplace((string)"global" + SAVE_EXTENSION, "screen0.png", FileUtils::getInstance()->fullPathForFilename((string)"save/global" + SAVE_EXTENSION));
-    utils::captureScreen([=](bool success, string filename){
-     if(success)
-     {
-         Sprite* screen = Sprite::create(filename);
-         DungeonMenuScene* menu = DungeonMenuScene::create(screen->getTexture());
-         menu->onBackToTitleSelected = CC_CALLBACK_0(DungeonScene::onBackToTitleSelected, this);
-         menu->onPopMenuScene = CC_CALLBACK_0(DungeonScene::onPopMenuScene, this);
-         
-         // メニューシーンをプッシュ
-         Director::getInstance()->pushScene(menu);
-         // cache削除
-         Director::getInstance()->getTextureCache()->removeTextureForKey(filename);
-     }
-    }, path);
+    // スクショをとる
+    RenderTexture* renderTexture { RenderTexture::create(WINDOW_WIDTH, WINDOW_HEIGHT) };
+    renderTexture->beginWithClear(0.f, 0.f, 0.f, 0.f);
+    this->visit();
+    renderTexture->end();
+    
+    DungeonMenuScene* menu { DungeonMenuScene::create(renderTexture->getSprite()) };
+    menu->onBackToTitleSelected = CC_CALLBACK_0(DungeonScene::onBackToTitleSelected, this);
+    menu->onPopMenuScene = CC_CALLBACK_0(DungeonScene::onPopMenuScene, this);
+    
+    // メニューシーンをプッシュ
+    Director::getInstance()->pushScene(menu);
 }
 
 // メニューシーンから戻ってきた時

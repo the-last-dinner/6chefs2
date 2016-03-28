@@ -35,13 +35,13 @@ private:
     Sprite* ambientLight { nullptr };
     map<Light*, Light*> lightMap {};
     RenderTexture* renderTexture { nullptr };
-    Sprite* renderTexSprite { nullptr };
 
 // インスタンスメソッド
 public:
     void setAmbient(const Color3B& color);
     void addLightSource(Light* lightSource);
     void removeLightSource(Light* lightSource);
+    void update(float delta);
     virtual void visit(Renderer* renderer, const Mat4& parentTransform, uint32_t parentFlags);
 private:
     AmbientLightLayer();   // コンストラクタ

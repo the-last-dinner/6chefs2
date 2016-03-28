@@ -12,12 +12,10 @@
 const Color3B Light::TORCH_COLOR {Color3B(195, 110, 60)};
 
 // コンストラクタ
-Light::Light()
-{ FUNCLOG }
+Light::Light() { FUNCLOG }
 
 // デストラクタ
-Light::~Light()
-{ FUNCLOG }
+Light::~Light() { FUNCLOG }
 
 // 初期化
 bool Light::init(const Information& info)
@@ -32,11 +30,10 @@ bool Light::init(const Information& info)
 	light->setScale(scale);
 	this->setContentSize(light->getContentSize() * scale);
 	this->addChild(light);
+    this->sprite = light;
     
 	this->setCascadeOpacityEnabled(true);
     this->setCascadeColorEnabled(true);
-    
-    light->setBlendFunc(BlendFunc{GL_SRC_ALPHA, GL_ONE});
     
     if(info.type == Light::Type::TORCH) this->runAction(Sequence::create(Repeat::create(Sequence::create(FadeTo::create(0.5f, 230), FadeTo::create(0.5f, 255), nullptr), -1), nullptr));
 	
@@ -46,4 +43,9 @@ bool Light::init(const Information& info)
 Light::Information Light::getInformation()
 {
     return this->info;
+}
+
+void Light::setBlendFunc(const BlendFunc& blendFunc)
+{
+    this->sprite->setBlendFunc(blendFunc);
 }

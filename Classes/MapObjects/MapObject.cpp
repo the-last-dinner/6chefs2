@@ -89,6 +89,7 @@ void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, fun
     this->light = light;
     this->addChild(light);
     light->setOpacity(0);
+    light->setBlendFunc(BlendFunc{GL_SRC_ALPHA, GL_ONE});
     light->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
     
     // 環境光レイヤーに光源として追加

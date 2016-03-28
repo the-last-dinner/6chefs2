@@ -46,6 +46,7 @@ public:
 // インスタンス変数
 private:
     Information info {};
+    Sprite* sprite { nullptr };
 
 // インスタンスメソッド
 public:
@@ -53,6 +54,7 @@ public:
     ~Light();  // デストラクタ
 	bool init(const Information& info);						  // 初期化
     Information getInformation();
+    void setBlendFunc(const BlendFunc& blendFunc);
 };
 
 #endif /* defined(_Light__) */
