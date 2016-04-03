@@ -15,6 +15,8 @@
 #include "Layers/Dungeon/ButtonMashingLayer.h"
 #include "Layers/Dungeon/SelectEventLayer.h"
 #include "Layers/Dungeon/PasswordEventLayer.h"
+#include "Layers/Message/CharacterMessagelayer.h"
+#include "Datas/Message/CharacterMessageData.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -135,12 +137,39 @@ bool SelectEvent::init(rapidjson::Value& json)
         this->eventCallBacks.push_back(SelectCallBack({eventId, event}));
     }
     
+    // キャラメッセージの時
+    if(this->validator->hasMember(json, member::CHARA_ID))
+    {
+        queue<string> pages {};
+        
+        pages.push(this->message);
+        
+        CharacterMessageData* data {CharacterMessageData::create(pages)};
+        CC_SAFE_RETAIN(data);
+        // キャラID
+        if(this->validator->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
+        
+        // キャラ名
+        string charaName {};
+        
+        if(this->validator->hasMember(json, member::NAME))
+        {
+            charaName = json[member::NAME].GetString();
+        }
+        else
+        {
+            charaName = CsvDataManager::getInstance()->getCharacterData()->getName(data->getCharaId());
+        }
+        data->setCharaName(charaName);
+        this->datas.push(data);
+    }
+    
     return true;
 }
 
 void SelectEvent::run()
 {
-    SelectEventLayer* layer { SelectEventLayer::create(this->message, this->choices) };
+    SelectEventLayer* layer { SelectEventLayer::create(this->message, this->choices, this->datas) };
     
     // コールバック
     layer->onSelected = [this](const int idx)
