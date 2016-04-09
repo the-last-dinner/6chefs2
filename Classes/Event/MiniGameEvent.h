@@ -10,6 +10,7 @@
 #define MiniGameEvent_h
 
 #include "Event/GameEvent.h"
+
 #include "Datas/Message/CharacterMessageData.h"
 
 // 連打イベント

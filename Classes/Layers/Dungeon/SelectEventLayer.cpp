@@ -9,11 +9,12 @@
 #include "Layers/Dungeon/SelectEventLayer.h"
 
 #include "Datas/Message/SystemMessageData.h"
+#include "Datas/Message/CharacterMessageData.h"
 
 #include "Layers/Message/SystemMessageLayer.h"
-#include "Layers/Menu/MiniSelector.h"
-#include "Datas/Message/CharacterMessageData.h"
 #include "Layers/Message/CharacterMessageLayer.h"
+#include "Layers/Menu/MiniSelector.h"
+
 
 // コンストラクタ
 SelectEventLayer::SelectEventLayer() {FUNCLOG};

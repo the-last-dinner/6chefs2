@@ -10,6 +10,7 @@
 #define SelectEventLayer_hpp
 
 #include "Common.h"
+
 #include "Datas/Message/CharacterMessageData.h"
 
 class MiniSelector;

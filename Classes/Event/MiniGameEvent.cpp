@@ -16,6 +16,7 @@
 #include "Layers/Dungeon/SelectEventLayer.h"
 #include "Layers/Dungeon/PasswordEventLayer.h"
 #include "Layers/Message/CharacterMessagelayer.h"
+
 #include "Datas/Message/CharacterMessageData.h"
 
 #include "Managers/DungeonSceneManager.h"
@@ -146,6 +147,7 @@ bool SelectEvent::init(rapidjson::Value& json)
         
         CharacterMessageData* data {CharacterMessageData::create(pages)};
         CC_SAFE_RETAIN(data);
+        
         // キャラID
         if(this->validator->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
         
@@ -161,6 +163,10 @@ bool SelectEvent::init(rapidjson::Value& json)
             charaName = CsvDataManager::getInstance()->getCharacterData()->getName(data->getCharaId());
         }
         data->setCharaName(charaName);
+        
+        // 画像ID
+        if(this->validator->hasMember(json, member::IMG_ID)) data->setImgId(stoi(json[member::IMG_ID].GetString()));
+        
         this->datas.push(data);
     }
     
