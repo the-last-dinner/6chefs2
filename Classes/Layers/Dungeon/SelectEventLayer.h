@@ -11,13 +11,15 @@
 
 #include "Common.h"
 
+#include "Datas/Message/CharacterMessageData.h"
+
 class MiniSelector;
 
 class SelectEventLayer : public Layer
 {
 // クラスメソッド
 public:
-    CREATE_FUNC_WITH_TWO_PARAM(SelectEventLayer, const string&, const vector<string>&)
+    CREATE_FUNC_WITH_THREE_PARAM(SelectEventLayer, const string&, const vector<string>&, const queue<CharacterMessageData*>&)
 
 // インスタンス変数
 public:
@@ -28,7 +30,7 @@ public:
 private:
     SelectEventLayer();
     ~SelectEventLayer();
-    bool init(const string& message, const vector<string>& choices);
+    bool init(const string& message, const vector<string>& choices, const queue<CharacterMessageData*>& datas);
     void onChoiceSelected(const int idx);
 };
 

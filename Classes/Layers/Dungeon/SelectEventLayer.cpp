@@ -9,9 +9,12 @@
 #include "Layers/Dungeon/SelectEventLayer.h"
 
 #include "Datas/Message/SystemMessageData.h"
+#include "Datas/Message/CharacterMessageData.h"
 
 #include "Layers/Message/SystemMessageLayer.h"
+#include "Layers/Message/CharacterMessageLayer.h"
 #include "Layers/Menu/MiniSelector.h"
+
 
 // コンストラクタ
 SelectEventLayer::SelectEventLayer() {FUNCLOG};
@@ -20,19 +23,28 @@ SelectEventLayer::SelectEventLayer() {FUNCLOG};
 SelectEventLayer::~SelectEventLayer() {FUNCLOG};
 
 // 初期化
-bool SelectEventLayer::init(const string& message, const vector<string>& choices)
+bool SelectEventLayer::init(const string& message, const vector<string>& choices, const queue<CharacterMessageData*>& datas)
 {
     if(!Layer::init()) return false;
     
     this->setCascadeOpacityEnabled(true);
-    
-    // システムメッセージで質問文表示
-    SystemMessageLayer* messageLayer { SystemMessageLayer::create(SystemMessageData::create(message), nullptr) };
-    this->addChild(messageLayer);
+    SpriteUtils::Square position = SpriteUtils::Square(75, 20, 95, 40); // 位置
+    // datasが空ならシステムメッセージで質問文表示
+    if(datas.empty())
+    {
+        SystemMessageLayer* messageLayer { SystemMessageLayer::create(SystemMessageData::create(message), nullptr) };
+        this->addChild(messageLayer);
+    }
+    else
+    {
+        // 空でない時はキャラメッセージ
+        CharacterMessageLayer* charaMessageLayer { CharacterMessageLayer::create(datas, nullptr) };
+        this->addChild(charaMessageLayer);
+        position = SpriteUtils::Square(77, 33, 97, 53); // 位置修正
+    }
     
     // 選択レイヤ表示
     Point index = Point(1,choices.size()); // 要素数
-    SpriteUtils::Square position = SpriteUtils::Square(75, 20, 95, 40); // 位置
     //Size parcent = Size(WINDOW_WIDTH/100, WINDOW_HEIGHT/100);
     //Sprite* window {Sprite::createWithSpriteFrameName("question_selector.png")};
     //window->setPosition(window->getContentSize().width/2 + parcent.width * 75, window->getContentSize().height/2 + parcent.height * 20);

@@ -11,6 +11,8 @@
 
 #include "Event/GameEvent.h"
 
+#include "Datas/Message/CharacterMessageData.h"
+
 // 連打イベント
 class ButtonMashingEvent : public GameEvent
 {
@@ -42,6 +44,8 @@ private:
     string message {};
     vector<string> choices {};
     vector<SelectCallBack> eventCallBacks {};
+    queue<CharacterMessageData*> datas {};
+    
 private:
     SelectEvent() {FUNCLOG};
     ~SelectEvent() {FUNCLOG};
