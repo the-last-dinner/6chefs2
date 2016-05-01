@@ -84,7 +84,7 @@ bool ChangeVolumeEvent::init(rapidjson::Value& json)
 
 void ChangeVolumeEvent::run()
 {
-    SoundManager::getInstance()->ChangeVolume(this->fileName, this->volume);
+    SoundManager::getInstance()->changeVolume(this->fileName, this->volume);
     this->setDone();
 }
 
