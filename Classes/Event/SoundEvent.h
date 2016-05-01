@@ -40,6 +40,22 @@ private:
     virtual void run() override;
 };
 
+// BGM音量変更イベント
+class ChangeVolumeEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(ChangeVolumeEvent, rapidjson::Value&)
+private:
+    string fileName {};
+    float volume { 1.f };
+private:
+    ChangeVolumeEvent():fileName("") {FUNCLOG};
+    ~ChangeVolumeEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
+
 // SE再生イベント
 class PlaySEEvent : public GameEvent
 {
