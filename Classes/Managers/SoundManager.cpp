@@ -76,6 +76,22 @@ void SoundManager::playBGM(const string& fileName, bool loop, float volume)
     mtx.unlock();
 }
 
+// BGMの音量を変更
+void SoundManager::changeVolume(const string& fileName, float volume)
+{
+    if(VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
+    int BGMId = -1;
+    for(pair<int, string> idToFilename : this->bgmIdMap)
+    {
+        if(idToFilename.second == fileName)
+        {
+            BGMId = idToFilename.first;
+            break;
+        }
+    }
+    if(BGMId != -1) AudioEngine::setVolume(BGMId, volume * PlayerDataManager::getInstance()->getGlobalData()->getBgmVolume());
+}
+
 // SE再生終了時
 void SoundManager::onSEFinished(int seId, const string& filename)
 {
