@@ -77,7 +77,7 @@ void SoundManager::playBGM(const string& fileName, bool loop, float volume)
 }
 
 // BGMの音量を変更
-void SoundManager::ChangeVolume(const string& fileName, float volume)
+void SoundManager::changeVolume(const string& fileName, float volume)
 {
     if(VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
     int BGMId = -1;

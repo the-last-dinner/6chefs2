@@ -33,7 +33,7 @@ public:
     void playSE(const string& filePath, float volume = 1.f);
     void playBGM(const string& filePath, bool loop = true, float volume = 1.f);
     
-    void ChangeVolume(const string& filePath, float volume = 1.f);
+    void changeVolume(const string& filePath, float volume = 1.f);
     
     void stopBGM(const string& filePath);
     void stopBGMAll();
