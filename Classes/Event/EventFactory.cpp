@@ -49,6 +49,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         // 音系
         {"playBGM", PlayBGMEvent::create},           // BGM再生
         {"stopBGM", StopBGMEvent::create},           // BGM停止
+        {"changeVolume", ChangeVolumeEvent::create}, // BGMの音量変更
         {"playSE", PlaySEEvent::create},             // 効果音再生
         
         // モーダルレイヤ系

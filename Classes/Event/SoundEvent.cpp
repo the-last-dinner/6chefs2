@@ -65,6 +65,30 @@ void StopBGMEvent::run()
 }
 
 #pragma mark -
+#pragma mark ChangeVolumeEvent
+
+bool ChangeVolumeEvent::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    // ファイル名。なければ生成しない
+    if(!this->validator->hasMember(json, member::FILE)) return false;
+    
+    this->fileName = json[member::FILE].GetString();
+    
+    // 音量
+    if(this->validator->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    
+    return true;
+}
+
+void ChangeVolumeEvent::run()
+{
+    SoundManager::getInstance()->ChangeVolume(this->fileName, this->volume);
+    this->setDone();
+}
+
+#pragma mark -
 #pragma mark PlaySEEvent
 
 bool PlaySEEvent::init(rapidjson::Value& json)
