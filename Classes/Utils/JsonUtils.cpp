@@ -116,8 +116,7 @@ void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::
     // ファイル書き出し
     ofstream ofs;
     ofs.open(path);
-    ofs << jsonStr << endl;
-    ofs.flush();
+    ofs << jsonStr << flush;
     ofs.close();
 }
 

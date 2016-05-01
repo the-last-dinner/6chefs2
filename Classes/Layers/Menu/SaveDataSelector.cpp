@@ -111,7 +111,6 @@ vector<SaveDataSelector::SaveIndex> SaveDataSelector::getSaveList()
     SaveIndex save;
     // セーブデータを一つずつチェック
     for(int i=1; i<=MAX_SAVE_COUNT; i++){
-        string file = "save/local" + to_string(i) + SAVE_EXTENSION;
         LocalPlayerData* local {LocalPlayerData::create(i)};
         if(!local)
         {
