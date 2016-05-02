@@ -54,7 +54,7 @@ void LastSupper::JsonUtils::writeJsonFile(const string& path, const rapidjson::D
     return;
 }
 
-// JSONファイルの読み込み
+// 暗号化されたJSONファイルの読み込み
 rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 {
     // 暗号化の必要がない場合は通常の読み込み
@@ -93,8 +93,10 @@ rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
     return doc;
 }
 
+// 暗号化されたJSONファイルの書き出し
 void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::Document &doc)
 {
+    // 平文でJSONファイル書き出し
     LastSupper::JsonUtils::writeJsonFile(path, doc);
     
     if (DebugManager::getInstance()->isPlainData()) return;
@@ -107,7 +109,7 @@ void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::
         return;
     }
     
-    // 文字列を複合化
+    // 文字列を暗号化
     string jsonStr;
     getline(ifs, jsonStr);
     LastSupper::StringUtils::encryptXor(jsonStr);
