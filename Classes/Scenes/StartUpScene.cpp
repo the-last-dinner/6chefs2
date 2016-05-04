@@ -21,15 +21,20 @@ bool StartUpScene::init()
     
     this->configListener->setKeyconfigEnabled(false);
     
+    // マスターデータ準備
+    CsvDataManager::getInstance();
+    
     // 暗号化が必要な場合は暗号化
-    if (DebugManager::getInstance()->getCryptTrigger())
+    if (DebugManager::getInstance()->getCryptTrigger() && DebugManager::getInstance()->isPlainData())
     {
         this->ecnryptCsvFiles();
         this->encryptSaveFiles();
         this->encryptEventScripts();
         DebugManager::getInstance()->setOffCryptTrigger();
+        DebugManager::getInstance()->setOffPlainData();
     }
-    CsvDataManager::getInstance();
+    
+    // セーブデータ準備
     PlayerDataManager::getInstance();
     
     // キーコンフィグの取得
@@ -100,10 +105,10 @@ void StartUpScene::encryptSaveFiles()
 void StartUpScene::encryptEventScripts()
 {
     vector<string> fileNames = CsvDataManager::getInstance()->getMapData()->getFileNameAll();
-    for(string fileName : Resource::EventScript::FILE_NAMES)
-    {
-        fileNames.push_back(fileName);
-    }
+//    for(string fileName : Resource::EventScript::FILE_NAMES)
+//    {
+//        fileNames.push_back(fileName);
+//    }
     string path = "";
     for(string file : fileNames)
     {
@@ -126,6 +131,6 @@ void StartUpScene::ecnryptCsvFiles()
     for(string file : files)
     {
         path = FileUtils::getInstance()->fullPathForFilename("csv/" + file + CSV_EXTENSION);
-        CsvUtils::encryptCsvFile(path);
+        CsvUtils::encryptCsvToJson(path);
     }
 }
