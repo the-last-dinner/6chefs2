@@ -85,6 +85,15 @@ bool DebugManager::isPlainData()
     return this->debugConfig[PLAIN_DATA].GetBool();
 }
 
+// データを平文じゃないに設定
+void DebugManager::setOffPlainData()
+{
+    if (!this->hasDebugConfig) return;
+    if (!this->debugConfig.HasMember(PLAIN_DATA)) return;
+    this->debugConfig[PLAIN_DATA].SetBool(false);
+    this->writeConfig();
+}
+
 // 暗号化トリガーが立っているかどうか
 bool DebugManager::getCryptTrigger()
 {
@@ -98,6 +107,6 @@ void DebugManager::setOffCryptTrigger()
 {
     if (!this->hasDebugConfig) return;
     if (!this->debugConfig.HasMember(CRYPT_TRIGGER)) return;
-    this->debugConfig[CRYPT_TRIGGER].SetBool(true);
+    this->debugConfig[CRYPT_TRIGGER].SetBool(false);
     this->writeConfig();
 }

@@ -98,8 +98,10 @@ void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::
 {
     // 平文でJSONファイル書き出し
     LastSupper::JsonUtils::writeJsonFile(path, doc);
-    
-    if (DebugManager::getInstance()->isPlainData()) return;
+
+    // 暗号化必須かチェック
+    DebugManager* dm = DebugManager::getInstance();
+    if (dm->isPlainData() && !dm->getCryptTrigger()) return;
     
     // ファイル読み込み
     ifstream ifs(path);

@@ -43,6 +43,7 @@ public:
     bool displayStats();
     bool isInvincibleMode();
     bool isPlainData();
+    void setOffPlainData();
     bool getCryptTrigger();
     void setOffCryptTrigger();
 private:
