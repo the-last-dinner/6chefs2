@@ -98,7 +98,7 @@ bool TitleMainMenuLayer::init()
     copyright->runAction(FadeTo::create(1.f, 200));
     
     // 操作方法
-    Label* opr {Label::createWithTTF("SPACE:決定 X:戻る", Resource::Font::MESSAGE, 18)};
+    Label* opr {Label::createWithTTF("F1:操作方法・設定 / F4:画面サイズ設定", Resource::Font::MESSAGE, 18)};
     opr->setPosition(WINDOW_WIDTH / 2, opr->getContentSize().height + copyright->getContentSize().height * 2);
     opr->setColor(Color3B::WHITE);
     opr->setOpacity(0);
