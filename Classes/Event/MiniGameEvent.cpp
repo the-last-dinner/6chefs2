@@ -40,8 +40,7 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
     this->limit = json[member::LIMIT].GetDouble();
     
     // 効果音ファイル名
-    if(!this->validator->hasMember(json, member::FILE))
-        this->fileName = json[member::FILE].GetString();
+    this->fileName = this->validator->hasMember(json, member::FILE) ? json[member::FILE].GetString() : "";
     
     // 成功時イベント
     if(this->validator->hasMember(json, member::TRUE_))
