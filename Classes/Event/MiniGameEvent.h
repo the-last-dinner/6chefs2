@@ -21,6 +21,7 @@ public:
 private:
     int count { 0 };
     float limit { 0.f };
+    string fileName {};
     int sEventId { static_cast<int>(EventID::UNDIFINED) };
     int fEventId { static_cast<int>(EventID::UNDIFINED) };
     GameEvent* sEvent { nullptr };
