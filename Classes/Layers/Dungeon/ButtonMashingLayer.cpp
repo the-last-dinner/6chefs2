@@ -11,10 +11,10 @@
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
 // create関数
-ButtonMashingLayer* ButtonMashingLayer::create(int time, float limit, ResultCallback callback)
+ButtonMashingLayer* ButtonMashingLayer::create(int time, float limit, string fileName, ResultCallback callback)
 {
     ButtonMashingLayer* p { new(nothrow) ButtonMashingLayer() };
-    if(p && p->init(time, limit, callback))
+    if(p && p->init(time, limit, fileName, callback))
     {
         CC_SAFE_RETAIN(p);
         return p;
@@ -34,15 +34,16 @@ ButtonMashingLayer::ButtonMashingLayer() {FUNCLOG};
 ButtonMashingLayer::~ButtonMashingLayer() {FUNCLOG};
 
 // 初期化
-bool ButtonMashingLayer::init(int time, float limit, ResultCallback callback)
+bool ButtonMashingLayer::init(int time, float limit, string fileName, ResultCallback callback)
 {
     if(!Layer::init() || time == 0 || limit == 0.f || !callback) return false;
     
     this->count = time;
     this->callback = callback;
+    this->fileName = fileName != "" ? fileName : "";
     
     // 文字表示
-    Label* label { Label::createWithTTF("スペース連打！！", "fonts/cinecaption2.28.ttf", 25) };
+    Label* label { Label::createWithTTF("決定キー連打！！", "fonts/cinecaption2.28.ttf", 25) };
     label->setPosition(Point(this->getContentSize().width / 2, this->getContentSize().height / 4));
     label->setCascadeOpacityEnabled(true);
     this->addChild(label);
@@ -66,7 +67,9 @@ void ButtonMashingLayer::onEnterKeyPressed()
 {
     this->count--;
     
-    if(this->count == 0 && this->callback)
+    if (this->fileName != "") SoundManager::getInstance()->playSE(fileName);
+    
+    if (this->count == 0 && this->callback)
     {
         this->stopAllActions();
         this->callback(Result::SUCCESS);

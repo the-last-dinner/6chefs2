@@ -39,6 +39,9 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
     if(!this->validator->hasMember(json, member::LIMIT)) return false;
     this->limit = json[member::LIMIT].GetDouble();
     
+    // 効果音ファイル名
+    this->fileName = this->validator->hasMember(json, member::FILE) ? json[member::FILE].GetString() : "";
+    
     // 成功時イベント
     if(this->validator->hasMember(json, member::TRUE_))
     {
@@ -60,7 +63,7 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
 
 void ButtonMashingEvent::run()
 {
-    ButtonMashingLayer* layer { ButtonMashingLayer::create(this->count, this->limit, [this](ButtonMashingLayer::Result result)
+    ButtonMashingLayer* layer { ButtonMashingLayer::create(this->count, this->limit, this->fileName, [this](ButtonMashingLayer::Result result)
     {
         this->setDone();
         
