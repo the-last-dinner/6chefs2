@@ -4,6 +4,8 @@ xcuserdata
 Debug.win32/
 Release.win32/
 *.sdf
+*.suo
+
 
 local.properties
 .classpath
