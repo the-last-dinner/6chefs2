@@ -29,7 +29,7 @@ private:
     GameEvent* clickCallbackEvent { nullptr };
 private:
     ButtonMashingEvent() {FUNCLOG};
-    ~ButtonMashingEvent() {FUNCLOG};
+    ~ButtonMashingEvent();
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
 };
