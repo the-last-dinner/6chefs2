@@ -39,9 +39,6 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
     if(!this->validator->hasMember(json, member::LIMIT)) return false;
     this->limit = json[member::LIMIT].GetDouble();
     
-    // 効果音ファイル名
-    this->fileName = this->validator->hasMember(json, member::FILE) ? json[member::FILE].GetString() : "";
-    
     // 成功時イベント
     if(this->validator->hasMember(json, member::TRUE_))
     {
@@ -58,15 +55,24 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
         CC_SAFE_RETAIN(this->fEvent);
     }
     
+    // クリック時のコールバックイベント
+    if(this->validator->hasMember(json, member::EVENT))
+    {
+        this->clickCallbackEvent = this->factory->createGameEvent(json[member::EVENT]);
+        this->clickCallbackEvent->setReusable(true);
+        CC_SAFE_RETAIN(this->clickCallbackEvent);
+    }
+    
     return true;
 }
 
 void ButtonMashingEvent::run()
 {
-    ButtonMashingLayer* layer { ButtonMashingLayer::create(this->count, this->limit, this->fileName, [this](ButtonMashingLayer::Result result)
+    ButtonMashingLayer* layer { ButtonMashingLayer::create(this->count, this->limit, [this]
     {
-        this->setDone();
-        
+        DungeonSceneManager::getInstance()->runEventAsync(this->clickCallbackEvent);
+    }, [this](ButtonMashingLayer::Result result)
+    {
         if(result == ButtonMashingLayer::Result::SUCCESS)
         {
             if(this->sEvent)
@@ -98,6 +104,10 @@ void ButtonMashingEvent::run()
         
         // イベント実行
         DungeonSceneManager::getInstance()->pushEventFront(this->event);
+        CC_SAFE_RELEASE_NULL(this->clickCallbackEvent);
+        this->clickCallbackEvent = nullptr;
+        
+        this->setDone();
     }) };
     
     if(!layer)

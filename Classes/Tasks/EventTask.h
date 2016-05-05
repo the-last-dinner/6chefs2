@@ -31,6 +31,7 @@ public:
 private:
     EventScript* eventScript { nullptr };
     deque<EventWithId> eventQueue {};
+    vector<GameEvent*> asyncEvents {};
     EventWithId runningEvent {EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
     CallbackWithId callbackInfo {CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
     int pushingEventId {etoi(EventID::UNDIFINED)};
@@ -42,6 +43,7 @@ public:
 	void runEvent(int eventId);
     void runEvent(vector<int> eventIds, function<void()> callback = nullptr);
     void runEvent(GameEvent* event, function<void()> callback = nullptr);
+    void runEventAsync(GameEvent* event);
     
     // キュー操作
     bool pushEventBack(int eventId);
@@ -62,6 +64,9 @@ public:
     EventScript* getEventScript() const;
     
     void update(float delta);
+    void updateForAsync(float delta);
+    
+    void releaseEventIfNeeded(GameEvent* event);
 private:
     EventTask();
     ~EventTask();

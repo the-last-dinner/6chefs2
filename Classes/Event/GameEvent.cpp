@@ -44,16 +44,28 @@ bool GameEvent::init()
     return true;
 }
 
+// インスタンスが再利用可能か
+bool GameEvent::isReusable() const
+{
+    return this->_isReusable;
+}
+
+// 再利用可能か設定
+void GameEvent::setReusable(bool reusable)
+{
+    this->_isReusable = reusable;
+}
+
 // イベントが終了しているか
 bool GameEvent::isDone() const
 {
-    return _isDone;
+    return this->_isDone;
 }
 
 // イベントを終了状態にする
-void GameEvent::setDone()
+void GameEvent::setDone(bool done)
 {
-    this->_isDone = true;
+    this->_isDone = done;
 }
 
 // EventIDもしくはaction配列からイベントを生成

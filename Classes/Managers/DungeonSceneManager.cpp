@@ -325,6 +325,12 @@ void DungeonSceneManager::runEvent(const vector<int>& eventIds)
     this->getScene()->eventTask->runEvent(eventIds);
 }
 
+// 非同期イベント実行
+void DungeonSceneManager::runEventAsync(GameEvent* event)
+{
+    this->getScene()->eventTask->runEventAsync(event);
+}
+
 // キューにイベントを後ろから詰める
 void DungeonSceneManager::pushEventBack(const int eventId)
 {
