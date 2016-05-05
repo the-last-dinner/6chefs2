@@ -104,7 +104,7 @@ void ButtonMashingEvent::run()
         
         // イベント実行
         DungeonSceneManager::getInstance()->pushEventFront(this->event);
-        CC_SAFE_RELEASE_NULL(this->clickCallbackEvent);
+        this->clickCallbackEvent->setReusable(false);
         this->clickCallbackEvent = nullptr;
         
         this->setDone();
