@@ -10,11 +10,13 @@
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/DungeonSceneManager.h"
+
 // create関数
-ButtonMashingLayer* ButtonMashingLayer::create(int time, float limit, string fileName, ResultCallback callback)
+ButtonMashingLayer* ButtonMashingLayer::create(int time, float limit, function<void()> onClick, ResultCallback callback)
 {
     ButtonMashingLayer* p { new(nothrow) ButtonMashingLayer() };
-    if(p && p->init(time, limit, fileName, callback))
+    if(p && p->init(time, limit, onClick, callback))
     {
         CC_SAFE_RETAIN(p);
         return p;
@@ -34,13 +36,13 @@ ButtonMashingLayer::ButtonMashingLayer() {FUNCLOG};
 ButtonMashingLayer::~ButtonMashingLayer() {FUNCLOG};
 
 // 初期化
-bool ButtonMashingLayer::init(int time, float limit, string fileName, ResultCallback callback)
+bool ButtonMashingLayer::init(int time, float limit, function<void()> onClick, ResultCallback callback)
 {
     if(!Layer::init() || time == 0 || limit == 0.f || !callback) return false;
     
     this->count = time;
     this->callback = callback;
-    this->fileName = fileName != "" ? fileName : "";
+    this->onClick = onClick;
     
     // 文字表示
     Label* label { Label::createWithTTF("決定キー連打！！", "fonts/cinecaption2.28.ttf", 25) };
@@ -67,7 +69,7 @@ void ButtonMashingLayer::onEnterKeyPressed()
 {
     this->count--;
     
-    if (this->fileName != "") SoundManager::getInstance()->playSE(fileName);
+    if(this->onClick) this->onClick();
     
     if (this->count == 0 && this->callback)
     {

@@ -119,6 +119,15 @@ void EventTask::runEvent(GameEvent* event, function<void()> callback)
     this->runEventQueue();
 }
 
+// 非同期イベント実行
+void EventTask::runEventAsync(GameEvent *event)
+{
+    if(!event) return;
+    
+    event->run();
+    this->asyncEvents.push_back(event);
+}
+
 // キューに指定IDイベントを後ろから詰める
 bool EventTask::pushEventBack(int eventId)
 {
@@ -176,6 +185,8 @@ EventScript* EventTask::getEventScript() const
 // update
 void EventTask::update(float delta)
 {
+    this->updateForAsync(delta);
+    
     // 実行中イベントがnullptrなら無視
     if(!this->getGameEvent(this->runningEvent)) return;
     
@@ -191,7 +202,7 @@ void EventTask::update(float delta)
             this->callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
             cb();
         }
-        CC_SAFE_RELEASE(this->getGameEvent(this->runningEvent));
+        this->releaseEventIfNeeded(this->getGameEvent(this->runningEvent)) ;
         this->runningEvent = EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
     }
         
@@ -203,6 +214,41 @@ void EventTask::update(float delta)
     
     // イベントを実行
     this->run();
+}
+
+// 非同期イベント用update
+void EventTask::updateForAsync(float delta)
+{
+    vector<GameEvent*>::iterator itr = this->asyncEvents.begin();
+    while(itr != this->asyncEvents.end())
+    {
+        // イベントを更新
+        (*itr)->update(delta);
+        
+        // イベントが終了していたら削除
+        if((*itr)->isDone())
+        {
+            this->releaseEventIfNeeded(*itr);
+            itr = this->asyncEvents.erase(itr);
+        }
+        else
+        {
+            itr++;
+        }
+    }
+}
+
+// 必要ならばイベントインスタンスを解放
+void EventTask::releaseEventIfNeeded(GameEvent *event)
+{
+    if(event->isReusable())
+    {
+        event->setDone(false);
+    }
+    else
+    {
+        CC_SAFE_RELEASE_NULL(event);
+    }
 }
 
 // 実行中のイベントIDを取得

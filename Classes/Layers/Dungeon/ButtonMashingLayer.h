@@ -27,19 +27,19 @@ public:
     
 // クラスメソッド
 public:
-    static ButtonMashingLayer* create(int time, float limit, string fileName, ResultCallback callback);
+    static ButtonMashingLayer* create(int time, float limit, function<void()> onClick, ResultCallback callback);
     
 // インスタンス変数
 private:
     int count { 0 };
-    string fileName {};
+    function<void()> onClick { nullptr };
     ResultCallback callback { nullptr };
     
 // インスタンスメソッド
 private:
     ButtonMashingLayer();
     ~ButtonMashingLayer();
-    bool init(int time, float limit, string fileName, ResultCallback callback);
+    bool init(int time, float limit, function<void()> onClick, ResultCallback callback);
     
     void onEnterKeyPressed();
 };

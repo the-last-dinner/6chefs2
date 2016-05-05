@@ -23,17 +23,20 @@ protected:
     EventScriptValidator* validator { nullptr };
 private:
     bool _isDone {false};
+    bool _isReusable {false};
     
 // インスタンスメソッド
 public:
+    bool isReusable() const;
+    void setReusable(bool reusable);
     bool isDone() const;
+    void setDone(bool done=true);
     virtual void run() {CCLOG("runメソッドをoverrideしてね");};     // イベント開始
     virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
 protected:
     GameEvent();
     virtual ~GameEvent();
     virtual bool init();
-    void setDone();
     GameEvent* createSpawnFromIdOrAction(rapidjson::Value& json);   // イベントIDもしくはaction配列からspawnを生成
 };
 
