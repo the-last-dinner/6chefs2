@@ -27,6 +27,13 @@
 
 #pragma mark ButtonMashingEvent
 
+ButtonMashingEvent::~ButtonMashingEvent()
+{
+    FUNCLOG   
+    CC_SAFE_RELEASE_NULL(this->clickCallbackEvent);
+    this->clickCallbackEvent = nullptr;
+}
+
 bool ButtonMashingEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
@@ -104,8 +111,6 @@ void ButtonMashingEvent::run()
         
         // イベント実行
         DungeonSceneManager::getInstance()->pushEventFront(this->event);
-        CC_SAFE_RELEASE_NULL(this->clickCallbackEvent);
-        this->clickCallbackEvent = nullptr;
         
         this->setDone();
     }) };

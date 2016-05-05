@@ -66,4 +66,21 @@ private:
     virtual void run() override;
 };
 
+// マップレイヤを揺らす
+class QuakeMapEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(QuakeMapEvent, rapidjson::Value&)
+private:
+    int x {0};
+    int y {0};
+    float time {0.0f};
+    Node* quakeLayer {};
+private:
+    QuakeMapEvent() {FUNCLOG};
+    ~QuakeMapEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value&);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__MapEvent__) */

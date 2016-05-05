@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="82" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="153">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="82" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="156">
  <tileset firstgid="1" name="castle7" tilewidth="16" tileheight="16">
   <image source="castle7.png" trans="007575" width="480" height="256"/>
  </tileset>
@@ -119,6 +119,8 @@
   <object id="130" x="1568" y="736" width="352" height="48"/>
   <object id="151" x="608" y="832" width="32" height="32"/>
   <object id="152" x="1392" y="832" width="32" height="32"/>
+  <object id="153" x="672" y="848" width="288" height="16"/>
+  <object id="155" x="1072" y="848" width="288" height="16"/>
  </objectgroup>
  <objectgroup name="Ugokumono(object)">
   <properties>

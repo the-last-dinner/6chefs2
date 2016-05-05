@@ -176,3 +176,9 @@ void TiledMapLayer::setZOrderByPosition(MapObject* mapObject)
     int z { static_cast<int>(mapObject->getGridPosition().y)};
     mapObject->setLocalZOrder(z);
 }
+
+// タイルドマップ背景の取得
+TMXTiledMap* TiledMapLayer::getTiledMap() const
+{
+    return this->tiledMap;
+}

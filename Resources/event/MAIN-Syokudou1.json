@@ -4132,6 +4132,19 @@
 					                        ]
 					                    },
 					                    {
+					                    	"type":"spawn",
+					                    	"action":[
+					                    		{
+					                    			"type":"displayImg",
+					                    			"file":"continued.png"
+					                    		},
+					                    		{
+					                    			"type":"playSE",
+					                    			"file":"logo_display.mp3"
+					                    		}
+					                    	]
+					                    },
+					                    {
 					                    	"type":"backToTitle"
 					                    }
 					                ]

@@ -74,6 +74,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"createLayer", ShowLayerEvent::create},        // マップの指定レイヤを表示
         {"swingLayer", SwingLayerEvent::create},        // マップの指定レイヤを揺らす
         {"stopSwing", StopLayerActionEvent::create},    // マップレイヤのアクションを止める
+        {"quakeMap", QuakeMapEvent::create},            // マップを振動させる
         
         // マップオブジェクト系
         {"createChara", CreateMapObjectEvent::create},      // マップオブジェクトを無効リストから有効リストへ移動、マップ上に表示

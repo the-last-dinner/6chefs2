@@ -210,6 +210,18 @@
 									"type":"barrage",
 									"times":28,
 									"limit":5.0,
+									"event":[
+										{
+											"type":"playSE",
+											"file":"door_unopen.mp3"
+										},
+										{
+											"type":"quakeMap",
+											"x":0,
+											"y":12,
+											"time":0.12
+										}
+									],
 									"true":[
 										{
 											"type":"sequence",
