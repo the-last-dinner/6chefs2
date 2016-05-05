@@ -37,6 +37,7 @@ private:
 public:
     MapObjectList* getMapObjectList() const;
     Size getMapSize() const;
+    TMXTiledMap* getTiledMap() const;
     // Layer
     void hideLayer(const string& layerName);
     void showLayer(const string& layerName);
