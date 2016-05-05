@@ -2,7 +2,41 @@
   <PropertyGroup Name="6chefs2" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
-      <RootFolder Name="." />
+      <RootFolder Name=".">
+        <Folder Name="character">
+          <PlistImageFolder Image="magoichi.png" PListFile="magoichi.plist" Name=".magoichi_PList.Dir">
+            <PlistImageFile Name="magoichi_0_0.png" Key="magoichi_0_0.png" />
+            <PlistImageFile Name="magoichi_0_1.png" Key="magoichi_0_1.png" />
+            <PlistImageFile Name="magoichi_0_2.png" Key="magoichi_0_2.png" />
+            <PlistImageFile Name="magoichi_1_0.png" Key="magoichi_1_0.png" />
+            <PlistImageFile Name="magoichi_1_1.png" Key="magoichi_1_1.png" />
+            <PlistImageFile Name="magoichi_1_2.png" Key="magoichi_1_2.png" />
+            <PlistImageFile Name="magoichi_2_0.png" Key="magoichi_2_0.png" />
+            <PlistImageFile Name="magoichi_2_1.png" Key="magoichi_2_1.png" />
+            <PlistImageFile Name="magoichi_2_2.png" Key="magoichi_2_2.png" />
+            <PlistImageFile Name="magoichi_3_0.png" Key="magoichi_3_0.png" />
+            <PlistImageFile Name="magoichi_3_1.png" Key="magoichi_3_1.png" />
+            <PlistImageFile Name="magoichi_3_2.png" Key="magoichi_3_2.png" />
+            <PlistImageFile Name="magoichi_s_0.png" Key="magoichi_s_0.png" />
+            <PlistImageFile Name="magoichi_s_1.png" Key="magoichi_s_1.png" />
+            <PlistImageFile Name="magoichi_s_2.png" Key="magoichi_s_2.png" />
+            <PlistImageFile Name="magoichi_s_3.png" Key="magoichi_s_3.png" />
+            <PlistImageFile Name="swim_magoichi_0_0.png" Key="swim_magoichi_0_0.png" />
+            <PlistImageFile Name="swim_magoichi_0_1.png" Key="swim_magoichi_0_1.png" />
+            <PlistImageFile Name="swim_magoichi_0_2.png" Key="swim_magoichi_0_2.png" />
+            <PlistImageFile Name="swim_magoichi_1_0.png" Key="swim_magoichi_1_0.png" />
+            <PlistImageFile Name="swim_magoichi_1_1.png" Key="swim_magoichi_1_1.png" />
+            <PlistImageFile Name="swim_magoichi_1_2.png" Key="swim_magoichi_1_2.png" />
+            <PlistImageFile Name="swim_magoichi_2_0.png" Key="swim_magoichi_2_0.png" />
+            <PlistImageFile Name="swim_magoichi_2_1.png" Key="swim_magoichi_2_1.png" />
+            <PlistImageFile Name="swim_magoichi_2_2.png" Key="swim_magoichi_2_2.png" />
+            <PlistImageFile Name="swim_magoichi_3_0.png" Key="swim_magoichi_3_0.png" />
+            <PlistImageFile Name="swim_magoichi_3_1.png" Key="swim_magoichi_3_1.png" />
+            <PlistImageFile Name="swim_magoichi_3_2.png" Key="swim_magoichi_3_2.png" />
+          </PlistImageFolder>
+          <Project Name="magoichi.csd" Type="Node" />
+        </Folder>
+      </RootFolder>
     </Group>
   </SolutionFolder>
 </Solution>
