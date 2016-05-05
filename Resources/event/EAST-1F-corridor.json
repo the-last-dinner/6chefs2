@@ -253,6 +253,14 @@
 							"type":"barrage",
 							"times":20,
 							"limit":5.0,
+							"event":[
+								{
+									"type":"quakeMap",
+									"x":12,
+									"y":0,
+									"time":0.12
+								}
+							],
 							"false":[
 								{
 									"type":"sequence",
