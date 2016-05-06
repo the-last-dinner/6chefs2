@@ -241,18 +241,14 @@ bool CallEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    EventScript* eventScript  = this->validator->hasMember(json, member::CLASS_NAME)? DungeonSceneManager::getInstance()->getCommonEventScripts()[json[member::CLASS_NAME].GetString()] : DungeonSceneManager::getInstance()->getEventScript();
+    EventScript* eventScript  = this->validator->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScripts()[json[member::CLASS_NAME].GetString()] : DungeonSceneManager::getInstance()->getEventScript();
     
-    if (this->validator->hasMember(json, member::EVENT_ID))
-    {
-        this->event = this->factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
-        CC_SAFE_RETAIN(this->event);
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    if (!this->validator->hasMember(json, member::EVENT_ID)) return false;
+    
+    this->event = this->factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
+    CC_SAFE_RETAIN(this->event);
+    
+    return true;
 }
 
 void CallEvent::run(){
