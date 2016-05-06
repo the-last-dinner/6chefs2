@@ -115,11 +115,7 @@ void EventListenerKeyboardLayer::onKeyPressed(const EventKeyboard::KeyCode& keyC
 }
 
 // キーを離した時
-void EventListenerKeyboardLayer::onKeyReleased(const EventKeyboard::KeyCode& keyCode)
-{
-    Key key {this->convertKeyCode(keyCode)};
-    this->releaseKey(key);
-}
+void EventListenerKeyboardLayer::onKeyReleased(const EventKeyboard::KeyCode& keyCode) { this->releaseKey(this->convertKeyCode(keyCode)); }
 
 //　キーを離すとき
 void EventListenerKeyboardLayer::releaseKey(const Key& key)
@@ -127,10 +123,6 @@ void EventListenerKeyboardLayer::releaseKey(const Key& key)
     if(key == Key::SIZE) return;
     this->keyStatus[key] = false;
     if(find(this->pressingKeys.begin(), this->pressingKeys.end(), key) != this->pressingKeys.end()) this->pressingKeys.erase(remove(this->pressingKeys.begin(), this->pressingKeys.end(), key));
-    if(this->pressingKeys.empty())
-    {
-        this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
-    }
 }
 
 // 全てのキーを強制リリースする
@@ -145,6 +137,13 @@ void EventListenerKeyboardLayer::releaseKeyAll()
 // キーを押し続けている時
 void EventListenerKeyboardLayer::intervalCheck(float duration)
 {
+    if(this->pressingKeys.empty())
+    {
+        this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
+        
+        return;
+    }
+    
     if(this->paused) return;
     
     if(this->intervalInputCheck) this->intervalInputCheck(this->pressingKeys);
@@ -157,9 +156,10 @@ Key EventListenerKeyboardLayer::convertKeyCode(const EventKeyboard::KeyCode& key
 }
 
 // 指定のキーが押し状態か判別
-bool EventListenerKeyboardLayer::isPressed(const Key& key)
+bool EventListenerKeyboardLayer::isPressed(const Key& key) const
 {
     if(this->keyStatus.count(key) == 0) return false;
+    
     return this->keyStatus.at(key);
 }
 
@@ -179,9 +179,12 @@ void EventListenerKeyboardLayer::setPaused(bool paused)
 }
 
 // 入力されている方向キーを取得
-vector<Key> EventListenerKeyboardLayer::getPressedCursorKeys() const
+vector<Key> EventListenerKeyboardLayer::getPressedCursorKeys() const { return this->pressingKeys; }
+
+// 入力されている方向キーをクリア
+void EventListenerKeyboardLayer::clearPressedCursorKeys()
 {
-    return this->pressingKeys;
+    this->pressingKeys.clear();
 }
 
 void EventListenerKeyboardLayer::scheduleIntervalCheck()

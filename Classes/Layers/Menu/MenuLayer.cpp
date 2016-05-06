@@ -180,8 +180,10 @@ void MenuLayer::setCursorEnable(const bool enable)
     this->cursorEnabled = enable;
 }
 
-void MenuLayer::intervalInputCheck(const vector<Key> keys)
+void MenuLayer::intervalInputCheck(const vector<Key>& keys)
 {
+    if(keys.empty()) return;
+    
     this->onCursorKeyPressed(keys.back());
 }
 
