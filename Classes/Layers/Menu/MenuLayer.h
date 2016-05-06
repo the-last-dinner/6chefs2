@@ -52,7 +52,7 @@ protected:
 	int getMenuSizeY() const;
     int calcSelectedIndex();
     void setCursorEnable(const bool enable);
-    void intervalInputCheck(const vector<Key> keys);
+    virtual void intervalInputCheck(const vector<Key>& keys);
     void changePage(const int page);
     int getPageSize();
 };

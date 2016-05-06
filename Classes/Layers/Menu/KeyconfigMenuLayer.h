@@ -24,8 +24,7 @@ private:
         CURSOR,
         ENTER,
         DASH,
-        SAVE,
-        CANCEL,
+        CLOSE,
         
         SIZE,
     };
@@ -70,6 +69,7 @@ private:
     Color3B getFrameColor(int idx) const;
     Point calcItemPosition(Sprite* item, int idx) const;
     Point calcConfigNamePosition(Label* label, Node* frame, float centerMargin) const;
+    virtual void intervalInputCheck(const vector<Key>& keys) override;
 };
 
 #endif /* KeyconfigMenuLayer_h */

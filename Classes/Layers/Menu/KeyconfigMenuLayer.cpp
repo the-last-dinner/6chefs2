@@ -88,19 +88,12 @@ bool KeyconfigMenuLayer::init()
     dashConfigLabel->setPosition(this->calcConfigNamePosition(dashConfigLabel, dashConfigFrame, centerMargin));
     dashConfigFrame->addChild(dashConfigLabel);
     
-    Sprite* saveFrame { dynamic_cast<Sprite*>(this->menuObjects.at(etoi(MenuType::SAVE))) };
-    saveFrame->setTextureRect(Rect(0, 0, saveFrame->getContentSize().width, saveFrame->getContentSize().height / 2));
-    saveFrame->setPosition(saveFrame->getPosition().x, saveFrame->getPosition().y + 10);
-    Label* saveLabel { Label::createWithTTF("適用", fontPath, saveFrame->getContentSize().height * 0.6) };
-    saveLabel->setPosition(saveFrame->getContentSize() / 2);
-    saveFrame->addChild(saveLabel);
-    
-    Sprite* cancelFrame { dynamic_cast<Sprite*>(this->menuObjects.at(etoi(MenuType::CANCEL))) };
-    cancelFrame->setTextureRect(Rect(0, 0, cancelFrame->getContentSize().width, cancelFrame->getContentSize().height / 2));
-    cancelFrame->setPosition(cancelFrame->getPosition().x, cancelFrame->getPosition().y + 35);
-    Label* cancelLabel { Label::createWithTTF("もどる", fontPath, cancelFrame->getContentSize().height * 0.6) };
-    cancelLabel->setPosition(cancelFrame->getContentSize() / 2);
-    cancelFrame->addChild(cancelLabel);
+    Sprite* closeFrame { dynamic_cast<Sprite*>(this->menuObjects.at(etoi(MenuType::CLOSE))) };
+    closeFrame->setTextureRect(Rect(0, 0, closeFrame->getContentSize().width, closeFrame->getContentSize().height / 2));
+    closeFrame->setPosition(closeFrame->getPosition().x, closeFrame->getPosition().y + 10);
+    Label* closeLabel { Label::createWithTTF("閉じる", fontPath, closeFrame->getContentSize().height * 0.6) };
+    closeLabel->setPosition(closeFrame->getContentSize() / 2);
+    closeFrame->addChild(closeLabel);
     
     Label* menuTitle { Label::createWithTTF("キーコンフィグ", fontPath, unitHeight * 0.5) };
     menuTitle->setPosition(-width / 2 + menuTitle->getContentSize().width / 2, cursorConfigFrame->getPosition().y + cursorConfigFrame->getContentSize().height);
@@ -143,7 +136,7 @@ void KeyconfigMenuLayer::onCursorKeyPressed(const Key& key)
     MenuType type { static_cast<MenuType>(this->getSelectedIndex()) };
     
     if(!(key == Key::RIGHT || key == Key::LEFT)) return;
-    if(type == MenuType::SAVE || type == MenuType::CANCEL) return;
+    if(type == MenuType::CLOSE) return;
     
     switch (key) {
         case Key::RIGHT:
@@ -157,6 +150,15 @@ void KeyconfigMenuLayer::onCursorKeyPressed(const Key& key)
         default:
             break;
     }
+    
+    // 方向キータイプが変更されたら入力中の方向キーをクリアする
+    // NOTE: 離されたことにならないため
+    if(type == MenuType::CURSOR) this->listenerKeyboard->clearPressedCursorKeys();
+    
+    // 変更した瞬間に反映
+    KeyconfigManager::getInstance()->setCursorKey(static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]));
+    KeyconfigManager::getInstance()->setEnterKey(static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]));
+    KeyconfigManager::getInstance()->setDashKey(static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH]));
     
     this->onConfigIdxChanged(type, this->configIdxs[type]);
 }
@@ -180,7 +182,7 @@ void KeyconfigMenuLayer::onIndexChanged(int newIdx, bool sound)
     this->arrows->setPosition(focusedItem->getPosition());
     
     MenuType type {static_cast<MenuType>(newIdx)};
-    this->arrows->setVisible(!(type == MenuType::SAVE || type == MenuType::CANCEL));
+    this->arrows->setVisible(!(type == MenuType::CLOSE));
 }
 
 // 決定キーを押した時
@@ -188,20 +190,7 @@ void KeyconfigMenuLayer::onEnterKeyPressed(int idx)
 {
     MenuType type { static_cast<MenuType>(idx) };
     switch (type) {
-        case MenuType::SAVE:
-            // なぜかKeyConfigManagerのCursorKeyTypeとかを変数に代入できない！後で検討
-            KeyconfigManager::getInstance()->setCursorKey(static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]));
-            KeyconfigManager::getInstance()->setEnterKey(static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]));
-            KeyconfigManager::getInstance()->setDashKey(static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH]));
-            PlayerDataManager::getInstance()->getGlobalData()->saveKeyConfig
-            (
-                static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]),
-                static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]),
-                static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH])
-            );
-            this->close();
-            break;
-        case MenuType::CANCEL:
+        case MenuType::CLOSE:
             this->close();
             break;
         default:
@@ -227,6 +216,14 @@ void KeyconfigMenuLayer::onConfigIdxChanged(MenuType type, int newIdx)
 // 閉じる
 void KeyconfigMenuLayer::close()
 {
+    // なぜかKeyConfigManagerのCursorKeyTypeとかを変数に代入できない！後で検討
+    PlayerDataManager::getInstance()->getGlobalData()->saveKeyConfig
+    (
+     static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]),
+     static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]),
+     static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH])
+     );
+    
     this->hideWithAnimation(this->onClose);
 }
 
@@ -247,7 +244,7 @@ void KeyconfigMenuLayer::hideWithAnimation(AnimationCallback callback)
 {
     this->arrows->setVisible(false);
     this->listenerKeyboard->setEnabled(false);
-    this->cover->runAction(TintTo::create(0.3f, Color3B::WHITE));
+    this->cover->runAction(TintTo::create(0.2f, Color3B::WHITE));
     this->container->runAction(Sequence::createWithTwoActions(FadeOut::create(0.2f), CallFunc::create([this, callback]{if(callback) callback(this);})));
 }
 
@@ -304,11 +301,22 @@ Point KeyconfigMenuLayer::calcItemPosition(Sprite* item, int idx) const
     int itemNumFix { etoi(MenuType::SIZE) / 2 };
     float evenFix { etoi(MenuType::SIZE) % 2 == 0 ? 0.5 : 0 };
     
-    return Point(0, (itemNumFix + evenFix) * (itemNumFix - idx) * item->getContentSize().height / 2);
+    return Point(0, (itemNumFix + evenFix) * (itemNumFix - idx) * item->getContentSize().height * 0.4);
 }
 
 // メニュー項目名の座標を計算
 Point KeyconfigMenuLayer::calcConfigNamePosition(Label* label, Node* frame, float centerMargin) const
 {
     return Point(frame->getContentSize().width / 2 - label->getContentSize().width / 2 - centerMargin, frame->getContentSize().height / 2);
+}
+
+// 周期的入力チェック
+void KeyconfigMenuLayer::intervalInputCheck(const vector<Key>& keys)
+{
+    if(keys.empty()) return;
+    
+    // 方向キー設定でバグるので縦方向のみ許可
+    Key key = keys.back();
+    if(key == Key::LEFT || key == Key::RIGHT) return;
+    this->onCursorKeyPressed(key);
 }
