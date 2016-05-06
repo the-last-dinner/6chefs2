@@ -32,6 +32,9 @@ AmbientLightLayer::~AmbientLightLayer()
         
         CC_SAFE_RELEASE_NULL(element.first);
     }
+    
+    if(this->renderTexture) this->renderTexture->autorelease();
+    if(this->ambientLight) this->ambientLight->autorelease();
 }
 
 // 初期化
@@ -49,6 +52,7 @@ bool AmbientLightLayer::init(const Color3B& color)
     ambientSprite->setPosition(winSize / 2);
     this->addChild(ambientSprite);
     this->ambientLight = ambientSprite;
+    CC_SAFE_RETAIN(ambientSprite); // crash fix
     
     this->setCascadeColorEnabled(true);
     this->setCascadeOpacityEnabled(true);
@@ -57,15 +61,26 @@ bool AmbientLightLayer::init(const Color3B& color)
     RenderTexture* renderTexture { RenderTexture::create(winSize.width, winSize.height) };
     this->addChild(renderTexture);
     this->renderTexture = renderTexture;
+    CC_SAFE_RETAIN(renderTexture); // crash fix
     
     // レンダーテクスチャ用Sprite
     Sprite* renderTexSprite { renderTexture->getSprite() };
     renderTexSprite->setPosition(WINDOW_CENTER);
     renderTexSprite->setBlendFunc(BlendFunc{GL_ZERO, GL_SRC_COLOR});
     
-    this->scheduleUpdate();
-    
     return true;
+}
+
+void AmbientLightLayer::onEnter()
+{
+    Layer::onEnter();
+    this->scheduleUpdate();
+}
+
+void AmbientLightLayer::onExit()
+{
+    Layer::onExit();
+    this->unscheduleUpdate();
 }
 
 // 環境光の色を設定
@@ -89,7 +104,7 @@ void AmbientLightLayer::addLightSource(Light* lightSource)
     light->setPosition(lightSource->convertToWorldSpace(lightSource->getPosition()));
     light->setOpacity(0);
     light->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
-    this->addChild(light);
+    this->ambientLight->addChild(light);
     
     float duration {0.5f};
     light->runAction(FadeIn::create(duration));
