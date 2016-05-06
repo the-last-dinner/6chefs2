@@ -64,27 +64,27 @@ void ConfigEventListenerLayer::openKeyconfigMenu()
 // 画面サイズを切り替え
 void ConfigEventListenerLayer::switchWinSize()
 {
-    vector<Size> winSizeConfig
+    vector<float> config
     {
-        Size(WINDOW_WIDTH * 0.75, WINDOW_HEIGHT * 0.75),
-        Size(WINDOW_WIDTH, WINDOW_HEIGHT),
-        Size(WINDOW_WIDTH * 1.5, WINDOW_HEIGHT * 1.5),
+        0.75f,
+        1.f,
+        1.25f,
+        1.5f,
     };
     
     int currentConfIdx { 0 };
     GLView* glView { Director::getInstance()->getOpenGLView() };
-    Size currentWinSize { glView->getFrameSize() };
+    float current { glView->getFrameSize().width / WINDOW_WIDTH };
     
-    for(int i {0}; i < winSizeConfig.size(); i++)
+    for(int i {0}; i < config.size(); i++)
     {
-        if(winSizeConfig.at(i).width != currentWinSize.width) continue;
+        if(config.at(i) != current) continue;
         currentConfIdx = i;
         break;
     }
+    float ratio { config.at(currentConfIdx == config.size() - 1 ? 0 : currentConfIdx + 1) };
     
-    Size size { winSizeConfig.at(currentConfIdx == winSizeConfig.size() - 1 ? 0 : currentConfIdx + 1) };
-    
-    glView->setFrameSize(size.width, size.height);
+    glView->setFrameSize(WINDOW_WIDTH * ratio, WINDOW_HEIGHT * ratio);
     glView->setDesignResolutionSize(WINDOW_WIDTH, WINDOW_HEIGHT, ResolutionPolicy::NO_BORDER);
     Director::getInstance()->setOpenGLView(glView);
 }
