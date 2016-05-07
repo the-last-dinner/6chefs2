@@ -69,6 +69,13 @@ void Party::removeMember(const int obj_id)
     }
 }
 
+// パーティメンバー全員削除
+void Party::removeMemberAll()
+{
+    this->members.clear();
+    PlayerDataManager::getInstance()->getLocalData()->removePartyMemberAll();
+}
+
 // 主人公を移動
 bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, function<void()> callback)
 {

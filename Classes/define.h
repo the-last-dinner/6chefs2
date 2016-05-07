@@ -121,6 +121,7 @@ enum struct Trigger
 enum struct ObjectID
 {
     UNDIFINED = -1,
+    HERO = -2,
 };
 
 // イベントID

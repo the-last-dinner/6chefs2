@@ -17,6 +17,7 @@
 
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/Party.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -142,4 +143,36 @@ void WalkToEvent::update(float delta)
     this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
     
     this->isCommandSent = true;
+}
+
+#pragma mark -
+#pragma mark ChangeHeroEvent
+
+bool ChangeHeroEvent::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+    if (!this->validator->hasMember(json, member::CHARA_ID)) return false;
+    this->charaId = stoi(json[member::CHARA_ID].GetString());
+    
+    return true;
+}
+
+void ChangeHeroEvent::run()
+{
+    this->setDone();
+    
+    // 現在のパーティを取得
+    Party* party {DungeonSceneManager::getInstance()->getMapObjectList()->getParty()};
+    Location location {party->getMainCharacter()->getCharacterData().location};
+    
+    // パーティを解散
+    party->removeMemberAll();
+    DungeonSceneManager::getInstance()->getMapObjectList()->removeById(etoi(ObjectID::HERO));
+    
+    // 新主人公を設定
+    Character* chara {Character::create(CharacterData(this->charaId, etoi(ObjectID::HERO), location))};
+    chara->setHit(true);
+    party->addMember(chara);
+    DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
+    
 }

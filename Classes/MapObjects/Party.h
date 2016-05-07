@@ -37,6 +37,7 @@ private:
 public:
     void addMember(Character* character);
     void removeMember(const int obj_id);
+    void removeMemberAll();
     bool move(const vector<Direction>& directions, float ratio, function<void()> callback);
     Character* getMainCharacter() const;
     Vector<Character*> getMembers() const;

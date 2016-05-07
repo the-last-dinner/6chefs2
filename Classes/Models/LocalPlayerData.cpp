@@ -30,6 +30,7 @@ const char* LocalPlayerData::FRIENDSHIP {"friendship"};
 const char* LocalPlayerData::EVENT {"event"};
 const char* LocalPlayerData::CHARA {"chara"};
 const char* LocalPlayerData::ITEM {"item"};
+const char* LocalPlayerData::ITEMS {"items"};
 const char* LocalPlayerData::BGM {"bgm"};
 
 const int LocalPlayerData::MAX_COUNT {999};
@@ -139,19 +140,19 @@ int LocalPlayerData::getChapterId(){return this->localData[CHAPTER].GetInt();}
 // 友好度をセット
 void LocalPlayerData::setFriendship(const int chara_id, const int level)
 {
-    char cid_char[10];
-    sprintf(cid_char, "%d", chara_id);
-    this->localData[FRIENDSHIP][cid_char].SetInt(level);
+    char cidChar[10];
+    sprintf(cidChar, "%d", chara_id);
+    this->localData[FRIENDSHIP][cidChar].SetInt(level);
     if (level == 2 && this->setTrophy != nullptr) this->setTrophy(chara_id);
 }
 
 // 友好度を取得
 int LocalPlayerData::getFriendship(const int chara_id)
 {
-    char cid_char[10];
-    sprintf(cid_char, "%d", chara_id);
-    rapidjson::Value::ConstMemberIterator itr = this->localData[FRIENDSHIP].FindMember(cid_char);
-    return itr != this->localData[FRIENDSHIP].MemberEnd() ? this->localData[FRIENDSHIP][cid_char].GetInt() : -1;
+    char cidChar[10];
+    sprintf(cidChar, "%d", chara_id);
+    rapidjson::Value::ConstMemberIterator itr = this->localData[FRIENDSHIP].FindMember(cidChar);
+    return itr != this->localData[FRIENDSHIP].MemberEnd() ? this->localData[FRIENDSHIP][cidChar].GetInt() : -1;
 }
 
 // 友好度が指定の値と一致するかどうか
@@ -171,22 +172,54 @@ int LocalPlayerData::getMaxFriendshipCount()
     }
     return maxCount;
 }
-
 #pragma mark -
+#pragma mark Items
+
+char* LocalPlayerData::getCharaIdChar(char *charaId)
+{
+    sprintf(charaId, "%d", this->localData[PARTY][0][CHARA_ID].GetInt());
+    return charaId;
+}
+
+void LocalPlayerData::checkItemsObject(char * charaId)
+{
+    rapidjson::Value& items {this->localData[ITEMS]};
+    if (!items.HasMember(charaId))
+    {
+        rapidjson::Value cidStr (kStringType);
+        cidStr.SetString(charaId, strlen(charaId), this->localData.GetAllocator());
+        
+        items.AddMember(cidStr, rapidjson::Value(kObjectType), this->localData.GetAllocator());
+        
+        cidStr.SetString(EQUIPMENT_LEFT, strlen(EQUIPMENT_LEFT), this->localData.GetAllocator());
+        items[charaId].AddMember(cidStr, rapidjson::Value(0), this->localData.GetAllocator());
+        
+        cidStr.SetString(EQUIPMENT_RIGHT, strlen(EQUIPMENT_RIGHT), this->localData.GetAllocator());
+        items[charaId].AddMember(cidStr, rapidjson::Value(0), this->localData.GetAllocator());
+        
+        cidStr.SetString(ITEM, strlen(ITEM), this->localData.GetAllocator());
+        items[charaId].AddMember(cidStr, rapidjson::Value(kArrayType), this->localData.GetAllocator());
+    }
+}
+
 #pragma mark Equipment
 
 // 装備をセット
 void LocalPlayerData::setItemEquipment(const Direction direction, const int item_id)
 {
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
     const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    this->localData[dir].SetInt(item_id);
+    this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].SetInt(item_id);
 }
 
 // 装備してるアイテムIDを取得
 int LocalPlayerData::getItemEquipment(const Direction direction)
 {
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
     const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    return this->localData[dir].GetInt();
+    return this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].GetInt();
 }
 
 // 指定のアイテムを装備しているかどうか
@@ -198,25 +231,28 @@ bool LocalPlayerData::isEquipedItem(const int item_id)
     return isEquiped;
 }
 
-#pragma mark -
 #pragma mark Item
 
 // アイテムゲット時の処理
 void LocalPlayerData::setItem(const int item_id){
     char iid_char[10];
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
     sprintf(iid_char, "%d", item_id);
     rapidjson::Value iid  (kStringType);
     iid.SetString(iid_char, strlen(iid_char), this->localData.GetAllocator());
-    this->localData[ITEM].PushBack(iid, this->localData.GetAllocator());
+    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].PushBack(iid, this->localData.GetAllocator());
 }
 
 // アイテムを消費
 bool LocalPlayerData::removeItem(const int item_id)
 {
     bool isExist = false;
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
     vector<int> items {this->getItemAll()};
-    this->localData[ITEM].Clear();
-    this->localData[ITEM].SetArray();
+    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].Clear();
+    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].SetArray();
     int itemCount = items.size();
     for(int i = 0; i < itemCount; i++)
     {
@@ -241,7 +277,7 @@ bool LocalPlayerData::removeItem(const int item_id)
             sprintf(iid_char, "%d", items[i]);
             rapidjson::Value iid  (kStringType);
             iid.SetString(iid_char, strlen(iid_char), this->localData.GetAllocator());
-            this->localData[ITEM].PushBack(iid, this->localData.GetAllocator());
+            this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].PushBack(iid, this->localData.GetAllocator());
         } 
     }
     return isExist;
@@ -251,7 +287,9 @@ bool LocalPlayerData::removeItem(const int item_id)
 vector<int> LocalPlayerData::getItemAll()
 {
     vector<int> items {};
-    rapidjson::Value& itemList = this->localData[ITEM];
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
+    rapidjson::Value& itemList = this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM];
     int itemCount = itemList.Size();
     for(int i = 0; i < itemCount; i++)
     {
@@ -263,7 +301,9 @@ vector<int> LocalPlayerData::getItemAll()
 // アイテムを所持しているか確認
 bool LocalPlayerData::hasItem(const int item_id)
 {
-    rapidjson::Value& itemList = this->localData[ITEM];
+    char cidChar[10];
+    this->checkItemsObject(this->getCharaIdChar(cidChar));
+    rapidjson::Value& itemList = this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM];
     int itemCount = itemList.Size();
     for(int i = 0; i < itemCount; i++)
     {
@@ -278,19 +318,19 @@ bool LocalPlayerData::hasItem(const int item_id)
 // キャラクタープロフィールの見れるレベルをセット
 void LocalPlayerData::setCharacterProfile(const int chara_id, const int level)
 {
-    char cid_char[10];
-    sprintf(cid_char, "%d", chara_id);
-    rapidjson::Value::ConstMemberIterator itr = this->localData[CHARA].FindMember(cid_char);
+    char cidChar[10];
+    sprintf(cidChar, "%d", chara_id);
+    rapidjson::Value::ConstMemberIterator itr = this->localData[CHARA].FindMember(cidChar);
     if (itr != this->localData[CHARA].MemberEnd())
     {
         // すでに追加されているキャラクター
-        this->localData[CHARA][cid_char].SetInt(level);
+        this->localData[CHARA][cidChar].SetInt(level);
     }
     else
     {
         // 初めて追加するキャラ
         rapidjson::Value id (kStringType);
-        id.SetString(cid_char,strlen(cid_char),this->localData.GetAllocator());
+        id.SetString(cidChar,strlen(cidChar),this->localData.GetAllocator());
         this->localData[CHARA].AddMember(id, rapidjson::Value(level), this->localData.GetAllocator());
     }
 }
@@ -299,12 +339,12 @@ void LocalPlayerData::setCharacterProfile(const int chara_id, const int level)
 int LocalPlayerData::getCharacterProfileLevel(const int chara_id)
 {
     int level {-1}; // 存在しない場合は-1を返す
-    char cid_char[10];
-    sprintf(cid_char, "%d", chara_id);
-    rapidjson::Value::ConstMemberIterator itr = this->localData[CHARA].FindMember(cid_char);
+    char cidChar[10];
+    sprintf(cidChar, "%d", chara_id);
+    rapidjson::Value::ConstMemberIterator itr = this->localData[CHARA].FindMember(cidChar);
     if (itr != this->localData[CHARA].MemberEnd())
     {
-        level = this->localData[CHARA][cid_char].GetInt();
+        level = this->localData[CHARA][cidChar].GetInt();
     }
     return level;
 }
@@ -479,6 +519,13 @@ bool LocalPlayerData::removePartyMember(const int obj_id)
         }
     }
     return isExsits;
+}
+
+// パーティーメンバーを全削除
+void LocalPlayerData::removePartyMemberAll()
+{
+    this->localData[PARTY].Clear();
+    this->localData[PARTY].SetArray();
 }
 
 // パーティメンバーを取得
