@@ -152,10 +152,7 @@ bool ChangeHeroEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     if (!this->validator->hasMember(json, member::CHARA_ID)) return false;
-    
     this->charaId = stoi(json[member::CHARA_ID].GetString());
-    this->objId = -1;
-    this->location = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getCharacterData().location;
     
     return true;
 }
@@ -163,11 +160,19 @@ bool ChangeHeroEvent::init(rapidjson::Value& json)
 void ChangeHeroEvent::run()
 {
     this->setDone();
-    Party* party {DungeonSceneManager::getInstance()->getParty()};
+    
+    // 現在のパーティを取得
+    Party* party {DungeonSceneManager::getInstance()->getMapObjectList()->getParty()};
+    Location location {party->getMainCharacter()->getCharacterData().location};
+    
+    // パーティを解散
     party->removeMemberAll();
-    DungeonSceneManager::getInstance()->getMapObjectList()->removeById(this->objId);
-    Character* character {Character::create(CharacterData(this->charaId, this->objId, this->location))};
-    party->addMember(character);
-    DungeonSceneManager::getInstance()->addMapObject(character);
+    DungeonSceneManager::getInstance()->getMapObjectList()->removeById(etoi(ObjectID::HERO));
+    
+    // 新主人公を設定
+    Character* chara {Character::create(CharacterData(this->charaId, etoi(ObjectID::HERO), location))};
+    chara->setHit(true);
+    party->addMember(chara);
+    DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
     
 }

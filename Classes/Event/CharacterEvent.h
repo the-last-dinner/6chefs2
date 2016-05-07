@@ -85,9 +85,7 @@ class ChangeHeroEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(ChangeHeroEvent, rapidjson::Value&)
 private:
-    int charaId;
-    int objId;
-    Location location;
+    int charaId {0};
 private:
     ChangeHeroEvent() {FUNCLOG};
     ~ChangeHeroEvent() {FUNCLOG};
