@@ -56,7 +56,6 @@ void ReactionEvent::run()
         return;
     }
 
-    SoundManager::getInstance()->playSE(Resource::SE::REACTION);
     target->reaction([this]{this->setDone();});
 }
 

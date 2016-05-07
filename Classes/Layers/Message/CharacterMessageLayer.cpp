@@ -75,7 +75,7 @@ Label* CharacterMessageLayer::createMessage()
         
         this->runAction(Sequence::create(DelayTime::create(1.5f), CallFunc::create([this, swingAction]{this->stopAction(swingAction); this->frame->setPosition(this->defaultMFramePosition);}), nullptr));
         
-        SoundManager::getInstance()->playSE("msg_reaction.mp3");
+        SoundManager::getInstance()->playSE("msg_reaction.mp3", 0.5f);
     }
  
     // キャラクター画像
