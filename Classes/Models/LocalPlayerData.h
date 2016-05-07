@@ -112,6 +112,7 @@ public:
     void setLocation(const vector<CharacterData>& characters);
     void setPartyMember(const CharacterData& chara);
     bool removePartyMember(const int obj_id);
+    void removePartyMemberAll();
     Location getLocation(const int num = 0);
     CharacterData getPartyMember(const int num = 0);
     vector<CharacterData> getPartyMemberAll();

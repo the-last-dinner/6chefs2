@@ -45,6 +45,7 @@ public:
     void stopLayerActions();
     // MapObject
     void setParty(Party* party);
+    void removeParty();
     void addEnemy(Enemy* enemy);
     void addMapObject(MapObject* mapObject, bool addingToList = true);
     void setZOrderByPosition(MapObject* mapObject);

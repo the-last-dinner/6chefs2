@@ -481,6 +481,13 @@ bool LocalPlayerData::removePartyMember(const int obj_id)
     return isExsits;
 }
 
+// パーティーメンバーを全削除
+void LocalPlayerData::removePartyMemberAll()
+{
+    this->localData[PARTY].Clear();
+    this->localData[PARTY].SetArray();
+}
+
 // パーティメンバーを取得
 CharacterData LocalPlayerData::getPartyMember(const int num)
 {

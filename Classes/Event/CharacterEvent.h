@@ -79,4 +79,20 @@ private:
     virtual void update(float delta) override;
 };
 
+// 主人公を変更
+class ChangeHeroEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(ChangeHeroEvent, rapidjson::Value&)
+private:
+    int charaId;
+    int objId;
+    Location location;
+private:
+    ChangeHeroEvent() {FUNCLOG};
+    ~ChangeHeroEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__CharacterEvent__) */
