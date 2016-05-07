@@ -20,7 +20,6 @@ const map<string, float> SoundManager::VOLUME_CONFIG
     {Resource::SE::TITLE_ENTER, 0.3f},
     {Resource::SE::GAME_START, 0.3f},
     {Resource::SE::LOAD, 0.3f},
-    {Resource::SE::REACTION, 0.5f},
 };
 
 // 唯一のインスタンスを初期化

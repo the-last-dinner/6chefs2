@@ -36,7 +36,6 @@ namespace Resource
         static const std::string LOAD = "load.mp3";
         static const std::string GAME_START = "gameStart.mp3";
         static const std::string LOGO = "logo_display.mp3";
-        static const std::string REACTION = "reaction.mp3";
     };
     
     namespace BGM
