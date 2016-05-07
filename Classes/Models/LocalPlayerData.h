@@ -33,6 +33,7 @@ class LocalPlayerData : public Ref
     static const char* FRIENDSHIP;
     static const char* EVENT;
     static const char* ITEM;
+    static const char* ITEMS;
     static const char* CHARA;
     static const char* BGM;
     
@@ -85,6 +86,10 @@ public:
     int getFriendship(const int chara_id);
     bool checkFriendship(const int chara_id, const int level);
     int getMaxFriendshipCount();
+    
+    // Items
+    char* getCharaIdChar(char* charaId);
+    void checkItemsObject(char* charaId);
     
     // Equipment
     void setItemEquipment(const Direction direction, const int item_id);
