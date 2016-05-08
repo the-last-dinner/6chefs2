@@ -11,6 +11,7 @@
 #include "Datas/Scene/DungeonSceneData.h"
 
 #include "Effects/AmbientLightLayer.h"
+#include "Effects/FocusLightLayer.h"
 
 #include "Event/EventScript.h"
 
@@ -99,6 +100,12 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
 	this->addChild(mapLayer);
 	this->mapLayer = mapLayer;
     
+    // フォーカス光レイヤー生成
+    FocusLightLayer* focusLightLayer {FocusLightLayer::create()};
+    focusLightLayer->setLocalZOrder(Priority::FOCUS_LIGHT);
+    this->addChild(focusLightLayer);
+    this->focusLightLayer = focusLightLayer;
+    
     // 環境光レイヤー生成
     AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::ROOM)};
     ambientLightLayer->setLocalZOrder(Priority::AMBIENT_LIGHT);
@@ -132,6 +139,9 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     // 主人公一行をマップに配置
     mapLayer->setParty(party);
+    
+    // 主人公にフォーカス光を当てる
+    focusLightLayer->addTarget(party->getMainCharacter());
     
     // スタミナバー生成
     StaminaBar* staminaBar { StaminaBar::create() };

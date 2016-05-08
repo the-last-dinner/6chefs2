@@ -11,9 +11,11 @@
 
 #include "Scenes/BaseScene.h"
 
+class DungeonSceneData;
+
 class AmbientLightLayer;
 class TiledMapLayer;
-class DungeonSceneData;
+class FocusLightLayer;
 
 class CameraTask;
 class EnemyTask;
@@ -36,7 +38,8 @@ public:
 protected:
     EventListenerKeyboardLayer* listener { nullptr };
     TiledMapLayer* mapLayer { nullptr };
-    AmbientLightLayer* ambientLightLayer {nullptr};
+    AmbientLightLayer* ambientLightLayer { nullptr };
+    FocusLightLayer* focusLightLayer { nullptr };
     
     CameraTask* cameraTask { nullptr };
     EnemyTask* enemyTask { nullptr };

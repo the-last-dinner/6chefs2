@@ -321,6 +321,8 @@
 		DC328A7E1C87194E00675131 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = DC328A671C87194E00675131 /* shaders */; };
 		DC328A7F1C87194E00675131 /* story in Resources */ = {isa = PBXBuildFile; fileRef = DC328A681C87194E00675131 /* story */; };
 		DC328A801C87194E00675131 /* story in Resources */ = {isa = PBXBuildFile; fileRef = DC328A681C87194E00675131 /* story */; };
+		DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
+		DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -645,6 +647,8 @@
 		DC328A661C87194E00675131 /* se */ = {isa = PBXFileReference; lastKnownFileType = folder; path = se; sourceTree = "<group>"; };
 		DC328A671C87194E00675131 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
 		DC328A681C87194E00675131 /* story */ = {isa = PBXFileReference; lastKnownFileType = folder; path = story; sourceTree = "<group>"; };
+		DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FocusLightLayer.cpp; sourceTree = "<group>"; };
+		DC37D80E1CDEFD3D0014418A /* FocusLightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusLightLayer.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -945,6 +949,8 @@
 				DC0390751C871E1000C50E8E /* Fog.h */,
 				DC0390761C871E1000C50E8E /* Light.cpp */,
 				DC0390771C871E1000C50E8E /* Light.h */,
+				DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */,
+				DC37D80E1CDEFD3D0014418A /* FocusLightLayer.h */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -1507,6 +1513,7 @@
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0392131C871E1000C50E8E /* LocalPlayerData.cpp in Sources */,
+				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391EB1C871E1000C50E8E /* ItemObject.cpp in Sources */,
 				DC03917D1C871E1000C50E8E /* DungeonSceneData.cpp in Sources */,
 				DC0391911C871E1000C50E8E /* EffectEvent.cpp in Sources */,
@@ -1653,6 +1660,7 @@
 				DC03919E1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DC0391CE1C871E1000C50E8E /* MessageLayer.cpp in Sources */,
 				DC0391D01C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
+				DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391D61C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
 				DC0392001C871E1000C50E8E /* Scouter.cpp in Sources */,
 				DC0391F01C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,

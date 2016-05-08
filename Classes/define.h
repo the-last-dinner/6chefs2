@@ -74,8 +74,9 @@ enum Priority
     BUTTON_MASHING_LAYER = 91,
     DISP_IMAGE_LAYER = 90,
     SCREEN_COVER = 80,
-    DEBUG_MASK = 40,
+    FOCUS_LIGHT = 55,
     AMBIENT_LIGHT = 50,
+    DEBUG_MASK = 40,
 	MAP = 0,
 };
 

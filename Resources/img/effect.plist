@@ -4,10 +4,24 @@
 	<dict>
 		<key>frames</key>
 		<dict>
+			<key>focus_light.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{795,795}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{2,2},{795,795}}</string>
+				<key>sourceSize</key>
+				<string>{800,800}</string>
+			</dict>
+
 			<key>fog.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{640,480}}</string>
+				<string>{{796,0},{640,480}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -25,7 +39,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{1024,512}</string>
+			<string>{2048,1024}</string>
 			<key>textureFileName</key>
 			<string>effect.png</string>
 			</dict>
