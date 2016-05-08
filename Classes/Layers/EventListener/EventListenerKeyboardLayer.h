@@ -34,7 +34,6 @@ private:
     float delay {0.05f};        // キーを押した瞬間から初回キー入力確認までの時間
     float interval {0.05f};     // キー入力の確認間隔
     bool paused { false };
-    bool intervalPaused { false };
     
 // インスタンスメソッド
 public:
@@ -48,7 +47,6 @@ public:
     bool isPressed(const Key& key) const;                          // 指定キーが押し状態か判別
     void setPaused(bool paused);
     vector<Key> getPressedCursorKeys() const;
-    void clearPressedCursorKeys();
 private:
     EventListenerKeyboardLayer();                                  // コンストラクタ
     ~EventListenerKeyboardLayer();                                 // デストラクタ

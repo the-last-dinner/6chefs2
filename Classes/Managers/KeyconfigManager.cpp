@@ -11,13 +11,6 @@
 #include "Layers/Menu/KeyconfigMenuLayer.h"
 
 // 定数
-const map<KeyconfigManager::EnterKeyType, string> KeyconfigManager::EnterKeyTypeToStr
-{
-    {EnterKeyType::SPACE, "スペース"},
-    {EnterKeyType::Z, "z"},
-    {EnterKeyType::ENTER, "enter"},
-};
-
 const map<KeyconfigManager::DashKeyType, string> KeyconfigManager::DashKeyTypeToStr
 {
     {DashKeyType::LEFT_SHIFT, "左shift"},
@@ -28,13 +21,6 @@ const map<KeyconfigManager::CursorKeyType, string> KeyconfigManager::CursorKeyTy
 {
     {CursorKeyType::ARROW, "カーソルキー"},
     {CursorKeyType::WASD, "WASD"},
-};
-
-const map<KeyconfigManager::EnterKeyType, EventKeyboard::KeyCode> KeyconfigManager::enterKeys
-{
-    {EnterKeyType::SPACE, EventKeyboard::KeyCode::KEY_SPACE},
-    {EnterKeyType::Z, EventKeyboard::KeyCode::KEY_Z},
-    {EnterKeyType::ENTER, EventKeyboard::KeyCode::KEY_ENTER},
 };
 
 const map<KeyconfigManager::DashKeyType, EventKeyboard::KeyCode> KeyconfigManager::dashKeys
@@ -85,6 +71,11 @@ KeyconfigManager::KeyconfigManager()
 {
     FUNCLOG
     
+    // 決定キー
+    this->keyconfig[EventKeyboard::KeyCode::KEY_SPACE] = Key::ENTER;
+    this->keyconfig[EventKeyboard::KeyCode::KEY_ENTER] = Key::ENTER;
+    this->keyconfig[EventKeyboard::KeyCode::KEY_Z]     = Key::ENTER;
+    
     // メニューキー
     this->keyconfig[EventKeyboard::KeyCode::KEY_X] = Key::MENU;
     
@@ -97,18 +88,6 @@ KeyconfigManager::KeyconfigManager()
 
 // デストラクタ
 KeyconfigManager::~KeyconfigManager() { FUNCLOG };
-
-// 決定キーを設定
-void KeyconfigManager::setEnterKey(const EnterKeyType keyType)
-{
-    for(pair<EnterKeyType, EventKeyboard::KeyCode> typeToKey : enterKeys)
-    {
-        this->keyconfig.erase(typeToKey.second);
-    }
-    
-    this->enterKeyType = keyType;
-    this->keyconfig[enterKeys.at(keyType)] = Key::ENTER;
-}
 
 // ダッシュキーを設定
 void KeyconfigManager::setDashKey(const DashKeyType keyType)
@@ -171,11 +150,6 @@ void KeyconfigManager::openKeyconfigMenu(function<void()> onClose)
 }
 
 // 表示用
-string KeyconfigManager::typeToDispName(const EnterKeyType keyType)
-{
-    return EnterKeyTypeToStr.at(keyType);
-}
-
 string KeyconfigManager::typeToDispName(const DashKeyType keyType)
 {
     return DashKeyTypeToStr.at(keyType);

@@ -89,11 +89,9 @@ public:
     // KeyConfig
     void setCursorKey(const KeyconfigManager::CursorKeyType keyType);
     KeyconfigManager::CursorKeyType getCursorKey();
-    void setEnterKey(const KeyconfigManager::EnterKeyType keyType);
-    KeyconfigManager::EnterKeyType getEnterKey();
     void setDashKey(const KeyconfigManager::DashKeyType keyType);
     KeyconfigManager::DashKeyType getDashKey();
-    void saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::EnterKeyType enterKey, const KeyconfigManager::DashKeyType dashKey);
+    void saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::DashKeyType dashKey);
     
 };
 
