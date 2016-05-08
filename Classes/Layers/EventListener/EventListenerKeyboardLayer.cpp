@@ -181,12 +181,6 @@ void EventListenerKeyboardLayer::setPaused(bool paused)
 // 入力されている方向キーを取得
 vector<Key> EventListenerKeyboardLayer::getPressedCursorKeys() const { return this->pressingKeys; }
 
-// 入力されている方向キーをクリア
-void EventListenerKeyboardLayer::clearPressedCursorKeys()
-{
-    this->pressingKeys.clear();
-}
-
 void EventListenerKeyboardLayer::scheduleIntervalCheck()
 {
     if(this->isScheduled(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck))) this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
