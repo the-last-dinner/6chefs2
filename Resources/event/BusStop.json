@@ -22,7 +22,7 @@
         {
           "type":"storyMsg",
           "title":"操作説明",
-          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shift\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
+          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
         },
         {
           "type":"addProfile",

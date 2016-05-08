@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="37">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="sakekage" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="sakekage" tilewidth="16" tileheight="16" tilecount="48" columns="6">
   <image source="sakekage.png" trans="000000" width="96" height="128"/>
  </tileset>
  <layer name="Base" width="34" height="26">
@@ -11,7 +11,7 @@
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztltENwjAMRJ0BoPwAQ7ThhzIE7RewGzAIMAiwAnvgiFoxkRpSxxJC4qSnKxVKTxfTANCvlQEYoY/Be981d467tzSRhyTI5VijN+Dd0XafY9D3GqUcFlkgBTIJ3EbYIwfkaHRzDPUTckYumTlq87mPmF+RG3IX5tgazy6jD8sybcz7uikqkQr8nEn7KNh1ydatEvvoy5HThzRH2eWwSn1U3VrkKaLMmn3wd0kr6ENrPsgf8CI1h3YfdE8jR04fU2TGGJKDZkqjD/ceqxOfTwrPM40+JO9T2sNwbyVO+yER5QjXlfQh2Q8Sn6c561dC7nnvxM9bKRo5SLyfGNQd/51+Q/y/Ss5caOSgGdfcj1/N8ZeuniWtUBc=
+   eJztlVEKwjAQRDcH0PqjHkLjj/UQtl/q3dSDqAdRr9B7uKFdugQa081CEBx4TC1ihtmYAAxrZwAm6FPofeiZO8e925rAIhFyOfboFfTuqLvPIeh7lVIOi2yQApl5bgOckQtyNbo5xvoNuSOPxByl+d5HyJ/IC3ln7sOyTAfkyEjJMbaPgj2voGXdkasPzRwpfbi1LfSeqw9+ltSRa/P9dFLqg7yBlhjRHCm7Rh/0TiNHSh9zZMEYk4P2lEYf7hwrI9cn+feZRh+S85Rm6M9W4jQPiSiH/7uSPiTzIPH9tGT9Ski935z4fStFIweJ9xOCuuP/0xzid0DKvtDIQXtccx6/muMvXX0AsehMqA==
   </data>
  </layer>
  <layer name="MonoShita" width="34" height="26">

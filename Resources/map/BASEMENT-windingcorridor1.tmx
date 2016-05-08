@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="c1a5c8" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="000000" width="256" height="1990"/>
  </tileset>
  <layer name="Base" width="26" height="22">
@@ -11,7 +11,7 @@
    <property name="cc_vertexz" value="-12"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlcENwjAMRZ0BILnQJcINGAJ6gvFgSpgAR81XLZNUSUjFBUtftqvi19+6lOgzToZoS5MQm9gfTOIHjRE4nvNeHPNRa3GerBfN/Vocy7Vjnbm+sK5c3xZUy4GP0UzSviCv6hq/gQMfmI8MX5oB1XIw18YavZzfk+PMzPoVJ/WMWjkhaw50TzBb98AKhV7OfGQ4x0KW9iNz6l5BI83vV60fuXehBzN3Hfr/qtSP5jl1H3XG+9XKkTytlK9STm6+3IslX9/4kfudyzs+Z+iwb7nrR679bgymTf/oG28T22h7
+   eJztlUEOgjAQRdsDaNnIJZCV8RDqCg8me72CHE5P4DT0h3FoTafKziY/f4ZgHx8GMWa+9taYtRmFtQr9zkZ+ULg8pyHfsmNN0FKcB+lppn4pjqO6Ih2oPpI6qs8fpOUgx8mOkrmgRtSavJ6DHNgfjlySAXWKXDyPCzV6vr/ktKTevM9PLqeyEyuHMyzAkc+oZce0HO+SA10Z4xI43nsFB3PgmHzPOTfGuQeO96EwD/fYPPPno71vcq7Rg5m6Dvl/lZtH8ipxH6Xj/SrlcJ5ULFcuJ7W/s3PFcn2Th893yjd0Tl3AkZ66frj2u1HbMv3Xb9cLFpxskQ==
   </data>
  </layer>
  <layer name="hint" width="26" height="22">

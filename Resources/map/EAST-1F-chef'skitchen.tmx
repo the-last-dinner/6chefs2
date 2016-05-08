@@ -114,7 +114,7 @@
     <property name="objID" value="10110"/>
    </properties>
   </object>
-  <object id="26" x="143" y="32" width="32" height="32">
+  <object id="26" x="144" y="32" width="32" height="32">
    <properties>
     <property name="CharaID" value="7"/>
     <property name="direction" value="DOWN"/>

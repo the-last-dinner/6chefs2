@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
- <tileset firstgid="1" name="meet" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="meet" tilewidth="16" tileheight="16" tilecount="504" columns="28">
   <image source="meet.png" trans="040204" width="448" height="288"/>
  </tileset>
- <tileset firstgid="505" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="505" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="26" height="20">
@@ -11,7 +11,7 @@
    <property name="cc_vertexz" value="-12"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlEEKhDAMRUODzko9hLoaPYS6Uq/pQU0poSVT6yaVYZgPn8C37Uu1FsBrRIDCeJeJKrNwzov8RriU5bTGu0tUmYVz+gRnQM+JzZV5qgfmDBHWRtlOnmjMbFxlz+Yzl1lYF/KKbk0p7uNAHfPepLiP3Byt9Z/m8LeSqulZo8w6IueAz3VujpUmp0L3jnJz7u6dP+d7OVY13jv8z6qLMRoaRd+x+//XdQI40ah5
+   eJxjYEAAXWYGBlYmBGbDQ6OLIethB2JtZgaswAso7g3EykwIrIKHRhdD1qOKxx5CetHF8bkBZo8OFrtg9jgCsROUdkTjO+ERQ6adgdiTGRJGuOxZwkwdDPMbOoC5g9b2UMt8etsDiyt0wAeU46eyXUuwpANQGtSlgz0gQE17eJkhYURre3CVB6P2DH57QICPmTBGzme8ONRQA+iiuRtb+T/cAQC/xqiB
   </data>
  </layer>
  <layer name="MonoShita" width="26" height="20">
