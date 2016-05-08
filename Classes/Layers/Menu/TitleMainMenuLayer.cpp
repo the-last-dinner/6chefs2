@@ -47,7 +47,7 @@ bool TitleMainMenuLayer::init()
     float font_size = 56.f;
     
     Label* title1 {Label::createWithTTF("6人の料理人", Resource::Font::SYSTEM, font_size)};
-    title1->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT - title1->getContentSize().height * 2);
+    title1->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT - title1->getContentSize().height * 1.6);
     title1->setColor(Color3B::Color3B(200,0,0));
     title1->setOpacity(0);
     this->addChild(title1);
@@ -71,7 +71,7 @@ bool TitleMainMenuLayer::init()
 	for(int i = 0; i < etoi(MenuType::SIZE); i++)
 	{
         Label* menuItem { Label::createWithTTF(typeToString[static_cast<MenuType>(i)], Resource::Font::SYSTEM, menuSize) };
-		menuItem->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT * 5 / 11 - (menuSize + 20) * i);
+		menuItem->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT * 0.5 - (menuSize + 20) * i);
 		menuItem->setOpacity(0);
 		this->addChild(menuItem);
 		this->menuObjects.push_back(menuItem);
@@ -91,15 +91,22 @@ bool TitleMainMenuLayer::init()
                     ));
     
     // copyright
-    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2016 最後の晩餐 All rights reserved.", Resource::Font::MESSAGE, 15.f)};
+    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2016 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
     copyright->setPosition(Point(WINDOW_WIDTH - copyright->getContentSize().width * 0.52f, copyright->getContentSize().height));
     copyright->setOpacity(0);
     this->addChild(copyright);
     copyright->runAction(FadeTo::create(1.f, 200));
     
     // 操作方法
-    Label* opr {Label::createWithTTF("F1:操作方法・設定 / F4:画面サイズ設定", Resource::Font::MESSAGE, 18)};
-    opr->setPosition(WINDOW_WIDTH / 2, opr->getContentSize().height + copyright->getContentSize().height * 2);
+    Label* opr2 {Label::createWithTTF("F1:操作設定 / F4:画面サイズ設定", Resource::Font::MESSAGE, 18)};
+    opr2->setPosition(WINDOW_WIDTH / 2, opr2->getContentSize().height / 2 + copyright->getContentSize().height * 2);
+    opr2->setColor(Color3B::WHITE);
+    opr2->setOpacity(0);
+    this->addChild(opr2);
+    opr2->runAction(FadeTo::create(1.2f, 200));
+    
+    Label* opr {Label::createWithTTF("Enter:決定 / X:戻る", Resource::Font::MESSAGE, 18)};
+    opr->setPosition(WINDOW_WIDTH / 2, opr->getContentSize().height + opr2->getContentSize().height + copyright->getContentSize().height * 2);
     opr->setColor(Color3B::WHITE);
     opr->setOpacity(0);
     this->addChild(opr);
