@@ -16,7 +16,6 @@
 const map<KeyconfigMenuLayer::MenuType, int> KeyconfigMenuLayer::idNums
 {
     {MenuType::CURSOR, etoi(KeyconfigManager::CursorKeyType::SIZE)},
-    {MenuType::ENTER, etoi(KeyconfigManager::EnterKeyType::SIZE)},
     {MenuType::DASH, etoi(KeyconfigManager::DashKeyType::SIZE)},
 };
 
@@ -51,7 +50,7 @@ bool KeyconfigMenuLayer::init()
     this->cover = cover;
     
     Node* container { Node::create() };
-    container->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 50);
+    container->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 75);
     container->setContentSize(Size(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2));
     container->setCascadeOpacityEnabled(true);
     this->addChild(container);
@@ -78,11 +77,6 @@ bool KeyconfigMenuLayer::init()
     cursorConfigLabel->setPosition(this->calcConfigNamePosition(cursorConfigLabel, cursorConfigFrame, centerMargin));
     cursorConfigFrame->addChild(cursorConfigLabel);
     
-    Node* enterConfigFrame { this->menuObjects.at(etoi(MenuType::ENTER)) };
-    Label* enterConfigLabel { Label::createWithTTF("決定キー", fontPath, enterConfigFrame->getContentSize().height * 0.4) };
-    enterConfigLabel->setPosition(this->calcConfigNamePosition(enterConfigLabel, enterConfigFrame, centerMargin));
-    enterConfigFrame->addChild(enterConfigLabel);
-    
     Node* dashConfigFrame { this->menuObjects.at(etoi(MenuType::DASH)) };
     Label* dashConfigLabel { Label::createWithTTF("ダッシュキー", fontPath, dashConfigFrame->getContentSize().height * 0.4) };
     dashConfigLabel->setPosition(this->calcConfigNamePosition(dashConfigLabel, dashConfigFrame, centerMargin));
@@ -107,10 +101,8 @@ bool KeyconfigMenuLayer::init()
     container->addChild(menuTitle);
     
     this->configIdxs[MenuType::CURSOR] = etoi(KeyconfigManager::getInstance()->getCursorKeyType());
-    this->configIdxs[MenuType::ENTER] = etoi(KeyconfigManager::getInstance()->getEnterKeyType());
     this->configIdxs[MenuType::DASH] = etoi(KeyconfigManager::getInstance()->getDashKeyType());
     this->setConfigNameLabel(MenuType::CURSOR, etoi(KeyconfigManager::getInstance()->getCursorKeyType()));
-    this->setConfigNameLabel(MenuType::ENTER, etoi(KeyconfigManager::getInstance()->getEnterKeyType()));
     this->setConfigNameLabel(MenuType::DASH, etoi(KeyconfigManager::getInstance()->getDashKeyType()));
     
     this->arrows = Node::create();
@@ -191,12 +183,10 @@ void KeyconfigMenuLayer::onEnterKeyPressed(int idx)
         case MenuType::SAVE:
             // なぜかKeyConfigManagerのCursorKeyTypeとかを変数に代入できない！後で検討
             KeyconfigManager::getInstance()->setCursorKey(static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]));
-            KeyconfigManager::getInstance()->setEnterKey(static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]));
             KeyconfigManager::getInstance()->setDashKey(static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH]));
             PlayerDataManager::getInstance()->getGlobalData()->saveKeyConfig
             (
                 static_cast<KeyconfigManager::CursorKeyType>(this->configIdxs[MenuType::CURSOR]),
-                static_cast<KeyconfigManager::EnterKeyType>(this->configIdxs[MenuType::ENTER]),
                 static_cast<KeyconfigManager::DashKeyType>(this->configIdxs[MenuType::DASH])
             );
             this->close();
@@ -270,10 +260,6 @@ void KeyconfigMenuLayer::setConfigNameLabel(const MenuType type, int idx)
         case MenuType::CURSOR:
             configNameStr = KeyconfigManager::getInstance()->typeToDispName(static_cast<KeyconfigManager::CursorKeyType>(idx));
             break;
-        
-        case MenuType::ENTER:
-            configNameStr = KeyconfigManager::getInstance()->typeToDispName(static_cast<KeyconfigManager::EnterKeyType>(idx));
-            break;
             
         case MenuType::DASH:
             configNameStr = KeyconfigManager::getInstance()->typeToDispName(static_cast<KeyconfigManager::DashKeyType>(idx));
@@ -304,7 +290,7 @@ Point KeyconfigMenuLayer::calcItemPosition(Sprite* item, int idx) const
     int itemNumFix { etoi(MenuType::SIZE) / 2 };
     float evenFix { etoi(MenuType::SIZE) % 2 == 0 ? 0.5 : 0 };
     
-    return Point(0, (itemNumFix + evenFix) * (itemNumFix - idx) * item->getContentSize().height / 2);
+    return Point(0, (itemNumFix + evenFix) * (itemNumFix - idx) * item->getContentSize().height * 0.4f);
 }
 
 // メニュー項目名の座標を計算

@@ -22,7 +22,6 @@ private:
     enum struct MenuType
     {
         CURSOR,
-        ENTER,
         DASH,
         SAVE,
         CANCEL,

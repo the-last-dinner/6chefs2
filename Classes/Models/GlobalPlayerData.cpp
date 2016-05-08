@@ -284,29 +284,6 @@ KeyconfigManager::CursorKeyType GlobalPlayerData::getCursorKey()
     return static_cast<KeyconfigManager::CursorKeyType>(this->globalData[CURSOR_KEY].GetInt());
 }
 
-// 決定キーをセット
-void GlobalPlayerData::setEnterKey(const KeyconfigManager::EnterKeyType keyType)
-{
-    int keyNum {etoi(keyType)};
-    if (this->globalData.HasMember(ENTER_KEY))
-    {
-        this->globalData[ENTER_KEY].SetInt(keyNum);
-    }
-    else
-    {
-        rapidjson::Value kid (kStringType);
-        kid.SetString(ENTER_KEY, strlen(ENTER_KEY), this->globalData.GetAllocator());
-        this->globalData.AddMember(kid, rapidjson::Value(keyNum), this->globalData.GetAllocator());
-    }
-}
-
-// 決定キーを取得 (デフォルトSPACE)
-KeyconfigManager::EnterKeyType GlobalPlayerData::getEnterKey()
-{
-    if (!this->globalData.HasMember(ENTER_KEY)) return KeyconfigManager::EnterKeyType::SPACE;
-    return static_cast<KeyconfigManager::EnterKeyType>(this->globalData[ENTER_KEY].GetInt());
-}
-
 // ダッシュキーをセット
 void GlobalPlayerData::setDashKey(const KeyconfigManager::DashKeyType keyType)
 {
@@ -331,10 +308,9 @@ KeyconfigManager::DashKeyType GlobalPlayerData::getDashKey()
 }
 
 // キーコンフィグのセーブ
-void GlobalPlayerData::saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::EnterKeyType enterKey, const KeyconfigManager::DashKeyType dashKey)
+void GlobalPlayerData::saveKeyConfig(const KeyconfigManager::CursorKeyType cursorKey, const KeyconfigManager::DashKeyType dashKey)
 {
     this->setCursorKey(cursorKey);
-    this->setEnterKey(enterKey);
     this->setDashKey(dashKey);
     this->saveGlobalData();
 }
