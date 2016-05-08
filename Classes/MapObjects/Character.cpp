@@ -124,9 +124,11 @@ bool Character::walkBy(const vector<Direction>& directions, function<void()> onW
 {
     if(!MapObject::moveBy(directions, onWalked, ratio)) return false;
     
-    this->setDirection(back ? MapUtils::oppositeDirection(directions.back()) : directions.back());
+    Direction direction { back ? MapUtils::oppositeDirection(directions.back()) : directions.back() };
     
-    this->stamp(directions.back(), ratio);
+    this->setDirection(direction);
+    
+    this->stamp(direction, ratio);
     
     return true;
 }

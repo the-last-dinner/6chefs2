@@ -94,14 +94,15 @@ bool WalkByEvent::init(rapidjson::Value& json)
 void WalkByEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
-    
-    this->target->setPaused(false);
+
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
 void WalkByEvent::update(float delta)
 {
     if(this->target->isMoving() || this->isCommandSent) return;
+    
+    if(this->target->isPaused()) this->target->setPaused(false);
     
     this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio, this->back);
     
@@ -127,14 +128,15 @@ bool WalkToEvent::init(rapidjson::Value& json)
 void WalkToEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
-    
-    this->target->setPaused(false);
+
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
 void WalkToEvent::update(float delta)
 {
     if(this->target->isMoving() || this->isCommandSent) return;
+    
+    if(this->target->isPaused()) this->target->setPaused(false);
     
     // 経路探索開始
     PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
