@@ -42,6 +42,10 @@
 					"text":["鍵以外のアイテムは装備しないと\n使用できません。","アイテムを使用したい時は\n装備を忘れないようにしましょう。"]
 				},
 				{
+					"type":"removeChara",
+					"objID":"1930"
+				},
+				{
 					"type":"already"
 				}
 			]
@@ -497,6 +501,20 @@
 		{
 			"type":"setLight",
 			"objID":"2"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["19","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeChara",
+					"objID":"1930"
+				}
+			]
 		}
 	]
 }

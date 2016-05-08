@@ -124,6 +124,25 @@
 						},
 						{
 							"type":"spawn",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"hero",
+									"x":14,
+									"y":4,
+									"speed":2.0
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"1021",
+									"x":16,
+									"y":5,
+									"speed":2.0
+								}
+							]
+						},
+						{
+							"type":"spawn",
 							"action":[	
 								{
 									"type":"stopBGM",
@@ -131,7 +150,8 @@
 								},
 								{
 									"type":"reaction",
-									"objID":"1021"
+									"objID":"1021",
+									"volume":0.25
 								},
 								{
 									"type":"changeDirection",
@@ -204,7 +224,7 @@
 									"objID":"1099",
 									"direction":"UP",
 									"steps":9.0,
-									"speed":0.4
+									"speed":0.6
 								},
 								{
 									"type":"barrage",
@@ -462,6 +482,12 @@
 													"time":0.2
 												}
 											]			
+										},
+										{
+											"type":"charaWalk",
+											"objID":"10109",
+											"steps":1.0,
+											"direction":"UP"
 										},
 							            {
 							            	"type":"removeChara",

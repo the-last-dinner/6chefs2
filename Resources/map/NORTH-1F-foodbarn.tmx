@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="68">
- <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="73">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="kitchen-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="kitchen-option1" tilewidth="16" tileheight="16" tilecount="216" columns="18">
   <image source="kitchen-option1.png" trans="007575" width="288" height="192"/>
  </tileset>
- <tileset firstgid="697" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="697" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="635a73" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="10597" name="ST-Room-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="10597" name="ST-Room-I01" tilewidth="16" tileheight="16" tilecount="1120" columns="16">
   <image source="ST-Room-I01.png" trans="635a73" width="256" height="1120"/>
  </tileset>
- <tileset firstgid="11717" name="object_treasure01a" tilewidth="16" tileheight="16">
+ <tileset firstgid="11717" name="object_treasure01a" tilewidth="16" tileheight="16" tilecount="288" columns="18">
   <image source="object_treasure01a.png" trans="c1a5c8" width="288" height="256"/>
  </tileset>
- <tileset firstgid="12005" name="yasai" tilewidth="16" tileheight="16">
+ <tileset firstgid="12005" name="yasai" tilewidth="16" tileheight="16" tilecount="32" columns="8">
   <image source="yasai.png" trans="ffffff" width="128" height="72"/>
  </tileset>
- <tileset firstgid="12037" name="kitchen3" tilewidth="16" tileheight="16">
+ <tileset firstgid="12037" name="kitchen3" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="kitchen3.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <tileset firstgid="13061" name="Yatai-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="13061" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="000000" width="944" height="255"/>
  </tileset>
  <layer name="Base" width="20" height="24">
@@ -139,12 +139,6 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="41" x="288" y="112" width="16" height="48">
-   <properties>
-    <property name="EventID" value="2"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
   <object id="42" x="144" y="48" width="32" height="32">
    <properties>
     <property name="EventID" value="3"/>
@@ -245,6 +239,15 @@
   <object id="67" x="272" y="64" width="32" height="16">
    <properties>
     <property name="objID" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="68" x="272" y="112" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="objID" value="1930"/>
+    <property name="trigger" value="2"/>
    </properties>
   </object>
  </objectgroup>

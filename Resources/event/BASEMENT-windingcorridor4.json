@@ -128,6 +128,11 @@
 									    			"objID":"10109"
 									    		},
 									    		{
+									    			"type":"playSE",
+									    			"file":"reaction.mp3",
+									    			"volume":0.25
+									    		},
+									    		{
 									    			"type":"changeDirection",
 									    			"direction":"DOWN",
 									    			"objID":"10109"

@@ -169,6 +169,11 @@
 							"type":"spawn",
 							"action":[
 								{
+									"type":"playSE",
+									"file":"reaction.mp3",
+									"volume":0.25
+								},
+								{
 									"type":"reaction",
 									"objID":"1072"
 								},
@@ -182,6 +187,11 @@
 						{
 							"type":"spawn",
 							"action":[
+								{
+									"type":"reaction",
+									"file":"reaction.mp3",
+									"volume":0.25
+								},
 								{
 									"type":"reaction",
 									"objID":"hero"
@@ -390,6 +400,11 @@
 							"type":"spawn",
 							"action":[
 								{
+									"type":"playSE",
+									"file":"reaction",
+									"volume":0.25
+								},
+								{
 									"type":"reaction",
 									"objID":"1072"
 								},
@@ -401,9 +416,19 @@
 							]
 						},
 						{
-							"type":"reaction",
-							"objID":"hero"
-						},
+				          "type":"spawn",
+				          "action":[
+				            {
+				              "type": "reaction",
+				              "objID": "hero"
+				            },
+				            {
+				              "type":"playSE",
+				              "file":"reaction.mp3",
+				              "volume":0.25
+				            }
+				          ]
+				        },
 						{
 							"type":"wait",
 							"time":1.0

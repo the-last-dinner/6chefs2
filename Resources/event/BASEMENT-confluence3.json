@@ -352,9 +352,19 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"reaction",
-							"objID":"1057"
-						},
+				          "type":"spawn",
+				          "action":[
+				            {
+				              "type": "reaction",
+				              "objID": "1057"
+				            },
+				            {
+				              "type":"playSE",
+				              "file":"reaction.mp3",
+				              "volume":0.25
+				            }
+				          ]
+				        },
 						{
 							"type":"charaMsg",
 							"text":["ん？なんだオメェ・・・\nこんなトコロまで来たのか・・・"],

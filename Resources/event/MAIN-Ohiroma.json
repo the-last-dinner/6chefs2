@@ -243,6 +243,64 @@
           ]
         }
       ]
+    },
+    {
+      "type":"if",
+      "condition":[
+          {
+              "event":["4","20"]
+          }
+      ],
+      "action":[
+           {
+                "type": "sequence",
+                "action": [
+                  {
+                    "type": "fadeout"
+                  },
+                  {
+                    "type": "displayImg",
+                    "file": "shituji_img.png",
+                    "time": 3.0
+                  },
+                  {
+                    "type": "fadein"
+                  },
+                  {
+                    "type": "questionMsg",
+                    "text": ["入りますか？"],
+                    "choices":[
+                      {
+                        "choice":"はい",
+                        "action":[
+                          {
+                            "type":"already"
+                          },
+                          {
+                            "type": "changeMap",
+                            "mapID": "9",
+                            "x": 8,
+                            "y": 31
+                          }
+                        ]
+                      },
+                      {
+                        "choice":"いいえ",
+                        "action":[
+                          {
+                            "type": "charaWalk",
+                            "direction": "DOWN",
+                            "option":"back",
+                            "steps": 1.0,
+                            "objID": "hero"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+            }
+      ] 
     }
   ],
   "12": [
@@ -286,66 +344,6 @@
           "type":"already"
         }
       ]
-    }
-  ],
-  "13": [
-    {
-      "type":"if",
-      "condition":[
-          {
-              "event":["4","20"]
-          }
-      ],
-      "action":[
-           {
-                "type": "sequence",
-                "action": [
-                  {
-                    "type": "fadeout"
-                  },
-                  {
-                    "type": "displayImg",
-                    "file": "shituji_img.png",
-                    "time": 2.0
-                  },
-                  {
-                    "type": "fadein"
-                  },
-                  {
-                    "type": "questionMsg",
-                    "text": ["入りますか？"],
-                    "choices":[
-                      {
-                        "choice":"はい",
-                        "action":[
-                          {
-                            "type":"already"
-                          },
-                          {
-                            "type": "changeMap",
-                            "mapID": "9",
-                            "x": 8,
-                            "y": 31
-                          }
-                        ]
-                      },
-                      {
-                        "choice":"いいえ",
-                        "action":[
-                          {
-                            "type":"charaWalk",
-                            "objID":"hero",
-                            "direction":"DOWN",
-                            "option":"back",
-                            "steps":1.0
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-            }
-      ] 
     }
   ],
   "15": [
@@ -416,6 +414,11 @@
             {
               "type": "spawn",
               "action": [
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
                 {
                   "type": "reaction",
                   "objID": "1034"
@@ -666,6 +669,11 @@
             {
               "type":"spawn",
               "action":[
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
                 {
                   "type":"reaction",
                   "objID":"hero"
@@ -927,6 +935,11 @@
               "type":"spawn",
               "action":[
                 {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
+                {
                   "type":"reaction",
                   "objID":"hero"
                 },
@@ -1172,6 +1185,11 @@
             {
               "type":"spawn",
               "action":[
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
                 {
                   "type":"reaction",
                   "objID":"hero"
@@ -1429,8 +1447,18 @@
               "objID":"1088"
             },
             {
-              "type":"reaction",
-              "objID":"1085"
+              "type":"spawn",
+              "action":[
+                {
+                  "type": "reaction",
+                  "objID": "1085"
+                },
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                }
+              ]
             },
             {
               "type":"wait",
@@ -1448,6 +1476,11 @@
             {
               "type":"spawn",
               "action":[
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
                 {
                   "type":"reaction",
                   "objID":"hero"
@@ -1665,6 +1698,11 @@
             {
               "type":"spawn",
               "action":[
+                {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
                 {
                   "type":"reaction",
                   "objID":"hero"
@@ -1885,6 +1923,11 @@
               "type":"spawn",
               "action":[
                 {
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
+                {
                   "type":"reaction",
                   "objID":"hero"
                 },
@@ -2014,6 +2057,11 @@
           "type": "spawn",
           "action": [
             {
+              "type":"playSE",
+              "file":"reaction.mp3",
+              "volume":0.25
+            },
+            {
               "type": "reaction",
               "objID": "1012"
             },
@@ -2022,6 +2070,13 @@
               "objID": "hero"
             }
           ]
+        },
+        {
+          "type":"charaWalk",
+          "steps":7.0,
+          "direction":"RIGHT",
+          "speed":5.0,
+          "objID":"1012"
         },
         {
           "type":"changeDirection",
@@ -2209,7 +2264,7 @@
       "condition":[
         {
           "event":["4","20"],
-          "Nevent":["4","13"]
+          "Nevent":["9","10"]
         }
       ],
       "action":[

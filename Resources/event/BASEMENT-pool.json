@@ -63,9 +63,19 @@
 					"objID":"10105"
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaMsg",
 					"text":["（いた！アイツだ・・・）"],
@@ -406,9 +416,19 @@
 							"imgID":"3"
 						},
 						{
-							"type":"reaction",
-							"objID":"10105"
-						},
+				          "type":"spawn",
+				          "action":[
+				            {
+				              "type": "reaction",
+				              "objID": "10105"
+				            },
+				            {
+				              "type":"playSE",
+				              "file":"reaction.mp3",
+				              "volume":0.25
+				            }
+				          ]
+				        },
 						{
 							"type":"charaMsg",
 							"text":["ぎがっ？"],

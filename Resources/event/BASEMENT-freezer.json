@@ -18,9 +18,19 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"reaction",
-					"objID":"1070"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "1070"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaMsg",
 					"text":["佐々木くん・・・"],
@@ -28,9 +38,19 @@
 					"imgID":"2"
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaMsg",
 					"text":["中山さん・・・"],
@@ -221,9 +241,19 @@
 							"steps":1.0
 						},
 						{
-							"type":"reaction",
-							"objID":"hero"
-						},
+				          "type":"spawn",
+				          "action":[
+				            {
+				              "type": "reaction",
+				              "objID": "hero"
+				            },
+				            {
+				              "type":"playSE",
+				              "file":"reaction.mp3",
+				              "volume":0.25
+				            }
+				          ]
+				        },
 						{
 							"type":"changeDirection",
 							"objID":"hero",

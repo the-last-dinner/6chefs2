@@ -68,9 +68,19 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"reaction",
-					"objID":"hero"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaWalkTo",
 					"objID":"hero",
@@ -126,6 +136,11 @@
 				{
 					"type":"spawn",
 					"action":[
+						{
+							"type":"playSE",
+							"file":"reaction.mp3",
+							"volume":0.25
+						},
 						{
 							"type":"reaction",
 							"objID":"1017"
@@ -205,9 +220,19 @@
 					"type":"fadein"
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaMsg",
 					"talk":[

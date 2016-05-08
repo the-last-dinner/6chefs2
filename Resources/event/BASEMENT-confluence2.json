@@ -154,9 +154,25 @@
 											]
 										},
 										{
-											"type":"reaction",
-											"objID":"10111"
+											"type":"charaWalk",
+											"objID":"10111",
+											"steps":1.0,
+											"direction":"DOWN"
 										},
+										{
+								          "type":"spawn",
+								          "action":[
+								            {
+								              "type": "reaction",
+								              "objID": "10111"
+								            },
+								            {
+								              "type":"playSE",
+								              "file":"reaction.mp3",
+								              "volume":0.25
+								            }
+								          ]
+								        },
 									    {
 									    	"type":"charaMsg",
 									    	"talk":[

@@ -54,9 +54,19 @@
 					"file":"bgm_noroi.mp3"
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaMsg",
 					"text":["一色さん！！"],
@@ -65,9 +75,19 @@
 					"option":"reaction"
 				},
 				{
-					"type":"reaction",
-					"objID":"1064"
-				},
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "1064"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        },
 				{
 					"type":"charaWalk",
 					"objID":"hero",

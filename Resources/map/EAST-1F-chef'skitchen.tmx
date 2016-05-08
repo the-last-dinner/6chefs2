@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="32">
- <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="050505" width="480" height="256"/>
   <tile id="227">
    <properties>
@@ -8,16 +8,16 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="481" name="kitchen-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="kitchen-option1" tilewidth="16" tileheight="16" tilecount="216" columns="18">
   <image source="kitchen-option1.png" trans="007575" width="288" height="192"/>
  </tileset>
- <tileset firstgid="697" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="697" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="007575" width="128" height="256"/>
  </tileset>
- <tileset firstgid="825" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="825" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="2809" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="2809" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="000000" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="20" height="20">
@@ -114,7 +114,7 @@
     <property name="objID" value="10110"/>
    </properties>
   </object>
-  <object id="26" x="144" y="64" width="32" height="32">
+  <object id="26" x="143" y="32" width="32" height="32">
    <properties>
     <property name="CharaID" value="7"/>
     <property name="direction" value="DOWN"/>

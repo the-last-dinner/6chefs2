@@ -60,9 +60,19 @@
 					]
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
-				}
+		          "type":"spawn",
+		          "action":[
+		            {
+		              "type": "reaction",
+		              "objID": "hero"
+		            },
+		            {
+		              "type":"playSE",
+		              "file":"reaction.mp3",
+		              "volume":0.25
+		            }
+		          ]
+		        }
 			]
 		}
 	],
