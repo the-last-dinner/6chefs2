@@ -1,16 +1,4 @@
 {
-	"1":[
-		{
-      		"type":"stopBGM",
-      		"file":"NORTH.mp3"
-    	},
-		{
-			"type":"changeMap",
-			"mapID":"9",
-			"x":2,
-			"y":3
-		}
-	],
 	"2":[
 		{
       		"type":"stopBGM",

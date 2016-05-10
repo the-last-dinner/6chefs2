@@ -121,7 +121,7 @@
 								{
 									"type":"displayImg",
 									"file":"taihou_stand.png",
-									"time":2.0
+									"time":3.0
 								},
 								{
 									"type":"charaMsg",
