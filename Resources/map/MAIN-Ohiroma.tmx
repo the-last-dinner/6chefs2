@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="48" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="146">
- <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="48" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="149">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
  </tileset>
  <layer name="Base" width="60" height="48">
@@ -202,6 +202,30 @@
     <property name="movePattern" value="1"/>
     <property name="objID" value="1097"/>
     <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="146" x="464" y="544" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="18"/>
+    <property name="direction" value="DOWN"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="10112"/>
+   </properties>
+  </object>
+  <object id="147" x="656" y="192" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="8"/>
+    <property name="direction" value="DOWN"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="10111"/>
+   </properties>
+  </object>
+  <object id="148" x="464" y="544" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="7"/>
+    <property name="direction" value="RIGHT"/>
+    <property name="movePattern" value="1"/>
+    <property name="objID" value="10113"/>
    </properties>
   </object>
  </objectgroup>
