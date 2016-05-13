@@ -342,6 +342,8 @@
 		DC328A801C87194E00675131 /* story in Resources */ = {isa = PBXBuildFile; fileRef = DC328A681C87194E00675131 /* story */; };
 		DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
 		DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
+		DC37D8131CDF450E0014418A /* CollisionBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8111CDF450E0014418A /* CollisionBox.cpp */; };
+		DC37D8141CDF450E0014418A /* CollisionBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8111CDF450E0014418A /* CollisionBox.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -686,6 +688,8 @@
 		DC328A681C87194E00675131 /* story */ = {isa = PBXFileReference; lastKnownFileType = folder; path = story; sourceTree = "<group>"; };
 		DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FocusLightLayer.cpp; sourceTree = "<group>"; };
 		DC37D80E1CDEFD3D0014418A /* FocusLightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusLightLayer.h; sourceTree = "<group>"; };
+		DC37D8111CDF450E0014418A /* CollisionBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionBox.cpp; sourceTree = "<group>"; };
+		DC37D8121CDF450E0014418A /* CollisionBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionBox.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1226,6 +1230,8 @@
 				DC0390F71C871E1000C50E8E /* PathObject.cpp */,
 				DC0390F81C871E1000C50E8E /* PathObject.h */,
 				DC0390F91C871E1000C50E8E /* TerrainObject */,
+				DC37D8111CDF450E0014418A /* CollisionBox.cpp */,
+				DC37D8121CDF450E0014418A /* CollisionBox.h */,
 			);
 			path = MapObjects;
 			sourceTree = "<group>";
@@ -1661,6 +1667,8 @@
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
 				DC0391A31C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
+				DC37D8131CDF450E0014418A /* CollisionBox.cpp in Sources */,
+				26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				26460B8E1D72EBB600F0336C /* CharacterMasterData.cpp in Sources */,
 				DC0391A11C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
@@ -1765,6 +1773,8 @@
 				DC0391D01C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391D61C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
+				260621C81D61B7A200348C94 /* DocumentData.cpp in Sources */,
+				DC37D8141CDF450E0014418A /* CollisionBox.cpp in Sources */,
 				DC0392001C871E1000C50E8E /* Scouter.cpp in Sources */,
 				DC0391F01C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
 				DC0391B81C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
