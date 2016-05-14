@@ -420,6 +420,11 @@
                   "volume":0.25
                 },
                 {
+                  "type":"changeDirection",
+                  "objID":"hero",
+                  "direction":"LEFT"
+                },
+                {
                   "type": "reaction",
                   "objID": "1034"
                 },
@@ -1385,39 +1390,53 @@
               "type":"stopBGM"
             },
             {
-              "type":"playBGM",
-              "file":"title_bgm.mp3"
-            },
-            {
-              "type":"charaMsg",
-              "talk":[
+              "type":"spawn",
+              "action":[
                 {
-                  "text":["希崎よ・・・\n俺たちはただの動物じゃねぇ・・・人間だ。","食えりゃ何でもいいってワケじゃねぇ・・・\n「腹が満たされりゃ満足」ってワケじゃねぇんだよ・・・"],
-                  "charaID":"2",
-                  "imgID":"2"
+                  "type":"sequence",
+                  "action":[
+                    {
+                      "type":"wait",
+                      "time":1.0
+                    },
+                    {
+                      "type":"playBGM",
+                      "file":"title_bgm.mp3"
+                    }
+                  ]
                 },
                 {
-                  "text":["加藤氏！"],
-                  "charaID":"4",
-                  "imgID":"1"
-                },
-                {
-                  "text":["あぁ・・・\nアンタはもう十分わかってるよな・・・"],
-                  "charaID":"2",
-                  "imgID":"2"
-                },
-                {
-                  "text":["・・・"],
-                  "charaID":"7"
-                },
-                {
-                  "text":["希崎・・・\nあとは俺らに任せてみてくれねぇか？"],
-                  "charaID":"2",
-                  "imgID":"2"
-                },
-                {
-                  "text":["・・・"],
-                  "charaID":"7"
+                  "type":"charaMsg",
+                  "talk":[
+                    {
+                      "text":["希崎よ・・・\n俺たちはただの動物じゃねぇ・・・人間だ。","食えりゃ何でもいいってワケじゃねぇ・・・\n「腹が満たされりゃ満足」ってワケじゃねぇんだよ・・・"],
+                      "charaID":"2",
+                      "imgID":"2"
+                    },
+                    {
+                      "text":["加藤氏！"],
+                      "charaID":"4",
+                      "imgID":"1"
+                    },
+                    {
+                      "text":["あぁ・・・\nアンタはもう十分わかってるよな・・・"],
+                      "charaID":"2",
+                      "imgID":"2"
+                    },
+                    {
+                      "text":["・・・"],
+                      "charaID":"7"
+                    },
+                    {
+                      "text":["希崎・・・\nあとは俺らに任せてみてくれねぇか？"],
+                      "charaID":"2",
+                      "imgID":"2"
+                    },
+                    {
+                      "text":["・・・"],
+                      "charaID":"7"
+                    }
+                  ]
                 }
               ]
             },
@@ -1754,7 +1773,7 @@
             },
             {
               "type":"wait",
-              "time":1.0
+              "time":2.0
             },
             {
               "type":"ending",

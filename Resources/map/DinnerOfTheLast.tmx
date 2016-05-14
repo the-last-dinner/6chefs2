@@ -9,6 +9,9 @@
  <tileset firstgid="745" name="youkan" tilewidth="16" tileheight="16">
   <image source="youkan.png" trans="0000ff" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="1225" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="40" height="30">
   <properties>
    <property name="cc_vertexz" value="-14"/>
@@ -156,4 +159,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzjENACAQALEfEYB/rYwIuIQwtAo6c+01X/Nr/Bq/xq/xa/wav8av8Wv8Gr/Gr/n9B68dDCEC2Q==
+  </data>
+ </layer>
 </map>

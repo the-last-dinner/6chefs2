@@ -18,6 +18,9 @@
  <tileset firstgid="12973" name="SC-Toybox01" tilewidth="16" tileheight="16">
   <image source="SC-Toybox01.png" trans="050505" width="256" height="256"/>
  </tileset>
+ <tileset firstgid="13229" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="28" height="28">
   <properties>
    <property name="cc_vertexz" value="-17"/>
@@ -184,4 +187,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="28" height="28">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBg+GHGQFdArH3pJqP2DWX7qAVG7Ru1b9S+UftG7Ru1bzDYN9D2j9o3at9gAQDDvCJH
+  </data>
+ </layer>
 </map>

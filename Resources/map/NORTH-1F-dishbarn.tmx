@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="57">
- <tileset firstgid="1" name="Yatai-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="c1a5c8" width="944" height="255"/>
  </tileset>
- <tileset firstgid="886" name="object_treasure01a" tilewidth="16" tileheight="16">
+ <tileset firstgid="886" name="object_treasure01a" tilewidth="16" tileheight="16" tilecount="288" columns="18">
   <image source="object_treasure01a.png" trans="c1a5c8" width="288" height="256"/>
  </tileset>
- <tileset firstgid="1174" name="kitchen-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1174" name="kitchen-option1" tilewidth="16" tileheight="16" tilecount="216" columns="18">
   <image source="kitchen-option1.png" trans="007575" width="288" height="192"/>
  </tileset>
- <tileset firstgid="1390" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="1390" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="007575" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="11290" name="ST-Room-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="11290" name="ST-Room-I01" tilewidth="16" tileheight="16" tilecount="1120" columns="16">
   <image source="ST-Room-I01.png" trans="007575" width="256" height="1120"/>
  </tileset>
- <tileset firstgid="12410" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="12410" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="635a73" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="22310" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="22310" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="22790" name="syokki" tilewidth="16" tileheight="16">
+ <tileset firstgid="22790" name="syokki" tilewidth="16" tileheight="16" tilecount="48" columns="6">
   <image source="syokki.png" trans="007575" width="96" height="128"/>
  </tileset>
- <tileset firstgid="22838" name="syokkidana" tilewidth="16" tileheight="16">
+ <tileset firstgid="22838" name="syokkidana" tilewidth="16" tileheight="16" tilecount="54" columns="9">
   <image source="syokkidana.png" trans="007575" width="150" height="100"/>
  </tileset>
- <tileset firstgid="22892" name="kitchen-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="22892" name="kitchen-option1" tilewidth="16" tileheight="16" tilecount="216" columns="18">
   <image source="kitchen-option1.png" trans="007575" width="288" height="192"/>
  </tileset>
- <tileset firstgid="23108" name="kitchen3" tilewidth="16" tileheight="16">
+ <tileset firstgid="23108" name="kitchen3" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="kitchen3.png" trans="ffffff" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="24132" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="26">
   <properties>
@@ -235,4 +238,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYICA/kQGqoKhZt6/uMFtHi5ArD0w8wipJ9U8QmCwu49YMGreqHmDybyhWl6Rax6l7iPFrlHzEAAAvawnVQ==
+  </data>
+ </layer>
 </map>

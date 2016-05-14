@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="38">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="kama" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="kama" tilewidth="16" tileheight="16" tilecount="768" columns="24">
   <image source="kama.png" trans="ffffff" width="384" height="512"/>
  </tileset>
- <tileset firstgid="1249" name="Yatai-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1249" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="007575" width="944" height="255"/>
  </tileset>
- <tileset firstgid="2134" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="2134" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="007575" width="384" height="256"/>
  </tileset>
- <tileset firstgid="2518" name="BlackMagic02" tilewidth="16" tileheight="16">
+ <tileset firstgid="2518" name="BlackMagic02" tilewidth="16" tileheight="16" tilecount="264" columns="12">
   <image source="BlackMagic02.png" trans="000000" width="192" height="352"/>
+ </tileset>
+ <tileset firstgid="2782" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="30" height="22">
   <properties>
@@ -241,4 +244,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="30" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAFGdwMAwJG7R21d9TeUXtHAX4w0uJ31N5Re0ftHToAALw4CIo=
+  </data>
+ </layer>
 </map>

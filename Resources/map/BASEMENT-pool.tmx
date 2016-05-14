@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="36" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="136">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="barrel-option" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="barrel-option" tilewidth="16" tileheight="16" tilecount="224" columns="16">
   <image source="barrel-option.png" trans="201c30" width="256" height="224"/>
  </tileset>
- <tileset firstgid="705" name="object_sack01" tilewidth="16" tileheight="16">
+ <tileset firstgid="705" name="object_sack01" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="object_sack01.png" trans="201c30" width="384" height="256"/>
  </tileset>
- <tileset firstgid="1089" name="meet" tilewidth="16" tileheight="16">
+ <tileset firstgid="1089" name="meet" tilewidth="16" tileheight="16" tilecount="504" columns="28">
   <image source="meet.png" trans="0000ff" width="448" height="288"/>
+ </tileset>
+ <tileset firstgid="1593" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="poolbottom" width="36" height="30">
   <properties>
@@ -476,4 +479,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="36" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0aENADAMwLCi/f/THhseCS6wL4iUmd89s4qepqfpaXqanqan6Wnbemjbfulpepqepqdt6+H3APL2FGs=
+  </data>
+ </layer>
 </map>

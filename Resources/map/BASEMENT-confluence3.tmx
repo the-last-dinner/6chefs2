@@ -11,6 +11,9 @@
  <tileset firstgid="481" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="007575" width="384" height="256"/>
  </tileset>
+ <tileset firstgid="865" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="22" height="36">
   <properties>
    <property name="cc_vertexz" value="-14"/>
@@ -221,6 +224,11 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKAuMGaksoHDzFwTCu0bLuFAbXMpDVdc5lILjJo7au6ouaPmjpo7au6ouYPXXDFG7FgcSb0oDjViJLoV1GYxRdIDchO12jGDBQAASsYJAQ==
+  </data>
+ </layer>
+ <layer name="shadow" width="22" height="36">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAOXjPjkKAQ0NtcSu2jtrkwfdQOB1qbS20wau7QBEMtfEfNHTV31NxRc0fNHTV3sNo5nNsWAIbaIXk=
   </data>
  </layer>
 </map>

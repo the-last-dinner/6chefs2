@@ -6,6 +6,9 @@
  <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="000000" width="256" height="1990"/>
  </tileset>
+ <tileset firstgid="2465" name="http://www.thisav.com/search?query=%E7%88%86%E4%B9%B3&amp;for=videos" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="26" height="22">
   <properties>
    <property name="cc_vertexz" value="-12"/>
@@ -72,4 +75,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="26" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAOdLhwSFAZ0NseWttHb3toDUbtGbVn1J5Re0btGQXDAQAAy0EEOQ==
+  </data>
+ </layer>
 </map>

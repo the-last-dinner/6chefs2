@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="36">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="chip10e_glas.png" trans="0000ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="961" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="34">
   <properties>
@@ -178,4 +181,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="34">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAE3ixYBCkAo+aNmjdq3qh5o+aNmjdq3qh5I908WptPa/fSEwAAVQgJ4Q==
+  </data>
+ </layer>
 </map>

@@ -6,6 +6,9 @@
  <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="2465" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="32" height="18">
   <properties>
    <property name="cc_vertexz" value="-14"/>
@@ -128,4 +131,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYICANzwMVAekmDlq/6j9A2k/LcBA2z8KRsEooB0Y6Pw90PYPBwAAR0wOiQ==
+  </data>
+ </layer>
 </map>

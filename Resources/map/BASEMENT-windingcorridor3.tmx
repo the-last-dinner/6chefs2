@@ -3,8 +3,11 @@
  <properties>
   <property name="cc_vertexz" value="-11"/>
  </properties>
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="40">
   <properties>
@@ -48,4 +51,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt0tsNACAIwEDjvO7/7Qyk4RHSGwBL8Jxa7xY/GGQfYx9jH2MfYx9jH2MfYx9jH2MfYx+zvS97P/t652//v9nsU6fp97WPmd6nmA8/hRDD
+  </data>
+ </layer>
 </map>

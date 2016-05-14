@@ -9,6 +9,9 @@
  <tileset firstgid="2049" name="death" tilewidth="16" tileheight="16">
   <image source="death.png" trans="007575" width="384" height="256"/>
  </tileset>
+ <tileset firstgid="2433" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="20" height="34">
   <properties>
    <property name="cc_vertexz" value="-14"/>
@@ -144,4 +147,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="34">
+  <data encoding="base64" compression="zlib">
+   eJxjYBga4AzPqHmj5o2aN2reqHmj5o2aN2reqHkjAQAAtD8ZUQ==
+  </data>
+ </layer>
 </map>

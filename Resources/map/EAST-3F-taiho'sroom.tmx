@@ -15,6 +15,9 @@
  <tileset firstgid="1809" name="set-mansion-in" tilewidth="16" tileheight="16">
   <image source="set-mansion-in.png" trans="007575" width="1440" height="1760"/>
  </tileset>
+ <tileset firstgid="11709" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="26" height="24">
   <properties>
    <property name="cc_vertexz" value="-17"/>
@@ -179,4 +182,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="26" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYIAADkMGuoDBbE+53qg9MHvI0Ttqz6g9o/bQ1x5ag1F7Ru0hBQw3fw92ewDjXw0V
+  </data>
+ </layer>
 </map>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="31">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="007575" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="40">
   <properties>
@@ -117,4 +120,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztzjEKgDAUQLHieb3/7NRVhCf0D8kJshZ/uq/Tg3d+jV/j1/g1fo1f49f4NX6NX+PX+DV+jV/j1/g103/b9Of0H988V2MPeQ==
+  </data>
+ </layer>
 </map>

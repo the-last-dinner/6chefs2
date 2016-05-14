@@ -6,6 +6,9 @@
  <tileset firstgid="505" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="985" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="26" height="20">
   <properties>
    <property name="cc_vertexz" value="-12"/>
@@ -120,4 +123,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAFySwMdAGj9ozaMxzBcIufUXtG7RmMYDR86QMAI3AGCg==
+  </data>
+ </layer>
 </map>

@@ -3,7 +3,10 @@
  <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Sewer-01.png" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1985" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
   <tile id="1674">
    <properties>
@@ -24,7 +27,7 @@
    <property name="cc_vertexz" value="-12"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBh5IJMTFXdyMDB0IWFc6mYC5WYhYUrVYQMAKU8Odg==
+   eJxjYBh5wJMfFWfyMTBkIWFc6iqBclVImFJ12AAAI8gLng==
   </data>
  </layer>
  <layer name="MonoUe" width="10" height="10">
@@ -32,7 +35,7 @@
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBh5oJoDwa7gwOTDQDcSu4MDk08LdQDH7gjZ
+   eJxjYBh5IJoPwY7gw+TDQDYSO4MPk08LdQBCTgc5
   </data>
  </layer>
  <objectgroup name="collision">
@@ -47,7 +50,7 @@
  <objectgroup name="Chara(object)"/>
  <layer name="CharaUe" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBg+IJsDwc7gwOQPBQAARGcBxw==
+   eJxjYBg+wJsPwfbgw+QPBQAA+lABXw==
   </data>
  </layer>
  <objectgroup name="event">
@@ -64,4 +67,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBg0GFlIAqMqqO9OgCe3QHr
+  </data>
+ </layer>
 </map>

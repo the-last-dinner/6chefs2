@@ -24,6 +24,9 @@
  <tileset firstgid="13061" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="000000" width="944" height="255"/>
  </tileset>
+ <tileset firstgid="13946" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="20" height="24">
   <properties>
    <property name="cc_vertexz" value="-18"/>
@@ -251,4 +254,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgOGrJQFUwah5tzZO0HtzmkQpGzRs1b9S8UfOINY/U8opS+2hpHgBjZxjN
+  </data>
+ </layer>
 </map>

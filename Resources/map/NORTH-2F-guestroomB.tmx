@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="37">
- <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="ffffff" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="9901" name="ST-Room-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="9901" name="ST-Room-I01" tilewidth="16" tileheight="16" tilecount="1120" columns="16">
   <image source="ST-Room-I01.png" trans="ffffff" width="256" height="1120"/>
  </tileset>
- <tileset firstgid="11021" name="object_fire06a" tilewidth="16" tileheight="16">
+ <tileset firstgid="11021" name="object_fire06a" tilewidth="16" tileheight="16" tilecount="288" columns="18">
   <image source="object_fire06a.png" trans="c1a5c8" width="288" height="256"/>
+ </tileset>
+ <tileset firstgid="11309" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="30" height="36">
   <properties>
@@ -136,4 +139,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="30" height="36">
+  <data encoding="base64" compression="zlib">
+   eJzt0EEBACAIBEEC2d9I1jCAP/mIzBYYjoiezcHlnq3kvdm9t35V9zYul8vlcrnc1+r2H+7fbtU2OTUfmg==
+  </data>
+ </layer>
 </map>

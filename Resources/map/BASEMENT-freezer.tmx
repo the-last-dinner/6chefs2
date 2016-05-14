@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="31">
- <tileset firstgid="1" name="chip10e_glas" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="chip10e_glas.png" trans="674c56" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="chip10e_glas.png" trans="070d2a" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="barrel-option" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="barrel-option" tilewidth="16" tileheight="16" tilecount="224" columns="16">
   <image source="barrel-option.png" trans="007575" width="256" height="224"/>
+ </tileset>
+ <tileset firstgid="1665" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="20">
   <properties>
@@ -157,4 +160,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYIAAHnYGqoJR80bNQwbeBNQPN/MIgeFm3mCPj6Eev4MVAADEnwND
+  </data>
+ </layer>
 </map>

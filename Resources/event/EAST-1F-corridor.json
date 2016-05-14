@@ -401,7 +401,7 @@
 							"action":[
 								{
 									"type":"playSE",
-									"file":"reaction",
+									"file":"reaction.mp3",
 									"volume":0.25
 								},
 								{
@@ -486,6 +486,14 @@
 							"type":"barrage",
 							"times":20,
 							"limit":5.0,
+							"event":[
+								{
+									"type":"quakeMap",
+									"x":0,
+									"y":12,
+									"time":0.12
+								}
+							],
 							"false":[
 								{
 									"type":"sequence",

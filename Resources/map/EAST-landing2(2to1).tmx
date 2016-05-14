@@ -11,6 +11,9 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="2465" name="ST-Sewer-01.png" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="10" height="10">
   <properties>
    <property name="cc_vertexz" value="-13"/>
@@ -64,4 +67,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgeMPDQBQYVUd7dQAuEAmx
+  </data>
+ </layer>
 </map>

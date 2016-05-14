@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="126" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="56">
- <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="castle7" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="castle7" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="castle7.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="empire-3" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="empire-3" tilewidth="16" tileheight="16" tilecount="900" columns="30">
   <image source="empire-3.png" trans="007575" width="480" height="480"/>
  </tileset>
- <tileset firstgid="1861" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1861" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="ffffff" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="3845" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="3845" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="ffffff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="3973" name="option-set" tilewidth="16" tileheight="16">
+ <tileset firstgid="3973" name="option-set" tilewidth="16" tileheight="16" tilecount="1071" columns="17">
   <image source="option-set.png" trans="c1a5c8" width="281" height="1018"/>
  </tileset>
- <tileset firstgid="5044" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="5044" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="000000" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="5524" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="126" height="24">
   <properties>
@@ -274,4 +277,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="126" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt2LENgFAIAFGmsHQU9x/LCYyiPwi5ezWh4DoiIvYtUo7kvNa7a/akkd3n6dY9u0vv2J3J7kx2Z7I70x/dq3bp2oo7230euzPZncnuTN26aw67M9mdye5MdmeyO5PdmezO5N9mnm5/G7vX6NZdNezO9LXZCZi0Dyk=
+  </data>
+ </layer>
 </map>

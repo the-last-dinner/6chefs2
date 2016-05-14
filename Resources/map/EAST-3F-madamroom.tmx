@@ -21,6 +21,9 @@
  <tileset firstgid="5289" name="SC-DoorI01" tilewidth="16" tileheight="16">
   <image source="SC-DoorI01.png" trans="050505" width="128" height="256"/>
  </tileset>
+ <tileset firstgid="5417" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="30" height="26">
   <properties>
    <property name="cc_vertexz" value="-18"/>
@@ -239,4 +242,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="30" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgKJVgoCp4LEqcOnR7cekj1ryhZi+l5g11e4k1h9r2kgqITR+j9o7aO2rvqL0DbS+xYNTeUXtH7R0FpAAA5VUtMQ==
+  </data>
+ </layer>
 </map>

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="241">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="tidamari" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="tidamari" tilewidth="16" tileheight="16" tilecount="48" columns="6">
   <image source="tidamari.png" trans="007575" width="96" height="128"/>
  </tileset>
- <tileset firstgid="529" name="Skull" tilewidth="16" tileheight="16">
+ <tileset firstgid="529" name="Skull" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Skull.png" trans="007575" width="64" height="64"/>
  </tileset>
- <tileset firstgid="545" name="steps" tilewidth="16" tileheight="16">
+ <tileset firstgid="545" name="steps" tilewidth="16" tileheight="16" tilecount="2380" columns="34">
   <image source="steps.png" trans="080500" width="544" height="1120"/>
+ </tileset>
+ <tileset firstgid="2925" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="26" height="22">
   <properties>
@@ -582,4 +585,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="26" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAF37kZ6AJG7RnZ9tDLH6OAMjBc0tuoPaP2jNozCgAsEREj
+  </data>
+ </layer>
 </map>

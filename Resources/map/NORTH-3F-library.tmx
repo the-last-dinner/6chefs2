@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="61">
- <tileset firstgid="1" name="situnai" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="situnai" tilewidth="16" tileheight="16" tilecount="1860" columns="60">
   <image source="situnai.png" trans="007575" width="960" height="511"/>
  </tileset>
- <tileset firstgid="1861" name="hondana" tilewidth="16" tileheight="16">
+ <tileset firstgid="1861" name="hondana" tilewidth="16" tileheight="16" tilecount="90" columns="10">
   <image source="hondana.png" trans="007575" width="160" height="144"/>
  </tileset>
- <tileset firstgid="1951" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="1951" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="ffffff" width="1440" height="1760"/>
+ </tileset>
+ <tileset firstgid="11851" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="26">
   <properties>
@@ -204,4 +207,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBguKbHQFVAS/O+YjGbWLGhaB41wFAyD1u4sOoTJzYUzaMGGKnmoYcxqfyhZh61AC73DVfziLVvsJo3kAAAfrsqSQ==
+  </data>
+ </layer>
 </map>

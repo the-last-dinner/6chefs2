@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="48" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="149">
- <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
+ </tileset>
+ <tileset firstgid="2465" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="48">
   <properties>
@@ -178,7 +181,7 @@
     <property name="objID" value="1084"/>
    </properties>
   </object>
-  <object id="128" x="688" y="96" width="32" height="32">
+  <object id="128" x="688" y="352" width="32" height="32">
    <properties>
     <property name="CharaID" value="19"/>
     <property name="direction" value="DOWN"/>
@@ -212,7 +215,7 @@
     <property name="objID" value="10112"/>
    </properties>
   </object>
-  <object id="147" x="656" y="192" width="32" height="32">
+  <object id="147" x="656" y="352" width="32" height="32">
    <properties>
     <property name="CharaID" value="8"/>
     <property name="direction" value="DOWN"/>
@@ -407,4 +410,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="60" height="48">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENwCAMAEEGyP5TZgjK1CmQ4LkbwPJb8hif9xlX0du2une3e+o9a/5fu+2zmt42vW162/S26W3T23ZbL5Tc9r962/S26W3T26a3TW+b3ja9bXrb9LbphbNM4gQskQ==
+  </data>
+ </layer>
 </map>

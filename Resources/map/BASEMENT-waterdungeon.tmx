@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="29">
- <tileset firstgid="1" name="chip10e_glas" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="chip10e_glas.png" trans="674c56" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="cfsm_rq_boy1" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="cfsm_rq_boy1" tilewidth="16" tileheight="16" tilecount="288" columns="18">
   <image source="cfsm_rq_boy1.png" trans="674c56" width="288" height="256"/>
  </tileset>
- <tileset firstgid="769" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="769" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="674c56" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1249" name="waterdeath" tilewidth="16" tileheight="16">
+ <tileset firstgid="1249" name="waterdeath" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="waterdeath.png" trans="000000" width="384" height="256"/>
+ </tileset>
+ <tileset firstgid="1633" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="26" height="22">
   <properties>
@@ -144,4 +147,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="26" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgY8IZt1J5Re0btGbVn1J5RgAAjNX5Gqr/pDQCNChAT
+  </data>
+ </layer>
 </map>

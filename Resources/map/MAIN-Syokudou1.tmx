@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-up" width="40" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="123">
- <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2465" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="42" opacity="0.99">
   <properties>
@@ -506,6 +509,11 @@
  <layer name="CharaUe1" width="40" height="42">
   <data encoding="base64" compression="zlib">
    eJztzLEJAAAIBDEF95/ZJb4QSeDaqwIAAAAAAC6azpV88t8CpXsAtQ==
+  </data>
+ </layer>
+ <layer name="shadow" width="40" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENACAQw8DUiM1+/y0Ygh1wEwm7j3RJkrNTnT6WPpY+lj6WPpa+ZNb7Vp8+mj6WPpY+lj6WPpY+lj5Wu4+kj6WPpa+n9q/tvt+6NrotEA==
   </data>
  </layer>
 </map>

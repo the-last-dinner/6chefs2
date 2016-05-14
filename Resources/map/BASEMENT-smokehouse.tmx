@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="32">
- <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="201c30" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1921" name="G1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1921" name="G1" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="G1.png" trans="007575" width="192" height="128"/>
  </tileset>
- <tileset firstgid="2017" name="G2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2017" name="G2" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="G2.png" trans="007575" width="192" height="128"/>
  </tileset>
- <tileset firstgid="2113" name="G3" tilewidth="16" tileheight="16">
+ <tileset firstgid="2113" name="G3" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="G3.png" trans="007575" width="192" height="128"/>
  </tileset>
- <tileset firstgid="2209" name="G4" tilewidth="16" tileheight="16">
+ <tileset firstgid="2209" name="G4" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="G4.png" trans="007575" width="192" height="128"/>
  </tileset>
- <tileset firstgid="2305" name="G5" tilewidth="16" tileheight="16">
+ <tileset firstgid="2305" name="G5" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="G5.png" trans="007575" width="192" height="128"/>
  </tileset>
- <tileset firstgid="2401" name="smoke" tilewidth="16" tileheight="16">
+ <tileset firstgid="2401" name="smoke" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="smoke.png" trans="000000" width="192" height="128"/>
+ </tileset>
+ <tileset firstgid="2497" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="24">
   <properties>
@@ -187,4 +190,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="20" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBg8OZioCoYNW/UvFHzRs0bNW9kmDcKyAcABQoGpQ==
+  </data>
+ </layer>
 </map>
