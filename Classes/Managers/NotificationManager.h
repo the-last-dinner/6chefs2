@@ -28,7 +28,6 @@ private:
 public:
     void notifyMapName(const int mapId);
     void notifyTrophy(const int trophyId);
-    void notifyRemainsInQueue();
     
 private:
     void notifyInQueue(NotificationNode* node, const bool sound = true);

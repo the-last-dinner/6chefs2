@@ -82,10 +82,6 @@ public:
     void pushCameraScene(DungeonCameraScene* scene);
     void popCameraScene();
     
-    // EventListener
-    bool isPressed(const Key& key);
-    vector<Key> getPressedCursorKeys() const;
-    
     // EnemyTask
     vector<SummonData> getSummonDatas() const;
     void removeEnemy(const int enemyId);

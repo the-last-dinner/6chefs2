@@ -3,6 +3,7 @@
 #include "Managers/KeyconfigManager.h"
 #include "Managers/EventListenerKeyboardManager.h"
 
+#include "Scenes/RootScene.h"
 #include "Scenes/StartUpScene.h"
 
 // コンストタクタ
@@ -52,7 +53,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	director->setAnimationInterval(1.0 / 60);
 	
 	// シーンを指定してゲーム開始
-	director->runWithScene(StartUpScene::create());
+    director->runWithScene(RootScene::create());
     
 	return true;
 }

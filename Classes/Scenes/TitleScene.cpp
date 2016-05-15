@@ -12,12 +12,17 @@
 #include "Datas/Scene/TitleSceneData.h"
 #include "Datas/Scene/DungeonSceneData.h"
 
+#include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
 #include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Menu/TitleMainMenuLayer.h"
 #include "Layers/Menu/TrophyListLayer.h"
 
+#include "Managers/SceneManager.h"
+
 #include "Models/GlobalPlayerData.h"
+
+#include "Scenes/RootScene.h"
 
 // コンストラクタ
 TitleScene::TitleScene(){FUNCLOG}
@@ -29,6 +34,8 @@ TitleScene::~TitleScene(){FUNCLOG}
 bool TitleScene::init()
 {
     if(!BaseScene::init(TitleSceneData::create())) return false;
+    
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(true);
     
     return true;
 }
@@ -78,7 +85,7 @@ void TitleScene::onStartSelected()
     SoundManager::getInstance()->stopBGMAll();
     SoundManager::getInstance()->playSE(Resource::SE::GAME_START);
 	PlayerDataManager::getInstance()->setGameStart(0);
-    Director::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
+    SceneManager::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
 }
 
 // 続きからが選ばれた時

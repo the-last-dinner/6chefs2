@@ -12,6 +12,7 @@
 #include "Layers/Menu/ItemMenuLayer.h"
 #include "Layers/Menu/CharacterMenuLayer.h"
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/SceneManager.h"
 #include "Models/StopWatch.h"
 
 // クラス変数
@@ -140,7 +141,8 @@ void DungeonMenuScene::onMenuHidden()
     {
         this->onPopMenuScene();
     }
-    Director::getInstance()->popScene();
+    
+    SceneManager::getInstance()->popScene();
 }
 
 #pragma mark -

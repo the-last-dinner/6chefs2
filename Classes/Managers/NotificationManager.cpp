@@ -9,7 +9,10 @@
 #include "Managers/NotificationManager.h"
 
 #include "Managers/CsvDataManager.h"
+#include "Managers/SceneManager.h"
 #include "Managers/SoundManager.h"
+
+#include "Scenes/RootScene.h"
 
 #include "UI/Notification/MapNameNotification.h"
 #include "UI/Notification/TrophyNotification.h"
@@ -35,7 +38,8 @@ void NotificationManager::destroy()
 void NotificationManager::notifyMapName(const int mapId)
 {
     MapNameNotification* n { MapNameNotification::create(CsvDataManager::getInstance()->getMapData()->getName(mapId)) };
-    Director::getInstance()->getRunningScene()->addChild(n, Priority::MAP_NOTIFICATION);
+    n->setGlobalZOrder(Priority::MAP_NOTIFICATION);
+    SceneManager::getInstance()->getRootScene()->addChild(n);
     n->notify(CC_CALLBACK_1(NotificationManager::onNotifyEnterAnimationFinished, this));
 }
 
@@ -47,22 +51,12 @@ void NotificationManager::notifyTrophy(const int trophyId)
     this->notifyInQueue(n);
 }
 
-// キューに残っている通知を再開する。シーン切替完了時に実行
-void NotificationManager::notifyRemainsInQueue()
-{
-    if(this->notifications.empty()) return;
-    
-    this->notifications.front()->setParent(nullptr);
-    
-    this->notifyInQueue(this->notifications.front(), false);
-}
-
 // トロフィ獲得通知をキューから表示
 void NotificationManager::notifyInQueue(NotificationNode* node, const bool sound)
 {
     if(this->notifications.front() != node) return;
-    
-    Director::getInstance()->getRunningScene()->addChild(node, Priority::TROPHY_NOTIFICATION);
+    node->setGlobalZOrder(Priority::TROPHY_NOTIFICATION);
+    SceneManager::getInstance()->getRootScene()->addChild(node);
     node->notify(CC_CALLBACK_1(NotificationManager::onNotifyEnterAnimationFinished, this));
     if(sound) SoundManager::getInstance()->playSE(Resource::SE::TROPHY_NOTIFICATION);
 }

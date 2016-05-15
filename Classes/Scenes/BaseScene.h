@@ -11,7 +11,6 @@
 
 #include "Common.h"
 
-class ConfigEventListenerLayer;
 class LoadingLayer;
 class SceneData;
 
@@ -20,7 +19,6 @@ class BaseScene : public Scene
 // インスタンス変数
 protected:
     SceneData* data { nullptr };
-    ConfigEventListenerLayer* configListener { nullptr };
     bool preloaded { false };
     
 // インスタンスメソッド
@@ -31,6 +29,7 @@ protected:
 	virtual ~BaseScene();
 	bool init(SceneData* data);
     virtual void onEnter() override;
+    virtual void onExit() override;
 };
 
 #endif // __BASE_SCENE_H__

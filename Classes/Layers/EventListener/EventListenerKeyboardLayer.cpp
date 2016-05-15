@@ -11,6 +11,8 @@
 #include "Managers/EventListenerKeyboardManager.h"
 #include "Managers/KeyconfigManager.h"
 
+# pragma mark private
+
 // コンストラクタ
 EventListenerKeyboardLayer::EventListenerKeyboardLayer(){ FUNCLOG }
 
@@ -39,15 +41,52 @@ bool EventListenerKeyboardLayer::init()
     return true;
 }
 
-// 初期化
-bool EventListenerKeyboardLayer::init(const vector<Key>& pressingCursorKeys, const bool isDashPressing)
+// キーを押し続けている時
+void EventListenerKeyboardLayer::intervalCheck(float duration)
 {
-    this->pressingKeys = pressingCursorKeys;
+    if(this->pressingKeys.empty())
+    {
+        this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
+        
+        return;
+    }
     
-    this->keyStatus[Key::DASH] = isDashPressing;
+    if(this->paused) return;
     
-    return this->init();
+    if(this->intervalInputCheck) this->intervalInputCheck(this->pressingKeys);
 }
+
+void EventListenerKeyboardLayer::scheduleIntervalCheck()
+{
+    if(this->isScheduled(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck))) this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
+    if(this->intervalInputCheck) this->schedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck), this->interval, CC_REPEAT_FOREVER, this->delay);
+}
+
+// キーコードを変換。ゲームで使わないキーが与えられた場合はSIZEを返す
+Key EventListenerKeyboardLayer::convertKeyCode(const EventKeyboard::KeyCode& keyCode)
+{
+    return KeyconfigManager::getInstance()->convertKeyCode(keyCode);
+}
+
+# pragma mark -
+# pragma mark getter
+
+// 指定のキーが押し状態か判別
+bool EventListenerKeyboardLayer::isPressed(const Key& key) const
+{
+    if(this->keyStatus.count(key) == 0) return false;
+    
+    return this->keyStatus.at(key);
+}
+
+// 押している方向キーを取得
+const vector<Key>& EventListenerKeyboardLayer::getPressedCursorKeys() const
+{
+    return this->pressingKeys;
+}
+
+# pragma mark -
+# pragma mark public
 
 // リスナを有効/無効化
 void EventListenerKeyboardLayer::setEnabled(bool enabled)
@@ -134,35 +173,6 @@ void EventListenerKeyboardLayer::releaseKeyAll()
     }
 }
 
-// キーを押し続けている時
-void EventListenerKeyboardLayer::intervalCheck(float duration)
-{
-    if(this->pressingKeys.empty())
-    {
-        this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
-        
-        return;
-    }
-    
-    if(this->paused) return;
-    
-    if(this->intervalInputCheck) this->intervalInputCheck(this->pressingKeys);
-}
-
-// キーコードを変換。ゲームで使わないキーが与えられた場合はSIZEを返す
-Key EventListenerKeyboardLayer::convertKeyCode(const EventKeyboard::KeyCode& keyCode)
-{
-    return KeyconfigManager::getInstance()->convertKeyCode(keyCode);
-}
-
-// 指定のキーが押し状態か判別
-bool EventListenerKeyboardLayer::isPressed(const Key& key) const
-{
-    if(this->keyStatus.count(key) == 0) return false;
-    
-    return this->keyStatus.at(key);
-}
-
 void EventListenerKeyboardLayer::setPaused(bool paused)
 {
     this->paused = paused;
@@ -178,11 +188,12 @@ void EventListenerKeyboardLayer::setPaused(bool paused)
     }
 }
 
-// 入力されている方向キーを取得
-vector<Key> EventListenerKeyboardLayer::getPressedCursorKeys() const { return this->pressingKeys; }
-
-void EventListenerKeyboardLayer::scheduleIntervalCheck()
+void EventListenerKeyboardLayer::clearCallbacks()
 {
-    if(this->isScheduled(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck))) this->unschedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck));
-    if(this->intervalInputCheck) this->schedule(CC_SCHEDULE_SELECTOR(EventListenerKeyboardLayer::intervalCheck), this->interval, CC_REPEAT_FOREVER, this->delay);
-} 
+    this->onCursorKeyPressed = nullptr;
+    this->onEnterKeyPressed = nullptr;
+    this->onMenuKeyPressed = nullptr;
+    this->onDashKeyPressed = nullptr;
+    this->onKeyConfKeyPressed = nullptr;
+    this->intervalInputCheck = nullptr;
+}

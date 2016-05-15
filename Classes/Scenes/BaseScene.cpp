@@ -11,9 +11,11 @@
 #include "Datas/Scene/SceneData.h"
 
 #include "Layers/LoadingLayer.h"
-#include "Layers/EventListener/ConfigEventListenerLayer.h"
+#include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
-#include "Managers/NotificationManager.h"
+#include "Managers/SceneManager.h"
+
+#include "Scenes/RootScene.h"
 
 // コンストラクタ
 BaseScene::BaseScene() {}
@@ -28,11 +30,6 @@ BaseScene::~BaseScene()
 bool BaseScene::init(SceneData* data)
 {
 	if(!Scene::init()) return false;
-    
-    // コンフィグ用のイベントリスナーを登録
-    ConfigEventListenerLayer* configListener { ConfigEventListenerLayer::create() };
-    this->addChild(configListener);
-    this->configListener = configListener;
 	
 	// データクラスをセットしretain
 	this->data = data;
@@ -45,9 +42,6 @@ bool BaseScene::init(SceneData* data)
 void BaseScene::onEnter()
 {
     Scene::onEnter();
-    
-    // 通知がキューに残っていたら、通知を開始する
-    NotificationManager::getInstance()->notifyRemainsInQueue();
     
     // すでにプリロード済みなら無視
     if(this->preloaded) return;
@@ -68,4 +62,11 @@ void BaseScene::onEnter()
             this->onPreloadFinished(loadingLayer);
         }
     });
+}
+
+void BaseScene::onExit()
+{
+    Scene::onExit();
+    
+    SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard()->clearCallbacks();
 }

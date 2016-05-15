@@ -17,7 +17,6 @@ class EventListenerKeyboardLayer : public Layer
 // クラスメソッド
 public:
     CREATE_FUNC(EventListenerKeyboardLayer)
-    CREATE_FUNC_WITH_TWO_PARAM(EventListenerKeyboardLayer, const vector<Key>&, const bool)
     
 // インスタンス変数
 public:
@@ -37,24 +36,24 @@ private:
     
 // インスタンスメソッド
 public:
+    bool isPressed(const Key& key) const;                           // 指定キーが押し状態か判別
+    const vector<Key>& getPressedCursorKeys() const;
     void onKeyPressed(const EventKeyboard::KeyCode& keyCode);
     void onKeyReleased(const EventKeyboard::KeyCode& keyCode);
-    void setEnabled(bool enabled);    // リスナを有効/無効化
-    void setInputCheckDelay(float delay);               // キーを押した瞬間から初回キー入力確認までの時間を設定
-    void setInputCheckInterval(float interval);         // キー入力の確認間隔を設定
-    void releaseKey(const Key& key);  // キーを離すとき
-    void releaseKeyAll();  // 全てのキーをリリース状態にリセット
-    bool isPressed(const Key& key) const;                          // 指定キーが押し状態か判別
+    void setEnabled(bool enabled);                                  // リスナを有効/無効化
+    void setInputCheckDelay(float delay);                           // キーを押した瞬間から初回キー入力確認までの時間を設定
+    void setInputCheckInterval(float interval);                     // キー入力の確認間隔を設定
+    void releaseKey(const Key& key);                                // キーを離すとき
+    void releaseKeyAll();                                           // 全てのキーをリリース状態にリセット
     void setPaused(bool paused);
-    vector<Key> getPressedCursorKeys() const;
+    void clearCallbacks();                                          // コールバックを全クリア
 private:
-    EventListenerKeyboardLayer();                                  // コンストラクタ
-    ~EventListenerKeyboardLayer();                                 // デストラクタ
-    virtual bool init() override;                                  // 初期化
-    virtual bool init(const vector<Key>& pressingCursorKeys, const bool isDashPressed);   // 初期化
-    void intervalCheck(float duration);                            // キーを押し続けている時
-    Key convertKeyCode(const EventKeyboard::KeyCode& keyCode);     // cococs上でのキーコードをゲーム内キーに変換
+    EventListenerKeyboardLayer();                                   // コンストラクタ
+    ~EventListenerKeyboardLayer();                                  // デストラクタ
+    virtual bool init() override;                                   // 初期化
+    void intervalCheck(float duration);                             // キーを押し続けている時
     void scheduleIntervalCheck();
+    Key convertKeyCode(const EventKeyboard::KeyCode& keyCode);      // cococs上でのキーコードをゲーム内キーに変換
 };
 
 #endif /* defined(_EventListenerKeyboardLayer__) */

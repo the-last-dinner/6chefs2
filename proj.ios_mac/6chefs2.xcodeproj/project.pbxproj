@@ -326,6 +326,12 @@
 		DC328A801C87194E00675131 /* story in Resources */ = {isa = PBXBuildFile; fileRef = DC328A681C87194E00675131 /* story */; };
 		DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
 		DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */; };
+		DC37D8171CE6DBB50014418A /* RootScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8151CE6DBB50014418A /* RootScene.cpp */; };
+		DC37D8181CE6DBB50014418A /* RootScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8151CE6DBB50014418A /* RootScene.cpp */; };
+		DC37D81B1CE7170C0014418A /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8191CE7170C0014418A /* SceneManager.cpp */; };
+		DC37D81C1CE7170C0014418A /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D8191CE7170C0014418A /* SceneManager.cpp */; };
+		DC37D8201CE738DE0014418A /* Transition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D81E1CE738DE0014418A /* Transition.cpp */; };
+		DC37D8211CE738DE0014418A /* Transition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37D81E1CE738DE0014418A /* Transition.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -654,6 +660,12 @@
 		DC328A681C87194E00675131 /* story */ = {isa = PBXFileReference; lastKnownFileType = folder; path = story; sourceTree = "<group>"; };
 		DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FocusLightLayer.cpp; sourceTree = "<group>"; };
 		DC37D80E1CDEFD3D0014418A /* FocusLightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusLightLayer.h; sourceTree = "<group>"; };
+		DC37D8151CE6DBB50014418A /* RootScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootScene.cpp; sourceTree = "<group>"; };
+		DC37D8161CE6DBB50014418A /* RootScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootScene.h; sourceTree = "<group>"; };
+		DC37D8191CE7170C0014418A /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		DC37D81A1CE7170C0014418A /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		DC37D81E1CE738DE0014418A /* Transition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transition.cpp; path = Transition/Transition.cpp; sourceTree = "<group>"; };
+		DC37D81F1CE738DE0014418A /* Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transition.h; path = Transition/Transition.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -810,6 +822,7 @@
 				DC03912E1C871E1000C50E8E /* resources.h */,
 				DC03912F1C871E1000C50E8E /* Scenes */,
 				DC0391401C871E1000C50E8E /* Tasks */,
+				DC37D81D1CE72BF80014418A /* Transition */,
 				DC0391561C871E1000C50E8E /* UI */,
 				DC0391661C871E1000C50E8E /* Utils */,
 			);
@@ -1110,6 +1123,8 @@
 				DCB075431C9417B900D69F72 /* KeyconfigManager.h */,
 				DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */,
 				DC01027D1C945F2F0076810F /* EventListenerKeyboardManager.h */,
+				DC37D8191CE7170C0014418A /* SceneManager.cpp */,
+				DC37D81A1CE7170C0014418A /* SceneManager.h */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1231,6 +1246,8 @@
 				DC03913D1C871E1000C50E8E /* StartUpScene.h */,
 				DC03913E1C871E1000C50E8E /* TitleScene.cpp */,
 				DC03913F1C871E1000C50E8E /* TitleScene.h */,
+				DC37D8151CE6DBB50014418A /* RootScene.cpp */,
+				DC37D8161CE6DBB50014418A /* RootScene.h */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1314,6 +1331,15 @@
 				26FBED371C98514A002FAFF7 /* CsvUtils.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DC37D81D1CE72BF80014418A /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				DC37D81E1CE738DE0014418A /* Transition.cpp */,
+				DC37D81F1CE738DE0014418A /* Transition.h */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1495,6 +1521,8 @@
 				DC0391F31C871E1000C50E8E /* Chaser.cpp in Sources */,
 				DC0392531C871E1000C50E8E /* StringUtils.cpp in Sources */,
 				DC0392271C871E1000C50E8E /* StartUpScene.cpp in Sources */,
+				DC37D8201CE738DE0014418A /* Transition.cpp in Sources */,
+				DC37D8171CE6DBB50014418A /* RootScene.cpp in Sources */,
 				DC0391D91C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DC0391A51C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DC0392171C871E1000C50E8E /* Stamina.cpp in Sources */,
@@ -1513,6 +1541,7 @@
 				DC0391E71C871E1000C50E8E /* EventObject.cpp in Sources */,
 				DC0392431C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC03918D1C871E1000C50E8E /* Light.cpp in Sources */,
+				DC37D81B1CE7170C0014418A /* SceneManager.cpp in Sources */,
 				DC03918B1C871E1000C50E8E /* Fog.cpp in Sources */,
 				DC0392391C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
@@ -1602,6 +1631,7 @@
 				DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
 				DC0391A21C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
 				DC0391701C871E1000C50E8E /* PathFinder.cpp in Sources */,
+				DC37D8181CE6DBB50014418A /* RootScene.cpp in Sources */,
 				DC0391F61C871E1000C50E8E /* CheapChaser.cpp in Sources */,
 				DC0391AC1C871E1000C50E8E /* ButtonMashingLayer.cpp in Sources */,
 				DC03919A1C871E1000C50E8E /* EventScriptValidator.cpp in Sources */,
@@ -1623,6 +1653,7 @@
 				DC0392341C871E1000C50E8E /* FollowType.cpp in Sources */,
 				DC0392221C871E1000C50E8E /* DungeonScene.cpp in Sources */,
 				DC0392521C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
+				DC37D81C1CE7170C0014418A /* SceneManager.cpp in Sources */,
 				DC03917E1C871E1000C50E8E /* DungeonSceneData.cpp in Sources */,
 				DC0391E21C871E1000C50E8E /* TextureManager.cpp in Sources */,
 				DC0391C01C871E1000C50E8E /* MenuLayer.cpp in Sources */,
@@ -1630,6 +1661,7 @@
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
+				DC37D8211CE738DE0014418A /* Transition.cpp in Sources */,
 				26FBED491C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
 				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,

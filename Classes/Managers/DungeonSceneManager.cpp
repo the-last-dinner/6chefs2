@@ -18,6 +18,8 @@
 #include "Layers/Dungeon/TiledMapLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/SceneManager.h"
+
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
@@ -33,7 +35,6 @@
 #include "Tasks/EnemyTask.h"
 #include "Tasks/EventTask.h"
 #include "Tasks/PlayerControlTask.h"
-
 
 #include "UI/StaminaBar.h"
 
@@ -97,7 +98,7 @@ DungeonSceneManager::~DungeonSceneManager()
 #pragma mark Getter Methods
 
 // シーンを取得
-DungeonScene* DungeonSceneManager::getScene() const { return dynamic_cast<DungeonScene*>(Director::getInstance()->getRunningScene()); }
+DungeonScene* DungeonSceneManager::getScene() const { return dynamic_cast<DungeonScene*>(SceneManager::getInstance()->getRunningScene()); }
 
 // マップレイヤを取得
 TiledMapLayer* DungeonSceneManager::getMapLayer() const { return this->getScene()->mapLayer; }
@@ -211,7 +212,7 @@ void DungeonSceneManager::setMapObjectPosition(MapObject *mapObject)
 void DungeonSceneManager::exitDungeon(Scene* scene)
 {
     this->getScene()->onExitDungeon();
-    Director::getInstance()->replaceScene(scene);
+    SceneManager::getInstance()->replaceScene(scene);
 }
 
 // マップ切り替え
@@ -244,39 +245,21 @@ void DungeonSceneManager::changeMap(const Location& destLocation, const Location
     DungeonSceneData* data { DungeonSceneData::create(destLocation) };
     data->setInitialEventId(initEventId);
     
-    // 現在入力されている方向キーからリスナ生成
-    EventListenerKeyboardLayer* listener {EventListenerKeyboardLayer::create(this->getPressedCursorKeys(), this->isPressed(Key::DASH))};
+    DungeonScene* scene {DungeonScene::create(data)};
     
-    DungeonScene* scene {DungeonScene::create(data, listener)};
-    
-    Director::getInstance()->replaceScene(scene);
+    SceneManager::getInstance()->replaceScene(scene);
 }
 
 // カメラシーンへ切り替え（スタックに積む）
 void DungeonSceneManager::pushCameraScene(DungeonCameraScene* scene)
 {
-    Director::getInstance()->pushScene(scene);
+    SceneManager::getInstance()->pushScene(scene);
 }
 
 // カメラシーンを終了する
 void DungeonSceneManager::popCameraScene()
 {
-    Director::getInstance()->popScene();
-}
-
-#pragma mark -
-#pragma mark EventListener
-
-// 指定キーが押されているかチェック
-bool DungeonSceneManager::isPressed(const Key& key)
-{
-    return this->getScene()->listener->isPressed(key);
-}
-
-// 入力されている方向キーを取得
-vector<Key> DungeonSceneManager::getPressedCursorKeys() const
-{
-    return this->getScene()->listener->getPressedCursorKeys();
+    SceneManager::getInstance()->popScene();
 }
 
 #pragma mark -

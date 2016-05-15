@@ -26,11 +26,13 @@
 
 #include "Managers/DungeonSceneManager.h"
 #include "Managers/NotificationManager.h"
+#include "Managers/SceneManager.h"
 
 #include "Models/Stamina.h"
 
 #include "Scenes/DungeonMenuScene.h"
 #include "Scenes/GameOverScene.h"
+#include "Scenes/RootScene.h"
 #include "Scenes/TitleScene.h"
 
 #include "Tasks/EnemyTask.h"
@@ -54,22 +56,11 @@ DungeonScene::~DungeonScene()
 // 初期化
 bool DungeonScene::init(DungeonSceneData* data)
 {
-    // イベントリスナ生成
-    EventListenerKeyboardLayer* listener { EventListenerKeyboardLayer::create() };
-    
-    return this->init(data, listener);
-}
-
-// 初期化
-bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* listener)
-{
     if(!BaseScene::init(data)) return false;
     
-    this->addChild(listener);
-    this->listener = listener;
-    
-    this->configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
-    this->configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
+    ConfigEventListenerLayer* configListener { SceneManager::getInstance()->getRootScene()->getConfigEventListener() };
+    configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
+    configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
     return true;
 }
@@ -78,14 +69,6 @@ bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* list
 void DungeonScene::onEnter()
 {
     BaseScene::onEnter();
-    
-    // フェード用カバー
-    Sprite* cover {DungeonSceneManager::getInstance()->getCover()};
-    
-    if(!cover) return;
-    
-    cover->removeFromParent();
-    this->addChild(cover);
 }
 
 // リソースプリロード完了時の処理
@@ -169,9 +152,10 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     mapLayer->getMapObjectList()->onContactWithEnemy = CC_CALLBACK_0(DungeonScene::onContactWithEnemy, this);
     
     // リスナにコールバック設定
-    this->listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
-    this->listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
-    this->listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
+    EventListenerKeyboardLayer* listener { SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard() };
+    listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
+    listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
+    listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
     
     // Trigger::INITを実行
     eventTask->runEvent(mapLayer->getMapObjectList()->getEventIds(Trigger::INIT), [this, loadingLayer](){this->onInitEventFinished(loadingLayer);});
@@ -217,7 +201,7 @@ void DungeonScene::onMenuKeyPressed()
     if(this->enemyTask->existsEnemy()) return;
     
     // リスナーを停止
-    this->listener->setEnabled(false);
+    SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard()->setEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
@@ -236,7 +220,7 @@ void DungeonScene::onMenuKeyPressed()
     menu->onPopMenuScene = CC_CALLBACK_0(DungeonScene::onPopMenuScene, this);
     
     // メニューシーンをプッシュ
-    Director::getInstance()->pushScene(menu);
+    SceneManager::getInstance()->pushScene(menu);
 }
 
 // メニューシーンから戻ってきた時
@@ -249,15 +233,15 @@ void DungeonScene::onPopMenuScene()
     this->setLight();
     
     // 操作可能に戻す
-    this->listener->setEnabled(true);
+    SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard()->setEnabled(true);
 }
 
 // メニューシーンでタイトルへ戻るを選択した時
 void DungeonScene::onBackToTitleSelected()
 {
-    Director::getInstance()->popScene();
+    SceneManager::getInstance()->popScene();
     this->onExitDungeon();
-    Director::getInstance()->replaceScene(TitleScene::create());
+    SceneManager::getInstance()->replaceScene(TitleScene::create());
 }
 
 // 主人公が敵に触れた時
@@ -265,7 +249,7 @@ void DungeonScene::onContactWithEnemy()
 {
     if (DebugManager::getInstance()->isInvincibleMode()) return;
     this->onExitDungeon();
-    Director::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
+    SceneManager::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
 }
 
 // 敵が全ていなくなった時
@@ -311,7 +295,7 @@ void DungeonScene::onEventStart()
     DungeonSceneManager::getInstance()->getStamina()->setPaused(true);
     
     // キーコンフィグを無効
-    this->configListener->setKeyconfigEnabled(false);
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
@@ -330,7 +314,7 @@ void DungeonScene::onEventFinished()
     DungeonSceneManager::getInstance()->getStamina()->setPaused(false);
     
     // キーコンフィグを有効
-    this->configListener->setKeyconfigEnabled(true);
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(true);
     
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();

@@ -54,8 +54,6 @@ bool DungeonCameraScene::init(DungeonCameraSceneData* data, GameEvent* event, Ev
     this->callback = callback;
     this->event = event;
     
-    this->configListener->setKeyconfigEnabled(false);
-    
     return true;
 }
 

@@ -8,14 +8,20 @@
 
 #include "Tasks/PlayerControlTask.h"
 
+#include "Managers/SceneManager.h"
+
+#include "Layers/EventListener/EventListenerKeyboardLayer.h"
+
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Party.h"
 #include "MapObjects/TerrainObject/TerrainObject.h"
 
+#include "Managers/DungeonSceneManager.h"
+
 #include "Models/Stamina.h"
 
-#include "Managers/DungeonSceneManager.h"
+#include "Scenes/RootScene.h"
 
 // 定数
 const string PlayerControlTask::START_WALKING_SCHEDULE_KEY { "start_walking" };
@@ -33,6 +39,7 @@ bool PlayerControlTask::init()
     if(!GameTask::init()) return false;
     
     DungeonSceneManager::getInstance()->getStamina()->onIncreasedMax = CC_CALLBACK_0(PlayerControlTask::onStaminaIncreasedMax, this);
+    this->listener = SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard();
     
     return true;
 }
@@ -54,7 +61,7 @@ void PlayerControlTask::turn(const Key& key, Party* party)
         // 一定時間後に歩行開始
         if(!this->isScheduled(START_WALKING_SCHEDULE_KEY)) this->scheduleOnce([this, party](float _)
         {
-            this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+            this->walking(this->listener->getPressedCursorKeys(), party);
         }, MapObject::DURATION_MOVE_ONE_GRID, START_WALKING_SCHEDULE_KEY);
     }
 }
@@ -98,7 +105,7 @@ void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
     TerrainObject* terrain { mainCharacter->getTerrain() };
     
     // ダッシュキーが押されていたら、速度の倍率をあげる
-    bool dash { terrain->canDash() ? DungeonSceneManager::getInstance()->isPressed(Key::DASH) : false };
+    bool dash { terrain->canDash() ? this->listener->isPressed(Key::DASH) : false };
     
     // 入力から、使う方向の個数を決める
     int directionCount {(directions.size() == 2 && directions.back() != directions.at(directions.size() - 2) && etoi(directions.back()) + etoi(directions.at(directions.size() - 2)) != 3)?etoi(directions.size()):1};
@@ -149,7 +156,7 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party)
     // キューにあるイベントを実行
     DungeonSceneManager::getInstance()->runEventQueue();
     
-    if(this->enableControl) this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(this->enableControl) this->walking(this->listener->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か設定
@@ -160,7 +167,7 @@ void PlayerControlTask::setControlEnable(bool enable, Party* party)
     this->enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
-    if(!before && enable) this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(!before && enable) this->walking(this->listener->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か確認

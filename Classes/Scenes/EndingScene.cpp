@@ -11,10 +11,12 @@
 #include "Datas/Scene/EndingSceneData.h"
 #include "Datas/Scene/DungeonSceneData.h"
 #include "Datas/Scene/TitleSceneData.h"
-#include "Scenes/DungeonScene.h"
-#include "Scenes/TitleScene.h"
+#include "Managers/SceneManager.h"
 #include "Layers/LoadingLayer.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
+#include "Scenes/DungeonScene.h"
+#include "Scenes/RootScene.h"
+#include "Scenes/TitleScene.h"
 
 // コンストラクタ
 EndingScene::EndingScene() {FUNCLOG};
@@ -27,7 +29,7 @@ bool EndingScene::init(const int endingId)
 {
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(false);
     this->end_id = endingId;
     
     return true;
@@ -292,5 +294,5 @@ void EndingScene::replaceScene()
             target = TitleScene::create();
             break;
     }
-    Director::getInstance()->replaceScene(target);
+    SceneManager::getInstance()->replaceScene(target);
 }

@@ -10,6 +10,10 @@
 
 #include "Layers/Menu/KeyconfigMenuLayer.h"
 
+#include "Managers/SceneManager.h"
+
+#include "Scenes/RootScene.h"
+
 // 定数
 const map<KeyconfigManager::DashKeyType, string> KeyconfigManager::DashKeyTypeToStr
 {
@@ -145,7 +149,7 @@ void KeyconfigManager::openKeyconfigMenu(function<void()> onClose)
         layer->removeFromParent();
         this->menuLayer = nullptr;
     };
-    Director::getInstance()->getRunningScene()->addChild(menuLayer);
+    SceneManager::getInstance()->getRootScene()->addChild(menuLayer);
     this->menuLayer = menuLayer;
 }
 

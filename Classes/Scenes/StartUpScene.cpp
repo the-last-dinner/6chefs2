@@ -6,11 +6,13 @@
 //
 //
 
+#include "Scenes/RootScene.h"
 #include "Scenes/StartUpScene.h"
 #include "Scenes/TitleScene.h"
 #include "Datas/Scene/StartUpSceneData.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
+#include "Managers/SceneManager.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/CsvUtils.h"
 
@@ -19,7 +21,7 @@ bool StartUpScene::init()
 {
     if (!BaseScene::init(StartUpSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(false);
     
     // マスターデータ準備
     CsvDataManager::getInstance();
@@ -61,7 +63,7 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     logo->setScale(0.8f);
     logo->setOpacity(0);
-    logo->setZOrder(1000);
+    logo->setLocalZOrder(1000);
     this->addChild(logo);
     
     // 効果音
@@ -71,7 +73,10 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f),EaseCubicActionOut::create(TintTo::create(1.0f, Color3B::RED))));
     
     // シーンのアニメーション
-    this->runAction(Sequence::create(DelayTime::create(2.0f), TargetedAction::create(logo,FadeOut::create(1.0f)),CallFunc::create([](){Director::getInstance()->replaceScene(TitleScene::create());}), nullptr));
+    this->runAction(Sequence::create(DelayTime::create(2.0f), TargetedAction::create(logo,FadeOut::create(1.0f)),CallFunc::create([]()
+    {
+        SceneManager::getInstance()->replaceScene(TitleScene::create());
+    }), nullptr));
 }
 
 // セーブデータの暗号化

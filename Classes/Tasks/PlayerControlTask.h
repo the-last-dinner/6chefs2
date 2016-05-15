@@ -27,6 +27,7 @@ public:
 
 // インスタンス変数
 private:
+    EventListenerKeyboardLayer* listener { nullptr };
     int riddenEventID { static_cast<int>(EventID::UNDIFINED)};
     bool enableControl { false };
     

@@ -14,6 +14,9 @@
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/SceneManager.h"
+
+#include "Scenes/RootScene.h"
 #include "Scenes/TitleScene.h"
 
 // 定数
@@ -40,7 +43,7 @@ bool GameOverScene::init(const Type type)
     
     if(!BaseScene::init(GameOverSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    SceneManager::getInstance()->getRootScene()->getConfigEventListener()->setKeyconfigEnabled(false);
     
     return true;
 }
@@ -101,5 +104,5 @@ void GameOverScene::onAnimationFinished()
     EventListenerKeyboardLayer* listener {EventListenerKeyboardLayer::create()};
     this->addChild(listener);
     
-    listener->onEnterKeyPressed = []{SoundManager::getInstance()->stopBGMAll(); Director::getInstance()->replaceScene(TitleScene::create());};
+    listener->onEnterKeyPressed = []{SoundManager::getInstance()->stopBGMAll(); SceneManager::getInstance()->replaceScene(TitleScene::create());};
 }

@@ -9,6 +9,8 @@
 #include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
+#include "Managers/SceneManager.h"
+
 #include "Scenes/DungeonScene.h"
 #include "Datas/Scene/DungeonSceneData.h"
 #include "UI/NotificationBand.h"
@@ -225,7 +227,7 @@ void SaveDataSelector::onEnterKeyPressed(int idx)
             }
             
             // シーン移動
-            Director::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
+            SceneManager::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
         }
         else
         {
