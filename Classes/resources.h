@@ -11,12 +11,12 @@
 
 namespace Resource
 {
-    namespace EventScript
-    {
-        static const std::vector<std::string> FILE_NAMES
-        {
-        };
-    }
+    namespace ConfigFiles{
+        static const std::string BASE_PATH = "config/";
+        static const std::string DEBUG_CONFIG = BASE_PATH + "DebugConfig.json";
+        static const std::string COMMON_EVENT = BASE_PATH + "CommonEvent.json";
+    };
+    
     namespace Font
     {
         static const std::string BASE_PATH = "fonts/";

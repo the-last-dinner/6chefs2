@@ -41,7 +41,7 @@ DebugManager::~DebugManager(){FUNCLOG}
 DebugManager::DebugManager()
 {
     FUNCLOG
-    this->file_path = FileUtils::getInstance()->fullPathForFilename("config/DebugConfig.json");
+    this->file_path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::DEBUG_CONFIG);
     if (this->file_path == "") return;
     this->debugConfig = LastSupper::JsonUtils::readJsonFile(this->file_path);
     this->hasDebugConfig = true;

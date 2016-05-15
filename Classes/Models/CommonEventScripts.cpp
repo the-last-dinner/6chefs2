@@ -24,7 +24,7 @@ bool CommonEventScripts::init()
 // CommonEventScripts設定ファイル読み込み
 bool CommonEventScripts::getEventScriptsConfig()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("config/CommonEvent.json");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::COMMON_EVENT);
     if (path == "") return false;
     this->config = LastSupper::JsonUtils::readJsonFile(path);
     return true;

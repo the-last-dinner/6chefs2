@@ -104,9 +104,10 @@ void StartUpScene::encryptSaveFiles()
 void StartUpScene::encryptEventScripts()
 {
     vector<string> fileNames = CsvDataManager::getInstance()->getMapData()->getFileNameAll();
-    for(string fileName : Resource::EventScript::FILE_NAMES)
+    rapidjson::Document common = LastSupper::JsonUtils::readJsonFile(FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::COMMON_EVENT));
+    for (int i = 0; i < common.Size(); i++)
     {
-        fileNames.push_back(fileName);
+        fileNames.push_back(common[i]["name"].GetString());
     }
     string path = "";
     for(string file : fileNames)
