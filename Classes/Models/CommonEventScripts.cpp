@@ -12,6 +12,7 @@
 
 const char* CommonEventScripts::NAME {"name"};
 const char* CommonEventScripts::CHAPTER {"chapter"};
+const char* CommonEventScripts::ALL {"all"};
 
 #pragma mark init
 // 初期化
@@ -44,7 +45,8 @@ bool CommonEventScripts::loadEventScripts(const int chapter)
     
     for (int i = 0; i < len; i++)
     {
-        if (!this->config[i][CHAPTER].HasMember(chapChar) || !this->config[i][CHAPTER][chapChar].GetBool()) continue;
+        if (this->config[i].HasMember(CHAPTER) &&
+            (!this->config[i][CHAPTER].HasMember(chapChar) || !this->config[i][CHAPTER][chapChar].GetBool())) continue;
         fileName = this->config[i][NAME].GetString();
         path = FileUtils::getInstance()->fullPathForFilename("event/" + fileName + ES_EXTENSION);
         if (path == "") cout << "Can not load " << fileName << " as a common event script!" << endl;;

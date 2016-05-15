@@ -20,6 +20,7 @@ public:
     typedef map<string, EventScript*> scripts;
     static const char* NAME;
     static const char* CHAPTER;
+    static const char* ALL;
     // クラスメソッド
 public:
     CREATE_FUNC(CommonEventScripts)
