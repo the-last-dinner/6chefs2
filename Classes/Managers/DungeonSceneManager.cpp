@@ -79,7 +79,7 @@ DungeonSceneManager::DungeonSceneManager()
     CommonEventScripts* commonEventScript {CommonEventScripts::create()};
     CC_SAFE_RETAIN(commonEventScript);
     this->commonEventScripts = commonEventScript;
-    this->commonEventScripts->loadEventScripts(0);
+    this->commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
 };
 
 // デストラクタ
