@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
+		2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
+		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
+		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26E950BA1CDA51200018BF93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B91CDA51200018BF93 /* Images.xcassets */; };
 		26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
@@ -303,8 +307,6 @@
 		DC328A6A1C87194E00675131 /* BGM in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5D1C87194E00675131 /* BGM */; };
 		DC328A6B1C87194E00675131 /* csv in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5E1C87194E00675131 /* csv */; };
 		DC328A6C1C87194E00675131 /* csv in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5E1C87194E00675131 /* csv */; };
-		DC328A6D1C87194E00675131 /* debug_config.json in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5F1C87194E00675131 /* debug_config.json */; };
-		DC328A6E1C87194E00675131 /* debug_config.json in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5F1C87194E00675131 /* debug_config.json */; };
 		DC328A6F1C87194E00675131 /* event in Resources */ = {isa = PBXBuildFile; fileRef = DC328A601C87194E00675131 /* event */; };
 		DC328A701C87194E00675131 /* event in Resources */ = {isa = PBXBuildFile; fileRef = DC328A601C87194E00675131 /* event */; };
 		DC328A711C87194E00675131 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = DC328A611C87194E00675131 /* fonts */; };
@@ -338,6 +340,9 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6chefs2-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
+		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
+		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
 		26E950B71CDA50C30018BF93 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = mac/ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		26FBED321C984A73002FAFF7 /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
@@ -638,7 +643,6 @@
 		DC03916E1C871E1000C50E8E /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
 		DC328A5D1C87194E00675131 /* BGM */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BGM; sourceTree = "<group>"; };
 		DC328A5E1C87194E00675131 /* csv */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csv; sourceTree = "<group>"; };
-		DC328A5F1C87194E00675131 /* debug_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debug_config.json; sourceTree = "<group>"; };
 		DC328A601C87194E00675131 /* event */ = {isa = PBXFileReference; lastKnownFileType = folder; path = event; sourceTree = "<group>"; };
 		DC328A611C87194E00675131 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		DC328A621C87194E00675131 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
@@ -770,10 +774,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				269211551CE89FB5005C0E5A /* config */,
 				26E950B91CDA51200018BF93 /* Images.xcassets */,
 				DC328A5D1C87194E00675131 /* BGM */,
 				DC328A5E1C87194E00675131 /* csv */,
-				DC328A5F1C87194E00675131 /* debug_config.json */,
 				DC328A601C87194E00675131 /* event */,
 				DC328A611C87194E00675131 /* fonts */,
 				DC328A621C87194E00675131 /* img */,
@@ -1201,6 +1205,8 @@
 				26FBED431C986CBB002FAFF7 /* ChapterData.h */,
 				26FBED461C9870E2002FAFF7 /* CharacterMasterData.cpp */,
 				26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */,
+				2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */,
+				2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1390,10 +1396,10 @@
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				269211561CE89FB5005C0E5A /* config in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				DC328A711C87194E00675131 /* fonts in Resources */,
 				DC328A751C87194E00675131 /* map in Resources */,
-				DC328A6D1C87194E00675131 /* debug_config.json in Resources */,
 				DC328A7B1C87194E00675131 /* se in Resources */,
 				DC328A731C87194E00675131 /* img in Resources */,
 				DC328A7F1C87194E00675131 /* story in Resources */,
@@ -1416,6 +1422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269211571CE8A9A9005C0E5A /* config in Resources */,
 				DC328A761C87194E00675131 /* map in Resources */,
 				DC328A741C87194E00675131 /* img in Resources */,
 				DC328A6A1C87194E00675131 /* BGM in Resources */,
@@ -1429,7 +1436,6 @@
 				DC328A801C87194E00675131 /* story in Resources */,
 				DC328A7E1C87194E00675131 /* shaders in Resources */,
 				DC328A6C1C87194E00675131 /* csv in Resources */,
-				DC328A6E1C87194E00675131 /* debug_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,6 +1516,7 @@
 				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */,
 				DC0391E51C871E1000C50E8E /* Enemy.cpp in Sources */,
+				2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0392131C871E1000C50E8E /* LocalPlayerData.cpp in Sources */,
@@ -1678,6 +1685,7 @@
 				DC0392161C871E1000C50E8E /* Sight.cpp in Sources */,
 				DC0391941C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
 				26FBED411C9861F1002FAFF7 /* TrophyData.cpp in Sources */,
+				2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC03920A1C871E1000C50E8E /* TerrainObject.cpp in Sources */,
 				DC0391AE1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0392501C871E1000C50E8E /* MapUtils.cpp in Sources */,

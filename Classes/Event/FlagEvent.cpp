@@ -17,6 +17,7 @@
 #include "Datas/Message/SystemMessageData.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Models/CommonEventScripts.h"
 
 #pragma mark NeverAgainEvent
 
@@ -143,6 +144,7 @@ bool ChangeChapterEvent::init(rapidjson::Value& json)
 void ChangeChapterEvent::run()
 {
     this->setDone();
+    DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->loadEventScripts(this->chapterId);
     PlayerDataManager::getInstance()->getLocalData()->setChapterId(this->chapterId);
 }
 

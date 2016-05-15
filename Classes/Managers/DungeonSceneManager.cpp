@@ -22,6 +22,7 @@
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
 
+#include "Models/CommonEventScripts.h"
 #include "Models/Stamina.h"
 #include "Models/StopWatch.h"
 
@@ -75,13 +76,10 @@ DungeonSceneManager::DungeonSceneManager()
     this->stamina = stamina;
     
     // 共通イベントスクリプト生成
-    for(string fileName : Resource::EventScript::FILE_NAMES)
-    {
-        EventScript* commonEventScript {EventScript::create(fileName)};
-        CC_SAFE_RETAIN(commonEventScript);
-        this->commonEventScripts[fileName] = commonEventScript;
-    }
-    
+    CommonEventScripts* commonEventScript {CommonEventScripts::create()};
+    CC_SAFE_RETAIN(commonEventScript);
+    this->commonEventScripts = commonEventScript;
+    this->commonEventScripts->loadEventScripts(0);
 };
 
 // デストラクタ
@@ -92,6 +90,7 @@ DungeonSceneManager::~DungeonSceneManager()
     CC_SAFE_RELEASE_NULL(this->eventFactory);
     CC_SAFE_RELEASE_NULL(this->scriprtValidator);
     CC_SAFE_RELEASE_NULL(this->stamina);
+    CC_SAFE_RELEASE_NULL(this->commonEventScripts);
 };
 
 #pragma mark -
@@ -113,7 +112,7 @@ EventFactory* DungeonSceneManager::getEventFactory() const { return this->eventF
 EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->eventTask->getEventScript(); }
 
 // 共通イベントスクリプトを取得
-map<string, EventScript*> DungeonSceneManager::getCommonEventScripts() const { return this->commonEventScripts; }
+CommonEventScripts* DungeonSceneManager::getCommonEventScriptsObject() { return this->commonEventScripts; }
 
 // スクリプトバリデータを取得
 EventScriptValidator* DungeonSceneManager::getScriptValidator() const { return this->scriprtValidator; }
