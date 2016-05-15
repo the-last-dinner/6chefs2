@@ -14,6 +14,7 @@
 #include "Datas/MapObject/EnemyData.h"
 
 class AmbientLightLayer;
+class CommonEventScripts;
 class DungeonCameraScene;
 class DungeonScene;
 class TiledMapLayer;
@@ -44,7 +45,7 @@ private:
     vector<SummonData> summonDatas {};
     StopWatch* stopWatch { nullptr };
     Stamina* stamina { nullptr };
-    map<string, EventScript*> commonEventScripts{};
+    CommonEventScripts* commonEventScripts;
     
 // インスタンスメソッド
 private:
@@ -59,7 +60,7 @@ public:
     EventFactory* getEventFactory() const;
     EventScriptValidator* getScriptValidator() const;
     EventScript* getEventScript() const;
-    map<string, EventScript*> getCommonEventScripts() const;
+    CommonEventScripts* getCommonEventScriptsObject();
     Party* getParty();
     AmbientLightLayer* getAmbientLayer() const;
     
