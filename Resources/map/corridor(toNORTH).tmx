@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="38">
- <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="1985" name="horror1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="horror1" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="horror1.png" trans="007575" width="140" height="140"/>
  </tileset>
- <tileset firstgid="2049" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="2049" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="007575" width="384" height="256"/>
  </tileset>
- <tileset firstgid="2433" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2433" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="34">
@@ -149,7 +149,7 @@
  </objectgroup>
  <layer name="shadow" width="20" height="34">
   <data encoding="base64" compression="zlib">
-   eJxjYBga4AzPqHmj5o2aN2reqHmj5o2aN2reqHkjAQAAtD8ZUQ==
+   eJxjYKAN4OGirnlneEbNGzVv1LxR80bNGzVv1LxR80bNoyagdnuNWuYBAKmgGZM=
   </data>
  </layer>
 </map>

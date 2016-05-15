@@ -42,8 +42,7 @@
 							"charaID":"14",
 							"x":12,
 							"y":14,
-							"speed":2,
-							"movePattern":"3"
+							"speed":2.0
 						},
 						{
 							"type":"createEnemy",
@@ -51,8 +50,7 @@
 							"charaID":"15",
 							"x":8,
 							"y":6,
-							"speed":2,
-							"movePattern":"3"
+							"speed":2.0
 						},
 						{
 							"type":"already"

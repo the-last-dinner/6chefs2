@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="37">
- <tileset firstgid="1" name="BlackMagic01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="BlackMagic01" tilewidth="16" tileheight="16" tilecount="264" columns="12">
   <image source="BlackMagic01.png" trans="008080" width="192" height="352"/>
  </tileset>
- <tileset firstgid="265" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="265" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="0000ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="745" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="745" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="0000ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1225" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1225" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="30">
@@ -161,7 +161,7 @@
  </objectgroup>
  <layer name="shadow" width="40" height="30">
   <data encoding="base64" compression="zlib">
-   eJztzjENACAQALEfEYB/rYwIuIQwtAo6c+01X/Nr/Bq/xq/xa/wav8av8Wv8Gr/Gr/n9B68dDCEC2Q==
+   eJztzqENACAQBMEzJBRAZ/TfCxL3ZkN4sVPBJNeaac0f44/xx/hj/DH+GH+MP8Yf44/xx/hjuv+oPX4Pav6YF78DyZwEOQ==
   </data>
  </layer>
 </map>

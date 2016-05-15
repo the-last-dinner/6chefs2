@@ -279,7 +279,7 @@
  </objectgroup>
  <layer name="shadow" width="126" height="24">
   <data encoding="base64" compression="zlib">
-   eJzt2LENgFAIAFGmsHQU9x/LCYyiPwi5ezWh4DoiIvYtUo7kvNa7a/akkd3n6dY9u0vv2J3J7kx2Z7I70x/dq3bp2oo7230euzPZncnuTN26aw67M9mdye5MdmeyO5PdmezO5N9mnm5/G7vX6NZdNezO9LXZCZi0Dyk=
+   eJzt2LENgFAIAFGmsHQU9x/LCYyiPwi5ezWh4DoiIvYtUo7kvNa7a/akkd3n6dY9u0vv2J3J7kx2Z7I70x/dq3bp2oo7230euzPZnalbd81hdya7M9mdye5MdmeyO5PdmezO5L9unm7/OrvX6NZdNezO9LXZCZwqDsE=
   </data>
  </layer>
 </map>

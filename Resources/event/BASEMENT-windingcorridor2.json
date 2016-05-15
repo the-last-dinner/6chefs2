@@ -38,8 +38,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["57","3"],
-					"Nevent":["55","12"]
+					"event":["57","3"]
 				}
 			],
 			"action":[
@@ -68,7 +67,8 @@
 							"charaID":"13",
 							"x":10,
 							"y":7,
-							"speed":1.3
+							"speed":1.3,
+							"times":2
 						},
 						{
 							"type":"createEnemy",
@@ -76,7 +76,8 @@
 							"charaID":"14",
 							"x":10,
 							"y":9,
-							"speed":1.3
+							"speed":1.3,
+							"times":2
 						},
 						{
 							"type":"already"

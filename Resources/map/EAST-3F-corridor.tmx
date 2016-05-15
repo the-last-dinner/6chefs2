@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="18" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="36">
- <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="fefefe" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2465" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="007575" width="128" height="256"/>
  </tileset>
- <tileset firstgid="2593" name="bank" tilewidth="16" tileheight="16">
+ <tileset firstgid="2593" name="bank" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="30" height="18">
@@ -147,7 +147,7 @@
  </objectgroup>
  <layer name="shadow" width="30" height="18">
   <data encoding="base64" compression="zlib">
-   eJxjYGBgyOVloDpAN/M0F2E1o/YOXXvJVTNqL+Vg1N5Re4eTveSA0TAaGgAA9hoOSw==
+   eJxjYGBgyOVloDpAN/M0F2E1o/YOXXvJVTNU7CUGjNo7au+ovQMDRloYrcZSzg8FewEhDA87
   </data>
  </layer>
 </map>

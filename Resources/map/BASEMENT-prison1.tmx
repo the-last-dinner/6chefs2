@@ -54,7 +54,7 @@
  </objectgroup>
  <layer name="shadow" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFOUwMVAWj5o2aN5DmDXYw2MNv1LzhbR6lAADRJgdP
+   eJxjYEAFOUwMVAWj5o2aNwpwg8EeH6PmDW/zKAUAO3kG4Q==
   </data>
  </layer>
 </map>

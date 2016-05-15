@@ -432,26 +432,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"flg":1,
-					"event":["57","3"],
-					"Nevent":["54","3"]
-				}
-			],
-			"action":[
-				{
-					"type":"charaMsg",
-					"text":["\nほうら逃げろ逃げろ・・・・","どうしようもなくなったら\n助けてやっから・・・"],
-					"charaID":"6",
-					"imgID":"1",
-					"name":"？？？"
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"event":["54","3"]
+					"event":["57","3"]
 				}
 			],
 			"action":[
@@ -488,6 +469,22 @@
 						{
 							"type":"spawn",
 							"action":[
+								{
+									"type":"removeEnemy",
+									"enemyID":"1411"
+								},
+								{
+									"type":"removeEnemy",
+									"enemyID":"1412"
+								},
+								{
+									"type":"removeEnemy",
+									"enemyID":"1413"
+								},
+								{
+									"type":"removeEnemy",
+									"enemyID":"1414"
+								},
 								{
 									"type":"removeEnemy",
 									"enemyID":"1415"

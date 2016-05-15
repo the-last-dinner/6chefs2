@@ -232,7 +232,7 @@
  </objectgroup>
  <layer name="shadow" width="42" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt00ERACAQw8AawP8XSUjihYMcA3NZBemjSTJHvmAny06WnayOnatws52sjp2V7GTZySI6K39+2Mmyk2Unq1PnDXay7NSrNr9SHqM=
+   eJzt1EENACAMBMEzgP8vkpDECwdbAumOgm3SXJLMkS/YybKTZSerY+cqvNlOVsf/rGQny04W0Vm5R4edLDtZdrI67ecNdrLs1Ks208wc6Q==
   </data>
  </layer>
 </map>

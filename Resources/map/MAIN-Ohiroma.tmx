@@ -412,7 +412,7 @@
  </objectgroup>
  <layer name="shadow" width="60" height="48">
   <data encoding="base64" compression="zlib">
-   eJzt07ENwCAMAEEGyP5TZgjK1CmQ4LkbwPJb8hif9xlX0du2une3e+o9a/5fu+2zmt42vW162/S26W3T23ZbL5Tc9r962/S26W3T26a3TW+b3ja9bXrb9LbphbNM4gQskQ==
+   eJzt1LENgDAAA8HUiE3YfyuGoKSORAo+dwNY+sZjvO5zLHUda/dn6f3Wbr2r92fpbdPbprdNb5veNr1tett26wX+a7e/0tumt01vm942vW162/S26W3T26a3TS/8ywMK7ytA
   </data>
  </layer>
 </map>

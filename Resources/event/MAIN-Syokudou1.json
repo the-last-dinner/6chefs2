@@ -2900,8 +2900,24 @@
 									"type":"sequence",
 									"action":[
 										{
-									        "type":"storyMsg",
-									        "text":["その後・・・\n加藤は「雪を縛ってきた」と言って食堂に入ってきた。"]
+											"type":"playSE",
+											"file":"door2.mp3"
+										},
+										{
+									        "type":"charaMsg",
+									        "talk":[
+									        	{
+									        		"text":["加藤さん！"],
+									        		"charaID":"0",
+									        		"imgID":"2",
+									        		"option":"reaction"
+									        	},
+									        	{
+									        		"text":["おう、安心しろや。\nあの娘キュッと縛ってやって\n今は眠ってるよ。"],
+									        		"charaID":"2",
+									        		"imgID":"2"
+									        	}
+									        ]
 									    },
 							            {
 							            	"type":"stopBGM"
@@ -2941,6 +2957,27 @@
 							            {
 							              "type":"charaMsg",
 							              "talk":[
+							              	{
+							              		"text":["とりあえず明日のバスが動くまで\nここにいるしかねぇか・・・"],
+							              		"charaID":"2",
+							              		"imgID":"2"
+							              	},
+							              	{
+							              		"text":["え！？冗談じゃないわ！"],
+							              		"charaID":"3",
+							              		"imgID":"1",
+							              		"option":"reaction"
+							              	},
+							              	{
+							              		"text":["大丈夫だよ・・・\nちゃんと見張ってるからよ。"],
+							              		"charaID":"2",
+							              		"imgID":"2"
+							              	},
+							              	{
+							              		"text":["・・・"],
+							              		"charaID":"3",
+							              		"imgID":"1"
+							              	},
 							              	{
 							              		"text":["今度はしっかり見張ってなさいよね！"],
 							              		"charaID":"3",

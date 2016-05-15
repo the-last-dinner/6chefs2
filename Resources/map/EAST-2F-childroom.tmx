@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="28" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
- <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="007575" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="9901" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="9901" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
- <tileset firstgid="10381" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="10381" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="050505" width="480" height="256"/>
  </tileset>
- <tileset firstgid="10861" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="10861" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="050505" width="128" height="256"/>
  </tileset>
- <tileset firstgid="10989" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="10989" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="050505" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="12973" name="SC-Toybox01" tilewidth="16" tileheight="16">
+ <tileset firstgid="12973" name="SC-Toybox01" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="SC-Toybox01.png" trans="050505" width="256" height="256"/>
  </tileset>
- <tileset firstgid="13229" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="13229" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="28" height="28">
@@ -189,7 +189,7 @@
  </objectgroup>
  <layer name="shadow" width="28" height="28">
   <data encoding="base64" compression="zlib">
-   eJxjYGBg+GHGQFdArH3pJqP2DWX7qAVG7Ru1b9S+UftG7Ru1bzDYN9D2j9o3at9gAQDDvCJH
+   eJxjYGBg+GHGQFdArH3pJqP2UdM+aoFR+0btG7Vv1L5R+0btG4n2DbT9o/aN2jdYAACCuiGs
   </data>
  </layer>
 </map>
