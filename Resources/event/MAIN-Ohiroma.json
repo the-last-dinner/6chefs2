@@ -52,6 +52,23 @@
       "type":"if",
       "condition":[
         {
+          "Nevent":["3","50"]
+        }
+      ],
+      "action":[
+        {
+          "type":"changeMap",
+          "mapID":"3",
+          "x":20,
+          "y":39
+        }
+      ]
+    },
+    {
+      "type":"if",
+      "condition":[
+        {
+          "event":["3","50"],
           "Nevent":["3","30"]
         },
         {
@@ -61,7 +78,7 @@
       "action":[
         {
           "type":"changeMap",
-          "mapID":"3",
+          "mapID":"66",
           "x":20,
           "y":39
         }
@@ -121,7 +138,7 @@
             },
             {
               "type":"changeMap",
-              "mapID":"3",
+              "mapID":"66",
               "x":20,
               "y":39,
               "eventID":"21"
