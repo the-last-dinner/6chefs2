@@ -800,6 +800,24 @@
 			"type":"if",
 			"condition":[
 				{
+					"event":["3","30"],
+					"Nevent":["4","15"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["早く行け！"],
+					"charaID":"2",
+					"imgID":"1",
+					"option":"reaction"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
 					"event":["4","15"],
 					"Nstatus":["2","2"]
 				}
@@ -1834,15 +1852,6 @@
 			"text":["ここは一旦加藤氏に任せるのが賢明ですな・・・"],
 			"charaID":"4",
 			"imgID":"1"
-		}
-	],
-	"56":[
-		{
-			"type":"charaMsg",
-			"text":["早く行け！"],
-			"charaID":"2",
-			"imgID":"1",
-			"option":"reaction"
 		}
 	],
 	"57":[
