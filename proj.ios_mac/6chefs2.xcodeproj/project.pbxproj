@@ -15,6 +15,7 @@
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26E950BA1CDA51200018BF93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B91CDA51200018BF93 /* Images.xcassets */; };
+		26FBC8EF1CF0B2CB00FDBF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26FBED341C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
 		26FBED351C984A73002FAFF7 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED321C984A73002FAFF7 /* ItemData.cpp */; };
 		26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26FBED361C98514A002FAFF7 /* CsvUtils.cpp */; };
@@ -343,8 +344,8 @@
 		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
-		26E950B71CDA50C30018BF93 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = mac/ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		26FBC8EE1CF0B28200FDBF17 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "mac/ja-JP.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		26FBED321C984A73002FAFF7 /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
 		26FBED331C984A73002FAFF7 /* ItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemData.h; sourceTree = "<group>"; };
 		26FBED361C98514A002FAFF7 /* CsvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvUtils.cpp; sourceTree = "<group>"; };
@@ -1369,6 +1370,7 @@
 				Japanese,
 				French,
 				German,
+				"ja-JP",
 				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
@@ -1405,6 +1407,7 @@
 				DC328A7F1C87194E00675131 /* story in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				26FBC8EF1CF0B2CB00FDBF17 /* InfoPlist.strings in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -1720,7 +1723,7 @@
 		26E950B61CDA50C30018BF93 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26E950B71CDA50C30018BF93 /* ja */,
+				26FBC8EE1CF0B28200FDBF17 /* ja-JP */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
