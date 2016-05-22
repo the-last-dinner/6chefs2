@@ -308,15 +308,17 @@
     <property name="objID" value="1037"/>
    </properties>
   </object>
-  <object id="114" x="320" y="480" width="32" height="32">
+  <object id="114" x="320" y="496" width="32" height="32">
    <properties>
     <property name="CharaID" value="2"/>
+    <property name="EventID" value="60"/>
     <property name="direction" value="DOWN"/>
     <property name="movePattern" value="1"/>
     <property name="objID" value="10103"/>
+    <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="116" x="320" y="496" width="32" height="32">
+  <object id="116" x="320" y="512" width="32" height="32">
    <properties>
     <property name="CharaID" value="8"/>
     <property name="direction" value="UP"/>

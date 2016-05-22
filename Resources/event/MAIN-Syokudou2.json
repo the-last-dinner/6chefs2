@@ -1854,6 +1854,20 @@
 			"imgID":"1"
 		}
 	],
+	"56":[
+		{
+			"type":"changeDirection",
+			"objID":"1028",
+			"direction":"DOWN"
+		},
+		{
+			"type":"charaMsg",
+			"text":["早く行け！"],
+			"charaID":"2",
+			"imgID":"1",
+			"option":"reaction"
+		}
+	],
 	"57":[
 		{
 			"type":"charaMsg",
@@ -1916,6 +1930,20 @@
 					"objID":"1022"
 				}
 			]
+		}
+	],
+	"60":[
+		{
+			"type":"changeDirection",
+			"objID":"10103",
+			"direction":"DOWN"
+		},
+		{
+			"type":"charaMsg",
+			"text":["早く行け！"],
+			"charaID":"2",
+			"imgID":"1",
+			"option":"reaction"
 		}
 	],
 	"38":[
