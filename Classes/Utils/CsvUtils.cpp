@@ -131,6 +131,7 @@ CsvUtils::CsvMap CsvUtils::readJsonForCsv(const string &path)
             line.push_back(itr->value[j].GetString());
         }
         csvMap[stoi(itr->name.GetString())] = line;
+        line.clear();
     }
     return csvMap;
 }
