@@ -172,16 +172,6 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="77" x="416" y="320" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="2"/>
-    <property name="EventID" value="56"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1028"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
   <object id="87" x="416" y="320" width="32" height="32">
    <properties>
     <property name="CharaID" value="2"/>

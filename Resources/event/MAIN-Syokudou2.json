@@ -1854,6 +1854,15 @@
 			"imgID":"1"
 		}
 	],
+	"56":[
+		{
+			"type":"charaMsg",
+			"text":["早く行け！"],
+			"charaID":"2",
+			"imgID":"1",
+			"option":"reaction"
+		}
+	],
 	"57":[
 		{
 			"type":"charaMsg",
