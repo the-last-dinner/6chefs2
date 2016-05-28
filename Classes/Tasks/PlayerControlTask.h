@@ -23,7 +23,7 @@ private:
 
 // クラスメソッド
 public:
-    CREATE_FUNC(PlayerControlTask)
+    CREATE_FUNC_WITH_PARAM(PlayerControlTask, DungeonScene*)
 
 // インスタンス変数
 private:
@@ -34,8 +34,8 @@ private:
 // インスタンスメソッド
 private:
     PlayerControlTask();
-    ~PlayerControlTask();
-    bool init();
+    virtual ~PlayerControlTask();
+    virtual bool init(DungeonScene* scene) override;
 public:
     void turn(const Key& key, Party* party);                  // 向きを変える
     void search(Party* party);                                // 目の前を調べる

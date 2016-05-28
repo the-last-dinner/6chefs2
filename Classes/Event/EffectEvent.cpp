@@ -85,7 +85,7 @@ void AnimationEvent::run()
     Sprite* animationSprite { Sprite::createWithSpriteFrame(this->spriteFrames.at(0)) };
     animationSprite->setPosition(WINDOW_CENTER);
     
-    DungeonSceneManager::getInstance()->getScene()->addChild(animationSprite, Priority::TOP_COVER);
+    DungeonSceneManager::getInstance()->getScene()->addChild(animationSprite, Priority::ANIMATION_LAYER);
     
     animationSprite->runAction(Sequence::create(Animate::create(animation), CallFunc::create([this]{this->setDone();}), RemoveSelf::create(), nullptr));
 }

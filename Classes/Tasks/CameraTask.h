@@ -19,7 +19,7 @@ class CameraTask : public GameTask
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(CameraTask)
+    CREATE_FUNC_WITH_PARAM(CameraTask, DungeonScene*)
 
 // インスタンス変数
 private:
@@ -30,15 +30,15 @@ private:
 // インスタンスメソッド
 private:
     CameraTask();
-    ~CameraTask();
-    bool init();
+    virtual ~CameraTask();
+    virtual bool init(DungeonScene* scene) override;
 public:
     void setTarget(MapObject* target);
     void stopFollowing();
     void resumeFollowing();
     void move(const Point& gridPosition, const float duration, function<void()> callback);
     void setCenter(const Point& gridPosition);
-    void update(float delta);
+    void update(float delta) override;
 };
 
 #endif /* defined(__LastSupper__CameraTask__) */

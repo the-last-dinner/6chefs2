@@ -59,13 +59,13 @@ using namespace std;
 // セーブデータの個数
 #define MAX_SAVE_COUNT 10
 
-// レイヤーのZORDER値
+// レイヤーのLocalZOrder値
 enum Priority
 {
     KEY_CONFIG = 2000,
-    TOP_COVER = 1000,
-    LOADING_LAYER = 999,
+    ANIMATION_LAYER = 1000,
     TROPHY_NOTIFICATION = 1000,
+    LOADING_LAYER = 999,
     STAMINA_BAR = 800,
 	STORY_MESSAGE = 102,
 	SYSTEM_MESSAGE = 101,
@@ -73,12 +73,19 @@ enum Priority
     SELECT_LAYER = 92,
     BUTTON_MASHING_LAYER = 91,
     DISP_IMAGE_LAYER = 90,
-    SCREEN_COVER = 80,
     MAP_NOTIFICATION = 60,
     FOCUS_LIGHT = 55,
     AMBIENT_LIGHT = 50,
     DEBUG_MASK = 40,
 	MAP = 0,
+};
+
+// GlobalZOrder値
+enum GlobalPriority
+{
+    TOP_COVER = 1000,
+    REACTION_ICON = 900,
+    SCREEN_COVER = 80,
 };
 
 // ゲームで使うキーの種類

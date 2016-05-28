@@ -127,48 +127,6 @@ AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->g
 #pragma mark -
 #pragma mark Scene
 
-// フェードアウト
-void DungeonSceneManager::fadeOut(const Color3B& color, const float duration, function<void()> callback)
-{
-    // 既にフェードアウトしている場合は無視
-    if(this->cover)
-    {
-        callback();
-        return;
-    }
-    
-    Sprite* cover { Sprite::create() };
-    cover->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
-    cover->setColor(color);
-    cover->setPosition(cover->getContentSize() / 2);
-    this->getScene()->addChild(cover, Priority::SCREEN_COVER);
-    CC_SAFE_RETAIN(cover);
-    this->cover = cover;
-    
-    cover->setOpacity(0.f);
-    this->getScene()->runAction(Sequence::createWithTwoActions(TargetedAction::create(cover, FadeIn::create(duration)), CallFunc::create(callback)));
-}
-
-// フェードイン
-void DungeonSceneManager::fadeIn(const float duration, function<void()> callback)
-{
-    if(!this->cover)
-    {
-        callback();
-        return;
-    }
-    
-    CC_SAFE_RELEASE(this->cover);
-    this->cover->runAction(Sequence::create(FadeOut::create(duration), CallFunc::create(callback), RemoveSelf::create(), nullptr));
-    this->cover = nullptr;
-}
-
-// フェード用カバーを取得
-Sprite* DungeonSceneManager::getCover() const
-{
-    return this->cover;
-}
-
 // ロケーションを取得
 Location DungeonSceneManager::getLocation() const
 {

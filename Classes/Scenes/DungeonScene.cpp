@@ -96,22 +96,22 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     this->ambientLightLayer = ambientLightLayer;
     
     // 敵処理クラス生成
-    EnemyTask* enemyTask { EnemyTask::create() };
+    EnemyTask* enemyTask { EnemyTask::create(this) };
     this->addChild(enemyTask);
     this->enemyTask = enemyTask;
     
     // カメラ処理クラス生成
-    CameraTask* cameraTask {CameraTask::create()};
+    CameraTask* cameraTask { CameraTask::create(this) };
     this->addChild(cameraTask);
     this->cameraTask = cameraTask;
     
     // イベント処理クラス生成
-    EventTask* eventTask { EventTask::create() };
+    EventTask* eventTask { EventTask::create(this) };
     this->addChild(eventTask);
     this->eventTask = eventTask;
     
     // プレイヤー操作処理クラス生成
-    PlayerControlTask* playerControlTask {PlayerControlTask::create()};
+    PlayerControlTask* playerControlTask { PlayerControlTask::create(this) };
     this->addChild(playerControlTask);
     this->playerControlTask = playerControlTask;
     

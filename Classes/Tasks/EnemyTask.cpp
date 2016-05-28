@@ -8,10 +8,14 @@
 
 #include "Tasks/EnemyTask.h"
 
+#include "Layers/Dungeon/TiledMapLayer.h"
+
+#include "Managers/DungeonSceneManager.h"
+
 #include "MapObjects/Enemy.h"
 #include "MapObjects/MapObjectList.h"
 
-#include "Managers/DungeonSceneManager.h"
+#include "Scenes/DungeonScene.h"
 
 // コンストラクタ
 EnemyTask::EnemyTask() {FUNCLOG};
@@ -20,9 +24,9 @@ EnemyTask::EnemyTask() {FUNCLOG};
 EnemyTask::~EnemyTask() {FUNCLOG};
 
 // 初期化
-bool EnemyTask::init()
+bool EnemyTask::init(DungeonScene* scene)
 {
-    if(!GameTask::init()) return false;
+    if(!GameTask::init(scene)) return false;
     
     // 配置すべき敵の情報を格納
     this->datas = DungeonSceneManager::getInstance()->getSummonDatas();
@@ -41,7 +45,7 @@ void EnemyTask::summonEnemy(SummonData& data)
 {
     data.isDone = true;
     
-    DungeonSceneManager::getInstance()->addEnemy(Enemy::create(data.enemy_data));
+    this->scene->mapLayer->addEnemy(Enemy::create(data.enemy_data));
 }
 
 // データとして存在している敵の出現遅延時間を取得
@@ -77,7 +81,7 @@ void EnemyTask::stop()
 void EnemyTask::removeEnemy(const int enemyId)
 {
     // マップ上にいる敵を削除
-    DungeonSceneManager::getInstance()->getMapObjectList()->removeEnemyById(enemyId);
+    this->scene->mapLayer->getMapObjectList()->removeEnemyById(enemyId);
     
     // データとして存在している敵を論理削除
     for(SummonData& data : this->datas)
@@ -244,5 +248,5 @@ bool EnemyTask::existsEnemy() const
     }
     
     // マップ上に配置されている、もしくはデータとして存在していれば、true
-    return DungeonSceneManager::getInstance()->getMapObjectList()->existsEnemy() || !empty;
+    return this->scene->mapLayer->getMapObjectList()->existsEnemy() || !empty;
 }

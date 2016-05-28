@@ -24,6 +24,7 @@ public:
 private:
     ConfigEventListenerLayer* configListener { nullptr };
     EventListenerKeyboardLayer* listener { nullptr };
+    Sprite* cover { nullptr };
     
 // インスタンスメソッド
 private:
@@ -34,6 +35,9 @@ private:
 public:
     ConfigEventListenerLayer* getConfigEventListener() const;
     EventListenerKeyboardLayer* getEventListenerKeyboard() const;
+    Sprite* getCover() const;
+public:
+    void setCover(Sprite* cover);
 };
 
 #endif /* RootScene_h */

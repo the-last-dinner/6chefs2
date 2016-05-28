@@ -79,12 +79,12 @@ void DungeonCameraScene::onPreloadFinished(LoadingLayer* loadingLayer)
     this->ambientLightLayer = ambientLightLayer;
     
     // カメラ処理クラス生成
-    CameraTask* cameraTask {CameraTask::create()};
+    CameraTask* cameraTask { CameraTask::create(this) };
     this->addChild(cameraTask);
     this->cameraTask = cameraTask;
     
     // イベント処理クラス生成
-    EventTask* eventTask { EventTask::create() };
+    EventTask* eventTask { EventTask::create(this) };
     this->addChild(eventTask);
     this->eventTask = eventTask;
     

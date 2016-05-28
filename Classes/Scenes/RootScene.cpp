@@ -59,3 +59,20 @@ EventListenerKeyboardLayer* RootScene::getEventListenerKeyboard() const
 {
     return this->listener;
 }
+
+Sprite* RootScene::getCover() const
+{
+    return this->cover;
+}
+
+# pragma mark -
+# pragma mark public
+
+void RootScene::setCover(Sprite* cover)
+{
+    this->cover = cover;
+    if(!cover) return;
+    
+    cover->setGlobalZOrder(GlobalPriority::SCREEN_COVER);
+    this->addChild(cover);
+}

@@ -20,12 +20,15 @@
 #include "MapObjects/Party.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/SceneManager.h"
+
 #include "Models/StopWatch.h"
 
 #include "Scenes/EndingScene.h"
 #include "Scenes/DungeonCameraScene.h"
 #include "Scenes/DungeonScene.h"
 #include "Scenes/GameOverScene.h"
+#include "Scenes/RootScene.h"
 #include "Scenes/TitleScene.h"
 
 #pragma mark ChangeMapEvent
@@ -154,7 +157,21 @@ bool FadeOutEvent::init(rapidjson::Value& json)
 
 void FadeOutEvent::run()
 {
-    DungeonSceneManager::getInstance()->fadeOut(this->color, this->duration, [this]{this->setDone();});
+    // 既にフェードアウトしている場合は無視
+    if(SceneManager::getInstance()->getRootScene()->getCover())
+    {
+        this->setDone();
+        return;
+    }
+    
+    Sprite* cover { Sprite::create() };
+    cover->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
+    cover->setColor(color);
+    cover->setPosition(cover->getContentSize() / 2);
+    SceneManager::getInstance()->getRootScene()->setCover(cover);
+    
+    cover->setOpacity(0.f);
+    cover->runAction(Sequence::createWithTwoActions(FadeIn::create(duration), CallFunc::create([this]{this->setDone();})));
 }
 
 #pragma mark -
@@ -171,7 +188,18 @@ bool FadeInEvent::init(rapidjson::Value& json)
 
 void FadeInEvent::run()
 {
-    DungeonSceneManager::getInstance()->fadeIn(this->duration, [this]{this->setDone();});
+    if(!SceneManager::getInstance()->getRootScene()->getCover())
+    {
+        this->setDone();
+        return;
+    }
+    
+    
+    SceneManager::getInstance()->getRootScene()->getCover()->runAction(Sequence::create(FadeOut::create(duration), CallFunc::create([this]
+    {
+        this->setDone();
+        SceneManager::getInstance()->getRootScene()->setCover(nullptr);
+    }), RemoveSelf::create(), nullptr));
 }
 
 #pragma mark -

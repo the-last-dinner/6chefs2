@@ -73,6 +73,10 @@ protected:
     DungeonSceneData* getData() const;
     
     friend class DungeonSceneManager;
+    friend class CameraTask;
+    friend class EnemyTask;
+    friend class EventTask;
+    friend class PlayerControlTask;
 };
 
 

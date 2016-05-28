@@ -11,17 +11,20 @@
 
 #include "Common.h"
 
+class DungeonScene;
+
 // タスククラスの基底
 class GameTask : public Node
 {
 // インスタンス変数
 protected:
+    DungeonScene* scene { nullptr };
     
 // インスタンスメソッド
 protected:
     GameTask();
     virtual ~GameTask();
-    virtual bool init();
+    virtual bool init(DungeonScene* scene);
 };
 
 #endif /* defined(__LastSupper__GameTask__) */

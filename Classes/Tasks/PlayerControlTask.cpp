@@ -10,6 +10,7 @@
 
 #include "Managers/SceneManager.h"
 
+#include "Layers/Dungeon/TiledMapLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
 #include "MapObjects/Character.h"
@@ -21,7 +22,11 @@
 
 #include "Models/Stamina.h"
 
+#include "Scenes/DungeonScene.h"
 #include "Scenes/RootScene.h"
+
+#include "Tasks/EnemyTask.h"
+#include "Tasks/EventTask.h"
 
 // 定数
 const string PlayerControlTask::START_WALKING_SCHEDULE_KEY { "start_walking" };
@@ -34,9 +39,9 @@ PlayerControlTask::PlayerControlTask(){FUNCLOG}
 PlayerControlTask::~PlayerControlTask(){FUNCLOG}
 
 // 初期化
-bool PlayerControlTask::init()
+bool PlayerControlTask::init(DungeonScene* scene)
 {
-    if(!GameTask::init()) return false;
+    if(!GameTask::init(scene)) return false;
     
     DungeonSceneManager::getInstance()->getStamina()->onIncreasedMax = CC_CALLBACK_0(PlayerControlTask::onStaminaIncreasedMax, this);
     this->listener = SceneManager::getInstance()->getRootScene()->getEventListenerKeyboard();
@@ -71,8 +76,8 @@ void PlayerControlTask::search(Party* party)
 {
     if(!this->isControlEnabled()) return;
     
-    MapObjectList* objectList {DungeonSceneManager::getInstance()->getMapObjectList()};
-    Character* mainCharacter {party->getMainCharacter()};
+    MapObjectList* objectList { this->scene->mapLayer->getMapObjectList() };
+    Character* mainCharacter { party->getMainCharacter() };
     
     Vector<MapObject*> objs { objectList->getMapObjects(mainCharacter->getCollisionRect(mainCharacter->getDirection()))};
     
@@ -84,7 +89,7 @@ void PlayerControlTask::search(Party* party)
         {
             objPosition = obj->getPosition();
             obj->onSearched(mainCharacter);
-            DungeonSceneManager::getInstance()->runEvent(obj->getEventId());
+            this->scene->eventTask->runEvent(obj->getEventId());
         }
     }
 }
@@ -120,7 +125,7 @@ void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
     // Trigger::WILLを持つオブジェクトを検索して実行
     Rect gridRect {mainCharacter->getGridRect()};
     gridRect.origin += MapUtils::directionsToMapVector(moveDirections);
-    DungeonSceneManager::getInstance()->runEvent(DungeonSceneManager::getInstance()->getMapObjectList()->getEventIdsByGridRect(gridRect, Trigger::WILL));
+    this->scene->eventTask->runEvent(this->scene->mapLayer->getMapObjectList()->getEventIdsByGridRect(gridRect, Trigger::WILL));
     
     Stamina* stamina {DungeonSceneManager::getInstance()->getStamina()};
     
@@ -130,12 +135,12 @@ void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
     stamina->setStepRatio(terrain->getStaminaConsumptionRate());
     
     // 敵出現中かつ、ダッシュ中ならスタミナを減少モードにする
-    stamina->setDecreasing(DungeonSceneManager::getInstance()->existsEnemy() && (dash || terrain->consumeStaminaWalking()));
+    stamina->setDecreasing(this->scene->enemyTask->existsEnemy() && (dash || terrain->consumeStaminaWalking()));
     
     // スタミナが危険値まで下がっていたら、bgmを再生
     if(stamina->isWarn() && !SoundManager::getInstance()->isPlaying(Resource::BGM::TIRED)) SoundManager::getInstance()->playBGM(Resource::BGM::TIRED, true, 2.0f);
     
-    Vector<MapObject*> objs { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjectsByGridRect(mainCharacter->getGridRect(), Trigger::RIDE) };
+    Vector<MapObject*> objs { this->scene->mapLayer->getMapObjectList()->getMapObjectsByGridRect(mainCharacter->getGridRect(), Trigger::RIDE) };
     
     // 何も見つからなかった場合は、UNDIFINEDをセットする
     if(objs.empty()) this->riddenEventID = etoi(EventID::UNDIFINED);
@@ -145,7 +150,7 @@ void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
         if(obj->getEventId() != this->riddenEventID)
         {
             if(this->riddenEventID == etoi(EventID::UNDIFINED)) this->riddenEventID = obj->getEventId();
-            DungeonSceneManager::getInstance()->pushEventBack(obj->getEventId());
+            this->scene->eventTask->pushEventBack(obj->getEventId());
         }
     }
 }
@@ -154,7 +159,7 @@ void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
 void PlayerControlTask::onPartyMovedOneGrid(Party* party)
 {
     // キューにあるイベントを実行
-    DungeonSceneManager::getInstance()->runEventQueue();
+    this->scene->eventTask->runEventQueue();
     
     if(this->enableControl) this->walking(this->listener->getPressedCursorKeys(), party);
 }

@@ -12,12 +12,12 @@
 
 #include "Layers/Dungeon/TiledMapLayer.h"
 
+#include "Scenes/DungeonScene.h"
+
 #include "Tasks/FollowType/NeverFollow.h"
 #include "Tasks/FollowType/HorizontalFollow.h"
 #include "Tasks/FollowType/VerticalFollow.h"
 #include "Tasks/FollowType/BothFollow.h"
-
-#include "Managers/DungeonSceneManager.h"
 
 // コンストラクタ
 CameraTask::CameraTask() {FUNCLOG};
@@ -34,12 +34,12 @@ CameraTask::~CameraTask()
 };
 
 // 初期化
-bool CameraTask::init()
+bool CameraTask::init(DungeonScene* scene)
 {
-    if(!GameTask::init()) return false;
+    if(!GameTask::init(scene)) return false;
     
     // マップレイヤ取得
-    TiledMapLayer* mapLayer { DungeonSceneManager::getInstance()->getMapLayer() };
+    TiledMapLayer* mapLayer { scene->mapLayer };
     if(!mapLayer) return false;
     this->mapLayer = mapLayer;
     

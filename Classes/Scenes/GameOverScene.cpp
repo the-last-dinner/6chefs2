@@ -38,7 +38,7 @@ bool GameOverScene::init(const Type type)
     blood->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
     blood->setColor(Color3B(177, 0, 0));
     blood->setPosition(WINDOW_CENTER);
-    this->addChild(blood, Priority::TOP_COVER);
+    this->addChild(blood, 1000);
     this->bloodCover = blood;
     
     if(!BaseScene::init(GameOverSceneData::create())) return false;

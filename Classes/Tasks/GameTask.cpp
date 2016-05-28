@@ -17,7 +17,11 @@ GameTask::GameTask() {FUNCLOG};
 GameTask::~GameTask() {FUNCLOG};
 
 // 初期化
-bool GameTask::init()
+bool GameTask::init(DungeonScene* scene)
 {
+    if(!scene) return false;
+    
+    this->scene = scene;
+    
     return true;
 }

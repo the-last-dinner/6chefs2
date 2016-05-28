@@ -65,9 +65,6 @@ public:
     AmbientLightLayer* getAmbientLayer() const;
     
     // Scene
-    void fadeOut(const Color3B& color, const float duration, function<void()> callback);
-    void fadeIn(const float duration, function<void()> callback);
-    Sprite* getCover() const;
     Location getLocation() const;
     
     // TiledMaplayer

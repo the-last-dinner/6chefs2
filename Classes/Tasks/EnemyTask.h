@@ -19,7 +19,7 @@ class EnemyTask : public GameTask
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(EnemyTask);
+    CREATE_FUNC_WITH_PARAM(EnemyTask, DungeonScene*)
 
 // インスタンス変数
 private:
@@ -31,8 +31,8 @@ public:
 // インスタンスメソッド
 private:
     EnemyTask();
-    ~EnemyTask();
-    bool init();
+    virtual ~EnemyTask();
+    virtual bool init(DungeonScene* scene) override;
     bool needsSummonEnemy(const SummonData& data) const;
     void summonEnemy(SummonData& data);
     float calcSummonDelayForData(const SummonData& data, const Location& enterLocation, const Location& exitLocation) const;
@@ -40,7 +40,7 @@ public:
     void start(const int mapId);
     void stop();
     void removeEnemy(const int enemyId);
-    void update(float delta);
+    void update(float delta) override;
     vector<SummonData> createDatas(const Vector<Enemy*>& enemies, const Location& destLocation, const Location& exitLocation, const Location& enterLocation) const;
     bool existsEnemy() const;
 };

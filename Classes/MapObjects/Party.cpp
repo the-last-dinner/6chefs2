@@ -81,8 +81,8 @@ bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, 
 {
     return this->getMainCharacter()->walkBy(directions, [this, callback]
     {
-        callback();
         if(this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridRect());
+        callback();
     }, ratio);
 }
 

@@ -8,11 +8,15 @@
 
 #include "Tasks/EventTask.h"
 
+#include "Datas/Scene/DungeonSceneData.h"
+
 #include "Event/GameEvent.h"
 #include "Event/EventFactory.h"
-
 #include "Event/EventScript.h"
+
 #include "Managers/DungeonSceneManager.h"
+
+#include "Scenes/DungeonScene.h"
 
 // コンストラクタ
 EventTask::EventTask(){FUNCLOG}
@@ -40,12 +44,12 @@ EventTask::~EventTask()
 }
 
 // 初期化
-bool EventTask::init()
+bool EventTask::init(DungeonScene* scene)
 {
-    if(!GameTask::init()) return false;
+    if(!GameTask::init(scene)) return false;
     
     // イベントスクリプト生成
-    EventScript* eventScript {EventScript::create(CsvDataManager::getInstance()->getMapData()->getFileName(DungeonSceneManager::getInstance()->getLocation().map_id))};
+    EventScript* eventScript {EventScript::create(CsvDataManager::getInstance()->getMapData()->getFileName(scene->getData()->getInitialLocation().map_id))};
     CC_SAFE_RETAIN(eventScript);
     this->eventScript = eventScript;
     
@@ -296,17 +300,19 @@ void EventTask::run()
     // なければ先頭を実行
     this->runningEvent = this->eventQueue.front();
     this->eventQueue.pop_front();
-    this->getGameEvent(this->runningEvent)->run();
     
     // イベント開始をコールバック
     if(this->onEventStart) this->onEventStart();
+    
+    // イベント実行
+    this->getGameEvent(this->runningEvent)->run();
 }
 
 // IDからイベントを生成
 GameEvent* EventTask::createEventById(int eventId)
 {
     if(eventId == static_cast<int>(EventID::UNDIFINED)) return nullptr;
-    if(PlayerDataManager::getInstance()->getLocalData()->checkEventIsDone(DungeonSceneManager::getInstance()->getLocation().map_id, eventId)) return nullptr;
+    if(PlayerDataManager::getInstance()->getLocalData()->checkEventIsDone(this->scene->getData()->getInitialLocation().map_id, eventId)) return nullptr;
     
     this->setPushingEventId(eventId);
     

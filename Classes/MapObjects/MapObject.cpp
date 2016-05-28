@@ -257,11 +257,12 @@ void MapObject::move(const vector<Direction>& enableDirections, function<void()>
     
     // 移動開始
     this->_isMoving = true;
-    this->runAction(Sequence::create(MoveBy::create(DURATION_MOVE_ONE_GRID / ratio, movement), CallFunc::create([this]
+    this->runAction(Sequence::createWithTwoActions(MoveBy::create(DURATION_MOVE_ONE_GRID / ratio, movement), CallFunc::create([this, onMoved]
     {
         this->_isMoving = false;
+        if(onMoved) onMoved();
         if(this->onMoved) this->onMoved(this);
-    }), CallFunc::create(onMoved), nullptr));
+    })));
 }
 
 // 方向指定移動メソッド
@@ -367,7 +368,7 @@ void MapObject::reaction(function<void()> callback)
 {
     Sprite* icon {Sprite::createWithSpriteFrameName("icon_sign.png")};
     icon->setPosition(Point(0, this->getContentSize().height / 2));
-    icon->setGlobalZOrder(Priority::TOP_COVER);
+    icon->setGlobalZOrder(GlobalPriority::REACTION_ICON);
     icon->setScaleY(0.01f);
     icon->setAnchorPoint(Point::ANCHOR_MIDDLE_BOTTOM);
     this->addChild(icon);

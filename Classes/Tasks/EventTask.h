@@ -22,7 +22,7 @@ private:
     using CallbackWithId = pair<int, function<void()>>;
 // クラスメソッド
 public:
-    CREATE_FUNC(EventTask)
+    CREATE_FUNC_WITH_PARAM(EventTask, DungeonScene*)
 
 // インスタンス変数
 public:
@@ -69,8 +69,8 @@ public:
     void releaseEventIfNeeded(GameEvent* event);
 private:
     EventTask();
-    ~EventTask();
-    bool init();
+    virtual ~EventTask();
+    virtual bool init(DungeonScene* scene) override;
     
     void run();
     GameEvent* createEventById(int eventId);
