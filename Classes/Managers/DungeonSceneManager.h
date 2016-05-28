@@ -41,7 +41,6 @@ public:
 private:
     EventFactory* eventFactory { nullptr };
     EventScriptValidator* scriprtValidator { nullptr };
-    Sprite* cover { nullptr };
     vector<SummonData> summonDatas {};
     StopWatch* stopWatch { nullptr };
     Stamina* stamina { nullptr };
