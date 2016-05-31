@@ -86,6 +86,7 @@ void StopWatch::startCountDown(const float& interval_time)
 
 void StopWatch::startCountDown()
 {
+    if(!this->countDownEvent) return;
     this->startCountDown(this->interval_time);
 }
 
@@ -111,6 +112,7 @@ void StopWatch::scheduleFunction(float delta)
     if (!continueSchedule)
     {
         this->stopCountDown();
+        CC_SAFE_RELEASE_NULL(this->countDownEvent);
     }
 }
 
