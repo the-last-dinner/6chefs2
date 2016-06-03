@@ -87,7 +87,10 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="shadow" width="46" height="30">
+ <layer name="shadow" width="46" height="30" opacity="0.5">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrERwCAQA8GPaQX6r4/YpLZ+8MxuASdVPc1Rn1uB5umvvxMbHb8Tkr+1tbW1tbW1tbXvbyf53cvvXn738ht4awPyZQjb
   </data>

@@ -160,7 +160,10 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="shadow" width="20" height="20">
+ <layer name="shadow" width="20" height="20" opacity="0.5">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYIAAHnYGqoJR80bNQwbeBNQPN/MIgeFm3mCPj6Eev4MVAADEnwND
   </data>

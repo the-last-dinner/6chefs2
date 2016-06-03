@@ -28,7 +28,15 @@
    eJxjYBgFQw1sYKGNWnTwhgS9pKgdBaNgFIwCWgFKyjxSwGiZN/QAANBvBO0=
   </data>
  </layer>
- <objectgroup name="collision">
+ <layer name="shadow" width="26" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAF2mwMeAEheWLBSLOHWmDUnlFATzDc0sFws4fe9o3aMzTsG7UHOwAA78gENw==
+  </data>
+ </layer>
+ <objectgroup name="collision" opacity="0.5">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <object id="2" x="0" y="0" width="64" height="128"/>
   <object id="4" x="0" y="160" width="64" height="96"/>
   <object id="5" x="64" y="224" width="32" height="96"/>
@@ -160,9 +168,4 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="shadow" width="26" height="22">
-  <data encoding="base64" compression="zlib">
-   eJxjYEAF2mwMeAEheWLBSLOHWmDUnlFATzDc0sFws4fe9o3aMzTsG7UHOwAA78gENw==
-  </data>
- </layer>
 </map>

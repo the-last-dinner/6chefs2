@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="126" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="82">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="126" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="85">
  <tileset firstgid="1" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="007575" width="480" height="256"/>
  </tileset>
@@ -34,7 +34,7 @@
    <property name="cc_vertexz" value="-15"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztl7tOwzAUhrOZpVl5IigJrECLWBGXjZuAEQQqMIKgwMblBbgMrLRIsMAKC8x9BEaOhaOcGMd2mivo/NInS4ntpv584tZxHGeMhch5qjnOM6JX0/enFJNRFqKK7I33mxbgOZoC1fh3QeC9qelPKSaBsymNd+yN9/cAX/Lux3h8E657Cu+qz8T7kMgO1TrLHmXv2Jtqn2DvL26UwPsX8u6J8XHeg/mpza7VrbPs7NX98f6FvGXhPRjPWQSWgGVghUX3IbXZtbp1jvP+bOE92Fe29e6LMefAFnAIXDGq97zaTeBArPM2s6v3d4P3exai8j7ghnDvuL/KexXq47+1svcu0BHEecf12hFjusg7zocbxZS8691j0f8PGJ+F5xPuj6/HUXb9pq13nbNP4W3QjZJlZO+dFHSRM9W9fufUfZaX8pn7/T5J0XkvI9z7BXApvFPySV7rPATvgWGgDoxo8AS+eG9cwzPcALfAHfs9T51IDV9reZ2xM1tvgTOccbjWsmQDmBJzPKB32iOwA9fXgVkiM/bd3+vMMyPu23pbUHifQfcngQbQtPAuh7zn410V2bvJm8r7aoJ9Q96r6d2EzvsE2jfkvXwalt5tvFG9/x1svdtgqveWS+d7VUhS7yZvpnrnc80B8+S9dJLUu8mbyfuacLdB3iuBrXeTN5vzfRfYI++VIMn5rvOW5++6I7h+DJwmpN3HmKxpI8p+FsxZAu868vROKS5ZeA/qNA5eAycWe5BSXI5i3MR5I2eUb9GsCF8=
+   eJztl7tOwzAUhrOZpVl5Ii4JrFyKWCsuGzdBRxCowAgqBTYuL8BlYKVFogusdIG5j9CRY+EoJ8axnTZpAjq/9MlSYrupP5+4dRzHmWYhcl5LjtNGdEv6/pThZIqFqCJ74/0WBXiOskA1viMIvJc1/SnDSeBsQeMde+P9PcCXvPsxHj+E667Cu+oz8T4k0kO1zrJH2Tv2pton2PubGyXw3kPePTE+znswP7Xptbp1lp29uz/ee8hbGt6D8Zw1YB3YADZZdB9Sm16rW+c4720L78G+sq13X4y5AvaAU+CWUb1n1e4CJ2Kd95ldvXcM3p9YiMr7iBvCveP+Ku9FqI//1sreW0BTEOcd12tTjGkh7zifbhRTsq53j0X/P2B8Fp5PuD++Hkfe9TtoveucfQGjEmlH9t4cgBZyprrX75y6z/IGfOZ+v09SdN7zCPd+DdwI75RsktU6j8G7YByYACY1eAJfvDvu4BnugQfgkf2eZ4IYGL7W8jpjZ7beAmc4M3CtZkkVWBBzPKN32gtwANd3gCUiNY7d3+vMUxH3bb2tKrxX0P05YB4oW3iXQ96z8a6K7N3kTeV9K8G+Ie/F9G5C530W7Rvynj/zlt5tvFG9/x1svdtgqveaS+d7UUhS7yZvpnrncy0DK+Q9d5LUu8mbyfu2cFcl74XA1rvJm835fggckfdCkOR813nL8nddHa6fARcJafQxJm0aiLyfBXOZwLuOLL1Thpc0vAd1GgevgXOLPUgZXuoxbuK8kTPKN9P8CF8=
   </data>
  </layer>
  <layer name="MonoChu" width="126" height="24">
@@ -170,6 +170,9 @@
   <object id="59" x="256" y="96" width="64" height="96"/>
   <object id="60" x="1760" y="112" height="16"/>
   <object id="61" x="1744" y="112" width="16" height="16"/>
+  <object id="82" x="1408" y="80" width="32" height="32"/>
+  <object id="83" x="1008" y="80" width="32" height="32"/>
+  <object id="84" x="576" y="80" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="Ugokumono(object)">
   <properties>

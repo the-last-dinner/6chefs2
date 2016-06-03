@@ -81,7 +81,10 @@
  <objectgroup name="terrain">
   <object id="143" type="slip" x="64" y="64" width="384" height="288"/>
  </objectgroup>
- <layer name="shadow" width="36" height="24">
+ <layer name="shadow" width="36" height="24" opacity="0.5">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYEAF3OwMgwqMugc/GGrusSbRvaSqRwdDzT20shcXGKzuoZX5pILB6p7BAgabe6gNBku8wwC9yh96+XuwumewxPtgdQ+lgFr+GS7uGSn1+yhABQBn/QYN
   </data>

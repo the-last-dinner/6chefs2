@@ -3,13 +3,10 @@
  <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="ffffff" width="1440" height="1760"/>
  </tileset>
- <tileset firstgid="9901" name="ST-Room-I01" tilewidth="16" tileheight="16" tilecount="1120" columns="16">
-  <image source="ST-Room-I01.png" trans="ffffff" width="256" height="1120"/>
- </tileset>
- <tileset firstgid="11021" name="situnai" tilewidth="16" tileheight="16" tilecount="1860" columns="60">
+ <tileset firstgid="9901" name="situnai" tilewidth="16" tileheight="16" tilecount="1860" columns="60">
   <image source="situnai.png" trans="007575" width="960" height="511"/>
  </tileset>
- <tileset firstgid="12881" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="11761" name="ST-Sewer-01.png" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="30" height="36">
@@ -41,10 +38,10 @@
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzbERABAQALBfyXTsxV6M4Gu1o0kWSARwSy0Rrbx/e57jwzvzXB9eAACA0wa4EQVc
+   eJztzbERABAQALDfgiV+GvZiZGq1o0kWSARwS8mImu/fts/+4R37nB9eAACA0wIK1wME
   </data>
  </layer>
- <objectgroup name="collision">
+ <objectgroup name="collision" visible="0">
   <object id="21" x="256" y="448" width="224" height="32"/>
   <object id="22" x="256" y="512" width="32" height="64"/>
   <object id="23" x="0" y="448" width="224" height="128"/>
@@ -145,7 +142,7 @@
  </objectgroup>
  <layer name="shadow" width="30" height="36">
   <data encoding="base64" compression="zlib">
-   eJxjYBiZ4LbRqL2j9g5+e38Tad5wsZdYMGrvqL2j9o7aS6m9xJZzo/aO2jsU7KUXGGn2kgpGWviM2jtq72C0FwBj9C0j
+   eJzt1FENADAIA1EUzeCkzCwWupAssN4J4CX9IMKzvXBx+7tHvPeLq4aLi4tbddU/h4s7wX2Vm3ub2z64uB3dBIliHLs=
   </data>
  </layer>
 </map>

@@ -54,7 +54,18 @@
    eJxjYBgFo2D4AD5G2ujVocBcSvSOglEwCgY/GC13RsEowASj+WJkAwBUfQFp
   </data>
  </layer>
+ <layer name="shadow" width="22" height="36" opacity="0.5">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYMAOXjNjF3+DQ5xYQG9zcYlTai6l5tHKXGqDUXNpa+5QA0MtfEfNHTV31NxRc0fNHTV3sNpJK3MpbVNTw1wAabkjWQ==
+  </data>
+ </layer>
  <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <object id="1" x="64" y="0" width="32" height="96"/>
   <object id="2" x="0" y="0" width="64" height="160"/>
   <object id="3" x="0" y="192" width="64" height="384"/>
@@ -224,11 +235,6 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKAuMGaksoHDzFwTCu0bLuFAbXMpDVdc5lILjJo7au6ouaPmjpo7au6ouYPXXDFG7FgcSb0oDjViJLoV1GYxRdIDchO12jGDBQAASsYJAQ==
-  </data>
- </layer>
- <layer name="shadow" width="22" height="36">
-  <data encoding="base64" compression="zlib">
-   eJxjYMAOXjNjF3+DQ5xYQG9zcYlTai6l5g01c6kNRs0dmmCohe+ouaPmjpo7au6ouaPmDlY7aWUupW1qapgLADwsJEc=
   </data>
  </layer>
 </map>
