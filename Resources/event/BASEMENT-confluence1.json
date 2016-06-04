@@ -106,15 +106,15 @@
 							"name":"たいまつ"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1914"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1915"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1916"
 						}
 					]
@@ -158,7 +158,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"189"
 				}
 			]
@@ -172,15 +172,15 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1914"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1915"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1916"
 				}
 			]

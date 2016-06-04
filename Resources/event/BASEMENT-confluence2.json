@@ -93,7 +93,7 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10110"
 										},
 										{
@@ -148,7 +148,7 @@
 													"time":0.5
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10111"
 												}
 											]

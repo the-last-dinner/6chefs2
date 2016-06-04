@@ -95,7 +95,7 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1079"
 						}
 					]
@@ -118,11 +118,11 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1820"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1"
 						}
 					]
@@ -143,7 +143,7 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1072"
 						}
 					]
@@ -317,11 +317,11 @@
 											"type":"spawn",
 											"action":[
 												{
-													"type":"removeChara",
+													"type":"removeObject",
 													"objID":"1072"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1078"
 												}
 											]
@@ -540,11 +540,11 @@
 											"type":"spawn",
 											"action":[
 												{
-													"type":"removeChara",
+													"type":"removeObject",
 													"objID":"1072"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1078"
 												}
 											]
@@ -627,7 +627,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1078"
 				}
 			]

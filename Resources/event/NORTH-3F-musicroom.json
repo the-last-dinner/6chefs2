@@ -57,7 +57,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1017"
 				}
 			]
@@ -165,7 +165,7 @@
 							"objID":"hero"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1018"
 						}
 					]
@@ -269,7 +269,7 @@
 					"objID":"1018"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1018"
 				},
 				{
@@ -348,7 +348,7 @@
 			"name":"小型低速ジューサー"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"1921"
 		},
 		{
@@ -368,7 +368,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1921"
 				}
 			]

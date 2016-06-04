@@ -59,7 +59,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10105"
 				},
 				{
@@ -93,7 +93,7 @@
 					"imgID":"2"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10105"
 				},
 				{
@@ -245,11 +245,11 @@
 							"direction":"LEFT"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1066"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10107"
 						},
 						{
@@ -316,15 +316,15 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1066"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1067"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"10107"
 								}
 							]
@@ -383,7 +383,7 @@
 							"direction":"LEFT"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10107"
 						},
 						{
@@ -440,7 +440,7 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10107"
 						},
 						{

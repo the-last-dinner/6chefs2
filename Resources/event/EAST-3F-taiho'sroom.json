@@ -172,7 +172,7 @@
 					"steps":0.8
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1024"
 				},
 				{
@@ -220,7 +220,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1024"
 				}
 			]
@@ -318,7 +318,7 @@
 			"name":"曇り止めスプレー（レンズ用）"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"1928"
 		},
 		{
@@ -335,7 +335,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1928"
 				}
 			]
@@ -344,7 +344,7 @@
 	"10":"大宝の部屋の日記",
 	"11":[
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10100"
 		},
 		{

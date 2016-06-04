@@ -108,19 +108,19 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1031"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1032"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"10101"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"10102"
 								}
 							]
@@ -188,7 +188,7 @@
 							"imgID":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1037"
 						},
 						{
@@ -201,7 +201,7 @@
 									"steps":1.0
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1036"
 								}
 							]
@@ -219,7 +219,7 @@
 							"objID":"1036"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1036"
 						},
 						{
@@ -254,7 +254,7 @@
 							"option":"reaction"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1037"
 						},
 						{
@@ -325,11 +325,11 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1058"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1059"
 										},
 										{
@@ -410,19 +410,19 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1031"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1032"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"10101"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"10102"
 								}
 							]
@@ -552,7 +552,7 @@
 							"imgID":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1037"
 						},
 						{
@@ -565,7 +565,7 @@
 									"steps":1.0
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1036"
 								}
 							]
@@ -583,7 +583,7 @@
 							"objID":"1036"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1036"
 						},
 						{
@@ -611,7 +611,7 @@
 							"option":"reaction"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1037"
 						},
 						{
@@ -678,11 +678,11 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1058"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1059"
 										},
 										{
@@ -762,11 +762,11 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1035"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"24"
 				}
 			]
@@ -781,7 +781,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1038"
 				}
 			]
@@ -853,7 +853,7 @@
 					"layer":"MonoUe"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				}	
 			]
@@ -939,7 +939,7 @@
 													"file":"fire_vanish.mp3"
 												},
 												{
-													"type":"removeChara",
+													"type":"removeObject",
 													"objID":"181"
 												},
 												{
@@ -1103,7 +1103,7 @@
 									"file":"door2.mp3"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1030"
 								},
 								{
@@ -1272,11 +1272,11 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1020"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1023"
 						}
 					]
@@ -1296,7 +1296,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1021"
 				}
 			]
@@ -1311,11 +1311,11 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1019"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1022"
 				}
 			]
@@ -1330,27 +1330,27 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1027"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1022"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1019"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10103"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10101"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10104"
 				}
 			]
@@ -1822,15 +1822,15 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1027"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1028"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1029"
 				}
 			]
@@ -1922,11 +1922,11 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1027"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1022"
 				}
 			]

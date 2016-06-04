@@ -63,7 +63,7 @@
 					"imgID":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1040"
 				},
 				{
@@ -108,7 +108,7 @@
 					"type":"fadeout"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1040"
 				},
 				{

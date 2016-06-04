@@ -72,6 +72,7 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
 void CreateMapObjectEvent::run()
 {
     MapObject* target {this->validator->getMapObjectById(this->objectId, false)};
+    // jsonからcharaIDで取ってくる
     
     if(!target)
     {
@@ -79,7 +80,6 @@ void CreateMapObjectEvent::run()
         
         return;
     }
-
     DungeonSceneManager::getInstance()->addMapObject(target);
     this->setDone();
 }

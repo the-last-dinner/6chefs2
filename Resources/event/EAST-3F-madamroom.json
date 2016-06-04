@@ -119,7 +119,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1099"
 						},
 						{
@@ -292,7 +292,7 @@
 			"name":"お祭りはっぴ"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"1925"
 		},
 		{
@@ -312,7 +312,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1925"
 				}
 			]
@@ -358,15 +358,15 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10108"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10109"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10110"
 				}
 			]
@@ -490,7 +490,7 @@
 											"direction":"UP"
 										},
 							            {
-							            	"type":"removeChara",
+							            	"type":"removeObject",
 							            	"objID":"10109"
 							            },
 							            {
@@ -606,7 +606,7 @@
 					                "type":"sequence",
 					                "action":[
 					             		{
-					                	    "type":"createChara",
+					                	    "type":"createObject",
 					                        "objID":"1095"
 					                    },
 					                    {

@@ -39,7 +39,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1064"
 				}
 			]
@@ -118,7 +118,7 @@
 					]
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1065"
 				},
 				{
@@ -215,7 +215,7 @@
 									"speed":6.0
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1064"
 								}
 							]
@@ -231,7 +231,7 @@
 									"speed":6.0
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1065"
 								}
 							]
@@ -346,7 +346,7 @@
 							"enemyID":"1421"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1076"
 						}, 
 						{
@@ -472,7 +472,7 @@
 											"option":"reaction"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1076"
 										},
 										{
@@ -524,7 +524,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1076"
 				}
 			]

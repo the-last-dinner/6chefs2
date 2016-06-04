@@ -82,7 +82,7 @@
 							"objID":"1021"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1021"
 						}
 					]
@@ -117,7 +117,7 @@
 							"file":"door_keyopen.mp3"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"188"
 						},
 						{
@@ -138,7 +138,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"188"
 				}
 			]

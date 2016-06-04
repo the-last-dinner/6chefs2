@@ -164,7 +164,7 @@
 					"name":"焔のかみしも"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1927"
 				},
 				{
@@ -229,7 +229,7 @@
 					"name":"蒸しせいろ"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1931"
 				},
 				{
@@ -256,7 +256,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1927"
 				}
 			]
@@ -275,7 +275,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1931"
 				}
 			]

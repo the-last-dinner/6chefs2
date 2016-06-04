@@ -77,8 +77,8 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"quakeMap", QuakeMapEvent::create},            // マップを振動させる
         
         // マップオブジェクト系
-        {"createChara", CreateMapObjectEvent::create},      // マップオブジェクトを無効リストから有効リストへ移動、マップ上に表示
-        {"removeChara", RemoveMapObjectEvent::create},      // マップオブジェクトを削除（有効リストのもののみ対象）
+        {"createObject", CreateMapObjectEvent::create},      // マップオブジェクトを無効リストから有効リストへ移動、マップ上に表示
+        {"removeObject", RemoveMapObjectEvent::create},      // マップオブジェクトを削除（有効リストのもののみ対象）
         {"reaction", ReactionEvent::create},                // リアクション
         {"chase", FollowCharacterEvent::create},            // パーティーの追加
         {"releaseChase", ReleaseFollowingCharacterEvent::create},   // パーティの解除

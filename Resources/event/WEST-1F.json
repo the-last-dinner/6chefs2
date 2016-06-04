@@ -36,7 +36,7 @@
 													"type":"sequence",
 													"action":[
 														{
-															"type":"createChara",
+															"type":"createObject",
 															"objID":"1087"
 														},
 														{
@@ -164,7 +164,7 @@
 											"type":"fadein"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1087"
 										},
 										{
@@ -884,7 +884,7 @@
 									"name":"水"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1915"
 								},
 								{
@@ -1657,7 +1657,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"109"
 				}
 			]
@@ -1875,7 +1875,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1915"
 				}
 			]
@@ -1900,7 +1900,7 @@
 					"event":["7","23"]
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1922"
 				}
 			]
@@ -1917,7 +1917,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1922"
 				}
 			]
