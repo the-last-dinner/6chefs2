@@ -61,6 +61,7 @@ namespace member
     static const char* TIMES = "times";
     static const char* TROPHY_ID = "trophyID";
     static const char* TRUE_ = "true";
+    static const char* TRIGGER = "trigger";
     static const char* TYPE = "type";
     static const char* VOLUME = "volume";
     static const char* X = "x";

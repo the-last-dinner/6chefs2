@@ -47,7 +47,7 @@ bool ReactionEvent::init(rapidjson::Value& json)
 
 void ReactionEvent::run()
 {
-    MapObject* target {this->validator->getMapObjectById(this->objectId)};
+    MapObject* target = {this->validator->getMapObjectById(this->objectId)};
     
     if(!target)
     {
@@ -65,22 +65,51 @@ void ReactionEvent::run()
 bool CreateMapObjectEvent::init(rapidjson::Value& json)
 {
     if(!MapObjectEvent::init(json)) return false;
+    
+    if(!this->validator->hasMember(json, member::CHARA_ID))
+    {
+        // キャラの時
+        this->target = {this->validator->getMapObjectById(this->objectId, false)};
+    }
+    else
+    {
+        // キャラじゃない時
+        // データ生成
+        CharacterData data;
+        data.obj_id = stoi(this->objectId);
+        data.chara_id = stoi(json[member::CHARA_ID].GetString());
+        data.location.x = json[member::X].GetInt();
+        data.location.y = json[member::Y].GetInt();
+        
+        Direction direction {this->validator->getDirection(json)};
+        if(direction == Direction::SIZE) direction = Direction::FRONT;
+        data.location.direction = direction;
+        data.move_pattern = this->validator->getMovePatternForCharacter(json);
+        
+        // データからキャラクタを生成
+        Character* chara { Character::create(data) };
+        
+        if(!chara) return nullptr;
+        
+        chara->setTrigger(this->validator->getTrigger(json));
+        chara->setEventId(this->validator->getEventId(json));
+        chara->setHit(true);
+        
+        this->target = chara;
+    }
  
     return true;
 }
 
 void CreateMapObjectEvent::run()
 {
-    MapObject* target {this->validator->getMapObjectById(this->objectId, false)};
-    // jsonからcharaIDで取ってくる
-    
-    if(!target)
+    if(!this->target)
     {
         this->setDone();
         
         return;
     }
-    DungeonSceneManager::getInstance()->addMapObject(target);
+    DungeonSceneManager::getInstance()->addMapObject(this->target);
     this->setDone();
 }
 

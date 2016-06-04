@@ -270,6 +270,24 @@ EnemyMovePattern EventScriptValidator::getMovePatternForEnemy(rapidjson::Value& 
     return this->hasMember(json, member::MOVE_PATTERN) ? static_cast<EnemyMovePattern>(stoi(json[member::MOVE_PATTERN].GetString())) : EnemyMovePattern::CHEAP_CHASER;
 }
 
+// 移動アルゴリズムの種類を取得
+CharacterMovePattern EventScriptValidator::getMovePatternForCharacter(rapidjson::Value& json)
+{
+    return this->hasMember(json, member::MOVE_PATTERN) ? static_cast<CharacterMovePattern>(stoi(json[member::MOVE_PATTERN].GetString())) : CharacterMovePattern::SIZE;
+}
+
+// トリガーを取得
+Trigger EventScriptValidator::getTrigger(rapidjson::Value& json)
+{
+    return this->hasMember(json, member::TRIGGER) ? static_cast<Trigger>(stoi(json[member::TRIGGER].GetString())):Trigger::SIZE;
+}
+
+// イベントIDを取得
+int EventScriptValidator::getEventId(rapidjson::Value& json)
+{
+    return this->hasMember(json, member::EVENT_ID)? stoi(json[member::EVENT_ID].GetString()):static_cast<int>(EventID::UNDIFINED);
+}
+
 // 色を取得
 Color3B EventScriptValidator::getColor(rapidjson::Value& json) const
 {
