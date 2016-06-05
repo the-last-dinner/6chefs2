@@ -103,6 +103,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"animation", AnimationEvent::create},              // アニメーション
         {"createFog", CreateFogEvent::create},              // 靄を発生させる
         {"createRain", CreateRainEvent::create},            // 雨を降らせる
+        {"createUnderwater", CreateUnderwaterEvent::create},// 水中
         
         // ミニゲーム系
         {"barrage", ButtonMashingEvent::create},        // 連打イベント

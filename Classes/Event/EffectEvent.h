@@ -64,5 +64,18 @@ private:
     virtual void run() override;
 };
 
+// 水中になる
+class CreateUnderwaterEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(CreateUnderwaterEvent, rapidjson::Value&)
+private:
+    CreateUnderwaterEvent() {FUNCLOG};
+    ~CreateUnderwaterEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
+
 
 #endif /* EffectEvent_h */
