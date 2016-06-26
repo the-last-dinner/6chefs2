@@ -54,8 +54,8 @@ void PlayerControlTask::turn(const Key& key, Party* party)
         // 一定時間後に歩行開始
         if(!this->isScheduled(START_WALKING_SCHEDULE_KEY)) this->scheduleOnce([this, party](float _)
         {
-            this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
-        }, MapObject::DURATION_MOVE_ONE_GRID, START_WALKING_SCHEDULE_KEY);
+            this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        }, 0.0f, START_WALKING_SCHEDULE_KEY);
     }
 }
 
@@ -83,7 +83,7 @@ void PlayerControlTask::search(Party* party)
 }
 
 // 歩行中、あたり判定を行い次に向かう位置を決定する
-void PlayerControlTask::walking(const vector<Key>& keys, Party* party)
+void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
 {
     if(keys.empty() || !this->isControlEnabled() || party->getMainCharacter()->isMoving()) return;
     
@@ -149,7 +149,7 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party)
     // キューにあるイベントを実行
     DungeonSceneManager::getInstance()->runEventQueue();
     
-    if(this->enableControl) this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(this->enableControl) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か設定
@@ -160,7 +160,7 @@ void PlayerControlTask::setControlEnable(bool enable, Party* party)
     this->enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
-    if(!before && enable) this->walking(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(!before && enable) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か確認
