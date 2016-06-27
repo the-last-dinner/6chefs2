@@ -40,7 +40,7 @@ DebugManager::~DebugManager(){FUNCLOG}
 // コンストラクタ
 DebugManager::DebugManager()
 {
-    return;
+    // return;
     FUNCLOG
     this->file_path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::DEBUG_CONFIG);
     if (this->file_path == "") return;
