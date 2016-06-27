@@ -29,6 +29,9 @@
   </data>
  </layer>
  <layer name="shadow" width="26" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYEAF2mwMeAEheWLBSLOHWmDUnlFATzDc0sFws4fe9o3aMzTsG7UHOwAA78gENw==
   </data>
