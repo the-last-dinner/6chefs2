@@ -371,7 +371,7 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* 6chefs2-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6chefs2-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5087E76F17EB910900C73F5D /* 6chefs1.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6chefs1.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */,
-				5087E76F17EB910900C73F5D /* 6chefs2-desktop.app */,
+				5087E76F17EB910900C73F5D /* 6chefs1.2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1336,9 +1336,9 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5087E73D17EB910900C73F5D /* 6chefs2-desktop */ = {
+		5087E73D17EB910900C73F5D /* 6chefs1.2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "6chefs2-desktop" */;
+			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "6chefs1.2" */;
 			buildPhases = (
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
@@ -1348,9 +1348,9 @@
 			);
 			dependencies = (
 			);
-			name = "6chefs2-desktop";
+			name = 6chefs1.2;
 			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* 6chefs2-desktop.app */;
+			productReference = 5087E76F17EB910900C73F5D /* 6chefs1.2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1378,7 +1378,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* 6chefs2-mobile */,
-				5087E73D17EB910900C73F5D /* 6chefs2-desktop */,
+				5087E73D17EB910900C73F5D /* 6chefs1.2 */,
 			);
 		};
 /* End PBXProject section */
@@ -1946,7 +1946,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "6chefs2-desktop" */ = {
+		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "6chefs1.2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5087E76D17EB910900C73F5D /* Debug */,
