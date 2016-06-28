@@ -44,6 +44,8 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
         if( (p = str.find("//")) != str.npos ) continue;
         vector<string> inner;
         i = 0;
+        // キャリッジリターンを消す
+        str = LastSupper::StringUtils::strReplace("\r", "", str);
         //カンマがあるかを探し、そこまでをvaluesに格納
         while( (p = str.find(",")) != str.npos ){
             if (i == 0)
