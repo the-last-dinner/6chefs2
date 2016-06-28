@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="38" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="12">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
+ </tileset>
+ <tileset firstgid="3489" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="3969" name="ranmaru_0_0" tilewidth="16" tileheight="16">
+  <image source="ranmaru_0_0.png" trans="aa55ff" width="32" height="32"/>
+ </tileset>
+ <layer name="Base" width="60" height="38">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzzEKgEAMRNGkFfQAgt7Xqwp6AEFx6zUs2Jnxf5gmpHlm9If2sjXR6lq/W/B/lR2JVtf6PYP/wc060fX+9M7lNopuCryLaw+v9vBqD6/28L77zx5evErhxasUXrxK4cWrFF68SuHFqxRevERf7wbbgrss
+  </data>
+ </layer>
+ <layer name="Base2" width="60" height="38">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0sENgCAUBFE6sBJtRG3E/gtQb8Q1BG/uMi/5JyBhCKWM6Zi85uv9a/vL+TRr1UhvHnqz0ZuN3mz0ZqO3bb72LMZT6+m932f78T9o3e251tubgl5Fry96Fb2+6FX0+qJX0euLXkWvL3oVvb5G60WuE6IKPOc=
+  </data>
+ </layer>
+ <layer name="steps" width="60" height="38">
+  <data encoding="base64" compression="zlib">
+   eJztz7EJgDAQhtEbINlTcQI3EewEFxDcT9tgChtR4nvwN1fdFwHf0uXrbajcWvG33ilF9LncnN7+6jlLpXdtuHc728Zcbm+4FwAAAAAAAOCOAzjgC8w=
+  </data>
+ </layer>
+ <layer name="ranmaru" width="60" height="38">
+  <data encoding="base64" compression="zlib">
+   eJztzwsVABAABMFrILNPcFLwMJNgNwEAAAAAAADgJbUkrZyu2Kev1/HRL3CfCcRZAkc=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="1" x="160" y="224" width="768" height="368"/>
+  <object id="3" x="928" y="0" width="32" height="336"/>
+  <object id="4" x="32" y="0" width="704" height="96"/>
+  <object id="5" x="0" y="0" width="32" height="608"/>
+  <object id="6" x="800" y="0" width="128" height="96"/>
+  <object id="8" x="32" y="512" width="32" height="32">
+   <properties>
+    <property name="objID" value="181"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="7" x="160" y="224" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="9" x="32" y="576" width="128" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="10" x="736" y="32" width="64" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="11" x="32" y="512" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="objID" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="60" height="38">
+  <data encoding="base64" compression="zlib">
+   eJztz1EJwDAUBMH4t1IJMVcRhSbsm/k/uF2LCfbpAz/Te7fn415vm942vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbNq2XpheBMhot
+  </data>
+ </layer>
+</map>

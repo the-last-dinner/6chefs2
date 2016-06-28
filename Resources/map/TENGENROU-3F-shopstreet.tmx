@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="48" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="26">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+  <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="48" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztmEEOgyAUROnag2oPYl1pD1I9iPZSfhIXxGBCC4NfnEkmhoTA+0AIjjFla3nodIgm6VfLt1Hmp/gTUAP58/H7ztj3IvxH62z7XZ2/Fb+UufuBv1Jq8uvi953zTgFnKP/ZPOTHuJexB4BdIfntOo2B78UY2ZreTn391k65z2hNzlx23hT7Qv778O9FfvLHiPzk/1djwvszx/vhKH+I5Z8z5W+o/y9EfuHLf8hP/jvzo/IHRH63z99MAs7cJj/5yV8OPyIjQ7oUrWZAayQ=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="48" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztzkkKwkAURdGfOLTdhu0mg9sIBEe6DBWbxdjEFfgghEANpCIVpPAeuMPPf2YAAAAA/lXeq4oV+38r9v0AAKCxTc2uTru0u7vQYt9/0s+z08Vjx7d3oe318+B09NhxS8zu6qGeqlSvpPu9rr62DlSm1mqsJh7767uhGrW4C22qnzNVqI1aqpXHjvpurhYt7gAAn70BMDwveA==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="384" y="224" width="352" height="304"/>
+  <object id="2" x="736" y="0" width="32" height="672"/>
+  <object id="3" x="0" y="640" width="736" height="32"/>
+  <object id="4" x="128" y="0" width="608" height="128"/>
+  <object id="5" x="32" y="16" width="96" height="176"/>
+  <object id="6" x="16" y="96" width="16" height="256"/>
+  <object id="8" x="32" y="256" width="32" height="96"/>
+  <object id="9" x="96" y="256" width="32" height="288"/>
+  <object id="12" x="0" y="432" width="96" height="112"/>
+  <object id="15" x="64" y="352" width="32" height="32"/>
+  <object id="20" x="384" y="528" width="288" height="16"/>
+  <object id="21" x="416" y="544" width="96" height="16"/>
+  <object id="22" x="640" y="544" width="32" height="16"/>
+  <object id="23" x="704" y="528" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="17" x="32" y="16" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="18" x="64" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="19" x="0" y="544" width="32" height="96">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="24" x="672" y="528" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="25" x="416" y="544" width="96" height="16">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="48" height="42">
+  <data encoding="base64" compression="zlib">
+   eJzt0LENACAQw0AKtmZ5eqSvkN4E+SZwMoZetiZdcMd+Vkp/1Wl/D/tZ9rNSOiv2s9L7K2m7zl77e6X3n+xn2c+yn2U/y36W/Sz7/+Y/ksTYO64U1w==
+  </data>
+ </layer>
+</map>

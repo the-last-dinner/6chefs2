@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="11">
+ <tileset firstgid="1" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
+ </tileset>
+ <layer name="Base" width="22" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzDkKgEAMRuHcxZO49q6949K7nt8Hlg4IQRiL/PAVKfJE7sVIkCJDrrgLea5EhRoNWsXdebo9HAaMmBT37OkuWLFhx6G4T083+oh1rWtd64buvk37F6r7l11jjjy9
+  </data>
+ </layer>
+ <layer name="MonoShita" width="22" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztkjlSAkEUhh8wNItCKqupitxA7oEsOWvOZg4u99Ab6A30BnIDqIIcBAO/ZGRwpuygawKq+Ku+qu735v+CrhHxN6uwyBq+YBPezctK5BYqUIUa1JW+ZyfCt1GIQdzRa3BuQgva0IGu0vfsnDFLQRoyjn2Pcx8GMIQR3Cl9z84Fs0u4goJjP+Y8gXt4gEd4UvqeneeAyEvAPTfNK843H7zvOD8MvIugyDLonn/inBp4tzi/Nd6EJZK09vcn3E8td+93H2Ifcs+d75Cnf/7HkeWe+8ebxZnz8Jq+wzXOood3hnNu4L3BWfLwrnCuffjPjjnmEPMDsecqhA==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="22" height="22">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowAT6LMzMBiwU99ce6CZDjQwl1bgPSMDwwdG6pv7H2QmE/XNHQWjYBQMXQAAoAID3g==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="32" y="0" width="288" height="64"/>
+  <object id="2" x="320" y="0" width="32" height="352"/>
+  <object id="3" x="192" y="288" width="128" height="64"/>
+  <object id="4" x="0" y="288" width="160" height="64"/>
+  <object id="5" x="0" y="0" width="32" height="288"/>
+  <object id="6" x="32" y="64" width="64" height="16"/>
+  <object id="7" x="128" y="64" width="96" height="16"/>
+  <object id="8" x="256" y="64" width="64" height="16"/>
+  <object id="9" x="288" y="128" width="32" height="64"/>
+  <object id="10" x="32" y="96" width="32" height="112"/>
+ </objectgroup>
+</map>

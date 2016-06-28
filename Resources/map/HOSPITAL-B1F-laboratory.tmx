@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
+ <tileset firstgid="1" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
+ </tileset>
+ <tileset firstgid="1857" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2337" name="sf" tilewidth="16" tileheight="16">
+  <image source="sf.png" trans="aa55ff" width="192" height="256"/>
+  <tile id="145">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="146">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="147">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="148">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="157">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="158">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="159">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="160">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="169">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="170">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="171">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="172">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="181">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="182">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="183">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="184">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="2529" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztj7ENgDAQA9PDBrD/LhAWgLAAhAUgFLiMrEdBghREb+lkN9a/jSlTHeiBJU9hKcf9Qbgzggk48hSOctyfhTsLWIEnT+Epx/1NuLODAwTyFIFy3D+FOxWoMzirAW0G1z26R/foHt3zzz1Pdffn13r7Zym6AF9CaOs=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1LdOw1AYhuFfKV6SO4A7oQwBJkiQKBNloEwRENE2CKItVNEW6p5AslOSnZLcACQ7ENiprweEhGwZ7GOy5JeewbL9fbZ1jkUq89+T8oqkvepzQ2Q2oBFNyCCroKfGL1KLOtSjjcx2dKATOeQV9DST3YIwIugjsx8DGEQBRdxz7sFvv6eLe7vRg16MkjmGcUzofCKTeOHcq4OenzNL9hzmsaCjY9HnPDegiQS17+MNsjexhW0dHTsKeqroqNasr/vLRA2+b8zGN7/1iNyhgKLH+XOZzSPZJTzh2aBniWdfxgpWsYZ1G+/zRvY7PvQOg721S+Ye9nGAQxwpXKtfkyAziWOcIIW0Cz2nZJ7hHBfIIOvCOrgk8wrXuEEOeRs9VuvAbMLswwhaf7kfrdZBuWeI9xjGCGIK/jFmM0X2NOKYcbGnMuWdT4S5Syw=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYKAv4OKkDUYGbzlo5/7XSGaP2jNqz6g9o/aM2jNqz6g9Q8ceEDjHQRifR9Jzlgj158hw/xsOVH+D3PmGhuEw2AEAUjk8Sw==
+  </data>
+ </layer>
+ <layer name="MonoUe" width="26" height="26">
+  <data encoding="base64" compression="zlib">
+   eJztjSkSg1AQBb/lzigWG4JlsQQsJJbFErABbkMfYWoqGGq6qs0T/Zy7L4HnXIgRxt51jQd7gk9MlT+SRsaeY4Gl8kfSqNhfWGOj/JE0WvYO3/hR/kgaPfuAI07KH0ljZv/igqvyR9L4sW+446H8+UdDgn9h2zAMw7gPJ6F4LiY=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="384" y="0" width="32" height="384"/>
+  <object id="2" x="224" y="352" width="160" height="64"/>
+  <object id="3" x="0" y="352" width="192" height="64"/>
+  <object id="4" x="0" y="16" width="32" height="336"/>
+  <object id="5" x="32" y="16" width="352" height="80"/>
+  <object id="6" x="48" y="96" width="64" height="48"/>
+  <object id="7" x="112" y="96" width="64" height="16"/>
+  <object id="10" x="192" y="96" width="80" height="48"/>
+  <object id="11" x="320" y="96" width="64" height="48"/>
+  <object id="12" x="320" y="176" width="64" height="48"/>
+  <object id="13" x="320" y="256" width="64" height="48"/>
+  <object id="14" x="144" y="320" width="32" height="32"/>
+  <object id="16" x="32" y="208" width="80" height="48"/>
+  <object id="17" x="64" y="256" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="18" x="384" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="CharaUe" width="26" height="26">
+  <data encoding="base64" compression="zlib">
+   eJztzScOwEAMBdGle6RUlspSWSpLvT/MHGEthazkkR4w+TZG86HAGhMiQowEqf1/I+POUaBEhVr4x2Wj4W7RoceAUfjHZWPinrFgxYZd+Mdl4+A+ceHGg1f4548NTdM0TfOxD4UHFa8=
+  </data>
+ </layer>
+ <layer name="CharaUe2" width="26" height="26">
+  <data encoding="base64" compression="zlib">
+   eJztzbcRgDAAQ1EV9niEBQg9wfTE0fkTUNlHo3/3Wklyzrl/mqI0Y8GKhC3m/9nZPHDiwo2nwI9zX1VBqtGgDeV+OrZ7DBgL/jiXsxeJuwiT
+  </data>
+ </layer>
+ <layer name="shadow" width="26" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYBieYDbXqD2j9ozaM2rPqD2D3R6QHcPJPyPVHmq4hV72EAsGU/iOBAAAcggQHg==
+  </data>
+ </layer>
+</map>

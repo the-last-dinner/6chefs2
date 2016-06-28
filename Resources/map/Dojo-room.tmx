@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="7">
+ <tileset firstgid="1" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="lower" tilewidth="16" tileheight="16">
+  <image source="lower.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKANMGWmDCMDCSBfG0jrkIl1gViMeWiZ5wmkvcjE3ljM02OkDI+aN2reYDKPDw8m1TwQ+MmEHf9iQuj5gUMNCBMDxJlRwwLkBnFmwvoGMwAAfpc+pQ==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpABWRgYGNkZM8VqgWB0WcUJAGahHBYu+2UCxOWSY5wjU44RF306g2C4yzIsH6kkgQ98oGAWjYPgDAPKHBUg=
+  </data>
+ </layer>
+ <layer name="CharaUe" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DggR0zZRgdxDBThtHBDGbKMDqoYqYMj4JRMBgAANldG4E=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="320" height="96"/>
+  <object id="2" x="288" y="96" width="32" height="224"/>
+  <object id="3" x="176" y="256" width="112" height="64"/>
+  <object id="4" x="0" y="256" width="144" height="64"/>
+  <object id="5" x="0" y="96" width="32" height="160"/>
+  <object id="6" x="32" y="192" width="256"/>
+ </objectgroup>
+</map>

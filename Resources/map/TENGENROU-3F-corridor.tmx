@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="31">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+  <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="961" name="cm01" tilewidth="16" tileheight="16">
+  <image source="cm01.png" trans="aa55ff" width="512" height="512"/>
+ </tileset>
+ <layer name="Base" width="78" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlM0RwiAUBkMTnrQQtSD1pmMP3qKFRBuxJS+Sk04GgTwIP3F35ptEQ+CxAZoGpLx0nor45Kg+3h76fqeve2LNQaf7U29Llc5byFi1xGeOKxV3vZnGnMJ17u83t306lc9hv3Pzliq1esu992Ofb7515T6fQiNZb/2cS5n3mDpi1hxrn5biMVVqPd9SZrgm+t+m822ts9G5NL/jeu7Tdvj/mD5tY/n0GzJW/+7W4G1BvII3vOGt/OANb3grP3jDG97KD97CvZ30/TVxbpba2gjtp8r5y1sObGu8M9Q2tr2Lu+Md1/Nc5PZWK3iTgTcZeJOBNxl4k4E3GXiTgTcZeJOBNxl4k4E3GXiTgTcAf97yqW5d
+  </data>
+ </layer>
+ <layer name="MonoShita" width="78" height="44">
+  <data encoding="base64" compression="zlib">
+   eJztzjEOgCAURMEfOBcn8frCOSBReyskMpNss9WLAAAAAHZX8rtvtlW7HsdoOVNEvdfS9X1t1S4AAAAAAAAAAPijDrozCbE=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="78" height="44">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJACAMRNHYO4n7D2hhKwTSaOC9CY7fXQQAAADQ3RyvF/zv1mjpltIIAKA/fyHnL9RoBAAAAAAAxwaYvgDh
+  </data>
+ </layer>
+ <layer name="MonoUe" width="78" height="44">
+  <data encoding="base64" compression="zlib">
+   eJztzsENABAQAMF7aJ1O6IS66MCHRGSmgM1GAAD8IaeIkv5u3VDXWzv092rrhr7exqG/V1sAAAAAAAAAAAAA7E0K+gvs
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="4" x="784" y="400" width="432" height="304"/>
+  <object id="5" x="1216" y="32" width="32" height="688"/>
+  <object id="6" x="592" y="400" width="96" height="304"/>
+  <object id="7" x="0" y="400" width="496" height="304"/>
+  <object id="8" x="0" y="0" width="32" height="400"/>
+  <object id="9" x="32" y="0" width="1184" height="224"/>
+  <object id="10" x="1200" y="224" width="16" height="16"/>
+  <object id="12" x="1200" y="368" width="16" height="32"/>
+  <object id="14" x="32" y="368" width="16" height="32"/>
+  <object id="15" x="32" y="224" width="16" height="16"/>
+  <object id="29" x="896" y="224" width="96" height="16"/>
+  <object id="30" x="288" y="224" width="96" height="16"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="18" x="784" y="400" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="19" x="496" y="672" width="96" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="21" x="688" y="672" width="96" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="24" x="1200" y="208" width="16" height="16">
+   <properties>
+    <property name="objID" value="1"/>
+   </properties>
+  </object>
+  <object id="25" x="1200" y="368" width="16" height="16">
+   <properties>
+    <property name="objID" value="2"/>
+   </properties>
+  </object>
+  <object id="26" x="32" y="368" width="16" height="16">
+   <properties>
+    <property name="objID" value="3"/>
+   </properties>
+  </object>
+  <object id="27" x="32" y="208" width="16" height="16">
+   <properties>
+    <property name="objID" value="4"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="28" x="112" y="304" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="objID" value="156"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="path">
+  <object id="22" x="1040" y="272" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="23" x="272" y="288" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

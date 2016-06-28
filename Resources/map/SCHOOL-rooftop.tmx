@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="10">
+ <tileset firstgid="1" name="ST-Schl-E01" tilewidth="16" tileheight="16">
+  <image source="ST-Schl-E01.png" trans="aa55ff" width="256" height="1824"/>
+  <tile id="325">
+   <properties>
+    <property name="CharaUe" value=""/>
+   </properties>
+  </tile>
+  <tile id="341">
+   <properties>
+    <property name="CharaUe" value=""/>
+   </properties>
+  </tile>
+  <tile id="357">
+   <properties>
+    <property name="CharaUe" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1825" name="ST-Fdshop-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Fdshop-I01.png" trans="aa55ff" width="256" height="1440"/>
+ </tileset>
+ <tileset firstgid="3265" name="SC-Door-Schl01" tilewidth="16" tileheight="16">
+  <image source="SC-Door-Schl01.png" trans="aa55ff" width="384" height="256"/>
+ </tileset>
+ <tileset firstgid="3649" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt0skJgEAMBdBAytH+e3BpwKUBlwZcDgbkMy4Dc9KMkoHPh5wemRDtL4ks16ftMd+7voqJar7PG5m1nrn5zunE0Hscg8xG8wV9mRhydl1ISna+lJ5NyIf7Q+Pu0No+/C8ae4tlf5MYZna9SNZDa/uQpx3mM5/5zGe+f/q08hXfBrXJteU=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztkTEOgkAUBZejCcZeIfaosVfRXkV7RTivswnFLyB05se8SSZvm00muyEMM0tCSDHDudnoIhm59EOWNKwwx8LsGdcO+koaNrjFHZ76c+zbO+urzD7w6aDvQMOxf7fKbHy/i/omudJwwzvWZr3874uGNzb4Mdti56BPCCGEEEL8J19pdRu/
+  </data>
+ </layer>
+ <layer name="MonoChu" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzrkRgDAQBMH1uSP/fAAlwZMEj836wkYypqvGHwkA8GUKaXaLK9H6prb6aXO7Ozr8O/10uds9Hf4NKYVLN2brGwAA8IcXV60LTQ==
+  </data>
+ </layer>
+ <layer name="MonoUe" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztl1EKg0AMRL3/p0eo2gPU6gFq7QFq7Xk6i1sIgSVxyxKhefD+Fma+ZklVbZxgA9uoRFPIkN3BM8u7wB5eoxJ9IUP2AEeWd4MTvEclpkKG7Bk+WN4TLvAVlVgKGbJX+GZ5taKTJd7vN47ej+5ft/N9zsZJ+8eh+zco+tH3ORsn7R+H7t+s6Eff52xcilQ+3b9V0Y++z9m4FNp8x3Gcf+H7n1or3R/WSveHtdL9YS2/Pz638AvE
+  </data>
+ </layer>
+ <layer name="MonoUe2" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt17cNgEAQRNGlNVwBuAJwBQAdYBrA1MsgIEFIBBuwwXxpkoueLroTOXMdEQ/zsQALHTFVBE+MJViKZT/6Rmx6nOXwFFiJVVhtzNfA0xq+v/vu6PuOPl306aJPF3266NNFny76dFn3vXW8nTvDvh6ewcj/460ZnuXaim1GfDtQ8EBC
+  </data>
+ </layer>
+ <layer name="MonoUe3" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt0DUSAlEQRdFGq2YyNEdzdD/IkKP7QXN0P2iOxtzsL2E66Fd18ltPxGaz2Ww2t44v0kUPfQQY+GFXuQ1pGWGMCaaYKeqb07LAEiussVHUt6Vlhz0OOOKkqO/pibzwxgdf/Lywq9wifBVFDHEkkFT0X4qWNDLIIoe8or4CLUWUUEYFVUV9NVrqaKCJFtqK+rTvzFcXXHHDHQ/7z6ZsfxQJHQU=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="112" y="0" width="528" height="176"/>
+  <object id="2" x="608" y="176" width="32" height="208"/>
+  <object id="3" x="0" y="320" width="608" height="64"/>
+  <object id="4" x="0" y="0" width="112" height="192"/>
+  <object id="5" x="480" y="208" width="96" height="64"/>
+  <object id="6" x="480" y="304" width="96" height="16"/>
+  <object id="8" x="112" y="176" width="112" height="16"/>
+  <object id="9" x="0" y="192" width="32" height="128"/>
+ </objectgroup>
+ <layer name="CharaUe" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzrsNgDAQwNCrs/9CSUj6fGAe3DECIPlJ7h0hSZIkKaeIQpUOatTT21ePwcukRZtOuj70J/3BDYUlCgM=
+  </data>
+ </layer>
+ <layer name="Shadow" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJADAMxEBP4P13zBKZwE0E5gO6Vo2qZqff2hb/GP8Y/xj/GP+Yn/8S+Mf4x/jH+Mf4xyT8XVhQIwU=
+  </data>
+ </layer>
+</map>

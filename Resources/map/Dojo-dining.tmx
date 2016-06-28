@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="8">
+ <tileset firstgid="1" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
+ </tileset>
+ <layer name="Base" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzV0DdOBTEAhGFjcwHCBQgXAN4FiD2xJ/bE/kVoX4SW/FoyLeEChAsQLkA4AL+E3QwrrVwy0id7ZiUXa8xvBjGEYYzIfdR33cI5Zv5mHBOYxJTcp33XLZwzCe/NYg7zWJD7ou+6hXMp4b1lrGAVa3Jf9123cG4kvJdFDnkU5F70XbdwlhLeK6OCKmpyr/uuWzgbCe/dWGNucYd7G981D2yPeMKzje+aF7ZXvOHdxnfNB9snvvBt47umxRlj4dDq4rumja0dHeh08V3TxdaNHvS6+K7pY+vHADIuvmuy/NMc8iigiBI2sWXTv2vKbBVUUUMdDWxjx6Z/1+yy7WEfBzjEEY7RtOnfNSdspzjDOS5wiStc2/Tv/yU/wEGOaw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBha4BHzwNgrzsrAIAHEkkAsxYopfxnormskuE0daIYGEGsCsRYW8x4DzXpGgnnmQDMsgNgSiK2wmCfMwsAgxkK8ee5AMzyA2BOIvbCYhw9oAt2theb2cKAZEUAcCcRRJJpnCTTLisJ4h7kpE4izgDgbiHOYsbuVFDdVAnEVEFcDcQ0z5W7tBOrtAuJuIO6hQlqfieTHOVTKO9SIj1EwPAAAXqYTyA==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxEksjAwJLFQz7xCoFlFVDRvFIyCUTAKALEpAbc=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="2" x="0" y="0" width="32" height="320"/>
+  <object id="3" x="32" y="288" width="288" height="32"/>
+  <object id="4" x="288" y="0" width="32" height="288"/>
+  <object id="5" x="32" y="0" width="256" height="96"/>
+  <object id="6" x="224" y="96" width="64" height="16"/>
+  <object id="7" x="128" y="144" width="64" height="48"/>
+ </objectgroup>
+</map>

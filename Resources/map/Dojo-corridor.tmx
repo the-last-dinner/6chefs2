@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="9">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="oinarisama" tilewidth="16" tileheight="16">
+  <image source="oinarisama.png" trans="aa55ff" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="881" name="temple_out" tilewidth="16" tileheight="16">
+  <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
+ </tileset>
+ <layer name="Base" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDHVQxMzAUAzEJcyo7BIkNjb5IiIxTD06mAQUmwzEzUC8CIoX0wDjsheEpzAj+NSiFxGwFyS3BEkdtWlc9tKKJmQvrfw56t/B499JSBiWxtHdPYlIdYT8O1IAAErvm/o=
+  </data>
+ </layer>
+ <layer name="Base2" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIwEIMzEwiDBBaFphkPnoQB0opsEEoWmFNbDYaw0Us2GC0LTCNljs9QeKBTBBaFrhACz2JjORhlOBOI1EPSlY7C1nIg1XAnEViXoqsNg7CkbBKBgFgx0AANv5K1k=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZwAiKjaHYBIoJicMAqephIACKA6E4CIoJicMAqepHwSgYBaNgFIyCUUB/AAAENgxd
+  </data>
+ </layer>
+ <layer name="door" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpABjKKY3CITiUTAKRsEoGAWjYBQMfgAALVgBCQ==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="30" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBTAbsaBsfcmle0dLv4YBaMAHwAAspMDLQ==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="32" height="64"/>
+  <object id="2" x="32" y="288" width="448" height="32"/>
+  <object id="3" x="448" y="0" width="32" height="64"/>
+  <object id="4" x="32" y="0" width="416" height="64"/>
+  <object id="5" x="32" y="112" width="192" height="16"/>
+  <object id="6" x="256" y="112" width="192" height="16"/>
+  <object id="7" x="0" y="112" width="32" height="208"/>
+  <object id="8" x="448" y="112" width="32" height="176"/>
+ </objectgroup>
+ <layer name="CharaUe" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZoI1xYOxYQgd7sdkx0uw9RAd76WHHKBgFo2AUjIKhCQB8tAZz
+  </data>
+ </layer>
+</map>

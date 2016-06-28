@@ -1,0 +1,32 @@
+{
+	"1":[
+		{
+		    "type":"setAmbient",
+		    "ambient":"night"
+		}
+	],
+	"2":[
+		{
+			"type":"changeMap",
+			"mapID":"35",
+			"x":20,
+			"y":3
+		}
+	],
+	"3":[
+		{
+			"type":"changeMap",
+			"mapID":"38",
+			"x":10,
+			"y":10
+		}
+	],
+	"4":[
+		{
+			"type":"changeMap",
+			"mapID":"40",
+			"x":2,
+			"y":33
+		}
+	]
+}

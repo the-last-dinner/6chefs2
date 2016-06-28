@@ -1,0 +1,16 @@
+{
+	"1":[
+		{
+		    "type":"setAmbient",
+		    "ambient":"night"
+		}
+	],
+	"2":[
+		{
+			"type":"changeMap",
+			"mapID":"65",
+			"x":30,
+			"y":9
+		}
+	]
+}

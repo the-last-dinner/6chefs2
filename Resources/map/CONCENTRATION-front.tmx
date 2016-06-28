@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="18">
+ <tileset firstgid="1" name="ST-Schl-E01" tilewidth="16" tileheight="16">
+  <image source="ST-Schl-E01.png" trans="aa55ff" width="256" height="1824"/>
+ </tileset>
+ <tileset firstgid="1825" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="26" height="26">
+  <properties>
+   <property name="cc_vertex" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztUwEKgCAMnPaCRf9/a0IOxqGRo4sKB8cE2Y7zTpGjFhKwJs/keRNPKsiN/nUeLVjrmcFj+60bGHoQrHfTh3jMf3Xvx/THZ4Hpj88CQw+Cmbcs3Bz4rNn5bp5N2v8n1bsRnt4en2PE2Yzpxert8p6jR1dmRvREEdETQUvPX2oH+GQJyA==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrcKAlEQRuFB5v3fwhw6c+jMrt2uuqk39kY8tgsXBDuZA19zYX6uiGVZlvUP5VWkgCJKKKOCKmqoo6Hf7+1yIiEixEiQoslGC2100EUPfQwwxEjd99n2vB1wxAlnXDBmY4IpZphjgSVW8LBW9322K2833PHAEy/4bATYYPv5N0JEiJEgVfe9ZVm/9wb0jEBD
+  </data>
+ </layer>
+ <layer name="MonoChu" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztkTEOgCAMRRkbb4AGdzWyq4H7H0tJMZBaiUMHh77kLTT0Q2sMYgHtie5yZM5p3RJTbQDzYAJ0Jq4fcjyU+3WfhcnZAN2JIfd5y0nviFDu130OJqdFyukaOVLcc+N24ARzfJ43twPJ/8Q8b24HQTBHURRFUZR/cAKQRBGA
+  </data>
+ </layer>
+ <layer name="MonoUe" width="26" height="26">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwwWosjAwqAGxOhBrsNDOHlOg2WZAbA7EFjS0xxVothsQuwOxBw3tGQWjYBSMglEwCkbBwAIAs0ICvw==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="2" x="384" y="0" width="32" height="416"/>
+  <object id="3" x="0" y="384" width="384" height="32"/>
+  <object id="4" x="0" y="0" width="32" height="384"/>
+  <object id="5" x="32" y="0" width="352" height="48"/>
+  <object id="6" x="144" y="48" width="128" height="64"/>
+  <object id="7" x="32" y="240" width="96" height="48"/>
+  <object id="8" x="128" y="224" width="32" height="64"/>
+  <object id="9" x="160" y="240" width="96" height="32"/>
+  <object id="10" x="256" y="224" width="32" height="64"/>
+  <object id="11" x="288" y="240" width="96" height="48"/>
+ </objectgroup>
+ <layer name="shadow" width="26" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAcCHBTwZBRe0btGWT2jIJRMFzBcMurw82eUTAKRiIAAGyjASo=
+  </data>
+ </layer>
+ <objectgroup name="chara">
+  <object id="12" x="192" y="336" width="32" height="32"/>
+  <object id="14" x="224" y="336" width="32" height="32"/>
+  <object id="15" x="160" y="336" width="32" height="32"/>
+  <object id="16" x="128" y="336" width="32" height="32"/>
+  <object id="17" x="256" y="336" width="32" height="32"/>
+ </objectgroup>
+</map>

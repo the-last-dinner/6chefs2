@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="56" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="199">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16">
+  <image source="ST-Temp-E01_2.png" trans="aa55ff" width="512" height="3200"/>
+ </tileset>
+ <tileset firstgid="6881" name="syakanyorai2" tilewidth="16" tileheight="16">
+  <image source="syakanyorai2.png" trans="aa55ff" width="192" height="128"/>
+ </tileset>
+ <tileset firstgid="6977" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="8481" name="magoichi_0_0" tilewidth="16" tileheight="16">
+  <image source="magoichi_0_0.png" trans="aa55ff" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="8485" name="nadeshiko_0_0" tilewidth="16" tileheight="16">
+  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Base" width="42" height="56">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0bENgCAQRuFjN3ZRB1E7FzEOIi4lxEJCy5H8xbvkhe74UDNGda5gFu3rDGPuSKG/p3LeDvtS89byHaZ8zp0t9ju99tX/Bae/c83n1tleOb32tc5omuHEiROnWjhx4sSpFk6cOHGqhRMnTpxq4cSJE6daOHHixKkWTpxljtBfOyN2qs8LQAOGzw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="42" height="56">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1kENwCAQRNGVgH8D1EnrhMooEnrYJYS8J+BnjhMBAADASXqLuNr+/Xs2nsKdWf0xG2/hzuo+AKzkh+T2/RAA+M8Pye37IcBqHzAaHk8=
+  </data>
+ </layer>
+ <layer name="butuzou" width="42" height="56">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrsJgEAURNGXW4CwYqKR/8h//61oATbggKmBgbC7cA/cZKIxA/51OLPT+X7xzRXJz1gkme8H36SB/cxf/hTaysB+VvpTq0a1qlO9GgL7OerPpGa1qFVtag/sJwAAAAAAAAAAAADgcQNwBQhQ
+  </data>
+ </layer>
+ <layer name="magoichi" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJztzkENACAMBLCzMsC/RnDAk5G0CpoAAAAA9FKVjHq9uJvnuD54AgAAAEBnG/JAAQ8=
+  </data>
+ </layer>
+ <layer name="nadeshiko" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJztzkkNACAQBLCxsg8O/wrBAU8gaRU0AQAAAHhbq6TX7cXZ2Mf5wRMAAAAAXrIAHB4BHw==
+  </data>
+ </layer>
+ <layer name="hide" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJztzqENAAAIA0GGY/+ZMFh8Se6SF3WtAgAAAMjS27VTfPkJAAAAAMkGAXYCIQ==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="183" x="128" y="336" width="32" height="32"/>
+  <object id="184" x="512" y="336" width="32" height="32"/>
+  <object id="185" x="512" y="544" width="32" height="32"/>
+  <object id="186" x="512" y="752" width="32" height="32"/>
+  <object id="187" x="128" y="752" width="32" height="32"/>
+  <object id="188" x="128" y="544" width="32" height="32"/>
+  <object id="189" x="0" y="864" width="672" height="32"/>
+  <object id="190" x="640" y="64" width="32" height="800"/>
+  <object id="192" x="352" y="0" width="288" height="128"/>
+  <object id="193" x="0" y="0" width="320" height="128"/>
+  <object id="194" x="304" y="144" width="64" height="32"/>
+  <object id="195" x="0" y="128" width="32" height="736"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="196" x="640" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="197" x="304" y="864" width="64" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="4"/>
+   </properties>
+  </object>
+  <object id="198" x="320" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJzt2MEJgEAQBEHzMP8o/RiCCq0uR1UAQ3Ov5baNyY7974J73u6s9nW2+zq/2a/obOls6WzpbOls6Wyt0jnlXlvlPafQ2dLZ0tnS2dLZ+vsOuWtKxxWdLZ0tnS2dLZ2tVTr9hzyjs6WTiU7wDEI/
+  </data>
+ </layer>
+ <layer name="CharaUe" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJzt1sERQEAQRNG5cVtZkAmZkAmZEobJQfcu5b8AfvWxIwAAAPAHZ4m4yvv73RDRD8877v6Yjcm4U9Wfs7EYd6r6azY2405Vf8/GYdzp7gNAK/wQbZ8fou3zQ+r0AaAVfoi2zw/R9vkhdfoAgG+4AefkIBE=
+  </data>
+ </layer>
+ <layer name="CharaUe2" width="42" height="56">
+  <data encoding="base64" compression="zlib">
+   eJztzjsOglAUANHb+KEUsYEosP9VoViqUPpLnAVQkRheMSeZfiKk+boy4kwX6ulaLn007cbXnR400Jjo55OvF73pQ99EP1dVxJo2tKWsWvpo2o6vnPZU0CHRzyNfJ6qpoTbRT0mSJEmSJEmSJEmS/uEHf9MSOg==
+  </data>
+ </layer>
+</map>

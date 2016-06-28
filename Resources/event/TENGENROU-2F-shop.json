@@ -1,0 +1,34 @@
+{
+	"1":[
+		{
+		    "type":"setAmbient",
+		    "ambient":"night"
+		}
+	],
+	"2":[
+		{
+			"type":"changeMap",
+			"mapID":"26",
+			"x":32,
+			"y":10
+		}
+	],
+	"3":[
+		{
+			"type":"systemMsg",
+			"text":["店の棚は荒らされ、物がなくなっている"]
+		}
+	],
+	"4":[
+		{
+			"type":"systemMsg",
+			"text":["棚は血まみれだ"]
+		}
+	],
+	"5":[
+		{
+			"type":"systemMsg",
+			"text":["この棚は比較的綺麗なままだ"]
+		}
+	]
+}

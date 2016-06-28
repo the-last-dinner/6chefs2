@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" nextobjectid="7">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="cyber2" tilewidth="16" tileheight="16">
+  <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="1985" name="chip10e_glas" tilewidth="16" tileheight="16">
+  <image source="chip10e_glas.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2465" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2945" name="set-mansion-in" tilewidth="16" tileheight="16">
+  <image source="set-mansion-in.png" trans="aa55ff" width="1440" height="1760"/>
+ </tileset>
+ <layer name="Base" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztz0sKgCAUheFrr3nPDdcOaoe5gbIadwQHQZFa0qQrfAgp9zeif64JZlAwGtKB7Z6et8AKm6WrDvdtpOXcpzs6OL7r7uzJ/77l0hWCKIIYErOHouelkIlzN8e3AkqozB6KnldDc9HtxTe4y13ucpe73OUud//S9V0tZnQB5vgu/fbhRXcHyyeSNA==
+  </data>
+ </layer>
+ <layer name="Base2" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBg4UMvFwJDFTR+cwIWw15ebfn70RrJr1N5Re0ftHbV31N5Re0ftHbV31N5Re0ftHfz21gD7DnrcxGN9JL26JOgD4XguTLcQA3y4UcMH5H4fMsILAM4uJiM=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzUEBABAQRcG/iWhAAxrQP4VfwcUevCkwEn5SQqrx/m0+e8I7fM6Ed/ncCS8AAABw4wCgnwJF
+  </data>
+ </layer>
+ <layer name="MonoChu" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAamAiZ065ixiow+mp70LofRiLPaSCqgVzqNgFIyCUTAKsAMAvioiMw==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="32" height="480"/>
+  <object id="2" x="32" y="448" width="224" height="32"/>
+  <object id="3" x="32" y="256" width="416" height="32"/>
+  <object id="4" x="256" y="448" width="224" height="32"/>
+  <object id="5" x="448" y="0" width="32" height="448"/>
+  <object id="6" x="32" y="0" width="416" height="128"/>
+ </objectgroup>
+ <layer name="CharaUe" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzaENACAQBMGTr4FCgEKA/qvh0WA/Qewka86cBADALZmUgyt2/1bfWnD9o9/h2wxuPX4BADg2yTIXKQ==
+  </data>
+ </layer>
+ <layer name="books" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzVEBABAQBbAX43pQk8ykOD62AksAgN+NSmb1v+ue+8ELQI8DcCUB4w==
+  </data>
+ </layer>
+ <layer name="shadow" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0EEJAAAIBMED+3c1giX8iLMFBjb5WReXy+VyuVwul8vl7nT1zwCOaRqV
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" nextobjectid="13">
+ <tileset firstgid="1" name="Yatai-option1" tilewidth="16" tileheight="16">
+  <image source="Yatai-option1.png" trans="aa55ff" width="944" height="255"/>
+  <tile id="247">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="886" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
+ </tileset>
+ <tileset firstgid="2486" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="3990" name="ST-Toyshop-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Toyshop-I01.png" trans="aa55ff" width="256" height="1600"/>
+ </tileset>
+ <layer name="Base" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYICAUiYGBiMycTkTAwYAmZdLJsZlXhmZGJt5G4BiG8nEm5hQ3QUyX46ZMjxUzNsA9T+1zKPUHFqbRy1zR80bNW/UvFHzRs2jjXmDFQAAIYlTtQ==
+  </data>
+ </layer>
+ <layer name="Base2" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1ElOAlEUheE7oC4gMqVTpirdFGUDNBsAWQCoG7DZAOAGBDYAskEVgYR/QlLcCXkBkkrgJd/gnpOcUaVERDoh2fuFfBuntneId94L7l7Qv7/z3v57P57IL/4wxz8WWGLlbfebzt/bPVWRMCKI4gIxXCKu2/2m8/d2L0GWRAppZHCFa2R1d2/3bshucYcc8iigiJLu7u1emeweD6io+233qmQ11NFQ99vuNclaeERb3W+71yV7wjNe1P22e69kb3jHh7rfdq9H1scAn+p+270vsiFGGKv7bfcmZFN8Y6bu96H/98d6a7xCWns=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg6QJCJgUEIiPmBWICJOD2HgeqOYFEbxsjA4AMU9wViLyD2BmJxoJgEEDMB2cxAzALErEDMhiT3D8j+j8O8dqB4BxC3AnEbEKcxQLAtkG0HxPZA7ADEjkhylswMDFbMmOZNZCQ+XIgBZ6hsHjuR4Y8NhBFwizUQrwDilTjwKiC2JMG8MiLMK6Gh+wiFFch9j4H4CQ78FM19xAA5oB/kcWAFKqeFUTAKRsEoGAWYAACTjSjd
+  </data>
+ </layer>
+ <layer name="MonoChu" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBi64AMjA8NHRuxyhUBcRKJ52kwMDDpM2OXWAPFaEs0bBaNgIIEFkWLEgmIixUbBKBgFo2AUMDAAAPNmBdE=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVABFsIMDJbC1DPPA2iWJxXNGwUQAAD2gwFP
+  </data>
+ </layer>
+ <layer name="food" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2BoAQ8qmvWDinp/QDEl7kPXS02/joJRMApGwSigHwAAwiIFAQ==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="48" height="128"/>
+  <object id="2" x="48" y="0" width="240" height="80"/>
+  <object id="6" x="272" y="112" width="16" height="64"/>
+  <object id="7" x="288" y="0" width="32" height="448"/>
+  <object id="8" x="0" y="160" width="32" height="320"/>
+  <object id="9" x="32" y="448" width="288" height="32"/>
+  <object id="11" x="224" y="384" width="32" height="32"/>
+  <object id="12" x="96" y="128" width="128" height="64"/>
+ </objectgroup>
+ <layer name="shadow" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYICAAi4GqoJR80bNG07Ak2fUvOFuXjYFmB7uGzVv1LxR84YWAAA1ahDE
+  </data>
+ </layer>
+</map>

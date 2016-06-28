@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="54" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+  <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16">
+  <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENg0AQRFFcAFAIOKYGcP/9cCERyCchdMP70mQb7Os6SZLua/mcLy1e3mN92dDoxgrvVDY3ui8vL+/jf/Pe513Ltkb3q/Be3bc+3uzxZo83e7zZ483ev960eHmT4uVNipc3KV7epHh5k+LlTYqXN6m3eZXZDq8GBhA=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENADAIwDDUk7mEk9k7IzrUviCJAAAAAAAAAAAAAOCW53XBrvrsFwCY1R2rAQc=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJzt2LENgDAQBEESlweNYBqBpoEM6QJsIu68I332yVqOfpoA/MlW3nfWhh0X9Cp6fY3UW8u33r34ztHZ2/I+7ujNRm82erPRm43ebPRmozcbvdnozdbbO187i/E8td73asg/GOl+e6NX0euLXkWvL3oVvb7oVfT6olfR64teRa8velVSL3KdPdBVow==
+  </data>
+ </layer>
+ <layer name="CharaUe" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztzjERAAAIBKA/O9m/mhEcdYAEJAAAAAAAAAAAAAC7rusBAABfDWIwADg=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="16" width="800" height="272"/>
+  <object id="2" x="800" y="64" width="128" height="32"/>
+  <object id="3" x="928" y="16" width="32" height="832"/>
+  <object id="4" x="160" y="464" width="768" height="368"/>
+  <object id="5" x="32" y="800" width="128" height="32"/>
+  <object id="7" x="0" y="288" width="32" height="544"/>
+  <object id="11" x="144" y="704" width="16" height="32"/>
+  <object id="12" x="0" y="832" width="528" height="48"/>
+  <object id="18" x="800" y="48" width="128" height="48"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="8" x="176" y="496" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="9" x="208" y="496" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="10" x="144" y="704" width="16" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="16" x="32" y="768" width="128" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="17" x="800" y="256" width="128" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJzt0LERgDAQBDFHNEn/fVADMwbsRYov+P0xAOA55/H1Be/S23a3d/f/6J27X43eufvV6J27X43eufvd6W3T26a3TW+b3ja9bXrb9LbpbdPbprdNb5veNr1tetv0tv2tl6YLCQwUdw==
+  </data>
+ </layer>
+ <layer name="shutterA" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztz8cNwCAURMEPd4c+HPrvyqECUwBHJCw0I737bgQAAAAAAAAAAAAAAH92pYi70lN6U+917U05Yi4tldbce117W/m0l45K54B/GdMHy/AJhw==
+  </data>
+ </layer>
+ <layer name="shutterA2" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztzrkNACAQxMC9/ovlqYArgByCGcm5EwAAAAAAAAAAAAAAfjYqmZdWt+v1HUByAOVmB4s=
+  </data>
+ </layer>
+ <layer name="shutterB" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztz8cNwCAURMEPd4c+HPrvyqECUwBHJCw0I737bgTwN1eKuCs9pTf1XtfelCPm0lJpzb3XtbeVT3vpqHQO+BcAAAAAAAAAAAAAGN8HcdwJhw==
+  </data>
+ </layer>
+ <layer name="shutterB2" width="60" height="54">
+  <data encoding="base64" compression="zlib">
+   eJztzrkNACAQBLG9/ovlqQBSJHIIbGnySYDftEr6pbGb9foOAAAAAAAAAAAAAABOC2/mB4s=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,34 @@
+{
+	"1":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["20","4"]
+				}
+			],
+			"action":[
+				{
+				    "type":"setAmbient",
+				    "ambient":"night"
+				}
+			]
+		}
+	],
+	"2":[
+		{
+			"type":"changeMap",
+			"mapID":"18",
+			"x":2,
+			"y":44
+		}
+	],
+	"3":[
+		{
+			"type":"changeMap",
+			"mapID":"20",
+			"x":10,
+			"y":23
+		}	
+	]
+}

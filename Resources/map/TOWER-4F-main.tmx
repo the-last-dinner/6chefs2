@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="192">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16">
+  <image source="ST-Temp-E01_2.png" trans="aa55ff" width="512" height="3200"/>
+ </tileset>
+ <tileset firstgid="6881" name="cyber2" tilewidth="16" tileheight="16">
+  <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="42" height="36" opacity="0.91">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlU0KgzAQhSdre5C2B9EexP4dpLrrRawHqb1UJ5hgcBcyDiO8Bx8BF8NnCPOIEIv5OKKRqWhmcPM36UyunF/i+RWYN63+09/Dnc9HIU9aPKXmDYmr93zx2RXSJ55S89aeFdkEnvvzPDKnwNmwZ800gQs8i2mZa+Bm2FMCeMLTkudByFNid2vcp8ROhOeCxO7W8NQGnvCEJzy3IvZtbtdqe8Yey+0wbc/YY7kdhve5nafP29lkb/kDoUq2LA==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="42" height="36">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1kENwCAQRNGVgH8DxQk4KTLgzhE2aZr3BPzMcSIAADjxlIhavt9vq9ETd97qv6sxEndm9wGAnb90t+8vwX9M9X8UNQ==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="42" height="36">
+  <data encoding="base64" compression="zlib">
+   eJztzjENAAAIA7D5mH+fKOAmIa2CJgAAAADApr0eAF8NA9QANw==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="170" x="576" y="272" width="16" height="16"/>
+  <object id="171" x="512" y="224" width="32" height="32"/>
+  <object id="172" x="512" y="448" width="32" height="32"/>
+  <object id="173" x="416" y="464" width="48" height="48"/>
+  <object id="174" x="368" y="144" width="64" height="64"/>
+  <object id="175" x="192" y="288" width="64" height="64"/>
+  <object id="176" x="128" y="224" width="32" height="32"/>
+  <object id="177" x="128" y="448" width="32" height="32"/>
+  <object id="178" x="0" y="64" width="32" height="512"/>
+  <object id="179" x="32" y="544" width="608" height="32"/>
+  <object id="181" x="640" y="32" width="32" height="544"/>
+  <object id="182" x="352" y="0" width="288" height="96"/>
+  <object id="183" x="32" y="0" width="288" height="96"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="184" x="640" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="185" x="224" y="464" width="16" height="16">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="186" x="320" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="path">
+  <object id="187" x="400" y="208" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="188" x="192" y="256" width="32" height="32">
+   <properties>
+    <property name="nextID" value="3"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+  <object id="189" x="416" y="432" width="32" height="32">
+   <properties>
+    <property name="nextID" value="4"/>
+    <property name="pathID" value="3"/>
+    <property name="previousID" value="2"/>
+   </properties>
+  </object>
+  <object id="190" x="192" y="384" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="4"/>
+    <property name="previousID" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)">
+  <object id="191" x="288" y="128" width="32" height="32"/>
+ </objectgroup>
+ <layer name="CharaUe" width="42" height="36">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1rENgDAQQ1F30CVbwCawCdkENoUxuAloOKNI/DfAl0tLAACHs0hX6b8/VGms7zvu/hSN2bgzq79EYzXuzOpv0WjGnVn9PRqHcae7DwB4xl/K7fOXcvv8pW/6APB3N2L6FWE=
+  </data>
+ </layer>
+</map>

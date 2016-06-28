@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="14" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="14">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
+  <image source="cave.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16">
+  <image source="Railroad1.png" trans="aa55ff" width="512" height="128"/>
+ </tileset>
+ <tileset firstgid="737" name="truck1" tilewidth="16" tileheight="16">
+  <image source="truck1.png" trans="aa55ff" width="144" height="128"/>
+ </tileset>
+ <tileset firstgid="809" name="Skull" tilewidth="16" tileheight="16">
+  <image source="Skull.png" trans="aa55ff" width="64" height="64"/>
+ </tileset>
+ <layer name="Base" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DggRwjA4M8BZgRiJmQ+AxQMXLNQQc2QDFbCt3XC8R9UNxPpvtAWAGL+ygNPxBejWTuWgrMweY+WPhRgkHuW8OIcB+55thhcR/HIMOj7htZ7hsF5AEAFr8dqg==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQAowZGZgMGIeaFfgBqZAt5kNYveNglFADQAAwkoA2w==
+  </data>
+ </layer>
+ <layer name="rail" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQC3AyMTAwATEzDhofHIgmtZAEWiHEhAr46DxySnTwX2jYBQQCwAHWQKN
+  </data>
+ </layer>
+ <layer name="rail2" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQA2gwcTAoMk00K7ADTyAbvMcxO4bBaOAFAAAzj4A6w==
+  </data>
+ </layer>
+ <layer name="rail3" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQA3gxsTA4M400K4YBaNgZAAA+hcAkg==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="40" height="14">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjILhDz4zMTB8ZRpoV+AGf4Bu+zeI3TcKRsFgAwC+pwPr
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="2" x="0" y="32" width="304" height="96"/>
+  <object id="3" x="0" y="192" width="608" height="32"/>
+  <object id="4" x="368" y="32" width="272" height="96"/>
+  <object id="5" x="608" y="128" width="32" height="96"/>
+  <object id="6" x="560" y="128" width="32" height="16"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="7" x="608" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="10" x="0" y="128" width="32" height="64">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="11" x="304" y="80" width="64" height="48">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="12" x="560" y="128" width="32" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="13" x="224" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="objID" value="1510"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

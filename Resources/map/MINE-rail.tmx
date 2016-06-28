@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="194" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="40">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
+  <image source="cave.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16">
+  <image source="Railroad1.png" trans="aa55ff" width="512" height="128"/>
+ </tileset>
+ <tileset firstgid="737" name="BlackMagic01" tilewidth="16" tileheight="16">
+  <image source="BlackMagic01.png" trans="aa55ff" width="192" height="352"/>
+ </tileset>
+ <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztnV1um0AURk2f2k04WYiTNXUjSR66jCYPXUbTTRUkoyI6Y358Z+5lvnOkT7aQIg8cX4LhDpxOAHAkPrt0oD0+Bq99ulke+/zEeXMMvs99HmbBd5vMfXfX12d8Nwm+tcC3Frn/3/huk8H3jz4vfV6vecN3swy+f13dvl/zge9mGet76hbf7TKt7+kyfLfJ4PbrKR18twe+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9a4FsLfGuBby3wrQW+tcC3FvjWAt9aqPr+7OKmJIq+h3U+93no0wXKMJ7Hrux2V/ddM92N5fguh5fvNcG3PfjGd5Tg2x584ztK8G0PvvEdJfi2Z1jnS5+ngHnGtzm31jlC8G0LvvEdKfi2Bd/4jhR824JvfEcKvm3BN7698i2xDN+2RPJNfZcH3/iOFHzbgm98Rwq+bcE3viMF37ZY+k79fsZ3LKhvfEcKvm3BN74jBd+24BvfL/2yV4e8JcaCb1um6zz+nvJa19T2x7cttbdxpLHgG9/e26A0R/D9Xmg8+I7n+3dX7j5P+I7n+9Tdf6+nL116nfAdz7fFXOXcvGJ849t7G5QG3/jGN769xoJvW/CNb3zju/ZYxms3+LYlqu8xFveOyt3nCd/xfFslgu8Izww4qu+tvc/evofPsjg3fO+55KP6Plp9j77vPRaZJ/VciFvHLiWvSW29ZtW6b4/7lq7xXfp5Jrlj5pK9dDkH+K4zrrW+W+l3iOz7Esx3KfD9z/cTvs0/K7Jv6tv+s/C9vP3xjW9LBzV9ezxXYH4uGd/1fK89V7A2a88xHu33WCmO7ntt1h6f1342Cb59fHuMIzcWfOPbCm/fteZdr11nfJf9LI/rkLfWucT9tfAdz7fHfiY3FnzXGUepa1J7xlLz81R9e4Dv8kQZh8dY8B3Tdyv9DhG2c5Rx5MZSspfuj5jvoW4ijGOkVC9d7hz+F2fftfpCl77jEX3vzS3fj86+va6H49vXd61r4Qq+t37Xqe96qPqmvm18L/XYRvHtXd9Lx42lKL1Npt/zSL696/vWvLbc3PnS2ySXW8djR9mf186WcdT2fe8cWnz/v3/LbeMIvkv20j0L+k6tc6T69kpN39PXc7f9e3BO/O182bg89/87Sn2PKd1r4+F73HdNXy/d9n3aJfG382Xjcurbz3eURKxvfJeLV30PeDwXae39IO4hsu/cb6Aavlslsu9cfefmAcEynn3A0fZ1CkTqA4byROojgvLgWwt8azH17f2cVigP9a0FvrXAtxb41oLzLcfFah6Px3yiGvexb4mhTvf01KXmqnk836L08zJaY+99UFN9RF79qZZp/Xrp1Pe9fd9jj1Gq1yyXeb9b7jX3fsvr0vshrV8vpb516xvf+MZ3W+Ab30vZ0/d9lOCb+m6Jvc+lSNV3jedAlY7C7zHv/uFowXeM1Jpzh2+t4FsrLfse2DNH463P91mOMr+E+Sfb+Uj4pt8BAMCHv+ekups=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt3KENADAIRUFS2/33regATSpA/LsJSB4KQRUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMC11/QEdNIbAAAAAPjhtphFbybYuyx6AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv/ppn0RsAgCkHMXIAaQ==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt28EJwDAMA0BD9p8i/acjJiP05UB1N4FBT8lVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECSOaqecfsKuqyT9StvAAAAAACgmU4qi04KAAAAAAAAAAAA4B/sgLPYAQMAAAAAAAAAAAAAQC5/JFn8kQAAAMB3G/t9Csk=
+  </data>
+ </layer>
+ <layer name="railtate" width="124" height="194">
+  <properties>
+   <property name="cc\vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt3OFx02AQRVHFxUAjEPovIakEvqGGlXZ8z2nA+3TH+pX4ugAAAAAAAN7X18d1fX88fQV30btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/Ru0btF7xa9W/RuqfX+9bqu36+nr/jviVtqvTftfeKWTfvvsGmv3vM27dV73qa9es/btFfveZv26j1v0169523aq/e8TXv1nrdpr97zNu3Ve96mvXrP27RX73mb9uo9b9Nevedt2qv3vE179Z63aa/e8zbt1Xvepr16z9u0V+95m/Z+vq7rj79PHbVpr+/3vE179Z63aa/e8zbt1Xvepr16z9u0V+95m/bqPW/TXr3nbdqr97xNe/Wet2mv3vM27X3n3lt+R0Pvez5zy3Pecseh97wf/94xPxe8Zw69O3ccenfuOPTu3HHo3bnj0Ltzx6F3545D784dh96dOw69O3ccenfuOPTu3HHo3bnj0Ltzx6F3545D784dh96dOw69O3ccenfuOPTu3HE88fsOd33mlue85Y53t+U5b7nj3W15zk+8Q4u2/L8B99jy/eYeerfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94tm35nnnm+3y16t+gN8Ly/5wYoAg==
+  </data>
+ </layer>
+ <layer name="railyoko" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt3UsKgzAQAFCrvUhr73/GuhFCSIzR+qvvwSAMwYXCLMJM0jQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwX4+2adohuug5Fbm1qXycy615tkd/iXt4Dd/5PUQfPacitzaVj3O5NR//GwAAAAAAAAAAAIAfm+qNrulx7vS6XsJUb3RNj3PvfwMAAADAXwn3irsZe8I1Z2PEwfHCveIx5px7MWdNHDBK1ZmtguOl6sxWAQAAAAAAAAAAcBVjL13p/rs1vbzuuDuPsZeudP/dml5ed9yxh9zZNKm6s3T+oPRu9Ww/ubNpUnVn6fxB6d3qGQAAAAAAAAAAAAAAnEs4G5eKNfMktfN1S+bvwjxl4WxcKtbMk9TO1y2ZvwvzAABwlC+BaSN3
+  </data>
+ </layer>
+ <layer name="railwind" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt3MsNwkAMBUBnT0knQEgffEL/LUAXWKIGspvsTAN+siWfLEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAn64lYim1U/y8h4jPUDvFsa0561cj8x4zx9RIFgAAAAAAAAAAAAAAAAAAAGD/Wvqjwf+19EcDAAAAAAAAAAAAoBenEnHe+IbzkvVmd6NV3LLv9417/8h6T/PmoOyzvthnAAAAAAAAAAAAAAAAAADAnn0BqW8Gqw==
+  </data>
+ </layer>
+ <layer name="railChange1_1" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0QEJACAQBMHj82gT7V9HOwgKMpNgYRMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAHrZJeryu4ZezX028AADi2AEKrAPs=
+  </data>
+ </layer>
+ <layer name="railChange1_2" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0QEJADAMBLGvf5WbkpkoK5REwcElAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADABqeSW9MV/OI3AAD0eBSvA4s=
+  </data>
+ </layer>
+ <layer name="railChange2_1" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0QEJACAQBMHj82gT7V9HOwgKMpNgYRMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH7RKun1uoJbxn49/QYAAAAAAAAAAAAAAAAAADiyAHdKAPs=
+  </data>
+ </layer>
+ <layer name="railChange2_2" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0QEJADAMBLGvf5WbkokorFASBQeXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwxank1nQFv/gNAAAAAAAAAAAAAAAAAADQ9wBm3QOL
+  </data>
+ </layer>
+ <layer name="railChange3_1" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0UENACAQBLHN6QEn4N8OCOAND1oFk0wCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ62SXq8ruGXs19NvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAzC3mfAPs=
+  </data>
+ </layer>
+ <layer name="railChange3_2" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0TENADAMBLEPf5QtkhLI3AyxEZx0CQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPROJbemK/jFbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgowdEUQOL
+  </data>
+ </layer>
+ <layer name="railChange4_1" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0QEJACAQBMHj02gT7V9IQ4gizCRY2AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhVq6TX6wpuGfv19BsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI5aGlUA6w==
+  </data>
+ </layer>
+ <layer name="railChange4_2" width="124" height="194">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzgENAAAIA6DbP6UmMYZzgwQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAV13J1PUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgrwUfuwHG
+  </data>
+ </layer>
+ <layer name="shadow" width="124" height="194">
+  <data encoding="base64" compression="zlib">
+   eJzt3UGqFUEQRUEHbtUVuH+QXsDHVsx6aZ2IqY0/bx1wpPjtGwD/k5/fP30BJ+ndoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16f8an3l3vz9C7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re95PxZt1Xvepq16z9u0Ve95m7bqPW/TVr3nbdqq97xNW/Wet2nrv7rlT3+fTW8wbdNWvedt2qr3vE1b9Z63aave8zZt1Xvepq16z9u0Ve95m7bqPW/TVr3n3bhV76/duFXvr924tdz7d1s2bf1Xf5dO77//9VN3vP1mgt7n73j7zQS9z9/x9psJep+/4+03E/Q+f8fbbyboff6Ot99M0Pv8HW+/maD3+TvefjNB7/N3vP1mgt7n73j7zYRS71PqvU/9u2u9d/zcLR1O0Xv+Z7yx6c8ZvedtueOh97wtdzz0nrfljofe87bc8dB73pY7HnrP23LHQ+95W+546D1vyx0PvedtueOh97wtdzz0nrfljofe87bc8dB73pY7HnrP23LHQ+95W+546D1vyx0PvedtueOT9G7Ru6X0BqWtXym9QWkrep+y5f950/sM79yid4veLXq36N2id4veLXq36N2id4veLXq36N1yS+9bdky75Z1u2THtlne6Zce0W97plh3TbnmnW3ZMu+Wdbtkx7ZZ3umXHtFve6ZYd0255p1t28I7eLXq36N2i9zveqUVvgM/5BXCatuE=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="1" x="320" y="3040" width="800" height="64"/>
+  <object id="2" x="1120" y="2784" width="32" height="320"/>
+  <object id="3" x="320" y="2624" width="800" height="352"/>
+  <object id="4" x="0" y="3040" width="256" height="64"/>
+  <object id="5" x="0" y="2816" width="32" height="224"/>
+  <object id="7" x="32" y="2000" width="224" height="976"/>
+  <object id="8" x="864" y="2256" width="416" height="368"/>
+  <object id="9" x="320" y="2224" width="480" height="336"/>
+  <object id="10" x="736" y="1200" width="64" height="1024"/>
+  <object id="11" x="256" y="2000" width="480" height="160"/>
+  <object id="12" x="864" y="1712" width="496" height="480"/>
+  <object id="14" x="1280" y="2192" width="80" height="384"/>
+  <object id="15" x="800" y="1200" width="624" height="160"/>
+  <object id="16" x="1424" y="1200" width="288" height="768"/>
+  <object id="17" x="1712" y="32" width="96" height="2480"/>
+  <object id="18" x="1424" y="2032" width="288" height="480"/>
+  <object id="19" x="1904" y="32" width="32" height="2576"/>
+  <object id="20" x="1280" y="2576" width="624" height="32"/>
+  <object id="21" x="1808" y="48" width="96" height="144"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="24" x="0" y="2784" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="25" x="256" y="3072" width="64" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="28" x="0" y="2752" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="30" x="224" y="2960" width="32" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="33" x="320" y="2544" width="32" height="16">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="34" x="864" y="2176" width="32" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="35" x="1424" y="1952" width="32" height="16">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="36" x="1808" y="608" width="96" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="38" x="1808" y="192" width="96" height="32">
+   <properties>
+    <property name="EventID" value="9"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="terrain"/>
+</map>

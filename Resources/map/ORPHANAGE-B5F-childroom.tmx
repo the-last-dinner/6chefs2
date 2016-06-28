@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="25">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="1985" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
+ </tileset>
+ <tileset firstgid="3969" name="nomen" tilewidth="16" tileheight="16">
+  <image source="nomen.png" trans="aa55ff" width="160" height="192"/>
+ </tileset>
+ <layer name="Base" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZ4B0Qv6IxfovD3l80wK+Q2LjspYUfkd3wF4u9/2jkX0L28jEyMHDRGPMyYtorBxSTojGWxWJvJSN98Ki9o/aO2jtq76i9o/aO2jty7SUVVDFCML3BQNk7VAEAM+ZHag==
+  </data>
+ </layer>
+ <layer name="Base2" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBg4sJeNgWEVO33wAjaEvb3s9PNjN5Jdo/aO2jtq76i9o/aO2jtq76i9o/aO2jsU7d0DbEvnsROP85H05pKgD4Tns2G6hViAHD4g9/fQMbyGKgAAudU9DA==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlEEKwjAQRecEKVXx/lepVvdq6l7buldj135xxFCIxUnJosyHx4cMyVskhEij0WjkKQzRCqxByS2l9HoDtibs3WG2BwdguaVYrytw/OE9YXYGNe+pI2i8bsHlD+89AsdnSLxj8PI/QKfeQa8133eZ0tswEn+M1zEff5v4fp13zpTf1VS9V8xu5v3PpfTmGdEMzMGCu09ofWjPMgt7NZqx8gRXgUmT
+  </data>
+ </layer>
+ <layer name="MonoChu" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1TkOgDAQQ9G5Qe5/OGiCxJKAxJ4yPsC0LgJ+5RTf5ZiJfE8XzPrA60e0B6c/4jYRd1e0N6e/43YQd1+0C7EvIiLSooTfmIn/cUZ7cfo3bg9x90T70t//jQoFhhOn
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="448" y="32" width="32" height="448"/>
+  <object id="2" x="256" y="416" width="192" height="64"/>
+  <object id="3" x="32" y="416" width="192" height="64"/>
+  <object id="4" x="0" y="16" width="32" height="464"/>
+  <object id="5" x="32" y="16" width="416" height="112"/>
+  <object id="6" x="32" y="128" width="32" height="16"/>
+  <object id="10" x="32" y="384" width="32" height="32"/>
+  <object id="11" x="416" y="384" width="32" height="32"/>
+  <object id="12" x="416" y="128" width="32" height="16"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="13" x="448" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="14" x="224" y="448" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="chara">
+  <object id="15" x="160" y="192" width="32" height="32"/>
+  <object id="16" x="160" y="320" width="32" height="32"/>
+  <object id="17" x="160" y="256" width="32" height="32"/>
+  <object id="18" x="287" y="192" width="32" height="32"/>
+  <object id="19" x="288" y="256" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="Ugokumono(object)" visible="0">
+  <object id="21" name="hanaitimonnme" x="128" y="144" width="224" height="256">
+   <properties>
+    <property name="objID" value="1"/>
+   </properties>
+  </object>
+  <object id="22" name="hanaitimonnme" x="128" y="144" width="224" height="256">
+   <properties>
+    <property name="objID" value="2"/>
+   </properties>
+  </object>
+  <object id="23" name="hanaitimonnme" x="128" y="144" width="224" height="256">
+   <properties>
+    <property name="objID" value="3"/>
+   </properties>
+  </object>
+  <object id="24" name="hanaitimonnme" x="128" y="144" width="224" height="256">
+   <properties>
+    <property name="objID" value="4"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0EENAAAIA7H5t4JJVOxB6BlocsnPhsvlcrlcLpfL5dby50YLeUsRXw==
+  </data>
+ </layer>
+ <layer name="CharaUe" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzAkNACAMBLBzMP/qeJSAiYWQtAKaAADAv1Ylu/r+ce/Z+MNLB32ZA78=
+  </data>
+ </layer>
+</map>

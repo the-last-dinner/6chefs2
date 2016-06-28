@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="137">
+ <tileset firstgid="1" name="tile01" tilewidth="16" tileheight="16">
+  <image source="tile01.png" trans="000000" width="512" height="1535"/>
+ </tileset>
+ <tileset firstgid="3041" name="option14" tilewidth="16" tileheight="16">
+  <image source="option14.png" trans="aa55ff" width="256" height="352"/>
+ </tileset>
+ <tileset firstgid="3393" name="gendai-soto2_2" tilewidth="16" tileheight="16">
+  <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
+ </tileset>
+ <tileset firstgid="5313" name="Eline" tilewidth="16" tileheight="16">
+  <image source="Eline.png" trans="aa55ff" width="288" height="128"/>
+ </tileset>
+ <tileset firstgid="5457" name="ed2" tilewidth="16" tileheight="16">
+  <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="5937" name="temple_out" tilewidth="16" tileheight="16">
+  <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
+ </tileset>
+ <layer name="Base" width="44" height="108">
+  <properties>
+   <property name="cc_vertexz" value="-16"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmw1u2zAMhY0Wq/dzixRdku4WW2djO8bWuPe/wWJAD2MIUqJkWVZSCXig//38haYcR+m61lprrbXWWrvdNpw1snjndE/02ekL2ZbvN7J10nHvleNr4m06643FndMj0bPTN7fNi1E/nSZyTOn4mix8tQi/8/xrQNTrye3P/WJ+JOv5OgtfLcJvaDvulX5ujxHne8vI17cd/J7Ycs7TEtfmS71K90VNfGkeSOtr40vZanWnRr7aetTcUnzRX0hcfXmLCL+l+MIvX87rbS18PznPUp2l09r+pfMXfsfu8vM/ZeZLny9y8J09vXaXdcDC15q/O4/fFL7gStfn5Ovzm8JXqq+18X3pLvNXWi9xT60PS5/PqF9tfc76oPnV8pQKOWvhm6v+an65t1lHIpqzS/la8rc/66PH71HQs9uvJ/O8/qbw/ZUg3ubr2iviz1sWvr7nB3jQzjfr4Pim9G/8uyP8St8pEUN1NfT8i3zAvMRX48G/Q8IvX077Y9/xYvI3hS+/Xkv++o5nqQ9L+PLrteTvUr7I4cY3nq+lf2v5u27+Xhtf3G+Nbzzftfu39873FusD7rfGt/VvtfEN5W9Pzpf6/qEk3333/35Lff9Qki+81pK/lv4Nni352yvaov5q3+fp9fneA5SqD9yHj68UsV8pvlPAbyh/c/KdnCznq4HvFHG+WviG8jcHX8znyF+tBtFadCTTKXwxn6M+7AM6OGl+LXwfMvK11AefXwvfh0x8rb/PXyvfPpIv7tFcfK392+x3r/i11MGa8pf+BqRpC76aX/obi6ZcfK2/vyEfDh6/muC3JF8aeZPyFvNPZ33IyBd+e6Ni6+9TdzlmMhffvVFSPvh4zH7pmMlS9YHGWL5fu/L9Wyh/kSsSX3iuiS9yRbo++J3nUS9qqg880vqgjT+rJX9H4ncgfmvmS/N3Kd8S489o/vrGT94i3xL5S/m+t/y9Nr4lxldvVR9S36/z+vC7EN8c4yd9kY9XXco3ZnzfWvF7QD/I9li2Fl9L/OMR947lMXzpdXPl5q9dRwxf7PNXUInPQ8qH0HXj+QzvDY8LON5FKqU+0PoL76m8dpFKqQ+0/sJvqXoybsw3JTa+jW/jm85LGptdI1/4k/736/vv8lZ8+fhx9Am+/zCfNuR7rfm7ZX0YyHFr4UsjfZc2EM+5ePLpIYEvjZQ1VS6efHoS/La2TvsHCRY/1Q==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="44" height="108">
+  <properties>
+   <property name="cc_vertexz" value="-15"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmrtuE1EQhrchXIr1uuDyAiF0BIcG3oJbeiAdYGjgLbj2TtIBgQaakMALcO0N6YBAA43NpSHit7SjHY/POrF17Iyl/5N+jY82tn4dn8zOeCdJCCGEEEIIIYQQMqn8q/SXN7S3rUCcSZPkWDp6D1s73JtTWaHTgXgZXhci+m1Uk2SxWngMqXNtCX+zXO19/82s0K1AXILX5Yh+m/BwKS32IyS5thHw+ywr9DwQP+GzNyL6vYjPWkyL/QhJroX26UdW6GcgHsZ3cyTi/10DHj6mxX6EJNdi7tOwNNPu/QlJrsXcJ0IIIYQQQgixtNBztKFfuX6r+Af666wnOY4+aRY6kaum4hx0Mttth92E/NYc+70CP1eha7nqKl6Hbjjz+xB+HkGPc62o+AR66szvZ/j5An3NtaniN+i7M7+E7Cb6/iR5VHJn2+G9Sud769euPeR+ne8lSq63aw+5X+d7iZLr7dpD7tf5XqLkersO5f4zONNnoXPQ+Urv+gI07+DcC7fh5Q50F7qXv9br+9ADR35fw8sb6C30Ln+t1++hDxH9lj3nk2eA2z3v24MzMgXtzeOUWu+D9kMHIp57W79aeatlbf1qVXecz0JacZzPQtpkLUsIIS5pBX7ns3rlqD5rlfjUvZ+Hvk/Q/WrbyKNfXd/Vsl6vnb46Zl0n81xls1yisnku63d2xH31NGrxo+n2c4VldbuuR8fRV3fmuWT+rJ/K5vR0PTqOvrqh5s/6qWxOT9ejg/TVw9JU82f95GX+7CDO5qFK95xeSJw/I4QQMknYenDO1Iaen7dI/Sevd1IXruIe/QJag9Zz6fXLyP2brQcH/X1S90Oh3i32cztbDw76+6Q9T9ITeXvOKNjzVHfu154H737tefDud9LOg/Vrz0dsv/rzJWdKHOZ+MWq/sj/2Oy0TGQ//Aahvtyo=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="44" height="108">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2kENgDAUBcF3AQGtInAPqloJnwNpCDMKVsAmAAAAAP9xteRuqyvqtp7sfXVF3TFbzw/1AgAAAAAAAAAAVPnP3uU/AwAAAHhuAASnBSM=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="44" height="108">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt24EJwlAQg+EO4DTuP4ULCC4gdAGd4EAxCcT7vwHaUHLvPaseBwAAuF1+v8ZdcI1PteV9CO71DOY9Bfd6kXdEXi/yeinyJtffjXnZL2Yb+0DeGfPmpTj/cl6fKfImKfqbxHrmxfP1atsv2vrQtr+1PV/F+77kvCnyJudt4/tU5m3GvHnRX6+29Yx582LevOivlyJvEu+jvNr60DZvG/cL1l+vZB8Ukn1QaHu+5J21fX7buF/Qh1lbXvrr1dYH8noxb15tfWjLey3Lq9CWF8B/Yj/2asvLedKrrQ/k9eL7Ta+2PpDXq+3/OG2/t8d33jwdm68=
+  </data>
+ </layer>
+ <layer name="MonoUe2" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt00EOgjAUBcBGPYG6/Rv1BOj9zyakcaPQVmOkiTPJSwlt4UEgpWwTKW0jjz1l6rSL9GI/njtEHnvK1Ok40/cU6+Vcmbss9H3M/fp4rl/PfUvP0Vvf1qzdt/Y9P+/poW/tHX+j7yf/fuk6pc6lvkPkXMfcGtKybmnNEO/fDwAAAAAAAAAAAAAAAAAAAAD+wR2x0l6p
+  </data>
+ </layer>
+ <layer name="MonoUe3" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt0EtqAlEURdEHRodRjl0NaNco6DhMogPwMwE1dnPsFdoVqgrXgs3tHm4p8HqjqpRxmqTP2p2mWdX0umfzbPpKi4dWad3yvcva7cLervx3k77TT/pN27Rr4da6ffYd0jGdWr717pyNl3RNf+nW8s29YSkfqZ8Gw6bXAAAAAAAAAAAAAAAAAAAAAPDu/gHWoCoy
+  </data>
+ </layer>
+ <layer name="door" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt0L9KgmEYxuF3NT0GPXZNqLUUPo/DRbSmliidXMQ/Q/cHBkJr4CteF/x41punFPh/w34po/SYxufb9pSe+9de99dLNr2mSZpe3CbNKt97WVPh1tYt/neelmmV3tJ7WlS49ddHtn2l77ROm/RZ8d5ttu3TIR3TKe0q3tvqDEp5SN3UG1x7DQAAAAAAAAAAAAAAAAAAAAD37gf4dyzS
+  </data>
+ </layer>
+ <layer name="MonoUe4" width="44" height="108">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztm8lNBFEMRPsG0kweLAmwJMCSCWQAGUAikAFkwpIASwIMnKgIGjEPl7B+vbtl68uqstsz0xRCCCGEneU07S7Xj39Q7COI/y0HynUI8r0o9tVY74lynYJ8H4pdGes9U65z8r4Lve/i7+r5iQvVekneV7WujPVeqdZrUO+GYjeN/RB9qKWbPjwp13OjfnhTrvdG/fCpXF+N+iF+UUs3v6D6sKXY7Ub6sKfY/Ub1Hin2uFG9br+g+uv2C6q/br+g+uvuB1qvux+oX7j7ge4Xbr+g+4XbL+h+4faL7Be1ZL+oJftFLfGLWkbzC7c+UL9w6wP1C7c+xC9qiV/UMppfuOul/eDWB9oPbn2g/dBNH3LfnGe0+2a3e4C7XjpPuvcLilsfKG59oLj1geKeHyju+YH6sXt+oH7s3i9Gm9fdfoHnM7M+4PnMrA/0+45bH7rdu+n3Hff8QOd19/xA53W3X9B5PX4xD/ULtz5Qv8h+EUII65H7RS3d7hd0H8rvaecZbR/K/y/m6Xa/iF/UMppf3Cj2tpFfuOulfnGn2Pvsm/+Wb49B0gs=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="27" x="448" y="160" width="256" height="1216"/>
+  <object id="36" x="0" y="1456" width="224" height="272"/>
+  <object id="38" x="0" y="160" width="224" height="336"/>
+  <object id="39" x="0" y="496" width="224" height="528"/>
+  <object id="49" x="32" y="128" width="304" height="32"/>
+  <object id="51" x="224" y="1712" width="224" height="16"/>
+  <object id="54" x="448" y="1456" width="256" height="272"/>
+  <object id="125" x="32" y="1056" width="48" height="304"/>
+  <object id="126" x="80" y="1088" width="112" height="272"/>
+  <object id="127" x="32" y="1024" width="160" height="32"/>
+  <object id="130" x="368" y="128" width="304" height="32"/>
+  <object id="131" x="336" y="128" width="32" height="32">
+   <properties>
+    <property name="objID" value="181"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Chara(object)">
+  <object id="122" x="384" y="480" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="8"/>
+    <property name="EventID" value="7"/>
+    <property name="direction" value="UP"/>
+    <property name="movePattern" value="2"/>
+    <property name="objID" value="1022"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="124" x="320" y="480" width="32" height="32">
+   <properties>
+    <property name="CharaID" value="5"/>
+    <property name="EventID" value="8"/>
+    <property name="direction" value="UP"/>
+    <property name="movePattern" value="2"/>
+    <property name="objID" value="1023"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="60" x="224" y="1664" width="224" height="48">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="61" x="0" y="1680" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="62" x="288" y="176" width="16" height="16">
+   <properties>
+    <property name="objID" value="1"/>
+   </properties>
+  </object>
+  <object id="64" x="368" y="176" width="16" height="16">
+   <properties>
+    <property name="objID" value="2"/>
+   </properties>
+  </object>
+  <object id="65" x="256" y="192" width="16" height="16">
+   <properties>
+    <property name="objID" value="3"/>
+   </properties>
+  </object>
+  <object id="66" x="320" y="192" width="16" height="16">
+   <properties>
+    <property name="objID" value="4"/>
+   </properties>
+  </object>
+  <object id="67" x="400" y="240" width="16" height="16">
+   <properties>
+    <property name="objID" value="5"/>
+   </properties>
+  </object>
+  <object id="68" x="320" y="256" width="16" height="16">
+   <properties>
+    <property name="objID" value="6"/>
+   </properties>
+  </object>
+  <object id="69" x="272" y="272" width="16" height="16">
+   <properties>
+    <property name="objID" value="7"/>
+   </properties>
+  </object>
+  <object id="70" x="400" y="304" width="16" height="16">
+   <properties>
+    <property name="objID" value="8"/>
+   </properties>
+  </object>
+  <object id="71" x="304" y="304" width="16" height="16">
+   <properties>
+    <property name="objID" value="9"/>
+   </properties>
+  </object>
+  <object id="72" x="304" y="352" width="16" height="16">
+   <properties>
+    <property name="objID" value="10"/>
+   </properties>
+  </object>
+  <object id="73" x="240" y="352" width="16" height="16">
+   <properties>
+    <property name="objID" value="11"/>
+   </properties>
+  </object>
+  <object id="74" x="384" y="384" width="16" height="16">
+   <properties>
+    <property name="objID" value="12"/>
+   </properties>
+  </object>
+  <object id="75" x="304" y="416" width="16" height="16">
+   <properties>
+    <property name="objID" value="13"/>
+   </properties>
+  </object>
+  <object id="76" x="240" y="416" width="16" height="16">
+   <properties>
+    <property name="objID" value="14"/>
+   </properties>
+  </object>
+  <object id="77" x="224" y="432" width="16" height="16">
+   <properties>
+    <property name="objID" value="15"/>
+   </properties>
+  </object>
+  <object id="78" x="400" y="464" width="16" height="16">
+   <properties>
+    <property name="objID" value="16"/>
+   </properties>
+  </object>
+  <object id="79" x="432" y="528" width="16" height="16">
+   <properties>
+    <property name="objID" value="17"/>
+   </properties>
+  </object>
+  <object id="80" x="336" y="544" width="16" height="16">
+   <properties>
+    <property name="objID" value="18"/>
+   </properties>
+  </object>
+  <object id="81" x="256" y="544" width="16" height="16">
+   <properties>
+    <property name="objID" value="19"/>
+   </properties>
+  </object>
+  <object id="82" x="368" y="576" width="16" height="16">
+   <properties>
+    <property name="objID" value="20"/>
+   </properties>
+  </object>
+  <object id="83" x="288" y="608" width="16" height="16">
+   <properties>
+    <property name="objID" value="21"/>
+   </properties>
+  </object>
+  <object id="84" x="288" y="704" width="16" height="16">
+   <properties>
+    <property name="objID" value="22"/>
+   </properties>
+  </object>
+  <object id="85" x="240" y="720" width="16" height="16">
+   <properties>
+    <property name="objID" value="23"/>
+   </properties>
+  </object>
+  <object id="86" x="384" y="736" width="16" height="16">
+   <properties>
+    <property name="objID" value="24"/>
+   </properties>
+  </object>
+  <object id="87" x="384" y="816" width="16" height="16">
+   <properties>
+    <property name="objID" value="25"/>
+   </properties>
+  </object>
+  <object id="88" x="288" y="768" width="16" height="16">
+   <properties>
+    <property name="objID" value="26"/>
+   </properties>
+  </object>
+  <object id="89" x="224" y="784" width="16" height="16">
+   <properties>
+    <property name="objID" value="27"/>
+   </properties>
+  </object>
+  <object id="90" x="224" y="864" width="16" height="16">
+   <properties>
+    <property name="objID" value="28"/>
+   </properties>
+  </object>
+  <object id="91" x="400" y="896" width="16" height="16">
+   <properties>
+    <property name="objID" value="29"/>
+   </properties>
+  </object>
+  <object id="92" x="416" y="992" width="16" height="16">
+   <properties>
+    <property name="objID" value="30"/>
+   </properties>
+  </object>
+  <object id="93" x="368" y="976" width="16" height="16">
+   <properties>
+    <property name="objID" value="31"/>
+   </properties>
+  </object>
+  <object id="94" x="240" y="960" width="16" height="16">
+   <properties>
+    <property name="objID" value="32"/>
+   </properties>
+  </object>
+  <object id="95" x="288" y="1008" width="16" height="16">
+   <properties>
+    <property name="objID" value="33"/>
+   </properties>
+  </object>
+  <object id="96" x="240" y="1024" width="16" height="16">
+   <properties>
+    <property name="objID" value="34"/>
+   </properties>
+  </object>
+  <object id="97" x="400" y="1056" width="16" height="16">
+   <properties>
+    <property name="objID" value="35"/>
+   </properties>
+  </object>
+  <object id="98" x="400" y="1120" width="16" height="16">
+   <properties>
+    <property name="objID" value="36"/>
+   </properties>
+  </object>
+  <object id="99" x="224" y="1088" width="16" height="16">
+   <properties>
+    <property name="objID" value="37"/>
+   </properties>
+  </object>
+  <object id="100" x="304" y="1136" width="16" height="16">
+   <properties>
+    <property name="objID" value="38"/>
+   </properties>
+  </object>
+  <object id="101" x="352" y="1168" width="16" height="16">
+   <properties>
+    <property name="objID" value="39"/>
+   </properties>
+  </object>
+  <object id="102" x="400" y="1184" width="16" height="16">
+   <properties>
+    <property name="objID" value="40"/>
+   </properties>
+  </object>
+  <object id="103" x="416" y="1248" width="16" height="16">
+   <properties>
+    <property name="objID" value="41"/>
+   </properties>
+  </object>
+  <object id="104" x="240" y="1152" width="16" height="16">
+   <properties>
+    <property name="objID" value="42"/>
+   </properties>
+  </object>
+  <object id="105" x="272" y="1200" width="16" height="16">
+   <properties>
+    <property name="objID" value="43"/>
+   </properties>
+  </object>
+  <object id="106" x="240" y="1216" width="16" height="16">
+   <properties>
+    <property name="objID" value="44"/>
+   </properties>
+  </object>
+  <object id="107" x="224" y="1520" width="16" height="16">
+   <properties>
+    <property name="objID" value="45"/>
+   </properties>
+  </object>
+  <object id="108" x="288" y="1520" width="16" height="16">
+   <properties>
+    <property name="objID" value="46"/>
+   </properties>
+  </object>
+  <object id="109" x="384" y="1552" width="16" height="16">
+   <properties>
+    <property name="objID" value="47"/>
+   </properties>
+  </object>
+  <object id="110" x="416" y="1568" width="16" height="16">
+   <properties>
+    <property name="objID" value="48"/>
+   </properties>
+  </object>
+  <object id="111" x="272" y="1584" width="16" height="16">
+   <properties>
+    <property name="objID" value="49"/>
+   </properties>
+  </object>
+  <object id="112" x="224" y="1600" width="16" height="16">
+   <properties>
+    <property name="objID" value="50"/>
+   </properties>
+  </object>
+  <object id="113" x="416" y="1632" width="16" height="16">
+   <properties>
+    <property name="objID" value="51"/>
+   </properties>
+  </object>
+  <object id="114" x="0" y="1360" width="32" height="96">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="115" x="672" y="1376" width="32" height="80">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="116" x="448" y="160" width="32" height="1200">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="117" x="448" y="1456" width="32" height="224">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="119" x="192" y="1456" width="32" height="224">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="120" x="192" y="160" width="32" height="880">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="121" x="336" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="9"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="128" x="192" y="1104" width="32" height="240">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="129" x="336" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="10"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="136" x="32" y="1360" width="32" height="96">
+   <properties>
+    <property name="EventID" value="11"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="path">
+  <object id="132" x="304" y="800" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="133" x="352" y="1216" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+  <object id="134" x="320" y="1552" width="32" height="32">
+   <properties>
+    <property name="nextID" value="4"/>
+    <property name="pathID" value="3"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="135" x="256" y="1136" width="32" height="32">
+   <properties>
+    <property name="nextID" value="3"/>
+    <property name="pathID" value="4"/>
+    <property name="previousID" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="CharaUe" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt2EdLpEEURuHPiGDWbhXBnAOMOc5mzBn/szmOG2fMaWMO44hg9rhwKajtpWi/98Czrrvo7ltdnqeUUkqp18YCnjeOCUxiCtOYwSzmMI8FLOI3lgKa970tc/Yf/MUKVrGGdWxgE1vYxg52sedw3n3OPsAhjnCME5ziDOe4wD9c4j+uHM57w9m3uMM9HvCIp5eZgp4XgUhEIRoxiA26mzeesxOQiCQkIwWpSEM6AggiA5nIcjhvDmfnIg/5KEAhilCMEpSiDOWoQKXDeX9wdg1qUYd6NKARTWhGC1rRhnb8dDjvL87uQCe60I0e9KIP/RjAIIYwjBGH8yrbtN9s036zTfvNNu03pdRb6f5gm+4PtoVyf8h2OPdn7g/V2nNKfSjtN9tC2W/XDuYOZb/FOfj91f9j2/z0/3hU94dvl75vtuk9SoVzfrpPushP7yUu0n6zTfvNNn1+bQu3z6/eo2zT/cE23R9s0++vUkoppZRS6qvS+4Nten+wzS/vD1WOZtb7g1JKhdYzodzBOA==
+  </data>
+ </layer>
+ <layer name="CharaUe3" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt2mdv20Ycx3ECnU+kUKJax9uJlb6Ats87ku6mQGtn2M5QDHTPN9DdOEn3cpzh7j2et2nTkbZA9/BK3QLZadqX0S8RHnw+HWWJupMp5P7ABxQNS/rxSB15R3qeK1euXLlyVX2tDDxvFa7C1bgG1waLnSq+HibbI3gUj+FxPIGtGME2bLeUP0k7fc7/7McX+BJf4WscwDf4Ft8ZzPsgn/VQkLydbs943h24E3fhbtyDe3Ef7scDGXN595HhsyB5OzU676181m2Z5N/r8rq8Lq/LG/e9b/G3t/EO3sV7eB8f4EN8FElL3iP87SiO4ThO4CT+wSn8i/8M5hXnCZl8vpAd0Jwv2rOe14FOdKEbPViG5ehFMWsu7xts+5uZ6vbrxwna6bWc572eM5f3EBkOZxq/X5NWK/uqLTt/v4qyuV9duToTa4A+dRBDkQ2RjdiUwnHjKJl2YiyyK7Ibe6rIq26v7e2e4LMmMRWZjszgYBXfo26v/Bm1bHcteUXWJQXP8yM55AvVvV/eXjlvLdtdS94wpyrMXE27qHnFe23mnZTaZarG7xHvF9vZiPadlNplSSF5Xl/K69f4ObXmNdG+fhO1rzh2G5U3aftmyJgtNN/xK9q3WfoHtS+z/Xurp31155s0t6987DbqeDhTjl+5f/ALybe71rxJv+c6/v963IAblWUa23cruUawDds1yycjpvPa2I8X+553CS71zWQNSz7+5OOw2uvfSmUjr3z8ycfhatyUwrzieMgW5og2PpWfG4vFjcOeynne03gGz+ZOr8t/ew7PG5w/mwjmZ8xqVBpvtJBlaW5uKfRHfsYvDcgrr4vXut9fi5K1X1rvi9Zt51X7fkH3+xN5VbbyxvUPqrj+oi+n128pr9o/yH2EfL6K6y/i2rfFUl75/DSinKvk89SOmPNUXPv2Wcpbb31Plh/wI37Kla+b7h/qrbPoo8/GOTg3X75+Hs7PL3bKubqMLJfjClyZL19fiVUG844Hlb0iLV/V9L+fkOVT7MvHv97fwLzjC+RtdMlZdGYjf+HvlOSt1J6qxa7ZQE+0p0qtgQrXbmmscH7d9By6zZqwMKa0WeJ6P7y2D6/rxfX9Qtf5puoQ587DOIKjOIbjOIGTmvOqPL4O76+MKUvTx8oFtMuFaMFStKIN7ehAJ7rQjR5Nvx93v6XWeYFq62Yy3II+9GMN1mId1mMAg+E4LtzfKcjbyj5uQzs60IkudKMHy7AcvSgucDxMN2HeGc16mvKq8305C/MuJvOq832rLcy7mMyrzvft0KybnO+rN2+jaw0Z1mId1mMAgxjCBmzEJmxGKQV5XyDDi3gJL2MUOzGGXdiNPdiL8RTk/ZUMv+F3/IEJTGIK05jBQfyJ2RTkdeXKlStXrlyVl/z8pHhmUl43PZ4v+p63Ahf5p1/L68OR8HUJWzT3KeXnJ8WzovK66fG8nK8k5RqWlsMV8qrjt2nL47eiv7BShbzq+E29h2d6/FbyqyPaWi15/CbGbDbHb/WWPH4TYzab47dmK7U/GgrK5xjT9Dy72h+NBeVzjDb6paSl9ke6+902+qWkNRrMf84tjul+KWnp5r90z76lJa9u/kv37Fta+lHd/Jfu2be4frQ3SKciVmh+b5uDdCphiybv3iCdxD3aZq3/AdN3/0U=
+  </data>
+ </layer>
+ <layer name="CharaUe4" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAAAAAAAAAAAAAAB4MkpAAAE=
+  </data>
+ </layer>
+ <layer name="CharaUe5" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt2kEOgkAQRFFO4Wk4ifc/iCsTojOJsoBfNf8tWbVdxQgJ2yZJklo8H9/X9sG1u33ONJpbOiL2+C2hv+T9NZnt2f2vwf+2+3mvnZfUX3PmMAs1IJx3Ke/xjQj5t7CzkmYSztrGMyxh7wnoe2zsbiJzWIM5c5iFiNp6mfx7aLPT5hmhP/OuIqErNO6Mg5oF/Xyjz/cPagd+QcuBNs9McuZtzEKSJEm6TtK39s1S34NIfSHNMpOacyvzkPK8AN+sEpE=
+  </data>
+ </layer>
+</map>

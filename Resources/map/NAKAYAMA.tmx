@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" nextobjectid="5">
+ <tileset firstgid="1" name="gendai-soto" tilewidth="16" tileheight="16">
+  <image source="gendai-soto.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="30" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzdkJgEAMRdFYg2sVgmtX1mCBNuUT9MMwRhNxgZnAJT8hh8jPKaN9MR2XoBRlKEfFul3xvxZ382rUoBZ1qBf8Oy73BpbkW9wz74qvdSuFJ/lad2kid9a7v7tPFFy/3PGlgvuN68vMoqp9Lg==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="30" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4ByMJGA/CS6uGLwgZmMuOV4gZgPiPmBWACPGbPwmIELcAL1vGTAjrWBWAeIdYFYD4caEOYiw158oB1oXgcUd1LZbBjAls6WAu1aBsXLsdiLrodQWiYWELKXXEAoLxGylxT/TWQkDk8C4sNAfASKjwLxBCL1TqRRWhgFo2CgAQC5Piq2
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="480" height="32"/>
+  <object id="2" x="0" y="32" width="32" height="288"/>
+  <object id="3" x="32" y="288" width="448" height="32"/>
+  <object id="4" x="448" y="32" width="32" height="256"/>
+ </objectgroup>
+ <layer name="shadow" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1ASzmUbtHbV3FIyCkQdG88YoGAWoAADHEQOv
+  </data>
+ </layer>
+</map>

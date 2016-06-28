@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="11">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="SC-Door-Metal01" tilewidth="16" tileheight="16">
+  <image source="SC-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
+ </tileset>
+ <tileset firstgid="1633" name="set-mansion-in" tilewidth="16" tileheight="16">
+  <image source="set-mansion-in.png" trans="aa55ff" width="1440" height="1760"/>
+ </tileset>
+ <tileset firstgid="11533" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBga4B0QvyITv8Vi3j8g/kUm/jsE3cfHyMDARSbmZcQ0Tw4oJkUmlsViXhcjZXjUvFHzhrN5gxUAAMxhles=
+  </data>
+ </layer>
+ <layer name="Base2" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYKA+eKnLwHBNjzJ8Rhdh3k49yt20HcmMUfNGzRs1b9S8oWLeC2BZOEuPMnxaF7ddlAAAD+09nQ==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztz7kNgDAQRNHhzO3mQOJo0CSc3YH4NbAW0X7phTuyJc/zvO+lIC0h314TpTbad27e9KBiq0aB0rDbcdtjwowBo2Fv5XbDjgMnrgz//rMXmWgLRg==
+  </data>
+ </layer>
+ <layer name="door" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtAaubAwMbmzUM88XaJYfFc0LBZoVRkXzYoFmxVHRvFEwCkbB4AQA6aUCvQ==
+  </data>
+ </layer>
+ <layer name="door2" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtAaqbAwMamzUM08XaJYeFc0zBZplRkXzbIFm2VHRvFEwCkbB4AQAh2kBvQ==
+  </data>
+ </layer>
+ <layer name="door3" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtAasbAwMbGzUM48XaBYfFc0TBZolRkXzZIFmyVHRvFEwCkbB4AQAJS0AvQ==
+  </data>
+ </layer>
+ <layer name="door4" width="20" height="20">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtAZPWRkYnrFSz7y3QLPeUdG8r0CzvlHRvL9As/5R0bxRMApGweAEALHnB7U=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="2" x="288" y="0" width="32" height="304"/>
+  <object id="3" x="192" y="240" width="64" height="48"/>
+  <object id="4" x="0" y="288" width="288" height="32"/>
+  <object id="5" x="0" y="16" width="32" height="272"/>
+  <object id="6" x="32" y="16" width="112" height="112"/>
+  <object id="7" x="176" y="16" width="112" height="112"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="8" x="288" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="9" x="144" y="96" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="10" x="208" y="240" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBga4PSoeaPmjZo3ah6F5uHSN9jNG6wAAKXFDxI=
+  </data>
+ </layer>
+</map>

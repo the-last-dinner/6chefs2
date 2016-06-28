@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="40" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="127">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="007575" width="256" height="1990"/>
+ </tileset>
+ <tileset firstgid="1985" name="youkan" tilewidth="16" tileheight="16">
+  <image source="youkan.png" trans="007575" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="40" height="42" opacity="0.99">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztk90KwjAMhYuwxhfw5969gV57o0822HubgoES2prNwqKcwCFtSNuTfWyKIVDYVvtKbWZvE+sUtlPJb6qflb+0Hz4oGnqW6vBW6S3tL++NBZU8lnp0Xc8XG2/kavlbM/NgPG9Rzd8xe7+lWp/1vOV+8bcjnxJ/N15fyV8Wf09eP8hfFn8jry/kL4Mv+IIv+IKvD57gC76eMviCL/j+Jt9RfT8PPMEX/6+nDL7g+298Zf5efFPcqZ9k/h53Ib6PF7P7V+Y=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="40" height="42">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlbsKwkAQRZNPlFjYyqrYalTS+vwnn73P3ud/aOUNZGBYNpo0mYhz4JKgxR5m9248T1EURfkH5r7nLXxpi3S2cNuV2O8Mt0sJ/NZw2CDNjFkiqwK9j1jrlMNvjxwK9LtjrUcOvytyE9j3CtYMkKqVBktN6DzG54/8AsurxyLhR/2oI4b5kVO8p2Hy3hbsRyfxID9y6rP3SLAfsV83g59UP9L8AstPijQ/I+xH/bD9XHdNJNwPlx+//6T7wWdmHPefdD/4zOjM0ZPmJwX52f0IrfkVDe+HYfvququl+xFac+Ou8W+tEnw/XN8Neg4E+zHEmiNkjEyQKTJzPBU3T8zm9WE+3/5XFEVRfpM3sA5+jA==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="40" height="42">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlktOAkEQhjsMiV5EbqAHEF24VVx4BJWND0hkxzPxseGZiGxAZQ93gBvoRTTRpR8Ji04gw9i0mTKpL/k3052qLzPTlTbmf7AbGJMme2Q/WFwvJ4ypJFbXqbKnFrJvi9qpJfVX9T/k2RHJkOMl6016tiL4tdnTCdm3Te0dh/7rckHNS3JFrkmO5P+gjytFXEqkTCqkSmqOfkXefynCt/oNdVwapElapE06jn513Bqe/fq4DMgzeSGvZOjo18dt4NnPJyPcxoL9FMUXD8m4DcLpxex3Tv+s5TBhLkwFz4Y33N4F+yl+ueXfvBN8hh9x68bod0rvM6v/B2fjU9D5uMGtYPkF3KmSgu7NiqJE54vZ8m3NlwMBs3l2x7ufe2wwWzat+XIiwG92x3sS4KEoiqIoih9+AORCLNg=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="40" height="42">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzjEBADAIA7CeeJwS3OOAczyJgiTAL13Jq+sFAAAAAADsBmsQAOU=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="11" x="0" y="0" width="16" height="608"/>
+  <object id="13" x="0" y="608" width="320" height="64"/>
+  <object id="14" x="352" y="608" width="272" height="64"/>
+  <object id="15" x="624" y="0" width="16" height="688"/>
+  <object id="16" x="592" y="96" width="32" height="32"/>
+  <object id="29" x="256" y="192" width="160" height="304"/>
+  <object id="64" x="16" y="64" width="608" height="32"/>
+  <object id="124" x="320" y="640" width="32" height="32"/>
+ </objectgroup>
+ <layer name="CharaUe" width="40" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztzNEJACAMQ8EU3H9PncIdpCCUO3hfgSQAAAAAwC+7klPvOzDbqr46P5nvAqsnBF8=
+  </data>
+ </layer>
+</map>

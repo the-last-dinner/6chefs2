@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="15">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+  <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <layer name="Base" width="40" height="26">
+  <data encoding="base64" compression="zlib">
+   eJztldEJgDAMBesA1UGq385Qu/8+FqSgYhJoo6bwHtxfIEcgiXOIRnxmJJgq6rQTMjPBUlEHv2vfdTiAX59+MbMRpJOfVPdWSv9W4NcGd78luPuu5cftjwS3X1b8PDFHK36BmCP8bPhx91sifeCnMX/LftE9/8m/ve7AT8erFz+kLju58HuZ
+  </data>
+ </layer>
+ <layer name="MonoShita" width="40" height="26">
+  <data encoding="base64" compression="zlib">
+   eJzt1tEJwCAUQ1HBeesibQfRKdsBXhVNChFywT+Rg8LDlPao5f6a3cfsJp57/mC0D8s+LPuw2L6LbGT66mB+r8x3pg8tun8lXw3uUckXpeZTft8o+7Dsw7IPS8l3vJYiPP++/j8la6zdegB72DsE
+  </data>
+ </layer>
+ <objectgroup name="corridor">
+  <object id="3" x="320" y="0" width="256" height="288"/>
+  <object id="4" x="576" y="0" width="64" height="320"/>
+  <object id="5" x="576" y="352" width="64" height="64"/>
+  <object id="6" x="32" y="384" width="544" height="32"/>
+  <object id="8" x="192" y="0" width="128" height="144"/>
+  <object id="9" x="0" y="0" width="160" height="144"/>
+  <object id="10" x="0" y="144" width="32" height="272"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="11" x="576" y="384" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="13" x="608" y="320" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="14" x="160" y="48" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="40" height="26">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJADAMBDEX3jrLZwOnOMMTOE2gKm04nR7M/DGvX/rvj/n9l+aP8cf4Y/wx/hh/jD8lXLWFDOc=
+  </data>
+ </layer>
+</map>

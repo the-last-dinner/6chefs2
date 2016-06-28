@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="25">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="1985" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+  <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
+ </tileset>
+ <tileset firstgid="3841" name="Yatai-option1" tilewidth="16" tileheight="16">
+  <image source="Yatai-option1.png" trans="aa55ff" width="944" height="255"/>
+ </tileset>
+ <tileset firstgid="4726" name="sf" tilewidth="16" tileheight="16">
+  <image source="sf.png" trans="aa55ff" width="192" height="256"/>
+ </tileset>
+ <tileset firstgid="4918" name="magoichi_0_0" tilewidth="16" tileheight="16">
+  <image source="magoichi_0_0.png" trans="aa55ff" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="cc_vertexz" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="4922" name="nadeshiko_0_0" tilewidth="16" tileheight="16">
+  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="32"/>
+ </tileset>
+ <layer name="Base" width="32" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlMEJgDAMAJOvYAcQ7L66gSsKdgBBsdAGpFCrjzSiObifcCQNAihnnHdmcrnR370rk9sL5neFPXDPX+obBGiYbLHct/6bjskew36v7mBAXk3cg1Tfxj2k0Ltw98doCr2LVL/W/DlqzZ+D7lKqT3cp1Z8w+Nc+oX3ta/+//SfQP0sK6f4XOAB47F5S
+  </data>
+ </layer>
+ <layer name="Base2" width="32" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-14"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBg8YC8bA8MqdtriBWy47e9lp70fu/HYQQ/7V0LDYaDsxwdG7R+59oPS5OoB9j89QBfjyLY/FxjHeQMYz/jK31H7R679oDSZPwLq/1H7R+0ftR872MMGKQeIwchlRS6RekB4Pp7+BykAOawGukwdygAABFg0Xw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="32" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-13"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0rcOwjAYRWGz4oQXoLz/Rq8LvS70utDrAjtIcJhJJBAxQuAjfcs/+CpShNDpvqewKUQEUcQQRwJJpJBGxlS3n+ftAooooYwKqqihjobC/TZvd9BFD30MMMQIY0wU7s95e4ElVlhjgy122OOgcP/VglKIkHz+/m6SbzdgwoMsGzlpf3c6L2/74EcATTZa0v6uuikbM4sdu7vTHdk4WezY3Z3uet8wHu9ntxAXt/p93W/m+sC/q9PpdP/cDfk0OHw=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="32" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwXAGDgIDa3/1ANtPb/8H8TMwnATiU0B8mp/+/t8mgIlHwSgYBaNgFEAAAPA2CIE=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="32" height="30">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzDkOgEAMBEFnHKmBlCOF5f/PY15g2SLZoEvqbDRmAAAAfRncbFSTmv3/rsr1tahVbcFvdle16+tQp7qC3+yu6tbXo5p6g9/sDgB68QGH4gWx
+  </data>
+ </layer>
+ <layer name="magoichi2" width="32" height="30" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzUkNACAQBLDxsF44/BsDC7w2JK2BJgD8aFQyq+9f996NPwDAqwOF8gEr
+  </data>
+ </layer>
+ <layer name="nadeshiko2" width="32" height="30" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzUkNACAQBLDxsG44/NsCA7w3Ia2BJgD8ZFQyq+9f996NPwDAywH4YgE7
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <object id="1" x="0" y="0" width="64" height="256"/>
+  <object id="3" x="0" y="288" width="64" height="192"/>
+  <object id="4" x="64" y="416" width="176" height="64"/>
+  <object id="5" x="272" y="416" width="208" height="64"/>
+  <object id="7" x="448" y="0" width="64" height="160"/>
+  <object id="8" x="64" y="0" width="384" height="128"/>
+  <object id="9" x="64" y="128" width="160" height="16"/>
+  <object id="10" x="192" y="160" width="64" height="16"/>
+  <object id="12" x="288" y="160" width="64" height="16"/>
+  <object id="13" x="352" y="160" width="32" height="64"/>
+  <object id="14" x="256" y="160" width="32" height="64"/>
+  <object id="15" x="128" y="256" width="64" height="80"/>
+  <object id="16" x="288" y="256" width="64" height="80"/>
+  <object id="17" x="368" y="288" width="80" height="32"/>
+  <object id="18" x="432" y="240" width="16" height="48"/>
+  <object id="19" x="448" y="192" width="64" height="224"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="20" x="448" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="21" x="240" y="448" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="22" x="480" y="160" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="23" x="0" y="256" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="24" x="416" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="trigger" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="32" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0LEJADAIRUH3XynLpU0bED4m93o9sUpni8/n85vmbvfxZ/pdpf3fS/+fz+fPKH1r2n+hDThcF2E=
+  </data>
+ </layer>
+ <layer name="nadeshiko" width="32" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzUkNACAQBLDxsG44/NsCDXw2JK2BJgAA70Yls/r+de/d+APwjwP17QE7
+  </data>
+ </layer>
+ <layer name="magoichi" width="32" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzUkNACAQBLDxsF44/BuDPwI2Ia2BJgAAr1HJrL5/3Xs3/gD85wC9XQEr
+  </data>
+ </layer>
+ <layer name="CharaUe" width="32" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzDsOgkAUheG7gKlYuKJ0KtiBYOez4yHL8LEW/85mEmfoSM6ffM3NzTFTSql59HRmL7zxcf/vSs21RWK2RIoV1siS6X+xbdjYYoccBfae3dC/2Eo2KhxQo8HRsxv6F9uJjTMuuOKGu2c39C+2lo0OPQY8MHp2Q/+UUkr9+gLt9zL7
+  </data>
+ </layer>
+ <layer name="CharaUe2" width="32" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzDkOgDAMRFGfIfe/F4SWpQ3Qsog5gWWLJsV/0u9GYwYAQH+GYjaqqqbyf5c162tRq9qc3+guq+lrV4c6nd/oLuvS160e9Tq/0R0AAD34AJ9UH5E=
+  </data>
+ </layer>
+</map>

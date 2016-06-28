@@ -1,0 +1,28 @@
+{
+	"1":[
+		{
+		    "type":"setAmbient",
+		    "ambient":"night"
+		},
+		{
+			"type":"createEnemy",
+			"enemyID":"1431",
+			"charaID":"13",
+			"x":25,
+			"y":14,
+			"direction":"UP",
+			"times":1,
+			"pathID":"1",
+			"movePattern":"4"
+		}
+	],
+	"2":[
+		{
+			"type":"changeMap",
+			"mapID":"50",
+			"x":34,
+			"y":29
+		}
+	],
+	"3":木箱で押すスイッチ
+}

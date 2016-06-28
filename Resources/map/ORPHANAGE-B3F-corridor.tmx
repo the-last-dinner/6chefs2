@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+  <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
+ </tileset>
+ <tileset firstgid="3489" name="ed4" tilewidth="16" tileheight="16">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="3969" name="SC-Door-Metal01" tilewidth="16" tileheight="16">
+  <image source="SC-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
+ </tileset>
+ <layer name="Base" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztl8EKQEAURd9sFR+g+F+/4A8pNlYUGWUhhhQvT51bZ/NmMae7uyLkjbSewVNtqNebJvsstyZwn9a3foO225nfeNGfBa76s0Cov8SJREaI3dEv97fUCFnAr3C2wA8//J77daILfvjhhx9++OF3ZNl1tRLNC36au26kv8/709zF8cmfd/1Kp7uLs4d+X4Iffvjd9yOE/C8zxaZXNQ==
+  </data>
+ </layer>
+ <layer name="Base2" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt18ENQDAYhuFOUJNgEMzAFSuwOw5CaNF8/dPie5Jeqknf9NCoUvEbtVJdEmYcrfON3uYqw7rQil0T+9yxD8M+DPsw7MN8pS+dv2VCI7/Y92nfsq4UOt+7fV3X+cY+DPsw7MP8pS/m+7kVfPv2HvpCYR+GfRj2YdiHYR/mTX2Dtr9HJd+/V6PW5xbTOUr+X7my9cUi9j5yNwGER02o
+  </data>
+ </layer>
+ <layer name="door" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrENwCAMALB8wP8HthvdykZFHuiGRAb7AkcAAAAAUMHVIu52evGv5+0p/HvzNgr/Zt6+wj8AYJ8FQMEIBQ==
+  </data>
+ </layer>
+ <layer name="door2" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrERgCAQALDfgP0H0g476XAWfgE77vgimSARAAAAAFRwtYi7nV7863l7Cv/evI3Cv5m3r/APANhnAVo6BwU=
+  </data>
+ </layer>
+ <layer name="door3" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrERgCAQALDfgP0H0A476XA2fgE77vgimSARAAAAAFRwtYi7nV7863l7Cv/evI3Cv5m3r/APANhnAXOzBgU=
+  </data>
+ </layer>
+ <layer name="door4" width="40" height="44">
+  <properties>
+   <property name="cc\vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrERgCAQALDfgKm1w046nJVfwI47vkgmSAQAAAAAFVwt4m6nF/963p7Cvzdvo/Bv5u0r/AMA9lmNLAUF
+  </data>
+ </layer>
+ <layer name="steps" width="40" height="44">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2LEJgEAQRcErQAu1BFPBHgQzwQYE+9P09ALFwD2YgZ9s9OJNiVoNzf02Fm5/qaGva/Ppe24q9M2B+pZC3xqobztb+jbfHqgPAAAAgHiu/65o9H0TvY93DvsoGX4=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="128" y="224" width="384" height="128"/>
+  <object id="2" x="128" y="352" width="320" height="80"/>
+  <object id="3" x="448" y="352" width="64" height="160"/>
+  <object id="4" x="128" y="432" width="32" height="80"/>
+  <object id="5" x="192" y="432" width="256" height="80"/>
+  <object id="6" x="0" y="16" width="32" height="624"/>
+  <object id="12" x="32" y="0" width="464" height="128"/>
+  <object id="13" x="496" y="0" width="16" height="128"/>
+  <object id="15" x="576" y="0" width="16" height="128"/>
+  <object id="17" x="592" y="32" width="16" height="96"/>
+  <object id="18" x="608" y="32" width="32" height="608"/>
+  <object id="22" x="32" y="608" width="32" height="112"/>
+  <object id="23" x="128" y="608" width="480" height="96"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="24" x="608" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="25" x="64" y="672" width="64" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="26" x="512" y="32" width="64" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="27" x="160" y="480" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="shadow" width="40" height="44">
+  <data encoding="base64" compression="zlib">
+   eJztzjERACAQwDD8W8EkE4eAMvyQGmjW0o/28C9f+/K1L1+Lr8XX4mtfvvbla1++9uVrX7725Wtfvvbla1++Fl+LrzXdd5vu5JNeB1ieKhY=
+  </data>
+ </layer>
+</map>

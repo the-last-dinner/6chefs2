@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="18">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+  <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="22" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAtOMWIignJ48LIYC2Qnw6kM6A4E4hXA8XWQDG6PC4M04fP3JNIbjhNRXPx8UkxtxVIt0FxOxZzkeVx4XYs5nIzoGJ0c9HlcWFC5qK7n1rmkouHgrkwMJDu7QWK9UFxPwn2EjIXPR9T01xywmnUXNLNBYE+RuIwMiDGXHLAqLm0NXcoAQAE12bb
+  </data>
+ </layer>
+ <layer name="MonoShita" width="22" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2Dwg3pmBLuRGbc6UsFcoFnzoHj+EDB3FIyCUTAKRgF5AABWNwYP
+  </data>
+ </layer>
+ <layer name="MonoChu" width="22" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DkgrWMCPZqRtzqhru5o2AUjIJRMNwBAKBUBA8=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="22" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBVQw8zAUAvFdczUM3cW0KzZUDyHiuaOglEwCkbBYAEAi/oEeQ==
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="2" x="320" y="64" width="32" height="352"/>
+  <object id="4" x="0" y="48" width="32" height="368"/>
+  <object id="6" x="96" y="192" width="64" height="224"/>
+  <object id="7" x="160" y="288" width="160" height="96"/>
+  <object id="8" x="32" y="48" width="288" height="48"/>
+  <object id="9" x="96" y="96" width="64" height="32"/>
+  <object id="11" x="256" y="160" width="64" height="16"/>
+  <object id="13" x="256" y="128" width="16" height="32"/>
+  <object id="14" x="304" y="128" width="16" height="32"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="15" x="320" y="32" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="16" x="272" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="17" x="32" y="384" width="64" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
