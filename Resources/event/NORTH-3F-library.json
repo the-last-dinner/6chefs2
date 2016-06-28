@@ -10,7 +10,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1026"
 				}
 			]

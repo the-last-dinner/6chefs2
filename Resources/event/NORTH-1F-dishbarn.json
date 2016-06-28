@@ -160,7 +160,7 @@
 					"name":"図書室の鍵"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1918"
 				},
 				{
@@ -179,7 +179,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1918"
 				}
 			]
@@ -243,7 +243,7 @@
 					"name":"目玉焼きリング"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1929"
 				},
 				{
@@ -283,7 +283,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1929"
 				}
 			]

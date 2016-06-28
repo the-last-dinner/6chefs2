@@ -82,7 +82,7 @@
 							"file":"door_keyopen.mp3"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"185"
 						},
 						{
@@ -223,11 +223,11 @@
 					"objID":"1016"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1016"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"186"
 				},
 				{
@@ -270,7 +270,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1016"
 				}
 			]
@@ -286,7 +286,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"186"
 				}
 			]
@@ -302,7 +302,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"185"
 				}
 			]
@@ -321,7 +321,7 @@
 							"name":"食材庫の鍵"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"192"
 						},
 						{
@@ -347,7 +347,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"192"
 				}
 			]
@@ -482,7 +482,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1025"
 				}
 			]

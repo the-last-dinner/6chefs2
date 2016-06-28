@@ -342,7 +342,7 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1010"
 						}
 					]
@@ -359,7 +359,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1011"
 				}
 			]
@@ -807,7 +807,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1921"
 				}
 			]

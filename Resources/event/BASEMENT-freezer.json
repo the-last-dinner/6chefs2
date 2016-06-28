@@ -92,11 +92,11 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1058"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1059"
 								},
 								{
@@ -195,7 +195,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1070"
 				}
 			]
@@ -210,7 +210,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1071"
 				}
 			]
@@ -304,11 +304,11 @@
 							"file":"chapter5.mp3"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1070"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1071"
 						},
 						{

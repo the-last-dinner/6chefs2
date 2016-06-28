@@ -154,7 +154,7 @@
 					"file":"door_keyopen.mp3"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1819"
 				},
 				{
@@ -191,7 +191,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1819"
 				}
 			]

@@ -59,7 +59,7 @@
 					"flg":2
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"191"
 				},
 				{
@@ -82,7 +82,7 @@
 					"name":"倉庫の鍵"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"191"
 				},
 				{
@@ -159,7 +159,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"191"
 				}
 			]

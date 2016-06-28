@@ -94,15 +94,15 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10108"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10109"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"101"
 										},
 										{

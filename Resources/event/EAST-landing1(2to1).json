@@ -22,7 +22,7 @@
 			"name":"三角巾"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"1924"
 		},
 		{
@@ -39,7 +39,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1924"
 				}
 			]

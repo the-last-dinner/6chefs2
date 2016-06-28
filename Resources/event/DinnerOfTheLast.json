@@ -178,11 +178,11 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1074"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1086"
 						},
 						{
@@ -315,15 +315,15 @@
 															"file":"hit.mp3"
 														},
 														{
-															"type":"createChara",
+															"type":"createObject",
 															"objID":"1075"
 														},
 														{
-															"type":"removeChara",
+															"type":"removeObject",
 															"objID":"1086"
 														},
 														{
-															"type":"createChara",
+															"type":"createObject",
 															"objID":"10106"
 														},
 														{
@@ -403,11 +403,11 @@
 															"text":["ゆ・・・き・・・"]
 														},
 														{
-															"type":"removeChara",
+															"type":"removeObject",
 															"objID":"1086"
 														},
 														{
-															"type":"createChara",
+															"type":"createObject",
 															"objID":"10106"
 														},
 														{
@@ -486,7 +486,7 @@
 																	"type":"sequence",
 																	"action":[
 																		{
-																			"type":"createChara",
+																			"type":"createObject",
 																			"objID":"1095"
 																		},
 																		{
@@ -551,11 +551,11 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1074"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1073"
 				}
 			]
@@ -597,15 +597,15 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1075"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10106"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1073"
 						},
 						{

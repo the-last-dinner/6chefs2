@@ -128,7 +128,7 @@
 							"file":"door_keyopen.mp3"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"182"
 						},
 						{
@@ -215,7 +215,7 @@
 									"type":"fadein"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"184"
 								},
 								{
@@ -238,7 +238,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"183"
 				}
 			]
@@ -252,7 +252,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				}
 			]
@@ -279,7 +279,7 @@
 							"file":"door_keyopen.mp3"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"183"
 						},
 						{
@@ -318,7 +318,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"184"
 				},
 				{

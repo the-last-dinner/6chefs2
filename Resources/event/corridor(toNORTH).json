@@ -108,7 +108,7 @@
           "objID": "1014"
         },
         {
-          "type": "removeChara",
+          "type": "removeObject",
           "objID": "1014"
         },
         {
@@ -161,7 +161,7 @@
       ],
       "action":[
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1014"
         }
       ]

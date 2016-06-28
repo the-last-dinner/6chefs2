@@ -449,11 +449,11 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"107"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"108"
 						}
 					]

@@ -29,67 +29,67 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1041"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1042"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1043"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1044"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1045"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1046"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1047"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1048"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1049"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1050"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1051"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1052"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1053"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1054"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1055"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1056"
 						}
 					]
@@ -118,7 +118,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1041"
 										}
 									]
@@ -134,7 +134,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1042"
 										}
 									]
@@ -150,7 +150,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1043"
 										}
 									]
@@ -166,7 +166,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1044"
 										}
 									]
@@ -182,7 +182,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1045"
 										}
 									]
@@ -198,7 +198,7 @@
 											"speed":2.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1046"
 										}
 									]
@@ -214,7 +214,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1047"
 										}
 									]
@@ -230,7 +230,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1048"
 										}
 									]
@@ -246,7 +246,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1049"
 										}
 									]
@@ -262,7 +262,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1050"
 										}
 									]
@@ -278,7 +278,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1051"
 										}
 									]
@@ -294,7 +294,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1052"
 										}
 									]
@@ -310,7 +310,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1053"
 										}
 									]
@@ -326,7 +326,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1054"
 										}
 									]
@@ -342,7 +342,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1055"
 										}
 									]
@@ -358,7 +358,7 @@
 											"speed":5.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1056"
 										}
 									]
@@ -411,7 +411,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1063"
 				}
 			]
@@ -435,7 +435,7 @@
 					"type":"fadein"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1063"
 				},
 				{

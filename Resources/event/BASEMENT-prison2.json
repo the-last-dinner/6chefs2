@@ -83,7 +83,7 @@
 					"itemID":"1517"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1917"
 				},
 				{
@@ -102,7 +102,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1917"
 				}
 			]

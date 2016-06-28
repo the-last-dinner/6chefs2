@@ -156,7 +156,7 @@
   ],
   "7":[
     {
-      "type":"createChara",
+      "type":"createObject",
       "objID":"101"
     },
     {
@@ -168,7 +168,7 @@
       ],
       "action":[
         {
-          "type":"removeChara",
+          "type":"removeObject",
           "objID":"1923"
         }
       ]
@@ -219,7 +219,7 @@
       "name":"猪肉"
     },
     {
-      "type":"removeChara",
+      "type":"removeObject",
       "objID":"1923"
     },
     {

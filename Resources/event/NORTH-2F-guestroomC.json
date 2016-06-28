@@ -127,7 +127,7 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1015"	
 										},
 										{
@@ -266,7 +266,7 @@
 											"objID":"1015"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1015"
 										},
 										{
@@ -343,7 +343,7 @@
 					"layer":"apple"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1920"
 				},
 				{
@@ -369,7 +369,7 @@
 					"layer":"apple"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1920"
 				}
 			]

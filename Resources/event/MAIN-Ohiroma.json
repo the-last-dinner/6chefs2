@@ -43,7 +43,7 @@
           "objID":"10100"
         },
         {
-          "type":"removeChara",
+          "type":"removeObject",
           "objID":"10100"
         }
       ]
@@ -112,11 +112,11 @@
               "objID":"1034"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1033"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1034"
             },
             {
@@ -382,39 +382,39 @@
               "type": "spawn",
               "action": [
                 {
-                  "type": "removeChara",
+                  "type": "removeObject",
                   "objID": "1019"
                 },
                 {
-                  "type": "removeChara",
+                  "type": "removeObject",
                   "objID": "1021"
                 },
                 {
-                  "type": "removeChara",
+                  "type": "removeObject",
                   "objID": "1027"
                 },
                 {
-                  "type": "removeChara",
+                  "type": "removeObject",
                   "objID": "1028"
                 },
                 {
-                  "type": "removeChara",
+                  "type": "removeObject",
                   "objID": "1029"
                 },
                 {
-                  "type": "createChara",
+                  "type": "createObject",
                   "objID": "1031"
                 },
                 {
-                  "type": "createChara",
+                  "type": "createObject",
                   "objID": "1032"
                 },
                 {
-                  "type": "createChara",
+                  "type": "createObject",
                   "objID": "1033"
                 },
                 {
-                  "type": "createChara",
+                  "type": "createObject",
                   "objID": "1034"
                 }
               ]
@@ -555,15 +555,15 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1080"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1084"
             },
             {
@@ -600,7 +600,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -643,7 +643,7 @@
               "charaID":"7"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1088"
             },
             {
@@ -667,7 +667,7 @@
               "file":"blood.mp3"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1088"
             },
             {
@@ -789,19 +789,19 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1080"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1081"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1084"
             },
             {
@@ -860,7 +860,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -905,7 +905,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1088"
             },
             {
@@ -929,7 +929,7 @@
               "file":"blood.mp3"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1088"
             },
             {
@@ -1069,23 +1069,23 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1080"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1081"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1082"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"10112"
             },
             {
@@ -1149,7 +1149,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -1189,7 +1189,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"10111"
             },
             {
@@ -1297,7 +1297,7 @@
               "type":"spawn",
               "action":[
                 {
-                  "type":"removeChara",
+                  "type":"removeObject",
                   "objID":"10112"
                 },
                 {
@@ -1305,7 +1305,7 @@
                   "file":"knife.mp3"
                 },
                 {
-                  "type":"createChara",
+                  "type":"createObject",
                   "objID":"10113"
                 }
               ]
@@ -1551,7 +1551,7 @@
                       "direction":"UP"
                     },
                     {
-                      "type":"removeChara",
+                      "type":"removeObject",
                       "objID":"1082"
                     }
                   ]
@@ -1623,7 +1623,7 @@
                       "direction":"UP"
                     },
                     {
-                      "type":"removeChara",
+                      "type":"removeObject",
                       "objID":"1083"
                     }
                   ]
@@ -1653,7 +1653,7 @@
                       "direction":"UP"
                     },
                     {
-                      "type":"removeChara",
+                      "type":"removeObject",
                       "objID":"1081"
                     }
                   ]
@@ -1678,7 +1678,7 @@
                       "direction":"UP"
                     },
                     {
-                      "type":"removeChara",
+                      "type":"removeObject",
                       "objID":"1080"
                     }
                   ]
@@ -1774,15 +1774,15 @@
             	"y":37,
             	"action":[
             		{
-		            	"type":"createChara",
+		            	"type":"createObject",
 		            	"objID":"10111"
 		            },
 		            {
-		            	"type":"createChara",
+		            	"type":"createObject",
 		            	"objID":"1085"
 		            },
 		            {
-		            	"type":"createChara",
+		            	"type":"createObject",
 		            	"objID":"10113"
 		            },
 		            {
@@ -1874,11 +1874,11 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1084"
             },
             {
@@ -1901,7 +1901,7 @@
               "time":3.0
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -1957,7 +1957,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1088"
             },
             {
@@ -1981,7 +1981,7 @@
               "file":"blood.mp3"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1088"
             },
             {
@@ -2102,15 +2102,15 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1089"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1084"
             },
             {
@@ -2152,7 +2152,7 @@
               "charaID":"7"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -2197,7 +2197,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1088"
             },
             {
@@ -2221,7 +2221,7 @@
               "file":"blood.mp3"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1088"
             },
             {
@@ -2329,19 +2329,19 @@
               "enemyID":"1422"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1089"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1082"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1083"
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1084"
             },
             {
@@ -2388,7 +2388,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1085"
             },
             {
@@ -2421,7 +2421,7 @@
               ]
             },
             {
-              "type":"createChara",
+              "type":"createObject",
               "objID":"1088"
             },
             {
@@ -2445,7 +2445,7 @@
               "file":"blood.mp3"
             },
             {
-              "type":"removeChara",
+              "type":"removeObject",
               "objID":"1088"
             },
             {
@@ -2635,7 +2635,7 @@
           "imgID": "1"
         },
         {
-          "type": "removeChara",
+          "type": "removeObject",
           "objID": "1012"
         },
         {
@@ -2679,7 +2679,7 @@
       ],
       "action":[
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1012"
         }
       ]
@@ -2727,11 +2727,11 @@
       ],
       "action":[
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1031"
         },
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1032"
         }
       ]
@@ -2746,11 +2746,11 @@
       ],
       "action":[
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1033"
         },
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1034"
         }
       ]
@@ -2774,7 +2774,7 @@
       ],
       "action":[
         {
-          "type":"createChara",
+          "type":"createObject",
           "objID":"1097"
         }
       ]

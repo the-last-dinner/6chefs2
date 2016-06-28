@@ -808,11 +808,11 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1020"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1023"
 						}
 					]
@@ -832,7 +832,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1021"
 				}
 			]
@@ -847,11 +847,11 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1019"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1022"
 				}
 			]
@@ -891,23 +891,23 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"102"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"103"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"104"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"105"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"106"
 						}
 					]
@@ -1099,47 +1099,47 @@
 							"type":"sequence",
 							"action":[
 								{
-						          "type":"createChara",
+						          "type":"createObject",
 						          "objID":"1096"
 						        },
 						        {
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"102"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"103"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"104"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"105"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"106"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1090"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1091"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1092"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1093"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1094"
 								},
 						        {
@@ -1200,7 +1200,7 @@
 						          "file": "door1.mp3"
 						        },
 						        {
-						          "type": "createChara",
+						          "type": "createObject",
 						          "objID": "1013"
 						        },
 						        {
@@ -1287,47 +1287,47 @@
 					]
 				},
 				{
-				    "type": "createChara",
+				    "type": "createObject",
 				    "objID": "1098"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1090"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1091"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1092"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1093"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1094"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"102"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"103"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"104"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"105"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"106"
 				},
 				{
@@ -1390,27 +1390,27 @@
 							            	"type":"stopBGM"
 							            },
 							            {
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1096"
 										},
 										{
-							                "type":"createChara",
+							                "type":"createObject",
 							                "objID":"1090"
 							            },
 							            {
-							            	"type":"createChara",
+							            	"type":"createObject",
 							            	"objID":"1091"
 							            },
 							            {
-							            	"type":"createChara",
+							            	"type":"createObject",
 							                "objID":"1092"
 							            },
 							            {
-							                "type":"createChara",
+							                "type":"createObject",
 							                "objID":"1093"
 							            },
 							            {
-							            	"type":"createChara",
+							            	"type":"createObject",
 							                "objID":"1094"
 							            },
 							            {
@@ -1568,7 +1568,7 @@
 					                "type":"sequence",
 					                "action":[
 					             		{
-					                	    "type":"createChara",
+					                	    "type":"createObject",
 					                        "objID":"1095"
 					                    },
 					                    {
@@ -1725,7 +1725,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1098"
 				}
 			]

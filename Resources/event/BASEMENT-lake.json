@@ -54,7 +54,7 @@
 							"layer":"lake"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1810"
 						}
 					]

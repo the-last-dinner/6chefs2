@@ -219,7 +219,7 @@
 					"name":"子供用弁当箱"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1933"
 				},
 				{
@@ -260,7 +260,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1933"
 				}
 			]

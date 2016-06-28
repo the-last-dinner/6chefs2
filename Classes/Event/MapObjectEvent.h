@@ -37,8 +37,9 @@ public:
 private:
     ReactionEvent() {FUNCLOG};
     ~ReactionEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
+   
 };
 
 // マップオブジェクトを生成
@@ -51,6 +52,9 @@ private:
     ~CreateMapObjectEvent() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
+    // インスタンス変数
+private:
+    MapObject* target {};
 };
 
 //  マップオブジェクトを削除

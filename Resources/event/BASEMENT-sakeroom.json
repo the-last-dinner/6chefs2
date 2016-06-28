@@ -23,7 +23,7 @@
 					"name":"茶色く濁ったどぶろく"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1916"
 				},
 				{
@@ -132,7 +132,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1916"
 				}
 			]

@@ -46,6 +46,9 @@ public:
     Point getToPoint(rapidjson::Value& json);
     Direction getDirection(rapidjson::Value& json);
     EnemyMovePattern getMovePatternForEnemy(rapidjson::Value& json);
+    CharacterMovePattern getMovePatternForCharacter(rapidjson::Value& json);
+    Trigger getTrigger(rapidjson::Value& json);
+    int getEventId(rapidjson::Value& json);
     Color3B getColor(rapidjson::Value& json) const;
 };
 #endif /* defined(__LastSupper__EventScriptValidator__) */
