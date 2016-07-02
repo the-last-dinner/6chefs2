@@ -371,7 +371,7 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* 6chefs1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6chefs1.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5087E76F17EB910900C73F5D /* 6chefs2_1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 6chefs2_1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */,
-				5087E76F17EB910900C73F5D /* 6chefs1.3.app */,
+				5087E76F17EB910900C73F5D /* 6chefs2_1.0.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1350,7 +1350,7 @@
 			);
 			name = 6chefs2_1.0;
 			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* 6chefs1.3.app */;
+			productReference = 5087E76F17EB910900C73F5D /* 6chefs2_1.0.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
