@@ -235,7 +235,7 @@
 							]
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1047",
 							"charaID":"5",
 							"direction":"UP",
@@ -244,7 +244,7 @@
 							"y":54
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1048",
 							"charaID":"8",
 							"direction":"UP",

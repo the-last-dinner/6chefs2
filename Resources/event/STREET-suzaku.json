@@ -234,7 +234,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1029",
 					"charaID":"6",
 					"x":12,
@@ -843,7 +843,7 @@
 											"type":"spawn",
 											"action":[
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1030",
 													"charaID":"13",
 													"x":28,
@@ -852,7 +852,7 @@
 													"movePattern":"2"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1031",
 													"charaID":"13",
 													"x":28,
@@ -861,7 +861,7 @@
 													"movePattern":"2"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1032",
 													"charaID":"13",
 													"x":10,
@@ -870,7 +870,7 @@
 													"movePattern":"2"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1033",
 													"charaID":"13",
 													"x":49,
@@ -879,7 +879,7 @@
 													"movePattern":"1"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1034",
 													"charaID":"0",
 													"x":47,
@@ -956,7 +956,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1044",
 					"charaID":"4",
 					"x":14,
@@ -965,7 +965,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1045",
 					"charaID":"6",
 					"x":12,

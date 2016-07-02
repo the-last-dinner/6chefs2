@@ -110,7 +110,7 @@
 							"layer":"shitai2"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"181"
 						},
 						{

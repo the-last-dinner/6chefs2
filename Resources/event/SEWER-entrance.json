@@ -299,15 +299,15 @@
 									"layer":"hide2"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"183"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"184"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"185"
 								},
 								{
@@ -373,11 +373,11 @@
 									"layer":"hide2"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"181"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"186"
 								},
 								{

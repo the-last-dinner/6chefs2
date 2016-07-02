@@ -4,7 +4,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"2",
 					"objID":"10161",
 					"x":14,
@@ -93,7 +93,7 @@
 					"text":["孫一や真夏とかを見ててよ・・・\n強さにも種類があるってのに気が付いたわ"]
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"27",
 					"objID":"10162",
 					"x":25,
@@ -150,7 +150,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"2",
 					"objID":"10206",
 					"x":14,

@@ -101,7 +101,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1025",
 					"charaID":"2",
 					"x":8,
@@ -112,7 +112,7 @@
 					"movePattern":"2"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1026",
 					"charaID":"3",
 					"x":4,
@@ -383,7 +383,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1049",
 					"charaID":"3",
 					"movePattern":"1",

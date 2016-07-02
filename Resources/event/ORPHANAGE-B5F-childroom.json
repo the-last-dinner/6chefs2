@@ -5,7 +5,7 @@
 		    "ambient":"night"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10101",
 			"charaID":"20",
 			"eventID":"3",
@@ -16,7 +16,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10102",
 			"charaID":"21",
 			"eventID":"4",
@@ -27,7 +27,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10103",
 			"charaID":"21",
 			"eventID":"5",
@@ -38,7 +38,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10104",
 			"charaID":"21",
 			"eventID":"6",
@@ -49,7 +49,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10105",
 			"charaID":"20",
 			"eventID":"7",

@@ -1,7 +1,7 @@
 {
 	"1":[
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10126",
 			"charaID":"1",
 			"x":23,
@@ -10,7 +10,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10127",
 			"charaID":"2",
 			"x":27,
@@ -19,7 +19,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10128",
 			"charaID":"3",
 			"x":14,
@@ -28,7 +28,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10130",
 			"charaID":"5",
 			"x":26,
@@ -37,7 +37,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10131",
 			"charaID":"6",
 			"x":14,
@@ -46,7 +46,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10132",
 			"charaID":"7",
 			"x":16,
@@ -55,7 +55,7 @@
 			"movePattern":"1"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10133",
 			"charaID":"8",
 			"x":24,
@@ -174,7 +174,7 @@
 							"file":"door_don.mp3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10129",
 							"charaID":"4",
 							"x":20,
@@ -209,7 +209,7 @@
 							"direction":"UP"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10134",
 							"charaID":"23",
 							"x":20,

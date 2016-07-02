@@ -115,7 +115,7 @@
 							"file":"door_don.mp3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1037",
 							"x":14,
 							"y":13,

@@ -298,7 +298,7 @@
 					"direction":"RIGHT"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1035",
 					"charaID":"1",
 					"x":72,

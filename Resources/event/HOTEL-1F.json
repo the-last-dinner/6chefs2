@@ -23,7 +23,7 @@
 			],
 			"action":[
 			    {
-			    	"type":"createChara",
+			    	"type":"createObject",
 			    	"objID":"1027",
 			    	"charaID":"12",
 			    	"x":13,
@@ -34,7 +34,7 @@
 			    	"movePattern":"1"
 			    },
 			    {
-			    	"type":"createChara",
+			    	"type":"createObject",
 			    	"objID":"1028",
 			    	"charaID":"12",
 			    	"x":13,

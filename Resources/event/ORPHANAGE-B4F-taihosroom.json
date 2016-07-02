@@ -47,7 +47,7 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1097",
 											"charaID":"17",
 											"x":12,
@@ -56,7 +56,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1098",
 											"charaID":"17",
 											"x":6,
@@ -65,7 +65,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1099",
 											"charaID":"16",
 											"x":9,
@@ -155,7 +155,7 @@
 													"layer":"taihou"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10100",
 													"charaID":"22",
 													"x":12,

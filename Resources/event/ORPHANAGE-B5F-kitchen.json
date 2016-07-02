@@ -34,7 +34,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1072",
 					"charaID":"7",
 					"eventID":"6",
@@ -157,7 +157,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1071",
 					"charaID":"9",
 					"x":14,
@@ -177,7 +177,7 @@
 					"objID":"1067"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1072",
 					"charaID":"7",
 					"eventID":"6",
@@ -619,7 +619,7 @@
 					"layer":"nadeshiko"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10101",
 					"charaID":"0",
 					"x":11,
@@ -628,7 +628,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10101",
 					"charaID":"1",
 					"x":11,
@@ -681,7 +681,7 @@
 					]
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10110",
 					"charaID":"2",
 					"x":2,

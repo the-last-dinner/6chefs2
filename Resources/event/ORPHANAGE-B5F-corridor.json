@@ -54,7 +54,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1073",
 					"charaID":"9",
 					"x":10,
@@ -523,7 +523,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10106",
 					"charaID":"21",
 					"x":22,

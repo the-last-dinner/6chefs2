@@ -1,7 +1,7 @@
 {
 	"1":[
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"1038",
 			"x":74,
 			"y":14,
@@ -12,7 +12,7 @@
 			"charaID":"14"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"1039",
 			"x":54,
 			"y":14,
@@ -23,7 +23,7 @@
 			"charaID":"14"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"1040",
 			"x":61,
 			"y":15,
@@ -34,7 +34,7 @@
 			"charaID":"14"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"1041",
 			"x":61,
 			"y":13,
