@@ -4,7 +4,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"25",
 					"objID":"10210",
 					"x":12,
@@ -44,7 +44,7 @@
 							"file":"door_don.mp3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"charaID":"17",
 							"objID":"10211",
 							"x":38,
@@ -53,7 +53,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"charaID":"17",
 							"objID":"10212",
 							"x":38,
@@ -62,7 +62,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"charaID":"17",
 							"objID":"10213",
 							"x":38,
@@ -71,7 +71,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"charaID":"17",
 							"objID":"10214",
 							"x":38,
@@ -80,7 +80,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"charaID":"17",
 							"objID":"10215",
 							"x":40,
@@ -387,7 +387,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"25",
 					"objID":"10210",
 					"x":12,

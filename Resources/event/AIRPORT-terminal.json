@@ -17,7 +17,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1010",
 					"charaID":"10",
 					"x":48,
@@ -26,7 +26,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1011",
 					"charaID":"1",
 					"x":46,
@@ -35,7 +35,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1012",
 					"charaID":"2",
 					"x":52,
@@ -44,7 +44,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1013",
 					"charaID":"3",
 					"x":46,
@@ -53,7 +53,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1014",
 					"charaID":"4",
 					"x":42,
@@ -64,7 +64,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1015",
 					"charaID":"5",
 					"x":52,
@@ -73,7 +73,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1016",
 					"charaID":"6",
 					"x":54,
@@ -82,7 +82,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1017",
 					"charaID":"7",
 					"x":50,
@@ -91,7 +91,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1018",
 					"charaID":"8",
 					"x":53,
@@ -113,7 +113,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1014",
 					"charaID":"4",
 					"x":42,
@@ -134,7 +134,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1019",
 					"charaID":"11",
 					"x":54,
@@ -143,7 +143,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1020",
 					"charaID":"11",
 					"x":8,
@@ -152,7 +152,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1021",
 					"charaID":"12",
 					"x":52,

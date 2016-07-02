@@ -5,7 +5,7 @@
 		    "ambient":"night"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"1046",
 			"charaID":"16",
 			"x":23,

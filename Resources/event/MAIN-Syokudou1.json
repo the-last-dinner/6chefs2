@@ -13,7 +13,7 @@
 					"direction":"LEFT"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10149",
 					"charaID":"25",
 					"x":14,
@@ -22,7 +22,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10150",
 					"charaID":"2",
 					"x":26,
@@ -31,7 +31,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10151",
 					"charaID":"27",
 					"x":14,
@@ -40,7 +40,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10152",
 					"charaID":"4",
 					"x":14,
@@ -49,7 +49,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10153",
 					"charaID":"5",
 					"x":26,
@@ -297,7 +297,7 @@
 					"text":["5年前・・・"]
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10189",
 					"charaID":"7",
 					"x":14,
@@ -306,7 +306,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10190",
 					"charaID":"11",
 					"x":14,
@@ -315,7 +315,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10191",
 					"charaID":"12",
 					"x":26,
@@ -324,7 +324,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10192",
 					"charaID":"14",
 					"x":26,
@@ -333,7 +333,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10193",
 					"charaID":"15",
 					"x":14,
@@ -342,7 +342,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10194",
 					"charaID":"16",
 					"x":26,
@@ -351,7 +351,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10195",
 					"charaID":"6",
 					"x":17,
@@ -360,7 +360,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10196",
 					"charaID":"23",
 					"x":22,

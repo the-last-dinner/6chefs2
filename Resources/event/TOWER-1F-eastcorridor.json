@@ -13,7 +13,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1068",
 					"charaID":"4",
 					"eventID":"7",
@@ -24,7 +24,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1069",
 					"charaID":"2",
 					"eventID":"5",
@@ -35,7 +35,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1070",
 					"charaID":"3",
 					"eventID":"6",
@@ -118,7 +118,7 @@
 					"y":15,
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1054",
 							"charaID":"5",
 							"x":7,
@@ -127,7 +127,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1055",
 							"charaID":"8",
 							"x":11,
@@ -136,7 +136,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1056",
 							"charaID":"7",
 							"x":9,
@@ -145,7 +145,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1057",
 							"charaID":"4",
 							"x":7,
@@ -154,7 +154,7 @@
 							"movePattern":"1"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"1058",
 							"charaID":"6",
 							"x":11,
@@ -284,7 +284,7 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1059",
 											"charaID":"5",
 											"x":53,
@@ -293,7 +293,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1060",
 											"charaID":"8",
 											"x":68,
@@ -302,7 +302,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1061",
 											"charaID":"7",
 											"x":46,
@@ -311,7 +311,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1062",
 											"charaID":"4",
 											"x":50,
@@ -320,7 +320,7 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1063",
 											"charaID":"6",
 											"x":57,
@@ -435,7 +435,7 @@
 					]
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1064",
 					"charaID":"6",
 					"x":14,
@@ -464,7 +464,7 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1065",
 									"charaID":"5",
 									"x":14,
@@ -485,7 +485,7 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1066",
 									"charaID":"8",
 									"x":14,
@@ -506,7 +506,7 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1067",
 									"charaID":"7",
 									"x":14,
@@ -527,7 +527,7 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1068",
 									"charaID":"4",
 									"eventID":"7",
@@ -666,7 +666,7 @@
 					"target":"hero"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1069",
 					"charaID":"2",
 					"eventID":"5",
@@ -677,7 +677,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1070",
 					"charaID":"3",
 					"eventID":"6",

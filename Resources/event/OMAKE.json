@@ -1,7 +1,7 @@
 {
 	"1":[
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10136",
 			"charaID":"0",
 			"trigger":"2",
@@ -12,7 +12,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10137",
 			"charaID":"1",
 			"trigger":"2",
@@ -23,7 +23,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10138",
 			"charaID":"29",
 			"trigger":"2",
@@ -34,7 +34,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10139",
 			"charaID":"3",
 			"trigger":"2",
@@ -45,7 +45,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10140",
 			"charaID":"4",
 			"trigger":"2",
@@ -56,7 +56,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10141",
 			"charaID":"5",
 			"trigger":"2",
@@ -67,7 +67,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10142",
 			"charaID":"6",
 			"trigger":"2",
@@ -78,7 +78,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10143",
 			"charaID":"7",
 			"trigger":"2",
@@ -89,7 +89,7 @@
 			"movePattern":"2"
 		},
 		{
-			"type":"createChara",
+			"type":"createObject",
 			"objID":"10144",
 			"charaID":"8",
 			"trigger":"2",

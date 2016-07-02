@@ -9,7 +9,7 @@
 					"direction":"UP"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10154",
 					"charaID":"21",
 					"x":16,
@@ -30,7 +30,7 @@
 					"time":3.0
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10155",
 					"charaID":"20",
 					"x":2,
@@ -63,7 +63,7 @@
 							"steps":1.0
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10156",
 							"charaID":"0",
 							"x":0,
@@ -372,7 +372,7 @@
 					"y":12,
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10157",
 							"charaID":"0",
 							"x":14,
@@ -423,7 +423,7 @@
 							"direction":"UP"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10158",
 							"charaID":"26",
 							"x":14,

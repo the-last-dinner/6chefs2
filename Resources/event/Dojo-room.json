@@ -4,7 +4,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"28",
 					"objID":"10163",
 					"x":9,
@@ -13,7 +13,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"2",
 					"objID":"10164",
 					"x":9,
@@ -22,7 +22,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"27",
 					"objID":"10165",
 					"x":9,

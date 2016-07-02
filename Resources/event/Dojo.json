@@ -16,7 +16,7 @@
 		        {
 		          "type":"storyMsg",
 		          "title":"操作説明",
-		          "text":["←↑↓→、awsd・・・移動\nShiftキー　　・・・走る\nxキー　　　　・・・メニュー\nEnter、Z、スペースキー ・・・決定,選択"]
+		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
 		        },
 		        {
 		        	"type":"playBGM",
@@ -88,7 +88,7 @@
 		        			"file":"fusuma-open1.mp3"
 		        		},
 		        		{
-		        			"type":"createChara",
+		        			"type":"createObject",
 		        			"objID":"102",
 		        			"charaID":"2",
 		        			"x":2,
@@ -153,7 +153,7 @@
 				        	"file":"fusuma-open1.mp3"
 				        },
 				        {
-		        			"type":"createChara",
+		        			"type":"createObject",
 		        			"objID":"103",
 		        			"charaID":"3",
 		        			"x":2,
@@ -251,7 +251,7 @@
 			],
 			"action":[
 				{
-		        	"type":"createChara",
+		        	"type":"createObject",
 		        	"objID":"101",
 		        	"charaID":"1",
 		        	"x":23,
@@ -262,7 +262,7 @@
 		        	"movePattern":"1"
 		        },
 		        {
-		        	"type":"createChara",
+		        	"type":"createObject",
 		        	"objID":"104",
 		        	"charaID":"4",
 		        	"x":11,
@@ -273,7 +273,7 @@
 		        	"movePattern":"1"
 		        },
 		        {
-		        	"type":"createChara",
+		        	"type":"createObject",
 		        	"objID":"105",
 		        	"charaID":"5",
 		        	"x":23,
@@ -295,7 +295,7 @@
 							"type":"sequence",
 							"action":[
 								{
-				        			"type":"createChara",
+				        			"type":"createObject",
 				        			"objID":"102",
 				        			"charaID":"2",
 				        			"x":23,
@@ -306,7 +306,7 @@
 				        			"movePattern":"1"
 				        		},
 				        		{
-				        			"type":"createChara",
+				        			"type":"createObject",
 				        			"objID":"103",
 				        			"charaID":"3",
 				        			"x":11,
@@ -643,7 +643,7 @@
 									"type":"sequence",
 									"action":[
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"109",
 											"charaID":"0",
 											"x":11,
@@ -727,7 +727,7 @@
 										        	"file":"fusuma-open1.mp3"
 										        },
 										        {
-										        	"type":"createChara",
+										        	"type":"createObject",
 										        	"objID":"107",
 										        	"charaID":"7",
 										        	"x":2,
@@ -762,7 +762,7 @@
 										        	"file":"fusuma-open1.mp3"
 										        },
 										        {
-										        	"type":"createChara",
+										        	"type":"createObject",
 										        	"objID":"108",
 										        	"charaID":"8",
 										        	"x":2,
@@ -945,7 +945,7 @@
 										        	"file":"fusuma-open1.mp3"
 										        },
 										        {
-										        	"type":"createChara",
+										        	"type":"createObject",
 										        	"objID":"106",
 										        	"charaID":"6",
 										        	"x":2,
@@ -1192,11 +1192,11 @@
 													"layer":"monoshita"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1080",
 													"charaID":"2",
 													"x":17,
@@ -1234,7 +1234,7 @@
 													"file":"fusuma-open1.mp3"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"1081",
 													"charaID":"5",
 													"x":2,
@@ -1285,7 +1285,7 @@
 															"type":"sequence",
 															"action":[
 																{
-																	"type":"createChara",
+																	"type":"createObject",
 																	"objID":"1082",
 																	"charaID":"2",
 																	"x":10,
@@ -1294,7 +1294,7 @@
 																	"movePattern":"1"
 																},
 																{
-																	"type":"createChara",
+																	"type":"createObject",
 																	"objID":"1083",
 																	"charaID":"5",
 																	"x":14,
@@ -1382,7 +1382,7 @@
 																	"y":6
 																},
 																{
-																	"type":"createChara",
+																	"type":"createObject",
 																	"objID":"1084",
 																	"charaID":"4",
 																	"x":3,

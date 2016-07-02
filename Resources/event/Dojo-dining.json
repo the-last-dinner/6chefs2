@@ -4,7 +4,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10170",
 					"charaID":"27",
 					"x":9,
@@ -13,7 +13,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10171",
 					"charaID":"6",
 					"x":9,
@@ -93,7 +93,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10172",
 					"charaID":"3",
 					"x":2,
@@ -165,7 +165,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10183",
 					"charaID":"2",
 					"x":9,
@@ -174,7 +174,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10184",
 					"charaID":"6",
 					"x":9,
@@ -183,7 +183,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10185",
 					"charaID":"27",
 					"x":12,

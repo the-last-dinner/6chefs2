@@ -31,7 +31,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10111",
 					"charaID":"5",
 					"x":7,
@@ -40,7 +40,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10112",
 					"charaID":"8",
 					"x":11,
@@ -49,7 +49,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10113",
 					"charaID":"7",
 					"x":9,
@@ -58,7 +58,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10114",
 					"charaID":"4",
 					"x":7,
@@ -67,7 +67,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10115",
 					"charaID":"6",
 					"x":11,

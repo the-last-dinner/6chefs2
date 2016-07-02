@@ -363,7 +363,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1043",
 					"x":38,
 					"y":59,

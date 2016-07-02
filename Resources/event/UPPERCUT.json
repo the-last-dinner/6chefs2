@@ -8,7 +8,7 @@
 					"layer":"food"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"30",
 					"objID":"10180",
 					"x":20,
@@ -17,7 +17,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"8",
 					"objID":"10181",
 					"x":17,
@@ -26,7 +26,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"14",
 					"objID":"10182",
 					"x":16,
@@ -136,7 +136,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"14",
 					"objID":"10208",
 					"x":16,
@@ -145,7 +145,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"5",
 					"objID":"10209",
 					"x":20,

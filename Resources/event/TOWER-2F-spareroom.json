@@ -106,19 +106,19 @@
 											"layer":"hide"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"181"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"182"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"183"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1"
 										},
 										{
@@ -189,19 +189,19 @@
 											"layer":"hide"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"181"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"182"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"183"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"1"
 										},
 										{

@@ -4,7 +4,7 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"charaID":"17",
 					"objID":"10216",
 					"x":4,

@@ -132,15 +132,15 @@
 									"layer":"hide2"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"184"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"185"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"186"
 								},
 								{
@@ -206,11 +206,11 @@
 									"objID":"182"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"183"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"181"
 								},
 								{

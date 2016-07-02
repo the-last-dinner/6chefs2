@@ -165,7 +165,7 @@
 					"charaID":"3"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"1053",
 					"charaID":"2",
 					"x":7,

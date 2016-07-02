@@ -14,7 +14,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10125",
 					"charaID":"9",
 					"x":53,
@@ -33,7 +33,7 @@
 			],
 			"action":[
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10117",
 					"charaID":"1",
 					"eventID":"9",
@@ -44,7 +44,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10118",
 					"charaID":"2",
 					"eventID":"10",
@@ -55,7 +55,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10120",
 					"charaID":"4",
 					"eventID":"11",
@@ -66,7 +66,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10123",
 					"charaID":"7",
 					"eventID":"13",
@@ -77,7 +77,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"createChara",
+					"type":"createObject",
 					"objID":"10124",
 					"charaID":"8",
 					"eventID":"14",
@@ -259,7 +259,7 @@
 							"objID":"10125"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10116",
 							"charaID":"0",
 							"x":86,
@@ -268,7 +268,7 @@
 							"movePattern":"3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10117",
 							"charaID":"1",
 							"eventID":"9",
@@ -279,7 +279,7 @@
 							"movePattern":"3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10119",
 							"charaID":"3",
 							"eventID":"15",
@@ -290,7 +290,7 @@
 							"movePattern":"3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10120",
 							"charaID":"4",
 							"eventID":"11",
@@ -301,7 +301,7 @@
 							"movePattern":"3"
 						},
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"10123",
 							"charaID":"7",
 							"eventID":"13",
@@ -327,7 +327,7 @@
 											"event":["54","5"]
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10121",
 											"charaID":"5",
 											"eventID":"12",
@@ -338,7 +338,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10122",
 											"charaID":"6",
 											"eventID":"16",
@@ -349,7 +349,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10124",
 											"charaID":"8",
 											"eventID":"14",
@@ -379,7 +379,7 @@
 											"event":["54","6"]
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10118",
 											"charaID":"2",
 											"eventID":"10",
@@ -390,7 +390,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10122",
 											"charaID":"6",
 											"eventID":"16",
@@ -401,7 +401,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10124",
 											"charaID":"8",
 											"eventID":"14",
@@ -432,7 +432,7 @@
 											"event":["54","7"]
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10121",
 											"charaID":"5",
 											"eventID":"12",
@@ -443,7 +443,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10118",
 											"charaID":"2",
 											"eventID":"10",
@@ -454,7 +454,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10124",
 											"charaID":"8",
 											"eventID":"14",
@@ -484,7 +484,7 @@
 											"event":["54","8"]
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10121",
 											"charaID":"5",
 											"eventID":"12",
@@ -495,7 +495,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10122",
 											"charaID":"6",
 											"eventID":"16",
@@ -506,7 +506,7 @@
 											"movePattern":"3"
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10118",
 											"charaID":"2",
 											"eventID":"10",
@@ -609,7 +609,7 @@
 											],
 											"action":[
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10118",
 													"charaID":"2",
 													"eventID":"10",
@@ -658,7 +658,7 @@
 													"direction":"UP"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10121",
 													"charaID":"5",
 													"eventID":"12",
@@ -707,7 +707,7 @@
 													"direction":"UP"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10122",
 													"charaID":"6",
 													"eventID":"16",
@@ -756,7 +756,7 @@
 													"direction":"UP"
 												},
 												{
-													"type":"createChara",
+													"type":"createObject",
 													"objID":"10124",
 													"charaID":"8",
 													"eventID":"14",
@@ -769,7 +769,7 @@
 											]
 										},
 										{
-											"type":"createChara",
+											"type":"createObject",
 											"objID":"10125",
 											"charaID":"9",
 											"x":53,

@@ -191,7 +191,7 @@
 									"layer":"shutterB"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1042",
 									"x":53,
 									"y":7,

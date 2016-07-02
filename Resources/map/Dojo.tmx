@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="36" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="32">
- <tileset firstgid="1" name="ed_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="ed_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="1921" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1921" name="ST-Washitu-I01" tilewidth="16" tileheight="16" tilecount="1600" columns="16">
   <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
  </tileset>
- <tileset firstgid="3521" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="3521" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="4001" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="4001" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="36" height="44">
@@ -45,90 +45,6 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="12" x="368" y="304" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="1"/>
-    <property name="EventID" value="4"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="101"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="16" x="32" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="2"/>
-    <property name="EventID" value="6"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="102"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="17" x="32" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="3"/>
-    <property name="EventID" value="8"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="103"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="18" x="176" y="560" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="4"/>
-    <property name="EventID" value="10"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="104"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="19" x="368" y="560" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="5"/>
-    <property name="EventID" value="12"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="105"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="26" x="176" y="304" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="0"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="109"/>
-   </properties>
-  </object>
-  <object id="27" x="32" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="7"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="107"/>
-   </properties>
-  </object>
-  <object id="28" x="32" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="8"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="108"/>
-   </properties>
-  </object>
-  <object id="29" x="32" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="6"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="106"/>
-   </properties>
-  </object>
- </objectgroup>
  <objectgroup name="collision">
   <object id="2" x="32" y="16" width="576" height="80"/>
   <object id="4" x="32" y="672" width="576" height="32"/>
@@ -139,7 +55,7 @@
   <object id="9" x="544" y="672" width="32" height="32">
    <properties>
     <property name="EventID" value="1"/>
-    <property name="trigger" value="3"/>
+    <property name="trigger" value="0"/>
    </properties>
   </object>
   <object id="10" x="512" y="672" width="32" height="32">

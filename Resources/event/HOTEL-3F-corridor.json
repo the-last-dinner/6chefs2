@@ -169,7 +169,7 @@
 									"layer":"doorP"
 								},
 								{
-									"type":"createChara",
+									"type":"createObject",
 									"objID":"1036",
 									"x":64,
 									"y":12,

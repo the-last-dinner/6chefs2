@@ -241,7 +241,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"181"
 						},
 						{
@@ -539,7 +539,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"182"
 						},
 						{
@@ -837,7 +837,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"183"
 						},
 						{
@@ -1135,7 +1135,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"184"
 						},
 						{
@@ -1439,7 +1439,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"185"
 						},
 						{
@@ -1743,7 +1743,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"createChara",
+							"type":"createObject",
 							"objID":"186"
 						},
 						{
