@@ -128,7 +128,9 @@ void FocusLightLayer::update(float delta)
             
             continue;
         }
-        light->setPosition(target->getParent()->convertToWorldSpace(target->getPosition()));
+        if (target->getParent()) {
+            light->setPosition(target->getParent()->convertToWorldSpace(target->getPosition()));
+        }
     }
     
     // レンダーテクスチャに焼き込み
