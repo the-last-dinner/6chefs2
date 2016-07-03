@@ -4,6 +4,9 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"fadeout"
+				},
+				{
 		          "type":"displayImg",
 		          "file":"warning.png",
 		          "time":3.0
@@ -201,7 +204,7 @@
 		        },
 		        {
 		        	"type":"charaMsg",
-		        	"text":["相変わらず文句ばっかだな。"],
+		        	"text":["相変わらず文句ばっかだな。/nおめーは"],
 		        	"charaID":"5",
 		        	"imgID":"2"
 		        },
@@ -224,21 +227,13 @@
 		        },
 		        {
 		        	"type":"changeDirection",
-		        	"objID":102,
+		        	"objID":"102",
 		        	"direction":"LEFT"
 		        },
 		        {
 		        	"type":"already"
 		        }
 			]
-		}
-	],
-	"2":[
-		{
-			"type":"fadeout"
-		},
-		{
-			"type":"already"
 		}
 	],
 	"3":[
@@ -336,7 +331,7 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["あ、佐々木くん。この前はありがとう。\n手伝いに来てくれて。","この前教えてくれたやつ、\nとても評判良くて。"],
+							"text":["あ、佐々木くん。この前はありがとう。\n手伝いに来てくれて。","この前教えてくれたの・・・\nとても評判良くて。"],
 							"charaID":"1",
 							"imgID":"1"
 						},
@@ -1190,10 +1185,6 @@
 												{
 													"type":"removeLayer",
 													"layer":"monoshita"
-												},
-												{
-													"type":"createObject",
-													"objID":"1"
 												},
 												{
 													"type":"createObject",
