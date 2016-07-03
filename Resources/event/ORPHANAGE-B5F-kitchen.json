@@ -463,7 +463,7 @@
 							"speed":2.0
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1071"
 						},
 						{

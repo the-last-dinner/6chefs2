@@ -31,11 +31,11 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				}
 			]

@@ -93,8 +93,13 @@
 						{
 							"type":"reaction",
 							"objID":"10181"
-						}
-					]
+						},
+						{
+		                  "type":"playSE",
+		                  "file":"reaction.mp3",
+		                  "volume":0.25
+		                }
+		            ]
 				},
 				{
 					"type":"charaMsg",

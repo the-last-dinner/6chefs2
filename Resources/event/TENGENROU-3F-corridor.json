@@ -24,7 +24,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"156"
 				}
 			]
@@ -52,7 +52,7 @@
 			"itemID":"156"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"156"
 		},
 		{

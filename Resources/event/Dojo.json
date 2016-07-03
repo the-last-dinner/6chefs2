@@ -514,7 +514,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["ホントですか？\nそれは是非食べて見たいです！"],
+							"text":["ホントですか？\nそれは是非食べてみたいです！"],
 							"charaID":"0",
 							"imgID":"1"
 						},
@@ -669,6 +669,11 @@
 								        {
 								        	"type":"spawn",
 								        	"action":[
+								        		{
+													"type":"playSE",
+													"file":"reaction.mp3",
+													"volume":0.25
+												},
 								        		{
 								        			"type":"reaction",
 								        			"objID":"101"
@@ -849,7 +854,7 @@
 								        },
 								        {
 								        	"type":"charaMsg",
-								        	"text":["それじゃー長くなってきてし、\n早速本題に入るよ！"],
+								        	"text":["それじゃー長くなってきてるし、\n早速本題に入るよ！"],
 								        	"charaID":"7",
 								        	"imgID":"4"
 								        },
@@ -857,21 +862,28 @@
 								        	"type":"fadeout"
 								        },
 								        {
-								        	"type":"playBGM",
-								        	"file":"106-Bach-Sheep-May-Safely-Graze.mp3"
+								        	"type":"stopBGM"
 								        },
 								        {
-								        	"type":"fadein"
+								        	"type":"wait",
+								        	"time":1.0
+								        },
+								        {
+								        	"type":"playBGM",
+								        	"file":"106-Bach-Sheep-May-Safely-Graze.mp3"
 								        },
 								        {
 								        	"type":"storyMsg",
 								        	"text":["咲賀谷の話をまとめるとこうだ","晩餐会での事件以来、\n料理界以外からも晩餐会は注目されていた。\n美食家「希崎夫人」の隠居。\n晩餐会の終わり。\nそして、結果的に雪が食べられる料理を作り上げた\n農ガール「一色　真夏」の優勝。","そこに目をつけたテレビ局が、\n歴代晩餐会の優秀者と悲劇の晩餐会の生き残りを集めて\n海外ロケをする。という企画を持ち込んできたらしい。"]
 								        },
 								        {
+								        	"type":"fadein"
+								        },
+								        {
 								        	"type":"charaMsg",
 								        	"talk":[
 								        		{
-								        			"text":["行き先はなんと食の大国「北森」！"],
+								        			"text":["行き先はなんと！\n食の大国「北森」！"],
 								        			"charaID":"7",
 								        			"imgID":"2"
 								        		},
@@ -896,12 +908,12 @@
 								        			"imgID":"2"
 								        		},
 								        		{
-								        			"text":["けどあの事件を面白おかしくされんのは気に食わねぇな。\nそれに俺には道場や雪のこともあるしよ・・・"],
+								        			"text":["けどあの事件を面白おかしくされんのは気に食わねぇな。\nそれに\n俺には道場や雪のこともあるしよ・・・"],
 								        			"charaID":"2",
 								        			"imgID":"2"
 								        		},
 								        		{
-								        			"text":["ん？聞いたよ？蘭丸クン？\nゆきりん・・・まだお肉しか食べられないらしいじゃーん？","北森に行けば肉以外の何か見つかるかもよ？\nなんてったって食の大国っていうぐらいだからね！"],
+								        			"text":["ん？聞いたよ？蘭丸クン？\nゆきりん・・・まだお肉しか食べられないらしいじゃーん？","北森に行けば肉以外の何か、見つかるかもよ？\nなんてったって食の大国っていうぐらいだからね！"],
 								        			"charaID":"7",
 								        			"imgID":"2"
 								        		},
@@ -922,7 +934,7 @@
 								        			"imgID":"4"
 								        		},
 								        		{
-								        			"text":["すまないね、テレビ局の人達には俺もお世話になってるからよ。\n断りづらいっつーか・・・朱花ちゃんもこの通りだし。"],
+								        			"text":["すまないね、テレビ局の人達には俺も世話になってるからよ。\n断りづらいっつーか・・・\n朱花ちゃんもこの通りだし。"],
 								        			"charaID":"8",
 								        			"imgID":"1"
 								        		},
@@ -969,12 +981,27 @@
 								        	"type":"spawn",
 								        	"action":[
 								        		{
+													"type":"playSE",
+													"file":"reaction.mp3",
+													"volume":0.25
+												},
+								        		{
 								        			"type":"reaction",
 								        			"objID":"101"
 								        		},
 								        		{
+								        			"type":"changeDirection",
+								        			"objID":"101",
+								        			"direction":"LEFT"
+								        		},
+								        		{
 								        			"type":"reaction",
 								        			"objID":"102"
+								        		},
+								        		{
+								        			"type":"changeDirection",
+								        			"objID":"102",
+								        			"direction":"LEFT"
 								        		},
 								        		{
 								        			"type":"reaction",
@@ -999,6 +1026,11 @@
 								        			"objID":"105"
 								        		},
 								        		{
+								        			"type":"changeDirection",
+								        			"objID":"105",
+								        			"direction":"LEFT"
+								        		},
+								        		{
 								        			"type":"reaction",
 								        			"objID":"107"
 								        		},
@@ -1019,6 +1051,11 @@
 								        		{
 								        			"type":"reaction",
 								        			"objID":"109"
+								        		},
+								        		{
+								        			"type":"changeDirection",
+								        			"objID":"109",
+								        			"direction":"LEFT"
 								        		}
 								        	]
 								        },
@@ -1062,7 +1099,7 @@
 								        		},
 								        		{
 								        			"text":["・・・","しゃーねぇな・・・雪！\nまぁその・・・なんだ・・・","皆で旅行だ。"],
-								        			"charaID":"1",
+								        			"charaID":"2",
 								        			"imgID":"1"
 								        		},
 								        		{
@@ -1396,6 +1433,11 @@
 																	"type":"spawn",
 																	"action":[
 																		{
+																			"type":"playSE",
+																			"file":"reaction.mp3",
+																			"volume":0.25
+																		},
+																		{
 																			"type":"reaction",
 																			"objID":"1082"
 																		},
@@ -1457,7 +1499,7 @@
 																					"y":5
 																				},
 																				{
-																					"type":"removeChara",
+																					"type":"removeObject",
 																					"objID":"1082"
 																				}
 																			]
@@ -1472,7 +1514,7 @@
 																					"y":5
 																				},
 																				{
-																					"type":"removeChara",
+																					"type":"removeObject",
 																					"objID":"1083"
 																				}
 																			]
@@ -1487,7 +1529,7 @@
 																					"y":5
 																				},
 																				{
-																					"type":"removeChara",
+																					"type":"removeObject",
 																					"objID":"1084"
 																				}
 																			]

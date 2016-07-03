@@ -21,15 +21,15 @@
 					"layer":"hide2"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"183"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"184"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"185"
 				}
 			]
@@ -51,11 +51,11 @@
 					"layer":"plate"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"186"
 				}
 			]
@@ -78,7 +78,7 @@
 					"layer":"door2"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"187"
 				}
 			]
@@ -311,7 +311,7 @@
 									"objID":"185"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"186"
 								},
 								{
@@ -381,15 +381,15 @@
 									"objID":"186"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"183"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"184"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"185"
 								},
 								{
@@ -444,7 +444,7 @@
 							"layer":"door2"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"187"
 						},
 						{

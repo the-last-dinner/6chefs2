@@ -41,7 +41,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"153"
 				}
 			]
@@ -61,7 +61,7 @@
 					"text":["303号室の鍵を使った"]
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				},
 				{
@@ -178,6 +178,11 @@
 									"direction":"DOWN"
 								},
 								{
+									"type":"playSE",
+									"file":"reaction.mp3",
+									"volume":0.25
+								},
+								{
 									"type":"reaction",
 									"objID":"hero"
 								},
@@ -236,7 +241,7 @@
 									"steps":5.5
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"1036"
 								},
 								{

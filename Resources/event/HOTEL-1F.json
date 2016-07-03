@@ -37,7 +37,7 @@
 			    	"type":"createObject",
 			    	"objID":"1028",
 			    	"charaID":"12",
-			    	"x":13,
+			    	"x":30,
 			    	"y":17,
 			    	"eventID":"4",
 			    	"trigger":"2",
@@ -58,7 +58,7 @@
 			],
 			"action":[
 			    {
-			    	"type":"removeChara",
+			    	"type":"removeObject",
 			    	"objID":"152"
 			    }
 			]
@@ -226,11 +226,12 @@
 								},
 								{
 									"text":["筈候。房間是二階\n非常階梯各層走廊的東側有","還有、203号房和303号房有逃出台\n剛才来的人掌著鍵","因為今天称門的出粗懇切\n請慢慢地故"],
-									"charaID":"12"
+									"charaID":"10",
+									"name":"受付"
 								},
 								{
 									"text":["お部屋は２階みたい。"],
-									"charaID":"１",
+									"charaID":"1",
 									"imgID":"2"
 								},
 								{
@@ -243,6 +244,10 @@
 						{
 					      "type":"getItem",
 					      "itemID":"151"
+					    },
+					    {
+					    	"type":"already",
+					    	"event":["11","5"]
 					    }
 					]
 				}
@@ -262,8 +267,7 @@
 					"talk":[
 						{
 							"text":["房間是二階"],
-							"charaID":"1",
-							"imgID":"1"
+							"charaID":"12"
 						},
 						{
 							"text":["「お部屋は２階です」って言ってるよ。"],
@@ -286,13 +290,51 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["受付は・・・ここですね"],
-							"charaID":"0",
-							"imgID":"2"
-						}
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["受付は・・・ここですね。\n先にチェックインしちゃいましょう・・・","・・・","中山さんお願いします・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["任せてください。"],
+									"charaID":"1",
+									"imgID":"4"
+								},
+								{
+									"text":["是預約中山和佐佐木"],
+									"charaID":"1",
+									"imgID":"2"
+								},
+								{
+									"text":["筈候。房間是二階\n非常階梯各層走廊的東側有","還有、203号房和303号房有逃出台\n剛才来的人掌著鍵","因為今天称門的出粗懇切\n請慢慢地故"],
+									"charaID":"10",
+									"name":"受付"
+								},
+								{
+									"text":["お部屋は２階みたい。"],
+									"charaID":"1",
+									"imgID":"2"
+								},
+								{
+									"text":["（やっぱすごいな・・・）"],
+									"charaID":"0",
+									"imgID":"2"
+								}
+							]
+						},
+						{
+					      "type":"getItem",
+					      "itemID":"151"
+					    },
+					    {
+					    	"type":"already",
+					    	"event":["11","5"]
+					    }
 					]
 				}
 			]
@@ -321,7 +363,7 @@
 					"talk":[
 						{
 							"text":["房間是二階"],
-							"charaID":"1",
+							"charaID":"10",
 							"imgID":"1"
 						},
 						{
@@ -352,7 +394,7 @@
 			"itemID":"152"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"152"
 		},
 		{

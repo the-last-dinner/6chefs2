@@ -13,7 +13,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"159"
 				}
 			]
@@ -37,7 +37,7 @@
 			"itemID":"159"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"159"
 		},
 		{

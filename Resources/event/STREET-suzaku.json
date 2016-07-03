@@ -85,142 +85,6 @@
 				{
 					"type":"setLight",
 					"objID":"17"
-				},
-				{
-					"type":"setLight",
-					"objID":"18"
-				},
-				{
-					"type":"setLight",
-					"objID":"19"
-				},
-				{
-					"type":"setLight",
-					"objID":"20"
-				},
-				{
-					"type":"setLight",
-					"objID":"21"
-				},
-				{
-					"type":"setLight",
-					"objID":"22"
-				},
-				{
-					"type":"setLight",
-					"objID":"23"
-				},
-				{
-					"type":"setLight",
-					"objID":"24"
-				},
-				{
-					"type":"setLight",
-					"objID":"25"
-				},
-				{
-					"type":"setLight",
-					"objID":"26"
-				},
-				{
-					"type":"setLight",
-					"objID":"27"
-				},
-				{
-					"type":"setLight",
-					"objID":"28"
-				},
-				{
-					"type":"setLight",
-					"objID":"29"
-				},
-				{
-					"type":"setLight",
-					"objID":"30"
-				},
-				{
-					"type":"setLight",
-					"objID":"31"
-				},
-				{
-					"type":"setLight",
-					"objID":"32"
-				},
-				{
-					"type":"setLight",
-					"objID":"33"
-				},
-				{
-					"type":"setLight",
-					"objID":"34"
-				},
-				{
-					"type":"setLight",
-					"objID":"35"
-				},
-				{
-					"type":"setLight",
-					"objID":"36"
-				},
-				{
-					"type":"setLight",
-					"objID":"37"
-				},
-				{
-					"type":"setLight",
-					"objID":"38"
-				},
-				{
-					"type":"setLight",
-					"objID":"39"
-				},
-				{
-					"type":"setLight",
-					"objID":"40"
-				},
-				{
-					"type":"setLight",
-					"objID":"41"
-				},
-				{
-					"type":"setLight",
-					"objID":"42"
-				},
-				{
-					"type":"setLight",
-					"objID":"43"
-				},
-				{
-					"type":"setLight",
-					"objID":"44"
-				},
-				{
-					"type":"setLight",
-					"objID":"45"
-				},
-				{
-					"type":"setLight",
-					"objID":"46"
-				},
-				{
-					"type":"setLight",
-					"objID":"47"
-				},
-				{
-					"type":"setLight",
-					"objID":"48"
-				},
-				{
-					"type":"setLight",
-					"objID":"49"
-				},
-				{
-					"type":"setLight",
-					"objID":"50"
-				},
-				{
-					"type":"setLight",
-					"objID":"51"
 				}
 			]
 		},
@@ -278,11 +142,11 @@
 					"layer":"shitai"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"52"
 				}
 			]
@@ -318,7 +182,7 @@
 					"action":[
 						{
 							"type":"charaMsg",
-							"text":["なんだかこっち暗くて怪しい路地だな・・・\n中山さんと行くようなところじゃないかも・・・"],
+							"text":["なんだかこっちは暗くて怪しい路地だな・・・\n中山さんと行くようなところじゃないかも・・・"],
 							"charaID":"0",
 							"imgID":"2"
 						},
@@ -347,7 +211,7 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["そういえばあの番組プロデューサーさん・・・どこ行ったんでしょうね。"],
+							"text":["そういえばあの番組プロデューサーさん・・・\nどこ行ったんでしょうね。"],
 							"charaID":"0",
 							"imgID":"2"
 						},
@@ -480,6 +344,11 @@
 									"direction":"UP"
 								},
 								{
+				                  "type":"playSE",
+				                  "file":"reaction.mp3",
+				                  "volume":0.25
+				                },
+								{
 									"type":"reaction",
 									"objID":"hero"
 								},
@@ -509,6 +378,11 @@
 									"objID":"1029",
 									"direction":"DOWN"
 								},
+								{
+				                  "type":"playSE",
+				                  "file":"reaction.mp3",
+				                  "volume":0.25
+				                },
 								{
 									"type":"reaction",
 									"objID":"1029"
@@ -616,6 +490,11 @@
 							"type":"spawn",
 							"action":[
 								{
+				                  "type":"playSE",
+				                  "file":"reaction.mp3",
+				                  "volume":0.25
+				                },
+								{
 									"type":"reaction",
 									"objID":"hero"
 								},
@@ -717,6 +596,11 @@
 											"type":"spawn",
 											"action":[
 												{
+								                  "type":"playSE",
+								                  "file":"reaction.mp3",
+								                  "volume":0.25
+								                },
+												{
 													"type":"reaction",
 													"objID":"1022"
 												},
@@ -790,6 +674,11 @@
 														{
 															"type":"spawn",
 															"action":[
+																{
+												                  "type":"playSE",
+												                  "file":"reaction.mp3",
+												                  "volume":0.25
+												                },
 																{
 																	"type":"reaction",
 																	"objID":"1025"

@@ -1,51 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="45">
- <tileset firstgid="1" name="gendai-soto2_2" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="49">
+ <tileset firstgid="1" name="gendai-soto2_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="1921" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="1921" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="3937" name="option14" tilewidth="16" tileheight="16">
+ <tileset firstgid="3937" name="option14" tilewidth="16" tileheight="16" tilecount="352" columns="16">
   <image source="option14.png" trans="aa55ff" width="256" height="352"/>
  </tileset>
- <tileset firstgid="4289" name="Eline" tilewidth="16" tileheight="16">
+ <tileset firstgid="4289" name="Eline" tilewidth="16" tileheight="16" tilecount="144" columns="18">
   <image source="Eline.png" trans="aa55ff" width="288" height="128"/>
  </tileset>
- <tileset firstgid="4433" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="4433" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="4913" name="shituji_0_0" tilewidth="16" tileheight="16">
+ <tileset firstgid="4913" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="shituji_0_0.png" trans="aa55ff" width="32" height="33"/>
  </tileset>
  <layer name="Base" width="24" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1kEKgCAQheHxBHWfOkF1rzp2xiTkwlzEiBP/g4cL5VuoiCJ5trtTyMe3zkHXXWMt+Pj4+Pj4+Pj4+J78VbRefev9wcfHx8fHx+/HT/+Kkj/Ejob+c85if/bYw9Dv/Xzx8fHxS6m9z/j4+N98ceyn4OPj47f2//D+e/AX0bb2U7zeT3x8fHvfW06syexv
   </data>
  </layer>
  <layer name="MonoShita" width="24" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmEEKwlAMBUN7HAW9lYLuFfQ2FXSvoLdS0AMY6FJfFpJUkZkDDF38P8mvGQAAAMB3OTZmpwa/4uruW6F/1JqN2zr/zN3zQn/n7l2hHz5j42d2W3huz+6+FPrv7n4U+id+ZqeF53bh7mWhf+/uA/cOoAT6GZPVz5V/4/rNd2b1U+2HWf1kP4xhP4RfRvUnq/+qP1n9V/3J6r/qT1b/VX+y+q/6w/78H6j7mwX/l2LYHwCGh/dpDO/THuZLDPMF4BXmS4/qf9Z8Uf3Pmi/V/R+aJz1kSUA=
   </data>
  </layer>
  <layer name="MonoChu" width="24" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0cEJACAMBEFLsEYbsP+fLYiCGjP7vyGQUiT9Uqvr2z6x5fP5fD7/NX+mzH70//L5fD6f/6u/UwY/+n/5fD6fz+fz+fyT/k4Z7ufz+Xw+nx/Lv9EArQpPpA==
   </data>
  </layer>
  <layer name="MonoUe" width="24" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmcFRQkEYg/eqF7hhB9gBdgLSAGADgA1AJ6ANCDSg0Al0ACdy5hBDZnZGJN/5/3N4m2TfvFdKCOG/8Nospd+8fm/QKGXY+H1uBO03Q38M7YmgP4X2u6E/g/Zc0N9j5iDMXbLAzlLYO2LmZOh/YWcl7D3g2Twaz+cb2j+CfvzD+cDMZ0X/rDGzqeifLWZ2hr7qHzdfXZxZTzg3N18DaA8FfTdfY+xMhD3XP2q+XP+o+XL11Xy5/aPi9o+K2z8qbr5U/7j5Uv3j5qu2f9R+dv2j9rPrn/QzR+3n+IeT/uG497uaL/f+VfPlvh8mXxw1Xy5qvlzUfLnkfueknznpZ076mZN8cdLPHNU/6R9O8sVJvjjJF8f1Tws7T8Ke6582dp6FPdc/Hey8VOyfe/k+duv/L9x81e5n1T9uvlT/uPnK/c6p7Z/8f+fcy/3+V/Olnu+tcQbkfuTh
   </data>
  </layer>
  <layer name="MonoUe2" width="24" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0FsKgzAQBdAsoPl3W7XdgI8V1B105Y2gEIOQD+uHcg5cBi7DEBLC1jOG0Ka8svkuur2sezVd2umzDCnjMsuuz/q1q5nisdz9/iftNI/r3p9vn/3+M///G48FAAAAAAAAAACA//gBRPdMbw==
   </data>
  </layer>
  <layer name="shitai" width="24" height="110">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzDkBACAMBLDzUCU8/rWBABi7JQKSAAAAP6OSWX3/uvdu/AEAAAAAAAB4O5kkARc=
@@ -150,7 +165,7 @@
     <property name="objID" value="17"/>
    </properties>
   </object>
-  <object id="32" x="352" y="464" width="32" height="32">
+  <object id="32" x="352" y="432" width="32" height="96">
    <properties>
     <property name="EventID" value="2"/>
     <property name="trigger" value="1"/>
@@ -191,6 +206,12 @@
     <property name="EventID" value="9"/>
     <property name="objID" value="52"/>
     <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="46" x="352" y="160" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
    </properties>
   </object>
  </objectgroup>

@@ -1977,6 +1977,11 @@
 							"name":"みろく"
 						},
 						{
+		                  "type":"playSE",
+		                  "file":"reaction.mp3",
+		                  "volume":0.25
+		                },
+						{
 							"type":"reaction",
 							"objID":"hero"
 						},

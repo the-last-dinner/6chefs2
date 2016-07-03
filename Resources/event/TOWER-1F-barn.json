@@ -13,7 +13,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1"
 				}
 			]
@@ -126,7 +126,7 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1"
 						},
 						{

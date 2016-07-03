@@ -202,8 +202,18 @@
 							]
 						},
 						{
-							"type":"reaction",
-							"objID":"1035"
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"reaction.mp3",
+									"volume":0.25
+								},
+								{
+									"type":"reaction",
+									"objID":"1035"
+								}
+							]
 						},
 						{
 							"type":"charaMsg",

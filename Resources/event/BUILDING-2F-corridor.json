@@ -136,7 +136,7 @@
 					"layer":"hide1"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1038"
 				},
 				{
@@ -160,7 +160,7 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1039"
 						},
 						{
@@ -244,11 +244,11 @@
 							"type":"stopSwing"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1040"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"1041"
 						}
 					]
@@ -297,8 +297,18 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"reaction",
-					"objID":"1038"
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"reaction.mp3",
+							"volume":0.25
+						},
+						{
+							"type":"reaction",
+							"objID":"1038"
+						}
+					]
 				},
 				{
 					"type":"charaMsg",

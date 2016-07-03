@@ -305,7 +305,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
@@ -404,7 +404,7 @@
 					"text":["もう人はいない"]
 				}
 			]
-		},
+		}
 	],
 	"6":"屋台での買物用",
 	"7":[
@@ -649,7 +649,7 @@
 									"imgID":"2"
 								}
 							]	
-						},
+						}
 					],
 					"true":[
 						{
@@ -667,7 +667,7 @@
 											"layer":"door"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"181"
 										}
 									]

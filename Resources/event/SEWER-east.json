@@ -21,15 +21,15 @@
 					"layer":"hide2"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"184"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"185"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"186"
 				}
 			]
@@ -51,15 +51,15 @@
 					"layer":"plate"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"183"
 				}
 			]
@@ -214,15 +214,15 @@
 									"objID":"181"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"184"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"185"
 								},
 								{
-									"type":"removeChara",
+									"type":"removeObject",
 									"objID":"186"
 								},
 								{

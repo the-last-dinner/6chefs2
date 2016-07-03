@@ -214,15 +214,15 @@
 											"layer":"door"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1097"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1098"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1099"
 										},
 										{

@@ -149,11 +149,11 @@
 					"layer":"shitai"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"22"
 				}
 			]
@@ -215,7 +215,7 @@
 								},
 								{
 									"text":["はいどうぞ。美味しいんで食べてみてください。"],
-									"charaID":"0",
+									"charaID":"1",
 									"imgID":"4"
 								}
 							]

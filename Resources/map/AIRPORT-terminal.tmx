@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="96">
- <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="97">
+ <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16" tilecount="1280" columns="16">
   <image source="ST-Convi-I01.png" trans="aa55ff" width="256" height="1280"/>
  </tileset>
- <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="80">
   <properties>
-   <property name="cc_vertexz" value="-14"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt2j0KAjEURtGAFmYZKtr7u4GZ/Xe6D3fggIIiiFg4g9+cBxcCKZJTJ6WU0kxKmdb/6ttpJ4/1P3rf+d/tp3k/NXbvsmbHmx1vdrzZNbzR8WbHmx1vdrzZ8WbHmx1vdrzZ8WbHm92rd1/77TR73OXcrXf1Nx3uPXvbAd5DL0/edQ/n8WZ7W15eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5e3hDvvGvRtRqJd9O1rbe/jccBvH33OkOcOYa5AgCiHyI=
@@ -22,7 +22,7 @@
  </layer>
  <layer name="MonoShita" width="60" height="80">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0bsNwkAQBNCFxJeCaABEA3xMzrf/VqACNrDkwLqcM+9JE+xko40AAODfvbuITze9a33rFiViWaZ3rW/dKjeshx2bMt5z/e82t+2Gvfsy3nP97yE3HDOnzDnTZy6l3rfumhtumXvmkXlmXqXeAwAAAAAAAAAAAAAAAAAAv+kLqaoTwQ==
@@ -30,7 +30,7 @@
  </layer>
  <layer name="MonoChu" width="60" height="80">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0F1OwkAUBtDpGtSFIAtR18ICeOTZLQD6atyB/D2zEvfgENowITNRSgGbnJN8yeRO29yvIexNqhDee5S7uPN9nYdwkM5z941b739qBnHnxzrDpEc6z93r24/oq6+++l4rbzfuu66um9UZ725inuLOz3Vekh7pPHffmFaZ4T8z73BHfc/3WTi3les7/uPs2CX6bgvntnJ9Z4W9S/PGJfp+F85tlfqOMs/+1vcr3i86zrLq9vvp99Jeryf9tf7add3lIzMHAAAAAAAAAAAAAAAAAIA++gEApmkN
@@ -38,28 +38,40 @@
  </layer>
  <layer name="MonoUe" width="60" height="80">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0bENACAQAkCqX1X3n8AFLMxrrO5aEgpIAACAV0Yls/r5r07O3G7vbwAAAAAAAAAAAAAAAAAAgL0FePwHtA==
   </data>
  </layer>
  <layer name="MonoUe2" width="60" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmMdy01AYRkXZINmZSSgzlI2dUHd2Qt3Rey8JJJQdvAMksKGmwIaaUPZ03iDAC9jJCyTwAkAegLPxJCPJVhQVS/Z3Zs5o7thzfb/7276/ZBhCCCGEEEIIIYQQQgghhBBCCCGEEPOj1TKMNlwegSss5+f1m4YxYM5e4ybHmvLYHoEdLnmHyThizl7jpsCaitgZgV0uedNAN+vusZzXuWxkvAk345YE5yxlDaOMEziZdX/PddZ/w3Je57Kd8Q7cibsSnHeKjNP4C39XydtI/CHjX/yHM02Qd1GLYSzGJbi0pd6rcbKMGphoYSbrHPslrPp+5Wz5Znqfv35ZzZrW4Fpcl3WO/RJWfcfJ+t30Pn/bLHcr+7MSV0X4fxdWfSt5vc7fvOVuZX/W44YI84ZdXy+KlruV/dmK21JU36CENU814q6vFyXmKEeYt9Hqe5sMd2rkSFp9g87zmKxPauTNkTGP7diRgLxBv89vyfquRt4CGYvYiV0B8ob1uws6z2eyfomhL55ijdMJyBsXrbY+aaH9ZFry5mx9UrV+0ou05C3Y+qSFPs9JS975Uu/7hbip9/1C3NT7fiHp7OYs3YN7cR/uxwN4EA/hYTyCR/EYHscTeBJPpfD51GnWfAbP4jk8jxewG3vwIl7CXuzDy3gFr+I1H3nt+2R/bjSeoX/EH/gz4xynDfs+2Z8blchUxgmczDjHtbjL6/fwPj7Ah/gIB3EohXvlxVMyPcPn+AJf4iscxbEGzCuEEEG4yRlzC/txIIV9iV8GyTiEwzgSQ16/fWLYjDLnGL7GNzHk9dsnhs175vyAH/FTE3yfhRBCNCf/Adk2qfA=
   </data>
  </layer>
  <layer name="MonoUe3" width="60" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1scRgDAMRUGd7aoJDRAagspwCx4YkncL0OjdfgQAAAAAAAAAAADAvww5YsxPf3GfpbSuF/RuKWJP5+98RWu9APAGXdksfUM7bSqtc0O9AAAAAABQ4wAtRAfb
   </data>
  </layer>
  <layer name="map" width="60" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjEBAAAIA6AddtT+SWyhDyQgAQAAAAAAAAC415VMfS8AAAAAAAAAAAAA+LCHngC4
   </data>
  </layer>
  <layer name="hide" width="60" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztziEBAAAIA7B7JPTPSgswW4IlAAAAAAAAAAD3upKp7wUAAAAAAAAAAAAAHxZfIAA+
   </data>
@@ -108,6 +120,7 @@
   <object id="49" x="640" y="976" width="256" height="32"/>
   <object id="51" x="576" y="1104" width="64" height="64"/>
   <object id="68" x="800" y="0" width="32" height="32"/>
+  <object id="96" x="544" y="544" width="384" height="32"/>
  </objectgroup>
  <objectgroup name="Chara(object)">
   <object id="54" x="736" y="288" width="32" height="32">
@@ -348,7 +361,7 @@
  </layer>
  <layer name="shadow" width="60" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt2NsJAyEURdHpII2kk5SQ/vvId2Aegi88rvUrMnejMOBxAADQy/c1e4Kx9GbTS4r3ZmerN5vebHqz6c2mN5vebHqz6SXJbuerN9vKvZ+b2a/W9M5119CC3rlW662dV29bpb295xj1nbTep/16+8xRSm/b/Xr7zFFqt95aev+l9T7Re07vmvSe2603xeje2fcktXeV99hWanpn38GW9GbTm01vNr1lVv1H6c2mN5teWM8PLAghXA==
+   eJzt2MEJg0AQhlE7SCPpJCWk/z5yyEkwRtTddX7fu4o6H7MgOE0AALTyfoyeoC+92fSS4nmz3erNpjeb3mx6s+nNpjeb3mx6SXK3/erNVrn3tTL7r2uVe/e4Wu/azs6gd6xqvUfnrdZ71FV6W8/R6z1pvf/u19tmjq30nnu/3jZz9KJ3Tu++51Shd5nemvQuu1tvit69o89J6n79f/7a0jv6DJ7JfrPpzaY3m95tqn6T7Teb3mx6oZ4Pz+UejA==
   </data>
  </layer>
 </map>

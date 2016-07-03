@@ -33,6 +33,11 @@
 							"movePattern":"1"
 						},
 						{
+		                  "type":"playSE",
+		                  "file":"reaction.mp3",
+		                  "volume":0.25
+		                },
+						{
 							"type":"reaction",
 							"objID":"10166"
 						},
@@ -71,11 +76,11 @@
 					"text":["ホンットに男子って使えない・・・","荒間田も佐々木も2,3回来たっきり・・・\n大善なんか一回しか来なかったわ・・・","あ、でも撫子はよく来てくれるわ。\nでもあの子はやっぱり肉料理が得意ってワケじゃないから・・・\nなかなかムズカシイわね・・・"]
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10167"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10168"
 				},
 				{
@@ -346,6 +351,11 @@
 				{
 					"type":"spawn",
 					"action":[
+						{
+		                  "type":"playSE",
+		                  "file":"reaction.mp3",
+		                  "volume":0.25
+		                },
 						{
 							"type":"reaction",
 							"objID":"10186"

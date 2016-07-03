@@ -13,19 +13,19 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"183"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1"
 				}
 			]

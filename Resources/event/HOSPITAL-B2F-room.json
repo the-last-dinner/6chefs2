@@ -77,51 +77,51 @@
 			"layer":"doorF1"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"181"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"182"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"183"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"184"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"185"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"186"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"181"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"182"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"183"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"184"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"185"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"186"
 		},
 		{
@@ -213,7 +213,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1511"
 				}
 			]
@@ -427,7 +427,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"181"
 						},
 						{
@@ -725,7 +725,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"182"
 						},
 						{
@@ -1023,7 +1023,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"183"
 						},
 						{
@@ -1327,7 +1327,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"184"
 						},
 						{
@@ -1631,7 +1631,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"185"
 						},
 						{
@@ -1935,7 +1935,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"186"
 						},
 						{
@@ -2071,7 +2071,7 @@
 			"itemID":"1511"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"1511"
 		},
 		{

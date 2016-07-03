@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="40">
- <tileset firstgid="1" name="gendai-soto2_2" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="41">
+ <tileset firstgid="1" name="gendai-soto2_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="1921" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="1921" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="3937" name="option14" tilewidth="16" tileheight="16">
+ <tileset firstgid="3937" name="option14" tilewidth="16" tileheight="16" tilecount="352" columns="16">
   <image source="option14.png" trans="aa55ff" width="256" height="352"/>
  </tileset>
- <tileset firstgid="4289" name="Eline" tilewidth="16" tileheight="16">
+ <tileset firstgid="4289" name="Eline" tilewidth="16" tileheight="16" tilecount="144" columns="18">
   <image source="Eline.png" trans="aa55ff" width="288" height="128"/>
  </tileset>
- <tileset firstgid="4433" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="4433" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0rEJgEAMBdAcjqUjuIXupaOqnBYWWmmR430IgRBeERJRM57Vl3t/q6HUvaM/hcvlcrlcLpfL5XK5XC6X26Y7dRFz97277Ob6g5vtvlwul8vlcrncnO4143Iz/i+Xy+W27mbJBtF15Jo=
   </data>
  </layer>
  <layer name="MonoShita" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAB4MCXQAAE=
   </data>
  </layer>
  <layer name="MonoUe" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmccNAlEQQ/8VLtAdoQFCA4QGoBNCA4QGCJ1AB3BiJJ8ZC0sfgeR3HY0Pu7ZnBaUYY75Nr11Kv/353qBVyrD1fj4KzbGgOwnNaaI7C825oLsIzWWie4vZPZm/YxU762TvEbOnoLuLnX2y14hn0BSewyk0z4mu/QA2MdtW8MMhZscKfrjE7CroMj+ouejEO+km70XNxSA0h4mumotJ7EyTPdUPLBeqH1guVF2WC9VnLBcqLBcqtXLB/KDmgvlBzQXzg3ovmB/Ue8H8oN4L9yRgPWk/APcDUO8my4V631gu1PvmXADnAvhuAvsBuCeBexI4F8A9CZgf3A/AuQDOBfi1XDD/qrlgqH5gqH5gqH5gqP3AUPuBofYD499+r1ZzUasnWT+ouWB3U82F7yao5Qf/vwn8PQlq5YK9t3/hBYoN54w=
   </data>
  </layer>
  <layer name="MonoUe2" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0NEJgzAUBdAMYP67ltoFqk7QbuDkjagQgvko4oflHLgE7guPkBBWbQyhS+mz81l0R9nv1bzSbMgypkzbWXZD1u9dzSeey7/sfafZo7nP3mXnVe+94n/neC4AAAAAAAAAAPCLLw8YTG8=
   </data>
@@ -211,6 +223,12 @@
    <properties>
     <property name="EventID" value="11"/>
     <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="40" x="304" y="160" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
    </properties>
   </object>
  </objectgroup>

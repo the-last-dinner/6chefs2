@@ -207,7 +207,7 @@
 											"y":5
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1054"
 										}
 									]
@@ -222,7 +222,7 @@
 											"y":5
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1055"
 										}
 									]
@@ -237,7 +237,7 @@
 											"y":5
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1056"
 										}
 									]
@@ -252,7 +252,7 @@
 											"y":5
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1057"
 										}
 									]
@@ -267,7 +267,7 @@
 											"y":5
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1058"
 										}
 									]
@@ -348,8 +348,18 @@
 											]
 										},
 										{
-											"type":"reaction",
-											"objID":"1063"
+											"type":"spawn",
+											"action":[
+												{
+									                "type":"playSE",
+									                "file":"reaction.mp3",
+									                "volume":0.25
+									            },
+												{
+													"type":"reaction",
+													"objID":"1063"
+												}
+											]
 										},
 										{
 											"type":"charaMsg",
@@ -365,7 +375,7 @@
 											"speed":3.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1063"
 										},
 										{
@@ -414,6 +424,11 @@
 				{
 					"type":"spawn",
 					"action":[
+						{
+						    "type":"playSE",
+						    "file":"reaction.mp3",
+						    "volume":0.25
+						},
 						{
 							"type":"reaction",
 							"objID":"hero"
@@ -585,8 +600,18 @@
 					]
 				},
 				{
-					"type":"reaction",
-					"objID":"1067"
+					"type":"spawn",
+					"action":[
+						{
+						    "type":"playSE",
+						    "file":"reaction.mp3",
+						    "volume":0.25
+						},
+						{
+							"type":"reaction",
+							"objID":"1067"
+						}
+					]
 				},
 				{
 					"type":"charaMsg",
@@ -647,7 +672,7 @@
 					"charaID":"8"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1066"
 				},
 				{

@@ -136,15 +136,15 @@
 					"direction":"LEFT"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10176"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10177"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10178"
 				},
 				{
@@ -208,6 +208,11 @@
 						}
 					]
 				},
+				{
+                  "type":"playSE",
+                  "file":"reaction.mp3",
+                  "volume":0.25
+                },
 				{
 					"type":"reaction",
 					"objID":"10175"

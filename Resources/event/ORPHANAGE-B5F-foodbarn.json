@@ -13,7 +13,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1"
 				}
 			]
@@ -94,7 +94,7 @@
 					エピソード真夏開放
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"1"
 				},
 				{

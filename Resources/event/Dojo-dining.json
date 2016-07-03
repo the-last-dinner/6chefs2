@@ -236,11 +236,11 @@
 					"time":3.0
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10184"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10185"
 				},
 				{

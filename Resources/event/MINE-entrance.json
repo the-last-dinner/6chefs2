@@ -21,7 +21,7 @@
 					"layer":"hide2"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				}
 			]
@@ -108,7 +108,7 @@
 							"layer":"hide2"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"181"
 						},
 						{

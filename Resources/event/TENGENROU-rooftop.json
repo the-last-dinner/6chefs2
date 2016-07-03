@@ -160,7 +160,7 @@
 							"layer":"rope"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"181"
 						},
 						{

@@ -13,7 +13,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				}
 			]
@@ -317,7 +317,7 @@
 							]
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"181"
 						},
 						{
@@ -339,6 +339,11 @@
 							"type":"changeDirection",
 							"objID":"hero",
 							"direction":"LEFT"
+						},
+						{
+							"type":"playSE",
+							"file":"reaction.mp3",
+							"volume":0.25
 						},
 						{
 							"type":"reaction",

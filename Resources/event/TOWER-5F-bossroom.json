@@ -223,39 +223,39 @@
 							"time":3.0
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10108"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10109"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10110"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10111"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10112"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10113"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10114"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10115"
 						},
 						{
-							"type":"removeChara",
+							"type":"removeObject",
 							"objID":"10125"
 						},
 						{
@@ -558,7 +558,7 @@
 											"charaID":"0"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"10116"
 										},
 										{
@@ -833,6 +833,11 @@
 											"type":"spawn",
 											"action":[
 												{
+								                  "type":"playSE",
+								                  "file":"reaction.mp3",
+								                  "volume":0.25
+								                },
+												{
 													"type":"reaction",
 													"objID":"10124"
 												},
@@ -1061,7 +1066,7 @@
 											"speed":3.0
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"10125"
 										},
 										{

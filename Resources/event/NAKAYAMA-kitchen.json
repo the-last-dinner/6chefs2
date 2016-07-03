@@ -94,8 +94,18 @@
 					]
 				},
 				{
-					"type":"reaction",
-					"objID":"10154"
+					"type":"spawn",
+					"action":[
+						{
+		                  "type":"playSE",
+		                  "file":"reaction.mp3",
+		                  "volume":0.25
+		                },
+		                {
+							"type":"reaction",
+							"objID":"10154"
+						}
+					]
 				},
 				{
 					"type":"changeDirection",
@@ -358,7 +368,7 @@
 					"imgID":"1"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"10156"
 				},
 				{
@@ -414,8 +424,18 @@
 							]
 						},
 						{
-							"type":"reaction",
-							"objID":"10157"
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"reaction.mp3",
+									"volume":0.25
+								},
+								{
+									"type":"reaction",
+									"objID":"10157"
+								}
+							]
 						},
 						{
 							"type":"changeDirection",

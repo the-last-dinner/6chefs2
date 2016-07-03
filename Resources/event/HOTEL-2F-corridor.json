@@ -23,7 +23,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				}
 			]
@@ -162,7 +162,7 @@
 			"file":"door_keyopen.mp3"
 		},
 		{
-			"type":"removeChara",
+			"type":"removeObject",
 			"objID":"181"
 		},
 		{
@@ -309,7 +309,7 @@
 				{
 					"type":"storyMsg",
 					"text":["皆それぞれ思うところはあったけれども、\n楽しい旅になると思っていた","食の大国で、\n美味しいものをたくさん食べて・・・","僕らはまた\n「自分たちが食べる側であること」\nに一切の疑いを向けなかった"]
-				}
+				},
 				{
 					"type":"fadein"
 				},

@@ -23,7 +23,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				}
 			]
@@ -37,7 +37,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				}
 			]
@@ -63,7 +63,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				}
 			]
@@ -262,7 +262,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"181"
 				},
 				{
@@ -429,7 +429,7 @@
 											"direction":"UP"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1064"
 										}
 									]
@@ -450,7 +450,7 @@
 											"direction":"UP"
 										},
 										{
-											"type":"removeChara",
+											"type":"removeObject",
 											"objID":"1065"
 										}
 									]
@@ -501,7 +501,7 @@
 			],
 			"action":[
 				{
-					"type":"removeChara",
+					"type":"removeObject",
 					"objID":"182"
 				},
 				{
