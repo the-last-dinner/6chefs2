@@ -243,6 +243,10 @@
 	],
 	"3":[
 		{
+      		"type":"setAmbient",
+      		"ambient":"day"
+    	},
+		{
 			"type":"if",
 			"condition":[
 				{

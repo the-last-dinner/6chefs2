@@ -22,7 +22,7 @@
  </layer>
  <layer name="MonoShita" width="36" height="44">
   <properties>
-   <property name="z" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1NENABAQRMFTCn3Rfxm0cAkhMvO92c8XAQB71RLRyrl9Vl/fI/Gf3QPv0B/gFv0BbtEf4GcT09cIEQ==
