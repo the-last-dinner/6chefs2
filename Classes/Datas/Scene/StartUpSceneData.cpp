@@ -7,43 +7,23 @@
 //
 
 #include "Datas/Scene/StartUpSceneData.h"
-
+#include "Utils/JsonUtils.h"
 
 bool StartUpSceneData::init()
 {
-    this->textureFilePaths =
+    string basePath;
+    int length;
+    const rapidjson::Document json = LastSupper::JsonUtils::readJsonFile("config/PreloadList.json");
+    for (rapidjson::Value::ConstMemberIterator itr = json.MemberBegin(); itr != json.MemberEnd(); itr++)
     {
-        Resource::SpriteFrame::ANIMATION,
-        Resource::SpriteFrame::STARTUP,
-        Resource::SpriteFrame::TITLE,
-        Resource::SpriteFrame::FRAME,
-        Resource::SpriteFrame::MENU_PANELS,
-        Resource::SpriteFrame::ICON,
-        Resource::SpriteFrame::UI,
-        Resource::SpriteFrame::MAP_OBJECT,
-        Resource::SpriteFrame::EFFECT,
-        Resource::SpriteFrame::Character::MAGOICHI,
-        Resource::SpriteFrame::Character::DAIGORO,
-        Resource::SpriteFrame::Character::DANDAN,
-        Resource::SpriteFrame::Character::NADESHIKO,
-        Resource::SpriteFrame::Character::MANAKA,
-        Resource::SpriteFrame::Character::RANMARU,
-        Resource::SpriteFrame::Character::SHITSUJI,
-        Resource::SpriteFrame::Character::YUKI,
-        Resource::SpriteFrame::Character::FUJIN,
-        Resource::SpriteFrame::Character::KNIFE,
-        Resource::SpriteFrame::Character::TAIHO,
-        Resource::SpriteFrame::Character::T_FUJIN,
-        Resource::SpriteFrame::Character::W_MANAKA,
-        Resource::SpriteFrame::Character::W_DANDAN,
-        Resource::SpriteFrame::Character::O_RANMARU,
-        Resource::SpriteFrame::Character::S_RANMARU,
-        Resource::SpriteFrame::Character::D_DAIGORO,
-        Resource::SpriteFrame::Character::KYOJIN_1,
-        Resource::SpriteFrame::Character::KYOJIN_2,
-        Resource::SpriteFrame::Character::KYOJIN_3,
-        Resource::SpriteFrame::Character::KYOJIN_4,
-    };
+        basePath = itr->name.GetString();
+        basePath += "/";
+        length = itr->value.Size();
+        for (int i = 0; i < length; i++)
+        {
+            this->textureFilePaths.push_back(basePath + itr->value[i].GetString());
+        }
+    }
     
     this->soundFilePaths = {};
     
