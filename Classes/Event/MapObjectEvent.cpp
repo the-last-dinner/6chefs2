@@ -88,6 +88,7 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         
         // データからキャラクタを生成
         Character* chara { Character::create(data) };
+        CC_SAFE_RETAIN(chara);
         
         if(!chara) return nullptr;
         
@@ -110,6 +111,7 @@ void CreateMapObjectEvent::run()
         return;
     }
     DungeonSceneManager::getInstance()->addMapObject(this->target);
+    CC_SAFE_RELEASE_NULL(this->target);
     this->setDone();
 }
 
