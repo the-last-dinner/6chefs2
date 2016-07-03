@@ -4,7 +4,7 @@
 	<dict>
 		<key>frames</key>
 		<dict>
-			<key>nadeshiko_0_0.png</key>
+			<key>truckchara_0_0.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1522},{21,33}}</string>
@@ -18,7 +18,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_0_1.png</key>
+			<key>truckchara_0_1.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1182},{22,33}}</string>
@@ -32,7 +32,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_0_2.png</key>
+			<key>truckchara_0_2.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1216},{22,33}}</string>
@@ -46,7 +46,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_1_0.png</key>
+			<key>truckchara_1_0.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1454},{21,33}}</string>
@@ -60,7 +60,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_1_1.png</key>
+			<key>truckchara_1_1.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1420},{21,33}}</string>
@@ -74,7 +74,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_1_2.png</key>
+			<key>truckchara_1_2.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1386},{21,33}}</string>
@@ -88,7 +88,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_2_0.png</key>
+			<key>truckchara_2_0.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1352},{21,33}}</string>
@@ -102,7 +102,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_2_1.png</key>
+			<key>truckchara_2_1.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1556},{21,33}}</string>
@@ -116,7 +116,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_2_2.png</key>
+			<key>truckchara_2_2.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1488},{21,33}}</string>
@@ -130,7 +130,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_3_0.png</key>
+			<key>truckchara_3_0.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1250},{21,33}}</string>
@@ -144,7 +144,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_3_1.png</key>
+			<key>truckchara_3_1.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1318},{21,33}}</string>
@@ -158,7 +158,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_3_2.png</key>
+			<key>truckchara_3_2.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,1284},{21,33}}</string>
@@ -172,7 +172,7 @@
 				<string>{32,33}</string>
 			</dict>
 
-			<key>nadeshiko_s_0.png</key>
+			<key>truckchara_s_0.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,0},{296,1181}}</string>
@@ -186,7 +186,7 @@
 				<string>{800,1200}</string>
 			</dict>
 
-			<key>nadeshiko_s_1.png</key>
+			<key>truckchara_s_1.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{0,0},{296,1181}}</string>
@@ -200,7 +200,7 @@
 				<string>{800,1200}</string>
 			</dict>
 
-			<key>nadeshiko_s_2.png</key>
+			<key>truckchara_s_2.png</key>
 			<dict>
 				<key>frame</key>
 				<string>{{297,0},{295,1181}}</string>
@@ -223,7 +223,7 @@
 			<key>size</key>
 			<string>{1024,2048}</string>
 			<key>textureFileName</key>
-			<string>nadeshiko.png</string>
+			<string>truckchara.png</string>
 			</dict>
 		</dict>
 </plist>
