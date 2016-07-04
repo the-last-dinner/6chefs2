@@ -116,6 +116,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"already", NeverAgainEvent::create},                   // イベントIDを見たことにし、二度と発動しないようにする
         {"getItem", GetItemEvent::create},                      // アイテムを入手
         {"removeItem", RemoveItemEvent::create},                // アイテムを破棄
+        {"giveItem", GiveItemEvent::create},                    // アイテムの受け渡し
         {"addProfile", AddProfileEvent::create},                // プロフィールに情報を追加する
         {"changeChapter", ChangeChapterEvent::create},          // チャプターを切り替える
         {"changeStatus", ChangeLikabilityRatingEvent::create},  // キャラクタの好感度を変更

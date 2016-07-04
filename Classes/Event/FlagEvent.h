@@ -127,4 +127,18 @@ private:
     virtual void run() override;
 };
 
+// アイテムの引き渡し
+class GiveItemEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(GiveItemEvent, rapidjson::Value&)
+private:
+    int charaId {-1};
+private:
+    GiveItemEvent() {FUNCLOG};
+    ~GiveItemEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__FlagEvent__) */
