@@ -177,7 +177,12 @@ int LocalPlayerData::getMaxFriendshipCount()
 
 char* LocalPlayerData::getCharaIdChar(char *charaId)
 {
-    sprintf(charaId, "%d", this->localData[PARTY][0][CHARA_ID].GetInt());
+    return this->getCharaIdChar(charaId, this->localData[PARTY][0][CHARA_ID].GetInt());
+}
+
+char* LocalPlayerData::getCharaIdChar(char *charaId, const int intCharaId)
+{
+    sprintf(charaId, "%d", intCharaId);
     return charaId;
 }
 
@@ -205,12 +210,12 @@ void LocalPlayerData::checkItemsObject(char * charaId)
 #pragma mark Equipment
 
 // 装備をセット
-void LocalPlayerData::setItemEquipment(const Direction direction, const int item_id)
+void LocalPlayerData::setItemEquipment(const Direction direction, const int itemId)
 {
     char cidChar[10];
     this->checkItemsObject(this->getCharaIdChar(cidChar));
     const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].SetInt(item_id);
+    this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].SetInt(itemId);
 }
 
 // 装備してるアイテムIDを取得
@@ -223,29 +228,35 @@ int LocalPlayerData::getItemEquipment(const Direction direction)
 }
 
 // 指定のアイテムを装備しているかどうか
-bool LocalPlayerData::isEquipedItem(const int item_id)
+bool LocalPlayerData::isEquipedItem(const int itemId)
 {
     int right = this->getItemEquipment(Direction::RIGHT);
     int left = this->getItemEquipment(Direction::LEFT);
-    bool isEquiped  = (item_id == right || item_id == left) ? true : false;
+    bool isEquiped  = (itemId == right || itemId == left) ? true : false;
     return isEquiped;
 }
 
 #pragma mark Item
 
 // アイテムゲット時の処理
-void LocalPlayerData::setItem(const int item_id){
-    char iid_char[10];
+void LocalPlayerData::setItem(const int itemId)
+{
+    this->setItem(this->localData[PARTY][0][CHARA_ID].GetInt(), itemId);
+}
+
+void LocalPlayerData::setItem(const int charaId, const int itemId)
+{
+    char iidChar[10];
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
-    sprintf(iid_char, "%d", item_id);
+    this->checkItemsObject(this->getCharaIdChar(cidChar, charaId));
+    sprintf(iidChar, "%d", itemId);
     rapidjson::Value iid  (kStringType);
-    iid.SetString(iid_char, strlen(iid_char), this->localData.GetAllocator());
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].PushBack(iid, this->localData.GetAllocator());
+    iid.SetString(iidChar, strlen(iidChar), this->localData.GetAllocator());
+    this->localData[ITEMS][cidChar][ITEM].PushBack(iid, this->localData.GetAllocator());
 }
 
 // アイテムを消費
-bool LocalPlayerData::removeItem(const int item_id)
+bool LocalPlayerData::removeItem(const int itemId)
 {
     bool isExist = false;
     char cidChar[10];
@@ -256,17 +267,17 @@ bool LocalPlayerData::removeItem(const int item_id)
     int itemCount = items.size();
     for(int i = 0; i < itemCount; i++)
     {
-        if (items[i] == item_id && !isExist)
+        if (items[i] == itemId && !isExist)
         {
             isExist = true;
             
             // 右手を確認
-            if(item_id == this->getItemEquipment(Direction::RIGHT))
+            if(itemId == this->getItemEquipment(Direction::RIGHT))
             {
                 this->setItemEquipment(Direction::RIGHT, 0);
             }
             // 左手を確認
-            if (item_id == this->getItemEquipment(Direction::LEFT))
+            if (itemId == this->getItemEquipment(Direction::LEFT))
             {
                 this->setItemEquipment(Direction::LEFT, 0);
             }
@@ -299,7 +310,7 @@ vector<int> LocalPlayerData::getItemAll()
 } 
 
 // アイテムを所持しているか確認
-bool LocalPlayerData::hasItem(const int item_id)
+bool LocalPlayerData::hasItem(const int itemId)
 {
     char cidChar[10];
     this->checkItemsObject(this->getCharaIdChar(cidChar));
@@ -307,7 +318,7 @@ bool LocalPlayerData::hasItem(const int item_id)
     int itemCount = itemList.Size();
     for(int i = 0; i < itemCount; i++)
     {
-        if (stoi(itemList[i].GetString()) == item_id) return true;
+        if (stoi(itemList[i].GetString()) == itemId) return true;
     }
     return false;
 }

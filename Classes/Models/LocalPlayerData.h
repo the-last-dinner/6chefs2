@@ -89,18 +89,20 @@ public:
     
     // Items
     char* getCharaIdChar(char* charaId);
+    char* getCharaIdChar(char* charaId, const int intCharaID);
     void checkItemsObject(char* charaId);
     
     // Equipment
-    void setItemEquipment(const Direction direction, const int item_id);
+    void setItemEquipment(const Direction direction, const int itemId);
     int getItemEquipment(const Direction direction);
-    bool isEquipedItem(const int item_id);
+    bool isEquipedItem(const int itemId);
     
     // Item
-    void setItem(const int item_id);
-    bool removeItem(const int item_id);
+    void setItem(const int itemId);
+    void setItem(const int charaId, const int itemId);
+    bool removeItem(const int itemId);
     vector<int> getItemAll();
-    bool hasItem(const int item_id);
+    bool hasItem(const int itemId);
     
     // Character prifile
     void setCharacterProfile(const int chara_id, const int level);
