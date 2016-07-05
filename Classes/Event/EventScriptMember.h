@@ -30,6 +30,7 @@ namespace member
     static const char* FALSE_ = "false";
     static const char* FAVORITE = "favorite";
     static const char* FLAG = "flg";
+    static const char* FROM_CHARA_ID = "fromCharaID";
     static const char* FILE = "file";
     static const char* CLASS_NAME = "className";
     static const char* ID = "id";
@@ -59,6 +60,7 @@ namespace member
     static const char* TIME = "time";
     static const char* TITLE = "title";
     static const char* TIMES = "times";
+    static const char* TO_CHARA_ID = "toCharaID";
     static const char* TROPHY_ID = "trophyID";
     static const char* TRUE_ = "true";
     static const char* TRIGGER = "trigger";

@@ -90,3 +90,9 @@ void LastSupper::StringUtils::encryptXor(string& str)
         str[i] ^= C_KEY;
     }
 }
+
+char* LastSupper::StringUtils::setCharsFromInt(char *charas, const int num)
+{
+    sprintf(charas, "%d", num);
+    return charas;
+}
