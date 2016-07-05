@@ -88,9 +88,7 @@ public:
     int getMaxFriendshipCount();
     
     // Items
-    char* getCharaIdChar(char* charaId);
-    char* getCharaIdChar(char* charaId, const int intCharaID);
-    void checkItemsObject(char* charaId);
+    void setItemsObject(char* charaId);
     
     // Equipment
     void setItemEquipment(const Direction direction, const int itemId);
@@ -123,6 +121,7 @@ public:
     Location getLocation(const int num = 0);
     CharacterData getPartyMember(const int num = 0);
     vector<CharacterData> getPartyMemberAll();
+    int getMainCharaId();
     
     // BGM
     void setBgm(const string& bgm_name);
