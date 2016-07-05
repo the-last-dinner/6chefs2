@@ -244,9 +244,16 @@ bool GiveItemEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    // charaId
-    if (!this->validator->hasMember(json, member::CHARA_ID)) return false;
-    this->charaId = stoi(json[member::CHARA_ID].GetString());
+    // toCharaId
+    if (!this->validator->hasMember(json, member::TO_CHARA_ID)) return false;
+    this->toCharaId = stoi(json[member::TO_CHARA_ID].GetString());
+    if (this->toCharaId == etoi(CharacterID::UNDIFINED)) return false;
+    
+    // fromCharaId
+    if (this->validator->hasMember(json, member::FROM_CHARA_ID))
+    {
+        this->fromCharaId = stoi(json[member::FROM_CHARA_ID].GetString());
+    }
     
     return true;
 }
@@ -254,11 +261,16 @@ bool GiveItemEvent::init(rapidjson::Value& json)
 void GiveItemEvent::run()
 {
     LocalPlayerData* localPlayerData { PlayerDataManager::getInstance()->getLocalData() };
-    vector<int> items { localPlayerData->getItemAll() };
+    if (this->fromCharaId == etoi(CharacterID::UNDIFINED))
+    {
+        this->fromCharaId = localPlayerData->getMainCharaId();
+    }
+    
+    vector<int> items { localPlayerData->getItemAll(this->fromCharaId) };
     for (auto item: items)
     {
-        localPlayerData->setItem(this->charaId, item);
-        localPlayerData->removeItem(item);
+        localPlayerData->setItem(this->toCharaId, item);
+        localPlayerData->removeItem(this->fromCharaId, item);
     }
     this->setDone();
 }

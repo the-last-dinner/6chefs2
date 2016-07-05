@@ -133,7 +133,8 @@ class GiveItemEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(GiveItemEvent, rapidjson::Value&)
 private:
-    int charaId {-1};
+    int fromCharaId {-1};
+    int toCharaId {-1};
 private:
     GiveItemEvent() {FUNCLOG};
     ~GiveItemEvent() {FUNCLOG};

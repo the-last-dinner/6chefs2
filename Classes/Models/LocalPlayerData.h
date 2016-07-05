@@ -99,8 +99,11 @@ public:
     void setItem(const int itemId);
     void setItem(const int charaId, const int itemId);
     bool removeItem(const int itemId);
+    bool removeItem(const int charaId, const int itemId);
     vector<int> getItemAll();
+    vector<int> getItemAll(const int charaId);
     bool hasItem(const int itemId);
+    bool hasItem(const int charaId, const int itemId);
     
     // Character prifile
     void setCharacterProfile(const int chara_id, const int level);
