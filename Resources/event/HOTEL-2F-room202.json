@@ -57,6 +57,11 @@
 					"direction":"DOWN"
 				},
 				{
+					"type":"changeDirection",
+					"objID":"1011",
+					"direction":"UP"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -81,7 +86,7 @@
 							"option":"reaction"
 						},
 						{
-							"text":["あれ？部屋の鍵一つですか？"],
+							"text":["あれ？部屋同じ・・・！？","鍵は一つですか？"],
 							"charaID":"0",
 							"imgID":"1"
 						},
@@ -170,7 +175,7 @@
 							"imgID":"3"
 						},
 						{
-							"text":["分かりました。\nでもちゃんと僕の後ろにいてくださいね。"],
+							"text":["・・・","分かりました。\nでもちゃんと僕の後ろにいてくださいね。"],
 							"charaID":"0",
 							"imgID":"1"
 						}

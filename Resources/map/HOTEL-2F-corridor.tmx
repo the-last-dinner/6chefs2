@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="86" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="42">
- <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="86" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="48">
+ <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="1985" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="2113" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2113" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2593" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="2593" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="3073" name="youkan" tilewidth="16" tileheight="16">
+ <tileset firstgid="3073" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="3553" name="school" tilewidth="16" tileheight="16">
+ <tileset firstgid="3553" name="school" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="school.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="5473" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="5473" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="86" height="40">
@@ -232,6 +232,36 @@
    <properties>
     <property name="EventID" value="13"/>
     <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="42" x="1024" y="144" width="32" height="32">
+   <properties>
+    <property name="EventID" value="14"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="43" x="224" y="144" width="32" height="32">
+   <properties>
+    <property name="EventID" value="14"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="45" x="1056" y="144" width="32" height="32">
+   <properties>
+    <property name="EventID" value="15"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="46" x="688" y="144" width="32" height="32">
+   <properties>
+    <property name="EventID" value="16"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="47" x="256" y="144" width="32" height="32">
+   <properties>
+    <property name="EventID" value="17"/>
+    <property name="trigger" value="2"/>
    </properties>
   </object>
  </objectgroup>

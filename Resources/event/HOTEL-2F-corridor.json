@@ -413,5 +413,33 @@
 				}
 			]
 		}
+	],
+	"14":[
+		{
+			"type":"playSE",
+			"file":"door_unopen.mp3"
+		},
+		{
+			"type":"systemMsg",
+			"text":["当然だが鍵がかかっている・・・"]
+		}
+	],
+	"15":[
+		{
+			"type":"systemMsg",
+			"text":["201号室"]
+		}
+	],
+	"16":[
+		{
+			"type":"systemMsg",
+			"text":["202号室"]
+		}
+	],
+	"17":[
+		{
+			"type":"systemMsg",
+			"text":["203号室"]
+		}
 	]
 }
