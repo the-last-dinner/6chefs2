@@ -75,6 +75,14 @@ void MapObjectList::setPathObjects(const Vector<PathObject*>& objects)
 // 指定IDのマップオブジェクトを取得
 MapObject* MapObjectList::getMapObject(int objId) const
 {
+    for(MapObject* obj : this->enemies)
+    {
+        if(objId == obj->getObjectId())
+        {
+            return obj;
+        }
+    }
+    
     for(MapObject* obj : this->availableObjects)
     {
         if(objId == obj->getObjectId())
@@ -268,6 +276,17 @@ void MapObjectList::add(MapObject* mapObject)
 void MapObjectList::removeById(const int objectId)
 {
     mutex mtx;
+    
+    for(MapObject* obj : this->enemies)
+    {
+        if(obj->getObjectId() == objectId)
+        {
+            mtx.lock();
+            obj->removeFromParent();
+            this->availableObjects.eraseObject(obj);
+            mtx.unlock();
+        }
+    }
     
     for(MapObject* obj : this->availableObjects)
     {

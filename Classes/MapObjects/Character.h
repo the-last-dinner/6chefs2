@@ -43,6 +43,7 @@ public:
     
 	virtual void setDirection(const Direction direction) override;
 	void setMoving(bool _isMoving);
+    void setAiPaused(bool paused);
     void stamp(const Direction direction, const float ratio = 1.0f);
     bool walkBy(const Direction& direction, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
     bool walkBy(const vector<Direction>& directions, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
