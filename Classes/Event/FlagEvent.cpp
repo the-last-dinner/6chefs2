@@ -236,3 +236,41 @@ void GetTrophyEvent::run()
     PlayerDataManager::getInstance()->getGlobalData()->setTrophy(this->trophyId);
     this->setDone();
 }
+
+#pragma mark -
+#pragma mark GiveItemEvent
+
+bool GiveItemEvent::init(rapidjson::Value& json)
+{
+    if(!GameEvent::init()) return false;
+    
+    // toCharaId
+    if (!this->validator->hasMember(json, member::TO_CHARA_ID)) return false;
+    this->toCharaId = stoi(json[member::TO_CHARA_ID].GetString());
+    if (this->toCharaId == etoi(CharacterID::UNDIFINED)) return false;
+    
+    // fromCharaId
+    if (this->validator->hasMember(json, member::FROM_CHARA_ID))
+    {
+        this->fromCharaId = stoi(json[member::FROM_CHARA_ID].GetString());
+    }
+    
+    return true;
+}
+
+void GiveItemEvent::run()
+{
+    LocalPlayerData* localPlayerData { PlayerDataManager::getInstance()->getLocalData() };
+    if (this->fromCharaId == etoi(CharacterID::UNDIFINED))
+    {
+        this->fromCharaId = localPlayerData->getMainCharaId();
+    }
+    
+    vector<int> items { localPlayerData->getItemAll(this->fromCharaId) };
+    for (auto item: items)
+    {
+        localPlayerData->setItem(this->toCharaId, item);
+        localPlayerData->removeItem(this->fromCharaId, item);
+    }
+    this->setDone();
+}

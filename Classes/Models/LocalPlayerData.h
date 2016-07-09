@@ -88,19 +88,22 @@ public:
     int getMaxFriendshipCount();
     
     // Items
-    char* getCharaIdChar(char* charaId);
-    void checkItemsObject(char* charaId);
+    void setItemsObject(char* charaId);
     
     // Equipment
-    void setItemEquipment(const Direction direction, const int item_id);
+    void setItemEquipment(const Direction direction, const int itemId);
     int getItemEquipment(const Direction direction);
-    bool isEquipedItem(const int item_id);
+    bool isEquipedItem(const int itemId);
     
     // Item
-    void setItem(const int item_id);
-    bool removeItem(const int item_id);
+    void setItem(const int itemId);
+    void setItem(const int charaId, const int itemId);
+    bool removeItem(const int itemId);
+    bool removeItem(const int charaId, const int itemId);
     vector<int> getItemAll();
-    bool hasItem(const int item_id);
+    vector<int> getItemAll(const int charaId);
+    bool hasItem(const int itemId);
+    bool hasItem(const int charaId, const int itemId);
     
     // Character prifile
     void setCharacterProfile(const int chara_id, const int level);
@@ -121,6 +124,7 @@ public:
     Location getLocation(const int num = 0);
     CharacterData getPartyMember(const int num = 0);
     vector<CharacterData> getPartyMemberAll();
+    int getMainCharaId();
     
     // BGM
     void setBgm(const string& bgm_name);

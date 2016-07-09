@@ -21,6 +21,7 @@ namespace LastSupper
         string getRandomString(const int length = 50);
         string getTimeForDisplay(const int sec);
         void encryptXor(string& str);
+        char* setCharsFromInt(char* charas, const int num);
     }
 }
 

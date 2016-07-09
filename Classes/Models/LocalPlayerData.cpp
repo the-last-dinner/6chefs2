@@ -175,13 +175,8 @@ int LocalPlayerData::getMaxFriendshipCount()
 #pragma mark -
 #pragma mark Items
 
-char* LocalPlayerData::getCharaIdChar(char *charaId)
-{
-    sprintf(charaId, "%d", this->localData[PARTY][0][CHARA_ID].GetInt());
-    return charaId;
-}
-
-void LocalPlayerData::checkItemsObject(char * charaId)
+// charaIDに対してのitemのオブジェクトをセットする
+void LocalPlayerData::setItemsObject(char * charaId)
 {
     rapidjson::Value& items {this->localData[ITEMS]};
     if (!items.HasMember(charaId))
@@ -205,68 +200,83 @@ void LocalPlayerData::checkItemsObject(char * charaId)
 #pragma mark Equipment
 
 // 装備をセット
-void LocalPlayerData::setItemEquipment(const Direction direction, const int item_id)
+void LocalPlayerData::setItemEquipment(const Direction direction, const int itemId)
 {
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
+    LastSupper::StringUtils::setCharsFromInt(cidChar, this->getMainCharaId());
+    this->setItemsObject(cidChar);
     const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].SetInt(item_id);
+    this->localData[ITEMS][cidChar][dir].SetInt(itemId);
 }
 
 // 装備してるアイテムIDを取得
 int LocalPlayerData::getItemEquipment(const Direction direction)
 {
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
+    LastSupper::StringUtils::setCharsFromInt(cidChar, this->getMainCharaId());
+    this->setItemsObject(cidChar);
     const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    return this->localData[ITEMS][this->getCharaIdChar(cidChar)][dir].GetInt();
+    return this->localData[ITEMS][cidChar][dir].GetInt();
 }
 
 // 指定のアイテムを装備しているかどうか
-bool LocalPlayerData::isEquipedItem(const int item_id)
+bool LocalPlayerData::isEquipedItem(const int itemId)
 {
     int right = this->getItemEquipment(Direction::RIGHT);
     int left = this->getItemEquipment(Direction::LEFT);
-    bool isEquiped  = (item_id == right || item_id == left) ? true : false;
+    bool isEquiped  = (itemId == right || itemId == left) ? true : false;
     return isEquiped;
 }
 
 #pragma mark Item
 
 // アイテムゲット時の処理
-void LocalPlayerData::setItem(const int item_id){
-    char iid_char[10];
+void LocalPlayerData::setItem(const int itemId)
+{
+    this->setItem(this->getMainCharaId(), itemId);
+}
+
+void LocalPlayerData::setItem(const int charaId, const int itemId)
+{
+    char iidChar[10];
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
-    sprintf(iid_char, "%d", item_id);
+    LastSupper::StringUtils::setCharsFromInt(cidChar, charaId);
+    this->setItemsObject(cidChar);
+    sprintf(iidChar, "%d", itemId);
     rapidjson::Value iid  (kStringType);
-    iid.SetString(iid_char, strlen(iid_char), this->localData.GetAllocator());
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].PushBack(iid, this->localData.GetAllocator());
+    iid.SetString(iidChar, strlen(iidChar), this->localData.GetAllocator());
+    this->localData[ITEMS][cidChar][ITEM].PushBack(iid, this->localData.GetAllocator());
 }
 
 // アイテムを消費
-bool LocalPlayerData::removeItem(const int item_id)
+bool LocalPlayerData::removeItem(const int itemId)
+{
+    return this->removeItem(this->getMainCharaId());
+}
+
+bool LocalPlayerData::removeItem(const int charaId, const int itemId)
 {
     bool isExist = false;
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
+    LastSupper::StringUtils::setCharsFromInt(cidChar, charaId);
+    this->setItemsObject(cidChar);
     vector<int> items {this->getItemAll()};
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].Clear();
-    this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].SetArray();
+    this->localData[ITEMS][cidChar][ITEM].Clear();
+    this->localData[ITEMS][cidChar][ITEM].SetArray();
     int itemCount = items.size();
     for(int i = 0; i < itemCount; i++)
     {
-        if (items[i] == item_id && !isExist)
+        if (items[i] == itemId && !isExist)
         {
             isExist = true;
             
             // 右手を確認
-            if(item_id == this->getItemEquipment(Direction::RIGHT))
+            if(itemId == this->getItemEquipment(Direction::RIGHT))
             {
                 this->setItemEquipment(Direction::RIGHT, 0);
             }
             // 左手を確認
-            if (item_id == this->getItemEquipment(Direction::LEFT))
+            if (itemId == this->getItemEquipment(Direction::LEFT))
             {
                 this->setItemEquipment(Direction::LEFT, 0);
             }
@@ -277,7 +287,7 @@ bool LocalPlayerData::removeItem(const int item_id)
             sprintf(iid_char, "%d", items[i]);
             rapidjson::Value iid  (kStringType);
             iid.SetString(iid_char, strlen(iid_char), this->localData.GetAllocator());
-            this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM].PushBack(iid, this->localData.GetAllocator());
+            this->localData[ITEMS][cidChar][ITEM].PushBack(iid, this->localData.GetAllocator());
         } 
     }
     return isExist;
@@ -286,10 +296,16 @@ bool LocalPlayerData::removeItem(const int item_id)
 // 所持しているアイテムをすべて取得
 vector<int> LocalPlayerData::getItemAll()
 {
+    return this->getItemAll(this->getMainCharaId());
+}
+
+vector<int> LocalPlayerData::getItemAll(const int charaId)
+{
     vector<int> items {};
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
-    rapidjson::Value& itemList = this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM];
+    LastSupper::StringUtils::setCharsFromInt(cidChar, charaId);
+    this->setItemsObject(cidChar);
+    rapidjson::Value& itemList = this->localData[ITEMS][cidChar][ITEM];
     int itemCount = itemList.Size();
     for(int i = 0; i < itemCount; i++)
     {
@@ -299,15 +315,21 @@ vector<int> LocalPlayerData::getItemAll()
 } 
 
 // アイテムを所持しているか確認
-bool LocalPlayerData::hasItem(const int item_id)
+bool LocalPlayerData::hasItem(const int itemId)
+{
+    return this->hasItem(this->getMainCharaId(), itemId);
+}
+
+bool LocalPlayerData::hasItem(const int charaId, const int itemId)
 {
     char cidChar[10];
-    this->checkItemsObject(this->getCharaIdChar(cidChar));
-    rapidjson::Value& itemList = this->localData[ITEMS][this->getCharaIdChar(cidChar)][ITEM];
+    LastSupper::StringUtils::setCharsFromInt(cidChar, this->getMainCharaId());
+    this->setItemsObject(cidChar);
+    rapidjson::Value& itemList = this->localData[ITEMS][cidChar][ITEM];
     int itemCount = itemList.Size();
     for(int i = 0; i < itemCount; i++)
     {
-        if (stoi(itemList[i].GetString()) == item_id) return true;
+        if (stoi(itemList[i].GetString()) == itemId) return true;
     }
     return false;
 }
@@ -546,6 +568,12 @@ vector<CharacterData> LocalPlayerData::getPartyMemberAll()
         party.push_back(this->getPartyMember(i));
     }
     return party;
+}
+
+// 主人公のキャラIDを取得
+int LocalPlayerData::getMainCharaId()
+{
+    return this->localData[PARTY][0][CHARA_ID].GetInt();
 }
 
 #pragma mark -
