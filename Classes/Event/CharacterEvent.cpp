@@ -94,7 +94,9 @@ bool WalkByEvent::init(rapidjson::Value& json)
 void WalkByEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
-
+    
+    this->target->clearDirectionsQueue();
+    this->target->setAiPaused(true);
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
@@ -104,7 +106,7 @@ void WalkByEvent::update(float delta)
     
     if(this->target->isPaused()) this->target->setPaused(false);
     
-    this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio, this->back);
+    this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->target->setAiPaused(false); this->setDone();}, this->speedRatio, this->back);
     
     this->isCommandSent = true;
 }
@@ -128,7 +130,9 @@ bool WalkToEvent::init(rapidjson::Value& json)
 void WalkToEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
-
+    
+    this->target->clearDirectionsQueue();
+    this->target->setAiPaused(true);
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
@@ -142,7 +146,7 @@ void WalkToEvent::update(float delta)
     PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
     deque<Direction> directions { pathFinder->getPath(this->target->getGridRect(), this->target->getWorldGridCollisionRects(), this->destPosition) };
     
-    this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
+    this->target->walkByQueue(directions, [this](bool reached){this->target->setAiPaused(false); this->setDone();}, this->speedRatio);
     
     this->isCommandSent = true;
 }
