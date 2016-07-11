@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="22">
- <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1505" name="gendai-soto2_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1505" name="gendai-soto2_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="3425" name="tile01" tilewidth="16" tileheight="16">
+ <tileset firstgid="3425" name="tile01" tilewidth="16" tileheight="16" tilecount="3040" columns="32">
   <image source="tile01.png" trans="aa55ff" width="512" height="1535"/>
  </tileset>
  <layer name="Base" width="40" height="36">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0EENACAMBMEaqH8D4AR8gQUIaUIy+7nXfSZC0u/1jGhZt6fN/RlZt/z48ePHjx8/fvz48ePHjx8/fq/9dNcCmT9Qtw==
   </data>
  </layer>
  <layer name="Base2" width="40" height="36">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrcNgEAQBdEL9wJMW5i2MAXAURemIE7aCpA+JMxIk78QvMW0JwvS8OHD951vw4cPHz58+PDh+7lvNT8J3l7w7eYfgs/8JfYV0S8FV/k6an1N9FvBXb4X+4boj4Kn/Cz2ERERPekGmTFATg==
   </data>
  </layer>
  <layer name="MonoShita" width="40" height="36">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrsNg0AQRdFdSjASObZECgaJ1O7AdACt8zE5HfAKYDdkNrhHeppwrnMAAACovXONt64I+6jtm3DfT21Dwn2j2qaE+ma1LNqqbRf3r+2GvYd+P7Lwcq3I7PpK/X5G9tIqw763freRdVpv2AcAAHCnE+DxEFU=
   </data>
  </layer>
  <layer name="MonoChu" width="40" height="36">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztlzEKhDAQRYcE7LexV9DeZbVfWL2L3kCrPfr+JpBGFIewPzgPfheYx4SZEJF0dF7khfTI4BMWuoj56TA/HTn4PZEGaQn9KjjVxP0Lfqz9C/fL2j/z02F+Otj9WPbf7ESWKAGW922F0xYl8IbTBxmR6Y9+jxO1v+74TCpy8isI5zT2Kwn9WPbIHux72Px0sPuxzwf7P8P8dJifDvb9cmd+qigc0Q==
   </data>
