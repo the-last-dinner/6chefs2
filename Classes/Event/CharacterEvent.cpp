@@ -102,8 +102,8 @@ void WalkByEvent::run()
 
 void WalkByEvent::update(float delta)
 {
+    if(!this->target) return;
     if(this->target->isMoving() || this->isCommandSent) return;
-    
     if(this->target->isPaused()) this->target->setPaused(false);
     
     this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->target->setAiPaused(false); this->setDone();}, this->speedRatio, this->back);
@@ -138,8 +138,8 @@ void WalkToEvent::run()
 
 void WalkToEvent::update(float delta)
 {
+    if(!this->target) return;
     if(this->target->isMoving() || this->isCommandSent) return;
-    
     if(this->target->isPaused()) this->target->setPaused(false);
     
     // 経路探索開始
