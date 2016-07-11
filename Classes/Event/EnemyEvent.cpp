@@ -26,12 +26,18 @@ bool CreateEnemyEvent::init(rapidjson::Value& json)
     EnemyData data {};
     
     // 敵ID
-    if(!this->validator->hasMember(json, member::ENEMY_ID)) return false;
-    data.enemy_id = stoi(json[member::ENEMY_ID].GetString());
+    if(this->validator->hasMember(json, member::ENEMY_ID))
+    {
+        data.enemy_id = stoi(json[member::ENEMY_ID].GetString());
+    }
     
     // キャラクタID
     if(!this->validator->hasMember(json, member::CHARA_ID)) return false;
     data.chara_data.chara_id = stoi(json[member::CHARA_ID].GetString());
+    
+    // オブジェクトID
+    if(!this->validator->hasMember(json, member::OBJECT_ID)) return false;
+    data.chara_data.obj_id = stoi(json[member::OBJECT_ID].GetString());
     
     // 向き
     Direction direction {this->validator->getDirection(json)};

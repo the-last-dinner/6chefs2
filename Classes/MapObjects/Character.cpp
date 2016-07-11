@@ -103,6 +103,14 @@ void Character::setDirection(const Direction direction)
 	this->getSprite()->setSpriteFrame(this->getTerrain()->getDotPrefix() + this->texturePrefix + "_" + to_string(static_cast<int>(direction)) + "_0.png");
 }
 
+// AIを一時停止
+void Character::setAiPaused(bool paused)
+{
+    if(!this->movePattern) return;
+    
+    this->movePattern->setPaused(paused);
+}
+
 // 足踏み
 void Character::stamp(const Direction direction, float ratio)
 {
