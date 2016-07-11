@@ -73,25 +73,25 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"143",
+					"objID":"143",
 					"charaID":"13",
 					"x":33,
 					"y":22,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
-					"movePattern":"1"
+					"movePattern":"4"
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"144",
+					"objID":"144",
 					"charaID":"13",
 					"x":19,
 					"y":54,
 					"direction":"DOWN",
 					"times":1,
 					"pathID":"1",
-					"movePattern":"1"
+					"movePattern":"4"
 				}
 			]
 		}

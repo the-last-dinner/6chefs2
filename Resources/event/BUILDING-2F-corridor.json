@@ -94,7 +94,7 @@
 					"action":[
 						{
 							"type":"createEnemy",
-							"enemyID":"149",
+							"objID":"149",
 							"x":74,
 							"y":12,
 							"charaID":"13",
@@ -117,7 +117,7 @@
 					"action":[
 						{
 							"type":"charaWalkTo",
-							"enemyID":"149",
+							"objID":"149",
 							"x":74,
 							"y":20,
 							"speed":5.0
@@ -151,7 +151,7 @@
 				},
 				{
 					"type":"charaWalkTo",
-					"enemyID":"149",
+					"objID":"149",
 					"x":56,
 					"y":14,
 					"speed":5.0
@@ -216,7 +216,7 @@
 				},
 				{
 					"type":"charaWalkTo",
-					"enemyID":"149",
+					"objID":"149",
 					"x":75,
 					"y":22,
 					"speed":5.0
@@ -255,14 +255,14 @@
 				},
 				{
 					"type":"charaWalkTo",
-					"enemyID":"149",
+					"objID":"149",
 					"x":74,
 					"y":16,
 					"speed":0.5
 				},
 				{
 					"type":"changeDirection",
-					"enemyID":"149",
+					"objID":"149",
 					"direction":"LEFT"
 				},
 				{

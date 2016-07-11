@@ -134,7 +134,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1435",
+					"objID":"1435",
 					"charaID":"13",
 					"x":18,
 					"y":9,
@@ -144,7 +144,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1436",
+					"objID":"1436",
 					"charaID":"13",
 					"x":29,
 					"y":10,
@@ -154,7 +154,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1437",
+					"objID":"1437",
 					"charaID":"13",
 					"x":41,
 					"y":10,
@@ -164,7 +164,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1438",
+					"objID":"1438",
 					"charaID":"13",
 					"x":16,
 					"y":36,
@@ -174,7 +174,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1439",
+					"objID":"1439",
 					"charaID":"13",
 					"x":28,
 					"y":36,
@@ -184,7 +184,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1440",
+					"objID":"1440",
 					"charaID":"13",
 					"x":40,
 					"y":36,
@@ -194,7 +194,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1441",
+					"objID":"1441",
 					"charaID":"13",
 					"x":48,
 					"y":25,
@@ -298,35 +298,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -336,7 +336,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -346,7 +346,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -356,7 +356,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -366,7 +366,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -376,7 +376,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -386,7 +386,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,
@@ -596,35 +596,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -634,7 +634,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -644,7 +644,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -654,7 +654,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -664,7 +664,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -674,7 +674,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -684,7 +684,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,
@@ -894,35 +894,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -932,7 +932,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -942,7 +942,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -952,7 +952,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -962,7 +962,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -972,7 +972,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -982,7 +982,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,
@@ -1198,35 +1198,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -1236,7 +1236,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -1246,7 +1246,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -1256,7 +1256,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -1266,7 +1266,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -1276,7 +1276,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -1286,7 +1286,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,
@@ -1502,35 +1502,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -1540,7 +1540,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -1550,7 +1550,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -1560,7 +1560,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -1570,7 +1570,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -1580,7 +1580,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -1590,7 +1590,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,
@@ -1806,35 +1806,35 @@
 							"action":[
 								{
 									"type":"removeEnemy",
-									"enemyID":"1435"
+									"objID":"1435"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1436"
+									"objID":"1436"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1437"
+									"objID":"1437"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1438"
+									"objID":"1438"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1439"
+									"objID":"1439"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1440"
+									"objID":"1440"
 								},
 								{
 									"type":"removeEnemy",
-									"enemyID":"1441"
+									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1442",
+									"objID":"1442",
 									"charaID":"13",
 									"x":18,
 									"y":9,
@@ -1844,7 +1844,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1443",
+									"objID":"1443",
 									"charaID":"13",
 									"x":29,
 									"y":10,
@@ -1854,7 +1854,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1444",
+									"objID":"1444",
 									"charaID":"13",
 									"x":41,
 									"y":10,
@@ -1864,7 +1864,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1445",
+									"objID":"1445",
 									"charaID":"13",
 									"x":16,
 									"y":36,
@@ -1874,7 +1874,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1446",
+									"objID":"1446",
 									"charaID":"13",
 									"x":28,
 									"y":36,
@@ -1884,7 +1884,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1447",
+									"objID":"1447",
 									"charaID":"13",
 									"x":40,
 									"y":36,
@@ -1894,7 +1894,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1448",
+									"objID":"1448",
 									"charaID":"13",
 									"x":48,
 									"y":25,

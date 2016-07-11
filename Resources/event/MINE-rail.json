@@ -375,7 +375,7 @@
 								},
 								{
 									"type":"createEnemy",
-									"enemyID":"1450",
+									"objID":"1450",
 									"charaID":"9",
 									"x":115,
 									"y":13,
@@ -535,7 +535,7 @@
 				},
 				{
 					"type":"charaWalkTo",
-					"enemyID":"1450",
+					"objID":"1450",
 					"x":115,
 					"y":13,
 					"speed":10.0

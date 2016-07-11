@@ -22,7 +22,7 @@
 			"false":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1410",
+					"objID":"1410",
 					"charaID":"13",
 					"x":5,
 					"y":50,

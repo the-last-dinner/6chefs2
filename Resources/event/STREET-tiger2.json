@@ -274,7 +274,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1417",
+					"objID":"1417",
 					"charaID":"13",
 					"x":19,
 					"y":51,
@@ -285,7 +285,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1418",
+					"objID":"1418",
 					"charaID":"13",
 					"x":20,
 					"y":97,

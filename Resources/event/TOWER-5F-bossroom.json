@@ -529,7 +529,7 @@
 						},
 						{
 							"type":"createEnemy",
-							"enemyID":"1451",
+							"objID":"1451",
 							"charaID":"9",
 							"x":53,
 							"y":55,
@@ -563,7 +563,7 @@
 										},
 										{
 											"type":"removeEnemy",
-											"enemyID":"1451"
+											"objID":"1451"
 										},
 										{
 											"type":"charaWarp",

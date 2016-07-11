@@ -242,7 +242,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1415",
+					"objID":"1415",
 					"charaID":"13",
 					"x":21,
 					"y":19,
@@ -253,7 +253,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1416",
+					"objID":"1416",
 					"charaID":"13",
 					"x":20,
 					"y":99,

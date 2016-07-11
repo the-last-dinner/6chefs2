@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="15">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztldEJgDAMBesA1UGq385Qu/8+FqSgYhJoo6bwHtxfIEcgiXOIRnxmJJgq6rQTMjPBUlEHv2vfdTiAX59+MbMRpJOfVPdWSv9W4NcGd78luPuu5cftjwS3X1b8PDFHK36BmCP8bPhx91sifeCnMX/LftE9/8m/ve7AT8erFz+kLju58HuZ
   </data>
  </layer>
  <layer name="MonoShita" width="40" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1tEJwCAUQ1HBeesibQfRKdsBXhVNChFywT+Rg8LDlPao5f6a3cfsJp57/mC0D8s+LPuw2L6LbGT66mB+r8x3pg8tun8lXw3uUckXpeZTft8o+7Dsw7IPS8l3vJYiPP++/j8la6zdegB72DsE
   </data>
  </layer>
- <objectgroup name="corridor">
+ <objectgroup name="collision">
   <object id="3" x="320" y="0" width="256" height="288"/>
   <object id="4" x="576" y="0" width="64" height="320"/>
   <object id="5" x="576" y="352" width="64" height="64"/>
