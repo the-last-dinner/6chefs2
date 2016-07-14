@@ -337,7 +337,7 @@ void DungeonScene::onEventFinished()
 }
 
 // Assertが表示される時
-void DungeonScene::onPushAssertScene()
+void DungeonScene::onEnterAssertScene()
 {
     FUNCLOG;
     // リスナーを停止
@@ -349,7 +349,7 @@ void DungeonScene::onPushAssertScene()
 }
 
 // Assertから戻ってくる特
-void DungeonScene::onPopAssertScene()
+void DungeonScene::onExitAssertScene()
 {
     FUNCLOG;
     // カウントダウンをしれてば再開

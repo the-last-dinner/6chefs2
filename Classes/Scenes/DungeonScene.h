@@ -79,8 +79,8 @@ protected:
     friend class DungeonSceneManager;
     
 public:
-    virtual void onPushAssertScene() override;
-    virtual void onPopAssertScene() override;
+    virtual void onEnterAssertScene() override;
+    virtual void onExitAssertScene() override;
 };
 
 

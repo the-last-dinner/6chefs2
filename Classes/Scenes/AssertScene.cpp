@@ -72,14 +72,14 @@ bool AssertScene::init(const string& title, const string& message, const bool& h
 void AssertScene::onEnter()
 {
     Scene::onEnter();
-    this->onPushAssertScene();
+    this->onEnterAssertScene();
 }
 
 // popされた時
 void AssertScene::onExit()
 {
     Scene::onExit();
-    this->onPopAssertScene();
+    this->onExitAssertScene();
 }
 
 
