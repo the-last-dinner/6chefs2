@@ -19,8 +19,8 @@ void LastSupper::AssertUtils::infoAssert(const string& message)
     string title = "InfoAssert";
     
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
-    nowScene->onPushAssertScene();
     AssertScene* assert { AssertScene::create(title, message, true) };
+    assert->onPushAssertScene = CC_CALLBACK_0(BaseScene::onPushAssertScene, nowScene);
     assert->onPopAssertScene = CC_CALLBACK_0(BaseScene::onPopAssertScene, nowScene);
     // assertをプッシュ
     Director::getInstance()->pushScene(assert);
@@ -33,8 +33,8 @@ void LastSupper::AssertUtils::fatalAssert(const string& message)
     
     // 戻ってこないのでpushのみ実行
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
-    nowScene->onPushAssertScene();
     AssertScene* assert { AssertScene::create(title, message, false) };
+    assert->onPushAssertScene = CC_CALLBACK_0(BaseScene::onPushAssertScene, nowScene);
 
     // assertをプッシュ
     Director::getInstance()->pushScene(assert);

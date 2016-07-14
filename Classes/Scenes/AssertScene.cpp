@@ -68,6 +68,20 @@ bool AssertScene::init(const string& title, const string& message, const bool& h
     return true;
 }
 
+// pushされた時
+void AssertScene::onEnter()
+{
+    Scene::onEnter();
+    this->onPushAssertScene();
+}
+
+// popされた時
+void AssertScene::onExit()
+{
+    Scene::onExit();
+    this->onPopAssertScene();
+}
+
 
 void AssertScene::onPreloadFinished(LoadingLayer* loadingLayer){}
 
@@ -84,7 +98,6 @@ void AssertScene::intervalInputCheck(const vector<Key>& keys){}
 void AssertScene::onMenuKeyPressed()
 {
     this->listenerKeyboard->setEnabled(false);
-    this->onPopAssertScene();
     Director::getInstance()->popScene();
 }
 

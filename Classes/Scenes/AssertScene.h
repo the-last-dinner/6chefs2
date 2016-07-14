@@ -21,6 +21,7 @@ public:
     
     // インスタンス変数
 public:
+    function<void()> onPushAssertScene {nullptr};
     function<void()> onPopAssertScene {nullptr};
     
 protected:
@@ -31,7 +32,8 @@ private:
     AssertScene();
     ~AssertScene();
     bool init(const string& title, const string& message, const bool& hideable);
-    virtual void onEnter() override { Scene::onEnter();};
+    virtual void onEnter() override;
+    virtual void onExit() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onCursorKeyPressed(const Key& key);
     virtual void onEnterKeyPressed();
