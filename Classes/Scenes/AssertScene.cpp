@@ -19,7 +19,7 @@ AssertScene::AssertScene(){FUNCLOG}
 AssertScene::~AssertScene(){FUNCLOG}
 
 // 初期化
-bool AssertScene::init(const string& message, const bool& hideable)
+bool AssertScene::init(const string& title, const string& message, const bool& hideable)
 {
     FUNCLOG;
     // カウントダウンしてれば停止
@@ -29,25 +29,32 @@ bool AssertScene::init(const string& message, const bool& hideable)
     auto layer = LayerColor::create(Color4B::BLACK);
     // 画面サイズ取得
     Size winSize = Director::getInstance()->getWinSize();
+    
+    // タイトルを追加
+    Label* titleLabel {Label::createWithTTF(title, "fonts/mgenplus-1c-light.ttf", 36.f)};
+    titleLabel->setPosition(WINDOW_WIDTH / 2, winSize.height - titleLabel->getContentSize().height * 4);
+    layer->addChild(titleLabel);
+    
     // メッセージを追加
-    Label* text { Label::createWithSystemFont(message, "fonts/mgenplus-1c-light.ttf", 18.f, winSize) };
-    text->setColor(Color3B::WHITE);
-    text->setPosition(Point(winSize.width / 2, winSize.height / 2));
-    layer->addChild(text);
-    // 左上に寄せる
-    text->setHorizontalAlignment(TextHAlignment::LEFT);
-    text->setVerticalAlignment(TextVAlignment::TOP);
+    Label* messageLabel { Label::createWithTTF(message, "fonts/mgenplus-1c-light.ttf", 24.f) };
+    messageLabel->setLineHeight(45.f);
+    messageLabel->setHorizontalAlignment(TextHAlignment::LEFT);
+    messageLabel->setVerticalAlignment(TextVAlignment::CENTER);
+    messageLabel->setPosition(messageLabel->getContentSize().width / 2 + WINDOW_WIDTH / 5, layer->getContentSize().height / 2);
+    layer->addChild(messageLabel);
     
     if(hideable)
     {
+        // 戻れるときは背景を青くする
+        layer->setColor(Color3B::BLUE);
         // 戻る用のメッセージ表示
-        Label* hideText {Label::createWithTTF("X:戻る", "fonts/mgenplus-1c-light.ttf", 18.f, winSize)};
-        hideText->setColor(Color3B::WHITE);
-        hideText->setPosition(Point(winSize.width / 2, winSize.height / 2));
-        layer->addChild(hideText);
+        Label* hideLabel {Label::createWithTTF("X:戻る", "fonts/mgenplus-1c-light.ttf", 24.f, winSize)};
+        hideLabel->setColor(Color3B::WHITE);
+        hideLabel->setPosition(Point(winSize.width / 2, winSize.height / 2));
+        layer->addChild(hideLabel);
         // 中央下に寄せる
-        hideText->setHorizontalAlignment(TextHAlignment::CENTER);
-        hideText->setVerticalAlignment(TextVAlignment::BOTTOM);
+        hideLabel->setHorizontalAlignment(TextHAlignment::CENTER);
+        hideLabel->setVerticalAlignment(TextVAlignment::BOTTOM);
         // キーボードのリスナーを貼る
         EventListenerKeyboardLayer* listenerKeyboard { EventListenerKeyboardLayer::create() };
         this->addChild(listenerKeyboard);

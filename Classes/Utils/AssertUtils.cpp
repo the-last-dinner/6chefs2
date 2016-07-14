@@ -12,7 +12,11 @@
 
 void LastSupper::AssertUtils::infoAssert(const string& message)
 {
-    AssertScene* assert { AssertScene::create(message, true) };
+    // デバッグじゃない時は出さない
+    if(!DebugManager::getInstance()->isPlainData()) return;
+    
+    string title = "InfoAssert";
+    AssertScene* assert { AssertScene::create(title, message, true) };
     
     // assertをプッシュ
     Director::getInstance()->pushScene(assert);
@@ -20,7 +24,9 @@ void LastSupper::AssertUtils::infoAssert(const string& message)
 
 void LastSupper::AssertUtils::fatalAssert(const string& message)
 {
-    AssertScene* assert { AssertScene::create(message, false) };
+    string title = DebugManager::getInstance()->isPlainData() ? "FatalAssert" : "SystemError";
+
+    AssertScene* assert { AssertScene::create(title, message, false) };
     
     // assertをプッシュ
     Director::getInstance()->pushScene(assert);

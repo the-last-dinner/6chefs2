@@ -17,7 +17,7 @@ class AssertScene : public BaseScene
 {
     // クラスメソッド
 public:
-    CREATE_FUNC_WITH_TWO_PARAM(AssertScene, string, bool);
+    CREATE_FUNC_WITH_THREE_PARAM(AssertScene, string, string, bool);
     
     // インスタンス変数
 protected:
@@ -26,7 +26,7 @@ protected:
 private:
     AssertScene();
     ~AssertScene();
-    bool init(const string& message, const bool& hideable);
+    bool init(const string& title, const string& message, const bool& hideable);
     virtual void onEnter() override { Scene::onEnter();};
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onCursorKeyPressed(const Key& key);
