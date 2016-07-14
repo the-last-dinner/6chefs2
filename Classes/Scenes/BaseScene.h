@@ -31,6 +31,9 @@ protected:
 	virtual ~BaseScene();
 	bool init(SceneData* data);
     virtual void onEnter() override;
+public:
+    virtual void onPushAssertScene(){};
+    virtual void onPopAssertScene(){};
 };
 
 #endif // __BASE_SCENE_H__

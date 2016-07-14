@@ -22,8 +22,6 @@ AssertScene::~AssertScene(){FUNCLOG}
 bool AssertScene::init(const string& title, const string& message, const bool& hideable)
 {
     FUNCLOG;
-    // カウントダウンしてれば停止
-    DungeonSceneManager::getInstance()->pauseStopWatch();
     
     // 黒い画面を生成
     auto layer = LayerColor::create(Color4B::BLACK);
@@ -85,8 +83,8 @@ void AssertScene::intervalInputCheck(const vector<Key>& keys){}
 // メニューキー押したとき
 void AssertScene::onMenuKeyPressed()
 {
-    // カウントダウンをしれてば再開
-    DungeonSceneManager::getInstance()->startStopWatch();
+    this->listenerKeyboard->setEnabled(false);
+    this->onPopAssertScene();
     Director::getInstance()->popScene();
 }
 

@@ -32,7 +32,7 @@ class DungeonScene : public BaseScene
 // クラスメソッド
 public:
 	CREATE_FUNC_WITH_PARAM(DungeonScene, DungeonSceneData*);
-    CREATE_FUNC_WITH_TWO_PARAM(DungeonScene, DungeonSceneData*, EventListenerKeyboardLayer*)
+    CREATE_FUNC_WITH_TWO_PARAM(DungeonScene, DungeonSceneData*, EventListenerKeyboardLayer*);
 	
 // インスタンス変数
 protected:
@@ -77,6 +77,10 @@ protected:
     DungeonSceneData* getData() const;
     
     friend class DungeonSceneManager;
+    
+public:
+    virtual void onPushAssertScene() override;
+    virtual void onPopAssertScene() override;
 };
 
 

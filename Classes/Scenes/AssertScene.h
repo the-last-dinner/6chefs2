@@ -20,9 +20,13 @@ public:
     CREATE_FUNC_WITH_THREE_PARAM(AssertScene, string, string, bool);
     
     // インスタンス変数
+public:
+    function<void()> onPopAssertScene {nullptr};
+    
 protected:
     EventListenerKeyboardLayer* listenerKeyboard { nullptr };
-    
+ 
+    // インスタンスメソッド
 private:
     AssertScene();
     ~AssertScene();
