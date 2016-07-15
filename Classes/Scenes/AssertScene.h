@@ -15,9 +15,17 @@ class EventListenerKeyboardLayer;
 
 class AssertScene : public BaseScene
 {
+    // 定数
+public:
+    enum struct AssertType
+    {
+        INFO,
+        FATAL
+    };
+
     // クラスメソッド
 public:
-    CREATE_FUNC_WITH_THREE_PARAM(AssertScene, string, string, bool);
+    CREATE_FUNC_WITH_TWO_PARAM(AssertScene, string, AssertType);
     
     // インスタンス変数
 public:
@@ -31,7 +39,7 @@ protected:
 private:
     AssertScene();
     ~AssertScene();
-    bool init(const string& title, const string& message, const bool& hideable);
+    bool init(const string& message, const AssertType& assertType);
     virtual void onEnter() override;
     virtual void onExit() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;

@@ -19,12 +19,30 @@ AssertScene::AssertScene(){FUNCLOG}
 AssertScene::~AssertScene(){FUNCLOG}
 
 // 初期化
-bool AssertScene::init(const string& title, const string& message, const bool& hideable)
+bool AssertScene::init(const string& message, const AssertType& assertType)
 {
     FUNCLOG;
+    // タイトルと背景色を決定
+    string title = "";
+    Color4B color {};
+    bool hideable;
+    switch (assertType) {
+        case AssertType::INFO:
+            title = "InfoAssert";
+            color = Color4B::BLUE;
+            hideable = true;
+            break;
+        case AssertType::FATAL:
+            title = DebugManager::getInstance()->isPlainData() ? "FatalAssert" : "SystemError";
+            color = Color4B::BLACK;
+            hideable = false;
+            break;
+        default:
+            break;
+    }
     
-    // 黒い画面を生成
-    auto layer = LayerColor::create(Color4B::BLACK);
+    // レイヤーを生成
+    auto layer = LayerColor::create(color);
     // 画面サイズ取得
     Size winSize = Director::getInstance()->getWinSize();
     
@@ -43,8 +61,6 @@ bool AssertScene::init(const string& title, const string& message, const bool& h
     
     if(hideable)
     {
-        // 戻れるときは背景を青くする
-        layer->setColor(Color3B::BLUE);
         // 戻る用のメッセージ表示
         Label* hideLabel {Label::createWithTTF("X:戻る", "fonts/mgenplus-1c-light.ttf", 24.f, winSize)};
         hideLabel->setColor(Color3B::WHITE);
@@ -61,8 +77,8 @@ bool AssertScene::init(const string& title, const string& message, const bool& h
         listenerKeyboard->setInputCheckInterval(0.1f);
         listenerKeyboard->setEnabled(true);
         this->listenerKeyboard = listenerKeyboard;
-
     }
+    
     this->addChild(layer);
     
     return true;

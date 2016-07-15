@@ -15,11 +15,8 @@ void LastSupper::AssertUtils::infoAssert(const string& message)
     // デバッグじゃない時は出さない
     if(!DebugManager::getInstance()->isPlainData()) return;
     
-    // Assert画面のタイトル
-    string title = "InfoAssert";
-    
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
-    AssertScene* assert { AssertScene::create(title, message, true) };
+    AssertScene* assert { AssertScene::create(message, AssertScene::AssertType::INFO) };
     assert->onEnterAssertScene = CC_CALLBACK_0(BaseScene::onEnterAssertScene, nowScene);
     assert->onExitAssertScene = CC_CALLBACK_0(BaseScene::onExitAssertScene, nowScene);
     // assertをプッシュ
@@ -28,14 +25,10 @@ void LastSupper::AssertUtils::infoAssert(const string& message)
 
 void LastSupper::AssertUtils::fatalAssert(const string& message)
 {
-    // Assert画面のタイトル
-    string title = DebugManager::getInstance()->isPlainData() ? "FatalAssert" : "SystemError";
-    
-    // 戻ってこないのでpushのみ実行
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
-    AssertScene* assert { AssertScene::create(title, message, false) };
+    AssertScene* assert { AssertScene::create(message, AssertScene::AssertType::FATAL) };
     assert->onEnterAssertScene = CC_CALLBACK_0(BaseScene::onEnterAssertScene, nowScene);
-
+    assert->onExitAssertScene = CC_CALLBACK_0(BaseScene::onExitAssertScene, nowScene);
     // assertをプッシュ
     Director::getInstance()->pushScene(assert);
 }
