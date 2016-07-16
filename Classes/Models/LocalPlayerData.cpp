@@ -251,7 +251,7 @@ void LocalPlayerData::setItem(const int charaId, const int itemId)
 // アイテムを消費
 bool LocalPlayerData::removeItem(const int itemId)
 {
-    return this->removeItem(this->getMainCharaId());
+    return this->removeItem(this->getMainCharaId(), itemId);
 }
 
 bool LocalPlayerData::removeItem(const int charaId, const int itemId)
