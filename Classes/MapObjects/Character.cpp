@@ -104,11 +104,21 @@ void Character::setDirection(const Direction direction)
 }
 
 // AIを一時停止
-void Character::setAiPaused(bool paused)
+void Character::pauseAi()
 {
     if(!this->movePattern) return;
     
-    this->movePattern->setPaused(paused);
+    this->clearDirectionsQueue();
+    
+    this->movePattern->pause();
+}
+
+// AIを再開
+void Character::resumeAi()
+{
+    if(!this->movePattern) return;
+    
+    this->movePattern->resume();
 }
 
 // 足踏み
@@ -266,5 +276,6 @@ void Character::onEventStart()
 void Character::onEventFinished()
 {
     this->setPaused(false);
+    if(this->movePattern && this->movePattern->isPaused()) this->movePattern->resume();
     this->getActionManager()->resumeTarget(this);
 }

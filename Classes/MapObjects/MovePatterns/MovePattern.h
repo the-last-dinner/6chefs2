@@ -20,13 +20,14 @@ class MovePattern : public Ref
 protected:
     Character* chara { nullptr };
     float speedRatio { 1.0f };
-    bool paused { true };
+    bool paused { false };
     int startPathId { -1 };
 
 // インスタンスメソッド
 public:
     virtual void start();
-    virtual void setPaused(bool paused);
+    virtual void pause();
+    virtual void resume();
     bool isPaused() const;
     virtual void onPartyMoved() {};
     virtual bool canGoToNextMap() const { return false; };

@@ -34,7 +34,7 @@ void RandomMove::start()
 
 void RandomMove::move()
 {
-    if(this->paused) return;
+    if(this->isPaused()) return;
     
     // 移動可能な方向のベクタを用意
     vector<Direction> enableDirections {};

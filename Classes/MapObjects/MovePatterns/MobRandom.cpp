@@ -40,9 +40,16 @@ void MobRandom::start()
     this->scheduleMove();
 }
 
+void MobRandom::pause()
+{
+    MovePattern::pause();
+    
+    this->chara->stopActionByTag(SCHEDULE_ACTION_TAG);
+}
+
 void MobRandom::move()
 {
-    if(this->paused) return;
+    if(this->isPaused()) return;
     
     // 移動可能な方向のベクタを用意
     vector<Direction> enableDirections {};
@@ -77,11 +84,4 @@ void MobRandom::scheduleMove()
     Action* action { Sequence::createWithTwoActions(DelayTime::create(duration), CallFunc::create(CC_CALLBACK_0(MobRandom::move, this))) };
     action->setTag(SCHEDULE_ACTION_TAG);
     this->chara->runAction(action);
-}
-
-void MobRandom::setPaused(bool paused)
-{
-    MovePattern::setPaused(paused);
-    
-    if(paused) this->chara->stopActionByTag(SCHEDULE_ACTION_TAG);
 }

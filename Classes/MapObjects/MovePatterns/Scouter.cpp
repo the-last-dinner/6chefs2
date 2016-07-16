@@ -53,23 +53,30 @@ bool Scouter::init(Character* character)
 // 移動開始
 void Scouter::start()
 {
-    if(!this->isPaused()) return;
-    
     MovePattern::start();
     
     if(!this->chara->isMoving()) this->move(this->startPathId);
     if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
 }
 
-// 停止
-void Scouter::setPaused(bool paused)
+// 一時停止
+void Scouter::pause()
 {
-    MovePattern::setPaused(paused);
+    MovePattern::pause();
     
-    if(paused) Director::getInstance()->getScheduler()->unscheduleUpdate(this);
+    Director::getInstance()->getScheduler()->unscheduleUpdate(this);
     
     // サブアルゴリズムに対しても適用
-    if(this->subPattern) this->subPattern->setPaused(paused);
+    if(this->subPattern) this->subPattern->pause();
+}
+
+// 再開
+void Scouter::resume()
+{
+    MovePattern::resume();
+    
+    if(!this->chara->isMoving()) this->move(this->startPathId);
+    if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
 }
 
 // 主人公一行が移動した時
@@ -137,7 +144,7 @@ void Scouter::update(float _)
 // サブパターンに切り替える
 void Scouter::shiftToSubPattern()
 {
-    MovePattern::setPaused(true);
+    MovePattern::pause();
     
     this->subPattern->start();
     
