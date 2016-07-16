@@ -147,20 +147,24 @@
 					"time":0.5
 				},
 				{
+					"type":"charaWalkTo",
+					"objID":"1038",
+					"x":74,
+					"y":22,
+					"speed":9.0
+				},
+				{
 					"type":"spawn",
 					"action":[
+						{
+							"type":"wait",
+							"time":0.1
+						},
 						{
 							"type":"charaWalkTo",
 							"objID":"149",
 							"x":74,
 							"y":20,
-							"speed":5.0
-						},
-						{
-							"type":"charaWalkTo",
-							"objID":"1038",
-							"x":74,
-							"y":22,
 							"speed":5.0
 						}
 					]

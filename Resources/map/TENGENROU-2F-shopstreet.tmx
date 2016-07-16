@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="38" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="35">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="38" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="37">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ed_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="ed_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="2881" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="2881" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
- <tileset firstgid="3265" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="3265" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="38" height="40">
@@ -72,6 +72,9 @@
   </data>
  </layer>
  <layer name="blood" width="38" height="40">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0McNwmAQBeG9G4kgUgeASe6AHAoGV2EogzIQc/CFAvgtoRnpO+/TRpiZ2T91yyLuKLOml3xXseeBZ+Jd7VZEB130MEcfAwwxwhivxLsm3JxihrzetcASK6xR4J1414abW+ywxwFHnHDGBdf6d2ZmZmZmZmb22z5G/A1+
   </data>
@@ -147,6 +150,12 @@
   <object id="34" x="304" y="128" width="96" height="16">
    <properties>
     <property name="EventID" value="7"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="36" x="80" y="192" width="64" height="64">
+   <properties>
+    <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>

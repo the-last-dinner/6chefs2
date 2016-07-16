@@ -68,7 +68,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["28","5"]
+					"Nevent":["34","5"]
 				}
 			],
 			"action":[
@@ -79,7 +79,7 @@
 							"type":"charaMsg",
 							"talk":[
 								{
-									"text":["向かいはにでっけぇ塔ッスね・・・"],
+									"text":["向かいはでっけぇ塔ッスね・・・"],
 									"charaID":"5",
 									"imgID":"2"
 								},
@@ -97,7 +97,7 @@
 						},
 						{
 							"type":"already",
-							"event":["28","5"]
+							"event":["34","5"]
 						}
 					]
 				}
@@ -107,7 +107,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["28","5"],
+					"event":["34","5"],
 					"equip":["157"],
 					"Nequip":["155"]
 				}
@@ -134,7 +134,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["28","5"],
+					"event":["34","5"],
 					"equip":["155","157"]
 				}
 			],
@@ -211,6 +211,9 @@
 							]
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -251,7 +254,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["28","5"],
+					"event":["34","5"],
 					"Nequip":["157"]
 				}
 			],

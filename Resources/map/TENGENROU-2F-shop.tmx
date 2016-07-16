@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="20">
- <tileset firstgid="1" name="ST-Convi-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-Convi-I01" tilewidth="16" tileheight="16" tilecount="1280" columns="16">
   <image source="ST-Convi-I01.png" trans="aa55ff" width="256" height="1280"/>
  </tileset>
- <tileset firstgid="1281" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="1281" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
- <tileset firstgid="1665" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1665" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgewAsJe1MBo4MoJBxNBYwOspBwNhUwOqhCwtVUwOigCwl3UwGjg1lIeDYVMDrQB2IDKtLowB6IHahIj7p/1P2j7h8+7icGwNxHK+DAAHHfSAIABx1qvQ==
   </data>
  </layer>
  <layer name="Base2" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0llyAVEUxvEr3MsSRCRsxzLswBDTDggJSzCzhIghlmCOJRASluBf1dUv+qnr8kJ/Vb/ql3NP1Vd9hHDixMktJSaFiCOBJF6RQhoZZKXe/jzvC3hDESW84wNlVDT3V3lfQx0Nefk+n8z38IW+vHyfCfNTzDCX1j5NtNBGB12b+zfMb/GLnbT2GWCIEb4xtvs/lBAuPMCtrH0WWGKFH6xt7vez8xEBPClrnz3+8I8Djpr3dN7HAwkFL3xKb73ZJ6KMuwnyfcYLQghr7jcTVcbdXCs5ZdzNPeUEbBtBSw==
   </data>
  </layer>
  <layer name="MonoShita" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0jkOQUEcx/ER09BYbsANuAE34CbW3q61PFzA0lgaS2O5Bg0tDS0NXy0jzyREhF/yKf6TN7/Jy4wQ//xCclKIPAooSvNZNwZ7aqijIc1n3TTZ00IbHWk+62bInhHGmEjz2WURwm3RP+fZeOj2vrHfR7cfEUQRQxwJJBXnLq1CrKzP9wfoCCKFNDLIIoe8on9L906jP0RHGCWUUUEVBmqK/iPdJ41+3dh4E3bFu1tz5uaN5+7pPryg/9H9nq9riv/qstZDHwN5P9/m0f06+Nap+H7K2gxzLOT9fJtP3e8/350Lx8pFjg==
   </data>
  </layer>
  <layer name="MonoChu" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUDBWwmJGBYQkj7czfDDR7Cw3NPww0+wgNzR8Fo2AUjAJiAQDM+gQ8
   </data>
  </layer>
  <layer name="blood" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztktkJgDAQRNdjoy2oXVi+WoV3Dd4lOBIC4q+roOTBI3+zbGaJLJbnWZgogzksWD7fUUQu9GD9QH6E3BgmSj77bY49sksfDWxhB/ub/5civ2RtxbqPmfUNrHAT6Gdg7QgnyJipYABDoY5M/nmOJOZezev/4LYsli+xAyZxG0M=
   </data>

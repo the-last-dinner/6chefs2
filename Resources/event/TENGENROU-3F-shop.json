@@ -39,12 +39,11 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							""
+							"text":["ここで田村エピソード解放"],
+							"charaID":"5",
+							"imgID":"1"
 						}
 					]
-				},
-				{
-					エピソード田村開放
 				},
 				{
 					"type":"already"

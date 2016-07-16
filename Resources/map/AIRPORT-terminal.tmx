@@ -147,16 +147,6 @@
     <property name="objID" value="1013"/>
    </properties>
   </object>
-  <object id="59" x="672" y="256" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="4"/>
-    <property name="EventID" value="3"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1014"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
   <object id="60" x="832" y="352" width="32" height="32">
    <properties>
     <property name="CharaID" value="5"/>

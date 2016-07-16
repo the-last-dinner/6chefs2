@@ -323,6 +323,10 @@
 					"itemID":"153"
 				},
 				{
+					"type":"removeObject",
+					"objID":"153"
+				},
+				{
 					"type":"charaMsg",
 					"text":["よし！急ごう！"],
 					"charaID":"0",

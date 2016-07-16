@@ -186,11 +186,11 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["27","4"],
-					"Nevent":[
-						["29","5"],
+					"event":[
+						["29","4"],
 						["34","5"]
-					]
+					],
+					"Nevent":["29","5"]
 				}
 			],
 			"action":[
@@ -198,7 +198,7 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"charamMsg",
+							"type":"charaMsg",
 							"text":["おっさん・・・\nわりぃがこのロープはもらっちまうぜ。"],
 							"charaID":"5",
 							"imgID":"2"
@@ -213,7 +213,7 @@
 						},
 						{
 							"type":"already",
-							"event":["27","5"]
+							"event":["29","5"]
 						}
 					]
 				}
@@ -223,11 +223,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":[
-						["29","4"],
-						["34","5"]
-					],
-					"Nevent":["29","5"]
+					"event":["29","5"]
 				}
 			],
 			"action":[

@@ -32,11 +32,11 @@
 			"action":[
 				{
 					"type":"removeObject",
-					"objID":"181"
+					"objID":"182"
 				},
 				{
 					"type":"removeLayer",
-					"layer":"hide1"
+					"layer":"hide2"
 				}
 			]
 		}
@@ -70,7 +70,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nequip":"154"
+					"Nequip":["154"]
 				}
 			],
 			"action":[
@@ -86,7 +86,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"equip":"154"
+					"equip":["154"]
 				}
 			],
 			"action":[
@@ -114,10 +114,6 @@
 							"type":"fadein"
 						},
 						{
-							"type":"removeItem",
-							"itemID":"154"
-						},
-						{
 							"type":"already"
 						}
 					]
@@ -130,7 +126,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nequip":"154"
+					"Nequip":["154"]
 				}
 			],
 			"action":[
@@ -146,7 +142,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"equip":"154"
+					"equip":["154"]
 				}
 			],
 			"action":[
@@ -172,10 +168,6 @@
 						},
 						{
 							"type":"fadein"
-						},
-						{
-							"type":"removeItem",
-							"itemID":"154"
 						},
 						{
 							"type":"already"
