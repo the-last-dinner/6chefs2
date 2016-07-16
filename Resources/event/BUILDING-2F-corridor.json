@@ -85,6 +85,31 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"fadeout"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"1041",
+					"direction":"DOWN"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"hero",
+					"x":61,
+					"y":14,
+					"direction":"UP"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"1035",
+					"x":59,
+					"y":14,
+					"direction":"RIGHT"
+				},
+				{
+					"type":"fadein"
+				},
+				{
 					"type":"charaMsg",
 					"text":["あいつら・・・人間じゃなかった・・・"],
 					"charaID":"14"
@@ -98,19 +123,28 @@
 							"x":74,
 							"y":12,
 							"charaID":"13",
-							"movePattern":"1",
+							"movePattern":"0",
 							"direction":"DOWN",
-							"times":1
+							"times":1,
+							"speed":1.2
 						},
 						{
 							"type":"playSE",
 							"file":"door_don.mp3"
 						},
 						{
+							"type":"playSE",
+							"file":"agaa.mp3"
+						},
+						{
 							"type":"removeLayer",
 							"layer":"door"
 						}
 					]
+				},
+				{
+					"type":"wait",
+					"time":0.5
 				},
 				{
 					"type":"spawn",
@@ -150,6 +184,10 @@
 					"name":"女性"		
 				},
 				{
+					"type":"wait",
+					"time":0.5
+				},
+				{
 					"type":"charaWalkTo",
 					"objID":"149",
 					"x":56,
@@ -176,6 +214,10 @@
 				{
 					"type":"playSE",
 					"file":"himei_girl.mp3"
+				},
+				{
+					"type":"wait",
+					"time":0.5
 				},
 				{
 					"type":"spawn",
@@ -206,13 +248,18 @@
 				},
 				{
 					"type":"playBGM",
-					"file":"akete.mp3"
+					"file":"akete.mp3",
+					"volume":5.0
 				},
 				{
 					"type":"charaMsg",
 					"text":["（にげなきゃ・・・にげなきゃ・・・）"],
 					"charaID":"0",
 					"imgID":"3"
+				},
+				{
+					"type":"wait",
+					"time":1.0
 				},
 				{
 					"type":"charaWalkTo",
@@ -333,6 +380,10 @@
 				{
 					"type":"playSE",
 					"file":"shutter.mp3"
+				},
+				{
+					"type":"wait",
+					"time":4.0
 				},
 				{
 					"type":"createLayer",

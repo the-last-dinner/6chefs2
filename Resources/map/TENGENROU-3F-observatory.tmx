@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="50" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="roop" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="roop" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="roop.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="shituji_0_0" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="shituji_0_0.png" trans="aa55ff" width="32" height="33"/>
  </tileset>
- <tileset firstgid="1445" name="tidamari" tilewidth="16" tileheight="16">
+ <tileset firstgid="1445" name="tidamari" tilewidth="16" tileheight="16" tilecount="48" columns="6">
   <image source="tidamari.png" trans="aa55ff" width="96" height="128"/>
  </tileset>
- <tileset firstgid="1493" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1493" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="42" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt10EOgjAQBdB2JZxLLyIbvYjuxIMIF/FUTgOTNJMCllI6xv+Tn6aU0hd2Nea38rY666en+YXGq8K+PCuccGornHDC+b/OG413hZXOk9FZOOF0eYq5y4OetXZY0+LsA073TmfL/u9vnbwGJ5wlnXOBE0444YQTTjjhLOmszNC9fHzeWmdurzwn1nmksQ58J5evHhvrPNPYePu38k75mrExThe+H/P+VO+Sj+/ka5Pqze1L9e7tC3kPZtlbyhfyzv3f0j6ZKa8Wn4z0avPJtMp9W+cDl7USSQ==
   </data>
  </layer>
  <layer name="MonoShita" width="42" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrENADAIwDAk/n+ht3ZmZyjUlrInAgAA2OBk7VU+e/nsNeUTAAAA4AcXVoUPGQ==
   </data>
  </layer>
  <layer name="MonoChu" width="42" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrENABAABMBv7D8GDTOygUYi4m6CSwAAAAD4US1JK7cXe30dxwNPAAAAzpqPzQK/
   </data>
  </layer>
  <layer name="shitai" width="42" height="50">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzjkNACAABLBb8K+BRyg4YCEhhFZBEwAAAABOqiVp5fZir6/jeOAJAADAnyZ93QKf
@@ -84,7 +93,7 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="27" x="384" y="416" width="32" height="32">
+  <object id="27" x="384" y="416" width="32" height="48">
    <properties>
     <property name="EventID" value="3"/>
     <property name="trigger" value="2"/>

@@ -231,6 +231,10 @@
 							"objID":"181"
 						},
 						{
+							"type":"wait",
+							"time":4.0
+						},
+						{
 							"type":"fadein"
 						},
 						{

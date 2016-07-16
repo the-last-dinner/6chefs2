@@ -38,7 +38,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["34","5"]
+					"event":["34","5"]
 				}
 			],
 			"action":[
@@ -302,6 +302,21 @@
 				{
 					"type":"battle",
 					"true":[
+						{
+							"type":"already"
+						}
+					]
+				},
+				{
+					"type":"barrage",
+					"times":20,
+					"limit":5.0,
+					"true":[
+						{
+							"type":"already"
+						}
+					],
+					"false":[
 						{
 							"type":"already"
 						}

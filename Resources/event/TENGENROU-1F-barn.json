@@ -10,9 +10,10 @@
 			"charaID":"13",
 			"x":20,
 			"y":22,
+			"pathID":"1",
 			"direction":"UP",
 			"times":1,
-			"movePattern":4
+			"movePattern":"4"
 		},
 		{
 			"type":"if",
@@ -45,9 +46,9 @@
 	"3":[
 		{
 			"type":"changeMap",
-			"mapID":"23",
-			"x":94,
-			"y":29
+			"mapID":"27",
+			"x":53,
+			"y":22
 		}	
 	],
 	"4":[

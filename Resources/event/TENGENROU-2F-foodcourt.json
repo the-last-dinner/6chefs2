@@ -29,7 +29,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["34","5"]
+					"event":["25","4"]
 				}
 			],
 			"action":[

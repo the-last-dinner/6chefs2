@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="55" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="325">
- <tileset firstgid="1" name="ed4_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed4_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="ed4_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="1921" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1921" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2401" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2401" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2881" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2881" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmcFSwyAQhrlo4GB9EOuDqI/ki0RHj+obxKpH6xvY3qsH9abjCwgzZdzgsmEriQTZmX+YSTbsfiEFlgpR7D/bvhLiWuLaU7/3/yubqu5cp2pz/5h2rPs/VDwdEbkeRPCn9C7D2cw7famEeGXorfLnivXF9aficr7hwlbYCtuwbFs6xjZDlSdPI6wvrj8Vl8tW62dOtE5BC4Xd9+UKfWumvy8WvMZla9ZxZqCFwu77coW+7nNd/r5Y8BqXzRd3EzVAbv4xZPcxIXuZEDYqt4ahWGwxx+1Ra0HcC9UCKBU2I+46wRW1ThS2woaJu75zRa3vfbNd6Pd62aOuAsfNrfdisN3r2PMe9RDIBn8b5jvOke1M5slmuHIet5zZzNidy588oWdQKbLdaN2udYew2XrItmNiq2W7nnPN7sk5e/NU2NyawsfGUSpsrnIaty42W0tRdVmqbPCbnCFsE/Wt3ZHNk7DOXSJs1rr+Y0mRbUe1x4aysbH1UeMUtsI2JBt2FuzOtUOwwfXWd8bMZYNzKlz74PWVjv3Uo56r9hnm0olvWw7bh2zPqanrk1jTcrUvpxrxWA==
   </data>
  </layer>
  <layer name="MonoShita" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0sEJgDAMBVC96gzqIOrcuoiuo7kViiepiPgeBAqFJB9SVQAAADzlaNK7bt/bo4vZfVbDzX1K9ipBtmSJe1ub67+vZ9si1/6RbGPMnrKab+5TshcAAAAA/3MCHkoPXA==
   </data>
  </layer>
  <layer name="MonoChu" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztz7ENgCAURVFaw07qoE7iJI5ja4GNieAz5yQ0v+DmlQIAAMBcS1lr+748eHd/te5v26Z/dUY0bcts2pbZtC2zaVtm07bMpm2ZTdsym7ZlNm3LbNqW2Ryxbe/U7NW5Ojo1e3X4jhOKFCUj
   </data>

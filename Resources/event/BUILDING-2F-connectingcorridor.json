@@ -28,6 +28,17 @@
 					"y":50,
 					"speed":5.0,
 					"movePattern":"5"
+				},
+				{
+					"type":"charaMsg",
+					"text":["来た・・・"],
+					"charaID":"0",
+					"imgID":"3"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"DOWN"
 				}
 			]
 		},
@@ -49,6 +60,10 @@
 				{
 					"type":"playSE",
 					"file":"door_don.mp3"
+				},
+				{
+					"type":"wait",
+					"time":1.0
 				},
 				{
 					"type":"charaMsg",
@@ -100,7 +115,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["22","3"]
+					"event":["22","3"]
 				}
 			],
 			"action":[
@@ -126,6 +141,9 @@
 							]
 						},
 						{
+							"type":"fadein"
+						},
+						{
 							"type":"charaMsg",
 							"talk":[
 								{
@@ -148,7 +166,7 @@
 							"type":"charaMsg",
 							"talk":[
 								{
-									"text":["・・・","狂人病というのは本来あんな病気ではないんです・・・\nさっきの人達や晩餐館の地下にいた人達・・・","雪ちゃんみたいになってしまうのは本当に稀なケースだって・・・"],
+									"text":["・・・","狂人病というのは本来あんな病気ではないんです・・・\nさっきの人達や晩餐館の地下にいた人達・・・","雪ちゃんみたいになってしまうのは\n本当に稀なケースだって・・・"],
 									"charaID":"1",
 									"imgID":"2"
 								},
@@ -243,6 +261,9 @@
 						},
 						{
 							"type":"already"
+						},
+						{
+							"type":"stopBGM"
 						},
 						{
 							"type":"spawn",
