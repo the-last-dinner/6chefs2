@@ -25,7 +25,7 @@ private:
 private:
     RandomMove();
     ~RandomMove();
-    bool init(Character* chara);
+    bool init(Character* chara) override;
     virtual void start() override;
     virtual void move();
 };

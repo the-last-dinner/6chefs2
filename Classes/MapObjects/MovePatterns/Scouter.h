@@ -39,7 +39,8 @@ private:
     void onTargetCameIntoSight();
 public:
     virtual void start() override;
-    virtual void setPaused(bool paused) override;
+    virtual void pause() override;
+    virtual void resume() override;
     virtual void onPartyMoved() override;
     virtual bool canGoToNextMap() const override;
     virtual float calcSummonDelay() const override;

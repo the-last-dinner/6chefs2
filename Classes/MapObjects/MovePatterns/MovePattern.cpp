@@ -31,15 +31,18 @@ bool MovePattern::init(Character* chara)
 }
 
 // 動き開始
-void MovePattern::start()
+void MovePattern::start() {}
+
+// 一時停止
+void MovePattern::pause()
 {
-    this->setPaused(false);
+    this->paused = true;
 }
 
-// 止めるフラグを変更
-void MovePattern::setPaused(bool paused)
+// 再開
+void MovePattern::resume()
 {
-    this->paused = paused;
+    this->paused = false;
 }
 
 // 速度の倍率を設定

@@ -53,20 +53,26 @@ bool Chaser::init(Character* character)
 // 追跡開始
 void Chaser::start()
 {
-    if(!this->isPaused()) return;
-    
     MovePattern::start();
     
     if(!this->chara->isMoving()) this->move();
 }
 
-// 停止
-void Chaser::setPaused(bool paused)
+// 一時停止
+void Chaser::pause()
 {
-    MovePattern::setPaused(paused);
+    MovePattern::pause();
     
     // サブアルゴリズムに対しても適用
-    this->subPattern->setPaused(paused);
+    this->subPattern->pause();
+}
+
+// 追跡再開
+void Chaser::resume()
+{
+    MovePattern::resume();
+    
+    if(!this->chara->isMoving()) this->move();
 }
 
 // 主人公一行が動いた時

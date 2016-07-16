@@ -33,8 +33,9 @@ private:
 
 // インスタンスメソッド
 public:
-    virtual void setPaused(bool paused) override;
     virtual void start() override;
+    virtual void pause() override;
+    virtual void resume() override;
     virtual void onPartyMoved() override;
     virtual void move();
 private:

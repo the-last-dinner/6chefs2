@@ -41,6 +41,8 @@ bool CharacterEvent::onRun()
     {
         this->setDone();
         
+        LastSupper::AssertUtils::fatalAssert("指定IDのキャラクターが存在しません" + string(member::OBJECT_ID) + " : " + this->objectId);
+        
         return false;
     }
     
@@ -95,8 +97,7 @@ void WalkByEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
-    this->target->clearDirectionsQueue();
-    this->target->setAiPaused(true);
+    this->target->pauseAi();
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
@@ -106,7 +107,7 @@ void WalkByEvent::update(float delta)
     if(this->target->isMoving() || this->isCommandSent) return;
     if(this->target->isPaused()) this->target->setPaused(false);
     
-    this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->target->setAiPaused(false); this->setDone();}, this->speedRatio, this->back);
+    this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio, this->back);
     
     this->isCommandSent = true;
 }
@@ -131,8 +132,8 @@ void WalkToEvent::run()
 {
     if(!CharacterEvent::onRun()) return;
     
-    this->target->clearDirectionsQueue();
-    this->target->setAiPaused(true);
+    // NOTICE: イベントからの命令のみで動かしたいのでAIを一時停止
+    this->target->pauseAi();
     this->target->getActionManager()->resumeTarget(this->target);
 }
 
@@ -146,7 +147,7 @@ void WalkToEvent::update(float delta)
     PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
     deque<Direction> directions { pathFinder->getPath(this->target->getGridRect(), this->target->getWorldGridCollisionRects(), this->destPosition) };
     
-    this->target->walkByQueue(directions, [this](bool reached){this->target->setAiPaused(false); this->setDone();}, this->speedRatio);
+    this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
     
     this->isCommandSent = true;
 }
