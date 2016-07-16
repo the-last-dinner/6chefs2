@@ -336,5 +336,28 @@ void DungeonScene::onEventFinished()
     DungeonSceneManager::getInstance()->startStopWatch();
 }
 
+// Assertが表示される時
+void DungeonScene::onEnterAssertScene()
+{
+    FUNCLOG;
+    // リスナーを停止
+    this->listener->setEnabled(false);
+    
+    // カウントダウンしてれば停止
+    DungeonSceneManager::getInstance()->pauseStopWatch();
+    
+}
+
+// Assertから戻ってくる特
+void DungeonScene::onExitAssertScene()
+{
+    FUNCLOG;
+    // カウントダウンをしれてば再開
+    DungeonSceneManager::getInstance()->startStopWatch();
+    
+    // 操作可能に戻す
+    this->listener->setEnabled(true);
+}
+
 // データクラスを取得
 DungeonSceneData* DungeonScene::getData() const { return dynamic_cast<DungeonSceneData*>(this->data); }

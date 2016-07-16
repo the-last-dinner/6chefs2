@@ -19,5 +19,6 @@
 #include "Utils/SpriteUtils.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/CsvUtils.h"
+#include "Utils/AssertUtils.h"
 
 #endif // __COMMON_H__

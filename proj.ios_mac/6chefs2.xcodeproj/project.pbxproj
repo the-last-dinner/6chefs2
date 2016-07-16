@@ -65,6 +65,10 @@
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		67264650BD08F5A9E8B7ED1D /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
+		9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
+		9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
+		9FB79E721D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -397,6 +401,10 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9FB79E681D362D6C004E81CF /* AssertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssertUtils.h; sourceTree = "<group>"; };
+		9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertUtils.cpp; sourceTree = "<group>"; };
+		9FB79E6F1D363073004E81CF /* AssertScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertScene.cpp; sourceTree = "<group>"; };
+		9FB79E701D363073004E81CF /* AssertScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertScene.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1231,6 +1239,8 @@
 				DC03913D1C871E1000C50E8E /* StartUpScene.h */,
 				DC03913E1C871E1000C50E8E /* TitleScene.cpp */,
 				DC03913F1C871E1000C50E8E /* TitleScene.h */,
+				9FB79E6F1D363073004E81CF /* AssertScene.cpp */,
+				9FB79E701D363073004E81CF /* AssertScene.h */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1312,6 +1322,8 @@
 				DC03916E1C871E1000C50E8E /* StringUtils.h */,
 				26FBED361C98514A002FAFF7 /* CsvUtils.cpp */,
 				26FBED371C98514A002FAFF7 /* CsvUtils.h */,
+				9FB79E681D362D6C004E81CF /* AssertUtils.h */,
+				9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1518,6 +1530,7 @@
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
 				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */,
+				9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
 				DC0391E51C871E1000C50E8E /* Enemy.cpp in Sources */,
 				2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
@@ -1552,6 +1565,7 @@
 				DC0391931C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
 				DC0391ED1C871E1000C50E8E /* MapObject.cpp in Sources */,
 				DC0391AF1C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
+				9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */,
 				DC0392191C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391CF1C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
@@ -1600,6 +1614,7 @@
 				DC0391A01C871E1000C50E8E /* MapEvent.cpp in Sources */,
 				DC03918A1C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
 				DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
+				9FB79E721D363073004E81CF /* AssertScene.cpp in Sources */,
 				DC0391A21C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
 				DC0391701C871E1000C50E8E /* PathFinder.cpp in Sources */,
 				DC0391F61C871E1000C50E8E /* CheapChaser.cpp in Sources */,
@@ -1615,6 +1630,7 @@
 				DC0392121C871E1000C50E8E /* GlobalPlayerData.cpp in Sources */,
 				DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
 				DC03918C1C871E1000C50E8E /* Fog.cpp in Sources */,
+				9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
 				DC0391EE1C871E1000C50E8E /* MapObject.cpp in Sources */,
 				DC0391FE1C871E1000C50E8E /* RandomMove.cpp in Sources */,
 				DC0391EA1C871E1000C50E8E /* GhostObject.cpp in Sources */,
