@@ -8,6 +8,7 @@
 
 #include "Models/LocalPlayerData.h"
 #include "Models/GlobalPlayerData.h"
+#include "Utils/AssertUtils.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
 #include "Datas/MapObject/CharacterData.h"

@@ -100,7 +100,11 @@ bool RemoveItemEvent::init(rapidjson::Value& json)
 void RemoveItemEvent::run()
 {
     this->setDone();
-    PlayerDataManager::getInstance()->getLocalData()->removeItem(this->itemId);
+    bool isExist = PlayerDataManager::getInstance()->getLocalData()->removeItem(this->itemId);
+    // アイテムが存在しない場合
+    if (!isExist) {
+        LastSupper::AssertUtils::warningAssert("Warning: removeItemEvent\nitemID: "+ to_string(itemId) +"\nこのアイテムは持っていません");
+    }
 }
 
 #pragma mark -

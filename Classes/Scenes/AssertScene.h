@@ -19,8 +19,10 @@ class AssertScene : public BaseScene
 public:
     enum struct AssertType
     {
-        INFO,
-        FATAL
+        INFO, // デバッグ用お知らせ
+        WARNING, // 修正必要な警告
+        FATAL, // 致命的なエラー
+        ERROR // ユーザー出力用
     };
 
     // クラスメソッド

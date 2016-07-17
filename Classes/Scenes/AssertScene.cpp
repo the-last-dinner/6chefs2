@@ -32,8 +32,18 @@ bool AssertScene::init(const string& message, const AssertType& assertType)
             color = Color4B::BLUE;
             hideable = true;
             break;
+        case AssertType::WARNING:
+            title = "WarningAssert";
+            color = Color4B::ORANGE;
+            hideable = true;
+            break;
         case AssertType::FATAL:
-            title = DebugManager::getInstance()->isPlainData() ? "FatalAssert" : "SystemError";
+            title = "FatalAssert";
+            color = Color4B::BLACK;
+            hideable = false;
+            break;
+        case AssertType::ERROR:
+            title = "SystemError";
             color = Color4B::BLACK;
             hideable = false;
             break;
