@@ -55,6 +55,9 @@ void MapObject::setTrigger(Trigger trigger) { this->trigger = trigger; }
 // 当たり判定の有無をセット
 void MapObject::setHit(bool _isHit) { this->_isHit = _isHit; }
 
+// かいりきで押せるかをセット
+void MapObject::setMovable(bool _isMovable) { FUNCLOG; this->_isMovable = _isMovable; }
+
 // 衝突判定用Rectをセット
 void MapObject::setCollisionRect(const Rect& rect) { this->collisionRect = rect;}
 
@@ -222,6 +225,8 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
         {
             enableDirs.push_back(direction);
         }
+        // 当たっていたらそのものが動かせるかどうか確認して、動かせたら入力方向に押して、enableDirs.push_back(direction);する
+        
     }
     
     return enableDirs;

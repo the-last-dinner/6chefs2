@@ -29,6 +29,7 @@ private:
     int eventId { static_cast<int>(EventID::UNDIFINED) };
 	Trigger trigger {Trigger::SIZE};
 	bool _isHit { false };
+    bool _isMovable { false };
     Rect collisionRect {Rect::ZERO};
 	Light* light { nullptr };
     bool _isMoving { false };
@@ -52,6 +53,7 @@ public:
 	void setEventId(int eventId);
 	void setTrigger(Trigger trigger);
 	void setHit(bool _isHit);
+    void setMovable(bool _isMovable);
     void setCollisionRect(const Rect& rect);
     void setMapObjectList(MapObjectList* objectList);
     void setSprite(Sprite* sprite);
