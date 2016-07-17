@@ -274,7 +274,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1417",
+					"objID":"1417",
 					"charaID":"13",
 					"x":19,
 					"y":51,
@@ -285,7 +285,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1418",
+					"objID":"1418",
 					"charaID":"13",
 					"x":20,
 					"y":97,
@@ -610,89 +610,106 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
-						{
-							"text":["チィ・・・\n閉まってやがる・・・"],
-							"charaID":"5",
-							"imgID":"1",
-							"option":"reaction"
-						},
-						{
-							"text":["関係ねぇ・・・\nブチ開けろ。吾郎。"],
-							"charaID":"8",
-							"imgID":"2"
-						},
-						{
-							"text":["ウス！"],
-							"charaID":"5",
-							"imgID":"2"
-						}
-					]	
-				},
-				{
-					"type":"barrage",
-					"times":20,
-					"limit":5.0,
-					"false":[
+					"type":"sequence",
+					"action":[
 						{
 							"type":"charaMsg",
 							"talk":[
 								{
-									"text":["くっ・・・開かねぇ・・・"],
+									"text":["チィ・・・\n閉まってやがる・・・"],
 									"charaID":"5",
-									"imgID":"2"
+									"imgID":"1",
+									"option":"reaction"
 								},
 								{
-									"text":["もう一回だ！"],
+									"text":["関係ねぇ・・・\nブチ開けろ。吾郎。"],
 									"charaID":"8",
 									"imgID":"2"
-								}
-							]	
-						}
-					],
-					"true":[
-						{
-							"type":"sequence",
-							"action":[
-								{
-									"type":"spawn",
-									"action":[
-										{
-											"type":"playSE",
-											"file":"door_don.mp3"
-										},
-										{
-											"type":"removeLayer",
-											"layer":"door"
-										},
-										{
-											"type":"removeObject",
-											"objID":"181"
-										}
-									]
 								},
+								{
+									"text":["ウス！"],
+									"charaID":"5",
+									"imgID":"2"
+								}
+							]
+						},
+						{
+							"type":"barrage",
+							"times":20,
+							"limit":5.0,
+							"event":[
+								{
+									"type":"playSE",
+									"file":"door_unopen.mp3"
+								},
+								{
+									"type":"quakeMap",
+									"x":0,
+									"y":12,
+									"time":0.12
+								}
+							],
+							"false":[
 								{
 									"type":"charaMsg",
 									"talk":[
 										{
-											"text":["よし！開いた！"],
+											"text":["くっ・・・開かねぇ・・・"],
 											"charaID":"5",
 											"imgID":"2"
 										},
 										{
-											"text":["よっしゃ！行くぞ！"],
+											"text":["もう一回だ！"],
 											"charaID":"8",
-											"imgID":"1"
+											"imgID":"2"
 										}
 									]	
-								},
+								}
+							],
+							"true":[
 								{
-									"type":"already"
+									"type":"sequence",
+									"action":[
+										{
+											"type":"spawn",
+											"action":[
+												{
+													"type":"playSE",
+													"file":"door_don.mp3"
+												},
+												{
+													"type":"removeLayer",
+													"layer":"door"
+												},
+												{
+													"type":"removeObject",
+													"objID":"181"
+												}
+											]
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["よし！開いた！"],
+													"charaID":"5",
+													"imgID":"2"
+												},
+												{
+													"text":["よっしゃ！行くぞ！"],
+													"charaID":"8",
+													"imgID":"1"
+												}
+											]	
+										},
+										{
+											"type":"already"
+										}
+									]
 								}
 							]
 						}
-					]
+					]	
 				}
 			]
 		}

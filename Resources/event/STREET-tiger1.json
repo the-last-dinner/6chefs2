@@ -242,7 +242,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1415",
+					"objID":"1415",
 					"charaID":"13",
 					"x":21,
 					"y":19,
@@ -253,7 +253,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1416",
+					"objID":"1416",
 					"charaID":"13",
 					"x":20,
 					"y":99,
@@ -363,6 +363,11 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"playBGM",
+					"file":"stylish_piano.mp3",
+					"volume":0.5
+				},
+				{
 					"type":"createObject",
 					"objID":"1043",
 					"x":38,
@@ -370,6 +375,10 @@
 					"movePattern":"1",
 					"direction":"LEFT",
 					"charaID":"8"
+				},
+				{
+					"type":"chase",
+					"objID":"1043"
 				},
 				{
 					"type":"changeDirection",
@@ -400,6 +409,10 @@
 					"direction":"UP"
 				},
 				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
 					"type":"displayImg",
 					"file":"tengenrou.png"
 				},
@@ -412,7 +425,7 @@
 							"imgID":"2"
 						},
 						{
-							"text":["なるほどな・・・\n確か”天楼楼”とかいう施設だったよな・・・","・・・","・・・フン\n吾郎お前変わったな。"],
+							"text":["なるほどな・・・\n確か”天弦楼”とかいう施設だったよな・・・","・・・","・・・フン\n吾郎、お前変わったな。"],
 							"charaID":"8",
 							"imgID":"1"
 						},

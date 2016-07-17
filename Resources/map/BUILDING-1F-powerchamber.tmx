@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="22">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBiagBeI+aiA0YE2EOtQAY+aOzzM9QRiLypgdGDOSB08au6ouaPmDj9zCQFy9Q2UuYMFAADcjEjZ
   </data>
  </layer>
  <layer name="MonoShita" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztisENQEAQReeXSQU6oAE6oAGOFMGF0Ahd+MkexmUzNnGSecnLT2aeiPMHVrol9COdPuxS2elBa4g00LWwupNetGczQNci1mW85dCd6fJYi1hX8lZB9y0FgjFa/jroOo7jOIEb5U4ZsQ==
   </data>
  </layer>
  <layer name="MonoChu" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4B6YCkTA8MyJuqbexho5hEKzDUH6rWggbtCgWaGUcHcBGbKzRiK5tYyo+I6KplbSIO4BoF+Gpk71MBo+I6CoQgAaHAJrw==
   </data>
  </layer>
  <layer name="MonoUe" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKAt6GKlDkYGuazY7SIHZCOZNWruqLmj5o6aO2ruqLkDaS4I+LHixv5Ian3xqPMj0X3I/kF3z3ABAAHLIck=
   </data>

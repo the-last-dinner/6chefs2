@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="395">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="398">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cm01" tilewidth="16" tileheight="16">
-  <image source="cm01.png" trans="aa55ff" width="512" height="512"/>
- </tileset>
- <tileset firstgid="1985" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="4001" name="d1" tilewidth="16" tileheight="16">
+ <tileset firstgid="2977" name="d1" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="d1.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
+ <tileset firstgid="4897" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="54" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztlzEOwjAMRe2ZnYmLwIWADcQZoBNcBDgIcCQW0g0JO8SiVWLzLT21g5X8l1ZVTYT6h7oy0YRkzvx7f63qc04VNC9Lf636lvPylrW/t/QPVc/EnW08MjlvA/Tn2BSeQX+Wy3RdGViTnlNay9qf27f0vYUXvOA1rtc+XQ8GukxOaS1rf25fi5e2Z4vAq35WeMELXm0Q2atkrvHmpc013r20/y54tYnkNeOYXlGfVwSveWLBnzOMdy8NePkCXr6AV5scEycB716R5y94+QFe9bOO4bVl+bvZKrtCr4j1ApLGQbE=
   </data>
  </layer>
  <layer name="MonoShita" width="54" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwYEAAAAAw6D5U1/hAFUBAAAAAAAAAACvASNwAAE=
   </data>
  </layer>
  <layer name="MonoChu" width="54" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1asOg0AYRGGeYN8/QRSPwdMWPFcPLTwKY2rIWihMzpccv5Ns8icJAAAAAEdp+PcLzlMYbC214ale6q0qVRvsarShVZ3q1aBGg12TNszqo75qUavBLuAndkMygz+eRzZwQ66LGwL429+bR/C9Nw64N/fCvQEA4Hgbp0k1QA==
+   eJzt1asOg0AYRGH0vr9DFI/B0xY8Vw8tPApjashaKEzOlxy/k2zyJwkAAAAAR2n49wvOUxhsLbXhqV7qrSpVG+xqtKFVnerVoEaDXZM2zOqjvmpRq8Eu4Cd2QzKDP55HNnBDrosbAvjb35tH8L03Drg398K9AQDgeBvi2DRA
   </data>
  </layer>
  <objectgroup name="collision">
@@ -77,9 +86,37 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="path">
+  <object id="395" x="448" y="320" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="396" x="192" y="288" width="32" height="32">
+   <properties>
+    <property name="nextID" value="3"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+  <object id="397" x="320" y="464" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="3"/>
+    <property name="previousID" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="CharaUe" width="54" height="42">
   <data encoding="base64" compression="zlib">
-   eJzt1ccJwEAQBMGN4PIHuQDkUtQEIWSOKuj/zmurAACAHg2takxTmtPS3r7oHmt2bGlPRzo72QXwJX4IAE/wbwAA+LML864U+w==
+   eJzt1bcNwEAMBEHG338mV4Bci7oiBJnHDLA5L2IVAADQo6FVjWlKc1ra2xfdY82OLe3pSGcnuwC+xA8B4An+DQAAf3YBGv0Ugw==
+  </data>
+ </layer>
+ <layer name="shadow" width="54" height="42">
+  <data encoding="base64" compression="zlib">
+   eJzt1MENgEAIAEF7sP/KbMYaxDOXjTNvCNkPx8FfXOe387voms3vUuia3NQ1v/GWrvmOrnUqP/gpXS26WnS16GrR1aKrRVeLrhZdLbpadLXoatHVogvWuwFCFjBZ
   </data>
  </layer>
 </map>

@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="18">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKAtOMWIignJ48LIYC2Qnw6kM6A4E4hXA8XWQDG6PC4M04fP3JNIbjhNRXPx8UkxtxVIt0FxOxZzkeVx4XYs5nIzoGJ0c9HlcWFC5qK7n1rmkouHgrkwMJDu7QWK9UFxPwn2EjIXPR9T01xywmnUXNLNBYE+RuIwMiDGXHLAqLm0NXcoAQAE12bb
   </data>
  </layer>
  <layer name="MonoShita" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2Dwg3pmBLuRGbc6UsFcoFnzoHj+EDB3FIyCUTAKRgF5AABWNwYP
   </data>
  </layer>
  <layer name="MonoChu" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2DkgrWMCPZqRtzqhru5o2AUjIJRMNwBAKBUBA8=
   </data>
  </layer>
  <layer name="MonoUe" width="22" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUDBVQw8zAUAvFdczUM3cW0KzZUDyHiuaOglEwCkbBYAEAi/oEeQ==
   </data>
@@ -57,4 +72,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="22" height="26">
+  <data encoding="base64" compression="zlib">
+   eJxjYBiaoJqFMvlRcwenueSCUXMH1tyhls5GzaWtueSCUXOHprlDBQAAB+QQYA==
+  </data>
+ </layer>
 </map>

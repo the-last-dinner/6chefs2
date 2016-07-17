@@ -118,7 +118,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1422",
+					"objID":"1422",
 					"charaID":"13",
 					"x":9,
 					"y":97,
@@ -717,86 +717,91 @@
 							"y":31,
 							"action":[
 								{
-									"type":"charaMsg",
-									"text":["間違いねぇ・・・"],
-									"charaID":"5",
-									"imgID":"1"
-								},
-								{
-									"type":"createCamera",
-									"mapID":"11",
-									"x":21,
-									"y":24,
+									"type":"sequence",
 									"action":[
 										{
-											"type":"spawn",
+											"type":"charaMsg",
+											"text":["間違いねぇ・・・"],
+											"charaID":"5",
+											"imgID":"1"
+										},
+										{
+											"type":"createCamera",
+											"mapID":"11",
+											"x":21,
+											"y":24,
 											"action":[
 												{
-													"type":"createObject",
-													"objID":"1030",
-													"charaID":"13",
-													"x":28,
-													"y":17,
-													"direction":"RIGHT",
-													"movePattern":"2"
+													"type":"spawn",
+													"action":[
+														{
+															"type":"createObject",
+															"objID":"1030",
+															"charaID":"13",
+															"x":28,
+															"y":17,
+															"direction":"RIGHT",
+															"movePattern":"2"
+														},
+														{
+															"type":"createObject",
+															"objID":"1031",
+															"charaID":"13",
+															"x":28,
+															"y":27,
+															"direction":"RIGHT",
+															"movePattern":"2"
+														},
+														{
+															"type":"createObject",
+															"objID":"1032",
+															"charaID":"13",
+															"x":10,
+															"y":24,
+															"direction":"UP",
+															"movePattern":"2"
+														},
+														{
+															"type":"createObject",
+															"objID":"1033",
+															"charaID":"13",
+															"x":49,
+															"y":4,
+															"direction":"LEFT",
+															"movePattern":"1"
+														},
+														{
+															"type":"createObject",
+															"objID":"1034",
+															"charaID":"0",
+															"x":47,
+															"y":4,
+															"direction":"LEFT",
+															"movePattern":"1"
+														}
+													]
 												},
 												{
-													"type":"createObject",
-													"objID":"1031",
-													"charaID":"13",
-													"x":28,
-													"y":27,
-													"direction":"RIGHT",
-													"movePattern":"2"
+													"type":"charaMsg",
+													"talk":[
+														{
+															"text":["狂人病・・・"],
+															"charaID":"0",
+															"imgID":"3"
+														},
+														{
+															"text":["中山さん！\n一旦戻ろう！"],
+															"charaID":"0",
+															"imgID":"3",
+															"option":"reaction"
+														}
+													]
 												},
 												{
-													"type":"createObject",
-													"objID":"1032",
-													"charaID":"13",
-													"x":10,
-													"y":24,
-													"direction":"UP",
-													"movePattern":"2"
-												},
-												{
-													"type":"createObject",
-													"objID":"1033",
-													"charaID":"13",
-													"x":49,
-													"y":4,
-													"direction":"LEFT",
-													"movePattern":"1"
-												},
-												{
-													"type":"createObject",
-													"objID":"1034",
-													"charaID":"0",
-													"x":47,
-													"y":4,
-													"direction":"LEFT",
-													"movePattern":"1"
+													"type":"fadeout",
+													"time":3.0
 												}
 											]
-										},
-										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["狂人病・・・"],
-													"charaID":"0",
-													"imgID":"3"
-												},
-												{
-													"text":["中山さん！\n一旦戻ろう！"],
-													"charaID":"0",
-													"imgID":"3",
-													"option":"reaction"
-												}
-											]
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
 										}
 									]
 								}
@@ -827,6 +832,9 @@
 						{
 							"type":"changeHero",
 							"charaID":"0"
+						},
+						{
+							"type":"already"
 						},
 						{
 							"type":"changeMap",

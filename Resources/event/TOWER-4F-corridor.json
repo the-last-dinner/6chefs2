@@ -64,20 +64,6 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["50","6"]
-				}
-			],
-			"action":[
-				{
-					"type":"removeObject",
-					"objID":"181"
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
 					"Nevent":["52","3"]
 				}
 			],

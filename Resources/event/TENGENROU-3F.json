@@ -6,13 +6,13 @@
 		},
 		{
 			"type":"createEnemy",
-			"enemyID":"1420",
+			"objID":"1420",
 			"charaID":"13",
-			"x":70,
-			"y":102,
+			"x":28,
+			"y":21,
 			"pathID":"1",
 			"movePattern":"4",
-			"time":1
+			"times":1
 		},
 		{
 			"type":"if",

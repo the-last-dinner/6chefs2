@@ -18,7 +18,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"146",
+					"objID":"146",
 					"x":64,
 					"y":12,
 					"charaID":"13",
@@ -33,7 +33,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["17","2"]
+					"flg":["17","2",0]
 				},
 				{
 					"event":["16","7"]
@@ -43,6 +43,20 @@
 				{
 					"type":"removeObject",
 					"objID":"153"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["16","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"182"
 				}
 			]
 		}
@@ -210,6 +224,11 @@
 							]
 						},
 						{
+							"type":"changeDirection",
+							"objID":"1036",
+							"direction":"LEFT"
+						},
+						{
 							"type":"charaMsg",
 							"text":["君達・・・"],
 							"charaID":"10"
@@ -219,11 +238,11 @@
 							"action":[
 								{
 									"type":"createEnemy",
-									"enemyID":"145",
+									"objID":"145",
 									"x":64,
 									"y":12,
 									"charaID":"13",
-									"movePattern":"1",
+									"movePattern":"0",
 									"direction":"DOWN",
 									"times":1
 								},
@@ -253,7 +272,7 @@
 						{
 							"type":"charaMsg",
 							"text":["いやぁぁぁぁぁ"],
-							"charaID":"0",
+							"charaID":"1",
 							"imgID":"2",
 							"option":"reaction"
 						},
@@ -263,6 +282,11 @@
 								{
 									"type":"playSE",
 									"file":"agaa.mp3"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"145",
+									"direction":"LEFT"
 								},
 								{
 									"type":"charaMsg",
@@ -299,6 +323,10 @@
 					"itemID":"153"
 				},
 				{
+					"type":"removeObject",
+					"objID":"153"
+				},
+				{
 					"type":"charaMsg",
 					"text":["よし！急ごう！"],
 					"charaID":"0",
@@ -332,6 +360,16 @@
 		{
 			"type":"systemMsg",
 			"text":["女の子が笑いかけている絵だ"]
+		}
+	],
+	"12":[
+		{
+			"type":"systemMsg",
+			"text":["当然だが鍵がかかっている"]
+		},
+		{
+			"type":"playSE",
+			"file":"door_unopen.mp3"
 		}
 	]
 }

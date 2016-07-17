@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="334" height="118" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="91">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="334" height="118" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="92">
  <tileset firstgid="1" name="gendai-soto2_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
@@ -127,7 +127,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="86" x="2352" y="1088" width="32" height="32">
+  <object id="86" x="2352" y="1056" width="32" height="32">
    <properties>
     <property name="EventID" value="4"/>
     <property name="trigger" value="1"/>
@@ -142,6 +142,12 @@
   <object id="90" x="64" y="192" width="32" height="32">
    <properties>
     <property name="EventID" value="7"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="91" x="5280" y="960" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
     <property name="trigger" value="1"/>
    </properties>
   </object>

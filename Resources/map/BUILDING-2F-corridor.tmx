@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1985" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2465" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2945" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2945" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="3073" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="3073" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="80" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1bENgDAMBVEzADAI0MIMkEWQ2L8nacFElhIEUe5L17l6jUUY+36trzfedZWnOQ2+yeAX7sbK05zwy+M3NyJLJPzwww+/ksMvv9/qcwa/cLdVnlP8YmZ0Dz/88Cs3/PD7kx/TdzzEbAtW+yX87MMvbfilDb+08T/e3QmlF+ZH
   </data>
  </layer>
  <layer name="MonoChu" width="80" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt07ERgCAQBVHy60ULQRux/wIMTOACxFmN3DfzM6KdoxS94Yhrs+/+vtY+0U292jSz33P2Y+zH2I+xH2M/xn6M/Rj7MfZj7MfYj7EfYz+mpmZLuLx1cFe5n3pbjP+l/e7Zj7EfYz/Gft87AQ2JPPE=
   </data>
  </layer>
  <layer name="MonoUe" width="80" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0DESQEAQRNHJ173JyGzG7cjIyGy7AVO1wfBf/jtoMwAAgH9qk1mXvtstalZH91Sv7cGxH6Xb1OwV/xu1nR37UbpDzVnxv0nbs2M/SnfdTfO+AwAAAAAAKHq5GsY=
   </data>
  </layer>
  <layer name="blood2" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0jEKgDAMRuE46NTsCh7D+19BBe9gvYWRJns7qfA++Idu4VERAAAAAAAAAADarUlks+2pvI9Uhjqntcq2y5v1KjLouzf9SbSLfrOWoZK16nwP/l+b0VpNvrDQDx9xA0wQC4Y=
@@ -43,7 +52,7 @@
  </layer>
  <layer name="hide3" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1MEJADAIBEH7Tf//NGDggvibARtY5KoAAAAAAODfeRyZrpV+ue7f9MvpN2P/ZuzfrgtBlQkz
@@ -51,7 +60,7 @@
  </layer>
  <layer name="blood" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1ckJAkEUBuGn55kAFE3CJQk1CjVH1xxcc1DQICzBDqAHYWioD+re/Id+EZIkSZIkqTSbKmJLO9rToWr7RWU5sdeZLnSlm/tlebDXkzp1RJcGNKzbflV5emzWpwlN3U+FS7fo6H+aLd2k7y26u1+2dJNe9Ha/RkbcoPHvHinfjN3mtHC/RpbstqK1+/3VB3PnGAs=
@@ -59,7 +68,7 @@
  </layer>
  <layer name="hide1" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0LENADAMwzD/m//3rl1bIxsJ6AElAAAAAADwb654M/Gv4V/Pv45/He92HN+bB/I=
@@ -67,7 +76,7 @@
  </layer>
  <layer name="hide2" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0MEJACAMALF2KvffzAHqw1J8CAncAhcBAAAA/GZljXv+zZz+edjnHwAAL2waNgRh
@@ -75,7 +84,7 @@
  </layer>
  <layer name="door" width="80" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0LENwCAMAEH3DJ50pAsdGRXP4CYC3U3w+ggAAE50tYi7/V2xr57vHv/K3nw3/Cub+e7zDwAAAChY8k8E9Q==

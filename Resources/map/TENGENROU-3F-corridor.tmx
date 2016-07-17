@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="31">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
- </tileset>
- <tileset firstgid="961" name="cm01" tilewidth="16" tileheight="16">
-  <image source="cm01.png" trans="aa55ff" width="512" height="512"/>
  </tileset>
  <layer name="Base" width="78" height="44">
   <properties>
@@ -25,11 +22,6 @@
  <layer name="MonoChu" width="78" height="44">
   <data encoding="base64" compression="zlib">
    eJzt17EJACAMRNHYO4n7D2hhKwTSaOC9CY7fXQQAAADQ3RyvF/zv1mjpltIIAKA/fyHnL9RoBAAAAAAAxwaYvgDh
-  </data>
- </layer>
- <layer name="MonoUe" width="78" height="44">
-  <data encoding="base64" compression="zlib">
-   eJztzsENABAQAMF7aJ1O6IS66MCHRGSmgM1GAAD8IaeIkv5u3VDXWzv092rrhr7exqG/V1sAAAAAAAAAAAAA7E0K+gvs
   </data>
  </layer>
  <objectgroup name="collision">

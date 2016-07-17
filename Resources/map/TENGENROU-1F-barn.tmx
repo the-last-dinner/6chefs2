@@ -1,43 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="28" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="31">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="z" value="-10"/>
+ </properties>
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgYcIoRuxi1MDJYC+SnA+kMGuFMIF7NOGrfcLKvFUi30Qi3Y7HPkMZ41L5R+0btG7Vv1L5R+0bto699INDHSFs8UAAA2SDPZQ==
   </data>
  </layer>
  <layer name="MonoShita" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgYUM+MKdaIRYxaYC7Q7HloeP6ofaP20di+P4wMDH8ZMWl0sBto9h40vJcM+6SYGBikmTDpUTAKRsEoGAWjYBSMAmoBAEh6IsE=
   </data>
  </layer>
  <layer name="MonoShita2" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztxbENACAIAMGHMWT/LTWxZAILw19zIM2yA070r62Eyl6SJOlnF7kUBGk=
   </data>
  </layer>
  <layer name="MonoShita3" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzQEJADAIAMHXGLN/yw1s4UD+ChxI/92AF3PfSaic+yRJkrZoWXkCNQ==
   </data>
  </layer>
  <layer name="MonoChu" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMNSBMiMDgwojJk0r4Ag024kRk0YGyUB+ChCn0tAdo4B+YDCmsaHkvqECFIF+UKKjP+yBdjnQ0b5YoF1xwyCeBhoAALorCfE=
   </data>
  </layer>
  <layer name="MonoChu2" width="28" height="28">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMByAIyMDgxMjgh4Fo4DaYLCnscHuvlEwCoYLAABtVgMf
   </data>
@@ -129,7 +150,7 @@
   </object>
   <object id="18" x="48" y="176" width="32" height="32">
    <properties>
-    <property name="nextID" value="6"/>
+    <property name="nextID" value="1"/>
     <property name="pathID" value="5"/>
     <property name="previousID" value="4"/>
    </properties>

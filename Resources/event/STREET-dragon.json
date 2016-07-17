@@ -389,7 +389,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1433",
+					"objID":"1433",
 					"charaID":"13",
 					"x":9,
 					"y":85,
@@ -399,7 +399,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1434",
+					"objID":"1434",
 					"charaID":"13",
 					"x":8,
 					"y":14,

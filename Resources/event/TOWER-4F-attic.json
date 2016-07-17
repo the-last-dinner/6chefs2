@@ -6,7 +6,7 @@
 		},
 		{
 			"type":"createEnemy",
-			"enemyID":"1432",
+			"objID":"1432",
 			"charaID":"13",
 			"x":22,
 			"y":12,

@@ -16,7 +16,7 @@
 		},
 		{
 			"type":"createEnemy",
-			"enemyID":"148",
+			"objID":"148",
 			"x":26,
 			"y":20,
 			"charaID":"13",
@@ -29,13 +29,17 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["18","5"]
+					"event":["18","5"]
 				}
 			],
 			"action":[
 				{
 				    "type":"removeLayer",
 				    "layer":"shutter"
+				},
+				{
+					"type":"removeObject",
+					"objID":"181"
 				}
 			]
 		}
@@ -160,7 +164,7 @@
 						},
 						{
 							"type":"createEnemy",
-							"enemyID":"147",
+							"objID":"147",
 							"x":36,
 							"y":23,
 							"charaID":"13",
@@ -221,6 +225,14 @@
 						{
 							"type":"removeLayer",
 							"layer":"shutter"
+						},
+						{
+							"type":"removeObject",
+							"objID":"181"
+						},
+						{
+							"type":"wait",
+							"time":4.0
 						},
 						{
 							"type":"fadein"

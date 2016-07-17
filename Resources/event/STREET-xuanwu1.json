@@ -24,13 +24,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["12","12"]
+					"event":["5","5"]
 				}
 			],
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1411",
+					"objID":"1411",
 					"charaID":"13",
 					"x":11,
 					"y":87,
@@ -41,7 +41,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1412",
+					"objID":"1412",
 					"charaID":"13",
 					"x":13,
 					"y":21,
@@ -389,6 +389,24 @@
 					"y":11,
 					"action":[
 						{
+							"type":"createObject",
+							"objID":"101411",
+							"charaID":"13",
+							"x":11,
+							"y":87,
+							"direction":"UP",
+							"movePattern":"2"
+						},
+						{
+							"type":"createObject",
+							"objID":"101412",
+							"charaID":"13",
+							"x":13,
+							"y":21,
+							"direction":"UP",
+							"movePattern":"2"
+						},
+						{
 							"type":"sequence",
 							"action":[						
 								{
@@ -417,10 +435,42 @@
 											]
 										}
 									]
+								},
+								{
+									"type":"removeObject",
+									"objID":"101411"
+								},
+								{
+									"type":"removeObject",
+									"objID":"101412"
 								}
 							]
 						}
 					]
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1411",
+					"charaID":"13",
+					"x":11,
+					"y":87,
+					"direction":"UP",
+					"times":1,
+					"pathID":"1",
+					"movePattern":"4",
+					"speed":1.4
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1412",
+					"charaID":"13",
+					"x":13,
+					"y":21,
+					"direction":"UP",
+					"times":1,
+					"pathID":"3",
+					"movePattern":"4",
+					"speed":1.4
 				},
 				{
 					"type":"fadein"

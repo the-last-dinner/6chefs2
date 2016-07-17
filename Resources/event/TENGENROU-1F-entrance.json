@@ -14,7 +14,7 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1424",
+					"objID":"1424",
 					"charaID":"13",
 					"x":17,
 					"y":18,
@@ -24,7 +24,7 @@
 				},
 				{
 					"type":"createEnemy",
-					"enemyID":"1425",
+					"objID":"1425",
 					"charaID":"13",
 					"x":43,
 					"y":37,
@@ -38,13 +38,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["34","5"]
+					"event":["34","5"]
 				}
 			],
 			"action":[
 				{
 					"type":"createEnemy",
-					"enemyID":"1426",
+					"objID":"1426",
 					"charaID":"13",
 					"x":27,
 					"y":13,
@@ -137,7 +137,7 @@
 						{
 							"type":"charaMsg",
 							"text":["これでいけるな・・・"],
-							"charaID":"0",
+							"charaID":"5",
 							"imgID":"2"
 						},
 						{
@@ -224,9 +224,9 @@
 					            				},
 	            								{
 	            									"type":"changeMap",
-	            									"mapID":"28",
+	            									"mapID":"34",
 	            									"x":22,
-	            									"y":22,
+	            									"y":24,
 	            									"eventID":"2"
 	            								}
 	            							]
@@ -302,6 +302,21 @@
 				{
 					"type":"battle",
 					"true":[
+						{
+							"type":"already"
+						}
+					]
+				},
+				{
+					"type":"barrage",
+					"times":20,
+					"limit":5.0,
+					"true":[
+						{
+							"type":"already"
+						}
+					],
+					"false":[
 						{
 							"type":"already"
 						}

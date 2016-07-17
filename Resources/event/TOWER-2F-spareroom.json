@@ -99,7 +99,7 @@
 										},
 										{
 											"type":"wait",
-											"time":9.0
+											"time":8.0
 										},
 										{
 											"type":"removeLayer",
@@ -135,6 +135,9 @@
 											"type":"changeDirection",
 											"objID":"1045",
 											"direction":"DOWN"
+										},
+										{
+											"type":"fadein"
 										},
 										{
 											"type":"already"

@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="27">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="50" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="33">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="option6" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="option6" tilewidth="16" tileheight="16" tilecount="32" columns="4">
   <image source="option6.png" trans="aa55ff" width="64" height="128"/>
  </tileset>
- <tileset firstgid="993" name="roop" tilewidth="16" tileheight="16">
+ <tileset firstgid="993" name="roop" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="roop.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1473" name="oinarisama" tilewidth="16" tileheight="16">
+ <tileset firstgid="1473" name="oinarisama" tilewidth="16" tileheight="16" tilecount="400" columns="20">
   <image source="oinarisama.png" trans="aa55ff" width="320" height="320"/>
  </tileset>
  <layer name="Base" width="30" height="50">
   <properties>
-   <property name="cc_vertexz" value="-15"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztlk0KwkAMhTu4cOHand7ClR5IPYjeS/Cv2uoIXVSYw5gBC6+DZtHOGJB88BiGBB55i5AsUxRFURRF6c4q0Dd2g34+Y9PWEjzXQX0PXofEvkPoOYNXHtnXC2voW0T0DWnmnZDP9O3bgL5lZN8NaUuak+fCtGsWvB6RfWemrRHUqoQ5c6TMmSNlzhxSOddCOTuhnFPuDQ4rlHMllHMtlLMTyrkQytkK5VwJ5VwL5ex0P/8EnPcpNK+/n4+kE7z+zu17V38ivJ8vpCu8fq/kzL9rf3hf3Uh3eP1eKZl/137cV8r/8gK0i2cK
   </data>
  </layer>
+ <layer name="Base2" width="30" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzzEKgDAMRuF0cnB201s46YHUg+i5G0EhzSgkg7wPfigU+qgIAADAd7tblKG020zzcPeZ3U5yuvb9+xzV9d7/jtqZnm6GU3fpFm2uwX+05tKuz0sDAAAA+IEK/QYKLw==
+  </data>
+ </layer>
  <layer name="tower" width="30" height="50">
   <properties>
-   <property name="cc_vertexz" value="-14"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1blOQlEUheHLdHpQFO1BAbVXBoUekPFVMMHXZFCGnkFAepTfgsSG5BRsILBX8rV7Nevc2/Q5TgttdPCBT3TRQx8DbDtDbo4wxgRfmGKGOb6xEOhdcvMHv3+3jeO44IYHXvhgzPZ7/dwM4AznCOIClwjhCtdH1BvmZgQ3uEUUMcRxh3s8CPSuk+B2Eimk8YwXwb51CnS8oogSyqjsoLdOx9s/DbwL9tq8I4nY7FkiNnvOCnQ/cvPJbN5zBjWB3hw382bznqvCmz7EPR/Tf2Ff32ebPUu8I5s9S7wjjUaj0Wg0Go1Go9GcZlYR/Tsy
   </data>
  </layer>
- <layer name="Base2" width="30" height="50">
+ <layer name="Base3" width="30" height="50">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztlkEOgjAQRacrF3AE3aMHUQ6i4GXUgwAHUS7lX5BISNFJrYOQ/5O3mmbeNJ1FRRiGYRiGYcJzcSLXjpsbP9eglkg4w1ToV7tX72HtV947+j06WkNvCc5gjb6bSN40YA7p1WLe95N3NZHX6r7voJfeb8nAFuyMvXtwALnS65szhCM4gULp9c1p8b6+Oee0V0v2ancxtle7i7G92l385/fV/Gmm3qs5ecXImQjDLDNP8adLnQ==
@@ -41,7 +49,7 @@
  </layer>
  <layer name="MonoShita" width="30" height="50">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1jEKgDAMAMBAf6L+QT+ii///h10ELViwQ0W4gywJJJAsiQAA6GNIEVO658bUFqUzX/a/2is1ns15b8sHu1vzzM3NAAC6Gxp/9DdR+9vhzw7SHQg0
@@ -49,7 +57,7 @@
  </layer>
  <layer name="rope" width="30" height="50">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzUEJAAAIBLD7iPZPbAxBtgJLgC+6kimv1+v1AgAAwIUFpiwBFA==
@@ -72,6 +80,11 @@
   <object id="24" x="96" y="128" width="32" height="160"/>
   <object id="25" x="32" y="128" width="32" height="144"/>
   <object id="26" x="32" y="96" width="96" height="32"/>
+  <object id="27" x="80" y="496" width="48" height="48"/>
+  <object id="28" x="112" y="640" width="16" height="16"/>
+  <object id="30" x="288" y="576" width="48" height="32"/>
+  <object id="31" x="368" y="464" width="48" height="48"/>
+  <object id="32" x="192" y="336" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="19" x="448" y="240" width="32" height="32">
