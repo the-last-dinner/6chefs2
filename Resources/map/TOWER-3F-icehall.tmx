@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="64" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="47">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="chip10e_glas.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="d1" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="d1" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="d1.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="2881" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2881" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="3361" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="3361" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="60" height="64">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt20EKwjAUhOFk7UG1B9Gs1INUD6K9lClafIS3NBN5/A+Gopvhc1cYU+K4390tp3TP389zfn+nvmfWZTG+h6jT3vp77+vzIMpkuhW9a99szHj79+8+GeU91udJlGK8it7ieLf+qMEbO3hjB2/s4NXkXLsuTa6C/lFe26vsx4sXL168ePHixYsXL168ePHixYsXL168ePHixYv3X7x2L7ntKaN6vb3kEtjr7ekmQS9evD3i7SWLoJe9SuzgjR28sYM3dtr3snbT2DN2L+ntKXtk1LXvf6P+T8fFvBfbjKje
   </data>
  </layer>
  <layer name="Base2" width="60" height="64">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAIAXAzwAAAE=
   </data>
  </layer>
  <layer name="MonoShita" width="60" height="64">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1TEKgEAMRcGQ8+tF9JJuLSzYJYZ5zYe0UyRCkiRVdWTEmXP33bVud85dvj0c+PLly7eL766pvrv48uXLly9fvnz58uXLly9fvnz58uXLly9fvnz58uXLly9fvnyrfKu2yrdq+fZw4MuXL9+vf1/Sf3oA6Rd7Bw==
   </data>
  </layer>
  <layer name="MonoChu" width="60" height="64">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1rEVgCAMQMGUbKJ76f4zaGdhx1Mh5m4CIDw+EQDAbJYWsbbRq/jOdu51L7RfGMG7MidzAYBLbxez9rS3i3oKwJ9l7XovXYc77wAAFehdDuYEAFCTf+AznCNvcr+Aag4E2Q6J
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="64">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztz1EJACAMQMEF0AbrH1P8WAVB2O7gBXgR8N5Z1RR+e5v2m7sCAAAAAAAAAAAAAAAA4I8LHv0Iow==
   </data>

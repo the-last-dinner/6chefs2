@@ -66,7 +66,7 @@
    eJztzDkBACAMBLDzUCU8/rWBABi7JQKSAAAAP6OSWX3/uvdu/AEAAAAAAAB4O5kkARc=
   </data>
  </layer>
- <objectgroup name="collision" visible="0">
+ <objectgroup name="collision">
   <object id="4" x="0" y="160" width="96" height="688"/>
   <object id="6" x="32" y="112" width="352" height="48"/>
   <object id="8" x="288.241" y="159.949" width="96" height="304" rotation="0.0905861"/>
@@ -263,7 +263,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Chara(object)" visible="0">
+ <objectgroup name="Chara(object)">
   <object id="37" x="192" y="272" width="32" height="32">
    <properties>
     <property name="CharaID" value="6"/>

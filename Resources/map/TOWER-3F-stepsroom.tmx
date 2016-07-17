@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="14">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="20">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKA++A3EpxhxYxjAp6YASd1aIDsdSGdgwZlI9uJTs3oAzXOBYlLMawXSbVhwO5J5+NSgm+fCQBkeNW/UvJFqHgwMlPsKgew+CnExknnUBADPEXfp
   </data>
  </layer>
  <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjALiwTxmCB4p5o0C3AAAimQDxw==
   </data>
  </layer>
  <layer name="MonoChu" width="20" height="20">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjALiwFpGBHs1I251o+aNDAAAhDAFaQ==
   </data>
  </layer>
  <layer name="MonoUe" width="20" height="20">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjALiAAszgs3GjFvdcDKPFYqpYZ4S0AxlKFahgnkDDQDz6gDp
   </data>

@@ -180,7 +180,8 @@
 							]
 						},
 						{
-							"type":エピソード蘭丸開放
+							"type":"systemMsg",
+							"text":["ランマルエピソード解放"]
 						},
 						{
 							"type":"already"

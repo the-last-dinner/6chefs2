@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="16">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="nomen" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="nomen" tilewidth="16" tileheight="16" tilecount="120" columns="10">
   <image source="nomen.png" trans="aa55ff" width="160" height="192"/>
  </tileset>
- <tileset firstgid="601" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="601" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1081" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1081" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKA9+A3EpxgJYxggRm0Bkvq1QHY6kM7AgzOR3EOM2tWD0HxuKCbH/FYg3YYHtyOZT4xadPO5GaiLR80fNX/U/FHzR80f/OYXAtl9VMbFSObTEgAAtJNkFQ==
   </data>
  </layer>
  <layer name="MonoShita" width="24" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBi+4CUjA8MrRtqZ/xlo9hc85j8Gyj2hwP6/QL3/8Oh/C5R7R0P/jYJRMApGwSgYBcMVAACY9wli
   </data>
  </layer>
  <layer name="steps" width="24" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjILBDb4zI9g/mXGrIxeIsjAwiEGxOMuo+aPmkwaMgWaaQLEpDcwfBbQBAFKVBUc=
@@ -32,7 +38,7 @@
  </layer>
  <layer name="hide" width="24" height="24">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjILBDbjR8Kj5o+aPJPNHAW0AACv8AWE=
@@ -89,7 +95,7 @@
  </objectgroup>
  <layer name="shadow" width="24" height="24">
   <data encoding="base64" compression="zlib">
-   eJxjYBge4DHL8DefEjcMBvMpAaPmj5o/av6o+aPmD07zhyoAAPkgE9s=
+   eJxjYBge4DHL8DefEjcMBvePmj9q/qj5o+aPmj/8zB+qAACynhL0
   </data>
  </layer>
 </map>

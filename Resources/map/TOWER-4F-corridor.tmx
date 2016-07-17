@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="76" height="74" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="237">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="76" height="74" opacity="0.91">
@@ -174,7 +174,4 @@
    eJzt1rEJACAAA8GI+++gDioWdoJgK9zBV1kgCQAAAAC8mSVpNelHo+4NAODF7U8AAAAAAAAAAAAAAAAAAAD8ZgGAtQmv
   </data>
  </layer>
- <objectgroup name="Ugokumono(object)">
-  <object id="228" x="384" y="288" width="32" height="32"/>
- </objectgroup>
 </map>

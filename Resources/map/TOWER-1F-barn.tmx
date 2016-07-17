@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="16" height="22">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKAe+A3EpxiJwwWMmPrXAsXSgXQGAZwJxKsHqf5WIN1GALfj0e/CQBwebPrXMJKvH5ZuTpOpHxZvmUTqpYV+aUbK9FsyQtIFufqJ1Udr/b1Adh8RuBiHfpC5a7CkTVwAPd2Rqn+gAQDXal/W
@@ -19,10 +19,18 @@
  </layer>
  <layer name="MonoShita" width="16" height="22">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgF2AAjMwMDExA/ZWJgeMZEvjnMQDNYmBHmgUACM271tWhyikC+EppYHR79lIIXFPgVBNigbuOggRsbaOjvwQKSGRkYUoA4lXGgXTIK6AEAF78GTA==
+   eJxjYBgF2AAjMwMDExA/ZWJgeMZEvjnMQDNYmBHmgUACM271tWhyikC+EppYHR79lIIXFPgVBNigbuOggRsbaOjvUTAKBgIAANFJBR0=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="16" height="22">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBaQzMjAkALEqYwD7ZJRQA8AAEvnATA=
   </data>
  </layer>
  <objectgroup name="collision">
