@@ -154,7 +154,6 @@ bool DungeonMainMenuLayer::init()
         {
             Sprite* dotimg {Sprite::createWithSpriteFrameName(file_name)};
             dotimg->setPosition(cPanelSize.width / 2, dotimg->getContentSize().height / 2 + 15);
-            dotimg->setZOrder(1);
             chara_panel->addChild(dotimg);
         }
         
