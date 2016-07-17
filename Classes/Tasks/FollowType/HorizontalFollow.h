@@ -22,7 +22,7 @@ private:
     HorizontalFollow();
     ~HorizontalFollow();
     virtual bool init() override;
-    virtual Point getPosition(const Size& mapSize, const Point& targetPosition);
+    virtual Point getPosition(const Size& mapSize, const Point& targetPosition) override;
 };
 
 #endif /* defined(__LastSupper__HorizontalFollow__) */

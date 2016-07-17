@@ -16,13 +16,13 @@ class TrophyListLayer : public MenuLayer
     // クラスメソッド
 public:
     CREATE_FUNC(TrophyListLayer)
-    virtual bool init();
+    virtual bool init() override;
     
     // インスタンスメソッド
 private:
-    virtual void onIndexChanged(int newIdx, bool sound);
-    virtual void onEnterKeyPressed(int idx);
-    virtual void onMenuKeyPressed();
+    virtual void onIndexChanged(int newIdx, bool sound) override;
+    virtual void onEnterKeyPressed(int idx) override;
+    virtual void onMenuKeyPressed() override;
     void changeTrophyDiscription(const int idx);
 protected:
     TrophyListLayer(){FUNCLOG};

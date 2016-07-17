@@ -50,7 +50,7 @@ public:
 private:
     CreateMapObjectEvent() {FUNCLOG};
     ~CreateMapObjectEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     // インスタンス変数
 private:
@@ -65,7 +65,7 @@ public:
 private:
     RemoveMapObjectEvent() {FUNCLOG};
     ~RemoveMapObjectEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -77,7 +77,7 @@ public:
 private:
     FollowCharacterEvent() {FUNCLOG};
     ~FollowCharacterEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -89,7 +89,7 @@ public:
 private:
     ReleaseFollowingCharacterEvent() {FUNCLOG};
     ~ReleaseFollowingCharacterEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -104,7 +104,7 @@ private:
 private:
     WarpMapObjectEvent(){FUNCLOG};
     ~WarpMapObjectEvent(){FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -119,7 +119,7 @@ private:
 private:
     MoveToEvent() {FUNCLOG};
     ~MoveToEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -135,7 +135,7 @@ private:
 private:
     MoveByEvent() {FUNCLOG};
     ~MoveByEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -149,7 +149,7 @@ private:
 private:
     SetLightEvent() {FUNCLOG};
     ~SetLightEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -161,7 +161,7 @@ public:
 private:
     RemoveLightEvent() {FUNCLOG};
     ~RemoveLightEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

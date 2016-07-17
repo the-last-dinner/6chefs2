@@ -33,7 +33,7 @@ private:
 private:
     StaminaBar();
     ~StaminaBar();
-    bool init();
+    bool init() override;
 
 public:
     void setPercentage(const float percentage);

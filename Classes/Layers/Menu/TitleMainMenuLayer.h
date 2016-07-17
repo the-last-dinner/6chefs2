@@ -35,11 +35,11 @@ public:
 private:
 	TitleMainMenuLayer();
 	~TitleMainMenuLayer();
-	virtual bool init();
+	virtual bool init() override;
     void onEnterAnimationFinished();
-	virtual void onIndexChanged(int newIdx, bool sound = false);
-	virtual void onEnterKeyPressed(int idx);
-	virtual void onMenuKeyPressed(){};
+	virtual void onIndexChanged(int newIdx, bool sound = false) override;
+	virtual void onEnterKeyPressed(int idx) override;
+	virtual void onMenuKeyPressed() override {};
     void trophyNotification();
 public:
 	virtual void show() override;

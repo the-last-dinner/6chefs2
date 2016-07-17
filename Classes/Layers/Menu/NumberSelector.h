@@ -25,9 +25,9 @@ public:
     
     // インスタンスメソッド
 private:
-    virtual void onIndexChanged(int newIdx, bool sound);
-    virtual void onEnterKeyPressed(int idx);
-    virtual void onMenuKeyPressed();
+    virtual void onIndexChanged(int newIdx, bool sound) override;
+    virtual void onEnterKeyPressed(int idx) override;
+    virtual void onMenuKeyPressed() override;
     int indexToLabel(int idx);
 protected:
     NumberSelector() {FUNCLOG};

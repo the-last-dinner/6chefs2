@@ -76,7 +76,7 @@ public:
     // インスタンスメソッド
 private:
     virtual void onIndexChanged(int newIdx, bool sound) override;
-    virtual void onEnterKeyPressed(int idx);
+    virtual void onEnterKeyPressed(int idx) override;
     virtual void onMenuKeyPressed() override;
 protected:
     MiniSelector();
