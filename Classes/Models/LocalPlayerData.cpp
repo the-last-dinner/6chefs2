@@ -8,6 +8,7 @@
 
 #include "Models/LocalPlayerData.h"
 #include "Models/GlobalPlayerData.h"
+#include "Utils/AssertUtils.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
 #include "Datas/MapObject/CharacterData.h"
@@ -251,7 +252,7 @@ void LocalPlayerData::setItem(const int charaId, const int itemId)
 // アイテムを消費
 bool LocalPlayerData::removeItem(const int itemId)
 {
-    return this->removeItem(this->getMainCharaId());
+    return this->removeItem(this->getMainCharaId(), itemId);
 }
 
 bool LocalPlayerData::removeItem(const int charaId, const int itemId)

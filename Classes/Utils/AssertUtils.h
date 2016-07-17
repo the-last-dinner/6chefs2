@@ -10,14 +10,17 @@
 #define AssertUtils_h
 
 #include "define.h"
+
+class AssertScene;
+
 namespace LastSupper
 {
     namespace AssertUtils
     {
         void infoAssert(const string& message);
+        void warningAssert(const string& message);
         void fatalAssert(const string& message);
     }
 }
-
 
 #endif /* AssertUtils_h */
