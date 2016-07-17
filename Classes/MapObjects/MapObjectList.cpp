@@ -217,7 +217,7 @@ vector<int> MapObjectList::getEventIdsByGridRect(const Rect& gridRect, const Tri
 // 当たり判定を持つオブジェクトのマスRectを全て取得(例外を指定できる)
 vector<Rect> MapObjectList::getGridCollisionRects(MapObject* exclusion) const
 {
-    vector<Rect> collisionRects {this->getGridCollisionRects({exclusion})};
+    vector<Rect> collisionRects {this->getGridCollisionRects(exclusion)};
     
     return collisionRects;
 }

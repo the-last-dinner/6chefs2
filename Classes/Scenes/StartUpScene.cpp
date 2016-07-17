@@ -61,7 +61,6 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     logo->setScale(0.8f);
     logo->setOpacity(0);
-    logo->setZOrder(1000);
     this->addChild(logo);
     
     // 効果音

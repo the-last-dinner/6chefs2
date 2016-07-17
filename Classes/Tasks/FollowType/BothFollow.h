@@ -22,7 +22,7 @@ private:
     BothFollow();
     ~BothFollow();
     virtual bool init() override;
-    Point getPosition(const Size& mapSize, const Point& targetPosition);
+    Point getPosition(const Size& mapSize, const Point& targetPosition) override;
 };
 
 #endif /* defined(__LastSupper__BothFollow__) */

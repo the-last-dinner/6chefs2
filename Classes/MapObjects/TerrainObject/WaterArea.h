@@ -25,13 +25,13 @@ public:
 private:
     WaterArea();
     ~WaterArea();
-    bool init();
+    bool init() override;
 public:
-    virtual void onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio);
+    virtual void onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio) override;
     virtual void onWillStamp(Character* target, const Direction& direction, const float ratio) override;
-    virtual float getStaminaConsumptionRate() const { return 2.0f; };
-    virtual bool canDash() const { return false; };
-    virtual bool consumeStaminaWalking() const { return true; };
+    virtual float getStaminaConsumptionRate() const override { return 2.0f; };
+    virtual bool canDash() const override { return false; };
+    virtual bool consumeStaminaWalking() const override { return true; };
     virtual string getDotPrefix() const override { return "swim_"; };
 };
 

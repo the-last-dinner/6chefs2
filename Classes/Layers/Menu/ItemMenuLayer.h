@@ -19,12 +19,12 @@ class ItemMenuLayer : public MenuLayer
     // クラスメソッド
 public:
     CREATE_FUNC(ItemMenuLayer)
-    virtual bool init();
+    virtual bool init() override;
     
     // インスタンスメソッド
 private:
     virtual void onIndexChanged(int newIdx, bool sound) override;
-    virtual void onEnterKeyPressed(int idx);
+    virtual void onEnterKeyPressed(int idx) override;
     virtual void onMenuKeyPressed() override;
     virtual void onPageChanged(const int page) override;
     void changeItemDiscription(const int idx);
