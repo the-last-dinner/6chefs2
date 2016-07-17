@@ -309,3 +309,21 @@ void RemoveLightEvent::run()
     
     target->removeLight([this]{this->setDone();});
 }
+
+#pragma mark -
+#pragma mark SetMovableEvent
+
+bool SetMovableEvent::init(rapidjson::Value& json)
+{
+    if(!MapObjectEvent::init(json)) return false;
+    
+    return true;
+}
+
+void SetMovableEvent::run()
+{
+    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    
+    target->setMovable(true);
+    this->setDone();
+}
