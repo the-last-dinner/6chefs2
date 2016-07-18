@@ -290,7 +290,12 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
 }
 
 // 方向、マス数指定移動用メソッド
-void MapObject::moveBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio) {this->moveBy({direction}, gridNum, callback, ratio);}
+void MapObject::moveBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio)
+{
+    vector<Direction> directions { direction };
+    
+    this->moveBy(directions, gridNum, callback, ratio);
+}
 
 // 複数方向、マス数指定移動用メソッド
 void MapObject::moveBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio)
