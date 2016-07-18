@@ -84,6 +84,10 @@ public:
     const bool isHit() const;
     const bool isHit(const Direction& direction) const;
     virtual const bool isHit(const vector<Direction>& directions) const;
+    const bool isMovable() const;
+    Vector<MapObject*> getHitObjects(const Direction& direction) const;
+    Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
+    
     
     // move
     vector<Direction> createEnableDirections(const vector<Direction>& directions) const;
@@ -97,6 +101,7 @@ public:
     void moveByQueue(deque<Direction> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void clearDirectionsQueue();
+    void moveObject(const vector<Direction>& directions) const;
     
     // 地形
     TerrainObject* getTerrain(const vector<Direction>& directions = {});

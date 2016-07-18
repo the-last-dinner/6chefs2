@@ -56,7 +56,7 @@ void MapObject::setTrigger(Trigger trigger) { this->trigger = trigger; }
 void MapObject::setHit(bool _isHit) { this->_isHit = _isHit; }
 
 // かいりきで押せるかをセット
-void MapObject::setMovable(bool _isMovable) { FUNCLOG; this->_isMovable = _isMovable; }
+void MapObject::setMovable(bool _isMovable) { this->_isMovable = _isMovable; }
 
 // 衝突判定用Rectをセット
 void MapObject::setCollisionRect(const Rect& rect) { this->collisionRect = rect;}
@@ -185,6 +185,9 @@ Rect MapObject::getCollisionRect(const vector<Direction>& directions) const
 // 当たり判定の有無を取得
 const bool MapObject::isHit() const {return this->_isHit;}
 
+// 動かせるかどうかを取得
+const bool MapObject::isMovable() const {return this->_isMovable;}
+
 // 指定の方向に対して当たり判定があるか
 const bool MapObject::isHit(const Direction& direction) const
 {
@@ -207,6 +210,30 @@ const bool MapObject::isHit(const vector<Direction>& directions) const
     return false;
 }
 
+// 指定の方向に対して当たり判定があるMapObjectのvectorを取得
+Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
+{
+    vector<Direction> directions {direction};
+    
+    return this->getHitObjects(directions);
+}
+
+// 指定の２方向に対して当たり判定があるMapObjectのvectorを取得
+Vector<MapObject*> MapObject::getHitObjects(const vector<Direction>& directions) const
+{
+    Vector<MapObject*> mapObjects {};
+    
+    if(!this->objectList) return mapObjects;
+    
+    // 自身以外の当たり判定を持つオブジェクトが、指定方向にあればlistに入れる
+    for(MapObject* obj : this->objectList->getMapObjectsByGridRect(this->getGridRect(directions)))
+    {
+        if(obj->isHit() && obj != this) mapObjects.pushBack(obj);
+    }
+    
+    return mapObjects;
+}
+
 // 入力のあった方向から、移動可能方向のみを取り出して返す
 vector<Direction> MapObject::createEnableDirections(const vector<Direction>& directions) const
 {
@@ -225,11 +252,43 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
         {
             enableDirs.push_back(direction);
         }
-        // 当たっていたらそのものが動かせるかどうか確認して、動かせたら入力方向に押して、enableDirs.push_back(direction);する
-        
     }
     
     return enableDirs;
+}
+
+// 入力のあった方向の当たっているものを動かす
+void MapObject::moveObject(const vector<Direction>& directions) const
+{
+    // 入力が複数なら動かさない
+    if(directions.size() >= 2) return;
+    // 自分自身が動かせるオブジェクトなら動かさない
+    if(this->isMovable()) return;
+    // 当たり判定
+    for(Direction direction : directions)
+    {
+        // 一方向入力で物にあたった時 当たったものがすべて動かせるなら入力方向に1マス動かす
+        if(this->isHit(direction))
+        {
+            bool allMovable = true;
+            Vector<MapObject*> mapObjects = this->getHitObjects(direction);
+            for(MapObject* obj : mapObjects)
+            {
+                if(!obj->isMovable())
+                {
+                    allMovable = false;
+                    break;
+                }
+            }
+            if(allMovable)
+            {
+                for(MapObject* obj : mapObjects)
+                {
+                    obj->moveBy(direction, 1, [](bool _){});
+                }
+            }
+        }
+    }
 }
 
 // 方向から移動ベクトルを生成
@@ -279,6 +338,9 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     
     // 移動可能な方向を生成
     vector<Direction> dirs { this->createEnableDirections(directions) };
+    
+    // 押せるものがあれば押す
+    this->moveObject(directions);
     
     // 移動可能な方向がなければ失敗としてリターン
     if(dirs.empty()) return false;
