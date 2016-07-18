@@ -116,6 +116,8 @@ enum struct Trigger
 	SEARCH,
     AFTER_INIT,
     WILL,
+    RIDE_ON,
+    GET_OFF,
 	SIZE,
 };
 

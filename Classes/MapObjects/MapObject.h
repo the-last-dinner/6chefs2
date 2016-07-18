@@ -36,6 +36,8 @@ private:
     Sprite* sprite { nullptr };
     Vector<SpriteFrame*> spriteFrames {};
     bool paused { false };
+    int getOffEventID { static_cast<int>(EventID::UNDIFINED)};
+    int rideOnEventID { static_cast<int>(EventID::UNDIFINED)};
 protected:
     MapObjectList* objectList { nullptr };
     deque<vector<Direction>> directionsQueue {};
@@ -102,6 +104,9 @@ public:
     void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void clearDirectionsQueue();
     void moveObject(const vector<Direction>& directions) const;
+    
+    // 自分のRectの指定されたトリガーのイベントを実行
+    void runRectEventByTrigger(const Trigger trigger);
     
     // 地形
     TerrainObject* getTerrain(const vector<Direction>& directions = {});

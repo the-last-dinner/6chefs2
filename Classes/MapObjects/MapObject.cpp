@@ -13,6 +13,8 @@
 #include "Effects/AmbientLightLayer.h"
 #include "Effects/Light.h"
 
+#include "Managers/DungeonSceneManager.h"
+
 // １マス動くのにかける時間の基準値
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
 
@@ -272,7 +274,7 @@ void MapObject::moveObject(const vector<Direction>& directions) const
         {
             for(MapObject* obj : this->getHitObjects(direction))
             {
-                if(obj->isMovable()) obj->moveBy(direction, 1, [](bool _){});
+                if(obj->isMovable()) obj->moveBy(direction, 1, [](bool _){DungeonSceneManager::getInstance()->runEventQueue(); });
             }
         }
     }
@@ -331,9 +333,15 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     
     // 移動可能な方向がなければ失敗としてリターン
     if(dirs.empty()) return false;
-
+    
+    // 移動する前の場所のイベントを発火
+    this->runRectEventByTrigger(Trigger::GET_OFF);
+    
     // 地形オブジェクトに移動をイベント送信
     this->getTerrain(dirs)->onWillMove(this, dirs, onMoved, ratio);
+    
+    // 移動したあとのイベントを発火
+    this->runRectEventByTrigger(Trigger::RIDE_ON);
     
     return true;
 }
@@ -419,6 +427,33 @@ TerrainObject* MapObject::getTerrain(const vector<Direction>& directions)
     if(!this->objectList) return nullptr;
     
     return this->objectList->getTerrainByGridRect(this->getGridRect(directions));
+}
+
+// 自分のRectの指定されたトリガーのイベントを実行
+void MapObject::runRectEventByTrigger(const Trigger trigger)
+{
+    Vector<MapObject*> rideOnMapObjects { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjectsByGridRect(this->getGridRect(), trigger) };
+    int* eventID;
+    switch (trigger) {
+        case Trigger::RIDE_ON:
+            eventID = &this->rideOnEventID;
+            break;
+        case Trigger::GET_OFF:
+            eventID = &this->getOffEventID;
+            break;
+        default:
+            break;
+    }
+    if(rideOnMapObjects.empty()) *eventID = etoi(EventID::UNDIFINED);
+    
+    for(MapObject* obj : rideOnMapObjects)
+    {
+        if(obj->getEventId() != *eventID)
+        {
+            if(*eventID == etoi(EventID::UNDIFINED)) *eventID = obj->getEventId();
+            DungeonSceneManager::getInstance()->pushEventFront(obj->getEventId());
+        }
+    }
 }
 
 // リアクション
