@@ -267,25 +267,12 @@ void MapObject::moveObject(const vector<Direction>& directions) const
     // 当たり判定
     for(Direction direction : directions)
     {
-        // 一方向入力で物にあたった時 当たったものがすべて動かせるなら入力方向に1マス動かす
+        // 当たったものが動かせるなら入力方向に1マス動かす
         if(this->isHit(direction))
         {
-            bool allMovable = true;
-            Vector<MapObject*> mapObjects = this->getHitObjects(direction);
-            for(MapObject* obj : mapObjects)
+            for(MapObject* obj : this->getHitObjects(direction))
             {
-                if(!obj->isMovable())
-                {
-                    allMovable = false;
-                    break;
-                }
-            }
-            if(allMovable)
-            {
-                for(MapObject* obj : mapObjects)
-                {
-                    obj->moveBy(direction, 1, [](bool _){});
-                }
+                if(obj->isMovable()) obj->moveBy(direction, 1, [](bool _){});
             }
         }
     }
