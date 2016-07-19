@@ -29,12 +29,15 @@ private:
     int eventId { static_cast<int>(EventID::UNDIFINED) };
 	Trigger trigger {Trigger::SIZE};
 	bool _isHit { false };
+    bool _isMovable { false };
     Rect collisionRect {Rect::ZERO};
 	Light* light { nullptr };
     bool _isMoving { false };
     Sprite* sprite { nullptr };
     Vector<SpriteFrame*> spriteFrames {};
     bool paused { false };
+    int getOffEventID { static_cast<int>(EventID::UNDIFINED)};
+    int rideOnEventID { static_cast<int>(EventID::UNDIFINED)};
 protected:
     MapObjectList* objectList { nullptr };
     deque<vector<Direction>> directionsQueue {};
@@ -52,6 +55,7 @@ public:
 	void setEventId(int eventId);
 	void setTrigger(Trigger trigger);
 	void setHit(bool _isHit);
+    void setMovable(bool _isMovable);
     void setCollisionRect(const Rect& rect);
     void setMapObjectList(MapObjectList* objectList);
     void setSprite(Sprite* sprite);
@@ -82,6 +86,10 @@ public:
     const bool isHit() const;
     const bool isHit(const Direction& direction) const;
     virtual const bool isHit(const vector<Direction>& directions) const;
+    const bool isMovable() const;
+    Vector<MapObject*> getHitObjects(const Direction& direction) const;
+    Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
+    
     
     // move
     vector<Direction> createEnableDirections(const vector<Direction>& directions) const;
@@ -95,6 +103,10 @@ public:
     void moveByQueue(deque<Direction> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void clearDirectionsQueue();
+    void moveObject(const vector<Direction>& directions) const;
+    
+    // 自分のRectの指定されたトリガーのイベントを実行
+    void runRectEventByTrigger(const Trigger trigger);
     
     // 地形
     TerrainObject* getTerrain(const vector<Direction>& directions = {});

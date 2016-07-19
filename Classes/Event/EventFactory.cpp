@@ -87,6 +87,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"charaMove", MoveByEvent::create},                 // マップオブジェクトを方向、格子数指定で移動
         {"setLight", SetLightEvent::create},                // オブジェクトに光をセット
         {"removeLight", RemoveLightEvent::create},          // オブジェクトから光を消す
+        {"setMovable", SetMovableEvent::create},            // オブジェクトに動かせるかどうかをセット
         
         // キャラクター系
         {"changeDirection", ChangeDirectionEvent::create},  // 方向転換

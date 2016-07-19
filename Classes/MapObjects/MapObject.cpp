@@ -13,6 +13,8 @@
 #include "Effects/AmbientLightLayer.h"
 #include "Effects/Light.h"
 
+#include "Managers/DungeonSceneManager.h"
+
 // １マス動くのにかける時間の基準値
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
 
@@ -54,6 +56,9 @@ void MapObject::setTrigger(Trigger trigger) { this->trigger = trigger; }
 
 // 当たり判定の有無をセット
 void MapObject::setHit(bool _isHit) { this->_isHit = _isHit; }
+
+// かいりきで押せるかをセット
+void MapObject::setMovable(bool _isMovable) { this->_isMovable = _isMovable; }
 
 // 衝突判定用Rectをセット
 void MapObject::setCollisionRect(const Rect& rect) { this->collisionRect = rect;}
@@ -182,6 +187,9 @@ Rect MapObject::getCollisionRect(const vector<Direction>& directions) const
 // 当たり判定の有無を取得
 const bool MapObject::isHit() const {return this->_isHit;}
 
+// 動かせるかどうかを取得
+const bool MapObject::isMovable() const {return this->_isMovable;}
+
 // 指定の方向に対して当たり判定があるか
 const bool MapObject::isHit(const Direction& direction) const
 {
@@ -202,6 +210,30 @@ const bool MapObject::isHit(const vector<Direction>& directions) const
     }
     
     return false;
+}
+
+// 指定の方向に対して当たり判定があるMapObjectのvectorを取得
+Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
+{
+    vector<Direction> directions {direction};
+    
+    return this->getHitObjects(directions);
+}
+
+// 指定の２方向に対して当たり判定があるMapObjectのvectorを取得
+Vector<MapObject*> MapObject::getHitObjects(const vector<Direction>& directions) const
+{
+    Vector<MapObject*> mapObjects {};
+    
+    if(!this->objectList) return mapObjects;
+    
+    // 自身以外の当たり判定を持つオブジェクトが、指定方向にあればlistに入れる
+    for(MapObject* obj : this->objectList->getMapObjectsByGridRect(this->getGridRect(directions)))
+    {
+        if(obj->isHit() && obj != this) mapObjects.pushBack(obj);
+    }
+    
+    return mapObjects;
 }
 
 // 入力のあった方向から、移動可能方向のみを取り出して返す
@@ -225,6 +257,27 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
     }
     
     return enableDirs;
+}
+
+// 入力のあった方向の当たっているものを動かす
+void MapObject::moveObject(const vector<Direction>& directions) const
+{
+    // 入力が複数なら動かさない
+    if(directions.size() >= 2) return;
+    // 自分自身が動かせるオブジェクトなら動かさない
+    if(this->isMovable()) return;
+    // 当たり判定
+    for(Direction direction : directions)
+    {
+        // 当たったものが動かせるなら入力方向に1マス動かす
+        if(this->isHit(direction))
+        {
+            for(MapObject* obj : this->getHitObjects(direction))
+            {
+                if(obj->isMovable()) obj->moveBy(direction, 1, [](bool _){DungeonSceneManager::getInstance()->runEventQueue(); });
+            }
+        }
+    }
 }
 
 // 方向から移動ベクトルを生成
@@ -275,17 +328,31 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     // 移動可能な方向を生成
     vector<Direction> dirs { this->createEnableDirections(directions) };
     
+    // 押せるものがあれば押す
+    this->moveObject(directions);
+    
     // 移動可能な方向がなければ失敗としてリターン
     if(dirs.empty()) return false;
-
+    
+    // 移動する前の場所のイベントを発火
+    this->runRectEventByTrigger(Trigger::GET_OFF);
+    
     // 地形オブジェクトに移動をイベント送信
     this->getTerrain(dirs)->onWillMove(this, dirs, onMoved, ratio);
+    
+    // 移動したあとのイベントを発火
+    this->runRectEventByTrigger(Trigger::RIDE_ON);
     
     return true;
 }
 
 // 方向、マス数指定移動用メソッド
-void MapObject::moveBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio) {this->moveBy({direction}, gridNum, callback, ratio);}
+void MapObject::moveBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio)
+{
+    vector<Direction> directions { direction };
+    
+    this->moveBy(directions, gridNum, callback, ratio);
+}
 
 // 複数方向、マス数指定移動用メソッド
 void MapObject::moveBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio)
@@ -360,6 +427,33 @@ TerrainObject* MapObject::getTerrain(const vector<Direction>& directions)
     if(!this->objectList) return nullptr;
     
     return this->objectList->getTerrainByGridRect(this->getGridRect(directions));
+}
+
+// 自分のRectの指定されたトリガーのイベントを実行
+void MapObject::runRectEventByTrigger(const Trigger trigger)
+{
+    Vector<MapObject*> rideOnMapObjects { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjectsByGridRect(this->getGridRect(), trigger) };
+    int* eventID;
+    switch (trigger) {
+        case Trigger::RIDE_ON:
+            eventID = &this->rideOnEventID;
+            break;
+        case Trigger::GET_OFF:
+            eventID = &this->getOffEventID;
+            break;
+        default:
+            break;
+    }
+    if(rideOnMapObjects.empty()) *eventID = etoi(EventID::UNDIFINED);
+    
+    for(MapObject* obj : rideOnMapObjects)
+    {
+        if(obj->getEventId() != *eventID)
+        {
+            if(*eventID == etoi(EventID::UNDIFINED)) *eventID = obj->getEventId();
+            DungeonSceneManager::getInstance()->pushEventFront(obj->getEventId());
+        }
+    }
 }
 
 // リアクション

@@ -165,4 +165,18 @@ private:
     virtual void run() override;
 };
 
+// オブジェクトを動かせるようにする
+class SetMovableEvent : public MapObjectEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(SetMovableEvent, rapidjson::Value&)
+private:
+    bool movable { false };
+private:
+    SetMovableEvent() {FUNCLOG};
+    ~SetMovableEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__MapObjectEvent__) */
