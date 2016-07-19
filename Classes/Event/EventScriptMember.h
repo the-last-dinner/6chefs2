@@ -41,6 +41,7 @@ namespace member
     static const char* LAYER = "layer";
     static const char* LIMIT = "limit";
     static const char* MAP_ID = "mapID";
+    static const char* MOVABLE = "movable";
     static const char* MOVE_PATTERN = "movePattern";
     static const char* NAME = "name";
     static const char* NEXT_X = "nextX";
