@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="192">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="195">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16" tilecount="6400" columns="32">
   <image source="ST-Temp-E01_2.png" trans="aa55ff" width="512" height="3200"/>
  </tileset>
- <tileset firstgid="6881" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="6881" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="42" height="36" opacity="0.91">
@@ -27,7 +27,7 @@
  </layer>
  <layer name="MonoChu" width="42" height="36">
   <data encoding="base64" compression="zlib">
-   eJztzjENAAAIA7D5mH+fKOAmIa2CJgAAAADApr0eAF8NA9QANw==
+   eJztzjEBAAAIA6D1WP+etlAPSEACAAAAAMAH7fWATQOAJQA3
   </data>
  </layer>
  <objectgroup name="collision">
@@ -52,16 +52,36 @@
     <property name="trigger" value="0"/>
    </properties>
   </object>
-  <object id="185" x="224" y="464" width="16" height="16">
+  <object id="185" x="32" y="528" width="16" height="16">
    <properties>
     <property name="EventID" value="3"/>
-    <property name="trigger" value="1"/>
+    <property name="trigger" value="5"/>
    </properties>
   </object>
   <object id="186" x="320" y="0" width="32" height="32">
    <properties>
     <property name="EventID" value="2"/>
     <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="192" x="288" y="128" width="32" height="32">
+   <properties>
+    <property name="hit" value="true"/>
+    <property name="img" value="box.png"/>
+    <property name="objID" value="203"/>
+   </properties>
+  </object>
+  <object id="193" x="32" y="528" width="16" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="6"/>
+   </properties>
+  </object>
+  <object id="194" x="32" y="512" width="32" height="32">
+   <properties>
+    <property name="hit" value="true"/>
+    <property name="img" value="box.png"/>
+    <property name="objID" value="204"/>
    </properties>
   </object>
  </objectgroup>
@@ -94,9 +114,6 @@
     <property name="previousID" value="3"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="Ugokumono(object)">
-  <object id="191" x="288" y="128" width="32" height="32"/>
  </objectgroup>
  <layer name="CharaUe" width="42" height="36">
   <properties>

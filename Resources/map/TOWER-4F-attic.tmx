@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="52" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="61">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="52" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="63">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="50" height="52">
@@ -30,7 +30,7 @@
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzjENAAAIA7Al+FfMg4vxtAqaAAAAAAAAAC073wMAAICOAw9gAP8=
+   eJztzkEJAAAIBLAD+yf2YwV/ImwJlgAAAAAAAMAPXdcDAAAAtgbR2AD/
   </data>
  </layer>
  <objectgroup name="collision">
@@ -72,10 +72,23 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="55" x="288" y="560" width="16" height="16">
+  <object id="55" x="304" y="544" width="16" height="16">
    <properties>
     <property name="EventID" value="3"/>
-    <property name="trigger" value="1"/>
+    <property name="trigger" value="5"/>
+   </properties>
+  </object>
+  <object id="61" x="320" y="368" width="32" height="32">
+   <properties>
+    <property name="hit" value="true"/>
+    <property name="img" value="box.png"/>
+    <property name="objID" value="205"/>
+   </properties>
+  </object>
+  <object id="62" x="304" y="544" width="16" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="6"/>
    </properties>
   </object>
  </objectgroup>
@@ -115,9 +128,6 @@
     <property name="previousID" value="4"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="Ugokumono(object)">
-  <object id="56" x="320" y="368" width="32" height="32"/>
  </objectgroup>
  <layer name="CharaUe" width="50" height="52">
   <data encoding="base64" compression="zlib">

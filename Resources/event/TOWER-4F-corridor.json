@@ -5,16 +5,36 @@
 		    "ambient":"night"
 		},
 		{
+			"type":"createEnemy",
+			"objID":"1452",
+			"charaID":"13",
+			"x":11,
+			"y":64,
+			"direction":"UP",
+			"times":1,
+			"pathID":"1",
+			"movePattern":"4"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["50","6"]
+					"Nflg":["50","6",1]
 				}
 			],
 			"action":[
 				{
 					"type":"removeLayer",
 					"layer":"steps"
+				},
+				{
+					"type":"removeObject",
+					"objID":"202"
+				},
+				{
+					"type":"setMovable",
+					"objID":"201",
+					"movable":true
 				}
 			]
 		},
@@ -22,13 +42,17 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["50","6"]
+					"flg":["50","6",1]
 				}
 			],
 			"action":[
 				{
 					"type":"removeObject",
 					"objID":"181"
+				},
+				{
+					"type":"removeObject",
+					"objID":"201"
 				}
 			]
 		},
@@ -36,7 +60,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["51","3"]
+					"Nflg":["51","3",1]
 				}
 			],
 			"action":[
@@ -50,7 +74,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["51","3"]
+					"flg":["51","3",1]
 				}
 			],
 			"action":[
@@ -64,7 +88,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["52","3"]
+					"Nflg":["52","3",1]
 				}
 			],
 			"action":[
@@ -78,7 +102,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["52","3"]
+					"flg":["52","3",1]
 				}
 			],
 			"action":[
@@ -127,13 +151,17 @@
 			"objID":"181"
 		},
 		{
-			"type":"cretaeLayer",
+			"type":"createLayer",
 			"layer":"steps"
 		},
 		{
-			"type":"already"
+			"type":"playSE",
+			"file":"bus-door1.mp3"
 		},
-		木箱で押すスイッチ
+		{
+			"type":"changeFlg",
+			"flg":["50","6",1]
+		}		
 	],
 	"7":[
 		{
@@ -169,7 +197,7 @@
 									"objID":"1044"
 								}
 							]
-						}
+						},
 						{
 							"type":"charaMsg",
 							"text":["咲賀谷氏！\n何やらあそこのガラス・・・割れていますが・・・"],
@@ -421,5 +449,19 @@
 				}
 			]
 		}
+	],
+	"9":[
+		{
+			"type":"createObject",
+			"objID":"181"
+		},
+		{
+			"type":"removeLayer",
+			"layer":"steps"
+		},
+		{
+			"type":"changeFlg",
+			"flg":["50","6",0]
+		}		
 	]
 }
