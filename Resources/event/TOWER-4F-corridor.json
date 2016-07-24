@@ -160,7 +160,9 @@
 		},
 		{
 			"type":"changeFlg",
-			"flg":["50","6",1]
+			"mapID":"50",
+			"eventID":"6",
+			"flg":1
 		}		
 	],
 	"7":[
@@ -461,7 +463,9 @@
 		},
 		{
 			"type":"changeFlg",
-			"flg":["50","6",0]
+			"mapID":"50",
+			"eventID":"6",
+			"flg":0
 		}		
 	]
 }
