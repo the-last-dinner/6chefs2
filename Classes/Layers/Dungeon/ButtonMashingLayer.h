@@ -32,6 +32,7 @@ public:
 // インスタンス変数
 private:
     int count { 0 };
+    bool finished { false };
     function<void()> onClick { nullptr };
     ResultCallback callback { nullptr };
     

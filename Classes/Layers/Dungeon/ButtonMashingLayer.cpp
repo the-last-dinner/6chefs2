@@ -59,7 +59,12 @@ bool ButtonMashingLayer::init(int time, float limit, function<void()> onClick, R
     this->addChild(listener);
     
     // 指定時間後に失敗通知
-    this->runAction(Sequence::create(DelayTime::create(limit), CallFunc::create([callback]{callback(Result::FAILURE);}), RemoveSelf::create(), nullptr));
+    this->runAction(Sequence::create(DelayTime::create(limit), CallFunc::create([this, callback]
+    {
+        if(this->finished) return;
+        this->finished = true;
+        if(callback) callback(Result::FAILURE);
+    }), RemoveSelf::create(), nullptr));
     
     return true;
 }
@@ -67,12 +72,14 @@ bool ButtonMashingLayer::init(int time, float limit, function<void()> onClick, R
 // 決定キーが押された時
 void ButtonMashingLayer::onEnterKeyPressed()
 {
-    this->count--;
+    if(this->finished) return;
     
+    this->count--;
     if(this->onClick) this->onClick();
     
     if (this->count == 0 && this->callback)
     {
+        this->finished = true;
         this->stopAllActions();
         this->callback(Result::SUCCESS);
         this->runAction(Sequence::create(FadeOut::create(0.3f), RemoveSelf::create(), nullptr));

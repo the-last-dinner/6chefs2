@@ -29,9 +29,9 @@
 
 ButtonMashingEvent::~ButtonMashingEvent()
 {
-    FUNCLOG   
+    FUNCLOG
+    
     CC_SAFE_RELEASE_NULL(this->clickCallbackEvent);
-    this->clickCallbackEvent = nullptr;
 }
 
 bool ButtonMashingEvent::init(rapidjson::Value& json)
