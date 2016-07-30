@@ -52,10 +52,6 @@
 				},
 				{
 					"type":"removeObject",
-					"objID":"181"
-				},
-				{
-					"type":"removeObject",
 					"objID":"182"
 				},
 				{
@@ -106,7 +102,8 @@
 						},
 						{
 							"type":"playBGM",
-							"file":"ocean-wave.mp3"
+							"file":"ocean-wave.mp3",
+							"volume":5.0
 						},
 						{
 							"type":"spawn",
@@ -145,7 +142,9 @@
 								},
 								{
 									"type":"changeFlg",
-									"flg":["57","5",1]
+									"mapID":"57",
+									"eventID":"5",
+									"flg":1
 								}
 							]
 						},
@@ -176,7 +175,8 @@
 						},
 						{
 							"type":"playBGM",
-							"file":"ocean-wave.mp3"
+							"file":"ocean-wave.mp3",
+							"volume":5.0
 						},
 						{
 							"type":"spawn",
@@ -202,16 +202,12 @@
 									"layer":"hide2"
 								},
 								{
-									"type":"createeChara",
+									"type":"createObject",
 									"objID":"182"
 								},
 								{
 									"type":"createObject",
 									"objID":"183"
-								},
-								{
-									"type":"createObject",
-									"objID":"181"
 								},
 								{
 									"type":"removeObject",
@@ -227,7 +223,9 @@
 								},
 								{
 									"type":"changeFlg",
-									"flg":["57","5",0]
+									"mapID":"57",
+									"eventID":"5",
+									"flg":0
 								}
 							]
 						},

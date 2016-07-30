@@ -8,16 +8,14 @@
 
 #include "Event/FlagEvent.h"
 
+#include "Datas/Message/SystemMessageData.h"
 #include "Event/EventScriptMember.h"
 #include "Event/EventScriptValidator.h"
-
-#include "Scenes/DungeonScene.h"
-
 #include "Layers/Message/SystemMessageLayer.h"
-#include "Datas/Message/SystemMessageData.h"
-
 #include "Managers/DungeonSceneManager.h"
 #include "Models/CommonEventScripts.h"
+#include "Scenes/DungeonScene.h"
+#include "Utils/AssertUtils.h"
 
 #pragma mark NeverAgainEvent
 
@@ -185,6 +183,10 @@ bool ChangeEventStatusEvent::init(rapidjson::Value& json)
     
     // status
     if(!this->validator->hasMember(json, member::FLAG)) return false;
+    if(!json[member::FLAG].IsInt()) {
+        LastSupper::AssertUtils::fatalAssert("ChangeEventStatusEvent(changeFlg)\nflgの型はintにしてください。");
+        return false;
+    }
     this->status = json[member::FLAG].GetInt();
     
     // map_id

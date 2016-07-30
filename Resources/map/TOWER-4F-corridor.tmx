@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="76" height="74" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="237">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="76" height="74" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="247">
  <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
@@ -12,12 +12,15 @@
  <tileset firstgid="1441" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="1921" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="76" height="74" opacity="0.91">
   <properties>
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztnFtOwzAQRdNvNgIsBFgIry4E+gUsBLqQlk3hSI0UrNjO9cw4jnOPdFVKWzucWtNgO+06QkgOx13XXXX/871b9phqhr4w6AuDvjDoC6OUr59G3gMrX8dRGyf383mUNWPp68XdvnrZK7W/FJa+3tztu5eDUvs9551O0L/LypffbonxiwYd72v2NTV+0aDjfc2+Qu2ncu1y43I7Op45n9/9c5b0Jak5vwJfdy73Lg+X+/7nN9pvCV/S+rPPdNXn0eXJ5flyHzmOqX5L+ZLUn0PER4jQ85HjmOq3lK/c8ZFKCKv+tHz5dXXISVh/WvXl19VSCVG7L7+u0leYWH36cI99TTze//5zZqZen+sL6XcqGuTU+7nnjan2c8ZHDfNNsfdDep6s7at26AtD4/+wufUtVZ/WgPU8+Lj9NYyfFJa+/HmEWuq5BI4vDK7jYdAXBn1h0BcGfWHQFwZ9YbTkS2PdPEUrvkrtE2nJl/U+kaGfVnyVmCeiL3k/LfrSmhfZgq/UvgxpP635iu3LqGXfWWlivmL7MmrZd1YayboLfdHXHHLX4bfqK0Ro/yZ9haEvDPrCoC8M+sKgLwz6wqAvDPrCoC8M+sKgLwxrX2vfB+jD8YXB8YVh6Qu5zrVEavelcb2/Vob1G8l4t54v1LjeXyv9+o3GeI9d57nU9SxW0fp+i6340vp+i634sg592fnqkVzT2kI0kJ6vpl5f4/nwH9Ss7Lg=
+   eJztnEtOwzAURdMxGwEWAiyEX2ewCOgIWAh0IS1LYoIttVJi+ZNrv+c4yT3SVf9Oemq9prbTriOE5LDfdN1FN8z3Ztp9ahn6wqAvDPrCoC+MWr5+FvIZaPna99o4mOvHXuaMpq8nc/nsZCvU/lRo+nozl+9OdkLtW44bmaDvS8uX226N/osG7e9z9uXrv2jQ/j5nX6H2U7k0uTK57u3PmO9v+5wpfZXUnN8CXzcmtyZ3p9vu9ze63Rq+SuvPNtOVzb3Jg8nj6TayH77t1vJVUn92ER8hQs9H9sO33Vq+cvtHKiG0tifly62r5xwK689Sfbl1tVZCtO7Lrav0FSZWnz7MY1+ex+39nyPje32uL2S7vkiQU+/HHjem2s/pHy2MN8U+j9LjZGlfrUNfGBK/w8bWt1R9mgPa4+D99ufQf1Jo+nLHEVqp5yWwf2FwHg+Dvob8deExt5fI8epaSc2n0deQ1HwafQ3J/f24VmK+QuOF9OWPrWta8wZToDVvfo6ta1rzBrWRWieSM34wV18S60TW5Evi/dAXfflI+Ro7LvKaGKPzzVcszVdqXUbpdpbmK7Yuo5V1Z7VJHTe1vu6sNiXzLvRFX2PInYdfq68QofWb9BWGvjDoC4O+MOgLg74w6AuDvjDoC4O+MOgLg74wtH3NfR2gC/sXBvsXhqYv5DzXGmndl8T5/lI5z9+U9Hft8UKJ8/2lYudvJPp77DzPqc5n0YrU/1usxZfU/1usxZd26EvPl6XknNYlRILS49XU61s8Hv4H/uEGrg==
   </data>
  </layer>
  <layer name="Base2" width="76" height="74">
@@ -44,12 +47,12 @@
    eJzt270JgDAQgNGgaziJk2QVl3EUdTSFVCqEXOfPe3DVdV9xpElKAADwfHNfhjZ6xegVoxdAu6FLaTlu5nqZrS87zmpN9LrTK0avGL1i9IoZK01qu7/KlfdE1gsAAAAAAAAAgJea/EsAAAAAAAA+ZAdZDxEx
   </data>
  </layer>
- <layer name="roap" width="76" height="74">
+ <layer name="MonoUe" width="76" height="74">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0EENACAMALEl4N8IStDEBwP8t5FWweUiAAAAAODtjOwCAAAAAAAAAAAAAKhvzeyCXrZfAAAAAADARy5csgJ7
+   eJzt0EENACAMALEl4N8IStDEBwd8t5FWweUiAAAAAAAAAODtjOwCAAAAAAAAAKhrzeyCXrZfAAAAAADARy5UPgJ7
   </data>
  </layer>
  <layer name="steps" width="76" height="74">
@@ -68,14 +71,92 @@
    eJztzsEJACAMBMGD9F+CsVU/9iCSGdj/JgAAAAAAAAAAAAAA/GhV0rddr28AAAAAAAAAAAAA5jl+FwKF
   </data>
  </layer>
- <layer name="steps3" width="76" height="74">
-  <properties>
-   <property name="cc_vertexz" value="-11"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJztzrEJADAMBLEH7z9CnFXTZAeDkeD6SwAAAAAAAAAAAAAAYL9TSf9uTd8AAAAAAAAAAAAAGzyBKgKF
-  </data>
- </layer>
+ <objectgroup name="event">
+  <object id="223" x="960" y="0" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="224" x="896" y="0" width="64" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="225" x="544" y="480" width="32" height="32">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="226" x="32" y="112" width="32" height="32">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="227" x="976" y="560" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="232" x="688" y="400" width="16" height="16">
+   <properties>
+    <property name="EventID" value="6"/>
+    <property name="trigger" value="5"/>
+   </properties>
+  </object>
+  <object id="235" x="1168" y="816" width="32" height="32">
+   <properties>
+    <property name="EventID" value="8"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="236" x="1088" y="768" width="96" height="32">
+   <properties>
+    <property name="EventID" value="7"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="237" x="224" y="320" width="32" height="32">
+   <properties>
+    <property name="hit" value="true"/>
+    <property name="img" value="dShituji.png"/>
+    <property name="objID" value="201"/>
+   </properties>
+  </object>
+  <object id="238" x="688" y="400" width="16" height="16">
+   <properties>
+    <property name="EventID" value="9"/>
+    <property name="trigger" value="6"/>
+   </properties>
+  </object>
+  <object id="239" x="672" y="384" width="32" height="32">
+   <properties>
+    <property name="hit" value="true"/>
+    <property name="img" value="dShituji.png"/>
+    <property name="objID" value="202"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="path">
+  <object id="241" x="176" y="320" width="32" height="32">
+   <properties>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="0"/>
+   </properties>
+  </object>
+  <object id="242" x="176" y="1008" width="32" height="32">
+   <properties>
+    <property name="nextID" value="1"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="collision">
   <object id="193" x="960" y="0" width="32" height="368"/>
   <object id="194" x="704" y="0" width="192" height="288"/>
@@ -84,7 +165,7 @@
   <object id="197" x="496" y="256" width="128" height="128"/>
   <object id="198" x="128" y="96" width="288" height="192"/>
   <object id="199" x="128" y="288" width="32" height="32"/>
-  <object id="200" x="128" y="352" width="32" height="816"/>
+  <object id="200" x="128" y="352" width="32" height="272"/>
   <object id="201" x="32" y="384" width="96" height="32"/>
   <object id="202" x="0" y="112" width="32" height="304"/>
   <object id="203" x="64" y="112" width="64" height="80"/>
@@ -119,59 +200,27 @@
     <property name="objID" value="181"/>
    </properties>
   </object>
+  <object id="240" x="128" y="688" width="32" height="496"/>
+  <object id="243" x="32" y="528" width="96" height="32"/>
+  <object id="245" x="0" y="528" width="32" height="208"/>
+  <object id="246" x="32" y="688" width="96" height="48"/>
  </objectgroup>
- <objectgroup name="event">
-  <object id="223" x="960" y="0" width="32" height="32">
-   <properties>
-    <property name="EventID" value="1"/>
-    <property name="trigger" value="0"/>
-   </properties>
-  </object>
-  <object id="224" x="896" y="0" width="64" height="32">
-   <properties>
-    <property name="EventID" value="2"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="225" x="544" y="480" width="32" height="32">
-   <properties>
-    <property name="EventID" value="3"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="226" x="32" y="112" width="32" height="32">
-   <properties>
-    <property name="EventID" value="4"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="227" x="976" y="560" width="32" height="32">
-   <properties>
-    <property name="EventID" value="5"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="232" x="432" y="240" width="16" height="16">
-   <properties>
-    <property name="EventID" value="6"/>
-   </properties>
-  </object>
-  <object id="235" x="1168" y="816" width="32" height="32">
-   <properties>
-    <property name="EventID" value="8"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="236" x="1088" y="736" width="32" height="32">
-   <properties>
-    <property name="EventID" value="7"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
- </objectgroup>
+ <layer name="steps3" width="76" height="74">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrEJADAMBLEH7z9CnFXTZAeDkeD6SwAAAAAAAAAAAAAAYL9TSf9uTd8AAAAAAAAAAAAAGzyBKgKF
+  </data>
+ </layer>
  <layer name="CharaUe" width="76" height="74">
   <data encoding="base64" compression="zlib">
    eJzt1rEJACAAA8GI+++gDioWdoJgK9zBV1kgCQAAAAC8mSVpNelHo+4NAODF7U8AAAAAAAAAAAAAAAAAAAD8ZgGAtQmv
+  </data>
+ </layer>
+ <layer name="shadow" width="76" height="74">
+  <data encoding="base64" compression="zlib">
+   eJzt10EOgyAUQEGXvVPvf6+uu2qeFVGcOcBHHgnBbQP2er9mf8G96NXo1ejV6NXo1Yzqteo56NXo1dy116zz0Osa6+p1jblnzT973V9z/11Xr2fTq9Gj0avRq3F/NXodS69Gr2bV/6VR9Gr0avRqVtvPaHo1en3zvm/0avRq9Gr0ap7S46h96jVnztXp1ejVnLXPVXrq1ejV6NXo1eh1LO+NRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr0avRq9Grzn0avSC8T6K8yGB
   </data>
  </layer>
 </map>

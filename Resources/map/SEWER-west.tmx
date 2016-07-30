@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="70" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="60">
- <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="70" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="64">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1505" name="water2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1505" name="water2" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="water2.png" trans="aa55ff" width="128" height="128"/>
  </tileset>
- <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="40" height="70">
@@ -82,22 +82,25 @@
     <property name="objID" value="182"/>
    </properties>
   </object>
-  <object id="49" x="384" y="192" width="240" height="512">
+  <object id="49" x="384" y="320" width="16" height="64">
    <properties>
     <property name="objID" value="183"/>
    </properties>
   </object>
-  <object id="52" x="384" y="192" height="576" visible="0">
+  <object id="52" x="384" y="192" height="576">
    <properties>
     <property name="objID" value="184"/>
    </properties>
   </object>
-  <object id="53" x="192" y="192" height="896" visible="0">
+  <object id="53" x="192" y="192" height="896">
    <properties>
     <property name="objID" value="185"/>
    </properties>
   </object>
-  <object id="56" x="384" y="704" width="240" height="64"/>
+  <object id="56" x="384" y="688" width="240" height="80"/>
+  <object id="60" x="192" y="192" width="192" height="64"/>
+  <object id="61" x="384" y="192" width="16" height="128"/>
+  <object id="62" x="384" y="384" width="16" height="320"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="41" x="544" y="416" width="32" height="32">

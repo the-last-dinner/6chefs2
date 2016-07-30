@@ -641,6 +641,11 @@
 							"type":"fadeout"
 						},
 						{
+							"type":"changeDirection",
+							"objID":"hero",
+							"direction":"DOWN"
+						},
+						{
 							"type":"createCamera",
 							"x":20,
 							"y":21,

@@ -1,58 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="24">
- <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1505" name="water" tilewidth="16" tileheight="16">
+ <tileset firstgid="1505" name="water" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="water.png" trans="aa55ff" width="128" height="128"/>
  </tileset>
- <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmUtuE0EQht2ao4aNkbLhJTmsQszDZgchUpIdCQSPxIaExw3IDcgNyA3Ikh55SvwU1U9XD7FnSvo03eWa6unfPdNS12g02GCDlbYPlZuzQB99dO2bfavcfA300UfXvtll5eZ7oI8+uvbNriqZHy3YRh/G4bVvdl3J/GzBNvowDq99s5tK5lcLttGHcXjldubYd9YdmtOuGY2eWPYsU8tTyzMjv6uI6z5uzb4i7TvrDs0pVj/ej9Wv2VekfWfdoTlxHd5YDsy/3zrej9UvtI7XFZqTSz/+reP9WP2kPWcToDm59HtueWGZWeaWiWXH8rj1xeon7TmbAM2ptH5bZskdQPLlop0rNed2q0HDfgH97pslDwDJl4t2rtScr4ES+u1BDCH5ctHOlZrzBDi1vLO8L6BfDlwjLbRy0rzvmT/r9aHlUQH9pP/ZtZZuk0Yu8H2VdNDSD78NBO+jXwvtfD5eMT01v3/4bSB4H/1aaOfz8RbG1P7+nZslFwDvo18L7Xw+PsGYny1fFPXD89WuuHSMmfocMfGucbT0c53BloSfefjOgkN5cmKuFPVzncGWhJ95+M6CQ3lyYq4V9XOdwZaEn3n4zoJDeXJibhT1G1vf3RapPWZ+HhdiHCA1X8x4oedv+AiaraIf3bdj5PaE+XlciEmA1Hwx44WenzSj9tEK+tH6nRu5PWN+HhdiFiA1X8x4oeeft5pRu7Yctr7jRP0O4d5NopnTwrjnV7P2or3mvL8p+N6JEmiMQ1rWHig25/1NwfdOlEBjnEWAGmJT9aP1HcuR6fad1xinToh9mahf6L+R/itsl0ZjnJQcqfvHlvm7ppBLao6uxpRieA1F+n07Uj9eU8glNUdXY0oxvIbCf0fdQvph3Cqk5uhqTCmG11D476gf4Tt/Tj0L5s8yzcjhi8fcqTn4s+2DfyrcJ+XA82oid/2VqlP8jzWfm3uV9VeqTqGRt2QNha9RqptwOzH+WkSpOoVG3pI1lFPWproJt3Pjr0WUqlNo5C1ZQ7lgbaqbDDbYbbDfJFicoQ==
   </data>
  </layer>
  <layer name="MonoShita" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1rkKwlAURdHnPICCMwoKzmjn/JF+peN3eIoUaTTRQK4P9oLNaywuxybOAUhTTuVVSZXfvAVVtDrwz7VUW/VU58Pvuumc452+Glgf4TH2S2al1tZHeGgZNFcL41t8c1anoIM62p7jnbP1AZ5jv2TYLxn2S4b9vlPJOlfNWl+BuGr6r+r8Xz8barsR+wEAEMsl49xV3dQ91EM9M9bX/b+GvjmaqhV626qjunyPRBpro4maht6ZmqsF+0XaaKOt2oXevTqoI/sBAAAAAAAAAIy8AGpCETU=
   </data>
  </layer>
  <layer name="faucet" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0CEOwzAQAMEDjmnKGpb8/yfND9qPNDCmJ9mSWVVpBi7cCID/9CoRZ5nvZO/26NP5NOpk3yXiWuY72VojHnW+kz3bo63zadTJ9vbo6HwadQAAAAAAAAAAAADgd25F9wwB
+   eJzt0CEOgDAQAMEzrQUHrvz/gyCpvaRNisLMyJUbAQB8dZeIp6x3sq1G7HW9kx390Tn4NOtkrT+6Bp9mHQAAAAAAAAAAAAD4zwugogVV
   </data>
  </layer>
- <layer name="hide" width="80" height="44" visible="0">
+ <layer name="faucet2" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0LEJACAMAMEU2X8v3UCn0VZQsBKEu/LLjwD4U8mImvedVZuP+ubTqQMAAAAAAAAAAAAAALw2ANxGBq0=
+  </data>
+ </layer>
+ <layer name="hide" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0LENgDAMAEFL2X8u2AA2gA2gxK0lR4KK5q788iMAgK+2EbGP953qyEdn82nWqa58dDefZp1qyUdr82nWAQAAAAAAAAAAAID/PFGXDik=
   </data>
  </layer>
- <layer name="hide2" width="80" height="44" visible="0">
+ <layer name="hide2" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztyCEBAAAIA7AL+veEFFQAv8klAMBXVzJ1fwAAAAAAAAAAAAAA4G8BP9cDtw==
   </data>
  </layer>
  <layer name="MonoChu" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0DtOgkEYRuFJoBPEHkR78dILSi+KPRfdiEvQHcgOdAe6A1mTZ3pIJn6JP7+eJznNTPPlTUmS9Jc900vVR9TYK62qPqLG3ui96iNq7IM+t/ztNVNqUZv2qUMHzd+8bvd90XrD+6SRUpetenRIfTqiY/crkvc7YasBndIZndOF+xXJ+12y1ZBGdEXXNHa/Inm/G7aa0C3d0ZTu3a9I3m/GVnNa0JIe6NH9iuT99HPuF+N+Me4X434x7hfjfjHuF+N+Me4X434x7hfjfpIk6b96so1JkiRJ0q74BoFUNpo=
   </data>
  </layer>
  <layer name="MonoUe" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1cEJwzAUBUHf1H8jaSRJI3ETuftikpWNwTPwCtDyQcsC+z5j7u7kfcB7nzdqqF+jX6Pf/17jnH6z/6crbXV/l6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX7Pt9xj2y5jjC1VJoxE=
   </data>
  </layer>
  <layer name="water" width="80" height="44">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztmE0KwyAQhV14/0u1PUHaEyQ9Qdt93YgP8SdqzCbfB48ZB0F4jiZoDAAAAADAdbhZY+5ODxtyrUGZxXn0dHrZkGsNyqzOo83pbUOuNSjzcR59nX425FqDMvGZjSOU8T7FZxf/9pHrO+8jlMn1H/7tg/4bg/4bg+/vGHx/x1jEK/qvnVW8Grn/Uu8Qs/JcrM3vWVPHKl/T3hvpv9Q7xKw8F2vze9bUsSqev9mx+y/1DjErz8Xa/J41dazytaO+v6l3iFl5Ltbm96ypY5Wv5f77Wu+/2j5cNbb6V9uPq8Re/4j035GR/ju//3x+1j6fvd6s+w8FtZ5f/6+Jglr8AwAAAAAAmM0f8C4+FA==
   </data>
  </layer>
  <layer name="plate" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0LcNw1AQRMEjO5DNZXPZ/luRrUMb/kyJIDKYAR4uPWwVAAAAAADwa7eu6p4e6dn0Su9u6O/Gb9JXTdOsufO0SMt+6O/Gb5WN1mnT3G3apb39vjpko2M6NfecLulqPwAAAAAAAPirD8asCqQ=
   </data>
@@ -65,28 +97,23 @@
   <object id="2" x="928" y="16" width="320" height="112"/>
   <object id="3" x="1248" y="16" width="32" height="688"/>
   <object id="4" x="0" y="672" width="1248" height="32"/>
-  <object id="10" x="32" y="352" width="992" height="64"/>
-  <object id="15" x="32" y="416" width="1120" height="128">
-   <properties>
-    <property name="objID" value="181"/>
-   </properties>
-  </object>
+  <object id="10" x="0" y="336" width="1024" height="80"/>
   <object id="16" x="1024" y="128" width="128" height="160">
    <properties>
     <property name="objID" value="182"/>
    </properties>
   </object>
-  <object id="17" x="1024" y="352" width="128" height="64">
+  <object id="17" x="1024" y="336" width="128" height="80">
    <properties>
     <property name="objID" value="183"/>
    </properties>
   </object>
-  <object id="20" x="1024" y="128" height="288" visible="0">
+  <object id="20" x="1024" y="128" height="288">
    <properties>
     <property name="objID" value="184"/>
    </properties>
   </object>
-  <object id="21" x="1152" y="128" height="416" visible="0">
+  <object id="21" x="1152" y="128" height="416">
    <properties>
     <property name="objID" value="185"/>
    </properties>
@@ -96,6 +123,10 @@
     <property name="objID" value="186"/>
    </properties>
   </object>
+  <object id="24" x="1024" y="128" width="128" height="64"/>
+  <object id="27" x="32" y="544" width="1136" height="16"/>
+  <object id="28" x="1152" y="128" width="16" height="160"/>
+  <object id="29" x="1152" y="336" width="16" height="208"/>
  </objectgroup>
  <objectgroup name="event">
   <properties>

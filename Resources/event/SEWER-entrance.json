@@ -57,6 +57,10 @@
 				{
 					"type":"removeObject",
 					"objID":"186"
+				},
+				{
+					"type":"removeObject",
+					"objID":"188"
 				}
 			]
 		},
@@ -96,7 +100,7 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["うっ！\nサイアクの臭ね・・・"],
+							"text":["うっ！\nサイアクの臭いね・・・"],
 							"charaID":"3",
 							"imgID":"2",
 							"option":"reaction"
@@ -139,7 +143,7 @@
 						},
 						{
 							"text":["とにかく進むぞ。"],
-							"charaID":"3",
+							"charaID":"2",
 							"imgID":"2"
 						}
 					]
@@ -156,7 +160,7 @@
 			"action":[
 				{
 					"type":"charaMsg",
-					"talk":["とにかく今は屋台街を離れるか・・・"],
+					"text":["とにかく今は屋台街を離れるか・・・"],
 					"charaID":"2",
 					"imgID":"2"
 				},
@@ -226,7 +230,9 @@
 						},
 						{
 							"type":"changeFlg",
-							"flg":["55","9",1]
+							"mapID":"55",
+							"eventID":"9",
+							"flg":1
 						},
 						{
 							"type":"changeMap",
@@ -273,7 +279,8 @@
 						},
 						{
 							"type":"playBGM",
-							"file":"ocean-wave.mp3"
+							"file":"ocean-wave.mp3",
+							"volume":5.0
 						},
 						{
 							"type":"spawn",
@@ -316,7 +323,9 @@
 								},
 								{
 									"type":"changeFlg",
-									"flg":["57","5",1]
+									"mapID":"57",
+									"eventID":"5",
+									"flg":1
 								}
 							]
 						},
@@ -347,7 +356,8 @@
 						},
 						{
 							"type":"playBGM",
-							"file":"ocean-wave.mp3"
+							"file":"ocean-wave.mp3",
+							"volume":5.0
 						},
 						{
 							"type":"spawn",
@@ -378,6 +388,10 @@
 								},
 								{
 									"type":"createObject",
+									"objID":"188"
+								},
+								{
+									"type":"createObject",
 									"objID":"186"
 								},
 								{
@@ -394,7 +408,9 @@
 								},
 								{
 									"type":"changeFlg",
-									"flg":["57","5",0]
+									"mapID":"57",
+									"eventID":"5",
+									"flg":0
 								}
 							]
 						},
@@ -453,6 +469,26 @@
 						{
 							"type":"stopBGM",
 							"file":"engine2.mp3"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["57","5",1],
+					"Nitem":"159"
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["鉄格子だが・・・鍵穴みてぇのがついてる\n開くのか？"]
 						}
 					]
 				}

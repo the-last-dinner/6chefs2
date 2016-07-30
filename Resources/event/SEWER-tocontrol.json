@@ -39,6 +39,20 @@
 					"objID":"182"
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["58","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"183"
+				}
+			]
 		}
 	],
 	"2":[
@@ -86,6 +100,55 @@
 					"mapID":"59",
 					"x":9,
 					"y":19
+				}
+			]
+		}
+	],
+	"4":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nitem":"158"
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
+					"type":"systemMsg",
+					"text":["鍵がかかっている・・・"]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"item":"158"
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_keyopen.mp3"
+				},
+				{
+					"type":"removeObject",
+					"objID":"183"
+				},
+				{
+					"type":"removeItem",
+					"itemID":"158"
+				},
+				{
+					"type":"systemMsg",
+					"text":["下水道管理室の鍵を使った"]
+				},
+				{
+					"type":"already"
 				}
 			]
 		}

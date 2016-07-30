@@ -14,6 +14,39 @@
 			"times":1,
 			"pathID":"1",
 			"movePattern":"4"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nflg":["51","3",1]
+				}
+			],
+			"action":[
+				{
+					"type":"setMovable",
+					"objID":"203",
+					"movable":true
+				},
+				{
+					"type":"removeObject",
+					"objID":"204"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["51","3",1]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"203"
+				}
+			]
 		}
 	],
 	"2":[
@@ -24,5 +57,20 @@
 			"y":29
 		}
 	],
-	"3":木箱で押すスイッチ
+	"3":[
+		{
+			"type":"changeFlg",
+			"mapID":"51",
+			"eventID":"3",
+			"flg":1
+		}
+	],
+	"4":[
+		{
+			"type":"changeFlg",
+			"mapID":"51",
+			"eventID":"3",
+			"flg":0
+		}
+	]
 }
