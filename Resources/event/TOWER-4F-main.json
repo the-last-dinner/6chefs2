@@ -60,13 +60,17 @@
 	"3":[
 		{
 			"type":"changeFlg",
-			"flg":["51","3",1]
+			"mapID":"51",
+			"eventID":"3",
+			"flg":1
 		}
 	],
 	"4":[
 		{
 			"type":"changeFlg",
-			"flg":["51","3",0]
+			"mapID":"51",
+			"eventID":"3",
+			"flg":0
 		}
 	]
 }

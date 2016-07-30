@@ -422,11 +422,15 @@
 						},
 						{
 							"text":["走れ！真夏！"],
-							"charaID":"3",
+							"charaID":"2",
 							"imgID":"3",
 							"option":"reaction"
 						}
 					]
+				},
+				{
+					"type":"chase",
+					"objID":"1049"
 				},
 				{
 					"type":"already"

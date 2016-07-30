@@ -26,6 +26,9 @@
   </data>
  </layer>
  <layer name="MonoChu" width="42" height="36">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjEBAAAIA6D1WP+etlAPSEACAAAAAMAH7fWATQOAJQA3
   </data>
@@ -67,7 +70,7 @@
   <object id="192" x="288" y="128" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="box.png"/>
+    <property name="img" value="dShituji.png"/>
     <property name="objID" value="203"/>
    </properties>
   </object>
@@ -80,7 +83,7 @@
   <object id="194" x="32" y="512" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="box.png"/>
+    <property name="img" value="dShituji.png"/>
     <property name="objID" value="204"/>
    </properties>
   </object>
@@ -116,9 +119,6 @@
   </object>
  </objectgroup>
  <layer name="CharaUe" width="42" height="36">
-  <properties>
-   <property name="cc_vertexz" value="-11"/>
-  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1rENgDAQQ1F30CVbwCawCdkENoUxuAloOKNI/DfAl0tLAACHs0hX6b8/VGms7zvu/hSN2bgzq79EYzXuzOpv0WjGnVn9PRqHcae7DwB4xl/K7fOXcvv8pW/6APB3N2L6FWE=
   </data>

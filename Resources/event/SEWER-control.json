@@ -6,7 +6,7 @@
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["59","3"]
 				}

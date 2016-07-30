@@ -114,7 +114,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="236" x="1088" y="736" width="32" height="32">
+  <object id="236" x="1088" y="768" width="96" height="32">
    <properties>
     <property name="EventID" value="7"/>
     <property name="trigger" value="1"/>
@@ -123,7 +123,7 @@
   <object id="237" x="224" y="320" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="box.png"/>
+    <property name="img" value="dShituji.png"/>
     <property name="objID" value="201"/>
    </properties>
   </object>
@@ -136,7 +136,7 @@
   <object id="239" x="672" y="384" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="box.png"/>
+    <property name="img" value="dShituji.png"/>
     <property name="objID" value="202"/>
    </properties>
   </object>
