@@ -31,7 +31,17 @@
 					"objID":"1449",
 					"charaID":"13",
 					"x":2,
-					"y":10,
+					"y":11,
+					"direction":"UP",
+					"times":1,
+					"movePattern":"2"
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1453",
+					"charaID":"13",
+					"x":2,
+					"y":9,
 					"direction":"DOWN",
 					"times":1,
 					"movePattern":"2"

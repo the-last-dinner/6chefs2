@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="21">
- <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="broken-Waste-E01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="broken-Waste-E01" tilewidth="16" tileheight="16" tilecount="1344" columns="16">
   <image source="broken-Waste-E01.png" trans="aa55ff" width="256" height="1344"/>
  </tileset>
- <tileset firstgid="2305" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2305" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="40" height="40">
@@ -52,7 +52,7 @@
    eJztzrkNgDAUBcEfuEcwDXD0X4BfTgQEIDQjbb5VwJ/1VrWkKc3t7ZuzPU9HWtPm7zJ/z3z9DwAAAID7BnW/Ce0=
   </data>
  </layer>
- <layer name="hide" width="40" height="40" visible="0">
+ <layer name="hide" width="40" height="40">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -60,7 +60,7 @@
    eJztzrEJACAMAEEziZPo/mNZiNjHJuAdfP+tAT/osavmfPnL8fdmxG0W/AMAAAAgbwHlPQM6
   </data>
  </layer>
- <layer name="hide2" width="40" height="40" visible="0">
+ <layer name="hide2" width="40" height="40">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>

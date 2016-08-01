@@ -140,7 +140,8 @@
 					"y":9,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -150,7 +151,8 @@
 					"y":10,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -160,7 +162,8 @@
 					"y":10,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -170,7 +173,8 @@
 					"y":36,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -180,7 +184,8 @@
 					"y":36,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -190,7 +195,8 @@
 					"y":36,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				},
 				{
 					"type":"createEnemy",
@@ -200,7 +206,8 @@
 					"y":25,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.2
 				}
 			]
 		},
@@ -241,6 +248,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":14,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":12,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"181"
 						},
@@ -249,26 +273,15 @@
 							"layer":"doorA1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorA2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorA3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"UP"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -297,39 +310,39 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
 									"type":"createEnemy",
 									"objID":"1442",
 									"charaID":"13",
-									"x":18,
-									"y":9,
+									"x":14,
+									"y":22,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -411,7 +424,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","3",1]
+					"mapID":"68",
+					"eventID":"3",
+					"flg":1
 				}
 			]
 		},
@@ -451,8 +466,38 @@
 							"layer":"doorA1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -513,7 +558,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]
@@ -539,6 +584,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":26,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":24,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"182"
 						},
@@ -547,26 +609,15 @@
 							"layer":"doorB1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorB2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorB3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"UP"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -595,31 +646,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
@@ -636,8 +687,8 @@
 									"type":"createEnemy",
 									"objID":"1443",
 									"charaID":"13",
-									"x":29,
-									"y":10,
+									"x":27,
+									"y":22,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -709,7 +760,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","4",1]
+					"mapID":"68",
+					"eventID":"4",
+					"flg":1
 				}
 			]
 		},
@@ -749,8 +802,38 @@
 							"layer":"doorB1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -811,7 +894,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]
@@ -837,6 +920,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":38,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":36,
+							"y":8,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"183"
 						},
@@ -845,26 +945,15 @@
 							"layer":"doorC1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorC2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorC3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"UP"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -893,31 +982,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
@@ -944,8 +1033,8 @@
 									"type":"createEnemy",
 									"objID":"1444",
 									"charaID":"13",
-									"x":41,
-									"y":10,
+									"x":38,
+									"y":22,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -1007,7 +1096,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","5",1]
+					"mapID":"68",
+					"eventID":"5",
+					"flg":1
 				}
 			]
 		},
@@ -1047,8 +1138,38 @@
 							"layer":"doorC1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1109,7 +1230,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]
@@ -1135,6 +1256,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":38,
+							"y":37,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":40,
+							"y":37,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"184"
 						},
@@ -1143,32 +1281,15 @@
 							"layer":"doorD1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorD2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorE3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":1.0,
-							"direction":"DOWN"
-						},
-						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"RIGHT"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -1197,31 +1318,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
@@ -1278,8 +1399,8 @@
 									"type":"createEnemy",
 									"objID":"1447",
 									"charaID":"13",
-									"x":40,
-									"y":36,
+									"x":38,
+									"y":22,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -1311,7 +1432,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","6",1]
+					"mapID":"68",
+					"eventID":"6",
+					"flg":1
 				}
 			]
 		},
@@ -1351,8 +1474,38 @@
 							"layer":"doorD1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1413,7 +1566,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]
@@ -1439,6 +1592,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":26,
+							"y":37,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":28,
+							"y":37,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"185"
 						},
@@ -1447,32 +1617,15 @@
 							"layer":"doorE1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorE2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorE3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":1.0,
-							"direction":"DOWN"
-						},
-						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"RIGHT"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -1501,31 +1654,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
@@ -1572,8 +1725,8 @@
 									"type":"createEnemy",
 									"objID":"1446",
 									"charaID":"13",
-									"x":28,
-									"y":36,
+									"x":25,
+									"y":21,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -1615,7 +1768,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","7",1]
+					"mapID":"68",
+					"eventID":"7",
+					"flg":1
 				}
 			]
 		},
@@ -1655,8 +1810,38 @@
 							"layer":"doorE1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1717,7 +1902,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]
@@ -1743,6 +1928,23 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":14,
+							"y":37,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1049",
+							"x":16,
+							"y":37,
+							"direction":"DOWN"
+						},
+						{
 							"type":"createObject",
 							"objID":"186"
 						},
@@ -1751,32 +1953,15 @@
 							"layer":"doorF1"
 						},
 						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
 							"type":"createLayer",
 							"layer":"doorF2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
 						},
 						{
 							"type":"createLayer",
 							"layer":"doorF3"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":1.0,
-							"direction":"DOWN"
-						},
-						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"steps":2.0,
-							"direction":"RIGHT"
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -1805,31 +1990,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1435"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1436"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1437"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1438"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1439"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1440"
 								},
 								{
-									"type":"removeEnemy",
+									"type":"removeObject",
 									"objID":"1441"
 								},
 								{
@@ -1866,8 +2051,8 @@
 									"type":"createEnemy",
 									"objID":"1445",
 									"charaID":"13",
-									"x":16,
-									"y":36,
+									"x":14,
+									"y":24,
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"3"
@@ -1919,7 +2104,9 @@
 				},
 				{
 					"type":"changeFlg",
-					"flg":["68","8",1]
+					"mapID":"68",
+					"eventID":"8",
+					"flg":1
 				}
 			]
 		},
@@ -1959,8 +2146,38 @@
 							"layer":"doorF1"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"limit":1.0,
+							"times":1,
 							"true":[
+								{
+									"type":"removeObject",
+									"objID":"1442"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1443"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1444"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1445"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1446"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1447"
+								},
+								{
+									"type":"removeObject",
+									"objID":"1448"
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -2021,7 +2238,7 @@
 						                  "target": "hero"
 						                }
 									]
-								}
+								},
 								{
 									"type":"already",
 									"event":["68","10"]

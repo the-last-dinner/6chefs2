@@ -82,6 +82,11 @@
 								{
 									"type":"reaction",
 									"objID":"hero"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"DOWN"
 								}
 							]
 						},
@@ -100,7 +105,7 @@
 							"speed":2.0
 						},
 						{
-							"type":"chacgeDirection",
+							"type":"changeDirection",
 							"objID":"hero",
 							"direction":"DOWN"	
 						},

@@ -85,7 +85,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","4",1]
+					"mapID":"63",
+					"eventID":"4",
+					"flg":1
 				},
 				{
 					"type":"createLayer",
@@ -103,7 +105,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","4",0]
+					"mapID":"63",
+					"eventID":"4",
+					"flg":0
 				},
 				{
 					"type":"removeLayer",
@@ -123,7 +127,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","5",1]
+					"mapID":"63",
+					"eventID":"5",
+					"flg":1
 				},
 				{
 					"type":"createLayer",
@@ -141,7 +147,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","5",0]
+					"mapID":"63",
+					"eventID":"5",
+					"flg":0
 				},
 				{
 					"type":"removeLayer",
@@ -161,7 +169,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","6",1]
+					"mapID":"63",
+					"eventID":"6",
+					"flg":1
 				},
 				{
 					"type":"createLayer",
@@ -179,7 +189,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","6",0]
+					"mapID":"63",
+					"eventID":"6",
+					"flg":1
 				},
 				{
 					"type":"removeLayer",
@@ -199,7 +211,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","7",1]
+					"mapID":"63",
+					"eventID":"7",
+					"flg":1
 				},
 				{
 					"type":"createLayer",
@@ -217,7 +231,9 @@
 			"action":[
 				{
 					"type":"changeFlg",
-					"flg":["63","7",0]
+					"mapID":"63",
+					"eventID":"7",
+					"flg":0
 				},
 				{
 					"type":"removeLayer",
@@ -236,6 +252,10 @@
 				{
 					"type":"changeHero",
 					"charaID":"18"
+				},
+				{
+					"type":"removeObject",
+					"objID":"1049"
 				},
 				{
 					"type":"createCamera",
@@ -338,7 +358,7 @@
 											"imgID":"4"
 										},
 										{
-											"text":["ほうほう・・・/nこんなトコにも逃げ込んでいやがったか・・・"],
+											"text":["ほうほう・・・\nこんなトコにも逃げ込んでいやがったか・・・"],
 											"charaID":"10",
 											"name":"？？？"
 										}
@@ -370,28 +390,29 @@
 								{
 									"type":"camera",
 									"nextX":115,
-									"nextY":13,
+									"nextY":26,
 									"time":0.5
 								},
 								{
-									"type":"createEnemy",
-									"objID":"1450",
+									"type":"wait",
+									"time":1.0
+								},
+								{
+									"type":"createObject",
+									"objID":"1050",
 									"charaID":"9",
 									"x":115,
 									"y":13,
 									"direction":"DOWN",
-									"times":2,
-									"speed":0.5,
 									"movePattern":"5"
+								},
+								{
+									"type":"wait",
+									"time":1.0
 								},
 								{
 									"type":"spawn",
 									"action":[
-										{
-											"type":"camera",
-											"nextX":115,
-											"nextY":26
-										},
 										{
 											"type":"charaMsg",
 											"file":"taihou_walk.png",
@@ -471,8 +492,15 @@
 					]
 				},
 				{
-					"type":"changeHero",
-					"charaID":"18"
+					"type":"createEnemy",
+					"objID":"1450",
+					"charaID":"9",
+					"x":115,
+					"y":13,
+					"direction":"DOWN",
+					"times":2,
+					"speed":0.5,
+					"movePattern":"5"
 				},
 				{
 					"type":"fadein"
@@ -502,10 +530,6 @@
 							"imgID":"2"
 						}
 					]
-				},
-				{
-					"type":"changeSpeed",
-					"speed":0.5
 				},
 				{
 					"type":"already"
