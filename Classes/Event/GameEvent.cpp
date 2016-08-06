@@ -343,3 +343,21 @@ void EventRepeat::update(float delta)
     
 }
 
+#pragma mark -
+#pragma mark EventRepeat
+
+// StopRepeat
+bool EventStopRepeat::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+
+    return true;
+}
+
+void EventStopRepeat::run()
+{
+    DungeonSceneManager::getInstance()->setEventRepeatTimes(0);
+     
+    this->setDone();
+}
+

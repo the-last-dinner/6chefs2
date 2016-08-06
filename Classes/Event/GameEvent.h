@@ -136,4 +136,24 @@ private:
     virtual void update(float delta) override;
 };
 
+// StopRepeat
+class EventStopRepeat : public GameEvent
+{
+    // クラスメソッド
+public:
+    CREATE_FUNC_WITH_PARAM(EventStopRepeat, rapidjson::Value&)
+    
+    // インスタンス変数
+private:
+    GameEvent* event {nullptr};
+    rapidjson::Value* json = {nullptr};
+    
+    // インスタンスメソッド
+private:
+    EventStopRepeat() {FUNCLOG};
+    ~EventStopRepeat() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__GameEvent__) */
