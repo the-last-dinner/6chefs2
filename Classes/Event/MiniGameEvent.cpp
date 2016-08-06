@@ -202,8 +202,9 @@ void SelectEvent::run()
         SelectCallBack callback {this->eventCallBacks.at(idx)};
         
         // コールバック実行
-        DungeonSceneManager::getInstance()->pushEventFront(callback.first);
-        DungeonSceneManager::getInstance()->pushEventFront(callback.second);
+        if (callback.second != nullptr) callback.second->run();
+        //DungeonSceneManager::getInstance()->pushEventFront(callback.first);
+        //DungeonSceneManager::getInstance()->pushEventFront(callback.second);
         
         // 選択されたコールバックイベント以外をリリース
         for(int i { 0 }; i < this->eventCallBacks.size(); i++)
