@@ -124,7 +124,6 @@ public:
     
 // インスタンス変数
 private:
-    int times { 0 };
     GameEvent* event {nullptr};
     rapidjson::Value* json = {nullptr};
     

@@ -289,7 +289,7 @@ bool EventRepeat::init(rapidjson::Value& json)
     
     if(!this->validator->hasMember(json, member::TIMES)) return false;
     
-    this->times = json[member::TIMES].GetInt();
+    DungeonSceneManager::getInstance()->setEventRepeatTimes(json[member::TIMES].GetInt());
     
     if (!this->validator->hasMember(json, member::ACTION)) return false;
     
@@ -303,7 +303,7 @@ bool EventRepeat::init(rapidjson::Value& json)
 void EventRepeat::run()
 {
     
-    if(!this->event || this->times == 0)
+    if(!this->event || DungeonSceneManager::getInstance()->getEventRepeatTimes() == 0)
     {
         this->setDone();
         CC_SAFE_RELEASE_NULL(this->event);
@@ -316,7 +316,7 @@ void EventRepeat::run()
 void EventRepeat::update(float delta)
 {
     
-    if (!this->event || this->times == 0)
+    if (!this->event || DungeonSceneManager::getInstance()->getEventRepeatTimes() == 0)
     {
         this->setDone();
         CC_SAFE_RELEASE_NULL(this->event);
@@ -327,8 +327,8 @@ void EventRepeat::update(float delta)
     
     if (this->event->isDone())
     {
-        this->times--;
-        if(this->times == 0)
+        DungeonSceneManager::getInstance()->decrementEventRepeatTimes();
+        if(DungeonSceneManager::getInstance()->getEventRepeatTimes() == 0)
         {
             this->setDone();
             CC_SAFE_RELEASE_NULL(this->event);

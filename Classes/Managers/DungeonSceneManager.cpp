@@ -385,6 +385,27 @@ bool DungeonSceneManager::isEventRunning() const
 }
 
 #pragma mark -
+#pragma mark EventRepeat
+
+// 繰り返しイベントの回数をセット
+void DungeonSceneManager::setEventRepeatTimes(const int times)
+{
+    this->eventRepeatTimes = times;
+}
+
+// 繰り返しイベントの回数をデクリメント
+void DungeonSceneManager::decrementEventRepeatTimes()
+{
+    this->eventRepeatTimes--;
+}
+
+// 繰り返しイベントの回数を取得
+int DungeonSceneManager::getEventRepeatTimes() const
+{
+    return this->eventRepeatTimes;
+}
+
+#pragma mark -
 #pragma mark StopWatch
 
 // ストップウォッチインスタンスの取得
