@@ -293,9 +293,9 @@ bool EventRepeat::init(rapidjson::Value& json)
     
     if (!this->validator->hasMember(json, member::ACTION)) return false;
     
-    this->event = this->factory->createGameEvent(json[member::ACTION]);
+    this->event = this->createSpawnFromIdOrAction(json);
     CC_SAFE_RETAIN(this->event);
-    this->json = json;
+    this->json = &json;
     
     return true;
 }
@@ -306,6 +306,7 @@ void EventRepeat::run()
     if(!this->event || this->times == 0)
     {
         this->setDone();
+        CC_SAFE_RELEASE_NULL(this->event);
         return;
     }
     
@@ -318,6 +319,7 @@ void EventRepeat::update(float delta)
     if (!this->event || this->times == 0)
     {
         this->setDone();
+        CC_SAFE_RELEASE_NULL(this->event);
         return;
     }
     
@@ -334,7 +336,7 @@ void EventRepeat::update(float delta)
         }
         // 0でないので再実行
         CC_SAFE_RELEASE_NULL(this->event);
-        this->event = this->factory->createGameEvent(this->json[member::ACTION]);
+        this->event = this->createSpawnFromIdOrAction(*this->json);
         CC_SAFE_RETAIN(this->event);
         this->event->run();
     }

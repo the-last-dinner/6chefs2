@@ -126,7 +126,7 @@ public:
 private:
     int times { 0 };
     GameEvent* event {nullptr};
-    rapidjson::Value json {};
+    rapidjson::Value* json = {nullptr};
     
 // インスタンスメソッド
 private:
