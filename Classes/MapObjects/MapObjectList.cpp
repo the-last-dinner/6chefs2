@@ -256,16 +256,12 @@ void MapObjectList::add(MapObject* mapObject)
     
     this->availableObjects.pushBack(mapObject);
     
-    std::mutex mtx;
-    
     // 無効リストに存在する場合は削除
     for(MapObject* obj : this->disableObjects)
     {
         if(mapObject->getObjectId() == obj->getObjectId())
         {
-            mtx.lock();
             this->disableObjects.eraseObject(mapObject);
-            mtx.unlock();
             
             break;
         }
@@ -275,16 +271,13 @@ void MapObjectList::add(MapObject* mapObject)
 // マップオブジェクトを削除
 void MapObjectList::removeById(const int objectId)
 {
-    mutex mtx;
-    
     for(MapObject* obj : this->enemies)
     {
         if(obj->getObjectId() == objectId)
         {
-            mtx.lock();
-            obj->removeFromParent();
+            this->disableObjects.pushBack(obj);
             this->availableObjects.eraseObject(obj);
-            mtx.unlock();
+            obj->removeFromParent();
         }
     }
     
@@ -292,11 +285,9 @@ void MapObjectList::removeById(const int objectId)
     {
         if(obj->getObjectId() == objectId)
         {
-            mtx.lock();
-            obj->removeFromParent();
             this->disableObjects.pushBack(obj);
             this->availableObjects.eraseObject(obj);
-            mtx.unlock();
+            obj->removeFromParent();
         }
     }
 }

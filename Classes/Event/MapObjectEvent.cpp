@@ -70,6 +70,7 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
     {
         // キャラの時
         this->target = {this->validator->getMapObjectById(this->objectId, false)};
+        CC_SAFE_RETAIN(this->target);
     }
     else
     {
