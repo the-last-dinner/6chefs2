@@ -21,6 +21,7 @@ class GameEvent : public Ref
 protected:
     EventFactory* factory { nullptr };
     EventScriptValidator* validator { nullptr };
+    int code { -1 };
 private:
     bool _isDone {false};
     bool _isReusable {false};
@@ -33,6 +34,7 @@ public:
     void setDone(bool done=true);
     virtual void run() {CCLOG("runメソッドをoverrideしてね");};     // イベント開始
     virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
+    virtual void stop() {};
 protected:
     GameEvent();
     virtual ~GameEvent();
