@@ -137,22 +137,17 @@ private:
     virtual void update(float delta) override;
 };
 
-// StopRepeat
-class EventStopRepeat : public GameEvent
+// StopEvent
+class EventStop : public GameEvent
 {
     // クラスメソッド
 public:
-    CREATE_FUNC_WITH_PARAM(EventStopRepeat, rapidjson::Value&)
-    
-    // インスタンス変数
-private:
-    GameEvent* event {nullptr};
-    rapidjson::Value* json = {nullptr};
+    CREATE_FUNC_WITH_PARAM(EventStop, rapidjson::Value&)
     
     // インスタンスメソッド
 private:
-    EventStopRepeat() {FUNCLOG};
-    ~EventStopRepeat() {FUNCLOG};
+    EventStop() {FUNCLOG};
+    ~EventStop() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
 };
