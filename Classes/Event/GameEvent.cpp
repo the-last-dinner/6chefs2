@@ -183,6 +183,14 @@ void EventSpawn::update(float delta)
     }
 }
 
+void EventSpawn::stop(int code)
+{
+    for (GameEvent* event : this->events)
+    {
+        event->stop(code);
+    }
+}
+
 #pragma mark -
 #pragma mark EventIf
 
@@ -285,13 +293,15 @@ void CallEvent::update(float delta)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if(!GameEvent::init()) return false;
     
     if(!this->validator->hasMember(json, member::TIMES)) return false;
     
     this->times = json[member::TIMES].GetInt();
     
-    if (!this->validator->hasMember(json, member::ACTION)) return false;
+    if(!this->validator->hasMember(json, member::ACTION)) return false;
+    
+    if(this->validator->hasMember(json, member::ID)) this->code = stoi(json[member::ID].GetString());
     
     this->event = this->createSpawnFromIdOrAction(json);
     CC_SAFE_RETAIN(this->event);
@@ -343,6 +353,11 @@ void EventRepeat::update(float delta)
     
 }
 
+void EventRepeat::stop(int code)
+{
+    if(this->code == code) this->times = 0;
+}
+
 #pragma mark -
 #pragma mark EventStop
 
@@ -350,13 +365,18 @@ void EventRepeat::update(float delta)
 bool EventStop::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
+    
+    if(!this->validator->hasMember(json, member::ID)) return false;
+    
+    this->eventCode = stoi(json[member::ID].GetString());
 
     return true;
 }
 
 void EventStop::run()
 {
-     
+    DungeonSceneManager::getInstance()->getRunningEvent()->stop(this->eventCode);
+    
     this->setDone();
 }
 

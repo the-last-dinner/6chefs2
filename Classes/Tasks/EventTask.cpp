@@ -257,6 +257,12 @@ int EventTask::getRunningEventId() const
     return this->getEventId(this->runningEvent);
 }
 
+// 実行中のイベントを取得
+GameEvent* EventTask::getRunningEvent() const
+{
+    return this->getGameEvent(this->runningEvent);
+}
+
 // キューにあるイベントを全て取得
 deque<EventTask::EventWithId> EventTask::getEvents() const
 {

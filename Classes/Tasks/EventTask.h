@@ -54,6 +54,7 @@ public:
     bool isEventRunning();
     bool existsEvent();
     int getRunningEventId() const;
+    GameEvent* getRunningEvent() const;
     deque<EventWithId> getEvents() const;
     
     // キュー中のevent_id操作

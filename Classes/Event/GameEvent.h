@@ -34,7 +34,8 @@ public:
     void setDone(bool done=true);
     virtual void run() {CCLOG("runメソッドをoverrideしてね");};     // イベント開始
     virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
-    virtual void stop() {};
+    virtual void stop(int code = -1) {};
+    
 protected:
     GameEvent();
     virtual ~GameEvent();
@@ -80,6 +81,8 @@ private:
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
+    virtual void stop(int code = -1) override;
+
 };
 
 // If
@@ -137,6 +140,7 @@ private:
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
+    virtual void stop(int code = -1) override;
 };
 
 // StopEvent
@@ -145,6 +149,10 @@ class EventStop : public GameEvent
     // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(EventStop, rapidjson::Value&)
+    
+    // インスタンス変数
+private:
+    int eventCode { -1 };
     
     // インスタンスメソッド
 private:
