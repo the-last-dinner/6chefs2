@@ -46,7 +46,6 @@ private:
     StopWatch* stopWatch { nullptr };
     Stamina* stamina { nullptr };
     CommonEventScripts* commonEventScripts;
-    int eventRepeatTimes { 0 };
     
 // インスタンスメソッド
 private:
@@ -108,11 +107,6 @@ public:
     int getRunningEventId() const;
     int getPushingEventid() const;
     bool isEventRunning() const;
-    
-    // EventRepeat
-    void setEventRepeatTimes(const int times);
-    void decrementEventRepeatTimes();
-    int getEventRepeatTimes() const;
     
     // StopWatch
     StopWatch* getStopWatch();
