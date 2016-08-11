@@ -309,6 +309,12 @@ void DungeonSceneManager::moveCamera(const Point& gridPosition, const float dura
     this->getScene()->cameraTask->move(gridPosition, duration, callback);
 }
 
+// カメラを指定のマップオブジェクトにセット
+void DungeonSceneManager::setCamera(MapObject *target)
+{
+    this->getScene()->cameraTask->setTarget(target);
+}
+
 #pragma mark -
 #pragma mark EventTask
 

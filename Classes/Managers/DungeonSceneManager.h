@@ -93,6 +93,7 @@ public:
     
     // CameraTask
     void moveCamera(const Point& gridPosition, const float duration, function<void()> callback);
+    void setCamera(MapObject* targetObject);
     
     // EventTask
     void runEvent(const int eventId);
