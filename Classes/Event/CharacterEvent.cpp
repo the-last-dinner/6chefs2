@@ -181,5 +181,5 @@ void ChangeHeroEvent::run()
     chara->setHit(true);
     party->addMember(chara);
     DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
-    
+    DungeonSceneManager::getInstance()->setCamera(party->getMainCharacter());
 }
