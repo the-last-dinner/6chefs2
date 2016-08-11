@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="67">
- <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="clear-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="129" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="129" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1633" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1633" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2113" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2113" name="ST-Hospital-I01" tilewidth="16" tileheight="16" tilecount="1856" columns="16">
   <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
  </tileset>
  <layer name="Base" width="60" height="42">
@@ -36,7 +36,7 @@
    eJzt2LENgDAQBEG3ChlkJoPq+R6st9/SjHTZVnCtAQDAfEfsLNRnu2J3oT5bjz2F+mxv7CvUAwAAAOP8V2v7bP6rtT0A7OQHUIMUiQ==
   </data>
  </layer>
- <layer name="doorA1" width="60" height="42" visible="0">
+ <layer name="doorA1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -44,7 +44,7 @@
    eJztzrENwCAMAEGvBl3oQgf7DxIPEdnNnfT9RwAAQL2Rze6JQk+2uicKvdnunih0sts9AQAAAAAAwO8+Tp4CbQ==
   </data>
  </layer>
- <layer name="doorA2" width="60" height="42" visible="0">
+ <layer name="doorA2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -52,7 +52,7 @@
    eJztzrENwCAMAEGvAl3oQgf7DxYPEdnNnfT9RwAAQL2Rze6JQk+2uicKvdnunih0sts9AQAAAAAAwO8+3voBbQ==
   </data>
  </layer>
- <layer name="doorA3" width="60" height="42" visible="0">
+ <layer name="doorA3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -60,7 +60,7 @@
    eJztzrENwCAMAEFDF7rQwf6DxkNEdnMnff8RAABQb2Sze6LQk63uiUJvtrsnCp3sdk8AAAAAAADwuw9vZQBt
   </data>
  </layer>
- <layer name="doorB1" width="60" height="42" visible="0">
+ <layer name="doorB1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -68,7 +68,7 @@
    eJztzqERwCAQAEFaIw5c4qD/QvgOcP8RuzPnrzUAAPi/Hj3VE4lGNKsnEr3RVz2RaEW7egIAAAAAAICrA9pPAm0=
   </data>
  </layer>
- <layer name="doorB2" width="60" height="42" visible="0">
+ <layer name="doorB2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -76,7 +76,7 @@
    eJztzqERwCAQAEFaIQ5c4qD/wvgOcP8RuzPnrzUAAPi/Hj3VE4lGNKsnEr3RVz2RaEW7egIAAAAAAICrA5q6AW0=
   </data>
  </layer>
- <layer name="doorB3" width="60" height="42" visible="0">
+ <layer name="doorB3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -84,7 +84,7 @@
    eJztziESwCAMAEGoA9c6+P9DyQ9wScXuzPlrDQAA/q9HT/VEohHN6olEb/RVTyRa0a6eAAAAAAAA4OoAWyUAbQ==
   </data>
  </layer>
- <layer name="doorC1" width="60" height="42" visible="0">
+ <layer name="doorC1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -92,7 +92,7 @@
    eJztzrENwCAMAEFWIx10pIP9B8FT2FJyJ33/rQEAwPf06KmeSDSiWT2RaEVv9USiHZ3qCQAAAAAAgB+6Zg8CbQ==
   </data>
  </layer>
- <layer name="doorC2" width="60" height="42" visible="0">
+ <layer name="doorC2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -100,7 +100,7 @@
    eJztzrENwCAMAEFWIR10pIP9B8NT2FJyJ33/rQEAwPf06KmeSDSiWT2RaEVv9USiHZ3qCQAAAAAAgB+6VnoBbQ==
   </data>
  </layer>
- <layer name="doorC3" width="60" height="42" visible="0">
+ <layer name="doorC3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -108,7 +108,7 @@
    eJztzrENwCAMAEFIBx3pYP9B8RS2lNxJ339rAADwPT16qicSjWhWTyRa0Vs9kWhHp3oCAAAAAADghy5G5QBt
   </data>
  </layer>
- <layer name="doorD1" width="60" height="42" visible="0">
+ <layer name="doorD1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -116,7 +116,7 @@
    eJztzrENwCAQA0BWC13SQZfsP0i+ZAF4kO4kt7ZLAQAAAAAAAGB0RerB/bu5I0/2iYVapGefGLwL+r/JGwCQ5QesHQNJ
   </data>
  </layer>
- <layer name="doorD2" width="60" height="42" visible="0">
+ <layer name="doorD2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -124,7 +124,7 @@
    eJztzrERwCAMADGvAl3oQgf7DxYvEbuR7r7/CAAAAAAAAAAqjWx2TxR6stU9UejNdvdEoZPd7gkA+MkHq+UBbQ==
   </data>
  </layer>
- <layer name="doorD3" width="60" height="42" visible="0">
+ <layer name="doorD3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -132,7 +132,7 @@
    eJztzrERwCAMADFDF7rQwf6DxkvEbqS77z8CAAAAAAAAgEojm90ThZ5sdU8UerPdPVHoZLd7AgB+8gFdbQBt
   </data>
  </layer>
- <layer name="doorE1" width="60" height="42" visible="0">
+ <layer name="doorE1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -140,7 +140,7 @@
    eJztzrENwCAMAEFWIx10SQf7D4J3QLJT3Enff2sAAAAAAAAA3OjRUz2RaESzeiLRG33VE4lWtKsnAOAnDm6sAm0=
   </data>
  </layer>
- <layer name="doorE2" width="60" height="42" visible="0">
+ <layer name="doorE2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -148,7 +148,7 @@
    eJztzrENwCAMAEFWIR10SQf7D4Z3QLJT3Enff2sAAAAAAAAA3OjRUz2RaESzeiLRG33VE4lWtKsnAOAnDvAlAW0=
   </data>
  </layer>
- <layer name="doorE3" width="60" height="42" visible="0">
+ <layer name="doorE3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -156,7 +156,7 @@
    eJztzrENwCAMAEFIB13Swf6D4h2Q7BR30vffGgAAAAAAAAA3evRUTyQa0ayeSPRGX/VEohXt6gkA+IkDca0AbQ==
   </data>
  </layer>
- <layer name="doorF1" width="60" height="42" visible="0">
+ <layer name="doorF1" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -164,7 +164,7 @@
    eJztzrENwCAMAEFWIx10SQf7D4JLJrAV6U76/lsDAAAAAAAA4Najp3oi0Yhm9USiN/qqJxKtaFdPAMBPHeLsAm0=
   </data>
  </layer>
- <layer name="doorF2" width="60" height="42" visible="0">
+ <layer name="doorF2" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -172,7 +172,7 @@
    eJztzrENwCAMAEFWIR10SQf7D4ZLJrAV6U76/lsDAAAAAAAA4Najp3oi0Yhm9USiN/qqJxKtaFdPAMBPHTR0AW0=
   </data>
  </layer>
- <layer name="doorF3" width="60" height="42" visible="0">
+ <layer name="doorF3" width="60" height="42">
   <properties>
    <property name="cc_vertexz" value="-11"/>
   </properties>
@@ -324,7 +324,7 @@
   <object id="66" x="656" y="96" width="32" height="32">
    <properties>
     <property name="EventID" value="12"/>
-    <property name="obiID" value="1511"/>
+    <property name="objID" value="1511"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>

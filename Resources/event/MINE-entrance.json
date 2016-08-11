@@ -48,7 +48,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nequip":"1511"
+					"Nequip":["1511"]
 				}
 			],
 			"action":[
@@ -64,7 +64,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"equip":"1511"
+					"equip":["1511"]
 				}
 			],
 			"action":[

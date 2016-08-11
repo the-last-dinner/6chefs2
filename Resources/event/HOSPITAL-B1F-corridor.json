@@ -22,7 +22,7 @@
 	"2":[
 		{
 			"type":"changeMap",
-			"mapID":"61",
+			"mapID":"60",
 			"x":4,
 			"y":30
 		}
@@ -151,7 +151,9 @@
 						},
 						{
 							"type":"changeFlg",
-							"flg":["65","5",1]
+							"mapID":"65",
+							"eventID":"5",
+							"flg":1
 						},
 						{
 							"type":"fadeout"
@@ -311,7 +313,7 @@
 								},
 								{
 									"text":["でかしたわ！"],
-									"charaID":"2",
+									"charaID":"3",
 									"imgID":"3"
 								}
 							]
@@ -324,6 +326,20 @@
 							"type":"already"
 						}
 					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nitem":"1510"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["？また鍵がかかってんな・・・\n探してこなきゃな・・・"]
 				}
 			]
 		}
