@@ -46,12 +46,14 @@ private:
     vector<string> choices {};
     vector<SelectCallBack> eventCallBacks {};
     queue<CharacterMessageData*> datas {};
+    GameEvent* event {nullptr};
     
 private:
     SelectEvent() {FUNCLOG};
     ~SelectEvent() {FUNCLOG};
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
+    virtual void update(float delta) override;
 };
 
 // パスワードイベント

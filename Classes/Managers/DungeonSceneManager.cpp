@@ -372,6 +372,12 @@ int DungeonSceneManager::getRunningEventId() const
     return this->getScene()->eventTask->getRunningEventId();
 }
 
+// 実行しているイベントを取得
+GameEvent* DungeonSceneManager::getRunningEvent() const
+{
+    return this->getScene()->eventTask->getRunningEvent();
+}
+
 // エンキュー中のイベントIDを取得
 int DungeonSceneManager::getPushingEventid() const
 {

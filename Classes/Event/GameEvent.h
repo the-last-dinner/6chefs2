@@ -21,6 +21,7 @@ class GameEvent : public Ref
 protected:
     EventFactory* factory { nullptr };
     EventScriptValidator* validator { nullptr };
+    int code { -1 };
 private:
     bool _isDone {false};
     bool _isReusable {false};
@@ -33,6 +34,8 @@ public:
     void setDone(bool done=true);
     virtual void run() {CCLOG("runメソッドをoverrideしてね");};     // イベント開始
     virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
+    virtual void stop(int code = -1) {};
+    
 protected:
     GameEvent();
     virtual ~GameEvent();
@@ -78,6 +81,8 @@ private:
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
+    virtual void stop(int code = -1) override;
+
 };
 
 // If
@@ -126,7 +131,7 @@ public:
 private:
     int times { 0 };
     GameEvent* event {nullptr};
-    rapidjson::Value json {};
+    rapidjson::Value* json = {nullptr};
     
 // インスタンスメソッド
 private:
@@ -135,6 +140,26 @@ private:
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
+    virtual void stop(int code = -1) override;
+};
+
+// StopEvent
+class EventStop : public GameEvent
+{
+    // クラスメソッド
+public:
+    CREATE_FUNC_WITH_PARAM(EventStop, rapidjson::Value&)
+    
+    // インスタンス変数
+private:
+    int eventCode { -1 };
+    
+    // インスタンスメソッド
+private:
+    EventStop() {FUNCLOG};
+    ~EventStop() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
 };
 
 #endif /* defined(__LastSupper__GameEvent__) */

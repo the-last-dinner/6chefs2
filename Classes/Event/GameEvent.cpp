@@ -183,6 +183,14 @@ void EventSpawn::update(float delta)
     }
 }
 
+void EventSpawn::stop(int code)
+{
+    for (GameEvent* event : this->events)
+    {
+        event->stop(code);
+    }
+}
+
 #pragma mark -
 #pragma mark EventIf
 
@@ -285,17 +293,19 @@ void CallEvent::update(float delta)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if(!GameEvent::init()) return false;
     
     if(!this->validator->hasMember(json, member::TIMES)) return false;
     
     this->times = json[member::TIMES].GetInt();
     
-    if (!this->validator->hasMember(json, member::ACTION)) return false;
+    if(!this->validator->hasMember(json, member::ACTION)) return false;
     
-    this->event = this->factory->createGameEvent(json[member::ACTION]);
+    if(this->validator->hasMember(json, member::ID)) this->code = stoi(json[member::ID].GetString());
+    
+    this->event = this->createSpawnFromIdOrAction(json);
     CC_SAFE_RETAIN(this->event);
-    this->json = json;
+    this->json = &json;
     
     return true;
 }
@@ -306,6 +316,7 @@ void EventRepeat::run()
     if(!this->event || this->times == 0)
     {
         this->setDone();
+        CC_SAFE_RELEASE_NULL(this->event);
         return;
     }
     
@@ -318,6 +329,7 @@ void EventRepeat::update(float delta)
     if (!this->event || this->times == 0)
     {
         this->setDone();
+        CC_SAFE_RELEASE_NULL(this->event);
         return;
     }
     
@@ -334,10 +346,37 @@ void EventRepeat::update(float delta)
         }
         // 0でないので再実行
         CC_SAFE_RELEASE_NULL(this->event);
-        this->event = this->factory->createGameEvent(this->json[member::ACTION]);
+        this->event = this->createSpawnFromIdOrAction(*this->json);
         CC_SAFE_RETAIN(this->event);
         this->event->run();
     }
     
+}
+
+void EventRepeat::stop(int code)
+{
+    if(this->code == code) this->times = 0;
+}
+
+#pragma mark -
+#pragma mark EventStop
+
+// StopEvent
+bool EventStop::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+    
+    if(!this->validator->hasMember(json, member::ID)) return false;
+    
+    this->eventCode = stoi(json[member::ID].GetString());
+
+    return true;
+}
+
+void EventStop::run()
+{
+    DungeonSceneManager::getInstance()->getRunningEvent()->stop(this->eventCode);
+    
+    this->setDone();
 }
 

@@ -200,10 +200,7 @@ void SelectEvent::run()
     {
         // 選ばれた選択肢のインデックスからコールバックを決定
         SelectCallBack callback {this->eventCallBacks.at(idx)};
-        
-        // コールバック実行
-        DungeonSceneManager::getInstance()->pushEventFront(callback.first);
-        DungeonSceneManager::getInstance()->pushEventFront(callback.second);
+        this->event = callback.second;
         
         // 選択されたコールバックイベント以外をリリース
         for(int i { 0 }; i < this->eventCallBacks.size(); i++)
@@ -213,10 +210,20 @@ void SelectEvent::run()
             CC_SAFE_RELEASE(this->eventCallBacks.at(i).second);
         }
         
-        this->setDone();
+        // コールバック実行
+        (this->event != nullptr)? this->event->run() : this->setDone();
+        
     };
     
     DungeonSceneManager::getInstance()->getScene()->addChild(layer, Priority::SELECT_LAYER);
+}
+
+void SelectEvent::update(float delta){
+    
+    if(this->event != nullptr) {
+        this->event->update(delta);
+        if(this->event->isDone()) this->setDone();
+    }
 }
 
 #pragma mark -
