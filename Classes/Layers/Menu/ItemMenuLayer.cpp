@@ -23,13 +23,9 @@ bool ItemMenuLayer::init()
 {
     FUNCLOG
     // メニュー設定
-    int obj_count = PlayerDataManager::getInstance()->getLocalData()->getItemAll().size();
+    int itemCount = PlayerDataManager::getInstance()->getLocalData()->getItemAll().size();
     Point maxSize = Point(3,6);
-    int sizeX = obj_count < maxSize.x ? obj_count : maxSize.x;
-    int sizeY = obj_count < maxSize.x * maxSize.y ? floor((obj_count - 1 )/ maxSize.x) + 1 : maxSize.y;
-    Size size = Size(sizeX, sizeY);
-    int page_size = floor(abs(obj_count-1 ) / (maxSize.x * maxSize.y)) + 1;
-    if (!MenuLayer::init(size, page_size)) return false;
+    if (!MenuLayer::init(maxSize, itemCount)) return false;
     
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;

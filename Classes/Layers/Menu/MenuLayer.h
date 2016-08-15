@@ -27,7 +27,7 @@ private:
     int sizeX { 0 };
     int sizeY { 0 };
     bool cursorEnabled {true};
-    int page_size { 1 };
+    int pageCount { 1 };
     int page { 0 };
 
 // インスタンスメソッド
@@ -37,7 +37,7 @@ public:
 protected:
 	MenuLayer();
 	virtual ~MenuLayer();
-    virtual bool init(const Size& size, const int page_size);
+    virtual bool init(const Point& size, const int itemCount);
 	virtual bool init(const Point& index, const Size& size);
 	virtual bool init(int sizeX, int sizeY);
 	virtual void onIndexChanged(int newIdx, bool sound = true) = 0;

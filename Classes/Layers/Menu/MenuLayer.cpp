@@ -17,10 +17,12 @@ MenuLayer::MenuLayer(){FUNCLOG}
 MenuLayer::~MenuLayer(){FUNCLOG}
 
 // 初期化 (ページ数指定有)
-bool MenuLayer::init(const Size& size, const int page_size)
+bool MenuLayer::init(const Point& pageSize, const int itemCount)
 {
-    this->page_size = page_size;
-    return this->init(size.width, size.height);
+    int sizeX = itemCount < pageSize.x ? itemCount : pageSize.x;
+    int sizeY = itemCount < pageSize.x * pageSize.y ? floor((itemCount - 1) / pageSize.x / sizeX) : pageSize.y;
+    this->pageCount = floor(abs(itemCount - 1) / (pageSize.x * pageSize.y)) + 1;
+    return this->init(sizeX, sizeY);
 }
 
 // 初期化
@@ -70,18 +72,18 @@ void MenuLayer::onCursorKeyPressed(const Key& key)
     switch(key)
     {
         case Key::UP:
-            if (this->page_size > 1 && indexY == 0)
+            if (this->pageCount > 1 && indexY == 0)
             {
-                this->page = this->page == 0 ? this->page_size - 1 : this->page - 1;
+                this->page = this->page == 0 ? this->pageCount - 1 : this->page - 1;
                 this->onPageChanged(this->page);
             }
             if(sizeY >= 2) this->indexY = (indexY == 0) ? indexY = sizeY - 1 : (indexY - 1) % sizeY;
             break;
             
         case Key::DOWN:
-            if (this->page_size > 1 && indexY + 1 == sizeY)
+            if (this->pageCount > 1 && indexY + 1 == sizeY)
             {
-                this->page = (this->page + 1) % this->page_size;
+                this->page = (this->page + 1) % this->pageCount;
                 this->onPageChanged(this->page);
             }
             if(sizeY >= 2) this->indexY = (indexY + 1) % sizeY;
@@ -188,7 +190,7 @@ void MenuLayer::intervalInputCheck(const vector<Key>& keys)
 }
 
 // ページサイズを取得
-int MenuLayer::getPageSize(){return this->page_size;}
+int MenuLayer::getPageSize(){return this->pageCount;}
 
 // 上下に反復移動
 void MenuLayer::moveUpDown(cocos2d::Node* target)
