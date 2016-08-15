@@ -15,9 +15,6 @@
 // 初期化
 bool TrophyListLayer::init()
 {
-    Point size {Point(2,6)};
-    if (!MenuLayer::init(size.x, size.y)) return false;
-    
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;
     Size parcent = Size(WINDOW_WIDTH/100, WINDOW_HEIGHT/100);
@@ -75,7 +72,12 @@ bool TrophyListLayer::init()
     center->setName("itemList");
     this->addChild(center);
     
+    // メニュー設定
     vector<int> trophies = CsvDataManager::getInstance()->getTrophyData()->getIdAll();
+    Point size {Point(2,5)};
+    
+    if (!MenuLayer::init(size, trophies.size(), center)) return false;
+    
     int i = 0;
     int page = 0;
     int upDownMargin = 40;
@@ -83,17 +85,21 @@ bool TrophyListLayer::init()
     
     for(int trophy_id : trophies)
     {
+        // ページパネル生成
+        page = floor(i / (size.x * size.y));
         
-        // パネル生成
+        // トロフィーパネル生成
         Sprite* panel = Sprite::create();
-        Size list_size {center->getContentSize()};
+        Size list_size {this->pagePanels[page]->getContentSize()};
         list_size.height -= upDownMargin;
         panel->setTextureRect(Rect(0, 0, list_size.width / size.x, list_size.height / size.y));
         panel->setOpacity(0);
         
         Size panel_size {panel->getContentSize()};
         panel->setPosition(((i - (int)(page * size.x * size.y))%(int)size.x) * (list_size.width / size.x) + panel_size.width/2, list_size.height - ((floor((i - page * size.x * size.y)/(int)size.x) + 1)  *  (panel_size.height)) + panel_size.height/2 + upDownMargin/2);
-        center->addChild(panel);
+        
+        // ページに登録
+        this->pagePanels[page]->addChild(panel);
         
         // トロフィー画像
         Sprite* trophy_img {Sprite::createWithSpriteFrameName("trophy_gold.png")};
@@ -126,6 +132,7 @@ bool TrophyListLayer::init()
         i++;
     }
     // デフォルトセレクト
+    this->onPageChanged(0);
     this->onIndexChanged(0, false);
     
     return true;

@@ -17,14 +17,6 @@ DocumentMenuLayer::~DocumentMenuLayer(){FUNCLOG}
 // 初期化
 bool DocumentMenuLayer::init()
 {
-    DocumentData* docData { CsvDataManager::getInstance()->getDocumentData() };
-    int docCount = docData->getDocumentCount();
-    this->documentIds = docData->getDocumentDataIds();
-    
-    // 現在は12個までしか許容できないのでページャーできるまで以下のように
-    docCount = docCount < 12 ? docCount : 12;
-    
-    if (!MenuLayer::init(1,docCount)) return false;
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;
     Size parcent = Size(WINDOW_WIDTH/100, WINDOW_HEIGHT/100);
@@ -71,18 +63,33 @@ bool DocumentMenuLayer::init()
     right->setName("charaRight");
     this->addChild(right);
     
+    // メニュー設定
+    DocumentData* docData { CsvDataManager::getInstance()->getDocumentData() };
+    int docCount = docData->getDocumentCount();
+    this->documentIds = docData->getDocumentDataIds();
+    Point maxSize {Point(1,12)};
+    if (!MenuLayer::init(maxSize, docCount, right)) return false;
+    
+    int page = 0;
+    int upDownMargin = 40;
     Size listSize {right->getContentSize()};
-    float space = 2;
-    Point maxSize {Point(1,docCount)};
+    listSize.height -= upDownMargin;
     for (int i = 0; i < docCount; i++)
     {
-        // パネル生成
+        // ページパネル生成
+        page = floor(i / (maxSize.x * maxSize.y));
+
+        // 資料パネル生成
         Sprite* panel = Sprite::create();
-        panel->setTextureRect(Rect(0, 0, listSize.width / maxSize.x, listSize.height / maxSize.y - space));
+        
+        panel->setTextureRect(Rect(0, 0, listSize.width / maxSize.x, listSize.height / maxSize.y));
         panel->setOpacity(0);
         Size panelSize {panel->getContentSize()};
-        panel->setPosition((i%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor(i/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 - space * 5);
-        right->addChild(panel);
+        // panel->setPosition((i%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor(i/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 - space * 5);
+        panel->setPosition(((i - (int)(page * maxSize.x * maxSize.y))%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor((i - page * maxSize.x * maxSize.y)/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 + upDownMargin/2);
+        
+        // ページに登録
+        this->pagePanels[page]->addChild(panel);
         
         // キャラクター名
         string docName {""};
@@ -110,6 +117,7 @@ bool DocumentMenuLayer::init()
     }
     
     // デフォルトセット
+    this->onPageChanged(0);
     this->onIndexChanged(0, false);
     
     return true;
@@ -214,7 +222,7 @@ void DocumentMenuLayer::onMenuKeyPressed()
     // キャラ説明が出ている場合は消すだけ
     if (this->isDiscription)
     {
-        this->onEnterKeyPressed(0);
+        this->onEnterKeyPressed(-1);
         return;
     }
     
@@ -260,7 +268,7 @@ void DocumentMenuLayer::onEnterKeyPressed(int idx)
         
         // 詳細のラベルを作成
         vector<Label*> discriptions;
-        Size panel_size = Size(back->getContentSize().width, back->getContentSize().height/3);
+        Size panelSize = Size(back->getContentSize().width, back->getContentSize().height/3);
         int canCheckLevel = PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[idx]);
         for(int i = 0; i < 3; i++)
         {
@@ -276,7 +284,7 @@ void DocumentMenuLayer::onEnterKeyPressed(int idx)
             }
             Label* label = Label::createWithTTF(profile, "fonts/cinecaption2.28.ttf", 24);
             label->setColor(Color3B::WHITE);
-            label->setPosition(canCheckLevel >= i ? label->getContentSize().width/2 + 20 : panel_size.width/2, (2-i) * panel_size.height + panel_size.height/2);
+            label->setPosition(canCheckLevel >= i ? label->getContentSize().width/2 + 20 : panelSize.width/2, (2-i) * panelSize.height + panelSize.height/2);
             discriptions.push_back(label);
             back->addChild(label);
         }
