@@ -189,3 +189,23 @@ void MenuLayer::intervalInputCheck(const vector<Key>& keys)
 
 // ページサイズを取得
 int MenuLayer::getPageSize(){return this->page_size;}
+
+// 上下に反復移動
+void MenuLayer::moveUpDown(cocos2d::Node* target)
+{
+    // 移動設定
+    float time = 0.3f;
+    float distance = 5.f;
+    
+    // 初期位置の取得
+    Vec2 position = target->getPosition();
+    
+    // 反復移動位置を設定
+    ActionInterval* upDown = Sequence::createWithTwoActions(
+        TargetedAction::create(target, MoveTo::create(time, Vec2(position.x, position.y + distance))),
+        TargetedAction::create(target, MoveTo::create(time, position))
+    );
+    
+    // 反復移動を登録
+    this->runAction(RepeatForever::create(upDown));
+}

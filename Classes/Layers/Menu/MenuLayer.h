@@ -55,6 +55,7 @@ protected:
     virtual void intervalInputCheck(const vector<Key>& keys);
     void changePage(const int page);
     int getPageSize();
+    void moveUpDown(cocos2d::Node* target);
 };
 
 #endif // __MENU_LAYER_H__
