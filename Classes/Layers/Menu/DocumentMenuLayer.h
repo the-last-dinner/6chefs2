@@ -1,23 +1,23 @@
 //
-//  CharacterMenuLayer.h
+//  DocumentMenuLayer.h
 //  LastSupper
 //
 //  Created by Ryoya Ino on 2015/11/09.
 //
 //
 
-#ifndef CharacterMenuLayer_h
-#define CharacterMenuLayer_h
+#ifndef DocumentMenuLayer_h
+#define DocumentMenuLayer_h
 
 #include "Layers/Menu/MenuLayer.h"
 
 class SlideNode;
 
-class CharacterMenuLayer : public MenuLayer
+class DocumentMenuLayer : public MenuLayer
 {
     // クラスメソッド
 public:
-    CREATE_FUNC(CharacterMenuLayer)
+    CREATE_FUNC(DocumentMenuLayer)
     virtual bool init() override;
   
     // インスタンスメソッド
@@ -27,19 +27,18 @@ private:
     virtual void onMenuKeyPressed() override;
     void changeCharaImage(const int idx);
 protected:
-    CharacterMenuLayer();
-    ~CharacterMenuLayer();
+    DocumentMenuLayer();
+    ~DocumentMenuLayer();
 public:
     virtual void show() override;
     virtual void hide() override;
     
     // インスタンス変数
 private:
-    vector<int> characters {};
-    int selected_character {0};
+    vector<int> documentIds {};
     bool isDiscription {false};
     SlideNode* slideNode {nullptr};
 public:
     function<void()> onCharacterMenuCanceled { nullptr };
 };
-#endif /* CharacterMenuLayer_h */
+#endif /* DocumentMenuLayer_h */

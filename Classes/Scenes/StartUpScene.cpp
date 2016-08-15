@@ -13,6 +13,7 @@
 #include "Layers/LoadingLayer.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/CsvUtils.h"
+#include "Utils/AssertUtils.h"
 
 // 初期化
 bool StartUpScene::init()
@@ -21,6 +22,16 @@ bool StartUpScene::init()
     
     this->configListener->setKeyconfigEnabled(false);
     
+    // キーコンフィグの取得
+    KeyconfigManager::getInstance()->setCursorKey(PlayerDataManager::getInstance()->getGlobalData()->getCursorKey());
+    KeyconfigManager::getInstance()->setDashKey(PlayerDataManager::getInstance()->getGlobalData()->getDashKey());
+    
+    return true;
+}
+
+// シーン生成直後
+void StartUpScene::onEnter()
+{
     // マスターデータ準備
     CsvDataManager::getInstance();
     
@@ -36,17 +47,6 @@ bool StartUpScene::init()
     
     // セーブデータ準備
     PlayerDataManager::getInstance();
-    
-    // キーコンフィグの取得
-    KeyconfigManager::getInstance()->setCursorKey(PlayerDataManager::getInstance()->getGlobalData()->getCursorKey());
-    KeyconfigManager::getInstance()->setDashKey(PlayerDataManager::getInstance()->getGlobalData()->getDashKey());
-    
-    return true;
-}
-
-// シーン生成直後
-void StartUpScene::onEnter()
-{
     BaseScene::onEnter();
 }
 

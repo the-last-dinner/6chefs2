@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		260621C71D61B7A200348C94 /* DocumentData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 260621C51D61B7A200348C94 /* DocumentData.cpp */; };
+		260621C81D61B7A200348C94 /* DocumentData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 260621C51D61B7A200348C94 /* DocumentData.cpp */; };
 		2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
 		2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
@@ -152,8 +154,8 @@
 		DC0391B61C871E1000C50E8E /* EventListenerKeyboardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A31C871E1000C50E8E /* EventListenerKeyboardLayer.cpp */; };
 		DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A51C871E1000C50E8E /* LoadingLayer.cpp */; };
 		DC0391B81C871E1000C50E8E /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A51C871E1000C50E8E /* LoadingLayer.cpp */; };
-		DC0391B91C871E1000C50E8E /* CharacterMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A81C871E1000C50E8E /* CharacterMenuLayer.cpp */; };
-		DC0391BA1C871E1000C50E8E /* CharacterMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A81C871E1000C50E8E /* CharacterMenuLayer.cpp */; };
+		DC0391B91C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A81C871E1000C50E8E /* DocumentMenuLayer.cpp */; };
+		DC0391BA1C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390A81C871E1000C50E8E /* DocumentMenuLayer.cpp */; };
 		DC0391BB1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390AA1C871E1000C50E8E /* DungeonMainMenuLayer.cpp */; };
 		DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390AA1C871E1000C50E8E /* DungeonMainMenuLayer.cpp */; };
 		DC0391BD1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390AC1C871E1000C50E8E /* ItemMenuLayer.cpp */; };
@@ -345,6 +347,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* 6chefs2-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6chefs2-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		260621C51D61B7A200348C94 /* DocumentData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentData.cpp; sourceTree = "<group>"; };
+		260621C61D61B7A200348C94 /* DocumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentData.h; sourceTree = "<group>"; };
 		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
@@ -493,8 +497,8 @@
 		DC0390A41C871E1000C50E8E /* EventListenerKeyboardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerKeyboardLayer.h; sourceTree = "<group>"; };
 		DC0390A51C871E1000C50E8E /* LoadingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingLayer.cpp; sourceTree = "<group>"; };
 		DC0390A61C871E1000C50E8E /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
-		DC0390A81C871E1000C50E8E /* CharacterMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterMenuLayer.cpp; sourceTree = "<group>"; };
-		DC0390A91C871E1000C50E8E /* CharacterMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterMenuLayer.h; sourceTree = "<group>"; };
+		DC0390A81C871E1000C50E8E /* DocumentMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentMenuLayer.cpp; sourceTree = "<group>"; };
+		DC0390A91C871E1000C50E8E /* DocumentMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentMenuLayer.h; sourceTree = "<group>"; };
 		DC0390AA1C871E1000C50E8E /* DungeonMainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DungeonMainMenuLayer.cpp; sourceTree = "<group>"; };
 		DC0390AB1C871E1000C50E8E /* DungeonMainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonMainMenuLayer.h; sourceTree = "<group>"; };
 		DC0390AC1C871E1000C50E8E /* ItemMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1051,8 +1055,8 @@
 			children = (
 				DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */,
 				DCCA52551C945625004769E1 /* KeyconfigMenuLayer.h */,
-				DC0390A81C871E1000C50E8E /* CharacterMenuLayer.cpp */,
-				DC0390A91C871E1000C50E8E /* CharacterMenuLayer.h */,
+				DC0390A81C871E1000C50E8E /* DocumentMenuLayer.cpp */,
+				DC0390A91C871E1000C50E8E /* DocumentMenuLayer.h */,
 				DC0390AA1C871E1000C50E8E /* DungeonMainMenuLayer.cpp */,
 				DC0390AB1C871E1000C50E8E /* DungeonMainMenuLayer.h */,
 				DC0390AC1C871E1000C50E8E /* ItemMenuLayer.cpp */,
@@ -1216,6 +1220,8 @@
 				26FBED471C9870E2002FAFF7 /* CharacterMasterData.h */,
 				2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */,
 				2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */,
+				260621C51D61B7A200348C94 /* DocumentData.cpp */,
+				260621C61D61B7A200348C94 /* DocumentData.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1519,6 +1525,7 @@
 				26FBED441C986CBB002FAFF7 /* ChapterData.cpp in Sources */,
 				DC0392211C871E1000C50E8E /* DungeonScene.cpp in Sources */,
 				DC0391831C871E1000C50E8E /* SceneData.cpp in Sources */,
+				260621C71D61B7A200348C94 /* DocumentData.cpp in Sources */,
 				DC0392471C871E1000C50E8E /* NotificationBand.cpp in Sources */,
 				DC0391F91C871E1000C50E8E /* MovePattern.cpp in Sources */,
 				DC0392351C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
@@ -1558,7 +1565,7 @@
 				DC0391C71C871E1000C50E8E /* TitleMainMenuLayer.cpp in Sources */,
 				DC0391AB1C871E1000C50E8E /* ButtonMashingLayer.cpp in Sources */,
 				DC0392491C871E1000C50E8E /* SlideNode.cpp in Sources */,
-				DC0391B91C871E1000C50E8E /* CharacterMenuLayer.cpp in Sources */,
+				DC0391B91C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */,
 				DC03924F1C871E1000C50E8E /* MapUtils.cpp in Sources */,
 				26FBED401C9861F1002FAFF7 /* TrophyData.cpp in Sources */,
 				DC0391891C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
@@ -1688,6 +1695,7 @@
 				DC0391D01C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC37D8101CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391D61C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
+				260621C81D61B7A200348C94 /* DocumentData.cpp in Sources */,
 				DC0392001C871E1000C50E8E /* Scouter.cpp in Sources */,
 				DC0391F01C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
 				DC0391B81C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
@@ -1717,7 +1725,7 @@
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
 				DC0391E01C871E1000C50E8E /* SoundManager.cpp in Sources */,
 				DC0392481C871E1000C50E8E /* NotificationBand.cpp in Sources */,
-				DC0391BA1C871E1000C50E8E /* CharacterMenuLayer.cpp in Sources */,
+				DC0391BA1C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */,
 				DC0391CC1C871E1000C50E8E /* CharacterMessageLayer.cpp in Sources */,
 				DC03921A1C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391A41C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,

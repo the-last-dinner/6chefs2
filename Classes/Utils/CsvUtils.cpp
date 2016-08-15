@@ -9,6 +9,7 @@
 #include "Utils/CsvUtils.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
+#include "Utils/Assertutils.h"
 #include "Managers/DebugManager.h"
 
 CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
@@ -17,12 +18,14 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
     ifstream file(path);
     CsvUtils::CsvMap values;
     string str;
-    int p, i, data_id;
+    int p, i, dataId;
+    int headerCount {1};
     
     // ファイル読み込み失敗時
     if(file.fail())
     {
         CCLOG("Reading csv file of %s is failed.", path.c_str());
+        LastSupper::AssertUtils::fatalAssert("CsvFileError\n" + path + "\nCSVファイルが存在しません。");
         return values;
     }
     
@@ -32,33 +35,52 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
         return CsvUtils::readJsonForCsv(path);
     }
     
+    // 1行目のheaderの要素数をカウント
+    string header;
+    getline(file, header);
+    header = LastSupper::StringUtils::strReplace("\r", "", header);
+    while( (p = header.find(",")) != header.npos )
+    {
+        header = header.substr(p+1);
+        ++headerCount;
+    }
+    
     // csvデータ格納
-    while(getline(file, str)){
-        // 複合化
-        // if (!DebugManager::getInstance()->isPlainData())
-        // {
-        //     LastSupper::StringUtils::encryptXor(str);
-        // }
-        
-        //コメント箇所は除く
-        if( (p = str.find("//")) != str.npos ) continue;
+    while(getline(file, str))
+    {
         vector<string> inner;
-        i = 0;
+        i = 1;
+        
         // キャリッジリターンを消す
         str = LastSupper::StringUtils::strReplace("\r", "", str);
-        //カンマがあるかを探し、そこまでをvaluesに格納
-        while( (p = str.find(",")) != str.npos ){
-            if (i == 0)
+        
+        // カンマがあるかを探し、そこまでをvaluesに格納
+        while( (p = str.find(",")) != str.npos )
+        {
+            if (i == 1)
             {
-                data_id = stoi(str.substr(0, p));
+                dataId = stoi(str.substr(0, p));
             }
             inner.push_back(str.substr(0, p));
-            //strの中身は","の1文字を飛ばす
+            // strの中身は","の1文字を飛ばす
             str = str.substr(p+1);
             i++;
         }
         inner.push_back(str);
-        values[data_id] = inner;
+        
+        // 要素数チェック
+        if (i != headerCount)
+        {
+            string fileName = path;
+            while ((p = fileName.find("/")) != fileName.npos)
+            {
+                fileName = fileName.substr(p+1);
+            }
+            fileName = fileName.substr(p+1);
+            LastSupper::AssertUtils::fatalAssert("CsvFileError\n" + fileName + ", ID: " + to_string(dataId) + "\n要素数が不正です。");
+            return values;
+        }
+        values[dataId] = inner;
     }
     return values;
 }
@@ -71,6 +93,7 @@ bool CsvUtils::encryptCsvFile(const string& path)
     if (ifs.fail())
     {
         CCLOG("%s is missing.", path.c_str());
+        LastSupper::AssertUtils::fatalAssert("CsvFileError\n" + path + "\nCSVファイルが存在しません。");
         return false;
     }
     

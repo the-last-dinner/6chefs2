@@ -14,7 +14,7 @@
 class DungeonMainMenuLayer;
 class SaveDataSelector;
 class ItemMenuLayer;
-class CharacterMenuLayer;
+class DocumentMenuLayer;
 
 class DungeonMenuScene : public BaseScene
 {
@@ -27,7 +27,7 @@ private:
     static const string MAIN_LAYER_NAME;
     static const string SAVE_LAYER_NAME;
     static const string ITEM_LAYER_NAME;
-    static const string CHARA_LAYER_NAME;
+    static const string DOCUMENT_LAYER_NAME;
 
 // インスタンス変数
 public:
@@ -37,7 +37,7 @@ private:
     DungeonMainMenuLayer* mainMenu {nullptr};
     SaveDataSelector* saveDataSelector {nullptr};
     ItemMenuLayer* itemMenu {nullptr};
-    CharacterMenuLayer* charaMenu {nullptr};
+    DocumentMenuLayer* documentMenu {nullptr};
     int menuIndex {0};
     
 // インスタンスメソッド
@@ -57,17 +57,17 @@ private:
     void createMainMenu();
     void createSaveMenu();
     void createItemMenu();
-    void createCharaMenu();
+    void createDocumentMenu();
     // メインメニュー
     void onSaveMenuSelected();
     void onItemMenuSelected();
-    void onCharaMenuSelected();
+    void onDocumentMenuSelected();
     // セーブデータセレクター
     void onSaveDataSelectCancelled();
     // アイテムメニュー
     void onItemMenuCanceled();
     // キャラクターメニュー
-    void onCharaMenuCanceled();
+    void onDocumentMenuCanceled();
     // タイトルへ戻るを承認した時
     void onBackToTitleConfirmed();
 };
