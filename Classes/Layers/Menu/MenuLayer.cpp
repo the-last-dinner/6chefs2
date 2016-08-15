@@ -224,6 +224,7 @@ void MenuLayer::onPageChanged(const int page)
     this->basePanel->removeChildByName("pagePanel");
     this->basePanel->addChild(this->pagePanels[page]);
     Size listContentSize = this->basePanel->getContentSize();
+    int fontSize = 16;
     
     // ページカウンター
     if (this->basePanel->getChildByName("counter"))
@@ -232,7 +233,7 @@ void MenuLayer::onPageChanged(const int page)
     }
     if (this->pageCount > 1)
     {
-        Label* counter = Label::createWithTTF(to_string(page+1) + "/" + to_string(this->pageCount), "fonts/cinecaption2.28.ttf", 20);
+        Label* counter = Label::createWithTTF(to_string(page+1) + "/" + to_string(this->pageCount), "fonts/cinecaption2.28.ttf", fontSize * 1.25);
         counter->setPosition(counter->getContentSize().width/2 + 5 , counter->getContentSize().height/2 + 5);
         counter->setColor(Color3B::WHITE);
         counter->setName("counter");
@@ -246,8 +247,8 @@ void MenuLayer::onPageChanged(const int page)
     }
     if (page + 1 != this->pageCount)
     {
-        Label* downPager = Label::createWithTTF("▼", "fonts/cinecaption2.28.ttf", 16);
-        downPager->setPosition(listContentSize.width/2 , downPager->getContentSize().height / 2 + 5);
+        Label* downPager = Label::createWithTTF("▼", "fonts/cinecaption2.28.ttf", fontSize);
+        downPager->setPosition(listContentSize.width/2 , fontSize * 0.75);
         downPager->setColor(Color3B::WHITE);
         downPager->setName("downPager");
         this->basePanel->addChild(downPager);
@@ -264,7 +265,7 @@ void MenuLayer::onPageChanged(const int page)
     if (page != 0)
     {
         Label* upPager = Label::createWithTTF("▲", "fonts/cinecaption2.28.ttf", 16);
-        upPager->setPosition(listContentSize.width/2 , listContentSize.height - upPager->getContentSize().height / 2 - 10);
+        upPager->setPosition(listContentSize.width/2 , listContentSize.height - fontSize * 0.75);
         upPager->setColor(Color3B::WHITE);
         upPager->setName("upPager");
         this->basePanel->addChild(upPager);
