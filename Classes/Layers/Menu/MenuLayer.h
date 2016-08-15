@@ -20,6 +20,7 @@ protected:
     vector<Node*> menuObjects {};
     vector<Node*> pagePanels {};
     EventListenerKeyboardLayer* listenerKeyboard { nullptr };
+    Node* basePanel {};
     
 private:
     int indexX { 0 };
@@ -37,17 +38,17 @@ public:
 protected:
 	MenuLayer();
 	virtual ~MenuLayer();
-    virtual bool init(const Point& size, const int itemCount);
+    virtual bool init(const Point& size, const int itemCount, Node* basePanel);
 	virtual bool init(const Point& index, const Size& size);
 	virtual bool init(int sizeX, int sizeY);
 	virtual void onIndexChanged(int newIdx, bool sound = true) = 0;
     virtual void onCursorKeyPressed(const Key& key);
     void onEnterPressed();
 	virtual void onEnterKeyPressed(int idx) = 0;
-	virtual void onMenuKeyPressed() = 0;
+	virtual void onMenuKeyPressed();
 	virtual int getSelectedIndex();
     virtual void setSelectedIndex(const int index);
-    virtual void onPageChanged(const int page){};
+    virtual void onPageChanged(const int page);
 	int getMenuSizeX() const;
 	int getMenuSizeY() const;
     int calcSelectedIndex();

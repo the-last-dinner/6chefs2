@@ -17,11 +17,25 @@ MenuLayer::MenuLayer(){FUNCLOG}
 MenuLayer::~MenuLayer(){FUNCLOG}
 
 // 初期化 (ページ数指定有)
-bool MenuLayer::init(const Point& pageSize, const int itemCount)
+bool MenuLayer::init(const Point& pageSize, const int itemCount, Node* basePanel)
 {
     int sizeX = itemCount < pageSize.x ? itemCount : pageSize.x;
     int sizeY = itemCount < pageSize.x * pageSize.y ? floor((itemCount - 1) / pageSize.x / sizeX) : pageSize.y;
     this->pageCount = floor(abs(itemCount - 1) / (pageSize.x * pageSize.y)) + 1;
+    
+    // pagePanel生成
+    for (int i = 0; i < this->pageCount; i++)
+    {
+        Sprite* pagePanel = Sprite::create();
+        pagePanel->setTextureRect(Rect(0,0,basePanel->getContentSize().width, basePanel->getContentSize().height));
+        pagePanel->setPosition(pagePanel->getContentSize().width/2, pagePanel->getContentSize().height/2);
+        pagePanel->setOpacity(0);
+        pagePanel->setName("pagePanel");
+        CC_SAFE_RETAIN(pagePanel);
+        this->pagePanels.push_back(pagePanel);
+    }
+    this->basePanel = basePanel;
+    
     return this->init(sizeX, sizeY);
 }
 
@@ -130,6 +144,16 @@ void MenuLayer::onEnterPressed()
     this->onEnterKeyPressed(this->getSelectedIndex());
 }
 
+// メニューキーを押した時
+void MenuLayer::onMenuKeyPressed()
+{
+    int size = this->pagePanels.size();
+    for (int i = 0; i < size; i++)
+    {
+        CC_SAFE_RELEASE(this->pagePanels[i]);
+    }
+}
+
 // 現在選ばれているメニューのINDEXを取得(現時点では横優先配置の場合のみ)
 int MenuLayer::getSelectedIndex()
 {
@@ -191,6 +215,64 @@ void MenuLayer::intervalInputCheck(const vector<Key>& keys)
 
 // ページサイズを取得
 int MenuLayer::getPageSize(){return this->pageCount;}
+
+// ページが変わった時
+void MenuLayer::onPageChanged(const int page)
+{
+    FUNCLOG
+    //　ページ処理
+    this->basePanel->removeChildByName("pagePanel");
+    this->basePanel->addChild(this->pagePanels[page]);
+    Size listContentSize = this->basePanel->getContentSize();
+    
+    // ページカウンター
+    if (this->basePanel->getChildByName("counter"))
+    {
+        this->basePanel->removeChildByName("counter");
+    }
+    if (this->pageCount > 1)
+    {
+        Label* counter = Label::createWithTTF(to_string(page+1) + "/" + to_string(this->pageCount), "fonts/cinecaption2.28.ttf", 20);
+        counter->setPosition(counter->getContentSize().width/2 + 5 , counter->getContentSize().height/2 + 5);
+        counter->setColor(Color3B::WHITE);
+        counter->setName("counter");
+        this->basePanel->addChild(counter);
+    }
+    
+    // 下への矢印
+    if (this->basePanel->getChildByName("downPager"))
+    {
+        this->basePanel->removeChildByName("downPager");
+    }
+    if (page + 1 != this->pageCount)
+    {
+        Label* downPager = Label::createWithTTF("▼", "fonts/cinecaption2.28.ttf", 16);
+        downPager->setPosition(listContentSize.width/2 , downPager->getContentSize().height / 2 + 5);
+        downPager->setColor(Color3B::WHITE);
+        downPager->setName("downPager");
+        this->basePanel->addChild(downPager);
+        
+        // アクション生成
+        this->moveUpDown(downPager);
+    }
+    
+    // 上への矢印
+    if (this->basePanel->getChildByName("upPager"))
+    {
+        this->basePanel->removeChildByName("upPager");
+    }
+    if (page != 0)
+    {
+        Label* upPager = Label::createWithTTF("▲", "fonts/cinecaption2.28.ttf", 16);
+        upPager->setPosition(listContentSize.width/2 , listContentSize.height - upPager->getContentSize().height / 2 - 10);
+        upPager->setColor(Color3B::WHITE);
+        upPager->setName("upPager");
+        this->basePanel->addChild(upPager);
+        
+        // アクション生成
+        this->moveUpDown(upPager);
+    }
+}
 
 // 上下に反復移動
 void MenuLayer::moveUpDown(cocos2d::Node* target)
