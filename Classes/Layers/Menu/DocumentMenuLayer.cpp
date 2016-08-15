@@ -1,21 +1,21 @@
 //
-//  CharacterMenuLayer.cpp
+//  DocumentMenuLayer.cpp
 //  LastSupper
 //
 //  Created by Ryoya Ino on 2015/11/09.
 //
 //
 
-#include "Layers/Menu/CharacterMenuLayer.h"
+#include "Layers/Menu/DocumentMenuLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 #include "UI/SlideNode.h"
 
-CharacterMenuLayer::CharacterMenuLayer(){FUNCLOG}
+DocumentMenuLayer::DocumentMenuLayer(){FUNCLOG}
 
-CharacterMenuLayer::~CharacterMenuLayer(){FUNCLOG}
+DocumentMenuLayer::~DocumentMenuLayer(){FUNCLOG}
 
 // 初期化
-bool CharacterMenuLayer::init()
+bool DocumentMenuLayer::init()
 {
     DocumentData* docData { CsvDataManager::getInstance()->getDocumentData() };
     int docCount = docData->getDocumentCount();
@@ -113,7 +113,7 @@ bool CharacterMenuLayer::init()
 }
 
 // カーソル移動
-void CharacterMenuLayer::onIndexChanged(int newIdx, bool sound)
+void DocumentMenuLayer::onIndexChanged(int newIdx, bool sound)
 {
     if (sound)
     {
@@ -136,7 +136,7 @@ void CharacterMenuLayer::onIndexChanged(int newIdx, bool sound)
     this->changeCharaImage(newIdx);
 }
 
-void CharacterMenuLayer::changeCharaImage(const int idx)
+void DocumentMenuLayer::changeCharaImage(const int idx)
 {
     // 親のスプライトを取得
     Node* leftBottom = this->getChildByName("charaImage");
@@ -206,7 +206,7 @@ void CharacterMenuLayer::changeCharaImage(const int idx)
 }
 
 // メニューキー
-void CharacterMenuLayer::onMenuKeyPressed()
+void DocumentMenuLayer::onMenuKeyPressed()
 {
     // キャラ説明が出ている場合は消すだけ
     if (this->isDiscription)
@@ -223,7 +223,7 @@ void CharacterMenuLayer::onMenuKeyPressed()
 }
 
 // 決定キー
-void CharacterMenuLayer::onEnterKeyPressed(int idx)
+void DocumentMenuLayer::onEnterKeyPressed(int idx)
 {
     // 状態によって場合分け
     if (this->isDiscription)
@@ -259,7 +259,7 @@ void CharacterMenuLayer::onEnterKeyPressed(int idx)
         vector<Label*> discriptions;
         Size panel_size = Size(back->getContentSize().width, back->getContentSize().height/3);
         int canCheckLevel = PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[idx]);
-        for(int i=0;i<3; i++)
+        for(int i = 0; i < 3; i++)
         {
             string profile {""};
             // 見れるレベルのプロフィールかチェック
@@ -284,7 +284,7 @@ void CharacterMenuLayer::onEnterKeyPressed(int idx)
 
 
 // 表示
-void CharacterMenuLayer::show()
+void DocumentMenuLayer::show()
 {
     this->listenerKeyboard->setEnabled(true);
     this->setVisible(true);
@@ -293,7 +293,7 @@ void CharacterMenuLayer::show()
 }
 
 // 非表示
-void CharacterMenuLayer::hide()
+void DocumentMenuLayer::hide()
 {
     this->listenerKeyboard->setEnabled(false);
     this->runAction(EaseCubicActionOut::create(ScaleTo::create(0.3f, 0)));

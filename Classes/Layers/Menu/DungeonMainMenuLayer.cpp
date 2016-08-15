@@ -76,7 +76,7 @@ bool DungeonMainMenuLayer::init()
     {
         {Type::ITEM, "アイテム"},
         {Type::SAVE, "セーブ"},
-        {Type::CHARA, "キャラ"},
+        {Type::CHARA, "資料"},
         {Type::TITLE, "タイトル"},
         {Type::CLOSE, "閉じる"},
     };

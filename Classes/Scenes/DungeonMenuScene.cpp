@@ -10,7 +10,7 @@
 #include "Layers/Menu/DungeonMainMenuLayer.h"
 #include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Menu/ItemMenuLayer.h"
-#include "Layers/Menu/CharacterMenuLayer.h"
+#include "Layers/Menu/DocumentMenuLayer.h"
 #include "Managers/DungeonSceneManager.h"
 #include "Models/StopWatch.h"
 
@@ -18,7 +18,7 @@
 const string DungeonMenuScene::MAIN_LAYER_NAME = "mainMenuLayer";
 const string DungeonMenuScene::SAVE_LAYER_NAME = "saveMenuLayer";
 const string DungeonMenuScene::ITEM_LAYER_NAME = "itemMenuLayer";
-const string DungeonMenuScene::CHARA_LAYER_NAME = "charaMenuLayer";
+const string DungeonMenuScene::DOCUMENT_LAYER_NAME = "documentMenuLayer";
 
 // コンストラクタ
 DungeonMenuScene::DungeonMenuScene(){FUNCLOG}
@@ -57,7 +57,7 @@ void DungeonMenuScene::createMainMenu()
     menu->onSaveMenuSelected = CC_CALLBACK_0(DungeonMenuScene::onSaveMenuSelected, this);
     menu->onMenuHidden = CC_CALLBACK_0(DungeonMenuScene::onMenuHidden, this);
     menu->onItemMenuSelected = CC_CALLBACK_0(DungeonMenuScene::onItemMenuSelected, this);
-    menu->onCharacterMenuSelected = CC_CALLBACK_0(DungeonMenuScene::onCharaMenuSelected, this);
+    menu->onCharacterMenuSelected = CC_CALLBACK_0(DungeonMenuScene::onDocumentMenuSelected, this);
     menu->onBackToTitleConfirmed = CC_CALLBACK_0(DungeonMenuScene::onBackToTitleConfirmed, this);
     menu->setDefaultMenuIndex(this->menuIndex);
     this->addChild(menu);
@@ -101,20 +101,20 @@ void DungeonMenuScene::createItemMenu()
 }
 
 // キャラクターメニューレイヤーの生成
-void DungeonMenuScene::createCharaMenu()
+void DungeonMenuScene::createDocumentMenu()
 {
     FUNCLOG
     // すでに存在すれば削除
-    if(this->getChildByName(CHARA_LAYER_NAME))
+    if(this->getChildByName(DOCUMENT_LAYER_NAME))
     {
-        this->removeChildByName(CHARA_LAYER_NAME);
+        this->removeChildByName(DOCUMENT_LAYER_NAME);
     }
     // 生成
-    CharacterMenuLayer* charaMenu { CharacterMenuLayer::create() };
-    charaMenu->setName(CHARA_LAYER_NAME);
-    charaMenu->onCharacterMenuCanceled = CC_CALLBACK_0(DungeonMenuScene::onCharaMenuCanceled, this);
-    this->addChild(charaMenu);
-    this->charaMenu = charaMenu;
+    DocumentMenuLayer* documentMenu { DocumentMenuLayer::create() };
+    documentMenu->setName(DOCUMENT_LAYER_NAME);
+    documentMenu->onCharacterMenuCanceled = CC_CALLBACK_0(DungeonMenuScene::onDocumentMenuCanceled, this);
+    this->addChild(documentMenu);
+    this->documentMenu = documentMenu;
 }
 
 void DungeonMenuScene::onPreloadFinished(LoadingLayer* loadingLayer){}
@@ -199,25 +199,25 @@ void DungeonMenuScene::onItemMenuCanceled()
 }
 
 #pragma mark -
-#pragma mark CharacterMenu
+#pragma mark DocumentMenu
 
 // キャラメニューが選択された時
-void DungeonMenuScene::onCharaMenuSelected()
+void DungeonMenuScene::onDocumentMenuSelected()
 {
     FUNCLOG
     SoundManager::getInstance()->playSE("cursorMove.mp3");
     this->mainMenu->hide();
-    this->createCharaMenu();
-    this->charaMenu->show();
+    this->createDocumentMenu();
+    this->documentMenu->show();
 }
 
 // キャラメニューでキャンセルされた時
-void DungeonMenuScene::onCharaMenuCanceled()
+void DungeonMenuScene::onDocumentMenuCanceled()
 {
     FUNCLOG
     SoundManager::getInstance()->playSE("back.mp3");
     runAction(Sequence::createWithTwoActions(
-        CallFunc::create([this](){this->charaMenu->hide();}),
+        CallFunc::create([this](){this->documentMenu->hide();}),
         CallFunc::create([this](){this->createMainMenu();})
     ));
 }
