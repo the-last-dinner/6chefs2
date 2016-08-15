@@ -110,13 +110,13 @@ bool ItemMenuLayer::init()
         
         // アイテムパネル生成
         Sprite* panel = Sprite::create();
-        Size list_size {this->pagePanels[page]->getContentSize()};
-        list_size.height -= upDownMargin;
-        panel->setTextureRect(Rect(0, 0, list_size.width / maxSize.x, list_size.height / maxSize.y));
+        Size listSize {this->pagePanels[page]->getContentSize()};
+        listSize.height -= upDownMargin;
+        panel->setTextureRect(Rect(0, 0, listSize.width / maxSize.x, listSize.height / maxSize.y));
         panel->setOpacity(0);
         
-        Size panel_size {panel->getContentSize()};
-        panel->setPosition(((i - (int)(page * maxSize.x * maxSize.y))%(int)maxSize.x) * (list_size.width / maxSize.x) + panel_size.width/2, list_size.height - ((floor((i - page * maxSize.x * maxSize.y)/(int)maxSize.x) + 1)  *  (panel_size.height)) + panel_size.height/2 + upDownMargin/2);
+        Size panelSize {panel->getContentSize()};
+        panel->setPosition(((i - (int)(page * maxSize.x * maxSize.y))%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor((i - page * maxSize.x * maxSize.y)/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 + upDownMargin/2);
         
         // ページに登録
         this->pagePanels[page]->addChild(panel);
@@ -124,7 +124,7 @@ bool ItemMenuLayer::init()
         // アイテム
         this->items.push_back(itr);
         Label* item = Label::createWithTTF(CsvDataManager::getInstance()->getItemData()->getItemName(itr), "fonts/cinecaption2.28.ttf", 22);
-        item->setPosition(panel_size.width/2 , panel_size.height/2);
+        item->setPosition(panelSize.width/2 , panelSize.height/2);
         item->setColor(Color3B::WHITE);
         item->setTag(i);
         // 不透明度を半分にしておく
