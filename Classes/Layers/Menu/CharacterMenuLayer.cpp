@@ -17,8 +17,11 @@ CharacterMenuLayer::~CharacterMenuLayer(){FUNCLOG}
 // 初期化
 bool CharacterMenuLayer::init()
 {
+    DocumentData* docData { CsvDataManager::getInstance()->getDocumentData() };
+    int docCount = docData->getDocumentCount();
+    this->documentIds = docData->getDocumentDataIds();
     
-    if (!MenuLayer::init(1,12)) return false;
+    if (!MenuLayer::init(1,docCount)) return false;
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;
     Size parcent = Size(WINDOW_WIDTH/100, WINDOW_HEIGHT/100);
@@ -65,47 +68,46 @@ bool CharacterMenuLayer::init()
     right->setName("charaRight");
     this->addChild(right);
     
-    Size list_size {right->getContentSize()};
+    Size listSize {right->getContentSize()};
     float space = 2;
-    Point maxSize {Point(1,12)};
-    this->characters = CsvDataManager::getInstance()->getCharacterData()->getDisplayCharacters();
-    int chara_count = this->characters.size();
-    for (int i=0;i<chara_count; i++){
+    Point maxSize {Point(1,docCount)};
+    for (int i = 0; i < docCount; i++)
+    {
         // パネル生成
         Sprite* panel = Sprite::create();
-        panel->setTextureRect(Rect(0, 0, list_size.width / maxSize.x, list_size.height / maxSize.y - space));
+        panel->setTextureRect(Rect(0, 0, listSize.width / maxSize.x, listSize.height / maxSize.y - space));
         panel->setOpacity(0);
-        Size panel_size {panel->getContentSize()};
-        panel->setPosition((i%(int)maxSize.x) * (list_size.width / maxSize.x) + panel_size.width/2, list_size.height - ((floor(i/(int)maxSize.x) + 1)  *  (panel_size.height)) + panel_size.height/2 - space * 5);
+        Size panelSize {panel->getContentSize()};
+        panel->setPosition((i%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor(i/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 - space * 5);
         right->addChild(panel);
         
         // キャラクター名
-        string chara_name {""};
-        if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->characters[i]) < 0)
+        string docName {""};
+        if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[i]) < 0)
         {
-            chara_name = "? ? ? ? ?";
+            docName = "? ? ? ? ?";
         }
         else
         {
-            chara_name = CsvDataManager::getInstance()->getCharacterData()->getNameWithRuby(this->characters[i]);
+            docName = docData->getName(this->documentIds[i]);
         }
         
         // ラベル生成
-        Label* chara = Label::createWithTTF(chara_name, "fonts/cinecaption2.28.ttf", 24);
-        chara->setPosition(panel_size.width/2 , panel_size.height / 2);
-        chara->setColor(Color3B::WHITE);
-        chara->setTag(i);
+        Label* doc = Label::createWithTTF(docName, "fonts/cinecaption2.28.ttf", 24);
+        doc->setPosition(panelSize.width/2 , panelSize.height / 2);
+        doc->setColor(Color3B::WHITE);
+        doc->setTag(i);
         // 不透明度を抑えるしておく
-        chara->setCascadeOpacityEnabled(true);
-        chara->setOpacity(120);
-        panel->addChild(chara);
+        doc->setCascadeOpacityEnabled(true);
+        doc->setOpacity(120);
+        panel->addChild(doc);
         
         // メニューオブジェクトに登録
-        this->menuObjects.push_back(chara);
+        this->menuObjects.push_back(doc);
     }
     
     // デフォルトセット
-    onIndexChanged(0, false);
+    this->onIndexChanged(0, false);
     
     return true;
 }
@@ -152,7 +154,8 @@ void CharacterMenuLayer::changeCharaImage(const int idx)
         leftBottom->removeChildByName(panelName);
     }
     
-    if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->characters[idx]) < 0)
+    DocumentData* docData {CsvDataManager::getInstance()->getDocumentData()};
+    if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[idx]) < 0)
     {
         // 見ることができないキャラクター
         Label* label = Label::createWithTTF("? ? ? ? ?", "fonts/cinecaption2.28.ttf", 24);
@@ -163,7 +166,7 @@ void CharacterMenuLayer::changeCharaImage(const int idx)
     else
     {
         // 見ることができるキャラクター
-        string fileName = CsvDataManager::getInstance()->getCharacterData()->getFileName(this->characters[idx]) + "_s_0.png";
+        string fileName = docData->getImageFileName(this->documentIds[idx]);
         if(SpriteFrameCache::getInstance()->getSpriteFrameByName(fileName))
         {
             Sprite* img { Sprite::createWithSpriteFrameName(fileName)};
@@ -181,7 +184,7 @@ void CharacterMenuLayer::changeCharaImage(const int idx)
             leftBottom->addChild(label);
         }
         // 友好度をセット
-        int level = PlayerDataManager::getInstance()->getLocalData()->getFriendship(this->characters[idx]);
+        int level = PlayerDataManager::getInstance()->getLocalData()->getFriendship(this->documentIds[idx]);
         if (level < 0) return; // 友好度が存在しない時はリターン
         // ハートを置くパネルの生成
         Sprite* heart_panel = Sprite::create();
@@ -222,12 +225,6 @@ void CharacterMenuLayer::onMenuKeyPressed()
 // 決定キー
 void CharacterMenuLayer::onEnterKeyPressed(int idx)
 {
-    // 見れないレベルのキャラの時
-    if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->characters[idx]) < 0)
-    {
-        SoundManager::getInstance()->playSE("failure.mp3");
-        return;
-    }
     // 状態によって場合分け
     if (this->isDiscription)
     {
@@ -239,6 +236,13 @@ void CharacterMenuLayer::onEnterKeyPressed(int idx)
     }
     else
     {
+        // 見れないレベルのキャラの時
+        if (PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[idx]) < 0)
+        {
+            SoundManager::getInstance()->playSE("failure.mp3");
+            return;
+        }
+        
         SoundManager::getInstance()->playSE(Resource::SE::TITLE_ENTER);
         // 背景の作成
         Sprite* back {Sprite::createWithSpriteFrameName("character_selector.png")};
@@ -254,14 +258,14 @@ void CharacterMenuLayer::onEnterKeyPressed(int idx)
         // 詳細のラベルを作成
         vector<Label*> discriptions;
         Size panel_size = Size(back->getContentSize().width, back->getContentSize().height/3);
-        int canCheckLevel = PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->characters[idx]);
+        int canCheckLevel = PlayerDataManager::getInstance()->getLocalData()->getCharacterProfileLevel(this->documentIds[idx]);
         for(int i=0;i<3; i++)
         {
             string profile {""};
             // 見れるレベルのプロフィールかチェック
             if (canCheckLevel >= i)
             {
-                profile = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getCharacterData()->getDiscription(this->characters[idx], i));
+                profile = LastSupper::StringUtils::strReplace("\\n", "\n", CsvDataManager::getInstance()->getDocumentData()->getDiscription(this->documentIds[idx], i));
             }
             else
             {

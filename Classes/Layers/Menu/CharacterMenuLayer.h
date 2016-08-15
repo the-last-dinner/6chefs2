@@ -35,8 +35,7 @@ public:
     
     // インスタンス変数
 private:
-    vector<int> characters {};
-    int selected_character {0};
+    vector<int> documentIds {};
     bool isDiscription {false};
     SlideNode* slideNode {nullptr};
 public:

@@ -36,6 +36,7 @@ CsvDataManager::~CsvDataManager()
     CC_SAFE_RELEASE_NULL(this->mapData);
     CC_SAFE_RELEASE_NULL(this->chapterData);
     CC_SAFE_RELEASE_NULL(this->characterData);
+    CC_SAFE_RELEASE_NULL(this->documentData);
 }
 
 // コンストラクタ
@@ -49,6 +50,7 @@ CsvDataManager::CsvDataManager()
     this->mapData = MapData::create();
     this->chapterData = ChapterData::create();
     this->characterData = CharacterMasterData::create();
+    this->documentData = DocumentData::create();
     
     // 参照カウントアップ
     CC_SAFE_RETAIN(this->itemData);
@@ -56,6 +58,7 @@ CsvDataManager::CsvDataManager()
     CC_SAFE_RETAIN(this->mapData);
     CC_SAFE_RETAIN(this->chapterData);
     CC_SAFE_RETAIN(this->characterData);
+    CC_SAFE_RETAIN(this->documentData);
 }
 
 // アイテムデータインスタンスの取得
@@ -86,4 +89,10 @@ ChapterData* CsvDataManager::getChapterData()
 CharacterMasterData* CsvDataManager::getCharacterData()
 {
     return this->characterData;
+}
+
+// 資料データインスタンスの取得
+DocumentData* CsvDataManager::getDocumentData()
+{
+    return this->documentData;
 }

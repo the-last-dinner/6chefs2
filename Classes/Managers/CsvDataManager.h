@@ -15,6 +15,7 @@
 #include "Models/MapData.h"
 #include "Models/ChapterData.h"
 #include "Models/CharacterMasterData.h"
+#include "Models/DocumentData.h"
 
 class CsvDataManager
 {
@@ -26,6 +27,7 @@ private:
     MapData* mapData {nullptr};
     ChapterData* chapterData {nullptr};
     CharacterMasterData* characterData {nullptr};
+    DocumentData* documentData {nullptr};
     
 // インスタンスメソッド
 public:
@@ -34,6 +36,7 @@ public:
     MapData* getMapData();
     ChapterData* getChapterData();
     CharacterMasterData* getCharacterData();
+    DocumentData* getDocumentData();
     
 // singleton用関数
 public:
