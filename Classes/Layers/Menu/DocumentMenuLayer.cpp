@@ -21,6 +21,9 @@ bool DocumentMenuLayer::init()
     int docCount = docData->getDocumentCount();
     this->documentIds = docData->getDocumentDataIds();
     
+    // 現在は12個までしか許容できないのでページャーできるまで以下のように
+    docCount = docCount < 12 ? docCount : 12;
+    
     if (!MenuLayer::init(1,docCount)) return false;
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;
