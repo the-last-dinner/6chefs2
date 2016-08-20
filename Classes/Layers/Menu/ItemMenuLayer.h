@@ -31,7 +31,6 @@ private:
     void createMiniSelector();
     void onMiniSelectorCanceled();
     void onMiniIndexSelected(const int idx);
-    void moveUpDown(Node* target);
 protected:
     ItemMenuLayer();
     ~ItemMenuLayer();

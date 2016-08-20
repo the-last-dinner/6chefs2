@@ -22,14 +22,6 @@ ItemMenuLayer::~ItemMenuLayer(){FUNCLOG}
 bool ItemMenuLayer::init()
 {
     FUNCLOG
-    // メニュー設定
-    int obj_count = PlayerDataManager::getInstance()->getLocalData()->getItemAll().size();
-    Point maxSize = Point(3,6);
-    int sizeX = obj_count < maxSize.x ? obj_count : maxSize.x;
-    int sizeY = obj_count < maxSize.x * maxSize.y ? floor((obj_count - 1 )/ maxSize.x) + 1 : maxSize.y;
-    Size size = Size(sizeX, sizeY);
-    int page_size = floor(abs(obj_count-1 ) / (maxSize.x * maxSize.y)) + 1;
-    if (!MenuLayer::init(size, page_size)) return false;
     
     SpriteUtils::Square square;
     SpriteUtils::Margin margin;
@@ -91,58 +83,48 @@ bool ItemMenuLayer::init()
     
     // アイテムリスト
     square = SpriteUtils::Square(0,25,100,80);
-    //margin = SpriteUtils::Margin(1.5,3.0,1.5,3.0);
     margin = SpriteUtils::Margin(1.0);
     Sprite* center = SpriteUtils::getSquareSprite(square, margin);
     center->setColor(Color3B::BLACK);
-    //Sprite* center {Sprite::createWithSpriteFrameName("item_selector.png")};
-    //center->setPosition(center->getContentSize().width/2, center->getContentSize().height/2 + parcent.height * 25);
-    center->setName("itemList");
-    CC_SAFE_RETAIN(center);
     this->addChild(center);
     
+    // メニュー設定
     vector<int> items = PlayerDataManager::getInstance()->getLocalData()->getItemAll();
+    int itemCount = items.size();
+    Point maxSize = Point(3,6);
+    if (!MenuLayer::init(maxSize, itemCount, center)) return false;
+    
+    // アイテムが時は空用の番号をインサート
     if (items.empty()){
-        // アイテムが時は空用の番号をインサート
         items.push_back(-1);
     }
+    
+    // メニュー生成
     int i = 0;
     int page = 0;
     int upDownMargin = 40;
-    Size centerSize {center->getContentSize()};
     for(auto itr : items)
     {
         // ページパネル生成
         page = floor(i / (maxSize.x * maxSize.y));
-        if (this->pagePanels.size() < page + 1)
-        {
-            Sprite* page_panel = Sprite::create();
-            page_panel->setTextureRect(Rect(0,0,centerSize.width, centerSize.height));
-            page_panel->setPosition(page_panel->getContentSize().width/2, page_panel->getContentSize().height/2);
-            page_panel->setOpacity(0);
-            page_panel->setName("pagePanel");
-            CC_SAFE_RETAIN(page_panel);
-            this->pagePanels.push_back(page_panel);
-        }
         
-        // パネル生成
+        // アイテムパネル生成
         Sprite* panel = Sprite::create();
-        Size list_size {this->pagePanels[page]->getContentSize()};
-        list_size.height -= upDownMargin;
-        panel->setTextureRect(Rect(0, 0, list_size.width / maxSize.x, list_size.height / maxSize.y));
-        //panel->setColor(Color3B::BLACK);
+        Size listSize {this->pagePanels[page]->getContentSize()};
+        listSize.height -= upDownMargin;
+        panel->setTextureRect(Rect(0, 0, listSize.width / maxSize.x, listSize.height / maxSize.y));
         panel->setOpacity(0);
         
-        Size panel_size {panel->getContentSize()};
-        panel->setPosition(((i - (int)(page * maxSize.x * maxSize.y))%(int)maxSize.x) * (list_size.width / maxSize.x) + panel_size.width/2, list_size.height - ((floor((i - page * maxSize.x * maxSize.y)/(int)maxSize.x) + 1)  *  (panel_size.height)) + panel_size.height/2 + upDownMargin/2);
+        Size panelSize {panel->getContentSize()};
+        panel->setPosition(((i - (int)(page * maxSize.x * maxSize.y))%(int)maxSize.x) * (listSize.width / maxSize.x) + panelSize.width/2, listSize.height - ((floor((i - page * maxSize.x * maxSize.y)/(int)maxSize.x) + 1)  *  (panelSize.height)) + panelSize.height/2 + upDownMargin/2);
         
-        // ページ登録
+        // ページに登録
         this->pagePanels[page]->addChild(panel);
         
         // アイテム
         this->items.push_back(itr);
         Label* item = Label::createWithTTF(CsvDataManager::getInstance()->getItemData()->getItemName(itr), "fonts/cinecaption2.28.ttf", 22);
-        item->setPosition(panel_size.width/2 , panel_size.height/2);
+        item->setPosition(panelSize.width/2 , panelSize.height/2);
         item->setColor(Color3B::WHITE);
         item->setTag(i);
         // 不透明度を半分にしておく
@@ -303,12 +285,7 @@ void ItemMenuLayer::onMenuKeyPressed()
     FUNCLOG
     if(this->onItemMenuCanceled)
     {
-        CC_SAFE_RELEASE(this->getChildByName("itemList"));
-        int size = this->pagePanels.size();
-        for (int i = 0; i < size; i++)
-        {
-            CC_SAFE_RELEASE(this->pagePanels[i]);
-        }
+        MenuLayer::onMenuKeyPressed();
         this->onItemMenuCanceled();
     }
 }
@@ -359,79 +336,5 @@ void ItemMenuLayer::onIndexChanged(int newIdx, bool sound)
 // ページが変わった時
 void ItemMenuLayer::onPageChanged(const int page)
 {
-    FUNCLOG
-    //　ページ処理
-    Node * itemList = this->getChildByName("itemList");
-    itemList->removeChildByName("pagePanel");
-    itemList->addChild(this->pagePanels[page]);
-    int page_size = this->getPageSize();
-    Size list_size = itemList->getContentSize();
-    
-    // ページカウンター
-    if (itemList->getChildByName("counter"))
-    {
-        itemList->removeChildByName("counter");
-    }
-    if (page_size > 1)
-    {
-        Label* counter = Label::createWithTTF(to_string(page+1) + "/" + to_string(page_size), "fonts/cinecaption2.28.ttf", 20);
-        counter->setPosition(counter->getContentSize().width/2 + 5 , counter->getContentSize().height/2 + 5);
-        counter->setColor(Color3B::WHITE);
-        counter->setName("counter");
-        itemList->addChild(counter);
-    }
-    
-    // 下への矢印
-    if (itemList->getChildByName("downPager"))
-    {
-        itemList->removeChildByName("downPager");
-    }
-    if (page + 1 != page_size)
-    {
-        Label* downPager = Label::createWithTTF("▼", "fonts/cinecaption2.28.ttf", 16);
-        downPager->setPosition(list_size.width/2 , downPager->getContentSize().height / 2 + 5);
-        downPager->setColor(Color3B::WHITE);
-        downPager->setName("downPager");
-        itemList->addChild(downPager);
-        
-        // アクション生成
-        this->moveUpDown(downPager);
-    }
-    
-    // 上への矢印
-    if (itemList->getChildByName("upPager"))
-    {
-        itemList->removeChildByName("upPager");
-    }
-    if (page != 0)
-    {
-        Label* upPager = Label::createWithTTF("▲", "fonts/cinecaption2.28.ttf", 16);
-        upPager->setPosition(list_size.width/2 , list_size.height - upPager->getContentSize().height / 2 - 10);
-        upPager->setColor(Color3B::WHITE);
-        upPager->setName("upPager");
-        itemList->addChild(upPager);
-        
-        // アクション生成
-        this->moveUpDown(upPager);
-    }
-}
-
-// 上下に反復移動
-void ItemMenuLayer::moveUpDown(cocos2d::Node* target)
-{
-    // 移動設定
-    float time = 0.3f;
-    float distance = 5.f;
-    
-    // 初期位置の取得
-    Vec2 position = target->getPosition();
-    
-    // 反復移動位置を設定
-    ActionInterval* upDown = Sequence::createWithTwoActions(
-        TargetedAction::create(target, MoveTo::create(time, Vec2(position.x, position.y + distance))),
-        TargetedAction::create(target, MoveTo::create(time, position))
-    );
-    
-    // 反復移動を登録
-    this->runAction(RepeatForever::create(upDown));
+    MenuLayer::onPageChanged(page);
 }
