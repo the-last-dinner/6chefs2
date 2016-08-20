@@ -191,7 +191,7 @@
 					"type":"changeFlg",
 					"mapID":"63",
 					"eventID":"6",
-					"flg":1
+					"flg":0
 				},
 				{
 					"type":"removeLayer",
@@ -217,7 +217,7 @@
 				},
 				{
 					"type":"createLayer",
-					"layer":"railChange3_2"
+					"layer":"railChange4_2"
 				}
 			]
 		},
@@ -627,7 +627,7 @@
 							"type":"charaWalk",
 							"objID":"hero",
 							"direction":"UP",
-							"steps":12.5,
+							"steps":13.5,
 							"speed":2.5
 						}
 					]
@@ -636,7 +636,7 @@
 					"type":"if",
 					"condition":[
 						{
-							"flg":["63","5",0]
+							"flg":["63","5",1]
 						}
 					],
 					"action":[
@@ -647,7 +647,7 @@
 									"type":"charaWalk",
 									"objID":"hero",
 									"direction":"UP",
-									"steps":12.0,
+									"steps":14.0,
 									"speed":2.5
 								},
 								{
@@ -677,7 +677,7 @@
 					"type":"if",
 					"condition":[
 						{
-							"flg":["63","5",1]
+							"flg":["63","5",0]
 						}
 					],
 					"action":[
@@ -751,7 +751,7 @@
 									"type":"charaWalk",
 									"objID":"hero",
 									"direction":"UP",
-									"steps":14.0,
+									"steps":18.5,
 									"speed":2.5
 								},
 								{
@@ -765,7 +765,7 @@
 									"type":"charaWalk",
 									"objID":"hero",
 									"direction":"DOWN",
-									"steps":11.5,
+									"steps":12.0,
 									"speed":2.5
 								}
 							]
@@ -852,6 +852,9 @@
 											"speed":2.5
 										}
 									]
+								},
+								{
+									"type":"already"
 								},
 								{
 									"type":"changeMap",

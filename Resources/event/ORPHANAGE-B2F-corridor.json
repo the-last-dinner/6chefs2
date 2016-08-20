@@ -444,6 +444,7 @@
 							               				{
 							               					"type":"repeat",
 							               					"times":-1,
+							               					"id":"1",
 							               					"action":[
 							               						{
 							               							"type":"sequence",
@@ -452,28 +453,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+									               										{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -485,28 +530,89 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -518,28 +624,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -551,28 +701,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -585,13 +779,14 @@
 							               					]
 							               				}
 							               			]
-							               		},	
+							               		},
 							               		{
 							               			"type":"wait",
 							              			"time":50.0
 							               		},
 							               		{
-							               			"type":"stopRepeat"
+							               			"type":"stopEvent",
+							               			"id":"1"
 							               		}
 											]
 										},
@@ -728,7 +923,8 @@
 							               			"action":[
 							               				{
 							               					"type":"playBGM",
-							               					"file":"tooryanse.mp3"
+							               					"file":"tooryanse.mp3",
+							               					"volume":5.0
 							               				},
 							               				{
 							             					"type":"fadein",
@@ -737,6 +933,7 @@
 							               				{
 							               					"type":"repeat",
 							               					"times":-1,
+							               					"id":"2",
 							               					"action":[
 							               						{
 							               							"type":"sequence",
@@ -745,10 +942,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -760,28 +1019,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+									               										{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -793,28 +1096,89 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -826,28 +1190,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -864,7 +1272,11 @@
 				                          		{
 				                          			"type":"wait",
 				                          			"time":50.0
-				                          		}
+				                          		},
+												{
+													"type":"stopEvent",
+													"id":"2"
+												}
 											]
 										},
 										{
@@ -1068,6 +1480,7 @@
 							               				{
 							               					"type":"repeat",
 							               					"times":-1,
+							               					"id":"3",
 							               					"action":[
 							               						{
 							               							"type":"sequence",
@@ -1076,28 +1489,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1109,28 +1566,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1142,28 +1643,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+									               										{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1175,28 +1720,89 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1209,10 +1815,14 @@
 							               					]
 							               				}
 							               			]
-							               		},	
+							               		},
 				                          		{
 				                          			"type":"wait",
 				                          			"time":50.0
+				                          		},
+				                          		{
+				                          			"type":"stopEvent",
+				                          			"id":"3"
 				                          		}
 											]
 										},
@@ -1358,6 +1968,7 @@
 							               				{
 							               					"type":"repeat",
 							               					"times":-1,
+							               					"id":"4",
 							               					"action":[
 							               						{
 							               							"type":"sequence",
@@ -1366,28 +1977,166 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
+									               								}
+									               							]
+									               						},
+									               						{
+									               							"type":"wait",
+									               							"time":3.5
+									               						},
+									               						{
+									               							"type":"spawn",
+									               							"action":[
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
+									               								},
+									               								{
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1399,28 +2148,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1432,61 +2225,72 @@
 									               							"type":"spawn",
 									               							"action":[
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+									               										{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":17,
+											               									"y":17
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"10217",
+											               									"x":21,
+											               									"y":19
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1086",
+											               									"x":21,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":21,
-									               									"y":23
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":19,
+											               									"y":23
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1087",
+											               									"x":17,
+											               									"y":23
+											               								}
+									               									]
 									               								},
 									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":23
-									               								}
-									               							]
-									               						},
-									               						{
-									               							"type":"wait",
-									               							"time":3.5
-									               						},
-							               								{
-									               							"type":"spawn",
-									               							"action":[
-									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"10217",
-									               									"x":21,
-									               									"y":19
-									               								},
-									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1086",
-									               									"x":21,
-									               									"y":23
-									               								},
-									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1087",
-									               									"x":17,
-									               									"y":23
-									               								},
-									               								{
-									               									"type":"charaWalkTo",
-									               									"objID":"1088",
-									               									"x":17,
-									               									"y":19
+									               									"type":"sequence",
+									               									"action":[
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":21
+											               								},
+											               								{
+											               									"type":"charaWalkTo",
+											               									"objID":"1088",
+											               									"x":17,
+											               									"y":19
+											               								}
+									               									]
 									               								}
 									               							]
 									               						},
@@ -1503,6 +2307,10 @@
 				                          		{
 				                          			"type":"wait",
 				                          			"time":50.0
+				                          		},
+				                          		{
+				                          			"type":"stopEvent",
+				                          			"id":"4"
 				                          		}
 											]
 										},
