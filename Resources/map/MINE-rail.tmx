@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="194" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="40">
- <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16" tilecount="256" columns="32">
+ <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16">
   <image source="Railroad1.png" trans="aa55ff" width="512" height="128"/>
  </tileset>
- <tileset firstgid="737" name="BlackMagic01" tilewidth="16" tileheight="16" tilecount="264" columns="12">
+ <tileset firstgid="737" name="BlackMagic01" tilewidth="16" tileheight="16">
   <image source="BlackMagic01.png" trans="aa55ff" width="192" height="352"/>
  </tileset>
- <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="124" height="194">

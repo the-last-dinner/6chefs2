@@ -174,7 +174,7 @@
 					"movePattern":"1"
 				},
 				{
-					"type":"chaneDirection",
+					"type":"changeDirection",
 					"objID":"hero",
 					"direction":"UP"
 				},
@@ -228,7 +228,7 @@
 					]
 				},
 				{
-					"type":"chaneDirection",
+					"type":"changeDirection",
 					"objID":"hero",
 					"direction":"LEFT"
 				},
@@ -286,6 +286,11 @@
 							"imgID":"1"
 						}
 					]
+				},
+				{
+					"type":"chase",
+					"objID":"1053",
+					"target":"hero"
 				},
 				{
 					"type":"already"

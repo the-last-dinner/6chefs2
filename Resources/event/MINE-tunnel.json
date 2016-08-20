@@ -151,16 +151,23 @@
 							"direction":"LEFT"
 						},
 						{
+							"type":"createObject",
+							"objID":"10135",
+							"charaID":"9",
+							"x":20,
+							"y":9,
+							"direction":"RIGHT",
+							"movePattern":"1"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
-									"type":"createObject",
+									"type":"charaWalk",
 									"objID":"10135",
-									"charaID":"9",
-									"x":20,
-									"y":9,
-									"direction":"RIGHT",
-									"movePattern":"1"
+									"steps":1.0,
+									"direction":"LEFT",
+									"option":"back"
 								},
 								{
 									"type":"sequence",
@@ -169,19 +176,13 @@
 											"type":"charaWalkTo",
 											"objID":"hero",
 											"x":20,
-											"y":8
+											"y":8,
+											"speed":3.0
 										},
 										{
 											"type":"changeDirection",
 											"objID":"hero",
 											"direction":"UP"
-										},
-										{
-											"type":"charaWalk",
-											"objID":"10135",
-											"steps":1.0,
-											"direction":"LEFT",
-											"option":"back"
 										}
 									]
 								},
