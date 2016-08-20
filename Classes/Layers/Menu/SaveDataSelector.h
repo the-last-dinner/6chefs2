@@ -12,22 +12,28 @@
 #include "Layers/Menu/MenuLayer.h"
 
 class NotificationBand;
+struct CharacterData;
 
 class SaveDataSelector : public MenuLayer
 {
-    //構造体
+    // 構造体
 private:
     struct SaveIndex
     {
-        int data_id {0};
+        int dataId {0};
         string chapter {};
-        string map_name {};
-        string play_time {};
-        string save_count {};
+        string mapName {};
+        string playTime {};
+        string saveCount {};
         int friendship {0};
-        SaveIndex(int i, const string& chap, const string& mn, const string& pt, const string& sc, const int fs):data_id(i), chapter(chap), map_name(mn), play_time(pt), save_count(sc), friendship(fs){};
+        vector<string> party {};
         SaveIndex(){};
     };
+    
+    // 定数
+private:
+    const static int MAX_FRIENDSHIP_COUNT;
+    const static int MAX_PARTY_DISPLAY_COUNT;
     
 	// クラスメソッド
 public:
@@ -36,17 +42,17 @@ public:
     
     // インスタンス変数
 private:
-    vector<SaveIndex> saveDatas {};
     NotificationBand* notification {nullptr};
     bool existsSaveData[MAX_SAVE_COUNT] {};
-    bool write_flag;
+    bool writeFlag;
     bool comfirm_flag;
 public:
     function<void()> onSaveDataSelectCancelled { nullptr };
 	
 	// インスタンスメソッド
 private:
-    vector<SaveIndex> getSaveList();
+    Node* createSavePanel(SaveIndex saveIndex);
+    vector<SaveIndex> createSaveIndexies();
 	virtual void onIndexChanged(int newIdx, bool sound) override;
 	virtual void onEnterKeyPressed(int idx) override;
 	virtual void onMenuKeyPressed() override;

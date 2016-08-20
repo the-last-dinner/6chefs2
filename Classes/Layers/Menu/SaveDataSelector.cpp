@@ -11,7 +11,14 @@
 
 #include "Scenes/DungeonScene.h"
 #include "Datas/Scene/DungeonSceneData.h"
+#include "Datas/MapObject/CharacterData.h"
 #include "UI/NotificationBand.h"
+#include "Managers/CsvDataManager.h"
+#include "Managers/MasterConfigManager.h"
+
+// 定数
+const int SaveDataSelector::MAX_FRIENDSHIP_COUNT = 5;
+const int SaveDataSelector::MAX_PARTY_DISPLAY_COUNT = 4;
 
 // コンストラクタ
 SaveDataSelector::SaveDataSelector(){FUNCLOG}
@@ -26,7 +33,7 @@ bool SaveDataSelector::init(bool write = false)
 	if(!MenuLayer::init(2, MAX_SAVE_COUNT / 2)) return false;
 	
     // フラグをセット
-    this->write_flag = write;
+    this->writeFlag = write;
     this->comfirm_flag = false;
 	// 黒い背景を生成
 	Sprite* black = Sprite::create();
@@ -35,62 +42,16 @@ bool SaveDataSelector::init(bool write = false)
 	black->setPosition(WINDOW_CENTER);
 	this->addChild(black);
 	
-	// セーブデータリストを取得
-	this->saveDatas = this->getSaveList();
-	
-	Point center = WINDOW_CENTER;
-    float margin {15.f};
+	// セーブデータインデックスを取得
+	vector<SaveIndex> saveIndexies = this->createSaveIndexies();
     
-	for(int i = 0; i < this->saveDatas.size();i++)
+    SaveIndex data {};
+	for(int i = 0; i < saveIndexies.size();i++)
 	{
-		SaveIndex data {this->saveDatas.at(i)};
-		Sprite* panel {Sprite::createWithSpriteFrameName("save_frame.png")};
-		Size panelSize {panel->getContentSize()};
-		panel->setPosition((panelSize.width / 2) * (2 * (i % 2) + 1), WINDOW_HEIGHT - (panelSize.height / 2) * (2 * (i / 2) + 1));
-		panel->setTag(i);
-		this->addChild(panel);
-		this->menuObjects.push_back(panel);
-		
-        // 番号
-        Label* num = Label::createWithTTF(to_string(data.data_id), "fonts/cinecaption2.28.ttf", panelSize.height / 5);
-        num->setPosition(Point(num->getContentSize().width / 2 + margin, panel->getContentSize().height - num->getContentSize().height / 2 - margin));
-        panel->addChild(num);
-        
-		// チャプター
-		Label* name = Label::createWithTTF(data.chapter, "fonts/cinecaption2.28.ttf", panelSize.height / 5);
-		name->setPosition(Point(name->getContentSize().width / 2 + num->getContentSize().width + margin * 2, name->getContentSize().height * 2 + margin));
-		panel->addChild(name);
-        
-		// マップ名
-		Label* mapName = Label::createWithTTF(data.map_name, "fonts/cinecaption2.28.ttf", panelSize.height / 6);
-		mapName->setPosition(Point(panelSize.width - mapName->getContentSize().width / 2 - margin, panelSize.height - mapName->getContentSize().height/2 - margin));
-		panel->addChild(mapName);
-		
-		// プレイ時間
-		Label* time = Label::createWithTTF(data.play_time, "fonts/cinecaption2.28.ttf", panelSize.height / 6);
-		time->setPosition(Point(panelSize.width - time->getContentSize().width / 2 - margin, time->getContentSize().height / 2 + margin));
-		panel->addChild(time);
-        
-        // セーブ回数
-        Label* count = Label::createWithTTF(data.save_count, "fonts/cinecaption2.28.ttf", panelSize.height / 6);
-        count->setPosition(Point(panelSize.width - count->getContentSize().width / 2 - margin, time->getContentSize().height + time->getContentSize().height / 2 + margin * 2));
-        panel->addChild(count);
-        
-        // 友好度
-        for (int i=0; i<data.friendship; i++)
-        {
-            Sprite* heart {Sprite::createWithSpriteFrameName("heart_pink.png")};
-            float scale = 0.30;
-            heart->setScale(scale);
-            heart->setOpacity(128);
-            Size heartSize {Size(heart->getContentSize().width * scale - 5, heart->getContentSize().height * scale - 25)};
-            heart->setPosition(i * (heartSize.width + 8) + heartSize.width + num->getContentSize().width + 10, heartSize.height / 2 + margin);
-            panel->addChild(heart);
-        }
-        
-		// 不透明度を半分にしておく
-		panel->setCascadeOpacityEnabled(true);
-		panel->setOpacity(100);
+        Node* panel {this->createSavePanel(saveIndexies.at(i))};
+        panel->setTag(i);
+        this->addChild(panel);
+        this->menuObjects.push_back(panel);
 	}
     
     // デフォルトセレクト
@@ -104,32 +65,108 @@ bool SaveDataSelector::init(bool write = false)
 	return true;
 }
 
+// セーブメニューのパネル一つ分を作成
+Node* SaveDataSelector::createSavePanel(SaveIndex saveIndex)
+{
+    int i = saveIndex.dataId - 1;
+    float margin {15.f};
+    
+    Sprite* panel {Sprite::createWithSpriteFrameName("save_frame.png")};
+    Size panelSize {panel->getContentSize()};
+    panel->setPosition((panelSize.width / 2) * (2 * (i % 2) + 1), WINDOW_HEIGHT - (panelSize.height / 2) * (2 * (i / 2) + 1));
+    
+    // 番号
+    Label* num = Label::createWithTTF(to_string(saveIndex.dataId), Resource::Font::MESSAGE, panelSize.height / 5);
+    num->setPosition(Point(num->getContentSize().width / 2 + margin, panel->getContentSize().height - num->getContentSize().height / 2 - margin));
+    panel->addChild(num);
+    
+    // チャプター
+    Label* name = Label::createWithTTF(saveIndex.chapter, Resource::Font::MESSAGE, panelSize.height / 5);
+    name->setPosition(Point(name->getContentSize().width / 2 + num->getContentSize().width + margin * 2, name->getContentSize().height * 2 + margin));
+    panel->addChild(name);
+    
+    // マップ名
+    Label* mapName = Label::createWithTTF(saveIndex.mapName, Resource::Font::MESSAGE, panelSize.height / 6);
+    mapName->setPosition(Point(panelSize.width - mapName->getContentSize().width / 2 - margin, panelSize.height - mapName->getContentSize().height/2 - margin));
+    panel->addChild(mapName);
+    
+    // プレイ時間
+    Label* time = Label::createWithTTF(saveIndex.playTime, Resource::Font::MESSAGE, panelSize.height / 6);
+    time->setPosition(Point(panelSize.width - time->getContentSize().width / 2 - margin, time->getContentSize().height / 2 + margin));
+    panel->addChild(time);
+    
+    // セーブ回数
+    Label* count = Label::createWithTTF(saveIndex.saveCount, Resource::Font::MESSAGE, panelSize.height / 6);
+    count->setPosition(Point(panelSize.width - count->getContentSize().width / 2 - margin, time->getContentSize().height + time->getContentSize().height / 2 + margin * 2));
+    panel->addChild(count);
+    
+    // 下部分
+    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::FRIENDSHIP))
+    {
+        // 友好度を表示 FIXME: 5個までなの微妙な気がする
+        for (int i = 0; i < saveIndex.friendship; i++)
+        {
+            Sprite* heart {Sprite::createWithSpriteFrameName("heart_pink.png")};
+            float scale = 0.30;
+            heart->setScale(scale);
+            heart->setOpacity(128);
+            Size heartSize {Size(heart->getContentSize().width * scale - 5, heart->getContentSize().height * scale - 25)};
+            heart->setPosition(i * (heartSize.width + 8) + heartSize.width + num->getContentSize().width + 10, heartSize.height / 2 + margin);
+            panel->addChild(heart);
+            if (i >= SaveDataSelector::MAX_FRIENDSHIP_COUNT) break;
+        }
+    }
+    else
+    {
+        // パーティーメンバーを表示
+        for (int i = 0; i < saveIndex.party.size(); i ++)
+        {
+            if (SpriteFrameCache::getInstance()->getSpriteFrameByName(saveIndex.party[i]))
+            {
+                Sprite* dotimg {Sprite::createWithSpriteFrameName(saveIndex.party[i])};
+                Size dotSize {dotimg->getContentSize()};
+                dotimg->setPosition((i + 1) * (dotSize.width / 2 + 30) + num->getContentSize().width + 10, dotSize.height / 2 + margin / 2);
+                panel->addChild(dotimg);
+            }
+            if (i >= SaveDataSelector::MAX_PARTY_DISPLAY_COUNT) break;
+        }
+    }
+    
+    // 不透明度を半分にしておく
+    panel->setCascadeOpacityEnabled(true);
+    panel->setOpacity(100);
+    return panel;
+}
+
 // セーブデータを取得
-vector<SaveDataSelector::SaveIndex> SaveDataSelector::getSaveList()
+vector<SaveDataSelector::SaveIndex> SaveDataSelector::createSaveIndexies()
 {
     vector<SaveIndex> save_list;
-    SaveIndex save;
+    SaveIndex save = SaveIndex();
     // セーブデータを一つずつチェック
-    for(int i=1; i<=MAX_SAVE_COUNT; i++){
+    for(int i = 1; i <= MAX_SAVE_COUNT; i++){
         LocalPlayerData* local {LocalPlayerData::create(i)};
         if(!local)
         {
             // セーブデータが存在しない
             this->existsSaveData[i-1] = false;
-            save = SaveIndex(i, "--------- NO DATA ---------", "", "", "", 0);
-            
+            save.dataId = i;
+            save.chapter = "--------- NO DATA ---------";
+            save.mapName = "";
+            save.playTime = "";
+            save.saveCount = "";
+            save.friendship = 0;
+            save.party = vector<string>{};
         } else {
             // セーブデータが存在する
             this->existsSaveData[i-1] = true;
-            save = SaveIndex(
-                             i,
-                             "--- " + CsvDataManager::getInstance()->getChapterData()->getName(local->getChapterId()) + " ---",
-                             LastSupper::StringUtils::getSprintf("%15s", CsvDataManager::getInstance()->getMapData()->getName(local->getLocation().map_id)),
-                             local->getPlayTimeForDisplay(),
-                             LastSupper
-                             ::StringUtils::getSprintf("%3s", to_string(local->getSaveCount())) + "回",
-                             local->getMaxFriendshipCount()
-                             );
+            save.dataId = i;
+            save.chapter = "--- " + CsvDataManager::getInstance()->getChapterData()->getName(local->getChapterId()) + " ---";
+            save.mapName = LastSupper::StringUtils::getSprintf("%15s", CsvDataManager::getInstance()->getMapData()->getName(local->getLocation().map_id));
+            save.playTime = local->getPlayTimeForDisplay();
+            save.saveCount = LastSupper::StringUtils::getSprintf("%3s", to_string(local->getSaveCount())) + "回";
+            save.friendship = local->getMaxFriendshipCount();
+            save.party = local->getPartyCharaDotImgFileNames();
         }
         save_list.push_back(save);
     }
@@ -193,7 +230,7 @@ void SaveDataSelector::onEnterKeyPressed(int idx)
         return;
     }
     // セーブorロード
-    if (this->write_flag)
+    if (this->writeFlag)
     {
         // セーブ時
         SoundManager::getInstance()->playSE("save.mp3");
