@@ -15,6 +15,8 @@ namespace Resource
         static const std::string BASE_PATH = "config/";
         static const std::string DEBUG_CONFIG = BASE_PATH + "DebugConfig.json";
         static const std::string COMMON_EVENT = BASE_PATH + "CommonEvent.json";
+        static const std::string PRELOAD_LIST = BASE_PATH + "PreloadList.json";
+        static const std::string MASTER_CONFIG = BASE_PATH + "MasterConfig.json";
     };
     
     namespace Font

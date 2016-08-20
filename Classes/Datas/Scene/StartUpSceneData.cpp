@@ -13,7 +13,7 @@ bool StartUpSceneData::init()
 {
     string basePath;
     int length;
-    const rapidjson::Document json = LastSupper::JsonUtils::readJsonFile("config/PreloadList.json");
+    const rapidjson::Document json = LastSupper::JsonUtils::readJsonFile(Resource::ConfigFiles::PRELOAD_LIST);
     for (rapidjson::Value::ConstMemberIterator itr = json.MemberBegin(); itr != json.MemberEnd(); itr++)
     {
         basePath = itr->name.GetString();

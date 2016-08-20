@@ -13,6 +13,8 @@
 		260621C81D61B7A200348C94 /* DocumentData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 260621C51D61B7A200348C94 /* DocumentData.cpp */; };
 		2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
 		2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
+		268E3FA91D64BFD90098B235 /* MasterConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */; };
+		268E3FAA1D64BFD90098B235 /* MasterConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -351,6 +353,8 @@
 		260621C61D61B7A200348C94 /* DocumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentData.h; sourceTree = "<group>"; };
 		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
+		268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MasterConfigManager.cpp; sourceTree = "<group>"; };
+		268E3FA81D64BFD90098B235 /* MasterConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterConfigManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		26FBC8EE1CF0B28200FDBF17 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "mac/ja-JP.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1122,6 +1126,8 @@
 				DCB075431C9417B900D69F72 /* KeyconfigManager.h */,
 				DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */,
 				DC01027D1C945F2F0076810F /* EventListenerKeyboardManager.h */,
+				268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */,
+				268E3FA81D64BFD90098B235 /* MasterConfigManager.h */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1550,6 +1556,7 @@
 				DC0391D51C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
 				DC0391AD1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0391D11C871E1000C50E8E /* SystemMessageLayer.cpp in Sources */,
+				268E3FA91D64BFD90098B235 /* MasterConfigManager.cpp in Sources */,
 				DC0392311C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0391C11C871E1000C50E8E /* MiniSelector.cpp in Sources */,
@@ -1720,6 +1727,7 @@
 				DC03922E1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
 				DC0391A61C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
+				268E3FAA1D64BFD90098B235 /* MasterConfigManager.cpp in Sources */,
 				DC0391FC1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				DC0392261C871E1000C50E8E /* GameOverScene.cpp in Sources */,
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
