@@ -260,7 +260,7 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
 }
 
 // 入力のあった方向の当たっているものを動かす
-void MapObject::moveObject(const vector<Direction>& directions) const
+void MapObject::moveObject(const vector<Direction>& directions, function<void()> onMoved) const
 {
     // 入力が複数なら動かさない
     if(directions.size() >= 2) return;
@@ -274,7 +274,16 @@ void MapObject::moveObject(const vector<Direction>& directions) const
         {
             for(MapObject* obj : this->getHitObjects(direction))
             {
-                if(obj->isMovable()) obj->moveBy(direction, 1, [](bool _){DungeonSceneManager::getInstance()->runEventQueue(); });
+                if(obj->isMovable()) obj->moveBy(direction, 1, [onMoved](bool _){
+                    if(_) {
+                        // 複数の物体が同時に接触した時に例外が出るのでキャッチ
+                        try{
+                            onMoved();
+                        }catch(exception e){
+                        }
+                    }
+                    DungeonSceneManager::getInstance()->runEventQueue();
+                });
             }
         }
     }
@@ -329,7 +338,7 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     vector<Direction> dirs { this->createEnableDirections(directions) };
     
     // 押せるものがあれば押す
-    this->moveObject(directions);
+    this->moveObject(directions, onMoved);
     
     // 移動可能な方向がなければ失敗としてリターン
     if(dirs.empty()) return false;
