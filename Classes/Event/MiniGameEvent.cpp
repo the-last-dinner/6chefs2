@@ -226,6 +226,11 @@ void SelectEvent::update(float delta){
     }
 }
 
+void SelectEvent::stop(int code)
+{
+    if(this->event != nullptr) this->event->stop(code);
+}
+
 #pragma mark -
 #pragma mark PasswordEvent
 
