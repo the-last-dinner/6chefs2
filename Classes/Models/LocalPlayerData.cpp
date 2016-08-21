@@ -33,6 +33,7 @@ const char* LocalPlayerData::CHARA {"chara"};
 const char* LocalPlayerData::ITEM {"item"};
 const char* LocalPlayerData::ITEMS {"items"};
 const char* LocalPlayerData::BGM {"bgm"};
+const char* LocalPlayerData::SPECIAL_ROOM {"special_room"};
 
 const int LocalPlayerData::MAX_COUNT {999};
 const int LocalPlayerData::MAX_PLAY_TIME {35999};
@@ -72,6 +73,13 @@ void LocalPlayerData::saveLocalData(const int local_id)
 
 // ローカルセーブデータのIDを返す
 int LocalPlayerData::getLocalId(){return this->local_id;}
+
+// おまけ部屋かどうか
+bool LocalPlayerData::isSpecialRoom()
+{
+    if (!this->localData.HasMember(LocalPlayerData::SPECIAL_ROOM)) return false;
+    return this->localData[LocalPlayerData::SPECIAL_ROOM].GetBool();
+}
 
 #pragma mark - 
 #pragma mark Token

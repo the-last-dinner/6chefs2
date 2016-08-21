@@ -30,6 +30,9 @@ typedef GenericStringBuffer< UTF8<> > StringBuffer;
 #define ES_EXTENSION ".json"
 #define CSV_EXTENSION ".csv"
 
+// おまけ部屋のセーブデータID
+#define SPECIAL_ROOM_SAVE_ID 99
+
 // 暗号キー
 #define C_KEY 4545
 

@@ -1,5 +1,6 @@
 {
     "display": {
-        "friendship": false
+        "friendship": false,
+        "special_room": true
     }
 }
