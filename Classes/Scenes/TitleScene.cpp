@@ -54,6 +54,7 @@ void TitleScene::onPreloadFinished(LoadingLayer* loadingLayer)
     mainMenu->onContinueSelected = CC_CALLBACK_0(TitleScene::onContinueSelected, this);
     mainMenu->onExitSelected = CC_CALLBACK_0(TitleScene::onExitSelected, this);
     mainMenu->onTrophySelected = CC_CALLBACK_0(TitleScene::onTrophyListSelected, this);
+    mainMenu->onSpecialRoomSelected = CC_CALLBACK_0(TitleScene::onSpecialRoomSelected, this);
     
     mainMenu->show();
     this->mainMenu = mainMenu;
@@ -105,6 +106,23 @@ void TitleScene::onSaveDataSelectCancelled()
     SoundManager::getInstance()->playSE(Resource::SE::BACK);
 	this->saveDataSelector->hide();
 	this->mainMenu->show();
+}
+void TitleScene::onSpecialRoomSelected()
+{
+    FUNCLOG
+    SoundManager::getInstance()->playSE(Resource::SE::LOAD);
+    PlayerDataManager::getInstance()->setGameStart(SPECIAL_ROOM_SAVE_ID);
+    
+    // 保存されているBGMの再生
+    SoundManager::getInstance()->stopBGMAll();
+    vector<string> bgms {PlayerDataManager::getInstance()->getLocalData()->getBgmAll()};
+    for(string bgm : bgms)
+    {
+        SoundManager::getInstance()->playBGM(bgm);
+    }
+    
+    // シーン移動
+    Director::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
 }
 
 #pragma mark -

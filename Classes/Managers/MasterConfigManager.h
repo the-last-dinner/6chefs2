@@ -27,6 +27,7 @@ private:
 public:
     static const char* DISPLAY;
     static const char* FRIENDSHIP;
+    static const char* SPECIAL_ROOM;
     
     // インスタンス変数
 private:
