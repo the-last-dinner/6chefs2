@@ -10,6 +10,7 @@
 #include "Managers/PlayerDataManager.h"
 #include "Managers/CsvDataManager.h"
 #include "Managers/DebugManager.h"
+#include "Managers/MasterConfigManager.h"
 
 #include "Models/LocalPlayerData.h"
 #include "Models/GlobalPlayerData.h"

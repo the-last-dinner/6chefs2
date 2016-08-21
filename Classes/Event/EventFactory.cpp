@@ -69,6 +69,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"gameover", GameOverEvent::create},            // ゲームオーバー
         {"ending", EndingEvent::create},                // エンディング
         {"backToTitle", BackToTitleEvent::create},      // タイトルへ戻る
+        {"infoAssert", InfoAssertEvent::create},        // デバッグ用にAssertを出す
         
         // マップ系
         {"removeLayer", HideLayerEvent::create},        // マップの指定レイヤを非表示
@@ -136,6 +137,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     if(pCreateFuncs.count(typeName) == 0)
     {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
+        LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
     }
     

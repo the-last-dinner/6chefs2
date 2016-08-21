@@ -577,6 +577,18 @@ int LocalPlayerData::getMainCharaId()
     return this->localData[PARTY][0][CHARA_ID].GetInt();
 }
 
+// パーティーメンバーの正面ドット絵を取得
+vector<string> LocalPlayerData::getPartyCharaDotImgFileNames()
+{
+    vector<string> party {};
+    int partySize = this->localData[PARTY].Size();
+    for (int i = 0; i < partySize; i++)
+    {
+        party.push_back(this->getPartyMember(i).getDotFileName());
+    }
+    return party;
+}
+
 #pragma mark -
 #pragma mark BGM
 

@@ -125,6 +125,7 @@ public:
     CharacterData getPartyMember(const int num = 0);
     vector<CharacterData> getPartyMemberAll();
     int getMainCharaId();
+    vector<string> getPartyCharaDotImgFileNames();
     
     // BGM
     void setBgm(const string& bgm_name);

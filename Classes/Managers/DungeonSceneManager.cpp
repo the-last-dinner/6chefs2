@@ -255,6 +255,7 @@ void DungeonSceneManager::changeMap(const Location& destLocation, const Location
 // カメラシーンへ切り替え（スタックに積む）
 void DungeonSceneManager::pushCameraScene(DungeonCameraScene* scene)
 {
+    this->getScene()->listener->releaseKeyAll();
     Director::getInstance()->pushScene(scene);
 }
 

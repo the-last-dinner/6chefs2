@@ -38,7 +38,7 @@ bool DocumentMenuLayer::init()
     leftTop->setPosition(leftTop->getContentSize().width/2, WINDOW_HEIGHT - leftTop->getContentSize().height/2);
     this->addChild(leftTop);
     
-    Label* title = Label::createWithTTF("キャラ", "fonts/cinecaption2.28.ttf", 48);
+    Label* title = Label::createWithTTF("資料", "fonts/cinecaption2.28.ttf", 48);
     title->setPosition(leftTop->getContentSize().width / 2, leftTop->getContentSize().height / 2);
     title->setColor(Color3B::WHITE);
     leftTop->addChild(title);

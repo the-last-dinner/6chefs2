@@ -18,7 +18,6 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
-
 #include "Managers/DungeonSceneManager.h"
 #include "Models/StopWatch.h"
 
@@ -27,6 +26,8 @@
 #include "Scenes/DungeonScene.h"
 #include "Scenes/GameOverScene.h"
 #include "Scenes/TitleScene.h"
+
+#include "Utils/AssertUtils.h"
 
 #pragma mark ChangeMapEvent
 
@@ -225,4 +226,20 @@ void BackToTitleEvent::run()
 {
     this->setDone();
     DungeonSceneManager::getInstance()->exitDungeon(TitleScene::create());
+}
+
+#pragma mark -
+#pragma mark InfoAssertEvent
+
+bool InfoAssertEvent::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init()) return false;
+    this->text = (this->validator->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
+    return true;
+}
+
+void InfoAssertEvent::run()
+{
+    this->setDone();
+    LastSupper::AssertUtils::infoAssert(this->text);
 }
