@@ -28,7 +28,19 @@ bool SelectEventLayer::init(const string& message, const vector<string>& choices
     if(!Layer::init()) return false;
     
     this->setCascadeOpacityEnabled(true);
-    SpriteUtils::Square position = SpriteUtils::Square(75, 20, 95, 40); // 位置
+    
+    // Selectorの大きさ設定
+    int choiceCount = choices.size();
+    int maxY = 22 + (choiceCount * 8);
+    int maxStrLen {9};
+    int temp {0};
+    for (auto choice : choices)
+    {
+        temp = choice.size();
+        if (maxStrLen < temp) maxStrLen = temp;
+    }
+    SpriteUtils::Square position = SpriteUtils::Square(88 - maxStrLen, 20, 95, maxY);
+    
     // datasが空ならシステムメッセージで質問文表示
     if(datas.empty())
     {
