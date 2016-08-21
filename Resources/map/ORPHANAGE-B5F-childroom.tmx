@@ -69,6 +69,33 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="chara">
+  <object id="15" x="160" y="192" width="32" height="32">
+   <properties>
+    <property name="10104" value=""/>
+   </properties>
+  </object>
+  <object id="16" x="160" y="320" width="32" height="32">
+   <properties>
+    <property name="10105" value=""/>
+   </properties>
+  </object>
+  <object id="17" x="160" y="256" width="32" height="32">
+   <properties>
+    <property name="10103" value=""/>
+   </properties>
+  </object>
+  <object id="18" x="287" y="192" width="32" height="32">
+   <properties>
+    <property name="10102" value=""/>
+   </properties>
+  </object>
+  <object id="19" x="288" y="256" width="32" height="32">
+   <properties>
+    <property name="10101" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="shadow" width="30" height="30">
   <data encoding="base64" compression="zlib">
    eJzt0EENAAAIA7H5t4JJVOxB6BlocsnPhsvlcrlcLpfL5dby50YLeUsRXw==
