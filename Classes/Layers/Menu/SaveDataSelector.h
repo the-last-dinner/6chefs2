@@ -45,7 +45,7 @@ private:
     NotificationBand* notification {nullptr};
     bool existsSaveData[MAX_SAVE_COUNT] {};
     bool writeFlag;
-    bool comfirm_flag;
+    bool comfirmFlag;
 public:
     function<void()> onSaveDataSelectCancelled { nullptr };
 	

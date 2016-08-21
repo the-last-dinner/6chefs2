@@ -34,7 +34,8 @@ bool SaveDataSelector::init(bool write = false)
 	
     // フラグをセット
     this->writeFlag = write;
-    this->comfirm_flag = false;
+    this->comfirmFlag = false;
+    
 	// 黒い背景を生成
 	Sprite* black = Sprite::create();
 	black->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
@@ -195,7 +196,7 @@ void SaveDataSelector::hide()
 void SaveDataSelector::onIndexChanged(int newIdx, bool sound)
 {
     // セーブしましたがでてる場合は無視
-    if(this->comfirm_flag) return;
+    if(this->comfirmFlag) return;
     // 移動音
     if (sound)
     {
@@ -220,13 +221,13 @@ void SaveDataSelector::onEnterKeyPressed(int idx)
     // インクリメント
     idx++;
     // 確認時
-    if (this->comfirm_flag)
+    if (this->comfirmFlag)
     {
         if(this->onSaveDataSelectCancelled)
         {
             this->onSaveDataSelectCancelled();
         }
-        this->comfirm_flag = false;
+        this->comfirmFlag = false;
         return;
     }
     // セーブorロード
@@ -242,7 +243,7 @@ void SaveDataSelector::onEnterKeyPressed(int idx)
         notification->show();
         this->addChild(notification);
         this->notification = notification;
-        this->comfirm_flag = true;
+        this->comfirmFlag = true;
     }
     else
     {

@@ -157,7 +157,8 @@ void TitleMainMenuLayer::onEnterAnimationFinished()
     this->cursor = cursor;
     
     // カーソルを初期位置まで移動
-    this->onIndexChanged(this->getSelectedIndex(), false);
+    this->onIndexChanged(1, false);
+    this->setSelectedIndex(1);
     
     // リスナを有効化
     this->listenerKeyboard->setEnabled(true);
