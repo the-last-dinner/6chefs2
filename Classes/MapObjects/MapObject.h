@@ -103,7 +103,7 @@ public:
     void moveByQueue(deque<Direction> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
     void clearDirectionsQueue();
-    void moveObject(const vector<Direction>& directions) const;
+    void moveObject(const vector<Direction>& directions, function<void()> onMoved) const;
     
     // 自分のRectの指定されたトリガーのイベントを実行
     void runRectEventByTrigger(const Trigger trigger);
