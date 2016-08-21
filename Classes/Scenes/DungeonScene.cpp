@@ -355,7 +355,7 @@ void DungeonScene::onExitAssertScene()
     DungeonSceneManager::getInstance()->startStopWatch();
     
     // 操作可能に戻す
-    // this->listener->setEnabled(true);
+    this->listener->setEnabled(true);
 }
 
 // データクラスを取得
