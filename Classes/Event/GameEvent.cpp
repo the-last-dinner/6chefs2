@@ -365,7 +365,6 @@ void EventRepeat::update(float delta)
 
 void EventRepeat::stop(int code)
 {
-    
     if(this->code == code) this->times = 0;
 }
 
