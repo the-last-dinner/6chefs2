@@ -136,6 +136,11 @@ void EventSequence::update(float delta)
     }
 }
 
+void EventSequence::stop(int code)
+{
+    this->events.front()->stop(code);
+}
+
 #pragma mark -
 #pragma mark EventSpawn
 
@@ -285,6 +290,11 @@ void CallEvent::update(float delta)
         this->setDone();
         CC_SAFE_RELEASE_NULL(this->event);
     }
+}
+
+void CallEvent::stop(int code)
+{
+    if(this->event != nullptr) this->event->stop(code);
 }
 
 #pragma mark -
