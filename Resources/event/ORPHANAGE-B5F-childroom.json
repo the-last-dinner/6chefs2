@@ -916,7 +916,7 @@
 																																},
 																																{
 																																	"type":"stopEvent",
-																																	"eventID":"3"
+																																	"id":"3"
 																																},
 																																{
 																																	"type":"charaWarp",
