@@ -339,24 +339,23 @@ void DungeonScene::onEventFinished()
 // Assertが表示される時
 void DungeonScene::onEnterAssertScene()
 {
-    FUNCLOG;
+    FUNCLOG
     // リスナーを停止
-    this->listener->setEnabled(false);
+    // this->listener->setEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
-    
 }
 
 // Assertから戻ってくる特
 void DungeonScene::onExitAssertScene()
 {
-    FUNCLOG;
+    FUNCLOG
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
     
     // 操作可能に戻す
-    this->listener->setEnabled(true);
+    // this->listener->setEnabled(true);
 }
 
 // データクラスを取得

@@ -142,4 +142,18 @@ private:
     virtual void run() override;
 };
 
+// デバッグ用InfoAssertを出す
+class InfoAssertEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(InfoAssertEvent, rapidjson::Value&)
+private:
+    string text {};
+private:
+    InfoAssertEvent() {FUNCLOG};
+    ~InfoAssertEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json);
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__SceneEvent__) */

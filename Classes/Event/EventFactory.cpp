@@ -69,6 +69,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         {"gameover", GameOverEvent::create},            // ゲームオーバー
         {"ending", EndingEvent::create},                // エンディング
         {"backToTitle", BackToTitleEvent::create},      // タイトルへ戻る
+        {"infoAssert", InfoAssertEvent::create},        // デバッグ用にAssertを出す
         
         // マップ系
         {"removeLayer", HideLayerEvent::create},        // マップの指定レイヤを非表示
