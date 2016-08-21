@@ -66,7 +66,7 @@ bool Character::init(const CharacterData& data)
         }
         else
         {
-            LastSupper::AssertUtils::fatalAssert("CharacterError\ncharaID: " + to_string(this->charaId) + ", name: " + this->texturePrefix);
+            LastSupper::AssertUtils::fatalAssert("CharacterError\ncharaID: " + to_string(this->charaId) + ", name: " + this->texturePrefix + "This character chip is missing.");
             return false;
         }
     }
