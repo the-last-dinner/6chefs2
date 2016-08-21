@@ -36,6 +36,7 @@ class LocalPlayerData : public Ref
     static const char* ITEMS;
     static const char* CHARA;
     static const char* BGM;
+    static const char* SPECIAL_ROOM;
     
     static const int MAX_COUNT;
     static const int MAX_PLAY_TIME;
@@ -63,6 +64,9 @@ private:
 public:
     void saveLocalData(const int local_id);
     int getLocalId();
+    
+    // おまけ部屋
+    bool isSpecialRoom();
     
     // Token
     void setToken();

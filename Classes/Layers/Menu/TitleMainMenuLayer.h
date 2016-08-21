@@ -22,8 +22,9 @@ public:
 		START,
 		CONTINUE,
         TROPHY,
+        SPECIAL_ROOM,
 		EXIT,
-		
+        
 		SIZE
 	};
 	
@@ -40,7 +41,7 @@ private:
 	virtual void onIndexChanged(int newIdx, bool sound = false) override;
 	virtual void onEnterKeyPressed(int idx) override;
 	virtual void onMenuKeyPressed() override {};
-    void trophyNotification();
+    void prohibitNotification(const string& msg);
 public:
 	virtual void show() override;
 	virtual void hide() override;
@@ -48,12 +49,14 @@ public:
 // インスタンス変数
 private:
     NotificationBand* notification {nullptr};
+    string specialRoomTitle {};
 public:
     bool animating { true };
     Node* cursor { nullptr };
 	function<void()> onStartSelected { nullptr };
 	function<void()> onContinueSelected { nullptr };
     function<void()> onTrophySelected { nullptr };
+    function<void()> onSpecialRoomSelected { nullptr };
 	function<void()> onExitSelected { nullptr };
 };
 

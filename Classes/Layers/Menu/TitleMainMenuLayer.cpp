@@ -27,8 +27,16 @@ bool TitleMainMenuLayer::init()
         {MenuType::START, "はじめから"},
         {MenuType::CONTINUE, "つづきから"},
         {MenuType::TROPHY, "トロフィ"},
-        //{MenuType::EXIT, "終了"},
     };
+    this->specialRoomTitle = PlayerDataManager::getInstance()->getGlobalData()->isCleared() ? "おまけ" : "? ? ?";
+    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::SPECIAL_ROOM))
+    {
+        typeToString.insert({MenuType::SPECIAL_ROOM, this->specialRoomTitle});
+    }
+    else
+    {
+        typeToString.insert({MenuType::EXIT, "終了"});
+    }
     
 	if(!MenuLayer::init(1, typeToString.size())) return false;
     
@@ -58,20 +66,20 @@ bool TitleMainMenuLayer::init()
     title2->setColor(Color3B::WHITE);
     this->addChild(title2);
     
-    Label* title3 {Label::createWithTTF("隻眼の少女", Resource::Font::SYSTEM, font_size)};
+    Label* title3 {Label::createWithTTF("隻眼の少女2", Resource::Font::SYSTEM, font_size)};
     title3->setPosition(WINDOW_WIDTH/2, title2->getPosition().y - title3->getContentSize().height);
     title3->setColor(Color3B::Color3B(200,0,0));
     title3->setOpacity(0);
     this->addChild(title3);
     
     // タイトルメニューを生成
-	int menuSize = 48.f;
+	int menuSize = 44.f;
     float duration { 1.0f };
     float latency { 0.2f };
 	for(int i = 0; i < etoi(MenuType::SIZE); i++)
 	{
         Label* menuItem { Label::createWithTTF(typeToString[static_cast<MenuType>(i)], Resource::Font::SYSTEM, menuSize) };
-		menuItem->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT * 0.5 - (menuSize + 20) * i);
+		menuItem->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT * 0.525 - (menuSize + 12) * i);
 		menuItem->setOpacity(0);
 		this->addChild(menuItem);
 		this->menuObjects.push_back(menuItem);
@@ -149,7 +157,8 @@ void TitleMainMenuLayer::onEnterAnimationFinished()
     this->cursor = cursor;
     
     // カーソルを初期位置まで移動
-    this->onIndexChanged(this->getSelectedIndex(), false);
+    this->onIndexChanged(1, false);
+    this->setSelectedIndex(1);
     
     // リスナを有効化
     this->listenerKeyboard->setEnabled(true);
@@ -193,24 +202,38 @@ void TitleMainMenuLayer::onEnterKeyPressed(int idx)
 		{MenuType::START, this->onStartSelected},
 		{MenuType::CONTINUE, this->onContinueSelected},
         {MenuType::TROPHY, this->onTrophySelected},
-		{MenuType::EXIT, this->onExitSelected},
+        {MenuType::SPECIAL_ROOM, this->onSpecialRoomSelected},
 	};
+    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::SPECIAL_ROOM))
+    {
+    }
     MenuType menu {static_cast<MenuType>(idx)};
 	if(!typeMap.count(menu)) return;
     
-    // クリアしていない場合はトロフィーを見れない
-    if (menu == MenuType::TROPHY && !PlayerDataManager::getInstance()->getGlobalData()->isCleared())
+    // クリアしていない場合
+    if (!PlayerDataManager::getInstance()->getGlobalData()->isCleared())
     {
-        this->trophyNotification();
-        return;
+        // トロフィー見れない
+        if (menu == MenuType::TROPHY)
+        {
+            this->prohibitNotification("トロフィーはクリア後に見ることができます");
+            return;
+        }
+        
+        // おまけ部屋を見れない
+        if (menu == MenuType::SPECIAL_ROOM) {
+            this->prohibitNotification(this->specialRoomTitle + "はクリア後に見ることができます");
+            return;
+        }
     }
+    
     
     // 選択されたメニューに応じてコールバック関数実行
 	if(function<void()> callback {typeMap.at(menu)}) callback();
 }
 
 // トロフィーを見れない通知
-void TitleMainMenuLayer::trophyNotification()
+void TitleMainMenuLayer::prohibitNotification(const string& msg)
 {
     if (notification)
     {
@@ -225,7 +248,7 @@ void TitleMainMenuLayer::trophyNotification()
     {
         this->setCursorEnable(false);
         SoundManager::getInstance()->playSE("failure.mp3");
-        NotificationBand* notification = NotificationBand::create("トロフィーはクリア後に見ることができます");
+        NotificationBand* notification = NotificationBand::create(msg);
         notification->setBandColor(Color3B(64,0,0));
         this->addChild(notification);
         notification->show();

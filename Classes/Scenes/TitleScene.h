@@ -37,6 +37,7 @@ private:
 	void onContinueSelected();
 	void onExitSelected();
 	void onSaveDataSelectCancelled();
+    void onSpecialRoomSelected();
     
     // トロフィーリスト
     void createTrophyListLayer();

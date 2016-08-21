@@ -150,8 +150,9 @@ void DungeonMenuScene::onMenuHidden()
 void DungeonMenuScene::onSaveMenuSelected()
 {
     FUNCLOG
-    // カウントダウン中は開けなくする
-    if (DungeonSceneManager::getInstance()->existsStopWatch())
+    // カウントダウン中とおまけ部屋は開けなくする
+    if (DungeonSceneManager::getInstance()->existsStopWatch() ||
+        PlayerDataManager::getInstance()->getLocalData()->isSpecialRoom())
     {
         SoundManager::getInstance()->playSE("failure.mp3");
         return;
@@ -201,17 +202,24 @@ void DungeonMenuScene::onItemMenuCanceled()
 #pragma mark -
 #pragma mark DocumentMenu
 
-// キャラメニューが選択された時
+// 資料メニューが選択された時
 void DungeonMenuScene::onDocumentMenuSelected()
 {
     FUNCLOG
+    // おまけ部屋は開けない
+    if (PlayerDataManager::getInstance()->getLocalData()->isSpecialRoom())
+    {
+        SoundManager::getInstance()->playSE("failure.mp3");
+        return;
+    }
+    
     SoundManager::getInstance()->playSE("cursorMove.mp3");
     this->mainMenu->hide();
     this->createDocumentMenu();
     this->documentMenu->show();
 }
 
-// キャラメニューでキャンセルされた時
+// 資料メニューでキャンセルされた時
 void DungeonMenuScene::onDocumentMenuCanceled()
 {
     FUNCLOG

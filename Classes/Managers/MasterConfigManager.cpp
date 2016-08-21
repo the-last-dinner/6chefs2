@@ -13,6 +13,7 @@
 // 定数
 const char* MasterConfigManager::DISPLAY {"display"};
 const char* MasterConfigManager::FRIENDSHIP {"friendship"};
+const char* MasterConfigManager::SPECIAL_ROOM {"special_room"};
 
 // 唯一のインスタンスを初期化
 static MasterConfigManager* _instance = nullptr;
