@@ -54,7 +54,6 @@ private:
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
-    virtual void stop(int code = -1) override;
 };
 
 // パスワードイベント
