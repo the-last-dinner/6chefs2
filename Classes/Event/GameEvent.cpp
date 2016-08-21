@@ -136,11 +136,6 @@ void EventSequence::update(float delta)
     }
 }
 
-void EventSequence::stop(int code)
-{
-    this->events.front()->stop(code);
-}
-
 #pragma mark -
 #pragma mark EventSpawn
 
@@ -292,11 +287,6 @@ void CallEvent::update(float delta)
     }
 }
 
-void CallEvent::stop(int code)
-{
-    if(this->event != nullptr) this->event->stop(code);
-}
-
 #pragma mark -
 #pragma mark EventRepeat
 
@@ -365,7 +355,6 @@ void EventRepeat::update(float delta)
 
 void EventRepeat::stop(int code)
 {
-    
     if(this->code == code) this->times = 0;
 }
 
