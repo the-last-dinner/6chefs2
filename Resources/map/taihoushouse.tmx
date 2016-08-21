@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="8">
- <tileset firstgid="1" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="13">
+ <tileset firstgid="1" name="ST-Washitu-I01" tilewidth="16" tileheight="16" tilecount="1600" columns="16">
   <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
  </tileset>
- <tileset firstgid="1601" name="child_taihou" tilewidth="16" tileheight="16">
+ <tileset firstgid="1601" name="child_taihou" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="child_taihou.png" trans="aa55ff" width="32" height="32"/>
  </tileset>
- <tileset firstgid="1605" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="1605" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
- <tileset firstgid="1989" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1989" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="20">

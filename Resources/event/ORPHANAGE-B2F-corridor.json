@@ -220,7 +220,12 @@
 		                    "choices":[
 		                    	{
 		                        	"choice":"はい",
-		                   			"eventID":"12"
+		                        	"action":[
+		                        		{
+		                        			"type":"callEvent",
+		                        			"eventID":"12"
+		                        		}
+		                        	]
 		                      	},
 		                      	{
 		                        	"choice":"いいえ",
@@ -263,7 +268,12 @@
 		                    "choices":[
 		                    	{
 		                        	"choice":"はい",
-		                        	"eventID":"12"
+		                        	"action":[
+		                        		{
+		                        			"type":"callEvent",
+		                        			"eventID":"12"
+		                        		}
+		                        	]
 		                      	},
 		                      	{
 		                        	"choice":"いいえ",
@@ -1407,7 +1417,8 @@
 											]
 										},
 										{
-											"type":"already"
+											"type":"already",
+											"event":["73","12"]
 										}
 									]
 								}

@@ -384,9 +384,6 @@
 							"imgID":"4"		
 						},
 						{
-							鉄砲水
-						},
-						{
 							"type":"charaMsg",
 							"text":["マジか！\nおい、走れ！"],
 							"charaID":"8",
@@ -918,14 +915,16 @@
 							]
 						},
 						{
-							"type":10122雪の殴りおろし
+							"type":"systemMsg",
+							"text":"雪の殴りおろし"
 						},
 						{
 							"type":"playSE",
 							"file":"big_hit.mp3"
 						},
 						{
-							"type":1073大宝の跪き
+							"type":"systemMsg",
+							"text":"大宝の跪き"
 						},
 						{
 							"type":"playSE",
