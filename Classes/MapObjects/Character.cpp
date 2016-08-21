@@ -59,7 +59,16 @@ bool Character::init(const CharacterData& data)
     // それぞれの方向の直立チップをSpriteFrameとして格納しておく
     for(int i { 0 }; i < etoi(Direction::SIZE); i++)
     {
-        this->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(this->texturePrefix + "_" + to_string(i) +"_0.png" ));
+        SpriteFrame* spFrame {SpriteFrameCache::getInstance()->getSpriteFrameByName(this->texturePrefix + "_" + to_string(i) +"_0.png")};
+        if (spFrame)
+        {
+            this->addSpriteFrame(spFrame);
+        }
+        else
+        {
+            LastSupper::AssertUtils::fatalAssert("CharacterError\ncharaID: " + to_string(this->charaId) + ", name: " + this->texturePrefix);
+            return false;
+        }
     }
     
     // サイズ、衝突判定範囲をセット
