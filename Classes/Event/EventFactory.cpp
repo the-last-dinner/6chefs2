@@ -137,6 +137,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     if(pCreateFuncs.count(typeName) == 0)
     {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
+        LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
     }
     
