@@ -111,28 +111,38 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"charaMsg",
-							"file":"taihou_reign.png",
-							"talk":[
+							"type":"spawn",
+							"action":[
 								{
-									"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
-									"charaID":"10",
-									"name":"戸塚　大宝"
+									"type":"charaMsg",
+									"file":"taihou_reign.png",
+									"talk":[
+										{
+											"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
+											"charaID":"10",
+											"name":"戸塚　大宝"
+										},
+										{
+											"text":["おじさん・・・"],
+											"charaID":"10",
+											"name":"希崎　雪"
+										},
+										{
+											"text":["お前が戸塚か・・・"],
+											"charaID":"10",
+											"name":"加藤　蘭丸"
+										},
+										{
+											"text":["・・・"],
+											"charaID":"10",
+											"name":"中山　撫子"
+										}
+									]
 								},
 								{
-									"text":["おじさん・・・"],
-									"charaID":"10",
-									"name":"希崎　雪"
-								},
-								{
-									"text":["お前が戸塚か・・・"],
-									"charaID":"10",
-									"name":"加藤　蘭丸"
-								},
-								{
-									"text":["・・・"],
-									"charaID":"10",
-									"name":"中山　撫子"
+									"type":"camera",
+									"nextX":53,
+									"nextY":63
 								}
 							]
 						},
@@ -1077,7 +1087,7 @@
 											"type":"charaMsg",
 											"text":["チィ・・・"],
 											"charaID":"8",
-											"imgID":4
+											"imgID":"4"
 										},
 										{
 											"type":"fadeout"
@@ -1252,8 +1262,6 @@
 										}
 									]
 								}
-							],
-							"false":[
 							]
 						}
 					]
