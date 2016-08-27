@@ -62,7 +62,7 @@
 	],
 	"2":[
 		{
-			"type":"chengeVolume",
+			"type":"changeVolume",
 			"file":"0hanaichi.mp3",
 			"volume":0.5
 		},
@@ -452,8 +452,52 @@
 									"type":"fadeout"
 								},
 								{
-									"type":"callEvent",
-									"eventID":"91"
+									"type":"spawn",
+									"action":[
+										{
+											"type":"charaWarp",
+											"objID":"10101",
+											"x":18,
+											"y":17,
+											"direction":"LEFT"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10102",
+											"x":18,
+											"y":13,
+											"direction":"LEFT"
+										},
+										{
+											"type":"createObject",
+											"objID":"10107",
+											"charaID":"3",
+											"x":18,
+											"y":21,
+											"direction":"LEFT"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10104",
+											"x":10,
+											"y":13,
+											"direction":"RIGHT"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10103",
+											"x":10,
+											"y":17,
+											"direction":"RIGHT"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10105",
+											"x":10,
+											"y":21,
+											"direction":"RIGHT"
+										}
+									]
 								},
 								{
 									"type":"fadein"
@@ -1997,9 +2041,8 @@
 					"direction":"LEFT"
 				},
 				{
-					"type":"createObject",
+					"type":"charaWarp",
 					"objID":"10107",
-					"charaID":"3",
 					"x":18,
 					"y":21,
 					"direction":"LEFT"

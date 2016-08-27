@@ -81,12 +81,12 @@
    eJztzDkOgEAMBEFnHKmBlCOF5f/PY15g2SLZoEvqbDRmAAAAfRncbFSTmv3/rsr1tahVbcFvdle16+tQp7qC3+yu6tbXo5p6g9/sDgB68QGH4gWx
   </data>
  </layer>
- <layer name="magoichi2" width="32" height="30" visible="0">
+ <layer name="magoichi2" width="32" height="30">
   <data encoding="base64" compression="zlib">
    eJztzUkNACAQBLDxsF44/BsDC7w2JK2BJgD8aFQyq+9f996NPwDAqwOF8gEr
   </data>
  </layer>
- <layer name="nadeshiko2" width="32" height="30" visible="0">
+ <layer name="nadeshiko2" width="32" height="30">
   <data encoding="base64" compression="zlib">
    eJztzUkNACAQBLDxsG44/NsCA7w3Ia2BJgD8ZFQyq+9f996NPwDAywH4YgE7
   </data>

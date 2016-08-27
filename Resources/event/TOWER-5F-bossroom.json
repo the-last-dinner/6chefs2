@@ -51,7 +51,7 @@
 					"trigger":"2",
 					"x":53,
 					"y":70,
-					"direction":膝まづき,
+					"direction":"UP",
 					"movePattern":"1"
 				},
 				{
@@ -865,7 +865,8 @@
 															"file":"down1.mp3"
 														},
 														{
-															"type":蘭丸10118を膝まづかせる
+															"type":"systemMsg",
+															"text":"蘭丸10118を膝まづかせる"
 														}
 													]
 												},
@@ -974,7 +975,8 @@
 											"direction":"LEFT"
 										},
 										{
-											"type":大宝を膝まづかせる
+											"type":"systemMsg",
+											"text":"大宝を膝まづかせる"
 										},
 										{
 											"type":"charaMsg",
