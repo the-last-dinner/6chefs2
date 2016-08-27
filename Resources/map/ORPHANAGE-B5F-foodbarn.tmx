@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
- <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1985" name="Yatai-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="aa55ff" width="944" height="255"/>
  </tileset>
- <tileset firstgid="2870" name="ST-Convi-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2870" name="ST-Convi-I01" tilewidth="16" tileheight="16" tilecount="1280" columns="16">
   <image source="ST-Convi-I01.png" trans="aa55ff" width="256" height="1280"/>
  </tileset>
  <layer name="Base" width="20" height="20">
@@ -88,7 +88,7 @@
  </layer>
  <layer name="shadow" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBhaYPWoeYPaPErNp7V5QxUQ6w96pRdy7Rmo9DzQ4Tdc0iE6AAAnSA1d
+   eJxjYBhaYPWoeYPaPErNH+z+HShArD/oFX7k2jNQ8TvQ4Tdc0iE6AAC7Owyy
   </data>
  </layer>
 </map>

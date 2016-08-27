@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="60" tilewidth="16" tileheight="16" nextobjectid="12">
- <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1985" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2465" name="SC-Door-Entce04" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="SC-Door-Entce04" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="SC-Door-Entce04.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="20" height="60">
@@ -83,7 +83,12 @@
     <property name="trigger" value="0"/>
    </properties>
   </object>
-  <object id="10" x="144" y="928" width="32" height="32"/>
+  <object id="10" x="144" y="928" width="32" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
   <object id="11" x="144" y="96" width="32" height="32">
    <properties>
     <property name="EventID" value="3"/>

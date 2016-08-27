@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="56" height="58" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="62">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="56" height="58" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="71">
  <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
@@ -125,4 +125,36 @@
    eJzt1bENwCAQBEH6b8UluDknDkmM/A972qngFiEYQwnu3QOK2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bOl9NNfuAa+qe2FfD/vWpPedwr4eVTvs6zHb8ccbZV8P+9hOOecq9rHZx5be91XS3zGT3qczPOW7MEI=
   </data>
  </layer>
+ <objectgroup name="chara">
+  <object id="65" name="1086" x="336" y="288" width="32" height="32">
+   <properties>
+    <property name="1086" value=""/>
+   </properties>
+  </object>
+  <object id="66" name="1087" x="336" y="352" width="32" height="32">
+   <properties>
+    <property name="1087" value=""/>
+   </properties>
+  </object>
+  <object id="67" name="1088" x="272" y="352" width="32" height="32">
+   <properties>
+    <property name="1088" value=""/>
+   </properties>
+  </object>
+  <object id="68" name="1089" x="240" y="288" width="32" height="32">
+   <properties>
+    <property name="1089" value=""/>
+   </properties>
+  </object>
+  <object id="69" name="1090" x="304" y="288" width="32" height="32">
+   <properties>
+    <property name="1090" value=""/>
+   </properties>
+  </object>
+  <object id="70" name="10217" x="272" y="288" width="32" height="32">
+   <properties>
+    <property name="10217" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

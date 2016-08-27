@@ -544,7 +544,9 @@
 							"type":"fadein"
 						},
 						{
-							"type":"battle",
+							"type":"barrage",
+							"times":20,
+							"limit":5.0,
 							"true":[
 								{
 									"type":"sequence",
@@ -866,7 +868,7 @@
 														},
 														{
 															"type":"systemMsg",
-															"text":"蘭丸10118を膝まづかせる"
+															"text":["蘭丸10118を膝まづかせる"]
 														}
 													]
 												},
@@ -874,7 +876,7 @@
 													"type":"charaWalk",
 													"objID":"10121",
 													"steps":2.0,
-													"direction":"rigHT"
+													"direction":"RIGHT"
 												}
 											]
 										},
@@ -976,7 +978,7 @@
 										},
 										{
 											"type":"systemMsg",
-											"text":"大宝を膝まづかせる"
+											"text":["大宝を膝まづかせる"]
 										},
 										{
 											"type":"charaMsg",
@@ -1018,7 +1020,7 @@
 													"imgID":"4"
 												},
 												{
-													"text":[""],
+													"text":["・・・"],
 													"charaID":"9",
 													"imgID":"3"
 												}
@@ -1250,6 +1252,8 @@
 										}
 									]
 								}
+							],
+							"false":[
 							]
 						}
 					]
