@@ -124,8 +124,8 @@
 		DC0391961C871E1000C50E8E /* EventFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03907F1C871E1000C50E8E /* EventFactory.cpp */; };
 		DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390811C871E1000C50E8E /* EventScript.cpp */; };
 		DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390811C871E1000C50E8E /* EventScript.cpp */; };
-		DC0391991C871E1000C50E8E /* EventScriptValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390841C871E1000C50E8E /* EventScriptValidator.cpp */; };
-		DC03919A1C871E1000C50E8E /* EventScriptValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390841C871E1000C50E8E /* EventScriptValidator.cpp */; };
+		DC0391991C871E1000C50E8E /* GameEventHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390841C871E1000C50E8E /* GameEventHelper.cpp */; };
+		DC03919A1C871E1000C50E8E /* GameEventHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390841C871E1000C50E8E /* GameEventHelper.cpp */; };
 		DC03919B1C871E1000C50E8E /* FlagEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390861C871E1000C50E8E /* FlagEvent.cpp */; };
 		DC03919C1C871E1000C50E8E /* FlagEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390861C871E1000C50E8E /* FlagEvent.cpp */; };
 		DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390881C871E1000C50E8E /* GameEvent.cpp */; };
@@ -469,8 +469,8 @@
 		DC0390811C871E1000C50E8E /* EventScript.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventScript.cpp; sourceTree = "<group>"; };
 		DC0390821C871E1000C50E8E /* EventScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScript.h; sourceTree = "<group>"; };
 		DC0390831C871E1000C50E8E /* EventScriptMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScriptMember.h; sourceTree = "<group>"; };
-		DC0390841C871E1000C50E8E /* EventScriptValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventScriptValidator.cpp; sourceTree = "<group>"; };
-		DC0390851C871E1000C50E8E /* EventScriptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScriptValidator.h; sourceTree = "<group>"; };
+		DC0390841C871E1000C50E8E /* GameEventHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameEventHelper.cpp; sourceTree = "<group>"; };
+		DC0390851C871E1000C50E8E /* GameEventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEventHelper.h; sourceTree = "<group>"; };
 		DC0390861C871E1000C50E8E /* FlagEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlagEvent.cpp; sourceTree = "<group>"; };
 		DC0390871C871E1000C50E8E /* FlagEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagEvent.h; sourceTree = "<group>"; };
 		DC0390881C871E1000C50E8E /* GameEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameEvent.cpp; sourceTree = "<group>"; };
@@ -990,8 +990,8 @@
 				DC0390811C871E1000C50E8E /* EventScript.cpp */,
 				DC0390821C871E1000C50E8E /* EventScript.h */,
 				DC0390831C871E1000C50E8E /* EventScriptMember.h */,
-				DC0390841C871E1000C50E8E /* EventScriptValidator.cpp */,
-				DC0390851C871E1000C50E8E /* EventScriptValidator.h */,
+				DC0390841C871E1000C50E8E /* GameEventHelper.cpp */,
+				DC0390851C871E1000C50E8E /* GameEventHelper.h */,
 				DC0390861C871E1000C50E8E /* FlagEvent.cpp */,
 				DC0390871C871E1000C50E8E /* FlagEvent.h */,
 				DC0390881C871E1000C50E8E /* GameEvent.cpp */,
@@ -1583,7 +1583,7 @@
 				DC0392191C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391CF1C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
-				DC0391991C871E1000C50E8E /* EventScriptValidator.cpp in Sources */,
+				DC0391991C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC0391DF1C871E1000C50E8E /* SoundManager.cpp in Sources */,
 				DC0391C31C871E1000C50E8E /* NumberSelector.cpp in Sources */,
 				DC0392411C871E1000C50E8E /* MapNameNotification.cpp in Sources */,
@@ -1633,7 +1633,7 @@
 				DC0391701C871E1000C50E8E /* PathFinder.cpp in Sources */,
 				DC0391F61C871E1000C50E8E /* CheapChaser.cpp in Sources */,
 				DC0391AC1C871E1000C50E8E /* ButtonMashingLayer.cpp in Sources */,
-				DC03919A1C871E1000C50E8E /* EventScriptValidator.cpp in Sources */,
+				DC03919A1C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC03924C1C871E1000C50E8E /* StaminaBar.cpp in Sources */,
 				DC0392041C871E1000C50E8E /* PathObject.cpp in Sources */,
 				DC0391DE1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,

@@ -10,7 +10,7 @@
 
 #include "Event/EventScript.h"
 #include "Event/EventFactory.h"
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
 
 #include "Managers/DungeonSceneManager.h"
@@ -25,22 +25,22 @@ GameEvent::GameEvent() {};
 GameEvent::~GameEvent()
 {
     CC_SAFE_RELEASE_NULL(this->factory);
-    CC_SAFE_RELEASE_NULL(this->validator);
+    CC_SAFE_RELEASE_NULL(this->eventHelper);
 };
 
 // 初期化
 bool GameEvent::init()
 {
     EventFactory* factory {DungeonSceneManager::getInstance()->getEventFactory()};
-    EventScriptValidator* validator {DungeonSceneManager::getInstance()->getScriptValidator()};
+    GameEventHelper* eventHelper {DungeonSceneManager::getInstance()->getGameEventHelper()};
     
-    if(!factory || !validator) return false;
+    if(!factory || !eventHelper) return false;
     
     CC_SAFE_RETAIN(factory);
     this->factory = factory;
     
-    CC_SAFE_RETAIN(validator);
-    this->validator = validator;
+    CC_SAFE_RETAIN(eventHelper);
+    this->eventHelper = eventHelper;
     
     return true;
 }
@@ -73,7 +73,7 @@ void GameEvent::setDone(bool done)
 GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 {
     // eventIDの指定があれば、指定のIDに対応するjsonから生成
-    if(this->validator->hasMember(json, member::EVENT_ID))
+    if(this->eventHelper->hasMember(json, member::EVENT_ID))
     {
         return this->factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()));
     }
@@ -205,7 +205,7 @@ bool EventIf::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // conditionをチェックしてtrueであればイベントを生成
-    if(this->validator->detectCondition(json))
+    if(this->eventHelper->detectCondition(json))
     {
         this->event = this->createSpawnFromIdOrAction(json);
         CC_SAFE_RETAIN(this->event);
@@ -255,9 +255,9 @@ bool CallEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    EventScript* eventScript  = this->validator->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript();
+    EventScript* eventScript  = this->eventHelper->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript();
     
-    if (!this->validator->hasMember(json, member::EVENT_ID)) return false;
+    if (!this->eventHelper->hasMember(json, member::EVENT_ID)) return false;
     
     this->event = this->factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
     CC_SAFE_RETAIN(this->event);
@@ -305,13 +305,13 @@ bool EventRepeat::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(!this->validator->hasMember(json, member::TIMES)) return false;
+    if(!this->eventHelper->hasMember(json, member::TIMES)) return false;
     
     this->times = json[member::TIMES].GetInt();
     
-    if(!this->validator->hasMember(json, member::ACTION)) return false;
+    if(!this->eventHelper->hasMember(json, member::ACTION)) return false;
     
-    if(this->validator->hasMember(json, member::ID)) this->code = stoi(json[member::ID].GetString());
+    if(this->eventHelper->hasMember(json, member::ID)) this->code = stoi(json[member::ID].GetString());
     
     this->event = this->createSpawnFromIdOrAction(json);
     CC_SAFE_RETAIN(this->event);
@@ -376,7 +376,7 @@ bool EventStop::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    if(!this->validator->hasMember(json, member::ID)) return false;
+    if(!this->eventHelper->hasMember(json, member::ID)) return false;
     
     this->eventCode = stoi(json[member::ID].GetString());
 
