@@ -39,7 +39,11 @@ bool SetAmbientLightEvent::init(rapidjson::Value& json)
     
     string str {json[member::AMBIENT].GetString()};
     
-    if(strToColor.count(str) == 0) return false;
+    if(strToColor.count(str) == 0)
+    {
+        LastSupper::AssertUtils::warningAssert("EventScriptError\ntype: setAmbient\nambient: " + str + "This ambient is missing.");
+        return false;
+    }
     
     this->color = strToColor[str];
     
