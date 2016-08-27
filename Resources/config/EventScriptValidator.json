@@ -494,16 +494,16 @@
         }
     },
     "giveItem": {
-        "require": ["itemID"],
+        "require": ["charaID"],
         "member": {
             "itemID": ["string"]
         }
     },
     "addProfile": {
-        "require": ["charaID", "infoID"],
+        "require": ["toCharaID", "fromCharaID"],
         "member": {
-            "charaID": ["string"],
-            "infoID": ["string"]
+            "toCharaID": ["string"],
+            "fromCharaID": ["string"]
         }
     },
     "changeChapter": {
@@ -513,9 +513,9 @@
         }
     },
     "changeStatus": {
-        "require": ["itemID"],
+        "require": ["charaID", "favorite"],
         "member": {
-            "itemID": ["string"]
+            "charaID": ["string"]
         }
     },
     "changeFlg": {
@@ -524,11 +524,10 @@
             "itemID": ["string"]
         }
     },
-
     "getTrophy": {
-        "require": ["itemID"],
+        "require": ["trophyID"],
         "member": {
-            "itemID": ["string"]
+            "trophyID": ["string"]
         }
     }
 }
