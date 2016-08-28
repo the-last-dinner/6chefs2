@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="108" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="69">
- <tileset firstgid="1" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="108" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="82">
+ <tileset firstgid="1" name="ST-Washitu-I01" tilewidth="16" tileheight="16" tilecount="1600" columns="16">
   <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
  </tileset>
- <tileset firstgid="1601" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1601" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2081" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="2081" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="4097" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="4097" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="4577" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="4577" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="6081" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="6081" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="6561" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="6561" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
   <tile id="257">
    <properties>
@@ -229,4 +229,15 @@
    eJzt0dENwkAUxMDUQPs0SwVIVkDYIev/3I7yjmOttdZaa6211lprrbXWWmuttdY63/Px2+/evfOt9z4xXKHda/c6887uxdq9dq8z7+xerN3rHvf6l/2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2K4Q7tP1+r3WutdaYXUER/DQ==
   </data>
  </layer>
+ <objectgroup name="chara">
+  <object id="69" x="848" y="1120" width="32" height="32"/>
+  <object id="70" x="896" y="1120" width="32" height="32"/>
+  <object id="71" x="944" y="1120" width="32" height="32"/>
+  <object id="72" x="800" y="1120" width="32" height="32"/>
+  <object id="74" x="752" y="1120" width="32" height="32"/>
+  <object id="75" x="992" y="1120" width="32" height="32"/>
+  <object id="76" x="704" y="1120" width="32" height="32"/>
+  <object id="79" x="1040" y="1120" width="32" height="32"/>
+  <object id="80" x="656" y="1120" width="32" height="32"/>
+ </objectgroup>
 </map>
