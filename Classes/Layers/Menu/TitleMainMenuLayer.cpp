@@ -29,7 +29,7 @@ bool TitleMainMenuLayer::init()
         {MenuType::TROPHY, "トロフィ"},
     };
     this->specialRoomTitle = PlayerDataManager::getInstance()->getGlobalData()->isCleared() ? "おまけ" : "? ? ?";
-    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::SPECIAL_ROOM))
+    if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::SPECIAL_ROOM))
     {
         typeToString.insert({MenuType::SPECIAL_ROOM, this->specialRoomTitle});
     }
@@ -204,7 +204,7 @@ void TitleMainMenuLayer::onEnterKeyPressed(int idx)
         {MenuType::TROPHY, this->onTrophySelected},
         {MenuType::SPECIAL_ROOM, this->onSpecialRoomSelected},
 	};
-    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::SPECIAL_ROOM))
+    if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::SPECIAL_ROOM))
     {
     }
     MenuType menu {static_cast<MenuType>(idx)};

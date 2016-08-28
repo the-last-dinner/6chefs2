@@ -263,7 +263,7 @@ void DungeonScene::onBackToTitleSelected()
 // 主人公が敵に触れた時
 void DungeonScene::onContactWithEnemy()
 {
-    if (DebugManager::getInstance()->isInvincibleMode()) return;
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::INVINCIBLE_MODE)) return;
     this->onExitDungeon();
     Director::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
 }

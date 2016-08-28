@@ -27,8 +27,12 @@
 		26460B9E1D72EDA600F0336C /* TrophyData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B8B1D72EBB600F0336C /* TrophyData.cpp */; };
 		26460B9F1D72EDAF00F0336C /* GlobalPlayerData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B931D72EBC800F0336C /* GlobalPlayerData.cpp */; };
 		26460BA01D72EDB400F0336C /* LocalPlayerData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B951D72EBC800F0336C /* LocalPlayerData.cpp */; };
-		268E3FA91D64BFD90098B235 /* MasterConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */; };
-		268E3FAA1D64BFD90098B235 /* MasterConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */; };
+		26460BA41D72EF1500F0336C /* DebugConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460BA21D72EF1500F0336C /* DebugConfigData.cpp */; };
+		26460BA51D72EF1500F0336C /* DebugConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460BA21D72EF1500F0336C /* DebugConfigData.cpp */; };
+		2672D5041D72F79700AC0E96 /* MasterConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */; };
+		2672D5051D72F79700AC0E96 /* MasterConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */; };
+		268E3FA91D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
+		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -367,8 +371,12 @@
 		26460B941D72EBC800F0336C /* GlobalPlayerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalPlayerData.h; path = PlayerData/GlobalPlayerData.h; sourceTree = "<group>"; };
 		26460B951D72EBC800F0336C /* LocalPlayerData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LocalPlayerData.cpp; path = PlayerData/LocalPlayerData.cpp; sourceTree = "<group>"; };
 		26460B961D72EBC800F0336C /* LocalPlayerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalPlayerData.h; path = PlayerData/LocalPlayerData.h; sourceTree = "<group>"; };
-		268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MasterConfigManager.cpp; sourceTree = "<group>"; };
-		268E3FA81D64BFD90098B235 /* MasterConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterConfigManager.h; sourceTree = "<group>"; };
+		26460BA21D72EF1500F0336C /* DebugConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DebugConfigData.cpp; path = ConfigData/DebugConfigData.cpp; sourceTree = "<group>"; };
+		26460BA31D72EF1500F0336C /* DebugConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugConfigData.h; path = ConfigData/DebugConfigData.h; sourceTree = "<group>"; };
+		2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MasterConfigData.cpp; path = ConfigData/MasterConfigData.cpp; sourceTree = "<group>"; };
+		2672D5031D72F79700AC0E96 /* MasterConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterConfigData.h; path = ConfigData/MasterConfigData.h; sourceTree = "<group>"; };
+		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
+		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		26FBC8EE1CF0B28200FDBF17 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "mac/ja-JP.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -745,6 +753,17 @@
 				5087E76F17EB910900C73F5D /* 6chefs2_1.0.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		26460BA11D72EE0700F0336C /* ConfigData */ = {
+			isa = PBXGroup;
+			children = (
+				26460BA21D72EF1500F0336C /* DebugConfigData.cpp */,
+				26460BA31D72EF1500F0336C /* DebugConfigData.h */,
+				2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */,
+				2672D5031D72F79700AC0E96 /* MasterConfigData.h */,
+			);
+			name = ConfigData;
 			sourceTree = "<group>";
 		};
 		26CEE23F1D71A5FB00956ED3 /* PlayerData */ = {
@@ -1156,8 +1175,8 @@
 				DCB075431C9417B900D69F72 /* KeyconfigManager.h */,
 				DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */,
 				DC01027D1C945F2F0076810F /* EventListenerKeyboardManager.h */,
-				268E3FA71D64BFD90098B235 /* MasterConfigManager.cpp */,
-				268E3FA81D64BFD90098B235 /* MasterConfigManager.h */,
+				268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */,
+				268E3FA81D64BFD90098B235 /* ConfigDataManager.h */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1230,6 +1249,7 @@
 		DC0391021C871E1000C50E8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26460BA11D72EE0700F0336C /* ConfigData */,
 				26CEE2401D71A6BD00956ED3 /* CsvData */,
 				26CEE23F1D71A5FB00956ED3 /* PlayerData */,
 				DC0391031C871E1000C50E8E /* ChangeMapHistory.cpp */,
@@ -1562,6 +1582,7 @@
 				26460B981D72EBC800F0336C /* LocalPlayerData.cpp in Sources */,
 				DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */,
 				9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
+				2672D5041D72F79700AC0E96 /* MasterConfigData.cpp in Sources */,
 				DC0391E51C871E1000C50E8E /* Enemy.cpp in Sources */,
 				26460B911D72EBB600F0336C /* MapData.cpp in Sources */,
 				2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
@@ -1574,7 +1595,7 @@
 				DC0391D51C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
 				DC0391AD1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0391D11C871E1000C50E8E /* SystemMessageLayer.cpp in Sources */,
-				268E3FA91D64BFD90098B235 /* MasterConfigManager.cpp in Sources */,
+				268E3FA91D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
 				DC0392311C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0391C11C871E1000C50E8E /* MiniSelector.cpp in Sources */,
@@ -1591,6 +1612,7 @@
 				DC0392491C871E1000C50E8E /* SlideNode.cpp in Sources */,
 				26460B8D1D72EBB600F0336C /* ChapterData.cpp in Sources */,
 				DC0391B91C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */,
+				26460BA41D72EF1500F0336C /* DebugConfigData.cpp in Sources */,
 				DC03924F1C871E1000C50E8E /* MapUtils.cpp in Sources */,
 				DC0391891C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
 				DC0391931C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
@@ -1642,6 +1664,7 @@
 				DC0391B01C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
 				DC0391C41C871E1000C50E8E /* NumberSelector.cpp in Sources */,
 				DC0391A01C871E1000C50E8E /* MapEvent.cpp in Sources */,
+				26460BA51D72EF1500F0336C /* DebugConfigData.cpp in Sources */,
 				DC03918A1C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
 				DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
 				9FB79E721D363073004E81CF /* AssertScene.cpp in Sources */,
@@ -1650,6 +1673,7 @@
 				26460B991D72ED7F00F0336C /* ChapterData.cpp in Sources */,
 				DC0391F61C871E1000C50E8E /* CheapChaser.cpp in Sources */,
 				DC0391AC1C871E1000C50E8E /* ButtonMashingLayer.cpp in Sources */,
+				2672D5051D72F79700AC0E96 /* MasterConfigData.cpp in Sources */,
 				DC03919A1C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC03924C1C871E1000C50E8E /* StaminaBar.cpp in Sources */,
 				DC0392041C871E1000C50E8E /* PathObject.cpp in Sources */,
@@ -1742,7 +1766,7 @@
 				26460B9B1D72ED9600F0336C /* DocumentData.cpp in Sources */,
 				DC0391A61C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
-				268E3FAA1D64BFD90098B235 /* MasterConfigManager.cpp in Sources */,
+				268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
 				DC0391FC1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				DC0392261C871E1000C50E8E /* GameOverScene.cpp in Sources */,
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,

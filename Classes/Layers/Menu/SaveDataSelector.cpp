@@ -14,7 +14,7 @@
 #include "Datas/MapObject/CharacterData.h"
 #include "UI/NotificationBand.h"
 #include "Managers/CsvDataManager.h"
-#include "Managers/MasterConfigManager.h"
+#include "Managers/ConfigDataManager.h"
 
 // 定数
 const int SaveDataSelector::MAX_FRIENDSHIP_COUNT = 5;
@@ -102,7 +102,7 @@ Node* SaveDataSelector::createSavePanel(SaveIndex saveIndex)
     panel->addChild(count);
     
     // 下部分
-    if (MasterConfigManager::getInstance()->isDisplay(MasterConfigManager::FRIENDSHIP))
+    if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::FRIENDSHIP))
     {
         // 友好度を表示 FIXME: 5個までなの微妙な気がする
         for (int i = 0; i < saveIndex.friendship; i++)

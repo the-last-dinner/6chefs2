@@ -9,8 +9,7 @@
 #include "Managers/TextureManager.h"
 #include "Managers/PlayerDataManager.h"
 #include "Managers/CsvDataManager.h"
-#include "Managers/DebugManager.h"
-#include "Managers/MasterConfigManager.h"
+#include "Managers/ConfigDataManager.h"
 
 #include "Models/PlayerData/LocalPlayerData.h"
 #include "Models/PlayerData/GlobalPlayerData.h"

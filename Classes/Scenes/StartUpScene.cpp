@@ -36,13 +36,12 @@ void StartUpScene::onEnter()
     CsvDataManager::getInstance();
     
     // 暗号化が必要な場合は暗号化
-    if (DebugManager::getInstance()->getCryptTrigger() && DebugManager::getInstance()->isPlainData())
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->needInitialCrypt())
     {
         this->ecnryptCsvFiles();
         this->encryptSaveFiles();
         this->encryptEventScripts();
-        DebugManager::getInstance()->setOffCryptTrigger();
-        DebugManager::getInstance()->setOffPlainData();
+        ConfigDataManager::getInstance()->getDebugConfigData()->setCrypted();
     }
     
     // セーブデータ準備
