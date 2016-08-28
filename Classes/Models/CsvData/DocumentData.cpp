@@ -11,7 +11,7 @@
 // 初期化
 bool DocumentData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/document.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::DOCUMENT);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;

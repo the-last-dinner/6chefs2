@@ -11,7 +11,7 @@
 // 初期化
 bool MapData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/map.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::MAP);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;

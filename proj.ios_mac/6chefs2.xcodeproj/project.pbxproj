@@ -31,6 +31,8 @@
 		26460BA51D72EF1500F0336C /* DebugConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460BA21D72EF1500F0336C /* DebugConfigData.cpp */; };
 		2672D5041D72F79700AC0E96 /* MasterConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */; };
 		2672D5051D72F79700AC0E96 /* MasterConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */; };
+		2672D5081D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */; };
+		2672D5091D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */; };
 		268E3FA91D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
@@ -375,6 +377,8 @@
 		26460BA31D72EF1500F0336C /* DebugConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugConfigData.h; path = ConfigData/DebugConfigData.h; sourceTree = "<group>"; };
 		2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MasterConfigData.cpp; path = ConfigData/MasterConfigData.cpp; sourceTree = "<group>"; };
 		2672D5031D72F79700AC0E96 /* MasterConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterConfigData.h; path = ConfigData/MasterConfigData.h; sourceTree = "<group>"; };
+		2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventScriptValidator.cpp; sourceTree = "<group>"; };
+		2672D5071D734C7F00AC0E96 /* EventScriptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScriptValidator.h; sourceTree = "<group>"; };
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
@@ -1057,6 +1061,8 @@
 				DC0390931C871E1000C50E8E /* SceneEvent.h */,
 				DC0390941C871E1000C50E8E /* SoundEvent.cpp */,
 				DC0390951C871E1000C50E8E /* SoundEvent.h */,
+				2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */,
+				2672D5071D734C7F00AC0E96 /* EventScriptValidator.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1603,6 +1609,7 @@
 				DC0391E11C871E1000C50E8E /* TextureManager.cpp in Sources */,
 				DC0391BD1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0391871C871E1000C50E8E /* TitleSceneData.cpp in Sources */,
+				2672D5081D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */,
 				DC0392051C871E1000C50E8E /* PlainArea.cpp in Sources */,
 				DC0392371C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC03921D1C871E1000C50E8E /* DungeonCameraScene.cpp in Sources */,
@@ -1688,6 +1695,7 @@
 				DC0391EE1C871E1000C50E8E /* MapObject.cpp in Sources */,
 				DC0391FE1C871E1000C50E8E /* RandomMove.cpp in Sources */,
 				DC0391EA1C871E1000C50E8E /* GhostObject.cpp in Sources */,
+				2672D5091D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */,
 				DC0392281C871E1000C50E8E /* StartUpScene.cpp in Sources */,
 				DC03922C1C871E1000C50E8E /* CameraTask.cpp in Sources */,
 				DC0392341C871E1000C50E8E /* FollowType.cpp in Sources */,

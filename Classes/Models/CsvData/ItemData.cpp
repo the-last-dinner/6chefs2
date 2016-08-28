@@ -11,7 +11,7 @@
 // 初期化
 bool ItemData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/item.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::ITEM);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;

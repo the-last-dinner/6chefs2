@@ -13,6 +13,7 @@
 
 class GameEvent;
 class EventSpawn;
+class EventScriptValidator;
 
 class EventFactory : public Ref
 {
@@ -20,6 +21,11 @@ class EventFactory : public Ref
 public:
     CREATE_FUNC(EventFactory)
 
+// インスタンス変数
+private:
+    static const map<string, function<GameEvent*(rapidjson::Value&)>> typeToCreateFunc;
+    EventScriptValidator* validator {};
+    
 // インスタンスメソッド
 private:
     EventFactory();
