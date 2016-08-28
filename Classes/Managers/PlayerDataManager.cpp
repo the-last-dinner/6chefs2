@@ -9,8 +9,8 @@
 
 #include "Scenes/EndingScene.h"
 
-#include "Models/GlobalPlayerData.h"
-#include "Models/LocalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
+#include "Models/PlayerData/LocalPlayerData.h"
 #include "Models/StopWatch.h"
 
 #include "Utils/StringUtils.h"

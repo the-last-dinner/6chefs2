@@ -6,7 +6,7 @@
 //
 //
 
-#include "TrophyData.h"
+#include "Models/CsvData/TrophyData.h"
 
 // 初期化
 bool TrophyData::init()

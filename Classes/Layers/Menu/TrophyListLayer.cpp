@@ -6,11 +6,11 @@
 //
 //
 
-#include "TrophyListLayer.h"
+#include "Layers/Menu/TrophyListLayer.h"
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 #include "Managers/PlayerDataManager.h"
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 
 // 初期化
 bool TrophyListLayer::init()

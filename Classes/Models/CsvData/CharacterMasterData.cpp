@@ -6,7 +6,7 @@
 //
 //
 
-#include "CharacterMasterData.h"
+#include "Models/CsvData/CharacterMasterData.h"
 
 // 初期化
 bool CharacterMasterData::init()

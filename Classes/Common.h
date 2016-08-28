@@ -12,8 +12,8 @@
 #include "Managers/DebugManager.h"
 #include "Managers/MasterConfigManager.h"
 
-#include "Models/LocalPlayerData.h"
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/LocalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 
 #include "Utils/MapUtils.h"
 #include "Utils/StringUtils.h"

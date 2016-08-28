@@ -17,7 +17,7 @@
 #include "Layers/Menu/TitleMainMenuLayer.h"
 #include "Layers/Menu/TrophyListLayer.h"
 
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 
 // コンストラクタ
 TitleScene::TitleScene(){FUNCLOG}
