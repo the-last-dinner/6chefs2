@@ -12,7 +12,7 @@
 #include "Datas/MapObject/EnemyData.h"
 
 #include "Event/EventFactory.h"
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 #include "Event/EventScript.h"
 
 #include "Layers/Dungeon/TiledMapLayer.h"
@@ -66,9 +66,9 @@ DungeonSceneManager::DungeonSceneManager()
     this->eventFactory = eventFactory;
     
     // イベントバリデータを生成
-    EventScriptValidator* scriptValidator {EventScriptValidator::create()};
-    CC_SAFE_RETAIN(scriptValidator);
-    this->scriprtValidator = scriptValidator;
+    GameEventHelper* gameEventHelper {GameEventHelper::create()};
+    CC_SAFE_RETAIN(gameEventHelper);
+    this->gameEventHelper = gameEventHelper;
     
     // スタミナ生成
     Stamina* stamina {Stamina::create()};
@@ -88,7 +88,7 @@ DungeonSceneManager::~DungeonSceneManager()
     FUNCLOG
 
     CC_SAFE_RELEASE_NULL(this->eventFactory);
-    CC_SAFE_RELEASE_NULL(this->scriprtValidator);
+    CC_SAFE_RELEASE_NULL(this->gameEventHelper);
     CC_SAFE_RELEASE_NULL(this->stamina);
     CC_SAFE_RELEASE_NULL(this->commonEventScripts);
 };
@@ -115,7 +115,7 @@ EventScript* DungeonSceneManager::getEventScript() const { return this->getScene
 CommonEventScripts* DungeonSceneManager::getCommonEventScriptsObject() { return this->commonEventScripts; }
 
 // スクリプトバリデータを取得
-EventScriptValidator* DungeonSceneManager::getScriptValidator() const { return this->scriprtValidator; }
+GameEventHelper* DungeonSceneManager::getGameEventHelper() const { return this->gameEventHelper; }
 
 // パーティを取得
 Party* DungeonSceneManager::getParty() { return this->getScene()->party; }

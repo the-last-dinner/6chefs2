@@ -9,7 +9,7 @@
 #include "Event/EventFactory.h"
 #include "Event/SceneEvent.h"
 
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
 
 #include "Datas/Scene/DungeonCameraSceneData.h"
@@ -38,7 +38,7 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
     Direction direction {Direction::SIZE};
 
     // directionの指定がされている時
-    if(this->validator->hasMember(json, member::DIRECTION))
+    if(this->eventHelper->hasMember(json, member::DIRECTION))
     {
         direction = MapUtils::toEnumDirection(json[member::DIRECTION].GetString());
     }
@@ -52,7 +52,7 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
     this->currentLocation = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation();
     
     // 移動後に実行するイベントID
-    if(this->validator->hasMember(json, member::EVENT_ID)) this->initEventId = stoi(json[member::EVENT_ID].GetString());
+    if(this->eventHelper->hasMember(json, member::EVENT_ID)) this->initEventId = stoi(json[member::EVENT_ID].GetString());
     
     return true;
 }
@@ -71,17 +71,17 @@ bool CreateCameraEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // 映したい場所
-    this->location.map_id = (this->validator->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
+    this->location.map_id = (this->eventHelper->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
  
-    Point position { this->validator->getPoint(json) };
+    Point position { this->eventHelper->getPoint(json) };
     this->location.x = position.x;
     this->location.y = position.y;
     
     // ターゲット
-    if(this->validator->hasMember(json, member::OBJECT_ID)) this->objId = stoi(json[member::OBJECT_ID].GetString());
+    if(this->eventHelper->hasMember(json, member::OBJECT_ID)) this->objId = stoi(json[member::OBJECT_ID].GetString());
     
     // イベント
-    if(!this->validator->hasMember(json, member::ACTION)) return false;
+    if(!this->eventHelper->hasMember(json, member::ACTION)) return false;
     this->event = this->factory->createGameEvent(json[member::ACTION]);
     CC_SAFE_RETAIN(this->event);
     
@@ -105,10 +105,10 @@ bool MoveCameraEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // 目的地
-    this->toPosition = this->validator->getToPoint(json);
+    this->toPosition = this->eventHelper->getToPoint(json);
     
     // 移動時間
-    if(this->validator->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
     return true;
 }
@@ -146,9 +146,9 @@ bool FadeOutEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(this->validator->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
-    this->color = this->validator->getColor(json);
+    this->color = this->eventHelper->getColor(json);
     
     return true;
 }
@@ -165,7 +165,7 @@ bool FadeInEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(this->validator->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
     return true;
 }
@@ -183,7 +183,7 @@ bool GameOverEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ゲームオーバーのID
-    if(this->validator->hasMember(json, member::ID)) this->gameOverId = stoi(json[member::ID].GetString());
+    if(this->eventHelper->hasMember(json, member::ID)) this->gameOverId = stoi(json[member::ID].GetString());
     
     return true;
 }
@@ -202,7 +202,7 @@ bool EndingEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // エンディングID
-    if(this->validator->hasMember(json, member::ID)) this->endingId = stoi(json[member::ID].GetString());
+    if(this->eventHelper->hasMember(json, member::ID)) this->endingId = stoi(json[member::ID].GetString());
     
     return true;
 }
@@ -234,7 +234,7 @@ void BackToTitleEvent::run()
 bool InfoAssertEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
-    this->text = (this->validator->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
+    this->text = (this->eventHelper->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
     return true;
 }
 

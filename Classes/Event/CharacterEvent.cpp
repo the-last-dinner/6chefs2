@@ -8,7 +8,7 @@
 
 #include "Event/CharacterEvent.h"
 
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
 
 #include "Algorithm/PathFinder.h"
@@ -27,7 +27,7 @@ bool CharacterEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(!this->validator->hasMember(json, member::OBJECT_ID)) return false;
+    if(!this->eventHelper->hasMember(json, member::OBJECT_ID)) return false;
     
     this->objectId = json[member::OBJECT_ID].GetString();
     
@@ -36,7 +36,7 @@ bool CharacterEvent::init(rapidjson::Value& json)
 
 bool CharacterEvent::onRun()
 {
-    Character* target { this->validator->getMapObjectById<Character*>(this->objectId) };
+    Character* target { this->eventHelper->getMapObjectById<Character*>(this->objectId) };
     if(!target)
     {
         this->setDone();
@@ -58,7 +58,7 @@ bool ChangeDirectionEvent::init(rapidjson::Value& json)
 {
     if(!CharacterEvent::init(json)) return false;
     
-    this->direction = this->validator->getDirection(json);
+    this->direction = this->eventHelper->getDirection(json);
     
     if(this->direction == Direction::SIZE) return false;
     
@@ -80,15 +80,15 @@ bool WalkByEvent::init(rapidjson::Value& json)
 {
     if(!CharacterEvent::init(json)) return false;
     
-    this->direction = this->validator->getDirection(json);
+    this->direction = this->eventHelper->getDirection(json);
     
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
     
     if(this->direction == Direction::SIZE || this->gridNum == 0) return false;
     
-    if(this->validator->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
-    if(this->validator->hasMember(json, member::OPTION)) this->back = true;
+    if(this->eventHelper->hasMember(json, member::OPTION)) this->back = true;
     
     return true;
 }
@@ -120,10 +120,10 @@ bool WalkToEvent::init(rapidjson::Value& json)
     if(!CharacterEvent::init(json)) return false;
     
     // 目的地座標をcocos座標系で保持
-    this->destPosition = this->validator->getPoint(json);
+    this->destPosition = this->eventHelper->getPoint(json);
     
     // 速さの倍率
-    if(this->validator->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
     return true;
 }
@@ -158,7 +158,7 @@ void WalkToEvent::update(float delta)
 bool ChangeHeroEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
-    if (!this->validator->hasMember(json, member::CHARA_ID)) return false;
+    if (!this->eventHelper->hasMember(json, member::CHARA_ID)) return false;
     this->charaId = stoi(json[member::CHARA_ID].GetString());
     
     return true;

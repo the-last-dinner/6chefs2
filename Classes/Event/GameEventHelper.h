@@ -1,29 +1,29 @@
 //
-//  EventScriptValidator.h
+//  GameEventHelper.h
 //  LastSupper
 //
 //  Created by Kohei Asami on 2015/10/24.
 //
 //
 
-#ifndef __LastSupper__EventScriptValidator__
-#define __LastSupper__EventScriptValidator__
+#ifndef __LastSupper__GameEventHelper__
+#define __LastSupper__GameEventHelper__
 
 #include "Common.h"
 
 class MapObject;
 
 // イベントスクリプトの値チェック、変換を担うクラス
-class EventScriptValidator : public Ref
+class GameEventHelper : public Ref
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(EventScriptValidator)
+    CREATE_FUNC(GameEventHelper)
     
 // インスタンスメソッド
 private:
-    EventScriptValidator();
-    ~EventScriptValidator();
+    GameEventHelper();
+    ~GameEventHelper();
     bool init();
     
     // condition
@@ -51,4 +51,4 @@ public:
     int getEventId(rapidjson::Value& json);
     Color3B getColor(rapidjson::Value& json) const;
 };
-#endif /* defined(__LastSupper__EventScriptValidator__) */
+#endif /* defined(__LastSupper__GameEventHelper__) */

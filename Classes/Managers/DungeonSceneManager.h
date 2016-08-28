@@ -22,7 +22,7 @@ class MapObject;
 class MapObjectList;
 class EventFactory;
 class EventScript;
-class EventScriptValidator;
+class GameEventHelper;
 class Party;
 class GameEvent;
 class Enemy;
@@ -40,7 +40,7 @@ public:
 // インスタンス変数
 private:
     EventFactory* eventFactory { nullptr };
-    EventScriptValidator* scriprtValidator { nullptr };
+    GameEventHelper* gameEventHelper { nullptr };
     Sprite* cover { nullptr };
     vector<SummonData> summonDatas {};
     StopWatch* stopWatch { nullptr };
@@ -58,7 +58,7 @@ public:
     TiledMapLayer* getMapLayer() const;
     MapObjectList* getMapObjectList() const;
     EventFactory* getEventFactory() const;
-    EventScriptValidator* getScriptValidator() const;
+    GameEventHelper* getGameEventHelper() const;
     EventScript* getEventScript() const;
     CommonEventScripts* getCommonEventScriptsObject();
     Party* getParty();

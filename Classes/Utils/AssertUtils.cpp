@@ -13,7 +13,7 @@
 void LastSupper::AssertUtils::infoAssert(const string& message)
 {
     // デバッグじゃない時は出さない
-    if(!DebugManager::getInstance()->isPlainData()) return;
+    if(!ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) return;
     
     AssertScene* assert { AssertScene::create(message, AssertScene::AssertType::INFO) };
     
@@ -26,7 +26,7 @@ void LastSupper::AssertUtils::infoAssert(const string& message)
 void LastSupper::AssertUtils::warningAssert(const string& message)
 {
     // デバッグじゃない時は出さない
-    if(!DebugManager::getInstance()->isPlainData()) return;
+    if(!ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) return;
     
     AssertScene* assert { AssertScene::create(message, AssertScene::AssertType::WARNING) };
     
@@ -37,7 +37,7 @@ void LastSupper::AssertUtils::warningAssert(const string& message)
 
 void LastSupper::AssertUtils::fatalAssert(const string& message)
 {
-    AssertScene::AssertType assertType = DebugManager::getInstance()->isPlainData() ? AssertScene::AssertType::FATAL : AssertScene::AssertType::ERROR;
+    AssertScene::AssertType assertType = ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode() ? AssertScene::AssertType::FATAL : AssertScene::AssertType::ERROR;
     AssertScene* assert { AssertScene::create(message, assertType) };
     
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();

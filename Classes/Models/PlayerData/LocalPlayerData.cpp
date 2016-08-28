@@ -6,8 +6,8 @@
 //
 //
 
-#include "Models/LocalPlayerData.h"
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/LocalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 #include "Utils/AssertUtils.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
