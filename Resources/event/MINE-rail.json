@@ -84,6 +84,10 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
+				{
 					"type":"changeFlg",
 					"mapID":"63",
 					"eventID":"4",
@@ -103,6 +107,10 @@
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
 				{
 					"type":"changeFlg",
 					"mapID":"63",
@@ -126,6 +134,10 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
+				{
 					"type":"changeFlg",
 					"mapID":"63",
 					"eventID":"5",
@@ -145,6 +157,10 @@
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
 				{
 					"type":"changeFlg",
 					"mapID":"63",
@@ -168,6 +184,10 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
+				{
 					"type":"changeFlg",
 					"mapID":"63",
 					"eventID":"6",
@@ -187,6 +207,10 @@
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
 				{
 					"type":"changeFlg",
 					"mapID":"63",
@@ -210,6 +234,10 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
+				{
 					"type":"changeFlg",
 					"mapID":"63",
 					"eventID":"7",
@@ -229,6 +257,10 @@
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"knife.mp3"
+				},
 				{
 					"type":"changeFlg",
 					"mapID":"63",

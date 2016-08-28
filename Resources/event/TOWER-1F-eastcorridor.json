@@ -66,12 +66,22 @@
 	],
 	"4":[
 		{
+			"type":"fadein",
+			"time":3.0
+		},
+		{
 			"type":"sequence",
 			"action":[
 				{
 					"type":"charaWalk",
 					"objID":"hero",
+					"steps":1.0,
 					"direction":"RIGHT"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"UP"
 				},
 				{
 					"type":"charaMsg",
@@ -105,9 +115,17 @@
 							"file":"chapter5.mp3"
 						},
 						{
-							"type":"displayImg",
-							"file":"chapter5.png",
-							"time":13.0
+							"type":"sequence",
+							"action":[
+								{
+									"type":"displayImg",
+									"file":"chapter5.png",
+									"time":13.0
+								},
+								{
+									"type":"stopBGM"
+								}
+							]
 						}
 					]
 				},
@@ -118,287 +136,296 @@
 					"y":15,
 					"action":[
 						{
-							"type":"createObject",
-							"objID":"1054",
-							"charaID":"5",
-							"x":7,
-							"y":9,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"createObject",
-							"objID":"1055",
-							"charaID":"8",
-							"x":11,
-							"y":9,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"createObject",
-							"objID":"1056",
-							"charaID":"7",
-							"x":9,
-							"y":7,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"createObject",
-							"objID":"1057",
-							"charaID":"4",
-							"x":7,
-							"y":11,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"createObject",
-							"objID":"1058",
-							"charaID":"6",
-							"x":11,
-							"y":11,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"fadein"
-						},
-						{
-							"type":"charaMsg",
-							"talk":[
+							"type":"sequence",
+							"action":[
 								{
-									"text":["この奥に戸塚がいるのね・・・"],
-									"charaID":"7",
-									"imgID":"3"
-								},
-								{
-									"text":["おう・・・この塔は確か五階建てだった。\nいるとすればこの階だろうな。"],
-									"charaID":"8",
-									"imgID":"1"
-								},
-								{
-									"text":["心してかかりますぞ・・・"],
-									"charaID":"4",
-									"imgID":"2"
-								},
-								{
-									"text":["行くぞ・・・"],
+									"type":"createObject",
+									"objID":"1054",
 									"charaID":"5",
-									"imgID":"2"
-								}
-							]
-						},
-						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"fadeout",
-									"time":3.0
+									"x":7,
+									"y":9,
+									"direction":"UP",
+									"movePattern":"1"
 								},
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"1054",
-											"x":9,
-											"y":5
-										},
-										{
-											"type":"removeObject",
-											"objID":"1054"
-										}
-									]
+									"type":"createObject",
+									"objID":"1055",
+									"charaID":"8",
+									"x":11,
+									"y":9,
+									"direction":"UP",
+									"movePattern":"1"
 								},
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"1055",
-											"x":9,
-											"y":5
-										},
-										{
-											"type":"removeObject",
-											"objID":"1055"
-										}
-									]
+									"type":"createObject",
+									"objID":"1056",
+									"charaID":"7",
+									"x":9,
+									"y":7,
+									"direction":"UP",
+									"movePattern":"1"
 								},
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"1056",
-											"x":9,
-											"y":5
-										},
-										{
-											"type":"removeObject",
-											"objID":"1056"
-										}
-									]
+									"type":"createObject",
+									"objID":"1057",
+									"charaID":"4",
+									"x":7,
+									"y":11,
+									"direction":"UP",
+									"movePattern":"1"
 								},
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"1057",
-											"x":9,
-											"y":5
-										},
-										{
-											"type":"removeObject",
-											"objID":"1057"
-										}
-									]
+									"type":"createObject",
+									"objID":"1058",
+									"charaID":"6",
+									"x":11,
+									"y":11,
+									"direction":"UP",
+									"movePattern":"1"
 								},
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"1058",
-											"x":9,
-											"y":5
-										},
-										{
-											"type":"removeObject",
-											"objID":"1058"
-										}
-									]
-								}
-							]
-						},
-						{
-							"type":"createCamera",
-							"mapID":"54",
-							"x":53,
-							"y":66,
-							"action":[
+									"type":"fadein"
+								},
 								{
-									"type":"sequence",
-									"action":[
+									"type":"charaMsg",
+									"talk":[
 										{
-											"type":"createObject",
-											"objID":"1059",
-											"charaID":"5",
-											"x":53,
-											"y":68,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1060",
-											"charaID":"8",
-											"x":68,
-											"y":69,
-											"direction":"RIGHT",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1061",
+											"text":["この奥に戸塚がいるのね・・・"],
 											"charaID":"7",
-											"x":46,
-											"y":70,
-											"direction":"LEFT",
-											"movePattern":"1"
+											"imgID":"3"
 										},
 										{
-											"type":"createObject",
-											"objID":"1062",
+											"text":["おう・・・この塔は確か五階建てだった。\nいるとすればこの階だろうな。"],
+											"charaID":"8",
+											"imgID":"1"
+										},
+										{
+											"text":["心してかかりますぞ・・・"],
 											"charaID":"4",
-											"x":50,
-											"y":73,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1063",
-											"charaID":"6",
-											"x":57,
-											"y":73,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["あん？\nいねぇじゃねぇか！"],
-													"charaID":"5",
-													"imgID":"1",
-													"option":"reaction"
-												},
-												{
-													"text":["あのオヤジ・・・\nデマだったのね・・・"],
-													"charaID":"7",
-													"imgID":"3"
-												}
-											]
-										},
-										{
-											"type":"spawn",
-											"action":[
-												{
-									                "type":"playSE",
-									                "file":"reaction.mp3",
-									                "volume":0.25
-									            },
-												{
-													"type":"reaction",
-													"objID":"1063"
-												}
-											]
-										},
-										{
-											"type":"charaMsg",
-											"text":["真夏ちゃん・・・蘭丸さん・・・"],
-											"charaID":"6",
 											"imgID":"2"
 										},
 										{
-											"type":"charaWalkTo",
-											"objID":"1063",
-											"x":53,
-											"y":57,
-											"speed":3.0
-										},
-										{
-											"type":"removeObject",
-											"objID":"1063"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"1061",
-											"direction":"DOWN"
-										},
-										{
-											"type":"charaMsg",
-											"text":["ちょっとゆきりん！？","皆！追いかけるよ！"],
-											"charaID":"7",
-											"imgID":"1",
-											"option":"reaction"
-										},
+											"text":["行くぞ・・・"],
+											"charaID":"5",
+											"imgID":"2"
+										}
+									]
+								},
+								{
+									"type":"spawn",
+									"action":[
 										{
 											"type":"fadeout",
 											"time":3.0
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1054",
+													"x":9,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1054"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1055",
+													"x":9,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1055"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1056",
+													"x":9,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1056"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1057",
+													"x":9,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1057"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1058",
+													"x":9,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1058"
+												}
+											]
 										}
 									]
 								}
 							]
 						}
 					]
+				},
+				{
+					"type":"createCamera",
+					"mapID":"54",
+					"x":53,
+					"y":66,
+					"action":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"createObject",
+									"objID":"1059",
+									"charaID":"5",
+									"x":53,
+									"y":68,
+									"direction":"UP",
+									"movePattern":"1"
+								},
+								{
+									"type":"createObject",
+									"objID":"1060",
+									"charaID":"8",
+									"x":68,
+									"y":69,
+									"direction":"RIGHT",
+									"movePattern":"1"
+								},
+								{
+									"type":"createObject",
+									"objID":"1061",
+									"charaID":"7",
+									"x":46,
+									"y":70,
+									"direction":"LEFT",
+									"movePattern":"1"
+								},
+								{
+									"type":"createObject",
+									"objID":"1062",
+									"charaID":"4",
+									"x":50,
+									"y":73,
+									"direction":"UP",
+									"movePattern":"1"
+								},
+								{
+									"type":"createObject",
+									"objID":"1063",
+									"charaID":"6",
+									"x":57,
+									"y":73,
+									"direction":"UP",
+									"movePattern":"1"
+								},
+								{
+									"type":"fadein"
+								},
+								{
+									"type":"charaMsg",
+									"talk":[
+										{
+											"text":["あん？\nいねぇじゃねぇか！"],
+											"charaID":"5",
+											"imgID":"1",
+											"option":"reaction"
+										},
+										{
+											"text":["あのオヤジ・・・\nデマだったのね・・・"],
+											"charaID":"7",
+											"imgID":"3"
+										}
+									]
+								},
+								{
+									"type":"spawn",
+									"action":[
+										{
+							                "type":"playSE",
+							                "file":"reaction.mp3",
+							                "volume":0.25
+							            },
+										{
+											"type":"reaction",
+											"objID":"1063"
+										}
+									]
+								},
+								{
+									"type":"charaMsg",
+									"text":["真夏ちゃん・・・蘭丸さん・・・"],
+									"charaID":"6",
+									"imgID":"2"
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"1063",
+									"x":53,
+									"y":77,
+									"speed":3.0
+								},
+								{
+									"type":"removeObject",
+									"objID":"1063"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"1061",
+									"direction":"DOWN"
+								},
+								{
+									"type":"charaMsg",
+									"text":["ちょっとゆきりん！？","皆！追いかけるよ！"],
+									"charaID":"7",
+									"imgID":"1",
+									"option":"reaction"
+								},
+								{
+									"type":"fadeout",
+									"time":3.0
+								}
+							]
+						}
+					]
+				},
+				{
+					"type":"fadein",
+					"time":3.0
 				},
 				{
 					"type":"charaMsg",
@@ -415,7 +442,7 @@
 						},
 						{
 							"text":["真夏ちゃーん、蘭丸さーん"],
-							"charaID":"7",
+							"charaID":"6",
 							"imgID":"2",
 							"option":"reaction"
 						}
@@ -466,6 +493,11 @@
 					"speed":2.0
 				},
 				{
+					"type":"changeDirection",
+					"objID":"1064",
+					"direction":"RIGHT"
+				},
+				{
 					"type":"charaMsg",
 					"text":["ゆ、雪！？"],
 					"charaID":"3",
@@ -482,16 +514,16 @@
 									"type":"createObject",
 									"objID":"1065",
 									"charaID":"5",
-									"x":14,
-									"y":9,
-									"direction":"DOwn",
+									"x":6,
+									"y":18,
+									"direction":"DOWN",
 									"movePattern":"1"
 								},
 								{
 									"type":"charaWalkTo",
 									"objID":"1065",
-									"x":8,
-									"y":53,
+									"x":6,
+									"y":43,
 									"speed":2.0
 								}
 							]
@@ -503,16 +535,16 @@
 									"type":"createObject",
 									"objID":"1066",
 									"charaID":"8",
-									"x":14,
-									"y":9,
-									"direction":"DOwn",
+									"x":8,
+									"y":21,
+									"direction":"DOWN",
 									"movePattern":"1"
 								},
 								{
 									"type":"charaWalkTo",
 									"objID":"1066",
 									"x":8,
-									"y":51,
+									"y":46,
 									"speed":2.0
 								}
 							]
@@ -524,16 +556,16 @@
 									"type":"createObject",
 									"objID":"1067",
 									"charaID":"7",
-									"x":14,
-									"y":9,
-									"direction":"DOwn",
+									"x":6,
+									"y":24,
+									"direction":"DOWN",
 									"movePattern":"1"
 								},
 								{
 									"type":"charaWalkTo",
 									"objID":"1067",
 									"x":6,
-									"y":51,
+									"y":49,
 									"speed":2.0
 								}
 							]
@@ -547,16 +579,16 @@
 									"charaID":"4",
 									"eventID":"7",
 									"trigger":"2",
-									"x":14,
-									"y":9,
-									"direction":"DOwn",
+									"x":8,
+									"y":16,
+									"direction":"DOWN",
 									"movePattern":"1"
 								},
 								{
 									"type":"charaWalkTo",
 									"objID":"1068",
 									"x":8,
-									"y":51,
+									"y":41,
 									"speed":2.0
 								}
 							]
@@ -589,7 +621,7 @@
 						},
 						{
 							"text":["ぬぅ・・・\n（まるおくんは普通我ですぞ・・・）"],
-							"charaID":"2",
+							"charaID":"4",
 							"imgID":"1"
 						},
 						{
@@ -624,7 +656,7 @@
 						},
 						{
 							"text":["えぇ・・・\nそれで何とか逃げてここまで来たのよ。"],
-							"charaID":"4",
+							"charaID":"3",
 							"imgID":"2"
 						},
 						{
@@ -691,6 +723,10 @@
 					"target":"hero"
 				},
 				{
+					"type":"removeObject",
+					"objID":"1053"
+				},
+				{
 					"type":"createObject",
 					"objID":"1069",
 					"charaID":"2",
@@ -711,6 +747,12 @@
 					"y":57,
 					"direction":"UP",
 					"movePattern":"1"
+				},
+				{
+					"type":"already"
+				},
+				{
+					"type":"fadein"
 				}
 			]
 		}
@@ -787,7 +829,9 @@
 						},
 						{
 							"type":"changeFlg",
-							"flg":["40","8",1]
+							"mapID":"40",
+							"eventID":"8",
+							"flg":1
 						},
 						{
 							"type":"changeMap",

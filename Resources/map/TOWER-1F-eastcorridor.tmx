@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="60" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="13">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="60" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="24">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="nomen" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="nomen" tilewidth="16" tileheight="16" tilecount="120" columns="10">
   <image source="nomen.png" trans="aa55ff" width="160" height="192"/>
  </tileset>
  <layer name="Base" width="18" height="60">
@@ -66,5 +66,18 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="chara">
+  <object id="13" x="112" y="832" width="32" height="32"/>
+  <object id="14" x="128" y="832" width="32" height="32"/>
+  <object id="15" x="96" y="832" width="32" height="32"/>
+  <object id="16" x="128" y="720" width="32" height="32"/>
+  <object id="17" x="96" y="768" width="32" height="32"/>
+  <object id="18" x="96" y="672" width="32" height="32"/>
+  <object id="19" x="128" y="640" width="32" height="32"/>
+  <object id="20" x="96" y="368" width="32" height="32"/>
+  <object id="21" x="128" y="320" width="32" height="32"/>
+  <object id="22" x="96" y="272" width="32" height="32"/>
+  <object id="23" x="128" y="240" width="32" height="32"/>
  </objectgroup>
 </map>

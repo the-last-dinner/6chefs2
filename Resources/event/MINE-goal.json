@@ -8,7 +8,7 @@
 	"2":[
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"flg":["64","2",0],
 					"event":["63","3"]
@@ -16,21 +16,31 @@
 			],
 			"action":[
 				{
-					"type":"chanegeFlg",
-					"flg":["64","2",1]
+					"type":"changeFlg",
+					"mapID":"64",
+					"eventID":"2",
+					"flg":1
 				},
 				{
-					"type":"changeMap",
-					"mapID":"40",
-					"x":7,
-					"y":53,
-					"eventID":"4"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"40",
+							"x":7,
+							"y":53,
+							"eventID":"4"
+						}
+					]
 				}
 			]
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"flg":["64","2",0],
 					"event":["69","2"]
@@ -38,8 +48,10 @@
 			],
 			"action":[
 				{
-					"type":"chanegeFlg",
-					"flg":["64","2",1]
+					"type":"changeFlg",
+					"mapID":"64",
+					"eventID":"2",
+					"flg":1
 				},
 				{
 					"type":"changeMap",
@@ -52,7 +64,7 @@
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"Nevent":["82","7"],
 					"flg":["64","2",1]
@@ -69,7 +81,7 @@
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["82","7"],
 					"flg":["64","2",1]
@@ -110,7 +122,7 @@
 	"3":[
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["63","3"],
 					"Nevent":["40","4"]
@@ -138,7 +150,7 @@
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["69","2"]
 				},
@@ -228,13 +240,21 @@
 					]
 				},
 				{
-					"type":"changeDirection",
+					"type":"charaWalk",
 					"objID":"hero",
-					"direction":"LEFT"
+					"direction":"UP",
+					"steps":1.0
 				},
 				{
 					"type":"playSE",
 					"file":"hit_dry.mp3"
+				},
+				{
+					"type":"charaWalk",
+					"objID":"hero",
+					"direction":"DOWN",
+					"steps":1.0,
+					"option":"back"
 				},
 				{
 					"type":"wait",
@@ -301,7 +321,7 @@
 	"5":[
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["63","3"],
 					"Nevent":["40","4"]
@@ -327,7 +347,7 @@
 		},
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["69","2"]
 				},
@@ -346,7 +366,7 @@
 	"6":[
 		{
 			"type":"if",
-			"consition":[
+			"condition":[
 				{
 					"event":["40","4"]
 				}
@@ -389,7 +409,7 @@
 									"imgID":"1"
 								},
 								{
-									"text":["戸塚はその悪性タンパク質を\nほとんど生かしたまま調理し、料理にすることができるらしいんだわ","ただこれは半端じゃなく難しいことでな・・・"],
+									"text":["戸塚はその悪性タンパク質を\nほとんど生かしたまま調理し、\n料理にすることができるらしいんだわ","ただこれは半端じゃなく難しいことでな・・・"],
 									"charaID":"5",
 									"imgID":"2"
 								},
@@ -419,12 +439,12 @@
 									"imgID":"2"
 								},
 								{
-									"text":["けどよ、あいにくオレらにはアイツの「過去」なんかに構ってやる\n時間も義理もねぇ。","「ムカつくから殴る」\n喧嘩売る理由なんてソレだけで十分だ。"],
+									"text":["けどよ、あいにくオレらには\nアイツの「過去」なんかに構ってやる\n時間も義理もねぇ。","「ムカつくから殴る」\n喧嘩売る理由なんてソレだけで十分だ。"],
 									"charaID":"8",
 									"imgID":"1"
 								},
 								{
-									"text":["はい！"],
+									"text":["ウス！"],
 									"charaID":"5",
 									"imgID":"2"
 								},

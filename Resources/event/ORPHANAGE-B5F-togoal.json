@@ -51,6 +51,7 @@
 							"layer":"door2"
 						},
 						{
+							"type":"charaMsg",
 							"text":["吾郎よ"],
 							"charaID":"8",
 							"imgID":"1"
