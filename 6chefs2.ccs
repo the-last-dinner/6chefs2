@@ -4,6 +4,23 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="character">
+          <PlistImageFolder Image="daigoro.png" PListFile="daigoro.plist" Name=".daigoro_PList.Dir">
+            <PlistImageFile Name="daigoro_0_0.png" Key="daigoro_0_0.png" />
+            <PlistImageFile Name="daigoro_0_1.png" Key="daigoro_0_1.png" />
+            <PlistImageFile Name="daigoro_0_2.png" Key="daigoro_0_2.png" />
+            <PlistImageFile Name="daigoro_1_0.png" Key="daigoro_1_0.png" />
+            <PlistImageFile Name="daigoro_1_1.png" Key="daigoro_1_1.png" />
+            <PlistImageFile Name="daigoro_1_2.png" Key="daigoro_1_2.png" />
+            <PlistImageFile Name="daigoro_2_0.png" Key="daigoro_2_0.png" />
+            <PlistImageFile Name="daigoro_2_1.png" Key="daigoro_2_1.png" />
+            <PlistImageFile Name="daigoro_2_2.png" Key="daigoro_2_2.png" />
+            <PlistImageFile Name="daigoro_3_0.png" Key="daigoro_3_0.png" />
+            <PlistImageFile Name="daigoro_3_1.png" Key="daigoro_3_1.png" />
+            <PlistImageFile Name="daigoro_3_2.png" Key="daigoro_3_2.png" />
+            <PlistImageFile Name="daigoro_s_0.png" Key="daigoro_s_0.png" />
+            <PlistImageFile Name="daigoro_s_1.png" Key="daigoro_s_1.png" />
+            <PlistImageFile Name="daigoro_s_2.png" Key="daigoro_s_2.png" />
+          </PlistImageFolder>
           <PlistImageFolder Image="magoichi.png" PListFile="magoichi.plist" Name=".magoichi_PList.Dir">
             <PlistImageFile Name="magoichi_0_0.png" Key="magoichi_0_0.png" />
             <PlistImageFile Name="magoichi_0_1.png" Key="magoichi_0_1.png" />
@@ -34,6 +51,35 @@
             <PlistImageFile Name="swim_magoichi_3_1.png" Key="swim_magoichi_3_1.png" />
             <PlistImageFile Name="swim_magoichi_3_2.png" Key="swim_magoichi_3_2.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="manaka.png" PListFile="manaka.plist" Name=".manaka_PList.Dir">
+            <PlistImageFile Name="manaka_0_0.png" Key="manaka_0_0.png" />
+            <PlistImageFile Name="manaka_0_1.png" Key="manaka_0_1.png" />
+            <PlistImageFile Name="manaka_0_2.png" Key="manaka_0_2.png" />
+            <PlistImageFile Name="manaka_1_0.png" Key="manaka_1_0.png" />
+            <PlistImageFile Name="manaka_1_1.png" Key="manaka_1_1.png" />
+            <PlistImageFile Name="manaka_1_2.png" Key="manaka_1_2.png" />
+            <PlistImageFile Name="manaka_2_0.png" Key="manaka_2_0.png" />
+            <PlistImageFile Name="manaka_2_1.png" Key="manaka_2_1.png" />
+            <PlistImageFile Name="manaka_2_2.png" Key="manaka_2_2.png" />
+            <PlistImageFile Name="manaka_3_0.png" Key="manaka_3_0.png" />
+            <PlistImageFile Name="manaka_3_1.png" Key="manaka_3_1.png" />
+            <PlistImageFile Name="manaka_3_2.png" Key="manaka_3_2.png" />
+            <PlistImageFile Name="manaka_s_0.png" Key="manaka_s_0.png" />
+            <PlistImageFile Name="manaka_s_1.png" Key="manaka_s_1.png" />
+            <PlistImageFile Name="manaka_s_2.png" Key="manaka_s_2.png" />
+            <PlistImageFile Name="swim_manaka_0_0.png" Key="swim_manaka_0_0.png" />
+            <PlistImageFile Name="swim_manaka_0_1.png" Key="swim_manaka_0_1.png" />
+            <PlistImageFile Name="swim_manaka_0_2.png" Key="swim_manaka_0_2.png" />
+            <PlistImageFile Name="swim_manaka_1_0.png" Key="swim_manaka_1_0.png" />
+            <PlistImageFile Name="swim_manaka_1_1.png" Key="swim_manaka_1_1.png" />
+            <PlistImageFile Name="swim_manaka_1_2.png" Key="swim_manaka_1_2.png" />
+            <PlistImageFile Name="swim_manaka_2_0.png" Key="swim_manaka_2_0.png" />
+            <PlistImageFile Name="swim_manaka_2_1.png" Key="swim_manaka_2_1.png" />
+            <PlistImageFile Name="swim_manaka_2_2.png" Key="swim_manaka_2_2.png" />
+            <PlistImageFile Name="swim_manaka_3_0.png" Key="swim_manaka_3_0.png" />
+            <PlistImageFile Name="swim_manaka_3_1.png" Key="swim_manaka_3_1.png" />
+            <PlistImageFile Name="swim_manaka_3_2.png" Key="swim_manaka_3_2.png" />
+          </PlistImageFolder>
           <PlistImageFolder Image="nadeshiko.png" PListFile="nadeshiko.plist" Name=".nadeshiko_PList.Dir">
             <PlistImageFile Name="nadeshiko_0_0.png" Key="nadeshiko_0_0.png" />
             <PlistImageFile Name="nadeshiko_0_1.png" Key="nadeshiko_0_1.png" />
@@ -51,7 +97,9 @@
             <PlistImageFile Name="nadeshiko_s_1.png" Key="nadeshiko_s_1.png" />
             <PlistImageFile Name="nadeshiko_s_2.png" Key="nadeshiko_s_2.png" />
           </PlistImageFolder>
+          <Project Name="daigoro.csd" Type="Node" />
           <Project Name="magoichi.csd" Type="Node" />
+          <Project Name="manaka.csd" Type="Node" />
           <Project Name="nadeshiko.csd" Type="Node" />
         </Folder>
       </RootFolder>
