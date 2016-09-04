@@ -21,6 +21,23 @@
             <PlistImageFile Name="daigoro_s_1.png" Key="daigoro_s_1.png" />
             <PlistImageFile Name="daigoro_s_2.png" Key="daigoro_s_2.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="dandan.png" PListFile="dandan.plist" Name=".dandan_PList.Dir">
+            <PlistImageFile Name="dandan_0_0.png" Key="dandan_0_0.png" />
+            <PlistImageFile Name="dandan_0_1.png" Key="dandan_0_1.png" />
+            <PlistImageFile Name="dandan_0_2.png" Key="dandan_0_2.png" />
+            <PlistImageFile Name="dandan_1_0.png" Key="dandan_1_0.png" />
+            <PlistImageFile Name="dandan_1_1.png" Key="dandan_1_1.png" />
+            <PlistImageFile Name="dandan_1_2.png" Key="dandan_1_2.png" />
+            <PlistImageFile Name="dandan_2_0.png" Key="dandan_2_0.png" />
+            <PlistImageFile Name="dandan_2_1.png" Key="dandan_2_1.png" />
+            <PlistImageFile Name="dandan_2_2.png" Key="dandan_2_2.png" />
+            <PlistImageFile Name="dandan_3_0.png" Key="dandan_3_0.png" />
+            <PlistImageFile Name="dandan_3_1.png" Key="dandan_3_1.png" />
+            <PlistImageFile Name="dandan_3_2.png" Key="dandan_3_2.png" />
+            <PlistImageFile Name="dandan_s_0.png" Key="dandan_s_0.png" />
+            <PlistImageFile Name="dandan_s_1.png" Key="dandan_s_1.png" />
+            <PlistImageFile Name="dandan_s_2.png" Key="dandan_s_2.png" />
+          </PlistImageFolder>
           <PlistImageFolder Image="magoichi.png" PListFile="magoichi.plist" Name=".magoichi_PList.Dir">
             <PlistImageFile Name="magoichi_0_0.png" Key="magoichi_0_0.png" />
             <PlistImageFile Name="magoichi_0_1.png" Key="magoichi_0_1.png" />
@@ -115,6 +132,7 @@
             <PlistImageFile Name="ranmaru_s_2.png" Key="ranmaru_s_2.png" />
           </PlistImageFolder>
           <Project Name="daigoro.csd" Type="Node" />
+          <Project Name="dandan.csd" Type="Node" />
           <Project Name="magoichi.csd" Type="Node" />
           <Project Name="manaka.csd" Type="Node" />
           <Project Name="nadeshiko.csd" Type="Node" />
