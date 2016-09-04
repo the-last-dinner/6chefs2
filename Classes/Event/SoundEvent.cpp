@@ -10,7 +10,7 @@
 
 #include "Event/EventScriptMember.h"
 
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 
 #pragma mark PlayBGMEvent
 
@@ -19,12 +19,12 @@ bool PlayBGMEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ファイル名。なければ生成しない
-    if(!this->validator->hasMember(json, member::FILE)) return false;
+    if(!this->eventHelper->hasMember(json, member::FILE)) return false;
     
     this->fileName = json[member::FILE].GetString();
     
     // 音量
-    if(this->validator->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
     
     return true;
 }
@@ -44,7 +44,7 @@ bool StopBGMEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ファイル名
-    if(this->validator->hasMember(json, member::FILE)) this->fileName = json[member::FILE].GetString();
+    if(this->eventHelper->hasMember(json, member::FILE)) this->fileName = json[member::FILE].GetString();
     
     return true;
 }
@@ -72,12 +72,12 @@ bool ChangeVolumeEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ファイル名。なければ生成しない
-    if(!this->validator->hasMember(json, member::FILE)) return false;
+    if(!this->eventHelper->hasMember(json, member::FILE)) return false;
     
     this->fileName = json[member::FILE].GetString();
     
     // 音量
-    if(this->validator->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
     
     return true;
 }
@@ -96,12 +96,12 @@ bool PlaySEEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ファイル名。なければ生成しない
-    if(!this->validator->hasMember(json, member::FILE)) return false;
+    if(!this->eventHelper->hasMember(json, member::FILE)) return false;
     
     this->fileName = json[member::FILE].GetString();
     
     // 音量
-    if(this->validator->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if(this->eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
     
     return true;
 }

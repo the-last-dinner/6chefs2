@@ -12,7 +12,7 @@
 #include "Common.h"
 
 class EventFactory;
-class EventScriptValidator;
+class GameEventHelper;
 
 // ゲーム上のイベント基底クラス
 class GameEvent : public Ref
@@ -20,7 +20,7 @@ class GameEvent : public Ref
 // インスタンス変数
 protected:
     EventFactory* factory { nullptr };
-    EventScriptValidator* validator { nullptr };
+    GameEventHelper* eventHelper { nullptr };
     int code { -1 };
 private:
     bool _isDone {false};

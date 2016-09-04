@@ -9,7 +9,7 @@
 #include "Event/MapEvent.h"
 
 #include "Event/EventScriptMember.h"
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 
 #include "Layers/Dungeon/TiledMapLayer.h"
 
@@ -91,11 +91,11 @@ bool QuakeMapEvent::init(rapidjson::Value& json)
     
     this->quakeLayer = static_cast<Node*>(DungeonSceneManager::getInstance()->getMapLayer()->getTiledMap());
     
-    if (!this->validator->hasMember(json, member::TIME)) return false;
+    if (!this->eventHelper->hasMember(json, member::TIME)) return false;
     this->time = json[member::TIME].GetDouble() / 4;
     
-    if (this->validator->hasMember(json, member::X)) this->x = json[member::X].GetInt();
-    if (this->validator->hasMember(json, member::Y)) this->y = json[member::Y].GetInt();
+    if (this->eventHelper->hasMember(json, member::X)) this->x = json[member::X].GetInt();
+    if (this->eventHelper->hasMember(json, member::Y)) this->y = json[member::Y].GetInt();
 
     return true;
 }

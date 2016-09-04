@@ -12,7 +12,7 @@
 
 #include "Effects/Light.h"
 
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
 
 #include "MapObjects/MapObject.h"
@@ -28,7 +28,7 @@ bool MapObjectEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // オブジェクトのIDを保持
-    if (!this->validator->hasMember(json, member::OBJECT_ID)) return false;
+    if (!this->eventHelper->hasMember(json, member::OBJECT_ID)) return false;
     
     this->objectId = json[member::OBJECT_ID].GetString();
     
@@ -47,7 +47,7 @@ bool ReactionEvent::init(rapidjson::Value& json)
 
 void ReactionEvent::run()
 {
-    MapObject* target = {this->validator->getMapObjectById(this->objectId)};
+    MapObject* target = {this->eventHelper->getMapObjectById(this->objectId)};
     
     if(!target)
     {
@@ -66,10 +66,10 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
 {
     if(!MapObjectEvent::init(json)) return false;
     
-    if(!this->validator->hasMember(json, member::CHARA_ID))
+    if(!this->eventHelper->hasMember(json, member::CHARA_ID))
     {
         // キャラの時
-        this->target = {this->validator->getMapObjectById(this->objectId, false)};
+        this->target = {this->eventHelper->getMapObjectById(this->objectId, false)};
         CC_SAFE_RETAIN(this->target);
     }
     else
@@ -82,10 +82,10 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         data.location.x = json[member::X].GetInt();
         data.location.y = json[member::Y].GetInt();
         
-        Direction direction {this->validator->getDirection(json)};
+        Direction direction {this->eventHelper->getDirection(json)};
         if(direction == Direction::SIZE) direction = Direction::FRONT;
         data.location.direction = direction;
-        data.move_pattern = this->validator->getMovePatternForCharacter(json);
+        data.move_pattern = this->eventHelper->getMovePatternForCharacter(json);
         
         // データからキャラクタを生成
         Character* chara { Character::create(data) };
@@ -93,8 +93,8 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         
         if(!chara) return nullptr;
         
-        chara->setTrigger(this->validator->getTrigger(json));
-        chara->setEventId(this->validator->getEventId(json));
+        chara->setTrigger(this->eventHelper->getTrigger(json));
+        chara->setEventId(this->eventHelper->getEventId(json));
         chara->setHit(true);
         
         this->target = chara;
@@ -145,7 +145,7 @@ bool FollowCharacterEvent::init(rapidjson::Value& json)
 void FollowCharacterEvent::run()
 {
     this->setDone();
-    MapObject* follower {this->validator->getMapObjectById(this->objectId)};
+    MapObject* follower {this->eventHelper->getMapObjectById(this->objectId)};
     DungeonSceneManager::getInstance()->getParty()->addMember(static_cast<Character*>(follower));
 }
 
@@ -172,11 +172,11 @@ bool WarpMapObjectEvent::init(rapidjson::Value& json)
 {
     if(!MapObjectEvent::init(json)) return false;
     
-    if(!this->validator->hasMember(json, member::X)) return false;
-    if(!this->validator->hasMember(json, member::Y)) return false;
-    if(!this->validator->hasMember(json, member::DIRECTION)) return false;
+    if(!this->eventHelper->hasMember(json, member::X)) return false;
+    if(!this->eventHelper->hasMember(json, member::Y)) return false;
+    if(!this->eventHelper->hasMember(json, member::DIRECTION)) return false;
     this->point = Point(json[member::X].GetInt(), json[member::Y].GetInt());
-    this->direction = this->validator->getDirection(json);
+    this->direction = this->eventHelper->getDirection(json);
     
     return true;
 }
@@ -184,7 +184,7 @@ bool WarpMapObjectEvent::init(rapidjson::Value& json)
 void WarpMapObjectEvent::run()
 {
     this->setDone();
-    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     target->setGridPosition(this->point);
     target->setDirection(this->direction);
     DungeonSceneManager::getInstance()->setMapObjectPosition(target);
@@ -198,17 +198,17 @@ bool MoveToEvent::init(rapidjson::Value& json)
     if(!MapObjectEvent::init(json)) return false;
     
     // 目的地
-    this->dest = this->validator->getPoint(json);
+    this->dest = this->eventHelper->getPoint(json);
     
     // 速さ倍率
-    if(this->validator->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
     return true;
 }
 
 void MoveToEvent::run()
 {
-    MapObject* target {this->validator->getMapObjectById(this->objectId)};
+    MapObject* target {this->eventHelper->getMapObjectById(this->objectId)};
     
     if(!target)
     {
@@ -232,7 +232,7 @@ bool MoveByEvent::init(rapidjson::Value& json)
     if(!MapObjectEvent::init(json)) return false;
     
     // 向き
-    this->direction = this->validator->getDirection(json);
+    this->direction = this->eventHelper->getDirection(json);
     
     // 格子数
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
@@ -240,14 +240,14 @@ bool MoveByEvent::init(rapidjson::Value& json)
     if(this->direction == Direction::SIZE || this->gridNum == 0) return false;
     
     // 速さ倍率
-    if(this->validator->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
     return true;
 }
 
 void MoveByEvent::run()
 {
-    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     if(!target)
     {
@@ -271,11 +271,11 @@ bool SetLightEvent::init(rapidjson::Value& json)
     int range {1};
     
     // 範囲
-    if(this->validator->hasMember(json, member::RANGE)) range = json[member::RANGE].GetInt();
+    if(this->eventHelper->hasMember(json, member::RANGE)) range = json[member::RANGE].GetInt();
     info.radius = range * GRID;
     
     // 色
-    if(this->validator->hasMember(json, member::COLOR)) info.color = this->validator->getColor(json);
+    if(this->eventHelper->hasMember(json, member::COLOR)) info.color = this->eventHelper->getColor(json);
     
     // 光生成
     Light* light { Light::create(info) };
@@ -287,7 +287,7 @@ bool SetLightEvent::init(rapidjson::Value& json)
 
 void SetLightEvent::run()
 {
-    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     target->setLight(this->light, DungeonSceneManager::getInstance()->getAmbientLayer(), [this]{this->setDone();});
     
@@ -306,7 +306,7 @@ bool RemoveLightEvent::init(rapidjson::Value& json)
 
 void RemoveLightEvent::run()
 {
-    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     target->removeLight([this]{this->setDone();});
 }
@@ -318,7 +318,7 @@ bool SetMovableEvent::init(rapidjson::Value& json)
 {
     if(!MapObjectEvent::init(json)) return false;
     
-    if(!this->validator->hasMember(json, member::MOVABLE)) return false;
+    if(!this->eventHelper->hasMember(json, member::MOVABLE)) return false;
     
     this->movable = json[member::MOVABLE].GetBool();
     
@@ -327,7 +327,7 @@ bool SetMovableEvent::init(rapidjson::Value& json)
 
 void SetMovableEvent::run()
 {
-    MapObject* target { this->validator->getMapObjectById(this->objectId) };
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     target->setMovable(this->movable);
     this->setDone();

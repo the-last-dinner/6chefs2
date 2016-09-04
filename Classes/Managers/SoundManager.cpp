@@ -8,7 +8,7 @@
 
 #include "Managers/SoundManager.h"
 #include "Managers/PlayerDataManager.h"
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 
 using namespace cocos2d::experimental;
 

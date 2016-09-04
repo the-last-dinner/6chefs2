@@ -1,12 +1,12 @@
 //
-//  EventScriptValidator.cpp
+//  GameEventHelper.cpp
 //  LastSupper
 //
 //  Created by Kohei Asami on 2015/10/24.
 //
 //
 
-#include "Event/EventScriptValidator.h"
+#include "Event/GameEventHelper.h"
 
 #include "Event/EventScriptMember.h"
 
@@ -17,33 +17,33 @@
 #include "Managers/DungeonSceneManager.h"
 
 // コンストラクタ
-EventScriptValidator::EventScriptValidator() {FUNCLOG};
+GameEventHelper::GameEventHelper() {FUNCLOG};
 
 // デストラクタ
-EventScriptValidator::~EventScriptValidator() {FUNCLOG};
+GameEventHelper::~GameEventHelper() {FUNCLOG};
 
 // 初期化
-bool EventScriptValidator::init() {return true;}
+bool GameEventHelper::init() {return true;}
 
 // メンバーが存在するかどうか
-bool EventScriptValidator::hasMember(rapidjson::Value& json, const char* member) const
+bool GameEventHelper::hasMember(rapidjson::Value& json, const char* member) const
 {
     return json.HasMember(member);
 }
 
 // condition情報からboolを算出
-bool EventScriptValidator::detectCondition(rapidjson::Value& json)
+bool GameEventHelper::detectCondition(rapidjson::Value& json)
 {
     if(!this->hasMember(json, member::CONDITION)) return false;
     
-    map<string, bool(EventScriptValidator::*)(rapidjson::Value&, bool)> pConditionFuncs
+    map<string, bool(GameEventHelper::*)(rapidjson::Value&, bool)> pConditionFuncs
     {
-        {"equip", &EventScriptValidator::detectEquipFlg},
-        {"event", &EventScriptValidator::detectEventFlg},
-        {"flg", &EventScriptValidator::detectFlg},
-        {"item", &EventScriptValidator::detectItemFlg},
-        {"status", &EventScriptValidator::detectStatusFlg},
-        {"trophy", &EventScriptValidator::detectTrophyFlg},
+        {"equip", &GameEventHelper::detectEquipFlg},
+        {"event", &GameEventHelper::detectEventFlg},
+        {"flg", &GameEventHelper::detectFlg},
+        {"item", &GameEventHelper::detectItemFlg},
+        {"status", &GameEventHelper::detectStatusFlg},
+        {"trophy", &GameEventHelper::detectTrophyFlg},
     };
     
     rapidjson::Value& conditions {json[member::CONDITION]};
@@ -80,7 +80,7 @@ bool EventScriptValidator::detectCondition(rapidjson::Value& json)
 }
 
 // 装備状態の確認
-bool EventScriptValidator::detectEquipFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectEquipFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
 
@@ -95,7 +95,7 @@ bool EventScriptValidator::detectEquipFlg(rapidjson::Value& json, bool negative)
 }
 
 // イベントを見たか確認
-bool EventScriptValidator::detectEventFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectEventFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
@@ -121,7 +121,7 @@ bool EventScriptValidator::detectEventFlg(rapidjson::Value& json, bool negative)
 }
 
 // フラグの確認
-bool EventScriptValidator::detectFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
@@ -152,7 +152,7 @@ bool EventScriptValidator::detectFlg(rapidjson::Value& json, bool negative)
 }
 
 // アイテム所持の確認
-bool EventScriptValidator::detectItemFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectItemFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
@@ -177,7 +177,7 @@ bool EventScriptValidator::detectItemFlg(rapidjson::Value& json, bool negative)
 }
 
 // 好感度の確認
-bool EventScriptValidator::detectStatusFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectStatusFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
@@ -202,7 +202,7 @@ bool EventScriptValidator::detectStatusFlg(rapidjson::Value& json, bool negative
 }
 
 // トロフィー所持確認
-bool EventScriptValidator::detectTrophyFlg(rapidjson::Value& json, bool negative)
+bool GameEventHelper::detectTrophyFlg(rapidjson::Value& json, bool negative)
 {
     bool detection { false };
     
@@ -225,7 +225,7 @@ bool EventScriptValidator::detectTrophyFlg(rapidjson::Value& json, bool negative
 }
 
 // マップオブジェクトを取得
-MapObject* EventScriptValidator::getMapObjectById(const string& objectId, bool available)
+MapObject* GameEventHelper::getMapObjectById(const string& objectId, bool available)
 {
     // heroであったら主人公を返す
     if (objectId == "hero")
@@ -241,7 +241,7 @@ MapObject* EventScriptValidator::getMapObjectById(const string& objectId, bool a
 }
 
 // x,yの組を取得
-Point EventScriptValidator::getPoint(rapidjson::Value& json)
+Point GameEventHelper::getPoint(rapidjson::Value& json)
 {
     if(!this->hasMember(json, member::X) || !this->hasMember(json, member::Y)) return Point::ZERO;
     
@@ -249,7 +249,7 @@ Point EventScriptValidator::getPoint(rapidjson::Value& json)
 }
 
 // nextX, nextYの組を取得
-Point EventScriptValidator::getToPoint(rapidjson::Value& json)
+Point GameEventHelper::getToPoint(rapidjson::Value& json)
 {
     if(!this->hasMember(json, member::NEXT_X) || !this->hasMember(json, member::NEXT_Y)) return Point::ZERO;
     
@@ -257,7 +257,7 @@ Point EventScriptValidator::getToPoint(rapidjson::Value& json)
 }
 
 // 方向を取得
-Direction EventScriptValidator::getDirection(rapidjson::Value& json)
+Direction GameEventHelper::getDirection(rapidjson::Value& json)
 {
     if(!this->hasMember(json, member::DIRECTION)) return Direction::SIZE;
     
@@ -265,31 +265,31 @@ Direction EventScriptValidator::getDirection(rapidjson::Value& json)
 }
 
 // 敵の移動アルゴリズムの種類を取得
-EnemyMovePattern EventScriptValidator::getMovePatternForEnemy(rapidjson::Value& json)
+EnemyMovePattern GameEventHelper::getMovePatternForEnemy(rapidjson::Value& json)
 {
     return this->hasMember(json, member::MOVE_PATTERN) ? static_cast<EnemyMovePattern>(stoi(json[member::MOVE_PATTERN].GetString())) : EnemyMovePattern::CHEAP_CHASER;
 }
 
 // 移動アルゴリズムの種類を取得
-CharacterMovePattern EventScriptValidator::getMovePatternForCharacter(rapidjson::Value& json)
+CharacterMovePattern GameEventHelper::getMovePatternForCharacter(rapidjson::Value& json)
 {
     return this->hasMember(json, member::MOVE_PATTERN) ? static_cast<CharacterMovePattern>(stoi(json[member::MOVE_PATTERN].GetString())) : CharacterMovePattern::SIZE;
 }
 
 // トリガーを取得
-Trigger EventScriptValidator::getTrigger(rapidjson::Value& json)
+Trigger GameEventHelper::getTrigger(rapidjson::Value& json)
 {
     return this->hasMember(json, member::TRIGGER) ? static_cast<Trigger>(stoi(json[member::TRIGGER].GetString())):Trigger::SIZE;
 }
 
 // イベントIDを取得
-int EventScriptValidator::getEventId(rapidjson::Value& json)
+int GameEventHelper::getEventId(rapidjson::Value& json)
 {
     return this->hasMember(json, member::EVENT_ID)? stoi(json[member::EVENT_ID].GetString()):static_cast<int>(EventID::UNDIFINED);
 }
 
 // 色を取得
-Color3B EventScriptValidator::getColor(rapidjson::Value& json) const
+Color3B GameEventHelper::getColor(rapidjson::Value& json) const
 {
     if(!this->hasMember(json, member::COLOR)) return Color3B::BLACK;
     

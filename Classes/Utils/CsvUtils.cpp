@@ -7,10 +7,11 @@
 //
 
 #include "Utils/CsvUtils.h"
+
 #include "Utils/JsonUtils.h"
 #include "Utils/StringUtils.h"
 #include "Utils/Assertutils.h"
-#include "Managers/DebugManager.h"
+#include "Managers/ConfigDataManager.h"
 
 CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
 {
@@ -30,7 +31,7 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
     }
     
     // jsonで暗号化されている場合の複合化
-    if (!DebugManager::getInstance()->isPlainData())
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::PLAIN_DATA))
     {
         return CsvUtils::readJsonForCsv(path);
     }

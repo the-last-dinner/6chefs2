@@ -135,8 +135,6 @@ void TiledMapLayer::setParty(Party* party)
     this->objectList->setParty(party);
 }
 
-
-
 // 敵をマップに配置
 void TiledMapLayer::addEnemy(Enemy* enemy)
 {
@@ -152,7 +150,7 @@ void TiledMapLayer::addMapObject(MapObject* mapObject, bool addingToList)
     if(!mapObject) return;
     
     this->setMapObjectPosition(mapObject);
-    if (DebugManager::getInstance()->displayDebugMask()) mapObject->drawDebugMask();
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) mapObject->drawDebugMask();
     mapObject->setMapObjectList(this->objectList);
     this->tiledMap->addChild(mapObject);
     mapObject->onMoved = CC_CALLBACK_1(TiledMapLayer::setZOrderByPosition, this);

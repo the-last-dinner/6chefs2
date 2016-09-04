@@ -6,7 +6,7 @@
 //
 //
 
-#include "Models/GlobalPlayerData.h"
+#include "Models/PlayerData/GlobalPlayerData.h"
 
 #include "Managers/CsvDataManager.h"
 //#include "Managers/KeyconfigManager.h"

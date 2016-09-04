@@ -46,7 +46,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	director->setDepthTest(false);
 	
 	// デバッグ表示
-    director->setDisplayStats(DebugManager::getInstance()->displayStats());
+    director->setDisplayStats(ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::STATS));
 	
 	// フレームレート
 	director->setAnimationInterval(1.0 / 60);
