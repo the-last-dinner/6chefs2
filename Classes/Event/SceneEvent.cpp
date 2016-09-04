@@ -40,7 +40,7 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
     // directionの指定がされている時
     if(this->eventHelper->hasMember(json, member::DIRECTION))
     {
-        direction = this->validator->getDirection(json);
+        direction = this->eventHelper->getDirection(json);
     }
     // directionが指定されていない時
     else

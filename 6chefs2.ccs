@@ -34,7 +34,25 @@
             <PlistImageFile Name="swim_magoichi_3_1.png" Key="swim_magoichi_3_1.png" />
             <PlistImageFile Name="swim_magoichi_3_2.png" Key="swim_magoichi_3_2.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="nadeshiko.png" PListFile="nadeshiko.plist" Name=".nadeshiko_PList.Dir">
+            <PlistImageFile Name="nadeshiko_0_0.png" Key="nadeshiko_0_0.png" />
+            <PlistImageFile Name="nadeshiko_0_1.png" Key="nadeshiko_0_1.png" />
+            <PlistImageFile Name="nadeshiko_0_2.png" Key="nadeshiko_0_2.png" />
+            <PlistImageFile Name="nadeshiko_1_0.png" Key="nadeshiko_1_0.png" />
+            <PlistImageFile Name="nadeshiko_1_1.png" Key="nadeshiko_1_1.png" />
+            <PlistImageFile Name="nadeshiko_1_2.png" Key="nadeshiko_1_2.png" />
+            <PlistImageFile Name="nadeshiko_2_0.png" Key="nadeshiko_2_0.png" />
+            <PlistImageFile Name="nadeshiko_2_1.png" Key="nadeshiko_2_1.png" />
+            <PlistImageFile Name="nadeshiko_2_2.png" Key="nadeshiko_2_2.png" />
+            <PlistImageFile Name="nadeshiko_3_0.png" Key="nadeshiko_3_0.png" />
+            <PlistImageFile Name="nadeshiko_3_1.png" Key="nadeshiko_3_1.png" />
+            <PlistImageFile Name="nadeshiko_3_2.png" Key="nadeshiko_3_2.png" />
+            <PlistImageFile Name="nadeshiko_s_0.png" Key="nadeshiko_s_0.png" />
+            <PlistImageFile Name="nadeshiko_s_1.png" Key="nadeshiko_s_1.png" />
+            <PlistImageFile Name="nadeshiko_s_2.png" Key="nadeshiko_s_2.png" />
+          </PlistImageFolder>
           <Project Name="magoichi.csd" Type="Node" />
+          <Project Name="nadeshiko.csd" Type="Node" />
         </Folder>
       </RootFolder>
     </Group>
