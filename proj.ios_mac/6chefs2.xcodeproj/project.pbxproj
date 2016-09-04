@@ -94,6 +94,17 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */; };
 		DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */; };
+		DC01828D1D75E3B800E556D1 /* TerrainState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01828B1D75E3B800E556D1 /* TerrainState.cpp */; };
+		DC01828E1D75E3B800E556D1 /* TerrainState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01828B1D75E3B800E556D1 /* TerrainState.cpp */; };
+		DC0182911D7A97D700E556D1 /* Slip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01828F1D7A97D700E556D1 /* Slip.cpp */; };
+		DC0182921D7A97D700E556D1 /* Slip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01828F1D7A97D700E556D1 /* Slip.cpp */; };
+		DC0182991D7A9C6A00E556D1 /* Swim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0182971D7A9C6A00E556D1 /* Swim.cpp */; };
+		DC01829A1D7A9C6A00E556D1 /* Swim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0182971D7A9C6A00E556D1 /* Swim.cpp */; };
+		DC01829D1D7A9D8900E556D1 /* Normal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01829B1D7A9D8900E556D1 /* Normal.cpp */; };
+		DC01829E1D7A9D8900E556D1 /* Normal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01829B1D7A9D8900E556D1 /* Normal.cpp */; };
+		DC0182A11D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01829F1D7AC52F00E556D1 /* TerrainStateCache.cpp */; };
+		DC0182A21D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC01829F1D7AC52F00E556D1 /* TerrainStateCache.cpp */; };
+		DC0182A61D7BCCE900E556D1 /* character in Resources */ = {isa = PBXBuildFile; fileRef = DC0182A51D7BCCE900E556D1 /* character */; };
 		DC03916F1C871E1000C50E8E /* PathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03904F1C871E1000C50E8E /* PathFinder.cpp */; };
 		DC0391701C871E1000C50E8E /* PathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03904F1C871E1000C50E8E /* PathFinder.cpp */; };
 		DC0391711C871E1000C50E8E /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390511C871E1000C50E8E /* AppDelegate.cpp */; };
@@ -348,6 +359,8 @@
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
 		DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
+		DCD9E5411D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
+		DCD9E5421D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
@@ -444,6 +457,17 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		DC01027C1C945F2F0076810F /* EventListenerKeyboardManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventListenerKeyboardManager.cpp; sourceTree = "<group>"; };
 		DC01027D1C945F2F0076810F /* EventListenerKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerKeyboardManager.h; sourceTree = "<group>"; };
+		DC01828B1D75E3B800E556D1 /* TerrainState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TerrainState.cpp; path = TerrainState/TerrainState.cpp; sourceTree = "<group>"; };
+		DC01828C1D75E3B800E556D1 /* TerrainState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerrainState.h; path = TerrainState/TerrainState.h; sourceTree = "<group>"; };
+		DC01828F1D7A97D700E556D1 /* Slip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slip.cpp; path = TerrainState/Slip.cpp; sourceTree = "<group>"; };
+		DC0182901D7A97D700E556D1 /* Slip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slip.h; path = TerrainState/Slip.h; sourceTree = "<group>"; };
+		DC0182971D7A9C6A00E556D1 /* Swim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Swim.cpp; path = TerrainState/Swim.cpp; sourceTree = "<group>"; };
+		DC0182981D7A9C6A00E556D1 /* Swim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swim.h; path = TerrainState/Swim.h; sourceTree = "<group>"; };
+		DC01829B1D7A9D8900E556D1 /* Normal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Normal.cpp; path = TerrainState/Normal.cpp; sourceTree = "<group>"; };
+		DC01829C1D7A9D8900E556D1 /* Normal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Normal.h; path = TerrainState/Normal.h; sourceTree = "<group>"; };
+		DC01829F1D7AC52F00E556D1 /* TerrainStateCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TerrainStateCache.cpp; path = TerrainState/TerrainStateCache.cpp; sourceTree = "<group>"; };
+		DC0182A01D7AC52F00E556D1 /* TerrainStateCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerrainStateCache.h; path = TerrainState/TerrainStateCache.h; sourceTree = "<group>"; };
+		DC0182A51D7BCCE900E556D1 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 		DC03904F1C871E1000C50E8E /* PathFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathFinder.cpp; sourceTree = "<group>"; };
 		DC0390501C871E1000C50E8E /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
 		DC0390511C871E1000C50E8E /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -694,6 +718,8 @@
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
 		DCCA52551C945625004769E1 /* KeyconfigMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigMenuLayer.h; sourceTree = "<group>"; };
+		DCD9E53F1D684C4B002CA51D /* CSNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSNode.cpp; path = CocosStudio/CSNode.cpp; sourceTree = "<group>"; };
+		DCD9E5401D684C4B002CA51D /* CSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNode.h; path = CocosStudio/CSNode.h; sourceTree = "<group>"; };
 		DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigEventListenerLayer.cpp; sourceTree = "<group>"; };
 		DCDD5D541CA26B6C0042C204 /* ConfigEventListenerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEventListenerLayer.h; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
@@ -861,6 +887,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC0182A51D7BCCE900E556D1 /* character */,
 				269211551CE89FB5005C0E5A /* config */,
 				26E950B91CDA51200018BF93 /* Images.xcassets */,
 				DC328A5D1C87194E00675131 /* BGM */,
@@ -886,6 +913,7 @@
 				DC0390511C871E1000C50E8E /* AppDelegate.cpp */,
 				DC0390521C871E1000C50E8E /* AppDelegate.h */,
 				DC0390531C871E1000C50E8E /* Common.h */,
+				DCD9E53E1D684BDD002CA51D /* CocosStudio */,
 				DC0390541C871E1000C50E8E /* Datas */,
 				DC0390701C871E1000C50E8E /* define.h */,
 				DC0390711C871E1000C50E8E /* Effects */,
@@ -966,6 +994,23 @@
 				5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */,
 			);
 			name = "ios-libs";
+			sourceTree = "<group>";
+		};
+		DC01828A1D75E37600E556D1 /* TerrainState */ = {
+			isa = PBXGroup;
+			children = (
+				DC01829B1D7A9D8900E556D1 /* Normal.cpp */,
+				DC01829C1D7A9D8900E556D1 /* Normal.h */,
+				DC01828F1D7A97D700E556D1 /* Slip.cpp */,
+				DC0182901D7A97D700E556D1 /* Slip.h */,
+				DC0182971D7A9C6A00E556D1 /* Swim.cpp */,
+				DC0182981D7A9C6A00E556D1 /* Swim.h */,
+				DC01828B1D75E3B800E556D1 /* TerrainState.cpp */,
+				DC01828C1D75E3B800E556D1 /* TerrainState.h */,
+				DC01829F1D7AC52F00E556D1 /* TerrainStateCache.cpp */,
+				DC0182A01D7AC52F00E556D1 /* TerrainStateCache.h */,
+			);
+			name = TerrainState;
 			sourceTree = "<group>";
 		};
 		DC03904E1C871E1000C50E8E /* Algorithm */ = {
@@ -1230,6 +1275,7 @@
 				DC0390F71C871E1000C50E8E /* PathObject.cpp */,
 				DC0390F81C871E1000C50E8E /* PathObject.h */,
 				DC0390F91C871E1000C50E8E /* TerrainObject */,
+				DC01828A1D75E37600E556D1 /* TerrainState */,
 				DC37D8111CDF450E0014418A /* CollisionBox.cpp */,
 				DC37D8121CDF450E0014418A /* CollisionBox.h */,
 			);
@@ -1402,6 +1448,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DCD9E53E1D684BDD002CA51D /* CocosStudio */ = {
+			isa = PBXGroup;
+			children = (
+				DCD9E53F1D684C4B002CA51D /* CSNode.cpp */,
+				DCD9E5401D684C4B002CA51D /* CSNode.h */,
+			);
+			name = CocosStudio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1511,6 +1566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0182A61D7BCCE900E556D1 /* character in Resources */,
 				269211571CE8A9A9005C0E5A /* config in Resources */,
 				DC328A761C87194E00675131 /* map in Resources */,
 				DC328A741C87194E00675131 /* img in Resources */,
@@ -1575,6 +1631,8 @@
 				DC03919B1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DC03921F1C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
+				26FBED481C9870E2002FAFF7 /* CharacterMasterData.cpp in Sources */,
+				DC0182991D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
 				DC0392511C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
@@ -1594,6 +1652,8 @@
 				DC0391F51C871E1000C50E8E /* CheapChaser.cpp in Sources */,
 				DC0392211C871E1000C50E8E /* DungeonScene.cpp in Sources */,
 				DC0391831C871E1000C50E8E /* SceneData.cpp in Sources */,
+				DCD9E5411D684C4B002CA51D /* CSNode.cpp in Sources */,
+				260621C71D61B7A200348C94 /* DocumentData.cpp in Sources */,
 				DC0392471C871E1000C50E8E /* NotificationBand.cpp in Sources */,
 				DC0391F91C871E1000C50E8E /* MovePattern.cpp in Sources */,
 				DC0392351C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
@@ -1616,6 +1676,7 @@
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391EB1C871E1000C50E8E /* ItemObject.cpp in Sources */,
+				DC0182911D7A97D700E556D1 /* Slip.cpp in Sources */,
 				DC03917D1C871E1000C50E8E /* DungeonSceneData.cpp in Sources */,
 				DC0391911C871E1000C50E8E /* EffectEvent.cpp in Sources */,
 				DC0391D51C871E1000C50E8E /* CsvDataManager.cpp in Sources */,
@@ -1628,6 +1689,7 @@
 				DC0391C91C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
 				DC0391E11C871E1000C50E8E /* TextureManager.cpp in Sources */,
 				DC0391BD1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
+				DC0182A11D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */,
 				DC0391871C871E1000C50E8E /* TitleSceneData.cpp in Sources */,
 				2672D5081D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */,
 				DC0392051C871E1000C50E8E /* PlainArea.cpp in Sources */,
@@ -1642,6 +1704,8 @@
 				26460BA41D72EF1500F0336C /* DebugConfigData.cpp in Sources */,
 				DC03924F1C871E1000C50E8E /* MapUtils.cpp in Sources */,
 				DC0391891C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
+				DC01829D1D7A9D8900E556D1 /* Normal.cpp in Sources */,
+				DC01828D1D75E3B800E556D1 /* TerrainState.cpp in Sources */,
 				DC0391931C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
 				DC0391ED1C871E1000C50E8E /* MapObject.cpp in Sources */,
 				DC0391AF1C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
@@ -1689,6 +1753,7 @@
 				DC03924A1C871E1000C50E8E /* SlideNode.cpp in Sources */,
 				DC0391E41C871E1000C50E8E /* Character.cpp in Sources */,
 				26460B9C1D72ED9E00F0336C /* ItemData.cpp in Sources */,
+				DCD9E5421D684C4B002CA51D /* CSNode.cpp in Sources */,
 				DC0391961C871E1000C50E8E /* EventFactory.cpp in Sources */,
 				DC0391F41C871E1000C50E8E /* Chaser.cpp in Sources */,
 				DC0391B01C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
@@ -1738,6 +1803,7 @@
 				DC0392401C871E1000C50E8E /* Cloud.cpp in Sources */,
 				DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0392201C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
+				DC0182921D7A97D700E556D1 /* Slip.cpp in Sources */,
 				DC0392321C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DC03919C1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				DC0391C21C871E1000C50E8E /* MiniSelector.cpp in Sources */,
@@ -1747,6 +1813,7 @@
 				DC0391AA1C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */,
 				DC0391DC1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
+				DC01829A1D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC0392441C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC0391B41C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
 				DC0391FA1C871E1000C50E8E /* MovePattern.cpp in Sources */,
@@ -1754,6 +1821,8 @@
 				26460BA01D72EDB400F0336C /* LocalPlayerData.cpp in Sources */,
 				DC0391CA1C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
 				DC03923E1C871E1000C50E8E /* PlayerControlTask.cpp in Sources */,
+				DC01828E1D75E3B800E556D1 /* TerrainState.cpp in Sources */,
+				DC0392141C871E1000C50E8E /* LocalPlayerData.cpp in Sources */,
 				DC0391F21C871E1000C50E8E /* MapObjectList.cpp in Sources */,
 				DC0391C61C871E1000C50E8E /* SaveDataSelector.cpp in Sources */,
 				DC0392241C871E1000C50E8E /* EndingScene.cpp in Sources */,
@@ -1762,6 +1831,7 @@
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				26460B9E1D72EDA600F0336C /* TrophyData.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
+				DC0182A21D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */,
 				DC0392021C871E1000C50E8E /* Party.cpp in Sources */,
 				DC03923A1C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC0391E81C871E1000C50E8E /* EventObject.cpp in Sources */,
@@ -1808,6 +1878,7 @@
 				DC0392481C871E1000C50E8E /* NotificationBand.cpp in Sources */,
 				DC0391BA1C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */,
 				DC0391CC1C871E1000C50E8E /* CharacterMessageLayer.cpp in Sources */,
+				DC01829E1D7A9D8900E556D1 /* Normal.cpp in Sources */,
 				DC03921A1C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391A41C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				26460B9D1D72EDA200F0336C /* MapData.cpp in Sources */,

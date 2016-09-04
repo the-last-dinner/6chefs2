@@ -42,7 +42,7 @@ void PlayerControlTask::turn(const Key& key, Party* party)
 {
     if(!this->isControlEnabled()) return;
     
-    Direction direction { MapUtils::keyToDirection(key) };
+    Direction direction { Direction::convertKey(key) };
     Character* mainCharacter {party->getMainCharacter()};
     
     // 主人公の向きを変更
@@ -87,21 +87,15 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
 {
     if(keys.empty() || !this->isControlEnabled() || party->getMainCharacter()->isMoving()) return;
     
-    vector<Direction> directions { MapUtils::keyToDirection(keys) };
+    vector<Direction> directions { Direction::convertKeys(keys) };
     
     Character* mainCharacter {party->getMainCharacter()};
     
-    // 一番最近押したキーの方向に主人公を向ける
-    mainCharacter->setDirection(directions.back());
-    
-    // 移動前の地形オブジェクトを取得
-    TerrainObject* terrain { mainCharacter->getTerrain() };
-    
     // ダッシュキーが押されていたら、速度の倍率をあげる
-    bool dash { terrain->canDash() ? DungeonSceneManager::getInstance()->isPressed(Key::DASH) : false };
+    bool dash { mainCharacter->isRunnable() ? DungeonSceneManager::getInstance()->isPressed(Key::DASH) : false };
     
     // 入力から、使う方向の個数を決める
-    int directionCount {(directions.size() == 2 && directions.back() != directions.at(directions.size() - 2) && etoi(directions.back()) + etoi(directions.at(directions.size() - 2)) != 3)?etoi(directions.size()):1};
+    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
     
     vector<Direction> moveDirections {};
     for(int i { 0 }; i < directions.size(); i++)
@@ -112,7 +106,7 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     
     // Trigger::WILLを持つオブジェクトを検索して実行
     Rect gridRect {mainCharacter->getGridRect()};
-    gridRect.origin += MapUtils::directionsToMapVector(moveDirections);
+    gridRect.origin += Direction::getGridVec2(moveDirections);
     DungeonSceneManager::getInstance()->runEvent(DungeonSceneManager::getInstance()->getMapObjectList()->getEventIdsByGridRect(gridRect, Trigger::WILL));
     
     Stamina* stamina {DungeonSceneManager::getInstance()->getStamina()};
@@ -120,10 +114,10 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     if(!party->move(moveDirections, dash ? DASH_SPEED_RATIO : 1.f, [this, party, stamina]{stamina->setDecreasing(false); this->onPartyMovedOneGrid(party);})) return;
     
     // 地形から、スタミナ減少の倍率を取得しセット
-    stamina->setStepRatio(terrain->getStaminaConsumptionRate());
+    stamina->setStepRatio(mainCharacter->getStaminaConsumptionRatio());
     
     // 敵出現中かつ、ダッシュ中ならスタミナを減少モードにする
-    stamina->setDecreasing(DungeonSceneManager::getInstance()->existsEnemy() && (dash || terrain->consumeStaminaWalking()));
+    stamina->setDecreasing(DungeonSceneManager::getInstance()->existsEnemy() && (dash || mainCharacter->consumeStaminaWalking()));
     
     // スタミナが危険値まで下がっていたら、bgmを再生
     if(stamina->isWarn() && !SoundManager::getInstance()->isPlaying(Resource::BGM::TIRED)) SoundManager::getInstance()->playBGM(Resource::BGM::TIRED, true, 2.0f);

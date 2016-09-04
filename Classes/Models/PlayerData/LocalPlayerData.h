@@ -21,8 +21,7 @@ class LocalPlayerData : public Ref
     static const char* SAVE_COUNT;
     static const char* PLAY_TIME;
     static const char* CHAPTER;
-    static const char* EQUIPMENT_RIGHT;
-    static const char* EQUIPMENT_LEFT;
+    static const char* EQUIPMENT;
     static const char* MAP_ID;
     static const char* PARTY;
     static const char* CHARA_ID;
@@ -61,6 +60,7 @@ private:
     bool init(const int local_id);
     // Local data File
     bool loadLocalData(const int local_id);
+    
 public:
     void saveLocalData(const int local_id);
     int getLocalId();
@@ -136,6 +136,14 @@ public:
     bool removeBgm(const string& bgm_name);
     void removeBgmAll();
     vector<string> getBgmAll();
+    
+// inner class
+private:
+    class JsonKey
+    {
+    public:
+        static string getEquipmentKey(const Direction& direction);
+    };
 };
 
 #endif /* LocalPlayerData_h */

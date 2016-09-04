@@ -259,9 +259,9 @@ Point GameEventHelper::getToPoint(rapidjson::Value& json)
 // 方向を取得
 Direction GameEventHelper::getDirection(rapidjson::Value& json)
 {
-    if(!this->hasMember(json, member::DIRECTION)) return Direction::SIZE;
+    if(!this->hasMember(json, member::DIRECTION)) return Direction::NONE;
     
-    return MapUtils::toEnumDirection(json[member::DIRECTION].GetString());
+    return Direction::convertString(json[member::DIRECTION].GetString());
 }
 
 // 敵の移動アルゴリズムの種類を取得

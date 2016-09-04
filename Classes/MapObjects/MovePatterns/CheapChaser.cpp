@@ -43,7 +43,7 @@ void CheapChaser::onPartyMoved()
 // マップ移動可能か
 bool CheapChaser::canGoToNextMap() const
 {
-    return this->chara->canMove(MapUtils::vectoMapDirections(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()));
+    return this->chara->canMove(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()));
 }
 
 // 次マップへの出現遅延時間を計算
@@ -61,6 +61,6 @@ float CheapChaser::calcSummonDelay() const
 void CheapChaser::move(function<void()> callback)
 {
     if(this->paused) return;
-    if(this->chara->walkBy(MapUtils::vectoMapDirections(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()), [this, callback](){this->move(callback);}, this->speedRatio)) return;
+    if(this->chara->walkBy(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()), [this, callback](){this->move(callback);}, this->speedRatio)) return;
     if(callback) callback();
 }

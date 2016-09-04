@@ -62,10 +62,10 @@ bool Sight::isSegmentIntersectWithBottom(const Point& p1, const Point& p2, const
 bool Sight::isIn(MapObject* target, MapObjectList* list) const
 {
     // キャラクタの向いている向きのベクトルを取得
-    Vec2 v1 { MapUtils::getGridVector(this->chara->getDirection()) };
+    Vec2 v1 { this->chara->getDirection().getVec2() };
     
     // 対象の当たり判定Rect
-    Rect rect {target->getCollisionRect()};
+    Rect rect { target->getCollisionRect() };
     
     // キャラクタから対象の間にできるベクトル
     Point p1 {this->chara->getPosition()};
@@ -82,7 +82,7 @@ bool Sight::isIn(MapObject* target, MapObjectList* list) const
     if(degree > this->angle / 2) return false;
     
     // 対象と本人以外の当たり判定用Rectを取得
-    vector<Rect> collisionRects {list->getCollisionRects({target, this->chara})};
+    vector<Rect> collisionRects {list->getCollisionRects({ target, this->chara })};
     
     // Rectを４辺に分解し、それぞれの辺ベクトルとv2が交差しているかチェックする
     for(Rect rect : collisionRects)

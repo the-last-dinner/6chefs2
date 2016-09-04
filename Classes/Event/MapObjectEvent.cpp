@@ -83,7 +83,7 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         data.location.y = json[member::Y].GetInt();
         
         Direction direction {this->eventHelper->getDirection(json)};
-        if(direction == Direction::SIZE) direction = Direction::FRONT;
+        if(direction.isNull()) direction = Direction::DOWN;
         data.location.direction = direction;
         data.move_pattern = this->eventHelper->getMovePatternForCharacter(json);
         
@@ -237,7 +237,7 @@ bool MoveByEvent::init(rapidjson::Value& json)
     // 格子数
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
     
-    if(this->direction == Direction::SIZE || this->gridNum == 0) return false;
+    if(this->direction.isNull() || this->gridNum == 0) return false;
     
     // 速さ倍率
     if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();

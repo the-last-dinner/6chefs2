@@ -169,9 +169,9 @@ CharacterMovePattern MapObjectFactory::getCharacterMovePattern(const ValueMap& i
 // 向きを取得
 Direction MapObjectFactory::getDirection(const ValueMap& info) const
 {
-    if(info.count("direction") == 0) return Direction::SIZE;
+    if(info.count("direction") == 0) return Direction::NONE;
     
-    return MapUtils::toEnumDirection(info.at("direction").asString());
+    return Direction::convertString(info.at("direction").asString());
 }
 
 // マス座標を取得

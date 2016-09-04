@@ -99,8 +99,8 @@ class WarpMapObjectEvent : public MapObjectEvent
 public:
     CREATE_FUNC_WITH_PARAM(WarpMapObjectEvent, rapidjson::Value&)
 private:
-    Point point {Point(0,0)};
-    Direction direction {Direction::FRONT};
+    Point point { Point(0,0) };
+    Direction direction { Direction::DOWN };
 private:
     WarpMapObjectEvent(){FUNCLOG};
     ~WarpMapObjectEvent(){FUNCLOG};
@@ -129,7 +129,7 @@ class MoveByEvent : public MapObjectEvent
 public:
     CREATE_FUNC_WITH_PARAM(MoveByEvent, rapidjson::Value&)
 private:
-    Direction direction {Direction::SIZE};
+    Direction direction { Direction::DOWN };
     int gridNum {0};
     float speedRatio {1.f};
 private:

@@ -58,17 +58,21 @@ deque<Direction> PathFinder::getPath(const Rect& chaserGridRect, const vector<Re
     
     PathNode* destNode { this->find(startNode, destGridPosition, nodeMap)};
     
-    deque<Direction> directions;
+    deque<Direction> directionQueue;
     
-    if(!destNode) return directions;
+    if(!destNode) return directionQueue;
     
     // どの方向に進むのかを、目的地ノードから探索開始ノードまで取り出す
     PathNode* node {destNode};
     while (node->getParent() != nullptr)
     {
         // 親との差ベクトルを方向に変換
-        Direction direction {MapUtils::vecToMapDirection(node->getGridPoint() - node->getParent()->getGridPoint())};
-        if(direction != Direction::SIZE) directions.push_front(direction);
+        vector<Direction> directions { Direction::convertGridVec2(node->getGridPoint() - node->getParent()->getGridPoint()) };
+        
+        for(Direction direction : directions)
+        {
+            directionQueue.push_front(direction);
+        }
         
         // ノード入れ替え
         node = node->getParent();
@@ -80,7 +84,7 @@ deque<Direction> PathFinder::getPath(const Rect& chaserGridRect, const vector<Re
         CC_SAFE_RELEASE(nodeWithPos.second);
     }
     
-    return directions;
+    return directionQueue;
 }
 
 // 基準ノードを中心に周りをOPEN

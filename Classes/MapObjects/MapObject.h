@@ -16,6 +16,8 @@ class AmbientLightLayer;
 class MapObjectList;
 class MovePattern;
 class TerrainObject;
+class TerrainState;
+class TerrainStateCache;
 
 class MapObject : public Node
 {
@@ -25,12 +27,12 @@ public:
     
 // インスタンス変数
 private:
-    int objectId { static_cast<int>(ObjectID::UNDIFINED)};
+    int objectId { static_cast<int>(ObjectID::UNDIFINED) };
     int eventId { static_cast<int>(EventID::UNDIFINED) };
-	Trigger trigger {Trigger::SIZE};
+	Trigger trigger { Trigger::SIZE };
 	bool _isHit { false };
     bool _isMovable { false };
-    Rect collisionRect {Rect::ZERO};
+    Rect collisionRect { Rect::ZERO };
 	Light* light { nullptr };
     bool _isMoving { false };
     Sprite* sprite { nullptr };
@@ -38,10 +40,14 @@ private:
     bool paused { false };
     int getOffEventID { static_cast<int>(EventID::UNDIFINED)};
     int rideOnEventID { static_cast<int>(EventID::UNDIFINED)};
+    vector<Direction> _movingDirections {};
 protected:
     MapObjectList* objectList { nullptr };
     deque<vector<Direction>> directionsQueue {};
     Location location {};
+    TerrainState* _terrainState { nullptr };
+    TerrainStateCache* _terrainStateCache { nullptr };
+    
 public:
     function<void(MapObject*)> onMoved { nullptr };
 	
@@ -49,8 +55,9 @@ public:
 public:
 	MapObject();
 	virtual ~MapObject();
+    virtual bool init();
 	void setGridPosition(const Point& gridPosition);
-    virtual void setDirection(const Direction direction);
+    virtual void setDirection(const Direction& direction);
     void setObjectId(int objectId);
 	void setEventId(int eventId);
 	void setTrigger(Trigger trigger);
@@ -77,6 +84,7 @@ public:
     Sprite* getSprite() const;
     Vector<SpriteFrame*> getSpriteFrames() const;
     bool isPaused() const;
+    vector<Direction> getMovingDirections() const;
     
     // collision
     virtual vector<Rect> getWorldGridCollisionRects();
@@ -89,7 +97,6 @@ public:
     const bool isMovable() const;
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
-    
     
     // move
     vector<Direction> createEnableDirections(const vector<Direction>& directions) const;
@@ -118,8 +125,6 @@ public:
     virtual void onSearched(MapObject* mainChara) {};           // 調べられた時
     virtual void onEventStart() {};                                // イベント開始時
     virtual void onEventFinished() {};                                 // イベント終了時
-    
-    Direction convertToWorldDir(const Direction direcction);
 
     void drawDebugMask(); // デバッグ用マスク
     

@@ -2,22 +2,31 @@
   <PropertyGroup Name="magoichi" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="180" Speed="1.0000" ActivedAnimationName="walk_right">
+      <Animation Duration="180" Speed="1.0000" ActivedAnimationName="left">
         <Timeline ActionTag="-1108922162" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="1" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
+            <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="2" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_2_0.png" Plist="character/magoichi.plist" />
+            <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="3" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_1_0.png" Plist="character/magoichi.plist" />
+            <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="4" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="magoichi_2_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="5" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
+            <TextureFile Type="PlistSubImage" Path="magoichi_2_0.png" Plist="character/magoichi.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="6" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="magoichi_1_0.png" Plist="character/magoichi.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="7" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="magoichi_1_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="15" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_0_1.png" Plist="character/magoichi.plist" />
@@ -46,9 +55,6 @@
           <TextureFrame FrameIndex="90" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="95" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_2_0.png" Plist="character/magoichi.plist" />
-          </TextureFrame>
           <TextureFrame FrameIndex="105" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_2_1.png" Plist="character/magoichi.plist" />
           </TextureFrame>
@@ -60,9 +66,6 @@
           </TextureFrame>
           <TextureFrame FrameIndex="135" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_2_0.png" Plist="character/magoichi.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="140" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_1_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="150" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_1_1.png" Plist="character/magoichi.plist" />
@@ -79,29 +82,29 @@
         </Timeline>
       </Animation>
       <AnimationList>
-        <AnimationInfo Name="down" StartIndex="0" EndIndex="0">
-          <RenderColor A="150" R="255" G="245" B="238" />
+        <AnimationInfo Name="down" StartIndex="0" EndIndex="1">
+          <RenderColor A="255" R="255" G="245" B="238" />
         </AnimationInfo>
-        <AnimationInfo Name="up" StartIndex="1" EndIndex="1">
-          <RenderColor A="150" R="0" G="206" B="209" />
+        <AnimationInfo Name="up" StartIndex="2" EndIndex="3">
+          <RenderColor A="255" R="0" G="206" B="209" />
         </AnimationInfo>
-        <AnimationInfo Name="left" StartIndex="2" EndIndex="2">
-          <RenderColor A="150" R="65" G="105" B="225" />
+        <AnimationInfo Name="left" StartIndex="4" EndIndex="5">
+          <RenderColor A="255" R="65" G="105" B="225" />
         </AnimationInfo>
-        <AnimationInfo Name="right" StartIndex="3" EndIndex="3">
-          <RenderColor A="150" R="245" G="222" B="179" />
+        <AnimationInfo Name="right" StartIndex="6" EndIndex="7">
+          <RenderColor A="255" R="245" G="222" B="179" />
         </AnimationInfo>
-        <AnimationInfo Name="walk_down" StartIndex="5" EndIndex="45">
-          <RenderColor A="150" R="255" G="228" B="181" />
+        <AnimationInfo Name="walk_down" StartIndex="15" EndIndex="45">
+          <RenderColor A="255" R="255" G="228" B="181" />
         </AnimationInfo>
-        <AnimationInfo Name="walk_up" StartIndex="50" EndIndex="90">
-          <RenderColor A="150" R="143" G="188" B="139" />
+        <AnimationInfo Name="walk_up" StartIndex="60" EndIndex="90">
+          <RenderColor A="255" R="143" G="188" B="139" />
         </AnimationInfo>
-        <AnimationInfo Name="walk_left" StartIndex="95" EndIndex="135">
-          <RenderColor A="150" R="0" G="191" B="255" />
+        <AnimationInfo Name="walk_left" StartIndex="105" EndIndex="135">
+          <RenderColor A="255" R="0" G="191" B="255" />
         </AnimationInfo>
-        <AnimationInfo Name="walk_right" StartIndex="140" EndIndex="180">
-          <RenderColor A="150" R="60" G="179" B="113" />
+        <AnimationInfo Name="walk_right" StartIndex="150" EndIndex="180">
+          <RenderColor A="255" R="60" G="179" B="113" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" ctype="GameNodeObjectData">

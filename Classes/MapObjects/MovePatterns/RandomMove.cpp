@@ -38,9 +38,8 @@ void RandomMove::move()
     
     // 移動可能な方向のベクタを用意
     vector<Direction> enableDirections {};
-    for(int i {0}; i < static_cast<int>(Direction::SIZE); i++)
+    for(Direction direction : Direction::getAll())
     {
-        Direction direction {static_cast<Direction>(i)};
         if(!this->chara->isHit(direction)) enableDirections.push_back(direction);
     }
     

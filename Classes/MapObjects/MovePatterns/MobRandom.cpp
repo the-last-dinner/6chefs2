@@ -53,12 +53,12 @@ void MobRandom::move()
     
     // 移動可能な方向のベクタを用意
     vector<Direction> enableDirections {};
-    for(int i {0}; i < etoi(Direction::SIZE); i++)
+    for(Direction direction : Direction::getAll())
     {
-        Direction direction {static_cast<Direction>(i)};
         if(this->chara->isHit(direction)) continue;
+        
         // DISTANCE * 2マス以上離れた場所に移動しようとしていたら無視
-        if((this->chara->getGridPosition() + MapUtils::directionsToMapVector({direction})).distance(this->homePosition) > DISTANCE * 2) continue;
+        if((this->chara->getGridPosition() + direction.getGridVec2()).distance(this->homePosition) > DISTANCE * 2) continue;
         
         enableDirections.push_back(direction);
     }

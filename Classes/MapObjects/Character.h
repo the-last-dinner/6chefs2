@@ -13,13 +13,10 @@
 
 struct CharacterData;
 class MovePattern;
+class CSNode;
 
 class Character : public MapObject
 {
-// 定数
-private:
-    static const string basePath;
-
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(Character, const CharacterData&);
@@ -27,8 +24,7 @@ public:
 // インスタンス変数
 private:
     int charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
-    string texturePrefix {};                                                    // キャラプロパティリストファイル名の先頭部分
-    int stampingState {0};                                                      // 歩行アニメーションの状態
+    CSNode* csNode { nullptr };
 protected:
     MovePattern* movePattern { nullptr };                                       // 動きのパターン
     
@@ -41,11 +37,11 @@ public:
     int getCharacterId() const;
     CharacterData getCharacterData() const;
     
-	virtual void setDirection(const Direction direction) override;
+	virtual void setDirection(const Direction& direction) override;
+    virtual void setDirection(const Direction& direction, bool stopAnimation);
 	void setMoving(bool _isMoving);
     void pauseAi();
     void resumeAi();
-    void stamp(const Direction direction, const float ratio = 1.0f);
     bool walkBy(const Direction& direction, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
     bool walkBy(const vector<Direction>& directions, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
     void walkBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
@@ -53,8 +49,20 @@ public:
     void walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
     void walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
     
-    void lookAround(function<void()> callback, Direction direction = Direction::SIZE);
+    void lookAround(function<void()> callback);
+    void lookAround(function<void()> callback, Direction direction);
     
+    // CSNode
+    void playAnimation(const string& name, float speed, bool loop = false);
+    void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
+    
+    // TerrainState
+    void stamp(const Direction direction, const float ratio = 1.0f);
+    bool isRunnable() const;
+    bool consumeStaminaWalking() const;
+    float getStaminaConsumptionRatio() const;
+    
+    // Callback
     virtual void onEnterMap() override;
     virtual void onPartyMoved();
     virtual void onSearched(MapObject* mainChara) override;
@@ -62,6 +70,16 @@ public:
     virtual void onEventFinished() override;
     
     friend class TerrainObject;
+    friend class TerrainState;
+    
+public:
+    class AnimationName
+    {
+    public:
+        static string getTurn(const Direction& direction);
+        static string getWalk(const Direction& direction);
+        static string getSwim(const Direction& direction);
+    };
 };
 
 #endif // __CHARACTER_H__

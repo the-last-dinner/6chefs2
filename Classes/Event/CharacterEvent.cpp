@@ -60,8 +60,6 @@ bool ChangeDirectionEvent::init(rapidjson::Value& json)
     
     this->direction = this->eventHelper->getDirection(json);
     
-    if(this->direction == Direction::SIZE) return false;
-    
     return true;
 }
 
@@ -84,7 +82,7 @@ bool WalkByEvent::init(rapidjson::Value& json)
     
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
     
-    if(this->direction == Direction::SIZE || this->gridNum == 0) return false;
+    if(this->direction.isNull() || this->gridNum == 0) return false;
     
     if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     

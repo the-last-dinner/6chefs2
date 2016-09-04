@@ -8,21 +8,19 @@
 
 #include "MapObjects/Character.h"
 
+#include "CocosStudio/CSNode.h"
+
 #include "Datas/MapObject/CharacterData.h"
 
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 
-#include "MapObjects/TerrainObject/TerrainObject.h"
+#include "MapObjects/TerrainState/TerrainState.h"
 
 #include "Managers/DungeonSceneManager.h"
-#include "Managers/CsvDataManager.h"
-
-// キャラのプロパティリストのディレクトリ
-const string Character::basePath = "img/character/";
 
 // コンストラクタ
-Character::Character(){FUNCLOG}
+Character::Character() { FUNCLOG }
 
 // デストラクタ
 Character::~Character()
@@ -35,13 +33,17 @@ Character::~Character()
 // 初期化
 bool Character::init(const CharacterData& data)
 {
-	if(!Node::init()) return false;
+	if(!MapObject::init()) return false;
     
 	// 生成時の情報をセット
     this->charaId = data.chara_id;
 	this->location = data.location;
     this->setObjectId(data.obj_id);
-    this->texturePrefix = CsvDataManager::getInstance()->getCharacterData()->getFileName(charaId);
+    
+    CSNode* csNode { CSNode::create(data.getCsbFilePath()) };
+    if(!csNode) return false;
+    this->csNode = csNode;
+    this->addChild(csNode);
     
     if(!this->movePattern)
     {
@@ -53,48 +55,11 @@ bool Character::init(const CharacterData& data)
         CC_SAFE_RELEASE(factory);
     }
     
-	// Spriteを生成
-    this->setSprite(Sprite::createWithSpriteFrameName(this->texturePrefix + "_" + to_string(etoi(data.location.direction)) +"_0.png"));
-    
-    // それぞれの方向の直立チップをSpriteFrameとして格納しておく
-    for(int i { 0 }; i < etoi(Direction::SIZE); i++)
-    {
-        SpriteFrame* spFrame {SpriteFrameCache::getInstance()->getSpriteFrameByName(this->texturePrefix + "_" + to_string(i) +"_0.png")};
-        if (spFrame)
-        {
-            this->addSpriteFrame(spFrame);
-        }
-        else
-        {
-            LastSupper::AssertUtils::fatalAssert("CharacterError\ncharaID: " + to_string(this->charaId) + ", name: " + this->texturePrefix + "\nThis character chip is missing.");
-            return false;
-        }
-    }
-    
     // サイズ、衝突判定範囲をセット
-    this->setContentSize(this->getSprite()->getContentSize());
+    this->setContentSize(Size(GRID * 2, GRID * 2));
     this->setCollisionRect(Rect(0, 0, this->getContentSize().width, this->getContentSize().height / 2));
 	
-    for(int i {0}; i < etoi(Direction::SIZE); i++)
-	{
-        // 右足だけ動くタイプと左足だけ動くタイプでアニメーションを分ける
-        for(int k = 0; k < 2; k++)
-        {
-            Animation* pAnimation { Animation::create() };
-            
-            // それぞれの向きのアニメーション用画像を追加していく
-            pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(this->texturePrefix + "_" + to_string(i) + "_" + to_string(k + 1) + ".png"));
-            
-            // キャッシュに保存
-            AnimationCache::getInstance()->addAnimation(pAnimation, this->texturePrefix + to_string(i) + to_string(k));
-            
-            // 水泳アニメーションも同様
-            Animation* sAnimation { Animation::create() };
-            sAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("swim_" + this->texturePrefix + "_" + to_string(i) + "_" + to_string(k + 1) + ".png"));
-            AnimationCache::getInstance()->addAnimation(sAnimation, "swim_" + this->texturePrefix + to_string(i) + to_string(k));
-        }
-	}
-	return true;
+    return true;
 }
 
 // キャラクタIDを取得
@@ -104,12 +69,20 @@ int Character::getCharacterId() const {return this->charaId;}
 CharacterData Character::getCharacterData() const { return CharacterData(this->charaId, this->getObjectId(), this->location); }
 
 // キャラクターの向きを変える
-void Character::setDirection(const Direction direction)
+void Character::setDirection(const Direction& direction)
+{
+    this->setDirection(direction, true);
+}
+
+// キャラクターの向きを変える
+// アニメーション再生を中断させるかを指定できる
+void Character::setDirection(const Direction& direction, bool stopAnimation)
 {
     MapObject::setDirection(direction);
     
-	// 画像差し替え
-	this->getSprite()->setSpriteFrame(this->getTerrain()->getDotPrefix() + this->texturePrefix + "_" + to_string(static_cast<int>(direction)) + "_0.png");
+    if(!stopAnimation) return;
+    
+    this->csNode->play(AnimationName::getTurn(direction));
 }
 
 // AIを一時停止
@@ -130,14 +103,6 @@ void Character::resumeAi()
     this->movePattern->resume();
 }
 
-// 足踏み
-void Character::stamp(const Direction direction, float ratio)
-{
-    this->getSprite()->stopAllActions();
-    
-    this->getTerrain()->onWillStamp(this, direction, ratio);
-}
-
 // 方向を指定して歩行させる
 bool Character::walkBy(const Direction& direction, function<void()> onWalked, const float ratio, const bool back)
 {
@@ -151,10 +116,11 @@ bool Character::walkBy(const vector<Direction>& directions, function<void()> onW
 {
     if(!MapObject::moveBy(directions, onWalked, ratio)) return false;
     
-    Direction direction { back ? MapUtils::oppositeDirection(directions.back()) : directions.back() };
+    // 方向を変える
+    Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
+    this->setDirection(direction, false);
     
-    this->setDirection(direction);
-    
+    // 歩行アニメーション
     this->stamp(direction, ratio);
     
     return true;
@@ -238,19 +204,72 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
 }
 
 // 周りを見渡す
+void Character::lookAround(function<void()> callback)
+{
+    this->setDirection(this->getDirection().convertToWorldDirection(Direction::RIGHT));
+    this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]{this->setDirection(this->getDirection().convertToWorldDirection(Direction::UP));}), DelayTime::create(1.f), CallFunc::create([callback]{callback();}), nullptr));
+    
+}
+
+// 周りを見渡す
 void Character::lookAround(function<void()> callback, Direction direction)
 {
-    if(direction != Direction::SIZE)
-    {
-        this->setDirection(direction);
-        this->runAction(Sequence::createWithTwoActions(DelayTime::create(1.5f), CallFunc::create(callback)));
-        
-        return;
-    }
-    
-    this->setDirection(this->convertToWorldDir(Direction::RIGHT));
-    this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]{this->setDirection(this->convertToWorldDir(Direction::BACK));}), DelayTime::create(1.f), CallFunc::create([callback]{callback();}), nullptr));
+    this->setDirection(direction);
+    this->runAction(Sequence::createWithTwoActions(DelayTime::create(1.5f), CallFunc::create(callback)));
 }
+
+#pragma mark -
+#pragma mark CSNode
+
+// アニメーションを再生
+void Character::playAnimation(const string& name, float speed, bool loop)
+{
+    if(!this->csNode) return;
+    
+    this->csNode->play(name, speed, loop);
+}
+
+void Character::playAnimationIfNotPlaying(const string& name, float speed)
+{
+    if(!this->csNode) return;
+    
+    this->csNode->playIfNotPlaying(name, speed);
+}
+
+#pragma mark -
+#pragma mark TerrainState
+
+// 足踏み
+void Character::stamp(const Direction direction, float ratio)
+{
+    if(!_terrainState) return;
+    
+    _terrainState->stamp(this, direction, ratio);
+}
+
+bool Character::isRunnable() const
+{
+    if(!_terrainState) return true;
+    
+    return _terrainState->isRunnable();
+}
+
+bool Character::consumeStaminaWalking() const
+{
+    if(!_terrainState) return false;
+    
+    return _terrainState->consumeStaminaWalking();
+}
+
+float Character::getStaminaConsumptionRatio() const
+{
+    if(!_terrainState) return 1.f;
+    
+    return _terrainState->getStaminaConsumptionRatio();
+}
+
+#pragma mark -
+#pragma mark Callback
 
 // マップに配置された時
 void Character::onEnterMap()
@@ -271,7 +290,7 @@ void Character::onPartyMoved()
 void Character::onSearched(MapObject* mainChara)
 {
     // 主人公の反対の方向を向かせる（向かいあわせる）
-    this->setDirection(MapUtils::oppositeDirection(mainChara->getDirection()));
+    this->setDirection(mainChara->getDirection().getOppositeDirection());
 }
 
 // イベント開始時
@@ -287,4 +306,21 @@ void Character::onEventFinished()
     this->setPaused(false);
     if(this->movePattern && this->movePattern->isPaused()) this->movePattern->resume();
     this->getActionManager()->resumeTarget(this);
+}
+
+#pragma mark -
+#pragma mark AnimationName
+string Character::AnimationName::getTurn(const Direction& direction)
+{
+    return direction.getDowncaseString();
+}
+
+string Character::AnimationName::getWalk(const Direction& direction)
+{
+    return "walk_" + direction.getDowncaseString();
+}
+
+string Character::AnimationName::getSwim(const Direction& direction)
+{
+    return "swim_" + direction.getDowncaseString();
 }

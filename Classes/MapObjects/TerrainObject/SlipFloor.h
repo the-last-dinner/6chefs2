@@ -21,13 +21,11 @@ public:
 private:
     SlipFloor();
     ~SlipFloor();
-    bool init();
+    bool init() override;
     
+// インターフェース
 public:
-    virtual void onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio);
-    virtual float getStaminaConsumptionRate() const { return 1.0f; };
-    virtual bool canDash() const { return false; };
-    virtual bool consumeStaminaWalking() const { return false; };
+    virtual TerrainState* getTerrainState(TerrainStateCache* cache) const override;
 };
 
 #endif /* SlipFloor_h */

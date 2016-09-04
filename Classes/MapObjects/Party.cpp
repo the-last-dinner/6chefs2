@@ -30,7 +30,9 @@ bool Party::init(const vector<CharacterData>& datas)
     // データを元にキャラクタを生成して格納
     for(int i { 0 }; i < datas.size(); i++)
     {
-        Character* chara {Character::create(datas[i])};
+        Character* chara { Character::create(datas[i]) };
+        
+        if(!chara) continue;
         
         // 主人公のみ当たり判定
         if(i == 0) chara->setHit(true);
@@ -89,32 +91,16 @@ bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, 
 // メンバーを移動
 void Party::moveMember(Character* member, Character* previousMember, float ratio)
 {
-    // 前のメンバーの後ろに移動するようにする
-    Direction backDirection { MapUtils::oppositeDirection(previousMember->getDirection()) };
+    // 前のメンバーの移動前にいた位置を計算
+    Point destPos { previousMember->getGridPosition() };
     
-    Point destPos {previousMember->getGridPosition()};
-    
-    switch (backDirection)
+    for(Direction direction : previousMember->getMovingDirections())
     {
-        case Direction::FRONT:
-        case Direction::BACK:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * previousMember->getGridSize().height;
-            break;
-            
-        case Direction::LEFT:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * (member->getGridSize().width);
-            break;
-            
-        case Direction::RIGHT:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * (previousMember->getGridSize().width);
-            break;
-            
-        default:
-            break;
+        destPos -= direction.getGridVec2() * 2;
     }
     
     Vec2 movement { destPos - member->getGridPosition() };
-    member->walkBy(MapUtils::vectoMapDirections(movement), nullptr, ratio);
+    member->walkBy(Direction::convertGridVec2(movement), nullptr, ratio);
 }
 
 // パーティを移動

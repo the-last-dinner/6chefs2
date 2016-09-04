@@ -12,23 +12,20 @@
 #include "MapObjects/MapObject.h"
 
 class Character;
+class TerrainState;
+class TerrainStateCache;
 
 class TerrainObject : public MapObject
-{
+{    
 // インスタンスメソッド
 protected:
+    virtual bool init() override;
     TerrainObject();
-    ~TerrainObject();
-    int getStampingState(Character* target) const;
-    void setStampingState(Character* target, int state);
-    string getPrefix(Character* target) const;
+    virtual ~TerrainObject();
+    
+// インターフェース
 public:
-    virtual void onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio) = 0;
-    virtual void onWillStamp(Character* target, const Direction& direction, const float ratio);
-    virtual float getStaminaConsumptionRate() const = 0;
-    virtual bool canDash() const = 0;
-    virtual bool consumeStaminaWalking() const = 0;
-    virtual string getDotPrefix() const { return "";};
+    virtual TerrainState* getTerrainState(TerrainStateCache* cache) const = 0;
 };
 
 #endif /* TerrainObject_h */

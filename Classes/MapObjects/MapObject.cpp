@@ -9,6 +9,8 @@
 #include "MapObjects/MapObject.h"
 
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/TerrainState/TerrainState.h"
+#include "MapObjects/TerrainState/TerrainStateCache.h"
 
 #include "Effects/AmbientLightLayer.h"
 #include "Effects/Light.h"
@@ -19,10 +21,27 @@
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
 
 // コンストラクタ
-MapObject::MapObject(){FUNCLOG}
+MapObject::MapObject() { FUNCLOG }
 
 // デストラクタ
-MapObject::~MapObject(){FUNCLOG}
+MapObject::~MapObject()
+{
+    FUNCLOG
+    
+    CC_SAFE_RELEASE(_terrainStateCache);
+}
+
+// 初期化
+bool MapObject::init()
+{
+    if(!Node::init()) return false;
+    
+    TerrainStateCache* terrainStateCache { TerrainStateCache::create() };
+    CC_SAFE_RETAIN(terrainStateCache);
+    _terrainStateCache = terrainStateCache;
+    
+    return true;
+}
 
 // マス数サイズを取得
 Size MapObject::getGridSize() const { return Size(floor(this->getContentSize().width / GRID),floor(this->getContentSize().height / GRID)); }
@@ -43,7 +62,7 @@ Rect MapObject::getGridRect(const vector<Direction>& directions) const
 void MapObject::setGridPosition(const Point& gridPosition) { this->location.x = gridPosition.x; this->location.y = gridPosition.y; }
 
 // 方向をセット
-void MapObject::setDirection(const Direction direction) { this->location.direction = direction; }
+void MapObject::setDirection(const Direction& direction) { this->location.direction = direction; }
 
 // オブジェクトIDをセット
 void MapObject::setObjectId(int objectId) { this->objectId = objectId; }
@@ -139,6 +158,9 @@ Vector<SpriteFrame*> MapObject::getSpriteFrames() const { return this->spriteFra
 // 一時停止状態か
 bool MapObject::isPaused() const { return this->paused; };
 
+// 移動方向を取得
+vector<Direction> MapObject::getMovingDirections() const { return _movingDirections; };
+
 // マップ上にある格子Rectを取得
 vector<Rect> MapObject::getWorldGridCollisionRects()
 {
@@ -177,7 +199,8 @@ Rect MapObject::getCollisionRect(const vector<Direction>& directions) const
     for(int i { 0 }; i < directions.size(); i++)
     {
         if(i > 2) break;
-        movementVec += MapUtils::getGridVector(directions[i]);
+        
+        movementVec += directions[i].getVec2();
     }
     
     // あたり判定用Rectを縦横-2ピクセルした後に、x,y方向に1ピクセル足すことによって、関係ない範囲を巻き込まないようにしている（線分上、頂点上であっても判定がきいてしまうため）
@@ -295,14 +318,7 @@ Vec2 MapObject::createMoveVec(const vector<Direction>& directions, const bool ch
     // 当たり判定チェックが必要な場合は、メソッドから、そうでない場合は素の方向から移動ベクトルを生成する
     vector<Direction> dirs {check ? this->createEnableDirections(directions) : directions};
     
-    Vec2 movement {Vec2::ZERO};
-    
-    for(Direction direction : dirs)
-    {
-        movement += MapUtils::getGridVector(direction);
-    }
-    
-    return movement;
+    return Direction::getVec2(directions);
 }
 
 // 入力方向に対して動くことが可能かどうか
@@ -311,6 +327,12 @@ bool MapObject::canMove(const vector<Direction>& directions) const {return !this
 // 当たり判定、地形チェックをせずにして方向に移動させる
 void MapObject::move(const vector<Direction>& enableDirections, function<void()> onMoved, const float ratio)
 {
+    // 移動中の方向を設定
+    for(Direction direction : enableDirections)
+    {
+        _movingDirections.push_back(direction);
+    }
+    
     // 方向からベクトル生成
     Vec2 movement { this->createMoveVec(enableDirections, false) };
     
@@ -321,6 +343,7 @@ void MapObject::move(const vector<Direction>& enableDirections, function<void()>
     this->_isMoving = true;
     this->runAction(Sequence::create(MoveBy::create(DURATION_MOVE_ONE_GRID / ratio, movement), CallFunc::create([this]
     {
+        _movingDirections.clear();
         this->_isMoving = false;
         if(this->onMoved) this->onMoved(this);
     }), CallFunc::create(onMoved), nullptr));
@@ -346,8 +369,9 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     // 移動する前の場所のイベントを発火
     this->runRectEventByTrigger(Trigger::GET_OFF);
     
-    // 地形オブジェクトに移動をイベント送信
-    this->getTerrain(dirs)->onWillMove(this, dirs, onMoved, ratio);
+    // 地形の状態
+    _terrainState = this->getTerrain(dirs)->getTerrainState(_terrainStateCache);
+    if(_terrainState) _terrainState->move(this, dirs, onMoved, ratio);
     
     // 移動したあとのイベントを発火
     this->runRectEventByTrigger(Trigger::RIDE_ON);
@@ -434,7 +458,7 @@ void MapObject::clearDirectionsQueue()
 TerrainObject* MapObject::getTerrain(const vector<Direction>& directions)
 {
     if(!this->objectList) return nullptr;
-    
+
     return this->objectList->getTerrainByGridRect(this->getGridRect(directions));
 }
 
@@ -476,31 +500,6 @@ void MapObject::reaction(function<void()> callback)
     this->addChild(icon);
     
     icon->runAction(Sequence::create(EaseElasticOut::create(ScaleTo::create(0.6f, 1.f), 0.5f), DelayTime::create(1.f), RemoveSelf::create(), CallFunc::create(callback), nullptr));
-}
-
-// 指定方法をマップ上での方向に変換
-Direction MapObject::convertToWorldDir(const Direction direction)
-{
-    switch (this->getDirection()) {
-        case Direction::FRONT: return MapUtils::oppositeDirection(direction);
-            
-        case Direction::BACK: return direction;
-        
-        case Direction::RIGHT:
-            if(direction == Direction::BACK) return Direction::LEFT;
-            if(direction == Direction::FRONT) return Direction::RIGHT;
-            if(direction == Direction::RIGHT) return Direction::FRONT;
-            if(direction == Direction::LEFT) return Direction::BACK;
-            
-        case Direction::LEFT:
-            if(direction == Direction::BACK) return Direction::RIGHT;
-            if(direction == Direction::FRONT) return Direction::LEFT;
-            if(direction == Direction::RIGHT) return Direction::BACK;
-            if(direction == Direction::LEFT) return Direction::FRONT;
-            
-        default:
-            return Direction::SIZE;
-    }
 }
 
 // デバッグ用に枠を描画
