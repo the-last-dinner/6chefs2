@@ -3,6 +3,20 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["17","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"setLight",
+					"objID":"1"
+				}
+			]
 		}
 	],
 	"2":[
@@ -236,14 +250,15 @@
 	],
 	"6":[
 		{
-			"type":"systemMsg",
-			"text":["引き出しの中は空だ"]
-		}
-	],
-	"7":[
+			"type":"setLight",
+			"objID":"1"
+		},
 		{
-			"type":"systemMsg",
-			"text":["電気スタンドだ\nベッドの中でゲームするときなんかはコレをつけて・・・"]
+			"type":"playSE",
+			"file":"switch1.mp3"
+		},
+		{
+			"type":"already"
 		}
 	]
 }

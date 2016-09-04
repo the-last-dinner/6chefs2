@@ -251,7 +251,7 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["暗くなったらホテルに行きましょう。"],
+							"text":["暗くなったらホテルに向かいましょう。"],
 							"charaID":"0",
 							"imgID":"2"
 						},
@@ -428,10 +428,10 @@
 							]
 						},
 						{
-							"type":"charaWalk",
+							"type":"charaMsg",
 							"talk":[
 								{
-									"text":["どったの？\n蘭丸くんとなっちんは？"],
+									"text":["どったの？\nまるおくんとなっつんは？"],
 									"charaID":"7",
 									"imgID":"1"
 								},
@@ -442,7 +442,7 @@
 								},
 								{
 									"text":["迷子・・・ですかな？"],
-									"charaID":"5",
+									"charaID":"4",
 									"imgID":"1"
 								},
 								{
@@ -473,7 +473,7 @@
 								},
 								{
 									"text":["咲賀谷氏、そろそろホテルに・・・"],
-									"charaID":"5",
+									"charaID":"4",
 									"imgID":"1"
 								}
 							]
@@ -484,7 +484,8 @@
 						},
 						{
 							"type":"playSE",
-							"file":"umeki_monster.mp3"
+							"file":"umeki_monster.mp3",
+							"volume":10.0
 						},
 						{
 							"type":"spawn",
@@ -526,12 +527,42 @@
 									"type":"sequence",
 									"action":[
 										{
+											"type":"removeObject",
+											"objID":"1022"
+										},
+										{
+											"type":"removeObject",
+											"objID":"1023"
+										},
+										{
+											"type":"createObject",
+											"objID":"10218",
+											"charaID":"8",
+											"x":24,
+											"y":31,
+											"eventID":"7",
+											"trigger":"2",
+											"direction":"UP",
+											"movePattern":"1"
+										},
+										{
+											"type":"createObject",
+											"objID":"10219",
+											"charaID":"5",
+											"x":20,
+											"y":31,
+											"eventID":"8",
+											"trigger":"2",
+											"direction":"UP",
+											"movePattern":"1"
+										},
+										{
 											"type":"fadein",
 											"time":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1023",
+											"objID":"10219",
 											"direction":"RIGHT"
 										},
 										{
@@ -540,7 +571,7 @@
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1023",
+											"objID":"10219",
 											"direction":"LEFT"
 										},
 										{
@@ -549,12 +580,12 @@
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1023",
+											"objID":"10219",
 											"direction":"RIGHT"
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1022",
+											"objID":"10218",
 											"direction":"LEFT"
 										},
 										{
@@ -602,113 +633,157 @@
 								                },
 												{
 													"type":"reaction",
-													"objID":"1022"
+													"objID":"10218"
 												},
 												{
 													"type":"reaction",
-													"objID":"1023"
+													"objID":"10219"
 												}
 											]
 										},
 										{
 											"type":"fadeout",
 											"time":3.0
-										},
-										{
-											"type":"createCamera",
-											"mapID":"9",
-											"x":9,
-											"y":68,
-											"action":[
-												{
-													"type":"sequence",
-													"action":[
-														{
-															"type":"fadein",
-															"time":2.0
-														},
-														{
-															"type":"changeDirection",
-															"objID":"1026",
-															"direction":"RIGHT"
-														},
-														{
-															"type":"changeDirection",
-															"objID":"1025",
-															"direction":"LEFT"
-														},
-														{
-															"type":"charaMsg",
-															"talk":[
-																{
-																	"text":["なぁ真夏・・・"],
-																	"charaID":"2",
-																	"imgID":"2"
-																},
-																{
-																	"text":["馴れ馴れしいわね・・・"],
-																	"charaID":"3",
-																	"imgID":"4"
-																},
-																{
-																	"text":["何言ってんだよ今更"],
-																	"charaID":"2",
-																	"imgID":"4"
-																},
-																{
-																	"text":["・・・","雪・・・いないわね・・・"],
-																	"charaID":"3",
-																	"imgID":"4"
-																},
-																{
-																	"text":["あぁ・・・もう暗ぇし心配だな"],
-																	"charaID":"5",
-																	"imgID":"3"
-																}
-															]
-														},
-														{
-															"type":"playSE",
-															"file":"umeki_monster.mp3"
-														},
-														{
-															"type":"spawn",
-															"action":[
-																{
-												                  "type":"playSE",
-												                  "file":"reaction.mp3",
-												                  "volume":0.25
-												                },
-																{
-																	"type":"reaction",
-																	"objID":"1025"
-																},
-																{
-																	"type":"reaction",
-																	"objID":"1026"
-																}
-															]
-														},
-														{
-															"type":"charaMsg",
-															"text":["あれは！"],
-															"charaID":"2",
-															"imgID":"2",
-															"option":"reaction"
-														}
-													]
-												}
-											]
 										}
 									]
 								}
 							]
 						},
 						{
+							"type":"createCamera",
+							"mapID":"9",
+							"x":9,
+							"y":68,
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"removeObject",
+											"objID":"1025"
+										},
+										{
+											"type":"removeObject",
+											"objID":"1026"
+										},
+										{
+											"type":"createObject",
+											"objID":"10220",
+											"charaID":"2",
+											"x":8,
+											"y":66,
+											"eventID":"7",
+											"trigger":"2",
+											"direction":"UP",
+											"movePattern":"2"
+										},
+										{
+											"type":"createObject",
+											"objID":"10221",
+											"charaID":"3",
+											"x":4,
+											"y":64,
+											"eventID":"8",
+											"trigger":"2",
+											"direction":"UP",
+											"movePattern":"2"
+										},
+										{
+											"type":"fadein",
+											"time":2.0
+										},
+										{
+											"type":"changeDirection",
+											"objID":"10221",
+											"direction":"RIGHT"
+										},
+										{
+											"type":"changeDirection",
+											"objID":"10220",
+											"direction":"LEFT"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["なぁ真夏・・・"],
+													"charaID":"2",
+													"imgID":"2"
+												},
+												{
+													"text":["馴れ馴れしいわね・・・"],
+													"charaID":"3",
+													"imgID":"4"
+												},
+												{
+													"text":["何言ってんだよ今更"],
+													"charaID":"2",
+													"imgID":"4"
+												},
+												{
+													"text":["・・・","雪・・・いないわね・・・"],
+													"charaID":"3",
+													"imgID":"4"
+												},
+												{
+													"text":["あぁ・・・もう暗ぇし心配だな"],
+													"charaID":"2",
+													"imgID":"3"
+												}
+											]
+										},
+										{
+											"type":"playSE",
+											"file":"umeki_monster.mp3"
+										},
+										{
+											"type":"spawn",
+											"action":[
+												{
+								                  "type":"playSE",
+								                  "file":"reaction.mp3",
+								                  "volume":0.25
+								                },
+												{
+													"type":"reaction",
+													"objID":"10220"
+												},
+												{
+													"type":"reaction",
+													"objID":"10221"
+												}
+											]
+										},
+										{
+											"type":"changeDirection",
+											"objID":"10220",
+											"direction":"DOWN"
+										},
+										{
+											"type":"charaMsg",
+											"text":["あれは！"],
+											"charaID":"2",
+											"imgID":"2",
+											"option":"reaction"
+										},
+										{
+											"type":"fadeout"
+										}
+									]
+								}
+							]
+						},
+						{
+							"type":"fadein"
+						},
+						{
 							"type":"charaMsg",
 							"text":["そんな・・・！！どうして！！"],
 							"charaID":"6",
 							"imgID":"2"
+						},
+						{
+							"type":"fadeout"
 						},
 						{
 							"type":"createCamera",
@@ -720,99 +795,155 @@
 									"type":"sequence",
 									"action":[
 										{
+											"type":"removeObject",
+											"objID":"1022"
+										},
+										{
+											"type":"removeObject",
+											"objID":"1023"
+										},
+										{
+											"type":"createObject",
+											"objID":"10218",
+											"charaID":"8",
+											"x":24,
+											"y":31,
+											"eventID":"7",
+											"trigger":"2",
+											"direction":"DOWN",
+											"movePattern":"1"
+										},
+										{
+											"type":"createObject",
+											"objID":"10219",
+											"charaID":"5",
+											"x":20,
+											"y":31,
+											"eventID":"8",
+											"trigger":"2",
+											"direction":"DOWN",
+											"movePattern":"1"
+										},
+										{
+											"type":"fadein"
+										},
+										{
 											"type":"charaMsg",
 											"text":["間違いねぇ・・・"],
 											"charaID":"5",
 											"imgID":"1"
 										},
 										{
-											"type":"createCamera",
-											"mapID":"11",
-											"x":21,
-											"y":24,
-											"action":[
-												{
-													"type":"spawn",
-													"action":[
-														{
-															"type":"createObject",
-															"objID":"1030",
-															"charaID":"13",
-															"x":28,
-															"y":17,
-															"direction":"RIGHT",
-															"movePattern":"2"
-														},
-														{
-															"type":"createObject",
-															"objID":"1031",
-															"charaID":"13",
-															"x":28,
-															"y":27,
-															"direction":"RIGHT",
-															"movePattern":"2"
-														},
-														{
-															"type":"createObject",
-															"objID":"1032",
-															"charaID":"13",
-															"x":10,
-															"y":24,
-															"direction":"UP",
-															"movePattern":"2"
-														},
-														{
-															"type":"createObject",
-															"objID":"1033",
-															"charaID":"13",
-															"x":49,
-															"y":4,
-															"direction":"LEFT",
-															"movePattern":"1"
-														},
-														{
-															"type":"createObject",
-															"objID":"1034",
-															"charaID":"0",
-															"x":47,
-															"y":4,
-															"direction":"LEFT",
-															"movePattern":"1"
-														}
-													]
-												},
-												{
-													"type":"charaMsg",
-													"talk":[
-														{
-															"text":["狂人病・・・"],
-															"charaID":"0",
-															"imgID":"3"
-														},
-														{
-															"text":["中山さん！\n一旦戻ろう！"],
-															"charaID":"0",
-															"imgID":"3",
-															"option":"reaction"
-														}
-													]
-												},
-												{
-													"type":"fadeout",
-													"time":3.0
-												}
-											]
+											"type":"fadeout"
 										}
 									]
 								}
 							]
 						},
 						{
+							"type":"createCamera",
+							"mapID":"11",
+							"x":21,
+							"y":24,
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"createObject",
+											"objID":"1030",
+											"charaID":"13",
+											"x":28,
+											"y":17,
+											"direction":"RIGHT",
+											"movePattern":"2"
+										},
+										{
+											"type":"createObject",
+											"objID":"1031",
+											"charaID":"13",
+											"x":28,
+											"y":27,
+											"direction":"RIGHT",
+											"movePattern":"2"
+										},
+										{
+											"type":"createObject",
+											"objID":"1032",
+											"charaID":"13",
+											"x":10,
+											"y":24,
+											"direction":"UP",
+											"movePattern":"2"
+										},
+										{
+											"type":"createObject",
+											"objID":"1033",
+											"charaID":"13",
+											"x":49,
+											"y":4,
+											"direction":"LEFT",
+											"movePattern":"1"
+										},
+										{
+											"type":"createObject",
+											"objID":"1034",
+											"charaID":"0",
+											"x":47,
+											"y":4,
+											"direction":"LEFT",
+											"movePattern":"1"
+										},
+										{
+											"type":"removeLayer",
+											"layer":"hide1"
+										},
+										{
+											"type":"removeLayer",
+											"layer":"hide2"
+										},
+										{
+											"type":"fadein"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["狂人病・・・"],
+													"charaID":"0",
+													"imgID":"3"
+												},
+												{
+													"text":["中山さん！\n一旦戻ろう！"],
+													"charaID":"0",
+													"imgID":"3",
+													"option":"reaction"
+												}
+											]
+										},
+										{
+											"type":"fadeout",
+											"time":3.0
+										}
+									]
+								}
+							]
+						},
+						{
+							"type":"storyMsg",
+							"text":["皆それぞれ思うところはあったけれども、\n楽しい旅になると思っていた","食の大国で、\n美味しいものをたくさん食べて・・・","僕らはまた\n「自分たちが食べる側であること」\nに一切の疑いを向けなかった"]
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
-									"type":"playBGM",
-									"file":"chapter1.mp3"
+									"type":"playSE",
+									"file":"chapter1.mp3",
+									"volume":10.0
 								},
 								{
 									"type":"displayImg",
@@ -824,10 +955,6 @@
 									"chapterID":"1"
 								}
 							]
-						},
-						{
-							"type":"stopBGM",
-							"file":"chapter1.mp3"
 						},
 						{
 							"type":"changeHero",
@@ -914,6 +1041,41 @@
 		{
 			"type":"systemMsg",
 			"text":["食いちぎられたところがいくつかある"]
+		}
+	],
+	"10":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
+					"Nevent":["5","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"night.mp3"
+						},
+						{
+							"type":"already",
+							"event":["5","6"]
+						}
+					]
+				}
+			]
 		}
 	]
 }

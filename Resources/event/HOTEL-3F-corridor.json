@@ -26,6 +26,10 @@
 					"pathID":"1",
 					"direction":"DOWN",
 					"times":1
+				},
+				{
+					"type":"removeLayer",
+					"layer":"doorP"
 				}
 			]
 		},
@@ -108,59 +112,158 @@
 	],
 	"3":[
 		{
-			"type":"sequence",
+			"type":"if",
+			"condition":[
+				{
+					"event":["16","6"]
+				}
+			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"door_easy_open.mp3"
-				},
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"door_easy_open.mp3"
+						},
+						{
+							"type":"removeLayer",
+							"layer":"door4"
+						},
+						{
+							"type":"wait",
+							"time":0.2
+						},
+						{
+							"type":"removeLayer",
+							"layer":"door3"
+						},
+						{
+							"type":"wait",
+							"time":0.2
+						},
+						{
+							"type":"removeLayer",
+							"layer":"door2"
+						},
+						{
+							"type":"wait",
+							"time":0.2
+						},
+						{
+							"type":"changeMap",
+							"mapID":"17",
+							"x":14,
+							"y":29
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
 				{
-					"type":"removeLayer",
-					"layer":"door4"
-				},
+					"Nevent":["16","6"]
+				}
+			],
+			"action":[
 				{
-					"type":"wait",
-					"time":0.2
-				},
-				{
-					"type":"removeLayer",
-					"layer":"door3"
-				},
-				{
-					"type":"wait",
-					"time":0.2
-				},
-				{
-					"type":"removeLayer",
-					"layer":"door2"
-				},
-				{
-					"type":"wait",
-					"time":0.2
-				},
-				{
-					"type":"changeMap",
-					"mapID":"17",
-					"x":14,
-					"y":29
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["さっきの音・・・\n気になるな・・・"],
+							"charaID":"0",
+							"imgID":"2"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"DOWN",
+							"steps":1.0
+						},
+						{
+							"type":"changeDirection",
+							"objID":"hero",
+							"direction":"RIGHT"
+						}
+					]
 				}
 			]
 		}
 	],
 	"4":[
 		{
-			"type":"charaMsg",
-			"text":["非常階段には近づかないようにしよう"],
-			"charaID":"0",
-			"imgID":"2"
+			"type":"sequence",
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["非常階段には近づかないようにしよう・・・"],
+					"charaID":"0",
+					"imgID":"2"
+				},
+				{
+					"type":"charaWalk",
+					"objID":"hero",
+					"direction":"UP",
+					"steps":1.0
+				}
+			]
 		}
 	],
 	"5":[
 		{
-			"type":"changeMap",
-			"mapID":"15",
-			"x":16,
-			"y":3
+			"type":"if",
+			"condition":[
+				{
+					"event":["16","15"],
+					"Nevent":["16","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["さっきの音・・・\n気になるな・・・"],
+							"charaID":"0",
+							"imgID":"2"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"UP",
+							"steps":1.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["16","15"]
+				},
+				{
+					"event":["16","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"changeMap",
+							"mapID":"15",
+							"x":16,
+							"y":3
+						}
+					]
+				}
+			]
 		}
 	],
 	"6":[
@@ -208,7 +311,7 @@
 									"type":"charaMsg",
 									"text":["うああああぁぁぁぁああああ！"],
 									"charaID":"10",
-									"option":"reavtion"
+									"option":"reaction"
 								},
 								{
 									"type":"charaWalk",
@@ -234,6 +337,11 @@
 							"charaID":"10"
 						},
 						{
+							"type":"charaMsg",
+							"text":["たすけ・・・"],
+							"charaID":"10"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -247,34 +355,45 @@
 									"times":1
 								},
 								{
-									"type":"charaMsg",
-									"text":["たすけ・・・"],
-									"charaID":"10",
-									"option":"reavtion"
-								},
-								{
 									"type":"charaWalk",
 									"objID":"145",
 									"direction":"DOWN",
-									"speed":3.0,
+									"speed":10.0,
 									"steps":5.5
-								},
-								{
-									"type":"removeObject",
-									"objID":"1036"
-								},
-								{
-									"type":"removeLayer",
-									"layer":"hide"
 								}
 							]
 						},
 						{
+							"type":"playSE",
+							"file":"blood.mp3"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1036"
+						},
+						{
+							"type":"removeLayer",
+							"layer":"hide"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
 							"type":"charaMsg",
-							"text":["いやぁぁぁぁぁ"],
-							"charaID":"1",
-							"imgID":"2",
-							"option":"reaction"
+							"talk":[
+								{
+									"text":["い・・・"],
+									"charaID":"1",
+									"imgID":"2"
+								},
+								{
+									"text":["いやぁぁぁぁぁ"],
+									"charaID":"1",
+									"imgID":"2",
+									"option":"reaction"
+								}
+							]
 						},
 						{
 							"type":"spawn",
@@ -305,6 +424,10 @@
 									]
 								}
 							]
+						},
+						{
+							"type":"playBGM",
+							"file":"dark_chapter1.mp3"
 						},
 						{
 							"type":"already"
@@ -370,6 +493,107 @@
 		{
 			"type":"playSE",
 			"file":"door_unopen.mp3"
+		}
+	],
+	"13":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["部屋は荒らされている"]
+				},
+				{
+					"type":"charaMsg",
+					"text":["早く・・・”脱出シューターを・・・”"],
+					"charaID":"0",
+					"imgID":"2"
+				},
+				{
+					"type":"charaWalk",
+					"objID":"hero",
+					"direction":"DOWN",
+					"steps":1.0,
+					"option":"back"
+				}
+			]
+		}
+	],
+	"14":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["17","2",0]
+				},
+				{
+					"event":["16","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["先に来てた人って・・・\nプロデューサーさんだったのか・・・"],
+							"charaID":"0",
+							"imgID":"3"
+						},
+						{
+							"text":["ひ・・・"],
+							"charaID":"1",
+							"imgID":"2"
+						},
+						{
+							"text":["・・・","とにかく・・・\n外に出なきゃ！"],
+							"charaID":"0",
+							"imgID":"2"
+						}
+					]
+				}
+			]
+		}
+	],
+	"15":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playSE",
+					"file":"broken-glass_RIGHT.mp3",
+					"volume":10.0
+				},
+				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["今の音・・・"],
+							"charaID":"0",
+							"imgID":"2"
+						},
+						{
+							"text":["・・・"],
+							"charaID":"1",
+							"imgID":"1"
+						},
+						{
+							"text":["気を付けて進みましょう・・・"],
+							"charaID":"0",
+							"imgID":"1"
+						}
+					]
+				},
+				{
+					"type":"already"
+				}
+			]
 		}
 	]
 }

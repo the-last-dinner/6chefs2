@@ -12,7 +12,8 @@
 			"y":29,
 			"direction":"UP",
 			"speed":0.3,
-			"times":1
+			"times":1,
+			"movePattern":"3"
 		},
 		{
 			"type":"createEnemy",
@@ -20,9 +21,10 @@
 			"charaID":"13",
 			"x":24,
 			"y":4,
-			"direction":"DOWN",
+			"direction":"UP",
 			"speed":0.3,
-			"times":1
+			"times":1,
+			"movePattern":"3"
 		}
 	],
 	"2":[
@@ -38,6 +40,11 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"DOWN"
+				},
+				{
 					"type":"spawn",
 					"action":[
 						{
@@ -48,6 +55,10 @@
 						{
 							"type":"reaction",
 							"objID":"hero"
+						},
+						{
+							"type":"reaction",
+							"objID":"142"
 						}
 					]
 				},
@@ -60,6 +71,18 @@
 					"type":"barrage",
 					"times":28,
 					"limit":5.0,
+					"event":[
+						{
+							"type":"playSE",
+							"file":"iron_door_unopen.mp3"
+						},
+						{
+							"type":"quakeMap",
+							"x":0,
+							"y":12,
+							"time":0.12
+						}
+					],
 					"true":[
 						{
 							"type":"sequence",

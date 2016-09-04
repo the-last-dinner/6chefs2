@@ -109,9 +109,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["2","4"]
-				},
-				{
+					"event":["2","4"],
 					"Nevent":["2","14"]
 				}
 			],
@@ -210,6 +208,11 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"DOWN"
+				},
+				{
 					"type":"fadein"
 				},
 				{
@@ -273,7 +276,7 @@
 					"x":31,
 					"y":44,
 					"objID":"1018",
-					"speed":2.0
+					"speed":4.0
 				},
 				{
 					"type":"removeObject",
@@ -291,7 +294,7 @@
 					"x":31,
 					"y":44,
 					"objID":"1015",
-					"speed":2.0
+					"speed":3.0
 				},
 				{
 					"type":"removeObject",
@@ -299,7 +302,7 @@
 				},
 				{
 					"type":"charaMsg",
-					"text":["うーんうんうん！いいねぇ。\nまぁ撮影は明日からだからさ、\n今日は好きに見て周りなよ。","あ、夕方までにホテルのチェックインは済ませてくれよ？\n場所の地図はここに置いとくからさ"],
+					"text":["うーんうんうん！いいねぇ。\nまぁ撮影は明日からだからさ、\n今日は好きに見て周りなよ。","あ、夕方までにホテルのチェックインは済ませてくれよ？\n詳しくはここにメモを置いとくからさ"],
 					"charaID":"10"
 				},
 				{
@@ -311,6 +314,14 @@
 				{
 					"type":"removeLayer",
 					"layer":"hide"
+				},
+				{
+					"type":"playSE",
+					"file":"dosa.mp3"
+				},
+				{
+					"type":"wait",
+					"time":1.0
 				},
 				{
 					"type":"charaMsg",
@@ -608,8 +619,8 @@
 	],
 	"15":[
 		{
-			"type":"displayImg",
-			"file":"root.png"
+			"type":"storyMsg",
+			"text":["夕方には\n「玄武-壱番街」にあるホテルの\nチェックインを済ますこと"]
 		}
 	]
 }

@@ -18,6 +18,9 @@
  <tileset firstgid="5569" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
+ <tileset firstgid="6049" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
+  <image source="death.png" width="384" height="256"/>
+ </tileset>
  <layer name="Base" width="60" height="72">
   <properties>
    <property name="cc_vertexz" value="-17"/>
@@ -72,6 +75,30 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt2kEOgzAMRNHcoeemF2k5CJwKunLVRYRwKo0n/0neRvmCXdwaZrA/6syVlp71whnVvDpN9NZHb6C3PnoDvfXRG+itj95Ab330BnrrozfQq2M57/a8MT3KvZ/v9B58P/Xe0ejVQW8evTrozaNXB7159OqgN49eHdsfdlyUe0f5/k/o9UOvN3q90euNXm/0eqPXG73e6PVGrzd6vdHrjV5v9Hr7fWe8s4Pa20fNnjd6MIcD78LAxg==
+  </data>
+ </layer>
+ <layer name="blood" width="60" height="72">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzslRgkEABeE/DLIRUTQEEBVDUNkMARHUEHCFEAQUDEE2IR06hDlMDZf+qvr66mWZJEmSlMZBLsvydEgFOqJjKtIJnebSbKRS4kuZzqhC53RBl1Slq4CvMTZSuebLDd1SjerUoCa16C7ga4yNVNp8uacOPVCXevRIT/Qc8DXGRip9vrzQK73RO33QJw1oGPA1xkYqX3wZ0Zgm9E0/NKUZ/QZ8jbGRyh9f5rSgJa1oTf+0oW3A1xgbkiRJkiRJkiRJkiRJkiRJkiRJ0r7sALZTUDs=
+  </data>
+ </layer>
+ <layer name="hide1" width="60" height="72">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0uEJwyAQBtBAAjdAukG7gdl/thLaEhukGgKpP96DD1FU7tBhAAAAOGeMtkxRv2eqpAdztOVWqfcerzzee0vpQYqt1jXrfCmk5tPrr/QgxXf2vaeD/S7ZmK+13HGV/E33/bfWWfoXR84DAAAAAAAAAAAAAADAPz0B7RwN8Q==
+  </data>
+ </layer>
+ <layer name="hide2" width="60" height="72">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztz7ENACAMA0G32X8CmJQVKAgS4q75yoUTAADoNyqZtd/T+9t++wsAAAAAAAAAAAAAAAAAL1soZh/5
   </data>
  </layer>
  <objectgroup name="collision">
@@ -273,7 +300,7 @@
  </layer>
  <layer name="shadow" width="60" height="72">
   <data encoding="base64" compression="zlib">
-   eJztz7ENAkEQBMEPgPyTICSSwcXA4KSVWPVXBTCavi7oeT7+/eB3r4GvevfSe07vXnrP6d1L77lvvRO7Uz6/6D2nd2/vBL273K13mt42vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbprdNb5veNr1tetv0tult09umt01v2916oeANQZJE1w==
+   eJztz8EJhEAUREEDMP8kDGmT8erBww4M+HlUBdD0Ow7ouc6vH/zvt+Gr3rn0rtM7l951eufSu+6td8fuLs8vetfpndu7g942vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbprdNb5veNr1tetv0tult09umt01vm942vcB0NygzQ/A=
   </data>
  </layer>
 </map>

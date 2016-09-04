@@ -312,12 +312,12 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["おう暖暖、と咲賀谷じゃねーか。"],
+							"text":["おう暖暖、\nと咲賀谷じゃねーか。"],
 							"charaID":"2",
 							"imgID":"1"
 						},
 						{
-							"text":["咲賀谷「さん」か\n「おねーさん」でしょ！蘭丸くん！"],
+							"text":["咲賀谷「さん」か\n「おねーさん」でしょ！まるおくん！"],
 							"charaID":"7",
 							"imgID":"2"
 						},
@@ -492,6 +492,41 @@
 							"objID":"hero",
 							"steps":1.0,
 							"direction":"LEFT"
+						}
+					]
+				}
+			]
+		}
+	],
+	"12":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
+					"Nevent":["5","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"night.mp3"
+						},
+						{
+							"type":"already",
+							"event":["5","6"]
 						}
 					]
 				}

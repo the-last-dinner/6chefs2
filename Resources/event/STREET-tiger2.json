@@ -485,7 +485,7 @@
 										},
 										{
 											"text":["ダイゴローって呼ぶな！\nタムケンって呼ぶな！"],
-											"charaID":"12",
+											"charaID":"10",
 											"name":"田村と大善",
 											"option":"reaction"
 										}
@@ -745,6 +745,41 @@
 							"objID":"hero",
 							"steps":1.0,
 							"direction":"RIGHT"
+						}
+					]
+				}
+			]
+		}
+	],
+	"12":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
+					"Nevent":["5","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"night.mp3"
+						},
+						{
+							"type":"already",
+							"event":["5","6"]
 						}
 					]
 				}

@@ -33,10 +33,10 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0F1OwkAUBtDpGtSFIAtR18ICeOTZLQD6atyB/D2zEvfgENowITNRSgGbnJN8yeRO29yvIexNqhDee5S7uPN9nYdwkM5z941b739qBnHnxzrDpEc6z93r24/oq6+++l4rbzfuu66um9UZ725inuLOz3Vekh7pPHffmFaZ4T8z73BHfc/3WTi3les7/uPs2CX6bgvntnJ9Z4W9S/PGJfp+F85tlfqOMs/+1vcr3i86zrLq9vvp99Jeryf9tf7add3lIzMHAAAAAAAAAAAAAAAAAIA++gEApmkN
+   eJzt0NFpAkEUBdDZGtRC1EKMtViAn/lOCzHkN6SDJMRvK7EHR7KLg8yQuK7EgXPgwvBmGd7dEH48NiG8VpRR3HncZhJO0nnuvvPf+1+aadx51mae9EjnuXt964i++uqrby25tu93U0+2MYu480ObZdIjnefuO89NZnhnXgbcUd/rvRfOfeX6rv84O3eLvrvCua9c301h79K8c4u++8K5r1LfVebb3/p+xPvPgfPVDPt++l7a6+miv1avY9dj3jJzAAAAAAAAAAAAAAAAAACo0QGFxmkP
   </data>
  </layer>
- <layer name="MonoUe" width="60" height="80">
+ <layer name="MonoUe" width="60" height="80" visible="0">
   <properties>
    <property name="z" value="-11"/>
   </properties>
@@ -212,7 +212,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="event">
+ <objectgroup name="event" visible="0">
   <object id="65" x="928" y="48" width="32" height="32">
    <properties>
     <property name="EventID" value="2"/>
@@ -351,7 +351,7 @@
  </layer>
  <layer name="shadow" width="60" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt2MEJg0AQhlE7SCPpJCWk/z5yyEkwRtTddX7fu4o6H7MgOE0AALTyfoyeoC+92fSS4nmz3erNpjeb3mx6s+nNpjeb3mx6SXK3/erNVrn3tTL7r2uVe/e4Wu/azs6gd6xqvUfnrdZ71FV6W8/R6z1pvf/u19tmjq30nnu/3jZz9KJ3Tu++51Shd5nemvQuu1tvit69o89J6n79f/7a0jv6DJ7JfrPpzaY3m95tqn6T7Teb3mx6oZ4Pz+UejA==
+   eJzt2N0Jg0AQAGE7SCHaSUpI/32I+BQw5tD7cWfnexV1hz0QnCZJkiS18nmNnqAve9ns5ZoTtW4We9HsZbOXzV42e9nsZbOXzV62bL3ZZNuvvWyRe98ns/+6Frn3iqf1nu2sBnvHitZ7d95ovXc9pbf1HL3eQ+v9d7+9beYoZW/d++1tM0cv9n6z99pzorD3mL0x2XssWy9F797R54S6X/8/70p6R5/Bmtwvm71s9rLZWybqN9n9stnLZq8UzwqdOB7G
   </data>
  </layer>
 </map>

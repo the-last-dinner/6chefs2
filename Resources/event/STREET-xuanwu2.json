@@ -310,5 +310,40 @@
 			"charaID":"0",
 			"imgID":"3"
 		}
+	],
+	"8":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
+					"Nevent":["5","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"night.mp3"
+						},
+						{
+							"type":"already",
+							"event":["5","6"]
+						}
+					]
+				}
+			]
+		}
 	]
 }

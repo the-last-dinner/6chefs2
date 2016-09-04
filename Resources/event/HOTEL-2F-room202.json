@@ -13,6 +13,20 @@
 			      "ambient":"night"
 			    }
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["13","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"setLight",
+					"objID":"1"
+				}
+			]
 		}
 	],
 	"2":[
@@ -82,13 +96,13 @@
 						{
 							"text":["！？"],
 							"charaID":"0",
-							"imgID":"1",
+							"imgID":"2",
 							"option":"reaction"
 						},
 						{
 							"text":["あれ？部屋同じ・・・！？","鍵は一つですか？"],
 							"charaID":"0",
-							"imgID":"1"
+							"imgID":"2"
 						},
 						{
 							"text":["うん・・・"],
@@ -185,6 +199,19 @@
 					"type":"already"
 				}
 			]	
+		}
+	],
+	"7":[
+		{
+			"type":"setLight",
+			"objID":"1"
+		},
+		{
+			"type":"playSE",
+			"file":"switch1.mp3"
+		},
+		{
+			"type":"already"
 		}
 	]
 }

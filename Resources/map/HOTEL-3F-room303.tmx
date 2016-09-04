@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="80">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="82">
  <tileset firstgid="1" name="set-mansion-in" tilewidth="16" tileheight="16" tilecount="9900" columns="90">
   <image source="set-mansion-in.png" trans="ffffff" width="1440" height="1760"/>
  </tileset>
@@ -96,16 +96,15 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="78" x="320" y="208" width="32" height="16">
+  <object id="79" x="320" y="192" width="32" height="32">
    <properties>
     <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="79" x="320" y="192" width="32" height="16">
+  <object id="81" x="320" y="176" width="32" height="32">
    <properties>
-    <property name="EventID" value="7"/>
-    <property name="trigger" value="2"/>
+    <property name="objID" value="1"/>
    </properties>
   </object>
  </objectgroup>

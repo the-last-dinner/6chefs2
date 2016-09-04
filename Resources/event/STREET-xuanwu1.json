@@ -319,12 +319,12 @@
 							"time":0.5
 						},
 						{
-							"type":"stopBGM",
-							"file":"town.mp3"
+							"type":"stopBGM"
 						},
 						{
 							"type":"playBGM",
-							"file":"hotel.mp3"
+							"file":"hotel.mp3",
+							"volume":0.2
 						},
 						{
 							"type":"changeMap",
@@ -508,6 +508,39 @@
 				},
 				{
 					"type":"already"
+				}
+			]
+		}
+	],
+	"6":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"night.mp3"
+						},
+						{
+							"type":"already"
+						}
+					]
 				}
 			]
 		}

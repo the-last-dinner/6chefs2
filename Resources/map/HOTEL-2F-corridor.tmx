@@ -270,11 +270,6 @@
    eJztyrEJADAIADAnbxf6dE/QxUFI5kQAAAAAAAAAAAAAF1X25w0OAAAAez6H9QEg
   </data>
  </layer>
- <layer name="stepsdoor" width="86" height="40">
-  <data encoding="base64" compression="zlib">
-   eJztwzENAAAIA7DJwL8wtPDCy90mTQAAAAAAAAD46roBAAAAAAC2AYfjA9k=
-  </data>
- </layer>
  <layer name="shadow" width="86" height="40">
   <data encoding="base64" compression="zlib">
    eJzt1jsVgDAUBUFMQIN/dZigoEEAyy8zAu7J2yrTBHDY5qdf8E+6NnRt6NrQtaFrQ9eGrg1dG7o2dG3o2tC1oWtD14auDV0bujZ0beja0LUxctfydl2/t/12ujZ0beja0LVxvn1dmu2rd79A14auDV0bujZ0bdzxz9IVxrMDjSAzfg==

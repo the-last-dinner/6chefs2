@@ -92,6 +92,14 @@
 					"times":1,
 					"pathID":"1",
 					"movePattern":"4"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"hide1"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"hide2"
 				}
 			]
 		}
@@ -106,12 +114,11 @@
 			],
 			"action":[
 				{
-					"type":"stopBGM",
-					"file":"hotel.mp3"
+					"type":"stopBGM"
 				},
 				{
 					"type":"playBGM",
-					"file":"town.mp3"
+					"file":"night.mp3"
 				},
 				{
 					"type":"changeMap",
