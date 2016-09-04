@@ -97,10 +97,28 @@
             <PlistImageFile Name="nadeshiko_s_1.png" Key="nadeshiko_s_1.png" />
             <PlistImageFile Name="nadeshiko_s_2.png" Key="nadeshiko_s_2.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="ranmaru.png" PListFile="ranmaru.plist" Name=".ranmaru_PList.Dir">
+            <PlistImageFile Name="ranmaru_0_0.png" Key="ranmaru_0_0.png" />
+            <PlistImageFile Name="ranmaru_0_1.png" Key="ranmaru_0_1.png" />
+            <PlistImageFile Name="ranmaru_0_2.png" Key="ranmaru_0_2.png" />
+            <PlistImageFile Name="ranmaru_1_0.png" Key="ranmaru_1_0.png" />
+            <PlistImageFile Name="ranmaru_1_1.png" Key="ranmaru_1_1.png" />
+            <PlistImageFile Name="ranmaru_1_2.png" Key="ranmaru_1_2.png" />
+            <PlistImageFile Name="ranmaru_2_0.png" Key="ranmaru_2_0.png" />
+            <PlistImageFile Name="ranmaru_2_1.png" Key="ranmaru_2_1.png" />
+            <PlistImageFile Name="ranmaru_2_2.png" Key="ranmaru_2_2.png" />
+            <PlistImageFile Name="ranmaru_3_0.png" Key="ranmaru_3_0.png" />
+            <PlistImageFile Name="ranmaru_3_1.png" Key="ranmaru_3_1.png" />
+            <PlistImageFile Name="ranmaru_3_2.png" Key="ranmaru_3_2.png" />
+            <PlistImageFile Name="ranmaru_s_0.png" Key="ranmaru_s_0.png" />
+            <PlistImageFile Name="ranmaru_s_1.png" Key="ranmaru_s_1.png" />
+            <PlistImageFile Name="ranmaru_s_2.png" Key="ranmaru_s_2.png" />
+          </PlistImageFolder>
           <Project Name="daigoro.csd" Type="Node" />
           <Project Name="magoichi.csd" Type="Node" />
           <Project Name="manaka.csd" Type="Node" />
           <Project Name="nadeshiko.csd" Type="Node" />
+          <Project Name="ranmaru.csd" Type="Node" />
         </Folder>
       </RootFolder>
     </Group>
