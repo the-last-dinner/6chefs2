@@ -24,7 +24,7 @@ bool CSNode::init(const string& filepath)
     if(!Node::init()) return false;
     
     // csbファイルをNodeとして生成
-    Node* csbNode { CSLoader::createNode("character/magoichi.csb") };
+    Node* csbNode { CSLoader::createNode(filepath) };
     
     if(!csbNode) return false;
     
@@ -32,7 +32,7 @@ bool CSNode::init(const string& filepath)
     _csbNode = csbNode;
     
     // csbファイルからタイムラインを読み込む
-    cocostudio::timeline::ActionTimeline* timeline { CSLoader::createTimeline("character/magoichi.csb") };
+    cocostudio::timeline::ActionTimeline* timeline { CSLoader::createTimeline(filepath) };
 
     if(!timeline) return false;
     

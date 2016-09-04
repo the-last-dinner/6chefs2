@@ -41,7 +41,12 @@ bool Character::init(const CharacterData& data)
     this->setObjectId(data.obj_id);
     
     CSNode* csNode { CSNode::create(data.getCsbFilePath()) };
-    if(!csNode) return false;
+    if(!csNode)
+    {
+        csNode = CSNode::create("character/nadeshiko.csb"); // これ、サービスね
+        //LastSupper::AssertUtils::fatalAssert("キャラクターのcsbファイルが存在しません\nFilePath : " + data.getCsbFilePath());
+        //return false;
+    }
     this->csNode = csNode;
     this->addChild(csNode);
     
