@@ -26,5 +26,11 @@
 			"type":"displayImg",
 			"file":"tower1f_hint.png"
 		}
+	],
+	"5":[
+		{
+			"type":"systemMsg",
+			"text":["からっぽ・・・"]
+		}
 	]
 }

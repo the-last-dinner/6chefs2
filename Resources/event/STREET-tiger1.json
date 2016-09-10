@@ -550,7 +550,7 @@
 			"action":[
 				{
 					"type":"playBGM",
-					"file":"stylish_piano.mp3",
+					"file":"chapter2.mp3",
 					"volume":0.5
 				},
 				{

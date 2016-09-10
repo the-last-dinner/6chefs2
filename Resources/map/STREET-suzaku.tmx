@@ -73,7 +73,7 @@
   <object id="10" x="0" y="880" width="96" height="880"/>
   <object id="11" x="288" y="496" width="96" height="1264"/>
   <object id="30" x="96" y="1728" width="192" height="32"/>
-  <object id="43" x="320" y="464" width="32" height="32">
+  <object id="43" x="320" y="448" width="32" height="48">
    <properties>
     <property name="objID" value="181"/>
    </properties>

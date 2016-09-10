@@ -7,6 +7,13 @@
 	],
 	"2":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower3.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"48",
 			"x":30,

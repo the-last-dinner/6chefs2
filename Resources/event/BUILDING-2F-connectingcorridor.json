@@ -86,6 +86,10 @@
 					]
 				},
 				{
+					"type":"playBGM",
+					"file":"dark_chapter1.mp3"
+				},
+				{
 					"type":"already"
 				}
 			]
@@ -198,6 +202,9 @@
 							]
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -256,8 +263,19 @@
 							"direction":"UP"
 						},
 						{
-							"type":"fadeout",
-							"time":3.0
+							"type":"spawn",
+							"action":[
+								{
+									"type":"charaWalk",
+									"objID":"1042",
+									"steps":8.0,
+									"direction":"DOWN"
+								},
+								{
+									"type":"fadeout",
+									"time":1.5
+								}
+							]
 						},
 						{
 							"type":"already"
@@ -273,13 +291,13 @@
 									"chapterID":"2"
 								},
 								{
-									"type":"playBGM",
+									"type":"playSE",
 									"file":"chapter2.mp3"
 								},	
 								{
 									"type":"displayImg",
 									"file":"chapter2.png",
-									"time":5.0
+									"time":12.0
 								}
 							]
 						},

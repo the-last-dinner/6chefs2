@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="14" height="60" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="13">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="14" height="60" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="14">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="14" height="60">
@@ -58,10 +58,16 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
+  <object id="13" x="32" y="912" width="16" height="16">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="shadow" width="14" height="60">
   <data encoding="base64" compression="zlib">
-   eJzty7ENADAIwDAGvu7znTigC4jKmeOI2U72uPp/d69xHMdxHMdx3AbX1QUVIB3F
+   eJzty7ENADAIwDAGvu7znTigC4jKmeOI2U72uPq3uNc4juM4juM47mfX1QVcUh1G
   </data>
  </layer>
 </map>

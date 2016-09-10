@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
  <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
@@ -36,7 +36,7 @@
    eJxjYBgFo2AUjILBDb4zI9g/mXGrIxeIsjAwiEGxOMuo+aPmkwaMgWaaQLEpDcwfBbQBAFKVBUc=
   </data>
  </layer>
- <layer name="hide" width="24" height="24">
+ <layer name="hide" width="24" height="24" visible="0">
   <properties>
    <property name="z" value="-10"/>
   </properties>
@@ -90,6 +90,12 @@
     <property name="EventID" value="4"/>
     <property name="objID" value="1"/>
     <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="16" x="112" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
    </properties>
   </object>
  </objectgroup>

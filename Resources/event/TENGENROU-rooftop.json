@@ -214,6 +214,10 @@
 							"type":"stopBGM"
 						},
 						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -221,19 +225,15 @@
 									"chapterID":"3"
 								},
 								{
-									"type":"playBGM",
+									"type":"playSE",
 									"file":"chapter3.mp3"
 								},	
 								{
 									"type":"displayImg",
 									"file":"chapter3.png",
-									"time":7.0
+									"time":14.0
 								}
 							]
-						},
-						{
-							"type":"stopBGM",
-							"file":"chapter3.mp3"
 						},
 						{
 							"type":"changeHero",

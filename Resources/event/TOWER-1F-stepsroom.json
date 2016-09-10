@@ -43,6 +43,10 @@
 					"action":[
 						{
 							"type":"playSE",
+							"file":"switch1.mp3"
+						},
+						{
+							"type":"playSE",
 							"file":"createsteps.mp3"
 						},
 						{
@@ -96,8 +100,13 @@
 							"imgID":"3"
 						},
 						{
-							"text":["・・・","とにかくいこう。"],
+							"text":["・・・"],
 							"charaID":"6",
+							"imgID":"3"
+						},
+						{
+							"text":["とにかくいこう。"],
+							"charaID":"7",
 							"imgID":"3"
 						},
 						{
@@ -115,10 +124,29 @@
 	],
 	"4":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower2.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"42",
 			"x":17,
 			"y":7
+		}
+	],
+	"5":[
+		{
+			"type":"systemMsg",
+			"text":["淵に「甲」\nという文字が彫ってある"]
+		}
+	],
+	"6":[
+		{
+			"type":"systemMsg",
+			"text":["淵に「丙」\nという文字が彫ってある"]
 		}
 	]
 }

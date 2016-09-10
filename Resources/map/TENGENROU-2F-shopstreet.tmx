@@ -76,7 +76,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0McNwmAQBeG9G4kgUgeASe6AHAoGV2EogzIQc/CFAvgtoRnpO+/TRpiZ2T91yyLuKLOml3xXseeBZ+Jd7VZEB130MEcfAwwxwhivxLsm3JxihrzetcASK6xR4J1414abW+ywxwFHnHDGBdf6d2ZmZmZmZmb22z5G/A1+
+   eJzt0NkJwlAURdH7nwdR0WgHDlFjB85DwZoq1BqMUw3OuCFpwQfC2bC+7+GaKaWU+rcOgVmGI04444Ir1tggDfzvunHzjgeeeOGND7bYYe95V+jMSiijghhV1BChjobLf+ezJjdbaKNT7Oqihz4SDFz+O58NuTnCGBNMMcMcCyyxKn6nlFJKKaWUUkqp3/YFvVEbKg==
   </data>
  </layer>
  <objectgroup name="collision">

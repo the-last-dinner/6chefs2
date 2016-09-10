@@ -9,6 +9,9 @@
  <tileset firstgid="961" name="nomen" tilewidth="16" tileheight="16" tilecount="120" columns="10">
   <image source="nomen.png" trans="aa55ff" width="160" height="192"/>
  </tileset>
+ <tileset firstgid="1081" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
  <layer name="Base" width="18" height="60">
   <properties>
    <property name="cc_vertexz" value="-13"/>
@@ -80,4 +83,9 @@
   <object id="22" x="96" y="272" width="32" height="32"/>
   <object id="23" x="128" y="240" width="32" height="32"/>
  </objectgroup>
+ <layer name="shadow" width="18" height="60">
+  <data encoding="base64" compression="zlib">
+   eJzt0kERACAMA8E+8G8SCRjAQV6dEjK3AjrXQtUf9uqZc5rm0KPRo9Gj0aPRo9GjufVgRte7u/0ft57Uvdz+D/fRUvdKvU9qzysXnOYvdg==
+  </data>
+ </layer>
 </map>

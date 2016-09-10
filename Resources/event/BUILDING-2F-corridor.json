@@ -115,6 +115,9 @@
 					"charaID":"14"
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
 					"type":"spawn",
 					"action":[
 						{
@@ -182,6 +185,15 @@
 					"file":"agaa.mp3"
 				},
 				{
+					"type":"wait",
+					"time":0.1
+				},
+				{
+					"type":"playSE",
+					"file":"himei_girl.mp3",
+					"volume":10.0
+				},
+				{
 					"type":"charaMsg",
 					"text":["きゃああああああああ"],
 					"charaID":"13",
@@ -214,10 +226,6 @@
 							"file":"blood.mp3"
 						}
 					]
-				},
-				{
-					"type":"playSE",
-					"file":"himei_girl.mp3"
 				},
 				{
 					"type":"wait",
@@ -253,7 +261,7 @@
 				{
 					"type":"playBGM",
 					"file":"akete.mp3",
-					"volume":5.0
+					"volume":10.0
 				},
 				{
 					"type":"charaMsg",

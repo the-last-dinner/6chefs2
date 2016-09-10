@@ -448,7 +448,7 @@
   <object id="136" x="32" y="1360" width="32" height="96">
    <properties>
     <property name="EventID" value="11"/>
-    <property name="trigger" value="2"/>
+    <property name="trigger" value="1"/>
    </properties>
   </object>
   <object id="140" x="672" y="128" width="32" height="32">

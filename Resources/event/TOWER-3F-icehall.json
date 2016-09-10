@@ -18,8 +18,8 @@
 			"type":"createEnemy",
 			"objID":"1430",
 			"charaID":"13",
-			"x":30,
-			"y":15,
+			"x":26,
+			"y":17,
 			"direction":"DOWN",
 			"times":1,
 			"movePattern":"0"
@@ -34,6 +34,13 @@
 		}
 	],
 	"3":[
+		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower4.mp3"
+		},
 		{
 			"type":"changeMap",
 			"mapID":"49",

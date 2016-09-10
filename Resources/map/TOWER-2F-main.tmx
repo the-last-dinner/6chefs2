@@ -53,10 +53,10 @@
   <object id="127" x="432" y="-128" width="128" height="128"/>
   <object id="132" x="192" y="320" width="64" height="64"/>
   <object id="133" x="368" y="176" width="64" height="64"/>
-  <object id="134" x="128" y="256" width="32" height="32"/>
-  <object id="135" x="512" y="256" width="32" height="32"/>
-  <object id="136" x="512" y="480" width="32" height="32"/>
-  <object id="137" x="128" y="480" width="32" height="32"/>
+  <object id="134" x="128" y="160" width="32" height="128"/>
+  <object id="135" x="512" y="160" width="32" height="128"/>
+  <object id="136" x="512" y="384" width="32" height="128"/>
+  <object id="137" x="128" y="384" width="32" height="128"/>
   <object id="138" x="32" y="0" width="288" height="128"/>
   <object id="139" x="352" y="0" width="288" height="128"/>
   <object id="140" x="640" y="0" width="32" height="608"/>

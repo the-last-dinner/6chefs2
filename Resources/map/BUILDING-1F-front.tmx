@@ -155,6 +155,9 @@
   </object>
  </objectgroup>
  <layer name="shutter" width="40" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrEJAAAIBDFx/5EtXMABfEjg+qvKMn33hT8AAAAAAACATAs2DhHd
   </data>

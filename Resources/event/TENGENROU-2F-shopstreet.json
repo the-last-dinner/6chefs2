@@ -107,6 +107,10 @@
 							"objID":"181"
 						},
 						{
+							"type":"removeItem",
+							"itemID":"154"
+						},
+						{
 							"type":"removeLayer",
 							"layer":"hide1"
 						},
@@ -161,6 +165,10 @@
 						{
 							"type":"removeObject",
 							"objID":"182"
+						},
+						{
+							"type":"removeItem",
+							"itemID":"154"
 						},
 						{
 							"type":"removeLayer",

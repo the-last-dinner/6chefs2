@@ -11,6 +11,14 @@
 			"file":"door_don.mp3"
 		},
 		{
+			"type":"stopBGM",
+			"file":"tower.mp3"
+		},
+		{
+			"type":"playBGM",
+			"file":"back_road.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"35",
 			"x":4,
