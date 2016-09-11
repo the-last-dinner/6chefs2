@@ -122,7 +122,7 @@
 		{
 			"type":"playBGM",
 			"file":"0hanaichi.mp3",
-			"volume":0.5
+			"volume":0.2
 		},
 		{
 			"type":"changeMap",
@@ -133,9 +133,8 @@
 	],
 	"4":[
 		{
-			"type":"chengeVolume",
-			"file":"kagome.mp3",
-			"volume":0.5
+			"type":"stopBGM",
+			"file":"kagome.mp3"
 		},
 		{
 			"type":"changeMap",
@@ -198,6 +197,9 @@
 												},
 												{
 													"type":"fadeout"
+												},
+												{
+													"type":"stopBGM"
 												},
 												{
 													"type":"playSE",
@@ -292,7 +294,7 @@
 																				},
 																				{
 																					"text":["ふふふ\nおねぇちゃんこどもみたい","たのしかったわ\nありがとう"],
-																					"charaID":"3",
+																					"charaID":"10",
 																					"name":"にこ"
 																				},
 																				{
@@ -302,7 +304,7 @@
 																				},
 																				{
 																					"text":["うん？\nずっとだよ"],
-																					"charaID":"3",
+																					"charaID":"10",
 																					"name":"にこ"
 																				},
 																				{
@@ -312,7 +314,7 @@
 																				},
 																				{
 																					"text":["うん！\nすっごくおいしいんだよ！"],
-																					"charaID":"3",
+																					"charaID":"10",
 																					"name":"にこ"
 																				},
 																				{
@@ -322,7 +324,7 @@
 																				},
 																				{
 																					"text":["ホント！？"],
-																					"charaID":"3",
+																					"charaID":"10",
 																					"name":"にこ"
 																				}
 																			]
@@ -500,6 +502,9 @@
 												},
 												{
 													"type":"fadeout"
+												},
+												{
+													"type":"stopBGM"
 												},
 												{
 													"type":"playSE",
@@ -804,6 +809,9 @@
 													"type":"fadeout"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"playSE",
 													"file":"kagome.mp3"
 												},
@@ -1104,6 +1112,9 @@
 												},
 												{
 													"type":"fadeout"
+												},
+												{
+													"type":"stopBGM"
 												},
 												{
 													"type":"playSE",
@@ -1408,6 +1419,9 @@
 													"type":"fadeout"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"playSE",
 													"file":"kagome.mp3"
 												},
@@ -1708,6 +1722,9 @@
 												},
 												{
 													"type":"fadeout"
+												},
+												{
+													"type":"stopBGM"
 												},
 												{
 													"type":"playSE",

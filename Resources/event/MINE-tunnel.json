@@ -111,6 +111,10 @@
 							"type":"fadeout"
 						},
 						{
+							"type":"removeObject",
+							"objID":"1450"
+						},
+						{
 							"type":"charaMsg",
 							"text":["お願い・・・動いて・・・"],
 							"charaID":"3",

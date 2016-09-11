@@ -11,7 +11,7 @@
 			"file":"iron_door.mp3"
 		},
 		{
-			"type":"chengeVolume",
+			"type":"changeVolume",
 			"file":"tooryanse.mp3",
 			"volume":1.0
 		},

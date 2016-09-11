@@ -142,7 +142,7 @@
 							"time":0.2
 						},
 						{
-							"type":"removeALayer",
+							"type":"removeLayer",
 							"layer":"doorA2"
 						},
 						{
@@ -161,6 +161,13 @@
 						{
 							"type":"changeHero",
 							"charaID":"3"
+						},
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"ORHANAGE.mp3"
 						},
 						{
 							"type":"changeMap",
@@ -205,12 +212,19 @@
 							"time":0.2
 						},
 						{
-							"type":"removeALayer",
+							"type":"removeLayer",
 							"layer":"doorA2"
 						},
 						{
 							"type":"wait",
 							"time":0.2
+						},
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"ORHANAGE.mp3"
 						},
 						{
 							"type":"changeMap",
@@ -285,7 +299,7 @@
 									"imgID":"1"
 								},
 								{
-									"text":["ちくしょう・・・\n手元がぼやけてきやがった・・・"],
+									"text":["(ちくしょう・・・\n手元がぼやけてきやがった・・・)"],
 									"charaID":"2",
 									"imgID":"4"
 								}

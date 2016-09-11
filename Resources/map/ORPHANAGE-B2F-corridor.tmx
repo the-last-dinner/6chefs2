@@ -121,22 +121,25 @@
   </object>
  </objectgroup>
  <layer name="shadow" width="56" height="58">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1bENwCAQBEH6b8UluDknDkmM/A972qngFiEYQwnu3QOK2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bOl9NNfuAa+qe2FfD/vWpPedwr4eVTvs6zHb8ccbZV8P+9hOOecq9rHZx5be91XS3zGT3qczPOW7MEI=
   </data>
  </layer>
  <objectgroup name="chara">
-  <object id="65" name="1086" x="336" y="288" width="32" height="32">
+  <object id="65" name="1086" x="272" y="288" width="32" height="32">
    <properties>
     <property name="1086" value=""/>
    </properties>
   </object>
-  <object id="66" name="1087" x="336" y="352" width="32" height="32">
+  <object id="66" name="1087" x="336" y="224" width="32" height="32">
    <properties>
     <property name="1087" value=""/>
    </properties>
   </object>
-  <object id="67" name="1088" x="272" y="352" width="32" height="32">
+  <object id="67" name="1088" x="400" y="288" width="32" height="32">
    <properties>
     <property name="1088" value=""/>
    </properties>
@@ -151,7 +154,7 @@
     <property name="1090" value=""/>
    </properties>
   </object>
-  <object id="70" name="10217" x="272" y="288" width="32" height="32">
+  <object id="70" name="10217" x="336" y="352" width="32" height="32">
    <properties>
     <property name="10217" value=""/>
    </properties>

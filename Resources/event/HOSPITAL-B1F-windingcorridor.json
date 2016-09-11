@@ -59,7 +59,7 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"chacgeDirection",
+									"type":"changeDirection",
 									"objID":"hero",
 									"direction":"DOWN"	
 								},

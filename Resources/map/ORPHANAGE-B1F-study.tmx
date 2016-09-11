@@ -130,7 +130,7 @@
  </objectgroup>
  <layer name="shadow" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgaYPWoeSPGPGqYTUvzqAFGzRs1bzgAAHbhDAc=
+   eJxjYBgaYPWoeaPmjZo3at4INW+wAgDEPgqx
   </data>
  </layer>
  <layer name="CharaUe" width="20" height="20">

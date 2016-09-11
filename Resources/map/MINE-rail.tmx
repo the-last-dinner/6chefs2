@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="194" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="40">
- <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16" tilecount="256" columns="32">
   <image source="Railroad1.png" trans="aa55ff" width="512" height="128"/>
  </tileset>
- <tileset firstgid="737" name="BlackMagic01" tilewidth="16" tileheight="16">
+ <tileset firstgid="737" name="BlackMagic01" tilewidth="16" tileheight="16" tilecount="264" columns="12">
   <image source="BlackMagic01.png" trans="aa55ff" width="192" height="352"/>
  </tileset>
- <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="124" height="194">
@@ -207,7 +207,7 @@
  <objectgroup name="terrain"/>
  <layer name="shadow" width="124" height="194">
   <data encoding="base64" compression="zlib">
-   eJzt3UGqFUEQRUEHbtUVuH+QXsDHVsx6aZ2IqY0/bx1wpPjtGwD/k5/fP30BJ+ndoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16t+jdoneL3i16f8an3l3vz9C7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re8WvVv0btG7Re95PxZt1Xvepq16z9u0Ve95m7bqPW/TVr3nbdqq97xNW/Wet2nrv7rlT3+fTW8wbdNWvedt2qr3vE1b9Z63aave8zZt1Xvepq16z9u0Ve95m7bqPW/TVr3n3bhV76/duFXvr924tdz7d1s2bf1Xf5dO77//9VN3vP1mgt7n73j7zQS9z9/x9psJep+/4+03E/Q+f8fbbyboff6Ot99M0Pv8HW+/maD3+TvefjNB7/N3vP1mgt7n73j7zYRS71PqvU/9u2u9d/zcLR1O0Xv+Z7yx6c8ZvedtueOh97wtdzz0nrfljofe87bc8dB73pY7HnrP23LHQ+95W+546D1vyx0PvedtueOh97wtdzz0nrfljofe87bc8dB73pY7HnrP23LHQ+95W+546D1vyx0PvedtueOT9G7Ru6X0BqWtXym9QWkrep+y5f950/sM79yid4veLXq36N2id4veLXq36N2id4veLXq36N1yS+9bdky75Z1u2THtlne6Zce0W97plh3TbnmnW3ZMu+Wdbtkx7ZZ3umXHtFve6ZYd0255p1t28I7eLXq36N2i9zveqUVvgM/5BXCatuE=
+   eJzt00FuFUsQRUEGbJUVsH8J1YCh9RtE9stfJ2Lqlp23jvztGwD/Jz+/f/oC3qR3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo/Rmfene9P0PvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9J63aave8zZt1Xvepq16z9u0Ve95m7bqPW/TVr3nbdr6r27509+z6Q2mbdqq97xNW/Wet2mr3vM2bdV73qates/btFXveZu26j1v01a9523aqve8G7fq/bUbt+r9tRu3lnv/15abtv6m99///K07nn4zQe/373j6zQS937/j6TcT9H7/jqffTND7/TuefjNB7/fvePrNBL3fv+PpNxP0fv+Op99M0Pv9O55+M0Hv9+94+s2EUu+31Hv/WPR/9YZ67y0d3qL3/N/YRO/5v/HEljsOvedtuePQe96WOw69522549B73pY7Dr3nbbnj0HveljsOvedtuePQe96WOw69522549B73pY7Dr3nbbnj0HveljsOvedtuePQe96WOw69522549B73pY7PknvFr1bSm9Q2vqV0huUtqJ3jd7v8M4terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94tt/S+Zce0W97plh3TbnmnW3ZMu+Wdbtkx7ZZ3umXHtFve6ZYd0255p1t2TLvlnW7ZMe2Wd7plB8/o3aJ3i94tej/jnVr0BvicXz6MtT0=
   </data>
  </layer>
 </map>

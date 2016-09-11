@@ -54,6 +54,13 @@
 					"flg":1
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"tower.mp3"
+				},
+				{
 					"type":"changeMap",
 					"mapID":"40",
 					"x":6,
@@ -71,6 +78,13 @@
 				}
 			],
 			"action":[
+				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"tower.mp3"
+				},
 				{
 					"type":"changeMap",
 					"mapID":"40",

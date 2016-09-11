@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="38" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="12">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="38" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="13">
  <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
@@ -42,6 +42,14 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzwsVABAABMFrILNPcFLwMJNgNwEAAAAAAADgJbUkrZyu2Kev1/HRL3CfCcRZAkc=
+  </data>
+ </layer>
+ <layer name="shadow2" width="60" height="38">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzzEBAAAIwzD8W8IcNwbGQaKgrQLI6uuAsG+/AAAAAAAAAGwD+1QBdw==
   </data>
  </layer>
  <objectgroup name="collision">
@@ -88,7 +96,7 @@
  </objectgroup>
  <layer name="shadow" width="60" height="38">
   <data encoding="base64" compression="zlib">
-   eJztz1EJwDAUBMH4t1IJMVcRhSbsm/k/uF2LCfbpAz/Te7fn415vm942vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbNq2XpheBMhot
+   eJztzwENACAMwLD7t4Q5XECytwq2GTY4vwMe89vmt81vm982v21+2/y2+W3z2+a3zW+b3za/bX7b/Lb5bdv2S9MFf6sY1w==
   </data>
  </layer>
 </map>

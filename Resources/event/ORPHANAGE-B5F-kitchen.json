@@ -139,7 +139,7 @@
 					"action":[
 						{
 							"type":"charaMsg",
-							"text":["早く逃げな！\n道草食っとる場合とちゃうわ！"],
+							"text":["おい、朱花！やべぇ！\n逃げるぞ！"],
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
@@ -606,6 +606,9 @@
 							"type":"spawn",
 							"action":[
 								{
+									"type":"stopBGM"
+								},
+								{
 									"type":"playSE",
 									"file":"despair.mp3"
 								},
@@ -720,17 +723,34 @@
 						},
 						{
 							"type":"charaMsg",
-							"talk":[
+							"text":["真夏！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"spawn",
+							"action":[
 								{
-									"text":["真夏！"],
-									"charaID":"2",
-									"imgID":"3",
-									"option":"reaction"
+									"type":"playSE",
+									"file":"reaction.mp3",
+									"volume":0.25
 								},
 								{
-									"text":["加藤！\n休んでなさいって言ったじゃない！"],
-									"charaID":"2",
-									"imgID":"3"
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"LEFT"
+								}
+							]
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["加藤！？\n休んでなさいって言ったじゃない！"],
+									"charaID":"3",
+									"imgID":"3",
+									"option":"reaction"
 								},
 								{
 									"text":["孫一！？撫子！？\n何がどうなってるんだ・・・"],
@@ -742,6 +762,13 @@
 						{
 							"type":"fadeout",
 							"time":2.0
+						},
+						{
+							"type":"charaWarp",
+							"objID":"10110",
+							"x":9,
+							"y":21,
+							"direction":"DOWN"
 						},
 						{
 							"type":"charaWarp",
@@ -803,6 +830,10 @@
 									"imgID":"3"
 								}
 							]
+						},
+						{
+							"type":"playBGM",
+							"file":"ORHANAGE.mp3"
 						},
 						{
 							"type":"chase",

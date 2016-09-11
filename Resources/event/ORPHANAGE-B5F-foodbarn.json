@@ -50,7 +50,7 @@
 					"type":"fadeout"
 				},
 				{
-					"type":"playSE",
+					"type":"playBGM",
 					"file":"juice.mp3"
 				},
 				{
@@ -58,21 +58,12 @@
 					"time":1.0
 				},
 				{
-					"type":"fadein"
+					"type":"stopBGM",
+					"file":"juice.mp3"
 				},
 				{
 					"type":"charaMsg",
 					"talk":[
-						{
-							"text":["加藤！\nコレ飲んで！","体力回復で\nどんな奴でもぶっ飛ばしなさい！"],
-							"charaID":"3",
-							"imgID":"3"
-						},
-						{
-							"text":["おう・・・\nさんきゅー・・・"],
-							"charaID":"2",
-							"imgID":"1"
-						},
 						{
 							"text":["加藤！\nコレ飲んで！","体力回復で\nどんな奴でもぶっ飛ばしなさい！"],
 							"charaID":"3",
@@ -89,6 +80,9 @@
 							"imgID":"2"
 						}
 					]
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"systemMsg",

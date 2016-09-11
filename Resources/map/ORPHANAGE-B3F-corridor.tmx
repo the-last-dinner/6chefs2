@@ -110,6 +110,9 @@
   </object>
  </objectgroup>
  <layer name="shadow" width="40" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjERACAQwDD8W8EkE4eAMvyQGmjW0o/28C9f+/K1L1+Lr8XX4mtfvvbla1++9uVrX7725Wtfvvbla1++Fl+LrzXdd5vu5JNeB1ieKhY=
   </data>

@@ -503,6 +503,9 @@
 									"type":"fadein"
 								},
 								{
+									"type":"stopBGM"
+								},
+								{
 									"type":"playBGM",
 									"file":"0hanaichi.mp3"
 								},
@@ -647,7 +650,7 @@
 																									"type":"charaMsg",
 																									"talk":[
 																										{
-																											"text":["もう・・・終わっちゃったの？","・・・","つまんない！"],
+																											"text":["もう・・・終わっちゃったの？","・・・","つまんない！","でてけ！"],
 																											"charaID":"10",
 																											"name":"たけし"
 																										},
@@ -659,7 +662,15 @@
 																									]
 																								},
 																								{
-																									"type":"gameover"
+																									"type":"fadeout"
+																								},
+																								{
+																									"type":"playBGM",
+																									"file":"ORHANAE.mp3"
+																								},
+																								{
+																									"type":"already",
+																									"event":["81","13"]
 																								}
 																							]
 																						}
@@ -712,6 +723,9 @@
 																},
 																{
 																	"type":"fadein"
+																},
+																{
+																	"type":"stopBGM"
 																},
 																{
 																	"type":"playBGM",
@@ -910,12 +924,20 @@
 																																								},
 																																								{
 																																									"type":"charaMsg",
-																																									"text":["まだ・・・つづけるの？","もう・・・","あきたよ・・・"],
+																																									"text":["まだ・・・つづけるの？","もう・・・あきたよ・・・\nつまんない、でてけ！"],
 																																									"charaID":"10",
 																																									"name":"たけし"
 																																								},
 																																								{
-																																									"type":"gameover"
+																																									"type":"fadeout"
+																																								},
+																																								{
+																																									"type":"playBGM",
+																																									"file":"ORHANAGE.mp3"
+																																								},
+																																								{
+																																									"type":"already",
+																																									"event":["81","13"]
 																																								}
 																																							]
 																																						}
@@ -1009,12 +1031,20 @@
 																																},
 																																{
 																																	"type":"charaMsg",
-																																	"text":["おねぇちゃんのせいでまけた・・・","・・・"],
+																																	"text":["おねぇちゃんのせいでまけた・・・","・・・","でてけ！"],
 																																	"charaID":"10",
 																																	"name":"たけし"
 																																},
 																																{
-																																	"type":"gameover"
+																																	"type":"fadeout"
+																																},
+																																{
+																																	"type":"playBGM",
+																																	"file":"ORHANAGE.mp3"
+																																},
+																																{
+																																	"type":"already",
+																																	"event":["81","13"]
 																																}
 																															]
 																														}
@@ -1469,12 +1499,20 @@
 																																								},
 																																								{
 																																									"type":"charaMsg",
-																																									"text":["まだ・・・つづけるの？","・・・","もうあきたよ・・・"],
+																																									"text":["まだ・・・つづけるの？","もうあきたよ・・・\nでてけ！"],
 																																									"charaID":"10",
 																																									"name":"たけし"
 																																								},
 																																								{
-																																									"type":"gameover"
+																																									"type":"fadeout"
+																																								},
+																																								{
+																																									"type":"playBGM",
+																																									"file":"ORHANAE.mp3"
+																																								},
+																																								{
+																																									"type":"already",
+																																									"event":["81","13"]
 																																								}
 																																							]
 																																						}
@@ -1560,12 +1598,20 @@
 																																								},
 																																								{
 																																									"type":"charaMsg",
-																																									"text":["まだ・・・つづけるの？","・・・","もうあきたよ・・・"],
+																																									"text":["まだ・・・つづけるの？","もうあきたよ・・・\nでてけ！"],
 																																									"charaID":"10",
 																																									"name":"たけし"
 																																								},
 																																								{
-																																									"type":"gameover"
+																																									"type":"fadeout"
+																																								},
+																																								{
+																																									"type":"playBGM",
+																																									"file":"ORHANAE.mp3"
+																																								},
+																																								{
+																																									"type":"already",
+																																									"event":["81","13"]
 																																								}
 																																							]
 																																						}
@@ -1607,8 +1653,7 @@
 					"type":"changeMap",
 					"mapID":"79",
 					"x":24,
-					"y":27,
-					"eventID":"9"
+					"y":27
 				}
 			]
 		}
@@ -1629,40 +1674,46 @@
 									"type":"charaWalk",
 									"objID":"10101",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								}
 							]
 						},
@@ -1674,39 +1725,45 @@
 									"objID":"10101",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								}
 							]
 						}
@@ -1731,39 +1788,45 @@
 									"type":"charaWalk",
 									"objID":"10101",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								}
 							]
 						},
@@ -1775,41 +1838,46 @@
 									"objID":"10101",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
-
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								}
 							]
 						}
@@ -1834,41 +1902,47 @@
 									"type":"charaWalk",
 									"objID":"10101",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								}
 							]
 						},
@@ -1880,38 +1954,44 @@
 									"objID":"10101",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								}
 							]
 						}
@@ -1936,40 +2016,46 @@
 									"type":"charaWalk",
 									"objID":"10101",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
-									"direction":"LEFT"
+									"direction":"LEFT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
 									"direction":"LEFT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								}
 							]
 						},
@@ -1981,39 +2067,45 @@
 									"objID":"10101",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10107",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10105",
 									"steps":3.0,
 									"direction":"RIGHT",
-									"option":"back"
+									"option":"back",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10102",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10104",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								},
 								{
 									"type":"charaWalk",
 									"objID":"10103",
 									"steps":3.0,
-									"direction":"RIGHT"
+									"direction":"RIGHT",
+									"speed":0.5
 								}
 							]
 						}
@@ -2022,6 +2114,7 @@
 			]
 		}
 	],
+	"13":"はないち負けたチェック",
 	"91":[
 		{
 			"type":"spawn",
