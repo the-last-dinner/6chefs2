@@ -36,7 +36,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2UEKgzAQQNGQ87cXsZds1wURUjOTad7bBFwY8QuJ2hoAkOXRW3v2vHH2dX07PsdePW88M+v8+uqrr753951l1b4AwP+otj/61W77o+y+0fNn942eX1999a3bN1v28xVtt77AuNW/M1f9vzCq6v+FUfrqq6++d92/an1X5/1JX331rSKqb9S6fNUhqm/UunzVQV999dVX3737Aut6A7sSX/g=
+   eJzt2VkKgzAUQNGQ9bcbaTdZvwsFm+nlkXN/BAUVjyQOpUiSpKgetZRnjVvOPq/vXte6d41b/mrW/vny5ct3tO+sdvWVJJ3Z7vPm6E6ZN7M9H/V22vNRtO/q40f7rj4+X7588/pGF31/re40X0nt7f6dOev/hday/l9ojS9fvnxHXb9svrvn/Ykv3/99V43Pd7fP9l01Pt/dns231z+bb68/X758+fI901fSvn0A50GJzg==
   </data>
  </layer>
  <layer name="MonoChu" width="60" height="64">
@@ -44,7 +44,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1rEVgCAMQMGUbKJ76f4zaGdhx1Mh5m4CIDw+EQDAbJYWsbbRq/jOdu51L7RfGMG7MidzAYBLbxez9rS3i3oKwJ9l7XovXYc77wAAFehdDuYEAFCTf+AznCNvcr+Aag4E2Q6J
+   eJzt1rsNgDAMBUCX2QT2gv1ngI4WRRaJyd0E8Ud5jgAAZrO1iL2NfsV3jrvWc6F6YQT/ypzMBQAevblYNU97c1GeAvBnVXO9l1wHAFiTu7cGcwIAWJM7MEdWH6vMI6uP7vJ3quxFFnsBXJFCDok=
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="64">
@@ -61,7 +61,7 @@
   <object id="23" x="512" y="960" width="448" height="64"/>
   <object id="24" x="928" y="64" width="32" height="896"/>
   <object id="25" x="768" y="864" width="32" height="32"/>
-  <object id="26" x="896" y="544" width="32" height="32"/>
+  <object id="26" x="448" y="896" width="32" height="32"/>
   <object id="27" x="608" y="480" width="32" height="32"/>
   <object id="28" x="736" y="192" width="32" height="32"/>
   <object id="29" x="448" y="224" width="32" height="32"/>
@@ -104,15 +104,15 @@
  </objectgroup>
  <layer name="CharaUe" width="60" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt1rEVgCAMQMF07D+J7qVDaGdhl6di4G4CIDw+EQBUtLSItfVexXe2c6/7RPuFHrwr/2QuAHDJdrFqT7Nd1FMARla161m6DnfeAQBmoHc1mBMAwJz8A5/hHHmT+wXASA7xBifZ
+   eJzt1rsNgDAMBUB32X8S2AuGgI4WRRbByd0E8Ud5jgCgoq1F7G30K75z3LWeC9ULI/hX/slcAODRm4tV87Q3F+UpADOrmuu95DoAwJrcvTWYEwDAmtyBObL6WGUeWX10l79TZS+y2AuAuV3luSfZ
   </data>
  </layer>
  <objectgroup name="terrain">
   <object id="44" type="slip" x="32" y="128" width="512" height="128"/>
   <object id="47" type="slip" x="672" y="608" width="256" height="352"/>
   <object id="48" type="slip" x="544" y="416" width="256" height="128"/>
-  <object id="49" type="slip" x="32" y="384" width="256" height="128"/>
-  <object id="50" type="slip" x="128" y="832" width="448" height="128"/>
+  <object id="49" type="slip" x="32" y="352" width="256" height="160"/>
+  <object id="50" type="slip" x="128" y="800" width="448" height="160"/>
   <object id="51" type="slip" x="32" y="608" width="416" height="128"/>
   <object id="52" type="slip" x="640" y="128" width="288" height="96"/>
  </objectgroup>

@@ -12,7 +12,8 @@
 			"y":59,
 			"direction":"DOWN",
 			"times":1,
-			"movePattern":"0"
+			"movePattern":"0",
+			"speed":0.8
 		},
 		{
 			"type":"createEnemy",
@@ -22,7 +23,8 @@
 			"y":17,
 			"direction":"DOWN",
 			"times":1,
-			"movePattern":"0"
+			"movePattern":"0",
+			"speed":0.8
 		}
 	],
 	"2":[

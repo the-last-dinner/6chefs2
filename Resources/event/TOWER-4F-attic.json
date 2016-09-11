@@ -59,6 +59,11 @@
 	],
 	"3":[
 		{
+			"type":"playSE",
+			"file":"bus-door1.mp3",
+			"volume":0.5
+		},
+		{
 			"type":"changeFlg",
 			"mapID":"52",
 			"eventID":"3",
@@ -66,6 +71,11 @@
 		}
 	],
 	"4":[
+		{
+			"type":"playSE",
+			"file":"bus-door1.mp3",
+			"volume":0.5
+		},
 		{
 			"type":"changeFlg",
 			"mapID":"52",
