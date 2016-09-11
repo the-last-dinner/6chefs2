@@ -97,6 +97,10 @@
 					"time":3.0
 				},
 				{
+					"type":"playBGM",
+					"file":"sewer.mp3"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -235,6 +239,9 @@
 							"flg":1
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"changeMap",
 							"mapID":"60",
 							"x":41,
@@ -253,6 +260,13 @@
 				}
 			],
 			"action":[
+				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"BASEMENT.mp3"
+				},
 				{
 					"type":"changeMap",
 					"mapID":"60",
@@ -439,6 +453,10 @@
 				{
 					"type":"sequence",
 					"action":[
+						{
+							"type":"playSE",
+							"file":"iron_door.mp3"
+						},
 						{
 							"type":"systemMsg",
 							"text":["鉄格子の鍵を使った"]

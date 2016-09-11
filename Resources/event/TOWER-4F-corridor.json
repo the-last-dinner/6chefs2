@@ -237,7 +237,7 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"removeEnemy",
+							"type":"removeObject",
 							"objID":"1452"
 						},
 						{
@@ -332,7 +332,7 @@
 									"imgID":"3"
 								},
 								{
-									"text":["・・・","晩餐館の地下施設を作ったっていう\nあいつか・・ン・"],
+									"text":["・・・","晩餐館の地下施設を作ったっていう\nあいつか・・・"],
 									"charaID":"5",
 									"imgID":"2"
 								},

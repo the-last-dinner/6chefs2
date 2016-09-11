@@ -7,10 +7,28 @@
 	],
 	"2":[
 		{
+			"type":"playSE",
+			"file":"iron_door.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"65",
 			"x":18,
 			"y":9
+		}
+	],
+	"3":[
+		{
+			"type":"charaMsg",
+			"text":["数年前に閉山・・・？\nにしちゃ新しそうな機械だな・・・"],
+			"charaID":"2",
+			"imgID":"2"
+		}
+	],
+	"4":[
+		{
+			"type":"systemMsg",
+			"text":["人がまるまる入れそうな容器だな"]
 		}
 	]
 }

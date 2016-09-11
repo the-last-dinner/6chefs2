@@ -133,6 +133,13 @@
 			],
 			"action":[
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"tower3.mp3"
+				},
+				{
 					"type":"createEnemy",
 					"objID":"1435",
 					"charaID":"13",
@@ -227,6 +234,13 @@
 		}
 	],
 	"2":[
+		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"BASEMENT.mp3"
+		},
 		{
 			"type":"changeMap",
 			"mapID":"65",
@@ -1286,7 +1300,7 @@
 						},
 						{
 							"type":"createLayer",
-							"layer":"doorE3"
+							"layer":"doorD3"
 						},
 						{
 							"type":"fadein"

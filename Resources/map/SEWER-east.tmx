@@ -118,7 +118,7 @@
     <property name="objID" value="185"/>
    </properties>
   </object>
-  <object id="22" x="32" y="544" width="1216" height="128">
+  <object id="22" x="0" y="544" width="1248" height="128">
    <properties>
     <property name="objID" value="186"/>
    </properties>

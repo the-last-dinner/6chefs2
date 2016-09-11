@@ -433,10 +433,6 @@
 					"objID":"1049"
 				},
 				{
-					"type":"playBGM",
-					"file":"sewer.mp3"
-				},
-				{
 					"type":"already"
 				}
 			]

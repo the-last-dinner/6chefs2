@@ -46,6 +46,10 @@
 					"time":3.0
 				},
 				{
+					"type":"playBGM",
+					"file":"BASEMENT.mp3"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -89,7 +93,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["ほぇ～お前詳しいな～"],
+							"text":["ほぇ～\nお前詳しいな～"],
 							"charaID":"2",
 							"imgID":"1"
 						},
