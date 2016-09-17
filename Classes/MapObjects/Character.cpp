@@ -279,6 +279,8 @@ float Character::getStaminaConsumptionRatio() const
 // マップに配置された時
 void Character::onEnterMap()
 {
+    MapObject::onEnterMap();
+    
     this->setDirection(this->getDirection());
     
     if(_movePattern) _movePattern->start();
