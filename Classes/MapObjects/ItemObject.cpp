@@ -35,7 +35,6 @@ bool ItemObject::init()
     this->setSprite(sprite);
     
     this->setContentSize(sprite->getContentSize());
-    this->setCollisionRect(Rect(0, 0, sprite->getContentSize().width, sprite->getContentSize().height));
     
     // 輝きアニメーション生成
     Animation* animation { Animation::create() };
@@ -55,14 +54,14 @@ bool ItemObject::init()
     return true;
 }
 
+string ItemObject::getSpriteFrameName(int state)
+{
+    return PREFIX + BLUE + to_string(state) + ".png";
+}
+
 void ItemObject::onEnterMap()
 {
     MapObject::onEnterMap();
     
     this->getSprite()->runAction(this->action);
-}
-
-string ItemObject::getSpriteFrameName(int state)
-{
-    return PREFIX + BLUE + to_string(state) + ".png";
 }

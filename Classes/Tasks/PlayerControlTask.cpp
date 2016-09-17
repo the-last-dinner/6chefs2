@@ -64,13 +64,13 @@ void PlayerControlTask::search(Party* party)
 {
     if(!this->isControlEnabled()) return;
     
-    MapObjectList* objectList {DungeonSceneManager::getInstance()->getMapObjectList()};
-    Character* mainCharacter {party->getMainCharacter()};
+    MapObjectList* objectList { DungeonSceneManager::getInstance()->getMapObjectList() };
+    Character* mainCharacter { party->getMainCharacter() };
     
-    Vector<MapObject*> objs { objectList->getMapObjects(mainCharacter->getCollisionRect(mainCharacter->getDirection()))};
+    Vector<MapObject*> objs { objectList->getMapObjects(mainCharacter, { mainCharacter->getDirection() }, Trigger::SEARCH) };
     
     // 同座標にあるイベントを全て発動
-    Point objPosition {Point::ZERO};
+    Point objPosition { Point::ZERO };
     for(MapObject* obj : objs)
     {
         if(obj && obj->getTrigger() == Trigger::SEARCH && (objPosition == Point::ZERO || obj->getPosition() == objPosition) && !obj->isMoving())
@@ -89,7 +89,7 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     
     vector<Direction> directions { Direction::convertKeys(keys) };
     
-    Character* mainCharacter {party->getMainCharacter()};
+    Character* mainCharacter { party->getMainCharacter() };
     
     // ダッシュキーが押されていたら、速度の倍率をあげる
     bool dash { mainCharacter->isRunnable() ? DungeonSceneManager::getInstance()->isPressed(Key::DASH) : false };
@@ -105,11 +105,15 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     }
     
     // Trigger::WILLを持つオブジェクトを検索して実行
-    Rect gridRect {mainCharacter->getGridRect()};
+    Rect gridRect { mainCharacter->getGridCollisionRect() };
     gridRect.origin += Direction::getGridVec2(moveDirections);
-    DungeonSceneManager::getInstance()->runEvent(DungeonSceneManager::getInstance()->getMapObjectList()->getEventIdsByGridRect(gridRect, Trigger::WILL));
+    for(MapObject* other : DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjects(mainCharacter, moveDirections, Trigger::WILL))
+    {
+        DungeonSceneManager::getInstance()->runEvent(other->getEventId());
+    }
     
-    Stamina* stamina {DungeonSceneManager::getInstance()->getStamina()};
+    
+    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
     
     if(!party->move(moveDirections, dash ? DASH_SPEED_RATIO : 1.f, [this, party, stamina]{stamina->setDecreasing(false); this->onPartyMovedOneGrid(party);})) return;
     
@@ -122,16 +126,16 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     // スタミナが危険値まで下がっていたら、bgmを再生
     if(stamina->isWarn() && !SoundManager::getInstance()->isPlaying(Resource::BGM::TIRED)) SoundManager::getInstance()->playBGM(Resource::BGM::TIRED, true, 2.0f);
     
-    Vector<MapObject*> objs { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjectsByGridRect(mainCharacter->getGridRect(), Trigger::RIDE) };
+    Vector<MapObject*> objs { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjects(mainCharacter, Trigger::RIDE) };
     
     // 何も見つからなかった場合は、UNDIFINEDをセットする
-    if(objs.empty()) this->riddenEventID = etoi(EventID::UNDIFINED);
+    if(objs.empty()) _riddenEventID = etoi(EventID::UNDIFINED);
     
     for(MapObject* obj : objs)
     {
-        if(obj->getEventId() != this->riddenEventID)
+        if(obj->getEventId() != _riddenEventID)
         {
-            if(this->riddenEventID == etoi(EventID::UNDIFINED)) this->riddenEventID = obj->getEventId();
+            if(_riddenEventID == etoi(EventID::UNDIFINED)) _riddenEventID = obj->getEventId();
             DungeonSceneManager::getInstance()->pushEventBack(obj->getEventId());
         }
     }
@@ -143,15 +147,15 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party)
     // キューにあるイベントを実行
     DungeonSceneManager::getInstance()->runEventQueue();
     
-    if(this->enableControl) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if(_enableControl) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か設定
 void PlayerControlTask::setControlEnable(bool enable, Party* party)
 {
-    bool before {this->enableControl};
+    bool before { _enableControl };
     
-    this->enableControl = enable;
+    _enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
     if(!before && enable) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
@@ -160,7 +164,7 @@ void PlayerControlTask::setControlEnable(bool enable, Party* party)
 // 操作可能状態か確認
 bool PlayerControlTask::isControlEnabled()
 {
-    if(!this->enableControl) return false;
+    if(!_enableControl) return false;
     
     // 疲労状態でない、またはスタミナが最大であれば操作可能
     return !DungeonSceneManager::getInstance()->getStamina()->isExhausted();

@@ -11,13 +11,12 @@
 #include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
 
-#include "Algorithm/PathFinder.h"
-
 #include "Layers/Dungeon/TiledMapLayer.h"
 
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -142,8 +141,8 @@ void WalkToEvent::update(float delta)
     if(this->target->isPaused()) this->target->setPaused(false);
     
     // 経路探索開始
-    PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    deque<Direction> directions { pathFinder->getPath(this->target->getGridRect(), this->target->getWorldGridCollisionRects(), this->destPosition) };
+    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
+    deque<Direction> directions { pathFinder->getPath(this->target, this->destPosition) };
     
     this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
     
@@ -175,8 +174,7 @@ void ChangeHeroEvent::run()
     DungeonSceneManager::getInstance()->getMapObjectList()->removeById(etoi(ObjectID::HERO));
     
     // 新主人公を設定
-    Character* chara {Character::create(CharacterData(this->charaId, etoi(ObjectID::HERO), location))};
-    chara->setHit(true);
+    Character* chara { Character::create(CharacterData(this->charaId, etoi(ObjectID::HERO), location)) };
     party->addMember(chara);
     DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
     DungeonSceneManager::getInstance()->setCamera(party->getMainCharacter());

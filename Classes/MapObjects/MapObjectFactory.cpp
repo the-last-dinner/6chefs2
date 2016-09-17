@@ -17,6 +17,8 @@
 #include "MapObjects/PathObject.h"
 #include "MapObjects/MapObjectList.h"
 
+#include "MapObjects/DetectionBox/CollisionBox.h"
+
 #include "MapObjects/TerrainObject/WaterArea.h"
 #include "MapObjects/TerrainObject/SlipFloor.h"
 
@@ -105,7 +107,7 @@ MapObjectList* MapObjectFactory::createMapObjectList(TMXTiledMap* tiledMap)
     delete p;
     
     // MapObjectListを生成して返す
-    MapObjectList* list { MapObjectList::create() };
+    MapObjectList* list { MapObjectList::create(tiledMap->getContentSize()) };
     
     list->setAvailableObjects(availableObjects);
     list->setDisableObjects(disableObjects);
@@ -245,8 +247,7 @@ MapObject* MapObjectFactory::createObjectOnCollision(const ValueMap& info)
     pObj->setObjectId(this->getObjectId(info));
     pObj->setGridPosition(this->getGridPosition(rect));
     pObj->setContentSize(rect.size);
-    pObj->setHit(true);
-    pObj->setCollisionRect(Rect(0, 0, rect.size.width, rect.size.height));
+    pObj->setCollision(CollisionBox::create(pObj, Rect(0, 0, rect.size.width, rect.size.height)));
     
     return pObj;
 }
@@ -262,9 +263,12 @@ MapObject* MapObjectFactory::createObjectOnEvent(const ValueMap& info)
     obj->setTrigger(this->getTrigger(info));
     obj->setGridPosition(this->getGridPosition(rect));
     obj->setContentSize(rect.size);
-    obj->setCollisionRect(Rect(0, 0, rect.size.width, rect.size.height));
-    obj->setHit(this->isHit(info));
     obj->setSprite(this->getSprite(info));
+    
+    if(this->isHit(info))
+    {
+        obj->setCollision(CollisionBox::create(obj, Rect(0, 0, rect.size.width, rect.size.height)));
+    }
     
     return obj;
 }
@@ -291,7 +295,6 @@ MapObject* MapObjectFactory::createObjectOnCharacter(const ValueMap& info)
     
     chara->setTrigger(this->getTrigger(info));
     chara->setEventId(this->getEventId(info));
-    chara->setHit(true);
     
     return chara;
 }
@@ -319,7 +322,6 @@ MapObject* MapObjectFactory::createObjectOnTerrain(const ValueMap& info)
     obj->setObjectId(this->getObjectId(info));
     obj->setGridPosition(this->getGridPosition(rect));
     obj->setContentSize(rect.size);
-    obj->setCollisionRect(Rect(0, 0, rect.size.width, rect.size.height));
     
     return obj;
 }
@@ -353,7 +355,6 @@ MapObject* MapObjectFactory::createObjectOnGhost(const ValueMap& info)
     Sprite* sprite { this->getSprite(info) };
     obj->setSprite(sprite);
     obj->setContentSize(sprite->getContentSize());
-    obj->setCollisionRect(Rect(0, 0, sprite->getContentSize().width, sprite->getContentSize().height));
     
     return obj;
 }

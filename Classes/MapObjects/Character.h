@@ -23,10 +23,10 @@ public:
     
 // インスタンス変数
 private:
-    int charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
-    CSNode* csNode { nullptr };
+    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
+    CSNode* _csNode { nullptr };
 protected:
-    MovePattern* movePattern { nullptr };                                       // 動きのパターン
+    MovePattern* _movePattern { nullptr };                                       // 動きのパターン
     
 // インスタンスメソッド
 public:

@@ -7,13 +7,10 @@
 //
 
 #include "MapObjects/MovePatterns/Scouter.h"
-
-#include "Algorithm/PathFinder.h"
-
 #include "MapObjects/MovePatterns/Chaser.h"
-
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/PathObject.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -27,7 +24,6 @@ Scouter::~Scouter()
 {
     FUNCLOG
     
-    CC_SAFE_RELEASE_NULL(this->finder);
     CC_SAFE_RELEASE_NULL(this->sight);
     CC_SAFE_RELEASE_NULL(this->subPattern);
     
@@ -39,8 +35,7 @@ bool Scouter::init(Character* character)
 {
     if(!MovePattern::init(character)) return false;
     
-    PathFinder* finder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    CC_SAFE_RETAIN(finder);
+    PathFinder* finder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
     this->finder = finder;
     
     Sight* sight {Sight::create(character)};
@@ -126,7 +121,7 @@ void Scouter::move(const int pathObjId)
 // 指定経路オブジェクトまでの経路を取得
 deque<Direction> Scouter::getPath(PathObject* pathObject)
 {
-    deque<Direction> path {this->finder->getPath(this->chara->getGridRect(), this->getMapObjectList()->getGridCollisionRects({this->chara, this->getMainCharacter()}), pathObject->getGridPosition())};
+    deque<Direction> path {this->finder->getPath(this->chara, pathObject->getGridPosition())};
     
     return path;
 }

@@ -46,7 +46,7 @@ public:
 public:
     bool isPlaying() const;
     bool isPlaying(const string& animationName) const;
-    
+    Node* getCSChild(const string& name) const;
 private:
     void setPlaying(const string& animationName, bool playing);
     

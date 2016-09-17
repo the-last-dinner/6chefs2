@@ -58,10 +58,10 @@ void MovePattern::setStartPathId(const int pathId)
 }
 
 // 主人公を取得
-Character* MovePattern::getMainCharacter() const { return this->chara->objectList->getParty()->getMainCharacter(); }
+Character* MovePattern::getMainCharacter() const { return this->chara->_objectList->getParty()->getMainCharacter(); }
 
 // マップオブジェクト一覧を取得
-MapObjectList* MovePattern::getMapObjectList() const { return this->chara->objectList; }
+MapObjectList* MovePattern::getMapObjectList() const { return this->chara->_objectList; }
 
 // 停止中か
 bool MovePattern::isPaused() const

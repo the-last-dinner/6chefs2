@@ -13,10 +13,10 @@
 #include "MapObjects/Character.h"
 
 // コンストラクタ
-TerrainState::TerrainState() { FUNCLOG }
+TerrainState::TerrainState() {}
 
 // デストラクタ
-TerrainState::~TerrainState() { FUNCLOG }
+TerrainState::~TerrainState() {}
 
 // 初期化
 bool TerrainState::init()

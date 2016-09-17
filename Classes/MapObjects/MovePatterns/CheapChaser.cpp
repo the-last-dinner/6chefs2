@@ -43,7 +43,7 @@ void CheapChaser::onPartyMoved()
 // マップ移動可能か
 bool CheapChaser::canGoToNextMap() const
 {
-    return this->chara->canMove(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()));
+    return this->chara->canMove(Direction::convertGridVec2(this->getMainCharacter()->getGridCollisionRect().origin - this->chara->getGridPosition()));
 }
 
 // 次マップへの出現遅延時間を計算

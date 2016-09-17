@@ -9,21 +9,22 @@
 #include "Models/Sight.h"
 
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 
 // 定数
 const float Sight::DEFAULT_VIEW_ANGLE { 90.f };
 const int Sight::DEFAULT_GRID_LIMIT_DISTANCE { 10 };
 
 // コンストラクタ
-Sight::Sight() {FUNCLOG};
+Sight::Sight() { FUNCLOG };
 
 // デストラクタ
-Sight::~Sight() {FUNCLOG};
+Sight::~Sight() { FUNCLOG };
 
 // 初期化
 bool Sight::init(Character* chara)
 {
-    this->chara = chara;
+    _chara = chara;
     
     return true;
 }
@@ -34,64 +35,28 @@ float Sight::toDegree(const float radian) const
     return (radian * 180.f) / 3.14159265359f;
 }
 
-// 線分がRectの左辺と交差しているか
-bool Sight::isSegmentIntersectWithLeft(const Point& p1, const Point& p2, const Rect& rect) const
-{
-    return Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMinY()), Point(rect.getMinX(), rect.getMaxY()));
-}
-
-// 線分がRectの右辺と交差しているか
-bool Sight::isSegmentIntersectWithRight(const Point& p1,const Point& p2, const Rect& rect) const
-{
-    return Vec2::isSegmentIntersect(p1, p2, Point(rect.getMaxX(), rect.getMinY()), Point(rect.getMaxX(), rect.getMaxY()));
-}
-
-// 線分がRectの上辺と交差しているか
-bool Sight::isSegmentIntersectWithUpper(const Point& p1, const Point& p2, const Rect& rect) const
-{
-    return Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMaxY()), Point(rect.getMaxX(), rect.getMaxY()));
-}
-
-// 線分がRectの下辺と交差しているか
-bool Sight::isSegmentIntersectWithBottom(const Point& p1, const Point& p2, const Rect& rect) const
-{
-    return Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMinY()), Point(rect.getMaxX(), rect.getMinY()));
-}
-
 // 対象が視界内にいるか
-bool Sight::isIn(MapObject* target, MapObjectList* list) const
+bool Sight::isIn(const MapObject* target, const MapObjectList* list) const
 {
     // キャラクタの向いている向きのベクトルを取得
-    Vec2 v1 { this->chara->getDirection().getVec2() };
-    
-    // 対象の当たり判定Rect
-    Rect rect { target->getCollisionRect() };
+    Vec2 v1 { _chara->getDirection().getVec2() };
     
     // キャラクタから対象の間にできるベクトル
-    Point p1 {this->chara->getPosition()};
-    Point p2 {Point(rect.getMidX(), rect.getMidY())};
+    Point p1 { _chara->getPosition() };
+    Point p2 { target->getPosition() };
     Vec2 v2 { p2 - p1 };
     
     // 視界限界距離より遠くにいれば視界外
-    if(v2.getLength() > this->limitDistance * GRID) return false;
+    if(v2.getLength() > _limitDistance * GRID) return false;
     
     // 二本のベクトルの間にできる角度を取得
     float degree { fabs(this->toDegree(v1.getAngle(v2))) };
     
     // 視野角の半分に収まっていなければ視界外
-    if(degree > this->angle / 2) return false;
+    if(degree > _angle / 2) return false;
     
-    // 対象と本人以外の当たり判定用Rectを取得
-    vector<Rect> collisionRects {list->getCollisionRects({ target, this->chara })};
-    
-    // Rectを４辺に分解し、それぞれの辺ベクトルとv2が交差しているかチェックする
-    for(Rect rect : collisionRects)
-    {
-        if(this->isSegmentIntersectWithLeft(p1, p2, rect)) return false;
-        if(this->isSegmentIntersectWithRight(p1, p2, rect)) return false;
-        if(this->isSegmentIntersectWithUpper(p1, p2, rect)) return false;
-        if(this->isSegmentIntersectWithBottom(p1, p2, rect)) return false;
-    }
+    // 対象と本人の間に当たり判定があれば視界外
+    if(list->getCollisionDetector()->existsCollisionBetween(_chara, target)) return false;
     
     return true;
 }

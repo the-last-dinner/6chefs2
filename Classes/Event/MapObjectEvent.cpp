@@ -8,8 +8,6 @@
 
 #include "MapObjectEvent.h"
 
-#include "Algorithm/PathFinder.h"
-
 #include "Effects/Light.h"
 
 #include "Event/GameEventHelper.h"
@@ -18,6 +16,7 @@
 #include "MapObjects/MapObject.h"
 #include "MapObjects/MapObjectList.h"
 #include "Mapobjects/Party.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -47,7 +46,7 @@ bool ReactionEvent::init(rapidjson::Value& json)
 
 void ReactionEvent::run()
 {
-    MapObject* target = {this->eventHelper->getMapObjectById(this->objectId)};
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     if(!target)
     {
@@ -95,7 +94,6 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         
         chara->setTrigger(this->eventHelper->getTrigger(json));
         chara->setEventId(this->eventHelper->getEventId(json));
-        chara->setHit(true);
         
         this->target = chara;
     }
@@ -218,8 +216,8 @@ void MoveToEvent::run()
     }
     
     // 経路探索開始
-    PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    deque<Direction> directions { pathFinder->getPath(target->getGridRect(), target->getWorldGridCollisionRects(), this->dest) };
+    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
+    deque<Direction> directions { pathFinder->getPath(target, this->dest) };
     
     target->moveByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
 }

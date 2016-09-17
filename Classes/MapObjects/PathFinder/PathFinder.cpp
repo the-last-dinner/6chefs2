@@ -6,7 +6,11 @@
 //
 //
 
-#include "PathFinder.h"
+#include "MapObjects/PathFinder/PathFinder.h"
+
+#include "MapObjects/MapObjectList.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/PathFinder/PathNode.h"
 
 // コンストラクタ
 PathFinder::PathFinder() { FUNCLOG };
@@ -15,55 +19,35 @@ PathFinder::PathFinder() { FUNCLOG };
 PathFinder::~PathFinder() { FUNCLOG };
 
 // 初期化
-bool PathFinder::init(const Size& mapSize)
+bool PathFinder::init(MapObjectList* mapObjectList, const Size& mapSize)
 {
+    if(!mapObjectList) return false;
+    
     // マップのマス数
-    this->gridWidth = static_cast<int>(MapUtils::getGridNum(mapSize.width));
-    this->gridHeight = static_cast<int>(MapUtils::getGridNum(mapSize.height));
+    _gridWidth = static_cast<int>(MapUtils::getGridNum(mapSize.width));
+    _gridHeight = static_cast<int>(MapUtils::getGridNum(mapSize.height));
+    
+    _mapObjectList = mapObjectList;
     
     return true;
 }
 
 // A-starのアルゴリズムで経路を探索
-deque<Direction> PathFinder::getPath(const Rect& chaserGridRect, const vector<Rect>& collisionGridRects, const Point& destGridPosition)
+deque<Direction> PathFinder::getPath(MapObject* targetMapObject, const Point& destGridPosition)
 {
     map<Point, PathNode*> nodeMap {};
     
-    // 追跡者の幅を考慮して進入不可座標をセットする
-    if(!collisionGridRects.empty())
-    {
-        for(Rect collisionGridRect : collisionGridRects)
-        {
-            for(Point gridPosition : this->splitByGrid(collisionGridRect))
-            {
-                // 追跡者のマス幅 - 1だけ左側のマスをCANT状態にする
-                for(int i {0}; i < static_cast<int>(chaserGridRect.size.width) ; i++)
-                {
-                    Point position {Point(gridPosition.x - i, gridPosition.y)};
-                    
-                    // もうすでにマス座標に登録されているノードがあれば無視
-                    if(nodeMap.count(position) != 0) continue;
-                    
-                    PathNode* node { this->createNode(position) };
-                    node->setState(PathNode::State::CANT);
-                    
-                    nodeMap.insert({position, node});
-                }
-            }
-        }
-    }
-    
     // 始点ノードを生成、探索開始
-    PathNode* startNode { this->createNode(chaserGridRect.origin, destGridPosition) };
+    PathNode* startNode { this->createNode(targetMapObject->getGridPosition(), destGridPosition) };
     
-    PathNode* destNode { this->find(startNode, destGridPosition, nodeMap)};
+    PathNode* destNode { this->find(targetMapObject, startNode, destGridPosition, nodeMap)};
     
     deque<Direction> directionQueue;
     
     if(!destNode) return directionQueue;
     
     // どの方向に進むのかを、目的地ノードから探索開始ノードまで取り出す
-    PathNode* node {destNode};
+    PathNode* node { destNode };
     while (node->getParent() != nullptr)
     {
         // 親との差ベクトルを方向に変換
@@ -88,7 +72,7 @@ deque<Direction> PathFinder::getPath(const Rect& chaserGridRect, const vector<Re
 }
 
 // 基準ノードを中心に周りをOPEN
-PathFinder::PathNode* PathFinder::find(PathFinder::PathNode* referenceNode, const Point& destGridPosition, map<Point, PathFinder::PathNode*>& nodeMap)
+PathNode* PathFinder::find(MapObject* target, PathNode* referenceNode, const Point& destGridPosition, map<Point, PathNode*>& nodeMap)
 {
     // 基準ノード座標 = 目的地座標ならばリターン
     if(referenceNode->getGridPoint() == destGridPosition) return referenceNode;
@@ -110,12 +94,22 @@ PathFinder::PathNode* PathFinder::find(PathFinder::PathNode* referenceNode, cons
     for(Point position : positions)
     {
         // マップの座標外なら無視
-        if(position.x < 0 || position.x > this->gridWidth || position.y < 0 || position.y > this->gridHeight) continue;
+        if(position.x < 0 || position.x > _gridWidth || position.y < 0 || position.y > _gridHeight) continue;
         
-        // あたり判定がないか確認、あれば無視
+        // 当たり判定がないか確認、あれば無視
         if(nodeMap.count(position) != 0 && nodeMap.at(position)->getState() == PathNode::State::CANT) continue;
+        
+        // 当たり判定があれば侵入不可座標として登録
+        if(_mapObjectList->getCollisionDetector()->isHit(target->getCollision()->clone(position)))
+        {
+            PathNode* node { this->createNode(position) };
+            node->setState(PathNode::State::CANT);
+            nodeMap.insert({position, node});
+            
+            continue;
+        }
 
-        PathNode* node {this->createNode(position, destGridPosition, referenceNode)};
+        PathNode* node { this->createNode(position, destGridPosition, referenceNode) };
         
         // マス座標にノードがないとき
         if(nodeMap.count(position) == 0)
@@ -174,7 +168,7 @@ PathFinder::PathNode* PathFinder::find(PathFinder::PathNode* referenceNode, cons
     if(!minScoreNode) return nullptr;
     
     // 最小ノードを新たな基準とし探索
-    return this->find(minScoreNode, destGridPosition, nodeMap);
+    return this->find(target, minScoreNode, destGridPosition, nodeMap);
 }
 
 // マスRectをマス座標に分割
@@ -197,7 +191,7 @@ vector<Point> PathFinder::splitByGrid(const Rect& gridRect)
 }
 
 // ノードを生成
-PathFinder::PathNode* PathFinder::createNode(const Point& gridPosition)
+PathNode* PathFinder::createNode(const Point& gridPosition)
 {
     PathNode* node { PathNode::create(gridPosition) };
     CC_SAFE_RETAIN(node);
@@ -206,7 +200,7 @@ PathFinder::PathNode* PathFinder::createNode(const Point& gridPosition)
 }
 
 // ノードを生成、実、推定コストも一緒にセット
-PathFinder::PathNode* PathFinder::createNode(const Point& gridPosition, const Point& destGridPosition, PathNode* parent)
+PathNode* PathFinder::createNode(const Point& gridPosition, const Point& destGridPosition, PathNode* parent)
 {
     PathNode* node { PathNode::create(gridPosition) };
     CC_SAFE_RETAIN(node);

@@ -27,8 +27,8 @@ public:
 
 // インスタンス変数
 private:
-    int riddenEventID { static_cast<int>(EventID::UNDIFINED)};
-    bool enableControl { false };
+    int _riddenEventID { static_cast<int>(EventID::UNDIFINED)};
+    bool _enableControl { false };
     
 // インスタンスメソッド
 private:

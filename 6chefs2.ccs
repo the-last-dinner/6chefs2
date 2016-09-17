@@ -138,6 +138,13 @@
           <Project Name="nadeshiko.csd" Type="Node" />
           <Project Name="ranmaru.csd" Type="Node" />
         </Folder>
+        <Folder Name="detection">
+          <PlistImageFolder Image="detection_box.png" PListFile="detection_box.plist" Name=".detection_box_PList.Dir">
+            <PlistImageFile Name="attack.png" Key="attack.png" />
+            <PlistImageFile Name="collision.png" Key="collision.png" />
+            <PlistImageFile Name="hit.png" Key="hit.png" />
+          </PlistImageFolder>
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

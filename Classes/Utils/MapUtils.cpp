@@ -47,3 +47,15 @@ bool MapUtils::includesGridRect(const cocos2d::Rect& parent, const Rect& child)
              parent.getMinY() < child.getMinY() ||
              parent.getMinY() - parent.size.height > child.getMinY() - child.size.height);
 }
+
+// 線分がRectに交差しているかどうか
+bool MapUtils::isSegmentIntersectWithRect(const Point& p1, const Point& p2, const cocos2d::Rect& rect)
+{
+    // 上下左右の線分とそれぞれ交差しているか
+    if(Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMaxY()), Point(rect.getMaxX(), rect.getMaxY()))) return true;
+    if(Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMinY()), Point(rect.getMaxX(), rect.getMinY()))) return true;
+    if(Vec2::isSegmentIntersect(p1, p2, Point(rect.getMaxX(), rect.getMinY()), Point(rect.getMaxX(), rect.getMaxY()))) return true;
+    if(Vec2::isSegmentIntersect(p1, p2, Point(rect.getMinX(), rect.getMinY()), Point(rect.getMinX(), rect.getMaxY()))) return true;
+    
+    return false;
+}

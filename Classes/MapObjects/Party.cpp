@@ -34,9 +34,6 @@ bool Party::init(const vector<CharacterData>& datas)
         
         if(!chara) continue;
         
-        // 主人公のみ当たり判定
-        if(i == 0) chara->setHit(true);
-        
         this->members.pushBack(chara);
     }
     
@@ -46,7 +43,6 @@ bool Party::init(const vector<CharacterData>& datas)
 // パーティにキャラクタを追加
 void Party::addMember(Character* character)
 {
-    character->setHit(false);
     this->members.pushBack(character);
     PlayerDataManager::getInstance()->getLocalData()->setPartyMember(character->getCharacterData());
 }
@@ -84,7 +80,7 @@ bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, 
     return this->getMainCharacter()->walkBy(directions, [this, callback]
     {
         callback();
-        if(this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridRect());
+        if(this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridCollisionRect());
     }, ratio);
 }
 

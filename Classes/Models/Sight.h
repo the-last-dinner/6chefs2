@@ -27,9 +27,9 @@ public:
     
 // インスタンス変数
 private:
-    Character* chara { nullptr };
-    float angle { DEFAULT_VIEW_ANGLE };
-    int limitDistance { DEFAULT_GRID_LIMIT_DISTANCE };
+    Character* _chara { nullptr };
+    float _angle { DEFAULT_VIEW_ANGLE };
+    int _limitDistance { DEFAULT_GRID_LIMIT_DISTANCE };
     
 // インスタンスメソッド
 private:
@@ -37,12 +37,8 @@ private:
     ~Sight();
     bool init(Character* chara);
     float toDegree(const float radian) const;
-    bool isSegmentIntersectWithLeft(const Point& p1, const Point& p2, const Rect& rect) const;
-    bool isSegmentIntersectWithRight(const Point& p1, const Point& p2, const Rect& rect) const;
-    bool isSegmentIntersectWithUpper(const Point& p1, const Point& p2, const Rect& rect) const;
-    bool isSegmentIntersectWithBottom(const Point& p1, const Point& p2, const Rect& rect) const;
 public:
-    bool isIn(MapObject* target, MapObjectList* list) const;
+    bool isIn(const MapObject* target, const MapObjectList* list) const;
 };
 
 #endif /* Sight_h */

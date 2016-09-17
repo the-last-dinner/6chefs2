@@ -12,9 +12,9 @@
 
 #include "Datas/MapObject/CharacterData.h"
 
+#include "MapObjects/DetectionBox/CollisionBox.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
-
 #include "MapObjects/TerrainState/TerrainState.h"
 
 #include "Managers/DungeonSceneManager.h"
@@ -27,7 +27,7 @@ Character::~Character()
 {
     FUNCLOG
     
-    CC_SAFE_RELEASE(this->movePattern);
+    CC_SAFE_RELEASE(_movePattern);
 }
 
 // 初期化
@@ -36,8 +36,8 @@ bool Character::init(const CharacterData& data)
 	if(!MapObject::init()) return false;
     
 	// 生成時の情報をセット
-    this->charaId = data.chara_id;
-	this->location = data.location;
+    _charaId = data.chara_id;
+    _location = data.location;
     this->setObjectId(data.obj_id);
     
     CSNode* csNode { CSNode::create(data.getCsbFilePath()) };
@@ -47,31 +47,31 @@ bool Character::init(const CharacterData& data)
         //LastSupper::AssertUtils::fatalAssert("キャラクターのcsbファイルが存在しません\nFilePath : " + data.getCsbFilePath());
         //return false;
     }
-    this->csNode = csNode;
+    _csNode = csNode;
     this->addChild(csNode);
     
-    if(!this->movePattern)
+    if(!_movePattern)
     {
         // 動きのアルゴリズムを生成
         MovePatternFactory* factory { MovePatternFactory::create() };
         CC_SAFE_RETAIN(factory);
-        this->movePattern = factory->createMovePattern(data.move_pattern, this);
-        CC_SAFE_RETAIN(this->movePattern);
+        _movePattern = factory->createMovePattern(data.move_pattern, this);
+        CC_SAFE_RETAIN(_movePattern);
         CC_SAFE_RELEASE(factory);
     }
     
     // サイズ、衝突判定範囲をセット
     this->setContentSize(Size(GRID * 2, GRID * 2));
-    this->setCollisionRect(Rect(0, 0, this->getContentSize().width, this->getContentSize().height / 2));
+    this->setCollision(CollisionBox::create(this, csNode->getCSChild("collision")));
 	
     return true;
 }
 
 // キャラクタIDを取得
-int Character::getCharacterId() const {return this->charaId;}
+int Character::getCharacterId() const { return _charaId; }
 
 // 自身のキャラクターデータを返す
-CharacterData Character::getCharacterData() const { return CharacterData(this->charaId, this->getObjectId(), this->location); }
+CharacterData Character::getCharacterData() const { return CharacterData(_charaId, this->getObjectId(), _location); }
 
 // キャラクターの向きを変える
 void Character::setDirection(const Direction& direction)
@@ -87,25 +87,25 @@ void Character::setDirection(const Direction& direction, bool stopAnimation)
     
     if(!stopAnimation) return;
     
-    this->csNode->play(AnimationName::getTurn(direction));
+    _csNode->play(AnimationName::getTurn(direction));
 }
 
 // AIを一時停止
 void Character::pauseAi()
 {
-    if(!this->movePattern) return;
+    if(!_movePattern) return;
     
     this->clearDirectionsQueue();
     
-    this->movePattern->pause();
+    _movePattern->pause();
 }
 
 // AIを再開
 void Character::resumeAi()
 {
-    if(!this->movePattern) return;
+    if(!_movePattern) return;
     
-    this->movePattern->resume();
+    _movePattern->resume();
 }
 
 // 方向を指定して歩行させる
@@ -180,10 +180,10 @@ void Character::walkByQueue(deque<Direction> directionQueue, function<void(bool)
 void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio, const bool back)
 {
     // 初回のみ中身が存在するため、空でない時は格納する
-    if(!directionsQueue.empty()) this->directionsQueue = directionsQueue;
+    if(!directionsQueue.empty()) _directionsQueue = directionsQueue;
     
     // キューが空になったら成功としてコールバックを呼び出し
-    if(this->directionsQueue.empty())
+    if(_directionsQueue.empty())
     {
         if(callback) callback(true);
         
@@ -199,8 +199,8 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
     }
     
     // キューの先頭を実行
-    vector<Direction> directions { this->directionsQueue.front() };
-    this->directionsQueue.pop_front();
+    vector<Direction> directions { _directionsQueue.front() };
+    _directionsQueue.pop_front();
     
     // 移動開始。失敗時はコールバックを失敗として呼び出し
     if(this->walkBy(directions, [callback, ratio, back, this]{this->walkByQueue(deque<vector<Direction>>({}), callback, ratio, back);}, ratio, back)) return;
@@ -229,16 +229,16 @@ void Character::lookAround(function<void()> callback, Direction direction)
 // アニメーションを再生
 void Character::playAnimation(const string& name, float speed, bool loop)
 {
-    if(!this->csNode) return;
+    if(!_csNode) return;
     
-    this->csNode->play(name, speed, loop);
+    _csNode->play(name, speed, loop);
 }
 
 void Character::playAnimationIfNotPlaying(const string& name, float speed)
 {
-    if(!this->csNode) return;
+    if(!_csNode) return;
     
-    this->csNode->playIfNotPlaying(name, speed);
+    _csNode->playIfNotPlaying(name, speed);
 }
 
 #pragma mark -
@@ -281,14 +281,14 @@ void Character::onEnterMap()
 {
     this->setDirection(this->getDirection());
     
-    if(this->movePattern) this->movePattern->start();
+    if(_movePattern) _movePattern->start();
     if(DungeonSceneManager::getInstance()->isEventRunning()) this->onEventStart();
 }
 
 // 主人公一行が動いた時
 void Character::onPartyMoved()
 {
-    if(this->movePattern) this->movePattern->onPartyMoved();
+    if(_movePattern) _movePattern->onPartyMoved();
 }
 
 // 調べられた時
@@ -309,7 +309,7 @@ void Character::onEventStart()
 void Character::onEventFinished()
 {
     this->setPaused(false);
-    if(this->movePattern && this->movePattern->isPaused()) this->movePattern->resume();
+    if(_movePattern && _movePattern->isPaused()) _movePattern->resume();
     this->getActionManager()->resumeTarget(this);
 }
 

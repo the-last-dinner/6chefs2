@@ -111,6 +111,13 @@ bool CSNode::isPlaying(const string& animationName) const
     return _isPlayingWithAnimationName.at(animationName);
 }
 
+Node* CSNode::getCSChild(const string& name) const
+{
+    if(!_csbNode) return nullptr;
+    
+    return _csbNode->getChildByName(name);
+}
+
 #pragma mark -
 #pragma mark private
 

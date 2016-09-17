@@ -103,7 +103,18 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="dandan_1_0.png" Plist="character/dandan.plist" />
+            <FileData Type="PlistSubImage" Path="dandan_0_0.png" Plist="character/dandan.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="collision" ActionTag="-652206629" Tag="18" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-42.0000" BottomMargin="-58.0000" ctype="SpriteObjectData">
+            <Size X="100.0000" Y="100.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position Y="-8.0000" />
+            <Scale ScaleX="0.3200" ScaleY="0.1600" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

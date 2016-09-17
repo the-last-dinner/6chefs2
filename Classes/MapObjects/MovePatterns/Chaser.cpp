@@ -10,10 +10,8 @@
 
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
-
 #include "MapObjects/MovePatterns/CheapChaser.h"
-
-#include "Algorithm/PathFinder.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -38,8 +36,7 @@ bool Chaser::init(Character* character)
     if(!MovePattern::init(character)) return false;
     
     // 経路探索
-    PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    CC_SAFE_RETAIN(pathFinder);
+    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
     this->pathFinder = pathFinder;
     
     // サブアルゴリズム
@@ -144,7 +141,7 @@ void Chaser::cutPath(deque<Direction>& path)
 // 経路を取得
 deque<Direction> Chaser::getPath() const
 {
-    deque<Direction> path { this->pathFinder->getPath(this->chara->getGridRect(), this->getMapObjectList()->getGridCollisionRects({this->getMainCharacter(), this->chara}), this->getMainCharacter()->getGridRect().origin) };
+    deque<Direction> path { this->pathFinder->getPath(this->chara, this->getMainCharacter()->getGridCollisionRect().origin) };
     
     return path;
 }
