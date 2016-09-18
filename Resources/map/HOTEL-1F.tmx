@@ -14,6 +14,11 @@
  </tileset>
  <tileset firstgid="5089" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
+  <tile id="448">
+   <properties>
+    <property name="direction" value="UP"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="5569" name="youkan" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="youkan.png" trans="aa55ff" width="480" height="256"/>
@@ -58,7 +63,7 @@
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0EEKwCAMBEA/0Q9LH1J9qe2hiEehGKEzEMgtu0kJAABgTj6iE3Tngiz6xtH3e3/re903SuC8nr1u9HsAAAAAAAAAAAAAAABGDdnKHh0=
+   eJzt0EEKgDAMBMB8Ih8ufYj2pR6tx0IxgjOw5+wmAgAAYE3L6ga3/kIXe+vYu9/f9h7TjTNrMz70ewAAAAAAAAAAAAAAAJ4uKXoeHQ==
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="72">
@@ -118,7 +123,7 @@
   <object id="18" x="832" y="1056" width="96" height="16"/>
   <object id="19" x="672" y="1056" width="96" height="16"/>
   <object id="23" x="96" y="208" width="16" height="96"/>
-  <object id="24" x="112" y="288" width="496" height="16"/>
+  <object id="24" x="144" y="288" width="496" height="16"/>
   <object id="25" x="656" y="208" width="16" height="96"/>
   <object id="26" x="640" y="288" width="16" height="16"/>
   <object id="55" x="640" y="640" width="288" height="160"/>
@@ -202,7 +207,7 @@
     <property name="previousID" value="0"/>
    </properties>
   </object>
-  <object id="51" x="224" y="400" width="32" height="32">
+  <object id="51" x="112" y="352" width="32" height="32">
    <properties>
     <property name="nextID" value="1"/>
     <property name="pathID" value="2"/>

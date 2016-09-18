@@ -3,6 +3,20 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["76","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"181"
+				}
+			]
 		}
 	],
 	"2":[
@@ -15,14 +29,47 @@
 	],
 	"3":[
 		{
-			"type":"playBGM",
-			"file":"kagome.mp3"
-		},
-		{
-			"type":"changeMap",
-			"mapID":"77",
-			"x":5,
-			"y":47
+			"type":"sequence",
+			"action":[
+				{
+					"type":"playSE",
+					"file":"iron_door.mp3"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door8"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door7"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door6"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"playBGM",
+					"file":"kagome.mp3"
+				},
+				{
+					"type":"changeMap",
+					"mapID":"77",
+					"x":5,
+					"y":47
+				}
+			]
 		}
 	],
 	"4":[
@@ -62,6 +109,63 @@
 					"mapID":"86",
 					"x":9,
 					"y":21
+				}
+			]
+		}
+	],
+	"5":[
+		{
+			"type":"playSE",
+			"file":"iron_door.mp3"
+		},
+		{
+			"type":"changeMap",
+			"mapID":"103",
+			"x":16,
+			"y":13
+		}
+	],
+	"6":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"item":"1515"
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"181"
+				},
+				{
+					"type":"systemMsg",
+					"text":["地下3階階段室の鍵を使った"]
+				},
+				{
+					"type":"playSE",
+					"file":"door_keyopen.mp3"
+				},
+				{
+					"type":"already"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nitem":"1515"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["鍵がかかっている"]
+				},
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
 				}
 			]
 		}

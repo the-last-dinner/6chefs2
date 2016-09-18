@@ -16,6 +16,22 @@
 			"movePattern":"4"
 		},
 		{
+			"type":"setLight",
+			"objID":"1"
+		},
+		{
+			"type":"setLight",
+			"objID":"2"
+		},
+		{
+			"type":"setLight",
+			"objID":"3"
+		},
+		{
+			"type":"setLight",
+			"objID":"4"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{

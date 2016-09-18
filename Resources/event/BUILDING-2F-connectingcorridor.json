@@ -167,6 +167,13 @@
 							"time":1.0
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"change.mp3"
+						},
+						{
 							"type":"charaMsg",
 							"talk":[
 								{

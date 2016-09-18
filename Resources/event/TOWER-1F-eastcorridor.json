@@ -610,21 +610,6 @@
 							"option":"reaction"
 						},
 						{
-							"text":["？？まるおくん？\n我は比較的健在ですぞ？"],
-							"charaID":"4",
-							"imgID":"2"
-						},
-						{
-							"text":["は？らんまるくんだからまるおくんだよ！"],
-							"charaID":"7",
-							"imgID":"1"
-						},
-						{
-							"text":["ぬぅ・・・\n（まるおくんは普通我ですぞ・・・）"],
-							"charaID":"4",
-							"imgID":"1"
-						},
-						{
 							"text":["アイツよ・・・\n戸塚・・・戸塚大宝よ・・・"],
 							"charaID":"3",
 							"imgID":"2"
@@ -649,10 +634,15 @@
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["戸塚がいたの！？"],
+							"text":["戸塚って・・・！？"],
 							"charaID":"7",
 							"imgID":"3",
 							"option":"reaction"
+						},
+						{
+							"text":["やはり・・・"],
+							"charaID":"4",
+							"imgID":"1"
 						},
 						{
 							"text":["えぇ・・・\nそれで何とか逃げてここまで来たのよ。"],
@@ -680,6 +670,11 @@
 							"imgID":"2"
 						},
 						{
+							"text":["おいよせ・・・\n危険だ"],
+							"charaID":"4",
+							"imgID":"2"
+						},
+						{
 							"text":["ゆきも・・・いく！"],
 							"charaID":"6",
 							"imgID":"1"
@@ -690,9 +685,60 @@
 							"imgID":"3"
 						},
 						{
+							"text":["おい！"],
+							"charaID":"2",
+							"imgID":"3"
+						},
+						{
 							"text":["よし！暖暖くん。\n蘭丸くんと真夏ちゃんを頼む"],
 							"charaID":"8",
 							"imgID":"1"
+						},
+						{
+							"text":["蘭丸・・・お前は今回も頑張っただろうな\n一色を守って闘って・・・"],
+							"charaID":"5",
+							"imgID":"2"
+						},
+						{
+							"text":["・・・"],
+							"charaID":"3",
+							"imgID":"1"
+						},
+						{
+							"text":["俺にも守らせろ？","お前にばっか美味しいところは\n持って行かせねぇよ"],
+							"charaID":"5",
+							"imgID":"2"
+						},
+						{
+							"text":["だがあいつは・・・\n完全に殺すつもりで来てた・・・"],
+							"charaID":"2",
+							"imgID":"4"
+						},
+						{
+							"text":["蘭丸くん。大丈夫だ。\n俺たちはちょっとあいつに聞きたいことが\nあるだけだからよ・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"text":["信じて・・・いいのか？"],
+							"charaID":"2",
+							"imgID":"4"
+						},
+						{
+							"text":["うるせぇ！\n黙って休んどけ！","ケンさん行くッスよ"],
+							"charaID":"5",
+							"imgID":"2",
+							"option":"reaction"
+						},
+						{
+							"text":["あぁ"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"text":["・・・"],
+							"charaID":"2",
+							"imgID":"4"
 						}
 					]
 				},
@@ -834,6 +880,13 @@
 							"flg":1
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"BASEMENT.mp3"
+						},
+						{
 							"type":"changeMap",
 							"mapID":"64",
 							"x":15,
@@ -853,6 +906,13 @@
 			],
 			"action":[
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"BASEMENT.mp3"
+				},
+				{
 					"type":"changeMap",
 					"mapID":"64",
 					"x":15,
@@ -866,6 +926,20 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"spawn",
+					"action":[	
+						{
+							"type":"reaction",
+							"objID":"hero"
+						},
+						{
+							"type":"playSE",
+							"file":"reaction.mp3",
+							"volume":0.25
+						}
+					]
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -874,7 +948,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["このどこかに・・・\n戸塚が・・・"],
+							"text":["・・・"],
 							"charaID":"3",
 							"imgID":"1"
 						},

@@ -519,6 +519,11 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"changeDirection",
+					"direction":"UP",
+					"objID":"hero"
+				},
+				{
 					"type":"fadein",
 					"time":3.0
 				},

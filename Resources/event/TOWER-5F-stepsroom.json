@@ -162,12 +162,12 @@
 									"imgID":"1"
 								},
 								{
-									"text":["あのね・・・","この奥に戸塚大宝がいるの・・・"],
-									"charaID":"7",
-									"imgID":"3"
+									"text":["おめーらこそ"],
+									"charaID":"5",
+									"imgID":"1"
 								},
 								{
-									"text":["えぇ、知ってるわ。\nこの建物は戸塚のモノ・・・"],
+									"text":["えぇ、なんとかね・・・"],
 									"charaID":"3",
 									"imgID":"1"
 								}
@@ -176,6 +176,38 @@
 						{
 							"type":"fadeout",
 							"time":3.0
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":9,
+							"y":14,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"10108",
+							"x":11,
+							"y":16,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"10109",
+							"x":13,
+							"y":16,
+							"direction":"UP"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"10110",
+							"x":6,
+							"y":16,
+							"direction":"UP"
+						},
+						{
+							"type":"playBGM",
+							"file":"tower5"
 						},
 						{
 							"type":"fadein",
@@ -190,9 +222,19 @@
 									"imgID":"1"
 								},
 								{
-									"text":["奴の過去にそんなことが・・・\nどうりでイカれてるワケだな・・・"],
+									"text":["それに狂人病の研究・・・\nこれでハッキリしたな"],
 									"charaID":"5",
-									"imgID":"2"
+									"imgID":"1"
+								},
+								{
+									"text":["うん・・・"],
+									"charaID":"7",
+									"imgID":"3"
+								},
+								{
+									"text":["この騒ぎには間違いなくその\n”戸塚 大宝”ってヤツが関わってる\nってことだな"],
+									"charaID":"8",
+									"imgID":"1"
 								},
 								{
 									"text":["後で地下の子供達も助けないとね・・・"],
@@ -207,7 +249,7 @@
 								{
 									"text":["おう！\nうん！\nうm！"],
 									"charaID":"10",
-									"name":"吾郎・田村・朱花・雪・暖暖"
+									"name":"吾郎・剣神・朱花・雪・暖暖"
 								}
 							]
 						},
@@ -260,6 +302,9 @@
 									"time":9.5
 								}
 							]
+						},
+						{
+							"type":"stopBGM"
 						},
 						{
 							"type":"already"

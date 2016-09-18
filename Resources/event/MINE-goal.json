@@ -7,6 +7,13 @@
 	],
 	"2":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower.mp3"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{
@@ -63,8 +70,8 @@
 				{
 					"type":"changeMap",
 					"mapID":"40",
-					"x":6,
-					"y":57,
+					"x":7,
+					"y":54,
 					"eventID":"9"
 				}
 			]

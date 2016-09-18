@@ -153,7 +153,7 @@
 		        			"y":13,
 		        			"eventID":"6",
 		        			"trigger":"2",
-		        			"direction":"RiGHT",
+		        			"direction":"RIGHT",
 		        			"movePattern":"1"
 		        		}
 		        	]
@@ -171,7 +171,7 @@
 		        {
 		        	"type":"changeDirection",
 		        	"objID":"102",
-		        	"direction":"RIGHT"
+		        	"direction":"DOWN"
 		        },
 		        {
 		        	"type":"charaMsg",

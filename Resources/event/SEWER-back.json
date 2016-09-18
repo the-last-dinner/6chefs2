@@ -15,6 +15,13 @@
 	],
 	"2":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"sewer.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"55",
 			"x":20,

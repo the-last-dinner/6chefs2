@@ -36,7 +36,7 @@
    eJxjYBgFo2AUjILBDb4zI9g/mXGrIxeIsjAwiEGxOMuo+aPmkwaMgWaaQLEpDcwfBbQBAFKVBUc=
   </data>
  </layer>
- <layer name="hide" width="24" height="24" visible="0">
+ <layer name="hide" width="24" height="24">
   <properties>
    <property name="z" value="-10"/>
   </properties>
