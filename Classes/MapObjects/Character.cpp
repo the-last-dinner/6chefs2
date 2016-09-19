@@ -287,6 +287,18 @@ void Character::onEnterMap()
     if(DungeonSceneManager::getInstance()->isEventRunning()) this->onEventStart();
 }
 
+// 主人公一行に参加した時
+void Character::onJoinedParty()
+{
+    
+}
+
+// 主人公一行から抜けた時
+void Character::onQuittedParty()
+{
+    
+}
+
 // 主人公一行が動いた時
 void Character::onPartyMoved()
 {

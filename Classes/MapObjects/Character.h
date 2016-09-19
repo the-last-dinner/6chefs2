@@ -64,6 +64,8 @@ public:
     
     // Callback
     virtual void onEnterMap() override;
+    virtual void onJoinedParty();
+    virtual void onQuittedParty();
     virtual void onPartyMoved();
     virtual void onSearched(MapObject* mainChara) override;
     virtual void onEventStart() override;

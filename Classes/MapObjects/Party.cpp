@@ -19,7 +19,7 @@ Party::~Party()
 {
     FUNCLOG
 
-    this->members.clear();
+    _members.clear();
 };
 
 // 初期化
@@ -34,7 +34,7 @@ bool Party::init(const vector<CharacterData>& datas)
         
         if(!chara) continue;
         
-        this->members.pushBack(chara);
+        _members.pushBack(chara);
     }
     
     return true;
@@ -43,34 +43,31 @@ bool Party::init(const vector<CharacterData>& datas)
 // パーティにキャラクタを追加
 void Party::addMember(Character* character)
 {
-    this->members.pushBack(character);
+    _members.pushBack(character);
+    character->onJoinedParty();
     PlayerDataManager::getInstance()->getLocalData()->setPartyMember(character->getCharacterData());
 }
 
 // パーティメンバーを削除
-void Party::removeMember(const int obj_id)
+void Party::removeMember(const int objectId)
 {
-    int member_count = this->members.size();
-    Vector<Character*> temp_members = this->members;
-    this->members.clear();
-    for (int i = 0; i < member_count; i++)
+    Character* targetMember { nullptr };
+    for(Character* member : _members)
     {
-        int target_obj = temp_members.at(i)->getCharacterData().obj_id;
-        if (obj_id == target_obj)
-        {
-            PlayerDataManager::getInstance()->getLocalData()->removePartyMember(target_obj);
-        }
-        else
-        {
-            this->members.pushBack(temp_members.at(i));
-        }
+        if(member->getObjectId() == objectId) targetMember = member;
     }
+    if(!targetMember) return;
+    
+    _members.eraseObject(targetMember);
+    targetMember->onQuittedParty();
+    
+    PlayerDataManager::getInstance()->getLocalData()->removePartyMember(objectId);
 }
 
 // パーティメンバー全員削除
 void Party::removeMemberAll()
 {
-    this->members.clear();
+    _members.clear();
     PlayerDataManager::getInstance()->getLocalData()->removePartyMemberAll();
 }
 
@@ -106,9 +103,9 @@ bool Party::move(const vector<Direction>& directions, float ratio, function<void
     if(!this->moveMainCharacter(directions, ratio, callback)) return false;
     
     // メンバーを移動
-    for(int i { 1 }; i < this->members.size(); i++)
+    for(int i { 1 }; i < _members.size(); i++)
     {
-        this->moveMember(this->members.at(i), this->members.at(i - 1), ratio);
+        this->moveMember(_members.at(i), _members.at(i - 1), ratio);
     }
     
     return true;
@@ -117,23 +114,23 @@ bool Party::move(const vector<Direction>& directions, float ratio, function<void
 // 主人公を取得
 Character* Party::getMainCharacter() const
 {
-    return this->members.at(0);
+    return _members.at(0);
 }
 
 // パーティメンバーを取得
 Vector<Character*> Party::getMembers() const
 {
-    return this->members;
+    return _members;
 }
 
 // パーティのキャラクターデータの取得
 vector<CharacterData> Party::getMembersData() const
 {
     vector<CharacterData> datas {};
-    int member_count = this->members.size();
+    int member_count = _members.size();
     for (int i = 0; i < member_count; i++)
     {
-        datas.push_back(this->members.at(i)->getCharacterData());
+        datas.push_back(_members.at(i)->getCharacterData());
     }
     return datas;
 }
