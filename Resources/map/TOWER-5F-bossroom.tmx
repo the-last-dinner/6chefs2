@@ -230,14 +230,14 @@
   </data>
  </layer>
  <objectgroup name="chara">
-  <object id="69" x="848" y="1120" width="32" height="32"/>
-  <object id="70" x="896" y="1120" width="32" height="32"/>
-  <object id="71" x="944" y="1120" width="32" height="32"/>
-  <object id="72" x="800" y="1120" width="32" height="32"/>
-  <object id="74" x="752" y="1120" width="32" height="32"/>
-  <object id="75" x="992" y="1120" width="32" height="32"/>
-  <object id="76" x="704" y="1120" width="32" height="32"/>
-  <object id="79" x="1040" y="1120" width="32" height="32"/>
-  <object id="80" x="656" y="1120" width="32" height="32"/>
+  <object id="69" name="10108" x="848" y="1120" width="32" height="32"/>
+  <object id="70" name="10110" x="896" y="1120" width="32" height="32"/>
+  <object id="71" name="hero" x="944" y="1120" width="32" height="32"/>
+  <object id="72" name="10112" x="800" y="1120" width="32" height="32"/>
+  <object id="74" name="10111" x="752" y="1120" width="32" height="32"/>
+  <object id="75" name="10109" x="992" y="1120" width="32" height="32"/>
+  <object id="76" name="10113" x="704" y="1120" width="32" height="32"/>
+  <object id="79" name="10115" x="1040" y="1120" width="32" height="32"/>
+  <object id="80" name="10114" x="656" y="1120" width="32" height="32"/>
  </objectgroup>
 </map>
