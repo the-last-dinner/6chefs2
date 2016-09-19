@@ -45,110 +45,48 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
     // プリロード終了
     loadingLayer->onLoadFinished();
     
+    // idからjsonを取得する
+    string filefilename = "config/Ending";
+    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(filefilename + ES_EXTENSION)).FindMember(to_string(this->end_id).c_str())->value;
+    
+    
     // エンディング振り分け
-    switch (this->end_id) {
-        case etoi(END_ID::NORMAL_END):
-            createNormalEnding();
-            break;
-        case etoi(END_ID::TRUE_END):
-            createTrueEnding();
-            break;
-        default:
-            createBadEnding();
-            break;
+     map<string, function<void(rapidjson::Value&)>> createEndings
+    {
+        {"normal", [this](rapidjson::Value& json){createNormalEnding(json);}},
+        {"special", [this](rapidjson::Value& json){createSpecialEnding(json);}},
+    };
+    string typeName {json["type"].GetString()};
+    
+    if(createEndings.count(typeName) == 0)
+    {
+        LastSupper::AssertUtils::warningAssert("EndingScriptError\n" + typeName + "は存在しません");
     }
+    
+    createEndings.at(typeName)(json);
+    
 }
 
-// トゥルーエンディング生成
-void EndingScene::createTrueEnding()
+// 特別なエンディング生成
+void EndingScene::createSpecialEnding(rapidjson::Value& json)
 {
-    vector<pair<string,float>> credits_name = {
-        // ------------------
-        {"--- BGM素材 ---",15.0},
-        //
-        {"魔王魂", 17.0},
-        //
-        {"クラシック名曲", 18.5},
-        {"サウンドライブラリー", 19.0},
-        // ------------------
-        {"--- 効果音素材 ---", 23.0},
-        //
-        {"効果音ラボ", 24.5},
-        //
-        {"ポケットサウンド", 26.0},
-        //
-        {"フリー音楽素材", 27.5},
-        {"Senses Circuit", 28.0},
-        // ------------------
-        {"--- 画像素材 ---", 32.0},
-        //
-        {"ドット絵世界", 33.5},
-        //
-        {"すきまの素材", 35.0},
-        //
-        {"臼井の会", 36.5},
-        //
-        {"ぴぽや",38.0},
-        //
-        {"-RyU-", 39.5},
-        //
-        {"sorairobaibai", 41.0},
-        //
-        {"とまりぎ", 42.5},
-        //
-        {"水晶と月の家", 44.0},
-        //
-        {"First Seed Material", 45.5},
-        //
-        {"なにかしらツクール", 47.0},
-        //
-        {"尾羽の小屋", 48.5},
-        //
-        {"ぼう然の流もの喫茶", 50.0},
-        //
-        {"白螺子屋", 51.5},
-        // ------------------
-        {"--- 制作メンバー ---", 55.0},
-        //
-        {"ジェダイマスター", 57.0},
-        {"エンジニア", 57.5},
-        {"ナニヲ", 58.5},
-        //
-        {"真夏大好き", 63.5},
-        {"エンジニア",64.0},
-        {"いのす", 65.0},
-        //
-        {"孫一ペロペロ", 70.0},
-        {"キャラクターデザイナー", 70.5},
-        {"早乙女", 71.5},
-        //
-        {"ピクセル", 76.5},
-        {"アート", 77.0},
-        {"おぐぐ", 78.0},
-        //
-        {"マエストロ", 83.0},
-        {"プランナー", 83.5},
-        {"スズラン", 84.5},
-    };
-    vector<string> pictures_name = {
-        "epilogue.png",
-        "chapter1.png",
-        "daigoro_usually.png",
-        "dandan_usually.png",
-        "chapter2.png",
-        "nadeshiko_usually.png",
-        "ranmaru_usually.png",
-        "chapter3.png",
-        "yuki_stan.png",
-        "manaka_usually.png",
-        "chapter4.png",
-        "taihou_usually.png",
-        "chapter5.png",
-        "magoichi_usually.png",
-    };
-    
+    vector<pair<string,float>> credits_name = {};
+    rapidjson::Value& creditsJson = json["credits"];
+    for(int i { 0 }; i < creditsJson.Size(); i++)
+    {
+        credits_name.push_back({creditsJson[i]["text"].GetString(), stod(creditsJson[i]["time"].GetString())});
+    }
+    vector<string> pictures_name = {};
+    rapidjson::Value& picturesJson = json["pictures"];
+    for(int i { 0 }; i < picturesJson.Size(); i++)
+    {
+        pictures_name.push_back(picturesJson[i]["name"].GetString());
+    }
+    string last_text = json["last_text"].GetString();
+    string last_picture = json["last_picture"].GetString();
+    string bgm = json["bgm"].GetString();
     // 背景
-    Sprite* background {Sprite::createWithSpriteFrameName("background.png")};
+    Sprite* background {Sprite::createWithSpriteFrameName(json["background"].GetString())};
     background->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     this->addChild(background);
     
@@ -173,14 +111,14 @@ void EndingScene::createTrueEnding()
     float pos = 22.5;
     
     // 制作
-    Label* last_label {Label::createWithTTF("制作", Resource::Font::MESSAGE, font_size)};
+    Label* last_label {Label::createWithTTF(last_text, Resource::Font::MESSAGE, font_size)};
     last_label->setPosition(x, -1 * last_label->getContentSize().height / 2);
     last_label->setColor(Color3B::WHITE);
     this->addChild(last_label);
     last_label->runAction(Sequence::createWithTwoActions(DelayTime::create(91.0), MoveTo::create(4.9, Vec2(last_label->getPosition().x, last_label->getContentSize().height * 2.5 + WINDOW_HEIGHT / 2 - pos))));
     
     // ロゴ
-    Sprite* logo {Sprite::createWithSpriteFrameName("the_last_dinner_log.png")};
+    Sprite* logo {Sprite::createWithSpriteFrameName(last_picture)};
     logo->setPosition(x, -1 * logo->getContentSize().height / 2);
     float scale_logo = 0.5;
     logo->setScale(scale_logo);
@@ -226,7 +164,7 @@ void EndingScene::createTrueEnding()
     }
     
     // エディング実行
-    SoundManager::getInstance()->playBGM("ending.mp3", false, 2.0);
+    SoundManager::getInstance()->playBGM(bgm, false, 2.0);
     this->runAction(Sequence::create(picture_acts));
     this->runAction(Spawn::create(label_acts));
     this->runAction(Sequence::create(DelayTime::create(103), CallFunc::create([this](){
@@ -234,27 +172,15 @@ void EndingScene::createTrueEnding()
     }), nullptr));
 }
 
-// ノーマルエンドを生成
-void EndingScene::createNormalEnding()
+// ノーマルエンディングを生成
+void EndingScene::createNormalEnding(rapidjson::Value& json)
 {
-    Label* label {Label::createWithTTF("MEDIUM END", Resource::Font::SYSTEM, 80)};
+    Label* label {Label::createWithTTF(json["text"].GetString(), Resource::Font::SYSTEM, 80)};
     label->setColor(Color3B::WHITE);
     label->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     label->setOpacity(0);
     this->addChild(label);
     label->runAction(Sequence::create(FadeIn::create(2.f), TintTo::create(2.f, Color3B::RED), DelayTime::create(2.f), CallFunc::create([this](){this->onEndingFinished();}), nullptr));
-}
-
-// バッドエンドを生成
-void EndingScene::createBadEnding()
-{
-    Label* label {Label::createWithTTF("BAD END", Resource::Font::SYSTEM, 80)};
-    label->setColor(Color3B::WHITE);
-    label->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
-    label->setOpacity(0);
-    this->addChild(label);
-    label->runAction(Sequence::create(FadeIn::create(2.f), TintTo::create(2.f, Color3B::RED), DelayTime::create(2.f), CallFunc::create([this](){this->onEndingFinished();}), nullptr));
-    
 }
 
 // エンディングが終了した時

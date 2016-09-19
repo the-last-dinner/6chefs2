@@ -38,9 +38,8 @@ private:
     bool init(const int endingId);
     virtual void onEnter() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
-    void createTrueEnding();
-    void createNormalEnding();
-    void createBadEnding();
+    void createSpecialEnding(rapidjson::Value& json);
+    void createNormalEnding(rapidjson::Value& json);
     void onEndingFinished();
     void replaceScene();
     
