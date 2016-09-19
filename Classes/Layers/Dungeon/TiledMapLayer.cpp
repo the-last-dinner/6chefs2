@@ -16,10 +16,10 @@
 #include "MapObjects/Party.h"
 
 // コンストラクタ
-TiledMapLayer::TiledMapLayer(){FUNCLOG}
+TiledMapLayer::TiledMapLayer() { FUNCLOG }
 
 // デストラクタ
-TiledMapLayer::~TiledMapLayer(){FUNCLOG}
+TiledMapLayer::~TiledMapLayer() { FUNCLOG }
 
 // 初期化
 bool TiledMapLayer::init(const Location& location)
@@ -35,7 +35,7 @@ bool TiledMapLayer::init(const Location& location)
     this->orderLayers();
     
     // オブジェクトリスト生成
-    MapObjectList* objectList {MapObjectFactory::createMapObjectList(tiledMap)};
+    MapObjectList* objectList { MapObjectFactory::createMapObjectList(tiledMap) };
     this->addChild(objectList);
     this->objectList = objectList;
     
@@ -168,7 +168,7 @@ void TiledMapLayer::addMapObject(MapObject* mapObject, bool addingToList)
 // マス座標からcocos座標系に変換して配置
 void TiledMapLayer::setMapObjectPosition(MapObject *mapObject)
 {
-    Point cocosPoint {MapUtils::convertToCCPoint(this->getMapSize(), mapObject->getGridPosition(), mapObject->getContentSize())};
+    Point cocosPoint { MapUtils::convertToCCPoint(this->getMapSize(), mapObject->getGridPosition(), mapObject->getContentSize()) };
     mapObject->setPosition(cocosPoint);
     this->setZOrderByPosition(mapObject);
 }
@@ -177,7 +177,7 @@ void TiledMapLayer::setMapObjectPosition(MapObject *mapObject)
 void TiledMapLayer::setZOrderByPosition(MapObject* mapObject)
 {
     if(ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) mapObject->drawDebugInfo();
-    int z { static_cast<int>(mapObject->getGridPosition().y)};
+    int z { static_cast<int>(mapObject->getGridPosition().y) };
     mapObject->setLocalZOrder(z);
 }
 
