@@ -524,7 +524,7 @@ void MapObject::drawDebugInfo()
 }
 
 #pragma mark -
-#pragma mark Event
+#pragma mark Interface
 
 void MapObject::onEnterMap()
 {

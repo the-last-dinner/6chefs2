@@ -116,7 +116,7 @@ public:
     
     void reaction(function<void()> callback = nullptr);
     
-    // イベント関数
+    // インターフェース
     virtual void onEnterMap();                               // マップに追加された時
     virtual void onExitMap();                                // マップから削除された時
     virtual void onSearched(MapObject* mainChara) {};        // 調べられた時

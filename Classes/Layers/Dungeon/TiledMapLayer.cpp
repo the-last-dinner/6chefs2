@@ -131,6 +131,8 @@ void TiledMapLayer::setParty(Party* party)
     {
         Character* member { members.at(members.size() - i - 1) };
         this->addMapObject(member);
+        
+        if(member == party->getMainCharacter()) continue;
         member->onJoinedParty();
     }
     

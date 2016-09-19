@@ -44,7 +44,10 @@ bool Party::init(const vector<CharacterData>& datas)
 void Party::addMember(Character* character)
 {
     _members.pushBack(character);
-    character->onJoinedParty();
+    if(character != this->getMainCharacter())
+    {
+        character->onJoinedParty();
+    }
     PlayerDataManager::getInstance()->getLocalData()->setPartyMember(character->getCharacterData());
 }
 
@@ -59,7 +62,10 @@ void Party::removeMember(const int objectId)
     if(!targetMember) return;
     
     _members.eraseObject(targetMember);
-    targetMember->onQuittedParty();
+    if(targetMember != this->getMainCharacter())
+    {
+        targetMember->onQuittedParty();
+    }
     
     PlayerDataManager::getInstance()->getLocalData()->removePartyMember(objectId);
 }
@@ -67,6 +73,12 @@ void Party::removeMember(const int objectId)
 // パーティメンバー全員削除
 void Party::removeMemberAll()
 {
+    for(Character* member : _members)
+    {
+        if(member == this->getMainCharacter()) continue;
+        member->onQuittedParty();
+    }
+    
     _members.clear();
     PlayerDataManager::getInstance()->getLocalData()->removePartyMemberAll();
 }

@@ -12,7 +12,8 @@
 
 #include "Datas/MapObject/CharacterData.h"
 
-#include "MapObjects/DetectionBox/CollisionBox.h"
+#include "MapObjects/MapObjectList.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 #include "MapObjects/TerrainState/TerrainState.h"
@@ -274,7 +275,7 @@ float Character::getStaminaConsumptionRatio() const
 }
 
 #pragma mark -
-#pragma mark Callback
+#pragma mark Interface
 
 // マップに配置された時
 void Character::onEnterMap()
@@ -290,13 +291,19 @@ void Character::onEnterMap()
 // 主人公一行に参加した時
 void Character::onJoinedParty()
 {
-    
+    if(_objectList && this->getCollision())
+    {
+        _objectList->getCollisionDetector()->removeCollision(this->getCollision());
+    }
 }
 
 // 主人公一行から抜けた時
 void Character::onQuittedParty()
 {
-    
+    if(_objectList && this->getCollision())
+    {
+        _objectList->getCollisionDetector()->addCollision(this->getCollision());
+    }
 }
 
 // 主人公一行が動いた時
