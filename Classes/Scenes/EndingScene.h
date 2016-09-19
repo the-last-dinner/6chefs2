@@ -21,7 +21,18 @@ public:
         NORMAL_END = 2,
         TRUE_END = 3
     };
-    
+private:
+    static const string ENDING_FILE;
+    static const char* JSON_MEMBER_TYPE;
+    static const char* JSON_MEMBER_TEXT;
+    static const char* JSON_MEMBER_CREDITS;
+    static const char* JSON_MEMBER_TIME;
+    static const char* JSON_MEMBER_PICTURES;
+    static const char* JSON_MEMBER_NAME;
+    static const char* JSON_MEMBER_BACKGROUND;
+    static const char* JSON_MEMBER_LAST_TEXT;
+    static const char* JSON_MEMBER_LAST_PICTURE;
+    static const char* JSON_MEMBER_BGM;
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_TWO_PARAM(EndingScene, const int, function<void()>)

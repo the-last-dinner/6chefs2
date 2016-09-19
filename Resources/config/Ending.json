@@ -180,8 +180,8 @@
             }
         ],
         "background":"title.png",
-        "last_text":"title.png",
-        "last_picture":"title.png",
+        "lastText":"title.png",
+        "lastPicture":"title.png",
         "bgm":"back_road.mp3"
     }
 }

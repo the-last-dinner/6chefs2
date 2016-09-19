@@ -16,6 +16,17 @@
 #include "Layers/LoadingLayer.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 
+const string EndingScene::ENDING_FILE = "config/Ending";
+const char* EndingScene::JSON_MEMBER_TYPE = "type";
+const char* EndingScene::JSON_MEMBER_TEXT = "text";
+const char* EndingScene::JSON_MEMBER_CREDITS = "credits";
+const char* EndingScene::JSON_MEMBER_TIME = "time";
+const char* EndingScene::JSON_MEMBER_PICTURES = "pictures";
+const char* EndingScene::JSON_MEMBER_NAME = "name";
+const char* EndingScene::JSON_MEMBER_BACKGROUND = "background";
+const char* EndingScene::JSON_MEMBER_LAST_TEXT = "lastText";
+const char* EndingScene::JSON_MEMBER_LAST_PICTURE = "lastPicture";
+const char* EndingScene::JSON_MEMBER_BGM = "bgm";
 // コンストラクタ
 EndingScene::EndingScene() {FUNCLOG};
 
@@ -47,9 +58,7 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
     loadingLayer->onLoadFinished();
     
     // idからjsonを取得する
-    string filefilename = "config/Ending";
-    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(filefilename + ES_EXTENSION)).FindMember(to_string(this->end_id).c_str())->value;
-    
+    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(ENDING_FILE + ES_EXTENSION)).FindMember(to_string(this->end_id).c_str())->value;
     
     // エンディング振り分け
      map<string, function<void(rapidjson::Value&)>> createEndings
@@ -57,12 +66,11 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
         {"normal", [this](rapidjson::Value& json){createNormalEnding(json);}},
         {"special", [this](rapidjson::Value& json){createSpecialEnding(json);}},
     };
-    string typeName {json["type"].GetString()};
     
-    if(createEndings.count(typeName) == 0)
-    {
-        LastSupper::AssertUtils::warningAssert("EndingScriptError\n" + typeName + "は存在しません");
-    }
+    if(!json.HasMember(JSON_MEMBER_TYPE)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ntypeが存在しません");
+    string typeName = json[JSON_MEMBER_TYPE].GetString();
+    
+    if(createEndings.count(typeName) == 0) LastSupper::AssertUtils::warningAssert("EndingScriptError\n" + typeName + "は存在しません");
     
     createEndings.at(typeName)(json);
     
@@ -72,22 +80,34 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
 void EndingScene::createSpecialEnding(rapidjson::Value& json)
 {
     vector<pair<string,float>> credits_name = {};
-    rapidjson::Value& creditsJson = json["credits"];
+    if(!json.HasMember(JSON_MEMBER_CREDITS)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ncreditsが存在しません");
+    rapidjson::Value& creditsJson = json[JSON_MEMBER_CREDITS];
     for(int i { 0 }; i < creditsJson.Size(); i++)
     {
-        credits_name.push_back({creditsJson[i]["text"].GetString(), stod(creditsJson[i]["time"].GetString())});
+        credits_name.push_back({creditsJson[i][JSON_MEMBER_TEXT].GetString(), stod(creditsJson[i][JSON_MEMBER_TIME].GetString())});
     }
     vector<string> pictures_name = {};
-    rapidjson::Value& picturesJson = json["pictures"];
+    if(!json.HasMember(JSON_MEMBER_PICTURES)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\npicturesが存在しません");
+    rapidjson::Value& picturesJson = json[JSON_MEMBER_PICTURES];
     for(int i { 0 }; i < picturesJson.Size(); i++)
     {
-        pictures_name.push_back(picturesJson[i]["name"].GetString());
+        pictures_name.push_back(picturesJson[i][JSON_MEMBER_NAME].GetString());
     }
-    string last_text = json["last_text"].GetString();
-    string last_picture = json["last_picture"].GetString();
-    string bgm = json["bgm"].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_BACKGROUND)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nbackgroundが存在しません");
+    string backgroundPicture = json[JSON_MEMBER_BACKGROUND].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_LAST_TEXT)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nlastTextが存在しません");
+    string lastText = json[JSON_MEMBER_LAST_TEXT].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_LAST_PICTURE)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nlastPictureが存在しません");
+    string lastPicture = json[JSON_MEMBER_LAST_PICTURE].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_BGM)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nbgmが存在しません");
+    string bgm = json[JSON_MEMBER_BGM].GetString();
+    
     // 背景
-    Sprite* background {Sprite::createWithSpriteFrameName(json["background"].GetString())};
+    Sprite* background {Sprite::createWithSpriteFrameName(backgroundPicture)};
     background->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     this->addChild(background);
     
@@ -112,14 +132,14 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     float pos = 22.5;
     
     // 制作
-    Label* last_label {Label::createWithTTF(last_text, Resource::Font::MESSAGE, font_size)};
+    Label* last_label {Label::createWithTTF(lastText, Resource::Font::MESSAGE, font_size)};
     last_label->setPosition(x, -1 * last_label->getContentSize().height / 2);
     last_label->setColor(Color3B::WHITE);
     this->addChild(last_label);
     last_label->runAction(Sequence::createWithTwoActions(DelayTime::create(91.0), MoveTo::create(4.9, Vec2(last_label->getPosition().x, last_label->getContentSize().height * 2.5 + WINDOW_HEIGHT / 2 - pos))));
     
     // ロゴ
-    Sprite* logo {Sprite::createWithSpriteFrameName(last_picture)};
+    Sprite* logo {Sprite::createWithSpriteFrameName(lastPicture)};
     logo->setPosition(x, -1 * logo->getContentSize().height / 2);
     float scale_logo = 0.5;
     logo->setScale(scale_logo);
@@ -176,7 +196,8 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
 // ノーマルエンディングを生成
 void EndingScene::createNormalEnding(rapidjson::Value& json)
 {
-    Label* label {Label::createWithTTF(json["text"].GetString(), Resource::Font::SYSTEM, 80)};
+    if(!json.HasMember(JSON_MEMBER_TEXT)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ntextが存在しません");
+    Label* label {Label::createWithTTF(json[JSON_MEMBER_TEXT].GetString(), Resource::Font::SYSTEM, 80)};
     label->setColor(Color3B::WHITE);
     label->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     label->setOpacity(0);
