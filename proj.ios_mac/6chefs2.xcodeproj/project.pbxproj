@@ -361,6 +361,8 @@
 		DC5D1D581D84FA7D0034DD8F /* CollisionBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D551D84FA7D0034DD8F /* CollisionBox.cpp */; };
 		DC5D1D5B1D8502FE0034DD8F /* CollisionDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */; };
 		DC5D1D5C1D8502FE0034DD8F /* CollisionDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */; };
+		DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
+		DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -726,6 +728,8 @@
 		DC5D1D561D84FA7D0034DD8F /* CollisionBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionBox.h; path = DetectionBox/CollisionBox.h; sourceTree = "<group>"; };
 		DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionDetector.cpp; path = DetectionBox/CollisionDetector.cpp; sourceTree = "<group>"; };
 		DC5D1D5A1D8502FE0034DD8F /* CollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionDetector.h; path = DetectionBox/CollisionDetector.h; sourceTree = "<group>"; };
+		DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HitBox.cpp; path = DetectionBox/HitBox.cpp; sourceTree = "<group>"; };
+		DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = DetectionBox/HitBox.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1471,6 +1475,8 @@
 				DC5D1D561D84FA7D0034DD8F /* CollisionBox.h */,
 				DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */,
 				DC5D1D5A1D8502FE0034DD8F /* CollisionDetector.h */,
+				DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */,
+				DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */,
 			);
 			name = DetectionBox;
 			sourceTree = "<group>";
@@ -1621,6 +1627,7 @@
 				DC0391BF1C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC0391EF1C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
+				DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */,
 				DC0391B31C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
 				DC03917F1C871E1000C50E8E /* EndingSceneData.cpp in Sources */,
 				DC03924B1C871E1000C50E8E /* StaminaBar.cpp in Sources */,
@@ -1828,6 +1835,7 @@
 				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,
 				DC0392401C871E1000C50E8E /* Cloud.cpp in Sources */,
+				DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */,
 				DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0392201C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
 				DC0182921D7A97D700E556D1 /* Slip.cpp in Sources */,
