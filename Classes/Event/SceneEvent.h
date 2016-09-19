@@ -90,6 +90,9 @@ public:
     CREATE_FUNC_WITH_PARAM(EndingEvent, rapidjson::Value&)
 private:
     int _endingId {0};
+    int _map_id {-1};
+    int _x {0};
+    int _y {0};
 private:
     EndingEvent() { FUNCLOG };
     ~EndingEvent() { FUNCLOG };

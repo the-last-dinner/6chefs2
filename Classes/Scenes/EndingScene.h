@@ -24,7 +24,7 @@ public:
     
 // クラスメソッド
 public:
-    CREATE_FUNC_WITH_PARAM(EndingScene, const int)
+    CREATE_FUNC_WITH_TWO_PARAM(EndingScene, const int, function<void()>)
 private:
     EndingScene();
     ~EndingScene();
@@ -32,17 +32,15 @@ private:
 // インスタンス変数
 private:
     int end_id {0};
-    
+    function<void()> onfinished { nullptr };
 // インスタンスメソッド
 private:
-    bool init(const int endingId);
+    bool init(const int endingId, function<void()> onfinished);
     virtual void onEnter() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     void createSpecialEnding(rapidjson::Value& json);
     void createNormalEnding(rapidjson::Value& json);
     void onEndingFinished();
-    void replaceScene();
-    
 };
 
 #endif /* EndingScene_h */

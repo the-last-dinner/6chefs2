@@ -146,13 +146,33 @@ bool EndingEvent::init(rapidjson::Value& json)
     // エンディングID
     if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
+    // エンディング終了時移動先マップ なければタイトルに戻る
+    if(_eventHelper->hasMember(json, member::MAP_ID)) _map_id = stoi(json[member::MAP_ID].GetString());
+    
+    if(_eventHelper->hasMember(json, member::X)) _x = json[member::X].GetInt();
+    
+    if(_eventHelper->hasMember(json, member::Y)) _y = json[member::Y].GetInt();
+    
     return true;
 }
 
 void EndingEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(_endingId));
+    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(_endingId, [this]()
+    {
+        BaseScene* target {nullptr};
+        if(_map_id == -1)
+        {
+            target = TitleScene::create();
+        }
+        else
+        {
+            target = DungeonScene::create(DungeonSceneData::create(Location(_map_id, _x, _y, Direction::UP)));
+        }
+        Director::getInstance()->replaceScene(target);
+    }));
+
 }
 
 #pragma mark -

@@ -23,12 +23,13 @@ EndingScene::EndingScene() {FUNCLOG};
 EndingScene::~EndingScene() {FUNCLOG};
 
 // 初期化
-bool EndingScene::init(const int endingId)
+bool EndingScene::init(const int endingId,function<void()> onfinished)
 {
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
     _configListener->setKeyconfigEnabled(false);
     this->end_id = endingId;
+    this->onfinished = onfinished;
     
     return true;
 }
@@ -198,25 +199,7 @@ void EndingScene::onEndingFinished()
                                      TargetedAction::create(black, FadeIn::create(2.f)),
                                      CallFunc::create([this](){
             PlayerDataManager::getInstance()->setGameClear(this->end_id);
-            this->replaceScene();
+            this->onfinished();
         }), nullptr));
-    
 }
 
-// シーンを切り替える
-void EndingScene::replaceScene()
-{
-    BaseScene* target {nullptr};
-    switch (this->end_id) {
-        case etoi(END_ID::TRUE_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(3,20,39,Direction::UP)));
-            break;
-        case etoi(END_ID::NORMAL_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(39,16,5,Direction::DOWN)));
-            break;
-        default:
-            target = TitleScene::create();
-            break;
-    }
-    Director::getInstance()->replaceScene(target);
-}
