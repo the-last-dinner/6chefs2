@@ -365,6 +365,8 @@
 		DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D311D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
 		DC8C4D321D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
+		DC8C4D351D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */; };
+		DC8C4D361D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -734,6 +736,8 @@
 		DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = DetectionBox/HitBox.h; sourceTree = "<group>"; };
 		DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackBox.cpp; path = DetectionBox/AttackBox.cpp; sourceTree = "<group>"; };
 		DC8C4D301D8FC13700FF0A1E /* AttackBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackBox.h; path = DetectionBox/AttackBox.h; sourceTree = "<group>"; };
+		DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackDetector.cpp; path = DetectionBox/AttackDetector.cpp; sourceTree = "<group>"; };
+		DC8C4D341D8FD57C00FF0A1E /* AttackDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackDetector.h; path = DetectionBox/AttackDetector.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1483,6 +1487,8 @@
 				DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */,
 				DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */,
 				DC8C4D301D8FC13700FF0A1E /* AttackBox.h */,
+				DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */,
+				DC8C4D341D8FD57C00FF0A1E /* AttackDetector.h */,
 			);
 			name = DetectionBox;
 			sourceTree = "<group>";
@@ -1769,6 +1775,7 @@
 				DC03923F1C871E1000C50E8E /* Cloud.cpp in Sources */,
 				2626AEC61D99895E00D5623B /* AssertHelper.cpp in Sources */,
 				DC0391DB1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
+				DC8C4D351D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */,
 				DC03920B1C871E1000C50E8E /* WaterArea.cpp in Sources */,
 				DC0391B11C871E1000C50E8E /* SelectEventLayer.cpp in Sources */,
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
@@ -1827,6 +1834,7 @@
 				DC0392281C871E1000C50E8E /* StartUpScene.cpp in Sources */,
 				DC8C4D321D8FC13700FF0A1E /* AttackBox.cpp in Sources */,
 				DC03922C1C871E1000C50E8E /* CameraTask.cpp in Sources */,
+				DC8C4D361D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */,
 				DC0392341C871E1000C50E8E /* FollowType.cpp in Sources */,
 				DC0392221C871E1000C50E8E /* DungeonScene.cpp in Sources */,
 				DC0392521C871E1000C50E8E /* SpriteUtils.cpp in Sources */,

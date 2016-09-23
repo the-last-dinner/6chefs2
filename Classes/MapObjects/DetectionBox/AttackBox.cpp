@@ -15,17 +15,29 @@ AttackBox::AttackBox() { FUNCLOG }
 AttackBox::~AttackBox() { FUNCLOG }
 
 // 初期化
-bool AttackBox::init(MapObject* parent, Node* origin)
+bool AttackBox::init(MapObject* parent, Node* origin, function<void()> onAttackHitted)
 {
     if(!DetectionBox::init(parent, origin)) return false;
+    
+    _onAttackHitted = onAttackHitted;
     
     return true;
 }
 
 // 初期化
-bool AttackBox::init(MapObject* parent, const Rect& originRect)
+bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void()> onAttackHitted)
 {
     if(!DetectionBox::init(parent, originRect)) return false;
     
+    _onAttackHitted = onAttackHitted;
+    
     return true;
+}
+
+void AttackBox::onAttackHitted()
+{
+    if(_onAttackHitted)
+    {
+        _onAttackHitted();
+    }
 }

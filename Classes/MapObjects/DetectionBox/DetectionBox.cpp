@@ -137,3 +137,8 @@ bool DetectionBox::isBetween(const MapObject* obj1, const MapObject* obj2) const
     
     return MapUtils::isSegmentIntersectWithRect(obj1->getPosition(), obj2->getPosition(), this->getRect());
 }
+
+bool DetectionBox::intersects(const DetectionBox* other) const
+{
+    return this->getRect().intersectsRect(other->getRect());
+}

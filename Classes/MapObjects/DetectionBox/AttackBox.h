@@ -15,15 +15,21 @@ class AttackBox : public DetectionBox
 {
 // クラスメソッド
 public:
-    CREATE_FUNC_WITH_TWO_PARAM(AttackBox, MapObject*, Node*)
-    CREATE_FUNC_WITH_TWO_PARAM(AttackBox, MapObject*, const Rect&)
+    CREATE_FUNC_WITH_THREE_PARAM(AttackBox, MapObject*, Node*, function<void()>)
+    CREATE_FUNC_WITH_THREE_PARAM(AttackBox, MapObject*, const Rect&, function<void()>)
+    
+// インスタンス変数
+private:
+    function<void()> _onAttackHitted { nullptr };
     
 // インスタンスメソッド
 private:
     AttackBox();
     virtual ~AttackBox();
-    virtual bool init(MapObject* parent, Node* origin) override;
-    virtual bool init(MapObject* parent, const Rect& originRect) override;
+    virtual bool init(MapObject* parent, Node* origin, function<void()> onAttackHitted);
+    virtual bool init(MapObject* parent, const Rect& originRect, function<void()> onAttackHitted);
+public:
+    void onAttackHitted();
 };
 
 #endif /* AttackBox_h */
