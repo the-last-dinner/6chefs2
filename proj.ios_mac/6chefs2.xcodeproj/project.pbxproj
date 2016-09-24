@@ -365,6 +365,10 @@
 		DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C251D966B4200ED569C /* MapObjectCommand.cpp */; };
 		DC668C2B1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */; };
 		DC668C2C1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */; };
+		DC668C2F1D9671CE00ED569C /* MoveCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C2D1D9671CE00ED569C /* MoveCommand.cpp */; };
+		DC668C301D9671CE00ED569C /* MoveCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C2D1D9671CE00ED569C /* MoveCommand.cpp */; };
+		DC7F6E1B1D96736A007AE8B5 /* WalkCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */; };
+		DC7F6E1C1D96736A007AE8B5 /* WalkCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */; };
 		DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D311D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
@@ -740,6 +744,10 @@
 		DC668C261D966B4200ED569C /* MapObjectCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapObjectCommand.h; path = Command/MapObjectCommand.h; sourceTree = "<group>"; };
 		DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapObjectCommandQueue.cpp; path = Command/MapObjectCommandQueue.cpp; sourceTree = "<group>"; };
 		DC668C2A1D966C8900ED569C /* MapObjectCommandQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapObjectCommandQueue.h; path = Command/MapObjectCommandQueue.h; sourceTree = "<group>"; };
+		DC668C2D1D9671CE00ED569C /* MoveCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MoveCommand.cpp; path = Command/MoveCommand.cpp; sourceTree = "<group>"; };
+		DC668C2E1D9671CE00ED569C /* MoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveCommand.h; path = Command/MoveCommand.h; sourceTree = "<group>"; };
+		DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WalkCommand.cpp; path = Command/WalkCommand.cpp; sourceTree = "<group>"; };
+		DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkCommand.h; path = Command/WalkCommand.h; sourceTree = "<group>"; };
 		DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HitBox.cpp; path = DetectionBox/HitBox.cpp; sourceTree = "<group>"; };
 		DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = DetectionBox/HitBox.h; sourceTree = "<group>"; };
 		DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackBox.cpp; path = DetectionBox/AttackBox.cpp; sourceTree = "<group>"; };
@@ -1276,9 +1284,9 @@
 		DC0390D51C871E1000C50E8E /* MapObjects */ = {
 			isa = PBXGroup;
 			children = (
-				DC668C241D966B0500ED569C /* Command */,
 				DC0390D61C871E1000C50E8E /* Character.cpp */,
 				DC0390D71C871E1000C50E8E /* Character.h */,
+				DC668C241D966B0500ED569C /* Command */,
 				DC5D1D501D7F0C4F0034DD8F /* DetectionBox */,
 				DC0390D81C871E1000C50E8E /* Enemy.cpp */,
 				DC0390D91C871E1000C50E8E /* Enemy.h */,
@@ -1509,6 +1517,10 @@
 				DC668C261D966B4200ED569C /* MapObjectCommand.h */,
 				DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */,
 				DC668C2A1D966C8900ED569C /* MapObjectCommandQueue.h */,
+				DC668C2D1D9671CE00ED569C /* MoveCommand.cpp */,
+				DC668C2E1D9671CE00ED569C /* MoveCommand.h */,
+				DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */,
+				DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1781,6 +1793,7 @@
 				DC0391AF1C871E1000C50E8E /* PasswordEventLayer.cpp in Sources */,
 				9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */,
 				DC0392191C871E1000C50E8E /* StopWatch.cpp in Sources */,
+				DC7F6E1B1D96736A007AE8B5 /* WalkCommand.cpp in Sources */,
 				DC0391CF1C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
 				DC0391991C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
@@ -1800,6 +1813,7 @@
 				DC03920B1C871E1000C50E8E /* WaterArea.cpp in Sources */,
 				DC0391B11C871E1000C50E8E /* SelectEventLayer.cpp in Sources */,
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
+				DC668C2F1D9671CE00ED569C /* MoveCommand.cpp in Sources */,
 				DC0391A31C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
@@ -1871,6 +1885,7 @@
 				DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
 				DC668C2C1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
+				DC668C301D9671CE00ED569C /* MoveCommand.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
 				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,
@@ -1943,6 +1958,7 @@
 				26460B9B1D72ED9600F0336C /* DocumentData.cpp in Sources */,
 				DC0391A61C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DC5D1D541D7F0E100034DD8F /* DetectionBox.cpp in Sources */,
+				DC7F6E1C1D96736A007AE8B5 /* WalkCommand.cpp in Sources */,
 				DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
 				2626AEC71D99895E00D5623B /* AssertHelper.cpp in Sources */,
 				268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
