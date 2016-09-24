@@ -361,6 +361,10 @@
 		DC5D1D581D84FA7D0034DD8F /* CollisionBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D551D84FA7D0034DD8F /* CollisionBox.cpp */; };
 		DC5D1D5B1D8502FE0034DD8F /* CollisionDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */; };
 		DC5D1D5C1D8502FE0034DD8F /* CollisionDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */; };
+		DC668C271D966B4200ED569C /* MapObjectCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C251D966B4200ED569C /* MapObjectCommand.cpp */; };
+		DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C251D966B4200ED569C /* MapObjectCommand.cpp */; };
+		DC668C2B1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */; };
+		DC668C2C1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */; };
 		DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D311D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
@@ -732,6 +736,10 @@
 		DC5D1D561D84FA7D0034DD8F /* CollisionBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionBox.h; path = DetectionBox/CollisionBox.h; sourceTree = "<group>"; };
 		DC5D1D591D8502FE0034DD8F /* CollisionDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionDetector.cpp; path = DetectionBox/CollisionDetector.cpp; sourceTree = "<group>"; };
 		DC5D1D5A1D8502FE0034DD8F /* CollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionDetector.h; path = DetectionBox/CollisionDetector.h; sourceTree = "<group>"; };
+		DC668C251D966B4200ED569C /* MapObjectCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapObjectCommand.cpp; path = Command/MapObjectCommand.cpp; sourceTree = "<group>"; };
+		DC668C261D966B4200ED569C /* MapObjectCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapObjectCommand.h; path = Command/MapObjectCommand.h; sourceTree = "<group>"; };
+		DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapObjectCommandQueue.cpp; path = Command/MapObjectCommandQueue.cpp; sourceTree = "<group>"; };
+		DC668C2A1D966C8900ED569C /* MapObjectCommandQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapObjectCommandQueue.h; path = Command/MapObjectCommandQueue.h; sourceTree = "<group>"; };
 		DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HitBox.cpp; path = DetectionBox/HitBox.cpp; sourceTree = "<group>"; };
 		DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = DetectionBox/HitBox.h; sourceTree = "<group>"; };
 		DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackBox.cpp; path = DetectionBox/AttackBox.cpp; sourceTree = "<group>"; };
@@ -1268,6 +1276,7 @@
 		DC0390D51C871E1000C50E8E /* MapObjects */ = {
 			isa = PBXGroup;
 			children = (
+				DC668C241D966B0500ED569C /* Command */,
 				DC0390D61C871E1000C50E8E /* Character.cpp */,
 				DC0390D71C871E1000C50E8E /* Character.h */,
 				DC5D1D501D7F0C4F0034DD8F /* DetectionBox */,
@@ -1493,6 +1502,17 @@
 			name = DetectionBox;
 			sourceTree = "<group>";
 		};
+		DC668C241D966B0500ED569C /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				DC668C251D966B4200ED569C /* MapObjectCommand.cpp */,
+				DC668C261D966B4200ED569C /* MapObjectCommand.h */,
+				DC668C291D966C8900ED569C /* MapObjectCommandQueue.cpp */,
+				DC668C2A1D966C8900ED569C /* MapObjectCommandQueue.h */,
+			);
+			name = Command;
+			sourceTree = "<group>";
+		};
 		DCD9E53E1D684BDD002CA51D /* CocosStudio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1679,6 +1699,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DC23C8701D8BD9D0008E57F3 /* PathNode.cpp in Sources */,
 				DC03921F1C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
+				DC668C271D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
 				DC0182991D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
@@ -1784,6 +1805,7 @@
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				26460B8E1D72EBB600F0336C /* CharacterMasterData.cpp in Sources */,
 				DC0391A11C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
+				DC668C2B1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */,
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391951C871E1000C50E8E /* EventFactory.cpp in Sources */,
 				DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
@@ -1819,6 +1841,7 @@
 				DC03919A1C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC03924C1C871E1000C50E8E /* StaminaBar.cpp in Sources */,
 				DC0392041C871E1000C50E8E /* PathObject.cpp in Sources */,
+				DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
 				DC0391DE1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC0391841C871E1000C50E8E /* SceneData.cpp in Sources */,
 				DC0391D81C871E1000C50E8E /* DebugManager.cpp in Sources */,
@@ -1846,6 +1869,7 @@
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
+				DC668C2C1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */,
 				DC0392301C871E1000C50E8E /* EventTask.cpp in Sources */,
 				DC0391861C871E1000C50E8E /* StartUpSceneData.cpp in Sources */,
 				26FBED391C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
