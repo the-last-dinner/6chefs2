@@ -41,8 +41,8 @@ CollisionBox* CollisionDetector::getHitCollision(const CollisionBox* collision, 
     return nullptr;
 }
 
-#pragma -
-#pragma Collection
+#pragma mark -
+#pragma mark Collection
 
 void CollisionDetector::addCollision(CollisionBox* collision)
 {
@@ -54,20 +54,8 @@ void CollisionDetector::removeCollision(CollisionBox* collision)
     _collistionBoxes.eraseObject(collision);
 }
 
-vector<Rect> CollisionDetector::getAllGridRect() const
-{
-    vector<Rect> gridRects {};
-    
-    for(CollisionBox* collision : _collistionBoxes)
-    {
-        gridRects.push_back(collision->getGridRect());
-    }
-    
-    return gridRects;
-}
-
-#pragma -
-#pragma Detection
+#pragma mark -
+#pragma mark Detection
 
 bool CollisionDetector::isHit(const CollisionBox* collision) const
 {

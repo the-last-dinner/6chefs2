@@ -32,7 +32,6 @@ private:
 public:
     void addCollision(CollisionBox* collision);
     void removeCollision(CollisionBox* collision);
-    vector<Rect> getAllGridRect() const;
 public:
     bool isHit(const CollisionBox* collision) const;
     bool isHit(const MapObject* mapObject, const vector<Direction>& directions) const;
