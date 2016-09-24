@@ -29,14 +29,6 @@ bool CollisionBox::init(MapObject* parent, const Rect& originRect)
     return true;
 }
 
-void CollisionBox::setOriginInfo(Node* origin)
-{
-    Rect originRect { origin->getBoundingBox() };
-    originRect.origin = Point::ZERO;
-    
-    this->DetectionBox::setOriginInfo(originRect);
-}
-
 CollisionBox* CollisionBox::clone(const Point& gridPosition) const
 {
     Rect gridRect { this->getGridRect() };

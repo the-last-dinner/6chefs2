@@ -95,10 +95,10 @@
       <ObjectData Name="Node" Tag="3" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" ActionTag="2064821685" Tag="4" IconVisible="False" LeftMargin="-16.0000" RightMargin="-16.0000" TopMargin="-16.5000" BottomMargin="-16.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-32.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="16.0000" Y="16.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -106,10 +106,10 @@
             <FileData Type="PlistSubImage" Path="nadeshiko_0_0.png" Plist="character/nadeshiko.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-42.0000" BottomMargin="-58.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="-8.0000" />
+            <Position X="16.0000" Y="8.0000" />
             <Scale ScaleX="0.3200" ScaleY="0.1600" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

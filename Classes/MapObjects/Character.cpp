@@ -20,6 +20,10 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+// 定数
+const string Character::CS_SPRITE_NODE_NAME { "sprite" };
+const string Character::CS_COLLISION_NODE_NAME { "collision" };
+
 // コンストラクタ
 Character::Character() { FUNCLOG }
 
@@ -48,8 +52,18 @@ bool Character::init(const CharacterData& data)
         //LastSupper::AssertUtils::fatalAssert("キャラクターのcsbファイルが存在しません\nFilePath : " + data.getCsbFilePath());
         //return false;
     }
-    _csNode = csNode;
+    
+    Node* spriteNode { csNode->getCSChild(CS_SPRITE_NODE_NAME) };
+    
+    if(!spriteNode)
+    {
+        LastSupper::AssertUtils::fatalAssert("キャラクターのcsbファイルに'sprite'オブジェクトが定義されていません");
+        return false;
+    }
+    
+    csNode->setPosition(-spriteNode->getPosition());
     this->addChild(csNode);
+    _csNode = csNode;
     
     if(!_movePattern)
     {
@@ -62,8 +76,8 @@ bool Character::init(const CharacterData& data)
     }
     
     // サイズ、衝突判定範囲をセット
-    this->setContentSize(Size(GRID * 2, GRID * 2));
-    this->setCollision(CollisionBox::create(this, csNode->getCSChild("collision")));
+    this->setContentSize(spriteNode->getContentSize());
+    this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
 	
     return true;
 }

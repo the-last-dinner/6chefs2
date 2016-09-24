@@ -17,6 +17,11 @@ class CSNode;
 
 class Character : public MapObject
 {
+// 定数
+private:
+    static const string CS_SPRITE_NODE_NAME;
+    static const string CS_COLLISION_NODE_NAME;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(Character, const CharacterData&);

@@ -66,22 +66,22 @@
           </TextureFrame>
         </Timeline>
         <Timeline ActionTag="615238074" Property="Position">
-          <PointFrame FrameIndex="0" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="2" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="4" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="6" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="10" Tween="False" X="2.0000" Y="2.0000" />
-          <PointFrame FrameIndex="20" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="25" Tween="False" X="1.0000" Y="2.0000" />
-          <PointFrame FrameIndex="35" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="45" Tween="False" X="-1.0000" Y="2.0000" />
-          <PointFrame FrameIndex="55" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="60" Tween="False" X="-0.5000" Y="2.0000" />
-          <PointFrame FrameIndex="70" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="80" Tween="False" X="1.5000" Y="2.0000" />
-          <PointFrame FrameIndex="90" Tween="False" X="0.0000" Y="2.0000" />
-          <PointFrame FrameIndex="115" Tween="False" X="-1.5000" Y="2.0000" />
-          <PointFrame FrameIndex="125" X="0.0000" Y="2.0000">
+          <PointFrame FrameIndex="0" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="2" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="4" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="6" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="10" Tween="False" X="18.0000" Y="17.0000" />
+          <PointFrame FrameIndex="20" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="25" Tween="False" X="17.0000" Y="17.0000" />
+          <PointFrame FrameIndex="35" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="45" Tween="False" X="15.0000" Y="17.0000" />
+          <PointFrame FrameIndex="55" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="60" Tween="False" X="15.5000" Y="17.0000" />
+          <PointFrame FrameIndex="70" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="80" Tween="False" X="17.5000" Y="17.0000" />
+          <PointFrame FrameIndex="90" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="115" Tween="False" X="14.5000" Y="17.0000" />
+          <PointFrame FrameIndex="125" X="16.0000" Y="17.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -115,21 +115,21 @@
       <ObjectData Name="Node" Tag="6" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" ActionTag="615238074" Tag="7" IconVisible="False" LeftMargin="-16.0000" RightMargin="-16.0000" TopMargin="-19.0000" BottomMargin="-15.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" ActionTag="615238074" Tag="7" IconVisible="False" RightMargin="-32.0000" TopMargin="-34.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="34.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="2.0000" />
+            <Position X="16.0000" Y="17.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="ranmaru_0_0.png" Plist="character/ranmaru.plist" />
+            <FileData Type="PlistSubImage" Path="ranmaru_1_2.png" Plist="character/ranmaru.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" ActionTag="1020399682" Tag="15" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-42.0000" BottomMargin="-58.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" ActionTag="1020399682" Tag="15" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="-8.0000" />
+            <Position X="16.0000" Y="8.0000" />
             <Scale ScaleX="0.3200" ScaleY="0.1600" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
