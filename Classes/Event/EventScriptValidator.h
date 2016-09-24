@@ -14,19 +14,35 @@
 class EventScriptValidator : public Ref
 {
 public:
-    CREATE_FUNC(EventScriptValidator)
+    CREATE_FUNC_WITH_PARAM_CONSRUCT(EventScriptValidator, rapidjson::Value&);
 private:
-    EventScriptValidator() { FUNCLOG };
+    EventScriptValidator(rapidjson::Value& targetEvent);
     ~EventScriptValidator() { FUNCLOG };
     
 // instance valiables
 private:
-    rapidjson::Document validateConfig {};
+    rapidjson::Value& targetEvent;
+    string type;
+
+private:
+    static const char* REQUIRE;
+    static const char* MEMBER;
+    static rapidjson::Document validateConfig;
     
 // instance methods
 public:
     bool init();
-    bool validate(const rapidjson::Value& json);
+    bool validate();
+private:
+    bool checkObject(rapidjson::Value& rule);
+    bool checkRequire(rapidjson::Value& requires);
+    bool checkRequireOr(rapidjson::Value& requireArray);
+    bool checkRequireChild(rapidjson::Value& require);
+    bool checkGroup();
+    bool isInt(rapidjson::Value& target);
+    bool isString();
+    bool isArray();
+    bool isStoi();
 };
 
 #endif /* EventScriptValidator_hpp */

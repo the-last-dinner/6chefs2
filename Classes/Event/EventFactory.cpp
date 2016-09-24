@@ -114,22 +114,6 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToC
     {"getTrophy", GetTrophyEvent::create},                  // トロフィーを取得
 };
 
-
-// コンストラクタ
-EventFactory::EventFactory()
-{
-    FUNCLOG
-    this->validator = EventScriptValidator::create();
-    CC_SAFE_RETAIN(this->validator);
-};
-
-// デストラクタ
-EventFactory::~EventFactory()
-{
-    FUNCLOG
-    CC_SAFE_RELEASE_NULL(this->validator);
-};
-
 // 初期化
 bool EventFactory::init()
 {
@@ -145,11 +129,14 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     // イベントタイプ名取得
     string typeName {json[member::TYPE].GetString()};
     
-    if(EventFactory::typeToCreateFunc.count(typeName) == 0)
-    {
+    if(EventFactory::typeToCreateFunc.count(typeName) == 0) {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
         LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
+    }
+    
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
+        EventScriptValidator::create(json)->validate();
     }
     
     return EventFactory::typeToCreateFunc.at(typeName)(json);
@@ -162,10 +149,8 @@ Vector<GameEvent*> EventFactory::createEventVector(rapidjson::Value& json)
     
     rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
     
-    for(int i { 0 }; i < eventJson.Size(); i++)
-    {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) })
-        {
+    for(int i { 0 }; i < eventJson.Size(); i++) {
+        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
             events.pushBack(event);
         }
     }
@@ -180,10 +165,8 @@ queue<GameEvent*> EventFactory::createEventQueue(rapidjson::Value& json)
     
     rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
     
-    for (int i { 0 }; i < eventJson.Size(); i++)
-    {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) })
-        {
+    for (int i { 0 }; i < eventJson.Size(); i++) {
+        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
             CC_SAFE_RETAIN(event);
             events.push(event);
         }

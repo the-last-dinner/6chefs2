@@ -28,8 +28,8 @@ private:
     
 // インスタンスメソッド
 private:
-    EventFactory();
-    ~EventFactory();
+    EventFactory() { FUNCLOG };
+    ~EventFactory() { FUNCLOG };
     bool init();
 public:
     GameEvent* createGameEvent(rapidjson::Value& json);

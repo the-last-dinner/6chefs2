@@ -240,4 +240,22 @@ pRet = NULL; \
 return NULL; \
 } \
 }
+
+#define CREATE_FUNC_WITH_PARAM_CONSRUCT(__TYPE_1__, __TYPE_2__) \
+static __TYPE_1__* create(__TYPE_2__ param) \
+{ \
+    __TYPE_1__ *pRet = new(std::nothrow) __TYPE_1__(param); \
+    if (pRet && pRet->init()) \
+    { \
+        pRet->autorelease(); \
+        return pRet; \
+    } \
+    else \
+    { \
+        delete pRet; \
+        pRet = NULL; \
+        return NULL; \
+    } \
+}
+
 #endif // __DEFINE_H__
