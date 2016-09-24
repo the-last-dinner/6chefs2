@@ -219,7 +219,11 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
 void Character::lookAround(function<void()> callback)
 {
     this->setDirection(this->getDirection().convertToWorldDirection(Direction::RIGHT));
-    this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]{this->setDirection(this->getDirection().convertToWorldDirection(Direction::UP));}), DelayTime::create(1.f), CallFunc::create([callback]{callback();}), nullptr));
+    this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this] {
+        this->setDirection(this->getDirection().convertToWorldDirection(Direction::UP));
+    }), DelayTime::create(1.f), CallFunc::create([callback] {
+        callback();
+    }), nullptr));
     
 }
 
