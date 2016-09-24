@@ -71,7 +71,7 @@ bool Character::init(const CharacterData& data)
         CC_SAFE_RETAIN(_movePattern);
         CC_SAFE_RELEASE(factory);
     }
-    
+
     // サイズ、衝突判定範囲をセット
     this->setContentSize(spriteNode->getContentSize());
     this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
@@ -201,7 +201,7 @@ void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<v
     // 一時停止中かチェック
     if (this->isPaused()) {
         this->clearDirectionsQueue();
-        
+
         return;
     }
     
@@ -290,7 +290,9 @@ float Character::getStaminaConsumptionRatio() const
 // マップに配置された時
 void Character::onEnterMap()
 {
-    MapObject::onEnterMap();
+    if (_objectList && this->getCollision()) {
+        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
+    }
     
     this->setDirection(this->getDirection());
     
@@ -298,11 +300,19 @@ void Character::onEnterMap()
     if (DungeonSceneManager::getInstance()->isEventRunning()) this->onEventStart();
 }
 
+// マップから削除された時
+void Character::onExitMap()
+{
+    if (_objectList && this->getCollision()) {
+        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
+    }
+}
+
 // 主人公一行に参加した時
 void Character::onJoinedParty()
 {
     if (_objectList && this->getCollision()) {
-        _objectList->getCollisionDetector()->removeCollision(this->getCollision());
+        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
     }
 }
 
@@ -310,7 +320,7 @@ void Character::onJoinedParty()
 void Character::onQuittedParty()
 {
     if (_objectList && this->getCollision()) {
-        _objectList->getCollisionDetector()->addCollision(this->getCollision());
+        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
     }
 }
 

@@ -19,6 +19,7 @@ CollisionDetector::~CollisionDetector()
     FUNCLOG
     
     _collistionBoxes.clear();
+    _ignorableCollisionBoxes.clear();
 }
 
 // 初期化
@@ -29,13 +30,30 @@ bool CollisionDetector::init()
     return true;
 }
 
-CollisionBox* CollisionDetector::getHitCollision(const CollisionBox* collision, const vector<Direction>& directions) const
+CollisionBox* CollisionDetector::getIntersectsCollision(const CollisionBox* collision, const vector<Direction>& directions) const
 {
     if(!collision) return nullptr;
     
     for(CollisionBox* other : _collistionBoxes)
     {
-        if(collision->isGridHit(other, directions)) return other;
+        if(collision->intersectsGrid(other, directions)) return other;
+    }
+    
+    return nullptr;
+}
+
+CollisionBox* CollisionDetector::getIntersentsCollisionIncludeIngrable(const CollisionBox* collision, const vector<Direction>& directions) const
+{
+    if(!collision) return nullptr;
+    
+    for(CollisionBox* other : _collistionBoxes)
+    {
+        if(collision->intersectsGrid(other, directions)) return other;
+    }
+    
+    for(CollisionBox* other : _ignorableCollisionBoxes)
+    {
+        if(collision->intersectsGrid(other, directions)) return other;
     }
     
     return nullptr;
@@ -54,21 +72,45 @@ void CollisionDetector::removeCollision(CollisionBox* collision)
     _collistionBoxes.eraseObject(collision);
 }
 
+void CollisionDetector::addIgnorableCollision(CollisionBox* collision)
+{
+    _ignorableCollisionBoxes.pushBack(collision);
+}
+
+void CollisionDetector::removeIgnorableCollision(CollisionBox* collision)
+{
+    _ignorableCollisionBoxes.eraseObject(collision);
+}
+
 #pragma mark -
 #pragma mark Detection
 
-bool CollisionDetector::isHit(const CollisionBox* collision) const
+bool CollisionDetector::intersects(const CollisionBox* collision) const
 {
     if(!collision) return false;
     
-    return this->getHitCollision(collision, {});
+    return this->getIntersentsCollisionIncludeIngrable(collision, {});
 }
 
-bool CollisionDetector::isHit(const MapObject* mapObject, const vector<Direction>& directions) const
+bool CollisionDetector::intersects(const MapObject* mapObject, const vector<Direction>& directions) const
 {
     if(!mapObject->getCollision()) return false;
     
-    return this->getHitCollision(mapObject->getCollision(), directions);
+    return this->getIntersentsCollisionIncludeIngrable(mapObject->getCollision(), directions);
+}
+
+bool CollisionDetector::intersectsExceptIgnorable(const CollisionBox* collision) const
+{
+    if(!collision) return false;
+    
+    return this->getIntersectsCollision(collision, {});
+}
+
+bool CollisionDetector::intersectsExceptIgnorable(const MapObject* mapObject, const vector<Direction>& directions) const
+{
+    if(!mapObject->getCollision()) return false;
+    
+    return this->getIntersectsCollision(mapObject->getCollision(), directions);
 }
 
 bool CollisionDetector::existsCollisionBetween(const MapObject* obj1, const MapObject* obj2) const

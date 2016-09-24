@@ -189,7 +189,7 @@ bool MapObject::isHit(const vector<Direction>& directions) const
 {
     if(!_objectList) return false;
     
-    return _objectList->getCollisionDetector()->isHit(this, directions);
+    return _objectList->getCollisionDetector()->intersects(this, directions);
 }
 
 // 指定のMapObjectに対して当たり判定があるか

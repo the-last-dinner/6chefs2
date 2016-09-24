@@ -86,15 +86,15 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
     return Rect(x, y, width, height);
 }
 
-bool DetectionBox::isGridHit(DetectionBox* other, const vector<Direction>& directions) const
+bool DetectionBox::intersectsGrid(DetectionBox* other, const vector<Direction>& directions) const
 {
     if(other == this) return false;
     if(!_parent->isHit(other->_parent)) return false;
     
-    return this->isGridHit(other->getGridRect(), directions);
+    return this->intersectsGrid(other->getGridRect(), directions);
 }
 
-bool DetectionBox::isGridHit(const Rect& gridRect, const vector<Direction>& directions) const
+bool DetectionBox::intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const
 {
     return MapUtils::intersectsGridRect(this->getGridRect(directions), gridRect);
 }

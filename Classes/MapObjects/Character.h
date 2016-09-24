@@ -69,6 +69,7 @@ public:
     
     // Callback
     virtual void onEnterMap() override;
+    virtual void onExitMap() override;
     virtual void onJoinedParty();
     virtual void onQuittedParty();
     virtual void onPartyMoved();

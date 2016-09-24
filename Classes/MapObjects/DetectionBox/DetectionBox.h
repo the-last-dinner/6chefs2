@@ -34,8 +34,8 @@ public:
     virtual void update(float delta);
 public:
     Rect getGridRect(const vector<Direction>& directions = {}) const;
-    bool isGridHit(DetectionBox* other, const vector<Direction>& directions = {}) const;
-    bool isGridHit(const Rect& gridRect, const vector<Direction>& directions) const;
+    bool intersectsGrid(DetectionBox* other, const vector<Direction>& directions = {}) const;
+    bool intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const;
 public:
     Rect getRect() const;
     Rect getRect(const Direction& direction) const;
