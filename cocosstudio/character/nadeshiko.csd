@@ -2,7 +2,7 @@
   <PropertyGroup Name="nadeshiko" Type="Node" ID="282c99bc-c69a-4edb-88d7-6f36092d6dc7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="left">
+      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="right">
         <Timeline ActionTag="2064821685" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="nadeshiko_0_0.png" Plist="character/nadeshiko.plist" />
@@ -103,7 +103,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="nadeshiko_0_0.png" Plist="character/nadeshiko.plist" />
+            <FileData Type="PlistSubImage" Path="nadeshiko_1_0.png" Plist="character/nadeshiko.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
