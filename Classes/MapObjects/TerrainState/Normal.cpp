@@ -33,9 +33,11 @@ bool Normal::init()
 void Normal::move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed)
 {
     target->move(directions, [target, cb, speed] {
-                     if(cb) cb();
-                     if(!target->isMoving()) target->setDirection(target->getDirection());
-                 }, speed);
+        if (cb) cb();
+        target->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID), CallFunc::create([target] {
+            if (!target->isMoving()) target->setDirection(target->getDirection());
+        })));
+    }, speed);
 }
 
 void Normal::stamp(Character* target, const Direction& direction, float speed)
