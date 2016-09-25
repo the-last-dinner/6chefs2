@@ -247,18 +247,6 @@ void MapObject::pushCommand(MapObjectCommand* command)
     _commandQueue->push(command);
 }
 
-void MapObject::pushCommandAndExecute(MapObjectCommand* command)
-{
-    this->pushCommand(command);
-    this->executeCommandFromQueue();
-}
-
-void MapObject::executeCommandFromQueue()
-{
-    MapObjectCommand* command { _commandQueue->pop() };
-    command->execute(this);
-}
-
 void MapObject::clearCommandQueue()
 {
     _commandQueue->clear();
@@ -418,6 +406,9 @@ void MapObject::reaction(function<void()> callback)
     icon->runAction(Sequence::create(EaseElasticOut::create(ScaleTo::create(0.6f, 1.f), 0.5f), DelayTime::create(1.f), RemoveSelf::create(), CallFunc::create(callback), nullptr));
 }
 
+#pragma mark -
+#pragma mark Debug
+
 // デバッグ用に枠を描画
 void MapObject::drawDebugMask()
 {
@@ -488,11 +479,13 @@ void MapObject::drawDebugInfo()
 
 void MapObject::update(float delta)
 {
-    
+    _commandQueue->update(this, delta);
 }
 
 void MapObject::onEnterMap()
 {
+    this->scheduleUpdate();
+    
     if (_objectList && _collision) {
         _objectList->getCollisionDetector()->addCollision(_collision);
     }
@@ -503,4 +496,6 @@ void MapObject::onExitMap()
     if (_objectList && _collision) {
         _objectList->getCollisionDetector()->removeCollision(_collision);
     }
+    
+    this->unscheduleUpdate();
 }

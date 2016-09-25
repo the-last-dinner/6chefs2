@@ -102,7 +102,6 @@ public:
 // command
 public:
     void pushCommand(MapObjectCommand* command);
-    void pushCommandAndExecute(MapObjectCommand* command);
     void clearCommandQueue();
 private:
     void executeCommandFromQueue();

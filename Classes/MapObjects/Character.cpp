@@ -211,6 +211,8 @@ float Character::getStaminaConsumptionRatio() const
 // マップに配置された時
 void Character::onEnterMap()
 {
+    this->scheduleUpdate();
+    
     if (_objectList && this->getCollision()) {
         _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
     }
@@ -227,6 +229,8 @@ void Character::onExitMap()
     if (_objectList && this->getCollision()) {
         _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
     }
+    
+    this->unscheduleUpdate();
 }
 
 // 主人公一行に参加した時

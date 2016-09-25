@@ -15,6 +15,7 @@ MapObjectCommandQueue::MapObjectCommandQueue() {}
 MapObjectCommandQueue::~MapObjectCommandQueue()
 {
     _commandQueue.clear();
+    CC_SAFE_RELEASE_NULL(_commandInProgress);
 }
 
 // 初期化
@@ -22,6 +23,9 @@ bool MapObjectCommandQueue::init()
 {
     return true;
 }
+
+#pragma mark -
+#pragma mark Queue
 
 // 後ろにプッシュ
 void MapObjectCommandQueue::push(MapObjectCommand* command)
@@ -32,15 +36,39 @@ void MapObjectCommandQueue::push(MapObjectCommand* command)
 // 先頭をポップ
 MapObjectCommand* MapObjectCommandQueue::pop()
 {
-    MapObjectCommand* first { _commandQueue.front() };
+    if (_commandQueue.size() == 0) return nullptr;
+    
+    MapObjectCommand* front { _commandQueue.front() };
     
     _commandQueue.erase(0);
     
-    return first;
+    return front;
 }
 
 // キューをクリア
 void MapObjectCommandQueue::clear()
 {
     _commandQueue.clear();
+}
+
+#pragma mark -
+#pragma mark Update
+
+void MapObjectCommandQueue::update(MapObject* mapObject, float delta)
+{
+    // 実行中のコマンドがあれば何もしない
+    if (_commandInProgress && !_commandInProgress->isDone()) return;
+    
+    // 実行していたコマンドを解放
+    CC_SAFE_RELEASE_NULL(_commandInProgress);
+    
+    MapObjectCommand* command { this->pop() };
+    CC_SAFE_RETAIN(command);
+    
+    // コマンドがキューになければ何もしない
+    if (!command) return;
+    
+    // コマンドを実行
+    command->execute(mapObject);
+    _commandInProgress = command;
 }

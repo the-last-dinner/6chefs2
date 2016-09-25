@@ -11,6 +11,8 @@
 
 #include "MapObjects/Command/MapObjectCommand.h"
 
+class MapObject;
+
 class MapObjectCommandQueue : public Ref
 {
 // クラスメソッド
@@ -20,7 +22,7 @@ public:
 // インスタンス変数
 private:
     Vector<MapObjectCommand*> _commandQueue {};
-    bool _isInProgress { false };
+    MapObjectCommand* _commandInProgress { nullptr };
     
 // インスタンスメソッド
 private:
@@ -29,9 +31,18 @@ private:
     bool init();
     
 public:
+    // キューにコマンドを詰める
     void push(MapObjectCommand* command);
+private:
+    // キューの先頭をポップして、そのコマンドを返す
     MapObjectCommand* pop();
+    
+public:
+    // キューをクリア
     void clear();
+    
+    // キューを確認して実行
+    void update(MapObject* mapObject, float delta);
 };
 
 #endif /* MapObjectCommandQueue_h */
