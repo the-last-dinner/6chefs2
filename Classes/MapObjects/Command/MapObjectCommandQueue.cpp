@@ -30,6 +30,7 @@ bool MapObjectCommandQueue::init()
 // 後ろにプッシュ
 void MapObjectCommandQueue::push(MapObjectCommand* command)
 {
+    CC_SAFE_RETAIN(command);
     _commandQueue.pushBack(command);
 }
 
@@ -63,7 +64,6 @@ void MapObjectCommandQueue::update(MapObject* mapObject, float delta)
     CC_SAFE_RELEASE_NULL(_commandInProgress);
     
     MapObjectCommand* command { this->pop() };
-    CC_SAFE_RETAIN(command);
     
     // コマンドがキューになければ何もしない
     if (!command) return;
