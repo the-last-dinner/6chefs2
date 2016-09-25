@@ -73,7 +73,7 @@ void EnemyTask::stop()
     this->unschedule(CC_SCHEDULE_SELECTOR(EnemyTask::update));
 }
 
-// 敵を削除
+// EnemyIdから敵を削除
 void EnemyTask::removeEnemy(const int enemyId)
 {
     // マップ上にいる敵を削除
@@ -83,6 +83,23 @@ void EnemyTask::removeEnemy(const int enemyId)
     for(SummonData& data : this->datas)
     {
         if(data.enemy_data.enemy_id != enemyId) continue;
+        data.isDeleted = true;
+    }
+    
+    // 削除後に敵がいなくなればコールバックを呼ぶ
+    if(!this->existsEnemy() && this->onAllEnemyRemoved) this->onAllEnemyRemoved();
+}
+
+// ObjectIDから敵を削除
+void EnemyTask::removeEnemyByObjectId(const int objectId)
+{
+    // マップ上にいる敵を削除
+    DungeonSceneManager::getInstance()->getMapObjectList()->removeEnemyByObjectId(objectId);
+    
+    // データとして存在している敵を論理削除
+    for(SummonData& data : this->datas)
+    {
+        if(data.enemy_data.chara_data.obj_id != objectId) continue;
         data.isDeleted = true;
     }
     

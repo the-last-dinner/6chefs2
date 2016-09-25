@@ -71,6 +71,8 @@ public:
     // 敵
     void addEnemy(Enemy* enemy);
     void removeEnemyById(const int enemyId);
+    void removeEnemyByObjectId(const int objectId);
+    void removeEnemy(Enemy* enemy);
     Vector<Enemy*> getEnemiesAll();
     bool existsEnemy() const;
     

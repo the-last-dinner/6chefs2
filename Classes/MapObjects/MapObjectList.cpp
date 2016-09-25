@@ -301,21 +301,34 @@ void MapObjectList::addEnemy(Enemy* enemy)
     this->enemies.pushBack(enemy);
 }
 
-// 敵を削除
+// EnemyIdから敵を削除
 void MapObjectList::removeEnemyById(const int enemyId)
 {
-    std::mutex mtx;
-    
-    for(Enemy* enemy : this->enemies)
-    {
-        if(enemy->getEnemyId() == enemyId)
-        {
-            mtx.lock();
-            enemy->removeFromParent();
-            this->enemies.eraseObject(enemy);
-            mtx.unlock();
+    for (Enemy* enemy : this->enemies) {
+        if(enemy->getEnemyId() == enemyId) {
+            this->removeEnemy(enemy);
         }
     }
+}
+
+// ObjectIdから敵を削除
+void MapObjectList::removeEnemyByObjectId(const int objectId)
+{
+    for (Enemy* enemy : this->enemies) {
+        if(enemy->getObjectId() == objectId) {
+            this->removeEnemy(enemy);
+        }
+    }
+}
+
+// 対象の敵のオブジェクトを削除
+void MapObjectList::removeEnemy(Enemy *enemy)
+{
+    std::mutex mtx;
+    mtx.lock();
+    enemy->removeFromParent();
+    this->enemies.eraseObject(enemy);
+    mtx.unlock();
 }
 
 // 敵を全て取得

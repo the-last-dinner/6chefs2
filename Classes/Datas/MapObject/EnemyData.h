@@ -14,7 +14,7 @@
 
 struct EnemyData
 {
-    int enemy_id { static_cast<int>(EnemyID::UNDIFINED) };
+    int enemy_id { etoi(EnemyID::UNDIFINED) };
     int change_map_counter { -1 };
     float speed_ratio { 1.0f };
     int start_path_id { -1 };
