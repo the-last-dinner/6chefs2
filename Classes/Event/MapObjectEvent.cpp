@@ -15,6 +15,7 @@
 
 #include "MapObjects/MapObject.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/Command/MoveCommand.h"
 #include "Mapobjects/Party.h"
 #include "MapObjects/PathFinder/PathFinder.h"
 
@@ -206,7 +207,7 @@ bool MoveToEvent::init(rapidjson::Value& json)
 
 void MoveToEvent::run()
 {
-    MapObject* target {this->eventHelper->getMapObjectById(this->objectId)};
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     if(!target)
     {
@@ -219,7 +220,11 @@ void MoveToEvent::run()
     PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
     deque<Direction> directions { pathFinder->getPath(target, this->dest) };
     
-    target->moveByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
+    Vector<MoveCommand*> commands { MoveCommand::create(directions, [this](bool moved) { this->setDone(); }, this->speedRatio) };
+    
+    for (MoveCommand* command : commands) {
+        target->pushCommand(command);
+    }
 }
 
 #pragma mark -
@@ -254,7 +259,11 @@ void MoveByEvent::run()
         return;
     }
     
-    target->moveBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio);
+    Vector<MoveCommand*> commands { MoveCommand::create({ this->direction }, this->gridNum, [this](bool moved) { this->setDone(); }, this->speedRatio) };
+    
+    for (MoveCommand* command : commands) {
+        target->pushCommand(command);
+    }
 }
 
 #pragma mark -

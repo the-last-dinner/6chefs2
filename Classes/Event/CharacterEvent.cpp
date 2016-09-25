@@ -14,6 +14,7 @@
 #include "Layers/Dungeon/TiledMapLayer.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Party.h"
 #include "MapObjects/PathFinder/PathFinder.h"
@@ -96,17 +97,16 @@ void WalkByEvent::run()
     
     this->target->pauseAi();
     this->target->getActionManager()->resumeTarget(this->target);
-}
-
-void WalkByEvent::update(float delta)
-{
-    if(!this->target) return;
-    if(this->target->isMoving() || this->isCommandSent) return;
+    
     if(this->target->isPaused()) this->target->setPaused(false);
     
-    this->target->walkBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio, this->back);
+    Vector<WalkCommand*> commands { WalkCommand::create({ this->direction }, this->gridNum, [this](bool walked) {
+        this->setDone();
+    }, this->speedRatio, this->back, true) };
     
-    this->isCommandSent = true;
+    for (WalkCommand* command : commands) {
+        this->target->pushCommand(command);
+    }
 }
 
 #pragma mark -
@@ -132,21 +132,20 @@ void WalkToEvent::run()
     // NOTICE: イベントからの命令のみで動かしたいのでAIを一時停止
     this->target->pauseAi();
     this->target->getActionManager()->resumeTarget(this->target);
-}
-
-void WalkToEvent::update(float delta)
-{
-    if(!this->target) return;
-    if(this->target->isMoving() || this->isCommandSent) return;
-    if(this->target->isPaused()) this->target->setPaused(false);
+    
+    if (this->target->isPaused()) this->target->setPaused(false);
     
     // 経路探索開始
     PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
     deque<Direction> directions { pathFinder->getPath(this->target, this->destPosition) };
     
-    this->target->walkByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
+    Vector<WalkCommand*> commands { WalkCommand::create( directions, [this](bool walked) {
+        this->setDone();
+    }, this->speedRatio, false, true) };
     
-    this->isCommandSent = true;
+    for (WalkCommand* command : commands) {
+        this->target->pushCommand(command);
+    }
 }
 
 #pragma mark -

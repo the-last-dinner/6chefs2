@@ -20,6 +20,7 @@ public:
 // インスタンス変数
 private:
     Vector<MapObjectCommand*> _commandQueue {};
+    bool _isInProgress { false };
     
 // インスタンスメソッド
 private:
@@ -30,6 +31,7 @@ private:
 public:
     void push(MapObjectCommand* command);
     MapObjectCommand* pop();
+    void clear();
 };
 
 #endif /* MapObjectCommandQueue_h */

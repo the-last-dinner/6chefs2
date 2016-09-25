@@ -38,8 +38,8 @@ public:
 
 // インターフェース
 public:
-    virtual void move(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio) = 0;
-    virtual void stamp(Character* target, const Direction& direction, const float ratio) = 0;
+    virtual void move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed) = 0;
+    virtual void stamp(Character* target, const Direction& direction, float speed) = 0;
 };
 
 #endif /* TerrainState_h */

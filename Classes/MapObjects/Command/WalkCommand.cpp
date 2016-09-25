@@ -10,6 +10,48 @@
 
 #include "MapObjects/Character.h"
 
+#pragma mark Create
+
+Vector<WalkCommand*> WalkCommand::create(const vector<Direction>& directions, int gridNum, function<void(bool)> cb, float speed, bool back, bool ignoreCollision)
+{
+    Vector<WalkCommand*> commands {};
+    
+    if (directions.empty() || gridNum == 0) return commands;
+    
+    for (int i { 0 }; i < gridNum; i++) {
+        WalkCommand* command { WalkCommand::create() };
+        command->setDirections(directions);
+        command->setSpeed(speed);
+        command->setBack(back);
+        command->setIgnoreCollision(ignoreCollision);
+        
+        commands.pushBack(command);
+    }
+    
+    commands.back()->setWalkCallback(cb);
+    
+    return commands;
+}
+
+Vector<WalkCommand*> WalkCommand::create(const deque<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision)
+{
+    Vector<WalkCommand*> commands {};
+    
+    for (Direction direction : directions) {
+        WalkCommand* command { WalkCommand::create() };
+        command->setDirection(direction);
+        command->setSpeed(speed);
+        command->setBack(back);
+        command->setIgnoreCollision(ignoreCollision);
+        
+        commands.pushBack(command);
+    }
+    
+    commands.back()->setWalkCallback(cb);
+    
+    return commands;
+}
+
 // コンストラクタ
 WalkCommand::WalkCommand() {}
 
@@ -37,9 +79,9 @@ void WalkCommand::setDirections(const vector<Direction>& directions)
     _directions = directions;
 }
 
-void WalkCommand::setWalkCallback(function<void()> callback)
+void WalkCommand::setWalkCallback(function<void(bool)> callback)
 {
-    _onWalked = callback;
+    _callback = callback;
 }
 
 void WalkCommand::setSpeed(const float speed)
@@ -52,21 +94,23 @@ void WalkCommand::setBack(const bool back)
     _back = back;
 }
 
+void WalkCommand::setIgnoreCollision(const bool ignore)
+{
+    _ignoreCollision = ignore;
+}
+
 #pragma mark -
 #pragma mark Interface
 
 // 実行
-void WalkCommand::execute(MapObject* target, function<void()> callback)
+void WalkCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
     
-    if (!character) {
-        if (callback) callback();
-        return;
-    }
+    if (!character) return;
     
-    character->walkBy(_directions, [this, callback] {
-        if (_onWalked) _onWalked();
-        if (callback) callback();
-    }, _speed, _back);
+    character->walkBy(_directions, [this](bool walked) {
+        if (_callback) _callback(walked);
+        this->setDone();
+    }, _speed, _back, _ignoreCollision);
 }

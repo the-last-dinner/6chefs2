@@ -38,3 +38,9 @@ MapObjectCommand* MapObjectCommandQueue::pop()
     
     return first;
 }
+
+// キューをクリア
+void MapObjectCommandQueue::clear()
+{
+    _commandQueue.clear();
+}

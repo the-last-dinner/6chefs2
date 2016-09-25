@@ -30,16 +30,15 @@ bool Normal::init()
     return true;
 }
 
-void Normal::move(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+void Normal::move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed)
 {
-    target->move(directions, [target, onMoved, ratio]
-                 {
-                     if(onMoved) onMoved();
+    target->move(directions, [target, cb, speed] {
+                     if(cb) cb();
                      if(!target->isMoving()) target->setDirection(target->getDirection());
-                 }, ratio);
+                 }, speed);
 }
 
-void Normal::stamp(Character* target, const Direction& direction, const float ratio)
+void Normal::stamp(Character* target, const Direction& direction, float speed)
 {
-    target->playAnimationIfNotPlaying(Character::AnimationName::getWalk(direction), ratio);
+    target->playAnimationIfNotPlaying(Character::AnimationName::getWalk(direction), speed);
 }

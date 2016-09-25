@@ -30,20 +30,17 @@ bool Swim::init()
     return true;
 }
 
-void Swim::move(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+void Swim::move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed)
 {
-    target->move(directions, [target, onMoved, ratio]
-    {
-        if(onMoved) onMoved();
-        target->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID),
-                                                         CallFunc::create([target]
-        {
-            if(!target->isMoving()) target->setDirection(target->getDirection());
+    target->move(directions, [target, cb, speed] {
+        if (cb) cb();
+        target->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID), CallFunc::create([target] {
+            if (!target->isMoving()) target->setDirection(target->getDirection());
         })));
-    }, ratio / 3.f);
+    }, speed / 3.f);
 }
 
-void Swim::stamp(Character* target, const Direction& direction, const float ratio)
+void Swim::stamp(Character* target, const Direction& direction, float speed)
 {
-    target->playAnimationIfNotPlaying(Character::AnimationName::getSwim(direction), ratio / 3.f);
+    target->playAnimationIfNotPlaying(Character::AnimationName::getSwim(direction), speed / 3.f);
 }

@@ -23,7 +23,7 @@ bool GhostObject::init()
 }
 
 // 当たり判定は常にfalseを返す
-bool GhostObject::isHit(const vector<Direction>& directions) const
+bool GhostObject::isHit(const vector<Direction>& directions, bool ignoreCollision) const
 {
     return false;
 }

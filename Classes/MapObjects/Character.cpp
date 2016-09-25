@@ -107,7 +107,7 @@ void Character::pauseAi()
 {
     if (!_movePattern) return;
     
-    this->clearDirectionsQueue();
+    this->clearCommandQueue();
     
     _movePattern->pause();
 }
@@ -121,99 +121,20 @@ void Character::resumeAi()
 }
 
 // 方向を指定して歩行させる
-bool Character::walkBy(const Direction& direction, function<void()> onWalked, const float ratio, const bool back)
+bool Character::walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision)
 {
-    vector<Direction> directions {direction};
-    
-    return this->walkBy(directions, onWalked, ratio, back);
-}
-
-// 方向を指定して歩行させる
-bool Character::walkBy(const vector<Direction>& directions, function<void()> onWalked, const float ratio, const bool back)
-{
-    if (!MapObject::moveBy(directions, onWalked, ratio)) return false;
+    if (!MapObject::moveBy(directions, cb, speed, ignoreCollision)) return false;
     
     // 方向を変える
     Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
     this->setDirection(direction, false);
     
     // 歩行アニメーション
-    this->stamp(direction, ratio);
+    this->stamp(direction, speed);
     
     return true;
 }
 
-// 方向とマス数してで歩行させる
-void Character::walkBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio, const bool back)
-{
-    vector<Direction> directions {direction};
-    
-    this->walkBy(directions, gridNum, callback, ratio, back);
-}
-
-// 方向とマス数指定で歩行させる
-void Character::walkBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio, const bool back)
-{
-    if (directions.empty() || this->isMoving()) return;
-    
-    deque<vector<Direction>> directionsQueue {};
-    
-    // 方向をキューに登録
-    for(int i { 0 }; i < gridNum; i++) {
-        directionsQueue.push_back(directions);
-    }
-    
-    // キューに登録した歩行を実行
-    this->walkByQueue(directionsQueue, callback, ratio, back);
-}
-
-// キューで歩行させる
-void Character::walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio, const bool back)
-{
-    if(directionQueue.empty()) {
-        if(callback) callback(true);
-        
-        return;
-    }
-    
-    deque<vector<Direction>> directionsQueue {};
-    
-    for(Direction direction : directionQueue) {
-        directionsQueue.push_back(vector<Direction>({direction}));
-    }
-    
-    this->walkByQueue(directionsQueue, callback, ratio, back);
-}
-
-// キューで歩行させる
-void Character::walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio, const bool back)
-{
-    // 初回のみ中身が存在するため、空でない時は格納する
-    if (!directionsQueue.empty()) _directionsQueue = directionsQueue;
-    
-    // キューが空になったら成功としてコールバックを呼び出し
-    if (_directionsQueue.empty()) {
-        if(callback) callback(true);
-        
-        return;
-    }
-    
-    // 一時停止中かチェック
-    if (this->isPaused()) {
-        this->clearDirectionsQueue();
-
-        return;
-    }
-    
-    // キューの先頭を実行
-    vector<Direction> directions { _directionsQueue.front() };
-    _directionsQueue.pop_front();
-    
-    // 移動開始。失敗時はコールバックを失敗として呼び出し
-    if (this->walkBy(directions, [callback, ratio, back, this]{this->walkByQueue(deque<vector<Direction>>({}), callback, ratio, back);}, ratio, back)) return;
-    
-    if (callback) callback(false);
-}
 
 // 周りを見渡す
 void Character::lookAround(function<void()> callback)

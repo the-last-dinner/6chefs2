@@ -7,6 +7,8 @@
 //
 
 #include "MapObjects/MovePatterns/Scouter.h"
+
+#include "MapObjects/Command/WalkCommand.h"
 #include "MapObjects/MovePatterns/Chaser.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/PathObject.h"
@@ -33,7 +35,7 @@ Scouter::~Scouter()
 // 初期化
 bool Scouter::init(Character* character)
 {
-    if(!MovePattern::init(character)) return false;
+    if (!MovePattern::init(character)) return false;
     
     PathFinder* finder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
     this->finder = finder;
@@ -50,8 +52,8 @@ void Scouter::start()
 {
     MovePattern::start();
     
-    if(!this->chara->isMoving()) this->move(this->startPathId);
-    if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+    if (!this->chara->isMoving()) this->move(this->startPathId);
+    if (!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
 }
 
 // 一時停止
@@ -62,7 +64,7 @@ void Scouter::pause()
     Director::getInstance()->getScheduler()->unscheduleUpdate(this);
     
     // サブアルゴリズムに対しても適用
-    if(this->subPattern) this->subPattern->pause();
+    if (this->subPattern) this->subPattern->pause();
 }
 
 // 再開
@@ -70,8 +72,8 @@ void Scouter::resume()
 {
     MovePattern::resume();
     
-    if(!this->chara->isMoving()) this->move(this->startPathId);
-    if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+    if (!this->chara->isMoving()) this->move(this->startPathId);
+    if (!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
 }
 
 // 主人公一行が移動した時
@@ -101,21 +103,24 @@ void Scouter::move(const int pathObjId)
     
     this->startPathId = destObj->getPathId();
     
-    function<void()> walkCallback { [this, destObj]{ this->move(destObj->getNextId()); } };
+    function<void()> walkCallback { [this, destObj] { this->move(destObj->getNextId()); } };
     
-    if(destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback]
-    {
-        if(this->subPattern)
-        {
+    if(destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback] {
+        if (this->subPattern) {
             walkCallback();
-            
             return;
         }
         
         this->chara->lookAround(walkCallback, destObj->getLookDirection());
     };
     
-    if(!this->chara->isMoving()) this->chara->walkByQueue(this->getPath(destObj), [walkCallback](bool _){ walkCallback(); }, destObj->getSpeedRatio(), false);
+    Vector<WalkCommand*> commands { WalkCommand::create(this->getPath(destObj), [walkCallback](bool _) {
+        walkCallback();
+    }, destObj->getSpeedRatio(), false) };
+    
+    for (WalkCommand* command : commands) {
+        this->chara->pushCommand(command);
+    }
 }
 
 // 指定経路オブジェクトまでの経路を取得
@@ -129,7 +134,7 @@ deque<Direction> Scouter::getPath(PathObject* pathObject)
 // 毎フレーム呼ばれる視界チェックメソッド
 void Scouter::update(float _)
 {
-    if(!this->sight->isIn(this->getMainCharacter(), this->getMapObjectList())) return;
+    if (!this->sight->isIn(this->getMainCharacter(), this->getMapObjectList())) return;
     
     Director::getInstance()->getScheduler()->unscheduleUpdate(this);
     
@@ -150,7 +155,7 @@ void Scouter::shiftToSubPattern()
 // 主人公が視界に入った時
 void Scouter::onTargetCameIntoSight()
 {
-    this->chara->clearDirectionsQueue();
+    this->chara->clearCommandQueue();
     
     // サブパターン生成
     Chaser* sub { Chaser::create(this->chara) };
@@ -159,6 +164,6 @@ void Scouter::onTargetCameIntoSight()
     this->subPattern = sub;
     
     // 移動中じゃなけられば、サブパターンでの移動開始
-    if(this->chara->isMoving()) return;
+    if (this->chara->isMoving()) return;
     this->shiftToSubPattern();
 }

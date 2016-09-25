@@ -25,7 +25,7 @@ private:
     bool init() override;
     
 public:
-    virtual bool isHit(const vector<Direction>& directions) const override;
+    virtual bool isHit(const vector<Direction>& directions, bool ignoreCollision) const override;
     virtual bool isHit(const MapObject* other) const override;
 };
 

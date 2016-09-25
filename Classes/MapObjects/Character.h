@@ -47,13 +47,7 @@ public:
 	void setMoving(bool _isMoving);
     void pauseAi();
     void resumeAi();
-    bool walkBy(const Direction& direction, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
-    bool walkBy(const vector<Direction>& directions, function<void()> onWalked, const float ratio = 1.0f, const bool back = false);
-    void walkBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
-    void walkBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
-    void walkByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
-    void walkByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f, const bool back = false);
-    
+    bool walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision);
     void lookAround(function<void()> callback);
     void lookAround(function<void()> callback, Direction direction);
     

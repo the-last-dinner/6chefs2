@@ -19,7 +19,7 @@ public:
 
 // インスタンス変数
 private:
-    float second {0.f};
+    float second { 0.f };
     
 // インスタンスメソッド
 private:

@@ -7,7 +7,9 @@
 //
 
 #include "MapObjects/Party.h"
+
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 
 #include "Managers/PlayerDataManager.h"
 
@@ -25,14 +27,14 @@ Party::~Party()
 // 初期化
 bool Party::init(const vector<CharacterData>& datas)
 {
-    if(datas.empty()) return false;
+    if (datas.empty()) return false;
     
     // データを元にキャラクタを生成して格納
-    for(int i { 0 }; i < datas.size(); i++)
+    for (int i { 0 }; i < datas.size(); i++)
     {
         Character* chara { Character::create(datas[i]) };
         
-        if(!chara) continue;
+        if (!chara) continue;
         
         _members.pushBack(chara);
     }
@@ -44,10 +46,7 @@ bool Party::init(const vector<CharacterData>& datas)
 void Party::addMember(Character* character)
 {
     _members.pushBack(character);
-    if(character != this->getMainCharacter())
-    {
-        character->onJoinedParty();
-    }
+    if (character != this->getMainCharacter()) character->onJoinedParty();
     PlayerDataManager::getInstance()->getLocalData()->setPartyMember(character->getCharacterData());
 }
 
@@ -55,17 +54,13 @@ void Party::addMember(Character* character)
 void Party::removeMember(const int objectId)
 {
     Character* targetMember { nullptr };
-    for(Character* member : _members)
-    {
-        if(member->getObjectId() == objectId) targetMember = member;
+    for(Character* member : _members) {
+        if (member->getObjectId() == objectId) targetMember = member;
     }
-    if(!targetMember) return;
+    if (!targetMember) return;
     
     _members.eraseObject(targetMember);
-    if(targetMember != this->getMainCharacter())
-    {
-        targetMember->onQuittedParty();
-    }
+    if (targetMember != this->getMainCharacter()) targetMember->onQuittedParty();
     
     PlayerDataManager::getInstance()->getLocalData()->removePartyMember(objectId);
 }
@@ -73,9 +68,8 @@ void Party::removeMember(const int objectId)
 // パーティメンバー全員削除
 void Party::removeMemberAll()
 {
-    for(Character* member : _members)
-    {
-        if(member == this->getMainCharacter()) continue;
+    for (Character* member : _members) {
+        if (member == this->getMainCharacter()) continue;
         member->onQuittedParty();
     }
     
@@ -84,43 +78,49 @@ void Party::removeMemberAll()
 }
 
 // 主人公を移動
-bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, function<void()> callback)
+void Party::moveMainCharacter(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
-    return this->getMainCharacter()->walkBy(directions, [this, callback]
-    {
-        callback();
-        if(this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridCollisionRect());
-    }, ratio);
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(directions);
+    command->setSpeed(speed);
+    command->setWalkCallback([this, callback](bool walked) {
+        callback(walked);
+        if (this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridCollisionRect());
+    });
+    
+    this->getMainCharacter()->pushCommand(command);
 }
 
 // メンバーを移動
-void Party::moveMember(Character* member, Character* previousMember, float ratio)
+void Party::moveMember(Character* member, Character* previousMember, float speed)
 {
     // 前のメンバーの移動前にいた位置を計算
     Point destPos { previousMember->getGridPosition() };
     
-    for(Direction direction : previousMember->getMovingDirections())
-    {
+    for (Direction direction : previousMember->getMovingDirections()) {
         destPos -= direction.getGridVec2() * 2;
     }
     
     Vec2 movement { destPos - member->getGridPosition() };
-    member->walkBy(Direction::convertGridVec2(movement), nullptr, ratio);
+    
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(Direction::convertGridVec2(movement));
+    command->setSpeed(speed);
+    
+    member->pushCommand(command);
 }
 
 // パーティを移動
-bool Party::move(const vector<Direction>& directions, float ratio, function<void()> callback)
+void Party::move(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
     // 主人公を移動
-    if(!this->moveMainCharacter(directions, ratio, callback)) return false;
+    this->moveMainCharacter(directions, speed, callback);
     
     // メンバーを移動
     for(int i { 1 }; i < _members.size(); i++)
     {
-        this->moveMember(_members.at(i), _members.at(i - 1), ratio);
+        this->moveMember(_members.at(i), _members.at(i - 1), speed);
     }
-    
-    return true;
 }
 
 // 主人公を取得

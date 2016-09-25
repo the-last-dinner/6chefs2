@@ -9,6 +9,7 @@
 #include "MapObjects/MovePatterns/MobRandom.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 
 // 定数
 const float MobRandom::MIN_WAIT_DURATION { 2.f };
@@ -74,7 +75,12 @@ void MobRandom::move()
     // 移動可能方向からランダムな要素を取り出す
     vector<Direction> detectedDirs {enableDirections[cocos2d::random(0, static_cast<int>(enableDirections.size()) - 1)]};
     
-    this->chara->walkBy(detectedDirs, [this]{this->scheduleMove();}, SPEED_RATIO);
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(detectedDirs);
+    command->setSpeed(SPEED_RATIO);
+    command->setWalkCallback([this](bool walked) { this->scheduleMove(); });
+    
+    this->chara->pushCommand(command);
 }
 
 void MobRandom::scheduleMove()

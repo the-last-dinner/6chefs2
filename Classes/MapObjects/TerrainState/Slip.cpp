@@ -30,15 +30,15 @@ bool Slip::init()
     return true;
 }
 
-void Slip::move(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+void Slip::move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed)
 {
-    target->move(directions, [target, directions, onMoved, ratio]
+    target->move(directions, [target, directions, cb, speed]
     {
-        if(!target->moveBy(directions, onMoved, ratio) && onMoved)  onMoved();
-    }, ratio);
+        if(!target->moveBy(directions, [cb](bool moved) { if(cb && moved) cb(); }, speed, false) && cb)  cb();
+    }, speed);
 }
 
-void Slip::stamp(Character* target, const Direction& direction, const float ratio)
+void Slip::stamp(Character* target, const Direction& direction, float speed)
 {
-    target->playAnimationIfNotPlaying(Character::AnimationName::getTurn(direction), ratio);
+    target->playAnimationIfNotPlaying(Character::AnimationName::getTurn(direction), speed);
 }

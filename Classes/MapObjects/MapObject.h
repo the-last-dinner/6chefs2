@@ -19,6 +19,8 @@ class TerrainObject;
 class TerrainState;
 class TerrainStateCache;
 class CollisionBox;
+class MapObjectCommand;
+class MapObjectCommandQueue;
 
 class MapObject : public Node
 {
@@ -47,6 +49,7 @@ protected:
     Location _location {};
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };
+    MapObjectCommandQueue* _commandQueue { nullptr };
     
 public:
     function<void(MapObject*)> onMoved { nullptr };
@@ -85,28 +88,32 @@ public:
     vector<Direction> getMovingDirections() const;
     CollisionBox* getCollision() const;
     
-    // collision
+// collision
+public:
     Rect getCollisionRect() const;
     bool isHit() const;
-    bool isHit(const Direction& direction) const;
-    virtual bool isHit(const vector<Direction>& directions) const;
+    bool isHit(const Direction& direction, bool ignoreCollision = false) const;
+    virtual bool isHit(const vector<Direction>& directions, bool ignoreCollision = false) const;
     virtual bool isHit(const MapObject* other) const;
     bool isMovable() const;
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
     
-    // move
-    vector<Direction> createEnableDirections(const vector<Direction>& directions) const;
+// command
+public:
+    void pushCommand(MapObjectCommand* command);
+    void pushCommandAndExecute(MapObjectCommand* command);
+    void clearCommandQueue();
+private:
+    void executeCommandFromQueue();
+
+// move
+public:
+    vector<Direction> createEnableDirections(const vector<Direction>& directions, bool ignoreCollision = false) const;
     bool canMove(const vector<Direction>& directions) const;
-    void move(const vector<Direction>& enableDirections, function<void()> onMoved, const float ratio = 1.0f);
-    bool moveBy(const Direction& direction, function<void()> onMoved, const float ratio = 1.0f);
-    bool moveBy(const vector<Direction>& directions, function<void()> onMoved, const float ratio = 1.0f);
-    void moveBy(const Direction& direction, const int gridNum, function<void(bool)> onMoved, const float ratio = 1.0f);
-    void moveBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> onMoved, const float ratio = 1.0f);
-    void moveByQueue(deque<Direction> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
-    void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
-    void clearDirectionsQueue();
-    void moveObject(const vector<Direction>& directions, function<void()> onMoved) const;
+    void move(const vector<Direction>& enableDirections, function<void()> onMoved, float speed);
+    bool moveBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool ignoreCollision);
+    void moveObject(const vector<Direction>& directions, function<void(bool)> cb) const;
     
     // 自分のRectの指定されたトリガーのイベントを実行
     void runRectEventByTrigger(const Trigger trigger);
@@ -116,7 +123,9 @@ public:
     
     void reaction(function<void()> callback = nullptr);
     
-    // インターフェース
+// インターフェース
+public:
+    virtual void update(float delta);                        // 毎フレーム処理
     virtual void onEnterMap();                               // マップに追加された時
     virtual void onExitMap();                                // マップから削除された時
     virtual void onSearched(MapObject* mainChara) {};        // 調べられた時

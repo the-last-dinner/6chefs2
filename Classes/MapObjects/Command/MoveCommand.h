@@ -16,12 +16,15 @@ class MoveCommand : public MapObjectCommand
 // クラスメソッド
 public:
     CREATE_FUNC(MoveCommand)
+    static Vector<MoveCommand*> create(const vector<Direction>& directions,int gridNum, function<void(bool)> cb,float speed);
+    static Vector<MoveCommand*> create(const deque<Direction>& directions, function<void(bool)> cb, float speed);
     
 // インスタンス変数
 private:
     vector<Direction> _directions {};
-    function<void()> _onMoved { nullptr };
+    function<void(bool)> _callback { nullptr };
     float _speed { 1.f };
+    bool _ignoreCollision { false };
     
 // インスタンスメソッド
 private:
@@ -32,12 +35,13 @@ private:
 public:
     void setDirection(const Direction& direction);
     void setDirections(const vector<Direction>& directions);
-    void setMoveCallcback(function<void()> callback);
+    void setMoveCallback(function<void(bool)> callback);
     void setSpeed(const float speed);
+    void setIgnoreCollision(const bool ignore);
     
 // インターフェース
 public:
-    void execute(MapObject* target, function<void()> callback) override;
+    void execute(MapObject* target) override;
 };
 
 #endif /* MoveCommand_h */

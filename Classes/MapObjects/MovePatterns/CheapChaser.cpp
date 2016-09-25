@@ -9,6 +9,7 @@
 #include "MapObjects/MovePatterns/CheapChaser.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 
 // コンストラクタ
 CheapChaser::CheapChaser() {FUNCLOG};
@@ -61,6 +62,17 @@ float CheapChaser::calcSummonDelay() const
 void CheapChaser::move(function<void()> callback)
 {
     if(this->paused) return;
-    if(this->chara->walkBy(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()), [this, callback](){this->move(callback);}, this->speedRatio)) return;
-    if(callback) callback();
+    
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - this->chara->getGridPosition()));
+    command->setSpeed(this->speedRatio);
+    command->setWalkCallback([this, callback](bool walked) {
+        if (walked) {
+            this->move();
+        } else {
+            if (callback) callback();
+        }
+    });
+    
+    this->chara->pushCommand(command);
 }

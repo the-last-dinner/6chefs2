@@ -9,6 +9,7 @@
 #include "MapObjects/MovePatterns/Chaser.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/CheapChaser.h"
 #include "MapObjects/PathFinder/PathFinder.h"
@@ -96,7 +97,11 @@ void Chaser::move()
     
     this->cutPath(path);
     
-    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false);
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, this->speedRatio, false) };
+    
+    for (WalkCommand* command : commands) {
+        this->chara->pushCommand(command);
+    }
 }
 
 // サブアルゴリズムから自身へ移行
@@ -107,8 +112,12 @@ void Chaser::shiftFromSubPattern()
     
     // 経路をカット
     this->cutPath(path);
- 
-    this->chara->walkByQueue(path, [this](bool reached){if(reached)this->move();}, this->speedRatio, false);
+    
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, this->speedRatio, false) };
+    
+    for (WalkCommand* command : commands) {
+        this->chara->pushCommand(command);
+    }
 }
 
 // サブアルゴリズムへ移行

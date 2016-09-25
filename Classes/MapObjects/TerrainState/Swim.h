@@ -26,8 +26,8 @@ private:
     
 // インターフェース
 public:
-    void move(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio) override;
-    void stamp(Character* target, const Direction& direction, const float ratio) override;
+    void move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed) override;
+    void stamp(Character* target, const Direction& direction, float speed) override;
 };
 
 NS_MO_T_STATE_END

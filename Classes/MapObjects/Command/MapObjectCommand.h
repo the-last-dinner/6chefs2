@@ -15,14 +15,23 @@ class MapObject;
 
 class MapObjectCommand : public Ref
 {
+// インスタンス変数
+private:
+    bool _isDone { false };
+    
 // インスタンスメソッド
 protected:
     MapObjectCommand();
     virtual ~MapObjectCommand();
     virtual bool init();
-    
+    void setDone();
 public:
-    virtual void execute(MapObject* target, function<void()> callback) = 0;
+    bool isDone() const;
+
+// インターフェース
+public:
+    virtual void execute(MapObject* target) = 0;
+    
 };
 
 #endif /* MapObjectCommand_h */
