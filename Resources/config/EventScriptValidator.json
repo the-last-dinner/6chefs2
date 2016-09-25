@@ -14,16 +14,22 @@
     "if": {
         "require": ["condition", "action"],
         "member": {
-            "condition": [{
+            "condition": [[{
                 "member": {
                     "item": [["string"], "string"],
                     "equip":[["string"], "string"],
                     "event": [[["string", "string"]], ["string", "string"]],
                     "flg": [[["string", "string", "int"]], ["string", "string", "int"], "int"],
                     "status": [[["string", "int"]], ["string", "int"]],
-                    "trophy": [["string"], "string"]
+                    "trophy": [["string"], "string"],
+                    "Nitem": [["string"], "string"],
+                    "Nequip":[["string"], "string"],
+                    "Nevent": [[["string", "string"]], ["string", "string"]],
+                    "Nflg": [[["string", "string", "int"]], ["string", "string", "int"], "int"],
+                    "Nstatus": [[["string", "int"]], ["string", "int"]],
+                    "Ntrophy": [["string"], "string"]
                 }
-            }],
+            }]],
             "action": [["object"]]
         }
     },
@@ -177,7 +183,6 @@
         }
     },
     "gameover": {
-        "require": ["id"],
         "member": {
             "id": ["string"]
         }
@@ -384,9 +389,10 @@
         }
     },
     "removeEnemy": {
-        "require": ["enemyID"],
+        "require": [["enemyID"], ["objID"]],
         "member": {
-            "enemyID": ["string"]
+            "enemyID": ["string"],
+            "objID": ["stoi"]
         }
     },
     
@@ -519,9 +525,11 @@
         }
     },
     "changeFlg": {
-        "require": ["itemID"],
+        "require": ["flg"],
         "member": {
-            "itemID": ["string"]
+            "mapID": ["stoi"],
+            "eventID": ["stoi"],
+            "flg": ["int"]
         }
     },
     "getTrophy": {

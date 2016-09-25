@@ -129,14 +129,17 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     // イベントタイプ名取得
     string typeName {json[member::TYPE].GetString()};
     
-    if(EventFactory::typeToCreateFunc.count(typeName) == 0) {
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
+        bool isOk = EventScriptValidator::create()->validate(json);
+        if (!isOk) {
+            LastSupper::AssertUtils::warningAssert("Validattion is NG");
+        }
+    }
+    
+    if (EventFactory::typeToCreateFunc.count(typeName) == 0) {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
         LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
-    }
-    
-    if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
-        EventScriptValidator::create(json)->validate();
     }
     
     return EventFactory::typeToCreateFunc.at(typeName)(json);

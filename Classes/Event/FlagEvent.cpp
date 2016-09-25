@@ -52,7 +52,7 @@ bool NeverAgainEvent::init(rapidjson::Value& json)
 void NeverAgainEvent::run()
 {
     this->setDone();
-    int arr_size = this->event.size();
+    int arr_size = static_cast<int>(this->event.size());
     for(int i = 0; i < arr_size; i++)
     {
         PlayerDataManager::getInstance()->getLocalData()->setEventNeverAgain(this->event[i].first, this->event[i].second);
@@ -232,7 +232,7 @@ bool GetTrophyEvent::init(rapidjson::Value& json)
     
     // trophyId
     if (!this->eventHelper->hasMember(json, member::TROPHY_ID)) return false;
-    this->trophyId = json[member::TROPHY_ID].GetInt();
+    this->trophyId = stoi(json[member::TROPHY_ID].GetString());
     
     return true;
 }
