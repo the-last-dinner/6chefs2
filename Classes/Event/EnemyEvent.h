@@ -34,6 +34,7 @@ public:
     CREATE_FUNC_WITH_PARAM(RemoveEnemyEvent, rapidjson::Value&)
 private:
     int enemyId { etoi(EnemyID::UNDIFINED) };
+    int objectId { etoi(ObjectID::UNDIFINED) };
 private:
     RemoveEnemyEvent() { FUNCLOG };
     ~RemoveEnemyEvent() { FUNCLOG };

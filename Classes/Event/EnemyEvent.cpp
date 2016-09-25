@@ -82,9 +82,17 @@ bool RemoveEnemyEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    // 敵ID
-    if(!this->eventHelper->hasMember(json, member::ENEMY_ID)) return false;
-    this->enemyId = stoi(json[member::ENEMY_ID].GetString());
+    bool hasEnemyId = this->eventHelper->hasMember(json, member::ENEMY_ID);
+    bool hasObjectId = this->eventHelper->hasMember(json, member::OBJECT_ID);
+    
+    if (!hasEnemyId && !hasObjectId) return false;
+    
+    if (hasEnemyId) {
+        this->enemyId = stoi(json[member::ENEMY_ID].GetString());
+    }
+    if (hasObjectId) {
+        this->objectId = stoi(json[member::OBJECT_ID].GetString());
+    }
     
     return true;
 }
@@ -92,5 +100,11 @@ bool RemoveEnemyEvent::init(rapidjson::Value& json)
 void RemoveEnemyEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->removeEnemy(this->enemyId);
+    if (this->enemyId != etoi(EnemyID::UNDIFINED)) {
+        DungeonSceneManager::getInstance()->removeEnemy(this->enemyId);
+    }
+    if (this->objectId != etoi(ObjectID::UNDIFINED)) {
+        cout << "removeEnemy" << this->objectId << endl;
+        DungeonSceneManager::getInstance()->removeEnemyByObjectId(this->objectId);
+    }
 }
