@@ -111,7 +111,7 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"removeObject",
+							"type":"removeEnemy",
 							"objID":"1450"
 						},
 						{

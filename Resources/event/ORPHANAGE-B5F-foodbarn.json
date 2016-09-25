@@ -93,6 +93,20 @@
 					"objID":"1"
 				},
 				{
+					"type":"if",
+					"condition":[
+						{
+							"Ntrophy":"3"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophy":"3"
+						}
+					]
+				},
+				{
 					"type":"already"
 				}
 			]

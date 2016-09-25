@@ -180,8 +180,18 @@
 							]
 						},
 						{
-							"type":"systemMsg",
-							"text":["ランマルエピソード解放"]
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"2"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophy":"2"
+								}
+							]
 						},
 						{
 							"type":"already"

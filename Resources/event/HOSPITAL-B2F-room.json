@@ -324,31 +324,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -486,31 +486,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{
@@ -661,31 +661,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -823,31 +823,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{
@@ -998,31 +998,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -1160,31 +1160,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{
@@ -1335,31 +1335,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -1497,31 +1497,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{
@@ -1672,31 +1672,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -1834,31 +1834,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{
@@ -2009,31 +2009,31 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1435"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1436"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1437"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1438"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1439"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1440"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1441"
 								},
 								{
@@ -2171,31 +2171,31 @@
 							"times":1,
 							"true":[
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1442"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1443"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1444"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1445"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1446"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1447"
 								},
 								{
-									"type":"removeObject",
+									"type":"removeEnemy",
 									"objID":"1448"
 								},
 								{

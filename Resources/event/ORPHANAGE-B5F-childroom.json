@@ -1244,6 +1244,21 @@
 																																									"direction":"LEFT"
 																																								},
 																																								{
+																																									"type":"if",
+																																									"condition":[
+																																										{
+																																											"Ntrophy":"6",
+																																											"event":["73","12"]
+																																										}
+																																									],
+																																									"action":[
+																																										{
+																																											"type":"getTrophy",
+																																											"trophy":"6"
+																																										}
+																																									]
+																																								},
+																																								{
 																																									"type":"fadein"
 																																								},
 																																								{

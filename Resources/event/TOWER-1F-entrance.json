@@ -3,6 +3,38 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["50","8"]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
+					"type":"systemMsg",
+					"text":["開かない・・・"]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["50","8"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"181"
+				}
+			]
 		}
 	],
 	"2":[
@@ -200,8 +232,32 @@
 					"text":["その後、\n北森の町にの狂人病患者達は制圧された。\n天弦楼の地下からは大勢の狂人病患者、子供の水死体。\nそして戸塚大宝の水死体が見つかった。\nこの世の全てを恨んで恨んで呪い尽くした・・・\nそんな凄まじい形相だったらしい。","反対に佐々木　孫一、中山　撫子両名の死体は\n丁寧な処理が施されていて、安らかな死に顔だった。"]
 				},
 				{
+					"type":"wait",
+					"time":2.0
+				}
+				{
 					"type":"ending",
 					"id":"2"
+				}
+			]
+		}
+	],
+	"5":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["50","8"]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
+					"type":"systemMsg",
+					"text":["開かない・・・"]
 				}
 			]
 		}

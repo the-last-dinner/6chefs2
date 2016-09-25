@@ -2153,6 +2153,21 @@
 											"movePattern":"1"
 										},
 										{
+											"type":"if",
+											"condition":[
+												{
+													"Ntrophy":"6",
+													"event":["81","8"]
+												}
+											],
+											"action":[
+												{
+													"type":"getTrophy",
+													"trophy":"6"
+												}
+											]
+										},
+										{
 											"type":"fadein"
 										},
 										{

@@ -1,6 +1,10 @@
 {
 	"1":[
 		{
+			"type":"playBGM",
+			"file":"OMAKE.mp3"
+		},
+		{
 			"type":"createObject",
 			"objID":"10136",
 			"charaID":"0",
@@ -105,7 +109,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"10"
+					"trophy":"10"
 				}
 			],
 			"action":[
@@ -124,6 +128,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"101",
 											"x":8,
@@ -138,6 +145,10 @@
 										{
 											"type":"fadein",
 											"time":2.0
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										}
 									]
 								}
@@ -149,6 +160,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"10"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"3":[
@@ -156,7 +181,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"1"
+					"trophy":"1"
 				}
 			],
 			"action":[
@@ -175,6 +200,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"changeMap",
 											"mapID":"91",
 											"x":26,
@@ -188,6 +216,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"1"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"4":[
@@ -195,7 +237,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"2"
+					"trophy":"2"
 				}
 			],
 			"action":[
@@ -239,6 +281,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"2"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"5":[
@@ -246,7 +302,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"3"
+					"trophy":"3"
 				}
 			],
 			"action":[
@@ -290,6 +346,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"3"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"6":[
@@ -297,7 +367,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"4"
+					"trophy":"4"
 				}
 			],
 			"action":[
@@ -341,6 +411,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"4"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"7":[
@@ -348,7 +432,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"5"
+					"trophy":"5"
 				}
 			],
 			"action":[
@@ -392,6 +476,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"5"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"8":[
@@ -399,7 +497,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"6"
+					"trophy":"6"
 				}
 			],
 			"action":[
@@ -443,6 +541,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"6"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"9":[
@@ -450,7 +562,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"7"
+					"trophy":"7"
 				}
 			],
 			"action":[
@@ -494,6 +606,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"7"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	],
 	"10":[
@@ -501,7 +627,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophyID":"8"
+					"trophy":"8"
 				}
 			],
 			"action":[
@@ -540,6 +666,30 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Ntrophy":"8"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
+		}
+	],
+	"11":[
+		{
+			"type":"fadein",
+			"time":3.0
+		},
+		{
+			"type":"playBGM",
+			"file":"OMAKE.mp3"
 		}
 	]
 }

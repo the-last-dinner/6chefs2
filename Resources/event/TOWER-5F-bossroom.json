@@ -114,6 +114,9 @@
 							"type":"fadeout"
 						},   
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -488,7 +491,7 @@
 																	"objID":"10116"
 																},
 																{
-																	"type":"removeObject",
+																	"type":"removeEnemy",
 																	"objID":"1451"
 																},
 																{
@@ -660,7 +663,7 @@
 																	"objID":"10116"
 																},
 																{
-																	"type":"removeObject",
+																	"type":"removeEnemy",
 																	"objID":"1451"
 																},
 																{
@@ -831,7 +834,7 @@
 																	"objID":"10116"
 																},
 																{
-																	"type":"removeObject",
+																	"type":"removeEnemy",
 																	"objID":"1451"
 																},
 																{
@@ -1003,7 +1006,7 @@
 																	"objID":"10116"
 																},
 																{
-																	"type":"removeObject",
+																	"type":"removeEnemy",
 																	"objID":"1451"
 																},
 																{
@@ -1332,7 +1335,7 @@
 							"type":"changeDirection",
 							"objID":"10122",
 							"direction":"LEFT"
-						},
+						}
 					]
 				},
 				{
@@ -1499,6 +1502,10 @@
 					]
 				},
 				{
+					"type":"setCamera",
+					"objID":"10125"
+				},
+				{
 					"type":"charaWalkTo",
 					"objID":"10125",
 					"x":53,
@@ -1542,6 +1549,12 @@
 					"speed":3.0
 				},
 				{
+					"type":"fadeout"
+				},
+				{
+					"type":"setCamera"
+				},
+				{
 					"type":"removeObject",
 					"objID":"10125"
 				},
@@ -1550,9 +1563,6 @@
 					"text":["チィ・・・"],
 					"charaID":"8",
 					"imgID":"4"
-				},
-				{
-					"type":"fadeout"
 				},
 				{
 					"type":"charaWarp",
