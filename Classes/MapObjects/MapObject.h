@@ -45,7 +45,6 @@ private:
     Label* _debugLabel { nullptr };
 protected:
     MapObjectList* _objectList { nullptr };
-    deque<vector<Direction>> _directionsQueue {};
     Location _location {};
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };

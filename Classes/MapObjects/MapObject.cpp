@@ -313,9 +313,7 @@ bool MapObject::canMove(const vector<Direction>& directions) const { return !thi
 void MapObject::move(const vector<Direction>& enableDirections, function<void()> onMoved, float speed)
 {
     // 移動中の方向を設定
-    for (Direction direction : enableDirections) {
-        _movingDirections.push_back(direction);
-    }
+    _movingDirections = enableDirections;
     
     // 方向からベクトル生成
     Vec2 movement { Direction::getVec2(enableDirections) };
@@ -325,11 +323,12 @@ void MapObject::move(const vector<Direction>& enableDirections, function<void()>
     
     // 移動開始
     this->_isMoving = true;
-    this->runAction(Sequence::create(MoveBy::create(DURATION_MOVE_ONE_GRID / speed, movement), CallFunc::create([this] {
-        _movingDirections.clear();
+    this->runAction(Sequence::createWithTwoActions(MoveBy::create(DURATION_MOVE_ONE_GRID / speed, movement), CallFunc::create([this, onMoved] {
         this->_isMoving = false;
         if (this->onMoved) this->onMoved(this);
-    }), CallFunc::create(onMoved), nullptr));
+        if (onMoved) onMoved();
+        _movingDirections.clear();
+    })));
 }
 
 // 方向指定移動メソッド

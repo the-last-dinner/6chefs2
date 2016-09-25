@@ -2,7 +2,7 @@
   <PropertyGroup Name="magoichi" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="walk_right">
+      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="right">
         <Timeline ActionTag="-1108922162" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
@@ -103,7 +103,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="magoichi_0_1.png" Plist="character/magoichi.plist" />
+            <FileData Type="PlistSubImage" Path="magoichi_1_0.png" Plist="character/magoichi.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">

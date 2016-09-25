@@ -2,7 +2,7 @@
   <PropertyGroup Name="nadeshiko" Type="Node" ID="282c99bc-c69a-4edb-88d7-6f36092d6dc7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="walk_down">
+      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="left">
         <Timeline ActionTag="2064821685" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="nadeshiko_0_0.png" Plist="character/nadeshiko.plist" />
@@ -95,10 +95,10 @@
       <ObjectData Name="Node" Tag="3" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-32.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-33.5000" BottomMargin="0.5000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="16.0000" />
+            <Position X="16.0000" Y="17.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

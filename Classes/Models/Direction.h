@@ -30,6 +30,7 @@ private:
     static const std::map<Key, Direction> KEY_TO_DIRECTION;
     static const std::map<std::string, Direction> STR_TO_DIRECTION;
     static const std::map<int, Direction> INT_TO_DIRECTION;
+    static const std::map<int, Direction> INT_TO_OPPOSITE_DIRECTION;
     
 // クラスメソッド
 public:
@@ -47,7 +48,7 @@ public:
     
 // インスタンス変数
 protected:
-    bool _isNull { false };
+    bool _isNull { true };
     int _int { -1 };
     std::string _upcaseString { "" };
     std::string _downcaseString { "" };
@@ -67,7 +68,7 @@ public:
     cocos2d::Vec2 getUnitVec2() const;
     cocos2d::Vec2 getVec2() const;
     cocos2d::Vec2 getGridVec2() const;
-    virtual Direction getOppositeDirection() const;
+    Direction getOppositeDirection() const;
     Direction convertToWorldDirection(const Direction& direction) const;
 protected:
     int getDegree() const;
@@ -77,28 +78,24 @@ class DirectionUp : public Direction
 {
 public:
     DirectionUp();
-    Direction getOppositeDirection() const override;
 };
 
 class DirectionDown : public Direction
 {
 public:
     DirectionDown();
-    Direction getOppositeDirection() const override;
 };
 
 class DirectionRight : public Direction
 {
 public:
     DirectionRight();
-    Direction getOppositeDirection() const override;
 };
 
 class DirectionLeft : public Direction
 {
 public:
     DirectionLeft();
-    Direction getOppositeDirection() const override;
 };
 
 #endif /* defined(__LastSupper__Direction__) */

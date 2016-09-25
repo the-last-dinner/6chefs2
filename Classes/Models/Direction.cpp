@@ -43,6 +43,14 @@ const std::map<int, Direction> Direction::INT_TO_DIRECTION
     { 2, Direction::LEFT },
 };
 
+const std::map<int, Direction> Direction::INT_TO_OPPOSITE_DIRECTION
+{
+    { 3, Direction::DOWN },
+    { 0, Direction::UP },
+    { 1, Direction::LEFT },
+    { 2, Direction::RIGHT },
+};
+
 // クラスメソッド
 
 Direction Direction::convertKey(const Key& key)
@@ -145,10 +153,7 @@ std::vector<Direction> Direction::getAll()
 
 // インスタンスメソッド
 
-Direction::Direction()
-{
-    _isNull = true;
-}
+Direction::Direction() {}
 
 
 Direction::~Direction() {}
@@ -190,7 +195,7 @@ cocos2d::Vec2 Direction::getGridVec2() const
 
 Direction Direction::getOppositeDirection() const
 {
-    return Direction::NONE;
+    return INT_TO_OPPOSITE_DIRECTION.at(this->getInt());
 }
 
 int Direction::getDegree() const
@@ -218,6 +223,7 @@ Direction Direction::convertToWorldDirection(const Direction& direction) const
 
 DirectionUp::DirectionUp()
 {
+    _isNull = false;
     _int = 3;
     _upcaseString = "UP";
     _downcaseString = "up";
@@ -226,13 +232,12 @@ DirectionUp::DirectionUp()
     _degree = 0;
 }
 
-Direction DirectionUp::getOppositeDirection() const { return Direction::DOWN; }
-
 #pragma mark -
 #pragma mark DirectionDown
 
 DirectionDown::DirectionDown()
 {
+    _isNull = false;
     _int = 0;
     _upcaseString = "DOWN";
     _downcaseString = "down";
@@ -241,13 +246,12 @@ DirectionDown::DirectionDown()
     _degree = 180;
 }
 
-Direction DirectionDown::getOppositeDirection() const { return Direction::UP; }
-
 #pragma mark -
 #pragma mark DirectionRight
 
 DirectionRight::DirectionRight()
 {
+    _isNull = false;
     _int = 1;
     _upcaseString = "RIGHT";
     _downcaseString = "right";
@@ -256,13 +260,12 @@ DirectionRight::DirectionRight()
     _degree = 90;
 }
 
-Direction DirectionRight::getOppositeDirection() const { return Direction::LEFT; }
-
 #pragma mark -
 #pragma mark DirectionLeft
 
 DirectionLeft::DirectionLeft()
 {
+    _isNull = false;
     _int = 2;
     _upcaseString = "LEFT";
     _downcaseString = "left";
@@ -270,5 +273,3 @@ DirectionLeft::DirectionLeft()
     _gridVec2 = cocos2d::Vec2(-1, 0);
     _degree = 270;
 }
-
-Direction DirectionLeft::getOppositeDirection() const { return Direction::RIGHT; }
