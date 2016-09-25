@@ -163,7 +163,6 @@ void Scouter::onTargetCameIntoSight()
     CC_SAFE_RETAIN(sub);
     this->subPattern = sub;
     
-    // 移動中じゃなけられば、サブパターンでの移動開始
-    if (this->chara->isMoving()) return;
+    // サブパターンでの移動開始
     this->shiftToSubPattern();
 }
