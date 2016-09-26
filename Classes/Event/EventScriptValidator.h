@@ -11,18 +11,20 @@
 
 #include "define.h"
 
+class AssertHelper;
+
 class EventScriptValidator : public Ref
 {
 public:
     CREATE_FUNC(EventScriptValidator);
 private:
     EventScriptValidator() { FUNCLOG };
-    ~EventScriptValidator() { FUNCLOG };
+    ~EventScriptValidator();
     
 // instance valiables
 private:
     map<string, function<bool(const rapidjson::Value&, const rapidjson::Value&)>> typeToValidateFunc;
-    string typeName;
+    AssertHelper* assertHelper;
 
 private:
     static const string REQUIRE;

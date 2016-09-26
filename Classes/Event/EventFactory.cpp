@@ -130,10 +130,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     string typeName {json[member::TYPE].GetString()};
     
     if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
-        bool isOk = EventScriptValidator::create()->validate(json);
-        if (!isOk) {
-            LastSupper::AssertUtils::warningAssert("Validattion is NG");
-        }
+        EventScriptValidator::create()->validate(json);
     }
     
     if (EventFactory::typeToCreateFunc.count(typeName) == 0) {

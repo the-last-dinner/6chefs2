@@ -11,6 +11,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
 		2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
+		2626AEC61D99895E00D5623B /* AssertHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2626AEC41D99895E00D5623B /* AssertHelper.cpp */; };
+		2626AEC71D99895E00D5623B /* AssertHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2626AEC41D99895E00D5623B /* AssertHelper.cpp */; };
 		26460B8D1D72EBB600F0336C /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B811D72EBB600F0336C /* ChapterData.cpp */; };
 		26460B8E1D72EBB600F0336C /* CharacterMasterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B831D72EBB600F0336C /* CharacterMasterData.cpp */; };
 		26460B8F1D72EBB600F0336C /* DocumentData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B851D72EBB600F0336C /* DocumentData.cpp */; };
@@ -357,6 +359,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
+		2626AEC41D99895E00D5623B /* AssertHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssertHelper.cpp; path = Helpers/AssertHelper.cpp; sourceTree = "<group>"; };
+		2626AEC51D99895E00D5623B /* AssertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssertHelper.h; path = Helpers/AssertHelper.h; sourceTree = "<group>"; };
 		26460B811D72EBB600F0336C /* ChapterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChapterData.cpp; path = CsvData/ChapterData.cpp; sourceTree = "<group>"; };
 		26460B821D72EBB600F0336C /* ChapterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChapterData.h; path = CsvData/ChapterData.h; sourceTree = "<group>"; };
 		26460B831D72EBB600F0336C /* CharacterMasterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CharacterMasterData.cpp; path = CsvData/CharacterMasterData.cpp; sourceTree = "<group>"; };
@@ -759,6 +763,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2626AEC31D9988AE00D5623B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2626AEC41D99895E00D5623B /* AssertHelper.cpp */,
+				2626AEC51D99895E00D5623B /* AssertHelper.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		26460BA11D72EE0700F0336C /* ConfigData */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +877,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2626AEC31D9988AE00D5623B /* Helpers */,
 				DC03904E1C871E1000C50E8E /* Algorithm */,
 				DC0390511C871E1000C50E8E /* AppDelegate.cpp */,
 				DC0390521C871E1000C50E8E /* AppDelegate.h */,
@@ -1640,6 +1654,7 @@
 				DC0392071C871E1000C50E8E /* SlipFloor.cpp in Sources */,
 				DC0391BB1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
 				DC03923F1C871E1000C50E8E /* Cloud.cpp in Sources */,
+				2626AEC61D99895E00D5623B /* AssertHelper.cpp in Sources */,
 				DC0391DB1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
 				DC03920B1C871E1000C50E8E /* WaterArea.cpp in Sources */,
 				DC0391B11C871E1000C50E8E /* SelectEventLayer.cpp in Sources */,
@@ -1774,6 +1789,7 @@
 				26460B9B1D72ED9600F0336C /* DocumentData.cpp in Sources */,
 				DC0391A61C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
+				2626AEC71D99895E00D5623B /* AssertHelper.cpp in Sources */,
 				268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
 				DC0391FC1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				DC0392261C871E1000C50E8E /* GameOverScene.cpp in Sources */,

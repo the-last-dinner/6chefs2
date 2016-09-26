@@ -375,7 +375,10 @@
     
     
     "createEnemy": {
-        "require": ["enemyID", "charaID", "objID", "x", "y"],
+        "require": [
+            ["objID", "charaID", "x", "y"],
+            ["enemyID", "charaID", "x", "y"]
+        ],
         "member": {
             "enemyID": ["string"],
             "charaID": ["string"],
