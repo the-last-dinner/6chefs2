@@ -93,6 +93,12 @@ void MoveCommand::setIgnoreCollision(const bool ignore)
 #pragma mark -
 #pragma mark Interface
 
+// 実行可能状態か
+bool MoveCommand::isExecutable(MapObject* target) const
+{
+    return !target->isMoving();
+}
+
 // 実行
 void MoveCommand::execute(MapObject* target)
 {

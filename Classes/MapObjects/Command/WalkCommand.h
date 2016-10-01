@@ -43,6 +43,7 @@ public:
     
 // インターフェース
 public:
+    bool isExecutable(MapObject* target) const override;
     void execute(MapObject* target) override;
 };
 

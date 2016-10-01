@@ -34,6 +34,18 @@ void MapObjectCommandQueue::push(MapObjectCommand* command)
     _commandQueue.pushBack(command);
 }
 
+// 先頭が実行可能か
+bool MapObjectCommandQueue::isFrontExecutable(MapObject* mapObject) const
+{
+    if (_commandQueue.size() == 0) return false;
+    
+    MapObjectCommand* front { _commandQueue.front() };
+    
+    if (!front) return false;
+    
+    return front->isExecutable(mapObject);
+}
+
 // 先頭をポップ
 MapObjectCommand* MapObjectCommandQueue::pop()
 {
@@ -62,6 +74,9 @@ void MapObjectCommandQueue::update(MapObject* mapObject, float delta)
     
     // 実行していたコマンドを解放
     CC_SAFE_RELEASE_NULL(_commandInProgress);
+    
+    // キューの先頭が実行可能でなければ無視
+    if (!this->isFrontExecutable(mapObject)) return;
     
     MapObjectCommand* command { this->pop() };
     

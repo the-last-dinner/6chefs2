@@ -102,6 +102,12 @@ void WalkCommand::setIgnoreCollision(const bool ignore)
 #pragma mark -
 #pragma mark Interface
 
+// 実行可能状態か
+bool WalkCommand::isExecutable(MapObject* target) const
+{
+    return !target->isMoving();
+}
+
 // 実行
 void WalkCommand::execute(MapObject* target)
 {

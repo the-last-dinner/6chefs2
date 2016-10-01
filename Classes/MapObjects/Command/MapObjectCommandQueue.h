@@ -34,6 +34,9 @@ public:
     // キューにコマンドを詰める
     void push(MapObjectCommand* command);
 private:
+    // キューの先頭が実行可能か
+    bool isFrontExecutable(MapObject* mapObject) const;
+    
     // キューの先頭をポップして、そのコマンドを返す
     MapObjectCommand* pop();
     

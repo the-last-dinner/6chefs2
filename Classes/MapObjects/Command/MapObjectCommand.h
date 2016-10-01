@@ -30,6 +30,7 @@ public:
 
 // インターフェース
 public:
+    virtual bool isExecutable(MapObject* target) const = 0;
     virtual void execute(MapObject* target) = 0;
     
 };
