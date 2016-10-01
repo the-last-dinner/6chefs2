@@ -17,7 +17,7 @@ HitBox::~HitBox() { FUNCLOG }
 // 初期化
 bool HitBox::init(MapObject* parent, Node* origin, function<void()> onHitted)
 {
-    if(!DetectionBox::init(parent, origin)) return false;
+    if (!DetectionBox::init(parent, origin)) return false;
     
     _onHitted = onHitted;
     
@@ -27,7 +27,7 @@ bool HitBox::init(MapObject* parent, Node* origin, function<void()> onHitted)
 // 初期化
 bool HitBox::init(MapObject* parent, const Rect& originRect, function<void()> onHitted)
 {
-    if(!DetectionBox::init(parent, originRect)) return false;
+    if (!DetectionBox::init(parent, originRect)) return false;
     
     _onHitted = onHitted;
     
@@ -36,8 +36,7 @@ bool HitBox::init(MapObject* parent, const Rect& originRect, function<void()> on
 
 void HitBox::onHitted()
 {
-    if(_onHitted)
-    {
+    if (_onHitted) {
         _onHitted();
     }
 }

@@ -17,6 +17,10 @@ class AttackBox;
 
 class Enemy : public Character
 {
+// 定数
+private:
+    static const string CS_ATTACK_NODE_NAME;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(Enemy, const EnemyData&)

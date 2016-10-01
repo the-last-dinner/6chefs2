@@ -29,9 +29,9 @@ public:
 // インスタンス変数
 private:
     int _charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
-    CSNode* _csNode { nullptr };
 protected:
     MovePattern* _movePattern { nullptr };                                       // 動きのパターン
+    CSNode* _csNode { nullptr };
     
 // インスタンスメソッド
 public:
@@ -61,7 +61,7 @@ public:
     bool consumeStaminaWalking() const;
     float getStaminaConsumptionRatio() const;
     
-    // Callback
+    // Interface
     virtual void onEnterMap() override;
     virtual void onExitMap() override;
     virtual void onJoinedParty();

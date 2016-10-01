@@ -8,6 +8,8 @@
 
 #include "MapObjects/Enemy.h"
 
+#include "CocosStudio/CSNode.h"
+
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
@@ -16,11 +18,19 @@
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 
+// 定数
+const string Enemy::CS_ATTACK_NODE_NAME { "attack" };
+
 // コンストラクタ
 Enemy::Enemy() { FUNCLOG }
 
 // デストラクタ
-Enemy::~Enemy() { FUNCLOG }
+Enemy::~Enemy()
+{
+    FUNCLOG
+    
+    CC_SAFE_RELEASE_NULL(_attackBox);
+}
 
 // 初期化
 bool Enemy::init(const EnemyData& data)
@@ -34,10 +44,15 @@ bool Enemy::init(const EnemyData& data)
     CC_SAFE_RETAIN(_movePattern);
     
     // 速さの倍率を設定
-    if(_movePattern) _movePattern->setSpeedRatio(data.speed_ratio);
+    if (_movePattern) _movePattern->setSpeedRatio(data.speed_ratio);
     
     // 最初に通る経路オブジェクトIDを設定
-    if(_movePattern) _movePattern->setStartPathId(data.start_path_id);
+    if (_movePattern) _movePattern->setStartPathId(data.start_path_id);
+    
+    // 攻撃判定を生成
+    AttackBox* attackBox { AttackBox::create(this, _csNode->getCSChild(CS_ATTACK_NODE_NAME), nullptr) };
+    CC_SAFE_RETAIN(attackBox);
+    _attackBox = attackBox;
     
     return true;
 }

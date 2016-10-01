@@ -17,7 +17,7 @@ AttackBox::~AttackBox() { FUNCLOG }
 // 初期化
 bool AttackBox::init(MapObject* parent, Node* origin, function<void()> onAttackHitted)
 {
-    if(!DetectionBox::init(parent, origin)) return false;
+    if (!DetectionBox::init(parent, origin)) return false;
     
     _onAttackHitted = onAttackHitted;
     
@@ -27,7 +27,7 @@ bool AttackBox::init(MapObject* parent, Node* origin, function<void()> onAttackH
 // 初期化
 bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void()> onAttackHitted)
 {
-    if(!DetectionBox::init(parent, originRect)) return false;
+    if (!DetectionBox::init(parent, originRect)) return false;
     
     _onAttackHitted = onAttackHitted;
     
@@ -36,8 +36,7 @@ bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void()>
 
 void AttackBox::onAttackHitted()
 {
-    if(_onAttackHitted)
-    {
+    if (_onAttackHitted) {
         _onAttackHitted();
     }
 }
