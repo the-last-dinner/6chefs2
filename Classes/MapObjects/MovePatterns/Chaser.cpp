@@ -53,7 +53,7 @@ void Chaser::start()
 {
     MovePattern::start();
     
-    if(!this->chara->isMoving()) this->move();
+    this->move();
 }
 
 // 一時停止
@@ -70,7 +70,7 @@ void Chaser::resume()
 {
     MovePattern::resume();
     
-    if(!this->chara->isMoving()) this->move();
+    this->move();
 }
 
 // 主人公一行が動いた時
