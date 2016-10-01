@@ -10,6 +10,7 @@
 
 #include "MapObjects/Party.h"
 #include "MapObjects/TerrainObject/PlainArea.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/PathFinder/PathFinder.h"
 
@@ -40,6 +41,7 @@ MapObjectList::~MapObjectList()
     
     CC_SAFE_RELEASE_NULL(_plainArea);
     CC_SAFE_RELEASE_NULL(_collisionDetector);
+    CC_SAFE_RELEASE_NULL(_attackDetector);
     CC_SAFE_RELEASE_NULL(_pathFinder);
 };
 
@@ -59,12 +61,16 @@ bool MapObjectList::init(const Size& mapSize)
     CC_SAFE_RETAIN(collisionDetector);
     _collisionDetector = collisionDetector;
     
+    // 攻撃判定を生成
+    AttackDetector* attackDetector { AttackDetector::create() };
+    CC_SAFE_RETAIN(attackDetector);
+    _attackDetector = attackDetector;
+    
     // 経路探索
     PathFinder* pathFinder { PathFinder::create(this, mapSize) };
     CC_SAFE_RETAIN(pathFinder);
     _pathFinder = pathFinder;
     
-    // 敵と主人公一行の衝突判定開始
     this->scheduleUpdate();
     
     return true;
@@ -392,6 +398,14 @@ CollisionDetector* MapObjectList::getCollisionDetector() const
 }
 
 #pragma mark -
+#pragma mark AttackDetector
+
+AttackDetector* MapObjectList::getAttackDetector() const
+{
+    return _attackDetector;
+}
+
+#pragma mark -
 #pragma mark PathFinder
 
 PathFinder* MapObjectList::getPathFinder() const
@@ -431,7 +445,7 @@ void MapObjectList::onEventFinished()
 }
 
 #pragma mark -
-#pragma mark update
+#pragma mark Update
 
 // 敵と主人公一行の衝突監視用updateメソッド
 void MapObjectList::update(float delta)

@@ -20,6 +20,7 @@ class Party;
 class PathFinder;
 class PlainArea;
 class CollisionDetector;
+class AttackDetector;
 
 class MapObjectList : public Node
 {
@@ -37,6 +38,7 @@ private:
     Vector<TerrainObject*> _terrainObjects {};
     PlainArea* _plainArea { nullptr };
     CollisionDetector* _collisionDetector { nullptr };
+    AttackDetector* _attackDetector { nullptr };
     PathFinder* _pathFinder { nullptr };
 public:
     function<void()> onContactWithEnemy { nullptr };
@@ -87,6 +89,9 @@ public:
     
     // 当たり判定
     CollisionDetector* getCollisionDetector() const;
+    
+    // 攻撃判定
+    AttackDetector* getAttackDetector() const;
     
     // 経路探索
     void setPathFinder(PathFinder* pathFinder);

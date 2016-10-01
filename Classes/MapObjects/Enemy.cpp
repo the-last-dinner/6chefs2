@@ -8,6 +8,7 @@
 
 #include "MapObjects/Enemy.h"
 
+#include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapOBjects/Party.h"
@@ -91,10 +92,14 @@ float Enemy::calcSummonDelay() const
 void Enemy::onEnterMap()
 {
     Character::onEnterMap();
+    
+    _objectList->getAttackDetector()->addAttackBox(_attackBox);
 }
 
 // マップから削除された時
 void Enemy::onExitMap()
 {
     Character::onExitMap();
+    
+    _objectList->getAttackDetector()->removeAttackBox(_attackBox);
 }
