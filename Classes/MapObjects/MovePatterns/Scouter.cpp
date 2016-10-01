@@ -88,13 +88,11 @@ float Scouter::calcSummonDelay() const { return 0.f; };
 // 動かす
 void Scouter::move(const int pathObjId)
 {
-    if(this->isPaused()) return;
+    if (this->isPaused()) return;
     
     // サブパターンが生成されていればそちらに移動を任せる
-    if(this->subPattern)
-    {
+    if (this->subPattern) {
         this->shiftToSubPattern();
-        
         return;
     }
     
@@ -105,7 +103,7 @@ void Scouter::move(const int pathObjId)
     
     function<void()> walkCallback { [this, destObj] { this->move(destObj->getNextId()); } };
     
-    if(destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback] {
+    if (destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback] {
         if (this->subPattern) {
             walkCallback();
             return;
