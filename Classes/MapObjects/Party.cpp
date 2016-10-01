@@ -96,15 +96,24 @@ void Party::moveMember(Character* member, Character* previousMember, float speed
 {
     // 前のメンバーの移動前にいた位置を計算
     Point destPos { previousMember->getGridPosition() };
+    vector<Direction> previousMemberMovingDirections { previousMember->getMovingDirections() };
     
-    for (Direction direction : previousMember->getMovingDirections()) {
-        destPos -= direction.getGridVec2() * 2;
+    for (Direction direction : previousMemberMovingDirections) {
+        int fixNum = 2;
+        if (direction.isVertical()) fixNum = 1;
+        
+        destPos -= direction.getGridVec2() * fixNum;
     }
     
-    Vec2 movement { destPos - member->getGridPosition() };
+    Vec2 gridMovement { destPos - member->getGridPosition() };
+    
+    Vec2 previousMemberMovement { Direction::getVec2(previousMemberMovingDirections) };
+    Vec2 movement { MapUtils::gridVecToVec2(gridMovement) };
+
+    if (MapUtils::radianToDegree(abs(movement.getAngle(previousMemberMovement))) >= 170) return;
     
     WalkCommand* command { WalkCommand::create() };
-    command->setDirections(Direction::convertGridVec2(movement));
+    command->setDirections(Direction::convertGridVec2(gridMovement));
     command->setSpeed(speed);
     
     member->pushCommand(command);
@@ -114,13 +123,15 @@ void Party::moveMember(Character* member, Character* previousMember, float speed
 void Party::move(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
     // 主人公を移動
-    this->moveMainCharacter(directions, speed, callback);
-    
-    // メンバーを移動
-    for(int i { 1 }; i < _members.size(); i++)
-    {
-        this->moveMember(_members.at(i), _members.at(i - 1), speed);
-    }
+    this->moveMainCharacter(directions, speed, [this, speed, callback](bool walked) {
+        // メンバーを移動
+        for(int i { 1 }; i < _members.size(); i++)
+        {
+            this->moveMember(_members.at(i), _members.at(i - 1), speed);
+        }
+        
+        callback(walked);
+    });
 }
 
 // 主人公を取得

@@ -59,3 +59,16 @@ bool MapUtils::isSegmentIntersectWithRect(const Point& p1, const Point& p2, cons
     
     return false;
 }
+
+// 弧度法から度数法に変換
+float MapUtils::radianToDegree(float radian)
+{
+    return (radian * 180.f) / 3.14159265359f;
+}
+
+Vec2 MapUtils::gridVecToVec2(const cocos2d::Vec2& gridVec)
+{
+    Vec2 vec2 { gridVec.x * GRID, -gridVec.y * GRID};
+    
+    return vec2;
+}

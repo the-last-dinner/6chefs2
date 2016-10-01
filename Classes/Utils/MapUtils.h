@@ -20,6 +20,8 @@ namespace MapUtils
     bool intersectsGridRect(const cocos2d::Rect& rect1, const cocos2d::Rect& rect2);
     bool includesGridRect(const Rect& parent, const Rect& child);
     bool isSegmentIntersectWithRect(const Point& p1, const Point& p2, const Rect& rect);
+    float radianToDegree(float radian);
+    Vec2 gridVecToVec2(const Vec2& gridVec);
 }
 
 #endif // __MAP_UTILS_H__

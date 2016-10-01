@@ -16,10 +16,10 @@ const float Sight::DEFAULT_VIEW_ANGLE { 90.f };
 const int Sight::DEFAULT_GRID_LIMIT_DISTANCE { 10 };
 
 // コンストラクタ
-Sight::Sight() { FUNCLOG };
+Sight::Sight() { FUNCLOG }
 
 // デストラクタ
-Sight::~Sight() { FUNCLOG };
+Sight::~Sight() { FUNCLOG }
 
 // 初期化
 bool Sight::init(Character* chara)
@@ -27,12 +27,6 @@ bool Sight::init(Character* chara)
     _chara = chara;
     
     return true;
-}
-
-// 弧度法から度数法に変換
-float Sight::toDegree(const float radian) const
-{
-    return (radian * 180.f) / 3.14159265359f;
 }
 
 // 対象が視界内にいるか
@@ -50,7 +44,7 @@ bool Sight::isIn(const MapObject* target, const MapObjectList* list) const
     if(v2.getLength() > _limitDistance * GRID) return false;
     
     // 二本のベクトルの間にできる角度を取得
-    float degree { fabs(this->toDegree(v1.getAngle(v2))) };
+    float degree { fabs(MapUtils::radianToDegree(v1.getAngle(v2))) };
     
     // 視野角の半分に収まっていなければ視界外
     if(degree > _angle / 2) return false;

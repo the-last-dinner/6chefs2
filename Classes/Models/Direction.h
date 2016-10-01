@@ -55,6 +55,7 @@ protected:
     cocos2d::Vec2 _unitVec2 { cocos2d::Vec2(0, 0) };
     cocos2d::Vec2 _gridVec2 { cocos2d::Vec2(0, 0) };
     int _degree { 0 };
+    bool _vertical { false };
     
 // インスタンスメソッド
 public:
@@ -70,6 +71,8 @@ public:
     cocos2d::Vec2 getGridVec2() const;
     Direction getOppositeDirection() const;
     Direction convertToWorldDirection(const Direction& direction) const;
+    bool isVertical() const;
+    
 protected:
     int getDegree() const;
 };

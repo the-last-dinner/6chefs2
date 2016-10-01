@@ -198,6 +198,11 @@ Direction Direction::getOppositeDirection() const
     return INT_TO_OPPOSITE_DIRECTION.at(this->getInt());
 }
 
+bool Direction::isVertical() const
+{
+    return _vertical;
+}
+
 int Direction::getDegree() const
 {
     return _degree;
@@ -230,6 +235,7 @@ DirectionUp::DirectionUp()
     _unitVec2 = cocos2d::Vec2(0, 1);
     _gridVec2 = cocos2d::Vec2(0, -1);
     _degree = 0;
+    _vertical = true;
 }
 
 #pragma mark -
@@ -244,6 +250,7 @@ DirectionDown::DirectionDown()
     _unitVec2 = cocos2d::Vec2(0, -1);
     _gridVec2 = cocos2d::Vec2(0, 1);
     _degree = 180;
+    _vertical = true;
 }
 
 #pragma mark -

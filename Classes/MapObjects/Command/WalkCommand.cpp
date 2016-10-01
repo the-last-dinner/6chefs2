@@ -28,7 +28,7 @@ Vector<WalkCommand*> WalkCommand::create(const vector<Direction>& directions, in
         commands.pushBack(command);
     }
     
-    commands.back()->setWalkCallback(cb);
+    if (!commands.empty()) commands.back()->setWalkCallback(cb);
     
     return commands;
 }
@@ -47,7 +47,7 @@ Vector<WalkCommand*> WalkCommand::create(const deque<Direction>& directions, fun
         commands.pushBack(command);
     }
     
-    commands.back()->setWalkCallback(cb);
+    if (!commands.empty()) commands.back()->setWalkCallback(cb);
     
     return commands;
 }

@@ -26,7 +26,7 @@ Vector<MoveCommand*> MoveCommand::create(const vector<Direction>& directions, in
         commands.pushBack(command);
     }
     
-    commands.back()->setMoveCallback(cb);
+    if (!commands.empty()) commands.back()->setMoveCallback(cb);
     
     return commands;
 }
@@ -43,7 +43,7 @@ Vector<MoveCommand*> MoveCommand::create(const deque<Direction>& directions, fun
         commands.pushBack(command);
     }
     
-    commands.back()->setMoveCallback(cb);
+    if (!commands.empty()) commands.back()->setMoveCallback(cb);
     
     return commands;
 }
