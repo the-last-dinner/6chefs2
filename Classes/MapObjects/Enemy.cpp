@@ -24,16 +24,13 @@ Enemy::~Enemy() { FUNCLOG }
 // 初期化
 bool Enemy::init(const EnemyData& data)
 {
-    if(!Character::init(data.chara_data)) return false;
+    if (!Character::init(data.chara_data)) return false;
     
-    this->data = data;
+    _data = data;
     
     // 動きのアルゴリズムを生成
-    MovePatternFactory* factory { MovePatternFactory::create() };
-    CC_SAFE_RETAIN(factory);
-    _movePattern = factory->createMovePattern(data.move_pattern, this);
+    _movePattern = MovePatternFactory::create()->createMovePattern(data.move_pattern, this);
     CC_SAFE_RETAIN(_movePattern);
-    CC_SAFE_RELEASE(factory);
     
     // 速さの倍率を設定
     if(_movePattern) _movePattern->setSpeedRatio(data.speed_ratio);
@@ -49,7 +46,7 @@ bool Enemy::isHit(const MapObject* other) const
 {
     Character* mainCharacter { _objectList->getParty()->getMainCharacter() };
     
-    if(other == mainCharacter) return false;
+    if (other == mainCharacter) return false;
     
     return true;
 }
@@ -57,13 +54,13 @@ bool Enemy::isHit(const MapObject* other) const
 // 敵IDを取得
 int Enemy::getEnemyId() const
 {
-    return this->data.enemy_id;
+    return _data.enemy_id;
 }
 
 // データを取得
 EnemyData Enemy::getEnemyData() const
 {
-    EnemyData data {this->data};
+    EnemyData data { _data };
     
     // 位置情報を更新
     data.chara_data.location = this->getCharacterData().location;
@@ -74,7 +71,7 @@ EnemyData Enemy::getEnemyData() const
 // マップ移動可能か
 bool Enemy::canGoToNextMap() const
 {
-    if(!_movePattern) return false;
+    if (!_movePattern) return false;
     
     return _movePattern->canGoToNextMap();
 }
@@ -82,7 +79,22 @@ bool Enemy::canGoToNextMap() const
 // 現在座標から、主人公までかかる時間を計算
 float Enemy::calcSummonDelay() const
 {
-    if(!_movePattern) return 0.0f;
+    if (!_movePattern) return 0.0f;
     
     return _movePattern->calcSummonDelay();
+}
+
+#pragma mark -
+#pragma mark Interface
+
+// マップに配置された時
+void Enemy::onEnterMap()
+{
+    Character::onEnterMap();
+}
+
+// マップから削除された時
+void Enemy::onExitMap()
+{
+    Character::onExitMap();
 }

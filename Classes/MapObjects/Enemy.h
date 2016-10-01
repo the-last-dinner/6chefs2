@@ -13,6 +13,8 @@
 
 #include "Datas/Mapobject/EnemyData.h"
 
+class AttackBox;
+
 class Enemy : public Character
 {
 // クラスメソッド
@@ -21,19 +23,25 @@ public:
 
 // インスタンス変数
 private:
-    EnemyData data {};
+    EnemyData _data {};
+    AttackBox* _attackBox { nullptr };
     
 // インスタンスメソッド
 private:
     Enemy();
     ~Enemy();
     bool init(const EnemyData& data);
-    virtual bool isHit(const MapObject* other) const;
+    virtual bool isHit(const MapObject* other) const override;
 public:
     int getEnemyId() const;
     EnemyData getEnemyData() const;
     bool canGoToNextMap() const;
     float calcSummonDelay() const;
+    
+// インターフェース
+public:
+    virtual void onEnterMap() override;
+    virtual void onExitMap() override;
 };
 
 #endif /* defined(__LastSupper__Enemy__) */

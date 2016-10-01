@@ -65,11 +65,8 @@ bool Character::init(const CharacterData& data)
     
     if (!_movePattern) {
         // 動きのアルゴリズムを生成
-        MovePatternFactory* factory { MovePatternFactory::create() };
-        CC_SAFE_RETAIN(factory);
-        _movePattern = factory->createMovePattern(data.move_pattern, this);
+        _movePattern = MovePatternFactory::create()->createMovePattern(data.move_pattern, this);
         CC_SAFE_RETAIN(_movePattern);
-        CC_SAFE_RELEASE(factory);
     }
 
     // サイズ、衝突判定範囲をセット
