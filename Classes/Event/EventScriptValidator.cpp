@@ -8,8 +8,6 @@
 
 #include "Event/EventScriptValidator.h"
 
-#include "Managers/DungeonSceneManager.h"
-#include "Managers/CsvDataManager.h"
 #include "Helpers/AssertHelper.h"
 #include "Utils/JsonUtils.h"
 #include "Utils/AssertUtils.h"
@@ -43,7 +41,7 @@ rapidjson::Document EventScriptValidator::validateConfig { rapidjson::Document()
 #pragma mark PublicMethods
 
 // 初期化
-bool EventScriptValidator::init()
+bool EventScriptValidator::init(const string& mapName, const string& eventName)
 {
     if (EventScriptValidator::validateConfig == rapidjson::Document()) {
         string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::EVENT_SCRIPT_VALIDATOR);
@@ -53,14 +51,10 @@ bool EventScriptValidator::init()
     
     this->assertHelper = AssertHelper::create();
     if (!this->assertHelper) return false;
-    
     CC_SAFE_RETAIN(this->assertHelper);
     
-    int mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
-    string mapFileName = CsvDataManager::getInstance()->getMapData()->getFileName(mapId);
-    string eventId = to_string(DungeonSceneManager::getInstance()->getRunningEventId());
-    this->assertHelper->pushTextLineKeyValue("MapName", mapFileName)
-                        ->pushTextLineKeyValue("EventID", eventId);
+    this->assertHelper->pushTextLineKeyValue("MapName", mapName)
+                        ->pushTextLineKeyValue("EventID", eventName);
     
     this->typeToValidateFunc = {
         {EventScriptValidator::RECURSIVE_OBJECT, CC_CALLBACK_2(EventScriptValidator::checkObject, this)},

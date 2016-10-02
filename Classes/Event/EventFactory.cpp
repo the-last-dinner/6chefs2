@@ -23,6 +23,9 @@
 #include "Event/EventScriptMember.h"
 #include "Event/EventScriptValidator.h"
 
+#include "Managers/DungeonSceneManager.h"
+
+
 // イベントtypeからイベントクラスへのマップ
 const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToCreateFunc = {
     // 制御系
@@ -130,7 +133,10 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     string typeName {json[member::TYPE].GetString()};
     
     if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
-        EventScriptValidator::create()->validate(json);
+        int mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
+        string mapFileName = CsvDataManager::getInstance()->getMapData()->getFileName(mapId);
+        string eventId = to_string(DungeonSceneManager::getInstance()->getRunningEventId());
+        EventScriptValidator::create(mapFileName, eventId)->validate(json);
     }
     
     if (EventFactory::typeToCreateFunc.count(typeName) == 0) {

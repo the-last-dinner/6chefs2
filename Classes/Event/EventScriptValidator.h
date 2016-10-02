@@ -16,7 +16,7 @@ class AssertHelper;
 class EventScriptValidator : public Ref
 {
 public:
-    CREATE_FUNC(EventScriptValidator);
+    CREATE_FUNC_WITH_TWO_PARAM(EventScriptValidator, const string&, const string&);
 private:
     EventScriptValidator() { FUNCLOG };
     ~EventScriptValidator();
@@ -47,7 +47,7 @@ private:
     
 // instance methods
 public:
-    bool init();
+    bool init(const string& mapName, const string& eventName);
     bool validate(const rapidjson::Value& targetEvent);
 private:
     // CheckObject
