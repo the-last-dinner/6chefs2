@@ -15,6 +15,7 @@
 #include "Utils/AssertUtils.h"
 #include "Utils/StringUtils.h"
 
+const string EventScriptValidator::TYPE {"type"};
 const string EventScriptValidator::REQUIRE {"require"};
 const string EventScriptValidator::MEMBER {"member"};
 const string EventScriptValidator::STRING {"string"};
@@ -82,19 +83,20 @@ EventScriptValidator::~EventScriptValidator()
 bool EventScriptValidator::validate(const rapidjson::Value& targetEvent)
 {
     // タイプ存在チェック
-    if (!targetEvent.HasMember("type")) {
-        this->assertHelper->pushTextLine("\"type\" is missing.")
+    const char* type = EventScriptValidator::TYPE.c_str();
+    if (!targetEvent.HasMember(type)) {
+        this->assertHelper->pushTextLine("\"" + EventScriptValidator::TYPE + "\" is missing.")
                           ->fatalAssert("EventScriptSyntaxError");
         return false;
     }
     
     // タイプ名取得
-    string typeName = targetEvent["type"].GetString();
+    string typeName = targetEvent[type].GetString();
     const char* typeNameChar = typeName.c_str();
     // cout << "ValidateEventName: " << this->typeName << endl;
     
     // タイプがstringかチェック
-    if (!targetEvent["type"].IsString()) {
+    if (!targetEvent[type].IsString()) {
         this->assertHelper->pushTextLine("Type must be string!")
                           ->fatalAssert("EventScriptSyntaxError");
         return false;
@@ -196,15 +198,24 @@ bool EventScriptValidator::checkRequireChild(const rapidjson::Value& targetEvent
 
 bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, const rapidjson::Value& members)
 {
-    for (rapidjson::Value::ConstMemberIterator itr = members.MemberBegin(); itr != members.MemberEnd(); itr++) {
-        // メンバがない場合はチェックOK
+    for (rapidjson::Value::ConstMemberIterator itr = targetEvent.MemberBegin(); itr != targetEvent.MemberEnd(); itr++) {
+        
         string targetMemberName = itr->name.GetString();
         
-        if (!targetEvent.HasMember(targetMemberName.c_str())) continue;
-        // cout << "checkType: " << targetMemberName;
+        // typeの場合はスルー
+        if (targetMemberName == EventScriptValidator::TYPE) continue;
+        // cout << "checkMember: " << targetMemberName;
+        
+        // メンバー存在チェック
+        if (!members.HasMember(targetMemberName.c_str())) {
+            this->assertHelper->pushTextLine("\"" + targetMemberName + "\" is not exists!");
+            return false;
+        }
+        
+        const rapidjson::Value& targetRule = members[targetMemberName.c_str()];
         
         // Validator文法ミス
-        if (!itr->value.IsArray()) {
+        if (!targetRule.IsArray()) {
             this->assertHelper->pushTextLine("\"members\" must be array")
                               ->fatalAssert("EventValidationConfigError");
             return true; // バリデーションエラーは回避
@@ -215,9 +226,9 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         
         // メンバーの型が配列のどれかに当てはまるようにチェック
         bool isOk = false;
-        int targetSize = itr->value.Size();
-        for (int i = 0; i < targetSize; i++) {
-            isOk = this->checkMemberType(targetEvent[targetMemberName.c_str()], itr->value[i]);
+        int ruleSize = targetRule.Size();
+        for (int i = 0; i < ruleSize; i++) {
+            isOk = this->checkMemberType(itr->value, targetRule[i]);
             if (isOk) {
                 this->assertHelper->popTextLines(i);
                 break;

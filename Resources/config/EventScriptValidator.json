@@ -16,18 +16,18 @@
         "member": {
             "condition": [[{
                 "member": {
-                    "item": [["string"], "string"],
-                    "equip":[["string"], "string"],
-                    "event": [[["string", "string"]], ["string", "string"]],
-                    "flg": [[["string", "string", "int"]], ["string", "string", "int"], "int"],
-                    "status": [[["string", "int"]], ["string", "int"]],
-                    "trophy": [["string"], "string"],
-                    "Nitem": [["string"], "string"],
-                    "Nequip":[["string"], "string"],
-                    "Nevent": [[["string", "string"]], ["string", "string"]],
-                    "Nflg": [[["string", "string", "int"]], ["string", "string", "int"], "int"],
-                    "Nstatus": [[["string", "int"]], ["string", "int"]],
-                    "Ntrophy": [["string"], "string"]
+                    "item": [["stoi"], "stoi"],
+                    "equip":[["stoi"], "stoi"],
+                    "event": [[["stoi", "stoi"]], ["stoi", "stoi"]],
+                    "flg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
+                    "status": [[["stoi", "int"]], ["stoi", "int"]],
+                    "trophy": [["stoi"], "stoi"],
+                    "Nitem": [["stoi"], "stoi"],
+                    "Nequip":[["stoi"], "stoi"],
+                    "Nevent": [[["stoi", "stoi"]], ["stoi", "stoi"]],
+                    "Nflg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
+                    "Nstatus": [[["stoi", "int"]], ["stoi", "int"]],
+                    "Ntrophy": [["stoi"], "stoi"]
                 }
             }]],
             "action": [["object"]]
@@ -98,16 +98,16 @@
         "member": {
             "text": [["string"]],
             "name": ["string"],
-            "charaID": ["string"],
-            "imgID": ["string"],
+            "charaID": ["stoi"],
+            "imgID": ["stoi"],
             "option": ["string"],
             "talk": [[{
                 "require": ["text"],
                 "member": {
                     "text": [["string"]],
                     "name": ["string"],
-                    "charaID": ["string"],
-                    "imgID": ["string"],
+                    "charaID": ["stoi"],
+                    "imgID": ["stoi"],
                     "option": ["string"]
                 }
             }]]
@@ -141,17 +141,17 @@
     "changeMap": {
         "require": ["mapID", "x", "y"],
         "member": {
-            "mapID": ["string"],
+            "mapID": ["stoi"],
             "x": ["int"],
             "y": ["int"],
             "direction": ["string"],
-            "eventID": ["string"]
+            "eventID": ["stoi"]
         }
     },
     "createCamera": {
         "require": ["action"],
         "member": {
-            "mapID": ["string"],
+            "mapID": ["stoi"],
             "x": ["int"],
             "y": ["int"],
             "objID": ["string"],
@@ -249,12 +249,13 @@
         ],
         "member": {
             "objID": ["string"],
-            "charaID": ["string"],
+            "charaID": ["stoi"],
             "x": ["int"],
             "y": ["int"],
             "direction": ["string"],
-            "trigger": ["string"],
-            "eventID": ["string"]
+            "trigger": ["stoi"],
+            "eventID": ["stoi"],
+            "movePattern": ["stoi"]
         }
     },
     "removeObject": {
@@ -365,7 +366,7 @@
         "require": ["objID", "charaID"],
         "member": {
             "objID": ["string"],
-            "charaID": ["string"]
+            "charaID": ["stoi"]
         }
     },
     
@@ -380,22 +381,23 @@
             ["enemyID", "charaID", "x", "y"]
         ],
         "member": {
-            "enemyID": ["string"],
-            "charaID": ["string"],
+            "enemyID": ["stoi"],
+            "charaID": ["stoi"],
             "objID": ["string"],
             "direction": ["string"],
             "x": ["int"],
             "y": ["int"],
             "times": ["int"],
             "speed": ["double", "int"],
-            "pathID": ["string"]
+            "pathID": ["string"],
+            "movePattern": ["stoi"]
         }
     },
     "removeEnemy": {
         "require": [["enemyID"], ["objID"]],
         "member": {
-            "enemyID": ["string"],
-            "objID": ["stoi"]
+            "enemyID": ["stoi"],
+            "objID": ["string"]
         }
     },
     
@@ -442,14 +444,14 @@
         "require": ["text", "choices"],
         "member": {
             "text": [["string"]],
-            "charaID": ["string"],
+            "charaID": ["stoi"],
             "name": ["string"],
-            "imgID": ["string"],
+            "imgID": ["stoi"],
             "choices": [[{
                 "require": ["choice"],
                 "member": {
                     "choice": ["string"],
-                    "eventID": ["string"],
+                    "eventID": ["stoi"],
                     "action": [["object"]]
                 }
             }]]
@@ -470,7 +472,7 @@
             "condition": [{
                 "require": ["equip"],
                 "member": {
-                    "equip": [["string"]]
+                    "equip": [["stoi"]]
                 }
             }],
             "true": [["object"]],
@@ -487,44 +489,44 @@
     
     "already": {
         "member": {
-            "event": [[["string", "string"]], ["string", "string"]]
+            "event": [[["stoi", "stoi"]], ["stoi", "stoi"]]
         }
     },
     "getItem": {
         "require": ["itemID"],
         "member": {
-            "itemID": ["string"]
+            "itemID": ["stoi"]
         }
     },
     "removeItem": {
         "require": ["itemID"],
         "member": {
-            "itemID": ["string"]
+            "itemID": ["stoi"]
         }
     },
     "giveItem": {
         "require": ["charaID"],
         "member": {
-            "itemID": ["string"]
+            "itemID": ["stoi"]
         }
     },
     "addProfile": {
         "require": ["toCharaID", "fromCharaID"],
         "member": {
-            "toCharaID": ["string"],
-            "fromCharaID": ["string"]
+            "toCharaID": ["stoi"],
+            "fromCharaID": ["stoi"]
         }
     },
     "changeChapter": {
         "require": ["chapterID"],
         "member": {
-            "chapterID": ["string"]
+            "chapterID": ["stoi"]
         }
     },
     "changeStatus": {
         "require": ["charaID", "favorite"],
         "member": {
-            "charaID": ["string"]
+            "charaID": ["stoi"]
         }
     },
     "changeFlg": {
@@ -538,7 +540,7 @@
     "getTrophy": {
         "require": ["trophyID"],
         "member": {
-            "trophyID": ["string"]
+            "trophyID": ["stoi"]
         }
     }
 }

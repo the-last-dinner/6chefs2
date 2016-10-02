@@ -27,6 +27,7 @@ private:
     AssertHelper* assertHelper;
 
 private:
+    static const string TYPE;
     static const string REQUIRE;
     static const string MEMBER;
     static const string STRING;
