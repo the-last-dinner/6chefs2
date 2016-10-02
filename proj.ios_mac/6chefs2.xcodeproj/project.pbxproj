@@ -369,6 +369,8 @@
 		DC668C301D9671CE00ED569C /* MoveCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC668C2D1D9671CE00ED569C /* MoveCommand.cpp */; };
 		DC7F6E1B1D96736A007AE8B5 /* WalkCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */; };
 		DC7F6E1C1D96736A007AE8B5 /* WalkCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */; };
+		DC7F6E201DA0B20D007AE8B5 /* HitPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E1E1DA0B20D007AE8B5 /* HitPoint.cpp */; };
+		DC7F6E211DA0B20D007AE8B5 /* HitPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7F6E1E1DA0B20D007AE8B5 /* HitPoint.cpp */; };
 		DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */; };
 		DC8C4D311D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
@@ -748,6 +750,8 @@
 		DC668C2E1D9671CE00ED569C /* MoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveCommand.h; path = Command/MoveCommand.h; sourceTree = "<group>"; };
 		DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WalkCommand.cpp; path = Command/WalkCommand.cpp; sourceTree = "<group>"; };
 		DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkCommand.h; path = Command/WalkCommand.h; sourceTree = "<group>"; };
+		DC7F6E1E1DA0B20D007AE8B5 /* HitPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HitPoint.cpp; path = Status/HitPoint.cpp; sourceTree = "<group>"; };
+		DC7F6E1F1DA0B20D007AE8B5 /* HitPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitPoint.h; path = Status/HitPoint.h; sourceTree = "<group>"; };
 		DC8C4D2B1D8FBE1300FF0A1E /* HitBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HitBox.cpp; path = DetectionBox/HitBox.cpp; sourceTree = "<group>"; };
 		DC8C4D2C1D8FBE1300FF0A1E /* HitBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = DetectionBox/HitBox.h; sourceTree = "<group>"; };
 		DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackBox.cpp; path = DetectionBox/AttackBox.cpp; sourceTree = "<group>"; };
@@ -1284,6 +1288,7 @@
 		DC0390D51C871E1000C50E8E /* MapObjects */ = {
 			isa = PBXGroup;
 			children = (
+				DC7F6E1D1DA0B150007AE8B5 /* Status */,
 				DC0390D61C871E1000C50E8E /* Character.cpp */,
 				DC0390D71C871E1000C50E8E /* Character.h */,
 				DC668C241D966B0500ED569C /* Command */,
@@ -1525,6 +1530,15 @@
 			name = Command;
 			sourceTree = "<group>";
 		};
+		DC7F6E1D1DA0B150007AE8B5 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				DC7F6E1E1DA0B20D007AE8B5 /* HitPoint.cpp */,
+				DC7F6E1F1DA0B20D007AE8B5 /* HitPoint.h */,
+			);
+			name = Status;
+			sourceTree = "<group>";
+		};
 		DCD9E53E1D684BDD002CA51D /* CocosStudio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1668,6 +1682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7F6E201DA0B20D007AE8B5 /* HitPoint.cpp in Sources */,
 				DC0391BF1C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
 				DC0391EF1C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
@@ -1972,6 +1987,7 @@
 				DC01829E1D7A9D8900E556D1 /* Normal.cpp in Sources */,
 				DC03921A1C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391A41C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
+				DC7F6E211DA0B20D007AE8B5 /* HitPoint.cpp in Sources */,
 				26460B9D1D72EDA200F0336C /* MapData.cpp in Sources */,
 				DC03924E1C871E1000C50E8E /* JsonUtils.cpp in Sources */,
 				DC0391A81C871E1000C50E8E /* SceneEvent.cpp in Sources */,

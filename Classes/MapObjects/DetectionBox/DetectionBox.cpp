@@ -19,8 +19,8 @@ DetectionBox::~DetectionBox() {}
 // 初期化
 bool DetectionBox::init(MapObject* parent, Node* origin)
 {
-    if(!Node::init()) return false;
-    if(!parent) return false;
+    if (!Node::init()) return false;
+    if (!parent) return false;
     
     _parent = parent;
     _origin = origin;
@@ -33,8 +33,8 @@ bool DetectionBox::init(MapObject* parent, Node* origin)
 // 初期化
 bool DetectionBox::init(MapObject* parent, const Rect& rect)
 {
-    if(!Node::init()) return false;
-    if(!parent) return false;
+    if (!Node::init()) return false;
+    if (!parent) return false;
     
     _parent = parent;
     
@@ -45,6 +45,8 @@ bool DetectionBox::init(MapObject* parent, const Rect& rect)
 
 void DetectionBox::setOriginInfo(Node* origin)
 {
+    if (!origin) return;
+    
     this->setOriginInfo(origin->getBoundingBox());
 }
 
@@ -56,13 +58,13 @@ void DetectionBox::setOriginInfo(const Rect& originRect)
 
 void DetectionBox::startDetection()
 {
-    if(this->isScheduled(CC_SCHEDULE_SELECTOR(DetectionBox::update))) return;
+    if (this->isScheduled(CC_SCHEDULE_SELECTOR(DetectionBox::update))) return;
     this->scheduleUpdate();
 }
 
 void DetectionBox::update(float delta)
 {
-    if(!_origin) return;
+    if (!_origin) return;
     
     this->setOriginInfo(_origin);
 }
@@ -72,7 +74,7 @@ void DetectionBox::update(float delta)
 
 Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
 {
-    if(!_parent) return Rect::ZERO;
+    if (!_parent) return Rect::ZERO;
     
     Vec2 gridVec { Direction::getGridVec2(directions) };
     Point parentGridPosition { _parent->getGridPosition() };
@@ -88,8 +90,8 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
 
 bool DetectionBox::intersectsGrid(DetectionBox* other, const vector<Direction>& directions) const
 {
-    if(other == this) return false;
-    if(!_parent->isHit(other->_parent)) return false;
+    if (other == this) return false;
+    if (!_parent->isHit(other->_parent)) return false;
     
     return this->intersectsGrid(other->getGridRect(), directions);
 }
@@ -130,15 +132,17 @@ Rect DetectionBox::getRect(const vector<Direction>& directions) const
 
 bool DetectionBox::isBetween(const MapObject* obj1, const MapObject* obj2) const
 {
-    if(!obj1) return false;
-    if(!obj2) return false;
-    if(obj1 == _parent) return false;
-    if(obj2 == _parent) return false;
+    if (!obj1) return false;
+    if (!obj2) return false;
+    if (obj1 == _parent) return false;
+    if (obj2 == _parent) return false;
     
     return MapUtils::isSegmentIntersectWithRect(obj1->getPosition(), obj2->getPosition(), this->getRect());
 }
 
 bool DetectionBox::intersects(const DetectionBox* other) const
 {
+    if(_parent == other->_parent) return false;
+    
     return this->getRect().intersectsRect(other->getRect());
 }

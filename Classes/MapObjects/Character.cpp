@@ -14,8 +14,10 @@
 
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/DetectionBox/HitBox.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
+#include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
 
 #include "Managers/DungeonSceneManager.h"
@@ -23,6 +25,7 @@
 // 定数
 const string Character::CS_SPRITE_NODE_NAME { "sprite" };
 const string Character::CS_COLLISION_NODE_NAME { "collision" };
+const string Character::CS_HIT_NODE_NAME { "hit" };
 
 // コンストラクタ
 Character::Character() { FUNCLOG }
@@ -32,7 +35,9 @@ Character::~Character()
 {
     FUNCLOG
     
-    CC_SAFE_RELEASE(_movePattern);
+    CC_SAFE_RELEASE_NULL(_movePattern);
+    CC_SAFE_RELEASE_NULL(_hitBox);
+    CC_SAFE_RELEASE_NULL(_hp);
 }
 
 // 初期化
@@ -72,6 +77,16 @@ bool Character::init(const CharacterData& data)
     // サイズ、衝突判定範囲をセット
     this->setContentSize(spriteNode->getContentSize());
     this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
+    
+    // くらい判定生成
+    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_0(Character::onAttackHitted, this)) };
+    CC_SAFE_RETAIN(hitBox);
+    _hitBox = hitBox;
+    
+    // HPを生成
+    HitPoint* hp { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
+    CC_SAFE_RETAIN(hp);
+    _hp = hp;
 	
     return true;
 }
@@ -200,6 +215,31 @@ float Character::getStaminaConsumptionRatio() const
     if (!_terrainState) return 1.f;
     
     return _terrainState->getStaminaConsumptionRatio();
+}
+
+#pragma mark -
+#pragma mark HitBox
+
+void Character::onAttackHitted()
+{
+    if (!_hp) return;
+    
+    _hp->reduce(1);
+}
+
+#pragma mark -
+#pragma mark HP
+
+void Character::setLostHPCallback(function<void(Character*)> callback)
+{
+    _onLostHP = callback;
+}
+
+void Character::onLostHP()
+{
+    if (_onLostHP) {
+        _onLostHP(this);
+    }
 }
 
 #pragma mark -

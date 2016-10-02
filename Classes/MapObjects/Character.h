@@ -14,6 +14,8 @@
 struct CharacterData;
 class MovePattern;
 class CSNode;
+class HitPoint;
+class HitBox;
 
 class Character : public MapObject
 {
@@ -21,6 +23,7 @@ class Character : public MapObject
 private:
     static const string CS_SPRITE_NODE_NAME;
     static const string CS_COLLISION_NODE_NAME;
+    static const string CS_HIT_NODE_NAME;
     
 // クラスメソッド
 public:
@@ -32,6 +35,9 @@ private:
 protected:
     MovePattern* _movePattern { nullptr };                                       // 動きのパターン
     CSNode* _csNode { nullptr };
+    HitBox* _hitBox { nullptr };
+    HitPoint* _hp { nullptr };
+    function<void(Character*)> _onLostHP { nullptr };
     
 // インスタンスメソッド
 public:
@@ -60,6 +66,13 @@ public:
     bool isRunnable() const;
     bool consumeStaminaWalking() const;
     float getStaminaConsumptionRatio() const;
+    
+    // HitBox
+    void onAttackHitted();
+    
+    // HP
+    void setLostHPCallback(function<void(Character*)> callback);
+    void onLostHP();
     
     // Interface
     virtual void onEnterMap() override;
