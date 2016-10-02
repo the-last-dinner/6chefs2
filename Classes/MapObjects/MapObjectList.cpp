@@ -21,7 +21,7 @@ MapObjectList::MapObjectList() { FUNCLOG };
 MapObjectList::~MapObjectList()
 {
     FUNCLOG
-    
+
     for(pair<int, MapObject*> objWithId : _availableObjects)
     {
         CC_SAFE_RELEASE(objWithId.second);
@@ -339,6 +339,7 @@ void MapObjectList::setParty(Party* party)
     
     // 主人公のHPがなくなった時のコールバックを設定
     party->getMainCharacter()->setLostHPCallback([this](Character* chara) {
+        this->unscheduleUpdate();
         if (!_onLostMainCharacterHP) return;
         _onLostMainCharacterHP();
     });

@@ -26,6 +26,8 @@ bool HitPoint::init(int max, function<void()> onLost)
 
 void HitPoint::reduce(int damage)
 {
+    if (_current == 0) return;
+    
     _current -= damage;
     
     if (_current > 0) return;
