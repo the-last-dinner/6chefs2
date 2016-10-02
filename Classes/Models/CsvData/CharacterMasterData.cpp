@@ -11,7 +11,7 @@
 // 初期化
 bool CharacterMasterData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/character.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::CHARACTER);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;

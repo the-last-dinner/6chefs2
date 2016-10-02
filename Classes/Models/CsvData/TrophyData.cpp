@@ -11,7 +11,7 @@
 // 初期化
 bool TrophyData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/trophy.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::TROPHY);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;

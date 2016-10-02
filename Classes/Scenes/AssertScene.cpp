@@ -58,7 +58,7 @@ bool AssertScene::init(const string& message, const AssertType& assertType)
     
     // タイトルを追加
     Label* titleLabel {Label::createWithTTF(title, "fonts/mgenplus-1c-light.ttf", 36.f)};
-    titleLabel->setPosition(WINDOW_WIDTH / 2, winSize.height - titleLabel->getContentSize().height * 4);
+    titleLabel->setPosition(WINDOW_WIDTH / 2, winSize.height - titleLabel->getContentSize().height * 2);
     layer->addChild(titleLabel);
     
     // メッセージを追加
@@ -69,16 +69,17 @@ bool AssertScene::init(const string& message, const AssertType& assertType)
     messageLabel->setPosition(messageLabel->getContentSize().width / 2 + WINDOW_WIDTH / 5, layer->getContentSize().height / 2);
     layer->addChild(messageLabel);
     
-    if(hideable)
-    {
+    if (hideable) {
         // 戻る用のメッセージ表示
         Label* hideLabel {Label::createWithTTF("X:戻る", "fonts/mgenplus-1c-light.ttf", 24.f, winSize)};
         hideLabel->setColor(Color3B::WHITE);
         hideLabel->setPosition(Point(winSize.width / 2, winSize.height / 2));
         layer->addChild(hideLabel);
         // 中央下に寄せる
+        
         hideLabel->setHorizontalAlignment(TextHAlignment::CENTER);
         hideLabel->setVerticalAlignment(TextVAlignment::BOTTOM);
+        
         // キーボードのリスナーを貼る
         EventListenerKeyboardLayer* listenerKeyboard { EventListenerKeyboardLayer::create() };
         this->addChild(listenerKeyboard);

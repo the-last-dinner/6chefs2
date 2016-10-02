@@ -57,18 +57,15 @@ string LastSupper::StringUtils::getRandomString(const int length)
     // 現在の時間を取得
     StopWatch* watch {StopWatch::create(0)};
     int runum = floor(watch->getSecMs());
-    string ranst = to_string(runum) + "/";
+    string randomString = to_string(runum) + "/";
     
     // ランダムに文字列を追加
-    string alphs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    int alphs_length = alphs.length();
-    int ranum;
-    for (int i = ranst.length(); i < length; i++)
-    {
-        ranum = rand() % alphs_length;
-        ranst += alphs[ranum];
+    static string alphs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    int alphLength {static_cast<int>(alphs.length())};
+    for (int i = static_cast<int>(randomString.length()); i < length; i++) {
+        randomString += alphs[rand() % alphLength];
     }
-    return ranst;
+    return randomString;
 }
 
 // 時間(秒)を表示用にに
@@ -91,8 +88,26 @@ void LastSupper::StringUtils::encryptXor(string& str)
     }
 }
 
+// intからchar*に変換
 char* LastSupper::StringUtils::setCharsFromInt(char *charas, const int num)
 {
     sprintf(charas, "%d", num);
     return charas;
+}
+
+// 文字列が数字かどうか判定
+bool LastSupper::StringUtils::isNumericString(const string &target)
+{
+    for (int i = 0; i < strlen(target.c_str()); i++) {
+        if (!isdigit(target[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// char*が一致するかチェック
+bool LastSupper::StringUtils::areMatchChars(const char *str1, const char *str2)
+{
+    return strcmp(str1, str2) == 0;
 }

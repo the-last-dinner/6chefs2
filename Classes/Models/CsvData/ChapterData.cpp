@@ -11,7 +11,7 @@
 // 初期化
 bool ChapterData::init()
 {
-    string path = FileUtils::getInstance()->fullPathForFilename("csv/chapter.csv");
+    string path = FileUtils::getInstance()->fullPathForFilename(Resource::CsvFiles::CHAPTER);
     if (path == "") return false;
     this->data = CsvUtils::readCsvFile(path);
     return true;
