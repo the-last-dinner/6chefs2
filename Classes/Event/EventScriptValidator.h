@@ -30,6 +30,8 @@ private:
     static const string TYPE;
     static const string REQUIRE;
     static const string MEMBER;
+    static const string MEMBERS;
+    static const string ENUMS;
     static const string STRING;
     static const string RECURSIVE_OBJECT;
     static const string OBJECT;
@@ -39,6 +41,7 @@ private:
     static const string INT;
     static const string DOUBLE;
     static const string STOI;
+    static const string ENUM;
     static rapidjson::Document validateConfig;
     static const map<rapidjson::Type, string> typeToValidateString;
     
@@ -72,6 +75,7 @@ private:
     bool isDouble(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
     bool isString(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
     bool isStoi(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
+    bool isEnum(const rapidjson::Value& target, const rapidjson::Value& enumName);
     
     // Utils
     string getValidateFuncKey(const rapidjson::Value& checkType);

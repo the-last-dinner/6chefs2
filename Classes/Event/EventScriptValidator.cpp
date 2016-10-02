@@ -18,6 +18,8 @@
 const string EventScriptValidator::TYPE {"type"};
 const string EventScriptValidator::REQUIRE {"require"};
 const string EventScriptValidator::MEMBER {"member"};
+const string EventScriptValidator::MEMBERS {"members"};
+const string EventScriptValidator::ENUMS {"enums"};
 const string EventScriptValidator::STRING {"string"};
 const string EventScriptValidator::RECURSIVE_OBJECT {"recursive_object"};
 const string EventScriptValidator::OBJECT {"object"};
@@ -27,6 +29,7 @@ const string EventScriptValidator::NORMAL {"normal"};
 const string EventScriptValidator::INT {"int"};
 const string EventScriptValidator::DOUBLE {"double"};
 const string EventScriptValidator::STOI {"stoi"};
+const string EventScriptValidator::ENUM {"enum"};
 
 const map<rapidjson::Type, string> EventScriptValidator::typeToValidateString = {
     {rapidjson::kObjectType, EventScriptValidator::RECURSIVE_OBJECT},
@@ -68,6 +71,7 @@ bool EventScriptValidator::init()
         {EventScriptValidator::DOUBLE, CC_CALLBACK_2(EventScriptValidator::isDouble, this)},
         {EventScriptValidator::STRING, CC_CALLBACK_2(EventScriptValidator::isString, this)},
         {EventScriptValidator::STOI, CC_CALLBACK_2(EventScriptValidator::isStoi, this)},
+        {EventScriptValidator::ENUM, CC_CALLBACK_2(EventScriptValidator::isEnum, this)},
     };
     
     return true;
@@ -105,14 +109,14 @@ bool EventScriptValidator::validate(const rapidjson::Value& targetEvent)
     this->assertHelper->pushTextLineKeyValue("TypeName", typeName);
     
     // イベントの存在チェック
-    if (!this->validateConfig.HasMember(typeNameChar)) {
+    if (!this->validateConfig["events"].HasMember(typeNameChar)) {
         this->assertHelper->pushTextLine("Validation config of this type is missing.")
                           ->warningAssert("EventValidationConfigError");
         return false;
     }
 
     // チェック
-    const rapidjson::Value& rule = this->validateConfig[typeNameChar];
+    const rapidjson::Value& rule = this->validateConfig["events"][typeNameChar];
     return this->checkObject(targetEvent, rule);
 }
 
@@ -236,9 +240,7 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         }
         
         // 当てはまらなかった場合
-        if (!isOk) {
-            return false;
-        }
+        if (!isOk) return false;
         
         // メンバ名をAssertから削除
         this->assertHelper->popTextLine();
@@ -251,6 +253,7 @@ bool EventScriptValidator::checkMemberType(const rapidjson::Value& targetMember,
     string funcKey = this->getValidateFuncKey(checkType);
     
     // cout << " is " << funcKey << endl;
+    
     // バリデート関数が存在するかチェック
     if (this->typeToValidateFunc.count(funcKey) == 0) {
         this->assertHelper->pushTextLine("Validate type \"" + funcKey + "\" is invalid")
@@ -356,6 +359,36 @@ bool EventScriptValidator::isStoi(const rapidjson::Value &target, const rapidjso
     return true;
 }
 
+bool EventScriptValidator::isEnum(const rapidjson::Value &target, const rapidjson::Value &enumName)
+{
+    string enumType = enumName.GetString();
+
+    // コンフィグ文法チェック
+    if (!this->validateConfig[EventScriptValidator::ENUMS.c_str()][enumType.c_str()].IsArray()) {
+        this->assertHelper->pushTextLine("Enums definition is not array.")
+                          ->fatalAssert("EventValidationConfigError");
+        return true; // バリデーションはスルー
+    }
+    const rapidjson::Value& enumArray = this->validateConfig[EventScriptValidator::ENUMS.c_str()][enumType.c_str()];
+    
+    // 対象が文字列かどうか
+    if (!target.IsString()) {
+        this->assertHelper->pushTextLine("Enum member must be string!");
+        return false;
+    }
+    string targetString = target.GetString();
+    
+    // enumの中に定義されている文字列かどうか
+    int enumSize = enumArray.Size();
+    for (int i = 0; i < enumSize; i++) {
+        string targetEnum = enumArray[i].GetString();
+        if (targetString == targetEnum) return true;
+    }
+    
+    this->assertHelper->pushTextLine("\"" + targetString + "\" is not exists in enum." + enumType + ".");
+    return false;
+}
+
 #pragma mark -
 #pragma mark Utils
 
@@ -371,6 +404,10 @@ string EventScriptValidator::getValidateFuncKey(const rapidjson::Value &checkTyp
     string funcKey = EventScriptValidator::typeToValidateString.at(validateType);
     if (funcKey == EventScriptValidator::NORMAL) {
         funcKey = checkType.GetString();
+        if (this->validateConfig[EventScriptValidator::ENUMS.c_str()].HasMember(funcKey.c_str())) {
+            funcKey = EventScriptValidator::ENUM;
+        }
+        
     }
     
     return funcKey;

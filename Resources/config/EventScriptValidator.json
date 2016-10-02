@@ -1,546 +1,553 @@
 {
-    "sequence": {
-        "require": ["action"],
-        "member": {
-            "action":[["object"]]
-        }
+    "enums": {
+        "messageOption": ["reaction"],
+        "walkOption": ["back"],
+        "direction": ["RIGHT", "LEFT", "UP", "DOWN"]
     },
-    "spawn": {
-        "require": ["action"],
-        "member": {
-            "action":[["object"]]
-        }
-    },
-    "if": {
-        "require": ["condition", "action"],
-        "member": {
-            "condition": [[{
-                "member": {
-                    "item": [["stoi"], "stoi"],
-                    "equip":[["stoi"], "stoi"],
-                    "event": [[["stoi", "stoi"]], ["stoi", "stoi"]],
-                    "flg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
-                    "status": [[["stoi", "int"]], ["stoi", "int"]],
-                    "trophy": [["stoi"], "stoi"],
-                    "Nitem": [["stoi"], "stoi"],
-                    "Nequip":[["stoi"], "stoi"],
-                    "Nevent": [[["stoi", "stoi"]], ["stoi", "stoi"]],
-                    "Nflg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
-                    "Nstatus": [[["stoi", "int"]], ["stoi", "int"]],
-                    "Ntrophy": [["stoi"], "stoi"]
-                }
-            }]],
-            "action": [["object"]]
-        }
-    },
-    "callEvent": {
-        "require": ["eventID"],
-        "member": {
-            "className": ["string"],
-            "eventID": ["string"]
-        }
-    },
-    "repeat": {
-        "require": ["times", "action"],
-        "member": {
-            "times": ["int"],
-            "action": [["object"]],
-            "id": ["string"]
-        }
-    },
-    "stopEvent": {
-        "require": ["id"],
-        "member": {
-            "id": ["string"]
-        }
-    },
+    "events": {
+        "sequence": {
+            "require": ["action"],
+            "member": {
+                "action":[["object"]]
+            }
+        },
+        "spawn": {
+            "require": ["action"],
+            "member": {
+                "action":[["object"]]
+            }
+        },
+        "if": {
+            "require": ["condition", "action"],
+            "member": {
+                "condition": [[{
+                    "member": {
+                        "item": [["stoi"], "stoi"],
+                        "equip":[["stoi"], "stoi"],
+                        "event": [[["stoi", "stoi"]], ["stoi", "stoi"]],
+                        "flg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
+                        "status": [[["stoi", "int"]], ["stoi", "int"]],
+                        "trophy": [["stoi"], "stoi"],
+                        "Nitem": [["stoi"], "stoi"],
+                        "Nequip":[["stoi"], "stoi"],
+                        "Nevent": [[["stoi", "stoi"]], ["stoi", "stoi"]],
+                        "Nflg": [[["stoi", "stoi", "int"]], ["stoi", "stoi", "int"], "int"],
+                        "Nstatus": [[["stoi", "int"]], ["stoi", "int"]],
+                        "Ntrophy": [["stoi"], "stoi"]
+                    }
+                }]],
+                "action": [["object"]]
+            }
+        },
+        "callEvent": {
+            "require": ["eventID"],
+            "member": {
+                "className": ["string"],
+                "eventID": ["string"]
+            }
+        },
+        "repeat": {
+            "require": ["times", "action"],
+            "member": {
+                "times": ["int"],
+                "action": [["object"]],
+                "id": ["string"]
+            }
+        },
+        "stopEvent": {
+            "require": ["id"],
+            "member": {
+                "id": ["string"]
+            }
+        },
 
 
 
 
 
-    "playBGM": {
-        "require": ["file"],
-        "member": {
-            "file": ["string"],
-            "volume": ["double", "int"]
-        }
-    },
-    "stopBGM": {
-        "member": {
-            "file": ["string"]
-        }
-    },
-    "changeVolume": {
-        "require": ["file"],
-        "member": {
-            "file": ["string"],
-            "volume": ["double", "int"]
-        }
-    },
-    "playSE": {
-        "require": ["file"],
-        "member": {
-            "file": ["string"],
-            "volume": ["double", "int"]
-        }
-    },
+        "playBGM": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "volume": ["double", "int"]
+            }
+        },
+        "stopBGM": {
+            "member": {
+                "file": ["string"]
+            }
+        },
+        "changeVolume": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "volume": ["double", "int"]
+            }
+        },
+        "playSE": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "volume": ["double", "int"]
+            }
+        },
 
 
 
 
 
-    "charaMsg": {
-        "require": [
-            ["talk"],
-            ["text"]
-        ],
-        "member": {
-            "text": [["string"]],
-            "name": ["string"],
-            "charaID": ["stoi"],
-            "imgID": ["stoi"],
-            "option": ["string"],
-            "talk": [[{
-                "require": ["text"],
-                "member": {
-                    "text": [["string"]],
-                    "name": ["string"],
-                    "charaID": ["stoi"],
-                    "imgID": ["stoi"],
-                    "option": ["string"]
-                }
-            }]]
-        }
-    },
-    "storyMsg": {
-        "require": ["text"],
-        "member": {
-            "title": ["string"],
-            "text": [["string"]]
-        }
-    },
-    "systemMsg": {
-        "require": ["text"],
-        "member": {
-            "text": [["string"]]
-        }
-    },
-    "displayImg": {
-        "require": ["file"],
-        "member": {
-            "file": ["string"],
-            "time": ["double", "int"]
-        }
-    },
+        "charaMsg": {
+            "require": [
+                ["talk"],
+                ["text"]
+            ],
+            "member": {
+                "text": [["string"]],
+                "name": ["string"],
+                "charaID": ["stoi"],
+                "imgID": ["stoi"],
+                "option": ["messageOption"],
+                "talk": [[{
+                    "require": ["text"],
+                    "member": {
+                        "text": [["string"]],
+                        "name": ["string"],
+                        "charaID": ["stoi"],
+                        "imgID": ["stoi"],
+                        "option": ["messageOption"]
+                    }
+                }]]
+            }
+        },
+        "storyMsg": {
+            "require": ["text"],
+            "member": {
+                "title": ["string"],
+                "text": [["string"]]
+            }
+        },
+        "systemMsg": {
+            "require": ["text"],
+            "member": {
+                "text": [["string"]]
+            }
+        },
+        "displayImg": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "time": ["double", "int"]
+            }
+        },
 
-    
-    
-    
-    
-    "changeMap": {
-        "require": ["mapID", "x", "y"],
-        "member": {
-            "mapID": ["stoi"],
-            "x": ["int"],
-            "y": ["int"],
-            "direction": ["string"],
-            "eventID": ["stoi"]
-        }
-    },
-    "createCamera": {
-        "require": ["action"],
-        "member": {
-            "mapID": ["stoi"],
-            "x": ["int"],
-            "y": ["int"],
-            "objID": ["string"],
-            "action": [["object"]]
-        }
-    },
-    "camera": {
-        "member": {
-            "x": ["int"],
-            "y": ["int"],
-            "time": ["double", "int"]
-        }
-    },
-    "wait": {
-        "require": ["time"],
-        "member": {
-            "time": ["double", "int"]
-        }
-    },
-    "fadeout": {
-        "member": {
-            "color": [["int", "int", "int"]],
-            "time": ["double", "int"]
-        }
-    },
-    "fadein": {
-        "member": {
-            "time": ["double", "int"]
-        }
-    },
-    "gameover": {
-        "member": {
-            "id": ["string"]
-        }
-    },
-    "ending": {
-        "member": {
-            "id": ["string"]
-        }
-    },
-    "backToTitle": {
         
-    },
-    "infoAssert": {
-        "member": {
-            "text": ["string"]
-        }
-    },
-    
-    
-    
-    
-    
-    "removeLayer": {
-        "require": ["layer"],
-        "member": {
-            "layer": ["string"]
-        }
-    },
-    "createLayer": {
-        "require": ["layer"],
-        "member": {
-            "layer": ["string"]
-        }
-    },
-    "swingLayer": {
-        "require": ["layer"],
-        "member": {
-            "layer": ["string"]
-        }
-    },
-    "stopSwing": {
-        "require": ["layer"],
-        "member": {
-            "layer": ["string"]
-        }
-    },
-    "quakeMap": {
-        "member": {
-            "time": ["double", "int"],
-            "x": ["int"],
-            "y": ["int"]
-        }
-    },
-    
-    
-    
-    
-    
-    
-    "createObject": {
-        "require": [
-            ["objID"],
-            ["objID", "charaID", "x", "y"]
-        ],
-        "member": {
-            "objID": ["string"],
-            "charaID": ["stoi"],
-            "x": ["int"],
-            "y": ["int"],
-            "direction": ["string"],
-            "trigger": ["stoi"],
-            "eventID": ["stoi"],
-            "movePattern": ["stoi"]
-        }
-    },
-    "removeObject": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"]
-        }
-    },
-    "reaction": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"]
-        }
-    },
-    "chase": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"]
-        }
-    },
-    "releaseChase": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"]
-        }
-    },
-    "charaWarp": {
-        "require": ["objID", "x", "y", "direction"],
-        "member": {
-            "objID": ["string"],
-            "x": ["int"],
-            "y": ["int"],
-            "direction": ["string"]
-        }
-    },
-    "charaMoveTo": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"],
-            "x": ["int"],
-            "y": ["int"],
-            "speed": ["double", "int"]
-        }
-    },
-    "charaMove": {
-        "require": ["objID", "direction"],
-        "member": {
-            "objID": ["string"],
-            "direction": ["string"],
-            "steps": ["double", "int"],
-            "speed": ["double", "int"]
-        }
-    },
-    "setLight": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"],
-            "range": ["int"],
-            "color": [["int", "int", "int"]]
-        }
-    },
-    "removeLight": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"]
-        }
-    },
-    "setMovable": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"],
-            "movable": ["bool"]
-        }
-    },
-    
-    
-    
-    
-    
-    
-    "changeDirection": {
-        "require": ["objID"],
-        "member": {
-            "objID": ["string"],
-            "direction": ["string"]
-        }
-    },
-    "charaWalkTo": {
-        "require": ["objID", "x", "y"],
-        "member": {
-            "objID": ["string"],
-            "x": ["int"],
-            "y": ["int"],
-            "speed": ["double", "int"]
-        }
-    },
-    "charaWalk": {
-        "require": ["objID", "steps"],
-        "member": {
-            "objID": ["string"],
-            "direction": ["string"],
-            "steps": ["double", "int"],
-            "speed": ["double", "int"],
-            "option": ["string"]
-        }
-    },
-    "changeHero": {
-        "require": ["objID", "charaID"],
-        "member": {
-            "objID": ["string"],
-            "charaID": ["stoi"]
-        }
-    },
-    
-    
-    
-    
-    
-    
-    "createEnemy": {
-        "require": [
-            ["objID", "charaID", "x", "y"],
-            ["enemyID", "charaID", "x", "y"]
-        ],
-        "member": {
-            "enemyID": ["stoi"],
-            "charaID": ["stoi"],
-            "objID": ["string"],
-            "direction": ["string"],
-            "x": ["int"],
-            "y": ["int"],
-            "times": ["int"],
-            "speed": ["double", "int"],
-            "pathID": ["string"],
-            "movePattern": ["stoi"]
-        }
-    },
-    "removeEnemy": {
-        "require": [["enemyID"], ["objID"]],
-        "member": {
-            "enemyID": ["stoi"],
-            "objID": ["string"]
-        }
-    },
-    
-    
-    
-    
-    
-    "setAmbient": {
-        "require": ["ambient"],
-        "member": {
-            "ambient": ["string"]
-        }
-    },
-    "animation": {
-        "require": ["imgs"],
-        "member": {
-            "imgs": [["string"]],
-            "time": ["double", "int"]
-        }
-    },
-    "createFog": {
-    },
-    "createRain": {
-    },
-    "createUnderwater": {
-    },
-    
-    
-    
-    
-    
-    
-    "barrage": {
-        "require": ["times", "limit"],
-        "member": {
-            "times": ["int"],
-            "limit": ["double", "int"],
-            "true": [["object"]],
-            "false": [["object"]],
-            "event": [["object"]]
-        }
-    },
-    "questionMsg": {
-        "require": ["text", "choices"],
-        "member": {
-            "text": [["string"]],
-            "charaID": ["stoi"],
-            "name": ["string"],
-            "imgID": ["stoi"],
-            "choices": [[{
-                "require": ["choice"],
-                "member": {
-                    "choice": ["string"],
-                    "eventID": ["stoi"],
-                    "action": [["object"]]
-                }
-            }]]
-        }
-    },
-    "password": {
-        "require": ["password"],
-        "member": {
-            "password": ["string"],
-            "true": [["object"]],
-            "false": [["object"]]
-        }
-    },
-    "countDown": {
-        "require": ["second"],
-        "member": {
-            "second": ["double", "int"],
-            "condition": [{
-                "require": ["equip"],
-                "member": {
-                    "equip": [["stoi"]]
-                }
-            }],
-            "true": [["object"]],
-            "false": [["object"]]
-        }
-    },
-    "stopCount": {
-    },
-    
-    
-    
-    
-    
-    
-    "already": {
-        "member": {
-            "event": [[["stoi", "stoi"]], ["stoi", "stoi"]]
-        }
-    },
-    "getItem": {
-        "require": ["itemID"],
-        "member": {
-            "itemID": ["stoi"]
-        }
-    },
-    "removeItem": {
-        "require": ["itemID"],
-        "member": {
-            "itemID": ["stoi"]
-        }
-    },
-    "giveItem": {
-        "require": ["charaID"],
-        "member": {
-            "itemID": ["stoi"]
-        }
-    },
-    "addProfile": {
-        "require": ["toCharaID", "fromCharaID"],
-        "member": {
-            "toCharaID": ["stoi"],
-            "fromCharaID": ["stoi"]
-        }
-    },
-    "changeChapter": {
-        "require": ["chapterID"],
-        "member": {
-            "chapterID": ["stoi"]
-        }
-    },
-    "changeStatus": {
-        "require": ["charaID", "favorite"],
-        "member": {
-            "charaID": ["stoi"]
-        }
-    },
-    "changeFlg": {
-        "require": ["flg"],
-        "member": {
-            "mapID": ["stoi"],
-            "eventID": ["stoi"],
-            "flg": ["int"]
-        }
-    },
-    "getTrophy": {
-        "require": ["trophyID"],
-        "member": {
-            "trophyID": ["stoi"]
+        
+        
+        
+        "changeMap": {
+            "require": ["mapID", "x", "y"],
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"],
+                "eventID": ["stoi"]
+            }
+        },
+        "createCamera": {
+            "require": ["action"],
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "objID": ["string"],
+                "action": [["object"]]
+            }
+        },
+        "camera": {
+            "member": {
+                "x": ["int"],
+                "y": ["int"],
+                "time": ["double", "int"]
+            }
+        },
+        "wait": {
+            "require": ["time"],
+            "member": {
+                "time": ["double", "int"]
+            }
+        },
+        "fadeout": {
+            "member": {
+                "color": [["int", "int", "int"]],
+                "time": ["double", "int"]
+            }
+        },
+        "fadein": {
+            "member": {
+                "time": ["double", "int"]
+            }
+        },
+        "gameover": {
+            "member": {
+                "id": ["string"]
+            }
+        },
+        "ending": {
+            "member": {
+                "id": ["string"]
+            }
+        },
+        "backToTitle": {
+            
+        },
+        "infoAssert": {
+            "member": {
+                "text": ["string"]
+            }
+        },
+        
+        
+        
+        
+        
+        "removeLayer": {
+            "require": ["layer"],
+            "member": {
+                "layer": ["string"]
+            }
+        },
+        "createLayer": {
+            "require": ["layer"],
+            "member": {
+                "layer": ["string"]
+            }
+        },
+        "swingLayer": {
+            "require": ["layer"],
+            "member": {
+                "layer": ["string"]
+            }
+        },
+        "stopSwing": {
+            "require": ["layer"],
+            "member": {
+                "layer": ["string"]
+            }
+        },
+        "quakeMap": {
+            "member": {
+                "time": ["double", "int"],
+                "x": ["int"],
+                "y": ["int"]
+            }
+        },
+        
+        
+        
+        
+        
+        
+        "createObject": {
+            "require": [
+                ["objID"],
+                ["objID", "charaID", "x", "y"]
+            ],
+            "member": {
+                "objID": ["string"],
+                "charaID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"],
+                "trigger": ["stoi"],
+                "eventID": ["stoi"],
+                "movePattern": ["stoi"]
+            }
+        },
+        "removeObject": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"]
+            }
+        },
+        "reaction": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"]
+            }
+        },
+        "chase": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"]
+            }
+        },
+        "releaseChase": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"]
+            }
+        },
+        "charaWarp": {
+            "require": ["objID", "x", "y", "direction"],
+            "member": {
+                "objID": ["string"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"]
+            }
+        },
+        "charaMoveTo": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"],
+                "x": ["int"],
+                "y": ["int"],
+                "speed": ["double", "int"]
+            }
+        },
+        "charaMove": {
+            "require": ["objID", "direction"],
+            "member": {
+                "objID": ["string"],
+                "direction": ["direction"],
+                "steps": ["double", "int"],
+                "speed": ["double", "int"]
+            }
+        },
+        "setLight": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"],
+                "range": ["int"],
+                "color": [["int", "int", "int"]]
+            }
+        },
+        "removeLight": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"]
+            }
+        },
+        "setMovable": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"],
+                "movable": ["bool"]
+            }
+        },
+        
+        
+        
+        
+        
+        
+        "changeDirection": {
+            "require": ["objID"],
+            "member": {
+                "objID": ["string"],
+                "direction": ["direction"]
+            }
+        },
+        "charaWalkTo": {
+            "require": ["objID", "x", "y"],
+            "member": {
+                "objID": ["string"],
+                "x": ["int"],
+                "y": ["int"],
+                "speed": ["double", "int"]
+            }
+        },
+        "charaWalk": {
+            "require": ["objID", "steps"],
+            "member": {
+                "objID": ["string"],
+                "direction": ["direction"],
+                "steps": ["double", "int"],
+                "speed": ["double", "int"],
+                "option": ["walkOption"]
+            }
+        },
+        "changeHero": {
+            "require": ["objID", "charaID"],
+            "member": {
+                "objID": ["string"],
+                "charaID": ["stoi"]
+            }
+        },
+        
+        
+        
+        
+        
+        
+        "createEnemy": {
+            "require": [
+                ["objID", "charaID", "x", "y"],
+                ["enemyID", "charaID", "x", "y"]
+            ],
+            "member": {
+                "enemyID": ["stoi"],
+                "charaID": ["stoi"],
+                "objID": ["string"],
+                "direction": ["direction"],
+                "x": ["int"],
+                "y": ["int"],
+                "times": ["int"],
+                "speed": ["double", "int"],
+                "pathID": ["string"],
+                "movePattern": ["stoi"]
+            }
+        },
+        "removeEnemy": {
+            "require": [["enemyID"], ["objID"]],
+            "member": {
+                "enemyID": ["stoi"],
+                "objID": ["string"]
+            }
+        },
+        
+        
+        
+        
+        
+        "setAmbient": {
+            "require": ["ambient"],
+            "member": {
+                "ambient": ["string"]
+            }
+        },
+        "animation": {
+            "require": ["imgs"],
+            "member": {
+                "imgs": [["string"]],
+                "time": ["double", "int"]
+            }
+        },
+        "createFog": {
+        },
+        "createRain": {
+        },
+        "createUnderwater": {
+        },
+        
+        
+        
+        
+        
+        
+        "barrage": {
+            "require": ["times", "limit"],
+            "member": {
+                "times": ["int"],
+                "limit": ["double", "int"],
+                "true": [["object"]],
+                "false": [["object"]],
+                "event": [["object"]]
+            }
+        },
+        "questionMsg": {
+            "require": ["text", "choices"],
+            "member": {
+                "text": [["string"]],
+                "charaID": ["stoi"],
+                "name": ["string"],
+                "imgID": ["stoi"],
+                "choices": [[{
+                    "require": ["choice"],
+                    "member": {
+                        "choice": ["string"],
+                        "eventID": ["stoi"],
+                        "action": [["object"]]
+                    }
+                }]]
+            }
+        },
+        "password": {
+            "require": ["password"],
+            "member": {
+                "password": ["string"],
+                "true": [["object"]],
+                "false": [["object"]]
+            }
+        },
+        "countDown": {
+            "require": ["second"],
+            "member": {
+                "second": ["double", "int"],
+                "condition": [{
+                    "require": ["equip"],
+                    "member": {
+                        "equip": [["stoi"]]
+                    }
+                }],
+                "true": [["object"]],
+                "false": [["object"]]
+            }
+        },
+        "stopCount": {
+        },
+        
+        
+        
+        
+        
+        
+        "already": {
+            "member": {
+                "event": [[["stoi", "stoi"]], ["stoi", "stoi"]]
+            }
+        },
+        "getItem": {
+            "require": ["itemID"],
+            "member": {
+                "itemID": ["stoi"]
+            }
+        },
+        "removeItem": {
+            "require": ["itemID"],
+            "member": {
+                "itemID": ["stoi"]
+            }
+        },
+        "giveItem": {
+            "require": ["charaID"],
+            "member": {
+                "itemID": ["stoi"]
+            }
+        },
+        "addProfile": {
+            "require": ["toCharaID", "fromCharaID"],
+            "member": {
+                "toCharaID": ["stoi"],
+                "fromCharaID": ["stoi"]
+            }
+        },
+        "changeChapter": {
+            "require": ["chapterID"],
+            "member": {
+                "chapterID": ["stoi"]
+            }
+        },
+        "changeStatus": {
+            "require": ["charaID", "favorite"],
+            "member": {
+                "charaID": ["stoi"]
+            }
+        },
+        "changeFlg": {
+            "require": ["flg"],
+            "member": {
+                "mapID": ["stoi"],
+                "eventID": ["stoi"],
+                "flg": ["int"]
+            }
+        },
+        "getTrophy": {
+            "require": ["trophyID"],
+            "member": {
+                "trophyID": ["stoi"]
+            }
         }
     }
 }
