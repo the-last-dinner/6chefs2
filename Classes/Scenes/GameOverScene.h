@@ -31,7 +31,7 @@ public:
     
 // インスタンス変数
 public:
-    Sprite* bloodCover { nullptr };
+    Sprite* _bloodCover { nullptr };
     
 // インスタンスメソッド
 private:

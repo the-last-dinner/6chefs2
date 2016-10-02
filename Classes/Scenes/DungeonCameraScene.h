@@ -27,8 +27,8 @@ public:
 
 // インスタンス変数
 private:
-    EventFinishCallback callback { nullptr };
-    GameEvent* event { nullptr };
+    EventFinishCallback _callback { nullptr };
+    GameEvent* _event { nullptr };
 
 // インスタンスメソッド
 private:

@@ -48,7 +48,7 @@ DungeonScene::~DungeonScene()
 {
     FUNCLOG
 
-    CC_SAFE_RELEASE_NULL(this->party);
+    CC_SAFE_RELEASE_NULL(_party);
 }
 
 // 初期化
@@ -66,10 +66,10 @@ bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* list
     if(!BaseScene::init(data)) return false;
     
     this->addChild(listener);
-    this->listener = listener;
+    _listener = listener;
     
-    this->configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
-    this->configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
+    _configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
+    _configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
     return true;
 }
@@ -98,44 +98,44 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
 	TiledMapLayer* mapLayer {TiledMapLayer::create(this->getData()->getInitialLocation())};
     mapLayer->setLocalZOrder(Priority::MAP);
 	this->addChild(mapLayer);
-	this->mapLayer = mapLayer;
+	_mapLayer = mapLayer;
     
     // フォーカス光レイヤー生成
     FocusLightLayer* focusLightLayer {FocusLightLayer::create()};
     focusLightLayer->setLocalZOrder(Priority::FOCUS_LIGHT);
     this->addChild(focusLightLayer);
-    this->focusLightLayer = focusLightLayer;
+    _focusLightLayer = focusLightLayer;
     
     // 環境光レイヤー生成
     AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::ROOM)};
     ambientLightLayer->setLocalZOrder(Priority::AMBIENT_LIGHT);
     this->addChild(ambientLightLayer);
-    this->ambientLightLayer = ambientLightLayer;
+    _ambientLightLayer = ambientLightLayer;
     
     // 敵処理クラス生成
     EnemyTask* enemyTask { EnemyTask::create() };
     this->addChild(enemyTask);
-    this->enemyTask = enemyTask;
+    _enemyTask = enemyTask;
     
     // カメラ処理クラス生成
     CameraTask* cameraTask {CameraTask::create()};
     this->addChild(cameraTask);
-    this->cameraTask = cameraTask;
+    _cameraTask = cameraTask;
     
     // イベント処理クラス生成
     EventTask* eventTask { EventTask::create() };
     this->addChild(eventTask);
-    this->eventTask = eventTask;
+    _eventTask = eventTask;
     
     // プレイヤー操作処理クラス生成
     PlayerControlTask* playerControlTask {PlayerControlTask::create()};
     this->addChild(playerControlTask);
-    this->playerControlTask = playerControlTask;
+    _playerControlTask = playerControlTask;
     
     // 主人公一行を生成
     Party* party { Party::create(PlayerDataManager::getInstance()->getLocalData()->getPartyMemberAll()) };
     CC_SAFE_RETAIN(party);
-    this->party = party;
+    _party = party;
     
     // 主人公一行をマップに配置
     mapLayer->setParty(party);
@@ -147,7 +147,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     StaminaBar* staminaBar { StaminaBar::create() };
     staminaBar->setLocalZOrder(Priority::STAMINA_BAR);
     this->addChild(staminaBar);
-    this->staminaBar = staminaBar;
+    _staminaBar = staminaBar;
     
     // スタミナが変化した際のコールバック指定
     DungeonSceneManager::getInstance()->setStaminaCallback(CC_CALLBACK_1(StaminaBar::setPercentage, staminaBar));
@@ -169,9 +169,9 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     mapLayer->getMapObjectList()->onContactWithEnemy = CC_CALLBACK_0(DungeonScene::onContactWithEnemy, this);
     
     // リスナにコールバック設定
-    this->listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
-    this->listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
-    this->listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
+    _listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
+    _listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
+    _listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
     
     // Trigger::INITを実行
     eventTask->runEvent(mapLayer->getMapObjectList()->getEventIds(Trigger::INIT), [this, loadingLayer](){this->onInitEventFinished(loadingLayer);});
@@ -181,21 +181,21 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
 void DungeonScene::onInitEventFinished(LoadingLayer* loadingLayer)
 {
     this->setLight();
-    cameraTask->setTarget( this->party->getMainCharacter() );
+    _cameraTask->setTarget( _party->getMainCharacter() );
     
-    this->enemyTask->start(this->getData()->getInitialLocation().map_id);
+    _enemyTask->start(this->getData()->getInitialLocation().map_id);
     
     // ローディング終了
     loadingLayer->onLoadFinished();
     
     // Trigger::AFTER_INITを実行
-    this->eventTask->runEvent(this->mapLayer->getMapObjectList()->getEventIds(Trigger::AFTER_INIT), CC_CALLBACK_0(DungeonScene::onAfterInitEventFinished, this));
+    _eventTask->runEvent(_mapLayer->getMapObjectList()->getEventIds(Trigger::AFTER_INIT), CC_CALLBACK_0(DungeonScene::onAfterInitEventFinished, this));
 }
 
 // Trigger::AFTER_INITのイベント終了時
 void DungeonScene::onAfterInitEventFinished()
 {
-    this->eventTask->runEvent({this->getData()->getInitialEventId()}, CC_CALLBACK_0(DungeonScene::onPassedEventFinished, this));
+    _eventTask->runEvent({this->getData()->getInitialEventId()}, CC_CALLBACK_0(DungeonScene::onPassedEventFinished, this));
 }
 
 // マップ移動前に渡されたイベント終了時
@@ -204,20 +204,20 @@ void DungeonScene::onPassedEventFinished()
     // マップ名通知
     NotificationManager::getInstance()->notifyMapName(this->getData()->getInitialLocation().map_id);
     
-    this->playerControlTask->setControlEnable(true, this->party);
+    _playerControlTask->setControlEnable(true, _party);
 }
 
 // メニューキー押したとき
 void DungeonScene::onMenuKeyPressed()
 {
     // イベント中なら無視
-    if(this->eventTask->isEventRunning() || this->eventTask->existsEvent()) return;
+    if (_eventTask->isEventRunning() || _eventTask->existsEvent()) return;
     
     // 敵が存在すれば無視
-    if(this->enemyTask->existsEnemy()) return;
+    if (_enemyTask->existsEnemy()) return;
     
     // リスナーを停止
-    this->listener->setEnabled(false);
+    _listener->setEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
@@ -249,7 +249,7 @@ void DungeonScene::onPopMenuScene()
     this->setLight();
     
     // 操作可能に戻す
-    this->listener->setEnabled(true);
+    _listener->setEnabled(true);
 }
 
 // メニューシーンでタイトルへ戻るを選択した時
@@ -272,10 +272,10 @@ void DungeonScene::onContactWithEnemy()
 void DungeonScene::onAllEnemyRemoved()
 {
     // スタミナバーを隠す
-    this->staminaBar->slideOut();
+    _staminaBar->slideOut();
     
     // 主人公疲労のBGMを消す
-    if(SoundManager::getInstance()->isPlaying(Resource::BGM::TIRED)) SoundManager::getInstance()->stopBGM(Resource::BGM::TIRED);
+    if (SoundManager::getInstance()->isPlaying(Resource::BGM::TIRED)) SoundManager::getInstance()->stopBGM(Resource::BGM::TIRED);
 }
 
 // ダンジョンシーンから他のシーンへ移動する時
@@ -288,13 +288,10 @@ void DungeonScene::onExitDungeon()
 // ライトの管理
 void DungeonScene::setLight()
 {
-    if (PlayerDataManager::getInstance()->getLocalData()->isEquipedItem(1514))
-    {
-        this->party->getMainCharacter()->setLight(Light::create(Light::Information(50)), this->ambientLightLayer);
-    }
-    else
-    {
-        this->party->getMainCharacter()->removeLight();
+    if (PlayerDataManager::getInstance()->getLocalData()->isEquipedItem(1514)) {
+        _party->getMainCharacter()->setLight(Light::create(Light::Information(50)), _ambientLightLayer);
+    } else {
+        _party->getMainCharacter()->removeLight();
     }
 }
 
@@ -302,16 +299,16 @@ void DungeonScene::setLight()
 void DungeonScene::onEventStart()
 {
     // プレイヤーの操作を無効に
-    this->playerControlTask->setControlEnable(false, party);
+    _playerControlTask->setControlEnable(false, _party);
     
     // 全てのオブジェクトにイベント開始を通知
-    this->mapLayer->getMapObjectList()->onEventStart();
+    _mapLayer->getMapObjectList()->onEventStart();
     
     // スタミナの増減を一時停止
     DungeonSceneManager::getInstance()->getStamina()->setPaused(true);
     
     // キーコンフィグを無効
-    this->configListener->setKeyconfigEnabled(false);
+    _configListener->setKeyconfigEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
@@ -321,16 +318,16 @@ void DungeonScene::onEventStart()
 void DungeonScene::onEventFinished()
 {
     // プレイヤーの操作を有効に
-    this->playerControlTask->setControlEnable(true, party);
+    _playerControlTask->setControlEnable(true, _party);
     
     // 全てのオブジェクトにイベント終了を通知
-    this->mapLayer->getMapObjectList()->onEventFinished();
+    _mapLayer->getMapObjectList()->onEventFinished();
     
     // スタミナの増減を再開
     DungeonSceneManager::getInstance()->getStamina()->setPaused(false);
     
     // キーコンフィグを有効
-    this->configListener->setKeyconfigEnabled(true);
+    _configListener->setKeyconfigEnabled(true);
     
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
@@ -339,7 +336,6 @@ void DungeonScene::onEventFinished()
 // Assertが表示される時
 void DungeonScene::onEnterAssertScene()
 {
-    FUNCLOG
     // リスナーを停止
     // this->listener->setEnabled(false);
     
@@ -350,13 +346,12 @@ void DungeonScene::onEnterAssertScene()
 // Assertから戻ってくる特
 void DungeonScene::onExitAssertScene()
 {
-    FUNCLOG
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
     
     // 操作可能に戻す
-    this->listener->setEnabled(true);
+    _listener->setEnabled(true);
 }
 
 // データクラスを取得
-DungeonSceneData* DungeonScene::getData() const { return dynamic_cast<DungeonSceneData*>(this->data); }
+DungeonSceneData* DungeonScene::getData() const { return dynamic_cast<DungeonSceneData*>(_data); }

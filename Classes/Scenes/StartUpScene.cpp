@@ -20,7 +20,7 @@ bool StartUpScene::init()
 {
     if (!BaseScene::init(StartUpSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    _configListener->setKeyconfigEnabled(false);
     
     // キーコンフィグの取得
     KeyconfigManager::getInstance()->setCursorKey(PlayerDataManager::getInstance()->getGlobalData()->getCursorKey());

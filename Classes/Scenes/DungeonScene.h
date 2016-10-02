@@ -36,20 +36,20 @@ public:
 	
 // インスタンス変数
 protected:
-    EventListenerKeyboardLayer* listener { nullptr };
-    TiledMapLayer* mapLayer { nullptr };
-    AmbientLightLayer* ambientLightLayer { nullptr };
-    FocusLightLayer* focusLightLayer { nullptr };
+    EventListenerKeyboardLayer* _listener { nullptr };
+    TiledMapLayer* _mapLayer { nullptr };
+    AmbientLightLayer* _ambientLightLayer { nullptr };
+    FocusLightLayer* _focusLightLayer { nullptr };
     
-    CameraTask* cameraTask { nullptr };
-    EnemyTask* enemyTask { nullptr };
-    EventTask* eventTask { nullptr };
-    PlayerControlTask* playerControlTask { nullptr };
+    CameraTask* _cameraTask { nullptr };
+    EnemyTask* _enemyTask { nullptr };
+    EventTask* _eventTask { nullptr };
+    PlayerControlTask* _playerControlTask { nullptr };
     
-    LoadingLayer* loadingLayer { nullptr };
+    LoadingLayer* _loadingLayer { nullptr };
     
-    Party* party { nullptr };
-    StaminaBar* staminaBar { nullptr };
+    Party* _party { nullptr };
+    StaminaBar* _staminaBar { nullptr };
     
 // インスタンスメソッド
 protected:

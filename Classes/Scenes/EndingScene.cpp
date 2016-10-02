@@ -27,7 +27,7 @@ bool EndingScene::init(const int endingId)
 {
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    _configListener->setKeyconfigEnabled(false);
     this->end_id = endingId;
     
     return true;
