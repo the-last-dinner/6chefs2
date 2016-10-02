@@ -13,6 +13,7 @@
 #include "Datas/MapObject/CharacterData.h"
 
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/DetectionBox/HitBox.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
@@ -250,8 +251,9 @@ void Character::onEnterMap()
 {
     this->scheduleUpdate();
     
-    if (_objectList && this->getCollision()) {
+    if (_objectList) {
         _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
+        _objectList->getAttackDetector()->addHitBox(_hitBox);
     }
     
     this->setDirection(this->getDirection());
@@ -263,8 +265,9 @@ void Character::onEnterMap()
 // マップから削除された時
 void Character::onExitMap()
 {
-    if (_objectList && this->getCollision()) {
+    if (_objectList) {
         _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
+        _objectList->getAttackDetector()->removeHitBox(_hitBox);
     }
     
     this->unscheduleUpdate();
@@ -273,7 +276,7 @@ void Character::onExitMap()
 // 主人公一行に参加した時
 void Character::onJoinedParty()
 {
-    if (_objectList && this->getCollision()) {
+    if (_objectList) {
         _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
     }
 }
@@ -281,7 +284,7 @@ void Character::onJoinedParty()
 // 主人公一行から抜けた時
 void Character::onQuittedParty()
 {
-    if (_objectList && this->getCollision()) {
+    if (_objectList) {
         _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
     }
 }

@@ -12,6 +12,7 @@
 #include "Scenes/BaseScene.h"
 
 class DungeonSceneData;
+class DungeonSceneEventHandler;
 
 class AmbientLightLayer;
 class TiledMapLayer;
@@ -36,6 +37,7 @@ public:
 	
 // インスタンス変数
 protected:
+    DungeonSceneEventHandler* _handler { nullptr };
     EventListenerKeyboardLayer* _listener { nullptr };
     TiledMapLayer* _mapLayer { nullptr };
     AmbientLightLayer* _ambientLightLayer { nullptr };
@@ -59,6 +61,8 @@ protected:
 protected:
 	virtual bool init(DungeonSceneData* data);
     virtual bool init(DungeonSceneData* data, EventListenerKeyboardLayer* listener);
+    
+// コールバック
     virtual void onEnter() override;
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onInitEventFinished(LoadingLayer* loadingLayer);
@@ -67,7 +71,6 @@ protected:
     virtual void onMenuKeyPressed();
     void onPopMenuScene();
     void onBackToTitleSelected();
-    void onContactWithEnemy();
     void onAllEnemyRemoved();
     void onExitDungeon();
     void setLight();
@@ -77,6 +80,7 @@ protected:
     DungeonSceneData* getData() const;
     
     friend class DungeonSceneManager;
+    friend class DungeonSceneEventHandler;
     
 public:
     virtual void onEnterAssertScene() override;

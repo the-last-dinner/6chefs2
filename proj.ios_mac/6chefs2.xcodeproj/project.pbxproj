@@ -377,6 +377,8 @@
 		DC8C4D321D8FC13700FF0A1E /* AttackBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D2F1D8FC13700FF0A1E /* AttackBox.cpp */; };
 		DC8C4D351D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */; };
 		DC8C4D361D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */; };
+		DCA4495D1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */; };
+		DCA4495E1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -758,6 +760,8 @@
 		DC8C4D301D8FC13700FF0A1E /* AttackBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackBox.h; path = DetectionBox/AttackBox.h; sourceTree = "<group>"; };
 		DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackDetector.cpp; path = DetectionBox/AttackDetector.cpp; sourceTree = "<group>"; };
 		DC8C4D341D8FD57C00FF0A1E /* AttackDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackDetector.h; path = DetectionBox/AttackDetector.h; sourceTree = "<group>"; };
+		DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DungeonSceneEventHandler.cpp; path = EventHandler/DungeonSceneEventHandler.cpp; sourceTree = "<group>"; };
+		DCA4495C1DA0EAA0005C5F9A /* DungeonSceneEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DungeonSceneEventHandler.h; path = EventHandler/DungeonSceneEventHandler.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1380,6 +1384,7 @@
 		DC03912F1C871E1000C50E8E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DCA449571DA0EA57005C5F9A /* EventHandler */,
 				DC0391301C871E1000C50E8E /* BaseScene.cpp */,
 				DC0391311C871E1000C50E8E /* BaseScene.h */,
 				DC0391321C871E1000C50E8E /* DungeonCameraScene.cpp */,
@@ -1537,6 +1542,15 @@
 				DC7F6E1F1DA0B20D007AE8B5 /* HitPoint.h */,
 			);
 			name = Status;
+			sourceTree = "<group>";
+		};
+		DCA449571DA0EA57005C5F9A /* EventHandler */ = {
+			isa = PBXGroup;
+			children = (
+				DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */,
+				DCA4495C1DA0EAA0005C5F9A /* DungeonSceneEventHandler.h */,
+			);
+			name = EventHandler;
 			sourceTree = "<group>";
 		};
 		DCD9E53E1D684BDD002CA51D /* CocosStudio */ = {
@@ -1838,6 +1852,7 @@
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391951C871E1000C50E8E /* EventFactory.cpp in Sources */,
 				DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
+				DCA4495D1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1943,6 +1958,7 @@
 				DC0392181C871E1000C50E8E /* Stamina.cpp in Sources */,
 				DC0391741C871E1000C50E8E /* CharacterMessageData.cpp in Sources */,
 				DC23C86D1D8BD9A7008E57F3 /* PathFinder.cpp in Sources */,
+				DCA4495E1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */,
 				DC03919E1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DC0391CE1C871E1000C50E8E /* MessageLayer.cpp in Sources */,
 				DC0391D01C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,

@@ -41,7 +41,7 @@ private:
     AttackDetector* _attackDetector { nullptr };
     PathFinder* _pathFinder { nullptr };
 public:
-    function<void()> onContactWithEnemy { nullptr };
+    function<void()> _onLostMainCharacterHP { nullptr };
     
 // インスタンスメソッド
 private:

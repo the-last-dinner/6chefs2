@@ -29,6 +29,7 @@
 
 #include "Models/Stamina.h"
 
+#include "Scenes/EventHandler/DungeonSceneEventHandler.h"
 #include "Scenes/DungeonMenuScene.h"
 #include "Scenes/GameOverScene.h"
 #include "Scenes/TitleScene.h"
@@ -41,7 +42,7 @@
 #include "UI/StaminaBar.h"
 
 // コンストラクタ
-DungeonScene::DungeonScene() {FUNCLOG}
+DungeonScene::DungeonScene() { FUNCLOG }
 
 // デストラクタ
 DungeonScene::~DungeonScene()
@@ -49,6 +50,7 @@ DungeonScene::~DungeonScene()
     FUNCLOG
 
     CC_SAFE_RELEASE_NULL(_party);
+    CC_SAFE_RELEASE_NULL(_handler);
 }
 
 // 初期化
@@ -63,7 +65,7 @@ bool DungeonScene::init(DungeonSceneData* data)
 // 初期化
 bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* listener)
 {
-    if(!BaseScene::init(data)) return false;
+    if (!BaseScene::init(data)) return false;
     
     this->addChild(listener);
     _listener = listener;
@@ -71,8 +73,16 @@ bool DungeonScene::init(DungeonSceneData* data, EventListenerKeyboardLayer* list
     _configListener->onOpenkeyconfigMenu = CC_CALLBACK_0(DungeonScene::onEventStart, this);
     _configListener->onKeyconfigMenuClosed = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
+    // イベントハンドラ生成
+    DungeonSceneEventHandler* handler { DungeonSceneEventHandler::create(this) };
+    CC_SAFE_RETAIN(handler);
+    _handler = handler;
+    
     return true;
 }
+
+#pragma mark -
+#pragma mark Callback
 
 // シーン切り替え終了時
 void DungeonScene::onEnter()
@@ -80,9 +90,9 @@ void DungeonScene::onEnter()
     BaseScene::onEnter();
     
     // フェード用カバー
-    Sprite* cover {DungeonSceneManager::getInstance()->getCover()};
+    Sprite* cover { DungeonSceneManager::getInstance()->getCover() };
     
-    if(!cover) return;
+    if (!cover) return;
     
     cover->removeFromParent();
     this->addChild(cover);
@@ -166,7 +176,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     enemyTask->onAllEnemyRemoved = CC_CALLBACK_0(DungeonScene::onAllEnemyRemoved, this);
     
     // オブジェクトリストにコールバック設定
-    mapLayer->getMapObjectList()->onContactWithEnemy = CC_CALLBACK_0(DungeonScene::onContactWithEnemy, this);
+    mapLayer->getMapObjectList()->_onLostMainCharacterHP = CC_CALLBACK_0(DungeonSceneEventHandler::onLostMainCharacterHP, _handler);
     
     // リスナにコールバック設定
     _listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
@@ -258,14 +268,6 @@ void DungeonScene::onBackToTitleSelected()
     Director::getInstance()->popScene();
     this->onExitDungeon();
     Director::getInstance()->replaceScene(TitleScene::create());
-}
-
-// 主人公が敵に触れた時
-void DungeonScene::onContactWithEnemy()
-{
-    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::INVINCIBLE_MODE)) return;
-    this->onExitDungeon();
-    Director::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
 }
 
 // 敵が全ていなくなった時

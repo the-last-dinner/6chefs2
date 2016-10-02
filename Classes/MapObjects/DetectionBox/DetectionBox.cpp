@@ -107,9 +107,10 @@ bool DetectionBox::intersectsGrid(const Rect& gridRect, const vector<Direction>&
 Rect DetectionBox::getRect() const
 {
     Rect rect { this->getBoundingBox() };
+    Rect parentRect { _parent->getBoundingBox() };
     
-    float x { _parent->getPositionX() + rect.getMinX() - _parent->getContentSize().width / 2 };
-    float y { _parent->getPositionY() + rect.getMinY() - _parent->getContentSize().height / 2 };
+    float x { parentRect.getMinX() + rect.getMinX() };
+    float y { parentRect.getMinY() + rect.getMinY() };
     float width { rect.size.width };
     float height { rect.size.height };
     

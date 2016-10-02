@@ -64,21 +64,29 @@ CollisionBox* CollisionDetector::getIntersentsCollisionIncludeIngrable(const Col
 
 void CollisionDetector::addCollision(CollisionBox* collision)
 {
+    if (!collision) return;
+    
     _collistionBoxes.pushBack(collision);
 }
 
 void CollisionDetector::removeCollision(CollisionBox* collision)
 {
+    if (!collision) return;
+    
     _collistionBoxes.eraseObject(collision);
 }
 
 void CollisionDetector::addIgnorableCollision(CollisionBox* collision)
 {
+    if (!collision) return;
+    
     _ignorableCollisionBoxes.pushBack(collision);
 }
 
 void CollisionDetector::removeIgnorableCollision(CollisionBox* collision)
 {
+    if (!collision) return;
+    
     _ignorableCollisionBoxes.eraseObject(collision);
 }
 

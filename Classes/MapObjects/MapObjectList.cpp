@@ -337,6 +337,12 @@ void MapObjectList::setParty(Party* party)
     // 一行が動いた時のコールバックを設定
     party->onPartyMoved = CC_CALLBACK_1(MapObjectList::onPartyMoved, this);
     
+    // 主人公のHPがなくなった時のコールバックを設定
+    party->getMainCharacter()->setLostHPCallback([this](Character* chara) {
+        if (!_onLostMainCharacterHP) return;
+        _onLostMainCharacterHP();
+    });
+    
     _party = party;
 }
 
@@ -447,23 +453,9 @@ void MapObjectList::onEventFinished()
 #pragma mark -
 #pragma mark Update
 
-// 敵と主人公一行の衝突監視用updateメソッド
 void MapObjectList::update(float delta)
 {
-    // partyがnullptrまたは、敵が一人もいない時は処理を中止
-    if(!_party || _enemies.empty()) return;
+    if (!_attackDetector) return;
     
-    for(auto objWithId : _enemies)
-    {
-        MapObject* obj { objWithId.second };
-        
-        // 主人公と敵が一体でもぶつかっていれば、コールバック呼び出し
-        if(obj->getCollisionRect().intersectsRect(_party->getMainCharacter()->getCollisionRect()))
-        {
-            // スケジュール終了
-            this->unscheduleUpdate();
-            if(!this->onContactWithEnemy) return;
-            this->onContactWithEnemy();
-        }
-    }
+    _attackDetector->update(delta);
 }
