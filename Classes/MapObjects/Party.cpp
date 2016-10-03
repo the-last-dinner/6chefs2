@@ -30,8 +30,7 @@ bool Party::init(const vector<CharacterData>& datas)
     if (datas.empty()) return false;
     
     // データを元にキャラクタを生成して格納
-    for (int i { 0 }; i < datas.size(); i++)
-    {
+    for (int i { 0 }; i < datas.size(); i++) {
         Character* chara { Character::create(datas[i]) };
         
         if (!chara) continue;
@@ -54,7 +53,7 @@ void Party::addMember(Character* character)
 void Party::removeMember(const int objectId)
 {
     Character* targetMember { nullptr };
-    for(Character* member : _members) {
+    for (Character* member : _members) {
         if (member->getObjectId() == objectId) targetMember = member;
     }
     if (!targetMember) return;
@@ -109,8 +108,10 @@ void Party::moveMember(Character* member, Character* previousMember, float speed
     
     Vec2 previousMemberMovement { Direction::getVec2(previousMemberMovingDirections) };
     Vec2 movement { MapUtils::gridVecToVec2(gridMovement) };
+    
+    float degree { MapUtils::radianToDegree(abs(movement.getAngle(previousMemberMovement))) };
 
-    if (MapUtils::radianToDegree(abs(movement.getAngle(previousMemberMovement))) >= 170) return;
+    if (!previousMemberMovement.isZero() && degree > 90) return;
     
     WalkCommand* command { WalkCommand::create() };
     command->setDirections(Direction::convertGridVec2(gridMovement));
@@ -123,15 +124,12 @@ void Party::moveMember(Character* member, Character* previousMember, float speed
 void Party::move(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
     // 主人公を移動
-    this->moveMainCharacter(directions, speed, [this, speed, callback](bool walked) {
-        // メンバーを移動
-        for(int i { 1 }; i < _members.size(); i++)
-        {
-            this->moveMember(_members.at(i), _members.at(i - 1), speed);
-        }
-        
-        callback(walked);
-    });
+    this->moveMainCharacter(directions, speed, callback);
+    
+    // メンバーを移動
+    for (int i { 1 }; i < _members.size(); i++) {
+        this->moveMember(_members.at(i), _members.at(i - 1), speed);
+    }
 }
 
 // 主人公を取得
@@ -151,9 +149,9 @@ vector<CharacterData> Party::getMembersData() const
 {
     vector<CharacterData> datas {};
     int member_count = _members.size();
-    for (int i = 0; i < member_count; i++)
-    {
+    for (int i = 0; i < member_count; i++) {
         datas.push_back(_members.at(i)->getCharacterData());
     }
+    
     return datas;
 }

@@ -80,7 +80,11 @@ Rect MapObject::getGridCollisionRect(const vector<Direction>& directions) const
 void MapObject::setGridPosition(const Point& gridPosition) { _location.x = gridPosition.x; _location.y = gridPosition.y; }
 
 // 方向をセット
-void MapObject::setDirection(const Direction& direction) { _location.direction = direction; }
+void MapObject::setDirection(const Direction& direction)
+{
+    if (direction.isNull()) return;
+    _location.direction = direction;
+}
 
 // オブジェクトIDをセット
 void MapObject::setObjectId(int objectId) { _objectId = objectId; }
