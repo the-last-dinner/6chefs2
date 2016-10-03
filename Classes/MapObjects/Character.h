@@ -16,6 +16,7 @@ class MovePattern;
 class CSNode;
 class HitPoint;
 class HitBox;
+class Sight;
 
 class Character : public MapObject
 {
@@ -33,11 +34,12 @@ public:
 private:
     int _charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
 protected:
+    function<void(Character*)> _onLostHP { nullptr };
     MovePattern* _movePattern { nullptr };                                       // 動きのパターン
     CSNode* _csNode { nullptr };
     HitBox* _hitBox { nullptr };
     HitPoint* _hp { nullptr };
-    function<void(Character*)> _onLostHP { nullptr };
+    Sight* _sight { nullptr };
     
 // インスタンスメソッド
 public:
@@ -74,7 +76,11 @@ public:
     void setLostHPCallback(function<void(Character*)> callback);
     void onLostHP();
     
+    // Sight
+    bool isInSight(MapObject* mapObject);
+    
     // Interface
+    virtual void update(float delta) override;
     virtual void onEnterMap() override;
     virtual void onExitMap() override;
     virtual void onJoinedParty();

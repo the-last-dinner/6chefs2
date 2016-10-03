@@ -27,9 +27,8 @@ public:
 
 // インスタンス変数
 private:
-    PathFinder* pathFinder { nullptr };
-    CheapChaser* subPattern { nullptr };
-    int partyMoveCount { 0 };
+    CheapChaser* _subPattern { nullptr };
+    int _partyMoveCount { 0 };
 
 // インスタンスメソッド
 public:

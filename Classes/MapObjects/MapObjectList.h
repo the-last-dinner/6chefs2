@@ -30,10 +30,11 @@ public:
     
 // インスタンス変数
 private:
-    multimap<int, MapObject*> _availableObjects {};
-    multimap<int, MapObject*> _disableObjects {};
-    multimap<int, Enemy*> _enemies {};
-    multimap<int, PathObject*> _pathObjects {};
+    Vector<MapObject*> _availableObjects {};
+    Vector<MapObject*> _disableObjects {};
+    Vector<Enemy*> _enemies {};
+    Vector<PathObject*> _pathObjects {};
+    
     Party* _party { nullptr };
     Vector<TerrainObject*> _terrainObjects {};
     PlainArea* _plainArea { nullptr };

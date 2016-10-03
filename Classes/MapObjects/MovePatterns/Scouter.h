@@ -24,10 +24,8 @@ public:
 
 // インスタンス変数
 private:
-    Sight* sight { nullptr };
-    Chaser* subPattern { nullptr };
-    PathFinder* finder { nullptr };
-    deque<Direction> path {};
+    Chaser* _subPattern { nullptr };
+    deque<Direction> _path {};
     
 // インスタンスメソッド
 private:
@@ -45,7 +43,10 @@ public:
     virtual bool canGoToNextMap() const override;
     virtual float calcSummonDelay() const override;
     void move(const int pathObjId);
-    void update(float _);
+    
+// インターフェース
+public:
+    void update(float delta) override;
 };
 
 #endif /* Scouter_h */

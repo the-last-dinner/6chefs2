@@ -18,10 +18,10 @@ class MovePattern : public Ref
 {
 // インスタンス変数
 protected:
-    Character* chara { nullptr };
-    float speedRatio { 1.0f };
-    bool paused { false };
-    int startPathId { -1 };
+    Character* _chara { nullptr };
+    float _speedRatio { 1.0f };
+    bool _paused { false };
+    int _startPathId { -1 };
 
 // インスタンスメソッド
 public:
@@ -40,6 +40,10 @@ protected:
     virtual bool init(Character* chara);
     Character* getMainCharacter() const;
     MapObjectList* getMapObjectList() const;
+
+// インターフェース
+public:
+    virtual void update(float delta);
 };
 
 #endif /* defined(__LastSupper__MovePattern__) */

@@ -27,8 +27,8 @@ Chaser::Chaser() {FUNCLOG};
 Chaser::~Chaser()
 {
     FUNCLOG
-    CC_SAFE_RELEASE_NULL(this->pathFinder);
-    CC_SAFE_RELEASE_NULL(this->subPattern);
+
+    CC_SAFE_RELEASE_NULL(_subPattern);
 };
 
 // 初期化
@@ -36,14 +36,10 @@ bool Chaser::init(Character* character)
 {
     if(!MovePattern::init(character)) return false;
     
-    // 経路探索
-    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
-    this->pathFinder = pathFinder;
-    
     // サブアルゴリズム
-    CheapChaser* sub { CheapChaser::create(this->chara) };
+    CheapChaser* sub { CheapChaser::create(_chara) };
     CC_SAFE_RETAIN(sub);
-    this->subPattern = sub;
+    _subPattern = sub;
     
     return true;
 }
@@ -62,7 +58,7 @@ void Chaser::pause()
     MovePattern::pause();
     
     // サブアルゴリズムに対しても適用
-    this->subPattern->pause();
+    _subPattern->pause();
 }
 
 // 追跡再開
@@ -97,10 +93,10 @@ void Chaser::move()
     
     this->cutPath(path);
     
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, this->speedRatio, false) };
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
     
     for (WalkCommand* command : commands) {
-        this->chara->pushCommand(command);
+        _chara->pushCommand(command);
     }
 }
 
@@ -113,19 +109,19 @@ void Chaser::shiftFromSubPattern()
     // 経路をカット
     this->cutPath(path);
     
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, this->speedRatio, false) };
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
     
     for (WalkCommand* command : commands) {
-        this->chara->pushCommand(command);
+        _chara->pushCommand(command);
     }
 }
 
 // サブアルゴリズムへ移行
 void Chaser::shiftToSubPattern()
 {
-    this->subPattern->setSpeedRatio(this->speedRatio);
+    _subPattern->setSpeedRatio(_speedRatio);
     
-    this->subPattern->move(CC_CALLBACK_0(Chaser::shiftFromSubPattern, this));
+    _subPattern->move(CC_CALLBACK_0(Chaser::shiftFromSubPattern, this));
 }
 
 // サブの移動アルゴリズムに切り替える必要があるか
@@ -150,7 +146,9 @@ void Chaser::cutPath(deque<Direction>& path)
 // 経路を取得
 deque<Direction> Chaser::getPath() const
 {
-    deque<Direction> path { this->pathFinder->getPath(this->chara, this->getMainCharacter()->getGridCollisionRect().origin) };
+    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
+    
+    deque<Direction> path { pathFinder->getPath(_chara, this->getMainCharacter()->getGridCollisionRect().origin) };
     
     return path;
 }
@@ -161,5 +159,5 @@ bool Chaser::canGoToNextMap() const { return true; };
 // 出口までに掛る時間を計算
 float Chaser::calcSummonDelay() const
 {
-    return this->getPath().size() * MapObject::DURATION_MOVE_ONE_GRID / this->speedRatio;
+    return static_cast<float>(this->getPath().size()) * MapObject::DURATION_MOVE_ONE_GRID / _speedRatio;
 }

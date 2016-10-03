@@ -41,7 +41,7 @@ void RandomMove::move()
     vector<Direction> enableDirections {};
     for(Direction direction : Direction::getAll())
     {
-        if(!this->chara->isHit(direction)) enableDirections.push_back(direction);
+        if(!_chara->isHit(direction)) enableDirections.push_back(direction);
     }
     
     // 移動可能方向がなければ終了

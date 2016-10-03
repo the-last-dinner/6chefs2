@@ -29,7 +29,7 @@ bool MobRandom::init(Character* chara)
 {
     if(!MovePattern::init(chara)) return false;
     
-    this->homePosition = chara->getGridPosition();
+    _homePosition = chara->getGridPosition();
     
     return true;
 }
@@ -45,7 +45,7 @@ void MobRandom::pause()
 {
     MovePattern::pause();
     
-    this->chara->stopActionByTag(SCHEDULE_ACTION_TAG);
+    _chara->stopActionByTag(SCHEDULE_ACTION_TAG);
 }
 
 void MobRandom::move()
@@ -56,10 +56,10 @@ void MobRandom::move()
     vector<Direction> enableDirections {};
     for(Direction direction : Direction::getAll())
     {
-        if(this->chara->isHit(direction)) continue;
+        if(_chara->isHit(direction)) continue;
         
         // DISTANCE * 2マス以上離れた場所に移動しようとしていたら無視
-        if((this->chara->getGridPosition() + direction.getGridVec2()).distance(this->homePosition) > DISTANCE * 2) continue;
+        if((_chara->getGridPosition() + direction.getGridVec2()).distance(_homePosition) > DISTANCE * 2) continue;
         
         enableDirections.push_back(direction);
     }
@@ -80,7 +80,7 @@ void MobRandom::move()
     command->setSpeed(SPEED_RATIO);
     command->setWalkCallback([this](bool walked) { this->scheduleMove(); });
     
-    this->chara->pushCommand(command);
+    _chara->pushCommand(command);
 }
 
 void MobRandom::scheduleMove()
@@ -89,5 +89,5 @@ void MobRandom::scheduleMove()
     float duration { cocos2d::random(MIN_WAIT_DURATION, MAX_WAIT_DURATION) };
     Action* action { Sequence::createWithTwoActions(DelayTime::create(duration), CallFunc::create(CC_CALLBACK_0(MobRandom::move, this))) };
     action->setTag(SCHEDULE_ACTION_TAG);
-    this->chara->runAction(action);
+    _chara->runAction(action);
 }

@@ -21,6 +21,8 @@
 #include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
 
+#include "Models/Sight.h"
+
 #include "Managers/DungeonSceneManager.h"
 
 // 定数
@@ -39,6 +41,7 @@ Character::~Character()
     CC_SAFE_RELEASE_NULL(_movePattern);
     CC_SAFE_RELEASE_NULL(_hitBox);
     CC_SAFE_RELEASE_NULL(_hp);
+    CC_SAFE_RELEASE_NULL(_sight);
 }
 
 // 初期化
@@ -88,6 +91,11 @@ bool Character::init(const CharacterData& data)
     HitPoint* hp { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
     CC_SAFE_RETAIN(hp);
     _hp = hp;
+    
+    // 視野を生成
+    Sight* sight { Sight::create(this) };
+    CC_SAFE_RETAIN(sight);
+    _sight = sight;
 	
     return true;
 }
@@ -244,7 +252,27 @@ void Character::onLostHP()
 }
 
 #pragma mark -
+#pragma mark Sight
+
+bool Character::isInSight(MapObject* mapObject)
+{
+    if (!_sight) return false;
+    
+    return _sight->isIn(mapObject, _objectList);
+}
+
+#pragma mark -
 #pragma mark Interface
+
+// 毎フレーム処理
+void Character::update(float delta)
+{
+    MapObject::update(delta);
+    
+    if (_movePattern) {
+        _movePattern->update(delta);
+    }
+}
 
 // マップに配置された時
 void Character::onEnterMap()

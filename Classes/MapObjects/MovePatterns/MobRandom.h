@@ -27,7 +27,7 @@ public:
     
 // インスタンス変数
 private:
-    Point homePosition { Point::ZERO };
+    Point _homePosition { Point::ZERO };
     
 // インスタンスメソッド
 private:

@@ -130,6 +130,8 @@ public:
     virtual void onEventStart() {};                          // イベント開始時
     virtual void onEventFinished() {};                       // イベント終了時
 
+// デバッグ
+public:
     void drawDebugMask(); // デバッグ用マスク
     void drawDebugCollisionMask();
     void drawDebugInfo();
