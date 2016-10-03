@@ -34,6 +34,22 @@ bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void()>
     return true;
 }
 
+#pragma mark -
+#pragma mark Power
+
+void AttackBox::setPower(int power)
+{
+    _power = power;
+}
+
+int AttackBox::getPower() const
+{
+    return _power;
+}
+
+#pragma mark -
+#pragma mark Callback
+
 void AttackBox::onAttackHitted()
 {
     if (_onAttackHitted) {

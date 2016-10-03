@@ -82,7 +82,7 @@ bool Character::init(const CharacterData& data)
     this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
     
     // くらい判定生成
-    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_0(Character::onAttackHitted, this)) };
+    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
     CC_SAFE_RETAIN(hitBox);
     _hitBox = hitBox;
     
@@ -228,11 +228,11 @@ float Character::getStaminaConsumptionRatio() const
 #pragma mark -
 #pragma mark HitBox
 
-void Character::onAttackHitted()
+void Character::onAttackHitted(int damage)
 {
     if (!_hp) return;
     
-    _hp->reduce(1);
+    _hp->reduce(damage);
 }
 
 #pragma mark -

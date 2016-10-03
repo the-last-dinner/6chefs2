@@ -70,7 +70,7 @@ public:
     float getStaminaConsumptionRatio() const;
     
     // HitBox
-    void onAttackHitted();
+    void onAttackHitted(int damage);
     
     // HP
     void setLostHPCallback(function<void(Character*)> callback);

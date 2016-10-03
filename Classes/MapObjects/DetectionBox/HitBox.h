@@ -15,22 +15,22 @@ class HitBox : public DetectionBox
 {
 // クラスメソッド
 public:
-    CREATE_FUNC_WITH_THREE_PARAM(HitBox, MapObject*, Node*, function<void()>)
-    CREATE_FUNC_WITH_THREE_PARAM(HitBox, MapObject*, const Rect&, function<void()>)
+    CREATE_FUNC_WITH_THREE_PARAM(HitBox, MapObject*, Node*, function<void(int)>)
+    CREATE_FUNC_WITH_THREE_PARAM(HitBox, MapObject*, const Rect&, function<void(int)>)
     
 // インスタンス変数
 private:
-    function<void()> _onHitted { nullptr };
+    function<void(int)> _onHitted { nullptr };
     
 // インスタンスメソッド
 private:
     HitBox();
     virtual ~HitBox();
-    virtual bool init(MapObject* parent, Node* origin, function<void()> onHitted);
-    virtual bool init(MapObject* parent, const Rect& originRect, function<void()> onHitted);
+    virtual bool init(MapObject* parent, Node* origin, function<void(int)> onHitted);
+    virtual bool init(MapObject* parent, const Rect& originRect, function<void(int)> onHitted);
     
 public:
-    void onHitted();
+    void onHitted(int damage);
 };
 
 #endif /* HitBox_h */

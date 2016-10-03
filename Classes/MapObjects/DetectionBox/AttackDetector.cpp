@@ -81,6 +81,6 @@ void AttackDetector::update(float delta)
         if (!hitBox) continue;
         
         attackBox->onAttackHitted();
-        hitBox->onHitted();
+        hitBox->onHitted(attackBox->getPower());
     }
 }

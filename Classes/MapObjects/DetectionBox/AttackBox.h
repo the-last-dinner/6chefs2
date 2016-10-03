@@ -20,6 +20,7 @@ public:
     
 // インスタンス変数
 private:
+    int _power { 1 };
     function<void()> _onAttackHitted { nullptr };
     
 // インスタンスメソッド
@@ -29,6 +30,8 @@ private:
     virtual bool init(MapObject* parent, Node* origin, function<void()> onAttackHitted);
     virtual bool init(MapObject* parent, const Rect& originRect, function<void()> onAttackHitted);
 public:
+    void setPower(int power);
+    int getPower() const;
     void onAttackHitted();
 };
 
