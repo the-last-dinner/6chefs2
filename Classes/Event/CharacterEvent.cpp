@@ -19,6 +19,8 @@
 #include "MapObjects/Party.h"
 #include "MapObjects/PathFinder/PathFinder.h"
 
+#include "Tasks/CameraTask.h"
+
 #include "Managers/DungeonSceneManager.h"
 
 #pragma mark CharacterEvent
@@ -176,5 +178,5 @@ void ChangeHeroEvent::run()
     Character* chara { Character::create(CharacterData(this->charaId, etoi(ObjectID::HERO), location)) };
     party->addMember(chara);
     DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
-    DungeonSceneManager::getInstance()->setCamera(party->getMainCharacter());
+    DungeonSceneManager::getInstance()->getCamera()->setTarget(party->getMainCharacter());
 }

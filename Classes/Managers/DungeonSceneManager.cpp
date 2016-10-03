@@ -123,6 +123,9 @@ Party* DungeonSceneManager::getParty() { return this->getScene()->_party; }
 // 環境光レイヤを取得
 AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->getScene()->_ambientLightLayer; };
 
+// カメラを取得
+CameraTask* DungeonSceneManager::getCamera() const { return this->getScene()->_cameraTask; };
+
 #pragma mark -
 #pragma mark Scene
 
@@ -304,21 +307,6 @@ void DungeonSceneManager::removeEnemyByObjectId(const int objectId)
 bool DungeonSceneManager::existsEnemy() const
 {
     return this->getScene()->_enemyTask->existsEnemy();
-}
-
-#pragma mark -
-#pragma mark CameraTask
-
-// カメラを指定座標が中心になるように移動
-void DungeonSceneManager::moveCamera(const Point& gridPosition, const float duration, function<void()> callback)
-{
-    this->getScene()->_cameraTask->move(gridPosition, duration, callback);
-}
-
-// カメラを指定のマップオブジェクトにセット
-void DungeonSceneManager::setCamera(MapObject *target)
-{
-    this->getScene()->_cameraTask->setTarget(target);
 }
 
 #pragma mark -

@@ -27,37 +27,6 @@ private:
     virtual void run();
 };
 
-// カメラ生成イベント
-class CreateCameraEvent : public GameEvent
-{
-public:
-    CREATE_FUNC_WITH_PARAM(CreateCameraEvent, rapidjson::Value&)
-private:
-    Location location {};
-    int objId { etoi(ObjectID::UNDIFINED) };
-    GameEvent* event { nullptr };
-private:
-    CreateCameraEvent() { FUNCLOG };
-    ~CreateCameraEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
-    virtual void run() override;
-};
-
-// カメラ移動イベント
-class MoveCameraEvent : public GameEvent
-{
-public:
-    CREATE_FUNC_WITH_PARAM(MoveCameraEvent, rapidjson::Value&)
-private:
-    Point toPosition { Point::ZERO };
-    float duration { 0.f };
-private:
-    MoveCameraEvent() {FUNCLOG};
-    ~MoveCameraEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
-    virtual void run() override;
-};
-
 // waitイベント
 class WaitEvent : public GameEvent
 {

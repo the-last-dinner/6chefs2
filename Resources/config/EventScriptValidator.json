@@ -154,23 +154,6 @@
                 "eventID": ["stoi"]
             }
         },
-        "createCamera": {
-            "require": ["action"],
-            "member": {
-                "mapID": ["stoi"],
-                "x": ["int"],
-                "y": ["int"],
-                "objID": ["string"],
-                "action": [["object"]]
-            }
-        },
-        "camera": {
-            "member": {
-                "x": ["int"],
-                "y": ["int"],
-                "time": ["double", "int"]
-            }
-        },
         "wait": {
             "require": ["time"],
             "member": {
@@ -204,6 +187,33 @@
         "infoAssert": {
             "member": {
                 "text": ["string"]
+            }
+        },
+        
+        
+        
+        
+        
+        "createCamera": {
+            "require": ["action"],
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "objID": ["string"],
+                "action": [["object"]]
+            }
+        },
+        "camera": {
+            "member": {
+                "x": ["int"],
+                "y": ["int"],
+                "time": ["double", "int"]
+            }
+        },
+        "setCamera": {
+            "member": {
+                "objID": ["stoi"]
             }
         },
         

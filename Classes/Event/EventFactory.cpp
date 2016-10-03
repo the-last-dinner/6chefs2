@@ -8,6 +8,7 @@
 
 #include "Event/EventFactory.h"
 
+#include "Event/CameraEvent.h"
 #include "Event/CharacterEvent.h"
 #include "Event/EnemyEvent.h"
 #include "Event/FlagEvent.h"
@@ -50,8 +51,6 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToC
     
     // シーン系
     {"changeMap", ChangeMapEvent::create},          // マップ移動
-    {"createCamera", CreateCameraEvent::create},    // カメラ生成
-    {"camera", MoveCameraEvent::create},            // カメラ移動
     {"wait", WaitEvent::create},                    // 時間待機
     {"fadeout", FadeOutEvent::create},              // フェードアウト
     {"fadein", FadeInEvent::create},                // フェードイン
@@ -59,6 +58,11 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToC
     {"ending", EndingEvent::create},                // エンディング
     {"backToTitle", BackToTitleEvent::create},      // タイトルへ戻る
     {"infoAssert", InfoAssertEvent::create},        // デバッグ用にAssertを出す
+    
+    // カメラ系
+    {"createCamera", CreateCameraEvent::create},    // カメラ生成
+    {"camera", MoveCameraEvent::create},            // カメラ移動
+    {"setCamera", SetCameraTargetEvent::create},    // カメラターゲット設定
     
     // マップ系
     {"removeLayer", HideLayerEvent::create},        // マップの指定レイヤを非表示
