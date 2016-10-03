@@ -41,16 +41,16 @@ bool Sight::isIn(const MapObject* target, const MapObjectList* list) const
     Vec2 v2 { p2 - p1 };
     
     // 視界限界距離より遠くにいれば視界外
-    if(v2.getLength() > _limitDistance * GRID) return false;
+    if (v2.getLength() > _limitDistance * GRID) return false;
     
     // 二本のベクトルの間にできる角度を取得
     float degree { fabs(MapUtils::radianToDegree(v1.getAngle(v2))) };
     
     // 視野角の半分に収まっていなければ視界外
-    if(degree > _angle / 2) return false;
+    if (degree > _angle / 2) return false;
     
     // 対象と本人の間に当たり判定があれば視界外
-    if(list->getCollisionDetector()->existsCollisionBetween(_chara, target)) return false;
+    if (list->getCollisionDetector()->existsCollisionBetween(_chara, target)) return false;
     
     return true;
 }
