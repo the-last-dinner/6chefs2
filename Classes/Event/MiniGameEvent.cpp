@@ -39,33 +39,33 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // 連打回数
-    if(!this->eventHelper->hasMember(json, member::TIMES)) return false;
+    if(!_eventHelper->hasMember(json, member::TIMES)) return false;
     this->count = json[member::TIMES].GetInt();
     
     // 制限時間
-    if(!this->eventHelper->hasMember(json, member::LIMIT)) return false;
+    if(!_eventHelper->hasMember(json, member::LIMIT)) return false;
     this->limit = json[member::LIMIT].GetDouble();
     
     // 成功時イベント
-    if(this->eventHelper->hasMember(json, member::TRUE_))
+    if(_eventHelper->hasMember(json, member::TRUE_))
     {
         if(json[member::TRUE_].IsString()) this->sEventId = stoi(json[member::TRUE_].GetString());
-        if(json[member::TRUE_].IsArray()) this->sEvent = this->factory->createGameEvent(json[member::TRUE_]);
+        if(json[member::TRUE_].IsArray()) this->sEvent = _factory->createGameEvent(json[member::TRUE_]);
         CC_SAFE_RETAIN(this->sEvent);
     }
     
     // 失敗時イベント
-    if(this->eventHelper->hasMember(json, member::FALSE_))
+    if(_eventHelper->hasMember(json, member::FALSE_))
     {
         if(json[member::FALSE_].IsString()) this->fEventId = stoi(json[member::FALSE_].GetString());
-        if(json[member::FALSE_].IsArray()) this->fEvent = this->factory->createGameEvent(json[member::FALSE_]);
+        if(json[member::FALSE_].IsArray()) this->fEvent = _factory->createGameEvent(json[member::FALSE_]);
         CC_SAFE_RETAIN(this->fEvent);
     }
     
     // クリック時のコールバックイベント
-    if(this->eventHelper->hasMember(json, member::EVENT))
+    if(_eventHelper->hasMember(json, member::EVENT))
     {
-        this->clickCallbackEvent = this->factory->createGameEvent(json[member::EVENT]);
+        this->clickCallbackEvent = _factory->createGameEvent(json[member::EVENT]);
         this->clickCallbackEvent->setReusable(true);
         CC_SAFE_RETAIN(this->clickCallbackEvent);
     }
@@ -133,31 +133,31 @@ bool SelectEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // 質問文
-    if(!this->eventHelper->hasMember(json, member::TEXT)) return false;
+    if(!_eventHelper->hasMember(json, member::TEXT)) return false;
     this->message = json[member::TEXT][0].GetString();
     
     // 選択肢
-    if(!this->eventHelper->hasMember(json, member::CHOICES) || !json[member::CHOICES].IsArray()) return false;
+    if(!_eventHelper->hasMember(json, member::CHOICES) || !json[member::CHOICES].IsArray()) return false;
     rapidjson::Value& choicesJson { json[member::CHOICES] };
     for(int i { 0 }; i < choicesJson.Size(); i++)
     {
         rapidjson::Value& choiceJson {choicesJson[i]};
         
         // 選択肢の表示ラベル
-        if(!this->eventHelper->hasMember(choiceJson, member::CHOICE)) return false;
+        if(!_eventHelper->hasMember(choiceJson, member::CHOICE)) return false;
         this->choices.push_back(choiceJson[member::CHOICE].GetString());
         
         // 選択肢のコールバックイベント
         int eventId { static_cast<int>(EventID::UNDIFINED) };
         GameEvent* event { nullptr };
-        if(this->eventHelper->hasMember(choiceJson, member::ACTION)) event = this->factory->createGameEvent(choiceJson[member::ACTION]);
-        if(this->eventHelper->hasMember(choiceJson, member::EVENT_ID)) eventId = stoi(choiceJson[member::EVENT_ID].GetString());
+        if(_eventHelper->hasMember(choiceJson, member::ACTION)) event = _factory->createGameEvent(choiceJson[member::ACTION]);
+        if(_eventHelper->hasMember(choiceJson, member::EVENT_ID)) eventId = stoi(choiceJson[member::EVENT_ID].GetString());
         CC_SAFE_RETAIN(event);
         this->eventCallBacks.push_back(SelectCallBack({eventId, event}));
     }
     
     // キャラメッセージの時
-    if(this->eventHelper->hasMember(json, member::CHARA_ID))
+    if(_eventHelper->hasMember(json, member::CHARA_ID))
     {
         queue<string> pages {};
         
@@ -167,12 +167,12 @@ bool SelectEvent::init(rapidjson::Value& json)
         CC_SAFE_RETAIN(data);
         
         // キャラID
-        if(this->eventHelper->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
+        if(_eventHelper->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
         
         // キャラ名
         string charaName {};
         
-        if(this->eventHelper->hasMember(json, member::NAME))
+        if(_eventHelper->hasMember(json, member::NAME))
         {
             charaName = json[member::NAME].GetString();
         }
@@ -183,7 +183,7 @@ bool SelectEvent::init(rapidjson::Value& json)
         data->setCharaName(charaName);
         
         // 画像ID
-        if(this->eventHelper->hasMember(json, member::IMG_ID)) data->setImgId(stoi(json[member::IMG_ID].GetString()));
+        if(_eventHelper->hasMember(json, member::IMG_ID)) data->setImgId(stoi(json[member::IMG_ID].GetString()));
         
         this->datas.push(data);
     }
@@ -242,18 +242,18 @@ bool PasswordEvent::init(rapidjson::Value& json)
     this->password = json[member::PASSWORD].GetString();
     
     // 成功時イベント
-    if(this->eventHelper->hasMember(json, member::TRUE_))
+    if(_eventHelper->hasMember(json, member::TRUE_))
     {
         if(json[member::TRUE_].IsString()) this->sEventId = stoi(json[member::TRUE_].GetString());
-        if(json[member::TRUE_].IsArray()) this->sEvent = this->factory->createGameEvent(json[member::TRUE_]);
+        if(json[member::TRUE_].IsArray()) this->sEvent = _factory->createGameEvent(json[member::TRUE_]);
         CC_SAFE_RETAIN(this->sEvent);
     }
     
     // 失敗時イベント
-    if(this->eventHelper->hasMember(json, member::FALSE_))
+    if(_eventHelper->hasMember(json, member::FALSE_))
     {
         if(json[member::FALSE_].IsString()) this->fEventId = stoi(json[member::FALSE_].GetString());
-        if(json[member::FALSE_].IsArray()) this->fEvent = this->factory->createGameEvent(json[member::FALSE_]);
+        if(json[member::FALSE_].IsArray()) this->fEvent = _factory->createGameEvent(json[member::FALSE_]);
         CC_SAFE_RETAIN(this->fEvent);
     }
     
@@ -316,35 +316,35 @@ bool CountDownEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // 制限時間
-    if(!this->eventHelper->hasMember(json, member::SECOND)) return false;
+    if(!_eventHelper->hasMember(json, member::SECOND)) return false;
     this->second = json[member::SECOND].GetDouble();
     
     // conditionを保存
-    if (this->eventHelper->hasMember(json, member::CONDITION))
+    if (_eventHelper->hasMember(json, member::CONDITION))
     {
         this->equip = stoi(json[member::CONDITION][0][member::EQUIP][0].GetString());
         this->checkEquip = true;
     }
     
     // 成功時イベント
-    if(this->eventHelper->hasMember(json, member::TRUE_))
+    if(_eventHelper->hasMember(json, member::TRUE_))
     {
         if(json[member::TRUE_].IsString()) this->sEventId = stoi(json[member::TRUE_].GetString());
-        if(json[member::TRUE_].IsArray()) this->sEvent = this->factory->createGameEvent(json[member::TRUE_]);
+        if(json[member::TRUE_].IsArray()) this->sEvent = _factory->createGameEvent(json[member::TRUE_]);
         CC_SAFE_RETAIN(this->sEvent);
     }
     
     // 失敗時イベント
-    if (this->eventHelper->hasMember(json, member::FALSE_))
+    if (_eventHelper->hasMember(json, member::FALSE_))
     {
         if(json[member::FALSE_].IsString()) this->fEventId = stoi(json[member::FALSE_].GetString());
-        if(json[member::FALSE_].IsArray()) this->fEvent = this->factory->createGameEvent(json[member::FALSE_]);
+        if(json[member::FALSE_].IsArray()) this->fEvent = _factory->createGameEvent(json[member::FALSE_]);
         CC_SAFE_RETAIN(this->fEvent);
     }
-    if (this->eventHelper->hasMember(json, member::ACTION))
+    if (_eventHelper->hasMember(json, member::ACTION))
     {
         if(json[member::ACTION].IsString()) this->fEventId = stoi(json[member::ACTION].GetString());
-        if(json[member::ACTION].IsArray()) this->fEvent = this->factory->createGameEvent(json[member::ACTION]);
+        if(json[member::ACTION].IsArray()) this->fEvent = _factory->createGameEvent(json[member::ACTION]);
         CC_SAFE_RETAIN(this->fEvent);
     }
     

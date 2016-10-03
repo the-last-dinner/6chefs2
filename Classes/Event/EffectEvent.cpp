@@ -24,7 +24,7 @@ bool SetAmbientLightEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(!this->eventHelper->hasMember(json, member::AMBIENT)) return false;
+    if(!_eventHelper->hasMember(json, member::AMBIENT)) return false;
     
     // 環境光の色
     map<string, Color3B> strToColor
@@ -64,7 +64,7 @@ bool AnimationEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // img
-    if(!eventHelper->hasMember(json, member::IMGS)) return false;
+    if(!_eventHelper->hasMember(json, member::IMGS)) return false;
     
     // 配列じゃなければ無視
     if(!json[member::IMGS].IsArray()) return false;
@@ -75,7 +75,7 @@ bool AnimationEvent::init(rapidjson::Value& json)
     }
     
     // 一枚あたりの表示する時間
-    if(this->eventHelper->hasMember(json, member::TIME)) this->delayPerUnit = json[member::TIME].GetDouble();
+    if(_eventHelper->hasMember(json, member::TIME)) this->delayPerUnit = json[member::TIME].GetDouble();
     
     return true;
 }

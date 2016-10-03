@@ -91,11 +91,11 @@ bool QuakeMapEvent::init(rapidjson::Value& json)
     
     this->quakeLayer = static_cast<Node*>(DungeonSceneManager::getInstance()->getMapLayer()->getTiledMap());
     
-    if (!this->eventHelper->hasMember(json, member::TIME)) return false;
+    if (!_eventHelper->hasMember(json, member::TIME)) return false;
     this->time = json[member::TIME].GetDouble() / 4;
     
-    if (this->eventHelper->hasMember(json, member::X)) this->x = json[member::X].GetInt();
-    if (this->eventHelper->hasMember(json, member::Y)) this->y = json[member::Y].GetInt();
+    if (_eventHelper->hasMember(json, member::X)) this->x = json[member::X].GetInt();
+    if (_eventHelper->hasMember(json, member::Y)) this->y = json[member::Y].GetInt();
 
     return true;
 }

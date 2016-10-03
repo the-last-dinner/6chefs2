@@ -29,7 +29,7 @@ bool CharacterEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(!this->eventHelper->hasMember(json, member::OBJECT_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::OBJECT_ID)) return false;
     
     this->objectId = json[member::OBJECT_ID].GetString();
     
@@ -38,7 +38,7 @@ bool CharacterEvent::init(rapidjson::Value& json)
 
 bool CharacterEvent::onRun()
 {
-    Character* target { this->eventHelper->getMapObjectById<Character*>(this->objectId) };
+    Character* target { _eventHelper->getMapObjectById<Character*>(this->objectId) };
     if(!target)
     {
         this->setDone();
@@ -60,7 +60,7 @@ bool ChangeDirectionEvent::init(rapidjson::Value& json)
 {
     if(!CharacterEvent::init(json)) return false;
     
-    this->direction = this->eventHelper->getDirection(json);
+    this->direction = _eventHelper->getDirection(json);
     
     return true;
 }
@@ -80,15 +80,15 @@ bool WalkByEvent::init(rapidjson::Value& json)
 {
     if(!CharacterEvent::init(json)) return false;
     
-    this->direction = this->eventHelper->getDirection(json);
+    this->direction = _eventHelper->getDirection(json);
     
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
     
     if(this->direction.isNull() || this->gridNum == 0) return false;
     
-    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(_eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
-    if(this->eventHelper->hasMember(json, member::OPTION)) this->back = true;
+    if(_eventHelper->hasMember(json, member::OPTION)) this->back = true;
     
     return true;
 }
@@ -119,10 +119,10 @@ bool WalkToEvent::init(rapidjson::Value& json)
     if(!CharacterEvent::init(json)) return false;
     
     // 目的地座標をcocos座標系で保持
-    this->destPosition = this->eventHelper->getPoint(json);
+    this->destPosition = _eventHelper->getPoint(json);
     
     // 速さの倍率
-    if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
+    if(_eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
     
     return true;
 }
@@ -156,7 +156,7 @@ void WalkToEvent::run()
 bool ChangeHeroEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
-    if (!this->eventHelper->hasMember(json, member::CHARA_ID)) return false;
+    if (!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
     this->charaId = stoi(json[member::CHARA_ID].GetString());
     
     return true;

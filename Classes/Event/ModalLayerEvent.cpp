@@ -45,7 +45,7 @@ bool CharacterMessage::init(rapidjson::Value& json)
     queue<CharacterMessageData*> datas {};
     
     //複数人での会話時
-    if(this->eventHelper->hasMember(json, member::TALK))
+    if(_eventHelper->hasMember(json, member::TALK))
     {
         //会話人数の取得
         SizeType len {json[member::TALK].Size()};
@@ -68,7 +68,7 @@ bool CharacterMessage::init(rapidjson::Value& json)
             CC_SAFE_RETAIN(data);
             
             // キャラID
-            if (this->eventHelper->hasMember(chara, member::CHARA_ID))
+            if (_eventHelper->hasMember(chara, member::CHARA_ID))
             {
                 data->setCharaId(stoi(chara[member::CHARA_ID].GetString()));
             }
@@ -76,7 +76,7 @@ bool CharacterMessage::init(rapidjson::Value& json)
             // キャラ名
             string charaName {};
             
-            if(this->eventHelper->hasMember(chara, member::NAME))
+            if(_eventHelper->hasMember(chara, member::NAME))
             {
                 charaName = chara[member::NAME].GetString();
             }
@@ -88,10 +88,10 @@ bool CharacterMessage::init(rapidjson::Value& json)
             data->setCharaName(charaName);
             
             // 画像ID
-            if(this->eventHelper->hasMember(chara, member::IMG_ID)) data->setImgId(stoi(chara[member::IMG_ID].GetString()));
+            if(_eventHelper->hasMember(chara, member::IMG_ID)) data->setImgId(stoi(chara[member::IMG_ID].GetString()));
             
             // リアクション
-            if(this->eventHelper->hasMember(chara, member::OPTION)) data->setOption(CharacterMessageData::Option::REACTION);
+            if(_eventHelper->hasMember(chara, member::OPTION)) data->setOption(CharacterMessageData::Option::REACTION);
             
             datas.push(data);
         }
@@ -112,12 +112,12 @@ bool CharacterMessage::init(rapidjson::Value& json)
         CC_SAFE_RETAIN(data);
         
         // キャラID
-        if(this->eventHelper->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
+        if(_eventHelper->hasMember(json, member::CHARA_ID)) data->setCharaId(stoi(json[member::CHARA_ID].GetString()));
         
         // キャラ名
         string charaName {};
         
-        if(this->eventHelper->hasMember(json, member::NAME))
+        if(_eventHelper->hasMember(json, member::NAME))
         {
             charaName = json[member::NAME].GetString();
         }
@@ -128,10 +128,10 @@ bool CharacterMessage::init(rapidjson::Value& json)
         data->setCharaName(charaName);
         
         // 画像ID
-        if(this->eventHelper->hasMember(json, member::IMG_ID)) data->setImgId(stoi(json[member::IMG_ID].GetString()));
+        if(_eventHelper->hasMember(json, member::IMG_ID)) data->setImgId(stoi(json[member::IMG_ID].GetString()));
         
         // リアクション
-        if(this->eventHelper->hasMember(json, member::OPTION)) data->setOption(CharacterMessageData::Option::REACTION);
+        if(_eventHelper->hasMember(json, member::OPTION)) data->setOption(CharacterMessageData::Option::REACTION);
         
         datas.push(data);
     }
@@ -154,7 +154,7 @@ bool StoryMessage::init(rapidjson::Value& json)
     if(!ModalLayerEvent::init()) return false;
     
     // タイトル
-    if(this->eventHelper->hasMember(json, member::TITLE))
+    if(_eventHelper->hasMember(json, member::TITLE))
     {
         this->title = json[member::TITLE].GetString();
     }
@@ -214,11 +214,11 @@ bool DispImageEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ファイル名
-    if(!this->eventHelper->hasMember(json, member::FILE)) return false;
+    if(!_eventHelper->hasMember(json, member::FILE)) return false;
     this->fileName = json[member::FILE].GetString();
     
     // 表示時間
-    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(_eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
     return true;
 }
