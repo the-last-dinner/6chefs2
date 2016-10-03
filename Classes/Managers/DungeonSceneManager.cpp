@@ -297,7 +297,7 @@ void DungeonSceneManager::removeEnemy(const int enemyId)
 
 void DungeonSceneManager::removeEnemyByObjectId(const int objectId)
 {
-    this->getScene()->enemyTask->removeEnemyByObjectId(objectId);
+    this->getScene()->_enemyTask->removeEnemyByObjectId(objectId);
 }
 
 // 敵が存在するか確認

@@ -234,7 +234,7 @@ void MapObjectList::addEnemy(Enemy* enemy)
 void MapObjectList::removeEnemyById(const int enemyId)
 {
     for (Enemy* enemy : _enemies) {
-        if(enemy->getEnemyId() == enemyId) {
+        if (enemy->getEnemyId() == enemyId) {
             this->removeEnemy(enemy);
         }
     }
@@ -244,7 +244,7 @@ void MapObjectList::removeEnemyById(const int enemyId)
 void MapObjectList::removeEnemyByObjectId(const int objectId)
 {
     for (Enemy* enemy : _enemies) {
-        if(enemy->getObjectId() == objectId) {
+        if (enemy->getObjectId() == objectId) {
             this->removeEnemy(enemy);
         }
     }
@@ -253,11 +253,8 @@ void MapObjectList::removeEnemyByObjectId(const int objectId)
 // 対象の敵のオブジェクトを削除
 void MapObjectList::removeEnemy(Enemy *enemy)
 {
-    std::mutex mtx;
-    mtx.lock();
     enemy->removeFromParent();
     _enemies.eraseObject(enemy);
-    mtx.unlock();
 }
 
 // 敵を全て取得
