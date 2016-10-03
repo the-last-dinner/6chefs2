@@ -28,6 +28,7 @@ class GameEvent;
 class Enemy;
 class StopWatch;
 class Stamina;
+class CameraTask;
 
 // ダンジョンシーンのマップ間で共有すべき情報を持つシングルトンクラス
 class DungeonSceneManager
@@ -63,6 +64,7 @@ public:
     CommonEventScripts* getCommonEventScriptsObject();
     Party* getParty();
     AmbientLightLayer* getAmbientLayer() const;
+    CameraTask* getCamera() const;
     
     // Scene
     void fadeOut(const Color3B& color, const float duration, function<void()> callback);
@@ -91,10 +93,6 @@ public:
     void removeEnemy(const int enemyId);
     void removeEnemyByObjectId(const int objectId);
     bool existsEnemy() const;
-    
-    // CameraTask
-    void moveCamera(const Point& gridPosition, const float duration, function<void()> callback);
-    void setCamera(MapObject* targetObject);
     
     // EventTask
     void runEvent(const int eventId);

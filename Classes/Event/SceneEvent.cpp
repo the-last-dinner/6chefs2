@@ -64,61 +64,6 @@ void ChangeMapEvent::run()
 }
 
 #pragma mark -
-#pragma mark CreateCameraEvent
-
-bool CreateCameraEvent::init(rapidjson::Value& json)
-{
-    if(!GameEvent::init()) return false;
-    
-    // 映したい場所
-    this->location.map_id = (this->eventHelper->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
- 
-    Point position { this->eventHelper->getPoint(json) };
-    this->location.x = position.x;
-    this->location.y = position.y;
-    
-    // ターゲット
-    if(this->eventHelper->hasMember(json, member::OBJECT_ID)) this->objId = stoi(json[member::OBJECT_ID].GetString());
-    
-    // イベント
-    if(!this->eventHelper->hasMember(json, member::ACTION)) return false;
-    this->event = this->factory->createGameEvent(json[member::ACTION]);
-    CC_SAFE_RETAIN(this->event);
-    
-    return true;
-}
-
-void CreateCameraEvent::run()
-{
-    DungeonCameraSceneData* data { DungeonCameraSceneData::create(this->location) };
-    data->setTargetId(this->objId);
-    
-    DungeonCameraScene* scene { DungeonCameraScene::create(data, this->event, [this]{DungeonSceneManager::getInstance()->popCameraScene(); this->setDone();}) };
-    DungeonSceneManager::getInstance()->pushCameraScene(scene);
-}
-
-#pragma mark -
-#pragma mark MoveCameraEvent
-
-bool MoveCameraEvent::init(rapidjson::Value& json)
-{
-    if(!GameEvent::init()) return false;
-    
-    // 目的地
-    this->toPosition = this->eventHelper->getToPoint(json);
-    
-    // 移動時間
-    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
-    
-    return true;
-}
-
-void MoveCameraEvent::run()
-{
-    DungeonSceneManager::getInstance()->moveCamera(this->toPosition, this->duration, [this]{this->setDone();});
-}
-
-#pragma mark -
 #pragma mark WaitEvent
 
 bool WaitEvent::init(rapidjson::Value& json)

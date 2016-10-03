@@ -379,6 +379,8 @@
 		DCA449641DA21698005C5F9A /* Sight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495F1DA21698005C5F9A /* Sight.cpp */; };
 		DCA449651DA21698005C5F9A /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449611DA21698005C5F9A /* Stamina.cpp */; };
 		DCA449661DA21698005C5F9A /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449611DA21698005C5F9A /* Stamina.cpp */; };
+		DCA449691DA2445A005C5F9A /* CameraEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449671DA2445A005C5F9A /* CameraEvent.cpp */; };
+		DCA4496A1DA2445A005C5F9A /* CameraEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449671DA2445A005C5F9A /* CameraEvent.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -762,6 +764,8 @@
 		DCA449601DA21698005C5F9A /* Sight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sight.h; path = Status/Sight.h; sourceTree = "<group>"; };
 		DCA449611DA21698005C5F9A /* Stamina.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stamina.cpp; path = Status/Stamina.cpp; sourceTree = "<group>"; };
 		DCA449621DA21698005C5F9A /* Stamina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stamina.h; path = Status/Stamina.h; sourceTree = "<group>"; };
+		DCA449671DA2445A005C5F9A /* CameraEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraEvent.cpp; sourceTree = "<group>"; };
+		DCA449681DA2445A005C5F9A /* CameraEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraEvent.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -957,7 +961,6 @@
 			isa = PBXGroup;
 			children = (
 				2626AEC31D9988AE00D5623B /* Helpers */,
-				DC03904E1C871E1000C50E8E /* Algorithm */,
 				DC0390511C871E1000C50E8E /* AppDelegate.cpp */,
 				DC0390521C871E1000C50E8E /* AppDelegate.h */,
 				DC0390531C871E1000C50E8E /* Common.h */,
@@ -1165,6 +1168,8 @@
 				DC0390951C871E1000C50E8E /* SoundEvent.h */,
 				2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */,
 				2672D5071D734C7F00AC0E96 /* EventScriptValidator.h */,
+				DCA449671DA2445A005C5F9A /* CameraEvent.cpp */,
+				DCA449681DA2445A005C5F9A /* CameraEvent.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1847,6 +1852,7 @@
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				26460B8E1D72EBB600F0336C /* CharacterMasterData.cpp in Sources */,
+				DCA449691DA2445A005C5F9A /* CameraEvent.cpp in Sources */,
 				DC0391A11C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,
 				DC668C2B1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */,
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
@@ -1931,6 +1937,7 @@
 				DC0392541C871E1000C50E8E /* StringUtils.cpp in Sources */,
 				DC0391821C871E1000C50E8E /* GameOverSceneData.cpp in Sources */,
 				DC0391801C871E1000C50E8E /* EndingSceneData.cpp in Sources */,
+				DCA4496A1DA2445A005C5F9A /* CameraEvent.cpp in Sources */,
 				DC0391AA1C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */,
 				DC0391DC1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
