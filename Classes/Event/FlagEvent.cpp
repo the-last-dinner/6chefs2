@@ -23,7 +23,7 @@ bool NeverAgainEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(this->eventHelper->hasMember(json, member::EVENT))
+    if(_eventHelper->hasMember(json, member::EVENT))
     {
         // 別イベントの指定がある場合
         if (json[member::EVENT][0].IsArray())
@@ -68,7 +68,7 @@ bool GetItemEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // アイテムIDを取得
-    if(!this->eventHelper->hasMember(json, member::ITEM_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::ITEM_ID)) return false;
     this->itemId = stoi(json[member::ITEM_ID].GetString());
     
     return true;
@@ -89,7 +89,7 @@ bool RemoveItemEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // アイテムIDを取得
-    if(!this->eventHelper->hasMember(json, member::ITEM_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::ITEM_ID)) return false;
     this->itemId = stoi(json[member::ITEM_ID].GetString());
     
     return true;
@@ -113,11 +113,11 @@ bool AddProfileEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // キャラクタIDを取得
-    if(!this->eventHelper->hasMember(json, member::CHARA_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
     this->charaId = stoi(json[member::CHARA_ID].GetString());
     
     // 情報レベル
-    if(!this->eventHelper->hasMember(json, member::INFO_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::INFO_ID)) return false;
     this->infoLevel = stoi(json[member::INFO_ID].GetString());
     
     return true;
@@ -137,7 +137,7 @@ bool ChangeChapterEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // チャプターID
-    if(!this->eventHelper->hasMember(json, member::CHAPTER_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::CHAPTER_ID)) return false;
     this->chapterId = stoi(json[member::CHAPTER_ID].GetString());
     
     return true;
@@ -158,11 +158,11 @@ bool ChangeLikabilityRatingEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // キャラクタID
-    if(!this->eventHelper->hasMember(json, member::CHARA_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
     this->charaId = stoi(json[member::CHARA_ID].GetString());
     
     // 好感度
-    if(!this->eventHelper->hasMember(json, member::FAVORITE)) return false;
+    if(!_eventHelper->hasMember(json, member::FAVORITE)) return false;
     this->rating = stoi(json[member::FAVORITE].GetString());
     
     return true;
@@ -182,7 +182,7 @@ bool ChangeEventStatusEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // status
-    if(!this->eventHelper->hasMember(json, member::FLAG)) return false;
+    if(!_eventHelper->hasMember(json, member::FLAG)) return false;
     if(!json[member::FLAG].IsInt()) {
         LastSupper::AssertUtils::fatalAssert("ChangeEventStatusEvent(changeFlg)\nflgの型はintにしてください。");
         return false;
@@ -190,13 +190,13 @@ bool ChangeEventStatusEvent::init(rapidjson::Value& json)
     this->status = json[member::FLAG].GetInt();
     
     // map_id
-    if(this->eventHelper->hasMember(json, member::MAP_ID))
+    if(_eventHelper->hasMember(json, member::MAP_ID))
     {
         this->map_id = stoi(json[member::MAP_ID].GetString());
     }
     
     // event_id
-    if(this->eventHelper->hasMember(json, member::EVENT_ID))
+    if(_eventHelper->hasMember(json, member::EVENT_ID))
     {
         this->event_id = stoi(json[member::EVENT_ID].GetString());
     }
@@ -231,7 +231,7 @@ bool GetTrophyEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // trophyId
-    if (!this->eventHelper->hasMember(json, member::TROPHY_ID)) return false;
+    if (!_eventHelper->hasMember(json, member::TROPHY_ID)) return false;
     this->trophyId = stoi(json[member::TROPHY_ID].GetString());
     
     return true;
@@ -251,12 +251,12 @@ bool GiveItemEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // toCharaId
-    if (!this->eventHelper->hasMember(json, member::TO_CHARA_ID)) return false;
+    if (!_eventHelper->hasMember(json, member::TO_CHARA_ID)) return false;
     this->toCharaId = stoi(json[member::TO_CHARA_ID].GetString());
     if (this->toCharaId == etoi(CharacterID::UNDIFINED)) return false;
     
     // fromCharaId
-    if (this->eventHelper->hasMember(json, member::FROM_CHARA_ID))
+    if (_eventHelper->hasMember(json, member::FROM_CHARA_ID))
     {
         this->fromCharaId = stoi(json[member::FROM_CHARA_ID].GetString());
     }

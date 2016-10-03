@@ -24,8 +24,8 @@ GameEvent::GameEvent() {};
 // デストラクタ
 GameEvent::~GameEvent()
 {
-    CC_SAFE_RELEASE_NULL(this->factory);
-    CC_SAFE_RELEASE_NULL(this->eventHelper);
+    CC_SAFE_RELEASE_NULL(_factory);
+    CC_SAFE_RELEASE_NULL(_eventHelper);
 };
 
 // 初期化
@@ -37,10 +37,10 @@ bool GameEvent::init()
     if(!factory || !eventHelper) return false;
     
     CC_SAFE_RETAIN(factory);
-    this->factory = factory;
+    _factory = factory;
     
     CC_SAFE_RETAIN(eventHelper);
-    this->eventHelper = eventHelper;
+    _eventHelper = eventHelper;
     
     return true;
 }
@@ -73,14 +73,12 @@ void GameEvent::setDone(bool done)
 GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 {
     // eventIDの指定があれば、指定のIDに対応するjsonから生成
-    if(this->eventHelper->hasMember(json, member::EVENT_ID))
-    {
-        return this->factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()));
+    if (_eventHelper->hasMember(json, member::EVENT_ID)) {
+        return _factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()));
     }
     // eventIDの指定がなければ、action配列から生成
-    else
-    {
-        return this->factory->createGameEvent(json[member::ACTION]);
+    else {
+        return _factory->createGameEvent(json[member::ACTION]);
     }
 }
 
@@ -90,55 +88,58 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 // Sequence
 bool EventSequence::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init()) return false;
     
-    this->events = this->factory->createEventQueue(json);
+    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
     
-    if(this->events.empty()) return false;
+    _json = json[member::ACTION];
+    
+    if (!_json.IsArray()) return false;
     
     return true;
 }
 
 void EventSequence::run()
 {
-    if(this->events.size() == 0) return;
+    // 先頭のイベントを生成して実行
+    GameEvent* event { _factory->createGameEvent(_json[0]) };
+    CC_SAFE_RETAIN(event);
+    _currentEvent = event;
     
-    // 最初のイベントを開始
-    this->events.front()->run();
+    event->run();
 }
 
 void EventSequence::update(float delta)
 {
-    if(this->events.empty())
-    {
+    if (_currentEvent) _currentEvent->update(delta);
+    if (_currentEvent && !_currentEvent->isDone()) return;
+    
+    // 実行中のイベントが終わっていたら解放
+    CC_SAFE_RELEASE_NULL(_currentEvent);
+    
+    // インデックスをあげる
+    _currentIdx++;
+    
+    // インデックス = 要素の個数なら終了
+    if (_currentIdx == _json.Size()) {
         this->setDone();
-        
         return;
     }
     
-    this->events.front()->update(delta);
+    // 次のイベントを生成
+    GameEvent* event { _factory->createGameEvent(_json[_currentIdx]) };
+    CC_SAFE_RETAIN(event);
+    _currentEvent = event;
     
-    if(this->events.front()->isDone())
-    {
-        CC_SAFE_RELEASE(this->events.front());
-        this->events.pop();
-        
-        // 次のイベントがあればを開始
-        if(!this->events.empty())
-        {
-           this->events.front()->run();
-        }
-        // 次のイベントがなければ終了
-        else
-        {
-            this->setDone();
-        }
-    }
+    // 次のイベントを実行
+    event->run();
 }
 
 void EventSequence::stop(int code)
 {
-    this->events.front()->stop(code);
+    if (!_currentEvent) return;
+    
+    _currentEvent->stop(code);
 }
 
 #pragma mark -
@@ -147,51 +148,47 @@ void EventSequence::stop(int code)
 // Spawn
 bool EventSpawn::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init()) return false;
     
-    this->events = this->factory->createEventVector(json);
+    _events = _factory->createEventVector(json);
     
-    if(this->events.empty()) return false;
+    if (_events.empty()) return false;
     
     return true;
 }
 
 void EventSpawn::run()
 {
-    if(this->events.size() == 0) return;
+    if (_events.size() == 0) return;
     
-    for(GameEvent* event : this->events)
-    {
+    for (GameEvent* event : _events) {
         event->run();
     }
 }
 
 void EventSpawn::update(float delta)
 {
-    if(this->isDone()) return;
+    if (this->isDone()) return;
     
     // 持っているイベントを更新し、全て終了していたら自身を終了する
     bool allDone { true };
     
-    for (GameEvent* event : this->events)
-    {
+    for (GameEvent* event : _events) {
         event->update(delta);
         
-        if(!event->isDone()) allDone = false;
+        if (!event->isDone()) allDone = false;
     }
     
-    if(allDone)
-    {
+    if (allDone) {
         this->setDone();
         
-        this->events.empty();
+        _events.empty();
     }
 }
 
 void EventSpawn::stop(int code)
 {
-    for (GameEvent* event : this->events)
-    {
+    for (GameEvent* event : _events) {
         event->stop(code);
     }
 }
@@ -202,49 +199,44 @@ void EventSpawn::stop(int code)
 // If
 bool EventIf::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init()) return false;
     
     // conditionをチェックしてtrueであればイベントを生成
-    if(this->eventHelper->detectCondition(json))
-    {
-        this->event = this->createSpawnFromIdOrAction(json);
-        CC_SAFE_RETAIN(this->event);
+    if (_eventHelper->detectCondition(json)) {
+        _event = this->createSpawnFromIdOrAction(json);
+        CC_SAFE_RETAIN(_event);
         
         return true;
     }
     // falseの場合はその場で終了
-    else
-    {
+    else {
         return false;
     }
 }
 
 void EventIf::run()
 {
-    if(!this->event)
-    {
+    if (!_event) {
         this->setDone();
         return;
     }
     
-    this->event->run();
+    _event->run();
 }
 
 void EventIf::update(float delta)
 {
-    if(!this->event)
-    {
+    if (!_event) {
         this->setDone();
         
         return;
     }
     
-    this->event->update(delta);
+    _event->update(delta);
     
-    if(this->event->isDone())
-    {
+    if (_event->isDone()) {
         this->setDone();
-        CC_SAFE_RELEASE_NULL(this->event);
+        CC_SAFE_RELEASE_NULL(_event);
     }
 }
 
@@ -255,46 +247,43 @@ bool CallEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    EventScript* eventScript  = this->eventHelper->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript();
+    EventScript* eventScript  = _eventHelper->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript();
     
-    if (!this->eventHelper->hasMember(json, member::EVENT_ID)) return false;
+    if (!_eventHelper->hasMember(json, member::EVENT_ID)) return false;
     
-    this->event = this->factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
-    CC_SAFE_RETAIN(this->event);
+    _event = _factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
+    CC_SAFE_RETAIN(_event);
     
     return true;
 }
 
 void CallEvent::run(){
-    if(!this->event)
-    {
+    if (!_event) {
         this->setDone();
         return;
     }
     
-    this->event->run();
+    _event->run();
 }
 
 void CallEvent::update(float delta)
 {
-    if (!this->event)
-    {
+    if (!_event) {
         this->setDone();
         return;
     }
     
-    this->event->update(delta);
+    _event->update(delta);
     
-    if (this->event->isDone())
-    {
+    if (_event->isDone()) {
         this->setDone();
-        CC_SAFE_RELEASE_NULL(this->event);
+        CC_SAFE_RELEASE_NULL(_event);
     }
 }
 
 void CallEvent::stop(int code)
 {
-    if(this->event != nullptr) this->event->stop(code);
+    if (_event != nullptr) _event->stop(code);
 }
 
 #pragma mark -
@@ -303,19 +292,19 @@ void CallEvent::stop(int code)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init()) return false;
     
-    if(!this->eventHelper->hasMember(json, member::TIMES)) return false;
+    if (!_eventHelper->hasMember(json, member::TIMES)) return false;
     
-    this->times = json[member::TIMES].GetInt();
+    _times = json[member::TIMES].GetInt();
     
-    if(!this->eventHelper->hasMember(json, member::ACTION)) return false;
+    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
     
-    if(this->eventHelper->hasMember(json, member::ID)) this->code = stoi(json[member::ID].GetString());
+    if (_eventHelper->hasMember(json, member::ID)) _code = stoi(json[member::ID].GetString());
     
-    this->event = this->createSpawnFromIdOrAction(json);
-    CC_SAFE_RETAIN(this->event);
-    this->json = &json;
+    _event = this->createSpawnFromIdOrAction(json);
+    CC_SAFE_RETAIN(_event);
+    _json = &json;
     
     return true;
 }
@@ -323,49 +312,45 @@ bool EventRepeat::init(rapidjson::Value& json)
 void EventRepeat::run()
 {
     
-    if(!this->event || this->times == 0)
-    {
+    if (!_event || _times == 0) {
         this->setDone();
-        CC_SAFE_RELEASE_NULL(this->event);
+        CC_SAFE_RELEASE_NULL(_event);
         return;
     }
     
-    this->event->run();
+    _event->run();
 }
 
 void EventRepeat::update(float delta)
 {
     
-    if (!this->event || this->times == 0)
-    {
+    if (!_event || _times == 0) {
         this->setDone();
-        CC_SAFE_RELEASE_NULL(this->event);
+        CC_SAFE_RELEASE_NULL(_event);
         return;
     }
     
-    this->event->update(delta);
+    _event->update(delta);
     
-    if (this->event->isDone())
-    {
-        this->times--;
-        if(this->times == 0)
-        {
+    if (_event->isDone()) {
+        _times--;
+        if (_times == 0) {
             this->setDone();
-            CC_SAFE_RELEASE_NULL(this->event);
+            CC_SAFE_RELEASE_NULL(_event);
             return;
         }
         // 0でないので再実行
-        CC_SAFE_RELEASE_NULL(this->event);
-        this->event = this->createSpawnFromIdOrAction(*this->json);
-        CC_SAFE_RETAIN(this->event);
-        this->event->run();
+        CC_SAFE_RELEASE_NULL(_event);
+        _event = this->createSpawnFromIdOrAction(*_json);
+        CC_SAFE_RETAIN(_event);
+        _event->run();
     }
     
 }
 
 void EventRepeat::stop(int code)
 {
-    if(this->code == code) this->times = 0;
+    if (_code == code) _times = 0;
 }
 
 #pragma mark -
@@ -376,16 +361,16 @@ bool EventStop::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    if(!this->eventHelper->hasMember(json, member::ID)) return false;
+    if (!_eventHelper->hasMember(json, member::ID)) return false;
     
-    this->eventCode = stoi(json[member::ID].GetString());
+    _eventCode = stoi(json[member::ID].GetString());
 
     return true;
 }
 
 void EventStop::run()
 {
-    DungeonSceneManager::getInstance()->getRunningEvent()->stop(this->eventCode);
+    DungeonSceneManager::getInstance()->getRunningEvent()->stop(_eventCode);
     
     this->setDone();
 }

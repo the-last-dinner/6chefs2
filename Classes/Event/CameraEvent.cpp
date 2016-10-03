@@ -35,18 +35,18 @@ bool CreateCameraEvent::init(rapidjson::Value& json)
     if (!GameEvent::init()) return false;
     
     // 映したい場所
-    _location.map_id = (this->eventHelper->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
+    _location.map_id = (_eventHelper->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
     
-    Point position { this->eventHelper->getPoint(json) };
+    Point position { _eventHelper->getPoint(json) };
     _location.x = position.x;
     _location.y = position.y;
     
     // ターゲット
-    if (this->eventHelper->hasMember(json, member::OBJECT_ID)) _objId = stoi(json[member::OBJECT_ID].GetString());
+    if (_eventHelper->hasMember(json, member::OBJECT_ID)) _objId = stoi(json[member::OBJECT_ID].GetString());
     
     // イベント
-    if (!this->eventHelper->hasMember(json, member::ACTION)) return false;
-    _event = this->factory->createGameEvent(json[member::ACTION]);
+    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
+    _event = _factory->createGameEvent(json[member::ACTION]);
     CC_SAFE_RETAIN(_event);
     
     return true;
@@ -69,10 +69,10 @@ bool MoveCameraEvent::init(rapidjson::Value& json)
     if (!GameEvent::init()) return false;
     
     // 目的地
-    _toPosition = this->eventHelper->getToPoint(json);
+    _toPosition = _eventHelper->getToPoint(json);
     
     // 移動時間
-    if (this->eventHelper->hasMember(json, member::TIME)) _duration = json[member::TIME].GetDouble();
+    if (_eventHelper->hasMember(json, member::TIME)) _duration = json[member::TIME].GetDouble();
     
     return true;
 }
@@ -89,7 +89,7 @@ bool SetCameraTargetEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    if (this->eventHelper->hasMember(json, member::OBJECT_ID)) {
+    if (_eventHelper->hasMember(json, member::OBJECT_ID)) {
         _objectId = stoi(json[member::OBJECT_ID].GetString());
     } else {
         _objectId = etoi(ObjectID::HERO);
@@ -100,7 +100,7 @@ bool SetCameraTargetEvent::init(rapidjson::Value& json)
 
 void SetCameraTargetEvent::run()
 {
-    MapObject* target { this->eventHelper->getMapObjectById(to_string(_objectId)) };
+    MapObject* target { _eventHelper->getMapObjectById(to_string(_objectId)) };
     DungeonSceneManager::getInstance()->getCamera()->setTarget(target);
     
     this->setDone();

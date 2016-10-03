@@ -26,21 +26,21 @@ bool CreateEnemyEvent::init(rapidjson::Value& json)
     EnemyData data {};
     
     // 敵ID
-    if(this->eventHelper->hasMember(json, member::ENEMY_ID))
+    if(_eventHelper->hasMember(json, member::ENEMY_ID))
     {
         data.enemy_id = stoi(json[member::ENEMY_ID].GetString());
     }
     
     // キャラクタID
-    if(!this->eventHelper->hasMember(json, member::CHARA_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
     data.chara_data.chara_id = stoi(json[member::CHARA_ID].GetString());
     
     // オブジェクトID
-    if(!this->eventHelper->hasMember(json, member::OBJECT_ID)) return false;
+    if(!_eventHelper->hasMember(json, member::OBJECT_ID)) return false;
     data.chara_data.obj_id = stoi(json[member::OBJECT_ID].GetString());
     
     // 向き
-    Direction direction {this->eventHelper->getDirection(json)};
+    Direction direction {_eventHelper->getDirection(json)};
     if(direction.isNull()) direction = Direction::DOWN;
     data.chara_data.location.direction = direction;
     
@@ -52,16 +52,16 @@ bool CreateEnemyEvent::init(rapidjson::Value& json)
     data.chara_data.location.map_id = DungeonSceneManager::getInstance()->getLocation().map_id;
     
     // 追跡アルゴリズム
-    data.move_pattern = this->eventHelper->getMovePatternForEnemy(json);
+    data.move_pattern = _eventHelper->getMovePatternForEnemy(json);
     
     // 消えるまでに必要なマップ移動の回数
-    if(this->eventHelper->hasMember(json, member::TIMES)) data.change_map_counter = json[member::TIMES].GetInt();
+    if(_eventHelper->hasMember(json, member::TIMES)) data.change_map_counter = json[member::TIMES].GetInt();
     
     // 移動速度の倍率
-    if(this->eventHelper->hasMember(json, member::SPEED)) data.speed_ratio = json[member::SPEED].GetDouble();
+    if(_eventHelper->hasMember(json, member::SPEED)) data.speed_ratio = json[member::SPEED].GetDouble();
     
     // 最初に目指す移動経路オブジェクトのID
-    if(this->eventHelper->hasMember(json, member::PATH_ID)) data.start_path_id = stoi(json[member::PATH_ID].GetString());
+    if(_eventHelper->hasMember(json, member::PATH_ID)) data.start_path_id = stoi(json[member::PATH_ID].GetString());
     
     // データを格納
     this->data = data;
@@ -82,8 +82,8 @@ bool RemoveEnemyEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    bool hasEnemyId = this->eventHelper->hasMember(json, member::ENEMY_ID);
-    bool hasObjectId = this->eventHelper->hasMember(json, member::OBJECT_ID);
+    bool hasEnemyId = _eventHelper->hasMember(json, member::ENEMY_ID);
+    bool hasObjectId = _eventHelper->hasMember(json, member::OBJECT_ID);
     
     if (!hasEnemyId && !hasObjectId) return false;
     

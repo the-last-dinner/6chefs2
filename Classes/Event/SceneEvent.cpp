@@ -38,9 +38,9 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
     Direction direction { Direction::NONE };
 
     // directionの指定がされている時
-    if(this->eventHelper->hasMember(json, member::DIRECTION))
+    if(_eventHelper->hasMember(json, member::DIRECTION))
     {
-        direction = this->eventHelper->getDirection(json);
+        direction = _eventHelper->getDirection(json);
     }
     // directionが指定されていない時
     else
@@ -52,7 +52,7 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
     this->currentLocation = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation();
     
     // 移動後に実行するイベントID
-    if(this->eventHelper->hasMember(json, member::EVENT_ID)) this->initEventId = stoi(json[member::EVENT_ID].GetString());
+    if(_eventHelper->hasMember(json, member::EVENT_ID)) this->initEventId = stoi(json[member::EVENT_ID].GetString());
     
     return true;
 }
@@ -91,9 +91,9 @@ bool FadeOutEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(_eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
-    this->color = this->eventHelper->getColor(json);
+    this->color = _eventHelper->getColor(json);
     
     return true;
 }
@@ -110,7 +110,7 @@ bool FadeInEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    if(this->eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if(_eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
     
     return true;
 }
@@ -128,7 +128,7 @@ bool GameOverEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // ゲームオーバーのID
-    if(this->eventHelper->hasMember(json, member::ID)) this->gameOverId = stoi(json[member::ID].GetString());
+    if(_eventHelper->hasMember(json, member::ID)) this->gameOverId = stoi(json[member::ID].GetString());
     
     return true;
 }
@@ -147,7 +147,7 @@ bool EndingEvent::init(rapidjson::Value& json)
     if(!GameEvent::init()) return false;
     
     // エンディングID
-    if(this->eventHelper->hasMember(json, member::ID)) this->endingId = stoi(json[member::ID].GetString());
+    if(_eventHelper->hasMember(json, member::ID)) this->endingId = stoi(json[member::ID].GetString());
     
     return true;
 }
@@ -179,7 +179,7 @@ void BackToTitleEvent::run()
 bool InfoAssertEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
-    this->text = (this->eventHelper->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
+    this->text = (_eventHelper->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
     return true;
 }
 

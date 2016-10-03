@@ -19,21 +19,21 @@ class GameEvent : public Ref
 {
 // インスタンス変数
 protected:
-    EventFactory* factory { nullptr };
-    GameEventHelper* eventHelper { nullptr };
-    int code { -1 };
+    EventFactory* _factory { nullptr };
+    GameEventHelper* _eventHelper { nullptr };
+    int _code { -1 };
 private:
-    bool _isDone {false};
-    bool _isReusable {false};
+    bool _isDone { false };
+    bool _isReusable { false };
     
 // インスタンスメソッド
 public:
     bool isReusable() const;
     void setReusable(bool reusable);
     bool isDone() const;
-    void setDone(bool done=true);
-    virtual void run() {CCLOG("runメソッドをoverrideしてね");};     // イベント開始
-    virtual void update(float delta) {};                         // タスクによって毎フレーム呼び出されるメソッド
+    void setDone(bool done = true);
+    virtual void run() { CCLOG("runメソッドをoverrideしてね"); };     // イベント開始
+    virtual void update(float delta) {};                           // タスクによって毎フレーム呼び出されるメソッド
     virtual void stop(int code = -1) {};
     
 protected:
@@ -52,12 +52,14 @@ public:
     
 // インスタンス変数
 private:
-    queue<GameEvent*> events {};
+    rapidjson::Value _json {};
+    int _currentIdx { 0 };
+    GameEvent* _currentEvent { nullptr };
     
 // インスタンスメソッド
 private:
-    EventSequence() {FUNCLOG};
-    ~EventSequence() {FUNCLOG};
+    EventSequence() { FUNCLOG };
+    ~EventSequence() { FUNCLOG };
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
@@ -73,7 +75,7 @@ public:
     
 // インスタンス変数
 private:
-    Vector<GameEvent*> events {};
+    Vector<GameEvent*> _events {};
     
 // インスタンスメソッド
 private:
@@ -95,7 +97,7 @@ public:
 
 // インスタンス変数
 private:
-    GameEvent* event { nullptr };
+    GameEvent* _event { nullptr };
 
 // インスタンスメソッド
 private:
@@ -112,7 +114,7 @@ class CallEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CallEvent, rapidjson::Value&)
 private:
-    GameEvent* event {nullptr};
+    GameEvent* _event { nullptr };
 private:
     CallEvent() {FUNCLOG};
     ~CallEvent() {FUNCLOG};
@@ -131,9 +133,9 @@ public:
     
 // インスタンス変数
 private:
-    int times { 0 };
-    GameEvent* event {nullptr};
-    rapidjson::Value* json = {nullptr};
+    int _times { 0 };
+    GameEvent* _event { nullptr };
+    rapidjson::Value* _json { nullptr };
     
 // インスタンスメソッド
 private:
@@ -154,7 +156,7 @@ public:
     
     // インスタンス変数
 private:
-    int eventCode { -1 };
+    int _eventCode { -1 };
     
     // インスタンスメソッド
 private:
