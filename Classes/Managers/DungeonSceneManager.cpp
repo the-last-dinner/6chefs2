@@ -21,9 +21,9 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/Status/Stamina.h"
 
 #include "Models/CommonEventScripts.h"
-#include "Models/Stamina.h"
 #include "Models/StopWatch.h"
 
 #include "Scenes/DungeonScene.h"

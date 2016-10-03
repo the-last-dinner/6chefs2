@@ -23,11 +23,10 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/Status/Stamina.h"
 
 #include "Managers/DungeonSceneManager.h"
 #include "Managers/NotificationManager.h"
-
-#include "Models/Stamina.h"
 
 #include "Scenes/EventHandler/DungeonSceneEventHandler.h"
 #include "Scenes/DungeonMenuScene.h"

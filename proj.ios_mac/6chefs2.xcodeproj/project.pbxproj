@@ -265,10 +265,6 @@
 		DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0391031C871E1000C50E8E /* ChangeMapHistory.cpp */; };
 		DC03920F1C871E1000C50E8E /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0391051C871E1000C50E8E /* Direction.cpp */; };
 		DC0392101C871E1000C50E8E /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0391051C871E1000C50E8E /* Direction.cpp */; };
-		DC0392151C871E1000C50E8E /* Sight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910B1C871E1000C50E8E /* Sight.cpp */; };
-		DC0392161C871E1000C50E8E /* Sight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910B1C871E1000C50E8E /* Sight.cpp */; };
-		DC0392171C871E1000C50E8E /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910D1C871E1000C50E8E /* Stamina.cpp */; };
-		DC0392181C871E1000C50E8E /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910D1C871E1000C50E8E /* Stamina.cpp */; };
 		DC0392191C871E1000C50E8E /* StopWatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910F1C871E1000C50E8E /* StopWatch.cpp */; };
 		DC03921A1C871E1000C50E8E /* StopWatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC03910F1C871E1000C50E8E /* StopWatch.cpp */; };
 		DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0391301C871E1000C50E8E /* BaseScene.cpp */; };
@@ -379,6 +375,10 @@
 		DC8C4D361D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8C4D331D8FD57C00FF0A1E /* AttackDetector.cpp */; };
 		DCA4495D1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */; };
 		DCA4495E1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */; };
+		DCA449631DA21698005C5F9A /* Sight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495F1DA21698005C5F9A /* Sight.cpp */; };
+		DCA449641DA21698005C5F9A /* Sight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA4495F1DA21698005C5F9A /* Sight.cpp */; };
+		DCA449651DA21698005C5F9A /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449611DA21698005C5F9A /* Stamina.cpp */; };
+		DCA449661DA21698005C5F9A /* Stamina.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449611DA21698005C5F9A /* Stamina.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
@@ -657,10 +657,6 @@
 		DC0391041C871E1000C50E8E /* ChangeMapHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeMapHistory.h; sourceTree = "<group>"; };
 		DC0391051C871E1000C50E8E /* Direction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Direction.cpp; sourceTree = "<group>"; };
 		DC0391061C871E1000C50E8E /* Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
-		DC03910B1C871E1000C50E8E /* Sight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sight.cpp; sourceTree = "<group>"; };
-		DC03910C1C871E1000C50E8E /* Sight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sight.h; sourceTree = "<group>"; };
-		DC03910D1C871E1000C50E8E /* Stamina.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stamina.cpp; sourceTree = "<group>"; };
-		DC03910E1C871E1000C50E8E /* Stamina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stamina.h; sourceTree = "<group>"; };
 		DC03910F1C871E1000C50E8E /* StopWatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StopWatch.cpp; sourceTree = "<group>"; };
 		DC0391101C871E1000C50E8E /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
 		DC03912E1C871E1000C50E8E /* resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resources.h; sourceTree = "<group>"; };
@@ -762,6 +758,10 @@
 		DC8C4D341D8FD57C00FF0A1E /* AttackDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackDetector.h; path = DetectionBox/AttackDetector.h; sourceTree = "<group>"; };
 		DCA4495B1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DungeonSceneEventHandler.cpp; path = EventHandler/DungeonSceneEventHandler.cpp; sourceTree = "<group>"; };
 		DCA4495C1DA0EAA0005C5F9A /* DungeonSceneEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DungeonSceneEventHandler.h; path = EventHandler/DungeonSceneEventHandler.h; sourceTree = "<group>"; };
+		DCA4495F1DA21698005C5F9A /* Sight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sight.cpp; path = Status/Sight.cpp; sourceTree = "<group>"; };
+		DCA449601DA21698005C5F9A /* Sight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sight.h; path = Status/Sight.h; sourceTree = "<group>"; };
+		DCA449611DA21698005C5F9A /* Stamina.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stamina.cpp; path = Status/Stamina.cpp; sourceTree = "<group>"; };
+		DCA449621DA21698005C5F9A /* Stamina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stamina.h; path = Status/Stamina.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
@@ -1369,10 +1369,6 @@
 				DC0391041C871E1000C50E8E /* ChangeMapHistory.h */,
 				DC0391051C871E1000C50E8E /* Direction.cpp */,
 				DC0391061C871E1000C50E8E /* Direction.h */,
-				DC03910B1C871E1000C50E8E /* Sight.cpp */,
-				DC03910C1C871E1000C50E8E /* Sight.h */,
-				DC03910D1C871E1000C50E8E /* Stamina.cpp */,
-				DC03910E1C871E1000C50E8E /* Stamina.h */,
 				DC03910F1C871E1000C50E8E /* StopWatch.cpp */,
 				DC0391101C871E1000C50E8E /* StopWatch.h */,
 				2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */,
@@ -1538,6 +1534,10 @@
 		DC7F6E1D1DA0B150007AE8B5 /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				DCA4495F1DA21698005C5F9A /* Sight.cpp */,
+				DCA449601DA21698005C5F9A /* Sight.h */,
+				DCA449611DA21698005C5F9A /* Stamina.cpp */,
+				DCA449621DA21698005C5F9A /* Stamina.h */,
 				DC7F6E1E1DA0B20D007AE8B5 /* HitPoint.cpp */,
 				DC7F6E1F1DA0B20D007AE8B5 /* HitPoint.h */,
 			);
@@ -1699,6 +1699,7 @@
 				DC7F6E201DA0B20D007AE8B5 /* HitPoint.cpp in Sources */,
 				DC0391BF1C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26FBED381C98514A002FAFF7 /* CsvUtils.cpp in Sources */,
+				DCA449631DA21698005C5F9A /* Sight.cpp in Sources */,
 				DC0391EF1C871E1000C50E8E /* MapObjectFactory.cpp in Sources */,
 				DC8C4D2D1D8FBE1300FF0A1E /* HitBox.cpp in Sources */,
 				DC0391B31C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
@@ -1713,7 +1714,6 @@
 				DC0391CD1C871E1000C50E8E /* MessageLayer.cpp in Sources */,
 				DC0391CB1C871E1000C50E8E /* CharacterMessageLayer.cpp in Sources */,
 				DC0392331C871E1000C50E8E /* FollowType.cpp in Sources */,
-				DC0392151C871E1000C50E8E /* Sight.cpp in Sources */,
 				DC03922B1C871E1000C50E8E /* CameraTask.cpp in Sources */,
 				DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
 				DC03920F1C871E1000C50E8E /* Direction.cpp in Sources */,
@@ -1752,7 +1752,6 @@
 				DC0392271C871E1000C50E8E /* StartUpScene.cpp in Sources */,
 				DC0391D91C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DC0391A51C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
-				DC0392171C871E1000C50E8E /* Stamina.cpp in Sources */,
 				DC0391771C871E1000C50E8E /* StoryMessageData.cpp in Sources */,
 				DC5D1D571D84FA7D0034DD8F /* CollisionBox.cpp in Sources */,
 				DC0391FF1C871E1000C50E8E /* Scouter.cpp in Sources */,
@@ -1796,6 +1795,7 @@
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0391C11C871E1000C50E8E /* MiniSelector.cpp in Sources */,
 				DC0391C91C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
+				DCA449651DA21698005C5F9A /* Stamina.cpp in Sources */,
 				DC0391E11C871E1000C50E8E /* TextureManager.cpp in Sources */,
 				DC0391BD1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0182A11D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */,
@@ -1893,6 +1893,7 @@
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
 				DC03918C1C871E1000C50E8E /* Fog.cpp in Sources */,
+				DCA449641DA21698005C5F9A /* Sight.cpp in Sources */,
 				9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
 				DC0391EE1C871E1000C50E8E /* MapObject.cpp in Sources */,
 				DC0391FE1C871E1000C50E8E /* RandomMove.cpp in Sources */,
@@ -1955,7 +1956,6 @@
 				DC03923A1C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC0391E81C871E1000C50E8E /* EventObject.cpp in Sources */,
 				DC0391EC1C871E1000C50E8E /* ItemObject.cpp in Sources */,
-				DC0392181C871E1000C50E8E /* Stamina.cpp in Sources */,
 				DC0391741C871E1000C50E8E /* CharacterMessageData.cpp in Sources */,
 				DC23C86D1D8BD9A7008E57F3 /* PathFinder.cpp in Sources */,
 				DCA4495E1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */,
@@ -1977,7 +1977,6 @@
 				DC03921E1C871E1000C50E8E /* DungeonCameraScene.cpp in Sources */,
 				DC03917C1C871E1000C50E8E /* DungeonCameraSceneData.cpp in Sources */,
 				DC0391B21C871E1000C50E8E /* SelectEventLayer.cpp in Sources */,
-				DC0392161C871E1000C50E8E /* Sight.cpp in Sources */,
 				DC0391941C871E1000C50E8E /* EnemyEvent.cpp in Sources */,
 				2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC23C8711D8BD9D0008E57F3 /* PathNode.cpp in Sources */,
@@ -2015,6 +2014,7 @@
 				DC0391721C871E1000C50E8E /* AppDelegate.cpp in Sources */,
 				DC0392461C871E1000C50E8E /* TrophyNotification.cpp in Sources */,
 				DC03921C1C871E1000C50E8E /* BaseScene.cpp in Sources */,
+				DCA449661DA21698005C5F9A /* Stamina.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

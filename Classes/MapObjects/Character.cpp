@@ -19,9 +19,8 @@
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 #include "MapObjects/Status/HitPoint.h"
+#include "MapObjects/Status/Sight.h"
 #include "MapObjects/TerrainState/TerrainState.h"
-
-#include "Models/Sight.h"
 
 #include "Managers/DungeonSceneManager.h"
 

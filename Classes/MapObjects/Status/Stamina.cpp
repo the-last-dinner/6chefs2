@@ -6,7 +6,7 @@
 //
 //
 
-#include "Models/Stamina.h"
+#include "MapObjects/Status/Stamina.h"
 
 // 定数
 const float Stamina::MAX_VALUE { 100.f };

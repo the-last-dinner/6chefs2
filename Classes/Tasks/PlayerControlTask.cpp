@@ -11,9 +11,8 @@
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/Status/Stamina.h"
 #include "MapObjects/TerrainObject/TerrainObject.h"
-
-#include "Models/Stamina.h"
 
 #include "Managers/DungeonSceneManager.h"
 

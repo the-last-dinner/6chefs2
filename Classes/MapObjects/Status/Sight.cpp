@@ -6,7 +6,7 @@
 //
 //
 
-#include "Models/Sight.h"
+#include "MapObjects/Status/Sight.h"
 
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"

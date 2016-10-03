@@ -16,8 +16,6 @@
 
 #include "Managers/DungeonSceneManager.h"
 
-#include "Models/Sight.h"
-
 // コンストラクタ
 Scouter::Scouter() {FUNCLOG};
 
