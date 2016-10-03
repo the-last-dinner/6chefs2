@@ -102,4 +102,6 @@ void SetCameraTargetEvent::run()
 {
     MapObject* target { this->eventHelper->getMapObjectById(to_string(_objectId)) };
     DungeonSceneManager::getInstance()->getCamera()->setTarget(target);
+    
+    this->setDone();
 }
