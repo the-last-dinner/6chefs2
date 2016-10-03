@@ -66,6 +66,7 @@ void EventTask::runEventQueue()
 // イベントをIDから実行
 void EventTask::runEvent(int eventId)
 {
+    if(eventId == etoi(EventID::UNDIFINED)) return;
     this->pushEventBack(eventId);
     
     // 実行

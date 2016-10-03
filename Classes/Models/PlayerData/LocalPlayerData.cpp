@@ -18,8 +18,7 @@ const char* LocalPlayerData::TOKEN {"token"};
 const char* LocalPlayerData::SAVE_COUNT {"save_count"};
 const char* LocalPlayerData::PLAY_TIME {"play_time"};
 const char* LocalPlayerData::CHAPTER {"chapter"};
-const char* LocalPlayerData::EQUIPMENT_RIGHT {"equipment_right"};
-const char* LocalPlayerData::EQUIPMENT_LEFT {"equipment_left"};
+const char* LocalPlayerData::EQUIPMENT {"equipment"};
 const char* LocalPlayerData::MAP_ID {"map_id"};
 const char* LocalPlayerData::PARTY {"party"};
 const char* LocalPlayerData::CHARA_ID {"chara_id"};
@@ -195,10 +194,12 @@ void LocalPlayerData::setItemsObject(char * charaId)
         
         items.AddMember(cidStr, rapidjson::Value(kObjectType), this->localData.GetAllocator());
         
-        cidStr.SetString(EQUIPMENT_LEFT, strlen(EQUIPMENT_LEFT), this->localData.GetAllocator());
+        string equipmentLeft { JsonKey::getEquipmentKey(Direction::LEFT) };
+        cidStr.SetString(equipmentLeft.c_str(), equipmentLeft.length(), this->localData.GetAllocator());
         items[charaId].AddMember(cidStr, rapidjson::Value(0), this->localData.GetAllocator());
         
-        cidStr.SetString(EQUIPMENT_RIGHT, strlen(EQUIPMENT_RIGHT), this->localData.GetAllocator());
+        string equipmentRight { JsonKey::getEquipmentKey(Direction::RIGHT) };
+        cidStr.SetString(equipmentRight.c_str(), equipmentRight.length(), this->localData.GetAllocator());
         items[charaId].AddMember(cidStr, rapidjson::Value(0), this->localData.GetAllocator());
         
         cidStr.SetString(ITEM, strlen(ITEM), this->localData.GetAllocator());
@@ -214,8 +215,8 @@ void LocalPlayerData::setItemEquipment(const Direction direction, const int item
     char cidChar[10];
     LastSupper::StringUtils::setCharsFromInt(cidChar, this->getMainCharaId());
     this->setItemsObject(cidChar);
-    const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    this->localData[ITEMS][cidChar][dir].SetInt(itemId);
+    const string dir = JsonKey::getEquipmentKey(direction);
+    this->localData[ITEMS][cidChar][dir.c_str()].SetInt(itemId);
 }
 
 // 装備してるアイテムIDを取得
@@ -224,8 +225,8 @@ int LocalPlayerData::getItemEquipment(const Direction direction)
     char cidChar[10];
     LastSupper::StringUtils::setCharsFromInt(cidChar, this->getMainCharaId());
     this->setItemsObject(cidChar);
-    const char* dir = direction == Direction::LEFT ? EQUIPMENT_LEFT : EQUIPMENT_RIGHT;
-    return this->localData[ITEMS][cidChar][dir].GetInt();
+    const string dir { JsonKey::getEquipmentKey(direction) };
+    return this->localData[ITEMS][cidChar][dir.c_str()].GetInt();
 }
 
 // 指定のアイテムを装備しているかどうか
@@ -485,7 +486,7 @@ void LocalPlayerData::setLocation(const vector<CharacterData>& characters)
         if (i == 0) this->localData[MAP_ID].SetInt(location.map_id);
         this->localData[PARTY][i][X].SetInt(location.x);
         this->localData[PARTY][i][Y].SetInt(location.y);
-        this->localData[PARTY][i][DIRECTION].SetInt(static_cast<int>(location.direction));
+        this->localData[PARTY][i][DIRECTION].SetInt(location.direction.getInt());
     }
 }
 
@@ -525,7 +526,7 @@ void LocalPlayerData::setPartyMember(const CharacterData& chara)
     
     // direction
     jval.SetString(DIRECTION, strlen(DIRECTION), this->localData.GetAllocator());
-    member.AddMember(jval, rapidjson::Value(static_cast<int>(chara.location.direction)), this->localData.GetAllocator());
+    member.AddMember(jval, rapidjson::Value(chara.location.direction.getInt()), this->localData.GetAllocator());
     
     this->localData[PARTY].PushBack(member, this->localData.GetAllocator());
 }
@@ -650,4 +651,12 @@ vector<string> LocalPlayerData::getBgmAll()
         bgms.push_back(bgmList[i].GetString());
     }
     return bgms;
+}
+
+#pragma mark -
+#pragma mark JsonKey
+
+string LocalPlayerData::JsonKey::getEquipmentKey(const Direction& direction)
+{
+    return string(EQUIPMENT) + "_" + direction.getDowncaseString();
 }

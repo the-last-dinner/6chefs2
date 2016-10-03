@@ -8,24 +8,23 @@
 
 #include "MapObjects/TerrainObject/SlipFloor.h"
 
+#include "MapObjects/Terrainstate/TerrainStateCache.h"
+
 // コンストラクタ
-SlipFloor::SlipFloor() {FUNCLOG};
+SlipFloor::SlipFloor() { FUNCLOG };
 
 // デストラクタ
-SlipFloor::~SlipFloor() {FUNCLOG};
+SlipFloor::~SlipFloor() { FUNCLOG };
 
 // 初期化
 bool SlipFloor::init()
 {
+    if(!TerrainObject::init()) return false;
+    
     return true;
 }
 
-// オブジェクトが動こうとした時
-void SlipFloor::onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+TerrainState* SlipFloor::getTerrainState(TerrainStateCache* cache) const
 {
-    // コールバックを変更
-    target->move(directions, [target, directions, onMoved, ratio]
-    {
-        if(!target->moveBy(directions, onMoved, ratio) && onMoved)  onMoved();
-    }, ratio);
+    return cache->getState(TerrainStateCache::StateType::SLIP);
 }

@@ -41,7 +41,7 @@ bool CreateEnemyEvent::init(rapidjson::Value& json)
     
     // 向き
     Direction direction {this->eventHelper->getDirection(json)};
-    if(direction == Direction::SIZE) direction = Direction::FRONT;
+    if(direction.isNull()) direction = Direction::DOWN;
     data.chara_data.location.direction = direction;
     
     // マス座標

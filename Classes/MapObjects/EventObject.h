@@ -13,11 +13,11 @@
 
 class EventObject : public MapObject
 {
-	// クラスメソッド
+// クラスメソッド
 public:
 	static EventObject* create();
 	
-	// インスタンスメソッド
+// インスタンスメソッド
 private:
 	EventObject();
 	~EventObject();

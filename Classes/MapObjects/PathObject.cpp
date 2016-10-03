@@ -53,7 +53,7 @@ void PathObject::setSpeedRatio(float speedRatio)
 }
 
 // 見渡す方向を設定
-void PathObject::setLookDirection(Direction direction)
+void PathObject::setLookDirection(const Direction& direction)
 {
     this->direction = direction;
 }

@@ -8,8 +8,6 @@
 
 #include "MapObjectEvent.h"
 
-#include "Algorithm/PathFinder.h"
-
 #include "Effects/Light.h"
 
 #include "Event/GameEventHelper.h"
@@ -17,7 +15,9 @@
 
 #include "MapObjects/MapObject.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/Command/MoveCommand.h"
 #include "Mapobjects/Party.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
 
@@ -47,7 +47,7 @@ bool ReactionEvent::init(rapidjson::Value& json)
 
 void ReactionEvent::run()
 {
-    MapObject* target = {this->eventHelper->getMapObjectById(this->objectId)};
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     if(!target)
     {
@@ -83,7 +83,7 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         data.location.y = json[member::Y].GetInt();
         
         Direction direction {this->eventHelper->getDirection(json)};
-        if(direction == Direction::SIZE) direction = Direction::FRONT;
+        if(direction.isNull()) direction = Direction::DOWN;
         data.location.direction = direction;
         data.move_pattern = this->eventHelper->getMovePatternForCharacter(json);
         
@@ -95,7 +95,6 @@ bool CreateMapObjectEvent::init(rapidjson::Value& json)
         
         chara->setTrigger(this->eventHelper->getTrigger(json));
         chara->setEventId(this->eventHelper->getEventId(json));
-        chara->setHit(true);
         
         this->target = chara;
     }
@@ -208,7 +207,7 @@ bool MoveToEvent::init(rapidjson::Value& json)
 
 void MoveToEvent::run()
 {
-    MapObject* target {this->eventHelper->getMapObjectById(this->objectId)};
+    MapObject* target { this->eventHelper->getMapObjectById(this->objectId) };
     
     if(!target)
     {
@@ -218,10 +217,14 @@ void MoveToEvent::run()
     }
     
     // 経路探索開始
-    PathFinder* pathFinder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    deque<Direction> directions { pathFinder->getPath(target->getGridRect(), target->getWorldGridCollisionRects(), this->dest) };
+    PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
+    deque<Direction> directions { pathFinder->getPath(target, this->dest) };
     
-    target->moveByQueue(directions, [this](bool reached){this->setDone();}, this->speedRatio);
+    Vector<MoveCommand*> commands { MoveCommand::create(directions, [this](bool moved) { this->setDone(); }, this->speedRatio) };
+    
+    for (MoveCommand* command : commands) {
+        target->pushCommand(command);
+    }
 }
 
 #pragma mark -
@@ -237,7 +240,7 @@ bool MoveByEvent::init(rapidjson::Value& json)
     // 格子数
     this->gridNum = static_cast<int>(json[member::STEPS].GetDouble() * 2);
     
-    if(this->direction == Direction::SIZE || this->gridNum == 0) return false;
+    if(this->direction.isNull() || this->gridNum == 0) return false;
     
     // 速さ倍率
     if(this->eventHelper->hasMember(json, member::SPEED)) this->speedRatio = json[member::SPEED].GetDouble();
@@ -256,7 +259,11 @@ void MoveByEvent::run()
         return;
     }
     
-    target->moveBy(this->direction, this->gridNum, [this](bool _){this->setDone();}, this->speedRatio);
+    Vector<MoveCommand*> commands { MoveCommand::create({ this->direction }, this->gridNum, [this](bool moved) { this->setDone(); }, this->speedRatio) };
+    
+    for (MoveCommand* command : commands) {
+        target->pushCommand(command);
+    }
 }
 
 #pragma mark -

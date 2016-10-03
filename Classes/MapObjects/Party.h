@@ -23,7 +23,7 @@ public:
 
 // インスタンス変数
 private:
-    Vector<Character*> members {};
+    Vector<Character*> _members {};
 public:
     function<void(const Rect&)> onPartyMoved { nullptr };
 
@@ -32,13 +32,13 @@ private:
     Party();
     ~Party();
     bool init(const vector<CharacterData>& datas);
-    bool moveMainCharacter(const vector<Direction>& directions, float ratio, function<void()> callback);
-    void moveMember(Character* member, Character* previousMember, float ratio);
+    void moveMainCharacter(const vector<Direction>& directions, float speed, function<void(bool)> callback);
+    void moveMember(Character* member, Character* previousMember, float speed);
 public:
     void addMember(Character* character);
-    void removeMember(const int obj_id);
+    void removeMember(const int objectId);
     void removeMemberAll();
-    bool move(const vector<Direction>& directions, float ratio, function<void()> callback);
+    void move(const vector<Direction>& directions, float ratio, function<void(bool)> callback);
     Character* getMainCharacter() const;
     Vector<Character*> getMembers() const;
     vector<CharacterData> getMembersData() const;

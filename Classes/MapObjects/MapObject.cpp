@@ -8,7 +8,13 @@
 
 #include "MapObjects/MapObject.h"
 
+#include "MapObjects/Command/MapObjectCommand.h"
+#include "MapObjects/Command/MapObjectCommandQueue.h"
+#include "MapObjects/Command/MoveCommand.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/TerrainState/TerrainState.h"
+#include "MapObjects/TerrainState/TerrainStateCache.h"
 
 #include "Effects/AmbientLightLayer.h"
 #include "Effects/Light.h"
@@ -19,82 +25,113 @@
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
 
 // コンストラクタ
-MapObject::MapObject(){FUNCLOG}
+MapObject::MapObject() {}
 
 // デストラクタ
-MapObject::~MapObject(){FUNCLOG}
+MapObject::~MapObject()
+{
+    CC_SAFE_RELEASE_NULL(_terrainStateCache);
+    CC_SAFE_RELEASE_NULL(_commandQueue);
+}
+
+// 初期化
+bool MapObject::init()
+{
+    if(!Node::init()) return false;
+    
+    TerrainStateCache* terrainStateCache { TerrainStateCache::create() };
+    CC_SAFE_RETAIN(terrainStateCache);
+    _terrainStateCache = terrainStateCache;
+    
+    MapObjectCommandQueue* commandQueue { MapObjectCommandQueue::create() };
+    CC_SAFE_RETAIN(commandQueue);
+    _commandQueue = commandQueue;
+    
+    return true;
+}
 
 // マス数サイズを取得
 Size MapObject::getGridSize() const { return Size(floor(this->getContentSize().width / GRID),floor(this->getContentSize().height / GRID)); }
 
 // マップ上のマス座標を取得(一番左下のマス座標を返す)
-Point MapObject::getGridPosition() const { return Point(this->location.x, this->location.y); }
+Point MapObject::getGridPosition() const { return Point(_location.x, _location.y); }
 
-// マス座標、マスあたり判定サイズのRectを取得
+// マスRectを取得
 Rect MapObject::getGridRect(const vector<Direction>& directions) const
 {
-    Vec2 movement { this->createMoveVec(directions, false) };
-    movement = Vec2(movement.x, -movement.y) / GRID;
+    Vec2 gridVec { Direction::getGridVec2(directions) };
+    Rect gridRect { Rect::ZERO };
     
-    return Rect(this->getGridPosition().x + this->collisionRect.getMinX() / GRID + movement.x, this->getGridPosition().y + this->collisionRect.getMinY() / GRID + movement.y, this->collisionRect.size.width / GRID, this->collisionRect.size.height / GRID);
+    gridRect.origin = this->getGridPosition();
+    gridRect.size = this->getGridSize();
+    
+    return gridRect;
+}
+
+// マスあたり判定Rectを取得
+Rect MapObject::getGridCollisionRect(const vector<Direction>& directions) const
+{
+    if(!_collision) return Rect::ZERO;
+    
+    return _collision->getGridRect(directions);
 }
 
 // マス座標をセット、実際の位置は変更しない
-void MapObject::setGridPosition(const Point& gridPosition) { this->location.x = gridPosition.x; this->location.y = gridPosition.y; }
+void MapObject::setGridPosition(const Point& gridPosition) { _location.x = gridPosition.x; _location.y = gridPosition.y; }
 
 // 方向をセット
-void MapObject::setDirection(const Direction direction) { this->location.direction = direction; }
+void MapObject::setDirection(const Direction& direction)
+{
+    if (direction.isNull()) return;
+    _location.direction = direction;
+}
 
 // オブジェクトIDをセット
-void MapObject::setObjectId(int objectId) { this->objectId = objectId; }
+void MapObject::setObjectId(int objectId) { _objectId = objectId; }
 
 // イベントIDをセット
-void MapObject::setEventId(int eventId) { this->eventId = eventId; }
+void MapObject::setEventId(int eventId) { _eventId = eventId; }
 
 // イベントのtriggerをセット
-void MapObject::setTrigger(Trigger trigger) { this->trigger = trigger; }
-
-// 当たり判定の有無をセット
-void MapObject::setHit(bool _isHit) { this->_isHit = _isHit; }
+void MapObject::setTrigger(Trigger trigger) { _trigger = trigger; }
 
 // かいりきで押せるかをセット
-void MapObject::setMovable(bool _isMovable) { this->_isMovable = _isMovable; }
-
-// 衝突判定用Rectをセット
-void MapObject::setCollisionRect(const Rect& rect) { this->collisionRect = rect;}
+void MapObject::setMovable(bool isMovable) { _isMovable = isMovable; }
 
 // マップオブジェクトのリストをセット
-void MapObject::setMapObjectList(MapObjectList* objectList) { this->objectList = objectList; }
+void MapObject::setMapObjectList(MapObjectList* objectList) { _objectList = objectList; }
+
+// 当たり判定をセット
+void MapObject::setCollision(CollisionBox* collision)
+{
+    if(_collision) return;
+    if(!collision) return;
+    
+    this->addChild(collision);
+    _collision = collision;
+}
 
 // Spriteを設定
 void MapObject::setSprite(Sprite* sprite)
 {
     if(!sprite) return;
-    
-    this->sprite = sprite;
-    
+    _sprite = sprite;
     this->addChild(sprite);
 };
 
-// SpriteFrameを追加
-void MapObject::addSpriteFrame(SpriteFrame* spriteFrame)
-{
-    this->spriteFrames.pushBack(spriteFrame);
-}
-
 // 一時停止状態を設定
-void MapObject::setPaused(bool paused) { this->paused = paused; }
+void MapObject::setPaused(bool paused) { _paused = paused; }
 
 // ライトをセット
 void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
-    if(this->light) return;
+    if(_light) return;
     
     // ライトを追加
-    this->light = light;
+    _light = light;
     this->addChild(light);
     light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{GL_SRC_ALPHA, GL_ONE});
+    light->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
     light->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
     
     // 環境光レイヤーに光源として追加
@@ -104,120 +141,90 @@ void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, fun
 // ライトを消す
 void MapObject::removeLight(function<void()> callback)
 {
-    if(!this->light) return;
+    if(!_light) return;
     
-    Light* light { this->light };
-    this->light = nullptr;
+    Light* light { _light };
+    _light = nullptr;
     
     light->runAction(Sequence::create(FadeOut::create(0.5f), CallFunc::create(callback), RemoveSelf::create(), nullptr));
 }
 
 // Locationを取得
-Location MapObject::getLocation() const {return this->location;}
+Location MapObject::getLocation() const {return _location;}
 
 // オブジェクトIDを取得
-int MapObject::getObjectId() const {return this->objectId;}
+int MapObject::getObjectId() const {return _objectId;}
 
 // イベントIDを取得
-int MapObject::getEventId() const {return this->eventId;}
+int MapObject::getEventId() const {return _eventId;}
 
 // triggerを取得
-Trigger MapObject::getTrigger() const {return this->trigger;}
+Trigger MapObject::getTrigger() const {return _trigger;}
 
 // 移動中かどうか
-bool MapObject::isMoving() const {return this->_isMoving;}
+bool MapObject::isMoving() const {return _isMoving;}
 
 // 現在キャラが向いている方向を取得
-Direction MapObject::getDirection() const {return this->location.direction;}
+Direction MapObject::getDirection() const {return _location.direction;}
 
 // Spriteを取得
-Sprite* MapObject::getSprite() const { return this->sprite;};
-
-// SpriteFrameを取得
-Vector<SpriteFrame*> MapObject::getSpriteFrames() const { return this->spriteFrames; };
+Sprite* MapObject::getSprite() const { return _sprite;};
 
 // 一時停止状態か
-bool MapObject::isPaused() const { return this->paused; };
+bool MapObject::isPaused() const { return _paused; };
 
-// マップ上にある格子Rectを取得
-vector<Rect> MapObject::getWorldGridCollisionRects()
-{
-    vector<Rect> gridCollisionRects {};
-    
-    for(MapObject* obj : this->objectList->getCollisionObjects({this}))
-    {
-        gridCollisionRects.push_back(obj->getGridRect());
-    }
-    
-    return gridCollisionRects;
-}
+// 移動方向を取得
+vector<Direction> MapObject::getMovingDirections() const { return _movingDirections; };
+
+// 当たり判定を取得
+CollisionBox* MapObject::getCollision() const { return _collision; }
 
 // 衝突判定用Rectを取得
 Rect MapObject::getCollisionRect() const
 {
-    return Rect(this->getPosition().x + this->collisionRect.getMinX() - this->getContentSize().width / 2, this->getPosition().y + this->collisionRect.getMinY() - getContentSize().height / 2, this->collisionRect.size.width, this->collisionRect.size.height);
-}
-
-// 指定方向に移動した場合の衝突判定用Rectを取得
-Rect MapObject::getCollisionRect(const Direction& direction) const
-{
-    vector<Direction> directions {direction};
+    if (!_collision) return Rect::ZERO;
     
-    return this->getCollisionRect(directions);
-}
-
-// 指定2方向に移動した場合の衝突判定用Rectを取得
-Rect MapObject::getCollisionRect(const vector<Direction>& directions) const
-{
-    Rect rect {this->getCollisionRect()};
-    
-    Point movementVec {Point::ZERO};
-    
-    // 二方向分の移動ベクトルを生成する
-    for(int i { 0 }; i < directions.size(); i++)
-    {
-        if(i > 2) break;
-        movementVec += MapUtils::getGridVector(directions[i]);
-    }
-    
-    // あたり判定用Rectを縦横-2ピクセルした後に、x,y方向に1ピクセル足すことによって、関係ない範囲を巻き込まないようにしている（線分上、頂点上であっても判定がきいてしまうため）
-    return Rect(rect.origin.x + 1 + movementVec.x, rect.origin.y + 1 + movementVec.y, rect.size.width - 2, rect.size.height - 2);
+    return _collision->getRect();
 }
 
 // 当たり判定の有無を取得
-const bool MapObject::isHit() const {return this->_isHit;}
-
-// 動かせるかどうかを取得
-const bool MapObject::isMovable() const {return this->_isMovable;}
+bool MapObject::isHit() const {return _collision;}
 
 // 指定の方向に対して当たり判定があるか
-const bool MapObject::isHit(const Direction& direction) const
+bool MapObject::isHit(const Direction& direction, bool ignoreCollision) const
 {
-    vector<Direction> directions {direction};
-    
-    return this->isHit(directions);
+    return this->isHit(vector<Direction>{ direction }, ignoreCollision);
 }
 
 // 指定の２方向に対して当たり判定があるか
-const bool MapObject::isHit(const vector<Direction>& directions) const
+bool MapObject::isHit(const vector<Direction>& directions, bool ignoreCollision) const
 {
-    if(!this->objectList) return false;
+    if (!_objectList) return false;
     
-    // 自身以外の当たり判定を持つオブジェクトが、指定方向にあればtrueを返す
-    for(MapObject* obj : this->objectList->getMapObjectsByGridRect(this->getGridRect(directions)))
-    {
-        if(obj->isHit() && obj != this) return true;
+    bool intersects { false };
+    
+    if (ignoreCollision) {
+        intersects = _objectList->getCollisionDetector()->intersectsExceptIgnorable(this, directions);
+    } else {
+        intersects = _objectList->getCollisionDetector()->intersects(this, directions);
     }
     
-    return false;
+    return intersects;
 }
+
+// 指定のMapObjectに対して当たり判定があるか
+bool MapObject::isHit(const MapObject* other) const
+{
+    return other;
+}
+
+// 動かせるかどうかを取得
+bool MapObject::isMovable() const {return _isMovable;}
 
 // 指定の方向に対して当たり判定があるMapObjectのvectorを取得
 Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
 {
-    vector<Direction> directions {direction};
-    
-    return this->getHitObjects(directions);
+    return this->getHitObjects(vector<Direction>{ direction });
 }
 
 // 指定の２方向に対して当たり判定があるMapObjectのvectorを取得
@@ -225,10 +232,10 @@ Vector<MapObject*> MapObject::getHitObjects(const vector<Direction>& directions)
 {
     Vector<MapObject*> mapObjects {};
     
-    if(!this->objectList) return mapObjects;
+    if(!_objectList) return mapObjects;
     
     // 自身以外の当たり判定を持つオブジェクトが、指定方向にあればlistに入れる
-    for(MapObject* obj : this->objectList->getMapObjectsByGridRect(this->getGridRect(directions)))
+    for(MapObject* obj : _objectList->getMapObjects(this, directions))
     {
         if(obj->isHit() && obj != this) mapObjects.pushBack(obj);
     }
@@ -236,8 +243,24 @@ Vector<MapObject*> MapObject::getHitObjects(const vector<Direction>& directions)
     return mapObjects;
 }
 
+#pragma mark -
+#pragma mark Command
+
+void MapObject::pushCommand(MapObjectCommand* command)
+{
+    _commandQueue->push(command);
+}
+
+void MapObject::clearCommandQueue()
+{
+    _commandQueue->clear();
+}
+
+#pragma mark -
+#pragma mark Move
+
 // 入力のあった方向から、移動可能方向のみを取り出して返す
-vector<Direction> MapObject::createEnableDirections(const vector<Direction>& directions) const
+vector<Direction> MapObject::createEnableDirections(const vector<Direction>& directions, bool ignoreCollision) const
 {
     vector<Direction> enableDirs {};
     
@@ -245,13 +268,14 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
     bool isInputMultiple {directions.size() >= 2};
     
     // 入力が２以上の時、斜め方向に当たり判定があるか確認
-    bool isHitDiagnally { isInputMultiple ? this->isHit(directions) : false };
+    bool isHitDiagnally { isInputMultiple ? this->isHit(directions, ignoreCollision) : false };
     
     // 当たり判定
-    for(Direction direction : directions)
-    {
-        if((isInputMultiple && !isHitDiagnally) || (!isHitDiagnally && !this->isHit(direction)) || (isHitDiagnally && !this->isHit(direction) && enableDirs.empty()))
-        {
+    for (Direction direction : directions) {
+        if ((isInputMultiple && !isHitDiagnally) ||
+            (!isHitDiagnally && !this->isHit(direction, ignoreCollision)) ||
+            (isHitDiagnally && !this->isHit(direction, ignoreCollision) &&
+             enableDirs.empty())) {
             enableDirs.push_back(direction);
         }
     }
@@ -260,94 +284,78 @@ vector<Direction> MapObject::createEnableDirections(const vector<Direction>& dir
 }
 
 // 入力のあった方向の当たっているものを動かす
-void MapObject::moveObject(const vector<Direction>& directions, function<void()> onMoved) const
+void MapObject::moveObject(const vector<Direction>& directions, function<void(bool)> onMoved) const
 {
     // 入力が複数なら動かさない
-    if(directions.size() >= 2) return;
+    if (directions.size() >= 2) return;
+    
     // 自分自身が動かせるオブジェクトなら動かさない
-    if(this->isMovable()) return;
+    if (this->isMovable()) return;
+    
     // 当たり判定
-    for(Direction direction : directions)
-    {
+    for (Direction direction : directions) {
         // 当たったものが動かせるなら入力方向に1マス動かす
-        if(this->isHit(direction))
-        {
-            for(MapObject* obj : this->getHitObjects(direction))
-            {
-                if(obj->isMovable()) obj->moveBy(direction, 1, [onMoved](bool _){
-                    if(_) {
-                        // 複数の物体が同時に接触した時に例外が出るのでキャッチ
-                        try{
-                            onMoved();
-                        }catch(exception e){
-                        }
+        if (this->isHit(direction)) {
+            for (MapObject* obj : this->getHitObjects(direction)) {
+                if(obj->isMovable()) obj->moveBy({ direction }, [onMoved](bool movable) {
+                    // 複数の物体が同時に接触した時に例外が出るのでキャッチ
+                    try {
+                        onMoved(movable);
+                    } catch(exception e) {
                     }
                     DungeonSceneManager::getInstance()->runEventQueue();
-                });
+                }, 1.f, false);
             }
         }
     }
 }
 
-// 方向から移動ベクトルを生成
-Vec2 MapObject::createMoveVec(const vector<Direction>& directions, const bool check) const
-{
-    // 当たり判定チェックが必要な場合は、メソッドから、そうでない場合は素の方向から移動ベクトルを生成する
-    vector<Direction> dirs {check ? this->createEnableDirections(directions) : directions};
-    
-    Vec2 movement {Vec2::ZERO};
-    
-    for(Direction direction : dirs)
-    {
-        movement += MapUtils::getGridVector(direction);
-    }
-    
-    return movement;
-}
-
 // 入力方向に対して動くことが可能かどうか
-bool MapObject::canMove(const vector<Direction>& directions) const {return !this->createEnableDirections(directions).empty();}
+bool MapObject::canMove(const vector<Direction>& directions) const { return !this->createEnableDirections(directions).empty(); }
 
 // 当たり判定、地形チェックをせずにして方向に移動させる
-void MapObject::move(const vector<Direction>& enableDirections, function<void()> onMoved, const float ratio)
+void MapObject::move(const vector<Direction>& enableDirections, function<void()> onMoved, float speed)
 {
+    // 移動中の方向を設定
+    _movingDirections = enableDirections;
+    
     // 方向からベクトル生成
-    Vec2 movement { this->createMoveVec(enableDirections, false) };
+    Vec2 movement { Direction::getVec2(enableDirections) };
     
     // マス座標を変更
     this->setGridPosition(this->getGridPosition() + Vec2(movement.x, -movement.y) / GRID);
     
     // 移動開始
     this->_isMoving = true;
-    this->runAction(Sequence::create(MoveBy::create(DURATION_MOVE_ONE_GRID / ratio, movement), CallFunc::create([this]
-    {
+    this->runAction(Sequence::createWithTwoActions(MoveBy::create(DURATION_MOVE_ONE_GRID / speed, movement), CallFunc::create([this, onMoved] {
         this->_isMoving = false;
-        if(this->onMoved) this->onMoved(this);
-    }), CallFunc::create(onMoved), nullptr));
+        if (this->onMoved) this->onMoved(this);
+        if (onMoved) onMoved();
+        _movingDirections.clear();
+    })));
 }
 
 // 方向指定移動メソッド
-bool MapObject::moveBy(const Direction& direction, function<void()> onMoved, const float ratio) {return this->moveBy({direction}, onMoved, ratio);}
-
-// 方向指定移動メソッド
-bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+bool MapObject::moveBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool ignoreCollision)
 {
-    if(directions.empty()) return false;
-    
     // 移動可能な方向を生成
-    vector<Direction> dirs { this->createEnableDirections(directions) };
+    vector<Direction> dirs { this->createEnableDirections(directions, ignoreCollision) };
     
     // 押せるものがあれば押す
-    this->moveObject(directions, onMoved);
+    this->moveObject(directions, cb);
     
-    // 移動可能な方向がなければ失敗としてリターン
-    if(dirs.empty()) return false;
+    // 移動可能な方向がなければ失敗としてリターン + 失敗をコールバック
+    if (dirs.empty()) {
+        cb(false);
+        return false;
+    }
     
     // 移動する前の場所のイベントを発火
     this->runRectEventByTrigger(Trigger::GET_OFF);
     
-    // 地形オブジェクトに移動をイベント送信
-    this->getTerrain(dirs)->onWillMove(this, dirs, onMoved, ratio);
+    // 地形の状態
+    _terrainState = this->getTerrain(dirs)->getTerrainState(_terrainStateCache);
+    if (_terrainState) _terrainState->move(this, dirs, [cb] { cb(true); }, speed);
     
     // 移動したあとのイベントを発火
     this->runRectEventByTrigger(Trigger::RIDE_ON);
@@ -355,111 +363,34 @@ bool MapObject::moveBy(const vector<Direction>& directions, function<void()> onM
     return true;
 }
 
-// 方向、マス数指定移動用メソッド
-void MapObject::moveBy(const Direction& direction, const int gridNum, function<void(bool)> callback, const float ratio)
-{
-    vector<Direction> directions { direction };
-    
-    this->moveBy(directions, gridNum, callback, ratio);
-}
-
-// 複数方向、マス数指定移動用メソッド
-void MapObject::moveBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> callback, const float ratio)
-{
-    if(directions.empty() || this->isMoving()) return;
-    
-    deque<vector<Direction>> directionsQueue {};
-    
-    // 方向をキューに登録
-    for(int i { 0 }; i < gridNum; i++)
-    {
-        directionsQueue.push_back(directions);
-    }
-    
-    // キューに登録した動きを実行
-    this->moveByQueue(directionsQueue, callback, ratio);
-}
-
-void MapObject::moveByQueue(deque<Direction> directionQueue, function<void(bool)> callback, const float ratio)
-{
-    if(directionQueue.empty())
-    {
-        if(callback) callback(true);
-        
-        return;
-    }
-    
-    deque<vector<Direction>> directionsQueue {};
-    
-    for(Direction direction : directionQueue)
-    {
-        directionsQueue.push_back(vector<Direction>({direction}));
-    }
-    
-    this->moveByQueue(directionsQueue, callback, ratio);
-}
-
-// キューから動かす
-void MapObject::moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio)
-{
-    // 初回呼び出し以外は空で渡されるため、空でない時は新たに格納する
-    if(!directionsQueue.empty()) this->directionsQueue = directionsQueue;
-    
-    // キューが空になったら成功としてコールバックを呼び出し
-    if(this->directionsQueue.empty())
-    {
-        callback(true);
-        
-        return;
-    }
-    
-    // キューの先頭を実行。失敗時にはコールバックを失敗として実行
-    vector<Direction> directions { this->directionsQueue.front() };
-    this->directionsQueue.pop_front();
-    
-    // 移動開始。失敗時はコールバックを失敗として呼び出し
-    if(!this->moveBy(directions, [this, callback, ratio]{this->moveByQueue(deque<vector<Direction>>({}), callback, ratio);}, ratio)) callback(false);
-}
-
-// 移動用方向キューをクリア
-void MapObject::clearDirectionsQueue()
-{
-    mutex mtx;
-    mtx.lock();
-    this->directionsQueue.clear();
-    mtx.unlock();
-}
-
 // 指定方向にある地形オブジェクトを取得
 TerrainObject* MapObject::getTerrain(const vector<Direction>& directions)
 {
-    if(!this->objectList) return nullptr;
-    
-    return this->objectList->getTerrainByGridRect(this->getGridRect(directions));
+    if (!_objectList) return nullptr;
+
+    return _objectList->getTerrain(this, directions);
 }
 
 // 自分のRectの指定されたトリガーのイベントを実行
 void MapObject::runRectEventByTrigger(const Trigger trigger)
 {
-    Vector<MapObject*> rideOnMapObjects { DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjectsByGridRect(this->getGridRect(), trigger) };
+    Vector<MapObject*> rideOnMapObjects { _objectList->getMapObjects(this, trigger) };
     int* eventID;
     switch (trigger) {
         case Trigger::RIDE_ON:
-            eventID = &this->rideOnEventID;
+            eventID = &_rideOnEventID;
             break;
         case Trigger::GET_OFF:
-            eventID = &this->getOffEventID;
+            eventID = &_getOffEventID;
             break;
         default:
             break;
     }
-    if(rideOnMapObjects.empty()) *eventID = etoi(EventID::UNDIFINED);
+    if (rideOnMapObjects.empty()) *eventID = etoi(EventID::UNDIFINED);
     
-    for(MapObject* obj : rideOnMapObjects)
-    {
-        if(obj->getEventId() != *eventID)
-        {
-            if(*eventID == etoi(EventID::UNDIFINED)) *eventID = obj->getEventId();
+    for(MapObject* obj : rideOnMapObjects) {
+        if (obj->getEventId() != *eventID) {
+            if (*eventID == etoi(EventID::UNDIFINED)) *eventID = obj->getEventId();
             DungeonSceneManager::getInstance()->pushEventFront(obj->getEventId());
         }
     }
@@ -478,30 +409,8 @@ void MapObject::reaction(function<void()> callback)
     icon->runAction(Sequence::create(EaseElasticOut::create(ScaleTo::create(0.6f, 1.f), 0.5f), DelayTime::create(1.f), RemoveSelf::create(), CallFunc::create(callback), nullptr));
 }
 
-// 指定方法をマップ上での方向に変換
-Direction MapObject::convertToWorldDir(const Direction direction)
-{
-    switch (this->getDirection()) {
-        case Direction::FRONT: return MapUtils::oppositeDirection(direction);
-            
-        case Direction::BACK: return direction;
-        
-        case Direction::RIGHT:
-            if(direction == Direction::BACK) return Direction::LEFT;
-            if(direction == Direction::FRONT) return Direction::RIGHT;
-            if(direction == Direction::RIGHT) return Direction::FRONT;
-            if(direction == Direction::LEFT) return Direction::BACK;
-            
-        case Direction::LEFT:
-            if(direction == Direction::BACK) return Direction::RIGHT;
-            if(direction == Direction::FRONT) return Direction::LEFT;
-            if(direction == Direction::RIGHT) return Direction::BACK;
-            if(direction == Direction::LEFT) return Direction::FRONT;
-            
-        default:
-            return Direction::SIZE;
-    }
-}
+#pragma mark -
+#pragma mark Debug
 
 // デバッグ用に枠を描画
 void MapObject::drawDebugMask()
@@ -520,4 +429,76 @@ void MapObject::drawDebugMask()
     draw->setPosition(this->getContentSize() / -2);
     draw->setGlobalZOrder(Priority::DEBUG_MASK);
     this->addChild(draw);
+    
+    this->drawDebugCollisionMask();
+}
+
+void MapObject::drawDebugCollisionMask()
+{
+    if (!_collision) return;
+    
+    Rect collisionRect { this->getCollisionRect() };
+    
+    Point vertices[]
+    {
+        Point::ZERO,
+        Point(0, collisionRect.size.height),
+        collisionRect.size,
+        Point(collisionRect.size.width, 0),
+        Point::ZERO
+    };
+    Color4F lineColor { Color4F::GREEN };
+    DrawNode* draw { DrawNode::create() };
+    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
+    draw->setPosition(this->getContentSize() / -2);
+    draw->setGlobalZOrder(Priority::DEBUG_MASK);
+    this->addChild(draw);
+}
+
+void MapObject::drawDebugInfo()
+{
+    if (!_collision) return;
+    
+    if (_debugLabel) {
+        _debugLabel->removeFromParent();
+        _debugLabel = nullptr;
+    }
+    
+    string labelStr { "" };
+    labelStr += "grect  : (" + to_string(etoi(this->getGridPosition().x)) + ", " + to_string(etoi(this->getGridPosition().y));
+    labelStr += ", " + to_string(etoi(this->getGridSize().width)) + ", " + to_string(etoi(this->getGridSize().height)) + ")\n";
+    labelStr += "cgrect : (" + to_string(etoi(this->getGridCollisionRect().origin.x)) + ", " + to_string(etoi(this->getGridCollisionRect().origin.y));
+    labelStr += ", " + to_string(etoi(this->getGridCollisionRect().size.width)) + ", " + to_string(etoi(this->getGridCollisionRect().size.height)) + ")";
+    
+    Label* label { Label::createWithTTF(labelStr, Resource::Font::CONFIG, 11) };
+    label->setGlobalZOrder(Priority::DEBUG_MASK);
+    label->setPosition(0, this->getContentSize().height / 2 + 13);
+    this->addChild(label);
+    _debugLabel = label;
+}
+
+#pragma mark -
+#pragma mark Interface
+
+void MapObject::update(float delta)
+{
+    _commandQueue->update(this, delta);
+}
+
+void MapObject::onEnterMap()
+{
+    this->scheduleUpdate();
+    
+    if (_objectList && _collision) {
+        _objectList->getCollisionDetector()->addCollision(_collision);
+    }
+}
+
+void MapObject::onExitMap()
+{
+    if (_objectList && _collision) {
+        _objectList->getCollisionDetector()->removeCollision(_collision);
+    }
+    
+    this->unscheduleUpdate();
 }

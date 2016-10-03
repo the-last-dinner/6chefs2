@@ -24,7 +24,7 @@ private:
     int nextId { -1 };
     bool through { false };
     float speedRatio { 1.f };
-    Direction direction { Direction::SIZE };
+    Direction direction { Direction::NONE };
     
 // インスタンスメソッド
 private:
@@ -37,7 +37,7 @@ public:
     void setNextId(int nextId);
     void setThrough(bool through);
     void setSpeedRatio(float speedRatio);
-    void setLookDirection(Direction direction);
+    void setLookDirection(const Direction& direction);
     
     int getPathId() const;
     int getPreviousId() const;

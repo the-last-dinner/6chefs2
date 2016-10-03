@@ -36,11 +36,11 @@ bool GameOverScene::init(const Type type)
     blood->setColor(Color3B(177, 0, 0));
     blood->setPosition(WINDOW_CENTER);
     this->addChild(blood, Priority::TOP_COVER);
-    this->bloodCover = blood;
+    _bloodCover = blood;
     
     if(!BaseScene::init(GameOverSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    _configListener->setKeyconfigEnabled(false);
     
     return true;
 }
@@ -56,7 +56,7 @@ void GameOverScene::onPreloadFinished(LoadingLayer* loadingLayer)
 {
     loadingLayer->onLoadFinished();
     
-    this->bloodCover->runAction(Sequence::createWithTwoActions(FadeOut::create(0.4f), RemoveSelf::create()));
+    _bloodCover->runAction(Sequence::createWithTwoActions(FadeOut::create(0.4f), RemoveSelf::create()));
     
     SoundManager::getInstance()->playBGM("gameover.mp3", false);
     
@@ -84,8 +84,7 @@ void GameOverScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     // 文字のアニメーション
     int charNum {gameover->getStringLength()};
-    for(int i { 0 }; i < charNum; i++)
-    {
+    for (int i { 0 }; i < charNum; i++) {
         Sprite* c { gameover->getLetter(i) };
         c->setOpacity(0);
         c->runAction(Sequence::createWithTwoActions(DelayTime::create(CHAR_ANIMATION_LATENCY * i), Spawn::createWithTwoActions(FadeIn::create(CHAR_ANIMATION_DURATION), MoveBy::create(CHAR_ANIMATION_DURATION, idxToVec[i]))));

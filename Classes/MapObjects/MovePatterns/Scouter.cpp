@@ -8,16 +8,13 @@
 
 #include "MapObjects/MovePatterns/Scouter.h"
 
-#include "Algorithm/PathFinder.h"
-
+#include "MapObjects/Command/WalkCommand.h"
 #include "MapObjects/MovePatterns/Chaser.h"
-
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/PathObject.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 #include "Managers/DungeonSceneManager.h"
-
-#include "Models/Sight.h"
 
 // コンストラクタ
 Scouter::Scouter() {FUNCLOG};
@@ -27,25 +24,13 @@ Scouter::~Scouter()
 {
     FUNCLOG
     
-    CC_SAFE_RELEASE_NULL(this->finder);
-    CC_SAFE_RELEASE_NULL(this->sight);
-    CC_SAFE_RELEASE_NULL(this->subPattern);
-    
-    Director::getInstance()->getScheduler()->unscheduleUpdate(this);
+    CC_SAFE_RELEASE_NULL(_subPattern);
 };
 
 // 初期化
 bool Scouter::init(Character* character)
 {
-    if(!MovePattern::init(character)) return false;
-    
-    PathFinder* finder { PathFinder::create(DungeonSceneManager::getInstance()->getMapSize()) };
-    CC_SAFE_RETAIN(finder);
-    this->finder = finder;
-    
-    Sight* sight {Sight::create(character)};
-    CC_SAFE_RETAIN(sight);
-    this->sight = sight;
+    if (!MovePattern::init(character)) return false;
     
     return true;
 }
@@ -55,8 +40,7 @@ void Scouter::start()
 {
     MovePattern::start();
     
-    if(!this->chara->isMoving()) this->move(this->startPathId);
-    if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+    if (!_chara->isMoving()) this->move(_startPathId);
 }
 
 // 一時停止
@@ -67,7 +51,7 @@ void Scouter::pause()
     Director::getInstance()->getScheduler()->unscheduleUpdate(this);
     
     // サブアルゴリズムに対しても適用
-    if(this->subPattern) this->subPattern->pause();
+    if (_subPattern) _subPattern->pause();
 }
 
 // 再開
@@ -75,8 +59,7 @@ void Scouter::resume()
 {
     MovePattern::resume();
     
-    if(!this->chara->isMoving()) this->move(this->startPathId);
-    if(!Director::getInstance()->getScheduler()->isScheduled(CC_SCHEDULE_SELECTOR(Scouter::update), this)) Director::getInstance()->getScheduler()->scheduleUpdate(this, 0, false);
+    if (!_chara->isMoving()) this->move(_startPathId);
 }
 
 // 主人公一行が移動した時
@@ -91,54 +74,47 @@ float Scouter::calcSummonDelay() const { return 0.f; };
 // 動かす
 void Scouter::move(const int pathObjId)
 {
-    if(this->isPaused()) return;
+    if (this->isPaused()) return;
     
     // サブパターンが生成されていればそちらに移動を任せる
-    if(this->subPattern)
-    {
+    if (_subPattern) {
         this->shiftToSubPattern();
-        
         return;
     }
     
     // 目的地までの経路を取得
     PathObject* destObj { this->getMapObjectList()->getPathObjectById(pathObjId) };
     
-    this->startPathId = destObj->getPathId();
+    _startPathId = destObj->getPathId();
     
-    function<void()> walkCallback { [this, destObj]{ this->move(destObj->getNextId()); } };
+    function<void()> walkCallback { [this, destObj] { this->move(destObj->getNextId()); } };
     
-    if(destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback]
-    {
-        if(this->subPattern)
-        {
+    if (destObj->needsLookingAround()) walkCallback = [this, destObj, walkCallback] {
+        if (_subPattern) {
             walkCallback();
-            
             return;
         }
         
-        this->chara->lookAround(walkCallback, destObj->getLookDirection());
+        _chara->lookAround(walkCallback, destObj->getLookDirection());
     };
     
-    if(!this->chara->isMoving()) this->chara->walkByQueue(this->getPath(destObj), [walkCallback](bool _){ walkCallback(); }, destObj->getSpeedRatio(), false);
+    Vector<WalkCommand*> commands { WalkCommand::create(this->getPath(destObj), [walkCallback](bool _) {
+        walkCallback();
+    }, destObj->getSpeedRatio(), false) };
+    
+    for (WalkCommand* command : commands) {
+        _chara->pushCommand(command);
+    }
 }
 
 // 指定経路オブジェクトまでの経路を取得
 deque<Direction> Scouter::getPath(PathObject* pathObject)
 {
-    deque<Direction> path {this->finder->getPath(this->chara->getGridRect(), this->getMapObjectList()->getGridCollisionRects({this->chara, this->getMainCharacter()}), pathObject->getGridPosition())};
+    PathFinder* finder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
+    
+    deque<Direction> path { finder->getPath(_chara, pathObject->getGridPosition()) };
     
     return path;
-}
-
-// 毎フレーム呼ばれる視界チェックメソッド
-void Scouter::update(float _)
-{
-    if(!this->sight->isIn(this->getMainCharacter(), this->getMapObjectList())) return;
-    
-    Director::getInstance()->getScheduler()->unscheduleUpdate(this);
-    
-    this->onTargetCameIntoSight();
 }
 
 // サブパターンに切り替える
@@ -146,24 +122,35 @@ void Scouter::shiftToSubPattern()
 {
     MovePattern::pause();
     
-    this->subPattern->start();
+    _subPattern->start();
     
-    this->chara->reaction();
+    _chara->reaction();
     SoundManager::getInstance()->playSE("agaa.mp3");
 }
 
 // 主人公が視界に入った時
 void Scouter::onTargetCameIntoSight()
 {
-    this->chara->clearDirectionsQueue();
+    _chara->clearCommandQueue();
     
     // サブパターン生成
-    Chaser* sub { Chaser::create(this->chara) };
-    sub->setSpeedRatio(this->speedRatio);
+    Chaser* sub { Chaser::create(_chara) };
+    sub->setSpeedRatio(_speedRatio);
     CC_SAFE_RETAIN(sub);
-    this->subPattern = sub;
+    _subPattern = sub;
     
-    // 移動中じゃなけられば、サブパターンでの移動開始
-    if(this->chara->isMoving()) return;
+    // サブパターンでの移動開始
     this->shiftToSubPattern();
+}
+
+#pragma mark -
+#pragma mark Interface
+
+void Scouter::update(float delta)
+{
+    if (_subPattern) return;
+    
+    if (!_chara->isInSight(this->getMainCharacter())) return;
+    
+    this->onTargetCameIntoSight();
 }

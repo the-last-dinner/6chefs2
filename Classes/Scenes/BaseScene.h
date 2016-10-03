@@ -19,9 +19,9 @@ class BaseScene : public Scene
 {
 // インスタンス変数
 protected:
-    SceneData* data { nullptr };
-    ConfigEventListenerLayer* configListener { nullptr };
-    bool preloaded { false };
+    SceneData* _data { nullptr };
+    ConfigEventListenerLayer* _configListener { nullptr };
+    bool _isPreloaded { false };
     
 // インスタンスメソッド
 private:

@@ -33,9 +33,7 @@ EventObject* EventObject::create()
 // 初期化
 bool EventObject::init()
 {
-	if(!Node::init()) return false;
-    
-    this->setCollisionRect(Rect(0, 0, this->getContentSize().width, this->getContentSize().height));
+	if(!MapObject::init()) return false;
 	
 	return true;
 }

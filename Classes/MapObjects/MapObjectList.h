@@ -17,31 +17,38 @@
 #include "MapObjects/PathObject.h"
 
 class Party;
+class PathFinder;
 class PlainArea;
+class CollisionDetector;
+class AttackDetector;
 
 class MapObjectList : public Node
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(MapObjectList)
+    CREATE_FUNC_WITH_PARAM(MapObjectList, const Size&)
     
 // インスタンス変数
 private:
-    Vector<MapObject*> availableObjects {};
-    Vector<MapObject*> disableObjects {};
-    Party* party { nullptr };
-    Vector<Enemy*> enemies {};
-    Vector<TerrainObject*> terrainObjects {};
-    Vector<PathObject*> pathObjects {};
-    PlainArea* plainArea { nullptr };
+    Vector<MapObject*> _availableObjects {};
+    Vector<MapObject*> _disableObjects {};
+    Vector<Enemy*> _enemies {};
+    Vector<PathObject*> _pathObjects {};
+    
+    Party* _party { nullptr };
+    Vector<TerrainObject*> _terrainObjects {};
+    PlainArea* _plainArea { nullptr };
+    CollisionDetector* _collisionDetector { nullptr };
+    AttackDetector* _attackDetector { nullptr };
+    PathFinder* _pathFinder { nullptr };
 public:
-    function<void()> onContactWithEnemy { nullptr };
+    function<void()> _onLostMainCharacterHP { nullptr };
     
 // インスタンスメソッド
 private:
     MapObjectList();
-    ~MapObjectList();
-    bool init();
+    virtual ~MapObjectList();
+    bool init(const Size& mapSize);
 public:
     // 初期設定
     void setAvailableObjects(const Vector<MapObject*>& objects);
@@ -50,19 +57,13 @@ public:
     void setPathObjects(const Vector<PathObject*>& objects);
     
     // 取得系
+    Vector<MapObject*> getAllAvailableObjects() const;
     MapObject* getMapObject(int objId) const;
     MapObject* getMapObjectFromDisableList(int objId) const;
-    const Vector<MapObject*>& getMapObjects() const;
-    Vector<MapObject*> getCollisionObjects(const vector<MapObject*> exclusion = {}) const;
-    Vector<MapObject*> getMapObjects(const Rect& rect) const;
-    Vector<MapObject*> getMapObjects(const Point& position) const;
-    Vector<MapObject*> getMapObjectsByGridRect(const Rect& gridRect, const Trigger trigger = Trigger::SIZE) const;
+    Vector<MapObject*> getMapObjects(const MapObject* obj, const Trigger trigger) const;
+    Vector<MapObject*> getMapObjects(const MapObject* obj, const vector<Direction>& directions, const Trigger trigger = Trigger::SIZE) const;
     
     vector<int> getEventIds(const Trigger trigger) const;
-    vector<int> getEventIdsByGridRect(const Rect& gridRect, const Trigger trigger) const;
-    vector<Rect> getGridCollisionRects(MapObject* exclusion = nullptr) const;
-    vector<Rect> getGridCollisionRects(vector<MapObject*> exclusion) const;
-    vector<Rect> getCollisionRects(vector<MapObject*> exclusion) const;
     
     // 追加、削除
     void add(MapObject* mapObject);
@@ -82,10 +83,20 @@ public:
     void onPartyMoved(const Rect& gridRect);
     
     // 地形
-    TerrainObject* getTerrainByGridRect(const Rect& gridRect);
+    TerrainObject* getTerrain(MapObject* mapObject, const vector<Direction>& directions);
     
     // 経路オブジェクト
     PathObject* getPathObjectById(const int pathId);
+    
+    // 当たり判定
+    CollisionDetector* getCollisionDetector() const;
+    
+    // 攻撃判定
+    AttackDetector* getAttackDetector() const;
+    
+    // 経路探索
+    void setPathFinder(PathFinder* pathFinder);
+    PathFinder* getPathFinder() const;
     
     // イベント
     void onEventStart();

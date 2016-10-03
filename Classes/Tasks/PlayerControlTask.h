@@ -27,8 +27,8 @@ public:
 
 // インスタンス変数
 private:
-    int riddenEventID { static_cast<int>(EventID::UNDIFINED)};
-    bool enableControl { false };
+    int _riddenEventID { static_cast<int>(EventID::UNDIFINED)};
+    bool _enableControl { false };
     
 // インスタンスメソッド
 private:
@@ -39,7 +39,7 @@ public:
     void turn(const Key& key, Party* party);                  // 向きを変える
     void search(Party* party);                                // 目の前を調べる
     void walk(const vector<Key>& keys, Party* party);         // 歩行
-    void onPartyMovedOneGrid(Party* party);                   // 一マス分移動し終えた時
+    void onPartyMovedOneGrid(Party* party, bool dashed);      // 一マス分移動し終えた時
     void setControlEnable(bool enable, Party* party);         // 操作可能状態かどうか設定
     bool isControlEnabled();                                  // 操作可能状態か確認
     void onStaminaIncreasedMax();                             // スタミナが上限まで回復した時

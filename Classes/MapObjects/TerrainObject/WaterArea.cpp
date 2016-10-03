@@ -8,38 +8,23 @@
 
 #include "MapObjects/TerrainObject/WaterArea.h"
 
-#include "MapObjects/Character.h"
-
-// 定数
-const float WaterArea::SPEED_RATIO { 0.25 };
+#include "MapObjects/Terrainstate/TerrainStateCache.h"
 
 // コンストラクタ
-WaterArea::WaterArea() {FUNCLOG};
+WaterArea::WaterArea() { FUNCLOG };
 
 // デストラクタ
-WaterArea::~WaterArea() {FUNCLOG};
+WaterArea::~WaterArea() { FUNCLOG };
 
 // 初期化
 bool WaterArea::init()
 {
+    if(!TerrainObject::init()) return false;
+    
     return true;
 }
 
-// オブジェクトが動こうとした時
-void WaterArea::onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+TerrainState* WaterArea::getTerrainState(TerrainStateCache* cache) const
 {
-    // 速度を1/2にして移動
-    target->move(directions, onMoved, ratio * SPEED_RATIO);
-}
-
-// 足踏みする時
-void WaterArea::onWillStamp(Character* target, const Direction& direction, const float ratio)
-{
-    Animation* anime = AnimationCache::getInstance()->getAnimation("swim_" + this->getPrefix(target) + to_string(etoi(direction)) + to_string(this->getStampingState(target) < 2 ? 0 : 1));
-    this->setStampingState(target, this->getStampingState(target) + 1);
-    if(this->getStampingState(target) > 3) this->setStampingState(target, 0);
-    anime->setDelayPerUnit(DURATION_MOVE_ONE_GRID / ratio);
-    
-    target->getSprite()->runAction(Animate::create(anime));
-    target->getSprite()->runAction(Sequence::createWithTwoActions(DelayTime::create(DURATION_MOVE_ONE_GRID / (ratio * SPEED_RATIO)), CallFunc::create([target]{target->setDirection(target->getDirection());})));
+    return cache->getState(TerrainStateCache::StateType::SWIM);
 }

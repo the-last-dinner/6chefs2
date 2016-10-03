@@ -16,6 +16,11 @@ class AmbientLightLayer;
 class MapObjectList;
 class MovePattern;
 class TerrainObject;
+class TerrainState;
+class TerrainStateCache;
+class CollisionBox;
+class MapObjectCommand;
+class MapObjectCommandQueue;
 
 class MapObject : public Node
 {
@@ -25,23 +30,26 @@ public:
     
 // インスタンス変数
 private:
-    int objectId { static_cast<int>(ObjectID::UNDIFINED)};
-    int eventId { static_cast<int>(EventID::UNDIFINED) };
-	Trigger trigger {Trigger::SIZE};
-	bool _isHit { false };
+    int _objectId { static_cast<int>(ObjectID::UNDIFINED) };
+    int _eventId { static_cast<int>(EventID::UNDIFINED) };
+	Trigger _trigger { Trigger::SIZE };
     bool _isMovable { false };
-    Rect collisionRect {Rect::ZERO};
-	Light* light { nullptr };
+	Light* _light { nullptr };
     bool _isMoving { false };
-    Sprite* sprite { nullptr };
-    Vector<SpriteFrame*> spriteFrames {};
-    bool paused { false };
-    int getOffEventID { static_cast<int>(EventID::UNDIFINED)};
-    int rideOnEventID { static_cast<int>(EventID::UNDIFINED)};
+    Sprite* _sprite { nullptr };
+    bool _paused { false };
+    int _getOffEventID { static_cast<int>(EventID::UNDIFINED)};
+    int _rideOnEventID { static_cast<int>(EventID::UNDIFINED)};
+    vector<Direction> _movingDirections {};
+    CollisionBox* _collision { nullptr };
+    Label* _debugLabel { nullptr };
 protected:
-    MapObjectList* objectList { nullptr };
-    deque<vector<Direction>> directionsQueue {};
-    Location location {};
+    MapObjectList* _objectList { nullptr };
+    Location _location {};
+    TerrainState* _terrainState { nullptr };
+    TerrainStateCache* _terrainStateCache { nullptr };
+    MapObjectCommandQueue* _commandQueue { nullptr };
+    
 public:
     function<void(MapObject*)> onMoved { nullptr };
 	
@@ -49,18 +57,17 @@ public:
 public:
 	MapObject();
 	virtual ~MapObject();
+    virtual bool init();
 	void setGridPosition(const Point& gridPosition);
-    virtual void setDirection(const Direction direction);
+    virtual void setDirection(const Direction& direction);
     void setObjectId(int objectId);
 	void setEventId(int eventId);
 	void setTrigger(Trigger trigger);
-	void setHit(bool _isHit);
-    void setMovable(bool _isMovable);
-    void setCollisionRect(const Rect& rect);
+    void setMovable(bool isMovable);
     void setMapObjectList(MapObjectList* objectList);
     void setSprite(Sprite* sprite);
-    void addSpriteFrame(SpriteFrame* spriteFrame);
     void setPaused(bool paused);
+    void setCollision(CollisionBox* collision);
     
 	void setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
 	void removeLight(function<void()> callback = nullptr);
@@ -69,41 +76,42 @@ public:
     Size  getGridSize() const;
 	Point getGridPosition() const;
     Rect getGridRect(const vector<Direction>& directions = {}) const;
+    Rect getGridCollisionRect(const vector<Direction>& directions = {}) const;
     int getObjectId() const;
 	int getEventId() const;
 	Trigger getTrigger() const;
     bool isMoving() const;
     Direction getDirection() const;
     Sprite* getSprite() const;
-    Vector<SpriteFrame*> getSpriteFrames() const;
     bool isPaused() const;
+    vector<Direction> getMovingDirections() const;
+    CollisionBox* getCollision() const;
     
-    // collision
-    virtual vector<Rect> getWorldGridCollisionRects();
+// collision
+public:
     Rect getCollisionRect() const;
-    Rect getCollisionRect(const Direction& direction) const;
-    Rect getCollisionRect(const vector<Direction>& directions) const;
-    const bool isHit() const;
-    const bool isHit(const Direction& direction) const;
-    virtual const bool isHit(const vector<Direction>& directions) const;
-    const bool isMovable() const;
+    bool isHit() const;
+    bool isHit(const Direction& direction, bool ignoreCollision = false) const;
+    virtual bool isHit(const vector<Direction>& directions, bool ignoreCollision = false) const;
+    virtual bool isHit(const MapObject* other) const;
+    bool isMovable() const;
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
     
-    
-    // move
-    vector<Direction> createEnableDirections(const vector<Direction>& directions) const;
-    Vec2 createMoveVec(const vector<Direction>& directions, const bool check = true) const;
+// command
+public:
+    void pushCommand(MapObjectCommand* command);
+    void clearCommandQueue();
+private:
+    void executeCommandFromQueue();
+
+// move
+public:
+    vector<Direction> createEnableDirections(const vector<Direction>& directions, bool ignoreCollision = false) const;
     bool canMove(const vector<Direction>& directions) const;
-    void move(const vector<Direction>& enableDirections, function<void()> onMoved, const float ratio = 1.0f);
-    bool moveBy(const Direction& direction, function<void()> onMoved, const float ratio = 1.0f);
-    bool moveBy(const vector<Direction>& directions, function<void()> onMoved, const float ratio = 1.0f);
-    void moveBy(const Direction& direction, const int gridNum, function<void(bool)> onMoved, const float ratio = 1.0f);
-    void moveBy(const vector<Direction>& directions, const int gridNum, function<void(bool)> onMoved, const float ratio = 1.0f);
-    void moveByQueue(deque<Direction> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
-    void moveByQueue(deque<vector<Direction>> directionsQueue, function<void(bool)> callback, const float ratio = 1.0f);
-    void clearDirectionsQueue();
-    void moveObject(const vector<Direction>& directions, function<void()> onMoved) const;
+    void move(const vector<Direction>& enableDirections, function<void()> onMoved, float speed);
+    bool moveBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool ignoreCollision);
+    void moveObject(const vector<Direction>& directions, function<void(bool)> cb) const;
     
     // 自分のRectの指定されたトリガーのイベントを実行
     void runRectEventByTrigger(const Trigger trigger);
@@ -113,15 +121,20 @@ public:
     
     void reaction(function<void()> callback = nullptr);
     
-    // イベント関数
-    virtual void onEnterMap() {};                               // マップに追加された時
-    virtual void onSearched(MapObject* mainChara) {};           // 調べられた時
-    virtual void onEventStart() {};                                // イベント開始時
-    virtual void onEventFinished() {};                                 // イベント終了時
-    
-    Direction convertToWorldDir(const Direction direcction);
+// インターフェース
+public:
+    virtual void update(float delta);                        // 毎フレーム処理
+    virtual void onEnterMap();                               // マップに追加された時
+    virtual void onExitMap();                                // マップから削除された時
+    virtual void onSearched(MapObject* mainChara) {};        // 調べられた時
+    virtual void onEventStart() {};                          // イベント開始時
+    virtual void onEventFinished() {};                       // イベント終了時
 
+// デバッグ
+public:
     void drawDebugMask(); // デバッグ用マスク
+    void drawDebugCollisionMask();
+    void drawDebugInfo();
     
     friend class MovePattern;
 };

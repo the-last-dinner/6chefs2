@@ -27,7 +27,7 @@ bool EndingScene::init(const int endingId)
 {
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
-    this->configListener->setKeyconfigEnabled(false);
+    _configListener->setKeyconfigEnabled(false);
     this->end_id = endingId;
     
     return true;
@@ -283,10 +283,10 @@ void EndingScene::replaceScene()
     BaseScene* target {nullptr};
     switch (this->end_id) {
         case etoi(END_ID::TRUE_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(3,20,39,Direction::BACK)));
+            target = DungeonScene::create(DungeonSceneData::create(Location(3,20,39,Direction::UP)));
             break;
         case etoi(END_ID::NORMAL_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(39,16,5,Direction::FRONT)));
+            target = DungeonScene::create(DungeonSceneData::create(Location(39,16,5,Direction::DOWN)));
             break;
         default:
             target = TitleScene::create();

@@ -35,12 +35,12 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init()) return false;
     
-    Direction direction {Direction::SIZE};
+    Direction direction { Direction::NONE };
 
     // directionの指定がされている時
     if(this->eventHelper->hasMember(json, member::DIRECTION))
     {
-        direction = MapUtils::toEnumDirection(json[member::DIRECTION].GetString());
+        direction = this->eventHelper->getDirection(json);
     }
     // directionが指定されていない時
     else

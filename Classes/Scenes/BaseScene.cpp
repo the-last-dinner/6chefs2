@@ -21,7 +21,7 @@ BaseScene::BaseScene() {}
 // デストラクタ
 BaseScene::~BaseScene()
 {
-	CC_SAFE_RELEASE_NULL(this->data);
+	CC_SAFE_RELEASE_NULL(_data);
 }
 
 // シーン共通初期化
@@ -32,11 +32,11 @@ bool BaseScene::init(SceneData* data)
     // コンフィグ用のイベントリスナーを登録
     ConfigEventListenerLayer* configListener { ConfigEventListenerLayer::create() };
     this->addChild(configListener);
-    this->configListener = configListener;
+    _configListener = configListener;
 	
 	// データクラスをセットしretain
-	this->data = data;
-	CC_SAFE_RETAIN(this->data);
+	_data = data;
+	CC_SAFE_RETAIN(_data);
     
 	return true;
 }
@@ -50,7 +50,7 @@ void BaseScene::onEnter()
     NotificationManager::getInstance()->notifyRemainsInQueue();
     
     // すでにプリロード済みなら無視
-    if(this->preloaded) return;
+    if(_isPreloaded) return;
     
     // ロード画面レイヤー
     LoadingLayer* loadingLayer = LoadingLayer::create();
@@ -58,11 +58,11 @@ void BaseScene::onEnter()
     this->addChild(loadingLayer);
     
     // プリロード開始
-    this->data->preloadResources([this, loadingLayer](float percentage)
+    _data->preloadResources([this, loadingLayer](float percentage)
     {
         if(percentage == 1.f)
         {
-            this->preloaded = true;
+            _isPreloaded = true;
             
             // プリロード完了時にコールバック
             this->onPreloadFinished(loadingLayer);

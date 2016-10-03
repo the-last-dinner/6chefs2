@@ -13,27 +13,39 @@
 
 #include "Datas/Mapobject/EnemyData.h"
 
+class AttackBox;
+
 class Enemy : public Character
 {
+// 定数
+private:
+    static const string CS_ATTACK_NODE_NAME;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(Enemy, const EnemyData&)
 
 // インスタンス変数
 private:
-    EnemyData data {};
+    EnemyData _data {};
+    AttackBox* _attackBox { nullptr };
     
 // インスタンスメソッド
 private:
     Enemy();
     ~Enemy();
     bool init(const EnemyData& data);
-    virtual const bool isHit(const vector<Direction>& directions) const;
+    virtual bool isHit(const MapObject* other) const override;
 public:
     int getEnemyId() const;
     EnemyData getEnemyData() const;
     bool canGoToNextMap() const;
     float calcSummonDelay() const;
+    
+// インターフェース
+public:
+    virtual void onEnterMap() override;
+    virtual void onExitMap() override;
 };
 
 #endif /* defined(__LastSupper__Enemy__) */

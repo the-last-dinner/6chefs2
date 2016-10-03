@@ -8,67 +8,75 @@
 
 #include "MapObjects/Enemy.h"
 
+#include "CocosStudio/CSNode.h"
+
+#include "MapObjects/DetectionBox/AttackDetector.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapOBjects/Party.h"
 
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 
+// 定数
+const string Enemy::CS_ATTACK_NODE_NAME { "attack" };
+
 // コンストラクタ
-Enemy::Enemy() {FUNCLOG};
+Enemy::Enemy() { FUNCLOG }
 
 // デストラクタ
-Enemy::~Enemy() {FUNCLOG};
+Enemy::~Enemy()
+{
+    FUNCLOG
+    
+    CC_SAFE_RELEASE_NULL(_attackBox);
+}
 
 // 初期化
 bool Enemy::init(const EnemyData& data)
 {
-    if(!Character::init(data.chara_data)) return false;
+    if (!Character::init(data.chara_data)) return false;
     
-    this->data = data;
+    _data = data;
     
     // 動きのアルゴリズムを生成
-    MovePatternFactory* factory { MovePatternFactory::create() };
-    CC_SAFE_RETAIN(factory);
-    this->movePattern = factory->createMovePattern(data.move_pattern, this);
-    CC_SAFE_RETAIN(this->movePattern);
-    CC_SAFE_RELEASE(factory);
+    _movePattern = MovePatternFactory::create()->createMovePattern(data.move_pattern, this);
+    CC_SAFE_RETAIN(_movePattern);
     
     // 速さの倍率を設定
-    if(this->movePattern) this->movePattern->setSpeedRatio(data.speed_ratio);
+    if (_movePattern) _movePattern->setSpeedRatio(data.speed_ratio);
     
     // 最初に通る経路オブジェクトIDを設定
-    if(this->movePattern) this->movePattern->setStartPathId(data.start_path_id);
+    if (_movePattern) _movePattern->setStartPathId(data.start_path_id);
+    
+    // 攻撃判定を生成
+    AttackBox* attackBox { AttackBox::create(this, _csNode->getCSChild(CS_ATTACK_NODE_NAME), nullptr) };
+    CC_SAFE_RETAIN(attackBox);
+    _attackBox = attackBox;
     
     return true;
 }
 
-// 主人公と自身に対して当たり判定を適用しないようにする
-const bool Enemy::isHit(const vector<Direction>& directions) const
+// 指定のMapObjectに対して当たり判定があるか
+bool Enemy::isHit(const MapObject* other) const
 {
-    if(!this->objectList) return false;
+    Character* mainCharacter { _objectList->getParty()->getMainCharacter() };
     
-    // 自身以外の当たり判定を持つオブジェクトが、指定方向にあればtrueを返す
-    for(MapObject* obj : this->objectList->getMapObjects(this->getCollisionRect(directions)))
-    {
-        if(obj == this || obj == this->objectList->getParty()->getMainCharacter()) continue;
-        
-        if(obj->isHit()) return true;
-    }
+    if (other == mainCharacter) return false;
     
-    return false;
+    return true;
 }
 
 // 敵IDを取得
 int Enemy::getEnemyId() const
 {
-    return this->data.enemy_id;
+    return _data.enemy_id;
 }
 
 // データを取得
 EnemyData Enemy::getEnemyData() const
 {
-    EnemyData data {this->data};
+    EnemyData data { _data };
     
     // 位置情報を更新
     data.chara_data.location = this->getCharacterData().location;
@@ -79,15 +87,34 @@ EnemyData Enemy::getEnemyData() const
 // マップ移動可能か
 bool Enemy::canGoToNextMap() const
 {
-    if(!this->movePattern) return false;
+    if (!_movePattern) return false;
     
-    return this->movePattern->canGoToNextMap();
+    return _movePattern->canGoToNextMap();
 }
 
 // 現在座標から、主人公までかかる時間を計算
 float Enemy::calcSummonDelay() const
 {
-    if(!this->movePattern) return 0.0f;
+    if (!_movePattern) return 0.0f;
     
-    return this->movePattern->calcSummonDelay();
+    return _movePattern->calcSummonDelay();
+}
+
+#pragma mark -
+#pragma mark Interface
+
+// マップに配置された時
+void Enemy::onEnterMap()
+{
+    Character::onEnterMap();
+    
+    _objectList->getAttackDetector()->addAttackBox(_attackBox);
+}
+
+// マップから削除された時
+void Enemy::onExitMap()
+{
+    Character::onExitMap();
+    
+    _objectList->getAttackDetector()->removeAttackBox(_attackBox);
 }

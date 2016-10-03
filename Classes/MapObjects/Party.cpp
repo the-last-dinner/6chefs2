@@ -7,7 +7,9 @@
 //
 
 #include "MapObjects/Party.h"
+
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 
 #include "Managers/PlayerDataManager.h"
 
@@ -19,23 +21,21 @@ Party::~Party()
 {
     FUNCLOG
 
-    this->members.clear();
+    _members.clear();
 };
 
 // 初期化
 bool Party::init(const vector<CharacterData>& datas)
 {
-    if(datas.empty()) return false;
+    if (datas.empty()) return false;
     
     // データを元にキャラクタを生成して格納
-    for(int i { 0 }; i < datas.size(); i++)
-    {
-        Character* chara {Character::create(datas[i])};
+    for (int i { 0 }; i < datas.size(); i++) {
+        Character* chara { Character::create(datas[i]) };
         
-        // 主人公のみ当たり判定
-        if(i == 0) chara->setHit(true);
+        if (!chara) continue;
         
-        this->members.pushBack(chara);
+        _members.pushBack(chara);
     }
     
     return true;
@@ -44,114 +44,114 @@ bool Party::init(const vector<CharacterData>& datas)
 // パーティにキャラクタを追加
 void Party::addMember(Character* character)
 {
-    character->setHit(false);
-    this->members.pushBack(character);
+    _members.pushBack(character);
+    if (character != this->getMainCharacter()) character->onJoinedParty();
     PlayerDataManager::getInstance()->getLocalData()->setPartyMember(character->getCharacterData());
 }
 
 // パーティメンバーを削除
-void Party::removeMember(const int obj_id)
+void Party::removeMember(const int objectId)
 {
-    int member_count = this->members.size();
-    Vector<Character*> temp_members = this->members;
-    this->members.clear();
-    for (int i = 0; i < member_count; i++)
-    {
-        int target_obj = temp_members.at(i)->getCharacterData().obj_id;
-        if (obj_id == target_obj)
-        {
-            PlayerDataManager::getInstance()->getLocalData()->removePartyMember(target_obj);
-        }
-        else
-        {
-            this->members.pushBack(temp_members.at(i));
-        }
+    Character* targetMember { nullptr };
+    for (Character* member : _members) {
+        if (member->getObjectId() == objectId) targetMember = member;
     }
+    if (!targetMember) return;
+    
+    _members.eraseObject(targetMember);
+    if (targetMember != this->getMainCharacter()) targetMember->onQuittedParty();
+    
+    PlayerDataManager::getInstance()->getLocalData()->removePartyMember(objectId);
 }
 
 // パーティメンバー全員削除
 void Party::removeMemberAll()
 {
-    this->members.clear();
+    for (Character* member : _members) {
+        if (member == this->getMainCharacter()) continue;
+        member->onQuittedParty();
+    }
+    
+    _members.clear();
     PlayerDataManager::getInstance()->getLocalData()->removePartyMemberAll();
 }
 
 // 主人公を移動
-bool Party::moveMainCharacter(const vector<Direction>& directions, float ratio, function<void()> callback)
+void Party::moveMainCharacter(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
-    return this->getMainCharacter()->walkBy(directions, [this, callback]
-    {
-        callback();
-        if(this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridRect());
-    }, ratio);
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(directions);
+    command->setSpeed(speed);
+    command->setWalkCallback([this, callback](bool walked) {
+        callback(walked);
+        if (this->onPartyMoved) this->onPartyMoved(this->getMainCharacter()->getGridCollisionRect());
+    });
+    
+    this->getMainCharacter()->pushCommand(command);
 }
 
 // メンバーを移動
-void Party::moveMember(Character* member, Character* previousMember, float ratio)
+void Party::moveMember(Character* member, Character* previousMember, float speed)
 {
-    // 前のメンバーの後ろに移動するようにする
-    Direction backDirection { MapUtils::oppositeDirection(previousMember->getDirection()) };
+    // 前のメンバーの移動前にいた位置を計算
+    Point destPos { previousMember->getGridPosition() };
+    vector<Direction> previousMemberMovingDirections { previousMember->getMovingDirections() };
     
-    Point destPos {previousMember->getGridPosition()};
-    
-    switch (backDirection)
-    {
-        case Direction::FRONT:
-        case Direction::BACK:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * previousMember->getGridSize().height;
-            break;
-            
-        case Direction::LEFT:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * (member->getGridSize().width);
-            break;
-            
-        case Direction::RIGHT:
-            destPos += MapUtils::directionsToMapVector({backDirection}) * (previousMember->getGridSize().width);
-            break;
-            
-        default:
-            break;
+    for (Direction direction : previousMemberMovingDirections) {
+        int fixNum = 2;
+        if (direction.isVertical()) fixNum = 1;
+        
+        destPos -= direction.getGridVec2() * fixNum;
     }
     
-    Vec2 movement { destPos - member->getGridPosition() };
-    member->walkBy(MapUtils::vectoMapDirections(movement), nullptr, ratio);
+    Vec2 gridMovement { destPos - member->getGridPosition() };
+    
+    Vec2 previousMemberMovement { Direction::getVec2(previousMemberMovingDirections) };
+    Vec2 movement { MapUtils::gridVecToVec2(gridMovement) };
+    
+    float degree { MapUtils::radianToDegree(abs(movement.getAngle(previousMemberMovement))) };
+
+    if (!previousMemberMovement.isZero() && degree > 90) return;
+    
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(Direction::convertGridVec2(gridMovement));
+    command->setSpeed(speed);
+    
+    member->pushCommand(command);
 }
 
 // パーティを移動
-bool Party::move(const vector<Direction>& directions, float ratio, function<void()> callback)
+void Party::move(const vector<Direction>& directions, float speed, function<void(bool)> callback)
 {
     // 主人公を移動
-    if(!this->moveMainCharacter(directions, ratio, callback)) return false;
+    this->moveMainCharacter(directions, speed, callback);
     
     // メンバーを移動
-    for(int i { 1 }; i < this->members.size(); i++)
-    {
-        this->moveMember(this->members.at(i), this->members.at(i - 1), ratio);
+    for (int i { 1 }; i < _members.size(); i++) {
+        this->moveMember(_members.at(i), _members.at(i - 1), speed);
     }
-    
-    return true;
 }
 
 // 主人公を取得
 Character* Party::getMainCharacter() const
 {
-    return this->members.at(0);
+    return _members.at(0);
 }
 
 // パーティメンバーを取得
 Vector<Character*> Party::getMembers() const
 {
-    return this->members;
+    return _members;
 }
 
 // パーティのキャラクターデータの取得
 vector<CharacterData> Party::getMembersData() const
 {
     vector<CharacterData> datas {};
-    int member_count = this->members.size();
-    for (int i = 0; i < member_count; i++)
-    {
-        datas.push_back(this->members.at(i)->getCharacterData());
+    int member_count = _members.size();
+    for (int i = 0; i < member_count; i++) {
+        datas.push_back(_members.at(i)->getCharacterData());
     }
+    
     return datas;
 }

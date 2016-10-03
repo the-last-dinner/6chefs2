@@ -16,10 +16,6 @@ class RandomMove : public MovePattern
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(RandomMove, Character*);
-
-// インスタンス変数
-private:
-    float second {0.f};
     
 // インスタンスメソッド
 private:

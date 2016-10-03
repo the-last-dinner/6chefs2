@@ -9,12 +9,13 @@
 #include "MapObjects/MovePatterns/RandomMove.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/Command/WalkCommand.h"
 
 // コンストラクタ
-RandomMove::RandomMove() {FUNCLOG};
+RandomMove::RandomMove() { FUNCLOG }
 
 // デストラクタ
-RandomMove::~RandomMove() {FUNCLOG};
+RandomMove::~RandomMove() { FUNCLOG }
 
 // 初期化
 bool RandomMove::init(Character* chara)
@@ -38,17 +39,18 @@ void RandomMove::move()
     
     // 移動可能な方向のベクタを用意
     vector<Direction> enableDirections {};
-    for(int i {0}; i < static_cast<int>(Direction::SIZE); i++)
+    for(Direction direction : Direction::getAll())
     {
-        Direction direction {static_cast<Direction>(i)};
-        if(!this->chara->isHit(direction)) enableDirections.push_back(direction);
+        if(!_chara->isHit(direction)) enableDirections.push_back(direction);
     }
     
     // 移動可能方向がなければ終了
     if (enableDirections.empty()) return;
     
     // 移動可能方向からランダムな要素を取り出す
-    vector<Direction> detectedDirs {enableDirections[cocos2d::random(0, static_cast<int>(enableDirections.size()) - 1)]};
+    vector<Direction> detectedDirs { enableDirections[cocos2d::random(0, static_cast<int>(enableDirections.size()) - 1)] };
     
-    this->chara->walkBy(detectedDirs, [this]{this->start();});
+    WalkCommand* command { WalkCommand::create() };
+    command->setDirections(detectedDirs);
+    command->setWalkCallback([this](bool walked) { this->move(); });
 }

@@ -10,31 +10,56 @@
 
 #include "MapObjects/Party.h"
 #include "MapObjects/TerrainObject/PlainArea.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/PathFinder/PathFinder.h"
 
 // コンストラクタ
-MapObjectList::MapObjectList() {FUNCLOG};
+MapObjectList::MapObjectList() { FUNCLOG };
 
 // デストラクタ
 MapObjectList::~MapObjectList()
 {
     FUNCLOG
-
-    this->availableObjects.clear();
-    this->disableObjects.clear();
-    this->enemies.clear();
-    this->terrainObjects.clear();
-    CC_SAFE_RELEASE_NULL(this->plainArea);
+    
+    _availableObjects.clear();
+    _disableObjects.clear();
+    _enemies.clear();
+    _pathObjects.clear();
+    _terrainObjects.clear();
+    
+    CC_SAFE_RELEASE_NULL(_plainArea);
+    CC_SAFE_RELEASE_NULL(_collisionDetector);
+    CC_SAFE_RELEASE_NULL(_attackDetector);
+    CC_SAFE_RELEASE_NULL(_pathFinder);
 };
 
+#pragma mark -
+#pragma mark Initializer
+
 // 初期化
-bool MapObjectList::init()
+bool MapObjectList::init(const Size& mapSize)
 {
     // ノーマルの地形を生成
     PlainArea* plainArea { PlainArea::create() };
     CC_SAFE_RETAIN(plainArea);
-    this->plainArea = plainArea;
+    _plainArea = plainArea;
     
-    // 敵と主人公一行の衝突判定開始
+    // 当たり判定を生成
+    CollisionDetector* collisionDetector { CollisionDetector::create() };
+    CC_SAFE_RETAIN(collisionDetector);
+    _collisionDetector = collisionDetector;
+    
+    // 攻撃判定を生成
+    AttackDetector* attackDetector { AttackDetector::create() };
+    CC_SAFE_RETAIN(attackDetector);
+    _attackDetector = attackDetector;
+    
+    // 経路探索
+    PathFinder* pathFinder { PathFinder::create(this, mapSize) };
+    CC_SAFE_RETAIN(pathFinder);
+    _pathFinder = pathFinder;
+    
     this->scheduleUpdate();
     
     return true;
@@ -43,52 +68,53 @@ bool MapObjectList::init()
 // 有効オブジェクトリストを設定
 void MapObjectList::setAvailableObjects(const Vector<MapObject*>& objects)
 {
-    if(!this->availableObjects.empty()) return;
+    if (!_availableObjects.empty()) return;
     
-    this->availableObjects = objects;
+    _availableObjects = objects;
 }
 
 // 無効オブジェクトを設定
 void MapObjectList::setDisableObjects(const Vector<MapObject*>& objects)
 {
-    if(!this->disableObjects.empty()) return;
+    if (!_disableObjects.empty()) return;
     
-    this->disableObjects = objects;
-};
+    _disableObjects = objects;
+}
 
 // 地形オブジェクトを設定
 void MapObjectList::setTerrainObjects(const Vector<TerrainObject*>& objects)
 {
-    if(!this->terrainObjects.empty()) return;
+    if (!_terrainObjects.empty()) return;
     
-    this->terrainObjects = objects;
-};
+    _terrainObjects = objects;
+}
 
 // 経路オブジェクト
 void MapObjectList::setPathObjects(const Vector<PathObject*>& objects)
 {
-    if(!this->pathObjects.empty()) return;
+    if (!_pathObjects.empty()) return;
     
-    this->pathObjects = objects;
+    _pathObjects = objects;
+}
+
+#pragma mark -
+#pragma mark Collection Getter
+
+// 有効なオブジェクトを全て取得
+Vector<MapObject*> MapObjectList::getAllAvailableObjects() const
+{
+    return _availableObjects;
 }
 
 // 指定IDのマップオブジェクトを取得
 MapObject* MapObjectList::getMapObject(int objId) const
 {
-    for(MapObject* obj : this->enemies)
-    {
-        if(objId == obj->getObjectId())
-        {
-            return obj;
-        }
+    for (Enemy* enemy : _enemies) {
+        if (enemy->getObjectId() == objId) return enemy;
     }
     
-    for(MapObject* obj : this->availableObjects)
-    {
-        if(objId == obj->getObjectId())
-        {
-            return obj;
-        }
+    for (MapObject* obj : _availableObjects) {
+        if (obj->getObjectId() == objId) return obj;
     }
     
     return nullptr;
@@ -97,91 +123,43 @@ MapObject* MapObjectList::getMapObject(int objId) const
 // 無効リストから指定IDのマップオブジェクトを取得
 MapObject* MapObjectList::getMapObjectFromDisableList(int objId) const
 {
-    for(MapObject* obj : this->disableObjects)
-    {
-        if(objId == obj->getObjectId())
-        {
-            return obj;
-        }
+    for (MapObject* obj : _disableObjects) {
+        if (obj->getObjectId() == objId) return obj;
     }
     
     return nullptr;
 }
 
-// 有効マップオブジェクトのベクタを取得
-const Vector<MapObject*>& MapObjectList::getMapObjects() const
-{
-    return this->availableObjects;
-}
-
-// 当たり判定を持つオブジェクトを取得
-Vector<MapObject*> MapObjectList::getCollisionObjects(vector<MapObject*> exclusion) const
-{
-    Vector<MapObject*> collisionObjects {};
-    
-    for(MapObject* obj : this->getMapObjects())
-    {
-        if(!obj->isHit()) continue;
-        
-        bool flg { false };
-        for(MapObject* ex : exclusion)
-        {
-            if(obj == ex) flg = true;
-        }
-        
-        if(flg) continue;
-        
-        collisionObjects.pushBack(obj);
-    }
-    
-    return collisionObjects;
-}
-
-// 指定範囲内にあるマップオブジェクトのベクタを取得
-Vector<MapObject*> MapObjectList::getMapObjects(const Rect& rect) const
+Vector<MapObject*> MapObjectList::getMapObjects(const MapObject* obj, const Trigger trigger) const
 {
     Vector<MapObject*> mapObjects {};
     
-    for(MapObject* obj : this->availableObjects)
-    {
-        if(rect.intersectsRect(obj->getCollisionRect())) mapObjects.pushBack(obj);
-    }
-    
-    return mapObjects;
-}
-
-// 指定座標を含むマップオブジェクトのベクタを取得
-Vector<MapObject*> MapObjectList::getMapObjects(const Point& position) const
-{
-    Vector<MapObject*> mapObjects {};
-    for(MapObject* obj : this->availableObjects)
-    {
-        if(obj->getCollisionRect().containsPoint(position)) mapObjects.pushBack(obj);
-    }
-    
-    return mapObjects;
-}
-
-// Rect(マス座標, マスサイズ)とトリガーからマップオブジェクトを取得
-Vector<MapObject*> MapObjectList::getMapObjectsByGridRect(const Rect& gridRect, const Trigger trigger) const
-{
-    Vector<MapObject*> mapObjects {};
-    bool needToCheckTrigger {trigger != Trigger::SIZE};
-    
-    for(MapObject* obj : this->availableObjects)
-    {
-        bool flag { false };
-        
-        Rect rect {obj->getGridRect()};
-        
-        if(MapUtils::intersectsGridRect(gridRect, rect))
-        {
-            if(!needToCheckTrigger) flag = true;
+    for (auto other : _availableObjects) {
+        if (MapUtils::intersectsGridRect(obj->getGridCollisionRect(), other->getGridRect())) {
+            if (other->getTrigger() != trigger) continue;
             
-            if(obj->getTrigger() == trigger) flag = true;
+            mapObjects.pushBack(other);
+        }
+    }
+    
+    return mapObjects;
+}
+
+// MapObject、方向、トリガーからマップオブジェクトを取得
+Vector<MapObject*> MapObjectList::getMapObjects(const MapObject* obj, const vector<Direction>& directions, const Trigger trigger) const
+{
+    Vector<MapObject*> mapObjects {};
+    bool needTriggerDetection { trigger != Trigger::SIZE };
+    
+    for (auto other : _availableObjects) {
+        bool shouldAdd { false };
+        
+        if (MapUtils::intersectsGridRect(obj->getGridCollisionRect(directions), other->getGridRect())) {
+            if(!needTriggerDetection) shouldAdd = true;
+            if(other->getTrigger() == trigger) shouldAdd = true;
         }
         
-        if(flag) mapObjects.pushBack(obj);
+        if (shouldAdd) mapObjects.pushBack(other);
     }
     
     return mapObjects;
@@ -192,77 +170,28 @@ vector<int> MapObjectList::getEventIds(const Trigger trigger) const
 {
     vector<int> eventIds {};
     
-    for(MapObject* obj : this->availableObjects)
-    {
-        if(obj->getTrigger() == trigger) eventIds.push_back(obj->getEventId());
+    for (auto obj : _availableObjects) {
+        if (obj->getTrigger() == trigger) eventIds.push_back(obj->getEventId());
     }
     
     return eventIds;
 }
 
-// マスRectとTriggerからイベントIDを取得
-vector<int> MapObjectList::getEventIdsByGridRect(const Rect& gridRect, const Trigger trigger) const
-{
-    vector<int> ids {};
-    
-    for(MapObject* obj : this->getMapObjectsByGridRect(gridRect, trigger))
-    {
-        if(obj->getEventId() == etoi(EventID::UNDIFINED)) continue;
-        ids.push_back(obj->getEventId());
-    }
-    
-    return ids;
-}
-
-// 当たり判定を持つオブジェクトのマスRectを全て取得(例外を指定できる)
-vector<Rect> MapObjectList::getGridCollisionRects(MapObject* exclusion) const
-{
-    vector<Rect> collisionRects {this->getGridCollisionRects(exclusion)};
-    
-    return collisionRects;
-}
-
-// 当たり判定を持つオブジェクトのマスRectを全て取得(例外を指定できる)
-vector<Rect> MapObjectList::getGridCollisionRects(vector<MapObject*> exclusion) const
-{
-    vector<Rect> gridRects {};
-    
-    for(MapObject* obj : this->getCollisionObjects(exclusion))
-    {
-        gridRects.push_back(obj->getGridRect());
-    }
-    
-    return gridRects;
-}
-
-// 当たり判定を持つオブジェクトのCollisionRectを例外を除いて全て取得
-vector<Rect> MapObjectList::getCollisionRects(vector<MapObject*> exclusion) const
-{
-    vector<Rect> collisionRects {};
-    
-    for(MapObject* obj : this->getCollisionObjects(exclusion))
-    {
-        collisionRects.push_back(obj->getCollisionRect());
-    }
-    
-    return collisionRects;
-}
+#pragma mark -
+#pragma mark Available MapObject
 
 // マップオブジェクトを追加
 void MapObjectList::add(MapObject* mapObject)
 {
     // もうすでにリスト内にあればリターン
-    if(this->availableObjects.find(mapObject) != this->availableObjects.end()) return;
+    if (_availableObjects.find(mapObject) != _availableObjects.end()) return;
     
-    this->availableObjects.pushBack(mapObject);
+    _availableObjects.pushBack(mapObject);
     
     // 無効リストに存在する場合は削除
-    for(MapObject* obj : this->disableObjects)
-    {
-        if(mapObject->getObjectId() == obj->getObjectId())
-        {
-            this->disableObjects.eraseObject(mapObject);
-            
+    for (MapObject* obj : _disableObjects) {
+        if (mapObject->getObjectId() == obj->getObjectId()) {
+            _disableObjects.eraseObject(mapObject);
             break;
         }
     }
@@ -271,24 +200,22 @@ void MapObjectList::add(MapObject* mapObject)
 // マップオブジェクトを削除
 void MapObjectList::removeById(const int objectId)
 {
-    for(MapObject* obj : this->enemies)
-    {
-        if(obj->getObjectId() == objectId)
-        {
-            this->disableObjects.pushBack(obj);
-            this->availableObjects.eraseObject(obj);
-            obj->removeFromParent();
-        }
+    for (Enemy* enemy : _enemies) {
+        if (enemy->getObjectId() != objectId) continue;
+        
+        _disableObjects.pushBack(enemy);
+        _enemies.eraseObject(enemy);
+        enemy->onExitMap();
+        enemy->removeFromParent();
     }
     
-    for(MapObject* obj : this->availableObjects)
-    {
-        if(obj->getObjectId() == objectId)
-        {
-            this->disableObjects.pushBack(obj);
-            this->availableObjects.eraseObject(obj);
-            obj->removeFromParent();
-        }
+    for (MapObject* obj : _availableObjects) {
+        if (obj->getObjectId() != objectId) continue;
+        
+        _disableObjects.pushBack(obj);
+        _availableObjects.eraseObject(obj);
+        obj->onExitMap();
+        obj->removeFromParent();
     }
 }
 
@@ -298,14 +225,16 @@ void MapObjectList::removeById(const int objectId)
 // 敵を追加
 void MapObjectList::addEnemy(Enemy* enemy)
 {
-    this->enemies.pushBack(enemy);
+    if(!enemy) return;
+    
+    _enemies.pushBack(enemy);
 }
 
 // EnemyIdから敵を削除
 void MapObjectList::removeEnemyById(const int enemyId)
 {
-    for (Enemy* enemy : this->enemies) {
-        if(enemy->getEnemyId() == enemyId) {
+    for (Enemy* enemy : _enemies) {
+        if (enemy->getEnemyId() == enemyId) {
             this->removeEnemy(enemy);
         }
     }
@@ -314,8 +243,8 @@ void MapObjectList::removeEnemyById(const int enemyId)
 // ObjectIdから敵を削除
 void MapObjectList::removeEnemyByObjectId(const int objectId)
 {
-    for (Enemy* enemy : this->enemies) {
-        if(enemy->getObjectId() == objectId) {
+    for (Enemy* enemy : _enemies) {
+        if (enemy->getObjectId() == objectId) {
             this->removeEnemy(enemy);
         }
     }
@@ -324,23 +253,20 @@ void MapObjectList::removeEnemyByObjectId(const int objectId)
 // 対象の敵のオブジェクトを削除
 void MapObjectList::removeEnemy(Enemy *enemy)
 {
-    std::mutex mtx;
-    mtx.lock();
     enemy->removeFromParent();
-    this->enemies.eraseObject(enemy);
-    mtx.unlock();
+    _enemies.eraseObject(enemy);
 }
 
 // 敵を全て取得
 Vector<Enemy*> MapObjectList::getEnemiesAll()
 {
-    return this->enemies;
+    return _enemies;
 }
 
 // 敵が存在するか
 bool MapObjectList::existsEnemy() const
 {
-    return !this->enemies.empty();
+    return !_enemies.empty();
 }
 
 #pragma mark -
@@ -352,20 +278,27 @@ void MapObjectList::setParty(Party* party)
     // 一行が動いた時のコールバックを設定
     party->onPartyMoved = CC_CALLBACK_1(MapObjectList::onPartyMoved, this);
     
-    this->party = party;
+    // 主人公のHPがなくなった時のコールバックを設定
+    party->getMainCharacter()->setLostHPCallback([this](Character* chara) {
+        this->unscheduleUpdate();
+        if (!_onLostMainCharacterHP) return;
+        _onLostMainCharacterHP();
+    });
+    
+    _party = party;
 }
 
 // 主人公一行を取得
 Party* MapObjectList::getParty()
 {
-    return this->party;
+    return _party;
 }
 
 // 主人公一行が移動した時
 void MapObjectList::onPartyMoved(const Rect& gridRect)
 {
     // 敵に移動したことを通知する
-    for(Enemy* enemy : this->enemies)
+    for(auto enemy : _enemies)
     {
         enemy->onPartyMoved();
     }
@@ -374,10 +307,11 @@ void MapObjectList::onPartyMoved(const Rect& gridRect)
 #pragma mark -
 #pragma mark TerrainObject
 
-// 地形オブジェクトをマスRectから取得
-TerrainObject* MapObjectList::getTerrainByGridRect(const Rect& gridRect)
+TerrainObject* MapObjectList::getTerrain(MapObject* mapObject, const vector<Direction>& directions)
 {
-    for(TerrainObject* obj : this->terrainObjects)
+    Rect gridRect { mapObject->getGridRect(directions) };
+    
+    for(TerrainObject* obj : _terrainObjects)
     {
         if(!MapUtils::includesGridRect(obj->getGridRect(), gridRect)) continue;
         
@@ -385,7 +319,7 @@ TerrainObject* MapObjectList::getTerrainByGridRect(const Rect& gridRect)
     }
     
     // 何も見つからなかった場合はノーマル地形を返す
-    return this->plainArea;
+    return _plainArea;
 }
 
 #pragma mark -
@@ -394,12 +328,37 @@ TerrainObject* MapObjectList::getTerrainByGridRect(const Rect& gridRect)
 // 経路オブジェクトをIDから取得
 PathObject* MapObjectList::getPathObjectById(const int pathId)
 {
-    for(PathObject* obj : this->pathObjects)
-    {
-        if(obj->getPathId() == pathId) return obj;
+    for (PathObject* obj : _pathObjects) {
+        if (obj->getPathId() != pathId) continue;
+        
+        return obj;
     }
     
     return nullptr;
+}
+
+#pragma mark -
+#pragma mark CollisionDetector
+
+CollisionDetector* MapObjectList::getCollisionDetector() const
+{
+    return _collisionDetector;
+}
+
+#pragma mark -
+#pragma mark AttackDetector
+
+AttackDetector* MapObjectList::getAttackDetector() const
+{
+    return _attackDetector;
+}
+
+#pragma mark -
+#pragma mark PathFinder
+
+PathFinder* MapObjectList::getPathFinder() const
+{
+    return _pathFinder;
 }
 
 #pragma mark -
@@ -408,13 +367,11 @@ PathObject* MapObjectList::getPathObjectById(const int pathId)
 // 全オブジェクトにイベント開始を通知
 void MapObjectList::onEventStart()
 {
-    for(MapObject* obj : this->availableObjects)
-    {
+    for (auto obj : _availableObjects) {
         obj->onEventStart();
     }
     
-    for(Enemy* enemy : this->enemies)
-    {
+    for (auto enemy : _enemies) {
         enemy->onEventStart();
     }
 }
@@ -422,35 +379,21 @@ void MapObjectList::onEventStart()
 // 全オブジェクトにイベント終了を通知
 void MapObjectList::onEventFinished()
 {
-    for(MapObject* obj : this->availableObjects)
-    {
+    for (auto obj : _availableObjects) {
         obj->onEventFinished();
     }
     
-    for(Enemy* enemy : this->enemies)
-    {
+    for (auto enemy : _enemies) {
         enemy->onEventFinished();
     }
 }
 
 #pragma mark -
-#pragma mark update
+#pragma mark Update
 
-// 敵と主人公一行の衝突監視用updateメソッド
 void MapObjectList::update(float delta)
 {
-    // partyがnullptrまたは、敵が一人もいない時は処理を中止
-    if(!this->party || this->enemies.empty()) return;
+    if (!_attackDetector) return;
     
-    for(MapObject* obj : this->enemies)
-    {
-        // 主人公と敵が一体でもぶつかっていれば、コールバック呼び出し
-        if(obj->getCollisionRect().intersectsRect(party->getMainCharacter()->getCollisionRect()))
-        {
-            // スケジュール終了
-            this->unscheduleUpdate();
-            if(!this->onContactWithEnemy) return;
-            this->onContactWithEnemy();
-        }
-    }
+    _attackDetector->update(delta);
 }

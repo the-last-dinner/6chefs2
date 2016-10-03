@@ -12,6 +12,7 @@
 #include "Scenes/BaseScene.h"
 
 class DungeonSceneData;
+class DungeonSceneEventHandler;
 
 class AmbientLightLayer;
 class TiledMapLayer;
@@ -36,20 +37,21 @@ public:
 	
 // インスタンス変数
 protected:
-    EventListenerKeyboardLayer* listener { nullptr };
-    TiledMapLayer* mapLayer { nullptr };
-    AmbientLightLayer* ambientLightLayer { nullptr };
-    FocusLightLayer* focusLightLayer { nullptr };
+    DungeonSceneEventHandler* _handler { nullptr };
+    EventListenerKeyboardLayer* _listener { nullptr };
+    TiledMapLayer* _mapLayer { nullptr };
+    AmbientLightLayer* _ambientLightLayer { nullptr };
+    FocusLightLayer* _focusLightLayer { nullptr };
     
-    CameraTask* cameraTask { nullptr };
-    EnemyTask* enemyTask { nullptr };
-    EventTask* eventTask { nullptr };
-    PlayerControlTask* playerControlTask { nullptr };
+    CameraTask* _cameraTask { nullptr };
+    EnemyTask* _enemyTask { nullptr };
+    EventTask* _eventTask { nullptr };
+    PlayerControlTask* _playerControlTask { nullptr };
     
-    LoadingLayer* loadingLayer { nullptr };
+    LoadingLayer* _loadingLayer { nullptr };
     
-    Party* party { nullptr };
-    StaminaBar* staminaBar { nullptr };
+    Party* _party { nullptr };
+    StaminaBar* _staminaBar { nullptr };
     
 // インスタンスメソッド
 protected:
@@ -59,6 +61,8 @@ protected:
 protected:
 	virtual bool init(DungeonSceneData* data);
     virtual bool init(DungeonSceneData* data, EventListenerKeyboardLayer* listener);
+    
+// コールバック
     virtual void onEnter() override;
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onInitEventFinished(LoadingLayer* loadingLayer);
@@ -67,7 +71,6 @@ protected:
     virtual void onMenuKeyPressed();
     void onPopMenuScene();
     void onBackToTitleSelected();
-    void onContactWithEnemy();
     void onAllEnemyRemoved();
     void onExitDungeon();
     void setLight();
@@ -77,6 +80,7 @@ protected:
     DungeonSceneData* getData() const;
     
     friend class DungeonSceneManager;
+    friend class DungeonSceneEventHandler;
     
 public:
     virtual void onEnterAssertScene() override;

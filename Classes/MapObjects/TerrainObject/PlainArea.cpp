@@ -8,21 +8,23 @@
 
 #include "MapObjects/TerrainObject/PlainArea.h"
 
+#include "MapObjects/Terrainstate/TerrainStateCache.h"
+
 // コンストラクタ
-PlainArea::PlainArea() {FUNCLOG};
+PlainArea::PlainArea() { FUNCLOG };
 
 // デストラクタ
-PlainArea::~PlainArea() {FUNCLOG};
+PlainArea::~PlainArea() { FUNCLOG };
 
 // 初期化
 bool PlainArea::init()
 {
+    if(!TerrainObject::init()) return false;
+    
     return true;
 }
 
-// オブジェクトが動こうとした時
-void PlainArea::onWillMove(MapObject* target, const vector<Direction>& directions, function<void()> onMoved, const float ratio)
+TerrainState* PlainArea::getTerrainState(TerrainStateCache* cache) const
 {
-    // 移動
-    target->move(directions, onMoved, ratio);
+    return cache->getState(TerrainStateCache::StateType::NORMAL);
 }

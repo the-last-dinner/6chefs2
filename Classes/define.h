@@ -9,6 +9,7 @@
 #include <fstream>
 #include "AudioEngine.h"
 #include "resources.h"
+#include "Models/Direction.h"
 
 // rapidjson
 #include "external/json/document.h"
@@ -100,17 +101,6 @@ enum struct Key
     SIZE,
 };
 
-// 向き
-enum struct Direction
-{
-	FRONT,
-	RIGHT,
-	LEFT,
-	BACK,
-    
-	SIZE,
-};
-
 // トリガータイプ
 enum struct Trigger
 {
@@ -180,8 +170,8 @@ struct Location
     int map_id{0};
     int x {0};
     int y {0};
-    Direction direction {Direction::SIZE};
-    Location(int map_id, int x, int y, int direction):map_id(map_id), x(x), y(y), direction(static_cast<Direction>(direction)){};
+    Direction direction {};
+    Location(int map_id, int x, int y, int direction):map_id(map_id), x(x), y(y), direction(Direction::convertInt(direction)){};
     Location(int map_id, int x, int y, Direction direction):map_id(map_id), x(x), y(y), direction(direction){};
     Location(){};
 };

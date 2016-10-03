@@ -21,9 +21,9 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/Status/Stamina.h"
 
 #include "Models/CommonEventScripts.h"
-#include "Models/Stamina.h"
 #include "Models/StopWatch.h"
 
 #include "Scenes/DungeonScene.h"
@@ -100,7 +100,7 @@ DungeonSceneManager::~DungeonSceneManager()
 DungeonScene* DungeonSceneManager::getScene() const { return dynamic_cast<DungeonScene*>(Director::getInstance()->getRunningScene()); }
 
 // マップレイヤを取得
-TiledMapLayer* DungeonSceneManager::getMapLayer() const { return this->getScene()->mapLayer; }
+TiledMapLayer* DungeonSceneManager::getMapLayer() const { return this->getScene()->_mapLayer; }
 
 // オブジェクトリストを取得
 MapObjectList* DungeonSceneManager::getMapObjectList() const { return this->getMapLayer()->getMapObjectList(); }
@@ -109,7 +109,7 @@ MapObjectList* DungeonSceneManager::getMapObjectList() const { return this->getM
 EventFactory* DungeonSceneManager::getEventFactory() const { return this->eventFactory; }
 
 // イベントスクリプトを取得
-EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->eventTask->getEventScript(); }
+EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->_eventTask->getEventScript(); }
 
 // 共通イベントスクリプトを取得
 CommonEventScripts* DungeonSceneManager::getCommonEventScriptsObject() { return this->commonEventScripts; }
@@ -118,10 +118,10 @@ CommonEventScripts* DungeonSceneManager::getCommonEventScriptsObject() { return 
 GameEventHelper* DungeonSceneManager::getGameEventHelper() const { return this->gameEventHelper; }
 
 // パーティを取得
-Party* DungeonSceneManager::getParty() { return this->getScene()->party; }
+Party* DungeonSceneManager::getParty() { return this->getScene()->_party; }
 
 // 環境光レイヤを取得
-AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->getScene()->ambientLightLayer; };
+AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->getScene()->_ambientLightLayer; };
 
 #pragma mark -
 #pragma mark Scene
@@ -195,7 +195,7 @@ void DungeonSceneManager::addEnemy(Enemy* enemy)
     this->getMapLayer()->addEnemy(enemy);
     
     // スタミナバー表示
-    this->getScene()->staminaBar->slideIn();
+    this->getScene()->_staminaBar->slideIn();
 }
 
 // マップオブジェクトの位置を設定
@@ -221,10 +221,10 @@ void DungeonSceneManager::changeMap(const Location& destLocation, const Location
     Director::getInstance()->getTextureCache()->removeUnusedTextures();
     
     // 敵を止める
-    this->getScene()->enemyTask->stop();
+    this->getScene()->_enemyTask->stop();
     
     // 敵情報を生成し直して格納
-    vector<SummonData> summonDatas { this->getScene()->enemyTask->createDatas(this->getMapObjectList()->getEnemiesAll(), destLocation, currentLocation, this->getLocation()) };
+    vector<SummonData> summonDatas { this->getScene()->_enemyTask->createDatas(this->getMapObjectList()->getEnemiesAll(), destLocation, currentLocation, this->getLocation()) };
     this->summonDatas.clear();
     this->summonDatas = summonDatas;
     
@@ -255,7 +255,7 @@ void DungeonSceneManager::changeMap(const Location& destLocation, const Location
 // カメラシーンへ切り替え（スタックに積む）
 void DungeonSceneManager::pushCameraScene(DungeonCameraScene* scene)
 {
-    this->getScene()->listener->releaseKeyAll();
+    this->getScene()->_listener->releaseKeyAll();
     Director::getInstance()->pushScene(scene);
 }
 
@@ -271,13 +271,13 @@ void DungeonSceneManager::popCameraScene()
 // 指定キーが押されているかチェック
 bool DungeonSceneManager::isPressed(const Key& key)
 {
-    return this->getScene()->listener->isPressed(key);
+    return this->getScene()->_listener->isPressed(key);
 }
 
 // 入力されている方向キーを取得
 vector<Key> DungeonSceneManager::getPressedCursorKeys() const
 {
-    return this->getScene()->listener->getPressedCursorKeys();
+    return this->getScene()->_listener->getPressedCursorKeys();
 }
 
 #pragma mark -
@@ -292,18 +292,18 @@ vector<SummonData> DungeonSceneManager::getSummonDatas() const
 // 敵を削除
 void DungeonSceneManager::removeEnemy(const int enemyId)
 {
-    this->getScene()->enemyTask->removeEnemy(enemyId);
+    this->getScene()->_enemyTask->removeEnemy(enemyId);
 }
 
 void DungeonSceneManager::removeEnemyByObjectId(const int objectId)
 {
-    this->getScene()->enemyTask->removeEnemyByObjectId(objectId);
+    this->getScene()->_enemyTask->removeEnemyByObjectId(objectId);
 }
 
 // 敵が存在するか確認
 bool DungeonSceneManager::existsEnemy() const
 {
-    return this->getScene()->enemyTask->existsEnemy();
+    return this->getScene()->_enemyTask->existsEnemy();
 }
 
 #pragma mark -
@@ -312,13 +312,13 @@ bool DungeonSceneManager::existsEnemy() const
 // カメラを指定座標が中心になるように移動
 void DungeonSceneManager::moveCamera(const Point& gridPosition, const float duration, function<void()> callback)
 {
-    this->getScene()->cameraTask->move(gridPosition, duration, callback);
+    this->getScene()->_cameraTask->move(gridPosition, duration, callback);
 }
 
 // カメラを指定のマップオブジェクトにセット
 void DungeonSceneManager::setCamera(MapObject *target)
 {
-    this->getScene()->cameraTask->setTarget(target);
+    this->getScene()->_cameraTask->setTarget(target);
 }
 
 #pragma mark -
@@ -327,79 +327,79 @@ void DungeonSceneManager::setCamera(MapObject *target)
 // イベントを実行
 void DungeonSceneManager::runEvent(const int eventId)
 {
-    this->getScene()->eventTask->runEvent(eventId);
+    this->getScene()->_eventTask->runEvent(eventId);
 }
 
 // イベント実行
 void DungeonSceneManager::runEvent(const vector<int>& eventIds)
 {
-    this->getScene()->eventTask->runEvent(eventIds);
+    this->getScene()->_eventTask->runEvent(eventIds);
 }
 
 // 非同期イベント実行
 void DungeonSceneManager::runEventAsync(GameEvent* event)
 {
-    this->getScene()->eventTask->runEventAsync(event);
+    this->getScene()->_eventTask->runEventAsync(event);
 }
 
 // キューにイベントを後ろから詰める
 void DungeonSceneManager::pushEventBack(const int eventId)
 {
-    this->getScene()->eventTask->pushEventBack(eventId);
+    this->getScene()->_eventTask->pushEventBack(eventId);
 }
 
 // キューにイベントを前から詰める
 void DungeonSceneManager::pushEventFront(const int eventId)
 {
-    this->getScene()->eventTask->pushEventFront(eventId);
+    this->getScene()->_eventTask->pushEventFront(eventId);
 }
 
 // キューにイベントを後ろから詰める
 void DungeonSceneManager::pushEventBack(GameEvent* event)
 {
-    this->getScene()->eventTask->pushEventBack(event);
+    this->getScene()->_eventTask->pushEventBack(event);
 }
 
 // キューにイベントを前から詰める
 void DungeonSceneManager::pushEventFront(GameEvent* event)
 {
-    this->getScene()->eventTask->pushEventFront(event);
+    this->getScene()->_eventTask->pushEventFront(event);
 }
 
 // キューにあるイベントを実行
 void DungeonSceneManager::runEventQueue()
 {
-    this->getScene()->eventTask->runEventQueue();
+    this->getScene()->_eventTask->runEventQueue();
 }
 
 // キューにイベントがあるか
 bool DungeonSceneManager::existsEvent() const
 {
-    return this->getScene()->eventTask->existsEvent();
+    return this->getScene()->_eventTask->existsEvent();
 }
 
 // 実行しているイベントのIDを取得
 int DungeonSceneManager::getRunningEventId() const
 {
-    return this->getScene()->eventTask->getRunningEventId();
+    return this->getScene()->_eventTask->getRunningEventId();
 }
 
 // 実行しているイベントを取得
 GameEvent* DungeonSceneManager::getRunningEvent() const
 {
-    return this->getScene()->eventTask->getRunningEvent();
+    return this->getScene()->_eventTask->getRunningEvent();
 }
 
 // エンキュー中のイベントIDを取得
 int DungeonSceneManager::getPushingEventid() const
 {
-    return this->getScene()->eventTask->getPushingEventId();
+    return this->getScene()->_eventTask->getPushingEventId();
 }
 
 // イベント実行中か
 bool DungeonSceneManager::isEventRunning() const
 {
-    return this->getScene()->eventTask->isEventRunning();
+    return this->getScene()->_eventTask->isEventRunning();
 }
 
 #pragma mark -

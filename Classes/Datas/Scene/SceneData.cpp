@@ -28,7 +28,7 @@ void SceneData::preloadResources(function<void(float)> callback)
 	}
 	
 	// コールバック用にパーセントを計算&渡す関数を生成
-	function<void()> func = [this, callback](){this->calcPercentage(); callback(this->percentage);};
+	function<void()> func = [this, callback](){ this->calcPercentage(); callback(this->percentage); };
 	
 	// 一ファイルのロードが完了するたびに関数を実行
 	this->preloadTextureAsync(this->textureFilePaths,func);
