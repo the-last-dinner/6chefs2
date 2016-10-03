@@ -9,10 +9,10 @@
 #include "MapObjects/PathFinder/PathNode.h"
 
 // コンストラクタ
-PathNode::PathNode() { FUNCLOG }
+PathNode::PathNode() {}
 
 // デストラクタ
-PathNode::~PathNode() { FUNCLOG }
+PathNode::~PathNode() {}
 
 // 初期化
 bool PathNode::init(const Point& gridPoint)
