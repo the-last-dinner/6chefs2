@@ -90,55 +90,58 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 // Sequence
 bool EventSequence::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init()) return false;
     
-    this->events = this->factory->createEventQueue(json);
+    if (!this->eventHelper->hasMember(json, member::ACTION)) return false;
     
-    if(this->events.empty()) return false;
+    _json = json[member::ACTION];
+    
+    if (!_json.IsArray()) return false;
     
     return true;
 }
 
 void EventSequence::run()
 {
-    if(this->events.size() == 0) return;
+    // 先頭のイベントを生成して実行
+    GameEvent* event { this->factory->createGameEvent(_json[0]) };
+    CC_SAFE_RETAIN(event);
+    _currentEvent = event;
     
-    // 最初のイベントを開始
-    this->events.front()->run();
+    event->run();
 }
 
 void EventSequence::update(float delta)
 {
-    if(this->events.empty())
-    {
+    if (_currentEvent) _currentEvent->update(delta);
+    if (_currentEvent && !_currentEvent->isDone()) return;
+    
+    // 実行中のイベントが終わっていたら解放
+    CC_SAFE_RELEASE_NULL(_currentEvent);
+    
+    // インデックスをあげる
+    _currentIdx++;
+    
+    // インデックス = 要素の個数なら終了
+    if (_currentIdx == _json.Size()) {
         this->setDone();
-        
         return;
     }
     
-    this->events.front()->update(delta);
+    // 次のイベントを生成
+    GameEvent* event { this->factory->createGameEvent(_json[_currentIdx]) };
+    CC_SAFE_RETAIN(event);
+    _currentEvent = event;
     
-    if(this->events.front()->isDone())
-    {
-        CC_SAFE_RELEASE(this->events.front());
-        this->events.pop();
-        
-        // 次のイベントがあればを開始
-        if(!this->events.empty())
-        {
-           this->events.front()->run();
-        }
-        // 次のイベントがなければ終了
-        else
-        {
-            this->setDone();
-        }
-    }
+    // 次のイベントを実行
+    event->run();
 }
 
 void EventSequence::stop(int code)
 {
-    this->events.front()->stop(code);
+    if (!_currentEvent) return;
+    
+    _currentEvent->stop(code);
 }
 
 #pragma mark -

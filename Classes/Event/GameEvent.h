@@ -52,12 +52,14 @@ public:
     
 // インスタンス変数
 private:
-    queue<GameEvent*> events {};
+    rapidjson::Value _json {};
+    int _currentIdx { 0 };
+    GameEvent* _currentEvent { nullptr };
     
 // インスタンスメソッド
 private:
-    EventSequence() {FUNCLOG};
-    ~EventSequence() {FUNCLOG};
+    EventSequence() { FUNCLOG };
+    ~EventSequence() { FUNCLOG };
     virtual bool init(rapidjson::Value& json);
     virtual void run() override;
     virtual void update(float delta) override;
