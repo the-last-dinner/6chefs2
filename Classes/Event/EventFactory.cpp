@@ -167,20 +167,3 @@ Vector<GameEvent*> EventFactory::createEventVector(rapidjson::Value& json)
     
     return events;
 }
-
-// イベントキューを生成
-queue<GameEvent*> EventFactory::createEventQueue(rapidjson::Value& json)
-{
-    queue<GameEvent*> events {};
-    
-    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
-    
-    for (int i { 0 }; i < eventJson.Size(); i++) {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
-            CC_SAFE_RETAIN(event);
-            events.push(event);
-        }
-    }
-    
-    return events;
-}
