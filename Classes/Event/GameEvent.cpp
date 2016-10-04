@@ -45,6 +45,26 @@ bool GameEvent::init()
     return true;
 }
 
+// 親イベントを設定
+void GameEvent::setParent(const GameEvent* parent)
+{
+    _parent = parent;
+}
+
+// イベントIDを設定
+void GameEvent::setEventId(int eventId)
+{
+    _id = eventId;
+}
+
+// イベントIDを取得
+int GameEvent::getEventId() const
+{
+    if (_parent) return _parent->getEventId();
+    
+    return _id;
+}
+
 // インスタンスが再利用可能か
 bool GameEvent::isReusable() const
 {

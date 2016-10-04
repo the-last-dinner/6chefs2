@@ -21,6 +21,8 @@ class GameEvent : public Ref
 protected:
     EventFactory* _factory { nullptr };
     GameEventHelper* _eventHelper { nullptr };
+    const GameEvent* _parent { nullptr };
+    int _id { etoi(EventID::UNDIFINED) };
     int _code { -1 };
 private:
     bool _isDone { false };
@@ -28,10 +30,16 @@ private:
     
 // インスタンスメソッド
 public:
+    void setParent(const GameEvent* parent);
+    void setEventId(int eventId);
+    int getEventId() const;
     bool isReusable() const;
     void setReusable(bool reusable);
     bool isDone() const;
     void setDone(bool done = true);
+    
+// インターフェース
+public:
     virtual void run() { CCLOG("runメソッドをoverrideしてね"); };     // イベント開始
     virtual void update(float delta) {};                           // タスクによって毎フレーム呼び出されるメソッド
     virtual void stop(int code = -1) {};
