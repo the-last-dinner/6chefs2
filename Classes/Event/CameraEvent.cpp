@@ -46,8 +46,7 @@ bool CreateCameraEvent::init(rapidjson::Value& json)
     
     // イベント
     if (!_eventHelper->hasMember(json, member::ACTION)) return false;
-    _event = _factory->createGameEvent(json[member::ACTION], this);
-    CC_SAFE_RETAIN(_event);
+    _eventJson = json[member::ACTION];
     
     return true;
 }
@@ -56,8 +55,10 @@ void CreateCameraEvent::run()
 {
     DungeonCameraSceneData* data { DungeonCameraSceneData::create(_location) };
     data->setTargetId(_objId);
+    data->setEventJson(_eventJson);
     
-    DungeonCameraScene* scene { DungeonCameraScene::create(data, _event, [this]{DungeonSceneManager::getInstance()->popCameraScene(); this->setDone();}) };
+    DungeonCameraScene* scene { DungeonCameraScene::create(data, [this]{DungeonSceneManager::getInstance()->popCameraScene(); this->setDone();}) };
+    
     DungeonSceneManager::getInstance()->pushCameraScene(scene);
 }
 

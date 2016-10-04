@@ -19,7 +19,7 @@ public:
 private:
     Location _location {};
     int _objId { etoi(ObjectID::UNDIFINED) };
-    GameEvent* _event { nullptr };
+    rapidjson::Value _eventJson {};
 private:
     CreateCameraEvent() { FUNCLOG };
     ~CreateCameraEvent() { FUNCLOG };

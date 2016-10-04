@@ -12,6 +12,8 @@
 
 #include "Effects/AmbientLightLayer.h"
 
+#include "Event/EventFactory.h"
+
 #include "Layers/Dungeon/TiledMapLayer.h"
 #include "Layers/EventListener/ConfigEventListenerlayer.h"
 #include "Layers/LoadingLayer.h"
@@ -23,23 +25,6 @@
 
 #include "Managers/DungeonSceneManager.h"
 
-// create関数
-DungeonCameraScene* DungeonCameraScene::create(DungeonCameraSceneData* data, GameEvent* event, EventFinishCallback callback)
-{
-    DungeonCameraScene* p { new(nothrow) DungeonCameraScene() };
-    if(p && p->init(data, event, callback))
-    {
-        p->autorelease();
-        return p;
-    }
-    else
-    {
-        delete p;
-        p = nullptr;
-        return nullptr;
-    }
-}
-
 // コンストラクタ
 DungeonCameraScene::DungeonCameraScene() { FUNCLOG };
 
@@ -47,12 +32,11 @@ DungeonCameraScene::DungeonCameraScene() { FUNCLOG };
 DungeonCameraScene::~DungeonCameraScene() { FUNCLOG };
 
 // 初期化
-bool DungeonCameraScene::init(DungeonCameraSceneData* data, GameEvent* event, EventFinishCallback callback)
+bool DungeonCameraScene::init(DungeonCameraSceneData* data, EventFinishCallback callback)
 {
     if(!BaseScene::init(data)) return false;
     
     _callback = callback;
-    _event = event;
     
     _configListener->setKeyconfigEnabled(false);
     
@@ -118,8 +102,12 @@ void DungeonCameraScene::onInitEventFinished(LoadingLayer* loadingLayer)
 // Trigger::AFTER_INITが終了した時
 void DungeonCameraScene::onAfterInitEventFinished()
 {
-    // 指定したイベントを実行
-    _eventTask->runEvent(_event, CC_CALLBACK_0(DungeonCameraScene::onCameraEventFinished, this));
+    // 指定したイベントをjsonから生成して実行
+    EventFactory* factory { DungeonSceneManager::getInstance()->getEventFactory() };
+    GameEvent* event { factory->createGameEvent(this->getData()->getEventJson()) };
+    CC_SAFE_RETAIN(event);
+    
+    _eventTask->runEvent(event, CC_CALLBACK_0(DungeonCameraScene::onCameraEventFinished, this));
 }
 
 // 渡されたイベントを終了した時

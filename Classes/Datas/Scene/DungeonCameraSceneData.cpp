@@ -25,11 +25,23 @@ bool DungeonCameraSceneData::init(const Location& location)
 // ターゲットのIDを設定
 void DungeonCameraSceneData::setTargetId(const int objId)
 {
-    this->targetId = objId;
+    _targetId = objId;
 }
 
 // ターゲットのIDを取得
 int DungeonCameraSceneData::getTargetId() const
 {
-    return this->targetId;
+    return _targetId;
+}
+
+// イベントJsonを設定
+void DungeonCameraSceneData::setEventJson(rapidjson::Value& json)
+{
+    _eventJson = json;
+}
+
+// イベントJsonを取得
+rapidjson::Value& DungeonCameraSceneData::getEventJson()
+{
+    return _eventJson;
 }
