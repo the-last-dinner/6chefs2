@@ -151,19 +151,3 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
     
     return EventFactory::typeToCreateFunc.at(typeName)(json);
 }
-
-// イベントベクタを生成
-Vector<GameEvent*> EventFactory::createEventVector(rapidjson::Value& json)
-{
-    Vector<GameEvent*> events {};
-    
-    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
-    
-    for(int i { 0 }; i < eventJson.Size(); i++) {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
-            events.pushBack(event);
-        }
-    }
-    
-    return events;
-}

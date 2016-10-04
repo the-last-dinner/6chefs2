@@ -150,7 +150,13 @@ bool EventSpawn::init(rapidjson::Value& json)
 {
     if (!GameEvent::init()) return false;
     
-    _events = _factory->createEventVector(json);
+    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION)) ? json[member::ACTION] : json};
+    
+    for(int i { 0 }; i < eventJson.Size(); i++) {
+        if(GameEvent* event { _factory->createGameEvent(eventJson[i]) }) {
+            _events.pushBack(event);
+        }
+    }
     
     if (_events.empty()) return false;
     

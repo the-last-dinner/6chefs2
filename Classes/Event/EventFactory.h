@@ -33,7 +33,6 @@ private:
     bool init();
 public:
     GameEvent* createGameEvent(rapidjson::Value& json);
-    Vector<GameEvent*> createEventVector(rapidjson::Value& json);
 };
 
 #endif /* defined(__LastSupper__EventFactory__) */
