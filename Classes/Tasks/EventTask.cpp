@@ -319,9 +319,10 @@ GameEvent* EventTask::createEventById(int eventId)
     
     DungeonSceneManager* manager {DungeonSceneManager::getInstance()};
     
-    GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId)) };
-    
+    GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId), nullptr) };
     CC_SAFE_RETAIN(event);
+    
+    if (event) event->setEventId(eventId);
     
     return event;
 }

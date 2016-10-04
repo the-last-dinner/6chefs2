@@ -94,11 +94,11 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 {
     // eventIDの指定があれば、指定のIDに対応するjsonから生成
     if (_eventHelper->hasMember(json, member::EVENT_ID)) {
-        return _factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()));
+        return _factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()), this);
     }
     // eventIDの指定がなければ、action配列から生成
     else {
-        return _factory->createGameEvent(json[member::ACTION]);
+        return _factory->createGameEvent(json[member::ACTION], this);
     }
 }
 
@@ -122,7 +122,7 @@ bool EventSequence::init(rapidjson::Value& json)
 void EventSequence::run()
 {
     // 先頭のイベントを生成して実行
-    GameEvent* event { _factory->createGameEvent(_json[0]) };
+    GameEvent* event { _factory->createGameEvent(_json[0], this) };
     CC_SAFE_RETAIN(event);
     _currentEvent = event;
     
@@ -147,7 +147,7 @@ void EventSequence::update(float delta)
     }
     
     // 次のイベントを生成
-    GameEvent* event { _factory->createGameEvent(_json[_currentIdx]) };
+    GameEvent* event { _factory->createGameEvent(_json[_currentIdx], this) };
     CC_SAFE_RETAIN(event);
     _currentEvent = event;
     
@@ -173,7 +173,7 @@ bool EventSpawn::init(rapidjson::Value& json)
     rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION)) ? json[member::ACTION] : json};
     
     for(int i { 0 }; i < eventJson.Size(); i++) {
-        if(GameEvent* event { _factory->createGameEvent(eventJson[i]) }) {
+        if(GameEvent* event { _factory->createGameEvent(eventJson[i], this) }) {
             _events.pushBack(event);
         }
     }
@@ -277,7 +277,7 @@ bool CallEvent::init(rapidjson::Value& json)
     
     if (!_eventHelper->hasMember(json, member::EVENT_ID)) return false;
     
-    _event = _factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()));
+    _event = _factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()), this);
     CC_SAFE_RETAIN(_event);
     
     return true;

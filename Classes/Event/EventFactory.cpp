@@ -128,7 +128,7 @@ bool EventFactory::init()
 }
 
 // ゲームイベントを生成して返す
-GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
+GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* parentEvent)
 {
     // イベントタイプがなければ同時実行を生成して返す
     if(!json.IsObject() || !json.HasMember(member::TYPE)) return EventSpawn::create(json);
@@ -149,5 +149,9 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         return nullptr;
     }
     
-    return EventFactory::typeToCreateFunc.at(typeName)(json);
+    GameEvent* event { EventFactory::typeToCreateFunc.at(typeName)(json) };
+    
+    if (event) event->setParent(parentEvent);
+    
+    return event;
 }

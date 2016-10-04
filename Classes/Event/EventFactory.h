@@ -32,7 +32,7 @@ private:
     ~EventFactory() { FUNCLOG };
     bool init();
 public:
-    GameEvent* createGameEvent(rapidjson::Value& json);
+    GameEvent* createGameEvent(rapidjson::Value& json, GameEvent* parentEvent);
 };
 
 #endif /* defined(__LastSupper__EventFactory__) */
