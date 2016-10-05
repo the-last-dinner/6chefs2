@@ -17,11 +17,11 @@ class NeverAgainEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(NeverAgainEvent, rapidjson::Value&)
 private:
-    vector<pair<int,int>> event {};
+    vector<pair<int,int>> _event {};
 private:
-    NeverAgainEvent() {FUNCLOG};
-    ~NeverAgainEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    NeverAgainEvent() { FUNCLOG };
+    ~NeverAgainEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -31,11 +31,11 @@ class GetItemEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(GetItemEvent, rapidjson::Value&)
 private:
-    int itemId { 0 };
+    int _itemId { 0 };
 private:
-    GetItemEvent() {FUNCLOG};
-    ~GetItemEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    GetItemEvent() { FUNCLOG };
+    ~GetItemEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -45,11 +45,11 @@ class RemoveItemEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(RemoveItemEvent, rapidjson::Value&)
 private:
-    int itemId { 0 };
+    int _itemId { 0 };
 private:
-    RemoveItemEvent() {FUNCLOG};
-    ~RemoveItemEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    RemoveItemEvent() { FUNCLOG };
+    ~RemoveItemEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -59,12 +59,12 @@ class AddProfileEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(AddProfileEvent, rapidjson::Value&)
 private:
-    int charaId { static_cast<int>(CharacterID::UNDIFINED) };
-    int infoLevel { 0 };
+    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
+    int _infoLevel { 0 };
 private:
-    AddProfileEvent() {FUNCLOG};
-    ~AddProfileEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    AddProfileEvent() { FUNCLOG };
+    ~AddProfileEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -74,11 +74,11 @@ class ChangeChapterEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(ChangeChapterEvent, rapidjson::Value&)
 private:
-    int chapterId { 0 };
+    int _chapterId { 0 };
 private:
-    ChangeChapterEvent() {FUNCLOG};
-    ~ChangeChapterEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    ChangeChapterEvent() { FUNCLOG };
+    ~ChangeChapterEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -88,12 +88,12 @@ class ChangeLikabilityRatingEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(ChangeLikabilityRatingEvent, rapidjson::Value&)
 private:
-    int charaId { static_cast<int>(CharacterID::UNDIFINED) };
-    int rating { 0 };
+    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
+    int _rating { 0 };
 private:
-    ChangeLikabilityRatingEvent() {FUNCLOG};
-    ~ChangeLikabilityRatingEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    ChangeLikabilityRatingEvent() { FUNCLOG };
+    ~ChangeLikabilityRatingEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -103,13 +103,13 @@ class ChangeEventStatusEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(ChangeEventStatusEvent, rapidjson::Value&)
 private:
-    int status {0};
-    int map_id {-1};
-    int event_id {-1};
+    int _status {0};
+    int _mapId {-1};
+    int _eventId {-1};
 private:
-    ChangeEventStatusEvent() {FUNCLOG};
-    ~ChangeEventStatusEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    ChangeEventStatusEvent() { FUNCLOG };
+    ~ChangeEventStatusEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -119,11 +119,11 @@ class GetTrophyEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(GetTrophyEvent, rapidjson::Value&)
 private:
-    int trophyId {0};
+    int _trophyId {0};
 private:
-    GetTrophyEvent() {FUNCLOG};
-    ~GetTrophyEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    GetTrophyEvent() { FUNCLOG };
+    ~GetTrophyEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -133,12 +133,12 @@ class GiveItemEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(GiveItemEvent, rapidjson::Value&)
 private:
-    int fromCharaId {-1};
-    int toCharaId {-1};
+    int _fromCharaId { -1 };
+    int _toCharaId { -1 };
 private:
     GiveItemEvent() {FUNCLOG};
     ~GiveItemEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

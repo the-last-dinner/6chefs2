@@ -29,7 +29,7 @@ GameEvent::~GameEvent()
 };
 
 // 初期化
-bool GameEvent::init()
+bool GameEvent::init(rapidjson::Value& json)
 {
     EventFactory* factory {DungeonSceneManager::getInstance()->getEventFactory()};
     GameEventHelper* eventHelper {DungeonSceneManager::getInstance()->getGameEventHelper()};
@@ -42,13 +42,16 @@ bool GameEvent::init()
     CC_SAFE_RETAIN(eventHelper);
     _eventHelper = eventHelper;
     
+    // NOTICE: これやると_jsonからしか参照できなくなる
+    _json = json;
+    
     return true;
 }
 
-// 親イベントを設定
-void GameEvent::setParent(const GameEvent* parent)
+// 呼び出し元イベントを設定
+void GameEvent::setCaller(const GameEvent* caller)
 {
-    _parent = parent;
+    _caller = caller;
 }
 
 // イベントIDを設定
@@ -60,7 +63,7 @@ void GameEvent::setEventId(int eventId)
 // イベントIDを取得
 int GameEvent::getEventId() const
 {
-    if (_parent) return _parent->getEventId();
+    if (_caller) return _caller->getEventId();
     
     return _id;
 }
@@ -94,7 +97,11 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 {
     // eventIDの指定があれば、指定のIDに対応するjsonから生成
     if (_eventHelper->hasMember(json, member::EVENT_ID)) {
-        return _factory->createGameEvent(DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::EVENT_ID].GetInt()), this);
+        rapidjson::Value& eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(stoi(json[member::EVENT_ID].GetString())) };
+        GameEvent* event { _factory->createGameEvent(eventJson, nullptr) };
+        event->setEventId(stoi(json[member::EVENT_ID].GetString()));
+        
+        return event;
     }
     // eventIDの指定がなければ、action配列から生成
     else {
@@ -108,11 +115,11 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 // Sequence
 bool EventSequence::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
+    if (!_eventHelper->hasMember(_json, member::ACTION)) return false;
     
-    _json = json[member::ACTION];
+    _json = _json[member::ACTION];
     
     if (!_json.IsArray()) return false;
     
@@ -168,9 +175,9 @@ void EventSequence::stop(int code)
 // Spawn
 bool EventSpawn::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION)) ? json[member::ACTION] : json};
+    rapidjson::Value& eventJson { (_json.IsObject() && _json.HasMember(member::ACTION)) ? _json[member::ACTION] : _json };
     
     for(int i { 0 }; i < eventJson.Size(); i++) {
         if(GameEvent* event { _factory->createGameEvent(eventJson[i], this) }) {
@@ -225,11 +232,11 @@ void EventSpawn::stop(int code)
 // If
 bool EventIf::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // conditionをチェックしてtrueであればイベントを生成
-    if (_eventHelper->detectCondition(json)) {
-        _event = this->createSpawnFromIdOrAction(json);
+    if (_eventHelper->detectCondition(_json)) {
+        _event = this->createSpawnFromIdOrAction(_json);
         CC_SAFE_RETAIN(_event);
         
         return true;
@@ -271,13 +278,13 @@ void EventIf::update(float delta)
 
 bool CallEvent::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    EventScript* eventScript  = _eventHelper->hasMember(json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript();
+    EventScript* eventScript { _eventHelper->hasMember(_json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(_json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript() };
     
-    if (!_eventHelper->hasMember(json, member::EVENT_ID)) return false;
+    if (!_eventHelper->hasMember(_json, member::EVENT_ID)) return false;
     
-    _event = _factory->createGameEvent(eventScript->getScriptJson(json[member::EVENT_ID].GetString()), this);
+    _event = _factory->createGameEvent(eventScript->getScriptJson(_json[member::EVENT_ID].GetString()), this);
     CC_SAFE_RETAIN(_event);
     
     return true;
@@ -318,19 +325,18 @@ void CallEvent::stop(int code)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if (!_eventHelper->hasMember(json, member::TIMES)) return false;
+    if (!_eventHelper->hasMember(_json, member::TIMES)) return false;
     
-    _times = json[member::TIMES].GetInt();
+    _times = _json[member::TIMES].GetInt();
     
-    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
+    if (!_eventHelper->hasMember(_json, member::ACTION)) return false;
     
-    if (_eventHelper->hasMember(json, member::ID)) _code = stoi(json[member::ID].GetString());
+    if (_eventHelper->hasMember(_json, member::ID)) _code = stoi(_json[member::ID].GetString());
     
-    _event = this->createSpawnFromIdOrAction(json);
+    _event = this->createSpawnFromIdOrAction(_json);
     CC_SAFE_RETAIN(_event);
-    _json = &json;
     
     return true;
 }
@@ -367,7 +373,7 @@ void EventRepeat::update(float delta)
         }
         // 0でないので再実行
         CC_SAFE_RELEASE_NULL(_event);
-        _event = this->createSpawnFromIdOrAction(*_json);
+        _event = this->createSpawnFromIdOrAction(_json);
         CC_SAFE_RETAIN(_event);
         _event->run();
     }
@@ -385,11 +391,11 @@ void EventRepeat::stop(int code)
 // StopEvent
 bool EventStop::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if (!_eventHelper->hasMember(json, member::ID)) return false;
+    if (!_eventHelper->hasMember(_json, member::ID)) return false;
     
-    _eventCode = stoi(json[member::ID].GetString());
+    _eventCode = stoi(_json[member::ID].GetString());
 
     return true;
 }

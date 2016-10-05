@@ -16,23 +16,23 @@
 
 bool PlayBGMEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // ファイル名。なければ生成しない
-    if(!_eventHelper->hasMember(json, member::FILE)) return false;
+    if (!_eventHelper->hasMember(_json, member::FILE)) return false;
     
-    this->fileName = json[member::FILE].GetString();
+    _fileName = _json[member::FILE].GetString();
     
     // 音量
-    if(_eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::VOLUME)) _volume = _json[member::VOLUME].GetDouble();
     
     return true;
 }
 
 void PlayBGMEvent::run()
 {
-    SoundManager::getInstance()->playBGM(this->fileName, true, this->volume);
-    PlayerDataManager::getInstance()->getLocalData()->setBgm(this->fileName);
+    SoundManager::getInstance()->playBGM(_fileName, true, _volume);
+    PlayerDataManager::getInstance()->getLocalData()->setBgm(_fileName);
     this->setDone();
 }
 
@@ -41,26 +41,24 @@ void PlayBGMEvent::run()
 
 bool StopBGMEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // ファイル名
-    if(_eventHelper->hasMember(json, member::FILE)) this->fileName = json[member::FILE].GetString();
+    if (_eventHelper->hasMember(_json, member::FILE)) _fileName = _json[member::FILE].GetString();
     
     return true;
 }
 
 void StopBGMEvent::run()
 {
-    if(this->fileName != "")
-    {
-        SoundManager::getInstance()->stopBGM(this->fileName);
-        PlayerDataManager::getInstance()->getLocalData()->removeBgm(this->fileName);
-    }
-    else
-    {
+    if (_fileName != "") {
+        SoundManager::getInstance()->stopBGM(_fileName);
+        PlayerDataManager::getInstance()->getLocalData()->removeBgm(_fileName);
+    } else {
         SoundManager::getInstance()->stopBGMAll();
         PlayerDataManager::getInstance()->getLocalData()->removeBgmAll();
     }
+    
     this->setDone();
 }
 
@@ -69,22 +67,22 @@ void StopBGMEvent::run()
 
 bool ChangeVolumeEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // ファイル名。なければ生成しない
-    if(!_eventHelper->hasMember(json, member::FILE)) return false;
+    if (!_eventHelper->hasMember(_json, member::FILE)) return false;
     
-    this->fileName = json[member::FILE].GetString();
+    _fileName = _json[member::FILE].GetString();
     
     // 音量
-    if(_eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::VOLUME)) _volume = _json[member::VOLUME].GetDouble();
     
     return true;
 }
 
 void ChangeVolumeEvent::run()
 {
-    SoundManager::getInstance()->changeVolume(this->fileName, this->volume);
+    SoundManager::getInstance()->changeVolume(_fileName, _volume);
     this->setDone();
 }
 
@@ -93,21 +91,21 @@ void ChangeVolumeEvent::run()
 
 bool PlaySEEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // ファイル名。なければ生成しない
-    if(!_eventHelper->hasMember(json, member::FILE)) return false;
+    if (!_eventHelper->hasMember(_json, member::FILE)) return false;
     
-    this->fileName = json[member::FILE].GetString();
+    _fileName = _json[member::FILE].GetString();
     
     // 音量
-    if(_eventHelper->hasMember(json, member::VOLUME)) this->volume = json[member::VOLUME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::VOLUME)) _volume = _json[member::VOLUME].GetDouble();
     
     return true;
 }
 
 void PlaySEEvent::run()
 {
-    SoundManager::getInstance()->playSE(this->fileName, this->volume);
+    SoundManager::getInstance()->playSE(_fileName, _volume);
     this->setDone();
 }

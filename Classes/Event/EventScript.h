@@ -23,7 +23,7 @@ private:
     
 //インスタンス変数
 private:
-    rapidjson::Document json;
+    rapidjson::Document _json;
     
 // インスタンスメソッド
 public:

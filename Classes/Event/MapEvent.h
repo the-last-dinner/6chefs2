@@ -19,11 +19,11 @@ class HideLayerEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(HideLayerEvent, rapidjson::Value&)
 private:
-    string layerName {};
+    string _layerName {};
 private:
-    HideLayerEvent() {FUNCLOG};
-    ~HideLayerEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    HideLayerEvent() { FUNCLOG };
+    ~HideLayerEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -32,11 +32,11 @@ class ShowLayerEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(ShowLayerEvent, rapidjson::Value&)
 private:
-    string layerName {};
+    string _layerName {};
 private:
-    ShowLayerEvent() {FUNCLOG};
-    ~ShowLayerEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    ShowLayerEvent() { FUNCLOG };
+    ~ShowLayerEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -46,11 +46,11 @@ class SwingLayerEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(SwingLayerEvent, rapidjson::Value&)
 private:
-    string layerName {};
+    string _layerName {};
 private:
-    SwingLayerEvent() {FUNCLOG};
-    ~SwingLayerEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    SwingLayerEvent() { FUNCLOG };
+    ~SwingLayerEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -60,9 +60,9 @@ class StopLayerActionEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(StopLayerActionEvent, rapidjson::Value&)
 private:
-    StopLayerActionEvent() {FUNCLOG};
-    ~StopLayerActionEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    StopLayerActionEvent() { FUNCLOG };
+    ~StopLayerActionEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -72,14 +72,13 @@ class QuakeMapEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(QuakeMapEvent, rapidjson::Value&)
 private:
-    int x {0};
-    int y {0};
-    float time {0.0f};
-    Node* quakeLayer {};
+    int _x { 0 };
+    int _y { 0 };
+    float _time { 0.0f };
 private:
-    QuakeMapEvent() {FUNCLOG};
-    ~QuakeMapEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value&);
+    QuakeMapEvent() { FUNCLOG };
+    ~QuakeMapEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

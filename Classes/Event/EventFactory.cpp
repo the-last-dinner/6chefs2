@@ -28,7 +28,7 @@
 
 
 // イベントtypeからイベントクラスへのマップ
-const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToCreateFunc = {
+const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeToCreateFunc = {
     // 制御系
     {"sequence", EventSequence::create},      // 順番に処理を実行
     {"spawn", EventSpawn::create},            // 同時に処理を実行
@@ -128,7 +128,7 @@ bool EventFactory::init()
 }
 
 // ゲームイベントを生成して返す
-GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* parentEvent)
+GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* caller)
 {
     // イベントタイプがなければ同時実行を生成して返す
     if(!json.IsObject() || !json.HasMember(member::TYPE)) return EventSpawn::create(json);
@@ -143,15 +143,15 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* pare
         EventScriptValidator::create(mapFileName, eventId)->validate(json);
     }
     
-    if (EventFactory::typeToCreateFunc.count(typeName) == 0) {
+    if (EventFactory::_typeToCreateFunc.count(typeName) == 0) {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
         LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
     }
     
-    GameEvent* event { EventFactory::typeToCreateFunc.at(typeName)(json) };
+    GameEvent* event { EventFactory::_typeToCreateFunc.at(typeName)(json) };
     
-    if (event) event->setParent(parentEvent);
+    if (event) event->setCaller(caller);
     
     return event;
 }
