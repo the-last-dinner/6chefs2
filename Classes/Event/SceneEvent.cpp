@@ -33,26 +33,23 @@
 
 bool ChangeMapEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     Direction direction { Direction::NONE };
 
     // directionの指定がされている時
-    if(_eventHelper->hasMember(json, member::DIRECTION))
-    {
-        direction = _eventHelper->getDirection(json);
-    }
+    if (_eventHelper->hasMember(_json, member::DIRECTION)) {
+        direction = _eventHelper->getDirection(_json);
+    } else {
     // directionが指定されていない時
-    else
-    {
         direction = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getDirection();
     }
     
-    this->destLocation = Location(stoi(json[member::MAP_ID].GetString()), json[member::X].GetInt(), json[member::Y].GetInt(), direction);
-    this->currentLocation = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation();
+    _destLocation = Location(stoi(_json[member::MAP_ID].GetString()), _json[member::X].GetInt(), _json[member::Y].GetInt(), direction);
+    _currentLocation = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation();
     
     // 移動後に実行するイベントID
-    if(_eventHelper->hasMember(json, member::EVENT_ID)) this->initEventId = stoi(json[member::EVENT_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::EVENT_ID)) _initEventId = stoi(_json[member::EVENT_ID].GetString());
     
     return true;
 }
@@ -60,7 +57,7 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
 void ChangeMapEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->changeMap(this->destLocation, this->currentLocation, this->initEventId);
+    DungeonSceneManager::getInstance()->changeMap(_destLocation, _currentLocation, _initEventId);
 }
 
 #pragma mark -
@@ -68,9 +65,9 @@ void ChangeMapEvent::run()
 
 bool WaitEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    this->duration = {static_cast<float>(json[member::TIME].GetDouble())};;
+    _duration = { static_cast<float>(_json[member::TIME].GetDouble()) };
     
     return true;
 }
@@ -79,9 +76,9 @@ void WaitEvent::run() {}
 
 void WaitEvent::update(float delta)
 {
-    this->duration -= delta;
+    _duration -= delta;
     
-    if(this->duration <= 0) this->setDone();
+    if (_duration <= 0) this->setDone();
 }
 
 #pragma mark -
@@ -89,18 +86,18 @@ void WaitEvent::update(float delta)
 
 bool FadeOutEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if(_eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::TIME)) _duration = _json[member::TIME].GetDouble();
     
-    this->color = _eventHelper->getColor(json);
+    _color = _eventHelper->getColor(_json);
     
     return true;
 }
 
 void FadeOutEvent::run()
 {
-    DungeonSceneManager::getInstance()->fadeOut(this->color, this->duration, [this]{this->setDone();});
+    DungeonSceneManager::getInstance()->fadeOut(_color, _duration, [this]{this->setDone();});
 }
 
 #pragma mark -
@@ -108,16 +105,16 @@ void FadeOutEvent::run()
 
 bool FadeInEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if(_eventHelper->hasMember(json, member::TIME)) this->duration = json[member::TIME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::TIME)) _duration = _json[member::TIME].GetDouble();
     
     return true;
 }
 
 void FadeInEvent::run()
 {
-    DungeonSceneManager::getInstance()->fadeIn(this->duration, [this]{this->setDone();});
+    DungeonSceneManager::getInstance()->fadeIn(_duration, [this]{this->setDone();});
 }
 
 #pragma mark -
@@ -125,10 +122,10 @@ void FadeInEvent::run()
 
 bool GameOverEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // ゲームオーバーのID
-    if(_eventHelper->hasMember(json, member::ID)) this->gameOverId = stoi(json[member::ID].GetString());
+    if (_eventHelper->hasMember(_json, member::ID)) _gameOverId = stoi(_json[member::ID].GetString());
     
     return true;
 }
@@ -136,7 +133,7 @@ bool GameOverEvent::init(rapidjson::Value& json)
 void GameOverEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->exitDungeon(GameOverScene::create(static_cast<GameOverScene::Type>(this->gameOverId)));
+    DungeonSceneManager::getInstance()->exitDungeon(GameOverScene::create(static_cast<GameOverScene::Type>(_gameOverId)));
 }
 
 #pragma mark -
@@ -144,10 +141,10 @@ void GameOverEvent::run()
 
 bool EndingEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // エンディングID
-    if(_eventHelper->hasMember(json, member::ID)) this->endingId = stoi(json[member::ID].GetString());
+    if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
     return true;
 }
@@ -155,7 +152,7 @@ bool EndingEvent::init(rapidjson::Value& json)
 void EndingEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(this->endingId));
+    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(_endingId));
 }
 
 #pragma mark -
@@ -163,7 +160,8 @@ void EndingEvent::run()
 
 bool BackToTitleEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
+    
     return true;
 }
 
@@ -178,13 +176,14 @@ void BackToTitleEvent::run()
 
 bool InfoAssertEvent::init(rapidjson::Value& json)
 {
-    if (!GameEvent::init()) return false;
-    this->text = (_eventHelper->hasMember(json, member::TEXT)) ? json[member::TEXT].GetString() : "";
+    if (!GameEvent::init(json)) return false;
+    _text = (_eventHelper->hasMember(_json, member::TEXT)) ? _json[member::TEXT].GetString() : "";
+    
     return true;
 }
 
 void InfoAssertEvent::run()
 {
     this->setDone();
-    LastSupper::AssertUtils::infoAssert(this->text);
+    LastSupper::AssertUtils::infoAssert(_text);
 }

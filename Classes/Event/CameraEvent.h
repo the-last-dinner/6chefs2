@@ -23,7 +23,7 @@ private:
 private:
     CreateCameraEvent() { FUNCLOG };
     ~CreateCameraEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -38,7 +38,7 @@ private:
 private:
     MoveCameraEvent() { FUNCLOG };
     ~MoveCameraEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -52,7 +52,7 @@ private:
 private:
     SetCameraTargetEvent() { FUNCLOG };
     ~SetCameraTargetEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

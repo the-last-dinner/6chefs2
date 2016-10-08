@@ -19,9 +19,9 @@
 
 bool HideLayerEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    this->layerName = json[member::LAYER].GetString();
+    _layerName = _json[member::LAYER].GetString();
     
     return true;
 }
@@ -29,16 +29,16 @@ bool HideLayerEvent::init(rapidjson::Value& json)
 void HideLayerEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->getMapLayer()->hideLayer(this->layerName);
+    DungeonSceneManager::getInstance()->getMapLayer()->hideLayer(_layerName);
 }
 
 #pragma mark ShowLayerEvent
 
 bool ShowLayerEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    this->layerName = json[member::LAYER].GetString();
+    _layerName = _json[member::LAYER].GetString();
     
     return true;
 }
@@ -46,7 +46,7 @@ bool ShowLayerEvent::init(rapidjson::Value& json)
 void ShowLayerEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->getMapLayer()->showLayer(this->layerName);
+    DungeonSceneManager::getInstance()->getMapLayer()->showLayer(_layerName);
 }
 
 #pragma mark -
@@ -54,9 +54,9 @@ void ShowLayerEvent::run()
 
 bool SwingLayerEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    this->layerName = json[member::LAYER].GetString();
+    _layerName = _json[member::LAYER].GetString();
     
     return true;
 }
@@ -64,7 +64,7 @@ bool SwingLayerEvent::init(rapidjson::Value& json)
 void SwingLayerEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->getMapLayer()->swingLayer(this->layerName);
+    DungeonSceneManager::getInstance()->getMapLayer()->swingLayer(_layerName);
 }
 
 #pragma mark -
@@ -72,7 +72,7 @@ void SwingLayerEvent::run()
 
 bool StopLayerActionEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if(!GameEvent::init(json)) return false;
     
     return true;
 }
@@ -87,15 +87,13 @@ void StopLayerActionEvent::run()
 #pragma mark QuakeMapEvent
 bool QuakeMapEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if(!GameEvent::init(json)) return false;
     
-    this->quakeLayer = static_cast<Node*>(DungeonSceneManager::getInstance()->getMapLayer()->getTiledMap());
+    if (!_eventHelper->hasMember(_json, member::TIME)) return false;
+    _time = _json[member::TIME].GetDouble() / 4;
     
-    if (!_eventHelper->hasMember(json, member::TIME)) return false;
-    this->time = json[member::TIME].GetDouble() / 4;
-    
-    if (_eventHelper->hasMember(json, member::X)) this->x = json[member::X].GetInt();
-    if (_eventHelper->hasMember(json, member::Y)) this->y = json[member::Y].GetInt();
+    if (_eventHelper->hasMember(_json, member::X)) _x = _json[member::X].GetInt();
+    if (_eventHelper->hasMember(_json, member::Y)) _y = _json[member::Y].GetInt();
 
     return true;
 }
@@ -103,12 +101,13 @@ bool QuakeMapEvent::init(rapidjson::Value& json)
 void QuakeMapEvent::run()
 {
     this->setDone();
-    this->quakeLayer->runAction(Sequence::create
+    Node* target { DungeonSceneManager::getInstance()->getMapLayer()->getTiledMap() };
+    target->runAction(Sequence::create
     (
-        EaseCubicActionOut::create(MoveBy::create(this->time, Vec2(this->x,this->y))),
-        EaseCubicActionOut::create(MoveBy::create(this->time, Vec2(-1 * this->x,-1 * this->y))),
-        EaseCubicActionOut::create(MoveBy::create(this->time, Vec2(-1 * this->x,-1 * this->y))),
-        EaseCubicActionOut::create(MoveBy::create(this->time, Vec2(this->x,this->y))),
+        EaseCubicActionOut::create(MoveBy::create(_time, Vec2(_x,_y))),
+        EaseCubicActionOut::create(MoveBy::create(_time, Vec2(-1 * _x, -1 * _y))),
+        EaseCubicActionOut::create(MoveBy::create(_time, Vec2(-1 * _x, -1 * _y))),
+        EaseCubicActionOut::create(MoveBy::create(_time, Vec2(_x, _y))),
         nullptr
     ));
 }

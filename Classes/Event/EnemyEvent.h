@@ -19,11 +19,11 @@ class CreateEnemyEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CreateEnemyEvent, rapidjson::Value&)
 private:
-    EnemyData data {};
+    EnemyData _data {};
 private:
-    CreateEnemyEvent() {FUNCLOG};
-    ~CreateEnemyEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    CreateEnemyEvent() { FUNCLOG };
+    ~CreateEnemyEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -33,12 +33,12 @@ class RemoveEnemyEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(RemoveEnemyEvent, rapidjson::Value&)
 private:
-    int enemyId { etoi(EnemyID::UNDIFINED) };
-    int objectId { etoi(ObjectID::UNDIFINED) };
+    int _enemyId { etoi(EnemyID::UNDIFINED) };
+    int _objectId { etoi(ObjectID::UNDIFINED) };
 private:
     RemoveEnemyEvent() { FUNCLOG };
     ~RemoveEnemyEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

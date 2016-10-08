@@ -22,9 +22,9 @@
 
 bool SetAmbientLightEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
-    if(!_eventHelper->hasMember(json, member::AMBIENT)) return false;
+    if (!_eventHelper->hasMember(_json, member::AMBIENT)) return false;
     
     // 環境光の色
     map<string, Color3B> strToColor
@@ -37,7 +37,7 @@ bool SetAmbientLightEvent::init(rapidjson::Value& json)
         {"room", AmbientLightLayer::ROOM},
     };
     
-    string str {json[member::AMBIENT].GetString()};
+    string str { _json[member::AMBIENT].GetString() };
     
     if(strToColor.count(str) == 0)
     {
@@ -45,7 +45,7 @@ bool SetAmbientLightEvent::init(rapidjson::Value& json)
         return false;
     }
     
-    this->color = strToColor[str];
+    _color = strToColor[str];
     
     return true;
 }
@@ -53,7 +53,7 @@ bool SetAmbientLightEvent::init(rapidjson::Value& json)
 void SetAmbientLightEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->getAmbientLayer()->setAmbient(this->color);
+    DungeonSceneManager::getInstance()->getAmbientLayer()->setAmbient(_color);
 }
 
 #pragma mark -
@@ -61,32 +61,31 @@ void SetAmbientLightEvent::run()
 
 bool AnimationEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // img
-    if(!_eventHelper->hasMember(json, member::IMGS)) return false;
+    if (!_eventHelper->hasMember(_json, member::IMGS)) return false;
     
     // 配列じゃなければ無視
-    if(!json[member::IMGS].IsArray()) return false;
+    if (!_json[member::IMGS].IsArray()) return false;
     
-    for(int i {0}; i < json[member::IMGS].Size(); i++)
-    {
-        this->spriteFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName(json[member::IMGS][i].GetString()));
+    for (int i {0}; i < _json[member::IMGS].Size(); i++) {
+        _spriteFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName(_json[member::IMGS][i].GetString()));
     }
     
     // 一枚あたりの表示する時間
-    if(_eventHelper->hasMember(json, member::TIME)) this->delayPerUnit = json[member::TIME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::TIME)) _delayPerUnit = _json[member::TIME].GetDouble();
     
     return true;
 }
 
 void AnimationEvent::run()
 {
-    Animation* animation { Animation::createWithSpriteFrames(this->spriteFrames) };
+    Animation* animation { Animation::createWithSpriteFrames(_spriteFrames) };
     
-    animation->setDelayPerUnit(this->delayPerUnit);
+    animation->setDelayPerUnit(_delayPerUnit);
     
-    Sprite* animationSprite { Sprite::createWithSpriteFrame(this->spriteFrames.at(0)) };
+    Sprite* animationSprite { Sprite::createWithSpriteFrame(_spriteFrames.at(0)) };
     animationSprite->setPosition(WINDOW_CENTER);
     
     DungeonSceneManager::getInstance()->getScene()->addChild(animationSprite, Priority::TOP_COVER);
@@ -99,7 +98,7 @@ void AnimationEvent::run()
 
 bool CreateFogEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     return true;
 }
@@ -119,7 +118,7 @@ void CreateFogEvent::run()
 
 bool CreateRainEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     return true;
 }
@@ -140,7 +139,7 @@ void CreateRainEvent::run()
 
 bool CreateUnderwaterEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     return true;
 }

@@ -12,8 +12,9 @@
 #include "Common.h"
 
 class MapObject;
+class GameEvent;
+class EventFactory;
 
-// イベントスクリプトの値チェック、変換を担うクラス
 class GameEventHelper : public Ref
 {
 // クラスメソッド
@@ -50,5 +51,8 @@ public:
     Trigger getTrigger(rapidjson::Value& json);
     int getEventId(rapidjson::Value& json);
     Color3B getColor(rapidjson::Value& json) const;
+    
+    GameEvent* createMiniGameSuccessCallbackEvent(rapidjson::Value& json, EventFactory* factory, GameEvent* caller);
+    GameEvent* createMiniGameFailureCallbackEvent(rapidjson::Value& json, EventFactory* factory, GameEvent* caller);
 };
 #endif /* defined(__LastSupper__GameEventHelper__) */

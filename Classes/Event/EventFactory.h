@@ -23,8 +23,7 @@ public:
 
 // インスタンス変数
 private:
-    static const map<string, function<GameEvent*(rapidjson::Value&)>> typeToCreateFunc;
-    EventScriptValidator* validator {};
+    static const map<string, function<GameEvent*(rapidjson::Value&)>> _typeToCreateFunc;
     
 // インスタンスメソッド
 private:
@@ -32,9 +31,7 @@ private:
     ~EventFactory() { FUNCLOG };
     bool init();
 public:
-    GameEvent* createGameEvent(rapidjson::Value& json);
-    Vector<GameEvent*> createEventVector(rapidjson::Value& json);
-    queue<GameEvent*> createEventQueue(rapidjson::Value& json);
+    GameEvent* createGameEvent(rapidjson::Value& json, GameEvent* caller);
 };
 
 #endif /* defined(__LastSupper__EventFactory__) */

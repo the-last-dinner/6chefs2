@@ -34,7 +34,6 @@ private:
     vector<GameEvent*> asyncEvents {};
     EventWithId runningEvent {EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
     CallbackWithId callbackInfo {CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
-    int pushingEventId {etoi(EventID::UNDIFINED)};
     
 // インスタンスメソッド
 public:
@@ -56,11 +55,6 @@ public:
     int getRunningEventId() const;
     GameEvent* getRunningEvent() const;
     deque<EventWithId> getEvents() const;
-    
-    // キュー中のevent_id操作
-    int getPushingEventId() const;
-    void setPushingEventId(const int event_id);
-    void resetPushingEventId();
     
     EventScript* getEventScript() const;
     

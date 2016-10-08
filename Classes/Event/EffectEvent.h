@@ -17,11 +17,11 @@ class SetAmbientLightEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(SetAmbientLightEvent, rapidjson::Value&)
 private:
-    Color3B color {Color3B::BLACK};
+    Color3B _color {Color3B::BLACK};
 private:
     SetAmbientLightEvent() { FUNCLOG };
     ~SetAmbientLightEvent() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -31,12 +31,12 @@ class AnimationEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(AnimationEvent, rapidjson::Value&)
 private:
-    float delayPerUnit {0.2f};
-    Vector<SpriteFrame*> spriteFrames {};
+    float _delayPerUnit { 0.2f };
+    Vector<SpriteFrame*> _spriteFrames {};
 private:
-    AnimationEvent() {FUNCLOG};
-    ~AnimationEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    AnimationEvent() { FUNCLOG };
+    ~AnimationEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -46,9 +46,9 @@ class CreateFogEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CreateFogEvent, rapidjson::Value&)
 private:
-    CreateFogEvent() {FUNCLOG};
-    ~CreateFogEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    CreateFogEvent() { FUNCLOG };
+    ~CreateFogEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -58,9 +58,9 @@ class CreateRainEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CreateRainEvent, rapidjson::Value&)
 private:
-    CreateRainEvent() {FUNCLOG};
-    ~CreateRainEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    CreateRainEvent() { FUNCLOG };
+    ~CreateRainEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 
@@ -70,9 +70,9 @@ class CreateUnderwaterEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CreateUnderwaterEvent, rapidjson::Value&)
 private:
-    CreateUnderwaterEvent() {FUNCLOG};
-    ~CreateUnderwaterEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    CreateUnderwaterEvent() { FUNCLOG };
+    ~CreateUnderwaterEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

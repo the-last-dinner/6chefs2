@@ -8,7 +8,10 @@
 
 #include "Event/GameEventHelper.h"
 
+#include "Event/EventFactory.h"
 #include "Event/EventScriptMember.h"
+#include "Event/EventScript.h"
+#include "Event/GameEvent.h"
 
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Character.h"
@@ -17,13 +20,13 @@
 #include "Managers/DungeonSceneManager.h"
 
 // コンストラクタ
-GameEventHelper::GameEventHelper() {FUNCLOG};
+GameEventHelper::GameEventHelper() {};
 
 // デストラクタ
-GameEventHelper::~GameEventHelper() {FUNCLOG};
+GameEventHelper::~GameEventHelper() {};
 
 // 初期化
-bool GameEventHelper::init() {return true;}
+bool GameEventHelper::init() { return true; }
 
 // メンバーが存在するかどうか
 bool GameEventHelper::hasMember(rapidjson::Value& json, const char* member) const
@@ -129,7 +132,7 @@ bool GameEventHelper::detectFlg(rapidjson::Value& json, bool negative)
     if (!json.IsArray())
     {
         // 自分自身のステータスを確認
-        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(DungeonSceneManager::getInstance()->getLocation().map_id, DungeonSceneManager::getInstance()->getPushingEventid(), json.GetInt());
+        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(DungeonSceneManager::getInstance()->getLocation().map_id, DungeonSceneManager::getInstance()->getRunningEventId(), json.GetInt());
         if(negative) detection = !detection;
     }
     else if (!json[0].IsArray())
@@ -295,4 +298,51 @@ Color3B GameEventHelper::getColor(rapidjson::Value& json) const
     
     rapidjson::Value& colorJson { json[member::COLOR] };
     return Color3B(colorJson[0].GetInt(), colorJson[1].GetInt(), colorJson[2].GetInt());
+}
+
+// ミニゲーム系イベントの成功コールバックイベントを生成
+GameEvent* GameEventHelper::createMiniGameSuccessCallbackEvent(rapidjson::Value& json, EventFactory* factory, GameEvent* caller)
+{
+    if (!this->hasMember(json, member::TRUE_)) return nullptr;
+    
+    GameEvent* event { nullptr };
+    
+    if (json[member::TRUE_].IsString()) {
+        rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::TRUE_].GetString()) };
+        event = factory->createGameEvent(eventJson, nullptr);
+        event->setEventId(stoi(json[member::TRUE_].GetString()));
+    }
+    
+    if (json[member::TRUE_].IsArray()) event = factory->createGameEvent(json[member::TRUE_], caller);
+    
+    return event;
+}
+
+// ミニゲーム系イベントの失敗コールバックイベントを生成
+GameEvent* GameEventHelper::createMiniGameFailureCallbackEvent(rapidjson::Value& json, EventFactory* factory, GameEvent* caller)
+{
+    if (!this->hasMember(json, member::FALSE_) && !this->hasMember(json, member::ACTION)) return nullptr;
+    
+    GameEvent* event { nullptr };
+    
+    if (json[member::FALSE_].IsString()) {
+        rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::FALSE_].GetString()) };
+        event = factory->createGameEvent(eventJson, nullptr);
+        event->setEventId(stoi(json[member::FALSE_].GetString()));
+    }
+    
+    if (json[member::FALSE_].IsArray()) event = factory->createGameEvent(json[member::FALSE_], caller);
+    
+    // NOTICE: これ不要？
+    if (this->hasMember(json, member::ACTION)) {
+        if (json[member::ACTION].IsString()) {
+            rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::ACTION].GetString()) };
+            event = factory->createGameEvent(eventJson, nullptr);
+            event->setEventId(stoi(json[member::ACTION].GetString()));
+        }
+        
+        if(json[member::ACTION].IsArray()) event = factory->createGameEvent(json[member::ACTION], caller);
+    }
+    
+    return event;
 }

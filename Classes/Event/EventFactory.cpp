@@ -28,7 +28,7 @@
 
 
 // イベントtypeからイベントクラスへのマップ
-const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::typeToCreateFunc = {
+const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeToCreateFunc = {
     // 制御系
     {"sequence", EventSequence::create},      // 順番に処理を実行
     {"spawn", EventSpawn::create},            // 同時に処理を実行
@@ -128,7 +128,7 @@ bool EventFactory::init()
 }
 
 // ゲームイベントを生成して返す
-GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
+GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* caller)
 {
     // イベントタイプがなければ同時実行を生成して返す
     if(!json.IsObject() || !json.HasMember(member::TYPE)) return EventSpawn::create(json);
@@ -143,44 +143,15 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json)
         EventScriptValidator::create(mapFileName, eventId)->validate(json);
     }
     
-    if (EventFactory::typeToCreateFunc.count(typeName) == 0) {
+    if (EventFactory::_typeToCreateFunc.count(typeName) == 0) {
         CCLOG("Undifined EventScript Type : %s", typeName.c_str());
         LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
         return nullptr;
     }
     
-    return EventFactory::typeToCreateFunc.at(typeName)(json);
-}
-
-// イベントベクタを生成
-Vector<GameEvent*> EventFactory::createEventVector(rapidjson::Value& json)
-{
-    Vector<GameEvent*> events {};
+    GameEvent* event { EventFactory::_typeToCreateFunc.at(typeName)(json) };
     
-    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
+    if (event) event->setCaller(caller);
     
-    for(int i { 0 }; i < eventJson.Size(); i++) {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
-            events.pushBack(event);
-        }
-    }
-    
-    return events;
-}
-
-// イベントキューを生成
-queue<GameEvent*> EventFactory::createEventQueue(rapidjson::Value& json)
-{
-    queue<GameEvent*> events {};
-    
-    rapidjson::Value& eventJson {(json.IsObject() && json.HasMember(member::ACTION))?json[member::ACTION]:json};
-    
-    for (int i { 0 }; i < eventJson.Size(); i++) {
-        if(GameEvent* event { this->createGameEvent(eventJson[i]) }) {
-            CC_SAFE_RETAIN(event);
-            events.push(event);
-        }
-    }
-    
-    return events;
+    return event;
 }

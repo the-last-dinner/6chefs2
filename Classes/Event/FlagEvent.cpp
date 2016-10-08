@@ -21,43 +21,33 @@
 
 bool NeverAgainEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if(!GameEvent::init(json)) return false;
     
-    if(_eventHelper->hasMember(json, member::EVENT))
-    {
-        // 別イベントの指定がある場合
-        if (json[member::EVENT][0].IsArray())
-        {
-            // 複数の場合
-            int arr_size = json[member::EVENT].Size();
-            for(int i = 0; i < arr_size; i++)
-            {
-                this->event.push_back(pair<int,int>({stoi(json[member::EVENT][i][0].GetString()), stoi(json[member::EVENT][i][1].GetString())}));
-            }
-        }
-        else
-        {
-            // 単数の場合
-            this->event.push_back(pair<int,int>({stoi(json[member::EVENT][0].GetString()), stoi(json[member::EVENT][1].GetString())}));
-        }
-    }
-    else
-    {
-        // 自分自身のイベントを設定
-        this->event.push_back(pair<int, int>({DungeonSceneManager::getInstance()->getLocation().map_id,DungeonSceneManager::getInstance()->getPushingEventid()}));
-    }
     return true;
 }
 
 void NeverAgainEvent::run()
 {
     this->setDone();
-    int arr_size = static_cast<int>(this->event.size());
-    for(int i = 0; i < arr_size; i++)
-    {
-        PlayerDataManager::getInstance()->getLocalData()->setEventNeverAgain(this->event[i].first, this->event[i].second);
-    }
     
+    LocalPlayerData* localData { PlayerDataManager::getInstance()->getLocalData() };
+    
+    if (_eventHelper->hasMember(_json, member::EVENT)) {
+        // 別イベントの指定がある場合
+        if (_json[member::EVENT][0].IsArray()) {
+            // 複数の場合
+            int arr_size = _json[member::EVENT].Size();
+            for (int i = 0; i < arr_size; i++) {
+                localData->setEventNeverAgain(stoi(_json[member::EVENT][i][0].GetString()), stoi(_json[member::EVENT][i][1].GetString()));
+            }
+        } else {
+            // 単数の場合
+            localData->setEventNeverAgain(stoi(_json[member::EVENT][0].GetString()), stoi(_json[member::EVENT][1].GetString()));
+        }
+    } else {
+        // 自分自身のイベントを設定
+        localData->setEventNeverAgain(DungeonSceneManager::getInstance()->getLocation().map_id, this->getEventId());
+    }
 }
 
 #pragma mark -
@@ -65,20 +55,20 @@ void NeverAgainEvent::run()
 
 bool GetItemEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // アイテムIDを取得
-    if(!_eventHelper->hasMember(json, member::ITEM_ID)) return false;
-    this->itemId = stoi(json[member::ITEM_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::ITEM_ID)) return false;
+    _itemId = stoi(_json[member::ITEM_ID].GetString());
     
     return true;
 }
 
 void GetItemEvent::run()
 {
-    PlayerDataManager::getInstance()->getLocalData()->setItem(this->itemId);
+    PlayerDataManager::getInstance()->getLocalData()->setItem(_itemId);
     SoundManager::getInstance()->playSE(Resource::SE::GET_ITEM, 1.4f);
-    DungeonSceneManager::getInstance()->getScene()->addChild(SystemMessageLayer::create(SystemMessageData::create(CsvDataManager::getInstance()->getItemData()->getItemName(this->itemId) + "　を手に入れた"), [this]{this->setDone();}), Priority::SYSTEM_MESSAGE);
+    DungeonSceneManager::getInstance()->getScene()->addChild(SystemMessageLayer::create(SystemMessageData::create(CsvDataManager::getInstance()->getItemData()->getItemName(_itemId) + "　を手に入れた"), [this]{this->setDone();}), Priority::SYSTEM_MESSAGE);
 }
 
 #pragma mark -
@@ -86,11 +76,11 @@ void GetItemEvent::run()
 
 bool RemoveItemEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // アイテムIDを取得
-    if(!_eventHelper->hasMember(json, member::ITEM_ID)) return false;
-    this->itemId = stoi(json[member::ITEM_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::ITEM_ID)) return false;
+    _itemId = stoi(_json[member::ITEM_ID].GetString());
     
     return true;
 }
@@ -98,10 +88,10 @@ bool RemoveItemEvent::init(rapidjson::Value& json)
 void RemoveItemEvent::run()
 {
     this->setDone();
-    bool isExist = PlayerDataManager::getInstance()->getLocalData()->removeItem(this->itemId);
+    bool isExist = PlayerDataManager::getInstance()->getLocalData()->removeItem(_itemId);
     // アイテムが存在しない場合
     if (!isExist) {
-        LastSupper::AssertUtils::warningAssert("Warning: removeItemEvent\nitemID: "+ to_string(itemId) +"\nこのアイテムは持っていません");
+        LastSupper::AssertUtils::warningAssert("Warning: removeItemEvent\nitemID: "+ to_string(_itemId) +"\nこのアイテムは持っていません");
     }
 }
 
@@ -110,15 +100,15 @@ void RemoveItemEvent::run()
 
 bool AddProfileEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // キャラクタIDを取得
-    if(!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
-    this->charaId = stoi(json[member::CHARA_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::CHARA_ID)) return false;
+    _charaId = stoi(_json[member::CHARA_ID].GetString());
     
     // 情報レベル
-    if(!_eventHelper->hasMember(json, member::INFO_ID)) return false;
-    this->infoLevel = stoi(json[member::INFO_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::INFO_ID)) return false;
+    _infoLevel = stoi(_json[member::INFO_ID].GetString());
     
     return true;
 }
@@ -126,7 +116,7 @@ bool AddProfileEvent::init(rapidjson::Value& json)
 void AddProfileEvent::run()
 {
     this->setDone();
-    PlayerDataManager::getInstance()->getLocalData()->setCharacterProfile(this->charaId, this->infoLevel);
+    PlayerDataManager::getInstance()->getLocalData()->setCharacterProfile(_charaId, _infoLevel);
 }
 
 #pragma mark -
@@ -134,11 +124,11 @@ void AddProfileEvent::run()
 
 bool ChangeChapterEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // チャプターID
-    if(!_eventHelper->hasMember(json, member::CHAPTER_ID)) return false;
-    this->chapterId = stoi(json[member::CHAPTER_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::CHAPTER_ID)) return false;
+    _chapterId = stoi(_json[member::CHAPTER_ID].GetString());
     
     return true;
 }
@@ -146,8 +136,8 @@ bool ChangeChapterEvent::init(rapidjson::Value& json)
 void ChangeChapterEvent::run()
 {
     this->setDone();
-    DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->loadEventScripts(this->chapterId);
-    PlayerDataManager::getInstance()->getLocalData()->setChapterId(this->chapterId);
+    DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->loadEventScripts(_chapterId);
+    PlayerDataManager::getInstance()->getLocalData()->setChapterId(_chapterId);
 }
 
 #pragma mark -
@@ -155,15 +145,15 @@ void ChangeChapterEvent::run()
 
 bool ChangeLikabilityRatingEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // キャラクタID
-    if(!_eventHelper->hasMember(json, member::CHARA_ID)) return false;
-    this->charaId = stoi(json[member::CHARA_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::CHARA_ID)) return false;
+    _charaId = stoi(json[member::CHARA_ID].GetString());
     
     // 好感度
-    if(!_eventHelper->hasMember(json, member::FAVORITE)) return false;
-    this->rating = stoi(json[member::FAVORITE].GetString());
+    if (!_eventHelper->hasMember(_json, member::FAVORITE)) return false;
+    _rating = stoi(json[member::FAVORITE].GetString());
     
     return true;
 }
@@ -171,7 +161,7 @@ bool ChangeLikabilityRatingEvent::init(rapidjson::Value& json)
 void ChangeLikabilityRatingEvent::run()
 {
     this->setDone();
-    PlayerDataManager::getInstance()->getLocalData()->setFriendship(this->charaId, this->rating);
+    PlayerDataManager::getInstance()->getLocalData()->setFriendship(_charaId, _rating);
 }
 
 #pragma mark -
@@ -179,26 +169,24 @@ void ChangeLikabilityRatingEvent::run()
 
 bool ChangeEventStatusEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // status
-    if(!_eventHelper->hasMember(json, member::FLAG)) return false;
-    if(!json[member::FLAG].IsInt()) {
+    if (!_eventHelper->hasMember(_json, member::FLAG)) return false;
+    if (!_json[member::FLAG].IsInt()) {
         LastSupper::AssertUtils::fatalAssert("ChangeEventStatusEvent(changeFlg)\nflgの型はintにしてください。");
         return false;
     }
-    this->status = json[member::FLAG].GetInt();
+    _status = _json[member::FLAG].GetInt();
     
     // map_id
-    if(_eventHelper->hasMember(json, member::MAP_ID))
-    {
-        this->map_id = stoi(json[member::MAP_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::MAP_ID)) {
+        _mapId = stoi(_json[member::MAP_ID].GetString());
     }
     
     // event_id
-    if(_eventHelper->hasMember(json, member::EVENT_ID))
-    {
-        this->event_id = stoi(json[member::EVENT_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::EVENT_ID)) {
+        _eventId = stoi(_json[member::EVENT_ID].GetString());
     }
     
     return true;
@@ -207,19 +195,17 @@ bool ChangeEventStatusEvent::init(rapidjson::Value& json)
 void ChangeEventStatusEvent::run()
 {
     // map_id
-    if(this->map_id < 0)
-    {
-        this->map_id = DungeonSceneManager::getInstance()->getLocation().map_id;
+    if (_mapId < 0) {
+        _mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
     }
     
     // event_id
-    if(this->event_id < 0)
-    {
-        this->event_id = DungeonSceneManager::getInstance()->getRunningEventId();
+    if (_eventId < 0) {
+        _eventId = DungeonSceneManager::getInstance()->getRunningEventId();
     }
     
     // 変更
-    PlayerDataManager::getInstance()->getLocalData()->setEventStatus(this->map_id, this->event_id, this->status);
+    PlayerDataManager::getInstance()->getLocalData()->setEventStatus(_mapId, _eventId, _status);
     this->setDone();
 }
 
@@ -228,18 +214,18 @@ void ChangeEventStatusEvent::run()
 
 bool GetTrophyEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if (!GameEvent::init(json)) return false;
     
     // trophyId
-    if (!_eventHelper->hasMember(json, member::TROPHY_ID)) return false;
-    this->trophyId = stoi(json[member::TROPHY_ID].GetString());
+    if (!_eventHelper->hasMember(_json, member::TROPHY_ID)) return false;
+    _trophyId = stoi(_json[member::TROPHY_ID].GetString());
     
     return true;
 }
 
 void GetTrophyEvent::run()
 {
-    PlayerDataManager::getInstance()->getGlobalData()->setTrophy(this->trophyId);
+    PlayerDataManager::getInstance()->getGlobalData()->setTrophy(_trophyId);
     this->setDone();
 }
 
@@ -248,17 +234,16 @@ void GetTrophyEvent::run()
 
 bool GiveItemEvent::init(rapidjson::Value& json)
 {
-    if(!GameEvent::init()) return false;
+    if(!GameEvent::init(json)) return false;
     
     // toCharaId
-    if (!_eventHelper->hasMember(json, member::TO_CHARA_ID)) return false;
-    this->toCharaId = stoi(json[member::TO_CHARA_ID].GetString());
-    if (this->toCharaId == etoi(CharacterID::UNDIFINED)) return false;
+    if (!_eventHelper->hasMember(_json, member::TO_CHARA_ID)) return false;
+    _toCharaId = stoi(_json[member::TO_CHARA_ID].GetString());
+    if (_toCharaId == etoi(CharacterID::UNDIFINED)) return false;
     
     // fromCharaId
-    if (_eventHelper->hasMember(json, member::FROM_CHARA_ID))
-    {
-        this->fromCharaId = stoi(json[member::FROM_CHARA_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::FROM_CHARA_ID)) {
+        _fromCharaId = stoi(_json[member::FROM_CHARA_ID].GetString());
     }
     
     return true;
@@ -267,16 +252,14 @@ bool GiveItemEvent::init(rapidjson::Value& json)
 void GiveItemEvent::run()
 {
     LocalPlayerData* localPlayerData { PlayerDataManager::getInstance()->getLocalData() };
-    if (this->fromCharaId == etoi(CharacterID::UNDIFINED))
-    {
-        this->fromCharaId = localPlayerData->getMainCharaId();
+    if (_fromCharaId == etoi(CharacterID::UNDIFINED)) {
+        _fromCharaId = localPlayerData->getMainCharaId();
     }
     
-    vector<int> items { localPlayerData->getItemAll(this->fromCharaId) };
-    for (auto item: items)
-    {
-        localPlayerData->setItem(this->toCharaId, item);
-        localPlayerData->removeItem(this->fromCharaId, item);
+    vector<int> items { localPlayerData->getItemAll(_fromCharaId) };
+    for (auto item : items) {
+        localPlayerData->setItem(_toCharaId, item);
+        localPlayerData->removeItem(_fromCharaId, item);
     }
     this->setDone();
 }

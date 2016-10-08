@@ -21,6 +21,9 @@ class GameEvent : public Ref
 protected:
     EventFactory* _factory { nullptr };
     GameEventHelper* _eventHelper { nullptr };
+    rapidjson::Value _json {};
+    const GameEvent* _caller { nullptr };
+    int _id { etoi(EventID::UNDIFINED) };
     int _code { -1 };
 private:
     bool _isDone { false };
@@ -28,10 +31,16 @@ private:
     
 // インスタンスメソッド
 public:
+    void setCaller(const GameEvent* parent);
+    void setEventId(int eventId);
+    int getEventId() const;
     bool isReusable() const;
     void setReusable(bool reusable);
     bool isDone() const;
     void setDone(bool done = true);
+    
+// インターフェース
+public:
     virtual void run() { CCLOG("runメソッドをoverrideしてね"); };     // イベント開始
     virtual void update(float delta) {};                           // タスクによって毎フレーム呼び出されるメソッド
     virtual void stop(int code = -1) {};
@@ -39,7 +48,7 @@ public:
 protected:
     GameEvent();
     virtual ~GameEvent();
-    virtual bool init();
+    virtual bool init(rapidjson::Value& json);
     GameEvent* createSpawnFromIdOrAction(rapidjson::Value& json);   // イベントIDもしくはaction配列からspawnを生成
 };
 
@@ -52,7 +61,6 @@ public:
     
 // インスタンス変数
 private:
-    rapidjson::Value _json {};
     int _currentIdx { 0 };
     GameEvent* _currentEvent { nullptr };
     
@@ -60,7 +68,7 @@ private:
 private:
     EventSequence() { FUNCLOG };
     ~EventSequence() { FUNCLOG };
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;
     virtual void stop(int code = -1) override;
@@ -81,7 +89,7 @@ private:
 private:
     EventSpawn() {FUNCLOG};
     ~EventSpawn() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;
     virtual void stop(int code = -1) override;
@@ -103,7 +111,7 @@ private:
 private:
     EventIf() {FUNCLOG};
     ~EventIf() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;
 };
@@ -118,7 +126,7 @@ private:
 private:
     CallEvent() {FUNCLOG};
     ~CallEvent() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;
     virtual void stop(int code = -1) override;
@@ -135,13 +143,12 @@ public:
 private:
     int _times { 0 };
     GameEvent* _event { nullptr };
-    rapidjson::Value* _json { nullptr };
     
 // インスタンスメソッド
 private:
     EventRepeat() {FUNCLOG};
     ~EventRepeat() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;
     virtual void stop(int code = -1) override;
@@ -162,7 +169,7 @@ private:
 private:
     EventStop() {FUNCLOG};
     ~EventStop() {FUNCLOG};
-    virtual bool init(rapidjson::Value& json);
+    virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };
 

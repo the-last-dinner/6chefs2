@@ -59,7 +59,6 @@ bool EventTask::init()
 void EventTask::runEventQueue()
 {
     if(!this->existsEvent()) return;
-    this->resetPushingEventId();
     this->run();
 }
 
@@ -271,24 +270,6 @@ deque<EventTask::EventWithId> EventTask::getEvents() const
 }
 
 #pragma mark -
-#pragma mark pushingEventId
-
-int EventTask::getPushingEventId() const
-{
-    return this->pushingEventId;
-}
-
-void EventTask::setPushingEventId(const int event_id)
-{
-    this->pushingEventId = event_id;
-}
-
-void EventTask::resetPushingEventId()
-{
-    this->pushingEventId = etoi(EventID::UNDIFINED);
-}
-
-#pragma mark -
 #pragma mark private
 
 // キューにある先頭のイベントを実行
@@ -315,13 +296,13 @@ GameEvent* EventTask::createEventById(int eventId)
     if(eventId == static_cast<int>(EventID::UNDIFINED)) return nullptr;
     if(PlayerDataManager::getInstance()->getLocalData()->checkEventIsDone(DungeonSceneManager::getInstance()->getLocation().map_id, eventId)) return nullptr;
     
-    this->setPushingEventId(eventId);
-    
     DungeonSceneManager* manager {DungeonSceneManager::getInstance()};
     
-    GameEvent* event { manager->getEventFactory()->createGameEvent(this->eventScript->getScriptJson(eventId)) };
-    
+    rapidjson::Value json { this->eventScript->getScriptJson(eventId) };
+    GameEvent* event { manager->getEventFactory()->createGameEvent(json, nullptr) };
     CC_SAFE_RETAIN(event);
+    
+    if (event) event->setEventId(eventId);
     
     return event;
 }
