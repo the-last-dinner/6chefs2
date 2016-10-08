@@ -35,19 +35,22 @@ bool CreateCameraEvent::init(rapidjson::Value& json)
     if (!GameEvent::init(json)) return false;
     
     // 映したい場所
-    _location.map_id = (_eventHelper->hasMember(json, member::MAP_ID)) ? stoi(json[member::MAP_ID].GetString()) : DungeonSceneManager::getInstance()->getLocation().map_id;
+    if (_eventHelper->hasMember(_json, member::MAP_ID)) {
+        _location.map_id = stoi(_json[member::MAP_ID].GetString());
+    } else {
+        _location.map_id = DungeonSceneManager::getInstance()->getLocation().map_id;
+    }
     
-    Point position { _eventHelper->getPoint(json) };
+    Point position { _eventHelper->getPoint(_json) };
     _location.x = position.x;
     _location.y = position.y;
     
     // ターゲット
-    if (_eventHelper->hasMember(json, member::OBJECT_ID)) _objId = stoi(json[member::OBJECT_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::OBJECT_ID)) _objId = stoi(_json[member::OBJECT_ID].GetString());
     
     // イベント
-    if (!_eventHelper->hasMember(json, member::ACTION)) return false;
-    _event = _factory->createGameEvent(json[member::ACTION], this);
-    CC_SAFE_RETAIN(_event);
+    if (!_eventHelper->hasMember(_json, member::ACTION)) return false;
+    _eventJson = _json[member::ACTION];
     
     return true;
 }
@@ -56,8 +59,13 @@ void CreateCameraEvent::run()
 {
     DungeonCameraSceneData* data { DungeonCameraSceneData::create(_location) };
     data->setTargetId(_objId);
+    data->setEventJson(_eventJson);
     
-    DungeonCameraScene* scene { DungeonCameraScene::create(data, _event, [this]{DungeonSceneManager::getInstance()->popCameraScene(); this->setDone();}) };
+    DungeonCameraScene* scene { DungeonCameraScene::create(data, [this] {
+        DungeonSceneManager::getInstance()->popCameraScene();
+        this->setDone();
+    }) };
+    
     DungeonSceneManager::getInstance()->pushCameraScene(scene);
 }
 

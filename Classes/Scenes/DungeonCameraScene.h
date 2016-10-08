@@ -23,18 +23,17 @@ public:
     
 // クラスメソッド
 public:
-    static DungeonCameraScene* create(DungeonCameraSceneData* data, GameEvent* event, EventFinishCallback callback);
+    CREATE_FUNC_WITH_TWO_PARAM(DungeonCameraScene, DungeonCameraSceneData*, EventFinishCallback)
 
 // インスタンス変数
 private:
     EventFinishCallback _callback { nullptr };
-    GameEvent* _event { nullptr };
 
 // インスタンスメソッド
 private:
     DungeonCameraScene();
     ~DungeonCameraScene();
-    bool init(DungeonCameraSceneData* data, GameEvent* event, EventFinishCallback callback);
+    bool init(DungeonCameraSceneData* data, EventFinishCallback callback);
     virtual void onEnter() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     virtual void onInitEventFinished(LoadingLayer* loadingLayer) override;

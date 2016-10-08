@@ -19,7 +19,8 @@ public:
     
 // インスタンス変数
 private:
-    int targetId {etoi(ObjectID::UNDIFINED)};
+    int _targetId { etoi(ObjectID::UNDIFINED) };
+    rapidjson::Value _eventJson {};
     
 // インスタンスメソッド
 private:
@@ -30,6 +31,9 @@ private:
 public:
     void setTargetId(const int objId);
     int getTargetId() const;
+    
+    void setEventJson(rapidjson::Value& json);
+    rapidjson::Value& getEventJson();
 };
 
 #endif /* DungeonCameraScene_h */

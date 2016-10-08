@@ -338,7 +338,7 @@ void DungeonScene::onEventFinished()
 void DungeonScene::onEnterAssertScene()
 {
     // リスナーを停止
-    // this->listener->setEnabled(false);
+    if (_listener) _listener->setEnabled(false);
     
     // カウントダウンしてれば停止
     DungeonSceneManager::getInstance()->pauseStopWatch();
@@ -351,7 +351,7 @@ void DungeonScene::onExitAssertScene()
     DungeonSceneManager::getInstance()->startStopWatch();
     
     // 操作可能に戻す
-    _listener->setEnabled(true);
+    if (_listener) _listener->setEnabled(true);
 }
 
 // データクラスを取得
