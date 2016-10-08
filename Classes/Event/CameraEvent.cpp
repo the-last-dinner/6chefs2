@@ -77,10 +77,10 @@ bool MoveCameraEvent::init(rapidjson::Value& json)
     if (!GameEvent::init(json)) return false;
     
     // 目的地
-    _toPosition = _eventHelper->getToPoint(json);
+    _toPosition = _eventHelper->getToPoint(_json);
     
     // 移動時間
-    if (_eventHelper->hasMember(json, member::TIME)) _duration = json[member::TIME].GetDouble();
+    if (_eventHelper->hasMember(_json, member::TIME)) _duration = _json[member::TIME].GetDouble();
     
     return true;
 }
@@ -97,8 +97,8 @@ bool SetCameraTargetEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
-    if (_eventHelper->hasMember(json, member::OBJECT_ID)) {
-        _objectId = stoi(json[member::OBJECT_ID].GetString());
+    if (_eventHelper->hasMember(_json, member::OBJECT_ID)) {
+        _objectId = stoi(_json[member::OBJECT_ID].GetString());
     } else {
         _objectId = etoi(ObjectID::HERO);
     }
