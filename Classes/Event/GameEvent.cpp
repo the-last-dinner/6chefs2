@@ -234,34 +234,24 @@ bool EventIf::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
-    // conditionをチェックしてtrueであればイベントを生成
-    if (_eventHelper->detectCondition(_json)) {
-        _event = this->createSpawnFromIdOrAction(_json);
-        CC_SAFE_RETAIN(_event);
-        
-        return true;
-    }
-    // falseの場合はその場で終了
-    else {
-        return false;
-    }
+    return true;
 }
 
 void EventIf::run()
 {
-    if (!_event) {
-        this->setDone();
-        return;
+    // conditionをチェックしてtrueであればイベントを生成
+    if (_eventHelper->detectCondition(_json)) {
+        _event = this->createSpawnFromIdOrAction(_json);
+        CC_SAFE_RETAIN(_event);
     }
     
-    _event->run();
+    if (_event) _event->run();
 }
 
 void EventIf::update(float delta)
 {
     if (!_event) {
         this->setDone();
-        
         return;
     }
     
@@ -279,25 +269,30 @@ void EventIf::update(float delta)
 bool CallEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
-    
-    EventScript* eventScript { _eventHelper->hasMember(_json, member::CLASS_NAME) ? DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(_json[member::CLASS_NAME].GetString()) : DungeonSceneManager::getInstance()->getEventScript() };
-    
     if (!_eventHelper->hasMember(_json, member::EVENT_ID)) return false;
-    
-    rapidjson::Value eventJson { eventScript->getScriptJson(_json[member::EVENT_ID].GetString()) };
-    _event = _factory->createGameEvent(eventJson, this);
-    CC_SAFE_RETAIN(_event);
     
     return true;
 }
 
-void CallEvent::run(){
-    if (!_event) {
-        this->setDone();
-        return;
+void CallEvent::run()
+{
+    EventScript* eventScript { nullptr };
+    
+    if (_eventHelper->hasMember(_json, member::CLASS_NAME)) {
+        eventScript = DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(_json[member::CLASS_NAME].GetString());
+    } else {
+        eventScript = DungeonSceneManager::getInstance()->getEventScript();
     }
     
-    _event->run();
+    int eventId { stoi(_json[member::EVENT_ID].GetString()) };
+    rapidjson::Value eventJson { eventScript->getScriptJson(eventId) };
+    _event = _factory->createGameEvent(eventJson, nullptr);
+    CC_SAFE_RETAIN(_event);
+    
+    if (_event) {
+        _event->setEventId(eventId);
+        _event->run();
+    }
 }
 
 void CallEvent::update(float delta)
