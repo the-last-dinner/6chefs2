@@ -104,7 +104,7 @@ void DungeonCameraScene::onAfterInitEventFinished()
 {
     // 指定したイベントをjsonから生成して実行
     EventFactory* factory { DungeonSceneManager::getInstance()->getEventFactory() };
-    GameEvent* event { factory->createGameEvent(this->getData()->getEventJson()) };
+    GameEvent* event { factory->createGameEvent(this->getData()->getEventJson(), nullptr) };
     CC_SAFE_RETAIN(event);
     
     _eventTask->runEvent(event, CC_CALLBACK_0(DungeonCameraScene::onCameraEventFinished, this));
