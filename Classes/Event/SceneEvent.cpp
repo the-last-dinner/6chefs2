@@ -35,19 +35,6 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
-    Direction direction { Direction::NONE };
-
-    // directionの指定がされている時
-    if (_eventHelper->hasMember(_json, member::DIRECTION)) {
-        direction = _eventHelper->getDirection(_json);
-    } else {
-    // directionが指定されていない時
-        direction = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getDirection();
-    }
-    
-    _destLocation = Location(stoi(_json[member::MAP_ID].GetString()), _json[member::X].GetInt(), _json[member::Y].GetInt(), direction);
-    _currentLocation = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation();
-    
     // 移動後に実行するイベントID
     if (_eventHelper->hasMember(_json, member::EVENT_ID)) _initEventId = stoi(_json[member::EVENT_ID].GetString());
     
@@ -56,8 +43,21 @@ bool ChangeMapEvent::init(rapidjson::Value& json)
 
 void ChangeMapEvent::run()
 {
+    Direction direction { Direction::NONE };
+    
+    // directionの指定がされている時
+    if (_eventHelper->hasMember(_json, member::DIRECTION)) {
+        direction = _eventHelper->getDirection(_json);
+    } else {
+        // directionが指定されていない時
+        direction = DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getDirection();
+    }
+    
+    Location destLocation { Location(stoi(_json[member::MAP_ID].GetString()), _json[member::X].GetInt(), _json[member::Y].GetInt(), direction) };
+    Location currentLocation { DungeonSceneManager::getInstance()->getParty()->getMainCharacter()->getLocation() };
+    
     this->setDone();
-    DungeonSceneManager::getInstance()->changeMap(_destLocation, _currentLocation, _initEventId);
+    DungeonSceneManager::getInstance()->changeMap(destLocation, currentLocation, _initEventId);
 }
 
 #pragma mark -
