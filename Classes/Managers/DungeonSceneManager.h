@@ -106,7 +106,6 @@ public:
     bool existsEvent() const;
     int getRunningEventId() const;
     GameEvent* getRunningEvent() const;
-    int getPushingEventid() const;
     bool isEventRunning() const;
     
     // StopWatch

@@ -132,7 +132,7 @@ bool GameEventHelper::detectFlg(rapidjson::Value& json, bool negative)
     if (!json.IsArray())
     {
         // 自分自身のステータスを確認
-        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(DungeonSceneManager::getInstance()->getLocation().map_id, DungeonSceneManager::getInstance()->getPushingEventid(), json.GetInt());
+        detection = PlayerDataManager::getInstance()->getLocalData()->checkEventStatus(DungeonSceneManager::getInstance()->getLocation().map_id, DungeonSceneManager::getInstance()->getRunningEventId(), json.GetInt());
         if(negative) detection = !detection;
     }
     else if (!json[0].IsArray())
