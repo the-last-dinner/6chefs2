@@ -11,7 +11,7 @@
 #pragma mark MessageData
 
 // コンストラクタ
-MessageData::MessageData() {FUNCLOG};
+MessageData::MessageData() {};
 
 // デストラクタ
-MessageData::~MessageData() {FUNCLOG};
+MessageData::~MessageData() {};
