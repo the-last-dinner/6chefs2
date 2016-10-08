@@ -23,35 +23,31 @@ bool NeverAgainEvent::init(rapidjson::Value& json)
 {
     if(!GameEvent::init(json)) return false;
     
-    if(_eventHelper->hasMember(_json, member::EVENT))
-    {
-        // 別イベントの指定がある場合
-        if (_json[member::EVENT][0].IsArray()) {
-            // 複数の場合
-            int arr_size = _json[member::EVENT].Size();
-            for (int i = 0; i < arr_size; i++) {
-                _event.push_back(pair<int, int>({stoi(_json[member::EVENT][i][0].GetString()), stoi(_json[member::EVENT][i][1].GetString())}));
-            }
-        } else {
-            // 単数の場合
-            _event.push_back(pair<int, int>({stoi(_json[member::EVENT][0].GetString()), stoi(_json[member::EVENT][1].GetString())}));
-        }
-    } else {
-        // 自分自身のイベントを設定
-        _event.push_back(pair<int, int>({DungeonSceneManager::getInstance()->getLocation().map_id, this->getEventId()}));
-    }
-    
     return true;
 }
 
 void NeverAgainEvent::run()
 {
     this->setDone();
-    int arr_size = static_cast<int>(_event.size());
-    for (int i = 0; i < arr_size; i++) {
-        PlayerDataManager::getInstance()->getLocalData()->setEventNeverAgain(_event[i].first, _event[i].second);
-    }
     
+    LocalPlayerData* localData { PlayerDataManager::getInstance()->getLocalData() };
+    
+    if (_eventHelper->hasMember(_json, member::EVENT)) {
+        // 別イベントの指定がある場合
+        if (_json[member::EVENT][0].IsArray()) {
+            // 複数の場合
+            int arr_size = _json[member::EVENT].Size();
+            for (int i = 0; i < arr_size; i++) {
+                localData->setEventNeverAgain(stoi(_json[member::EVENT][i][0].GetString()), stoi(_json[member::EVENT][i][1].GetString()));
+            }
+        } else {
+            // 単数の場合
+            localData->setEventNeverAgain(stoi(_json[member::EVENT][0].GetString()), stoi(_json[member::EVENT][1].GetString()));
+        }
+    } else {
+        // 自分自身のイベントを設定
+        localData->setEventNeverAgain(DungeonSceneManager::getInstance()->getLocation().map_id, this->getEventId());
+    }
 }
 
 #pragma mark -

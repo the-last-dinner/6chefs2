@@ -97,7 +97,7 @@ GameEvent* GameEvent::createSpawnFromIdOrAction(rapidjson::Value& json)
 {
     // eventIDの指定があれば、指定のIDに対応するjsonから生成
     if (_eventHelper->hasMember(json, member::EVENT_ID)) {
-        rapidjson::Value& eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(stoi(json[member::EVENT_ID].GetString())) };
+        rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(stoi(json[member::EVENT_ID].GetString())) };
         GameEvent* event { _factory->createGameEvent(eventJson, nullptr) };
         event->setEventId(stoi(json[member::EVENT_ID].GetString()));
         
@@ -284,7 +284,8 @@ bool CallEvent::init(rapidjson::Value& json)
     
     if (!_eventHelper->hasMember(_json, member::EVENT_ID)) return false;
     
-    _event = _factory->createGameEvent(eventScript->getScriptJson(_json[member::EVENT_ID].GetString()), this);
+    rapidjson::Value eventJson { eventScript->getScriptJson(_json[member::EVENT_ID].GetString()) };
+    _event = _factory->createGameEvent(eventJson, this);
     CC_SAFE_RETAIN(_event);
     
     return true;

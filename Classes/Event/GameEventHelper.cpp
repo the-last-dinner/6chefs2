@@ -308,7 +308,7 @@ GameEvent* GameEventHelper::createMiniGameSuccessCallbackEvent(rapidjson::Value&
     GameEvent* event { nullptr };
     
     if (json[member::TRUE_].IsString()) {
-        rapidjson::Value& eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::TRUE_].GetString()) };
+        rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::TRUE_].GetString()) };
         event = factory->createGameEvent(eventJson, nullptr);
         event->setEventId(stoi(json[member::TRUE_].GetString()));
     }
@@ -326,7 +326,7 @@ GameEvent* GameEventHelper::createMiniGameFailureCallbackEvent(rapidjson::Value&
     GameEvent* event { nullptr };
     
     if (json[member::FALSE_].IsString()) {
-        rapidjson::Value& eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::FALSE_].GetString()) };
+        rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::FALSE_].GetString()) };
         event = factory->createGameEvent(eventJson, nullptr);
         event->setEventId(stoi(json[member::FALSE_].GetString()));
     }
@@ -336,7 +336,7 @@ GameEvent* GameEventHelper::createMiniGameFailureCallbackEvent(rapidjson::Value&
     // NOTICE: これ不要？
     if (this->hasMember(json, member::ACTION)) {
         if (json[member::ACTION].IsString()) {
-            rapidjson::Value& eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::ACTION].GetString()) };
+            rapidjson::Value eventJson { DungeonSceneManager::getInstance()->getEventScript()->getScriptJson(json[member::ACTION].GetString()) };
             event = factory->createGameEvent(eventJson, nullptr);
             event->setEventId(stoi(json[member::ACTION].GetString()));
         }

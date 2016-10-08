@@ -17,8 +17,6 @@ class NeverAgainEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(NeverAgainEvent, rapidjson::Value&)
 private:
-    vector<pair<int,int>> _event {};
-private:
     NeverAgainEvent() { FUNCLOG };
     ~NeverAgainEvent() { FUNCLOG };
     virtual bool init(rapidjson::Value& json) override;

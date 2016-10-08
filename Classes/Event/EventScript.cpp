@@ -37,22 +37,27 @@ vector<string> EventScript::getPreLoadList(const string& type){
 }
 
 // 該当idのスクリプトを取得
-rapidjson::Value& EventScript::getScriptJson(const int eventId)
+rapidjson::Value EventScript::getScriptJson(const int eventId)
 {
     return getScriptJson(to_string(eventId).c_str());
 }
 
-rapidjson::Value& EventScript::getScriptJson(const string& eventId)
+rapidjson::Value EventScript::getScriptJson(const string& eventId)
 {
     return getScriptJson(eventId.c_str());
 }
 
-rapidjson::Value& EventScript::getScriptJson(const char* eventId)
+rapidjson::Value EventScript::getScriptJson(const char* eventId)
 {
     rapidjson::Value::MemberIterator itr { _json.FindMember(eventId) };
+    
     if (itr == _json.MemberEnd()) {
-        static rapidjson::Value nullValue;
+        rapidjson::Value nullValue;
         return nullValue;
     }
-    return itr->value;
+    
+    rapidjson::Value json {};
+    json.CopyFrom(itr->value, _json.GetAllocator());
+    
+    return json;
 }

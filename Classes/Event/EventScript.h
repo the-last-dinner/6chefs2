@@ -29,8 +29,8 @@ private:
 public:
     bool init(const string& jsonFileName);              // 初期化
     vector<string> getPreLoadList(const string& type);         // 音楽などのリソースのプリロード
-    rapidjson::Value& getScriptJson(const int eventId);           // 該当IDスクリプトの取得
-    rapidjson::Value& getScriptJson(const char* eventId);
-    rapidjson::Value& getScriptJson(const string& eventId);
+    rapidjson::Value getScriptJson(const int eventId);           // 該当IDスクリプトの取得
+    rapidjson::Value getScriptJson(const char* eventId);
+    rapidjson::Value getScriptJson(const string& eventId);
 };
 #endif /* defined(__LastSupper__EventScript__) */
