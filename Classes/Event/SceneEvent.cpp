@@ -147,11 +147,11 @@ bool EndingEvent::init(rapidjson::Value& json)
     if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
     // エンディング終了時移動先マップ なければタイトルに戻る
-    if(_eventHelper->hasMember(json, member::MAP_ID)) _map_id = stoi(json[member::MAP_ID].GetString());
+    if(_eventHelper->hasMember(_json, member::MAP_ID)) _map_id = stoi(_json[member::MAP_ID].GetString());
     
-    if(_eventHelper->hasMember(json, member::X)) _x = json[member::X].GetInt();
+    if(_eventHelper->hasMember(_json, member::X)) _x = _json[member::X].GetInt();
     
-    if(_eventHelper->hasMember(json, member::Y)) _y = json[member::Y].GetInt();
+    if(_eventHelper->hasMember(_json, member::Y)) _y = _json[member::Y].GetInt();
     
     return true;
 }

@@ -86,12 +86,13 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     {
         credits_name.push_back({creditsJson[i][JSON_MEMBER_TEXT].GetString(), stod(creditsJson[i][JSON_MEMBER_TIME].GetString())});
     }
-    vector<string> pictures_name = {};
+    
+    vector<pair<string,float>> pictures_name = {};
     if(!json.HasMember(JSON_MEMBER_PICTURES)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\npicturesが存在しません");
     rapidjson::Value& picturesJson = json[JSON_MEMBER_PICTURES];
     for(int i { 0 }; i < picturesJson.Size(); i++)
     {
-        pictures_name.push_back(picturesJson[i][JSON_MEMBER_NAME].GetString());
+        pictures_name.push_back({picturesJson[i][JSON_MEMBER_NAME].GetString(), stod(picturesJson[i][JSON_MEMBER_TIME].GetString())});
     }
     
     if(!json.HasMember(JSON_MEMBER_BACKGROUND)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nbackgroundが存在しません");
@@ -150,7 +151,7 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     vector<Sprite*> pictures {};
     int pic_len = pictures_name.size();
     
-    Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[0])};
+    Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[0].first)};
     sprite->setOpacity(0);
     sprite->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     this->addChild(sprite);
@@ -161,7 +162,7 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     float scale = 0.5;
     for (int i = 1; i < pic_len; i++)
     {
-        Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[i])};
+        Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[i].first)};
         sprite->setOpacity(0);
         sprite->setScale(scale);
         sprite->setPosition(x, y);
@@ -171,15 +172,12 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     
     // 画像の動き
     Vector<FiniteTimeAction*> picture_acts {};
-    picture_acts.pushBack(TargetedAction::create(pictures[0], FadeIn::create(1.f)));
-    picture_acts.pushBack(TargetedAction::create(pictures[0], DelayTime::create(13.f)));
-    picture_acts.pushBack(TargetedAction::create(pictures[0], FadeOut::create(1.f)));
-    for (int i = 1; i < pic_len; i++)
+    for (int i = 0; i < pic_len; i++)
     {
         picture_acts.pushBack(TargetedAction::create(pictures[i], FadeIn::create(1.f)));
         if (i != pic_len - 1)
         {
-            picture_acts.pushBack(TargetedAction::create(pictures[i], DelayTime::create(4.7f)));
+            picture_acts.pushBack(TargetedAction::create(pictures[i], DelayTime::create(pictures_name[i].second)));
             picture_acts.pushBack(TargetedAction::create(pictures[i], FadeOut::create(1.f)));
         }
     }

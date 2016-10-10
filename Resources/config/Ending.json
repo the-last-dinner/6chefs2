@@ -170,13 +170,16 @@
         ],
         "pictures":[
             {
-                "name":"1_last.png"
+                "name":"1_last.png",
+                "time":"10.0"
             },
             {
-                "name":"daigoro_stand.png"
+                "name":"daigoro_stand.png",
+                "time":"12.0"
             },
             {
-                "name":"dandan_stand.png"
+                "name":"dandan_stand.png",
+                "time":"14.5"
             }
         ],
         "background":"title.png",
