@@ -524,9 +524,11 @@
             }
         },
         "giveItem": {
-            "require": ["charaID"],
+            "require": ["charaID", "toCharaID"],
             "member": {
-                "itemID": ["stoi"]
+                "itemID": ["stoi"],
+                "toCharaID": ["stoi"],
+                "fromCharaID": ["stoi"]
             }
         },
         "addProfile": {
