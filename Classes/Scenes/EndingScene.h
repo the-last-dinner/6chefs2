@@ -35,19 +35,23 @@ private:
     static const char* JSON_MEMBER_BGM;
 // クラスメソッド
 public:
-    CREATE_FUNC_WITH_TWO_PARAM(EndingScene, const int, function<void()>)
+    CREATE_FUNC_WITH_PARAM(EndingScene, const int)
 private:
     EndingScene();
     ~EndingScene();
     
 // インスタンス変数
+    // インスタンス変数
+public:
+    function<void()> onEnterPushedScene {nullptr};
+    function<void()> onExitPushedScene {nullptr};
 private:
     int end_id {0};
-    function<void()> onfinished { nullptr };
 // インスタンスメソッド
 private:
-    bool init(const int endingId, function<void()> onfinished);
+    bool init(const int endingId);
     virtual void onEnter() override;
+     virtual void onExit() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
     void createSpecialEnding(rapidjson::Value& json);
     void createNormalEnding(rapidjson::Value& json);

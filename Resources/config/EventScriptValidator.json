@@ -178,7 +178,8 @@
         },
         "ending": {
             "member": {
-                "id": ["string"]
+                "id": ["string"],
+                "callback": [["object"]]
             }
         },
         "backToTitle": {

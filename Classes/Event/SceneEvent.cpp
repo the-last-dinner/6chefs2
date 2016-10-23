@@ -146,33 +146,37 @@ bool EndingEvent::init(rapidjson::Value& json)
     // エンディングID
     if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
-    // エンディング終了時移動先マップ なければタイトルに戻る
-    if(_eventHelper->hasMember(_json, member::MAP_ID)) _map_id = stoi(_json[member::MAP_ID].GetString());
+    // エンディング終了時動作
+    if (!_eventHelper->hasMember(_json, member::CALLBACK)) return false;
     
-    if(_eventHelper->hasMember(_json, member::X)) _x = _json[member::X].GetInt();
-    
-    if(_eventHelper->hasMember(_json, member::Y)) _y = _json[member::Y].GetInt();
-    
+    _event = _factory->createGameEvent(json[member::CALLBACK], this);
+    CC_SAFE_RETAIN(_event);
     return true;
 }
 
 void EndingEvent::run()
 {
-    this->setDone();
-    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(_endingId, [this]()
-    {
-        BaseScene* target {nullptr};
-        if(_map_id == -1)
-        {
-            target = TitleScene::create();
-        }
-        else
-        {
-            target = DungeonScene::create(DungeonSceneData::create(Location(_map_id, _x, _y, Direction::UP)));
-        }
-        Director::getInstance()->replaceScene(target);
-    }));
+    EndingScene* ending { EndingScene::create(_endingId) };
+    
+    BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
+    ending->onEnterPushedScene = [nowScene](){
+        nowScene->onEnterPushedScene();
+        SoundManager::getInstance()->stopBGMAll();
+    };
+    ending->onExitPushedScene = [nowScene, this](){
+        nowScene->onExitPushedScene();
+        _isEnd = true;
+    };
+    Director::getInstance()->pushScene(ending);
+    
+}
 
+void EndingEvent::update(float delta)
+{
+    if(_isEnd){
+        _event->run();
+        this->setDone();
+    }
 }
 
 #pragma mark -

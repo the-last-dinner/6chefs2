@@ -34,21 +34,28 @@ EndingScene::EndingScene() {FUNCLOG};
 EndingScene::~EndingScene() {FUNCLOG};
 
 // 初期化
-bool EndingScene::init(const int endingId,function<void()> onfinished)
+bool EndingScene::init(const int endingId)
 {
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
     _configListener->setKeyconfigEnabled(false);
     this->end_id = endingId;
-    this->onfinished = onfinished;
     
     return true;
 }
 
-// シーン切り替え終了時
+// pushされた時
 void EndingScene::onEnter()
 {
     BaseScene::onEnter();
+    this->onEnterPushedScene();
+}
+
+// popされた時
+void EndingScene::onExit()
+{
+    BaseScene::onExit();
+    this->onExitPushedScene();
 }
 
 // リソースのプリロード完了時
@@ -218,7 +225,7 @@ void EndingScene::onEndingFinished()
                                      TargetedAction::create(black, FadeIn::create(2.f)),
                                      CallFunc::create([this](){
             PlayerDataManager::getInstance()->setGameClear(this->end_id);
-            this->onfinished();
+            Director::getInstance()->popScene();
         }), nullptr));
 }
 
