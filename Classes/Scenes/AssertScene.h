@@ -31,8 +31,8 @@ public:
     
     // インスタンス変数
 public:
-    function<void()> onEnterAssertScene {nullptr};
-    function<void()> onExitAssertScene {nullptr};
+    function<void()> onEnterPushedScene {nullptr};
+    function<void()> onExitPushedScene {nullptr};
     
 protected:
     EventListenerKeyboardLayer* listenerKeyboard { nullptr };

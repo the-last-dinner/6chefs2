@@ -83,8 +83,8 @@ protected:
     friend class DungeonSceneEventHandler;
     
 public:
-    virtual void onEnterAssertScene() override;
-    virtual void onExitAssertScene() override;
+    virtual void onEnterPushedScene() override;
+    virtual void onExitPushedScene() override;
 };
 
 
