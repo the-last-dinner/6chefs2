@@ -41,12 +41,11 @@ private:
     ~EndingScene();
     
 // インスタンス変数
-    // インスタンス変数
 public:
     function<void()> onEnterPushedScene {nullptr};
     function<void()> onExitPushedScene {nullptr};
 private:
-    int end_id {0};
+    int _end_id {0};
 // インスタンスメソッド
 private:
     bool init(const int endingId);

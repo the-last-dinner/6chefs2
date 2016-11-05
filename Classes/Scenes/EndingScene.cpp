@@ -39,7 +39,7 @@ bool EndingScene::init(const int endingId)
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
     _configListener->setKeyconfigEnabled(false);
-    this->end_id = endingId;
+    _end_id = endingId;
     
     return true;
 }
@@ -65,11 +65,10 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
     loadingLayer->onLoadFinished();
     
     // idからjsonを取得する
-    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(ENDING_FILE + ES_EXTENSION)).FindMember(to_string(this->end_id).c_str())->value;
+    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(ENDING_FILE + ES_EXTENSION)).FindMember(to_string(_end_id).c_str())->value;
     
     // エンディング振り分け
-     map<string, function<void(rapidjson::Value&)>> createEndings
-    {
+     map<string, function<void(rapidjson::Value&)>> createEndings = {
         {"normal", [this](rapidjson::Value& json){createNormalEnding(json);}},
         {"special", [this](rapidjson::Value& json){createSpecialEnding(json);}},
     };
@@ -89,16 +88,14 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     vector<pair<string,float>> credits_name = {};
     if(!json.HasMember(JSON_MEMBER_CREDITS)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ncreditsが存在しません");
     rapidjson::Value& creditsJson = json[JSON_MEMBER_CREDITS];
-    for(int i { 0 }; i < creditsJson.Size(); i++)
-    {
+    for(int i { 0 }; i < creditsJson.Size(); i++) {
         credits_name.push_back({creditsJson[i][JSON_MEMBER_TEXT].GetString(), stod(creditsJson[i][JSON_MEMBER_TIME].GetString())});
     }
     
     vector<pair<string,float>> pictures_name = {};
     if(!json.HasMember(JSON_MEMBER_PICTURES)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\npicturesが存在しません");
     rapidjson::Value& picturesJson = json[JSON_MEMBER_PICTURES];
-    for(int i { 0 }; i < picturesJson.Size(); i++)
-    {
+    for(int i { 0 }; i < picturesJson.Size(); i++) {
         pictures_name.push_back({picturesJson[i][JSON_MEMBER_NAME].GetString(), stod(picturesJson[i][JSON_MEMBER_TIME].GetString())});
     }
     
@@ -127,8 +124,7 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     float x = WINDOW_WIDTH * 4 / 5 - 10;
     float font_size = 28;
     float moving_time = 9.f;
-    for (int i = 0; i < credits_len; i++)
-    {
+    for (int i = 0; i < credits_len; i++) {
         Label* label {Label::createWithTTF(credits_name[i].first, Resource::Font::MESSAGE, font_size)};
         label->setPosition(x, -1 * label->getContentSize().height / 2);
         label->setColor(Color3B::WHITE);
@@ -167,8 +163,7 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     x = WINDOW_WIDTH / 3 - 20;
     float y = WINDOW_HEIGHT / 2;
     float scale = 0.5;
-    for (int i = 1; i < pic_len; i++)
-    {
+    for (int i = 1; i < pic_len; i++) {
         Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[i].first)};
         sprite->setOpacity(0);
         sprite->setScale(scale);
@@ -179,11 +174,9 @@ void EndingScene::createSpecialEnding(rapidjson::Value& json)
     
     // 画像の動き
     Vector<FiniteTimeAction*> picture_acts {};
-    for (int i = 0; i < pic_len; i++)
-    {
+    for (int i = 0; i < pic_len; i++) {
         picture_acts.pushBack(TargetedAction::create(pictures[i], FadeIn::create(1.f)));
-        if (i != pic_len - 1)
-        {
+        if (i != pic_len - 1) {
             picture_acts.pushBack(TargetedAction::create(pictures[i], DelayTime::create(pictures_name[i].second)));
             picture_acts.pushBack(TargetedAction::create(pictures[i], FadeOut::create(1.f)));
         }
@@ -224,8 +217,7 @@ void EndingScene::onEndingFinished()
     this->runAction(Sequence::create(
                                      TargetedAction::create(black, FadeIn::create(2.f)),
                                      CallFunc::create([this](){
-            PlayerDataManager::getInstance()->setGameClear(this->end_id);
+            PlayerDataManager::getInstance()->setGameClear(_end_id);
             Director::getInstance()->popScene();
         }), nullptr));
 }
-

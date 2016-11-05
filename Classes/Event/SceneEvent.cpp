@@ -161,19 +161,19 @@ void EndingEvent::run()
     BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
     ending->onEnterPushedScene = [nowScene](){
         nowScene->onEnterPushedScene();
-        SoundManager::getInstance()->stopBGMAll();
     };
     ending->onExitPushedScene = [nowScene, this](){
         nowScene->onExitPushedScene();
         _isEnd = true;
     };
+    SoundManager::getInstance()->stopBGMAll();
     Director::getInstance()->pushScene(ending);
     
 }
 
 void EndingEvent::update(float delta)
 {
-    if(_isEnd){
+    if(_isEnd) {
         _event->run();
         this->setDone();
     }
