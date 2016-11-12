@@ -84,14 +84,14 @@ Label* CharacterMessageLayer::createMessage()
         this->charaImg->removeFromParent();
         this->charaImg = nullptr;
     }
-    string charaImgName = CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + ((data->isMini())? "_m_" : "_s_") + to_string(data->getImgId()) + ".png" ;
-    Point charaImgPoint = (data->isMini())? Point(WINDOW_WIDTH * 3 / 4, 0) : Point(WINDOW_WIDTH * 3 / 4, 0);
+    string charaImgName = CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + ((data->isMiniChara())? "_m_" : "_s_") + to_string(data->getImgId()) + ".png" ;
+    Point charaImgPoint = (data->isMiniChara())? Point(WINDOW_WIDTH * 3 / 4, 0) : Point(WINDOW_WIDTH * 3 / 4, 0);
     
 	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(charaImgName))
     {
         Sprite* img { Sprite::createWithSpriteFrameName(charaImgName)};
         img->setPosition(charaImgPoint);
-        img->setLocalZOrder(-1);
+        img->setLocalZOrder((data->isMiniChara()) ? 1 : -1);
         this->addChild(img);
         this->charaImg = img;
 	}

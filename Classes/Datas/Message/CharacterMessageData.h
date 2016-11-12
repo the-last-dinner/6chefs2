@@ -35,7 +35,7 @@ private:
     string charaName {};
     queue<string> pages {};
     Option option {Option::SIZE};
-    bool _mini {false};
+    bool _miniChara {false};
     
 // インスタンスメソッド
 public:
@@ -45,13 +45,13 @@ public:
     int getImgId() const;
     const string& getCharaName() const;
     Option getOption() const;
-    bool isMini() const;
+    bool isMiniChara() const;
     
     void setCharaId(int charaId);
     void setImgId(int imgId);
     void setCharaName(const string& charaName);
     void setOption(Option option);
-    void setMini(bool mini);
+    void setMiniChara(bool miniChara);
     
 private:
     CharacterMessageData();

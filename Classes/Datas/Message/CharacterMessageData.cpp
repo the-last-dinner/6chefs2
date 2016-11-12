@@ -87,9 +87,9 @@ CharacterMessageData::Option CharacterMessageData::getOption() const
 }
 
 // ミニキャラかどうか
-bool CharacterMessageData::isMini() const
+bool CharacterMessageData::isMiniChara() const
 {
-    return _mini;
+    return _miniChara;
 }
 
 void CharacterMessageData::setCharaId(int charaId)
@@ -108,7 +108,7 @@ void CharacterMessageData::setOption(Option option)
 {
     this->option = option;
 }
-void CharacterMessageData::setMini(bool mini)
+void CharacterMessageData::setMiniChara(bool miniChara)
 {
-    _mini = mini;
+    _miniChara = miniChara;
 }
