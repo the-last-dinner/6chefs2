@@ -28,6 +28,7 @@ const string EventScriptValidator::INT {"int"};
 const string EventScriptValidator::DOUBLE {"double"};
 const string EventScriptValidator::STOI {"stoi"};
 const string EventScriptValidator::ENUM {"enum"};
+const string EventScriptValidator::BOOL {"bool"};
 
 const map<rapidjson::Type, string> EventScriptValidator::TYPE_TO_VALIDATE_STRING = {
     {rapidjson::kObjectType, EventScriptValidator::RECURSIVE_OBJECT},
@@ -65,6 +66,7 @@ bool EventScriptValidator::init(const string& mapName, const string& eventName)
         {EventScriptValidator::STRING, CC_CALLBACK_2(EventScriptValidator::isString, this)},
         {EventScriptValidator::STOI, CC_CALLBACK_2(EventScriptValidator::isStoi, this)},
         {EventScriptValidator::ENUM, CC_CALLBACK_2(EventScriptValidator::isEnum, this)},
+        {EventScriptValidator::BOOL, CC_CALLBACK_2(EventScriptValidator::isBool, this)},
     };
     
     _typeToValidateFunc = typeToValidateFunc;
@@ -382,6 +384,11 @@ bool EventScriptValidator::isEnum(const rapidjson::Value &target, const rapidjso
     
     _assertHelper->pushTextLine("\"" + targetString + "\" is not exists in enum." + enumType + ".");
     return false;
+}
+
+bool EventScriptValidator::isBool(const rapidjson::Value &target, const rapidjson::Value& checkType)
+{
+    return target.IsBool();
 }
 
 #pragma mark -
