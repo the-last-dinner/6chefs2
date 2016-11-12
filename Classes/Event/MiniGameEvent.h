@@ -22,10 +22,9 @@ private:
     int _count { 0 };
     float _limit { 0.f };
     GameEvent* _resultCallbackEvent { nullptr };
-    GameEvent* _clickCallbackEvent { nullptr };
 private:
     ButtonMashingEvent() { FUNCLOG };
-    ~ButtonMashingEvent();
+    ~ButtonMashingEvent() { FUNCLOG };
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
     virtual void update(float delta) override;

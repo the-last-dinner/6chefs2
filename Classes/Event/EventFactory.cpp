@@ -139,7 +139,7 @@ GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* call
     if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
         int mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
         string mapFileName = CsvDataManager::getInstance()->getMapData()->getFileName(mapId);
-        string eventId = to_string(DungeonSceneManager::getInstance()->getRunningEventId());
+        string eventId = to_string(caller->getEventId());
         EventScriptValidator::create(mapFileName, eventId)->validate(json);
     }
     

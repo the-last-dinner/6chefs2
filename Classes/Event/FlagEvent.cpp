@@ -201,7 +201,7 @@ void ChangeEventStatusEvent::run()
     
     // event_id
     if (_eventId < 0) {
-        _eventId = DungeonSceneManager::getInstance()->getRunningEventId();
+        _eventId = this->getEventId();
     }
     
     // 変更

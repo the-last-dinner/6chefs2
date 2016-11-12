@@ -13,6 +13,7 @@
 
 class GameEvent;
 class EventScript;
+class EventQueue;
 
 class EventTask : public GameTask
 {

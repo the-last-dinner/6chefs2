@@ -27,13 +27,6 @@
 
 #pragma mark ButtonMashingEvent
 
-ButtonMashingEvent::~ButtonMashingEvent()
-{
-    FUNCLOG
-    
-    CC_SAFE_RELEASE_NULL(_clickCallbackEvent);
-}
-
 bool ButtonMashingEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
@@ -51,14 +44,11 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
 
 void ButtonMashingEvent::run()
 {
-    // クリック時のコールバックイベント
-    GameEvent* clickCallbackEvent { _factory->createGameEvent(_json[member::EVENT], this) };
-    clickCallbackEvent->setReusable(true);
-    CC_SAFE_RETAIN(clickCallbackEvent);
-    _clickCallbackEvent = clickCallbackEvent;
-    
     ButtonMashingLayer* layer { ButtonMashingLayer::create(_count, _limit, [this] {
-        DungeonSceneManager::getInstance()->runEventAsync(_clickCallbackEvent);
+        // クリック時のコールバックイベント
+        GameEvent* clickCallbackEvent { _factory->createGameEvent(_json[member::EVENT], this) };
+        CC_SAFE_RETAIN(clickCallbackEvent);
+        DungeonSceneManager::getInstance()->runEventAsync(clickCallbackEvent);
     }, [this](ButtonMashingLayer::Result result) {
         if (result == ButtonMashingLayer::Result::SUCCESS) {
             _resultCallbackEvent = _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this);
