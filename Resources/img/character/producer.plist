@@ -7,13 +7,13 @@
 			<key>producer_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{20,24}}</string>
+				<string>{{26,0},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,3},{20,24}}</string>
+				<string>{{3,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -21,13 +21,13 @@
 			<key>producer_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{42,0},{19,24}}</string>
+				<string>{{26,33},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{19,24}}</string>
+				<string>{{4,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -35,13 +35,13 @@
 			<key>producer_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{21,25},{20,24}}</string>
+				<string>{{26,66},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{20,24}}</string>
+				<string>{{3,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -49,13 +49,13 @@
 			<key>producer_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{81,0},{18,24}}</string>
+				<string>{{52,66},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,3},{18,24}}</string>
+				<string>{{4,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -63,13 +63,13 @@
 			<key>producer_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{100,0},{18,24}}</string>
+				<string>{{76,33},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,4},{18,24}}</string>
+				<string>{{4,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -77,13 +77,13 @@
 			<key>producer_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{62,0},{18,24}}</string>
+				<string>{{76,0},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{18,24}}</string>
+				<string>{{4,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -91,13 +91,13 @@
 			<key>producer_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{100,25},{18,24}}</string>
+				<string>{{76,66},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,3},{18,24}}</string>
+				<string>{{5,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -105,13 +105,13 @@
 			<key>producer_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{62,25},{18,24}}</string>
+				<string>{{52,0},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{8,8},{18,24}}</string>
+				<string>{{5,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -119,13 +119,13 @@
 			<key>producer_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{81,25},{18,24}}</string>
+				<string>{{52,33},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{18,24}}</string>
+				<string>{{5,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -133,13 +133,13 @@
 			<key>producer_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{21,0},{20,24}}</string>
+				<string>{{0,66},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,3},{20,24}}</string>
+				<string>{{3,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -147,13 +147,13 @@
 			<key>producer_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,25},{20,24}}</string>
+				<string>{{0,33},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,4},{20,24}}</string>
+				<string>{{4,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -161,13 +161,13 @@
 			<key>producer_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{42,25},{19,24}}</string>
+				<string>{{0,0},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{19,24}}</string>
+				<string>{{3,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -179,7 +179,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{128,64}</string>
+			<string>{128,128}</string>
 			<key>textureFileName</key>
 			<string>producer.png</string>
 			</dict>

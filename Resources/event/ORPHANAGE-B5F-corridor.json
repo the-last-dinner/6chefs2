@@ -506,19 +506,29 @@
 			],
 			"action":[
 				{
-					"type":"removeObject",
-					"objID":"182"
-				},
-				{
-					"type":"systemMsg",
-					"text":["調理場の鍵を使った"]
-				},
-				{
-					"type":"playSE",
-					"file":"door_keyopen.mp3"
-				},
-				{
-					"type":"already"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"removeObject",
+									"objID":"182"
+								},
+								{
+									"type":"systemMsg",
+									"text":["調理場の鍵を使った"]
+								},
+								{
+									"type":"playSE",
+									"file":"door_keyopen.mp3"
+								}
+							]
+						},
+						{
+							"type":"already"
+						}
+					]
 				}
 			]
 		}

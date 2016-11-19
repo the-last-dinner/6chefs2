@@ -101,6 +101,102 @@
 				{
 					"type":"setLight",
 					"objID":"21"
+				},
+				{
+					"type":"setLight",
+					"objID":"22"
+				},
+				{
+					"type":"setLight",
+					"objID":"23"
+				},
+				{
+					"type":"setLight",
+					"objID":"24"
+				},
+				{
+					"type":"setLight",
+					"objID":"25"
+				},
+				{
+					"type":"setLight",
+					"objID":"26"
+				},
+				{
+					"type":"setLight",
+					"objID":"27"
+				},
+				{
+					"type":"setLight",
+					"objID":"28"
+				},
+				{
+					"type":"setLight",
+					"objID":"29"
+				},
+				{
+					"type":"setLight",
+					"objID":"30"
+				},
+				{
+					"type":"setLight",
+					"objID":"31"
+				},
+				{
+					"type":"setLight",
+					"objID":"32"
+				},
+				{
+					"type":"setLight",
+					"objID":"33"
+				},
+				{
+					"type":"setLight",
+					"objID":"34"
+				},
+				{
+					"type":"setLight",
+					"objID":"35"
+				},
+				{
+					"type":"setLight",
+					"objID":"36"
+				},
+				{
+					"type":"setLight",
+					"objID":"37"
+				},
+				{
+					"type":"setLight",
+					"objID":"38"
+				},
+				{
+					"type":"setLight",
+					"objID":"39"
+				},
+				{
+					"type":"setLight",
+					"objID":"40"
+				},
+				{
+					"type":"setLight",
+					"objID":"41"
+				},
+				{
+					"type":"setLight",
+					"objID":"42"
+				},
+				{
+					"type":"setLight",
+					"objID":"43"
+				},
+				{
+					"type":"setLight",
+					"objID":"44"
+				},
+				{
+					"type":"setLight",
+					"objID":"45"
 				}
 			]
 		},
@@ -157,14 +253,40 @@
 					"objID":"22"
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["8","6"]
+				},
+				{
+					"Nevent":["7","5"]
+				},
+				{
+					"Nevent":["6","6"]
+				},
+				{
+					"Nevent":["10","6"]
+				},
+				{
+					"Nevent":["9","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"light"
+				}
+			]
 		}
 	],
 	"2":[
 		{
 			"type":"changeMap",
 			"mapID":"7",
-			"x":40,
-			"y":31
+			"x":36,
+			"y":32
 		}
 	],
 	"3":[

@@ -83,16 +83,25 @@
   </data>
  </layer>
  <layer name="magoichi" width="42" height="56">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzkENACAMBLCzMsC/RnDAk5G0CpoAAAAA9FKVjHq9uJvnuD54AgAAAEBnG/JAAQ8=
   </data>
  </layer>
  <layer name="nadeshiko" width="42" height="56">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzkkNACAQBLCxsg8O/wrBAU8gaRU0AQAAAHhbq6TX7cXZ2Mf5wRMAAAAAXrIAHB4BHw==
   </data>
  </layer>
  <layer name="hide" width="42" height="56">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzqENAAAIA0GGY/+ZMFh8Se6SF3WtAgAAAMjS27VTfPkJAAAAAMkGAXYCIQ==
   </data>

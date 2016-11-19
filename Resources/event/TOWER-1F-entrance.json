@@ -8,24 +8,6 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["50","8"]
-				}
-			],
-			"action":[
-				{
-					"type":"playSE",
-					"file":"door_unopen.mp3"
-				},
-				{
-					"type":"systemMsg",
-					"text":["開かない・・・"]
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
 					"Nevent":["50","8"]
 				}
 			],
@@ -234,7 +216,7 @@
 				{
 					"type":"wait",
 					"time":2.0
-				}
+				},
 				{
 					"type":"ending",
 					"id":"2"

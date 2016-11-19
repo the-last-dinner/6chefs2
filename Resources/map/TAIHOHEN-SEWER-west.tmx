@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="70" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="72">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="1505" name="water2" tilewidth="16" tileheight="16" tilecount="64" columns="8">
+  <image source="water2.png" trans="aa55ff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="40" height="70">
+  <properties>
+   <property name="cc_vertexz" value="-12"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmctSE0EUhtOVlZcXUEvfTQSrdCU3L+gGCEjQDQQU0IUQUHQlCKKle30D2YMK3qpUVC5qeabSp/Ln2N3TPZkMWdBVX/XMMJz8+ft0T59JLnfQsmxfiE3iQwwfic/7rG8TiM53NXycpr5NB+zHJ+IvXN/RmDSyf1+Jb8SahbfEOw99OwZwHKU+vmdX3MfXpL7vBm3rxA/ip6c+k2/siUmfzMNdh741rZFhfUn8k9ps/uGY8rHLv4gtYiWfXJ/MJdf4ynkSp28rVzu2ofp4fPgYsemTuYj5YNKHPm4l0Gdbz/aI36CPvXJ9H5O+dUGoPhtHVC53VNWuLxKMYdMn8Z2/p+mzW4kzmlZBG3FW6zOtRdJH1hfFbYGYGL8N4sa1drqni+jUdAm6iYtaH2vYsfQRe1pfFLcDYmL8bogb13rpngLRrykIBohBre+wqnDI0kdE+fBHx+2DmBh/IEDfCN0zRpQ0Y4Jx4hZxijiuOWbpI04QJ1Wtf50QvxSor13/P34/9JH9u0RcJq7EcJW4pmr9kyTRJ8cVcyWKc50YsmjqgeMbxE1VGZdR7Rd7WNakoQ9zxeRfj+iHtTbWJ+dHOWV9JeEf6itqPbJ36cP5m4a+gkNfEv+y1HfgX/b+9TeBf8MOfaUM9dn8c+nDZ3sz+pelviT+9UPMZvSP9x5SH+9jbXvprPzLUp/NvyniDnHXoU/u/7L0D9c/uT/FveV++Yf6cH81puz7v7T08f6vGOifKW6j9fn4l5a+XmWuixrtH+97m9G/fh33gqrWxlG/3/mHcwRrHO7r0XebmCAm6/CP60upL6pJZjPyj9dnXl8wHtdHaenjXB5U6eRfqQ59+M4A13p+fxCaf+wfrtH1+DcLlOF4jrivwvNvmpjRlCFuWdU+UwrKT1+fgXryb4FY1DwhlnQvWYLe1Hh9HhVw7iTNv1f5XO51vtL7EN1raiPab/aMPe+rM//e0Oet5iu9D6sWfTy+owaN3A8myL/39Hkb+Urvw0aMvhnQaNIXmn+/6PO285Xeh22LPs4/nms++uL8e0yc05wPwJV/vA7U6x8f4z7Wl7jxdenzzT+slfDYBx99ck/u6x/XRpP6eMpwHzMEsfA8Lv/Kqna9T5p/rHHIwgSMBZ775N+s9g7HOST/UN9EDJPi3Gd8+bkr9YWsf6yvGEiIvtD5y/mHOTgZiE/+sT6cH/L55vP8kL+/tenzFsN1V/3B+cd7FdTJ+8ok9Yd8v9GtzzsM1131B9aXA+r/ecL6ktYfGBv3bnjdVx8jNYbmH9YfvJaOq+reDbXhWLnmh03frGF8Q/bPHGdO65G/7fHfSwH6pMa06l+TPqx1QvQ1ov5FPdI/W/3hev9i29+H5J9L3z1VrT1s9UeW7194Dkd+cN0Q13j9k/URzjsc36JyP0+nlPn9JM7hUoC+aVXdtyA47yJ9D4h5rWHewkPikTLPX441o2rr6ri2oHNgUcB5sUw8JVaIZzE8J14QL1W1/sX8WtbXMO5Ba0z7B7lDCZM=
+  </data>
+ </layer>
+ <layer name="MonoShita" width="40" height="70">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2UEKgCAUAFF33v8gdZHqINUlCmoRLbQcCYN54NLv4E4MQV8YYwhTfL9viMdeaon5tRacMz+Yu2TmltxLbUOiwb48+xj7GPsY+xj7GPsY+xj7GPsY+5jUO7mFvus7+a6FvhT7GPsY+xj7GPsY+xj7GPsY+xj7GPsY+xj7GPsY+xj7GPsY+/K6vaE/110Lfa3/L/zhf0b1bQokZws=
+  </data>
+ </layer>
+ <layer name="MonoChu" width="40" height="70">
+  <properties>
+   <property name="cc_vertexz" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmDtrAkEURpdkGzHRdDH4BKug0UAq8ZXe9dGr0f/jn/YrUqRRbuabcQb8DpxmubCH5c4Um2XilhSPsQuuE6vvZJwL0VcyzMTsezPMxOx7N8zE7BsZZrR/l7nX/SvnWfYEn2EFVuFL/v8+y/5Zv8vfuTpaGrAJW7ANO1f6Sg8Xngfq66GlDz/gAA7hp8P3s+yfS98YLRM4hTM4h98OfZb9c+lboKWAS7iCa7hJaP+2aNnBPfyBB3h06Au1f75QH4f6OELdf74Idf/5ItT954vU9y/1Pp0PDp0PjtT7dD44Uj8fXY/vvce+L/gKa78y7431/1R9HOrjUB+H+jjUx6E+DvVxqI9DfRzq41Afh/o41MehPg71iRicAbnNNi4=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="64" x="384" y="64" width="256" height="704"/>
+  <object id="65" x="384" y="896" width="240" height="224"/>
+  <object id="66" x="0" y="1088" width="384" height="32"/>
+  <object id="68" x="16" y="32" width="176" height="1056"/>
+  <object id="69" x="192" y="32" width="192" height="224"/>
+ </objectgroup>
+ <objectgroup name="event">
+  <object id="70" x="544" y="64" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="71" x="592" y="768" width="32" height="128">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

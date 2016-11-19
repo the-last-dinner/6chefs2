@@ -85,6 +85,144 @@
 				{
 					"type":"setLight",
 					"objID":"18"
+				},
+				{
+					"type":"setLight",
+					"objID":"19"
+				},
+				{
+					"type":"setLight",
+					"objID":"20"
+				},
+				{
+					"type":"setLight",
+					"objID":"21"
+				},
+				{
+					"type":"setLight",
+					"objID":"22"
+				},
+				{
+					"type":"setLight",
+					"objID":"23"
+				},
+				{
+					"type":"setLight",
+					"objID":"24"
+				},
+				{
+					"type":"setLight",
+					"objID":"25"
+				},
+				{
+					"type":"setLight",
+					"objID":"26"
+				},
+				{
+					"type":"setLight",
+					"objID":"27"
+				},
+				{
+					"type":"setLight",
+					"objID":"28"
+				},
+				{
+					"type":"setLight",
+					"objID":"29"
+				},
+				{
+					"type":"setLight",
+					"objID":"30"
+				},
+				{
+					"type":"setLight",
+					"objID":"31"
+				},
+				{
+					"type":"setLight",
+					"objID":"32"
+				},
+				{
+					"type":"setLight",
+					"objID":"33"
+				},
+				{
+					"type":"setLight",
+					"objID":"34"
+				},
+				{
+					"type":"setLight",
+					"objID":"35"
+				},
+				{
+					"type":"setLight",
+					"objID":"36"
+				},
+				{
+					"type":"setLight",
+					"objID":"37"
+				},
+				{
+					"type":"setLight",
+					"objID":"38"
+				},
+				{
+					"type":"setLight",
+					"objID":"39"
+				},
+				{
+					"type":"setLight",
+					"objID":"40"
+				},
+				{
+					"type":"setLight",
+					"objID":"41"
+				},
+				{
+					"type":"setLight",
+					"objID":"42"
+				},
+				{
+					"type":"setLight",
+					"objID":"43"
+				},
+				{
+					"type":"setLight",
+					"objID":"44"
+				},
+				{
+					"type":"setLight",
+					"objID":"45"
+				},
+				{
+					"type":"setLight",
+					"objID":"46"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["8","6"]
+				},
+				{
+					"Nevent":["7","5"]
+				},
+				{
+					"Nevent":["6","6"]
+				},
+				{
+					"Nevent":["10","6"]
+				},
+				{
+					"Nevent":["9","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"light"
 				}
 			]
 		},
@@ -100,7 +238,7 @@
 					"type":"createObject",
 					"objID":"1025",
 					"charaID":"2",
-					"x":8,
+					"x":10,
 					"y":66,
 					"eventID":"7",
 					"trigger":"2",
@@ -111,8 +249,8 @@
 					"type":"createObject",
 					"objID":"1026",
 					"charaID":"3",
-					"x":4,
-					"y":64,
+					"x":6,
+					"y":66,
 					"eventID":"8",
 					"trigger":"2",
 					"direction":"UP",
@@ -134,7 +272,7 @@
 			"type":"changeMap",
 			"mapID":"10",
 			"x":20,
-			"y":30
+			"y":33
 		}
 	],
 	"4":[
@@ -147,23 +285,28 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["管財板給"],
-							"charaID":"1",
-							"imgID":"3"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["管財板給"],
+									"charaID":"1",
+									"imgID":"3"
+								},
+								{
+									"text":["（頼もしいな、中山さん）"],
+									"charaID":"0",
+									"imgID":"2"
+								}
+							]
 						},
 						{
-							"text":["（頼もしいな、中山さん）"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"already",
+							"event":["9","5"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["9","5"]
 				}
 			]
 		},
@@ -252,33 +395,38 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["なぁ孫一。\n雪見なかったか？"],
-							"charaID":"2",
-							"imgID":"1"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["なぁ孫一。\n雪見なかったか？"],
+									"charaID":"2",
+									"imgID":"1"
+								},
+								{
+									"text":["いえ、見てませんけど・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["どこ行ったんかなぁ・・・"],
+									"charaID":"2",
+									"imgID":"1"
+								},
+								{
+									"text":["（それ結構マズいんじゃ・・・）"],
+									"charaID":"0",
+									"imgID":"2"
+								}
+							]
 						},
 						{
-							"text":["いえ、見てませんけど・・・"],
-							"charaID":"0",
-							"imgID":"2"
-						},
-						{
-							"text":["どこ行ったんかなぁ・・・"],
-							"charaID":"2",
-							"imgID":"1"
-						},
-						{
-							"text":["（それ結構マズいんじゃ・・・）"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"changeFlg",
+							"flg":1
 						}
 					]
-				},
-				{
-					"type":"changeFlg",
-					"flg":1
 				}
 			]		
 		},
@@ -309,34 +457,39 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["おう暖暖、\nと咲賀谷じゃねーか。"],
-							"charaID":"2",
-							"imgID":"1"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["おう暖暖、\nと咲賀谷じゃねーか。"],
+									"charaID":"2",
+									"imgID":"1"
+								},
+								{
+									"text":["咲賀谷「さん」か\n「おねーさん」でしょ！まるおくん！"],
+									"charaID":"7",
+									"imgID":"2"
+								},
+								{
+									"text":["ん？何でだ？？"],
+									"charaID":"2",
+									"imgID":"1"
+								},
+								{
+									"text":["何でって・・・\n何でも！！"],
+									"charaID":"7",
+									"imgID":"2",
+									"option":"reaction"
+								}
+							]
 						},
 						{
-							"text":["咲賀谷「さん」か\n「おねーさん」でしょ！まるおくん！"],
-							"charaID":"7",
-							"imgID":"2"
-						},
-						{
-							"text":["ん？何でだ？？"],
-							"charaID":"2",
-							"imgID":"1"
-						},
-						{
-							"text":["何でって・・・\n何でも！！"],
-							"charaID":"7",
-							"imgID":"2",
-							"option":"reaction"
+							"type":"changeFlg",
+							"flg":2
 						}
 					]
-				},
-				{
-					"type":"changeFlg",
-					"flg":2
 				}
 			]
 		},

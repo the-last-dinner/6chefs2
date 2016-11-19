@@ -399,28 +399,33 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["あ、佐々木くん。この前はありがとう。\n手伝いに来てくれて。","この前教えてくれたの・・・\nとても評判良くて。"],
-							"charaID":"1",
-							"imgID":"1"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["あ、佐々木くん。この前はありがとう。\n手伝いに来てくれて。","この前教えてくれたの・・・\nとても評判良くて。"],
+									"charaID":"1",
+									"imgID":"1"
+								},
+								{
+									"text":["ホントですか？よかったぁ。\nまた行ってもいいですか？"],
+									"charaID":"0",
+									"imgID":"1"
+								},
+								{
+									"text":["うん！\nいつでも来て！"],
+									"charaID":"1",
+									"imgID":"3"
+								}
+							]
 						},
 						{
-							"text":["ホントですか？よかったぁ。\nまた行ってもいいですか？"],
-							"charaID":"0",
-							"imgID":"1"
-						},
-						{
-							"text":["うん！\nいつでも来て！"],
-							"charaID":"1",
-							"imgID":"3"
+							"type":"already",
+							"event":["1","5"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["1","5"]
 				}
 			]
 		},
@@ -452,43 +457,48 @@
 			],
 			"action":[
 				{
-					"type":"addProfile",
-          			"charaID":"7",
-          			"infoID":"2"
-				},
-				{
-					"type":"addProfile",
-          			"charaID":"8",
-          			"infoID":"2"
-				},
-				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["あの・・・\n今日って何で僕達集められたんですか？"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"addProfile",
+		          			"charaID":"7",
+		          			"infoID":"2"
 						},
 						{
-							"text":["？\nオメーにはまだ言ってなかったっけか？","なんでも、咲賀谷と田村が\n俺たちに話があるんだと。"],
-							"charaID":"2",
-							"imgID":"1"
+							"type":"addProfile",
+		          			"charaID":"8",
+		          			"infoID":"2"
 						},
 						{
-							"text":["え？"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["あの・・・\n今日って何で僕達集められたんですか？"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["？\nオメーにはまだ言ってなかったっけか？","なんでも、咲賀谷と田村が\n俺たちに話があるんだと。"],
+									"charaID":"2",
+									"imgID":"1"
+								},
+								{
+									"text":["え？"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["まぁ詳しくは二人の到着を待とうや。"],
+									"charaID":"2",
+									"imgID":"1"
+								}
+							]
 						},
 						{
-							"text":["まぁ詳しくは二人の到着を待とうや。"],
-							"charaID":"2",
-							"imgID":"1"
+							"type":"already",
+							"event":["1","7"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["1","7"]
 				}
 			]
 		},
@@ -520,33 +530,38 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["雪ちゃんは・・・ちゃんと食べてるんですか？\nその・・・フツーの・・・"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["雪ちゃんは・・・ちゃんと食べてるんですか？\nその・・・フツーの・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["まぁなんとかね。\nでも毎回お手入れしても\nすぐにジューサーがダメになるのよね。","くさいし！\nアイツが変な肉ばっかり獲ってくるから！"],
+									"charaID":"3",
+									"imgID":"1"
+								},
+								{
+									"text":["まぁその・・・安心しました。\n思ったよりうまくやってそうで・・・"],
+									"charaID":"0",
+									"imgID":"1"
+								},
+								{
+									"text":["どこがよ！\n最初の方は大変だったんだから！","ふん縛ってムリヤリジュース飲ませたり・・・\n最近はだいぶ大人しくなったけどね。"],
+									"charaID":"3",
+									"imgID":"1"
+								}
+							]
 						},
 						{
-							"text":["まぁなんとかね。\nでも毎回お手入れしても\nすぐにジューサーがダメになるのよね。","くさいし！\nアイツが変な肉ばっかり獲ってくるから！"],
-							"charaID":"3",
-							"imgID":"1"
-						},
-						{
-							"text":["まぁその・・・安心しました。\n思ったよりうまくやってそうで・・・"],
-							"charaID":"0",
-							"imgID":"1"
-						},
-						{
-							"text":["どこがよ！\n最初の方は大変だったんだから！","ふん縛ってムリヤリジュース飲ませたり・・・\n最近はだいぶ大人しくなったけどね。"],
-							"charaID":"3",
-							"imgID":"1"
+							"type":"already",
+							"event":["1","9"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["1","9"]
 				}
 			]
 		},
@@ -578,28 +593,33 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["ふっふっふ・・・\n佐々木氏・・・","本店のみに集中するようになってから\nとても調子がいいですぞ。","料理人としてさらに力が付きましたな。"],
-							"charaID":"4",
-							"imgID":"1"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["ふっふっふ・・・\n佐々木氏・・・","本店のみに集中するようになってから\nとても調子がいいですぞ。","料理人としてさらに力が付きましたな。"],
+									"charaID":"4",
+									"imgID":"1"
+								},
+								{
+									"text":["ホントですか？\nそれは是非食べてみたいです！"],
+									"charaID":"0",
+									"imgID":"1"
+								},
+								{
+									"text":["ウヌ！お待ちしておりますぞ！"],
+									"charaID":"4",
+									"imgID":"1"
+								}
+							]
 						},
 						{
-							"text":["ホントですか？\nそれは是非食べてみたいです！"],
-							"charaID":"0",
-							"imgID":"1"
-						},
-						{
-							"text":["ウヌ！お待ちしておりますぞ！"],
-							"charaID":"4",
-							"imgID":"1"
+							"type":"already",
+							"event":["1","11"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["1","11"]
 				}
 			]
 		},
@@ -631,45 +651,50 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["（ドキドキ・・・）"],
-							"charaID":"5",
-							"imgID":"3"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["（ドキドキ・・・）"],
+									"charaID":"5",
+									"imgID":"3"
+								},
+								{
+									"text":["吾郎さん？"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["うわっ！何だよ、孫一か。\nおどかすんじゃねぇよ。"],
+									"charaID":"5",
+									"imgID":"2",
+									"option":"reaction"
+								},
+								{
+									"text":["どうしたんですか？ソワソワして・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["な、何でもねーよ！"],
+									"charaID":"5",
+									"imgID":"2",
+									"option":"reaction"
+								},
+								{
+									"text":["？"],
+									"charaID":"0",
+									"imgID":"2"
+								}
+							]
 						},
 						{
-							"text":["吾郎さん？"],
-							"charaID":"0",
-							"imgID":"2"
-						},
-						{
-							"text":["うわっ！何だよ、孫一か。\nおどかすんじゃねぇよ。"],
-							"charaID":"5",
-							"imgID":"2",
-							"option":"reaction"
-						},
-						{
-							"text":["どうしたんですか？ソワソワして・・・"],
-							"charaID":"0",
-							"imgID":"2"
-						},
-						{
-							"text":["な、何でもねーよ！"],
-							"charaID":"5",
-							"imgID":"2",
-							"option":"reaction"
-						},
-						{
-							"text":["？"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"already",
+							"event":["1","13"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["1","13"]
 				}
 			]
 		},

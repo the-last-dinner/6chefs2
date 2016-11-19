@@ -75,19 +75,29 @@
 			],
 			"action":[
 				{
-					"type":"systemMsg",
-					"text":["303号室の鍵を使った"]
-				},
-				{
-					"type":"removeObject",
-					"objID":"182"
-				},
-				{
-					"type":"playSE",
-					"file":"door_keyopen.mp3"
-				},
-				{
-					"type":"already"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"systemMsg",
+									"text":["303号室の鍵を使った"]
+								},
+								{
+									"type":"removeObject",
+									"objID":"182"
+								},
+								{
+									"type":"playSE",
+									"file":"door_keyopen.mp3"
+								}
+							]
+						},
+						{
+							"type":"already"
+						}
+					]
 				}
 			]
 		},

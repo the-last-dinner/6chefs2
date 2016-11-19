@@ -30,254 +30,51 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"storyMsg",
-							"text":["親父が落盤事故に巻き込まれて死んだ","わざわざ金鉱まで越してきたのに死んだ","借金を沢山残して死んだ","取立てのガラの悪い男たちが来るようになった"]
-						},
-						{
 							"type":"fadeout"
 						},
 						{
+							"type":"storyMsg",
+							"text":["北森金鉱で起きた落盤事故・・・\nアレによって身寄りのいなくなった子供は\n俺だけじゃなかった・・・・","しばらくして北森金鉱跡のすぐ近くに\n孤児院ができた。","北森の落盤事故のことを\n聞きつけたどこぞの国の金持ちが\n建てたらしい・・・"]
+						},
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"wait",
+									"time":5.0
+								},
+								{
+									"type":"changeChapter",
+									"chapterID":"8"
+								},
+								{
+									"type":"playSE",
+									"file":"chapter3.mp3"
+								}
+							]
+						},
+						{
 							"type":"stopBGM"
+						},
+						{
+							"type":"changeHero",
+							"charaID":"22"
 						},
 						{
 							"type":"playBGM",
 							"file":"bgm_sad memory.mp3"
 						},
 						{
-							"type":"createCamera",
-							"mapID":"87",
-							"x":9,
-							"y":12,
-							"action":[
-								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"createObject",
-											"objID":"1097",
-											"charaID":"17",
-											"x":12,
-											"y":9,
-											"direction":"LEFT",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1098",
-											"charaID":"17",
-											"x":6,
-											"y":9,
-											"direction":"RIGHT",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1099",
-											"charaID":"3",
-											"x":9,
-											"y":10,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
-											"type":"removeLayer",
-											"layer":"CharaUedoor"
-										},
-										{
-											"type":"removeLayer",
-											"layer":"door"
-										},
-										{
-											"type":"removeLayer",
-											"layer":"blood"
-										},
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["大宝！来ちゃダメ！"],
-													"charaID":"10",
-													"name":"戸塚　母",
-													"option":"reaction"
-												},
-												{
-													"text":["うるせぇ！\n大人しくしやがれ！"],
-													"charaID":"10",
-													"name":"北森マフィアの男",
-													"option":"reaction"
-												}
-											]
-										},
-										{
-											"type":"spawn",
-											"action":[
-												{
-													"type":"playSE",
-													"file":"fusuma-open1.mp3"
-												},
-												{
-													"type":"createLayer",
-													"layer":"CharaUedoor"
-												},
-												{
-													"type":"createLayer",
-													"layer":"door"
-												}
-											]
-										},
-										{
-											"type":"charaMsg",
-											"text":["おい小僧！いいか！","人間ってのはなぁ！\n喰う人間と喰われる人間に分かれるんだよ！","お前らみてぇな家畜は一生俺達に\n喰われて生きるんだ","ゲハハハハハハハハハハハ"],
-											"charaID":"10",
-											"name":"北森マフィアの男"
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
-										},
-										{
-											"type":"storyMsg",
-											"text":["それから男たちは家に住み着いた\n代わる代わる色々な男が家に出入りするようになった","一日中響く母親の声\n下品な男の声\n鼻を突き抜けて目に染みるほどの臭い・・・","そんな日々が一か月続いた"]
-										},
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"wait",
-											"time":1.0
-										},
-										{
-											"type":"storyMsg",
-											"text":["おい小僧！いいか！\n人間ってのはなぁ！\n喰う人間と喰われる人間に分かれるんだよ！"]
-										},
-										{
-											"type":"spawn",
-											"action":[
-												{
-													"type":"removeLayer",
-													"layer":"taihou"
-												},
-												{
-													"type":"createObject",
-													"objID":"10100",
-													"charaID":"22",
-													"x":12,
-													"y":13,
-													"direction":"DOWN",
-													"movePattern":"1"
-												}
-											]
-										},
-										{
-											"type":"charaWalk",
-											"objID":"10100",
-											"steps":2.5,
-											"direction":"LEFT"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10100",
-											"direction":"UP"
-										},
-										{
-											"type":"spawn",
-											"action":[
-												{
-													"type":"playSE",
-													"file":"fusuma-open1.mp3"
-												},
-												{
-													"type":"removeLayer",
-													"layer":"CharaUedoor"
-												},
-												{
-													"type":"removeLayer",
-													"layer":"door"
-												}
-											]
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
-										},
-										{
-											"type":"playSE",
-											"file":"blood.mp3"
-										},
-										{
-											"type":"storyMsg",
-											"text":["約一月ぶりにみた母親の姿は\nもはや人間と呼ぶには難いナリだった","あの日俺の中の何かが壊れた","その場にいた奴は全員喰い殺してやった","人間は喰う者と喰われる者に分かれる"]
-										},
-										{
-											"type":"createLayer",
-											"layer":"CharaUedoor"
-										},
-										{
-											"type":"createLayer",
-											"layer":"door"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1097"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1098"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1099"
-										},
-										{
-											"type":"createLayer",
-											"layer":"blood"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10100",
-											"direction":"DOWN"
-										},
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"charaMsg",
-											"text":["喰ってやる・・・","あのクソ共を・・・\n腹いっぱい・・・","喰い散らしてやる・・・"],
-											"charaID":"10",
-											"name":"戸塚　大宝"
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
-										}
-									]
-								}
-							]
+							"type":"changeDirection",
+							"objID":"hero",
+							"direction":"DOWN"
 						},
 						{
-							"type":"fadein"
-						},
-						{
-							"type":"charaMsg",
-							"text":["う！\nヒドイ話ね・・・"],
-							"charaID":"3",
-							"imgID":"1"
-						},
-						{
-							"type":"stopBGM"
-						},
-						{
-							"type":"playBGM",
-							"file":"ORHANAGE.mp3"
-						},
-						{
-							"type":"changeFlg",
-							"mapID":"78",
-							"eventID":"3",
-							"flg":1
+							"type":"changeMap",
+							"mapID":"104",
+							"x":6,
+							"y":21,
+							"eventID":"2"
 						}
 					]
 				}
@@ -293,7 +90,7 @@
 			"action":[
 				{
 					"type":"storyMsg",
-					"text":["親父が落盤事故に巻き込まれて死んだ","わざわざ金鉱まで越してきたのに死んだ","借金を沢山残して死んだ","取立てのガラの悪い男たちが来るようになった","それから男たちは家に住み着いた\n代わる代わる色々な男が家に出入りするようになった","一日中響く母親の声\n下品な男の声\n鼻を突き抜けて目に染みるほどの濃厚な臭い・・・","そんな日々が一か月続いた","約一月ぶりにみた母親の姿は\nもはや人間と呼ぶには難いナリだった","あの日俺の中の何かが壊れた"]
+					"text":["北森は・・・人肉の売買で栄えた国だ・・・\n公にはなっていないが今でも人肉の取引は続いている。"]
 				}
 			]
 		}
@@ -332,6 +129,32 @@
 		{
 			"type":"systemMsg",
 			"text":["ホワイトボード・・・あまり使ってはいないようね・・・"]
+		}
+	],
+	"10":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"fadein"
+				},
+				{
+					"type":"charaMsg",
+					"text":["う！\nヒドイ話ね・・・"],
+					"charaID":"3",
+					"imgID":"1"
+				},
+				{
+					"type":"playBGM",
+					"file":"ORHANAGE.mp3"
+				},
+				{
+					"type":"changeFlg",
+					"mapID":"78",
+					"eventID":"3",
+					"flg":1
+				}
+			]
 		}
 	]
 }

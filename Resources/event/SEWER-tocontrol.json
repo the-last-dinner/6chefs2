@@ -132,23 +132,33 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"door_keyopen.mp3"
-				},
-				{
-					"type":"removeObject",
-					"objID":"183"
-				},
-				{
-					"type":"removeItem",
-					"itemID":"158"
-				},
-				{
-					"type":"systemMsg",
-					"text":["下水道管理室の鍵を使った"]
-				},
-				{
-					"type":"already"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"door_keyopen.mp3"
+								},
+								{
+									"type":"removeObject",
+									"objID":"183"
+								},
+								{
+									"type":"removeItem",
+									"itemID":"158"
+								},
+								{
+									"type":"systemMsg",
+									"text":["下水道管理室の鍵を使った"]
+								}
+							]
+						},
+						{
+							"type":"already"
+						}
+					]
 				}
 			]
 		}

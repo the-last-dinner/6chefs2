@@ -236,6 +236,32 @@
 			"type":"if",
 			"condition":[
 				{
+					"Nevent":["8","6"]
+				},
+				{
+					"Nevent":["7","5"]
+				},
+				{
+					"Nevent":["6","6"]
+				},
+				{
+					"Nevent":["10","6"]
+				},
+				{
+					"Nevent":["9","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"light"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
 					"Nevent":["12","12"]
 				}
 			],
@@ -319,8 +345,8 @@
 		{
 			"type":"changeMap",
 			"mapID":"9",
-			"x":18,
-			"y":88
+			"x":19,
+			"y":90
 		}
 	],
 	"4":[
@@ -341,38 +367,43 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"sequence",
+					"action":[
 						{
-							"text":["うわぁ屋台いっぱいですね、中山さ・・・"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["うわぁ屋台いっぱいですね、中山さ・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["胡椒餅給一個"],
+									"charaID":"1",
+									"imgID":"3"
+								},
+								{
+									"text":["・・・！？"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["おいしい！"],
+									"charaID":"1",
+									"imgID":"3"
+								},
+								{
+									"text":["すごいなこの人・・・"],
+									"charaID":"0",
+									"imgID":"2"
+								}
+							]
 						},
 						{
-							"text":["胡椒餅給一個"],
-							"charaID":"1",
-							"imgID":"3"
-						},
-						{
-							"text":["・・・！？"],
-							"charaID":"0",
-							"imgID":"2"
-						},
-						{
-							"text":["おいしい！"],
-							"charaID":"1",
-							"imgID":"3"
-						},
-						{
-							"text":["すごいなこの人・・・"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"already",
+							"event":["8","6"]
 						}
 					]
-				},
-				{
-					"type":"already",
-					"event":["8","6"]
 				}
 			]
 		},

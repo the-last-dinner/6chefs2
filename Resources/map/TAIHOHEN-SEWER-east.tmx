@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="39">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+  <tile id="392">
+   <properties>
+    <property name="z" value="-10"/>
+   </properties>
+  </tile>
+  <tile id="393">
+   <properties>
+    <property name="z" value="-10"/>
+   </properties>
+  </tile>
+  <tile id="408">
+   <properties>
+    <property name="z" value="-10"/>
+   </properties>
+  </tile>
+  <tile id="409">
+   <properties>
+    <property name="z" value="-10"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1505" name="water" tilewidth="16" tileheight="16" tilecount="64" columns="8">
+  <image source="water.png" trans="aa55ff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="1569" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+  <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2049" name="yoshituneDeath" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="yoshituneDeath.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2053" name="マフィア" tilewidth="16" tileheight="16" tilecount="48" columns="6">
+  <image source="マフィア.png" width="96" height="128"/>
+ </tileset>
+ <layer name="Base" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmUtuE0EQht2ao4aNkbLhJTmsQszDZgchUpIdCQSPxIaExw3IDcgNyA3Ikh55SvwU1U9XD7FnSvo03eWa6unfPdNS12g02GCDlbYPlZuzQB99dO2bfavcfA300UfXvtll5eZ7oI8+uvbNriqZHy3YRh/G4bVvdl3J/GzBNvowDq99s5tK5lcLttGHcXjldubYd9YdmtOuGY2eWPYsU8tTyzMjv6uI6z5uzb4i7TvrDs0pVj/ej9Wv2VekfWfdoTlxHd5YDsy/3zrej9UvtI7XFZqTSz/+reP9WP2kPWcToDm59HtueWGZWeaWiWXH8rj1xeon7TmbAM2ptH5bZskdQPLlop0rNed2q0HDfgH97pslDwDJl4t2rtScr4ES+u1BDCH5ctHOlZrzBDi1vLO8L6BfDlwjLbRy0rzvmT/r9aHlUQH9pP/ZtZZuk0Yu8H2VdNDSD78NBO+jXwvtfD5eMT01v3/4bSB4H/1aaOfz8RbG1P7+nZslFwDvo18L7Xw+PsGYny1fFPXD89WuuHSMmfocMfGucbT0c53BloSfefjOgkN5cmKuFPVzncGWhJ95+M6CQ3lyYq4V9XOdwZaEn3n4zoJDeXJibhT1G1vf3RapPWZ+HhdiHCA1X8x4oedv+AiaraIf3bdj5PaE+XlciEmA1Hwx44WenzSj9tEK+tH6nRu5PWN+HhdiFiA1X8x4oeeft5pRu7Yctr7jRP0O4d5NopnTwrjnV7P2or3mvL8p+N6JEmiMQ1rWHig25/1NwfdOlEBjnEWAGmJT9aP1HcuR6fad1xinToh9mahf6L+R/itsl0ZjnJQcqfvHlvm7ppBLao6uxpRieA1F+n07Uj9eU8glNUdXY0oxvIbCf0fdQvph3Cqk5uhqTCmG11D476gf4Tt/Tj0L5s8yzcjhi8fcqTn4s+2DfyrcJ+XA82oid/2VqlP8jzWfm3uV9VeqTqGRt2QNha9RqptwOzH+WkSpOoVG3pI1lFPWproJt3Pjr0WUqlNo5C1ZQ7lgbaqbDDbYbbDfJFicoQ==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0DtOgkEYRuFJoBPEHkR78dILSi+KPRfdiEvQHcgOdAe6A1mTZ3pIJn6JP7+eJznNTPPlTUmS9Jc900vVR9TYK62qPqLG3ui96iNq7IM+t/ztNVNqUZv2qUMHzd+8bvd90XrD+6SRUpetenRIfTqiY/crkvc7YasBndIZndOF+xXJ+12y1ZBGdEXXNHa/Inm/G7aa0C3d0ZTu3a9I3m/GVnNa0JIe6NH9iuT99HPuF+N+Me4X434x7hfjfjHuF+N+Me4X434x7hfjfpIk6b96so1JkiRJ0q74BoFUNpo=
+  </data>
+ </layer>
+ <layer name="MonoUe" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJwzAUBUHf1H8jaSRJI3ETuftikpWNwTPwCtDyQcsC+z5j7u7kfcB7nzdqqF+jX6Pf/17jnH6z/6crbXV/l6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX6Nfo1+jX7Pt9xj2y5jjC1VJoxE=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="30" x="0" y="544" width="1392" height="160"/>
+  <object id="32" x="0" y="112" width="1024" height="304"/>
+  <object id="33" x="1152" y="32" width="144" height="512"/>
+  <object id="34" x="1024" y="32" width="128" height="160"/>
+ </objectgroup>
+ <layer name="death" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0EcNADAQBLFNeRx/xAmLFNkIRpMAAAAAAAAAwD9aJb1OV7xr7HfTPwAAAAAALrEACLQAKw==
+  </data>
+ </layer>
+ <objectgroup name="event">
+  <object id="35" x="896" y="80" width="32" height="32">
+   <properties>
+    <property name="EventID" value="1"/>
+    <property name="trigger" value="0"/>
+   </properties>
+  </object>
+  <object id="37" x="1024" y="384" width="128" height="32">
+   <properties>
+    <property name="EventID" value="2"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="38" x="0" y="416" width="32" height="128">
+   <properties>
+    <property name="EventID" value="3"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="mafia2" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1zsOwkAMBNBtgOWPBE24QtLA/Q/HCG2PyBaI6L3GbqYZyYVLAQAAAJbmWku51e9zYzLTjNzSDOngPqOHRzJP/dHJ/fZxv/yS++3jfgEAAP7TKj/Zuv1lm8za9m3mzr/20T4dHVpPx8xT28+ZF/0BAADA2wtQqQTb
+  </data>
+ </layer>
+ <layer name="hide2" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKgDAQBMDL27XRVht9rSnTBCQRhThTXXPNwrIRAAAAwGimFDGn9/5Gs+UM9oYcWv+gpL999Jcv6W8f/QXgSUvehtU+NDtydqf8ALip3N3aTV25u7UbAAAA/u4C/NgWVQ==
+  </data>
+ </layer>
+</map>
