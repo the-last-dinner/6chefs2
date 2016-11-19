@@ -527,10 +527,10 @@
             }
         },
         "addProfile": {
-            "require": ["toCharaID", "fromCharaID"],
+            "require": ["charaID", "infoID"],
             "member": {
-                "toCharaID": ["stoi"],
-                "fromCharaID": ["stoi"]
+                "charaID": ["stoi"],
+                "infoID": ["stoi"]
             }
         },
         "changeChapter": {
