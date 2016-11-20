@@ -304,7 +304,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_0.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_4.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -340,10 +340,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-66.0000" RightMargin="-34.0000" TopMargin="-66.0000" BottomMargin="-34.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-2.0000" RightMargin="-98.0000" TopMargin="-66.0000" BottomMargin="-34.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-16.0000" Y="16.0000" />
+            <Position X="48.0000" Y="16.0000" />
             <Scale ScaleX="0.3000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -351,10 +351,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect1" CanEdit="False" ActionTag="-717259485" VisibleForFrame="False" Tag="7" RotationSkewX="45.0000" RotationSkewY="45.0000" IconVisible="False" LeftMargin="-32.0000" RightMargin="-32.0000" TopMargin="-40.0000" BottomMargin="-24.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect1" CanEdit="False" ActionTag="-717259485" VisibleForFrame="False" Tag="7" RotationSkewX="245.0000" RotationSkewY="245.0000" IconVisible="False" LeftMargin="6.0000" RightMargin="-70.0000" TopMargin="-40.0000" BottomMargin="-24.0000" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="8.0000" />
+            <Position X="38.0000" Y="8.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -362,10 +362,10 @@
             <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_1.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect2" CanEdit="False" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-32.0000" RightMargin="-32.0000" TopMargin="-40.0000" BottomMargin="-24.0000" FlipX="True" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect2" CanEdit="False" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" RotationSkewX="-160.0000" RotationSkewY="-160.0000" IconVisible="False" LeftMargin="-2.0000" RightMargin="-62.0000" TopMargin="-42.0000" BottomMargin="-22.0000" FlipX="True" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="8.0000" />
+            <Position X="30.0000" Y="10.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
