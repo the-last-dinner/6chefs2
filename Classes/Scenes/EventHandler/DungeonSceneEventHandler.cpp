@@ -32,3 +32,9 @@ void DungeonSceneEventHandler::onLostMainCharacterHP()
     _scene->onExitDungeon();
     Director::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
 }
+
+// バトル開始
+void DungeonSceneEventHandler::onBattleStart()
+{
+    
+}

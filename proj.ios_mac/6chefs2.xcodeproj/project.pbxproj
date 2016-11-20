@@ -387,6 +387,12 @@
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
 		DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
+		DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */; };
+		DCCDBC1A1DE181D50026AF5C /* PlayerControlState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */; };
+		DCCDBC1D1DE186FF0026AF5C /* SearchState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1B1DE186FF0026AF5C /* SearchState.cpp */; };
+		DCCDBC1E1DE186FF0026AF5C /* SearchState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1B1DE186FF0026AF5C /* SearchState.cpp */; };
+		DCCDBC211DE1882E0026AF5C /* BattleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */; };
+		DCCDBC221DE1882E0026AF5C /* BattleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */; };
 		DCD9E5411D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCD9E5421D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
@@ -774,6 +780,12 @@
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
 		DCCA52551C945625004769E1 /* KeyconfigMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigMenuLayer.h; sourceTree = "<group>"; };
+		DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerControlState.cpp; path = PlayerControlState/PlayerControlState.cpp; sourceTree = "<group>"; };
+		DCCDBC181DE181D50026AF5C /* PlayerControlState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerControlState.h; path = PlayerControlState/PlayerControlState.h; sourceTree = "<group>"; };
+		DCCDBC1B1DE186FF0026AF5C /* SearchState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SearchState.cpp; path = PlayerControlState/SearchState.cpp; sourceTree = "<group>"; };
+		DCCDBC1C1DE186FF0026AF5C /* SearchState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchState.h; path = PlayerControlState/SearchState.h; sourceTree = "<group>"; };
+		DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleState.cpp; path = PlayerControlState/BattleState.cpp; sourceTree = "<group>"; };
+		DCCDBC201DE1882E0026AF5C /* BattleState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleState.h; path = PlayerControlState/BattleState.h; sourceTree = "<group>"; };
 		DCD9E53F1D684C4B002CA51D /* CSNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSNode.cpp; path = CocosStudio/CSNode.cpp; sourceTree = "<group>"; };
 		DCD9E5401D684C4B002CA51D /* CSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNode.h; path = CocosStudio/CSNode.h; sourceTree = "<group>"; };
 		DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigEventListenerLayer.cpp; sourceTree = "<group>"; };
@@ -1428,6 +1440,7 @@
 				DC0391531C871E1000C50E8E /* GameTask.h */,
 				DC0391541C871E1000C50E8E /* PlayerControlTask.cpp */,
 				DC0391551C871E1000C50E8E /* PlayerControlTask.h */,
+				DCCDBC161DE181A10026AF5C /* PlayerControlState */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -1562,6 +1575,19 @@
 				DCA4495C1DA0EAA0005C5F9A /* DungeonSceneEventHandler.h */,
 			);
 			name = EventHandler;
+			sourceTree = "<group>";
+		};
+		DCCDBC161DE181A10026AF5C /* PlayerControlState */ = {
+			isa = PBXGroup;
+			children = (
+				DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */,
+				DCCDBC181DE181D50026AF5C /* PlayerControlState.h */,
+				DCCDBC1B1DE186FF0026AF5C /* SearchState.cpp */,
+				DCCDBC1C1DE186FF0026AF5C /* SearchState.h */,
+				DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */,
+				DCCDBC201DE1882E0026AF5C /* BattleState.h */,
+			);
+			name = PlayerControlState;
 			sourceTree = "<group>";
 		};
 		DCD9E53E1D684BDD002CA51D /* CocosStudio */ = {
@@ -1793,6 +1819,7 @@
 				26460B911D72EBB600F0336C /* MapData.cpp in Sources */,
 				2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
+				DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391EB1C871E1000C50E8E /* ItemObject.cpp in Sources */,
@@ -1837,6 +1864,7 @@
 				DC7F6E1B1D96736A007AE8B5 /* WalkCommand.cpp in Sources */,
 				DC0391CF1C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
+				DCCDBC211DE1882E0026AF5C /* BattleState.cpp in Sources */,
 				DC0391991C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC0391DF1C871E1000C50E8E /* SoundManager.cpp in Sources */,
 				DC0391C31C871E1000C50E8E /* NumberSelector.cpp in Sources */,
@@ -1856,6 +1884,7 @@
 				DC0391B71C871E1000C50E8E /* LoadingLayer.cpp in Sources */,
 				DC668C2F1D9671CE00ED569C /* MoveCommand.cpp in Sources */,
 				DC0391A31C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
+				DCCDBC1D1DE186FF0026AF5C /* SearchState.cpp in Sources */,
 				DC03922D1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
 				DC03921B1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				26460B8E1D72EBB600F0336C /* CharacterMasterData.cpp in Sources */,
@@ -1897,6 +1926,7 @@
 				2672D5051D72F79700AC0E96 /* MasterConfigData.cpp in Sources */,
 				DC03919A1C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC03924C1C871E1000C50E8E /* StaminaBar.cpp in Sources */,
+				DCCDBC1A1DE181D50026AF5C /* PlayerControlState.cpp in Sources */,
 				DC0392041C871E1000C50E8E /* PathObject.cpp in Sources */,
 				DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
 				DC0391DE1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
@@ -1924,6 +1954,7 @@
 				DC0391C01C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26460B9A1D72ED8900F0336C /* CharacterMasterData.cpp in Sources */,
 				DC5D1D581D84FA7D0034DD8F /* CollisionBox.cpp in Sources */,
+				DCCDBC1E1DE186FF0026AF5C /* SearchState.cpp in Sources */,
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DC8916CE1DB31505005BC516 /* EventQueue.cpp in Sources */,
@@ -2028,6 +2059,7 @@
 				DC03918E1C871E1000C50E8E /* Light.cpp in Sources */,
 				DC0391721C871E1000C50E8E /* AppDelegate.cpp in Sources */,
 				DC0392461C871E1000C50E8E /* TrophyNotification.cpp in Sources */,
+				DCCDBC221DE1882E0026AF5C /* BattleState.cpp in Sources */,
 				DC03921C1C871E1000C50E8E /* BaseScene.cpp in Sources */,
 				DCA449661DA21698005C5F9A /* Stamina.cpp in Sources */,
 			);
