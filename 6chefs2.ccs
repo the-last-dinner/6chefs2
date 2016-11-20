@@ -131,12 +131,41 @@
             <PlistImageFile Name="ranmaru_s_1.png" Key="ranmaru_s_1.png" />
             <PlistImageFile Name="ranmaru_s_2.png" Key="ranmaru_s_2.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="yuki.png" PListFile="yuki.plist" Name=".yuki_PList.Dir">
+            <PlistImageFile Name="swim_yuki_0_0.png" Key="swim_yuki_0_0.png" />
+            <PlistImageFile Name="swim_yuki_0_1.png" Key="swim_yuki_0_1.png" />
+            <PlistImageFile Name="swim_yuki_0_2.png" Key="swim_yuki_0_2.png" />
+            <PlistImageFile Name="swim_yuki_1_0.png" Key="swim_yuki_1_0.png" />
+            <PlistImageFile Name="swim_yuki_1_1.png" Key="swim_yuki_1_1.png" />
+            <PlistImageFile Name="swim_yuki_1_2.png" Key="swim_yuki_1_2.png" />
+            <PlistImageFile Name="swim_yuki_2_0.png" Key="swim_yuki_2_0.png" />
+            <PlistImageFile Name="swim_yuki_2_1.png" Key="swim_yuki_2_1.png" />
+            <PlistImageFile Name="swim_yuki_2_2.png" Key="swim_yuki_2_2.png" />
+            <PlistImageFile Name="swim_yuki_3_0.png" Key="swim_yuki_3_0.png" />
+            <PlistImageFile Name="swim_yuki_3_1.png" Key="swim_yuki_3_1.png" />
+            <PlistImageFile Name="swim_yuki_3_2.png" Key="swim_yuki_3_2.png" />
+            <PlistImageFile Name="yuki_0_0.png" Key="yuki_0_0.png" />
+            <PlistImageFile Name="yuki_0_1.png" Key="yuki_0_1.png" />
+            <PlistImageFile Name="yuki_0_2.png" Key="yuki_0_2.png" />
+            <PlistImageFile Name="yuki_1_0.png" Key="yuki_1_0.png" />
+            <PlistImageFile Name="yuki_1_1.png" Key="yuki_1_1.png" />
+            <PlistImageFile Name="yuki_1_2.png" Key="yuki_1_2.png" />
+            <PlistImageFile Name="yuki_2_0.png" Key="yuki_2_0.png" />
+            <PlistImageFile Name="yuki_2_1.png" Key="yuki_2_1.png" />
+            <PlistImageFile Name="yuki_2_2.png" Key="yuki_2_2.png" />
+            <PlistImageFile Name="yuki_3_0.png" Key="yuki_3_0.png" />
+            <PlistImageFile Name="yuki_3_1.png" Key="yuki_3_1.png" />
+            <PlistImageFile Name="yuki_3_2.png" Key="yuki_3_2.png" />
+            <PlistImageFile Name="yuki_s_0.png" Key="yuki_s_0.png" />
+            <PlistImageFile Name="yuki_s_1.png" Key="yuki_s_1.png" />
+          </PlistImageFolder>
           <Project Name="daigoro.csd" Type="Node" />
           <Project Name="dandan.csd" Type="Node" />
           <Project Name="magoichi.csd" Type="Node" />
           <Project Name="manaka.csd" Type="Node" />
           <Project Name="nadeshiko.csd" Type="Node" />
           <Project Name="ranmaru.csd" Type="Node" />
+          <Project Name="yuki.csd" Type="Node" />
         </Folder>
         <Folder Name="detection">
           <PlistImageFolder Image="detection_box.png" PListFile="detection_box.plist" Name=".detection_box_PList.Dir">
