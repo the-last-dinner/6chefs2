@@ -2,7 +2,7 @@
   <PropertyGroup Name="kyoujin" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="273" Speed="1.0000" ActivedAnimationName="attack_left">
+      <Animation Duration="353" Speed="1.0000" ActivedAnimationName="attack_right">
         <Timeline ActionTag="-315007894" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="260" Tween="False" Value="True" />
@@ -107,10 +107,20 @@
           <TextureFrame FrameIndex="262" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_3_3.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
+          <TextureFrame FrameIndex="310" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_0.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="340" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_3.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="342" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
         </Timeline>
         <Timeline ActionTag="662120565" Property="Position">
           <PointFrame FrameIndex="180" Tween="False" X="16.0000" Y="-16.0000" />
-          <PointFrame FrameIndex="260" X="16.0000" Y="32.0000">
+          <PointFrame FrameIndex="260" Tween="False" X="16.0000" Y="32.0000" />
+          <PointFrame FrameIndex="340" X="-16.0000" Y="16.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -125,24 +135,67 @@
           <BoolFrame FrameIndex="193" Tween="False" Value="False" />
           <BoolFrame FrameIndex="260" Tween="False" Value="True" />
           <BoolFrame FrameIndex="273" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="340" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="353" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-717259485" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="182" Tween="False" Value="True" />
           <BoolFrame FrameIndex="193" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="340" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="351" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-717259485" Property="Position">
-          <PointFrame FrameIndex="182" X="16.0000" Y="-8.0000">
+          <PointFrame FrameIndex="182" Tween="False" X="16.0000" Y="-8.0000" />
+          <PointFrame FrameIndex="193" Tween="False" X="16.0000" Y="-8.0000" />
+          <PointFrame FrameIndex="340" Tween="False" X="0.0000" Y="8.0000" />
+          <PointFrame FrameIndex="351" X="0.0000" Y="8.0000">
             <EasingData Type="0" />
           </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="-717259485" Property="Scale">
+          <ScaleFrame FrameIndex="182" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="193" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="351" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-717259485" Property="RotationSkew">
+          <ScaleFrame FrameIndex="182" Tween="False" X="0.0000" Y="0.0000" />
+          <ScaleFrame FrameIndex="193" Tween="False" X="0.0000" Y="0.0000" />
+          <ScaleFrame FrameIndex="340" Tween="False" X="45.0000" Y="45.0000" />
+          <ScaleFrame FrameIndex="351" X="45.0000" Y="45.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="-1749614145" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="180" Tween="False" Value="True" />
           <BoolFrame FrameIndex="191" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="342" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="353" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-1749614145" Property="RotationSkew">
-          <ScaleFrame FrameIndex="180" X="-45.0000" Y="-45.0000">
+          <ScaleFrame FrameIndex="180" Tween="False" X="-45.0000" Y="-45.0000" />
+          <ScaleFrame FrameIndex="191" Tween="False" X="-45.0000" Y="-45.0000" />
+          <ScaleFrame FrameIndex="342" Tween="False" X="0.0000" Y="0.0000" />
+          <ScaleFrame FrameIndex="353" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-1749614145" Property="Position">
+          <PointFrame FrameIndex="180" Tween="False" X="16.0000" Y="0.0000" />
+          <PointFrame FrameIndex="191" Tween="False" X="16.0000" Y="0.0000" />
+          <PointFrame FrameIndex="342" Tween="False" X="0.0000" Y="8.0000" />
+          <PointFrame FrameIndex="353" X="0.0000" Y="8.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="-1749614145" Property="Scale">
+          <ScaleFrame FrameIndex="180" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="191" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="342" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="353" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -181,6 +234,9 @@
         <AnimationInfo Name="attack_left" StartIndex="310" EndIndex="385">
           <RenderColor A="150" R="240" G="128" B="128" />
         </AnimationInfo>
+        <AnimationInfo Name="attack_right" StartIndex="390" EndIndex="465">
+          <RenderColor A="150" R="144" G="238" B="144" />
+        </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
@@ -215,7 +271,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_3_3.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -251,10 +307,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-82.0000" BottomMargin="-18.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-66.0000" RightMargin="-34.0000" TopMargin="-66.0000" BottomMargin="-34.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="32.0000" />
+            <Position X="-16.0000" Y="16.0000" />
             <Scale ScaleX="0.3000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -262,10 +318,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect1" CanEdit="False" ActionTag="-717259485" VisibleForFrame="False" Tag="7" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-24.0000" BottomMargin="-40.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect1" CanEdit="False" ActionTag="-717259485" VisibleForFrame="False" Tag="7" RotationSkewX="45.0000" RotationSkewY="45.0000" IconVisible="False" LeftMargin="-32.0000" RightMargin="-32.0000" TopMargin="-40.0000" BottomMargin="-24.0000" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="-8.0000" />
+            <Position Y="8.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -273,10 +329,10 @@
             <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_1.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect2" CanEdit="False" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-32.0000" BottomMargin="-32.0000" FlipX="True" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect2" CanEdit="False" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-32.0000" RightMargin="-32.0000" TopMargin="-40.0000" BottomMargin="-24.0000" FlipX="True" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" />
+            <Position Y="8.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
