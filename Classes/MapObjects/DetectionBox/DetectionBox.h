@@ -31,6 +31,7 @@ protected:
     void setOriginInfo(const Rect& originRect);
 public:
     MapObject* getMOParent() const;
+    bool isEnabled() const;
 public:
     virtual void startDetection();
     virtual void update(float delta);

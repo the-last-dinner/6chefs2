@@ -66,6 +66,7 @@ public:
     // CSNode
     void playAnimation(const string& name, float speed, bool loop = false);
     void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
+    void playAnimation(const string& name, function<void(Character*)> callback);
     
     // TerrainState
     void stamp(const Direction direction, const float ratio = 1.0f);
@@ -108,6 +109,7 @@ public:
         static string getTurn(const Direction& direction);
         static string getWalk(const Direction& direction);
         static string getSwim(const Direction& direction);
+        static string getAttack(const Direction& direction, const string& name);
     };
 };
 

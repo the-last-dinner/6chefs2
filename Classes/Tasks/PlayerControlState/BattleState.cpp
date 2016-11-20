@@ -8,6 +8,9 @@
 
 #include "Tasks/PlayerControlState/BattleState.h"
 
+#include "MapObjects/Character.h"
+#include "MapObjects/Party.h"
+
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
 
@@ -25,5 +28,6 @@ bool BattleState::init()
 // 決定キーが押された時
 void BattleState::onEnterKeyPressed(Party* party)
 {
-    
+    Character* mainCharacter { party->getMainCharacter() };
+    mainCharacter->playAnimationIfNotPlaying(Character::AnimationName::getAttack(mainCharacter->getDirection(), "attack"));
 }

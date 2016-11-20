@@ -184,15 +184,19 @@ void Character::lookAround(function<void()> callback, Direction direction)
 void Character::playAnimation(const string& name, float speed, bool loop)
 {
     if (!_csNode) return;
-    
     _csNode->play(name, speed, loop);
 }
 
 void Character::playAnimationIfNotPlaying(const string& name, float speed)
 {
     if (!_csNode) return;
-    
     _csNode->playIfNotPlaying(name, speed);
+}
+
+void Character::playAnimation(const string& name, function<void(Character*)> callback)
+{
+    if (!_csNode) return;
+    _csNode->play(name, [this, callback]{ callback(this); });
 }
 
 #pragma mark -
@@ -383,4 +387,9 @@ string Character::AnimationName::getWalk(const Direction& direction)
 string Character::AnimationName::getSwim(const Direction& direction)
 {
     return "swim_" + direction.getDowncaseString();
+}
+
+string Character::AnimationName::getAttack(const Direction& direction, const string& name)
+{
+    return name + "_"+ direction.getDowncaseString();
 }
