@@ -2,39 +2,8 @@
   <PropertyGroup Name="kyoujin" Type="Plist" ID="caf77606-d793-484c-aff3-432d34afb7bd" Version="3.10.0.0" />
   <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_0_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_0_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_0_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_1_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_1_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_1_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_2_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_2_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_2_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_3_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_3_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin1_3_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_3.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_4.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_5.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_0_6.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_1_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_1_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_1_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_1_3.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_1_4.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_2_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_2_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_2_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_2_3.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_2_4.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_3_0.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_3_1.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_3_2.png" />
-      <FilePathData Path="character/plist/kyoujin/kyoujin_a_3_3.png" />
+      <FilePathData Path="character/plist/kyoujin/effect_1.png" />
+      <FilePathData Path="character/plist/kyoujin/effect_2.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>

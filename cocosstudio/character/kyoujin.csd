@@ -2,7 +2,7 @@
   <PropertyGroup Name="kyoujin" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="171" Speed="1.0000" ActivedAnimationName="attack_1_down">
+      <Animation Duration="193" Speed="1.0000" ActivedAnimationName="attack_1_down">
         <Timeline ActionTag="-1108922162" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/kyoujin.plist" />
@@ -67,9 +67,25 @@
           <TextureFrame FrameIndex="150" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="171" Tween="False">
+          <TextureFrame FrameIndex="180" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_4.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="182" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_6.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
+        </Timeline>
+        <Timeline ActionTag="-1108922162" Property="BlendFunc">
+          <BlendFuncFrame FrameIndex="180" Tween="False" Src="1" Dst="771" />
+        </Timeline>
+        <Timeline ActionTag="-717259485" Property="VisibleForFrame">
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="182" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="193" Tween="False" Value="False" />
+        </Timeline>
+        <Timeline ActionTag="-1749614145" Property="VisibleForFrame">
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="180" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="191" Tween="False" Value="False" />
         </Timeline>
       </Animation>
       <AnimationList>
@@ -97,22 +113,22 @@
         <AnimationInfo Name="walk_right" StartIndex="115" EndIndex="145">
           <RenderColor A="255" R="60" G="179" B="113" />
         </AnimationInfo>
-        <AnimationInfo Name="attack_1_down" StartIndex="150" EndIndex="180">
-          <RenderColor A="150" R="238" G="130" B="238" />
+        <AnimationInfo Name="attack_1_down" StartIndex="150" EndIndex="195">
+          <RenderColor A="255" R="238" G="130" B="238" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" ActionTag="-1108922162" Tag="3" IconVisible="False" RightMargin="-32.0000" TopMargin="-32.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="32.0000" />
+          <AbstractNodeData Name="sprite" ActionTag="-1108922162" Tag="3" IconVisible="False" LeftMargin="-7.0000" RightMargin="-39.0000" TopMargin="-39.0000" BottomMargin="-7.0000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="42.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="16.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_0.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_6.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -137,7 +153,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" Visible="False" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -146,6 +162,28 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="attack_effect1" ActionTag="-717259485" VisibleForFrame="False" Tag="7" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-32.0000" BottomMargin="-32.0000" ctype="SpriteObjectData">
+            <Size X="64.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="16.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_1.png" Plist="character/kyoujin.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="attack_effect2" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-32.0000" BottomMargin="-32.0000" ctype="SpriteObjectData">
+            <Size X="64.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="16.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_2.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

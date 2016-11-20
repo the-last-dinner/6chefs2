@@ -7,7 +7,7 @@
 			<key>character/plist/kyoujin/kyoujin1_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,42},{32,32}}</string>
+				<string>{{0,170},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -18,7 +18,7 @@
 			<key>character/plist/kyoujin/kyoujin1_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,74},{32,32}}</string>
+				<string>{{0,202},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -29,7 +29,7 @@
 			<key>character/plist/kyoujin/kyoujin1_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,106},{32,32}}</string>
+				<string>{{0,234},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -40,7 +40,7 @@
 			<key>character/plist/kyoujin/kyoujin1_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,138},{32,32}}</string>
+				<string>{{0,266},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -51,7 +51,7 @@
 			<key>character/plist/kyoujin/kyoujin1_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,170},{32,32}}</string>
+				<string>{{0,298},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -62,7 +62,7 @@
 			<key>character/plist/kyoujin/kyoujin1_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,202},{32,32}}</string>
+				<string>{{0,330},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -73,7 +73,7 @@
 			<key>character/plist/kyoujin/kyoujin1_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,234},{32,32}}</string>
+				<string>{{0,362},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -84,7 +84,7 @@
 			<key>character/plist/kyoujin/kyoujin1_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,266},{32,32}}</string>
+				<string>{{0,394},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -95,7 +95,7 @@
 			<key>character/plist/kyoujin/kyoujin1_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,298},{32,32}}</string>
+				<string>{{0,426},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -106,7 +106,7 @@
 			<key>character/plist/kyoujin/kyoujin1_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,330},{32,32}}</string>
+				<string>{{0,458},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -117,7 +117,7 @@
 			<key>character/plist/kyoujin/kyoujin1_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,362},{32,32}}</string>
+				<string>{{0,490},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -128,7 +128,7 @@
 			<key>character/plist/kyoujin/kyoujin1_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,394},{32,32}}</string>
+				<string>{{0,522},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -139,7 +139,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,426},{32,32}}</string>
+				<string>{{0,554},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -150,7 +150,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,458},{32,32}}</string>
+				<string>{{0,586},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -161,7 +161,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,490},{32,32}}</string>
+				<string>{{0,618},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -172,7 +172,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,522},{32,32}}</string>
+				<string>{{0,650},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -183,7 +183,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_4.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,554},{32,32}}</string>
+				<string>{{0,682},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -194,7 +194,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_5.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,586},{32,32}}</string>
+				<string>{{0,714},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -205,7 +205,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_0_6.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{32,42}}</string>
+				<string>{{0,128},{32,42}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -216,7 +216,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,618},{32,32}}</string>
+				<string>{{0,746},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -227,7 +227,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,650},{32,32}}</string>
+				<string>{{0,778},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -238,7 +238,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,682},{32,32}}</string>
+				<string>{{0,810},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -249,7 +249,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_1_3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,714},{32,32}}</string>
+				<string>{{0,842},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -260,7 +260,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_1_4.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,746},{32,32}}</string>
+				<string>{{0,874},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -271,7 +271,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,778},{32,32}}</string>
+				<string>{{0,906},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -282,7 +282,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,810},{32,32}}</string>
+				<string>{{0,938},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -293,7 +293,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,842},{32,32}}</string>
+				<string>{{0,970},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -304,7 +304,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_2_3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,874},{32,32}}</string>
+				<string>{{32,128},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -315,7 +315,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_2_4.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,906},{32,32}}</string>
+				<string>{{32,160},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -326,7 +326,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,938},{32,32}}</string>
+				<string>{{32,192},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -337,7 +337,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,970},{32,32}}</string>
+				<string>{{32,224},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -348,7 +348,7 @@
 			<key>character/plist/kyoujin/kyoujin_a_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{32,0},{32,32}}</string>
+				<string>{{32,256},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -359,13 +359,35 @@
 			<key>character/plist/kyoujin/kyoujin_a_3_3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{64,0},{32,32}}</string>
+				<string>{{32,288},{32,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false />
 				<key>sourceSize</key>
 				<string>{32,32}</string>
+			</dict>
+			<key>character/plist/kyoujin/effect_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{64,64}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{64,64}</string>
+			</dict>
+			<key>character/plist/kyoujin/effect_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,64},{64,64}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{64,64}</string>
 			</dict>
 		</dict>
 		<key>metadata</key>
@@ -377,12 +399,12 @@
 			<key>realTextureFileName</key>
 			<string>kyoujin.png</string>
 			<key>size</key>
-			<string>{128,1024}</string>
+			<string>{64,1024}</string>
 		</dict>
 		<key>texture</key>
 		<dict>
 			<key>width</key>
-			<integer>128</integer>
+			<integer>64</integer>
 			<key>height</key>
 			<integer>1024</integer>
 		</dict>
