@@ -1,0 +1,32 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="daigoro" Type="Plist" ID="38c734c4-647e-46c8-b256-3d572947e772" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="character/plist/daigoro/daigoro_0_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_0_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_0_2.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_1_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_1_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_1_2.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_2_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_2_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_2_2.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_3_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_3_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_3_2.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_0_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_0_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_1_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_1_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_2_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_2_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_3_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_a_3_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_s_0.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_s_1.png" />
+      <FilePathData Path="character/plist/daigoro/daigoro_s_2.png" />
+      <FilePathData Path="character/plist/daigoro/effect_kick.png" />
+    </ImageFiles>
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>
