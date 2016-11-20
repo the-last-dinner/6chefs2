@@ -31,7 +31,7 @@ struct CharacterData
     string getStandFileName() const { return CsvDataManager::getInstance()->getCharacterData()->getFileName(this->chara_id) + "_s_1.png"; }
     
     // csbファイルパス
-    string getCsbFilePath() const { return "character/" + CsvDataManager::getInstance()->getCharacterData()->getFileName(this->chara_id) + ".csb"; }
+    string getCsbFilePath() const { return "character/" + CsvDataManager::getInstance()->getCharacterData()->getFileName(5) + ".csb"; }
 };
 
 #endif /* CharacterData_h */

@@ -389,6 +389,25 @@ void MapObjectList::onEventFinished()
 }
 
 #pragma mark -
+#pragma mark Battle
+
+// バトル開始時
+void MapObjectList::onBattleStart()
+{
+    for (auto enemy : _enemies) {
+        enemy->onBattleStart();
+    }
+}
+
+// バトル終了時
+void MapObjectList::onBattleFinished()
+{
+    for (auto enemy : _enemies) {
+        enemy->onBattleFinished();
+    }
+}
+
+#pragma mark -
 #pragma mark Update
 
 void MapObjectList::update(float delta)

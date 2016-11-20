@@ -18,9 +18,6 @@
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 
-// 定数
-const string Enemy::CS_ATTACK_NODE_NAME { "attack" };
-
 // コンストラクタ
 Enemy::Enemy() { FUNCLOG }
 
@@ -107,7 +104,6 @@ float Enemy::calcSummonDelay() const
 void Enemy::onEnterMap()
 {
     Character::onEnterMap();
-    
     _objectList->getAttackDetector()->addAttackBox(_attackBox);
 }
 
@@ -115,6 +111,19 @@ void Enemy::onEnterMap()
 void Enemy::onExitMap()
 {
     Character::onExitMap();
-    
     _objectList->getAttackDetector()->removeAttackBox(_attackBox);
+}
+
+// バトル開始時
+void Enemy::onBattleStart()
+{
+    Character::onBattleStart();
+    _objectList->getAttackDetector()->removeAttackBox(_attackBox);
+}
+
+// バトル終了時
+void Enemy::onBattleFinished()
+{
+    Character::onBattleFinished();
+    _objectList->getAttackDetector()->addAttackBox(_attackBox);
 }

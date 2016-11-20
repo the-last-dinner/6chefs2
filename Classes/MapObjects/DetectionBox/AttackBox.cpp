@@ -15,7 +15,7 @@ AttackBox::AttackBox() { FUNCLOG }
 AttackBox::~AttackBox() { FUNCLOG }
 
 // 初期化
-bool AttackBox::init(MapObject* parent, Node* origin, function<void()> onAttackHitted)
+bool AttackBox::init(MapObject* parent, Node* origin, function<void(MapObject*)> onAttackHitted)
 {
     if (!DetectionBox::init(parent, origin)) return false;
     
@@ -25,7 +25,7 @@ bool AttackBox::init(MapObject* parent, Node* origin, function<void()> onAttackH
 }
 
 // 初期化
-bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void()> onAttackHitted)
+bool AttackBox::init(MapObject* parent, const Rect& originRect, function<void(MapObject*)> onAttackHitted)
 {
     if (!DetectionBox::init(parent, originRect)) return false;
     
@@ -50,9 +50,9 @@ int AttackBox::getPower() const
 #pragma mark -
 #pragma mark Callback
 
-void AttackBox::onAttackHitted()
+void AttackBox::onAttackHitted(MapObject* hittedObject)
 {
     if (_onAttackHitted) {
-        _onAttackHitted();
+        _onAttackHitted(hittedObject);
     }
 }

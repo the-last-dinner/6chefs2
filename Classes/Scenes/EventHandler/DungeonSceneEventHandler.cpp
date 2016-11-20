@@ -8,8 +8,14 @@
 
 #include "Scenes/EventHandler/DungeonSceneEventHandler.h"
 
+#include "Layers/Dungeon/TiledMapLayer.h"
+
+#include "MapObjects/MapObjectList.h"
+
 #include "Scenes/DungeonScene.h"
 #include "Scenes/GameOverScene.h"
+
+#include "Tasks/PlayerControlTask.h"
 
 // コンストラクタ
 DungeonSceneEventHandler::DungeonSceneEventHandler() {}
@@ -33,8 +39,16 @@ void DungeonSceneEventHandler::onLostMainCharacterHP()
     Director::getInstance()->replaceScene(GameOverScene::create(GameOverScene::Type::BLOOD));
 }
 
-// バトル開始
+// バトル開始時
 void DungeonSceneEventHandler::onBattleStart()
 {
-    
+    _scene->_playerControlTask->onBattleStart();
+    _scene->_mapLayer->getMapObjectList()->onBattleStart();
+}
+
+// バトル終了時
+void DungeonSceneEventHandler::onBattleFinished()
+{
+    _scene->_mapLayer->getMapObjectList()->onBattleFinished();
+    _scene->_playerControlTask->onBattleFinished();
 }

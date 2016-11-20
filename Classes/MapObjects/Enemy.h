@@ -17,10 +17,6 @@ class AttackBox;
 
 class Enemy : public Character
 {
-// 定数
-private:
-    static const string CS_ATTACK_NODE_NAME;
-    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(Enemy, const EnemyData&)
@@ -46,6 +42,8 @@ public:
 public:
     virtual void onEnterMap() override;
     virtual void onExitMap() override;
+    virtual void onBattleStart() override;
+    virtual void onBattleFinished() override;
 };
 
 #endif /* defined(__LastSupper__Enemy__) */

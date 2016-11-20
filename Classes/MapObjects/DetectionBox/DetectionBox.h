@@ -30,6 +30,8 @@ protected:
     virtual void setOriginInfo(Node* origin);
     void setOriginInfo(const Rect& originRect);
 public:
+    MapObject* getMOParent() const;
+public:
     virtual void startDetection();
     virtual void update(float delta);
 public:

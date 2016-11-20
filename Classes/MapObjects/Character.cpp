@@ -28,6 +28,8 @@
 const string Character::CS_SPRITE_NODE_NAME { "sprite" };
 const string Character::CS_COLLISION_NODE_NAME { "collision" };
 const string Character::CS_HIT_NODE_NAME { "hit" };
+const string Character::CS_ATTACK_NODE_NAME { "attack" };
+const string Character::CS_BATTLE_ATTACK_NODE_NAME { "battle_attack" };
 
 // コンストラクタ
 Character::Character() { FUNCLOG }
@@ -226,8 +228,14 @@ float Character::getStaminaConsumptionRatio() const
 }
 
 #pragma mark -
-#pragma mark HitBox
+#pragma mark Battle
+// 自分の攻撃が誰かに当たった時
+void Character::onMyAttackHitted(MapObject* hittedObject)
+{
+    
+}
 
+// 攻撃を受けた時
 void Character::onAttackHitted(int damage)
 {
     if (!_hp) return;
@@ -342,6 +350,22 @@ void Character::onEventFinished()
     this->setPaused(false);
     if (_movePattern && _movePattern->isPaused()) _movePattern->resume();
     this->getActionManager()->resumeTarget(this);
+}
+
+// バトル開始時
+void Character::onBattleStart()
+{
+    MapObject::onBattleStart();
+    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
+    _objectList->getAttackDetector()->addAttackBox(box);
+    _battleAttackBox = box;
+}
+
+// バトル終了時
+void Character::onBattleFinished()
+{
+    MapObject::onBattleFinished();
+    _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
 }
 
 #pragma mark -

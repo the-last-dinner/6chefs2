@@ -15,16 +15,19 @@ struct CharacterData;
 class MovePattern;
 class CSNode;
 class HitPoint;
+class AttackBox;
 class HitBox;
 class Sight;
 
 class Character : public MapObject
 {
 // 定数
-private:
+protected:
     static const string CS_SPRITE_NODE_NAME;
     static const string CS_COLLISION_NODE_NAME;
     static const string CS_HIT_NODE_NAME;
+    static const string CS_BATTLE_ATTACK_NODE_NAME;
+    static const string CS_ATTACK_NODE_NAME;
     
 // クラスメソッド
 public:
@@ -32,11 +35,12 @@ public:
     
 // インスタンス変数
 private:
-    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
+    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
 protected:
     function<void(Character*)> _onLostHP { nullptr };
-    MovePattern* _movePattern { nullptr };                                       // 動きのパターン
+    MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
+    AttackBox* _battleAttackBox { nullptr };
     HitBox* _hitBox { nullptr };
     HitPoint* _hp { nullptr };
     Sight* _sight { nullptr };
@@ -69,7 +73,8 @@ public:
     bool consumeStaminaWalking() const;
     float getStaminaConsumptionRatio() const;
     
-    // HitBox
+    // Battle
+    void onMyAttackHitted(MapObject* hittedObject);
     void onAttackHitted(int damage);
     
     // HP
@@ -78,7 +83,8 @@ public:
     
     // Sight
     bool isInSight(MapObject* mapObject);
-    
+
+public:
     // Interface
     virtual void update(float delta) override;
     virtual void onEnterMap() override;
@@ -89,6 +95,8 @@ public:
     virtual void onSearched(MapObject* mainChara) override;
     virtual void onEventStart() override;
     virtual void onEventFinished() override;
+    virtual void onBattleStart() override;
+    virtual void onBattleFinished() override;
     
     friend class TerrainObject;
     friend class TerrainState;

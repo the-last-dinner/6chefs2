@@ -80,7 +80,7 @@ void AttackDetector::update(float delta)
         
         if (!hitBox) continue;
         
-        attackBox->onAttackHitted();
+        attackBox->onAttackHitted(hitBox->getMOParent());
         hitBox->onHitted(attackBox->getPower());
     }
 }

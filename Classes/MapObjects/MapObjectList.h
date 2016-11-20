@@ -101,6 +101,10 @@ public:
     // イベント
     void onEventStart();
     void onEventFinished();
+    
+    // 戦闘
+    void onBattleStart();
+    void onBattleFinished();
 
     // 敵と主人公一行の衝突監視用updateメソッド
     void update(float delta);
