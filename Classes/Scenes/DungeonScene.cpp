@@ -116,7 +116,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     _focusLightLayer = focusLightLayer;
     
     // 環境光レイヤー生成
-    AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::ROOM)};
+    AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::DAY)};
     ambientLightLayer->setLocalZOrder(Priority::AMBIENT_LIGHT);
     this->addChild(ambientLightLayer);
     _ambientLightLayer = ambientLightLayer;
