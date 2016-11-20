@@ -21,7 +21,18 @@ public:
         NORMAL_END = 2,
         TRUE_END = 3
     };
-    
+private:
+    static const string ENDING_FILE;
+    static const char* JSON_MEMBER_TYPE;
+    static const char* JSON_MEMBER_TEXT;
+    static const char* JSON_MEMBER_CREDITS;
+    static const char* JSON_MEMBER_TIME;
+    static const char* JSON_MEMBER_PICTURES;
+    static const char* JSON_MEMBER_NAME;
+    static const char* JSON_MEMBER_BACKGROUND;
+    static const char* JSON_MEMBER_LAST_TEXT;
+    static const char* JSON_MEMBER_LAST_PICTURE;
+    static const char* JSON_MEMBER_BGM;
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(EndingScene, const int)
@@ -30,20 +41,20 @@ private:
     ~EndingScene();
     
 // インスタンス変数
+public:
+    function<void()> onEnterPushedScene {nullptr};
+    function<void()> onExitPushedScene {nullptr};
 private:
-    int end_id {0};
-    
+    int _end_id {0};
 // インスタンスメソッド
 private:
     bool init(const int endingId);
     virtual void onEnter() override;
+     virtual void onExit() override;
     virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
-    void createTrueEnding();
-    void createNormalEnding();
-    void createBadEnding();
+    void createSpecialEnding(rapidjson::Value& json);
+    void createNormalEnding(rapidjson::Value& json);
     void onEndingFinished();
-    void replaceScene();
-    
 };
 
 #endif /* EndingScene_h */

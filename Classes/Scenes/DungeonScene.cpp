@@ -334,8 +334,8 @@ void DungeonScene::onEventFinished()
     DungeonSceneManager::getInstance()->startStopWatch();
 }
 
-// Assertが表示される時
-void DungeonScene::onEnterAssertScene()
+// pushされたシーンが表示される時
+void DungeonScene::onEnterPushedScene()
 {
     // リスナーを停止
     if (_listener) _listener->setEnabled(false);
@@ -344,8 +344,8 @@ void DungeonScene::onEnterAssertScene()
     DungeonSceneManager::getInstance()->pauseStopWatch();
 }
 
-// Assertから戻ってくる特
-void DungeonScene::onExitAssertScene()
+// pushされたシーンから戻ってくる特
+void DungeonScene::onExitPushedScene()
 {
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
