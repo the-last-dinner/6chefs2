@@ -193,10 +193,6 @@
 				{
 					"type":"setLight",
 					"objID":"44"
-				},
-				{
-					"type":"setLight",
-					"objID":"45"
 				}
 			]
 		},

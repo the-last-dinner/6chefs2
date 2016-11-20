@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="131">
- <tileset firstgid="1" name="cyber2-tate" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber2-tate" tilewidth="16" tileheight="16" tilecount="480" columns="16">
   <image source="cyber2-tate.png" trans="aa55ff" width="256" height="480"/>
  </tileset>
- <tileset firstgid="481" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2497" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2497" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2977" name="shituji_0_0" tilewidth="16" tileheight="16">
+ <tileset firstgid="2977" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="shituji_0_0.png" trans="aa55ff" width="32" height="33"/>
  </tileset>
- <tileset firstgid="2981" name="chinaTown" tilewidth="16" tileheight="16">
+ <tileset firstgid="2981" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" width="480" height="1520"/>
  </tileset>
  <layer name="Base" width="44" height="108">
@@ -390,7 +390,7 @@
   </object>
   <object id="130" x="432" y="1632" width="16" height="16">
    <properties>
-    <property name="objID" value="45"/>
+    <property name="objID" value="34"/>
    </properties>
   </object>
  </objectgroup>
