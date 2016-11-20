@@ -2,7 +2,7 @@
   <PropertyGroup Name="kyoujin" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="353" Speed="1.0000" ActivedAnimationName="attack_right">
+      <Animation Duration="433" Speed="1.0000" ActivedAnimationName="attack_right">
         <Timeline ActionTag="-315007894" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="260" Tween="False" Value="True" />
@@ -116,11 +116,26 @@
           <TextureFrame FrameIndex="342" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
+          <TextureFrame FrameIndex="390" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_0.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="420" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_3.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="422" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_4.png" Plist="character/kyoujin.plist" />
+          </TextureFrame>
+        </Timeline>
+        <Timeline ActionTag="-1108922162" Property="BlendFunc">
+          <BlendFuncFrame FrameIndex="390" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="420" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="422" Tween="False" Src="1" Dst="771" />
         </Timeline>
         <Timeline ActionTag="662120565" Property="Position">
           <PointFrame FrameIndex="180" Tween="False" X="16.0000" Y="-16.0000" />
           <PointFrame FrameIndex="260" Tween="False" X="16.0000" Y="32.0000" />
-          <PointFrame FrameIndex="340" X="-16.0000" Y="16.0000">
+          <PointFrame FrameIndex="340" Tween="False" X="-16.0000" Y="16.0000" />
+          <PointFrame FrameIndex="420" X="48.0000" Y="16.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -137,6 +152,8 @@
           <BoolFrame FrameIndex="273" Tween="False" Value="False" />
           <BoolFrame FrameIndex="340" Tween="False" Value="True" />
           <BoolFrame FrameIndex="353" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="420" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="422" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-717259485" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
@@ -144,19 +161,25 @@
           <BoolFrame FrameIndex="193" Tween="False" Value="False" />
           <BoolFrame FrameIndex="340" Tween="False" Value="True" />
           <BoolFrame FrameIndex="351" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="420" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="431" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-717259485" Property="Position">
           <PointFrame FrameIndex="182" Tween="False" X="16.0000" Y="-8.0000" />
           <PointFrame FrameIndex="193" Tween="False" X="16.0000" Y="-8.0000" />
           <PointFrame FrameIndex="340" Tween="False" X="0.0000" Y="8.0000" />
-          <PointFrame FrameIndex="351" X="0.0000" Y="8.0000">
+          <PointFrame FrameIndex="351" Tween="False" X="0.0000" Y="8.0000" />
+          <PointFrame FrameIndex="420" Tween="False" X="38.0000" Y="8.0000" />
+          <PointFrame FrameIndex="431" X="38.0000" Y="8.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
         <Timeline ActionTag="-717259485" Property="Scale">
           <ScaleFrame FrameIndex="182" Tween="False" X="1.0000" Y="1.0000" />
           <ScaleFrame FrameIndex="193" Tween="False" X="1.0000" Y="1.0000" />
-          <ScaleFrame FrameIndex="351" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="351" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="420" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="431" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -164,7 +187,9 @@
           <ScaleFrame FrameIndex="182" Tween="False" X="0.0000" Y="0.0000" />
           <ScaleFrame FrameIndex="193" Tween="False" X="0.0000" Y="0.0000" />
           <ScaleFrame FrameIndex="340" Tween="False" X="45.0000" Y="45.0000" />
-          <ScaleFrame FrameIndex="351" X="45.0000" Y="45.0000">
+          <ScaleFrame FrameIndex="351" Tween="False" X="45.0000" Y="45.0000" />
+          <ScaleFrame FrameIndex="420" Tween="False" X="245.0000" Y="245.0000" />
+          <ScaleFrame FrameIndex="431" X="245.0000" Y="245.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -174,12 +199,16 @@
           <BoolFrame FrameIndex="191" Tween="False" Value="False" />
           <BoolFrame FrameIndex="342" Tween="False" Value="True" />
           <BoolFrame FrameIndex="353" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="422" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="433" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-1749614145" Property="RotationSkew">
           <ScaleFrame FrameIndex="180" Tween="False" X="-45.0000" Y="-45.0000" />
           <ScaleFrame FrameIndex="191" Tween="False" X="-45.0000" Y="-45.0000" />
           <ScaleFrame FrameIndex="342" Tween="False" X="0.0000" Y="0.0000" />
-          <ScaleFrame FrameIndex="353" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="353" Tween="False" X="0.0000" Y="0.0000" />
+          <ScaleFrame FrameIndex="422" Tween="False" X="-160.0000" Y="-160.0000" />
+          <ScaleFrame FrameIndex="433" X="-160.0000" Y="-160.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -187,7 +216,9 @@
           <PointFrame FrameIndex="180" Tween="False" X="16.0000" Y="0.0000" />
           <PointFrame FrameIndex="191" Tween="False" X="16.0000" Y="0.0000" />
           <PointFrame FrameIndex="342" Tween="False" X="0.0000" Y="8.0000" />
-          <PointFrame FrameIndex="353" X="0.0000" Y="8.0000">
+          <PointFrame FrameIndex="353" Tween="False" X="0.0000" Y="8.0000" />
+          <PointFrame FrameIndex="422" Tween="False" X="30.0000" Y="10.0000" />
+          <PointFrame FrameIndex="433" X="30.0000" Y="10.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -195,7 +226,9 @@
           <ScaleFrame FrameIndex="180" Tween="False" X="1.0000" Y="1.0000" />
           <ScaleFrame FrameIndex="191" Tween="False" X="1.0000" Y="1.0000" />
           <ScaleFrame FrameIndex="342" Tween="False" X="1.0000" Y="1.0000" />
-          <ScaleFrame FrameIndex="353" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="353" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="422" Tween="False" X="1.0000" Y="1.0000" />
+          <ScaleFrame FrameIndex="433" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -271,7 +304,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_0.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
