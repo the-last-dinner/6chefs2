@@ -50,8 +50,8 @@ bool PlayerControlTask::init()
 // Stateを設定
 void PlayerControlTask::setCurrentState(PlayerControlState* state)
 {
-    CC_SAFE_RELEASE_NULL(_state);
     CC_SAFE_RETAIN(state);
+    CC_SAFE_RELEASE_NULL(_state);
     _state = state;
 }
 
@@ -78,6 +78,7 @@ void PlayerControlTask::turn(const Key& key, Party* party)
 // 決定キーが押された時
 void PlayerControlTask::onEnterKeyPressed(Party* party)
 {
+    
     if (!this->isControlEnabled()) return;
     
     _state->onEnterKeyPressed(party);

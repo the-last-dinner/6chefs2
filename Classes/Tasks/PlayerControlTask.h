@@ -28,7 +28,7 @@ public:
 
 // インスタンス変数
 private:
-    PlayerControlState* _state;
+    PlayerControlState* _state { nullptr };
     int _riddenEventID { static_cast<int>(EventID::UNDIFINED) };
     bool _enableControl { false };
     
