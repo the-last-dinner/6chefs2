@@ -17,11 +17,19 @@ class BattleData : public Ref
 public:
     CREATE_FUNC(BattleData);
     
-// 初期化
+// インスタンス変数
+private:
+    vector<int> _targetObjectIds {};
+    
+// インスタンスメソッド
 private:
     BattleData();
     ~BattleData();
     bool init();
+    
+public:
+    void setTargetObjectIds(const vector<int>& ids);
+    vector<int> getTargetObjectIds() const;
 };
 
 #endif /* BattleData_h */

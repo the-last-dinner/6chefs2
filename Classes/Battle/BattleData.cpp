@@ -19,3 +19,15 @@ bool BattleData::init()
 {
     return true;
 }
+
+#pragma mark -
+#pragma mark TargetObjectIds
+void BattleData::setTargetObjectIds(const vector<int>& ids)
+{
+    _targetObjectIds = ids;
+}
+
+vector<int> BattleData::getTargetObjectIds() const
+{
+    return _targetObjectIds;
+}
