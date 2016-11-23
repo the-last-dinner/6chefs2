@@ -63,6 +63,7 @@ void AttackCommand::execute(MapObject* target)
 void AttackCommand::onAttackAnimationFinished(Character* character)
 {
     character->beInAttackMotion(false);
+    character->clearCommandQueue();
     this->setDone();
     if (_callback) {
         _callback(character);
