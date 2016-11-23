@@ -394,6 +394,10 @@ void MapObjectList::onEventFinished()
 // バトル開始時
 void MapObjectList::onBattleStart()
 {
+    for (auto obj : _availableObjects) {
+        obj->onBattleStart();
+    }
+    
     for (auto enemy : _enemies) {
         enemy->onBattleStart();
     }
@@ -402,6 +406,10 @@ void MapObjectList::onBattleStart()
 // バトル終了時
 void MapObjectList::onBattleFinished()
 {
+    for (auto obj : _availableObjects) {
+        obj->onBattleFinished();
+    }
+    
     for (auto enemy : _enemies) {
         enemy->onBattleFinished();
     }
