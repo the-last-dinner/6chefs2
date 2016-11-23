@@ -145,7 +145,16 @@ void Character::resumeAi()
 // 方向を指定して歩行させる
 bool Character::walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision)
 {
-    if (!MapObject::moveBy(directions, cb, speed, ignoreCollision)) return false;
+    function<void(bool)> callback { [this, cb](bool canMove){
+        this->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID), CallFunc::create([this] {
+            if (this->isMoving()) return;
+            if (this->isInAttackMotion()) return;
+            this->setDirection(this->getDirection());
+        })));
+        cb(canMove);
+    }};
+    
+    if (!MapObject::moveBy(directions, callback, speed, ignoreCollision)) return false;
     
     // 方向を変える
     Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
