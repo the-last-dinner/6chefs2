@@ -106,8 +106,6 @@
               <Image Name="daigoro_1_1.png" />
               <Image Name="daigoro_1_2.png" />
               <Image Name="daigoro_2_0.png" />
-              <Image Name="daigoro_a_2_0.png" />
-              <Image Name="daigoro_a_2_1.png" />
               <Image Name="daigoro_2_1.png" />
               <Image Name="daigoro_2_2.png" />
               <Image Name="daigoro_3_0.png" />
@@ -117,6 +115,8 @@
               <Image Name="daigoro_a_0_1.png" />
               <Image Name="daigoro_a_1_0.png" />
               <Image Name="daigoro_a_1_1.png" />
+              <Image Name="daigoro_a_2_0.png" />
+              <Image Name="daigoro_a_2_1.png" />
               <Image Name="daigoro_a_3_0.png" />
               <Image Name="daigoro_a_3_1.png" />
               <Image Name="daigoro_s_0.png" />
@@ -187,8 +187,6 @@
               <Image Name="kyoujin1_3_1.png" />
               <Image Name="kyoujin1_3_2.png" />
             </Folder>
-            <PlistInfo Name="daigoro.csi" Type="Plist" />
-            <PlistInfo Name="kyoujin.csi" Type="Plist" />
             <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
               <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
               <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
@@ -226,6 +224,8 @@
               <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
               <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
             </PlistImageFolder>
+            <PlistInfo Name="daigoro.csi" Type="Plist" />
+            <PlistInfo Name="kyoujin.csi" Type="Plist" />
           </Folder>
           <PlistImageFolder Image="ranmaru.png" PListFile="ranmaru.plist" Name=".ranmaru_PList.Dir">
             <PlistImageFile Name="ranmaru_0_0.png" Key="ranmaru_0_0.png" />
