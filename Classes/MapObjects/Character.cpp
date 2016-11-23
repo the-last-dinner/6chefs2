@@ -180,6 +180,13 @@ void Character::lookAround(function<void()> callback, Direction direction)
 #pragma mark -
 #pragma mark CSNode
 
+// アニメーションが再生されているか
+bool Character::isAnimationPlaying() const
+{
+    if (!_csNode) return false;
+    return _csNode->isPlaying();
+}
+
 // アニメーションを再生
 void Character::playAnimation(const string& name, float speed, bool loop)
 {
@@ -233,6 +240,18 @@ float Character::getStaminaConsumptionRatio() const
 
 #pragma mark -
 #pragma mark Battle
+// 攻撃モーション中状態にする
+void Character::beInAttackMotion(bool isInAttackMotion)
+{
+    _isInAttackMotion = isInAttackMotion;
+}
+
+// 攻撃モーション中か
+bool Character::isInAttackMotion() const
+{
+    return _isInAttackMotion;
+}
+
 // 自分の攻撃が誰かに当たった時
 void Character::onMyAttackHitted(MapObject* hittedObject)
 {

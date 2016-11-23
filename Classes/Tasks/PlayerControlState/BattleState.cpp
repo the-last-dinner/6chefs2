@@ -10,6 +10,7 @@
 
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
+#include "MapObjects/Command/AttackCommand.h"
 
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
@@ -29,5 +30,10 @@ bool BattleState::init()
 void BattleState::onEnterKeyPressed(Party* party)
 {
     Character* mainCharacter { party->getMainCharacter() };
-    mainCharacter->playAnimationIfNotPlaying(Character::AnimationName::getAttack(mainCharacter->getDirection(), "attack"));
+    if (mainCharacter->isInAttackMotion()) return;
+    
+    AttackCommand* command { AttackCommand::create() };
+    command->setName(Character::AnimationName::getAttack(mainCharacter->getDirection(), "attack"));
+    
+    mainCharacter->pushCommand(command);
 }

@@ -44,6 +44,7 @@ protected:
     HitBox* _hitBox { nullptr };
     HitPoint* _hp { nullptr };
     Sight* _sight { nullptr };
+    bool _isInAttackMotion { nullptr };
     
 // インスタンスメソッド
 public:
@@ -56,7 +57,6 @@ public:
     
 	virtual void setDirection(const Direction& direction) override;
     virtual void setDirection(const Direction& direction, bool stopAnimation);
-	void setMoving(bool _isMoving);
     void pauseAi();
     void resumeAi();
     bool walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision);
@@ -64,6 +64,7 @@ public:
     void lookAround(function<void()> callback, Direction direction);
     
     // CSNode
+    bool isAnimationPlaying() const;
     void playAnimation(const string& name, float speed, bool loop = false);
     void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
     void playAnimation(const string& name, function<void(Character*)> callback);
@@ -75,6 +76,8 @@ public:
     float getStaminaConsumptionRatio() const;
     
     // Battle
+    void beInAttackMotion(bool isInAttackMotion);
+    bool isInAttackMotion() const;
     void onMyAttackHitted(MapObject* hittedObject);
     void onAttackHitted(int damage);
     

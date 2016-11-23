@@ -393,6 +393,8 @@
 		DCCDBC1E1DE186FF0026AF5C /* SearchState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1B1DE186FF0026AF5C /* SearchState.cpp */; };
 		DCCDBC211DE1882E0026AF5C /* BattleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */; };
 		DCCDBC221DE1882E0026AF5C /* BattleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */; };
+		DCCDBC281DE1AF690026AF5C /* AttackCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */; };
+		DCCDBC291DE1AF690026AF5C /* AttackCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */; };
 		DCD9E5411D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCD9E5421D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
@@ -786,6 +788,8 @@
 		DCCDBC1C1DE186FF0026AF5C /* SearchState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchState.h; path = PlayerControlState/SearchState.h; sourceTree = "<group>"; };
 		DCCDBC1F1DE1882E0026AF5C /* BattleState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleState.cpp; path = PlayerControlState/BattleState.cpp; sourceTree = "<group>"; };
 		DCCDBC201DE1882E0026AF5C /* BattleState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleState.h; path = PlayerControlState/BattleState.h; sourceTree = "<group>"; };
+		DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttackCommand.cpp; path = Command/AttackCommand.cpp; sourceTree = "<group>"; };
+		DCCDBC271DE1AF690026AF5C /* AttackCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackCommand.h; path = Command/AttackCommand.h; sourceTree = "<group>"; };
 		DCD9E53F1D684C4B002CA51D /* CSNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSNode.cpp; path = CocosStudio/CSNode.cpp; sourceTree = "<group>"; };
 		DCD9E5401D684C4B002CA51D /* CSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNode.h; path = CocosStudio/CSNode.h; sourceTree = "<group>"; };
 		DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigEventListenerLayer.cpp; sourceTree = "<group>"; };
@@ -1551,6 +1555,8 @@
 				DC668C2E1D9671CE00ED569C /* MoveCommand.h */,
 				DC7F6E191D96736A007AE8B5 /* WalkCommand.cpp */,
 				DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */,
+				DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */,
+				DCCDBC271DE1AF690026AF5C /* AttackCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1773,6 +1779,7 @@
 				DC03917B1C871E1000C50E8E /* DungeonCameraSceneData.cpp in Sources */,
 				DC0391FB1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				26460B8F1D72EBB600F0336C /* DocumentData.cpp in Sources */,
+				DCCDBC281DE1AF690026AF5C /* AttackCommand.cpp in Sources */,
 				DC0392251C871E1000C50E8E /* GameOverScene.cpp in Sources */,
 				DC03919B1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -1935,6 +1942,7 @@
 				DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
+				DCCDBC291DE1AF690026AF5C /* AttackCommand.cpp in Sources */,
 				DC03918C1C871E1000C50E8E /* Fog.cpp in Sources */,
 				DCA449641DA21698005C5F9A /* Sight.cpp in Sources */,
 				9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
