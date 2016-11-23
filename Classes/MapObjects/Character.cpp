@@ -408,7 +408,7 @@ string Character::AnimationName::getSwim(const Direction& direction)
     return "swim_" + direction.getDowncaseString();
 }
 
-string Character::AnimationName::getAttack(const Direction& direction, const string& name)
+string Character::AnimationName::getAttack(const string& name, const Direction& direction)
 {
     return name + "_"+ direction.getDowncaseString();
 }

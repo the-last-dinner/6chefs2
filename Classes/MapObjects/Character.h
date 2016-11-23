@@ -112,7 +112,7 @@ public:
         static string getTurn(const Direction& direction);
         static string getWalk(const Direction& direction);
         static string getSwim(const Direction& direction);
-        static string getAttack(const Direction& direction, const string& name);
+        static string getAttack(const string& name, const Direction& direction);
     };
 };
 
