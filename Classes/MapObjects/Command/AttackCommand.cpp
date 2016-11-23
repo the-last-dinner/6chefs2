@@ -31,7 +31,7 @@ void AttackCommand::setName(const string& name)
 }
 
 // コールバックを設定
-void AttackCommand::setCallback(function<void (Character*)> callback)
+void AttackCommand::setCallback(function<void(Character*)> callback)
 {
     _callback = callback;
 }

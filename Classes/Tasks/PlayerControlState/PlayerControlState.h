@@ -12,6 +12,7 @@
 #include "define.h"
 
 class Party;
+class PlayerControlTask;
 
 class PlayerControlState : public Ref
 {
@@ -19,7 +20,11 @@ class PlayerControlState : public Ref
 protected:
     PlayerControlState();
     ~PlayerControlState();
-    virtual bool init();
+    virtual bool init(PlayerControlTask* task);
+    
+// インスタンス変数
+protected:
+    PlayerControlTask* _task { nullptr };
     
 // インターフェース
 public:

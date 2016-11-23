@@ -12,6 +12,10 @@
 #include "MapObjects/Party.h"
 #include "MapObjects/Command/AttackCommand.h"
 
+#include "Managers/DungeonSceneManager.h"
+
+#include "Tasks/PlayerControlTask.h"
+
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
 
@@ -19,12 +23,14 @@ BattleState::BattleState() { FUNCLOG }
 BattleState::~BattleState() { FUNCLOG }
 
 // 初期化
-bool BattleState::init()
+bool BattleState::init(PlayerControlTask* task)
 {
-    if (!PlayerControlState::init()) return false;
-    
+    if (!PlayerControlState::init(task)) return false;
     return true;
 }
+
+#pragma mark -
+#pragma mark Interface
 
 // 決定キーが押された時
 void BattleState::onEnterKeyPressed(Party* party)
@@ -34,6 +40,18 @@ void BattleState::onEnterKeyPressed(Party* party)
     
     AttackCommand* command { AttackCommand::create() };
     command->setName(Character::AnimationName::getAttack("attack", mainCharacter->getDirection()));
+    command->setCallback([this, party](Character* c) {
+        this->onAttackCommandFinished(party);
+    });
     
     mainCharacter->pushCommand(command);
+}
+
+#pragma mark -
+#pragma mark Callback
+
+// 攻撃コマンド終了時
+void BattleState::onAttackCommandFinished(Party* party)
+{
+    _task->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }

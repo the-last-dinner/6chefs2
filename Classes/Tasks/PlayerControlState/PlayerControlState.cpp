@@ -15,7 +15,10 @@ PlayerControlState::PlayerControlState() {}
 PlayerControlState::~PlayerControlState() {}
 
 // 初期化
-bool PlayerControlState::init()
+bool PlayerControlState::init(PlayerControlTask* task)
 {
+    if (!task) return false;
+    _task = task;
+    
     return true;
 }

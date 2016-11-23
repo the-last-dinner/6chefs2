@@ -14,6 +14,8 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+#include "Tasks/PlayerControlTask.h"
+
 // コンストラクタ
 SearchState::SearchState() { FUNCLOG }
 
@@ -21,12 +23,14 @@ SearchState::SearchState() { FUNCLOG }
 SearchState::~SearchState() { FUNCLOG }
 
 // 初期化
-bool SearchState::init()
+bool SearchState::init(PlayerControlTask* task)
 {
-    if (!PlayerControlState::init()) return false;
-    
+    if (!PlayerControlState::init(task)) return false;
     return true;
 }
+
+#pragma mark -
+#pragma mark Interface
 
 // 決定キーが押された時
 void SearchState::onEnterKeyPressed(Party* party)

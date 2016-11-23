@@ -15,18 +15,17 @@ class SearchState : public PlayerControlState
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(SearchState);
+    CREATE_FUNC_WITH_PARAM(SearchState, PlayerControlTask*);
     
 // インスタンスメソッド
 private:
     SearchState();
     ~SearchState();
-    virtual bool init() override;
+    virtual bool init(PlayerControlTask* task) override;
 
 // インターフェース
 protected:
     virtual void onEnterKeyPressed(Party* party) override;
-    
 };
 
 #endif /* SearchState_h */
