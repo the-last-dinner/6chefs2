@@ -2,7 +2,7 @@
   <PropertyGroup Name="daigoro" Type="Node" ID="d3d29e04-ec24-4485-a773-618ffdb82511" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="attack_left">
+      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="walk_right">
         <Timeline ActionTag="-1399200398" Property="Position">
           <PointFrame FrameIndex="0" Tween="False" X="-27.9000" Y="20.2000" />
           <PointFrame FrameIndex="203" Tween="False" X="23.7000" Y="25.4000" />
@@ -408,37 +408,37 @@
           <RenderColor A="255" R="255" G="165" B="0" />
         </AnimationInfo>
         <AnimationInfo Name="attack_down" StartIndex="150" EndIndex="195">
-          <RenderColor A="150" R="255" G="250" B="240" />
+          <RenderColor A="255" R="255" G="250" B="240" />
         </AnimationInfo>
         <AnimationInfo Name="attack_up" StartIndex="200" EndIndex="245">
-          <RenderColor A="150" R="230" G="230" B="250" />
+          <RenderColor A="255" R="230" G="230" B="250" />
         </AnimationInfo>
         <AnimationInfo Name="attack_left" StartIndex="250" EndIndex="295">
-          <RenderColor A="150" R="219" G="112" B="147" />
+          <RenderColor A="255" R="219" G="112" B="147" />
         </AnimationInfo>
         <AnimationInfo Name="attack_right" StartIndex="300" EndIndex="345">
-          <RenderColor A="150" R="255" G="182" B="193" />
+          <RenderColor A="255" R="255" G="182" B="193" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" Tag="9" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="attack_effect_3" ActionTag="-1399200398" VisibleForFrame="False" Tag="34" RotationSkewX="-100.0000" RotationSkewY="-100.0000" IconVisible="False" LeftMargin="-8.3000" RightMargin="-55.7000" TopMargin="-57.4000" BottomMargin="-6.6000" FlipX="True" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_3" ActionTag="-1399200398" VisibleForFrame="False" Tag="34" IconVisible="False" LeftMargin="-59.9000" RightMargin="-4.1000" TopMargin="-52.2000" BottomMargin="-11.8000" FlipX="True" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="23.7000" Y="25.4000" />
-            <Scale ScaleX="0.7500" ScaleY="0.7500" />
+            <Position X="-27.9000" Y="20.2000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="character/plist/daigoro/effect_kick.png" Plist="character/plist/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect_4" CanEdit="False" ActionTag="-213310550" VisibleForFrame="False" Tag="35" RotationSkewX="45.0000" RotationSkewY="44.9999" IconVisible="False" LeftMargin="-13.5005" RightMargin="-50.4995" TopMargin="-80.7997" BottomMargin="16.7997" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_4" CanEdit="False" ActionTag="-213310550" VisibleForFrame="False" Tag="35" IconVisible="False" LeftMargin="-59.9000" RightMargin="-4.1000" TopMargin="-52.2000" BottomMargin="-11.8000" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="18.4995" Y="48.7997" />
-            <Scale ScaleX="1.0000" ScaleY="0.7500" />
+            <Position X="-27.9000" Y="20.2000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
@@ -489,21 +489,21 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="-683538257" VisibleForFrame="False" Tag="16" IconVisible="False" LeftMargin="6.0000" RightMargin="-106.0000" TopMargin="-66.0000" BottomMargin="-34.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" ActionTag="-683538257" VisibleForFrame="False" Tag="16" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-50.0000" BottomMargin="-50.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="56.0000" Y="16.0000" />
-            <Scale ScaleX="0.4600" ScaleY="0.3000" />
+            <Position />
+            <Scale ScaleX="0.3000" ScaleY="0.4600" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect_1" ActionTag="440561340" VisibleForFrame="False" Tag="32" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="-8.0000" RightMargin="-56.0000" TopMargin="-40.0000" BottomMargin="-24.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_1" ActionTag="440561340" VisibleForFrame="False" Tag="32" RotationSkewX="45.0000" RotationSkewY="45.0000" IconVisible="False" LeftMargin="-18.0001" RightMargin="-45.9999" TopMargin="-33.1999" BottomMargin="-30.8001" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="24.0000" Y="8.0000" />
+            <Position X="13.9999" Y="1.1999" />
             <Scale ScaleX="0.7500" ScaleY="0.7500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -511,10 +511,10 @@
             <FileData Type="PlistSubImage" Path="character/plist/daigoro/effect_kick.png" Plist="character/plist/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect_2" ActionTag="-1310328428" VisibleForFrame="False" Tag="33" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.0000" RightMargin="-80.0000" TopMargin="-46.9999" BottomMargin="-17.0001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_2" ActionTag="-1310328428" VisibleForFrame="False" Tag="33" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-16.0000" BottomMargin="-48.0000" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="48.0000" Y="14.9999" />
+            <Position X="16.0000" Y="-16.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
