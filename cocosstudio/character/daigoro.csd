@@ -2,7 +2,7 @@
   <PropertyGroup Name="daigoro" Type="Node" ID="d3d29e04-ec24-4485-a773-618ffdb82511" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="walk_right">
+      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="right">
         <Timeline ActionTag="-1399200398" Property="Position">
           <PointFrame FrameIndex="0" Tween="False" X="-27.9000" Y="20.2000" />
           <PointFrame FrameIndex="203" Tween="False" X="23.7000" Y="25.4000" />
@@ -87,10 +87,10 @@
             <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_3_0.png" Plist="character/plist/daigoro.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="4" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_3_0.png" Plist="character/plist/daigoro.plist" />
+            <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_2_0.png" Plist="character/plist/daigoro.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_2_0.png" Plist="character/plist/daigoro.plist" />
+            <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_1_0.png" Plist="character/plist/daigoro.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="10" Tween="False">
             <TextureFile Type="PlistSubImage" Path="character/plist/daigoro/daigoro_0_1.png" Plist="character/plist/daigoro.plist" />
@@ -456,7 +456,7 @@
             <FileData Type="PlistSubImage" Path="character/plist/daigoro/daigoro_1_0.png" Plist="character/plist/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" CanEdit="False" Visible="False" ActionTag="-801586463" Tag="12" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-801586463" Tag="12" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -467,7 +467,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" CanEdit="False" Visible="False" ActionTag="413082807" Tag="16" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" CanEdit="False" ActionTag="413082807" Tag="16" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -478,7 +478,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" Visible="False" ActionTag="1824182946" Tag="29" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" ActionTag="1824182946" Tag="29" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
