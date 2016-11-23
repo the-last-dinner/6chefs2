@@ -59,6 +59,7 @@ void PlayerControlTask::setCurrentState(PlayerControlState* state)
 void PlayerControlTask::turn(const Key& key, Party* party)
 {
     if (!this->isControlEnabled()) return;
+    if (party->getMainCharacter()->isInAttackMotion()) return;
     
     Direction direction { Direction::convertKey(key) };
     Character* mainCharacter {party->getMainCharacter()};
@@ -78,16 +79,17 @@ void PlayerControlTask::turn(const Key& key, Party* party)
 // 決定キーが押された時
 void PlayerControlTask::onEnterKeyPressed(Party* party)
 {
-    
     if (!this->isControlEnabled()) return;
-    
     _state->onEnterKeyPressed(party);
 }
 
 // 歩行中、あたり判定を行い次に向かう位置を決定する
 void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
 {
-    if (keys.empty() || !this->isControlEnabled() || party->getMainCharacter()->isMoving()) return;
+    if (!this->isControlEnabled()) return;
+    if (keys.empty()) return;
+    if (party->getMainCharacter()->isMoving()) return;
+    if (party->getMainCharacter()->isInAttackMotion()) return;
     
     vector<Direction> directions { Direction::convertKeys(keys) };
     
@@ -159,7 +161,6 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party, bool dashed)
 void PlayerControlTask::setControlEnable(bool enable, Party* party)
 {
     bool before { _enableControl };
-    
     _enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
