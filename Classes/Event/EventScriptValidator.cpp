@@ -28,14 +28,15 @@ const string EventScriptValidator::INT {"int"};
 const string EventScriptValidator::DOUBLE {"double"};
 const string EventScriptValidator::STOI {"stoi"};
 const string EventScriptValidator::ENUM {"enum"};
+const string EventScriptValidator::BOOL {"bool"};
 
-const map<rapidjson::Type, string> EventScriptValidator::typeToValidateString = {
+const map<rapidjson::Type, string> EventScriptValidator::TYPE_TO_VALIDATE_STRING = {
     {rapidjson::kObjectType, EventScriptValidator::RECURSIVE_OBJECT},
     {rapidjson::kArrayType, EventScriptValidator::RECURSIVE_ARRAY},
     {rapidjson::kStringType, EventScriptValidator::NORMAL},
 };
 
-rapidjson::Document EventScriptValidator::validateConfig { rapidjson::Document() };
+rapidjson::Document EventScriptValidator::VALIDATE_CONFIG { rapidjson::Document() };
 
 #pragma mark -
 #pragma mark PublicMethods
@@ -43,20 +44,19 @@ rapidjson::Document EventScriptValidator::validateConfig { rapidjson::Document()
 // 初期化
 bool EventScriptValidator::init(const string& mapName, const string& eventName)
 {
-    if (EventScriptValidator::validateConfig == rapidjson::Document()) {
+    if (EventScriptValidator::VALIDATE_CONFIG == rapidjson::Document()) {
         string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::EVENT_SCRIPT_VALIDATOR);
         if (path == "") return false;
-        EventScriptValidator::validateConfig = LastSupper::JsonUtils::readJsonFile(path);
+        EventScriptValidator::VALIDATE_CONFIG = LastSupper::JsonUtils::readJsonFile(path);
     }
     
-    this->assertHelper = AssertHelper::create();
-    if (!this->assertHelper) return false;
-    CC_SAFE_RETAIN(this->assertHelper);
+    _assertHelper = AssertHelper::create();
+    if (!_assertHelper) return false;
+    CC_SAFE_RETAIN(_assertHelper);
     
-    this->assertHelper->pushTextLineKeyValue("MapName", mapName)
-                        ->pushTextLineKeyValue("EventID", eventName);
+    _assertHelper->pushTextLineKeyValue("MapName", mapName)->pushTextLineKeyValue("EventID", eventName);
     
-    this->typeToValidateFunc = {
+    map<string, function<bool(const rapidjson::Value&, const rapidjson::Value&)>> typeToValidateFunc {
         {EventScriptValidator::RECURSIVE_OBJECT, CC_CALLBACK_2(EventScriptValidator::checkObject, this)},
         {EventScriptValidator::RECURSIVE_ARRAY, CC_CALLBACK_2(EventScriptValidator::checkArray, this)},
         {EventScriptValidator::OBJECT, CC_CALLBACK_2(EventScriptValidator::isObject, this)},
@@ -66,7 +66,10 @@ bool EventScriptValidator::init(const string& mapName, const string& eventName)
         {EventScriptValidator::STRING, CC_CALLBACK_2(EventScriptValidator::isString, this)},
         {EventScriptValidator::STOI, CC_CALLBACK_2(EventScriptValidator::isStoi, this)},
         {EventScriptValidator::ENUM, CC_CALLBACK_2(EventScriptValidator::isEnum, this)},
+        {EventScriptValidator::BOOL, CC_CALLBACK_2(EventScriptValidator::isBool, this)},
     };
+    
+    _typeToValidateFunc = typeToValidateFunc;
     
     return true;
 }
@@ -74,7 +77,7 @@ bool EventScriptValidator::init(const string& mapName, const string& eventName)
 EventScriptValidator::~EventScriptValidator()
 {
     FUNCLOG
-    CC_SAFE_RELEASE_NULL(this->assertHelper);
+    CC_SAFE_RELEASE_NULL(_assertHelper);
 }
 
 // メインのバリデートメソッド
@@ -83,8 +86,8 @@ bool EventScriptValidator::validate(const rapidjson::Value& targetEvent)
     // タイプ存在チェック
     const char* type = EventScriptValidator::TYPE.c_str();
     if (!targetEvent.HasMember(type)) {
-        this->assertHelper->pushTextLine("\"" + EventScriptValidator::TYPE + "\" is missing.")
-                          ->fatalAssert("EventScriptSyntaxError");
+        _assertHelper->pushTextLine("\"" + EventScriptValidator::TYPE + "\" is missing.")
+                     ->fatalAssert("EventScriptSyntaxError");
         return false;
     }
     
@@ -95,22 +98,22 @@ bool EventScriptValidator::validate(const rapidjson::Value& targetEvent)
     
     // タイプがstringかチェック
     if (!targetEvent[type].IsString()) {
-        this->assertHelper->pushTextLine("Type must be string!")
-                          ->fatalAssert("EventScriptSyntaxError");
+        _assertHelper->pushTextLine("Type must be string!")
+                     ->fatalAssert("EventScriptSyntaxError");
         return false;
     }
     
-    this->assertHelper->pushTextLineKeyValue("TypeName", typeName);
+    _assertHelper->pushTextLineKeyValue("TypeName", typeName);
     
     // イベントの存在チェック
-    if (!this->validateConfig["events"].HasMember(typeNameChar)) {
-        this->assertHelper->pushTextLine("Validation config of this type is missing.")
+    if (!VALIDATE_CONFIG["events"].HasMember(typeNameChar)) {
+        _assertHelper->pushTextLine("Validation config of this type is missing.")
                           ->warningAssert("EventValidationConfigError");
         return false;
     }
 
     // チェック
-    const rapidjson::Value& rule = this->validateConfig["events"][typeNameChar];
+    const rapidjson::Value& rule = VALIDATE_CONFIG["events"][typeNameChar];
     return this->checkObject(targetEvent, rule);
 }
 
@@ -126,7 +129,7 @@ bool EventScriptValidator::checkObject(const rapidjson::Value& targetEvent, cons
         isOk = this->checkRequire(targetEvent, requires);
     }
     if (!isOk) {
-        this->assertHelper->warningAssert("EventRequireError");
+        _assertHelper->warningAssert("EventRequireError");
         return false;
     }
     
@@ -137,7 +140,7 @@ bool EventScriptValidator::checkObject(const rapidjson::Value& targetEvent, cons
         isOk = this->checkMember(targetEvent, members);
     }
     if (!isOk) {
-        this->assertHelper->warningAssert("EventMemberTypeError");
+        _assertHelper->warningAssert("EventMemberTypeError");
         return false;
     }
     
@@ -162,7 +165,7 @@ bool EventScriptValidator::checkRequireOr(const rapidjson::Value& targetEvent, c
     int doubleArraySize = requireDoubleArray.Size();
     for (int i = 0; i < doubleArraySize; i++) {
         if (this->checkRequireAnd(targetEvent, requireDoubleArray[i])) {
-            this->assertHelper->popTextLines(i);
+            _assertHelper->popTextLines(i);
             return true;
         }
     }
@@ -185,7 +188,7 @@ bool EventScriptValidator::checkRequireChild(const rapidjson::Value& targetEvent
     // cout << "require: " << targetMemberName.GetString() << endl;
     if (!targetEvent.HasMember(targetMemberName.GetString())) {
         string memberNameString = targetMemberName.GetString();
-        this->assertHelper->pushTextLine(memberNameString + " is require!");
+        _assertHelper->pushTextLine(memberNameString + " is require!");
         return false;
     }
     return true;
@@ -206,7 +209,7 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         
         // メンバー存在チェック
         if (!members.HasMember(targetMemberName.c_str())) {
-            this->assertHelper->pushTextLine("\"" + targetMemberName + "\" is not exists!");
+            _assertHelper->pushTextLine("\"" + targetMemberName + "\" is not exists!");
             return false;
         }
         
@@ -214,13 +217,13 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         
         // Validator文法ミス
         if (!targetRule.IsArray()) {
-            this->assertHelper->pushTextLine("\"members\" must be array")
+            _assertHelper->pushTextLine("\"members\" must be array")
                               ->fatalAssert("EventValidationConfigError");
             return true; // バリデーションエラーは回避
         }
         
         // メンバー名をAssertに追加
-        this->assertHelper->pushTextLineKeyValue("MemberName", targetMemberName);
+        _assertHelper->pushTextLineKeyValue("MemberName", targetMemberName);
         
         // メンバーの型が配列のどれかに当てはまるようにチェック
         bool isOk = false;
@@ -228,7 +231,7 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         for (int i = 0; i < ruleSize; i++) {
             isOk = this->checkMemberType(itr->value, targetRule[i]);
             if (isOk) {
-                this->assertHelper->popTextLines(i);
+                _assertHelper->popTextLines(i);
                 break;
             }
         }
@@ -237,7 +240,7 @@ bool EventScriptValidator::checkMember(const rapidjson::Value& targetEvent, cons
         if (!isOk) return false;
         
         // メンバ名をAssertから削除
-        this->assertHelper->popTextLine();
+        _assertHelper->popTextLine();
     }
     return true;
 }
@@ -249,14 +252,14 @@ bool EventScriptValidator::checkMemberType(const rapidjson::Value& targetMember,
     // cout << " is " << funcKey << endl;
     
     // バリデート関数が存在するかチェック
-    if (this->typeToValidateFunc.count(funcKey) == 0) {
-        this->assertHelper->pushTextLine("Validate type \"" + funcKey + "\" is invalid")
+    if (_typeToValidateFunc.count(funcKey) == 0) {
+        _assertHelper->pushTextLine("Validate type \"" + funcKey + "\" is invalid")
                           ->fatalAssert("EventValidationConfigError");
         return true; // バリデーションエラーは回避
     }
     
-    if (!this->typeToValidateFunc.at(funcKey)(targetMember, checkType)) {
-        this->assertHelper->pushTextLine("Type did not match \"" + funcKey + "\".");
+    if (!_typeToValidateFunc.at(funcKey)(targetMember, checkType)) {
+        _assertHelper->pushTextLine("Type did not match \"" + funcKey + "\".");
         return false;
     }
     return true;
@@ -302,7 +305,7 @@ bool EventScriptValidator::checkArrayMultipleContents(const rapidjson::Value &ta
     int typeSize = checkTypes.Size();
     
     if (targetSize != typeSize) {
-        this->assertHelper->pushTextLine("Array length did not match.");
+        _assertHelper->pushTextLine("Array length did not match.");
         return false;
     }
     
@@ -358,16 +361,16 @@ bool EventScriptValidator::isEnum(const rapidjson::Value &target, const rapidjso
     string enumType = enumName.GetString();
 
     // コンフィグ文法チェック
-    if (!this->validateConfig[EventScriptValidator::ENUMS.c_str()][enumType.c_str()].IsArray()) {
-        this->assertHelper->pushTextLine("Enums definition is not array.")
+    if (!VALIDATE_CONFIG[EventScriptValidator::ENUMS.c_str()][enumType.c_str()].IsArray()) {
+        _assertHelper->pushTextLine("Enums definition is not array.")
                           ->fatalAssert("EventValidationConfigError");
         return true; // バリデーションはスルー
     }
-    const rapidjson::Value& enumArray = this->validateConfig[EventScriptValidator::ENUMS.c_str()][enumType.c_str()];
+    const rapidjson::Value& enumArray = VALIDATE_CONFIG[EventScriptValidator::ENUMS.c_str()][enumType.c_str()];
     
     // 対象が文字列かどうか
     if (!target.IsString()) {
-        this->assertHelper->pushTextLine("Enum member must be string!");
+        _assertHelper->pushTextLine("Enum member must be string!");
         return false;
     }
     string targetString = target.GetString();
@@ -379,8 +382,13 @@ bool EventScriptValidator::isEnum(const rapidjson::Value &target, const rapidjso
         if (targetString == targetEnum) return true;
     }
     
-    this->assertHelper->pushTextLine("\"" + targetString + "\" is not exists in enum." + enumType + ".");
+    _assertHelper->pushTextLine("\"" + targetString + "\" is not exists in enum." + enumType + ".");
     return false;
+}
+
+bool EventScriptValidator::isBool(const rapidjson::Value &target, const rapidjson::Value& checkType)
+{
+    return target.IsBool();
 }
 
 #pragma mark -
@@ -390,15 +398,15 @@ bool EventScriptValidator::isEnum(const rapidjson::Value &target, const rapidjso
 string EventScriptValidator::getValidateFuncKey(const rapidjson::Value &checkType)
 {
     rapidjson::Type validateType = checkType.GetType();
-    if (EventScriptValidator::typeToValidateString.count(validateType) == 0) {
+    if (EventScriptValidator::TYPE_TO_VALIDATE_STRING.count(validateType) == 0) {
         // Assert
         return "ERROR";
     }
     
-    string funcKey = EventScriptValidator::typeToValidateString.at(validateType);
+    string funcKey = EventScriptValidator::TYPE_TO_VALIDATE_STRING.at(validateType);
     if (funcKey == EventScriptValidator::NORMAL) {
         funcKey = checkType.GetString();
-        if (this->validateConfig[EventScriptValidator::ENUMS.c_str()].HasMember(funcKey.c_str())) {
+        if (VALIDATE_CONFIG[EventScriptValidator::ENUMS.c_str()].HasMember(funcKey.c_str())) {
             funcKey = EventScriptValidator::ENUM;
         }
         

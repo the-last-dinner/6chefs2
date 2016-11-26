@@ -16,6 +16,17 @@
 #include "Layers/LoadingLayer.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 
+const string EndingScene::ENDING_FILE = "config/Ending";
+const char* EndingScene::JSON_MEMBER_TYPE = "type";
+const char* EndingScene::JSON_MEMBER_TEXT = "text";
+const char* EndingScene::JSON_MEMBER_CREDITS = "credits";
+const char* EndingScene::JSON_MEMBER_TIME = "time";
+const char* EndingScene::JSON_MEMBER_PICTURES = "pictures";
+const char* EndingScene::JSON_MEMBER_NAME = "name";
+const char* EndingScene::JSON_MEMBER_BACKGROUND = "background";
+const char* EndingScene::JSON_MEMBER_LAST_TEXT = "lastText";
+const char* EndingScene::JSON_MEMBER_LAST_PICTURE = "lastPicture";
+const char* EndingScene::JSON_MEMBER_BGM = "bgm";
 // コンストラクタ
 EndingScene::EndingScene() {FUNCLOG};
 
@@ -28,15 +39,23 @@ bool EndingScene::init(const int endingId)
     if(!BaseScene::init(EndingSceneData::create())) return false;
     
     _configListener->setKeyconfigEnabled(false);
-    this->end_id = endingId;
+    _end_id = endingId;
     
     return true;
 }
 
-// シーン切り替え終了時
+// pushされた時
 void EndingScene::onEnter()
 {
     BaseScene::onEnter();
+    this->onEnterPushedScene();
+}
+
+// popされた時
+void EndingScene::onExit()
+{
+    BaseScene::onExit();
+    this->onExitPushedScene();
 }
 
 // リソースのプリロード完了時
@@ -45,110 +64,55 @@ void EndingScene::onPreloadFinished(LoadingLayer* loadingLayer)
     // プリロード終了
     loadingLayer->onLoadFinished();
     
+    // idからjsonを取得する
+    rapidjson::Value& json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename(ENDING_FILE + ES_EXTENSION)).FindMember(to_string(_end_id).c_str())->value;
+    
     // エンディング振り分け
-    switch (this->end_id) {
-        case etoi(END_ID::NORMAL_END):
-            createNormalEnding();
-            break;
-        case etoi(END_ID::TRUE_END):
-            createTrueEnding();
-            break;
-        default:
-            createBadEnding();
-            break;
-    }
-}
-
-// トゥルーエンディング生成
-void EndingScene::createTrueEnding()
-{
-    vector<pair<string,float>> credits_name = {
-        // ------------------
-        {"--- BGM素材 ---",15.0},
-        //
-        {"魔王魂", 17.0},
-        //
-        {"クラシック名曲", 18.5},
-        {"サウンドライブラリー", 19.0},
-        // ------------------
-        {"--- 効果音素材 ---", 23.0},
-        //
-        {"効果音ラボ", 24.5},
-        //
-        {"ポケットサウンド", 26.0},
-        //
-        {"フリー音楽素材", 27.5},
-        {"Senses Circuit", 28.0},
-        // ------------------
-        {"--- 画像素材 ---", 32.0},
-        //
-        {"ドット絵世界", 33.5},
-        //
-        {"すきまの素材", 35.0},
-        //
-        {"臼井の会", 36.5},
-        //
-        {"ぴぽや",38.0},
-        //
-        {"-RyU-", 39.5},
-        //
-        {"sorairobaibai", 41.0},
-        //
-        {"とまりぎ", 42.5},
-        //
-        {"水晶と月の家", 44.0},
-        //
-        {"First Seed Material", 45.5},
-        //
-        {"なにかしらツクール", 47.0},
-        //
-        {"尾羽の小屋", 48.5},
-        //
-        {"ぼう然の流もの喫茶", 50.0},
-        //
-        {"白螺子屋", 51.5},
-        // ------------------
-        {"--- 制作メンバー ---", 55.0},
-        //
-        {"ジェダイマスター", 57.0},
-        {"エンジニア", 57.5},
-        {"ナニヲ", 58.5},
-        //
-        {"真夏大好き", 63.5},
-        {"エンジニア",64.0},
-        {"いのす", 65.0},
-        //
-        {"孫一ペロペロ", 70.0},
-        {"キャラクターデザイナー", 70.5},
-        {"早乙女", 71.5},
-        //
-        {"ピクセル", 76.5},
-        {"アート", 77.0},
-        {"おぐぐ", 78.0},
-        //
-        {"マエストロ", 83.0},
-        {"プランナー", 83.5},
-        {"スズラン", 84.5},
-    };
-    vector<string> pictures_name = {
-        "epilogue.png",
-        "chapter1.png",
-        "daigoro_usually.png",
-        "dandan_usually.png",
-        "chapter2.png",
-        "nadeshiko_usually.png",
-        "ranmaru_usually.png",
-        "chapter3.png",
-        "yuki_stan.png",
-        "manaka_usually.png",
-        "chapter4.png",
-        "taihou_usually.png",
-        "chapter5.png",
-        "magoichi_usually.png",
+     map<string, function<void(rapidjson::Value&)>> createEndings = {
+        {"normal", [this](rapidjson::Value& json){createNormalEnding(json);}},
+        {"special", [this](rapidjson::Value& json){createSpecialEnding(json);}},
     };
     
+    if(!json.HasMember(JSON_MEMBER_TYPE)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ntypeが存在しません");
+    string typeName = json[JSON_MEMBER_TYPE].GetString();
+    
+    if(createEndings.count(typeName) == 0) LastSupper::AssertUtils::warningAssert("EndingScriptError\n" + typeName + "は存在しません");
+    
+    createEndings.at(typeName)(json);
+    
+}
+
+// 特別なエンディング生成
+void EndingScene::createSpecialEnding(rapidjson::Value& json)
+{
+    vector<pair<string,float>> credits_name = {};
+    if(!json.HasMember(JSON_MEMBER_CREDITS)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ncreditsが存在しません");
+    rapidjson::Value& creditsJson = json[JSON_MEMBER_CREDITS];
+    for(int i { 0 }; i < creditsJson.Size(); i++) {
+        credits_name.push_back({creditsJson[i][JSON_MEMBER_TEXT].GetString(), stod(creditsJson[i][JSON_MEMBER_TIME].GetString())});
+    }
+    
+    vector<pair<string,float>> pictures_name = {};
+    if(!json.HasMember(JSON_MEMBER_PICTURES)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\npicturesが存在しません");
+    rapidjson::Value& picturesJson = json[JSON_MEMBER_PICTURES];
+    for(int i { 0 }; i < picturesJson.Size(); i++) {
+        pictures_name.push_back({picturesJson[i][JSON_MEMBER_NAME].GetString(), stod(picturesJson[i][JSON_MEMBER_TIME].GetString())});
+    }
+    
+    if(!json.HasMember(JSON_MEMBER_BACKGROUND)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nbackgroundが存在しません");
+    string backgroundPicture = json[JSON_MEMBER_BACKGROUND].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_LAST_TEXT)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nlastTextが存在しません");
+    string lastText = json[JSON_MEMBER_LAST_TEXT].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_LAST_PICTURE)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nlastPictureが存在しません");
+    string lastPicture = json[JSON_MEMBER_LAST_PICTURE].GetString();
+    
+    if(!json.HasMember(JSON_MEMBER_BGM)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\nbgmが存在しません");
+    string bgm = json[JSON_MEMBER_BGM].GetString();
+    
     // 背景
-    Sprite* background {Sprite::createWithSpriteFrameName("background.png")};
+    Sprite* background {Sprite::createWithSpriteFrameName(backgroundPicture)};
     background->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     this->addChild(background);
     
@@ -160,8 +124,7 @@ void EndingScene::createTrueEnding()
     float x = WINDOW_WIDTH * 4 / 5 - 10;
     float font_size = 28;
     float moving_time = 9.f;
-    for (int i = 0; i < credits_len; i++)
-    {
+    for (int i = 0; i < credits_len; i++) {
         Label* label {Label::createWithTTF(credits_name[i].first, Resource::Font::MESSAGE, font_size)};
         label->setPosition(x, -1 * label->getContentSize().height / 2);
         label->setColor(Color3B::WHITE);
@@ -173,14 +136,14 @@ void EndingScene::createTrueEnding()
     float pos = 22.5;
     
     // 制作
-    Label* last_label {Label::createWithTTF("制作", Resource::Font::MESSAGE, font_size)};
+    Label* last_label {Label::createWithTTF(lastText, Resource::Font::MESSAGE, font_size)};
     last_label->setPosition(x, -1 * last_label->getContentSize().height / 2);
     last_label->setColor(Color3B::WHITE);
     this->addChild(last_label);
     last_label->runAction(Sequence::createWithTwoActions(DelayTime::create(91.0), MoveTo::create(4.9, Vec2(last_label->getPosition().x, last_label->getContentSize().height * 2.5 + WINDOW_HEIGHT / 2 - pos))));
     
     // ロゴ
-    Sprite* logo {Sprite::createWithSpriteFrameName("the_last_dinner_log.png")};
+    Sprite* logo {Sprite::createWithSpriteFrameName(lastPicture)};
     logo->setPosition(x, -1 * logo->getContentSize().height / 2);
     float scale_logo = 0.5;
     logo->setScale(scale_logo);
@@ -191,7 +154,7 @@ void EndingScene::createTrueEnding()
     vector<Sprite*> pictures {};
     int pic_len = pictures_name.size();
     
-    Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[0])};
+    Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[0].first)};
     sprite->setOpacity(0);
     sprite->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     this->addChild(sprite);
@@ -200,9 +163,8 @@ void EndingScene::createTrueEnding()
     x = WINDOW_WIDTH / 3 - 20;
     float y = WINDOW_HEIGHT / 2;
     float scale = 0.5;
-    for (int i = 1; i < pic_len; i++)
-    {
-        Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[i])};
+    for (int i = 1; i < pic_len; i++) {
+        Sprite* sprite {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + pictures_name[i].first)};
         sprite->setOpacity(0);
         sprite->setScale(scale);
         sprite->setPosition(x, y);
@@ -212,21 +174,16 @@ void EndingScene::createTrueEnding()
     
     // 画像の動き
     Vector<FiniteTimeAction*> picture_acts {};
-    picture_acts.pushBack(TargetedAction::create(pictures[0], FadeIn::create(1.f)));
-    picture_acts.pushBack(TargetedAction::create(pictures[0], DelayTime::create(13.f)));
-    picture_acts.pushBack(TargetedAction::create(pictures[0], FadeOut::create(1.f)));
-    for (int i = 1; i < pic_len; i++)
-    {
+    for (int i = 0; i < pic_len; i++) {
         picture_acts.pushBack(TargetedAction::create(pictures[i], FadeIn::create(1.f)));
-        if (i != pic_len - 1)
-        {
-            picture_acts.pushBack(TargetedAction::create(pictures[i], DelayTime::create(4.7f)));
+        if (i != pic_len - 1) {
+            picture_acts.pushBack(TargetedAction::create(pictures[i], DelayTime::create(pictures_name[i].second)));
             picture_acts.pushBack(TargetedAction::create(pictures[i], FadeOut::create(1.f)));
         }
     }
     
     // エディング実行
-    SoundManager::getInstance()->playBGM("ending.mp3", false, 2.0);
+    SoundManager::getInstance()->playBGM(bgm, false, 2.0);
     this->runAction(Sequence::create(picture_acts));
     this->runAction(Spawn::create(label_acts));
     this->runAction(Sequence::create(DelayTime::create(103), CallFunc::create([this](){
@@ -234,27 +191,16 @@ void EndingScene::createTrueEnding()
     }), nullptr));
 }
 
-// ノーマルエンドを生成
-void EndingScene::createNormalEnding()
+// ノーマルエンディングを生成
+void EndingScene::createNormalEnding(rapidjson::Value& json)
 {
-    Label* label {Label::createWithTTF("MEDIUM END", Resource::Font::SYSTEM, 80)};
+    if(!json.HasMember(JSON_MEMBER_TEXT)) LastSupper::AssertUtils::fatalAssert("EndingScriptError\ntextが存在しません");
+    Label* label {Label::createWithTTF(json[JSON_MEMBER_TEXT].GetString(), Resource::Font::SYSTEM, 80)};
     label->setColor(Color3B::WHITE);
     label->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
     label->setOpacity(0);
     this->addChild(label);
     label->runAction(Sequence::create(FadeIn::create(2.f), TintTo::create(2.f, Color3B::RED), DelayTime::create(2.f), CallFunc::create([this](){this->onEndingFinished();}), nullptr));
-}
-
-// バッドエンドを生成
-void EndingScene::createBadEnding()
-{
-    Label* label {Label::createWithTTF("BAD END", Resource::Font::SYSTEM, 80)};
-    label->setColor(Color3B::WHITE);
-    label->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
-    label->setOpacity(0);
-    this->addChild(label);
-    label->runAction(Sequence::create(FadeIn::create(2.f), TintTo::create(2.f, Color3B::RED), DelayTime::create(2.f), CallFunc::create([this](){this->onEndingFinished();}), nullptr));
-    
 }
 
 // エンディングが終了した時
@@ -271,26 +217,7 @@ void EndingScene::onEndingFinished()
     this->runAction(Sequence::create(
                                      TargetedAction::create(black, FadeIn::create(2.f)),
                                      CallFunc::create([this](){
-            PlayerDataManager::getInstance()->setGameClear(this->end_id);
-            this->replaceScene();
+            PlayerDataManager::getInstance()->setGameClear(_end_id);
+            Director::getInstance()->popScene();
         }), nullptr));
-    
-}
-
-// シーンを切り替える
-void EndingScene::replaceScene()
-{
-    BaseScene* target {nullptr};
-    switch (this->end_id) {
-        case etoi(END_ID::TRUE_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(3,20,39,Direction::UP)));
-            break;
-        case etoi(END_ID::NORMAL_END):
-            target = DungeonScene::create(DungeonSceneData::create(Location(39,16,5,Direction::DOWN)));
-            break;
-        default:
-            target = TitleScene::create();
-            break;
-    }
-    Director::getInstance()->replaceScene(target);
 }

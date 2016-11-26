@@ -14,6 +14,7 @@ namespace member
     static const char* ACTION = "action";
     static const char* ALPHA = "alpha";
     static const char* AMBIENT = "ambient";
+    static const char* CALLBACK_ = "callback";
     static const char* COLOR = "color";
     static const char* CONDITION = "condition";
     static const char* CHARA_ID = "charaID";
@@ -41,6 +42,7 @@ namespace member
     static const char* LAYER = "layer";
     static const char* LIMIT = "limit";
     static const char* MAP_ID = "mapID";
+    static const char* MINI_CHARA = "miniChara";
     static const char* MOVABLE = "movable";
     static const char* MOVE_PATTERN = "movePattern";
     static const char* NAME = "name";

@@ -39,12 +39,13 @@ bool TerrainStateCache::init()
     CC_SAFE_RETAIN(slip);
     CC_SAFE_RETAIN(swim);
     
-    _typeToState =
-    {
+    map<StateType, TerrainState*> typeToState {
         { StateType::NORMAL, normal },
         { StateType::SLIP,   slip   },
         { StateType::SWIM,   swim   },
     };
+    
+    _typeToState = typeToState;
     
     return true;
 }

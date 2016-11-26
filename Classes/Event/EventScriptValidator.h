@@ -23,8 +23,8 @@ private:
     
 // instance valiables
 private:
-    map<string, function<bool(const rapidjson::Value&, const rapidjson::Value&)>> typeToValidateFunc;
-    AssertHelper* assertHelper;
+    map<string, function<bool(const rapidjson::Value&, const rapidjson::Value&)>> _typeToValidateFunc;
+    AssertHelper* _assertHelper;
 
 private:
     static const string TYPE;
@@ -42,8 +42,9 @@ private:
     static const string DOUBLE;
     static const string STOI;
     static const string ENUM;
-    static rapidjson::Document validateConfig;
-    static const map<rapidjson::Type, string> typeToValidateString;
+    static const string BOOL;
+    static rapidjson::Document VALIDATE_CONFIG;
+    static const map<rapidjson::Type, string> TYPE_TO_VALIDATE_STRING;
     
 // instance methods
 public:
@@ -76,6 +77,7 @@ private:
     bool isString(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
     bool isStoi(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
     bool isEnum(const rapidjson::Value& target, const rapidjson::Value& enumName);
+    bool isBool(const rapidjson::Value& target, const rapidjson::Value& empty = rapidjson::Value());
     
     // Utils
     string getValidateFuncKey(const rapidjson::Value& checkType);

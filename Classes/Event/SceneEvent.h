@@ -90,11 +90,14 @@ public:
     CREATE_FUNC_WITH_PARAM(EndingEvent, rapidjson::Value&)
 private:
     int _endingId {0};
+    GameEvent* _event { nullptr };
+    bool _isEnd { false };
 private:
     EndingEvent() { FUNCLOG };
     ~EndingEvent() { FUNCLOG };
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
+    virtual void update(float delta) override;
 };
 
 // タイトルへ移動

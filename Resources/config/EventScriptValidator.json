@@ -107,6 +107,7 @@
                 "charaID": ["stoi"],
                 "imgID": ["stoi"],
                 "option": ["messageOption"],
+                "miniChara": ["bool"],
                 "talk": [[{
                     "require": ["text"],
                     "member": {
@@ -114,7 +115,8 @@
                         "name": ["string"],
                         "charaID": ["stoi"],
                         "imgID": ["stoi"],
-                        "option": ["messageOption"]
+                        "option": ["messageOption"],
+                        "miniChara": ["bool"]
                     }
                 }]]
             }
@@ -178,7 +180,8 @@
         },
         "ending": {
             "member": {
-                "id": ["string"]
+                "id": ["string"],
+                "callback": [["object"]]
             }
         },
         "backToTitle": {

@@ -84,12 +84,14 @@ Label* CharacterMessageLayer::createMessage()
         this->charaImg->removeFromParent();
         this->charaImg = nullptr;
     }
+    string charaImgName = CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + ((data->isMiniChara())? "_m_" : "_s_") + to_string(data->getImgId()) + ".png" ;
+    Point charaImgPoint = (data->isMiniChara())? Point(WINDOW_WIDTH * 4 / 5, WINDOW_HEIGHT * 7 / 40) : Point(WINDOW_WIDTH * 3 / 4, 0);
     
-	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png"))
+	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(charaImgName))
     {
-        Sprite* img { Sprite::createWithSpriteFrameName(CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + "_s_" + to_string(data->getImgId()) + ".png")};
-        img->setPosition(Point(WINDOW_WIDTH * 3 / 4, 0));
-        img->setLocalZOrder(-1);
+        Sprite* img { Sprite::createWithSpriteFrameName(charaImgName)};
+        img->setPosition(charaImgPoint);
+        img->setLocalZOrder((data->isMiniChara()) ? 1 : -1);
         this->addChild(img);
         this->charaImg = img;
 	}

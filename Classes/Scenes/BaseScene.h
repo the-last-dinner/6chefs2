@@ -32,8 +32,8 @@ protected:
 	bool init(SceneData* data);
     virtual void onEnter() override;
 public:
-    virtual void onEnterAssertScene(){};
-    virtual void onExitAssertScene(){};
+    virtual void onEnterPushedScene(){};
+    virtual void onExitPushedScene(){};
 };
 
 #endif // __BASE_SCENE_H__

@@ -146,13 +146,37 @@ bool EndingEvent::init(rapidjson::Value& json)
     // エンディングID
     if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
+    // エンディング終了時動作
+    if (!_eventHelper->hasMember(_json, member::CALLBACK_)) return false;
+    
+    _event = _factory->createGameEvent(json[member::CALLBACK_], this);
+    CC_SAFE_RETAIN(_event);
     return true;
 }
 
 void EndingEvent::run()
 {
-    this->setDone();
-    DungeonSceneManager::getInstance()->exitDungeon(EndingScene::create(_endingId));
+    EndingScene* ending { EndingScene::create(_endingId) };
+    
+    BaseScene* nowScene = (BaseScene*)Director::getInstance()->getRunningScene();
+    ending->onEnterPushedScene = [nowScene](){
+        nowScene->onEnterPushedScene();
+    };
+    ending->onExitPushedScene = [nowScene, this](){
+        nowScene->onExitPushedScene();
+        _isEnd = true;
+    };
+    SoundManager::getInstance()->stopBGMAll();
+    Director::getInstance()->pushScene(ending);
+    
+}
+
+void EndingEvent::update(float delta)
+{
+    if(_isEnd) {
+        _event->run();
+        this->setDone();
+    }
 }
 
 #pragma mark -
