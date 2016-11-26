@@ -6,8 +6,6 @@
 //
 //
 
-#include "Models/Direction.h"
-
 #include "define.h"
 
 #pragma mark Direction
