@@ -197,6 +197,26 @@
 				{
 					"type":"setLight",
 					"objID":"46"
+				},
+				{
+					"type":"setLight",
+					"objID":"47"
+				},
+				{
+					"type":"setLight",
+					"objID":"48"
+				},
+				{
+					"type":"setLight",
+					"objID":"49"
+				},
+				{
+					"type":"setLight",
+					"objID":"50"
+				},
+				{
+					"type":"setLight",
+					"objID":"51"
 				}
 			]
 		},

@@ -451,7 +451,7 @@
 					"x":17,
 					"y":29,
 					"direction":"UP",
-					"movePattern":"3"
+					"movePattern":"6"
 				},
 				{
 					"type":"fadein",
@@ -475,6 +475,7 @@
 				},
 				{
 					"type":"battle",
+					"objID":["10207"],
 					"true":[
 						{
 							"type":"sequence",

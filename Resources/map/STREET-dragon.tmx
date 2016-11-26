@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="71">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="76">
  <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
@@ -14,7 +14,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzLEJADAIAEFb95/SLVKkFgQr4R6+vYhf5e6urdv5XC6Xy+VyuVwul8vlcrlcLpfL5XK5XC6Xy+VyuVwulzt1r/QA3XQsNg==
+   eJzt0qENACAQBMG39F8lXSCwoJ5AnswmZ0ddxKy33HZl3Z3P5XK5XC6Xy/3bPeVx77rVfsblcrlcLpfL5XK5XC6Xy1373BputZ9xuVzua7dKA0j0Px4=
   </data>
  </layer>
  <layer name="MonoShita" width="22" height="110">
@@ -384,6 +384,31 @@
     <property name="objID" value="46"/>
    </properties>
   </object>
+  <object id="71" x="288" y="208" width="16" height="16">
+   <properties>
+    <property name="objID" value="47"/>
+   </properties>
+  </object>
+  <object id="72" x="288" y="400" width="16" height="16">
+   <properties>
+    <property name="objID" value="48"/>
+   </properties>
+  </object>
+  <object id="73" x="288" y="640" width="16" height="16">
+   <properties>
+    <property name="objID" value="49"/>
+   </properties>
+  </object>
+  <object id="74" x="288" y="1168" width="16" height="16">
+   <properties>
+    <property name="objID" value="50"/>
+   </properties>
+  </object>
+  <object id="75" x="288" y="1584" width="16" height="16">
+   <properties>
+    <property name="objID" value="51"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="CharaUe" width="22" height="110">
   <data encoding="base64" compression="zlib">
@@ -392,7 +417,7 @@
  </layer>
  <layer name="line" width="22" height="110">
   <data encoding="base64" compression="zlib">
-   eJzt2LVOBFEAheHbwMLOwFa4NLCLdrg0uLwELi/F4rwELi+BS4NLh8tPR0LD3DAhs5w/+cp7MtmszKwxSin18ybCxsQxiSlMYwazmMM8FsLedxc5s4RlrGAVa1jHBjaxZbG7zZkd7GIP+zjAIY5wjBOL3aDV4hrTija0owOd6EI3etDret/t40w/BjCIIQxjBKMYw7jF7qljzBnOcYFLXOEaN7jFneN9N4lrSUYIKUhFGA5cpCHd4nqLOFOMKGIoQSnKUI4KVFrs3vPefMAjnvCMF7ziDe+f712L1yGDM5nIQjZykIs85KMAhRa7VZypRg1qUYd6NKARTWi22FX+FrTvB6WCnH7flFIqsdJ9lFIqUdL/D0p9T89vSv3PQhE+m5Hf342yGfNh9y/T/YP6mp6PlfKnDxe1g4c=
+   eJzt2LVOBFEAheHbwMLMwFa4NLCLdrg0uLwEzlvh8hK4vAQuDS4dLj8FCQkNc8OEzHL+5CvvyWSzMrPGKKXUzxtzjBnHBCYxhWnMYBZzmHf87y5wZhFLWMYKVrGGdWxg02J3izPb2MEu9rCPAxziCMcWu2GrxTOmFW1oRwc60YVu9KDX87/bx5l+DGAQQxjGCEYt9j47cY05xRnOcYFLXOEaN7h1/e8mcU3JiCAFqXDgwkMa0i2uu4gzxYghjhKUogzlqEClxe4d7817POART3jGC17x9vHetXgdMjiTiSxkIwe5yEM+ClBosVvFmWrUoBZ1qEcDGtGEZotdFWxh+35QKszp900ppRIr3UcppRIl/f+g1Pf0/KbU/ywS5bMZ/f3dGJvxAHb/Mt0/qK/p+VipYHoHQb1/6w==
   </data>
  </layer>
  <layer name="neon" width="22" height="110">

@@ -20,7 +20,7 @@
 					"y":18,
 					"direction":"UP",
 					"times":1,
-					"movePattern":"3"
+					"movePattern":"6"
 				},
 				{
 					"type":"createEnemy",
@@ -30,7 +30,7 @@
 					"y":37,
 					"direction":"UP",
 					"times":1,
-					"movePattern":"3"
+					"movePattern":"6"
 				}
 			]
 		},
@@ -301,6 +301,7 @@
 				},
 				{
 					"type":"battle",
+					"objID":["1424","1425"],
 					"true":[
 						{
 							"type":"already"

@@ -193,6 +193,46 @@
 				{
 					"type":"setLight",
 					"objID":"44"
+				},
+				{
+					"type":"setLight",
+					"objID":"45"
+				},
+				{
+					"type":"setLight",
+					"objID":"46"
+				},
+				{
+					"type":"setLight",
+					"objID":"47"
+				},
+				{
+					"type":"setLight",
+					"objID":"48"
+				},
+				{
+					"type":"setLight",
+					"objID":"49"
+				},
+				{
+					"type":"setLight",
+					"objID":"50"
+				},
+				{
+					"type":"setLight",
+					"objID":"51"
+				},
+				{
+					"type":"setLight",
+					"objID":"52"
+				},
+				{
+					"type":"setLight",
+					"objID":"53"
+				},
+				{
+					"type":"setLight",
+					"objID":"54"
 				}
 			]
 		},

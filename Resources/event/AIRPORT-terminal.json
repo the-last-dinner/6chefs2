@@ -547,7 +547,7 @@
 									]
 								},
 								{
-									"type":"fadein"
+									"type":"fadeout"
 								},
 								{
 									"type":"if",
@@ -564,7 +564,7 @@
 									]
 								},
 								{
-									"type":"fadeout"
+									"type":"fadein"
 								},
 								{
 									"type":"changeFlg",

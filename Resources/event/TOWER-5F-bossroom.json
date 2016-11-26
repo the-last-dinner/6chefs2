@@ -462,7 +462,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"3"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
@@ -471,9 +471,8 @@
 													"type":"fadein"
 												},
 												{
-													"type":"barrage",
-													"times":20,
-													"limit":5.0,
+													"type":"battle",
+													"objID":"1451",
 													"true":[
 														{
 															"type":"sequence",
@@ -634,7 +633,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"3"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
@@ -643,9 +642,8 @@
 													"type":"fadein"
 												},
 												{
-													"type":"barrage",
-													"times":20,
-													"limit":5.0,
+													"type":"battle",
+													"objID":"1451",
 													"true":[
 														{
 															"type":"sequence",
@@ -805,7 +803,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"3"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
@@ -814,9 +812,8 @@
 													"type":"fadein"
 												},
 												{
-													"type":"barrage",
-													"times":20,
-													"limit":5.0,
+													"type":"battle",
+													"objID":"1451",
 													"true":[
 														{
 															"type":"sequence",
@@ -977,7 +974,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"3"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
@@ -986,9 +983,8 @@
 													"type":"fadein"
 												},
 												{
-													"type":"barrage",
-													"times":20,
-													"limit":5.0,
+													"type":"battle",
+													"objID":"1451",
 													"true":[
 														{
 															"type":"sequence",

@@ -229,6 +229,46 @@
 				{
 					"type":"setLight",
 					"objID":"51"
+				},
+				{
+					"type":"setLight",
+					"objID":"52"
+				},
+				{
+					"type":"setLight",
+					"objID":"53"
+				},
+				{
+					"type":"setLight",
+					"objID":"54"
+				},
+				{
+					"type":"setLight",
+					"objID":"55"
+				},
+				{
+					"type":"setLight",
+					"objID":"56"
+				},
+				{
+					"type":"setLight",
+					"objID":"57"
+				},
+				{
+					"type":"setLight",
+					"objID":"58"
+				},
+				{
+					"type":"setLight",
+					"objID":"59"
+				},
+				{
+					"type":"setLight",
+					"objID":"60"
+				},
+				{
+					"type":"setLight",
+					"objID":"61"
 				}
 			]
 		},
@@ -813,6 +853,57 @@
 							"event":["5","6"]
 						}
 					]
+				}
+			]
+		}
+	],
+	"13":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"fadeout"
+				},
+				{
+					"type":"createCamera",
+					"x":21,
+					"y":103,
+					"action":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"fadein"
+										},
+										{
+											"type":"camera",
+											"nextX":21,
+											"nextY":10,
+											"time":10.0
+										},
+										{
+											"type":"charaMsg",
+											"text":["ここが食の大国・・・","北森・・・"],
+											"charaID":"0",
+											"imgID":"2"
+										}
+									]
+								},
+								{
+									"type":"fadeout"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type":"fadein"
+				},
+				{
+					"type":"already"
 				}
 			]
 		}

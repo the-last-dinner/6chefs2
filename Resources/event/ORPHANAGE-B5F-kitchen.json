@@ -188,15 +188,13 @@
 							"objID":"1067"
 						},
 						{
-							"type":"createObject",
-							"objID":"1072",
+							"type":"createEnemy",
+							"objID":"1458",
 							"charaID":"7",
-							"eventID":"6",
-							"trigger":"2",
 							"x":17,
 							"y":25,
 							"direction":"UP",
-							"movePattern":"1"
+							"movePattern":"6"
 						},
 						{
 							"type":"fadein"
@@ -291,6 +289,7 @@
 						},
 						{
 							"type":"battle",
+							"objID":["1458"],
 							"true":[
 								{
 									"type":"sequence",
@@ -300,8 +299,12 @@
 											"time":3.0
 										},
 										{
-											"type":"charaWarp",
+											"type":"createChara",
 											"objID":"1071",
+											"charaID":"7",
+											"eventID":"6",
+											"trigger":"2",
+											"movePattern":"1",
 											"x":14,
 											"y":23,
 											"direction":"RIGHT"

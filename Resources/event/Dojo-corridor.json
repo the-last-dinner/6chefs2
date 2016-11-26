@@ -26,8 +26,7 @@
 					"text":["負けた・・・"]
 				},
 				{
-					"type":"fadein",
-					"time":3.0
+					"type":"fadein"
 				},
 				{
 					"type":"wait",

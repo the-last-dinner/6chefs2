@@ -233,6 +233,42 @@
 				{
 					"type":"setLight",
 					"objID":"54"
+				},
+				{
+					"type":"setLight",
+					"objID":"55"
+				},
+				{
+					"type":"setLight",
+					"objID":"56"
+				},
+				{
+					"type":"setLight",
+					"objID":"57"
+				},
+				{
+					"type":"setLight",
+					"objID":"58"
+				},
+				{
+					"type":"setLight",
+					"objID":"59"
+				},
+				{
+					"type":"setLight",
+					"objID":"60"
+				},
+				{
+					"type":"setLight",
+					"objID":"61"
+				},
+				{
+					"type":"setLight",
+					"objID":"62"
+				},
+				{
+					"type":"setLight",
+					"objID":"63"
 				}
 			]
 		},
