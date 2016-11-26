@@ -50,8 +50,8 @@ public:
 protected:
     bool _isNull { true };
     int _int { -1 };
-    std::string _upcaseString { "" };
-    std::string _downcaseString { "" };
+    std::string _upcaseString {};
+    std::string _downcaseString {};
     cocos2d::Vec2 _unitVec2 { cocos2d::Vec2(0, 0) };
     cocos2d::Vec2 _gridVec2 { cocos2d::Vec2(0, 0) };
     int _degree { 0 };
