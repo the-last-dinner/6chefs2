@@ -19,7 +19,7 @@ const Direction Direction::DOWN { DirectionDown() };
 const Direction Direction::RIGHT { DirectionRight() };
 const Direction Direction::LEFT { DirectionLeft() };
 
-const std::map<Key, Direction> Direction::KEY_TO_DIRECTION
+const map<Key, Direction> Direction::KEY_TO_DIRECTION
 {
     { Key::UP, Direction::UP },
     { Key::DOWN, Direction::DOWN },
@@ -27,7 +27,7 @@ const std::map<Key, Direction> Direction::KEY_TO_DIRECTION
     { Key::LEFT, Direction::LEFT },
 };
 
-const std::map<std::string, Direction> Direction::STR_TO_DIRECTION
+const map<string, Direction> Direction::STR_TO_DIRECTION
 {
     { "UP", Direction::UP },
     { "DOWN", Direction::DOWN },
@@ -35,7 +35,7 @@ const std::map<std::string, Direction> Direction::STR_TO_DIRECTION
     { "LEFT", Direction::LEFT },
 };
 
-const std::map<int, Direction> Direction::INT_TO_DIRECTION
+const map<int, Direction> Direction::INT_TO_DIRECTION
 {
     { 3, Direction::UP },
     { 0, Direction::DOWN },
@@ -43,7 +43,7 @@ const std::map<int, Direction> Direction::INT_TO_DIRECTION
     { 2, Direction::LEFT },
 };
 
-const std::map<int, Direction> Direction::INT_TO_OPPOSITE_DIRECTION
+const map<int, Direction> Direction::INT_TO_OPPOSITE_DIRECTION
 {
     { 3, Direction::DOWN },
     { 0, Direction::UP },
@@ -60,7 +60,7 @@ Direction Direction::convertKey(const Key& key)
     return KEY_TO_DIRECTION.at(key);
 }
 
-std::vector<Direction> Direction::convertKeys(const std::vector<Key>& keys)
+vector<Direction> Direction::convertKeys(const vector<Key>& keys)
 {
     vector<Direction> directions {};
     
@@ -72,7 +72,7 @@ std::vector<Direction> Direction::convertKeys(const std::vector<Key>& keys)
     return directions;
 }
 
-Direction Direction::convertString(const std::string& directionStr)
+Direction Direction::convertString(const string& directionStr)
 {
     if(STR_TO_DIRECTION.count(directionStr) == 0) return Direction();
     
@@ -86,7 +86,7 @@ Direction Direction::convertInt(const int directionInt)
     return INT_TO_DIRECTION.at(directionInt);
 }
 
-Direction Direction::convertVec2(const cocos2d::Vec2& vec2)
+Direction Direction::convertVec2(const Vec2& vec2)
 {
     if(vec2.x > 0) return Direction::RIGHT;
     if(vec2.x < 0) return Direction::LEFT;
@@ -97,7 +97,7 @@ Direction Direction::convertVec2(const cocos2d::Vec2& vec2)
     return Direction::NONE;
 }
 
-vector<Direction> Direction::convertGridVec2(const cocos2d::Vec2& vec2)
+vector<Direction> Direction::convertGridVec2(const Vec2& vec2)
 {
     vector<Direction> directions {};
     
@@ -122,7 +122,7 @@ vector<Direction> Direction::convertGridVec2(const cocos2d::Vec2& vec2)
     return directions;
 }
 
-cocos2d::Vec2 Direction::getVec2(const std::vector<Direction>& directions)
+Vec2 Direction::getVec2(const vector<Direction>& directions)
 {
     Vec2 vec2 { Vec2::ZERO };
     
@@ -134,7 +134,7 @@ cocos2d::Vec2 Direction::getVec2(const std::vector<Direction>& directions)
     return vec2;
 }
 
-cocos2d::Vec2 Direction::getGridVec2(const std::vector<Direction>& directions)
+Vec2 Direction::getGridVec2(const vector<Direction>& directions)
 {
     Vec2 vec2 { Vec2::ZERO };
     
@@ -146,7 +146,7 @@ cocos2d::Vec2 Direction::getGridVec2(const std::vector<Direction>& directions)
     return vec2;
 }
 
-std::vector<Direction> Direction::getAll()
+vector<Direction> Direction::getAll()
 {
     return { UP, DOWN, RIGHT, LEFT };
 }
@@ -168,27 +168,27 @@ int Direction::getInt() const
     return _int;
 }
 
-std::string Direction::getUpcaseString() const
+string Direction::getUpcaseString() const
 {
     return _upcaseString;
 }
 
-std::string Direction::getDowncaseString() const
+string Direction::getDowncaseString() const
 {
     return _downcaseString;
 }
 
-cocos2d::Vec2 Direction::getUnitVec2() const
+Vec2 Direction::getUnitVec2() const
 {
     return _unitVec2;
 }
 
-cocos2d::Vec2 Direction::getVec2() const
+Vec2 Direction::getVec2() const
 {
     return this->getUnitVec2() * GRID;
 }
 
-cocos2d::Vec2 Direction::getGridVec2() const
+Vec2 Direction::getGridVec2() const
 {
     return _gridVec2;
 }
@@ -232,8 +232,8 @@ DirectionUp::DirectionUp()
     _int = 3;
     _upcaseString = "UP";
     _downcaseString = "up";
-    _unitVec2 = cocos2d::Vec2(0, 1);
-    _gridVec2 = cocos2d::Vec2(0, -1);
+    _unitVec2 = Vec2(0, 1);
+    _gridVec2 = Vec2(0, -1);
     _degree = 0;
     _vertical = true;
 }
@@ -247,8 +247,8 @@ DirectionDown::DirectionDown()
     _int = 0;
     _upcaseString = "DOWN";
     _downcaseString = "down";
-    _unitVec2 = cocos2d::Vec2(0, -1);
-    _gridVec2 = cocos2d::Vec2(0, 1);
+    _unitVec2 = Vec2(0, -1);
+    _gridVec2 = Vec2(0, 1);
     _degree = 180;
     _vertical = true;
 }
@@ -262,8 +262,8 @@ DirectionRight::DirectionRight()
     _int = 1;
     _upcaseString = "RIGHT";
     _downcaseString = "right";
-    _unitVec2 = cocos2d::Vec2(1, 0);
-    _gridVec2 = cocos2d::Vec2(1, 0);
+    _unitVec2 = Vec2(1, 0);
+    _gridVec2 = Vec2(1, 0);
     _degree = 90;
 }
 
@@ -276,7 +276,7 @@ DirectionLeft::DirectionLeft()
     _int = 2;
     _upcaseString = "LEFT";
     _downcaseString = "left";
-    _unitVec2 = cocos2d::Vec2(-1, 0);
-    _gridVec2 = cocos2d::Vec2(-1, 0);
+    _unitVec2 = Vec2(-1, 0);
+    _gridVec2 = Vec2(-1, 0);
     _degree = 270;
 }
