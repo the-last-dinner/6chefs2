@@ -14,7 +14,7 @@ namespace member
     static const char* ACTION = "action";
     static const char* ALPHA = "alpha";
     static const char* AMBIENT = "ambient";
-    static const char* CALLBACK = "callback";
+    static const char* CALLBACK_ = "callback";
     static const char* COLOR = "color";
     static const char* CONDITION = "condition";
     static const char* CHARA_ID = "charaID";

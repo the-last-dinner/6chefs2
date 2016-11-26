@@ -147,9 +147,9 @@ bool EndingEvent::init(rapidjson::Value& json)
     if (_eventHelper->hasMember(_json, member::ID)) _endingId = stoi(_json[member::ID].GetString());
     
     // エンディング終了時動作
-    if (!_eventHelper->hasMember(_json, member::CALLBACK)) return false;
+    if (!_eventHelper->hasMember(_json, member::CALLBACK_)) return false;
     
-    _event = _factory->createGameEvent(json[member::CALLBACK], this);
+    _event = _factory->createGameEvent(json[member::CALLBACK_], this);
     CC_SAFE_RETAIN(_event);
     return true;
 }
