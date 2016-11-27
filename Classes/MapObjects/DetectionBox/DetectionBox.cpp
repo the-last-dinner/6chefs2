@@ -50,6 +50,19 @@ void DetectionBox::setOriginInfo(Node* origin)
     this->setOriginInfo(origin->getBoundingBox());
 }
 
+// 親を取得
+MapObject* DetectionBox::getMOParent() const
+{
+    return _parent;
+}
+
+// 有効か
+bool DetectionBox::isEnabled() const
+{
+    if (!_origin) return true;
+    return _origin->isVisible();
+}
+
 void DetectionBox::setOriginInfo(const Rect& originRect)
 {
     this->setPosition(originRect.getMinX(), originRect.getMinY());

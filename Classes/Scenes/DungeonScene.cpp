@@ -116,7 +116,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     _focusLightLayer = focusLightLayer;
     
     // 環境光レイヤー生成
-    AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::ROOM)};
+    AmbientLightLayer* ambientLightLayer {AmbientLightLayer::create(AmbientLightLayer::DAY)};
     ambientLightLayer->setLocalZOrder(Priority::AMBIENT_LIGHT);
     this->addChild(ambientLightLayer);
     _ambientLightLayer = ambientLightLayer;
@@ -179,7 +179,7 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     // リスナにコールバック設定
     _listener->onCursorKeyPressed = [playerControlTask, party](const Key& key){playerControlTask->turn(key, party);};
-    _listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->search(party);};
+    _listener->onEnterKeyPressed = [playerControlTask, party]{playerControlTask->onEnterKeyPressed(party);};
     _listener->onMenuKeyPressed = CC_CALLBACK_0(DungeonScene::onMenuKeyPressed, this);
     
     // Trigger::INITを実行

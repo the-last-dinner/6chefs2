@@ -1,8 +1,8 @@
 <GameFile>
-  <PropertyGroup Name="magoichi" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
+  <PropertyGroup Name="magoichi" Type="Node" ID="fe3f6827-e54a-4baa-a320-a7baaa8311d3" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="right">
+      <Animation Duration="140" Speed="1.0000" ActivedAnimationName="walk_up">
         <Timeline ActionTag="-1108922162" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
@@ -29,16 +29,16 @@
             <TextureFile Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="45" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="55" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_3_1.png" Plist="character/magoichi.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="60" Tween="False">
+          <TextureFrame FrameIndex="55" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="70" Tween="False">
+          <TextureFrame FrameIndex="60" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_3_2.png" Plist="character/magoichi.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="70" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="80" Tween="False">
             <TextureFile Type="PlistSubImage" Path="magoichi_2_1.png" Plist="character/magoichi.plist" />
@@ -103,10 +103,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="magoichi_0_0.png" Plist="character/magoichi.plist" />
+            <FileData Type="PlistSubImage" Path="magoichi_3_0.png" Plist="character/magoichi.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -117,7 +117,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" ActionTag="-1281559338" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" Visible="False" ActionTag="-1281559338" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -128,7 +128,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" Visible="False" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />

@@ -129,6 +129,8 @@ public:
     virtual void onSearched(MapObject* mainChara) {};        // 調べられた時
     virtual void onEventStart() {};                          // イベント開始時
     virtual void onEventFinished() {};                       // イベント終了時
+    virtual void onBattleStart() {};                         // バトル開始時
+    virtual void onBattleFinished() {};                      // バトル終了時
 
 // デバッグ
 public:

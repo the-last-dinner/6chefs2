@@ -32,12 +32,7 @@ bool Swim::init()
 
 void Swim::move(MapObject* target, const vector<Direction>& directions, function<void()> cb, float speed)
 {
-    target->move(directions, [target, cb, speed] {
-        if (cb) cb();
-        target->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID), CallFunc::create([target] {
-            if (!target->isMoving()) target->setDirection(target->getDirection());
-        })));
-    }, speed / 3.f);
+    target->move(directions, cb, speed / 3.f);
 }
 
 void Swim::stamp(Character* target, const Direction& direction, float speed)
