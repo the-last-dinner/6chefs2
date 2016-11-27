@@ -865,42 +865,53 @@
 					"type":"fadeout"
 				},
 				{
-					"type":"createCamera",
-					"x":21,
-					"y":103,
+					"type":"sequence",
 					"action":[
 						{
-							"type":"sequence",
+							"type":"spawn",
 							"action":[
 								{
-									"type":"spawn",
-									"action":[
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"camera",
-											"nextX":21,
-											"nextY":10,
-											"time":10.0
-										},
-										{
-											"type":"charaMsg",
-											"text":["ここが食の大国・・・","北森・・・"],
-											"charaID":"0",
-											"imgID":"2"
-										}
-									]
+									"type":"fadein"
 								},
 								{
-									"type":"fadeout"
+									"type":"camera",
+									"nextX":21,
+									"nextY":10,
+									"time":10.0
+								},
+								{
+									"type":"charaMsg",
+									"text":["ここが食の大国・・・","北森・・・"],
+									"charaID":"0",
+									"imgID":"2"
 								}
 							]
+						},
+						{
+							"type":"fadeout"
 						}
 					]
 				},
 				{
+					"type":"setCamera"
+				},
+				{
 					"type":"fadein"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["早く行こ！佐々木くん！"],
+							"charaID":"1",
+							"imgID":"3"
+						},
+						{
+							"text":["は、はい・・・"],
+							"charaID":"0",
+							"imgID":"2"
+						}
+					]
 				},
 				{
 					"type":"already"

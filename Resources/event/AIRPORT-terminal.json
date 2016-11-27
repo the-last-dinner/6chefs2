@@ -487,13 +487,10 @@
 	],
 	"11":[
 		{
-			"type":"sequence",
-			"action":[
-				{
 					"type":"if",
 					"condition":[
 						{
-							"flg":0,
+							"flg":["2","11",0],
 							"Nevent":["2","14"]
 						}
 					],
@@ -559,7 +556,7 @@
 									"action":[
 										{
 											"type":"getTrophy",
-											"trophy":"1"
+											"trophyID":"1"
 										}
 									]
 								},
@@ -568,18 +565,31 @@
 								},
 								{
 									"type":"changeFlg",
+									"mapID":"2",
+									"eventID":"11",
 									"flg":1
 								}
 							]
 						}
 					]
-				},
-				{
-					"type":"systemMsg",
-					"text":["傘だ"]
-				}
-			]
-		}
+		},
+		{
+					"type":"if",
+					"condition":[
+						{
+							"flg":["2","11",1]
+						},
+						{
+							"event":["2","14"]
+						}
+					],
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["傘だ"]
+						}		
+					] 
+		}	
 	],
 	"12":[
 		{

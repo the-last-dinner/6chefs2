@@ -104,10 +104,6 @@
 				},
 				{
 					"type":"setLight",
-					"objID":"22"
-				},
-				{
-					"type":"setLight",
 					"objID":"23"
 				},
 				{
@@ -233,6 +229,10 @@
 				{
 					"type":"setLight",
 					"objID":"54"
+				},
+				{
+					"type":"setLight",
+					"objID":"55"
 				}
 			]
 		},
@@ -347,6 +347,32 @@
 					"mapID":"18",
 					"x":36,
 					"y":23
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["ここはお店ではなさそう・・・"]
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"RIGHT",
+							"option":"back"
+						}
+					]
 				}
 			]
 		}
