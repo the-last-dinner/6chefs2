@@ -202,7 +202,7 @@ void EventTask::update(float delta)
             this->callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
             cb();
         }
-        this->releaseEventIfNeeded(this->getGameEvent(this->runningEvent)) ;
+        this->releaseEvent(this->getGameEvent(this->runningEvent)) ;
         this->runningEvent = EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
     }
         
@@ -228,7 +228,7 @@ void EventTask::updateForAsync(float delta)
         // イベントが終了していたら削除
         if((*itr)->isDone())
         {
-            this->releaseEventIfNeeded(*itr);
+            this->releaseEvent(*itr);
             itr = this->asyncEvents.erase(itr);
         }
         else
@@ -239,16 +239,9 @@ void EventTask::updateForAsync(float delta)
 }
 
 // 必要ならばイベントインスタンスを解放
-void EventTask::releaseEventIfNeeded(GameEvent *event)
+void EventTask::releaseEvent(GameEvent *event)
 {
-    if(event->isReusable())
-    {
-        event->setDone(false);
-    }
-    else
-    {
-        CC_SAFE_RELEASE_NULL(event);
-    }
+    CC_SAFE_RELEASE_NULL(event);
 }
 
 // 実行中のイベントIDを取得

@@ -62,7 +62,7 @@ public:
     void update(float delta);
     void updateForAsync(float delta);
     
-    void releaseEventIfNeeded(GameEvent* event);
+    void releaseEvent(GameEvent* event);
 private:
     EventTask();
     ~EventTask();

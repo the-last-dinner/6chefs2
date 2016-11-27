@@ -27,15 +27,12 @@ protected:
     int _code { -1 };
 private:
     bool _isDone { false };
-    bool _isReusable { false };
     
 // インスタンスメソッド
 public:
     void setCaller(const GameEvent* parent);
     void setEventId(int eventId);
     int getEventId() const;
-    bool isReusable() const;
-    void setReusable(bool reusable);
     bool isDone() const;
     void setDone(bool done = true);
     
