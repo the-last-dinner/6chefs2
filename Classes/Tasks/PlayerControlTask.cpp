@@ -40,7 +40,7 @@ bool PlayerControlTask::init()
 {
     if (!GameTask::init()) return false;
 
-    this->setCurrentState(BattleState::create(this));
+    this->setCurrentState(SearchState::create(this));
     
     DungeonSceneManager::getInstance()->getStamina()->onIncreasedMax = CC_CALLBACK_0(PlayerControlTask::onStaminaIncreasedMax, this);
     
