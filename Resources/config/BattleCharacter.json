@@ -1,0 +1,40 @@
+{
+    "2": {
+        "name": "ranmaru",
+        "attack": 30,
+        "hit_point": 100,
+        "speed_ratio": 1.0
+    },
+    "5": {
+        "name": "daigoro"
+        "attack": 30,
+        "hit_point": 100,
+        "speed_ratio": 1.0
+    },
+    "6": {
+        "name": "yuki",
+        "attack": 30,
+        "hit_point": 100,
+        "speed_ratio": 1.0
+    },
+    "8": {
+        "name": "tamuken",
+        "attack": 25,
+        "hit_point": 100,
+        "speed_ratio": 1.0
+    },
+    
+    "9": {
+        "name": "taihou",
+        "attack": 75,
+        "attack2": 75,
+        "hit_point": 125,
+        "speed_ratio": 1.0
+    },
+    "13": {
+        "name": "kyoujin",
+        "attack": 50,
+        "hit_point": 75,
+        "speed_ratio": 1.0
+    }
+}
