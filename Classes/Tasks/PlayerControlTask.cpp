@@ -8,6 +8,10 @@
 
 #include "Tasks/PlayerControlTask.h"
 
+#include "Tasks/PlayerControlState/PlayerControlState.h"
+#include "Tasks/PlayerControlState/SearchState.h"
+#include "Tasks/PlayerControlState/BattleState.h"
+
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Party.h"
@@ -21,25 +25,41 @@ const string PlayerControlTask::START_WALKING_SCHEDULE_KEY { "start_walking" };
 const float PlayerControlTask::DASH_SPEED_RATIO {2.0f};
 
 // コンストラクタ
-PlayerControlTask::PlayerControlTask(){FUNCLOG}
+PlayerControlTask::PlayerControlTask() { FUNCLOG }
 
 // デストラクタ
-PlayerControlTask::~PlayerControlTask(){FUNCLOG}
+PlayerControlTask::~PlayerControlTask()
+{
+    FUNCLOG
+
+    CC_SAFE_RELEASE_NULL(_state);
+}
 
 // 初期化
 bool PlayerControlTask::init()
 {
     if (!GameTask::init()) return false;
+
+    this->setCurrentState(SearchState::create(this));
     
     DungeonSceneManager::getInstance()->getStamina()->onIncreasedMax = CC_CALLBACK_0(PlayerControlTask::onStaminaIncreasedMax, this);
     
     return true;
 }
 
+// Stateを設定
+void PlayerControlTask::setCurrentState(PlayerControlState* state)
+{
+    CC_SAFE_RETAIN(state);
+    CC_SAFE_RELEASE_NULL(_state);
+    _state = state;
+}
+
 // 向きを変える
 void PlayerControlTask::turn(const Key& key, Party* party)
 {
     if (!this->isControlEnabled()) return;
+    if (party->getMainCharacter()->isInAttackMotion()) return;
     
     Direction direction { Direction::convertKey(key) };
     Character* mainCharacter {party->getMainCharacter()};
@@ -56,31 +76,20 @@ void PlayerControlTask::turn(const Key& key, Party* party)
     }
 }
 
-// 目の前を調べる
-void PlayerControlTask::search(Party* party)
+// 決定キーが押された時
+void PlayerControlTask::onEnterKeyPressed(Party* party)
 {
     if (!this->isControlEnabled()) return;
-    
-    MapObjectList* objectList { DungeonSceneManager::getInstance()->getMapObjectList() };
-    Character* mainCharacter { party->getMainCharacter() };
-    
-    Vector<MapObject*> objs { objectList->getMapObjects(mainCharacter, { mainCharacter->getDirection() }, Trigger::SEARCH) };
-    
-    // 同座標にあるイベントを全て発動
-    Point objPosition { Point::ZERO };
-    for (MapObject* obj : objs) {
-        if (obj && obj->getTrigger() == Trigger::SEARCH && (objPosition == Point::ZERO || obj->getPosition() == objPosition) && !obj->isMoving()) {
-            objPosition = obj->getPosition();
-            obj->onSearched(mainCharacter);
-            DungeonSceneManager::getInstance()->runEvent(obj->getEventId());
-        }
-    }
+    _state->onEnterKeyPressed(party);
 }
 
 // 歩行中、あたり判定を行い次に向かう位置を決定する
 void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
 {
-    if (keys.empty() || !this->isControlEnabled() || party->getMainCharacter()->isMoving()) return;
+    if (!this->isControlEnabled()) return;
+    if (keys.empty()) return;
+    if (party->getMainCharacter()->isMoving()) return;
+    if (party->getMainCharacter()->isInAttackMotion()) return;
     
     vector<Direction> directions { Direction::convertKeys(keys) };
     
@@ -152,7 +161,6 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party, bool dashed)
 void PlayerControlTask::setControlEnable(bool enable, Party* party)
 {
     bool before { _enableControl };
-    
     _enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
@@ -172,4 +180,16 @@ bool PlayerControlTask::isControlEnabled()
 void PlayerControlTask::onStaminaIncreasedMax()
 {
     SoundManager::getInstance()->stopBGM(Resource::BGM::TIRED);
+}
+
+// バトル開始時
+void PlayerControlTask::onBattleStart()
+{
+    this->setCurrentState(BattleState::create(this));
+}
+
+// バトル終了時
+void PlayerControlTask::onBattleFinished()
+{
+    this->setCurrentState(SearchState::create(this));
 }

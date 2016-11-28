@@ -15,16 +15,19 @@ struct CharacterData;
 class MovePattern;
 class CSNode;
 class HitPoint;
+class AttackBox;
 class HitBox;
 class Sight;
 
 class Character : public MapObject
 {
 // 定数
-private:
+protected:
     static const string CS_SPRITE_NODE_NAME;
     static const string CS_COLLISION_NODE_NAME;
     static const string CS_HIT_NODE_NAME;
+    static const string CS_BATTLE_ATTACK_NODE_NAME;
+    static const string CS_ATTACK_NODE_NAME;
     
 // クラスメソッド
 public:
@@ -32,14 +35,16 @@ public:
     
 // インスタンス変数
 private:
-    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };                   // キャラクタID
+    int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
 protected:
     function<void(Character*)> _onLostHP { nullptr };
-    MovePattern* _movePattern { nullptr };                                       // 動きのパターン
+    MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
+    AttackBox* _battleAttackBox { nullptr };
     HitBox* _hitBox { nullptr };
     HitPoint* _hp { nullptr };
     Sight* _sight { nullptr };
+    bool _isInAttackMotion { nullptr };
     
 // インスタンスメソッド
 public:
@@ -52,7 +57,6 @@ public:
     
 	virtual void setDirection(const Direction& direction) override;
     virtual void setDirection(const Direction& direction, bool stopAnimation);
-	void setMoving(bool _isMoving);
     void pauseAi();
     void resumeAi();
     bool walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision);
@@ -60,8 +64,10 @@ public:
     void lookAround(function<void()> callback, Direction direction);
     
     // CSNode
+    bool isAnimationPlaying() const;
     void playAnimation(const string& name, float speed, bool loop = false);
     void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
+    void playAnimation(const string& name, function<void(Character*)> callback);
     
     // TerrainState
     void stamp(const Direction direction, const float ratio = 1.0f);
@@ -69,7 +75,10 @@ public:
     bool consumeStaminaWalking() const;
     float getStaminaConsumptionRatio() const;
     
-    // HitBox
+    // Battle
+    void beInAttackMotion(bool isInAttackMotion);
+    bool isInAttackMotion() const;
+    void onMyAttackHitted(MapObject* hittedObject);
     void onAttackHitted(int damage);
     
     // HP
@@ -78,7 +87,8 @@ public:
     
     // Sight
     bool isInSight(MapObject* mapObject);
-    
+
+public:
     // Interface
     virtual void update(float delta) override;
     virtual void onEnterMap() override;
@@ -89,6 +99,8 @@ public:
     virtual void onSearched(MapObject* mainChara) override;
     virtual void onEventStart() override;
     virtual void onEventFinished() override;
+    virtual void onBattleStart() override;
+    virtual void onBattleFinished() override;
     
     friend class TerrainObject;
     friend class TerrainState;
@@ -100,6 +112,7 @@ public:
         static string getTurn(const Direction& direction);
         static string getWalk(const Direction& direction);
         static string getSwim(const Direction& direction);
+        static string getAttack(const string& name, const Direction& direction);
     };
 };
 

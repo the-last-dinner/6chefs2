@@ -28,6 +28,8 @@
 const string Character::CS_SPRITE_NODE_NAME { "sprite" };
 const string Character::CS_COLLISION_NODE_NAME { "collision" };
 const string Character::CS_HIT_NODE_NAME { "hit" };
+const string Character::CS_ATTACK_NODE_NAME { "attack" };
+const string Character::CS_BATTLE_ATTACK_NODE_NAME { "battle_attack" };
 
 // コンストラクタ
 Character::Character() { FUNCLOG }
@@ -41,6 +43,7 @@ Character::~Character()
     CC_SAFE_RELEASE_NULL(_hitBox);
     CC_SAFE_RELEASE_NULL(_hp);
     CC_SAFE_RELEASE_NULL(_sight);
+    CC_SAFE_RELEASE_NULL(_battleAttackBox);
 }
 
 // 初期化
@@ -143,7 +146,16 @@ void Character::resumeAi()
 // 方向を指定して歩行させる
 bool Character::walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision)
 {
-    if (!MapObject::moveBy(directions, cb, speed, ignoreCollision)) return false;
+    function<void(bool)> callback { [this, cb](bool canMove){
+        this->runAction(Sequence::createWithTwoActions(DelayTime::create(MapObject::DURATION_MOVE_ONE_GRID), CallFunc::create([this] {
+            if (this->isMoving()) return;
+            if (this->isInAttackMotion()) return;
+            this->setDirection(this->getDirection());
+        })));
+        cb(canMove);
+    }};
+    
+    if (!MapObject::moveBy(directions, callback, speed, ignoreCollision)) return false;
     
     // 方向を変える
     Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
@@ -178,19 +190,30 @@ void Character::lookAround(function<void()> callback, Direction direction)
 #pragma mark -
 #pragma mark CSNode
 
+// アニメーションが再生されているか
+bool Character::isAnimationPlaying() const
+{
+    if (!_csNode) return false;
+    return _csNode->isPlaying();
+}
+
 // アニメーションを再生
 void Character::playAnimation(const string& name, float speed, bool loop)
 {
     if (!_csNode) return;
-    
     _csNode->play(name, speed, loop);
 }
 
 void Character::playAnimationIfNotPlaying(const string& name, float speed)
 {
     if (!_csNode) return;
-    
     _csNode->playIfNotPlaying(name, speed);
+}
+
+void Character::playAnimation(const string& name, function<void(Character*)> callback)
+{
+    if (!_csNode) return;
+    _csNode->play(name, [this, callback]{ callback(this); });
 }
 
 #pragma mark -
@@ -226,8 +249,26 @@ float Character::getStaminaConsumptionRatio() const
 }
 
 #pragma mark -
-#pragma mark HitBox
+#pragma mark Battle
+// 攻撃モーション中状態にする
+void Character::beInAttackMotion(bool isInAttackMotion)
+{
+    _isInAttackMotion = isInAttackMotion;
+}
 
+// 攻撃モーション中か
+bool Character::isInAttackMotion() const
+{
+    return _isInAttackMotion;
+}
+
+// 自分の攻撃が誰かに当たった時
+void Character::onMyAttackHitted(MapObject* hittedObject)
+{
+    
+}
+
+// 攻撃を受けた時
 void Character::onAttackHitted(int damage)
 {
     if (!_hp) return;
@@ -344,6 +385,24 @@ void Character::onEventFinished()
     this->getActionManager()->resumeTarget(this);
 }
 
+// バトル開始時
+void Character::onBattleStart()
+{
+    MapObject::onBattleStart();
+    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
+    _objectList->getAttackDetector()->addAttackBox(box);
+    CC_SAFE_RELEASE_NULL(_battleAttackBox);
+    CC_SAFE_RETAIN(box);
+    _battleAttackBox = box;
+}
+
+// バトル終了時
+void Character::onBattleFinished()
+{
+    MapObject::onBattleFinished();
+    _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
+}
+
 #pragma mark -
 #pragma mark AnimationName
 string Character::AnimationName::getTurn(const Direction& direction)
@@ -359,4 +418,9 @@ string Character::AnimationName::getWalk(const Direction& direction)
 string Character::AnimationName::getSwim(const Direction& direction)
 {
     return "swim_" + direction.getDowncaseString();
+}
+
+string Character::AnimationName::getAttack(const string& name, const Direction& direction)
+{
+    return name + "_"+ direction.getDowncaseString();
 }
