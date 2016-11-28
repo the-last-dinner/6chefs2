@@ -130,28 +130,43 @@ bool EventFactory::init()
 // ゲームイベントを生成して返す
 GameEvent* EventFactory::createGameEvent(rapidjson::Value& json, GameEvent* caller)
 {
-    // イベントタイプがなければ同時実行を生成して返す
-    if(!json.IsObject() || !json.HasMember(member::TYPE)) return EventSpawn::create(json);
+    GameEvent* event {nullptr};
     
-    // イベントタイプ名取得
-    string typeName {json[member::TYPE].GetString()};
-    
-    if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
-        int mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
-        string mapFileName = CsvDataManager::getInstance()->getMapData()->getFileName(mapId);
-        string eventId = to_string(caller->getEventId());
-        EventScriptValidator::create(mapFileName, eventId)->validate(json);
+    if (!json.IsObject() || !json.HasMember(member::TYPE)) {
+        // イベントタイプがない場合はspawnでイベント生成
+        event = EventSpawn::create(json);
+    } else {
+        // イベントタイプがある場合はタイプからイベント生成
+        string typeName {json[member::TYPE].GetString()};
+        
+        /**
+         * NOTICE: 
+         *  EventScriptValidatorはconfig/EventScriptValidator.jsonを元にチェックしているが、
+         *  こっちはシステム上のGameEventがあるかどうかのチェックを行なっている。
+         **/
+        if (EventFactory::_typeToCreateFunc.count(typeName) == 0) {
+            CCLOG("Undifined EventScript Type : %s", typeName.c_str());
+            LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
+            return nullptr;
+        }
+        
+        // デバッグモード時のみEventScriptのバリデーション
+        if (ConfigDataManager::getInstance()->getDebugConfigData()->isDebugMode()) {
+            int mapId = DungeonSceneManager::getInstance()->getLocation().map_id;
+            string mapFileName = CsvDataManager::getInstance()->getMapData()->getFileName(mapId);
+            // @FIXME: callerがない場合eventIDを引数でもらいたい
+            string eventId = to_string((caller) ?
+                    caller->getEventId() : etoi(DungeonSceneManager::getInstance()->getRunningEventId()));
+            EventScriptValidator::create(mapFileName, eventId)->validate(json);
+        }
+        
+        event = EventFactory::_typeToCreateFunc.at(typeName)(json);
     }
     
-    if (EventFactory::_typeToCreateFunc.count(typeName) == 0) {
-        CCLOG("Undifined EventScript Type : %s", typeName.c_str());
-        LastSupper::AssertUtils::warningAssert("EventScriptError\n" + typeName + "なんてイベントはないずら〜");
-        return nullptr;
+    // 親イベントとEventIDのセット
+    if (event && caller) {
+        event->setCaller(caller);
     }
-    
-    GameEvent* event { EventFactory::_typeToCreateFunc.at(typeName)(json) };
-    
-    if (event) event->setCaller(caller);
     
     return event;
 }

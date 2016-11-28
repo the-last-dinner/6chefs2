@@ -150,6 +150,7 @@ bool EndingEvent::init(rapidjson::Value& json)
     if (!_eventHelper->hasMember(_json, member::CALLBACK_)) return false;
     
     _event = _factory->createGameEvent(json[member::CALLBACK_], this);
+    // @TODO: メモリリークしてそうなのでRELEASEすべきタイミングでリリースする。デストラクタだとまずそうなのでコールバック実行後とか？
     CC_SAFE_RETAIN(_event);
     return true;
 }
