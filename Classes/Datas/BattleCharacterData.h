@@ -11,12 +11,20 @@
 
 #include "define.h"
 
+class AssertHelper;
+
 class BattleCharacterData: public Ref
 {
+public:
+    static const char* HIT_POINT;
+    static const char* SPEED_RATIO;
+    static const char* ATTACKS;
+    
 private:
-    static rapidjson::Document battleCharacterData;
+    static rapidjson::Document BATTLE_CHARACTER_DATA;
 
 private:
+    AssertHelper* assertHelper {nullptr};
     string charaId {etos(CharacterID::UNDIFINED)};
     map<string, int> attacks {};
     int hitPoint {100};
@@ -25,12 +33,18 @@ private:
 private:
     BattleCharacterData() {FUNCLOG};
     ~BattleCharacterData() {FUNCLOG};
+    bool init(const string& charaId);
+    bool init(const int charaId);
+    bool setHitPoint(const rapidjson::Value& battleCharacterData);
+    bool setSpeedRatio(const rapidjson::Value& battleCharacterData);
+    bool setAttacks(const rapidjson::Value& battleCharacterData);
 
 public:
     CREATE_FUNC_WITH_PARAM(BattleCharacterData, const string&);
     CREATE_FUNC_WITH_PARAM(BattleCharacterData, const int);
-    bool init(const string& charaId);
-    bool init(const int charaId);
+    int getHitPoint() const;
+    float getSpeedRatio() const;
+    int getAttackPoint(const string& attackName) const;
 };
 
 #endif /* BattleCharacterData_h */
