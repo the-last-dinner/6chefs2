@@ -267,7 +267,7 @@
  </objectgroup>
  <layer name="CharaUe" width="86" height="40">
   <data encoding="base64" compression="zlib">
-   eJztyrEJADAIADAnbxf6dE/QxUFI5kQAAAAAAAAAAAAAF1X25w0OAAAAez6H9QEg
+   eJztz7ENACAMBLFUzI6UpRkhtK/Y9TVXBQAAAAAAAAAAAJnumZv+aFJt/wcAAEjwAPk5Aj8=
   </data>
  </layer>
  <layer name="shadow" width="86" height="40">

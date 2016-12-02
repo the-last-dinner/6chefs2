@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="153">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="154">
  <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
@@ -506,6 +506,12 @@
    <properties>
     <property name="EventID" value="13"/>
     <property name="trigger" value="3"/>
+   </properties>
+  </object>
+  <object id="153" x="272" y="1648" width="160" height="32">
+   <properties>
+    <property name="EventID" value="14"/>
+    <property name="trigger" value="1"/>
    </properties>
   </object>
  </objectgroup>

@@ -627,7 +627,7 @@
 				{
 					"type":"createObject",
 					"objID":"1043",
-					"x":38,
+					"x":36,
 					"y":59,
 					"movePattern":"1",
 					"direction":"LEFT",
