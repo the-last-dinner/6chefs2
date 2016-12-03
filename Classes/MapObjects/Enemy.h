@@ -44,6 +44,7 @@ public:
     virtual void onExitMap() override;
     virtual void onBattleStart() override;
     virtual void onBattleFinished() override;
+    virtual void onEventFinished() override;
 };
 
 #endif /* defined(__LastSupper__Enemy__) */
