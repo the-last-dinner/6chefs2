@@ -39,6 +39,10 @@ bool ButtonMashingEvent::init(rapidjson::Value& json)
     if (!_eventHelper->hasMember(_json, member::LIMIT)) return false;
     _limit = _json[member::LIMIT].GetDouble();
     
+    // クリック時のコールバックイベント
+    _clickCallbackEvent = _factory->createGameEvent(_json[member::EVENT], this);
+    CC_SAFE_RETAIN(_clickCallbackEvent);
+    
     return true;
 }
 
@@ -46,9 +50,9 @@ void ButtonMashingEvent::run()
 {
     ButtonMashingLayer* layer { ButtonMashingLayer::create(_count, _limit, [this] {
         // クリック時のコールバックイベント
-        GameEvent* clickCallbackEvent { _factory->createGameEvent(_json[member::EVENT], this) };
-        CC_SAFE_RETAIN(clickCallbackEvent);
-        DungeonSceneManager::getInstance()->runEventAsync(clickCallbackEvent);
+        if (_clickCallbackEvent) {
+            _clickCallbackEvent->run();
+        }
     }, [this](ButtonMashingLayer::Result result) {
         if (result == ButtonMashingLayer::Result::SUCCESS) {
             _resultCallbackEvent = _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this);
@@ -62,6 +66,7 @@ void ButtonMashingEvent::run()
     
     if (!layer) {
         this->setDone();
+        CC_SAFE_RELEASE_NULL(_clickCallbackEvent);
         return;
     }
     
