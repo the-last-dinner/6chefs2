@@ -38,7 +38,6 @@ Character::Character() { FUNCLOG }
 Character::~Character()
 {
     FUNCLOG
-    
     CC_SAFE_RELEASE_NULL(_movePattern);
     CC_SAFE_RELEASE_NULL(_hitBox);
     CC_SAFE_RELEASE_NULL(_hp);

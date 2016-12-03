@@ -28,6 +28,7 @@ private:
 // インターフェース
 public:
     virtual void onEnterKeyPressed(Party* party) override;
+    virtual void move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed) override;
 
 // コールバック
 public:

@@ -14,6 +14,8 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+#include "MapObjects/Status/Stamina.h"
+
 #include "Tasks/PlayerControlTask.h"
 
 // コンストラクタ
@@ -49,4 +51,38 @@ void SearchState::onEnterKeyPressed(Party* party)
             DungeonSceneManager::getInstance()->runEvent(obj->getEventId());
         }
     }
+}
+
+// 移動
+void SearchState::move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // ダッシュキーが押されていたら、速度の倍率をあげる
+    bool dash { mainCharacter->isRunnable() ? isDashKeyPressed : false };
+    
+    // 入力から、使う方向の個数を決める
+    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
+    
+    vector<Direction> moveDirections {};
+    for (int i { 0 }; i < directions.size(); i++) {
+        if (directions.size() - directionCount > i) continue;
+        moveDirections.push_back(directions.at(i));
+    }
+    
+    // Trigger::WILLを持つオブジェクトを検索して実行
+    Rect gridRect { mainCharacter->getGridCollisionRect() };
+    gridRect.origin += Direction::getGridVec2(moveDirections);
+    for (MapObject* other : DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjects(mainCharacter, moveDirections, Trigger::WILL)) {
+        DungeonSceneManager::getInstance()->runEvent(other->getEventId());
+    }
+    
+    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
+    
+    party->move(moveDirections, dash ? PlayerControlTask::DASH_SPEED_RATIO : 1.f, [this, party, stamina, dash](bool moved) {
+        if (!moved) return;
+        
+        stamina->setDecreasing(false);
+        _task->onPartyMovedOneGrid(party, dash);
+    });
 }

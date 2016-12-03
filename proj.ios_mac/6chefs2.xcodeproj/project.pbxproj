@@ -410,6 +410,8 @@
 		DCEF71FB1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
 		DCEF71FC1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
 		DCEF71FE1DFBC54900FA1291 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = DCEF71FD1DFBC54900FA1291 /* voice */; };
+		DCEF71FB1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
+		DCEF71FC1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -1586,6 +1588,8 @@
 				DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */,
 				DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */,
 				DCCDBC271DE1AF690026AF5C /* AttackCommand.h */,
+				DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */,
+				DCEF71FA1DF2776C00FA1291 /* StepCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1831,6 +1835,7 @@
 				DC0182991D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
+				DCEF71FB1DF2776C00FA1291 /* StepCommand.cpp in Sources */,
 				DC0392511C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				DC0391F31C871E1000C50E8E /* Chaser.cpp in Sources */,
@@ -2035,6 +2040,7 @@
 				DC0391AA1C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */,
 				DC0391DC1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
+				DCEF71FC1DF2776C00FA1291 /* StepCommand.cpp in Sources */,
 				DC01829A1D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC0392441C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC0391B41C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,

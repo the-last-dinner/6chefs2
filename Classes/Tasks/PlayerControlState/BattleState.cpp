@@ -14,6 +14,8 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+#include "MapObjects/Status/Stamina.h"
+
 #include "Tasks/PlayerControlTask.h"
 
 // コンストラクタ
@@ -47,11 +49,35 @@ void BattleState::onEnterKeyPressed(Party* party)
     mainCharacter->pushCommand(command);
 }
 
+// 移動
+void BattleState::move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    bool step { mainCharacter->isRunnable() ? isDashKeyPressed : false };
+    
+    // 入力から、使う方向の個数を決める
+    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
+    
+    vector<Direction> moveDirections {};
+    for (int i { 0 }; i < directions.size(); i++) {
+        if (directions.size() - directionCount > i) continue;
+        moveDirections.push_back(directions.at(i));
+    }
+    
+    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
+    party->move(moveDirections, 1.f, [this, party, stamina, step](bool moved) {
+        if (!moved) return;
+        
+        stamina->setDecreasing(false);
+        _task->onPartyMovedOneGrid(party, false);
+    });
+}
+
 #pragma mark -
 #pragma mark Callback
 
 // 攻撃コマンド終了時
 void BattleState::onAttackCommandFinished(Party* party)
 {
-    _task->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
