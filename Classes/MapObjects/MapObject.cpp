@@ -120,7 +120,7 @@ void MapObject::setSprite(Sprite* sprite)
     if(!sprite) return;
     _sprite = sprite;
     this->addChild(sprite);
-};
+}
 
 // 一時停止状態を設定
 void MapObject::setPaused(bool paused) { _paused = paused; }
