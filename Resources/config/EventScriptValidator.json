@@ -211,6 +211,8 @@
             "member": {
                 "x": ["int"],
                 "y": ["int"],
+                "nextX": ["int"],
+                "nextY": ["int"],
                 "time": ["double", "int"]
             }
         },

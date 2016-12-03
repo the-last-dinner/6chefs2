@@ -231,7 +231,7 @@ bool GameEventHelper::detectTrophyFlg(rapidjson::Value& json, bool negative)
 MapObject* GameEventHelper::getMapObjectById(const string& objectId, bool available)
 {
     // heroであったら主人公を返す
-    if (objectId == "hero")
+    if (objectId == "hero" || objectId == etos(ObjectID::HERO))
     {
         return DungeonSceneManager::getInstance()->getParty()->getMainCharacter();
     }
