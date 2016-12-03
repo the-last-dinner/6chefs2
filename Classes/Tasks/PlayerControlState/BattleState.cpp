@@ -18,6 +18,8 @@
 
 #include "Tasks/PlayerControlTask.h"
 
+#include "MapObjects/Command/StepCommand.h"
+
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
 
@@ -33,6 +35,25 @@ bool BattleState::init(PlayerControlTask* task)
 
 #pragma mark -
 #pragma mark Interface
+
+// 振り向き
+void BattleState::turn(Party* party, const Direction& direction, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // 主人公の向きを変更
+    if (!isDashKeyPressed) {
+        mainCharacter->setDirection(direction);
+    }
+    
+    // 主人公が移動中でなければ
+    if (!mainCharacter->isMoving()) {
+        // 一定時間後に歩行開始
+        if (!_task->isScheduled(PlayerControlTask::START_WALKING_SCHEDULE_KEY)) _task->scheduleOnce([this, party](float _) {
+            _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        }, 0.0f, PlayerControlTask::START_WALKING_SCHEDULE_KEY);
+    }
+}
 
 // 決定キーが押された時
 void BattleState::onEnterKeyPressed(Party* party)
@@ -65,12 +86,23 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
     }
     
     Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
-    party->move(moveDirections, 1.f, [this, party, stamina, step](bool moved) {
-        if (!moved) return;
+    
+    if (step) {
+        StepCommand* command { StepCommand::create() };
+        command->setDirections(directions);
+        command->setCallback([this, party](bool moved) {
+            _task->onPartyMovedOneGrid(party, false);
+        });
         
-        stamina->setDecreasing(false);
-        _task->onPartyMovedOneGrid(party, false);
-    });
+        mainCharacter->pushCommand(command);
+    } else {
+        party->move(moveDirections, 1.f, [this, party, stamina](bool moved) {
+            if (!moved) return;
+            
+            stamina->setDecreasing(false);
+            _task->onPartyMovedOneGrid(party, false);
+        });
+    }
 }
 
 #pragma mark -

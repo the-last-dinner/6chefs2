@@ -333,9 +333,9 @@ void MapObject::move(const vector<Direction>& enableDirections, function<void()>
     this->setGridPosition(this->getGridPosition() + Vec2(movement.x, -movement.y) / GRID);
     
     // 移動開始
-    this->_isMoving = true;
+    _isMoving = true;
     this->runAction(Sequence::createWithTwoActions(MoveBy::create(DURATION_MOVE_ONE_GRID / speed, movement), CallFunc::create([this, onMoved] {
-        this->_isMoving = false;
+        _isMoving = false;
         if (this->onMoved) this->onMoved(this);
         if (onMoved) onMoved();
         _movingDirections.clear();

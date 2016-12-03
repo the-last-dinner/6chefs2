@@ -18,9 +18,8 @@ class Party;
 class PlayerControlTask : public GameTask
 {
 // 定数
-private:
-    static const string START_WALKING_SCHEDULE_KEY;
 public:
+    static const string START_WALKING_SCHEDULE_KEY;
     static const float DASH_SPEED_RATIO;
 
 // クラスメソッド

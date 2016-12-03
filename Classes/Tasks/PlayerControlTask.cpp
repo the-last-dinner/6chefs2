@@ -61,18 +61,8 @@ void PlayerControlTask::turn(const Key& key, Party* party)
     if (party->getMainCharacter()->isInAttackMotion()) return;
     
     Direction direction { Direction::convertKey(key) };
-    Character* mainCharacter {party->getMainCharacter()};
     
-    // 主人公の向きを変更
-    mainCharacter->setDirection(direction);
-    
-    // 主人公が移動中でなければ
-    if (!mainCharacter->isMoving()) {
-        // 一定時間後に歩行開始
-        if (!this->isScheduled(START_WALKING_SCHEDULE_KEY)) this->scheduleOnce([this, party](float _) {
-            this->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
-        }, 0.0f, START_WALKING_SCHEDULE_KEY);
-    }
+    _state->turn(party, direction, DungeonSceneManager::getInstance()->isPressed(Key::DASH));
 }
 
 // 決定キーが押された時
@@ -92,7 +82,7 @@ void PlayerControlTask::move(const vector<Key>& keys, Party* party)
     
     vector<Direction> directions { Direction::convertKeys(keys) };
     
-    _state->move(party, directions,  DungeonSceneManager::getInstance()->isPressed(Key::DASH));
+    _state->move(party, directions, DungeonSceneManager::getInstance()->isPressed(Key::DASH));
 }
 
 // 一マス分移動し終えた時

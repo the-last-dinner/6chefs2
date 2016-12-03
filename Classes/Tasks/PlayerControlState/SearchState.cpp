@@ -34,6 +34,23 @@ bool SearchState::init(PlayerControlTask* task)
 #pragma mark -
 #pragma mark Interface
 
+// 振り向き
+void SearchState::turn(Party* party, const Direction& direction, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // 主人公の向きを変更
+    mainCharacter->setDirection(direction);
+    
+    // 主人公が移動中でなければ
+    if (!mainCharacter->isMoving()) {
+        // 一定時間後に歩行開始
+        if (!_task->isScheduled(PlayerControlTask::START_WALKING_SCHEDULE_KEY)) _task->scheduleOnce([this, party](float _) {
+            _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        }, 0.0f, PlayerControlTask::START_WALKING_SCHEDULE_KEY);
+    }
+}
+
 // 決定キーが押された時
 void SearchState::onEnterKeyPressed(Party* party)
 {
