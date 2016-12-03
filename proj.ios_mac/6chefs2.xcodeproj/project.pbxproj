@@ -11,6 +11,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
 		2607CB181CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */; };
+		2613244D1DE2081200E39526 /* BattleCharacterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2613244B1DE2081200E39526 /* BattleCharacterData.cpp */; };
+		2613244E1DE2081200E39526 /* BattleCharacterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2613244B1DE2081200E39526 /* BattleCharacterData.cpp */; };
 		2626AEC61D99895E00D5623B /* AssertHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2626AEC41D99895E00D5623B /* AssertHelper.cpp */; };
 		2626AEC71D99895E00D5623B /* AssertHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2626AEC41D99895E00D5623B /* AssertHelper.cpp */; };
 		26460B8D1D72EBB600F0336C /* ChapterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26460B811D72EBB600F0336C /* ChapterData.cpp */; };
@@ -416,6 +418,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonEventScripts.cpp; sourceTree = "<group>"; };
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
+		2613244B1DE2081200E39526 /* BattleCharacterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharacterData.cpp; sourceTree = "<group>"; };
+		2613244C1DE2081200E39526 /* BattleCharacterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCharacterData.h; sourceTree = "<group>"; };
 		2626AEC41D99895E00D5623B /* AssertHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssertHelper.cpp; path = Helpers/AssertHelper.cpp; sourceTree = "<group>"; };
 		2626AEC51D99895E00D5623B /* AssertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssertHelper.h; path = Helpers/AssertHelper.h; sourceTree = "<group>"; };
 		26460B811D72EBB600F0336C /* ChapterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChapterData.cpp; path = CsvData/ChapterData.cpp; sourceTree = "<group>"; };
@@ -1103,6 +1107,8 @@
 				DC0390551C871E1000C50E8E /* MapObject */,
 				DC0390581C871E1000C50E8E /* Message */,
 				DC0390611C871E1000C50E8E /* Scene */,
+				2613244B1DE2081200E39526 /* BattleCharacterData.cpp */,
+				2613244C1DE2081200E39526 /* BattleCharacterData.h */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -1843,6 +1849,7 @@
 				DC0392431C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC03918D1C871E1000C50E8E /* Light.cpp in Sources */,
 				DC03918B1C871E1000C50E8E /* Fog.cpp in Sources */,
+				2613244D1DE2081200E39526 /* BattleCharacterData.cpp in Sources */,
 				DC0392391C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
 				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
@@ -1953,6 +1960,7 @@
 				DC0391A01C871E1000C50E8E /* MapEvent.cpp in Sources */,
 				26460BA51D72EF1500F0336C /* DebugConfigData.cpp in Sources */,
 				DC03918A1C871E1000C50E8E /* AmbientLightLayer.cpp in Sources */,
+				2613244E1DE2081200E39526 /* BattleCharacterData.cpp in Sources */,
 				DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
 				9FB79E721D363073004E81CF /* AssertScene.cpp in Sources */,
 				DC0391A21C871E1000C50E8E /* MapObjectEvent.cpp in Sources */,

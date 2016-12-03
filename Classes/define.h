@@ -178,6 +178,7 @@ struct Location
 
 // enum structをint型にキャスト
 #define etoi(param) static_cast<int>(param)
+#define etos(param) to_string(etoi(param))
 
 // パラメータを一つタイプを指定してcreate
 #define CREATE_FUNC_WITH_PARAM(__TYPE_1__, __TYPE_2__) \
