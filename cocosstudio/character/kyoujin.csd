@@ -2,7 +2,7 @@
   <PropertyGroup Name="kyoujin" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="433" Speed="1.0000" ActivedAnimationName="attack_right">
+      <Animation Duration="433" Speed="1.0000" ActivedAnimationName="down">
         <Timeline ActionTag="-315007894" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="260" Tween="False" Value="True" />
@@ -304,7 +304,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_0.png" Plist="character/plist/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/plist/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
