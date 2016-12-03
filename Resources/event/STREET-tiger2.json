@@ -918,5 +918,35 @@
 				}
 			]
 		}
+	],
+	"14":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["7","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["おぃおぃ\n流石に飛行機では逃げられねぇと思うぞ？"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"UP",
+							"steps":1.0,
+							"option":"back"
+						}
+					]
+				}
+			]
+		}
 	]
 }

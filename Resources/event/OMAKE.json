@@ -102,6 +102,17 @@
 			"y":32,
 			"direction":"UP",
 			"movePattern":"2"
+		},
+		{
+			"type":"createObject",
+			"objID":"10145",
+			"charaID":"9",
+			"trigger":"2",
+			"eventID":"12",
+			"x":26,
+			"y":24,
+			"direction":"LEFT",
+			"movePattern":"2"
 		}
 	],
 	"2":[
@@ -212,6 +223,9 @@
 									]
 								}
 							]
+						},
+						{
+							"choice":"いいえ"
 						}
 					]
 				}
@@ -686,10 +700,70 @@
 		{
 			"type":"fadein",
 			"time":3.0
+		}
+	],
+	"12":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"trofyID":"10"
+				}
+			],
+			"action":[
+				{
+					"type":"questionMsg",
+					"text":["エピソード・オブ・大宝を観ますか？"],
+					"choices":[
+						{
+							"choice":"はい",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"fadeout",
+											"time":2.0
+										},
+										{
+											"type":"createCamera",
+											"mapID":"90",
+											"x":15,
+											"y":17,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"fadein"
+										}
+									]
+								}
+							]
+						},
+						{
+							"choice":"いいえ"
+						}
+					]
+				}
+			]
 		},
 		{
-			"type":"playBGM",
-			"file":"OMAKE.mp3"
+			"type":"if",
+			"condition":[
+				{
+					"NtrofyID":"10"
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["必要なトロフィを取得していない・・・"]
+				}
+			]
 		}
 	]
 }
