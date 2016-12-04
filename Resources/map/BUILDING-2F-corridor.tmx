@@ -91,13 +91,12 @@
   </data>
  </layer>
  <objectgroup name="collision">
-  <object id="1" x="0" y="272" width="1168" height="128"/>
+  <object id="1" x="0" y="272" width="1152" height="128"/>
   <object id="2" x="1248" y="80" width="32" height="304"/>
   <object id="3" x="192" y="0" width="1056" height="176"/>
   <object id="4" x="0" y="0" width="32" height="272"/>
   <object id="5" x="32" y="0" width="32" height="176"/>
-  <object id="7" x="1232" y="272" width="16" height="128"/>
-  <object id="8" x="1168" y="368" width="64" height="32"/>
+  <object id="8" x="1152" y="368" width="96" height="32"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="12" x="1088" y="352" width="32" height="32">
