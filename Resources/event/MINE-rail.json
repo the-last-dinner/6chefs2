@@ -5,6 +5,14 @@
 		    "ambient":"night"
 		},
 		{
+			"type":"removeLayer",
+			"layer":"ranmaru"
+		},
+		{
+			"type":"removeLayer",
+			"layer":"ranmaru1"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{
@@ -298,13 +306,12 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"createObject",
-									"objID":"1051",
-									"charaID":"19",
-									"x":115,
-									"y":40,
-									"direction":"UP",
-									"movePattern":"1"
+									"type":"createLayer",
+									"layer":"ranmaru"
+								},
+								{
+									"type":"createLayer",
+									"layer":"ranmaru1"
 								},
 								{
 									"type":"createObject",

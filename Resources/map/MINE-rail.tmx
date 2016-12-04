@@ -2,6 +2,11 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="124" height="194" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="40">
  <tileset firstgid="1" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
+  <tile id="7">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="481" name="Railroad1" tilewidth="16" tileheight="16" tilecount="256" columns="32">
   <image source="Railroad1.png" trans="aa55ff" width="512" height="128"/>
@@ -11,6 +16,9 @@
  </tileset>
  <tileset firstgid="1001" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="2505" name="hizatukiranmaru_3_0" tilewidth="16" tileheight="16" tilecount="8" columns="2">
+  <image source="hizatukiranmaru_3_0.png" width="40" height="64"/>
  </tileset>
  <layer name="Base" width="124" height="194">
   <properties>
@@ -124,6 +132,14 @@
    eJztzgENAAAIA6DbP6UmMYZzgwQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAV13J1PUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgrwUfuwHG
   </data>
  </layer>
+ <layer name="ranmaru" width="124" height="194">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzkENADAIBLD74l/WEIUMMtIqaAIAAAAAAAAAAAAAAAAAAAAAAAAAf3mVdG0vAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALhgAO8RAao=
+  </data>
+ </layer>
  <objectgroup name="collision">
   <properties>
    <property name="cc_vertexz" value="-11"/>
@@ -208,6 +224,11 @@
  <layer name="shadow" width="124" height="194">
   <data encoding="base64" compression="zlib">
    eJzt00FuFUsQRUEGbJUVsH8J1YCh9RtE9stfJ2Lqlp23jvztGwD/Jz+/f/oC3qR3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94terfo/Rmfene9P0PvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9G7Ru0XvFr1b9J63aave8zZt1Xvepq16z9u0Ve95m7bqPW/TVr3nbdr6r27509+z6Q2mbdqq97xNW/Wet2mr3vM2bdV73qates/btFXveZu26j1v01a9523aqve8G7fq/bUbt+r9tRu3lnv/15abtv6m99///K07nn4zQe/373j6zQS937/j6TcT9H7/jqffTND7/TuefjNB7/fvePrNBL3fv+PpNxP0fv+Op99M0Pv9O55+M0Hv9+94+s2EUu+31Hv/WPR/9YZ67y0d3qL3/N/YRO/5v/HEljsOvedtuePQe96WOw69522549B73pY7Dr3nbbnj0HveljsOvedtuePQe96WOw69522549B73pY7Dr3nbbnj0HveljsOvedtuePQe96WOw69522549B73pY7PknvFr1bSm9Q2vqV0huUtqJ3jd7v8M4terfo3aJ3i94terfo3aJ3i94terfo3aJ3i94tt/S+Zce0W97plh3TbnmnW3ZMu+Wdbtkx7ZZ3umXHtFve6ZYd0255p1t2TLvlnW7ZMe2Wd7plB8/o3aJ3i94tej/jnVr0BvicXz6MtT0=
+  </data>
+ </layer>
+ <layer name="ranmaru1" width="124" height="194">
+  <data encoding="base64" compression="zlib">
+   eJztzkENAAAIBKD72j+VpjKGc4MEJAAAAAAAAAAAAAAAAAAAAAAAAAD/dSVT1wsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4JsFfGoBpg==
   </data>
  </layer>
 </map>

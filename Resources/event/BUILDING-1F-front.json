@@ -17,7 +17,7 @@
 		{
 			"type":"createEnemy",
 			"objID":"148",
-			"x":26,
+			"x":28,
 			"y":20,
 			"charaID":"13",
 			"movePattern":"4",

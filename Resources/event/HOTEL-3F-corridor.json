@@ -19,7 +19,7 @@
 				{
 					"type":"createEnemy",
 					"objID":"146",
-					"x":64,
+					"x":62,
 					"y":12,
 					"charaID":"13",
 					"movePattern":"4",
@@ -368,7 +368,7 @@
 									"type":"charaWalk",
 									"objID":"145",
 									"direction":"DOWN",
-									"speed":10.0,
+									"speed":20.0,
 									"steps":5.5
 								}
 							]

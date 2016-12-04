@@ -36,28 +36,6 @@
 			"y":23,
 			"direction":"UP",
 			"movePattern":"1"
-		},
-		{
-			"type":"createObject",
-			"objID":"1089",
-			"charaID":"21",
-			"eventID":"10",
-			"trigger":"2",
-			"x":15,
-			"y":19,
-			"direction":"DOWN",
-			"movePattern":"1"
-		},
-		{
-			"type":"createObject",
-			"objID":"1090",
-			"charaID":"21",
-			"eventID":"11",
-			"trigger":"2",
-			"x":19,
-			"y":19,
-			"direction":"DOWN",
-			"movePattern":"1"
 		}
 	],
 	"2":[
@@ -521,10 +499,9 @@
 									             			"type":"fadein",
 									               			"time":3.0
 									              		},
-									               		
-									               				{
-									               					"type":"sequence",
-									            					"action":[
+									               		{
+									               			"type":"sequence",
+									            			"action":[
 									            						{
 									            							"type":"wait",
 									            							"time":4.9
@@ -1238,7 +1215,9 @@
 								                        	"type":"stopBGM"
 								                        }
 													]
-												},
+												}
+											]
+										},
 										{
 											"type":"createObject",
 											"objID":"1086",
@@ -1266,24 +1245,6 @@
 											"x":19,
 											"y":23,
 											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1089",
-											"charaID":"21",
-											"x":15,
-											"y":19,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1090",
-											"charaID":"21",
-											"x":19,
-											"y":19,
-											"direction":"DOWN",
 											"movePattern":"1"
 										},
 										{
@@ -2132,24 +2093,6 @@
 											"x":19,
 											"y":23,
 											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1089",
-											"charaID":"21",
-											"x":15,
-											"y":19,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1090",
-											"charaID":"21",
-											"x":19,
-											"y":19,
-											"direction":"DOWN",
 											"movePattern":"1"
 										},
 										{
@@ -3069,24 +3012,6 @@
 											"movePattern":"1"
 										},
 										{
-											"type":"createObject",
-											"objID":"1089",
-											"charaID":"21",
-											"x":15,
-											"y":19,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1090",
-											"charaID":"21",
-											"x":19,
-											"y":19,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
 											"type":"fadein"
 										},
 										{
@@ -3931,24 +3856,6 @@
 											"x":19,
 											"y":23,
 											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1089",
-											"charaID":"21",
-											"x":15,
-											"y":19,
-											"direction":"DOWN",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1090",
-											"charaID":"21",
-											"x":19,
-											"y":19,
-											"direction":"DOWN",
 											"movePattern":"1"
 										},
 										{
