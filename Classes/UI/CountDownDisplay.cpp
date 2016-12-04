@@ -26,9 +26,9 @@ bool CountDownDisplay::init()
 {
     // 下地のディスプレイ
     Sprite* display {Sprite::create()};
-    display->setTextureRect(Rect(0, 0, WINDOW_WIDTH / 6, WINDOW_HEIGHT / 8));
+    display->setTextureRect(Rect(0, 0, WINDOW_WIDTH / 7, WINDOW_HEIGHT / 9));
     display->setColor(Color3B::BLACK);
-    display->setOpacity(50);
+    display->setOpacity(30);
     this->addChild(display);
     
     // カウントダウンラベル
@@ -36,12 +36,14 @@ bool CountDownDisplay::init()
     secondsLabel->setPosition(display->getContentSize().width / 2, display->getContentSize().height / 2);
     secondsLabel->setColor(Color3B::WHITE);
     display->addChild(secondsLabel);
-    this->secondsLabel = secondsLabel;
+    _secondsLabel = secondsLabel;
     
     Point inPosition {Point(WINDOW_WIDTH - display->getContentSize().width / 2 - HORIZONTAL_MARGIN, WINDOW_HEIGHT - display->getContentSize().height / 2 - VERTICAL_MARGIN)};
     Point outPosition {Point(WINDOW_WIDTH - display->getContentSize().width / 2 - HORIZONTAL_MARGIN, WINDOW_HEIGHT + display->getContentSize().height)};
     
     if(!SlideNode::init(inPosition, outPosition)) return false;
+    
+    this->changeColor(100.f);
     
     return true;
 }
@@ -49,24 +51,43 @@ bool CountDownDisplay::init()
 // 残り秒数をセット
 void CountDownDisplay::setSecondsLeft(const float& secondsLeft)
 {
+    if (!_secondsLabel) return;
     char secondsLeftCharas[10];
     sprintf(secondsLeftCharas, "%.2f", secondsLeft);
     string secondsLeftString = secondsLeftCharas;
-    this->secondsLabel->setString(secondsLeftString);
-    // this->changeColor();
+    _secondsLabel->setString(secondsLeftString);
 }
 
 // 色を変更
 void CountDownDisplay::changeColor(const float percentage)
 {
-    if(percentage < WARNING_COLOR_CHANGE_THRESHOLD)
-    {
-        this->secondsLabel->setColor(WARNING_COLOR);
+    // Warning状態だったら何もしない
+    if (_isWarning) return;
+    
+    if (percentage > WARNING_COLOR_CHANGE_THRESHOLD) {
+        _secondsLabel->setColor(Color3B::WHITE);
+    } else {
+        _secondsLabel->setColor(Color3B::RED);
+        this->setWarningScaleAnimation();
+        _isWarning = true;
     }
-    else
-    {
-        this->secondsLabel->setColor(NORMAL_COLOR);
-    }
+}
+
+// 各隊縮小のアニメーションを入れる
+void CountDownDisplay::setWarningScaleAnimation()
+{
+    // 移動設定
+    float duaration = 0.5f;
+    float scale = 1.4f;
+    
+    // 反復移動位置を設定
+    ActionInterval* animation = Sequence::createWithTwoActions(
+        TargetedAction::create(_secondsLabel, ScaleTo::create(duaration, scale)),
+        TargetedAction::create(_secondsLabel, ScaleTo::create(duaration, 1.f))
+    );
+    
+    // 反復移動を登録
+    this->runAction(RepeatForever::create(animation));
 }
 
 // 表示

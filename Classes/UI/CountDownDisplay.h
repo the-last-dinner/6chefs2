@@ -27,13 +27,15 @@ public:
     
     // インスタンス変数
 private:
-    Label* secondsLabel { nullptr };
+    Label* _secondsLabel { nullptr };
+    bool _isWarning { false };
     
     // インスタンスメソッド
 private:
     CountDownDisplay();
     ~CountDownDisplay();
     bool init() override;
+    void setWarningScaleAnimation();
     
 public:
     void setSecondsLeft(const float& secondsLeft);

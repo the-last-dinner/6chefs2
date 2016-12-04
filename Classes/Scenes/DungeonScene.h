@@ -92,6 +92,7 @@ public:
     virtual void onExitPushedScene() override;
     void onBattleStart(Battle* battle);
     void onBattleFinished(Battle* battle);
+    CountDownDisplay* getCountDownDisplay();
 };
 
 

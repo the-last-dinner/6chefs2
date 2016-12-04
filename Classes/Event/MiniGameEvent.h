@@ -76,6 +76,7 @@ private:
     float _second { 5.f };
     int _equip { 0 };
     bool _checkEquip { false };
+    bool _display { false };
     GameEvent* _resultCallbackEvent { nullptr };
 private:
     CountDownEvent() { FUNCLOG };

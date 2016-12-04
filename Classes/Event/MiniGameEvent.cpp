@@ -25,6 +25,8 @@
 
 #include "Scenes/DungeonScene.h"
 
+#include "UI/CountDownDisplay.h"
+
 #pragma mark ButtonMashingEvent
 
 bool ButtonMashingEvent::init(rapidjson::Value& json)
@@ -238,14 +240,21 @@ bool CountDownEvent::init(rapidjson::Value& json)
         _checkEquip = true;
     }
     
+    if (_eventHelper->hasMember(_json, member::DISPLAY)) {
+        _display = _json[member::DISPLAY].GetBool();
+    }
+    
     return true;
 }
 
 void CountDownEvent::run()
 {
     StopWatch* stopWatch { DungeonSceneManager::getInstance()->getStopWatch() };
-    
     stopWatch->setCountDown(this);
+    
+    if (_display) {
+        DungeonSceneManager::getInstance()->getScene()->getCountDownDisplay()->slideIn();
+    }
     
     stopWatch->scheduleCallback = [this](double time) {
         // 条件チェック
@@ -263,6 +272,14 @@ void CountDownEvent::run()
             
             return false;
         }
+
+        // ディスプレイ表示
+        if (_display) {
+            CountDownDisplay* countDownDisplay { DungeonSceneManager::getInstance()->getScene()->getCountDownDisplay() };
+            countDownDisplay->setSecondsLeft(_second - time);
+            countDownDisplay->changeColor((_second - time) / _second * 100);
+        }
+        
         CCLOG("COUNT DOWN >> %f", _second - time);
         
         // 時間切れチェック
@@ -270,7 +287,8 @@ void CountDownEvent::run()
             GameEvent* event { _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this) };
             CC_SAFE_RETAIN(event);
             _resultCallbackEvent = event;
-            event->run();
+            // 時間切れと同時にrunuすると落ちるの防止
+            if (event) event->run();
             
             return false;
         }
@@ -279,7 +297,7 @@ void CountDownEvent::run()
     };
     
     // カウントダウンスタート
-    stopWatch->startCountDown(0.5f);
+    stopWatch->startCountDown(0.03f);
     
     this->setDone();
 }
@@ -309,5 +327,7 @@ void StopCountEvent::run()
 {
     DungeonSceneManager::getInstance()->pauseStopWatch();
     DungeonSceneManager::getInstance()->releaseStopWatch();
+    DungeonSceneManager::getInstance()->getScene()->getCountDownDisplay()->slideOut();
+
     this->setDone();
 }

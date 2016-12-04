@@ -175,15 +175,8 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     CountDownDisplay* countDownDisplay { CountDownDisplay::create() };
     countDownDisplay->setLocalZOrder(Priority::COUNT_DOWN_DISPLAY);
     this->addChild(countDownDisplay);
-    StopWatch* stopWatch {DungeonSceneManager::getInstance()->getStopWatch()};
-    stopWatch->scheduleCallback = [this](double time) {
-        this->_countDownDisplay->setSecondsLeft(time);
-        return true;
-    };
     _countDownDisplay = countDownDisplay;
-    stopWatch->startCountDown(0.01);
-    //_countDownDisplay->setSecondsLeft(stopWatch->getTime());
-    _countDownDisplay->slideIn();
+    if (DungeonSceneManager::getInstance()->existsStopWatch()) _countDownDisplay->slideIn();
     
     // イベント処理クラスにコールバック設定
     eventTask->onEventStart = CC_CALLBACK_0(DungeonScene::onEventStart, this);
@@ -386,3 +379,9 @@ void DungeonScene::onExitPushedScene()
 
 // データクラスを取得
 DungeonSceneData* DungeonScene::getData() const { return dynamic_cast<DungeonSceneData*>(_data); }
+
+// カウントダウンディスプレイを取得
+CountDownDisplay* DungeonScene::getCountDownDisplay()
+{
+    return _countDownDisplay;
+}
