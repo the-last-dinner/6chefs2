@@ -28,6 +28,8 @@
 #include "Managers/DungeonSceneManager.h"
 #include "Managers/NotificationManager.h"
 
+#include "Models/StopWatch.h"
+
 #include "Scenes/EventHandler/DungeonSceneEventHandler.h"
 #include "Scenes/DungeonMenuScene.h"
 #include "Scenes/GameOverScene.h"
@@ -39,6 +41,7 @@
 #include "Tasks/PlayerControlTask.h"
 
 #include "UI/StaminaBar.h"
+#include "UI/CountDownDisplay.h"
 
 // コンストラクタ
 DungeonScene::DungeonScene() { FUNCLOG }
@@ -158,14 +161,29 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     this->addChild(staminaBar);
     _staminaBar = staminaBar;
     
+    
     // スタミナが変化した際のコールバック指定
-    DungeonSceneManager::getInstance()->setStaminaCallback(CC_CALLBACK_1(StaminaBar::setPercentage, staminaBar));
+    DungeonSceneManager::getInstance()->setStaminaCallback(CC_CALLBACK_1(StaminaBar::setPercentage, _staminaBar));
     
     // スタミナ残量を反映
-    staminaBar->setPercentage(DungeonSceneManager::getInstance()->getStamina()->getPercentage());
+    _staminaBar->setPercentage(DungeonSceneManager::getInstance()->getStamina()->getPercentage());
     
     // 敵が存在すれば、スタミナバーを表示しておく
     if(enemyTask->existsEnemy()) staminaBar->slideIn();
+    
+    // カウントダウン表示
+    CountDownDisplay* countDownDisplay { CountDownDisplay::create() };
+    countDownDisplay->setLocalZOrder(Priority::COUNT_DOWN_DISPLAY);
+    this->addChild(countDownDisplay);
+    StopWatch* stopWatch {DungeonSceneManager::getInstance()->getStopWatch()};
+    stopWatch->scheduleCallback = [this](double time) {
+        this->_countDownDisplay->setSecondsLeft(time);
+        return true;
+    };
+    _countDownDisplay = countDownDisplay;
+    stopWatch->startCountDown(0.01);
+    //_countDownDisplay->setSecondsLeft(stopWatch->getTime());
+    _countDownDisplay->slideIn();
     
     // イベント処理クラスにコールバック設定
     eventTask->onEventStart = CC_CALLBACK_0(DungeonScene::onEventStart, this);

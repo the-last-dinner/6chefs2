@@ -14,16 +14,16 @@
 #pragma mark Init
 
 // 初期化
-bool StopWatch::init(const double& init_time)
+bool StopWatch::init(const double& initTime)
 {
     // 初期時間のセット
-    this->time = init_time;
+    this->time = initTime;
     return true;
 }
 
-bool StopWatch::init(const int init_time)
+bool StopWatch::init(const int initTime)
 {
-    return this->init(static_cast<double>(init_time));
+    return this->init(static_cast<double>(initTime));
 }
 
 #pragma mark -
@@ -33,16 +33,16 @@ bool StopWatch::init(const int init_time)
 void StopWatch::tic()
 {
     this->isCounting = true;
-    this->start_time = this->getSecMs();
+    this->startTime = this->getSecMs();
 }
 
 // 時間計測停止
 void StopWatch::toc()
 {
-    double start = this->start_time;
+    double start = this->startTime;
     double stop = this->getSecMs();
-    double interval_time = stop - start;
-    this->time += interval_time;
+    double intervalTime = stop - start;
+    this->time += intervalTime;
     this->isCounting = false;
 }
 
@@ -77,17 +77,17 @@ int StopWatch::getTimeInt()
 #pragma mark CountDown
 
 // カウントダウン開始
-void StopWatch::startCountDown(const float& interval_time)
+void StopWatch::startCountDown(const float& intervalTime)
 {
-    this->interval_time = interval_time;
-    Director::getInstance()->getScheduler()->schedule(schedule_selector(StopWatch::scheduleFunction), this, this->interval_time, false);
+    this->intervalTime = intervalTime;
+    Director::getInstance()->getScheduler()->schedule(schedule_selector(StopWatch::scheduleFunction), this, this->intervalTime, false);
     this->tic();
 }
 
 void StopWatch::startCountDown()
 {
-    if(!this->countDownEvent) return;
-    this->startCountDown(this->interval_time);
+    //if(!this->countDownEvent) return;
+    this->startCountDown(this->intervalTime);
 }
 
 // カウントダウン停止処理
@@ -102,15 +102,13 @@ void StopWatch::scheduleFunction(float delta)
     bool continueSchedule = true;
     
     // コールバック関数の実行
-    if(this->scheduleCallback)
-    {
+    if (this->scheduleCallback) {
         // 引数に経過時間、戻り値がTRUE
         continueSchedule = this->scheduleCallback(this->getTime());
     }
     
     // カウントダウンをストップ
-    if (!continueSchedule)
-    {
+    if (!continueSchedule) {
         this->stopCountDown();
         CC_SAFE_RELEASE_NULL(this->countDownEvent);
     }

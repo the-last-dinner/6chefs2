@@ -41,6 +41,8 @@
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
+		26E301571DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
+		26E301581DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26E950BA1CDA51200018BF93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B91CDA51200018BF93 /* Images.xcassets */; };
 		26FBC8EF1CF0B2CB00FDBF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -458,6 +460,8 @@
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
+		26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CountDownDisplay.cpp; sourceTree = "<group>"; };
+		26E301561DF2D6B7000E585D /* CountDownDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownDisplay.h; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		26FBC8EE1CF0B28200FDBF17 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "mac/ja-JP.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		26FBED361C98514A002FAFF7 /* CsvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvUtils.cpp; sourceTree = "<group>"; };
@@ -1528,6 +1532,8 @@
 				DC0391631C871E1000C50E8E /* SlideNode.h */,
 				DC0391641C871E1000C50E8E /* StaminaBar.cpp */,
 				DC0391651C871E1000C50E8E /* StaminaBar.h */,
+				26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */,
+				26E301561DF2D6B7000E585D /* CountDownDisplay.h */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1888,6 +1894,7 @@
 				DC03918D1C871E1000C50E8E /* Light.cpp in Sources */,
 				DC03918B1C871E1000C50E8E /* Fog.cpp in Sources */,
 				2613244D1DE2081200E39526 /* BattleCharacterData.cpp in Sources */,
+				26E301571DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */,
 				DC0392391C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
 				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
@@ -2036,6 +2043,7 @@
 				DC0392521C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
 				DC03917E1C871E1000C50E8E /* DungeonSceneData.cpp in Sources */,
 				DC0391E21C871E1000C50E8E /* TextureManager.cpp in Sources */,
+				26E301581DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */,
 				DC0391C01C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26460B9A1D72ED8900F0336C /* CharacterMasterData.cpp in Sources */,
 				DC5D1D581D84FA7D0034DD8F /* CollisionBox.cpp in Sources */,

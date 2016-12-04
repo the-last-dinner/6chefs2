@@ -26,6 +26,7 @@ class PlayerControlTask;
 class LoadingLayer;
 class Party;
 class StaminaBar;
+class CountDownDisplay;
 class EventListenerKeyboardLayer;
 
 class Battle;
@@ -54,6 +55,7 @@ protected:
     
     Party* _party { nullptr };
     StaminaBar* _staminaBar { nullptr };
+    CountDownDisplay* _countDownDisplay { nullptr };
     
 // インスタンスメソッド
 protected:
