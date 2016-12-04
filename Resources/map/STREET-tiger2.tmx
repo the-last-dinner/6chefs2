@@ -54,7 +54,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzrsNwjAUhtEbEuGKEZiLHRmDR5ghgWG4JQhHQBHJxTnS11iW/Ue823VttmTftdmSQ99m9tprr73/7j0OEcP2e33l7FQiztklu2Zjdiuf9zYv1d6ptZYp983ZPXuU9f4BAAAAAAAAAAAAAAAAAAAAgF88ASYqbjQ=
+   eJzt0EtKw1AAheFbW8zIJXRd7kMLzq3gPuoLnFpdgI+6Bm0X4yk4iJiqAwM38H3wc+ESkkNK+epgVGe7TEd1tsvhuM762HvUlHKcZp/ntpOm3r2n2TZPZ63zfAB72w1h71D+7yLbLtJlukrX6abivdvusm+Z7tPDP239ae/tpJTJ/u+NO+4es+8pPaeXtEqvzffn9lp1vaervrxl33tap03T33cAAAAAAAAAAAAAAAAAAAAA4C8+AO6mddQ=
   </data>
  </layer>
  <layer name="MonoUe3" width="44" height="108">
@@ -70,7 +70,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0DkKwgAURdF02a8K9iq4DxtxqGzEobIRhw04LMYXsEhjKSZyDlx++/hFAd/RKYuim3rvW9Uvf73qs0G2DdOodsct2FuvDXvb8t9Jts3SPC3SMk0bvHeVbZu0Tbu0T+sG7z1k2ymd0yVd07HBeyu37LunR3o2fCsAAAAAAAAAAAAAAAAAAAAA/+8FnrMdnw==
+   eJzt0LkJAmEUhdE/m35VMFfBPkzEpQGXyERcGnApxjtgMImhOCPnwMdLL68U+I5eVUo/Dd63blj9etVno2wbp0njTjuwt1kX9nblv7NsW6RlWqV1mrd4b22Tfdu0S/uWbz1k3ymd0yVd07Hlm2/Zd0+P9Gz5VgAAAAAAAAAAAAAAAAAAAAD+3wth0Rwo
   </data>
  </layer>
  <objectgroup name="collision">
@@ -506,12 +506,6 @@
    <properties>
     <property name="EventID" value="13"/>
     <property name="trigger" value="3"/>
-   </properties>
-  </object>
-  <object id="153" x="272" y="1648" width="160" height="32">
-   <properties>
-    <property name="EventID" value="14"/>
-    <property name="trigger" value="1"/>
    </properties>
   </object>
  </objectgroup>

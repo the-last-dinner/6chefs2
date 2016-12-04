@@ -341,10 +341,20 @@
 	],
 	"3":[
 		{
-			"type":"changeMap",
-			"mapID":"6",
-			"x":4,
-			"y":29
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["7","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"6",
+					"x":4,
+					"y":29
+				}
+			]
 		}
 	],
 	"4":[
@@ -670,19 +680,40 @@
 					"time":1.0
 				},
 				{
-					"type":"displayImg",
-					"file":"tengenrou.png"
+					"type":"camera",
+					"x":18,
+					"y":10,
+					"time":0.5
 				},
 				{
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["あそこにある建物なんかどうスか？\n塀も高いし・・・","確か隣の通りに入口がありましたよね。"],
+							"text":["あそこにある建物なんかどうスか？\nあのバカ高い壁の・・・","確か隣の通りに入口がありましたよね。"],
 							"charaID":"5",
 							"imgID":"2"
 						},
 						{
-							"text":["なるほどな・・・\n確か”天弦楼”とかいう施設だったよな・・・","・・・","・・・フン\n吾郎、お前変わったな。"],
+							"text":["なるほどな・・・\n確か”天弦楼”とかいう施設だったよな・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						}
+					]
+				},
+				{
+					"type":"fadeout"
+				},
+				{
+					"type":"setCamera"
+				},
+				{
+					"type":"fadein"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["・・・","・・・フン\n吾郎、お前変わったな。"],
 							"charaID":"8",
 							"imgID":"1"
 						},

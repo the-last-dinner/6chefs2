@@ -8,7 +8,7 @@
 			"type":"createEnemy",
 			"objID":"1419",
 			"charaID":"13",
-			"x":20,
+			"x":22,
 			"y":22,
 			"pathID":"1",
 			"direction":"UP",

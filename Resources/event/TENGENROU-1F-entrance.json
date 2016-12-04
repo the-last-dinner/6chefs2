@@ -46,7 +46,7 @@
 					"type":"createEnemy",
 					"objID":"1426",
 					"charaID":"13",
-					"x":27,
+					"x":30,
 					"y":13,
 					"direction":"UP",
 					"times":1,
@@ -296,15 +296,6 @@
 							"text":["・・・\nフゥ・・・","ケンさん。ここはオレに任せてくださいッス。"],
 							"charaID":"5",
 							"imgID":"1"
-						}
-					]
-				},
-				{
-					"type":"battle",
-					"objID":["1424","1425"],
-					"true":[
-						{
-							"type":"already"
 						}
 					]
 				},

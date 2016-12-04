@@ -621,15 +621,34 @@
 			],
 			"action":[
 				{
-					"type":"changeDirection",
-					"objID":"1023",
-					"direction":"UP"
-				},
-				{
-					"type":"charaMsg",
-					"text":["アレが・・・天弦楼か・・・\nでけーな"],
-					"charaID":"5",
-					"imgID":"3"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"camera",
+									"x":21,
+									"y":9,
+									"time":0.5
+								},
+								{
+									"type":"changeDirection",
+									"objID":"1023",
+									"direction":"UP"
+								},
+								{
+									"type":"charaMsg",
+									"text":["アレが・・・天弦楼か・・・\nでけーな"],
+									"charaID":"5",
+									"imgID":"3"
+								}
+							]
+						},
+						{
+							"type":"setCamera"
+						}
+					]
 				}
 			]
 		},
@@ -915,36 +934,6 @@
 				},
 				{
 					"type":"already"
-				}
-			]
-		}
-	],
-	"14":[
-		{
-			"type":"if",
-			"condition":[
-				{
-					"event":["7","7"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"charaMsg",
-							"text":["おぃおぃ\n流石に飛行機では逃げられねぇと思うぞ？"],
-							"charaID":"8",
-							"imgID":"1"
-						},
-						{
-							"type":"charaWalk",
-							"objID":"hero",
-							"direction":"UP",
-							"steps":1.0,
-							"option":"back"
-						}
-					]
 				}
 			]
 		}
