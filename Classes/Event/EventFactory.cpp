@@ -42,6 +42,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"stopBGM", StopBGMEvent::create},           // BGM停止
     {"changeVolume", ChangeVolumeEvent::create}, // BGMの音量変更
     {"playSE", PlaySEEvent::create},             // 効果音再生
+    {"playVoice", PlayVoiceEvent::create},       // ボイス再生
     
     // モーダルレイヤ系
     {"charaMsg", CharacterMessage::create},         // キャラメッセージ

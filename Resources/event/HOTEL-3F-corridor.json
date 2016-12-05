@@ -291,6 +291,10 @@
 						{
 							"type":"spawn",
 							"action":[
+                                      {
+                                      "type": "playVoice",
+                                      "file": "herukepo.mp3"
+                                      },
 								{
 									"type":"removeLayer",
 									"layer":"doorP"

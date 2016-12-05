@@ -27,6 +27,7 @@ const char* GlobalPlayerData::TROPHY {"trophy"};
 const char* GlobalPlayerData::TOKENS {"tokens"};
 const char* GlobalPlayerData::BGM_VOLUME {"bgm_volume"};
 const char* GlobalPlayerData::SE_VOLUME {"se_volume"};
+const char* GlobalPlayerData::VOICE_VOLUME {"voice_volume"};
 const char* GlobalPlayerData::CURSOR_KEY {"cursor_key"};
 const char* GlobalPlayerData::ENTER_KEY {"enter_key"};
 const char* GlobalPlayerData::DASH_KEY {"dash_key"};
@@ -256,6 +257,19 @@ float GlobalPlayerData::getSeVolume()
 {
     if (!this->globalData.HasMember(SE_VOLUME)) return 0.5;
     return this->globalData[SE_VOLUME].GetDouble();
+}
+
+// voiceのマスターボリュームをセット
+void GlobalPlayerData::setVoiceVolume(const float &volume)
+{
+    this->globalData[VOICE_VOLUME].SetDouble(volume);
+}
+
+// voiceのマスターボリュームをゲット
+float GlobalPlayerData::getVoiceVolume()
+{
+    if (!this->globalData.HasMember(VOICE_VOLUME)) return 0.5;
+    return this->globalData[VOICE_VOLUME].GetDouble();
 }
 
 #pragma mark -
