@@ -115,6 +115,7 @@
                 "imgID": ["stoi"],
                 "option": ["messageOption"],
                 "miniChara": ["bool"],
+                "voice": ["string"],
                 "talk": [[{
                     "require": ["text"],
                     "member": {
@@ -123,7 +124,8 @@
                         "charaID": ["stoi"],
                         "imgID": ["stoi"],
                         "option": ["messageOption"],
-                        "miniChara": ["bool"]
+                        "miniChara": ["bool"],
+                        "voice": ["file"]
                     }
                 }]]
             }

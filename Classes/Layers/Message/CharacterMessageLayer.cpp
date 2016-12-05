@@ -77,6 +77,12 @@ Label* CharacterMessageLayer::createMessage()
         
         SoundManager::getInstance()->playSE("msg_reaction.mp3", 0.5f);
     }
+    
+    // ボイスがあれば鳴らす
+    string voiceFileName = data->getVoiceFileName();
+    if (voiceFileName != "") {
+        SoundManager::getInstance()->playVoice(voiceFileName);
+    }
  
     // キャラクター画像
     if(this->charaImg)
