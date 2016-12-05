@@ -125,7 +125,7 @@
                         "imgID": ["stoi"],
                         "option": ["messageOption"],
                         "miniChara": ["bool"],
-                        "voice": ["file"]
+                        "voice": ["string"]
                     }
                 }]]
             }

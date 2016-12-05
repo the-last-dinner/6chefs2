@@ -41,7 +41,7 @@
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
-		26CC40EF1DF5CD3B00DCCC30 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = 26CC40EE1DF5CD3B00DCCC30 /* voice */; };
+		26CC40F91DF5E33000DCCC30 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = 26CC40F81DF5E33000DCCC30 /* voice */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26E950BA1CDA51200018BF93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B91CDA51200018BF93 /* Images.xcassets */; };
 		26FBC8EF1CF0B2CB00FDBF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -448,7 +448,7 @@
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
-		26CC40EE1DF5CD3B00DCCC30 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voice; path = ../proj.ios_mac/voice; sourceTree = "<group>"; };
+		26CC40F81DF5E33000DCCC30 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voice; path = ../proj.ios_mac/voice; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		26FBC8EE1CF0B28200FDBF17 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "mac/ja-JP.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		26FBED361C98514A002FAFF7 /* CsvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvUtils.cpp; sourceTree = "<group>"; };
@@ -977,7 +977,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				26CC40EE1DF5CD3B00DCCC30 /* voice */,
+				26CC40F81DF5E33000DCCC30 /* voice */,
 				DC0182A51D7BCCE900E556D1 /* character */,
 				269211551CE89FB5005C0E5A /* config */,
 				26E950B91CDA51200018BF93 /* Images.xcassets */,
@@ -1749,7 +1749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26CC40EF1DF5CD3B00DCCC30 /* voice in Resources */,
+				26CC40F91DF5E33000DCCC30 /* voice in Resources */,
 				DC0182A61D7BCCE900E556D1 /* character in Resources */,
 				269211571CE8A9A9005C0E5A /* config in Resources */,
 				DC328A761C87194E00675131 /* map in Resources */,
