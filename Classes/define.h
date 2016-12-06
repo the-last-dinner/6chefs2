@@ -40,6 +40,11 @@ typedef GenericStringBuffer< UTF8<> > StringBuffer;
 // ゲームウインドウ横幅、縦幅
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
+// ゲームウインドウのサイズ比
+#define WINDOW_SIZE_RATIO_MIN 0.75f
+#define WINDOW_SIZE_RATIO_DEFAULT 1.f
+#define WINDOW_SIZE_RATIO_MIDDLE 1.25f
+#define WINDOW_SIZE_RATIO_MAX 1.5f
 
 // 1マスの大きさ(px)
 #define GRID 16

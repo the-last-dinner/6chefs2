@@ -66,10 +66,10 @@ void ConfigEventListenerLayer::switchWinSize()
 {
     vector<float> config
     {
-        0.75f,
-        1.f,
-        1.25f,
-        1.5f,
+        WINDOW_SIZE_RATIO_MIN,
+        WINDOW_SIZE_RATIO_DEFAULT,
+        WINDOW_SIZE_RATIO_MIDDLE,
+        WINDOW_SIZE_RATIO_MAX,
     };
     
     int currentConfIdx { 0 };

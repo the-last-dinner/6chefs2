@@ -207,6 +207,8 @@ void EventSpawn::update(float delta)
     bool allDone { true };
     
     for (GameEvent* event : _events) {
+        if(event->isDone()) continue;
+        
         event->update(delta);
         
         if (!event->isDone()) allDone = false;
