@@ -707,7 +707,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trofyID":"10"
+					"trophy":"10"
 				}
 			],
 			"action":[
@@ -755,7 +755,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"NtrofyID":"10"
+					"Ntrophy":"10"
 				}
 			],
 			"action":[

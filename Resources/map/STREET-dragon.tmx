@@ -9,6 +9,29 @@
  <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" width="480" height="1520"/>
  </tileset>
+ <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="man.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Base" width="22" height="110">
   <properties>
    <property name="z" value="-11"/>
@@ -30,7 +53,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztmCsOAkEQRPsAS/b+pwABgk9AgAUBgr+A4FixCBAgliKDw06RVFLvAE9Muqu7J8IYYxLDMmJU5vdu4dwRvOMiYlLk93bh7BG8SzhXBG8N543gZb0vy2s0UcudKWp3RqjfE5xngrf5OFv5vaw+fsL5cj6YL2r50Ebtdgj1O4dzQfBe4ay8R9H2qD6cA4J3DeeG4L3D+SB43RcJ14NRRm0eew4lfLckWPnrXE+w7sIDnEehe1Mtd9TyzGiitj/sMYMuhDmk5jXG/KKWZ/6HMcqo9du/eAOdKmu8
+   eJzt2L0OAUEYheHvAlb2/q+CgsJPKEhoKCj8hILENhQUFBQcGZ12juQk572Ap9jMfDOzEc45l+qWEb0yv7uGuSG4/SJiUOR3mzBbBHcOc0FwLzCvBJf1fVmu00xt7gyxdkeE9buHeSC4r49Zy++y9vED5tPzwX1Tmw91rN0GYf1OYc4I7gnm2fco2j2qDbNDcJcwVwT3BvNOcL0vUl4PTjm189jnUMrvlhRr/nqup1jvwi3MndB7U23uqM0zp5na/WGMM2hCOIdY7hFmRXCdc7+pzTP/h3HKqe23f/UGzvVraA==
   </data>
  </layer>
  <layer name="MonoUe2" width="22" height="110">
@@ -47,6 +70,11 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1rENg0AQRcHLIKMK3Ag0YhqBRkytXmlDJMuBFwk8U8DL7t+2xj/rhtb64ffdMZqPgu4Uzbmg+4zmUtBdo7kVdF/R3Au6cAa7k+wOHFXtQ9U7tjvJ7gDci3s9+TcB4Hvuh+R+AM5mz5I9uyb3Q/Le+OQNln4gDg==
+  </data>
+ </layer>
+ <layer name="manhall" width="22" height="110">
+  <data encoding="base64" compression="zlib">
+   eJztzEkNACAQBLARsf7NcegACyTwIGkFNAEAAACAc62SXvffsc/54AUAAACAHywOhQPj
   </data>
  </layer>
  <objectgroup name="collision">
