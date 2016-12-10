@@ -115,8 +115,9 @@ void WalkCommand::execute(MapObject* target)
     
     if (!character) return;
     
-    character->walkBy(_directions, [this](bool walked) {
-        if (_callback) _callback(walked);
+    function<void(bool)> callback = _callback;
+    character->walkBy(_directions, [this, callback](bool walked) {
+        if (callback) callback(walked);
         this->setDone();
     }, _speed, _back, _ignoreCollision);
 }
