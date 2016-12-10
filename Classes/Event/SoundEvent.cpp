@@ -109,3 +109,26 @@ void PlaySEEvent::run()
     SoundManager::getInstance()->playSE(_fileName, _volume);
     this->setDone();
 }
+
+#pragma mark -
+#pragma mark PlayVoiceEvent
+
+bool PlayVoiceEvent::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init(json)) return false;
+    
+    if (!_eventHelper->hasMember(_json, member::FILE)) return false;
+    
+    _fileName = _json[member::FILE].GetString();
+    
+    // 音量
+    if (_eventHelper->hasMember(_json, member::VOLUME)) _volume = _json[member::VOLUME].GetDouble();
+    
+    return true;
+}
+
+void PlayVoiceEvent::run()
+{
+    SoundManager::getInstance()->playVoice(_fileName, _volume);
+    this->setDone();
+}

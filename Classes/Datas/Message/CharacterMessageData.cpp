@@ -92,6 +92,12 @@ bool CharacterMessageData::isMiniChara() const
     return _miniChara;
 }
 
+// ボイスファイル名の取得
+string CharacterMessageData::getVoiceFileName() const
+{
+    return _voiceFileName;
+}
+
 void CharacterMessageData::setCharaId(int charaId)
 {
     this->charaId = charaId;
@@ -111,4 +117,8 @@ void CharacterMessageData::setOption(Option option)
 void CharacterMessageData::setMiniChara(bool miniChara)
 {
     _miniChara = miniChara;
+}
+void CharacterMessageData::setVoice(string fileName)
+{
+    _voiceFileName = fileName;
 }

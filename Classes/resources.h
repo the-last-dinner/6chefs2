@@ -60,6 +60,11 @@ namespace Resource
         static const std::string TIRED = "tired.mp3";
     };
     
+    namespace VOICE
+    {
+        static const std::string BASE_PATH = "voice/";
+    };
+    
     namespace SpriteFrame
     {
         static const std::string BASE_PATH = "img/";

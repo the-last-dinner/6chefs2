@@ -9,6 +9,7 @@
 #include "Managers/SoundManager.h"
 #include "Managers/PlayerDataManager.h"
 #include "Models/PlayerData/GlobalPlayerData.h"
+#include "Utils/AssertUtils.h"
 
 using namespace cocos2d::experimental;
 
@@ -51,7 +52,14 @@ SoundManager::~SoundManager()
 void SoundManager::playSE(const string& fileName, float volume)
 {
     if(VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
-    int seId { AudioEngine::play2d(Resource::SE::BASE_PATH + fileName, false, volume * PlayerDataManager::getInstance()->getGlobalData()->getSeVolume()) };
+    
+    string filePath = Resource::SE::BASE_PATH + fileName;
+    
+    if (FileUtils::getInstance()->fullPathForFilename(filePath) == "") {
+        LastSupper::AssertUtils::warningAssert("PlaySE ERROR\n" + fileName + " is missing.");
+    }
+    
+    int seId { AudioEngine::play2d(filePath, false, volume * PlayerDataManager::getInstance()->getGlobalData()->getSeVolume()) };
     AudioEngine::setFinishCallback(seId, CC_CALLBACK_2(SoundManager::onSEFinished, this));
     
     mtx.lock();
@@ -61,11 +69,37 @@ void SoundManager::playSE(const string& fileName, float volume)
     mtx.unlock();
 }
 
+// voiceを再生
+void SoundManager::playVoice(const string &fileName, float volume)
+{
+    if (VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
+    
+    string filePath = Resource::VOICE::BASE_PATH + fileName;
+    
+    if (FileUtils::getInstance()->fullPathForFilename(filePath) == "") {
+        LastSupper::AssertUtils::warningAssert("PlayVoice ERROR\n" + fileName + " is missing.");
+    }
+    
+    int voiceId { AudioEngine::play2d(filePath, false, volume * PlayerDataManager::getInstance()->getGlobalData()->getVoiceVolume())};
+    mtx.lock();
+    
+    this->seIdMap.insert({voiceId, fileName});
+    
+    mtx.unlock();
+}
+
 // BGMを再生
 void SoundManager::playBGM(const string& fileName, bool loop, float volume)
 {
     if(VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
-    int BGMId { AudioEngine::play2d(Resource::BGM::BASE_PATH + fileName, loop, volume * PlayerDataManager::getInstance()->getGlobalData()->getBgmVolume()) };
+    
+    string filePath = Resource::BGM::BASE_PATH + fileName;
+    
+    if (FileUtils::getInstance()->fullPathForFilename(filePath) == "") {
+        LastSupper::AssertUtils::warningAssert("PlayBGM ERROR\n" + fileName + " is missing.");
+    }
+    
+    int BGMId { AudioEngine::play2d(filePath, loop, volume * PlayerDataManager::getInstance()->getGlobalData()->getBgmVolume()) };
     AudioEngine::setFinishCallback(BGMId, CC_CALLBACK_2(SoundManager::onBGMFinished, this));
     
     mtx.lock();

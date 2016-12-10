@@ -71,5 +71,20 @@ private:
     virtual void run() override;
 };
 
+// Voice再生イベント
+class PlayVoiceEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(PlayVoiceEvent, rapidjson::Value&)
+private:
+    string _fileName {};
+    float _volume { 1.f };
+private:
+    PlayVoiceEvent() { FUNCLOG };
+    ~PlayVoiceEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
 
 #endif /* defined(__LastSupper__SoundEvent__) */
