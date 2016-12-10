@@ -41,7 +41,6 @@
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
-		26CC40F91DF5E33000DCCC30 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = 26CC40F81DF5E33000DCCC30 /* voice */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
 		26E950BA1CDA51200018BF93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B91CDA51200018BF93 /* Images.xcassets */; };
 		26FBC8EF1CF0B2CB00FDBF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -408,6 +407,7 @@
 		DCEF71F41DE5DC8400FA1291 /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F11DE5DC8400FA1291 /* Battle.cpp */; };
 		DCEF71F71DE5DCA700FA1291 /* BattleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F51DE5DCA700FA1291 /* BattleData.cpp */; };
 		DCEF71F81DE5DCA700FA1291 /* BattleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F51DE5DCA700FA1291 /* BattleData.cpp */; };
+		DCEF71FE1DFBC54900FA1291 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = DCEF71FD1DFBC54900FA1291 /* voice */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -812,6 +812,7 @@
 		DCEF71F21DE5DC8400FA1291 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Battle.h; path = Battle/Battle.h; sourceTree = "<group>"; };
 		DCEF71F51DE5DCA700FA1291 /* BattleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleData.cpp; path = Battle/BattleData.cpp; sourceTree = "<group>"; };
 		DCEF71F61DE5DCA700FA1291 /* BattleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleData.h; path = Battle/BattleData.h; sourceTree = "<group>"; };
+		DCEF71FD1DFBC54900FA1291 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voice; path = ../Resources/voice; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -936,6 +937,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DCEF71FD1DFBC54900FA1291 /* voice */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -1749,7 +1751,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26CC40F91DF5E33000DCCC30 /* voice in Resources */,
+				DCEF71FE1DFBC54900FA1291 /* voice in Resources */,
 				DC0182A61D7BCCE900E556D1 /* character in Resources */,
 				269211571CE8A9A9005C0E5A /* config in Resources */,
 				DC328A761C87194E00675131 /* map in Resources */,
