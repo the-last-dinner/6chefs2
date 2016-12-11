@@ -154,6 +154,30 @@
 											]
 										},
 										{
+											"type":"createCamera",
+											"mapID":"102",
+											"x":3,
+											"y":5,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"101",
+											"x":8,
+											"y":12,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
+												}
+											]
+										},
+										{
 											"type":"fadein",
 											"time":2.0
 										},
@@ -266,6 +290,9 @@
 									"type":"sequence",
 									"action":[
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"fadeout",
 											"time":2.0
 										},
@@ -280,6 +307,22 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"94",
+											"x":9,
+											"y":11,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -335,6 +378,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"100",
 											"x":17,
@@ -345,6 +391,49 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"98",
+											"x":9,
+											"y":11,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"100",
+											"x":17,
+											"y":26,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"98",
+											"x":2,
+											"y":17,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -468,10 +557,25 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"96",
 											"x":32,
 											"y":15,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"97",
+											"x":13,
+											"y":13,
 											"action":[
 												{
 													"type":"callEvent",
@@ -533,6 +637,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"98",
 											"x":9,
@@ -543,6 +650,25 @@
 													"eventID":"3"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"100",
+											"x":17,
+											"y":26,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"3"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -735,6 +861,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"90",
 											"x":15,
@@ -745,6 +874,25 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"99",
+											"x":12,
+											"y":13,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein"

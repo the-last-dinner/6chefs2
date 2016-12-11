@@ -19,23 +19,11 @@
 					"type":"charaMsg",
 					"text":["クソっ！クソっ！あんコック・・・","ぬあああ！\nケツが・・・っ！"],
 					"charaID":"10",
-					"name":"竹下"
+					"name":"ナニヲ"
 				},
 				{
 					"type":"fadeout",
 					"time":3.0
-				},
-				{
-					"type":"createCamera",
-					"mapID":"101",
-					"x":8,
-					"y":12,
-					"action":[
-						{
-							"type":"callEvent",
-							"eventID":"2"
-						}
-					]
 				}
 			]
 		}
