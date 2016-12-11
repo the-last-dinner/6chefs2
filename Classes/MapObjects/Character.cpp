@@ -40,7 +40,6 @@ Character::~Character()
     FUNCLOG
     CC_SAFE_RELEASE_NULL(_movePattern);
     CC_SAFE_RELEASE_NULL(_hitBox);
-    CC_SAFE_RELEASE_NULL(_hp);
     CC_SAFE_RELEASE_NULL(_sight);
     CC_SAFE_RELEASE_NULL(_battleAttackBox);
 }
@@ -89,9 +88,9 @@ bool Character::init(const CharacterData& data)
     _hitBox = hitBox;
     
     // HPを生成
-    HitPoint* hp { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
-    CC_SAFE_RETAIN(hp);
-    _hp = hp;
+    HitPoint* hitPoint { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
+    CC_SAFE_RETAIN(hitPoint);
+    _hitPoint = hitPoint;
     
     // 視野を生成
     Sight* sight { Sight::create(this) };
@@ -270,9 +269,9 @@ void Character::onMyAttackHitted(MapObject* hittedObject)
 // 攻撃を受けた時
 void Character::onAttackHitted(int damage)
 {
-    if (!_hp) return;
+    if (!_hitPoint) return;
     
-    _hp->reduce(damage);
+    _hitPoint->reduce(damage);
 }
 
 #pragma mark -

@@ -21,6 +21,7 @@ class TerrainStateCache;
 class CollisionBox;
 class MapObjectCommand;
 class MapObjectCommandQueue;
+class HitPoint;
 
 class MapObject : public Node
 {
@@ -50,6 +51,7 @@ protected:
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };
     MapObjectCommandQueue* _commandQueue { nullptr };
+    HitPoint* _hitPoint { nullptr };
     
 public:
     function<void(MapObject*)> onMoved { nullptr };
@@ -107,6 +109,10 @@ public:
     void clearCommandQueue();
 private:
     void executeCommandFromQueue();
+    
+// HP
+public:
+    HitPoint* getHitPoint() const;
 
 // move
 public:

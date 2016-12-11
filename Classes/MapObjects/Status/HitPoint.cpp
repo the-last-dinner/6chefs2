@@ -38,3 +38,8 @@ void HitPoint::reduce(int damage)
         _onLost();
     }
 }
+
+bool HitPoint::isLost() const
+{
+    return _current == 0;
+}

@@ -42,7 +42,6 @@ protected:
     CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
     HitBox* _hitBox { nullptr };
-    HitPoint* _hp { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
     

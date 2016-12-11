@@ -13,6 +13,7 @@
 #include "MapObjects/Command/MoveCommand.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
 #include "MapObjects/TerrainState/TerrainStateCache.h"
 
@@ -30,6 +31,7 @@ MapObject::MapObject() {}
 // デストラクタ
 MapObject::~MapObject()
 {
+    CC_SAFE_RELEASE_NULL(_hitPoint);
     CC_SAFE_RELEASE_NULL(_terrainStateCache);
     CC_SAFE_RELEASE_NULL(_commandQueue);
 }
@@ -260,6 +262,14 @@ void MapObject::pushCommand(MapObjectCommand* command)
 void MapObject::clearCommandQueue()
 {
     _commandQueue->clear();
+}
+
+#pragma mark -
+#pragma mark HitPoint
+
+HitPoint* MapObject::getHitPoint() const
+{
+    return _hitPoint;
 }
 
 #pragma mark -

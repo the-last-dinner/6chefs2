@@ -31,6 +31,7 @@ private:
 public:
     // HPを減少させる
     void reduce(int damage);
+    bool isLost() const;
 };
 
 #endif /* HitPoint_h */
