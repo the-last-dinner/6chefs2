@@ -612,7 +612,7 @@
 					"y":85,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0"
 				},
 				{
 					"type":"createEnemy",
@@ -622,7 +622,7 @@
 					"y":14,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0"
 				},
 				{
 					"type":"fadein",

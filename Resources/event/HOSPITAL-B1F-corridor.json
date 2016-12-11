@@ -352,6 +352,10 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
 					"type":"systemMsg",
 					"text":["？また鍵がかかってんな・・・\n探してこなきゃなんねぇな・・・"]
 				}

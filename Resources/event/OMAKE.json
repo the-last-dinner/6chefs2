@@ -400,10 +400,13 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"95",
-											"x":17,
-											"y":26,
+											"x":7,
+											"y":11,
 											"action":[
 												{
 													"type":"callEvent",
