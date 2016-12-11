@@ -49,6 +49,7 @@ namespace member
     static const char* NEXT_X = "nextX";
     static const char* NEXT_Y = "nextY";
     static const char* OBJECT_ID = "objID";
+    static const char* OBJECT_IDS = "objIDs";
     static const char* OPTION = "option";
     static const char* PASSWORD = "pass";
     static const char* PATH_ID = "pathID";

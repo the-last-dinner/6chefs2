@@ -8,16 +8,47 @@
 
 #include "Event/BattleEvent.h"
 
+#include "Battle/Battle.h"
+#include "Battle/BattleData.h"
+
+#include "Event/EventScriptMember.h"
+#include "Event/GameEventHelper.h"
+#include "Event/EventFactory.h"
+
+#include "Managers/DungeonSceneManager.h"
+
 #pragma mark BattleStartEvent
 
 bool BattleStartEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
+    if (!_eventHelper->hasMember(_json, member::OBJECT_IDS)) return false;
+    if (!_eventHelper->hasMember(_json, member::TRUE_)) return false;
+    if (!_eventHelper->hasMember(_json, member::FALSE_)) return false;
+    
+    BattleData* data { BattleData::create() };
+    
+    vector<int> targetIds {};
+    rapidjson::Value& targetsJson { _json[member::OBJECT_IDS] };
+    for(int i { 0 }; i < targetsJson.Size(); i++) {
+        targetIds.push_back(targetsJson[i].GetInt());
+    }
+    
+    data->setTargetObjectIds(targetIds);
+    data->setSuccessCallbackEvent(_factory->createGameEvent(_json[member::TRUE_], nullptr));
+    data->setFailureCallbackEvent(_factory->createGameEvent(_json[member::FALSE_], nullptr));
+    
+    Battle* battle { Battle::create(data, DungeonSceneManager::getInstance()) };
+    if (!battle) return false;
+     
+    _battle = battle;
+    
     return true;
 }
 
 void BattleStartEvent::run()
 {
-    
+    _battle->start();
+    this->setDone();
 }

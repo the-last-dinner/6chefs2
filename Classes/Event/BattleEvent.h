@@ -11,10 +11,14 @@
 
 #include "Event/GameEvent.h"
 
+class Battle;
+
 class BattleStartEvent : public GameEvent
 {
 public:
     CREATE_FUNC_WITH_PARAM(BattleStartEvent, rapidjson::Value&)
+private:
+    Battle* _battle { nullptr };
 private:
     BattleStartEvent() { FUNCLOG };
     ~BattleStartEvent() { FUNCLOG };

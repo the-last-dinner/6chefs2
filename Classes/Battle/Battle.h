@@ -9,12 +9,10 @@
 #ifndef Battle_h
 #define Battle_h
 
-#include "define.h"
+#include "MapObjects/MapObject.h"
 
 class BattleData;
 class EventTask;
-class MapObject;
-class MapObjectList;
 class DungeonSceneManager;
 
 class Battle : public Node
@@ -39,6 +37,7 @@ private:
     bool isMainCharacterDestroyed() const;
     
 public:
+    void start();
     void update(float delta) override;
 };
 

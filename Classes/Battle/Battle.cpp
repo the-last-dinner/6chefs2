@@ -51,8 +51,6 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
     
     _eventTask = manager->getEventTask();
     
-    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
-    
     return true;
 }
 
@@ -67,6 +65,11 @@ bool Battle::isAllTargetDestroyed() const
 bool Battle::isMainCharacterDestroyed() const
 {
     return _mainCharacter->getHitPoint()->isLost();
+}
+
+void Battle::start()
+{
+    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
 }
 
 #pragma mark -
