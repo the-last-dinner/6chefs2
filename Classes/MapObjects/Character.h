@@ -56,6 +56,8 @@ public:
     
     int getCharacterId() const;
     CharacterData getCharacterData() const;
+    BattleCharacterData* getBattleCharacterData() const;
+    AttackBox* getBattleAttackBox() const;
     
 	virtual void setDirection(const Direction& direction) override;
     virtual void setDirection(const Direction& direction, bool stopAnimation);

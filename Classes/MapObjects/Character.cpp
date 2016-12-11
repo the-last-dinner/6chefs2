@@ -112,6 +112,12 @@ int Character::getCharacterId() const { return _charaId; }
 // 自身のキャラクターデータを返す
 CharacterData Character::getCharacterData() const { return CharacterData(_charaId, this->getObjectId(), _location); }
 
+// バトル用のデータを返す
+BattleCharacterData* Character::getBattleCharacterData() const { return _battleData; }
+
+// 戦闘用攻撃判定を返す
+AttackBox* Character::getBattleAttackBox() const { return _battleAttackBox; }
+
 // キャラクターの向きを変える
 void Character::setDirection(const Direction& direction)
 {

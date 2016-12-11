@@ -62,7 +62,7 @@ void BattleState::onEnterKeyPressed(Party* party)
     if (mainCharacter->isInAttackMotion()) return;
     
     AttackCommand* command { AttackCommand::create() };
-    command->setName(Character::AnimationName::getAttack("attack", mainCharacter->getDirection()));
+    command->setName("attack");
     command->setCallback([this, party](Character* c) {
         this->onAttackCommandFinished(party);
     });
