@@ -31,6 +31,7 @@ private:
 public:
     // HPを減少させる
     void reduce(int damage);
+    void setMax(int max);
     bool isLost() const;
 };
 

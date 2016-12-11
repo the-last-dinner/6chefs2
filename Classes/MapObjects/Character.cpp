@@ -11,6 +11,7 @@
 #include "CocosStudio/CSNode.h"
 
 #include "Datas/MapObject/CharacterData.h"
+#include "Datas/BattleCharacterData.h"
 
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/DetectionBox/AttackDetector.h"
@@ -42,6 +43,7 @@ Character::~Character()
     CC_SAFE_RELEASE_NULL(_hitBox);
     CC_SAFE_RELEASE_NULL(_sight);
     CC_SAFE_RELEASE_NULL(_battleAttackBox);
+    CC_SAFE_RELEASE_NULL(_battleData);
 }
 
 // 初期化
@@ -96,6 +98,10 @@ bool Character::init(const CharacterData& data)
     Sight* sight { Sight::create(this) };
     CC_SAFE_RETAIN(sight);
     _sight = sight;
+    
+    BattleCharacterData* battleData { BattleCharacterData::create(data.chara_id) };
+    CC_SAFE_RETAIN(battleData);
+    _battleData = battleData;
 	
     return true;
 }
@@ -127,9 +133,7 @@ void Character::setDirection(const Direction& direction, bool stopAnimation)
 void Character::pauseAi()
 {
     if (!_movePattern) return;
-    
     this->clearCommandQueue();
-    
     _movePattern->pause();
 }
 
@@ -137,7 +141,6 @@ void Character::pauseAi()
 void Character::resumeAi()
 {
     if (!_movePattern) return;
-    
     _movePattern->resume();
 }
 
@@ -153,14 +156,14 @@ bool Character::walkBy(const vector<Direction>& directions, function<void(bool)>
         cb(canMove);
     }};
     
-    if (!MapObject::moveBy(directions, callback, speed, ignoreCollision)) return false;
+    if (!MapObject::moveBy(directions, callback, speed * _speed, ignoreCollision)) return false;
     
     // 方向を変える
     Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
     this->setDirection(direction, false);
     
     // 歩行アニメーション
-    this->stamp(direction, speed);
+    this->stamp(direction, speed * _speed);
     
     return true;
 }
@@ -221,28 +224,24 @@ void Character::playAnimation(const string& name, function<void(Character*)> cal
 void Character::stamp(const Direction direction, float ratio)
 {
     if (!_terrainState) return;
-    
     _terrainState->stamp(this, direction, ratio);
 }
 
 bool Character::isRunnable() const
 {
     if (!_terrainState) return true;
-    
     return _terrainState->isRunnable();
 }
 
 bool Character::consumeStaminaWalking() const
 {
     if (!_terrainState) return false;
-    
     return _terrainState->consumeStaminaWalking();
 }
 
 float Character::getStaminaConsumptionRatio() const
 {
     if (!_terrainState) return 1.f;
-    
     return _terrainState->getStaminaConsumptionRatio();
 }
 
@@ -270,7 +269,6 @@ void Character::onMyAttackHitted(MapObject* hittedObject)
 void Character::onAttackHitted(int damage)
 {
     if (!_hitPoint) return;
-    
     _hitPoint->reduce(damage);
 }
 
@@ -390,6 +388,12 @@ void Character::onEventFinished()
 void Character::onBattleStart()
 {
     MapObject::onBattleStart();
+
+    if (_battleData) {
+        _hitPoint->setMax(_battleData->getHitPoint());
+        _speed = _battleData->getSpeedRatio();
+    }
+    
     AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
     _objectList->getAttackDetector()->addAttackBox(box);
     CC_SAFE_RELEASE_NULL(_battleAttackBox);
@@ -401,6 +405,10 @@ void Character::onBattleStart()
 void Character::onBattleFinished()
 {
     MapObject::onBattleFinished();
+    
+    _hitPoint->setMax(1);
+    _speed = 1.f;
+    
     _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
 }
 

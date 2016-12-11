@@ -18,6 +18,7 @@ class HitPoint;
 class AttackBox;
 class HitBox;
 class Sight;
+class BattleCharacterData;
 
 class Character : public MapObject
 {
@@ -44,6 +45,8 @@ protected:
     HitBox* _hitBox { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
+    float _speed { 1.f };
+    BattleCharacterData* _battleData { nullptr };
     
 // インスタンスメソッド
 public:

@@ -43,3 +43,9 @@ bool HitPoint::isLost() const
 {
     return _current == 0;
 }
+
+void HitPoint::setMax(int max)
+{
+    _max = max;
+    _current = max;
+}
