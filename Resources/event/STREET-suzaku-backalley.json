@@ -208,6 +208,16 @@
 							]
 						},
 						{
+							"type":"displayImg",
+							"file":"yuki_meet.png"
+						},
+						{
+							"type":"charaMsg",
+							"text":["おじさん・・・"],
+							"charaID":"6",
+							"imgID":"3"
+						},
+						{
 							"type":"stopBGM"
 						},
 						{

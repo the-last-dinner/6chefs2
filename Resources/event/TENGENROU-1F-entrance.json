@@ -300,9 +300,8 @@
 					]
 				},
 				{
-					"type":"barrage",
-					"times":20,
-					"limit":5.0,
+					"type":"battle",
+					"objID":["1424","1425"],
 					"true":[
 						{
 							"type":"already"

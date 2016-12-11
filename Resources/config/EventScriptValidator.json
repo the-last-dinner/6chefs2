@@ -91,13 +91,6 @@
                 "volume": ["double", "int"]
             }
         },
-        "playVoice": {
-            "require": ["file"],
-            "member": {
-                "file": ["string"],
-                "volume": ["double", "int"]
-            }
-        },
 
 
 
@@ -115,7 +108,6 @@
                 "imgID": ["stoi"],
                 "option": ["messageOption"],
                 "miniChara": ["bool"],
-                "voice": ["string"],
                 "talk": [[{
                     "require": ["text"],
                     "member": {
@@ -124,8 +116,7 @@
                         "charaID": ["stoi"],
                         "imgID": ["stoi"],
                         "option": ["messageOption"],
-                        "miniChara": ["bool"],
-                        "voice": ["string"]
+                        "miniChara": ["bool"]
                     }
                 }]]
             }
@@ -220,8 +211,6 @@
             "member": {
                 "x": ["int"],
                 "y": ["int"],
-                "nextX": ["int"],
-                "nextY": ["int"],
                 "time": ["double", "int"]
             }
         },
@@ -254,7 +243,6 @@
             }
         },
         "stopSwing": {
-            "require": ["layer"],
             "member": {
                 "layer": ["string"]
             }
@@ -393,7 +381,7 @@
             }
         },
         "changeHero": {
-            "require": ["objID", "charaID"],
+            "require": ["charaID"],
             "member": {
                 "objID": ["string"],
                 "charaID": ["stoi"]
@@ -488,9 +476,9 @@
             }
         },
         "password": {
-            "require": ["password"],
+            "require": ["pass"],
             "member": {
-                "password": ["string"],
+                "pass": ["string"],
                 "true": [["object"]],
                 "false": [["object"]]
             }
@@ -535,11 +523,9 @@
             }
         },
         "giveItem": {
-            "require": ["charaID", "toCharaID"],
+            "require": ["charaID"],
             "member": {
-                "itemID": ["stoi"],
-                "toCharaID": ["stoi"],
-                "fromCharaID": ["stoi"]
+                "itemID": ["stoi"]
             }
         },
         "addProfile": {

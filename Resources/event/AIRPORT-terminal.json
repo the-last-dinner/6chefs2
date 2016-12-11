@@ -440,10 +440,8 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"charaMsg",
-					"text":["飛行機に乗る必要はないな。"],
-					"charaID":"0",
-					"imgID":"2"
+					"type":"systemMsg",
+					"text":["飛行機に乗る必要はない・・・"]
 				},
 				{
 					"type":"charaWalk",
@@ -725,7 +723,7 @@
 	"15":[
 		{
 			"type":"storyMsg",
-			"text":["夕方には\n「玄武-壱番街」にあるホテルの\nチェックインを済ますこと"]
+			"text":["夕方には\n「ホテル街-玄武壱番街」にあるホテルの\nチェックインを済ますこと"]
 		}
 	]
 }

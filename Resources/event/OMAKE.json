@@ -126,7 +126,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・孫一を観ますか？"],
+					"text":["「料理人としてのプライド」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -198,7 +198,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・撫子を観ますか？"],
+					"text":["「日常をくれた人」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -257,7 +257,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・蘭丸を観ますか？"],
+					"text":["「”強さ”の意味」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -322,7 +322,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・真夏を観ますか？"],
+					"text":["「適材適所」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -387,7 +387,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・暖暖を観ますか？"],
+					"text":["「ですぞ・DE・カウンセリング」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -452,7 +452,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・ダイゴローを観ますか？"],
+					"text":["「ボーイミーツボーイ」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -517,7 +517,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・雪を観ますか？"],
+					"text":["「”いきていく”ために」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -582,7 +582,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・朱花を観ますか？"],
+					"text":["「始まりと後悔」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -593,6 +593,9 @@
 										{
 											"type":"fadeout",
 											"time":2.0
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"createCamera",
@@ -647,7 +650,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・タムケンを観ますか？"],
+					"text":["「奔放な挑戦者」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -662,6 +665,9 @@
 										{
 											"type":"changeHero",
 											"charaID":"8"
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"changeMap",
@@ -707,13 +713,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"trofyID":"10"
+					"trophy":"10"
 				}
 			],
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・大宝を観ますか？"],
+					"text":["「アホくせぇ・・・」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -755,7 +761,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"NtrofyID":"10"
+					"Ntrophy":"10"
 				}
 			],
 			"action":[

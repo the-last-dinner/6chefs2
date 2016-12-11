@@ -33,7 +33,7 @@
 					"objID":"1411",
 					"charaID":"13",
 					"x":11,
-					"y":85,
+					"y":89,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
@@ -43,12 +43,30 @@
 					"type":"createEnemy",
 					"objID":"1412",
 					"charaID":"13",
-					"x":13,
-					"y":23,
+					"x":12,
+					"y":54,
 					"direction":"UP",
 					"times":1,
 					"pathID":"3",
 					"movePattern":"4"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"shitai"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"blood"
 				}
 			]
 		}
@@ -471,6 +489,11 @@
 					"pathID":"3",
 					"movePattern":"4",
 					"speed":1.4
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"LEFT"
 				},
 				{
 					"type":"fadein"
