@@ -63,6 +63,9 @@ namespace Resource
     namespace VOICE
     {
         static const std::string BASE_PATH = "voice/";
+        static const std::string THE_LAST_DINNER_UEHARA = "the-last-dinner-uehara.mp3";
+        static const std::string THE_LAST_DINNER_NANIWO = "the-last-dinner-naniwo.mp3";
+        static const std::string THE_LAST_DINNER_ERI = "the-last-dinner-eri.mp3";
     };
     
     namespace SpriteFrame
