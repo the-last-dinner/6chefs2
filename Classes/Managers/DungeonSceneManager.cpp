@@ -124,7 +124,7 @@ Party* DungeonSceneManager::getParty() { return this->getScene()->_party; }
 AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->getScene()->_ambientLightLayer; };
 
 // イベントタスクを取得
-EventTask* DungeonSceneManager::getEventTask() const { return this->getEventTask(); }
+EventTask* DungeonSceneManager::getEventTask() const { return this->getScene()->_eventTask; }
 
 // カメラを取得
 CameraTask* DungeonSceneManager::getCamera() const { return this->getScene()->_cameraTask; };
