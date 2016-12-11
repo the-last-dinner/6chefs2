@@ -75,7 +75,7 @@
 					"type":"createEnemy",
 					"objID":"143",
 					"charaID":"13",
-					"x":33,
+					"x":31,
 					"y":22,
 					"direction":"UP",
 					"times":1,

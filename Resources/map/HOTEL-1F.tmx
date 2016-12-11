@@ -204,10 +204,10 @@
    <properties>
     <property name="nextID" value="2"/>
     <property name="pathID" value="1"/>
-    <property name="previousID" value="0"/>
+    <property name="previousID" value="2"/>
    </properties>
   </object>
-  <object id="51" x="112" y="352" width="32" height="32">
+  <object id="51" x="112" y="400" width="32" height="32">
    <properties>
     <property name="nextID" value="1"/>
     <property name="pathID" value="2"/>
@@ -236,68 +236,6 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="30" x="208" y="256" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="12"/>
-    <property name="EventID" value="4"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1027"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="35" x="480" y="256" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="12"/>
-    <property name="EventID" value="4"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1028"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="41" x="448" y="256" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="13"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1030"/>
-   </properties>
-  </object>
-  <object id="42" x="448" y="416" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="13"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1031"/>
-   </properties>
-  </object>
-  <object id="43" x="160" y="368" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="13"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1032"/>
-   </properties>
-  </object>
-  <object id="44" x="752" y="48" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="0"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1034"/>
-   </properties>
-  </object>
-  <object id="45" x="784" y="48" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="1"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1033"/>
-   </properties>
-  </object>
- </objectgroup>
  <layer name="CharaUe" width="60" height="72">
   <data encoding="base64" compression="zlib">
    eJzt1bsNwgAMRVEXUVYK6yQE+nzn5w1AgUAiEJ0j3c6FXbkKAAAAAAAAAAAA+Fd9UzWkaxrTLd2b9+d+3ZSd57SkNW1pf3LHq3MAfKZrqy7t0Vt8n//r/wIAAABwPg9WjxVk
@@ -305,7 +243,7 @@
  </layer>
  <layer name="shadow" width="60" height="72">
   <data encoding="base64" compression="zlib">
-   eJztz8EJhEAUREEDMP8kDGmT8erBww4M+HlUBdD0Ow7ouc6vH/zvt+Gr3rn0rtM7l951eufSu+6td8fuLs8vetfpndu7g942vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbprdNb5veNr1tetv0tult09umt01vm942vcB0NygzQ/A=
+   eJzt1EERgEAMBMEIwL8JJGEGEVB31NCtYCePzEDPeexesJbeNr1tetv0tumduT50g7e36NW7k95n/Oc2vW162/S26W3T26a3TW+b3ja9bXrb9LbpbdPbprdNb5veNr1tetv0tult09umt01vm962v/VCwQ1reDg1
   </data>
  </layer>
 </map>

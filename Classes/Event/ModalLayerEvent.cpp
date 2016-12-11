@@ -88,6 +88,9 @@ bool CharacterMessage::init(rapidjson::Value& json)
             
             // ミニキャラ
             if (_eventHelper->hasMember(chara, member::MINI_CHARA)) data->setMiniChara(chara[member::MINI_CHARA].GetBool());
+            
+            // ボイス
+            if (_eventHelper->hasMember(chara, member::VOICE)) data->setVoice(chara[member::VOICE].GetString());
 
             datas.push(data);
         }
@@ -127,6 +130,9 @@ bool CharacterMessage::init(rapidjson::Value& json)
         
         // ミニキャラ
         if (_eventHelper->hasMember(_json, member::MINI_CHARA)) data->setMiniChara(_json[member::MINI_CHARA].GetBool());
+        
+        // ボイス
+        if (_eventHelper->hasMember(_json, member::VOICE)) data->setVoice(_json[member::VOICE].GetString());
 
         datas.push(data);
     }

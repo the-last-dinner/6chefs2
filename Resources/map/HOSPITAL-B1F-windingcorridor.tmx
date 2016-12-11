@@ -9,8 +9,8 @@
  <tileset firstgid="3489" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="3969" name="ranmaru_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="ranmaru_0_0.png" trans="aa55ff" width="32" height="32"/>
+ <tileset firstgid="3969" name="hizatukiranmaru_0_0" tilewidth="16" tileheight="16" tilecount="8" columns="2">
+  <image source="hizatukiranmaru_0_0.png" width="40" height="64"/>
  </tileset>
  <layer name="Base" width="60" height="38">
   <properties>

@@ -91,6 +91,13 @@
                 "volume": ["double", "int"]
             }
         },
+        "playVoice": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "volume": ["double", "int"]
+            }
+        },
 
 
 
@@ -108,6 +115,7 @@
                 "imgID": ["stoi"],
                 "option": ["messageOption"],
                 "miniChara": ["bool"],
+                "voice": ["string"],
                 "talk": [[{
                     "require": ["text"],
                     "member": {
@@ -116,7 +124,8 @@
                         "charaID": ["stoi"],
                         "imgID": ["stoi"],
                         "option": ["messageOption"],
-                        "miniChara": ["bool"]
+                        "miniChara": ["bool"],
+                        "voice": ["string"]
                     }
                 }]]
             }
@@ -211,6 +220,8 @@
             "member": {
                 "x": ["int"],
                 "y": ["int"],
+                "nextX": ["int"],
+                "nextY": ["int"],
                 "time": ["double", "int"]
             }
         },
@@ -524,9 +535,11 @@
             }
         },
         "giveItem": {
-            "require": ["charaID"],
+            "require": ["charaID", "toCharaID"],
             "member": {
-                "itemID": ["stoi"]
+                "itemID": ["stoi"],
+                "toCharaID": ["stoi"],
+                "fromCharaID": ["stoi"]
             }
         },
         "addProfile": {

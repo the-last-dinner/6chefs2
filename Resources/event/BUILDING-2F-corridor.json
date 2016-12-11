@@ -129,7 +129,7 @@
 							"movePattern":"0",
 							"direction":"DOWN",
 							"times":1,
-							"speed":1.2
+							"speed":2.0
 						},
 						{
 							"type":"playSE",
@@ -146,31 +146,32 @@
 					]
 				},
 				{
-					"type":"wait",
-					"time":0.5
-				},
-				{
-					"type":"charaWalkTo",
-					"objID":"1038",
-					"x":74,
-					"y":22,
-					"speed":9.0
-				},
-				{
 					"type":"spawn",
 					"action":[
 						{
-							"type":"wait",
-							"time":0.1
+							"type":"charaWalkTo",
+							"objID":"1038",
+							"x":74,
+							"y":22,
+							"speed":10.0
 						},
 						{
 							"type":"charaWalkTo",
 							"objID":"149",
 							"x":74,
 							"y":20,
-							"speed":5.0
+							"speed":10.0
 						}
 					]
+				},
+				{
+					"type":"changeDirection",
+					"objID":"149",
+					"direction":"DOWN"
+				},
+				{
+					"type":"removeObject",
+					"objID":"1038"
 				},
 				{
 					"type":"removeLayer",
@@ -206,9 +207,16 @@
 				{
 					"type":"charaWalkTo",
 					"objID":"149",
+					"x":74,
+					"y":16,
+					"speed":8.0
+				},
+				{
+					"type":"charaWalkTo",
+					"objID":"149",
 					"x":56,
 					"y":14,
-					"speed":5.0
+					"speed":8.0
 				},
 				{
 					"type":"spawn",
@@ -235,18 +243,42 @@
 					"type":"spawn",
 					"action":[
 						{
-							"type":"charaWalkTo",
-							"objID":"1040",
-							"x":73,
-							"y":22,
-							"speed":2.0
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"1040",
+									"x":76,
+									"y":16,
+									"speed":2.0
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"1040",
+									"x":76,
+									"y":22,
+									"speed":2.0
+								}
+							]
 						},
 						{
-							"type":"charaWalkTo",
-							"objID":"1041",
-							"x":75,
-							"y":22,
-							"speed":2.0
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"1041",
+									"x":72,
+									"y":16,
+									"speed":2.0
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"1041",
+									"x":72,
+									"y":22,
+									"speed":2.0
+								}
+							]
 						}
 					]
 				},

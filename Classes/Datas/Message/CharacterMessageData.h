@@ -36,6 +36,7 @@ private:
     queue<string> pages {};
     Option option {Option::SIZE};
     bool _miniChara {false};
+    string _voiceFileName {};
     
 // インスタンスメソッド
 public:
@@ -46,12 +47,14 @@ public:
     const string& getCharaName() const;
     Option getOption() const;
     bool isMiniChara() const;
+    string getVoiceFileName() const;
     
     void setCharaId(int charaId);
     void setImgId(int imgId);
     void setCharaName(const string& charaName);
     void setOption(Option option);
     void setMiniChara(bool miniChara);
+    void setVoice(string fileName);
     
 private:
     CharacterMessageData();

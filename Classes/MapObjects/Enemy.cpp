@@ -127,3 +127,10 @@ void Enemy::onBattleFinished()
     Character::onBattleFinished();
     _objectList->getAttackDetector()->addAttackBox(_attackBox);
 }
+
+// イベント終了時
+void Enemy::onEventFinished()
+{
+    Character::onEventFinished();
+    _movePattern->start();
+}

@@ -343,7 +343,7 @@
 					"objID":"1417",
 					"charaID":"13",
 					"x":19,
-					"y":51,
+					"y":53,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
@@ -354,7 +354,7 @@
 					"objID":"1418",
 					"charaID":"13",
 					"x":20,
-					"y":97,
+					"y":100,
 					"direction":"UP",
 					"times":1,
 					"pathID":"3",
@@ -621,15 +621,34 @@
 			],
 			"action":[
 				{
-					"type":"changeDirection",
-					"objID":"1023",
-					"direction":"UP"
-				},
-				{
-					"type":"charaMsg",
-					"text":["アレが・・・天弦楼か・・・\nでけーな"],
-					"charaID":"5",
-					"imgID":"3"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"camera",
+									"x":21,
+									"y":9,
+									"time":0.5
+								},
+								{
+									"type":"changeDirection",
+									"objID":"1023",
+									"direction":"UP"
+								},
+								{
+									"type":"charaMsg",
+									"text":["アレが・・・天弦楼か・・・\nでけーな"],
+									"charaID":"5",
+									"imgID":"3"
+								}
+							]
+						},
+						{
+							"type":"setCamera"
+						}
+					]
 				}
 			]
 		},

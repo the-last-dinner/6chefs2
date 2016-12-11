@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" nextobjectid="5">
- <tileset firstgid="1" name="gendai-soto" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="gendai-soto" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="gendai-soto.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="30" height="20">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzdkJgEAMRdFYg2sVgmtX1mCBNuUT9MMwRhNxgZnAJT8hh8jPKaN9MR2XoBRlKEfFul3xvxZ382rUoBZ1qBf8Oy73BpbkW9wz74qvdSuFJ/lad2kid9a7v7tPFFy/3PGlgvuN68vMoqp9Lg==
@@ -16,7 +16,7 @@
  </layer>
  <layer name="MonoShita" width="30" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4ByMJGA/CS6uGLwgZmMuOV4gZgPiPmBWACPGbPwmIELcAL1vGTAjrWBWAeIdYFYD4caEOYiw158oB1oXgcUd1LZbBjAls6WAu1aBsXLsdiLrodQWiYWELKXXEAoLxGylxT/TWQkDk8C4sNAfASKjwLxBCL1TqRRWhgFo2CgAQC5Piq2

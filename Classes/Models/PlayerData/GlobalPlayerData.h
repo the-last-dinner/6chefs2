@@ -29,6 +29,7 @@ public:
     static const char* TOKENS;
     static const char* BGM_VOLUME;
     static const char* SE_VOLUME;
+    static const char* VOICE_VOLUME;
     static const char* CURSOR_KEY;
     static const char* ENTER_KEY;
     static const char* DASH_KEY;
@@ -85,6 +86,8 @@ public:
     float getBgmVolume();
     void setSeVolume(const float& volume);
     float getSeVolume();
+    void setVoiceVolume(const float& volume);
+    float getVoiceVolume();
     
     // KeyConfig
     void setCursorKey(const KeyconfigManager::CursorKeyType keyType);

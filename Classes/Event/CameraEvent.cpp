@@ -109,7 +109,9 @@ bool SetCameraTargetEvent::init(rapidjson::Value& json)
 void SetCameraTargetEvent::run()
 {
     MapObject* target { _eventHelper->getMapObjectById(to_string(_objectId)) };
-    DungeonSceneManager::getInstance()->getCamera()->setTarget(target);
+    CameraTask* camera { DungeonSceneManager::getInstance()->getCamera() };
+    camera->setTarget(target);
+    camera->resumeFollowing();
     
     this->setDone();
 }

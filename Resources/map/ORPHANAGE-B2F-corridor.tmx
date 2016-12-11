@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="56" height="58" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="71">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="56" height="58" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="73">
  <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
@@ -11,6 +11,9 @@
  </tileset>
  <tileset firstgid="3617" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="4097" name="rondonarch" tilewidth="16" tileheight="16" tilecount="24" columns="6">
+  <image source="rondonarch.png" width="96" height="64"/>
  </tileset>
  <layer name="Base" width="56" height="58">
   <properties>
@@ -68,6 +71,14 @@
    eJzt1MEJg0AQhlELcPs0WIGpQLCBQG4BGxDsL95E1pO3/XkPhoW5fbBM1wEAAAAAAADAc69ynTT62pbeB8nmvt4tN7tWpfcNpb7BY9AdTu/79HXfN+h//m761qC+7WiZjqZ3Od89qA8AaNcfFZoZNA==
   </data>
  </layer>
+ <layer name="arch" width="56" height="58">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzsEJACEQBMFJwHO9/IN1n2YgQhX0vxMAAACAd41Kvm521a3ur9tXAAAAAAAAAACcNjGDAL4=
+  </data>
+ </layer>
  <objectgroup name="collision">
   <object id="1" x="32" y="0" width="832" height="128"/>
   <object id="8" x="864" y="0" width="32" height="896"/>
@@ -81,6 +92,8 @@
   <object id="18" x="512" y="672" width="160" height="96"/>
   <object id="19" x="704" y="672" width="160" height="96"/>
   <object id="20" x="800" y="544" width="64" height="128"/>
+  <object id="71" x="240" y="304" width="32" height="16"/>
+  <object id="72" x="304" y="304" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="21" x="352" y="640" width="32" height="32">
@@ -126,6 +139,11 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1bENwCAQBEH6b8UluDknDkmM/A972qngFiEYQwnu3QOK2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bPax2cdmH5t9bOl9NNfuAa+qe2FfD/vWpPedwr4eVTvs6zHb8ccbZV8P+9hOOecq9rHZx5be91XS3zGT3qczPOW7MEI=
+  </data>
+ </layer>
+ <layer name="arch1" width="56" height="58">
+  <data encoding="base64" compression="zlib">
+   eJztz8kNgEAQA8HhPh+bf7Q4CCQQVEn9t6sAAADg37pW1achjWlKc3t61X2WfFnTlvZ0pPND/wAAAAAAAAAAeL8LOisBDw==
   </data>
  </layer>
  <objectgroup name="chara">

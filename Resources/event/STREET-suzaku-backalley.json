@@ -3,17 +3,6 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
-		},
-		{
-			"type":"createObject",
-			"objID":"1046",
-			"charaID":"10",
-			"x":23,
-			"y":54,
-			"eventID":"5",
-			"trigger":"2",
-			"direction":"DOWN",
-			"movePattern":"1"
 		}
 	],
 	"2":[
@@ -556,7 +545,7 @@
 			"action":[
 				{
 					"type":"charaMsg",
-					"text":["咲賀谷氏！あそこに人がいますぞ！\n例の人肉料理のこと、何か知ってるかも知れませぬな。"],
+					"text":["咲賀谷氏！あの赤い屋台、人がいますぞ！\n例の人肉料理のこと、何か知ってるかも知れませぬな。"],
 					"charaID":"4",
 					"imgID":"2"
 				},

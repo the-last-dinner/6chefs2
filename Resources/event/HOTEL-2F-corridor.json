@@ -269,10 +269,19 @@
 							"text":["時は少し戻り・・・"]
 						},
 						{
+							"type":"changeHero",
+							"charaID":"7"
+						},
+						{
 							"type":"already"
 						},
 						{
-							"type":"fadein"
+							"type":"changeMap",
+							"mapID":"2",
+							"x":31,
+							"y":34,
+							"eventID":"14"
+							
 						}
 					]
 				}
@@ -296,6 +305,10 @@
 					"y":35,
 					"direction":"LEFT",
 					"movePattern":"1"
+				},
+				{
+					"type":"setAmbient",
+					"ambient":"night"
 				},
 				{
 					"type":"fadein"
@@ -428,4 +441,4 @@
 			"text":["203号室"]
 		}
 	]
-}
+}
