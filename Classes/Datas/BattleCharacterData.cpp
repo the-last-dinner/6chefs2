@@ -20,13 +20,14 @@ rapidjson::Document BattleCharacterData::BATTLE_CHARACTER_DATA { rapidjson::Docu
 
 bool BattleCharacterData::init(const string &charaId)
 {
-    this->assertHelper = AssertHelper::create()->pushTextLineKeyValue("charaID", charaId);
+    _assertHelper = AssertHelper::create()->pushTextLineKeyValue("charaID", charaId);
+    _charaId = etos(CharacterID::UNDIFINED);
     
     // configFileがセットされていなければセット
     if (BattleCharacterData::BATTLE_CHARACTER_DATA == rapidjson::Document()) {
         string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::BATTLE_CHARACTER);
         if (path == "") {
-            assertHelper->fatalAssert(Resource::ConfigFiles::BATTLE_CHARACTER + "is missing");
+            _assertHelper->fatalAssert(Resource::ConfigFiles::BATTLE_CHARACTER + "is missing");
             return false;
         }
         BattleCharacterData::BATTLE_CHARACTER_DATA = LastSupper::JsonUtils::readJsonFile(path);
@@ -34,7 +35,7 @@ bool BattleCharacterData::init(const string &charaId)
     
     // charaIDに対応するデータを取得
     if (!BattleCharacterData::BATTLE_CHARACTER_DATA.HasMember(charaId.c_str())) {
-        this->assertHelper->fatalAssert("BattleCharacterData is missing.");
+        _assertHelper->fatalAssert("BattleCharacterData is missing.");
         return false;
     }
     rapidjson::Value& battleCharacterData {BattleCharacterData::BATTLE_CHARACTER_DATA[charaId.c_str()]};
@@ -44,7 +45,7 @@ bool BattleCharacterData::init(const string &charaId)
     if (!this->setSpeedRatio(battleCharacterData)) return false;
     if (!this->setAttacks(battleCharacterData)) return false;
     
-    this->charaId = charaId;
+    _charaId = charaId;
     
     return true;
 }
@@ -64,44 +65,44 @@ bool BattleCharacterData::init(const int charaId)
 bool BattleCharacterData::setHitPoint(const rapidjson::Value &battleCharacterData)
 {
     if (!battleCharacterData.HasMember(BattleCharacterData::HIT_POINT)) {
-        this->assertHelper->fatalAssert("hit_point is missing.");
+        _assertHelper->fatalAssert("hit_point is missing.");
         return false;
     }
     
     if (!battleCharacterData[BattleCharacterData::HIT_POINT].IsInt()) {
-        this->assertHelper->fatalAssert("Type of hit_point should be int.");
+        _assertHelper->fatalAssert("Type of hit_point should be int.");
         return false;
     }
     
-    this->hitPoint = battleCharacterData[BattleCharacterData::HIT_POINT].GetInt();
+    _hitPoint = battleCharacterData[BattleCharacterData::HIT_POINT].GetInt();
     return true;
 }
 
 bool BattleCharacterData::setSpeedRatio(const rapidjson::Value &battleCharacterData)
 {
     if (!battleCharacterData.HasMember(BattleCharacterData::SPEED_RATIO)) {
-        this->assertHelper->fatalAssert("speed_ratio is missing.");
+        _assertHelper->fatalAssert("speed_ratio is missing.");
         return false;
     }
     
     if (!battleCharacterData[BattleCharacterData::SPEED_RATIO].IsDouble()) {
-        this->assertHelper->fatalAssert("Type of speed_ratio should be float.");
+        _assertHelper->fatalAssert("Type of speed_ratio should be float.");
         return false;
     }
     
-    this->speedRatio = battleCharacterData[BattleCharacterData::SPEED_RATIO].GetDouble();
+    _speedRatio = battleCharacterData[BattleCharacterData::SPEED_RATIO].GetDouble();
     return true;
 }
 
 bool BattleCharacterData::setAttacks(const rapidjson::Value &battleCharacterData)
 {
     if (!battleCharacterData.HasMember(BattleCharacterData::ATTACKS)) {
-        this->assertHelper->fatalAssert("attacks is missing.");
+        _assertHelper->fatalAssert("attacks is missing.");
         return false;
     }
     
     if (!battleCharacterData[BattleCharacterData::ATTACKS].IsObject()) {
-        this->assertHelper->fatalAssert("Type of speed_ratio should be Object.");
+        _assertHelper->fatalAssert("Type of speed_ratio should be Object.");
         return false;
     }
     
@@ -110,11 +111,11 @@ bool BattleCharacterData::setAttacks(const rapidjson::Value &battleCharacterData
     {
         string attackName = itr->name.GetString();
         if (!itr->value.IsInt()) {
-            this->assertHelper->pushTextLineKeyValue("attack_name", attackName)
+            _assertHelper->pushTextLineKeyValue("attack_name", attackName)
                             ->fatalAssert("Type of atack_point should be int.");
             return false;
         }
-        this->attacks[attackName] = itr->value.GetInt();
+        _attacks[attackName] = itr->value.GetInt();
     }
     return true;
 }
@@ -124,21 +125,21 @@ bool BattleCharacterData::setAttacks(const rapidjson::Value &battleCharacterData
 
 int BattleCharacterData::getHitPoint() const
 {
-    return this->hitPoint;
+    return _hitPoint;
 }
 
 float BattleCharacterData::getSpeedRatio() const
 {
-    return this->speedRatio;
+    return _speedRatio;
 }
 
 int BattleCharacterData::getAttackPoint(const string &attackName) const
 {
-    if (this->attacks.count(attackName) == 0) {
-        this->assertHelper->pushTextLineKeyValue("attack_name", attackName)
+    if (_attacks.count(attackName) == 0) {
+        _assertHelper->pushTextLineKeyValue("attack_name", attackName)
                             ->fatalAssert("attack_point is missing.");
         return 0;
     }
     
-    return this->attacks.at(attackName);
+    return _attacks.at(attackName);
 }
