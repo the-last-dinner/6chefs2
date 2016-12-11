@@ -13,6 +13,7 @@
 
 class BattleData;
 class EventTask;
+class DungeonScene;
 class DungeonSceneManager;
 
 class Battle : public Node
@@ -27,6 +28,7 @@ private:
     MapObject* _mainCharacter { nullptr };
     Vector<MapObject*> _targetObjects {};
     EventTask* _eventTask { nullptr };
+    DungeonScene* _scene { nullptr };
 public:
     function<void(Battle*)> _finishCallback {};
     

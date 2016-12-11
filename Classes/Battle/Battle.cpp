@@ -17,6 +17,8 @@
 #include "MapObjects/Party.h"
 #include "MapObjects/Status/HitPoint.h"
 
+#include "Scenes/DungeonScene.h"
+
 #include "Tasks/EventTask.h"
 
 // コンストラクタ
@@ -47,10 +49,12 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
     }
     
     _mainCharacter = objectList->getParty()->getMainCharacter();
+    _eventTask = manager->getEventTask();
+    _scene = manager->getScene();
     
     if (!_mainCharacter) return false;
-    
-    _eventTask = manager->getEventTask();
+    if (!_eventTask) return false;
+    if (!_scene) return false;
     
     BattleManager::getInstance()->setBattleInstance(this);
     
@@ -72,6 +76,7 @@ bool Battle::isMainCharacterDestroyed() const
 
 void Battle::start()
 {
+    _scene->onBattleStart();
     this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
 }
 
@@ -82,6 +87,7 @@ void Battle::update(float delta)
     if (this->isAllTargetDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getSuccessCallbackEvent());
+        _scene->onBattleFinished();
         if (_finishCallback) _finishCallback(this);
         return;
     }
@@ -89,6 +95,7 @@ void Battle::update(float delta)
     if (this->isMainCharacterDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getFailureCallbackEvent());
+        _scene->onBattleFinished();
         if (_finishCallback) _finishCallback(this);
         return;
     }

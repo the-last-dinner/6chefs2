@@ -85,6 +85,8 @@ protected:
 public:
     virtual void onEnterPushedScene() override;
     virtual void onExitPushedScene() override;
+    void onBattleStart();
+    void onBattleFinished();
 };
 
 
