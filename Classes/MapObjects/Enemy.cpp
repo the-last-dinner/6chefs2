@@ -132,5 +132,5 @@ void Enemy::onBattleFinished()
 void Enemy::onEventFinished()
 {
     Character::onEventFinished();
-    _movePattern->start();
+    if (_movePattern) _movePattern->start();
 }

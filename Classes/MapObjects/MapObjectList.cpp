@@ -202,11 +202,7 @@ void MapObjectList::removeById(const int objectId)
 {
     for (Enemy* enemy : _enemies) {
         if (enemy->getObjectId() != objectId) continue;
-        
-        _disableObjects.pushBack(enemy);
-        _enemies.eraseObject(enemy);
-        enemy->onExitMap();
-        enemy->removeFromParent();
+        this->removeEnemy(enemy);
     }
     
     for (MapObject* obj : _availableObjects) {
@@ -253,7 +249,9 @@ void MapObjectList::removeEnemyByObjectId(const int objectId)
 // 対象の敵のオブジェクトを削除
 void MapObjectList::removeEnemy(Enemy *enemy)
 {
+    _disableObjects.pushBack(enemy);
     enemy->removeFromParent();
+    enemy->onExitMap();
     _enemies.eraseObject(enemy);
 }
 
