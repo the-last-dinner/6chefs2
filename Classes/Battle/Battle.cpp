@@ -10,6 +10,7 @@
 
 #include "Battle/BattleData.h"
 
+#include "Managers/BattleManager.h"
 #include "Managers/DungeonSceneManager.h"
 
 #include "MapObjects/MapObjectList.h"
@@ -51,6 +52,8 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
     
     _eventTask = manager->getEventTask();
     
+    BattleManager::getInstance()->setBattleInstance(this);
+    
     return true;
 }
 
@@ -79,12 +82,14 @@ void Battle::update(float delta)
     if (this->isAllTargetDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getSuccessCallbackEvent());
+        if (_finishCallback) _finishCallback(this);
         return;
     }
     
     if (this->isMainCharacterDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getFailureCallbackEvent());
+        if (_finishCallback) _finishCallback(this);
         return;
     }
 }
