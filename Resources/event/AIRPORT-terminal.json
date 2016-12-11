@@ -440,10 +440,8 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"charaMsg",
-					"text":["飛行機に乗る必要はないな。"],
-					"charaID":"0",
-					"imgID":"2"
+					"type":"systemMsg",
+					"text":["飛行機に乗る必要はない・・・"]
 				},
 				{
 					"type":"charaWalk",

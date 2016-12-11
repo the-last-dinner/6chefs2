@@ -209,7 +209,7 @@
 			"action":[
 				{
 					"type":"charaMsg",
-					"text":["非常階段には近づかないようにしよう・・・"],
+					"text":["何かの気配を感じる・・・"],
 					"charaID":"0",
 					"imgID":"2"
 				},
@@ -277,14 +277,7 @@
 		}
 	],
 	"6":[
-		{
-			"type":"if",
-			"condition":[
-				{
-					"item":"152"
-				}
-			],
-			"action":[
+		
 				{
 					"type":"sequence",
 					"action":[
@@ -444,8 +437,7 @@
 						}
 					]
 				}
-			]
-		}
+			
 	],
 	"7":[
 		{
@@ -514,10 +506,20 @@
 					"text":["部屋は荒らされている"]
 				},
 				{
-					"type":"charaMsg",
-					"text":["早く・・・”脱出シューターを・・・”"],
-					"charaID":"0",
-					"imgID":"2"
+					"type":"if",
+					"condition":[
+						{
+							"flg":["17","2",1]
+						}
+					],
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["早く・・・”脱出シューターを・・・”"],
+							"charaID":"0",
+							"imgID":"2"
+						}
+					]
 				},
 				{
 					"type":"charaWalk",

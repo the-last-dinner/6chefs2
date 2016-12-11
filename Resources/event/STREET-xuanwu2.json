@@ -281,6 +281,10 @@
 					"layer":"shitai"
 				},
 				{
+					"type":"removeLayer",
+					"layer":"blood"
+				},
+				{
 					"type":"removeObject",
 					"objID":"181"
 				},

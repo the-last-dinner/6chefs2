@@ -629,6 +629,20 @@
 									]
 								},
 								{
+									"type":"if",
+									"condition":[
+										{
+											"Ntrophy":"7"
+										}
+									],
+									"action":[
+										{
+											"type":"getTrophy",
+											"trophyID":"7"
+										}
+									]
+								},
+								{
 									"type":"changeFlg",
 									"flg":1
 								}

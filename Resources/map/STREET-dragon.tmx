@@ -73,6 +73,9 @@
   </data>
  </layer>
  <layer name="manhall" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzEkNACAQBLARsf7NcegACyTwIGkFNAEAAACAc62SXvffsc/54AUAAACAHywOhQPj
   </data>

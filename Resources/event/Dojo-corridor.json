@@ -17,7 +17,7 @@
 					"times":-1,
 					"action":[
 						{
-							"type":蘭丸の正拳突き
+							"type":"蘭丸の正拳突き"
 						}
 					]
 				},
@@ -119,7 +119,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["・・・\n今日は素直ね・・・"],
+							"text":["・・・\n今日はやけに素直ね・・・"],
 							"charaID":"27",
 							"imgID":"1"
 						}
@@ -157,15 +157,16 @@
 					"direction":"DOWN",
 					"movePattern":"1"
 				},
-				{
-					"type":"spawn",
-					"action":[
 						{
 							"type":"charaWalk",
 							"objID":"hero",
 							"steps":2.0,
 							"direction":"RIGHT",
 							"speed":0.5
+						},
+						{
+							"type":"playBGM",
+							"file":"favo_kenshin.mp3"
 						},
 						{
 							"type":"fadein",
@@ -255,8 +256,7 @@
 								}
 							]
 						}
-					]
-				}
+					
 			]
 		}
 	]

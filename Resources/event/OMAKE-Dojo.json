@@ -370,7 +370,7 @@
 							"direction":"LEFT"
 						}
 					]
-				}
+				},
 				{
 					"type":"charaMsg",
 					"talk":[
@@ -451,7 +451,7 @@
 					"x":17,
 					"y":29,
 					"direction":"UP",
-					"movePattern":"6"
+					"movePattern":"2"
 				},
 				{
 					"type":"fadein",
@@ -474,7 +474,7 @@
 					]
 				},
 				{
-					"type":"battle",
+					"type":"barrage",
 					"objID":["10207"],
 					"true":[
 						{
