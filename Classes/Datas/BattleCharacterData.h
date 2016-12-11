@@ -24,11 +24,11 @@ private:
     static rapidjson::Document BATTLE_CHARACTER_DATA;
 
 private:
-    AssertHelper* assertHelper {nullptr};
-    string charaId {etos(CharacterID::UNDIFINED)};
-    map<string, int> attacks {};
-    int hitPoint {100};
-    float speedRatio {1.0f};
+    AssertHelper* _assertHelper {nullptr};
+    string _charaId {};
+    map<string, int> _attacks {};
+    int _hitPoint {100};
+    float _speedRatio {1.0f};
     
 private:
     BattleCharacterData() {FUNCLOG};
