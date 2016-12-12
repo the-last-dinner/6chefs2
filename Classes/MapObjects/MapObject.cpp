@@ -98,6 +98,9 @@ void MapObject::setTrigger(Trigger trigger) { _trigger = trigger; }
 // かいりきで押せるかをセット
 void MapObject::setMovable(bool isMovable) { _isMovable = isMovable; }
 
+// 押されたときに鳴らす音
+void MapObject::setMovingSoundFileName(const string& fileName) {_movingSoundFileName = fileName;}
+
 // マップオブジェクトのリストをセット
 void MapObject::setMapObjectList(MapObjectList* objectList) { _objectList = objectList; }
 
@@ -221,6 +224,9 @@ bool MapObject::isHit(const MapObject* other) const
 // 動かせるかどうかを取得
 bool MapObject::isMovable() const {return _isMovable;}
 
+// 動かしたときの音を取得
+string MapObject::getMovingSoundFileName() const {return _movingSoundFileName;}
+
 // 指定の方向に対して当たり判定があるMapObjectのvectorを取得
 Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
 {
@@ -297,9 +303,10 @@ void MapObject::moveObject(const vector<Direction>& directions, function<void(bo
         // 当たったものが動かせるなら入力方向に1マス動かす
         if (this->isHit(direction)) {
             for (MapObject* obj : this->getHitObjects(direction)) {
-                if(obj->isMovable()) obj->moveBy({ direction }, [onMoved](bool movable) {
+                if(obj->isMovable()) obj->moveBy({ direction }, [onMoved, obj](bool movable) {
                     // 複数の物体が同時に接触した時に例外が出るのでキャッチ
                     try {
+                        if(movable && obj->getMovingSoundFileName() != "") SoundManager::getInstance()->playSE(obj->getMovingSoundFileName(),  1.f);
                         onMoved(movable);
                     } catch(exception e) {
                     }
