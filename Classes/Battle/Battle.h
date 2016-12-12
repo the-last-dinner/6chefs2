@@ -42,6 +42,7 @@ private:
     
 public:
     void start();
+    Vector<MapObject*> getTargetObjects() const;
     void update(float delta) override;
 };
 

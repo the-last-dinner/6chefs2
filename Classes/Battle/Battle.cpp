@@ -80,6 +80,11 @@ void Battle::start()
     this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
 }
 
+Vector<MapObject*> Battle::getTargetObjects() const
+{
+    return _targetObjects;
+}
+
 #pragma mark -
 #pragma mark Interface
 void Battle::update(float delta)

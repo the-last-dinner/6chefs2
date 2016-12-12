@@ -282,6 +282,13 @@ void Character::onHurt(int damage)
     }
 }
 
+// 対象を攻撃できるか
+bool Character::canAttack(MapObject* target) const
+{
+    if (_battle) return false;
+    return true;
+}
+
 #pragma mark -
 #pragma mark HP
 

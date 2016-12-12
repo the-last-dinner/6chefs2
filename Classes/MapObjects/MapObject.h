@@ -114,6 +114,10 @@ private:
 // HP
 public:
     HitPoint* getHitPoint() const;
+    
+// Battle
+public:
+    virtual bool canAttack(MapObject* target) const;
 
 // move
 public:

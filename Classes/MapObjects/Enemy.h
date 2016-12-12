@@ -37,6 +37,10 @@ public:
     EnemyData getEnemyData() const;
     bool canGoToNextMap() const;
     float calcSummonDelay() const;
+
+// Battle
+public:
+    bool canAttack(MapObject* target) const override;
     
 // インターフェース
 public:

@@ -84,6 +84,7 @@ public:
     bool isInAttackMotion() const;
     void onAttackHitted(MapObject* hittedObject);
     void onHurt(int damage);
+    bool canAttack(MapObject* target) const override;
     
     // HP
     void setLostHPCallback(function<void(Character*)> callback);

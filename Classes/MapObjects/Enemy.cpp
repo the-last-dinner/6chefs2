@@ -8,12 +8,14 @@
 
 #include "MapObjects/Enemy.h"
 
+#include "Battle/Battle.h"
+
 #include "CocosStudio/CSNode.h"
 
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
-#include "MapOBjects/Party.h"
+#include "MapObjects/Party.h"
 
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
@@ -90,6 +92,19 @@ float Enemy::calcSummonDelay() const
     if (!_movePattern) return 0.0f;
     
     return _movePattern->calcSummonDelay();
+}
+
+#pragma mark -
+#pragma mark Battle
+
+bool Enemy::canAttack(MapObject* target) const
+{
+    if (_battle) return true;
+    
+    for (MapObject* other : _battle->getTargetObjects()) {
+        if (other == target) return false;
+    }
+    return true;
 }
 
 #pragma mark -

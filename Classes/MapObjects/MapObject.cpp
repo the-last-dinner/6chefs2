@@ -274,6 +274,14 @@ HitPoint* MapObject::getHitPoint() const
 }
 
 #pragma mark -
+#pragma mark Battle
+
+bool MapObject::canAttack(MapObject* target) const
+{
+    return false;
+}
+
+#pragma mark -
 #pragma mark Move
 
 // 入力のあった方向から、移動可能方向のみを取り出して返す
