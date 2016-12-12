@@ -34,6 +34,7 @@ private:
     int _eventId { static_cast<int>(EventID::UNDIFINED) };
 	Trigger _trigger { Trigger::SIZE };
     bool _isMovable { false };
+    string _movingSoundFileName {};
 	Light* _light { nullptr };
     bool _isMoving { false };
     Sprite* _sprite { nullptr };
@@ -64,6 +65,7 @@ public:
 	void setEventId(int eventId);
 	void setTrigger(Trigger trigger);
     void setMovable(bool isMovable);
+    void setMovingSoundFileName(const string& fileName);
     void setMapObjectList(MapObjectList* objectList);
     void setSprite(Sprite* sprite);
     void setPaused(bool paused);
@@ -95,6 +97,7 @@ public:
     virtual bool isHit(const vector<Direction>& directions, bool ignoreCollision = false) const;
     virtual bool isHit(const MapObject* other) const;
     bool isMovable() const;
+    string getMovingSoundFileName() const;
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
     

@@ -171,6 +171,7 @@ public:
     CREATE_FUNC_WITH_PARAM(SetMovableEvent, rapidjson::Value&)
 private:
     bool _movable { false };
+    string _fileName {};
 private:
     SetMovableEvent() { FUNCLOG };
     ~SetMovableEvent() { FUNCLOG };
