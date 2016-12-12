@@ -96,18 +96,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"4",
-					"flg":1
-				},
-				{
-					"type":"createLayer",
-					"layer":"railChange1_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"4",
+							"flg":1
+						},
+						{
+							"type":"createLayer",
+							"layer":"railChange1_2"
+						}
+					]
 				}
 			]
 		},
@@ -120,18 +125,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"4",
-					"flg":0
-				},
-				{
-					"type":"removeLayer",
-					"layer":"railChange1_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"4",
+							"flg":0
+						},
+						{
+							"type":"removeLayer",
+							"layer":"railChange1_2"
+						}
+					]
 				}
 			]
 		}
@@ -146,18 +156,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"5",
-					"flg":1
-				},
-				{
-					"type":"createLayer",
-					"layer":"railChange2_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"5",
+							"flg":1
+						},
+						{
+							"type":"createLayer",
+							"layer":"railChange2_2"
+						}
+					]
 				}
 			]
 		},
@@ -170,18 +185,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"5",
-					"flg":0
-				},
-				{
-					"type":"removeLayer",
-					"layer":"railChange2_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"5",
+							"flg":0
+						},
+						{
+							"type":"removeLayer",
+							"layer":"railChange2_2"
+						}
+					]
 				}
 			]
 		}
@@ -196,18 +216,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"6",
-					"flg":1
-				},
-				{
-					"type":"createLayer",
-					"layer":"railChange3_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"6",
+							"flg":1
+						},
+						{
+							"type":"createLayer",
+							"layer":"railChange3_2"
+						}
+					]
 				}
 			]
 		},
@@ -220,18 +245,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"6",
-					"flg":0
-				},
-				{
-					"type":"removeLayer",
-					"layer":"railChange3_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"6",
+							"flg":0
+						},
+						{
+							"type":"removeLayer",
+							"layer":"railChange3_2"
+						}
+					]
 				}
 			]
 		}
@@ -246,18 +276,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"7",
-					"flg":1
-				},
-				{
-					"type":"createLayer",
-					"layer":"railChange4_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"7",
+							"flg":1
+						},
+						{
+							"type":"createLayer",
+							"layer":"railChange4_2"
+						}
+					]
 				}
 			]
 		},
@@ -270,18 +305,23 @@
 			],
 			"action":[
 				{
-					"type":"playSE",
-					"file":"knife.mp3"
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"63",
-					"eventID":"7",
-					"flg":0
-				},
-				{
-					"type":"removeLayer",
-					"layer":"railChange4_2"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"knife.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"63",
+							"eventID":"7",
+							"flg":0
+						},
+						{
+							"type":"removeLayer",
+							"layer":"railChange4_2"
+						}
+					]
 				}
 			]
 		}
@@ -296,10 +336,6 @@
 				{
 					"type":"changeHero",
 					"charaID":"18"
-				},
-				{
-					"type":"createObject",
-					"objID":"181"
 				},
 				{
 					"type":"removeObject",
@@ -320,6 +356,10 @@
 								{
 									"type":"createLayer",
 									"layer":"ranmaru1"
+								},
+								{
+									"type":"createObject",
+									"objID":"181"
 								},
 								{
 									"type":"createObject",
