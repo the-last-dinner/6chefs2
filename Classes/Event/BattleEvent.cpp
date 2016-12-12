@@ -32,7 +32,7 @@ bool BattleStartEvent::init(rapidjson::Value& json)
     vector<int> targetIds {};
     rapidjson::Value& targetsJson { _json[member::OBJECT_ID] };
     for(int i { 0 }; i < targetsJson.Size(); i++) {
-        targetIds.push_back(targetsJson[i].GetInt());
+        targetIds.push_back(stoi(targetsJson[i].GetString()));
     }
     
     data->setTargetObjectIds(targetIds);
