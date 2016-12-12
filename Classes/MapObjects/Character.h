@@ -89,6 +89,9 @@ public:
     void setLostHPCallback(function<void(Character*)> callback);
     void onLostHP();
     
+    // HitBox
+    void enableHit(bool enableHit);
+    
     // Sight
     bool isInSight(MapObject* mapObject);
 

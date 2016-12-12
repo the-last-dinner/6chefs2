@@ -292,6 +292,19 @@ void Character::onLostHP()
 }
 
 #pragma mark -
+#pragma mark HitBox
+void Character::enableHit(bool enableHit)
+{
+    if (!_objectList) return;
+    
+    if (enableHit) {
+        _objectList->getAttackDetector()->addHitBox(_hitBox);
+    } else {
+        _objectList->getAttackDetector()->removeHitBox(_hitBox);
+    }
+}
+
+#pragma mark -
 #pragma mark Sight
 
 bool Character::isInSight(MapObject* mapObject)
@@ -321,8 +334,8 @@ void Character::onEnterMap()
     
     if (_objectList) {
         _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
-        _objectList->getAttackDetector()->addHitBox(_hitBox);
     }
+    this->enableHit(true);
     
     this->setDirection(this->getDirection());
     
@@ -338,8 +351,8 @@ void Character::onExitMap()
 {
     if (_objectList) {
         _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
-        _objectList->getAttackDetector()->removeHitBox(_hitBox);
     }
+    this->enableHit(false);
     
     this->unscheduleUpdate();
 }

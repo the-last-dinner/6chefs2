@@ -9,6 +9,8 @@
 #include "MapObjects/Command/StepCommand.h"
 
 #include "MapObjects/Character.h"
+#include "MapObjects/MapObjectList.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
 
 // 定数
 const int StepCommand::MOVE_GRID_NUM { 3 };
@@ -75,8 +77,10 @@ void StepCommand::moveCharacter(Character* character)
 {
     _restGridNum--;
     
+    character->enableHit(false);
     bool movable { character->walkBy(_directions, [this, character](bool moved) {
         if (_callback && _restGridNum == 0) {
+            character->enableHit(true);
             _callback(moved);
             this->setDone();
         } else if (_restGridNum > 0) {
