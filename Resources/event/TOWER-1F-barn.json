@@ -89,9 +89,27 @@
 			"action":[
 				{
 					"type":"charaMsg",
-					"text":["俺の力でも開かねぇな・・・\nオレより力がある奴って言や・・・"],
-					"charaID":"8",
-					"imgID":"1"
+					"talk":[
+						{
+							"text":["俺の力でも開かねぇな・・・\nオレより力がある奴って言や・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						}
+					]
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"Ntrophy":"5"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophyID":"5"
+						}
+					]
 				}
 			]
 		},
@@ -153,7 +171,7 @@
 									"imgID":"1"
 								},
 								{
-									"text":["アンタ・・・\nまた力を上げたわね・・・"],
+									"text":["アンタ・・・\n相変わらず筋肉バカね・・・"],
 									"charaID":"3",
 									"imgID":"1"
 								},

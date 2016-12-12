@@ -113,6 +113,17 @@
 			"y":24,
 			"direction":"LEFT",
 			"movePattern":"2"
+		},
+		{
+			"type":"createObject",
+			"objID":"10239",
+			"charaID":"13",
+			"trigger":"2",
+			"eventID":"13",
+			"x":20,
+			"y":34,
+			"direction":"DOWN",
+			"movePattern":"1"
 		}
 	],
 	"2":[
@@ -922,5 +933,59 @@
 				}
 			]
 		}
+	],
+	"13":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["この度は「6人の料理人と隻眼の少女」を\n手に取っていただき、ありがとうございます。","早速ですがルートAにたどり着く方法を\n教えましょう。"],
+					"charaID":"10",
+					"name":"最後の晩餐"
+				},
+				{
+					"type":"questionMsg",
+					"text":["聞きますか？"],
+					"choices":[
+						{
+							"choice":"聞く",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"charaMsg",
+											"file":"",
+											"text":["北森金鉱跡に針金を拾った坑道が\nありませんでしたか？","そこで坑道に入らず、\n地下病棟に戻り"],
+											"charaID":"10",
+											"name":"最後の晩餐"
+										},
+										{
+											"type":"charaMsg",
+											"file":"",
+											"text":["ここの扉を調べると\n新エリアへの道が・・・"],
+											"charaID":"10",
+											"name":"最後の晩餐"
+										}
+									]
+								}
+							]
+						},
+						{
+							"choice":"聞かない",
+							"action":[
+								{
+									"type":"charaMsg",
+									"text":["引き続き、おまけ部屋をお楽しみ下さい。"],
+									"charaID":"10",
+									"name":"最後の晩餐"
+								}
+							]
+						}
+					]
+				}
+			]
+		}	
 	]
 }

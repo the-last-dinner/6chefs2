@@ -686,8 +686,8 @@
 							"action":[
 								{
 									"type":"camera",
-									"x":21,
-									"y":9,
+									"nextX":21,
+									"nextY":9,
 									"time":0.5
 								},
 								{

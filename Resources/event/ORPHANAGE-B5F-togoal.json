@@ -58,37 +58,36 @@
 						},
 						{
 							"type":"charaMsg",
-							"file":"tamura_daigoro.png",
 							"talk":[
 								{
 									"text":["二人で喧嘩なんて久しぶりだな。\nいつぶりだ？"],
-									"charaID":"10",
-									"name":"田村　剣神"
+									"charaID":"8",
+									"imgID":"1"
 								},
 								{
 									"text":["そうっスね。\nあのエバりくさってたアホに屋上呼び出された時以来っスかね。"],
-									"charaID":"10",
-									"name":"大善　吾郎"
+									"charaID":"5",
+									"imgID":"1"
 								},
 								{
 									"text":["へっ"],
-									"charaID":"10",
-									"name":"田村　剣神"
+									"charaID":"8",
+									"imgID":"1"
 								},
 								{
 									"text":["（ウチら無いものとして扱われてない？）"],
-									"charaID":"10",
-									"name":"咲賀谷　朱花"
+									"charaID":"7",
+									"imgID":"3"
 								},
 								{
 									"text":["入るぞ。\n雪、朱花、邪魔にならないようにしとけや。"],
-									"charaID":"10",
-									"name":"田村　剣神"
+									"charaID":"8",
+									"imgID":"4"
 								},
 								{
 									"text":["う、うん"],
 									"charaID":"10",
-									"name":"咲賀谷　朱花・希崎　雪"
+									"name":"朱花・雪"
 								}
 							]
 						},

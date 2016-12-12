@@ -6,17 +6,6 @@
 		},
 		{
 			"type":"createEnemy",
-			"objID":"1429",
-			"charaID":"13",
-			"x":44,
-			"y":59,
-			"direction":"DOWN",
-			"times":1,
-			"movePattern":"0",
-			"speed":0.8
-		},
-		{
-			"type":"createEnemy",
 			"objID":"1430",
 			"charaID":"13",
 			"x":26,
@@ -31,6 +20,9 @@
 			"condition":[
 				{
 					"event":["48","5"]
+				},
+				{
+					"event":["49","8"]
 				}
 			],
 			"action":[
@@ -71,20 +63,17 @@
 		}
 	],
 	"5":[
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["48","5",0]
-				}
-			],
-			"action":[
 				{
 					"type":"sequence",
 					"action":[
 						{
 							"type":"charaMsg",
 							"talk":[
+								{
+									"text":["うぅ・・・\n変な部屋・・・","寒いね・・・"],
+									"charaID":"7",
+									"imgID":"3"
+								},
 								{
 									"text":["氷の床・・・","おうちにあったのみたい・・・"],
 									"charaID":"6",
@@ -129,6 +118,7 @@
 								}
 							]
 						},
+						
 						{
 							"type":"already"
 						},
@@ -141,7 +131,5 @@
 						}
 					]
 				}
-			]
-		}
 	]
 }
