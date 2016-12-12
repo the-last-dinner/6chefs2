@@ -46,3 +46,13 @@ void BattleMob::resume()
 {
     MovePattern::resume();
 }
+
+void BattleMob::onPartyMoved()
+{
+    
+}
+
+bool BattleMob::canGoToNextMap() const
+{
+    return false;
+}
