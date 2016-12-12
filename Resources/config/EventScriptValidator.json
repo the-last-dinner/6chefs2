@@ -211,6 +211,8 @@
             "member": {
                 "x": ["int"],
                 "y": ["int"],
+                "nextX": ["int"],
+                "nextY": ["int"],
                 "time": ["double", "int"]
             }
         },
@@ -503,6 +505,14 @@
         
         
         
+        "battle": {
+            "require": ["objID", "true", "false"],
+            "member": {
+                "objID": [["string"]],
+                "true": [["object"]],
+                "false": [["object"]]
+            }
+        },
         
         
         

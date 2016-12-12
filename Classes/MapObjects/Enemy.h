@@ -37,12 +37,16 @@ public:
     EnemyData getEnemyData() const;
     bool canGoToNextMap() const;
     float calcSummonDelay() const;
+
+// Battle
+public:
+    bool canAttack(MapObject* target) const override;
     
 // インターフェース
 public:
     virtual void onEnterMap() override;
     virtual void onExitMap() override;
-    virtual void onBattleStart() override;
+    virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
     virtual void onEventFinished() override;
 };

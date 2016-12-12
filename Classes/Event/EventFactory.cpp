@@ -8,6 +8,7 @@
 
 #include "Event/EventFactory.h"
 
+#include "Event/BattleEvent.h"
 #include "Event/CameraEvent.h"
 #include "Event/CharacterEvent.h"
 #include "Event/EnemyEvent.h"
@@ -108,6 +109,9 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"password", PasswordEvent::create},            // パスワードイベント
     {"countDown", CountDownEvent::create},          // カウントダウン
     {"stopCount", StopCountEvent::create},          // ストップカウント
+    
+    // 戦闘系
+    {"battle", BattleStartEvent::create},           // 戦闘開始
     
     // フラグ系
     {"already", NeverAgainEvent::create},                   // イベントIDを見たことにし、二度と発動しないようにする

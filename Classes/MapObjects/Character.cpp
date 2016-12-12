@@ -11,11 +11,13 @@
 #include "CocosStudio/CSNode.h"
 
 #include "Datas/MapObject/CharacterData.h"
+#include "Datas/BattleCharacterData.h"
 
-#include "MapObjects/MapObjectList.h"
+#include "MapObjects/Command/HurtCommand.h"
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/DetectionBox/HitBox.h"
+#include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 #include "MapObjects/Status/HitPoint.h"
@@ -38,12 +40,9 @@ Character::Character() { FUNCLOG }
 Character::~Character()
 {
     FUNCLOG
-    
     CC_SAFE_RELEASE_NULL(_movePattern);
-    CC_SAFE_RELEASE_NULL(_hitBox);
-    CC_SAFE_RELEASE_NULL(_hp);
     CC_SAFE_RELEASE_NULL(_sight);
-    CC_SAFE_RELEASE_NULL(_battleAttackBox);
+    CC_SAFE_RELEASE_NULL(_battleData);
 }
 
 // 初期化
@@ -85,19 +84,23 @@ bool Character::init(const CharacterData& data)
     this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
     
     // くらい判定生成
-    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
-    CC_SAFE_RETAIN(hitBox);
+    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onHurt, this)) };
+    this->addChild(hitBox);
     _hitBox = hitBox;
     
     // HPを生成
-    HitPoint* hp { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
-    CC_SAFE_RETAIN(hp);
-    _hp = hp;
+    HitPoint* hitPoint { HitPoint::create(1, CC_CALLBACK_0(Character::onLostHP, this)) };
+    CC_SAFE_RETAIN(hitPoint);
+    _hitPoint = hitPoint;
     
     // 視野を生成
     Sight* sight { Sight::create(this) };
     CC_SAFE_RETAIN(sight);
     _sight = sight;
+    
+    BattleCharacterData* battleData { BattleCharacterData::create(data.chara_id) };
+    CC_SAFE_RETAIN(battleData);
+    _battleData = battleData;
 	
     return true;
 }
@@ -107,6 +110,12 @@ int Character::getCharacterId() const { return _charaId; }
 
 // 自身のキャラクターデータを返す
 CharacterData Character::getCharacterData() const { return CharacterData(_charaId, this->getObjectId(), _location); }
+
+// バトル用のデータを返す
+BattleCharacterData* Character::getBattleCharacterData() const { return _battleData; }
+
+// 戦闘用攻撃判定を返す
+AttackBox* Character::getBattleAttackBox() const { return _battleAttackBox; }
 
 // キャラクターの向きを変える
 void Character::setDirection(const Direction& direction)
@@ -129,9 +138,7 @@ void Character::setDirection(const Direction& direction, bool stopAnimation)
 void Character::pauseAi()
 {
     if (!_movePattern) return;
-    
     this->clearCommandQueue();
-    
     _movePattern->pause();
 }
 
@@ -139,7 +146,6 @@ void Character::pauseAi()
 void Character::resumeAi()
 {
     if (!_movePattern) return;
-    
     _movePattern->resume();
 }
 
@@ -155,14 +161,14 @@ bool Character::walkBy(const vector<Direction>& directions, function<void(bool)>
         cb(canMove);
     }};
     
-    if (!MapObject::moveBy(directions, callback, speed, ignoreCollision)) return false;
+    if (!MapObject::moveBy(directions, callback, speed * _speed, ignoreCollision)) return false;
     
     // 方向を変える
     Direction direction { back ? directions.back().getOppositeDirection() : directions.back() };
     this->setDirection(direction, false);
     
     // 歩行アニメーション
-    this->stamp(direction, speed);
+    this->stamp(direction, speed * _speed);
     
     return true;
 }
@@ -223,28 +229,24 @@ void Character::playAnimation(const string& name, function<void(Character*)> cal
 void Character::stamp(const Direction direction, float ratio)
 {
     if (!_terrainState) return;
-    
     _terrainState->stamp(this, direction, ratio);
 }
 
 bool Character::isRunnable() const
 {
     if (!_terrainState) return true;
-    
     return _terrainState->isRunnable();
 }
 
 bool Character::consumeStaminaWalking() const
 {
     if (!_terrainState) return false;
-    
     return _terrainState->consumeStaminaWalking();
 }
 
 float Character::getStaminaConsumptionRatio() const
 {
     if (!_terrainState) return 1.f;
-    
     return _terrainState->getStaminaConsumptionRatio();
 }
 
@@ -263,31 +265,42 @@ bool Character::isInAttackMotion() const
 }
 
 // 自分の攻撃が誰かに当たった時
-void Character::onMyAttackHitted(MapObject* hittedObject)
+void Character::onAttackHitted(MapObject* hittedObject)
 {
     
 }
 
 // 攻撃を受けた時
-void Character::onAttackHitted(int damage)
+void Character::onHurt(int damage)
 {
-    if (!_hp) return;
+    if (!_hitPoint) return;
+    _hitPoint->reduce(damage);
     
-    _hp->reduce(damage);
+    if (_battle) {
+        HurtCommand* command { HurtCommand::create() };
+        this->pushCommand(command);
+    }
+}
+
+// 対象を攻撃できるか
+bool Character::canAttack(MapObject* target) const
+{
+    if (!_battle) return false;
+    return true;
 }
 
 #pragma mark -
-#pragma mark HP
-
-void Character::setLostHPCallback(function<void(Character*)> callback)
+#pragma mark HitBox
+void Character::enableHit(bool enableHit)
 {
-    _onLostHP = callback;
-}
-
-void Character::onLostHP()
-{
-    if (_onLostHP) {
-        _onLostHP(this);
+    if (!_objectList) return;
+    
+    if (enableHit) {
+        _objectList->getAttackDetector()->addHitBox(_hitBox);
+        _hitBox->setVisible(true);
+    } else {
+        _objectList->getAttackDetector()->removeHitBox(_hitBox);
+        _hitBox->setVisible(false);
     }
 }
 
@@ -321,8 +334,8 @@ void Character::onEnterMap()
     
     if (_objectList) {
         _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
-        _objectList->getAttackDetector()->addHitBox(_hitBox);
     }
+    this->enableHit(true);
     
     this->setDirection(this->getDirection());
     
@@ -338,8 +351,8 @@ void Character::onExitMap()
 {
     if (_objectList) {
         _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
-        _objectList->getAttackDetector()->removeHitBox(_hitBox);
     }
+    this->enableHit(false);
     
     this->unscheduleUpdate();
 }
@@ -389,20 +402,39 @@ void Character::onEventFinished()
 }
 
 // バトル開始時
-void Character::onBattleStart()
+void Character::onBattleStart(Battle* battle)
 {
-    MapObject::onBattleStart();
-    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
-    _objectList->getAttackDetector()->addAttackBox(box);
-    CC_SAFE_RELEASE_NULL(_battleAttackBox);
-    CC_SAFE_RETAIN(box);
-    _battleAttackBox = box;
+    MapObject::onBattleStart(battle);
+
+    if (_battleData) {
+        _hitPoint->setMax(_battleData->getHitPoint());
+        _speed = _battleData->getSpeedRatio();
+    }
+    
+    if (_battleAttackBox) {
+        this->removeChild(_battleAttackBox);
+    }
+    
+    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
+    if (box) {
+        _objectList->getAttackDetector()->addAttackBox(box);
+        this->addChild(box);
+        _battleAttackBox = box;
+    }
 }
 
 // バトル終了時
 void Character::onBattleFinished()
 {
     MapObject::onBattleFinished();
+    
+    _hitPoint->setMax(1);
+    _speed = 1.f;
+    
+    if (_battleAttackBox) {
+        this->removeChild(_battleAttackBox);
+        _battleAttackBox = nullptr;
+    }
     _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
 }
 

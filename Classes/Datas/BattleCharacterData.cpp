@@ -34,10 +34,8 @@ bool BattleCharacterData::init(const string &charaId)
     }
     
     // charaIDに対応するデータを取得
-    if (!BattleCharacterData::BATTLE_CHARACTER_DATA.HasMember(charaId.c_str())) {
-        _assertHelper->fatalAssert("BattleCharacterData is missing.");
-        return false;
-    }
+    if (!BattleCharacterData::BATTLE_CHARACTER_DATA.HasMember(charaId.c_str())) return false;
+    
     rapidjson::Value& battleCharacterData {BattleCharacterData::BATTLE_CHARACTER_DATA[charaId.c_str()]};
     
     // 固有データのセット

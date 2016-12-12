@@ -18,6 +18,7 @@ class HitPoint;
 class AttackBox;
 class HitBox;
 class Sight;
+class BattleCharacterData;
 
 class Character : public MapObject
 {
@@ -37,14 +38,14 @@ public:
 private:
     int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
 protected:
-    function<void(Character*)> _onLostHP { nullptr };
     MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
     HitBox* _hitBox { nullptr };
-    HitPoint* _hp { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
+    float _speed { 1.f };
+    BattleCharacterData* _battleData { nullptr };
     
 // インスタンスメソッド
 public:
@@ -54,6 +55,8 @@ public:
     
     int getCharacterId() const;
     CharacterData getCharacterData() const;
+    BattleCharacterData* getBattleCharacterData() const;
+    AttackBox* getBattleAttackBox() const;
     
 	virtual void setDirection(const Direction& direction) override;
     virtual void setDirection(const Direction& direction, bool stopAnimation);
@@ -78,12 +81,12 @@ public:
     // Battle
     void beInAttackMotion(bool isInAttackMotion);
     bool isInAttackMotion() const;
-    void onMyAttackHitted(MapObject* hittedObject);
-    void onAttackHitted(int damage);
+    void onAttackHitted(MapObject* hittedObject);
+    void onHurt(int damage);
+    bool canAttack(MapObject* target) const override;
     
-    // HP
-    void setLostHPCallback(function<void(Character*)> callback);
-    void onLostHP();
+    // HitBox
+    void enableHit(bool enableHit);
     
     // Sight
     bool isInSight(MapObject* mapObject);
@@ -99,7 +102,7 @@ public:
     virtual void onSearched(MapObject* mainChara) override;
     virtual void onEventStart() override;
     virtual void onEventFinished() override;
-    virtual void onBattleStart() override;
+    virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
     
     friend class TerrainObject;

@@ -14,7 +14,11 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+#include "MapObjects/Status/Stamina.h"
+
 #include "Tasks/PlayerControlTask.h"
+
+#include "MapObjects/Command/StepCommand.h"
 
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
@@ -32,6 +36,25 @@ bool BattleState::init(PlayerControlTask* task)
 #pragma mark -
 #pragma mark Interface
 
+// 振り向き
+void BattleState::turn(Party* party, const Direction& direction, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // 主人公の向きを変更
+    if (!isDashKeyPressed) {
+        mainCharacter->setDirection(direction);
+    }
+    
+    // 主人公が移動中でなければ
+    if (!mainCharacter->isMoving()) {
+        // 一定時間後に歩行開始
+        if (!_task->isScheduled(PlayerControlTask::START_WALKING_SCHEDULE_KEY)) _task->scheduleOnce([this, party](float _) {
+            _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        }, 0.0f, PlayerControlTask::START_WALKING_SCHEDULE_KEY);
+    }
+}
+
 // 決定キーが押された時
 void BattleState::onEnterKeyPressed(Party* party)
 {
@@ -39,12 +62,47 @@ void BattleState::onEnterKeyPressed(Party* party)
     if (mainCharacter->isInAttackMotion()) return;
     
     AttackCommand* command { AttackCommand::create() };
-    command->setName(Character::AnimationName::getAttack("attack", mainCharacter->getDirection()));
+    command->setName("attack");
     command->setCallback([this, party](Character* c) {
         this->onAttackCommandFinished(party);
     });
     
     mainCharacter->pushCommand(command);
+}
+
+// 移動
+void BattleState::move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    bool step { mainCharacter->isRunnable() ? isDashKeyPressed : false };
+    
+    // 入力から、使う方向の個数を決める
+    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
+    
+    vector<Direction> moveDirections {};
+    for (int i { 0 }; i < directions.size(); i++) {
+        if (directions.size() - directionCount > i) continue;
+        moveDirections.push_back(directions.at(i));
+    }
+    
+    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
+    
+    if (step) {
+        StepCommand* command { StepCommand::create() };
+        command->setDirections(directions);
+        command->setCallback([this, party](bool moved) {
+            _task->onPartyMovedOneGrid(party, false);
+        });
+        
+        mainCharacter->pushCommand(command);
+    } else {
+        party->move(moveDirections, 1.f, [this, party, stamina](bool moved) {
+            if (!moved) return;
+            
+            stamina->setDecreasing(false);
+            _task->onPartyMovedOneGrid(party, false);
+        });
+    }
 }
 
 #pragma mark -
@@ -53,5 +111,6 @@ void BattleState::onEnterKeyPressed(Party* party)
 // 攻撃コマンド終了時
 void BattleState::onAttackCommandFinished(Party* party)
 {
-    _task->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if (!_task) return;
+    _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }

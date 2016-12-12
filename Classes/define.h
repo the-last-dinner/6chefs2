@@ -166,6 +166,8 @@ enum struct EnemyMovePattern
     PERFECT_RANDOM,
     SCOUTER,
     CHASER,
+    BATTLE_MOB,
+    BATTLE_BOSS,
     
     SIZE,
 };

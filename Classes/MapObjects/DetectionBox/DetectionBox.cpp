@@ -10,6 +10,8 @@
 
 #include "MapObjects/MapObject.h"
 
+#include "Managers/DebugManager.h"
+
 // コンストラクタ
 DetectionBox::DetectionBox() {}
 
@@ -21,6 +23,7 @@ bool DetectionBox::init(MapObject* parent, Node* origin)
 {
     if (!Node::init()) return false;
     if (!parent) return false;
+    if (!origin) return false;
     
     _parent = parent;
     _origin = origin;
@@ -69,17 +72,13 @@ void DetectionBox::setOriginInfo(const Rect& originRect)
     this->setContentSize(originRect.size);
 }
 
-void DetectionBox::startDetection()
-{
-    if (this->isScheduled(CC_SCHEDULE_SELECTOR(DetectionBox::update))) return;
-    this->scheduleUpdate();
-}
-
 void DetectionBox::update(float delta)
 {
-    if (!_origin) return;
+    if (_origin) this->setOriginInfo(_origin);
     
-    this->setOriginInfo(_origin);
+    if (DebugManager::getInstance()->displayDebugMask()) {
+        this->drawDebugMask();
+    }
 }
 
 #pragma mark -
@@ -158,4 +157,40 @@ bool DetectionBox::intersects(const DetectionBox* other) const
     if(_parent == other->_parent) return false;
     
     return this->getRect().intersectsRect(other->getRect());
+}
+
+#pragma mark -
+#pragma mark Debug
+
+void DetectionBox::drawDebugMask()
+{
+    Node* debugMask { this->getChildByName("debug_mask") };
+    if (debugMask) {
+        this->removeChild(debugMask);
+    }
+    
+    if (!this->isEnabled()) return;
+    
+    Rect rect { this->getBoundingBox() };
+    
+    Point vertices[]
+    {
+        Point::ZERO,
+        Point(0, rect.size.height),
+        rect.size,
+        Point(rect.size.width, 0),
+        Point::ZERO
+    };
+    Color4F lineColor { this->getDebugMaskColor() };
+    DrawNode* draw { DrawNode::create() };
+    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
+    draw->setPosition(rect.size.width / -2, rect.size.height / -2);
+    draw->setGlobalZOrder(Priority::DEBUG_MASK);
+    draw->setName("debug_mask");
+    this->addChild(draw);
+}
+
+Color4F DetectionBox::getDebugMaskColor() const
+{
+    return Color4F::WHITE;
 }

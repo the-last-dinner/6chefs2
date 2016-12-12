@@ -109,7 +109,7 @@ MapObjectList* DungeonSceneManager::getMapObjectList() const { return this->getM
 EventFactory* DungeonSceneManager::getEventFactory() const { return this->eventFactory; }
 
 // イベントスクリプトを取得
-EventScript* DungeonSceneManager::getEventScript() const { return this->getScene()->_eventTask->getEventScript(); }
+EventScript* DungeonSceneManager::getEventScript() const { return this->getEventTask()->getEventScript(); }
 
 // 共通イベントスクリプトを取得
 CommonEventScripts* DungeonSceneManager::getCommonEventScriptsObject() { return this->commonEventScripts; }
@@ -122,6 +122,9 @@ Party* DungeonSceneManager::getParty() { return this->getScene()->_party; }
 
 // 環境光レイヤを取得
 AmbientLightLayer* DungeonSceneManager::getAmbientLayer() const { return this->getScene()->_ambientLightLayer; };
+
+// イベントタスクを取得
+EventTask* DungeonSceneManager::getEventTask() const { return this->getScene()->_eventTask; }
 
 // カメラを取得
 CameraTask* DungeonSceneManager::getCamera() const { return this->getScene()->_cameraTask; };
@@ -315,73 +318,73 @@ bool DungeonSceneManager::existsEnemy() const
 // イベントを実行
 void DungeonSceneManager::runEvent(const int eventId)
 {
-    this->getScene()->_eventTask->runEvent(eventId);
+    this->getEventTask()->runEvent(eventId);
 }
 
 // イベント実行
 void DungeonSceneManager::runEvent(const vector<int>& eventIds)
 {
-    this->getScene()->_eventTask->runEvent(eventIds);
+    this->getEventTask()->runEvent(eventIds);
 }
 
 // 非同期イベント実行
 void DungeonSceneManager::runEventAsync(GameEvent* event)
 {
-    this->getScene()->_eventTask->runEventAsync(event);
+    this->getEventTask()->runEventAsync(event);
 }
 
 // キューにイベントを後ろから詰める
 void DungeonSceneManager::pushEventBack(const int eventId)
 {
-    this->getScene()->_eventTask->pushEventBack(eventId);
+    this->getEventTask()->pushEventBack(eventId);
 }
 
 // キューにイベントを前から詰める
 void DungeonSceneManager::pushEventFront(const int eventId)
 {
-    this->getScene()->_eventTask->pushEventFront(eventId);
+    this->getEventTask()->pushEventFront(eventId);
 }
 
 // キューにイベントを後ろから詰める
 void DungeonSceneManager::pushEventBack(GameEvent* event)
 {
-    this->getScene()->_eventTask->pushEventBack(event);
+    this->getEventTask()->pushEventBack(event);
 }
 
 // キューにイベントを前から詰める
 void DungeonSceneManager::pushEventFront(GameEvent* event)
 {
-    this->getScene()->_eventTask->pushEventFront(event);
+    this->getEventTask()->pushEventFront(event);
 }
 
 // キューにあるイベントを実行
 void DungeonSceneManager::runEventQueue()
 {
-    this->getScene()->_eventTask->runEventQueue();
+    this->getEventTask()->runEventQueue();
 }
 
 // キューにイベントがあるか
 bool DungeonSceneManager::existsEvent() const
 {
-    return this->getScene()->_eventTask->existsEvent();
+    return this->getEventTask()->existsEvent();
 }
 
 // 実行しているイベントのIDを取得
 int DungeonSceneManager::getRunningEventId() const
 {
-    return this->getScene()->_eventTask->getRunningEventId();
+    return this->getEventTask()->getRunningEventId();
 }
 
 // 実行しているイベントを取得
 GameEvent* DungeonSceneManager::getRunningEvent() const
 {
-    return this->getScene()->_eventTask->getRunningEvent();
+    return this->getEventTask()->getRunningEvent();
 }
 
 // イベント実行中か
 bool DungeonSceneManager::isEventRunning() const
 {
-    return this->getScene()->_eventTask->isEventRunning();
+    return this->getEventTask()->isEventRunning();
 }
 
 #pragma mark -

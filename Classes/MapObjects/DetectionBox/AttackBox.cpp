@@ -56,3 +56,11 @@ void AttackBox::onAttackHitted(MapObject* hittedObject)
         _onAttackHitted(hittedObject);
     }
 }
+
+#pragma mark -
+#pragma mark Debug
+
+Color4F AttackBox::getDebugMaskColor() const
+{
+    return Color4F::MAGENTA;
+}

@@ -33,7 +33,6 @@ public:
     MapObject* getMOParent() const;
     bool isEnabled() const;
 public:
-    virtual void startDetection();
     virtual void update(float delta);
 public:
     Rect getGridRect(const vector<Direction>& directions = {}) const;
@@ -46,7 +45,12 @@ public:
 public:
     bool isBetween(const MapObject* obj1, const MapObject* obj2) const;
 public:
-    bool intersects(const DetectionBox* other) const;
+    virtual bool intersects(const DetectionBox* other) const;
+    
+// デバッグ
+private:
+    void drawDebugMask();
+    virtual Color4F getDebugMaskColor() const;
 };
 
 #endif /* DetectionBox_h */

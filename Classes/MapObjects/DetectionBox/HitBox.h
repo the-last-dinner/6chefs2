@@ -31,6 +31,14 @@ private:
     
 public:
     void onHitted(int damage);
+    
+// インターフェース
+public:
+    bool intersects(const DetectionBox* other) const override;
+
+// Debug
+private:
+    virtual Color4F getDebugMaskColor() const override;
 };
 
 #endif /* HitBox_h */

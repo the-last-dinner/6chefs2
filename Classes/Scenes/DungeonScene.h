@@ -28,6 +28,8 @@ class Party;
 class StaminaBar;
 class EventListenerKeyboardLayer;
 
+class Battle;
+
 class DungeonScene : public BaseScene
 {
 // クラスメソッド
@@ -62,6 +64,7 @@ protected:
 	virtual bool init(DungeonSceneData* data);
     virtual bool init(DungeonSceneData* data, EventListenerKeyboardLayer* listener);
     
+public:
 // コールバック
     virtual void onEnter() override;
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
@@ -85,6 +88,8 @@ protected:
 public:
     virtual void onEnterPushedScene() override;
     virtual void onExitPushedScene() override;
+    void onBattleStart(Battle* battle);
+    void onBattleFinished(Battle* battle);
 };
 
 

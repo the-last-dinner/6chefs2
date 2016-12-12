@@ -39,3 +39,10 @@ CollisionBox* CollisionBox::clone(const Point& gridPosition) const
     
     return CollisionBox::create(_parent, gridRect);
 }
+
+#pragma mark -
+#pragma mark Debug
+Color4F CollisionBox::getDebugMaskColor() const
+{
+    return Color4F::GREEN;
+}

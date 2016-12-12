@@ -21,6 +21,8 @@ class TerrainStateCache;
 class CollisionBox;
 class MapObjectCommand;
 class MapObjectCommandQueue;
+class HitPoint;
+class Battle;
 
 class MapObject : public Node
 {
@@ -44,13 +46,15 @@ private:
     vector<Direction> _movingDirections {};
     CollisionBox* _collision { nullptr };
     Label* _debugLabel { nullptr };
+    function<void(MapObject*)> _onLostHP { nullptr };
 protected:
     MapObjectList* _objectList { nullptr };
     Location _location {};
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };
     MapObjectCommandQueue* _commandQueue { nullptr };
-    
+    HitPoint* _hitPoint { nullptr };
+    Battle* _battle { nullptr };
 public:
     function<void(MapObject*)> onMoved { nullptr };
 	
@@ -107,6 +111,16 @@ public:
     void clearCommandQueue();
 private:
     void executeCommandFromQueue();
+    
+// HP
+public:
+    HitPoint* getHitPoint() const;
+    void setLostHPCallback(function<void(MapObject*)> callback);
+    void onLostHP();
+    
+// Battle
+public:
+    virtual bool canAttack(MapObject* target) const;
 
 // move
 public:
@@ -132,13 +146,11 @@ public:
     virtual void onSearched(MapObject* mainChara) {};        // 調べられた時
     virtual void onEventStart() {};                          // イベント開始時
     virtual void onEventFinished() {};                       // イベント終了時
-    virtual void onBattleStart() {};                         // バトル開始時
-    virtual void onBattleFinished() {};                      // バトル終了時
+    virtual void onBattleStart(Battle* battle);              // バトル開始時
+    virtual void onBattleFinished();                         // バトル終了時
 
 // デバッグ
 public:
-    void drawDebugMask(); // デバッグ用マスク
-    void drawDebugCollisionMask();
     void drawDebugInfo();
     
     friend class MovePattern;

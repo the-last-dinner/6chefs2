@@ -17,7 +17,7 @@
 #include "Managers/DungeonSceneManager.h"
 
 // コンストラクタ
-Scouter::Scouter() {FUNCLOG};
+Scouter::Scouter() { FUNCLOG }
 
 // デストラクタ
 Scouter::~Scouter()
@@ -25,7 +25,7 @@ Scouter::~Scouter()
     FUNCLOG
     
     CC_SAFE_RELEASE_NULL(_subPattern);
-};
+}
 
 // 初期化
 bool Scouter::init(Character* character)

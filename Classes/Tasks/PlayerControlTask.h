@@ -18,7 +18,7 @@ class Party;
 class PlayerControlTask : public GameTask
 {
 // 定数
-private:
+public:
     static const string START_WALKING_SCHEDULE_KEY;
     static const float DASH_SPEED_RATIO;
 
@@ -41,7 +41,7 @@ private:
 public:
     void turn(const Key& key, Party* party);
     void onEnterKeyPressed(Party* party);
-    void walk(const vector<Key>& keys, Party* party);
+    void move(const vector<Key>& keys, Party* party);
     void onPartyMovedOneGrid(Party* party, bool dashed);
     void setControlEnable(bool enable, Party* party);
     bool isControlEnabled();

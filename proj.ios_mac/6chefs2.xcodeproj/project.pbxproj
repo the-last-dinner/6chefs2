@@ -399,6 +399,14 @@
 		DCCDBC291DE1AF690026AF5C /* AttackCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */; };
 		DCD9E5411D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
 		DCD9E5421D684C4B002CA51D /* CSNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCD9E53F1D684C4B002CA51D /* CSNode.cpp */; };
+		DCDB71BB1DFD34930015A434 /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71B91DFD34930015A434 /* BattleManager.cpp */; };
+		DCDB71BC1DFD34930015A434 /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71B91DFD34930015A434 /* BattleManager.cpp */; };
+		DCDB71C31DFD88F40015A434 /* BattleMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C11DFD88F40015A434 /* BattleMob.cpp */; };
+		DCDB71C41DFD88F40015A434 /* BattleMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C11DFD88F40015A434 /* BattleMob.cpp */; };
+		DCDB71C71DFD8E4C0015A434 /* BattleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */; };
+		DCDB71C81DFD8E4C0015A434 /* BattleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */; };
+		DCDB71CB1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */; };
+		DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */; };
 		DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		DCEF71E61DE5D76900FA1291 /* BattleEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71E41DE5D76900FA1291 /* BattleEvent.cpp */; };
@@ -805,6 +813,14 @@
 		DCCDBC271DE1AF690026AF5C /* AttackCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttackCommand.h; path = Command/AttackCommand.h; sourceTree = "<group>"; };
 		DCD9E53F1D684C4B002CA51D /* CSNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSNode.cpp; path = CocosStudio/CSNode.cpp; sourceTree = "<group>"; };
 		DCD9E5401D684C4B002CA51D /* CSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNode.h; path = CocosStudio/CSNode.h; sourceTree = "<group>"; };
+		DCDB71B91DFD34930015A434 /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleManager.cpp; sourceTree = "<group>"; };
+		DCDB71BA1DFD34930015A434 /* BattleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleManager.h; sourceTree = "<group>"; };
+		DCDB71C11DFD88F40015A434 /* BattleMob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMob.cpp; sourceTree = "<group>"; };
+		DCDB71C21DFD88F40015A434 /* BattleMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleMob.h; sourceTree = "<group>"; };
+		DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleBoss.cpp; sourceTree = "<group>"; };
+		DCDB71C61DFD8E4C0015A434 /* BattleBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleBoss.h; sourceTree = "<group>"; };
+		DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HurtCommand.cpp; path = Command/HurtCommand.cpp; sourceTree = "<group>"; };
+		DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HurtCommand.h; path = Command/HurtCommand.h; sourceTree = "<group>"; };
 		DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigEventListenerLayer.cpp; sourceTree = "<group>"; };
 		DCDD5D541CA26B6C0042C204 /* ConfigEventListenerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEventListenerLayer.h; sourceTree = "<group>"; };
 		DCEF71E41DE5D76900FA1291 /* BattleEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleEvent.cpp; sourceTree = "<group>"; };
@@ -813,7 +829,6 @@
 		DCEF71F21DE5DC8400FA1291 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Battle.h; path = Battle/Battle.h; sourceTree = "<group>"; };
 		DCEF71F51DE5DCA700FA1291 /* BattleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleData.cpp; path = Battle/BattleData.cpp; sourceTree = "<group>"; };
 		DCEF71F61DE5DCA700FA1291 /* BattleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleData.h; path = Battle/BattleData.h; sourceTree = "<group>"; };
-		DCEF71FD1DFBC54900FA1291 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voice; path = ../Resources/voice; sourceTree = "<group>"; };
 		DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepCommand.cpp; path = Command/StepCommand.cpp; sourceTree = "<group>"; };
 		DCEF71FA1DF2776C00FA1291 /* StepCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepCommand.h; path = Command/StepCommand.h; sourceTree = "<group>"; };
 		DCEF71FD1DFBC54900FA1291 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; path = voice; sourceTree = "<group>"; };
@@ -1341,6 +1356,8 @@
 				DC01027D1C945F2F0076810F /* EventListenerKeyboardManager.h */,
 				268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */,
 				268E3FA81D64BFD90098B235 /* ConfigDataManager.h */,
+				DCDB71B91DFD34930015A434 /* BattleManager.cpp */,
+				DCDB71BA1DFD34930015A434 /* BattleManager.h */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1396,6 +1413,10 @@
 				DC0390F21C871E1000C50E8E /* RandomMove.h */,
 				DC0390F31C871E1000C50E8E /* Scouter.cpp */,
 				DC0390F41C871E1000C50E8E /* Scouter.h */,
+				DCDB71C11DFD88F40015A434 /* BattleMob.cpp */,
+				DCDB71C21DFD88F40015A434 /* BattleMob.h */,
+				DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */,
+				DCDB71C61DFD8E4C0015A434 /* BattleBoss.h */,
 			);
 			path = MovePatterns;
 			sourceTree = "<group>";
@@ -1586,6 +1607,10 @@
 				DC7F6E1A1D96736A007AE8B5 /* WalkCommand.h */,
 				DCCDBC261DE1AF690026AF5C /* AttackCommand.cpp */,
 				DCCDBC271DE1AF690026AF5C /* AttackCommand.h */,
+				DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */,
+				DCEF71FA1DF2776C00FA1291 /* StepCommand.h */,
+				DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */,
+				DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1818,6 +1843,7 @@
 				DC0392231C871E1000C50E8E /* EndingScene.cpp in Sources */,
 				DC03924D1C871E1000C50E8E /* JsonUtils.cpp in Sources */,
 				DC0391711C871E1000C50E8E /* AppDelegate.cpp in Sources */,
+				DCDB71CB1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC03917B1C871E1000C50E8E /* DungeonCameraSceneData.cpp in Sources */,
 				DC0391FB1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				26460B8F1D72EBB600F0336C /* DocumentData.cpp in Sources */,
@@ -1828,15 +1854,18 @@
 				DC23C8701D8BD9D0008E57F3 /* PathNode.cpp in Sources */,
 				DC03921F1C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
 				DC668C271D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
+				DCDB71BB1DFD34930015A434 /* BattleManager.cpp in Sources */,
 				DC0182991D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC03919D1C871E1000C50E8E /* GameEvent.cpp in Sources */,
 				DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
+				DCEF71FB1DF2776C00FA1291 /* StepCommand.cpp in Sources */,
 				DC0392511C871E1000C50E8E /* SpriteUtils.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				DC0391F31C871E1000C50E8E /* Chaser.cpp in Sources */,
 				26460B971D72EBC800F0336C /* GlobalPlayerData.cpp in Sources */,
 				DC0392531C871E1000C50E8E /* StringUtils.cpp in Sources */,
 				DC0392271C871E1000C50E8E /* StartUpScene.cpp in Sources */,
+				DCDB71C71DFD8E4C0015A434 /* BattleBoss.cpp in Sources */,
 				DC0391D91C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DC0391A51C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
 				DC0391771C871E1000C50E8E /* StoryMessageData.cpp in Sources */,
@@ -1882,6 +1911,7 @@
 				DC0391D11C871E1000C50E8E /* SystemMessageLayer.cpp in Sources */,
 				268E3FA91D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
 				DC0392311C871E1000C50E8E /* BothFollow.cpp in Sources */,
+				DCDB71C31DFD88F40015A434 /* BattleMob.cpp in Sources */,
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0391C11C871E1000C50E8E /* MiniSelector.cpp in Sources */,
 				DC0391C91C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
@@ -1986,6 +2016,7 @@
 				DC0391841C871E1000C50E8E /* SceneData.cpp in Sources */,
 				DC0391D81C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
+				DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
 				DCCDBC291DE1AF690026AF5C /* AttackCommand.cpp in Sources */,
@@ -2028,6 +2059,7 @@
 				DC0392321C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DC03919C1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
 				DC0391C21C871E1000C50E8E /* MiniSelector.cpp in Sources */,
+				DCDB71C81DFD8E4C0015A434 /* BattleBoss.cpp in Sources */,
 				DC0392541C871E1000C50E8E /* StringUtils.cpp in Sources */,
 				DC0391821C871E1000C50E8E /* GameOverSceneData.cpp in Sources */,
 				DC0391801C871E1000C50E8E /* EndingSceneData.cpp in Sources */,
@@ -2035,6 +2067,7 @@
 				DC0391AA1C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC0391981C871E1000C50E8E /* EventScript.cpp in Sources */,
 				DC0391DC1C871E1000C50E8E /* NotificationManager.cpp in Sources */,
+				DCEF71FC1DF2776C00FA1291 /* StepCommand.cpp in Sources */,
 				DC01829A1D7A9C6A00E556D1 /* Swim.cpp in Sources */,
 				DC0392441C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC0391B41C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
@@ -2087,6 +2120,7 @@
 				DC0391AE1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0392501C871E1000C50E8E /* MapUtils.cpp in Sources */,
 				DC0391F81C871E1000C50E8E /* MobRandom.cpp in Sources */,
+				DCDB71BC1DFD34930015A434 /* BattleManager.cpp in Sources */,
 				DC03922E1C871E1000C50E8E /* EnemyTask.cpp in Sources */,
 				26460B9B1D72ED9600F0336C /* DocumentData.cpp in Sources */,
 				DC0391A61C871E1000C50E8E /* ModalLayerEvent.cpp in Sources */,
@@ -2096,6 +2130,7 @@
 				2626AEC71D99895E00D5623B /* AssertHelper.cpp in Sources */,
 				268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
 				DC0391FC1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
+				DCDB71C41DFD88F40015A434 /* BattleMob.cpp in Sources */,
 				DC0392261C871E1000C50E8E /* GameOverScene.cpp in Sources */,
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
 				DC0391E01C871E1000C50E8E /* SoundManager.cpp in Sources */,

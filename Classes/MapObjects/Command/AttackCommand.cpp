@@ -8,7 +8,9 @@
 
 #include "MapObjects/Command/AttackCommand.h"
 
+#include "Datas/BattleCharacterData.h"
 #include "MapObjects/Character.h"
+#include "MapObjects/DetectionBox/AttackBox.h"
 
 // コンストラクタ
 AttackCommand::AttackCommand() { FUNCLOG }
@@ -53,7 +55,8 @@ void AttackCommand::execute(MapObject* target)
     Character* character { dynamic_cast<Character*>(target) };
     if (!character) return;
     character->beInAttackMotion(true);
-    character->playAnimation(_name, CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
+    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
+    character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
 }
 
 #pragma mark -

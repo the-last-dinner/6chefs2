@@ -31,7 +31,6 @@ PlayerControlTask::PlayerControlTask() { FUNCLOG }
 PlayerControlTask::~PlayerControlTask()
 {
     FUNCLOG
-
     CC_SAFE_RELEASE_NULL(_state);
 }
 
@@ -62,18 +61,8 @@ void PlayerControlTask::turn(const Key& key, Party* party)
     if (party->getMainCharacter()->isInAttackMotion()) return;
     
     Direction direction { Direction::convertKey(key) };
-    Character* mainCharacter {party->getMainCharacter()};
     
-    // 主人公の向きを変更
-    mainCharacter->setDirection(direction);
-    
-    // 主人公が移動中でなければ
-    if (!mainCharacter->isMoving()) {
-        // 一定時間後に歩行開始
-        if (!this->isScheduled(START_WALKING_SCHEDULE_KEY)) this->scheduleOnce([this, party](float _) {
-            this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
-        }, 0.0f, START_WALKING_SCHEDULE_KEY);
-    }
+    _state->turn(party, direction, DungeonSceneManager::getInstance()->isPressed(Key::DASH));
 }
 
 // 決定キーが押された時
@@ -84,7 +73,7 @@ void PlayerControlTask::onEnterKeyPressed(Party* party)
 }
 
 // 歩行中、あたり判定を行い次に向かう位置を決定する
-void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
+void PlayerControlTask::move(const vector<Key>& keys, Party* party)
 {
     if (!this->isControlEnabled()) return;
     if (keys.empty()) return;
@@ -93,35 +82,7 @@ void PlayerControlTask::walk(const vector<Key>& keys, Party* party)
     
     vector<Direction> directions { Direction::convertKeys(keys) };
     
-    Character* mainCharacter { party->getMainCharacter() };
-    
-    // ダッシュキーが押されていたら、速度の倍率をあげる
-    bool dash { mainCharacter->isRunnable() ? DungeonSceneManager::getInstance()->isPressed(Key::DASH) : false };
-    
-    // 入力から、使う方向の個数を決める
-    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
-    
-    vector<Direction> moveDirections {};
-    for (int i { 0 }; i < directions.size(); i++) {
-        if (directions.size() - directionCount > i) continue;
-        moveDirections.push_back(directions.at(i));
-    }
-    
-    // Trigger::WILLを持つオブジェクトを検索して実行
-    Rect gridRect { mainCharacter->getGridCollisionRect() };
-    gridRect.origin += Direction::getGridVec2(moveDirections);
-    for (MapObject* other : DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjects(mainCharacter, moveDirections, Trigger::WILL)) {
-        DungeonSceneManager::getInstance()->runEvent(other->getEventId());
-    }
-    
-    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
-    
-    party->move(moveDirections, dash ? DASH_SPEED_RATIO : 1.f, [this, party, stamina, dash](bool moved) {
-        if (!moved) return;
-        
-        stamina->setDecreasing(false);
-        this->onPartyMovedOneGrid(party, dash);
-    });
+    _state->move(party, directions, DungeonSceneManager::getInstance()->isPressed(Key::DASH));
 }
 
 // 一マス分移動し終えた時
@@ -154,7 +115,7 @@ void PlayerControlTask::onPartyMovedOneGrid(Party* party, bool dashed)
     // キューにあるイベントを実行
     DungeonSceneManager::getInstance()->runEventQueue();
     
-    if (_enableControl) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if (_enableControl) this->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か設定
@@ -164,7 +125,7 @@ void PlayerControlTask::setControlEnable(bool enable, Party* party)
     _enableControl = enable;
     
     // 有効にされた時は、入力しているキーに応じて移動開始
-    if (!before && enable) this->walk(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+    if (!before && enable) this->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
 
 // 操作可能状態か確認

@@ -334,6 +334,18 @@ void DungeonScene::onEventFinished()
     DungeonSceneManager::getInstance()->startStopWatch();
 }
 
+// バトル開始時
+void DungeonScene::onBattleStart(Battle* battle)
+{
+    if (_handler) _handler->onBattleStart(battle);
+}
+
+// バトル終了時
+void DungeonScene::onBattleFinished(Battle* battle)
+{
+    if (_handler) _handler->onBattleFinished(battle);
+}
+
 // pushされたシーンが表示される時
 void DungeonScene::onEnterPushedScene()
 {

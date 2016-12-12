@@ -8,6 +8,8 @@
 
 #include "MapObjects/DetectionBox/HitBox.h"
 
+#include "MapObjects/MapObject.h"
+
 // コンストラクタ
 HitBox::HitBox() { FUNCLOG }
 
@@ -39,4 +41,21 @@ void HitBox::onHitted(int damage)
     if (_onHitted) {
         _onHitted(damage);
     }
+}
+
+#pragma mark -
+#pragma mark Interface
+
+bool HitBox::intersects(const DetectionBox* other) const
+{
+    if (!other->getMOParent()->canAttack(this->getMOParent())) return false;
+    return DetectionBox::intersects(other);
+}
+
+#pragma mark -
+#pragma mark Debug
+
+Color4F HitBox::getDebugMaskColor() const
+{
+    return Color4F::BLUE;
 }

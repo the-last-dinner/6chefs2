@@ -124,32 +124,6 @@
               <Image Name="daigoro_s_2.png" />
               <Image Name="effect_kick.png" />
             </Folder>
-            <PlistImageFolder Image="daigoro.png" PListFile="daigoro.plist" Name=".daigoro_PList.Dir">
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_0.png" Key="character/plist/daigoro/daigoro_0_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_1.png" Key="character/plist/daigoro/daigoro_0_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_2.png" Key="character/plist/daigoro/daigoro_0_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_0.png" Key="character/plist/daigoro/daigoro_1_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_1.png" Key="character/plist/daigoro/daigoro_1_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_2.png" Key="character/plist/daigoro/daigoro_1_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_0.png" Key="character/plist/daigoro/daigoro_2_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_1.png" Key="character/plist/daigoro/daigoro_2_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_2.png" Key="character/plist/daigoro/daigoro_2_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_0.png" Key="character/plist/daigoro/daigoro_3_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_1.png" Key="character/plist/daigoro/daigoro_3_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_2.png" Key="character/plist/daigoro/daigoro_3_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_0.png" Key="character/plist/daigoro/daigoro_a_0_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_1.png" Key="character/plist/daigoro/daigoro_a_0_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_0.png" Key="character/plist/daigoro/daigoro_a_1_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_1.png" Key="character/plist/daigoro/daigoro_a_1_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_0.png" Key="character/plist/daigoro/daigoro_a_2_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_1.png" Key="character/plist/daigoro/daigoro_a_2_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_0.png" Key="character/plist/daigoro/daigoro_a_3_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_1.png" Key="character/plist/daigoro/daigoro_a_3_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_0.png" Key="character/plist/daigoro/daigoro_s_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_1.png" Key="character/plist/daigoro/daigoro_s_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_2.png" Key="character/plist/daigoro/daigoro_s_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_effect_kick.png" Key="character/plist/daigoro/effect_kick.png" />
-            </PlistImageFolder>
             <Folder Name="kyoujin">
               <Image Name="effect_1.png" />
               <Image Name="effect_2.png" />
@@ -187,43 +161,6 @@
               <Image Name="kyoujin1_3_1.png" />
               <Image Name="kyoujin1_3_2.png" />
             </Folder>
-            <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
-              <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_0.png" Key="character/plist/kyoujin/kyoujin_a_0_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_1.png" Key="character/plist/kyoujin/kyoujin_a_0_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_2.png" Key="character/plist/kyoujin/kyoujin_a_0_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_3.png" Key="character/plist/kyoujin/kyoujin_a_0_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_4.png" Key="character/plist/kyoujin/kyoujin_a_0_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_5.png" Key="character/plist/kyoujin/kyoujin_a_0_5.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_6.png" Key="character/plist/kyoujin/kyoujin_a_0_6.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_0.png" Key="character/plist/kyoujin/kyoujin_a_1_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_1.png" Key="character/plist/kyoujin/kyoujin_a_1_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_2.png" Key="character/plist/kyoujin/kyoujin_a_1_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_3.png" Key="character/plist/kyoujin/kyoujin_a_1_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_4.png" Key="character/plist/kyoujin/kyoujin_a_1_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_0.png" Key="character/plist/kyoujin/kyoujin_a_2_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_1.png" Key="character/plist/kyoujin/kyoujin_a_2_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_2.png" Key="character/plist/kyoujin/kyoujin_a_2_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_3.png" Key="character/plist/kyoujin/kyoujin_a_2_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_4.png" Key="character/plist/kyoujin/kyoujin_a_2_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_0.png" Key="character/plist/kyoujin/kyoujin_a_3_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_1.png" Key="character/plist/kyoujin/kyoujin_a_3_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_2.png" Key="character/plist/kyoujin/kyoujin_a_3_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_3.png" Key="character/plist/kyoujin/kyoujin_a_3_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_0.png" Key="character/plist/kyoujin/kyoujin1_0_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_1.png" Key="character/plist/kyoujin/kyoujin1_0_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_2.png" Key="character/plist/kyoujin/kyoujin1_0_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_0.png" Key="character/plist/kyoujin/kyoujin1_1_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_1.png" Key="character/plist/kyoujin/kyoujin1_1_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_2.png" Key="character/plist/kyoujin/kyoujin1_1_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_0.png" Key="character/plist/kyoujin/kyoujin1_2_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_1.png" Key="character/plist/kyoujin/kyoujin1_2_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_2.png" Key="character/plist/kyoujin/kyoujin1_2_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_0.png" Key="character/plist/kyoujin/kyoujin1_3_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
-            </PlistImageFolder>
             <PlistInfo Name="daigoro.csi" Type="Plist" />
             <PlistInfo Name="kyoujin.csi" Type="Plist" />
           </Folder>
@@ -281,18 +218,8 @@
           <Project Name="ranmaru.csd" Type="Node" />
           <Project Name="yuki.csd" Type="Node" />
           <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_0.png" Key="character/plist/kyoujin/kyoujin1_0_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_1.png" Key="character/plist/kyoujin/kyoujin1_0_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_2.png" Key="character/plist/kyoujin/kyoujin1_0_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_0.png" Key="character/plist/kyoujin/kyoujin1_1_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_1.png" Key="character/plist/kyoujin/kyoujin1_1_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_2.png" Key="character/plist/kyoujin/kyoujin1_1_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_0.png" Key="character/plist/kyoujin/kyoujin1_2_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_1.png" Key="character/plist/kyoujin/kyoujin1_2_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_2.png" Key="character/plist/kyoujin/kyoujin1_2_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_0.png" Key="character/plist/kyoujin/kyoujin1_3_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
+            <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
+            <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_0.png" Key="character/plist/kyoujin/kyoujin_a_0_0.png" />
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_1.png" Key="character/plist/kyoujin/kyoujin_a_0_1.png" />
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_2.png" Key="character/plist/kyoujin/kyoujin_a_0_2.png" />
@@ -314,8 +241,44 @@
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_1.png" Key="character/plist/kyoujin/kyoujin_a_3_1.png" />
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_2.png" Key="character/plist/kyoujin/kyoujin_a_3_2.png" />
             <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_3.png" Key="character/plist/kyoujin/kyoujin_a_3_3.png" />
-            <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_0.png" Key="character/plist/kyoujin/kyoujin1_0_0.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_1.png" Key="character/plist/kyoujin/kyoujin1_0_1.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_2.png" Key="character/plist/kyoujin/kyoujin1_0_2.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_0.png" Key="character/plist/kyoujin/kyoujin1_1_0.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_1.png" Key="character/plist/kyoujin/kyoujin1_1_1.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_2.png" Key="character/plist/kyoujin/kyoujin1_1_2.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_0.png" Key="character/plist/kyoujin/kyoujin1_2_0.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_1.png" Key="character/plist/kyoujin/kyoujin1_2_1.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_2.png" Key="character/plist/kyoujin/kyoujin1_2_2.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_0.png" Key="character/plist/kyoujin/kyoujin1_3_0.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
+            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="daigoro.png" PListFile="daigoro.plist" Name=".daigoro_PList.Dir">
+            <PlistImageFile Name="character_plist_daigoro_daigoro_0_0.png" Key="character/plist/daigoro/daigoro_0_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_0_1.png" Key="character/plist/daigoro/daigoro_0_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_0_2.png" Key="character/plist/daigoro/daigoro_0_2.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_1_0.png" Key="character/plist/daigoro/daigoro_1_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_1_1.png" Key="character/plist/daigoro/daigoro_1_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_1_2.png" Key="character/plist/daigoro/daigoro_1_2.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_2_0.png" Key="character/plist/daigoro/daigoro_2_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_2_1.png" Key="character/plist/daigoro/daigoro_2_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_2_2.png" Key="character/plist/daigoro/daigoro_2_2.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_3_0.png" Key="character/plist/daigoro/daigoro_3_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_3_1.png" Key="character/plist/daigoro/daigoro_3_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_3_2.png" Key="character/plist/daigoro/daigoro_3_2.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_0.png" Key="character/plist/daigoro/daigoro_a_0_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_1.png" Key="character/plist/daigoro/daigoro_a_0_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_0.png" Key="character/plist/daigoro/daigoro_a_1_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_1.png" Key="character/plist/daigoro/daigoro_a_1_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_0.png" Key="character/plist/daigoro/daigoro_a_2_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_1.png" Key="character/plist/daigoro/daigoro_a_2_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_0.png" Key="character/plist/daigoro/daigoro_a_3_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_1.png" Key="character/plist/daigoro/daigoro_a_3_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_s_0.png" Key="character/plist/daigoro/daigoro_s_0.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_s_1.png" Key="character/plist/daigoro/daigoro_s_1.png" />
+            <PlistImageFile Name="character_plist_daigoro_daigoro_s_2.png" Key="character/plist/daigoro/daigoro_s_2.png" />
+            <PlistImageFile Name="character_plist_daigoro_effect_kick.png" Key="character/plist/daigoro/effect_kick.png" />
           </PlistImageFolder>
         </Folder>
         <Folder Name="detection">
