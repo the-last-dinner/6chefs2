@@ -58,8 +58,11 @@ void AttackDetector::removeHitBox(HitBox* hitBox)
 
 HitBox* AttackDetector::getIntersectHitBox(AttackBox* attackBox)
 {
+    if (!attackBox->isEnabled()) return nullptr;
+    
     for (HitBox* hitBox : _hitBoxes) {
-        if(hitBox->intersects(attackBox)) return hitBox;
+        if (!hitBox->isEnabled()) continue;
+        if (hitBox->intersects(attackBox)) return hitBox;
     }
     
     return nullptr;

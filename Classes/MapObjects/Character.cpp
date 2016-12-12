@@ -13,10 +13,11 @@
 #include "Datas/MapObject/CharacterData.h"
 #include "Datas/BattleCharacterData.h"
 
-#include "MapObjects/MapObjectList.h"
+#include "MapObjects/Command/HurtCommand.h"
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/DetectionBox/HitBox.h"
+#include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
 #include "MapObjects/Status/HitPoint.h"
@@ -274,6 +275,11 @@ void Character::onHurt(int damage)
 {
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
+    
+    if (_battleAttackBox) {
+        HurtCommand* command { HurtCommand::create() };
+        this->pushCommand(command);
+    }
 }
 
 #pragma mark -
@@ -299,8 +305,10 @@ void Character::enableHit(bool enableHit)
     
     if (enableHit) {
         _objectList->getAttackDetector()->addHitBox(_hitBox);
+        _hitBox->setVisible(true);
     } else {
         _objectList->getAttackDetector()->removeHitBox(_hitBox);
+        _hitBox->setVisible(false);
     }
 }
 

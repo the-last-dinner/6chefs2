@@ -36,8 +36,8 @@ void HurtCommand::execute(MapObject* target)
     Character* character { dynamic_cast<Character*>(target) };
     character->enableHit(false);
     
-    character->runAction(Sequence::create(Hide::create(),
-                                          DelayTime::create(0.2f),
+    character->runAction(
+                         Sequence::create(Hide::create(),DelayTime::create(0.2f),
                                           Show::create(),
                                           DelayTime::create(0.2f),
                                           Hide::create(),
@@ -47,7 +47,8 @@ void HurtCommand::execute(MapObject* target)
                                           Hide::create(),
                                           DelayTime::create(0.2f),
                                           Show::create(),
-                                          CallFunc::create([character]{ character->enableHit(true); }),
-                                          nullptr
-    ));
+                                          CallFunc::create([character, this] {
+                             character->enableHit(true);
+                             this->setDone();
+                         }),nullptr));
 }
