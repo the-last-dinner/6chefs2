@@ -15,6 +15,7 @@ class BattleData;
 class EventTask;
 class DungeonScene;
 class DungeonSceneManager;
+class MapObjectList;
 
 class Battle : public Node
 {
@@ -29,6 +30,7 @@ private:
     Vector<MapObject*> _targetObjects {};
     EventTask* _eventTask { nullptr };
     DungeonScene* _scene { nullptr };
+    MapObjectList* _objectList { nullptr };
 public:
     function<void(Battle*)> _finishCallback {};
     
@@ -37,8 +39,10 @@ private:
     Battle();
     ~Battle();
     bool init(BattleData* data, DungeonSceneManager* manager);
+    void setLostHPCallback(MapObject* target);
     bool isAllTargetDestroyed() const;
     bool isMainCharacterDestroyed() const;
+    void onFinish();
     
 public:
     void start();

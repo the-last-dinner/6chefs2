@@ -99,7 +99,7 @@ float Enemy::calcSummonDelay() const
 
 bool Enemy::canAttack(MapObject* target) const
 {
-    if (_battle) return true;
+    if (!_battle) return true;
     
     for (MapObject* other : _battle->getTargetObjects()) {
         if (other == target) return false;

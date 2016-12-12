@@ -33,7 +33,7 @@ private:
 public:
     void onLostMainCharacterHP();
     void onBattleStart(Battle* battle);
-    void onBattleFinished();
+    void onBattleFinished(Battle* battle);
 };
 
 #endif /* DungeonSceneEventHandler_h */

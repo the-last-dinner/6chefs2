@@ -266,11 +266,23 @@ void MapObject::clearCommandQueue()
 }
 
 #pragma mark -
-#pragma mark HitPoint
+#pragma mark HP
 
 HitPoint* MapObject::getHitPoint() const
 {
     return _hitPoint;
+}
+
+void MapObject::setLostHPCallback(function<void(MapObject*)> callback)
+{
+    _onLostHP = callback;
+}
+
+void MapObject::onLostHP()
+{
+    if (_onLostHP) {
+        _onLostHP(this);
+    }
 }
 
 #pragma mark -

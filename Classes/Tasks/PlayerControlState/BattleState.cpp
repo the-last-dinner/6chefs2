@@ -111,5 +111,6 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
 // 攻撃コマンド終了時
 void BattleState::onAttackCommandFinished(Party* party)
 {
+    if (!_task) return;
     _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }

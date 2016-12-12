@@ -38,7 +38,6 @@ public:
 private:
     int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
 protected:
-    function<void(Character*)> _onLostHP { nullptr };
     MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
@@ -85,10 +84,6 @@ public:
     void onAttackHitted(MapObject* hittedObject);
     void onHurt(int damage);
     bool canAttack(MapObject* target) const override;
-    
-    // HP
-    void setLostHPCallback(function<void(Character*)> callback);
-    void onLostHP();
     
     // HitBox
     void enableHit(bool enableHit);

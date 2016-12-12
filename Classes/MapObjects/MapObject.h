@@ -46,6 +46,7 @@ private:
     vector<Direction> _movingDirections {};
     CollisionBox* _collision { nullptr };
     Label* _debugLabel { nullptr };
+    function<void(MapObject*)> _onLostHP { nullptr };
 protected:
     MapObjectList* _objectList { nullptr };
     Location _location {};
@@ -114,6 +115,8 @@ private:
 // HP
 public:
     HitPoint* getHitPoint() const;
+    void setLostHPCallback(function<void(MapObject*)> callback);
+    void onLostHP();
     
 // Battle
 public:

@@ -341,9 +341,9 @@ void DungeonScene::onBattleStart(Battle* battle)
 }
 
 // バトル終了時
-void DungeonScene::onBattleFinished()
+void DungeonScene::onBattleFinished(Battle* battle)
 {
-    if (_handler) _handler->onBattleFinished();
+    if (_handler) _handler->onBattleFinished(battle);
 }
 
 // pushされたシーンが表示される時

@@ -35,9 +35,12 @@ bool BattleStartEvent::init(rapidjson::Value& json)
         targetIds.push_back(stoi(targetsJson[i].GetString()));
     }
     
+    _successCallbackEvent = _factory->createGameEvent(_json[member::TRUE_], nullptr);
+    _failureCallbackEvent = _factory->createGameEvent(_json[member::FALSE_], nullptr);
+    
     data->setTargetObjectIds(targetIds);
-    data->setSuccessCallbackEvent(_factory->createGameEvent(_json[member::TRUE_], nullptr));
-    data->setFailureCallbackEvent(_factory->createGameEvent(_json[member::FALSE_], nullptr));
+    data->setSuccessCallbackEvent(_successCallbackEvent);
+    data->setFailureCallbackEvent(_failureCallbackEvent);
     
     Battle* battle { Battle::create(data, DungeonSceneManager::getInstance()) };
     if (!battle) return false;
@@ -49,6 +52,9 @@ bool BattleStartEvent::init(rapidjson::Value& json)
 
 void BattleStartEvent::run()
 {
+    _successCallbackEvent->setEventId(this->getEventId());
+    _failureCallbackEvent->setEventId(this->getEventId());
+    
     _battle->start();
     this->setDone();
 }
