@@ -45,7 +45,7 @@ public:
 public:
     bool isBetween(const MapObject* obj1, const MapObject* obj2) const;
 public:
-    bool intersects(const DetectionBox* other) const;
+    virtual bool intersects(const DetectionBox* other) const;
     
 // デバッグ
 private:
