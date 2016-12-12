@@ -405,6 +405,8 @@
 		DCDB71C41DFD88F40015A434 /* BattleMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C11DFD88F40015A434 /* BattleMob.cpp */; };
 		DCDB71C71DFD8E4C0015A434 /* BattleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */; };
 		DCDB71C81DFD8E4C0015A434 /* BattleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */; };
+		DCDB71CB1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */; };
+		DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */; };
 		DCDD5D551CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */; };
 		DCEF71E61DE5D76900FA1291 /* BattleEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71E41DE5D76900FA1291 /* BattleEvent.cpp */; };
@@ -817,6 +819,8 @@
 		DCDB71C21DFD88F40015A434 /* BattleMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleMob.h; sourceTree = "<group>"; };
 		DCDB71C51DFD8E4C0015A434 /* BattleBoss.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleBoss.cpp; sourceTree = "<group>"; };
 		DCDB71C61DFD8E4C0015A434 /* BattleBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleBoss.h; sourceTree = "<group>"; };
+		DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HurtCommand.cpp; path = Command/HurtCommand.cpp; sourceTree = "<group>"; };
+		DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HurtCommand.h; path = Command/HurtCommand.h; sourceTree = "<group>"; };
 		DCDD5D531CA26B6C0042C204 /* ConfigEventListenerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigEventListenerLayer.cpp; sourceTree = "<group>"; };
 		DCDD5D541CA26B6C0042C204 /* ConfigEventListenerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEventListenerLayer.h; sourceTree = "<group>"; };
 		DCEF71E41DE5D76900FA1291 /* BattleEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleEvent.cpp; sourceTree = "<group>"; };
@@ -1605,6 +1609,8 @@
 				DCCDBC271DE1AF690026AF5C /* AttackCommand.h */,
 				DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */,
 				DCEF71FA1DF2776C00FA1291 /* StepCommand.h */,
+				DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */,
+				DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1837,6 +1843,7 @@
 				DC0392231C871E1000C50E8E /* EndingScene.cpp in Sources */,
 				DC03924D1C871E1000C50E8E /* JsonUtils.cpp in Sources */,
 				DC0391711C871E1000C50E8E /* AppDelegate.cpp in Sources */,
+				DCDB71CB1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC03917B1C871E1000C50E8E /* DungeonCameraSceneData.cpp in Sources */,
 				DC0391FB1C871E1000C50E8E /* MovePatternFactory.cpp in Sources */,
 				26460B8F1D72EBB600F0336C /* DocumentData.cpp in Sources */,
@@ -2009,6 +2016,7 @@
 				DC0391841C871E1000C50E8E /* SceneData.cpp in Sources */,
 				DC0391D81C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
+				DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC01027F1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
 				DCCDBC291DE1AF690026AF5C /* AttackCommand.cpp in Sources */,

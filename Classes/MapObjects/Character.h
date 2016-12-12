@@ -82,8 +82,8 @@ public:
     // Battle
     void beInAttackMotion(bool isInAttackMotion);
     bool isInAttackMotion() const;
-    void onMyAttackHitted(MapObject* hittedObject);
-    void onAttackHitted(int damage);
+    void onAttackHitted(MapObject* hittedObject);
+    void onHurt(int damage);
     
     // HP
     void setLostHPCallback(function<void(Character*)> callback);

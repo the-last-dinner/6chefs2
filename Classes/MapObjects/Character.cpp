@@ -83,7 +83,7 @@ bool Character::init(const CharacterData& data)
     this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
     
     // くらい判定生成
-    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
+    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onHurt, this)) };
     this->addChild(hitBox);
     _hitBox = hitBox;
     
@@ -264,13 +264,13 @@ bool Character::isInAttackMotion() const
 }
 
 // 自分の攻撃が誰かに当たった時
-void Character::onMyAttackHitted(MapObject* hittedObject)
+void Character::onAttackHitted(MapObject* hittedObject)
 {
     
 }
 
 // 攻撃を受けた時
-void Character::onAttackHitted(int damage)
+void Character::onHurt(int damage)
 {
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
@@ -415,7 +415,7 @@ void Character::onBattleStart()
         this->removeChild(_battleAttackBox);
     }
     
-    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
+    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
     if (box) {
         _objectList->getAttackDetector()->addAttackBox(box);
         this->addChild(box);
