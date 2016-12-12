@@ -87,6 +87,7 @@ void Battle::update(float delta)
     if (this->isAllTargetDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getSuccessCallbackEvent());
+        _eventTask->runEventQueue();
         _scene->onBattleFinished();
         if (_finishCallback) _finishCallback(this);
         return;
@@ -95,6 +96,7 @@ void Battle::update(float delta)
     if (this->isMainCharacterDestroyed()) {
         this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
         _eventTask->pushEventBack(_data->getFailureCallbackEvent());
+        _eventTask->runEventQueue();
         _scene->onBattleFinished();
         if (_finishCallback) _finishCallback(this);
         return;
