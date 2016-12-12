@@ -104,6 +104,7 @@
             "member": {
                 "text": [["string"]],
                 "name": ["string"],
+                "img": ["string"],
                 "charaID": ["stoi"],
                 "imgID": ["stoi"],
                 "option": ["messageOption"],

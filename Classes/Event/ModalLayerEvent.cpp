@@ -44,6 +44,9 @@ bool CharacterMessage::init(rapidjson::Value& json)
     
     queue<CharacterMessageData*> datas {};
     
+    string imageName = "";
+    if (_eventHelper->hasMember(_json, member::IMG)) imageName = _json[member::IMG].GetString();
+    
     //複数人での会話時
     if (_eventHelper->hasMember(_json, member::TALK)) {
         //会話人数の取得
@@ -92,6 +95,9 @@ bool CharacterMessage::init(rapidjson::Value& json)
             // ボイス
             if (_eventHelper->hasMember(chara, member::VOICE)) data->setVoice(chara[member::VOICE].GetString());
 
+            // 背景画像
+            if (imageName != "") data->setImageName(imageName);
+            
             datas.push(data);
         }
     }
@@ -133,7 +139,22 @@ bool CharacterMessage::init(rapidjson::Value& json)
         
         // ボイス
         if (_eventHelper->hasMember(_json, member::VOICE)) data->setVoice(_json[member::VOICE].GetString());
+        
+        // 背景画像
+        if (imageName != "") data->setImageName(imageName);
 
+        datas.push(data);
+    }
+    
+    // 最後に画像のみ表示するので入れる
+    if(imageName != "") {
+        queue<string> pages {};
+        pages.push("");
+        CharacterMessageData* data {CharacterMessageData::create(pages)};
+        CC_SAFE_RETAIN(data);
+        data->setImageName(imageName);
+        data->setImageOnly(true);
+        data->setCharaName("");
         datas.push(data);
     }
     
