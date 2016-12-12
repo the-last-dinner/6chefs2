@@ -114,6 +114,8 @@ void Enemy::onBattleStart()
 {
     Character::onBattleStart();
     _objectList->getAttackDetector()->removeAttackBox(_attackBox);
+    CC_SAFE_RETAIN(_attackBox);
+    this->removeChild(_attackBox);
 }
 
 // バトル終了時
@@ -121,6 +123,8 @@ void Enemy::onBattleFinished()
 {
     Character::onBattleFinished();
     _objectList->getAttackDetector()->addAttackBox(_attackBox);
+    this->addChild(_attackBox);
+    CC_SAFE_RELEASE(_attackBox);
 }
 
 // イベント終了時
