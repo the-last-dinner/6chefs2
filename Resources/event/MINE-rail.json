@@ -5,6 +5,10 @@
 		    "ambient":"night"
 		},
 		{
+			"type":"removeObject",
+			"objID":"181"
+		},
+		{
 			"type":"removeLayer",
 			"layer":"ranmaru"
 		},
@@ -294,6 +298,10 @@
 					"charaID":"18"
 				},
 				{
+					"type":"createObject",
+					"objID":"181"
+				},
+				{
 					"type":"removeObject",
 					"objID":"1049"
 				},
@@ -546,6 +554,10 @@
 					"direction":"DOWN",
 					"speed":1.1,
 					"movePattern":"5"
+				},
+				{
+					"type":"removeObject",
+					"objID":"181"
 				},
 				{
 					"type":"fadein"
