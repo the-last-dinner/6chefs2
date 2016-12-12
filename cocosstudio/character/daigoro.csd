@@ -453,7 +453,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/daigoro/daigoro_1_0.png" Plist="character/plist/daigoro.plist" />
+            <FileData Type="PlistSubImage" Path="character/plist/daigoro/daigoro_0_0.png" Plist="character/plist/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-801586463" Tag="12" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">

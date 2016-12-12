@@ -22,12 +22,7 @@
 Enemy::Enemy() { FUNCLOG }
 
 // デストラクタ
-Enemy::~Enemy()
-{
-    FUNCLOG
-    
-    CC_SAFE_RELEASE_NULL(_attackBox);
-}
+Enemy::~Enemy() { FUNCLOG }
 
 // 初期化
 bool Enemy::init(const EnemyData& data)
@@ -48,7 +43,7 @@ bool Enemy::init(const EnemyData& data)
     
     // 攻撃判定を生成
     AttackBox* attackBox { AttackBox::create(this, _csNode->getCSChild(CS_ATTACK_NODE_NAME), nullptr) };
-    CC_SAFE_RETAIN(attackBox);
+    this->addChild(attackBox);
     _attackBox = attackBox;
     
     return true;

@@ -143,8 +143,6 @@ public:
 
 // デバッグ
 public:
-    void drawDebugMask(); // デバッグ用マスク
-    void drawDebugCollisionMask();
     void drawDebugInfo();
     
     friend class MovePattern;

@@ -31,6 +31,10 @@ private:
     
 public:
     void onHitted(int damage);
+
+// Debug
+private:
+    virtual Color4F getDebugMaskColor() const override;
 };
 
 #endif /* HitBox_h */

@@ -40,3 +40,11 @@ void HitBox::onHitted(int damage)
         _onHitted(damage);
     }
 }
+
+#pragma mark -
+#pragma mark Debug
+
+Color4F HitBox::getDebugMaskColor() const
+{
+    return Color4F::BLUE;
+}

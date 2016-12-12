@@ -40,9 +40,7 @@ Character::~Character()
 {
     FUNCLOG
     CC_SAFE_RELEASE_NULL(_movePattern);
-    CC_SAFE_RELEASE_NULL(_hitBox);
     CC_SAFE_RELEASE_NULL(_sight);
-    CC_SAFE_RELEASE_NULL(_battleAttackBox);
     CC_SAFE_RELEASE_NULL(_battleData);
 }
 
@@ -86,7 +84,7 @@ bool Character::init(const CharacterData& data)
     
     // くらい判定生成
     HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
-    CC_SAFE_RETAIN(hitBox);
+    this->addChild(hitBox);
     _hitBox = hitBox;
     
     // HPを生成
@@ -400,11 +398,16 @@ void Character::onBattleStart()
         _speed = _battleData->getSpeedRatio();
     }
     
+    if (_battleAttackBox) {
+        this->removeChild(_battleAttackBox);
+    }
+    
     AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onMyAttackHitted, this)) };
-    _objectList->getAttackDetector()->addAttackBox(box);
-    CC_SAFE_RELEASE_NULL(_battleAttackBox);
-    CC_SAFE_RETAIN(box);
-    _battleAttackBox = box;
+    if (box) {
+        _objectList->getAttackDetector()->addAttackBox(box);
+        this->addChild(box);
+        _battleAttackBox = box;
+    }
 }
 
 // バトル終了時

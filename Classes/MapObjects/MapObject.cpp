@@ -429,49 +429,6 @@ void MapObject::reaction(function<void()> callback)
 #pragma mark -
 #pragma mark Debug
 
-// デバッグ用に枠を描画
-void MapObject::drawDebugMask()
-{
-    Point vertices[]
-    {
-        Point::ZERO,
-        Point(0, this->getContentSize().height),
-        this->getContentSize(),
-        Point(this->getContentSize().width, 0),
-        Point::ZERO,
-    };
-    Color4F lineColor = Color4F::BLUE;
-    DrawNode* draw {DrawNode::create()};
-    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
-    draw->setPosition(this->getContentSize() / -2);
-    draw->setGlobalZOrder(Priority::DEBUG_MASK);
-    this->addChild(draw);
-    
-    this->drawDebugCollisionMask();
-}
-
-void MapObject::drawDebugCollisionMask()
-{
-    if (!_collision) return;
-    
-    Rect collisionRect { this->getCollisionRect() };
-    
-    Point vertices[]
-    {
-        Point::ZERO,
-        Point(0, collisionRect.size.height),
-        collisionRect.size,
-        Point(collisionRect.size.width, 0),
-        Point::ZERO
-    };
-    Color4F lineColor { Color4F::GREEN };
-    DrawNode* draw { DrawNode::create() };
-    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
-    draw->setPosition(this->getContentSize() / -2);
-    draw->setGlobalZOrder(Priority::DEBUG_MASK);
-    this->addChild(draw);
-}
-
 void MapObject::drawDebugInfo()
 {
     if (!_collision) return;
@@ -500,6 +457,7 @@ void MapObject::drawDebugInfo()
 void MapObject::update(float delta)
 {
     _commandQueue->update(this, delta);
+    if (_collision) _collision->update(delta);
 }
 
 void MapObject::onEnterMap()

@@ -33,6 +33,10 @@ public:
     void setPower(int power);
     int getPower() const;
     void onAttackHitted(MapObject* hittedObject);
+    
+// Debug
+private:
+    virtual Color4F getDebugMaskColor() const override;
 };
 
 #endif /* AttackBox_h */

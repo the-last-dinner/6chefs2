@@ -154,7 +154,6 @@ void TiledMapLayer::addMapObject(MapObject* mapObject, bool addingToList)
     if(!mapObject) return;
     
     this->setMapObjectPosition(mapObject);
-    if(ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) mapObject->drawDebugMask();
     mapObject->setMapObjectList(this->objectList);
     this->tiledMap->addChild(mapObject);
     mapObject->onMoved = CC_CALLBACK_1(TiledMapLayer::setZOrderByPosition, this);
