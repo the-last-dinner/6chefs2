@@ -504,9 +504,9 @@
         
         
         "battle": {
-            "require": ["objIDs", "true", "false"],
+            "require": ["objID", "true", "false"],
             "member": {
-                "objIDs": [["string"]],
+                "objID": [["string"]],
                 "true": [["object"]],
                 "false": [["object"]]
             }

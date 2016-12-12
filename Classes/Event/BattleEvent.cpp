@@ -23,14 +23,14 @@ bool BattleStartEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
-    if (!_eventHelper->hasMember(_json, member::OBJECT_IDS)) return false;
+    if (!_eventHelper->hasMember(_json, member::OBJECT_ID)) return false;
     if (!_eventHelper->hasMember(_json, member::TRUE_)) return false;
     if (!_eventHelper->hasMember(_json, member::FALSE_)) return false;
     
     BattleData* data { BattleData::create() };
     
     vector<int> targetIds {};
-    rapidjson::Value& targetsJson { _json[member::OBJECT_IDS] };
+    rapidjson::Value& targetsJson { _json[member::OBJECT_ID] };
     for(int i { 0 }; i < targetsJson.Size(); i++) {
         targetIds.push_back(targetsJson[i].GetInt());
     }
