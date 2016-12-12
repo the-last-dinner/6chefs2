@@ -175,7 +175,6 @@ void TiledMapLayer::setMapObjectPosition(MapObject *mapObject)
 // マス座標からZOrder値を設定
 void TiledMapLayer::setZOrderByPosition(MapObject* mapObject)
 {
-    if(ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) mapObject->drawDebugInfo();
     int z { static_cast<int>(mapObject->getGridPosition().y) };
     mapObject->setLocalZOrder(z);
 }

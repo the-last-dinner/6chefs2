@@ -169,6 +169,8 @@ void DetectionBox::drawDebugMask()
         this->removeChild(debugMask);
     }
     
+    if (!this->isEnabled()) return;
+    
     Rect rect { this->getBoundingBox() };
     
     Point vertices[]

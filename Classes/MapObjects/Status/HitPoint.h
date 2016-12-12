@@ -33,6 +33,7 @@ public:
     void reduce(int damage);
     void setMax(int max);
     bool isLost() const;
+    int getCurrent() const;
 };
 
 #endif /* HitPoint_h */

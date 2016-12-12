@@ -21,6 +21,7 @@
 #include "Effects/Light.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/ConfigDataManager.h"
 
 // １マス動くのにかける時間の基準値
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
@@ -439,10 +440,10 @@ void MapObject::drawDebugInfo()
     }
     
     string labelStr { "" };
-    labelStr += "grect  : (" + to_string(etoi(this->getGridPosition().x)) + ", " + to_string(etoi(this->getGridPosition().y));
-    labelStr += ", " + to_string(etoi(this->getGridSize().width)) + ", " + to_string(etoi(this->getGridSize().height)) + ")\n";
-    labelStr += "cgrect : (" + to_string(etoi(this->getGridCollisionRect().origin.x)) + ", " + to_string(etoi(this->getGridCollisionRect().origin.y));
-    labelStr += ", " + to_string(etoi(this->getGridCollisionRect().size.width)) + ", " + to_string(etoi(this->getGridCollisionRect().size.height)) + ")";
+    if (_hitPoint) {
+        labelStr += "HP : ";
+        labelStr += to_string(_hitPoint->getCurrent());
+    }
     
     Label* label { Label::createWithTTF(labelStr, Resource::Font::CONFIG, 11) };
     label->setGlobalZOrder(Priority::DEBUG_MASK);
@@ -458,6 +459,7 @@ void MapObject::update(float delta)
 {
     _commandQueue->update(this, delta);
     if (_collision) _collision->update(delta);
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) this->drawDebugInfo();
 }
 
 void MapObject::onEnterMap()

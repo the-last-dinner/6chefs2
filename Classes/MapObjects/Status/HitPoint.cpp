@@ -49,3 +49,8 @@ void HitPoint::setMax(int max)
     _max = max;
     _current = max;
 }
+
+int HitPoint::getCurrent() const
+{
+    return _current;
+}
