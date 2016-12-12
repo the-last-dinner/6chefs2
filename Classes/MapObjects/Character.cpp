@@ -439,6 +439,10 @@ void Character::onBattleFinished()
     _hitPoint->setMax(1);
     _speed = 1.f;
     
+    if (_battleAttackBox) {
+        this->removeChild(_battleAttackBox);
+        _battleAttackBox = nullptr;
+    }
     _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
 }
 
