@@ -4,16 +4,30 @@
 	<dict>
 		<key>frames</key>
 		<dict>
-			<key>reception_0_1.png</key>
+			<key>reception_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{37,0},{17,25}}</string>
+				<string>{{0,66},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{17,25}}</string>
+				<string>{{5,0},{22,32}}</string>
+				<key>sourceSize</key>
+				<string>{32,32}</string>
+			</dict>
+
+			<key>reception_0_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,33},{22,32}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{5,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -21,13 +35,13 @@
 			<key>reception_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,26},{18,25}}</string>
+				<string>{{23,0},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{18,25}}</string>
+				<string>{{5,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -35,13 +49,13 @@
 			<key>reception_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{72,0},{16,25}}</string>
+				<string>{{45,66},{20,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,3},{16,25}}</string>
+				<string>{{6,0},{20,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -49,13 +63,13 @@
 			<key>reception_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{55,26},{16,25}}</string>
+				<string>{{66,33},{20,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{16,25}}</string>
+				<string>{{5,0},{20,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -63,13 +77,13 @@
 			<key>reception_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{19,26},{17,25}}</string>
+				<string>{{23,33},{21,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{17,25}}</string>
+				<string>{{5,0},{21,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -77,13 +91,13 @@
 			<key>reception_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{72,26},{16,25}}</string>
+				<string>{{67,0},{20,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{8,3},{16,25}}</string>
+				<string>{{7,0},{20,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -91,13 +105,13 @@
 			<key>reception_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{89,0},{15,25}}</string>
+				<string>{{66,66},{19,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,4},{15,25}}</string>
+				<string>{{7,0},{19,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -105,13 +119,13 @@
 			<key>reception_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{55,0},{16,25}}</string>
+				<string>{{46,0},{20,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{8,4},{16,25}}</string>
+				<string>{{7,0},{20,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -119,13 +133,13 @@
 			<key>reception_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{37,26},{17,25}}</string>
+				<string>{{45,33},{20,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,3},{17,25}}</string>
+				<string>{{6,0},{20,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -133,13 +147,13 @@
 			<key>reception_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{19,0},{17,25}}</string>
+				<string>{{23,66},{21,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{17,25}}</string>
+				<string>{{6,0},{21,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -147,13 +161,13 @@
 			<key>reception_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{18,25}}</string>
+				<string>{{0,0},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{18,25}}</string>
+				<string>{{5,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -165,7 +179,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{128,64}</string>
+			<string>{128,128}</string>
 			<key>textureFileName</key>
 			<string>reception.png</string>
 			</dict>

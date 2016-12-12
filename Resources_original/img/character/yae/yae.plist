@@ -7,13 +7,13 @@
 			<key>yae_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{67,0},{21,33}}</string>
+				<string>{{0,58},{24,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,5},{24,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -21,13 +21,13 @@
 			<key>yae_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{22,33}}</string>
+				<string>{{0,0},{24,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{22,33}}</string>
+				<string>{{4,5},{24,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -35,13 +35,13 @@
 			<key>yae_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,34},{22,33}}</string>
+				<string>{{0,29},{24,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,0},{22,33}}</string>
+				<string>{{4,5},{24,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -49,13 +49,13 @@
 			<key>yae_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{45,34},{21,33}}</string>
+				<string>{{48,90},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -63,13 +63,13 @@
 			<key>yae_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{45,0},{21,33}}</string>
+				<string>{{48,60},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -77,13 +77,13 @@
 			<key>yae_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{44,68},{21,33}}</string>
+				<string>{{25,30},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -91,13 +91,13 @@
 			<key>yae_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{67,34},{21,33}}</string>
+				<string>{{25,0},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -105,13 +105,13 @@
 			<key>yae_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{66,68},{21,33}}</string>
+				<string>{{24,87},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -119,13 +119,13 @@
 			<key>yae_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{22,68},{21,33}}</string>
+				<string>{{0,87},{23,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{3,4},{23,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -133,13 +133,13 @@
 			<key>yae_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{23,34},{21,33}}</string>
+				<string>{{72,0},{22,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,4},{22,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -147,13 +147,13 @@
 			<key>yae_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{23,0},{21,33}}</string>
+				<string>{{49,0},{22,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{5,4},{22,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -161,13 +161,13 @@
 			<key>yae_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,68},{21,33}}</string>
+				<string>{{49,30},{22,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{5,4},{22,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
