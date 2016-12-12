@@ -106,7 +106,7 @@ public:
     virtual void onSearched(MapObject* mainChara) override;
     virtual void onEventStart() override;
     virtual void onEventFinished() override;
-    virtual void onBattleStart() override;
+    virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
     
     friend class TerrainObject;

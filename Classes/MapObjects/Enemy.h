@@ -42,7 +42,7 @@ public:
 public:
     virtual void onEnterMap() override;
     virtual void onExitMap() override;
-    virtual void onBattleStart() override;
+    virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
     virtual void onEventFinished() override;
 };

@@ -335,9 +335,9 @@ void DungeonScene::onEventFinished()
 }
 
 // バトル開始時
-void DungeonScene::onBattleStart()
+void DungeonScene::onBattleStart(Battle* battle)
 {
-    if (_handler) _handler->onBattleStart();
+    if (_handler) _handler->onBattleStart(battle);
 }
 
 // バトル終了時

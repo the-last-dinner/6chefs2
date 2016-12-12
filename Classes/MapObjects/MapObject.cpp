@@ -479,3 +479,13 @@ void MapObject::onExitMap()
     
     this->unscheduleUpdate();
 }
+
+void MapObject::onBattleStart(Battle* battle)
+{
+    _battle = battle;
+}
+
+void MapObject::onBattleFinished()
+{
+    _battle = nullptr;
+}

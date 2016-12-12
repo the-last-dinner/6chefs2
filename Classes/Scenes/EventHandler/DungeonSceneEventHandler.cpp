@@ -40,10 +40,10 @@ void DungeonSceneEventHandler::onLostMainCharacterHP()
 }
 
 // バトル開始時
-void DungeonSceneEventHandler::onBattleStart()
+void DungeonSceneEventHandler::onBattleStart(Battle* battle)
 {
     _scene->_playerControlTask->onBattleStart();
-    _scene->_mapLayer->getMapObjectList()->onBattleStart();
+    _scene->_mapLayer->getMapObjectList()->onBattleStart(battle);
 }
 
 // バトル終了時

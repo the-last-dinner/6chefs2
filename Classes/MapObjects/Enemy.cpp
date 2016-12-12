@@ -110,9 +110,9 @@ void Enemy::onExitMap()
 }
 
 // バトル開始時
-void Enemy::onBattleStart()
+void Enemy::onBattleStart(Battle* battle)
 {
-    Character::onBattleStart();
+    Character::onBattleStart(battle);
     _objectList->getAttackDetector()->removeAttackBox(_attackBox);
     _attackBox->setVisible(false);
 }

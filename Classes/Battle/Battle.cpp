@@ -76,7 +76,7 @@ bool Battle::isMainCharacterDestroyed() const
 
 void Battle::start()
 {
-    _scene->onBattleStart();
+    _scene->onBattleStart(this);
     this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
 }
 

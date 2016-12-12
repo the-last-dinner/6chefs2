@@ -390,14 +390,14 @@ void MapObjectList::onEventFinished()
 #pragma mark Battle
 
 // バトル開始時
-void MapObjectList::onBattleStart()
+void MapObjectList::onBattleStart(Battle* battle)
 {
     for (auto obj : _availableObjects) {
-        obj->onBattleStart();
+        obj->onBattleStart(battle);
     }
     
     for (auto enemy : _enemies) {
-        enemy->onBattleStart();
+        enemy->onBattleStart(battle);
     }
 }
 

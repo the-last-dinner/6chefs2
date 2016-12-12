@@ -22,6 +22,7 @@ class CollisionBox;
 class MapObjectCommand;
 class MapObjectCommandQueue;
 class HitPoint;
+class Battle;
 
 class MapObject : public Node
 {
@@ -52,7 +53,7 @@ protected:
     TerrainStateCache* _terrainStateCache { nullptr };
     MapObjectCommandQueue* _commandQueue { nullptr };
     HitPoint* _hitPoint { nullptr };
-    
+    Battle* _battle { nullptr };
 public:
     function<void(MapObject*)> onMoved { nullptr };
 	
@@ -138,8 +139,8 @@ public:
     virtual void onSearched(MapObject* mainChara) {};        // 調べられた時
     virtual void onEventStart() {};                          // イベント開始時
     virtual void onEventFinished() {};                       // イベント終了時
-    virtual void onBattleStart() {};                         // バトル開始時
-    virtual void onBattleFinished() {};                      // バトル終了時
+    virtual void onBattleStart(Battle* battle);              // バトル開始時
+    virtual void onBattleFinished();                         // バトル終了時
 
 // デバッグ
 public:

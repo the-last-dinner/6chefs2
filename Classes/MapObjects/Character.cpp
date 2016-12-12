@@ -276,7 +276,7 @@ void Character::onHurt(int damage)
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
     
-    if (_battleAttackBox) {
+    if (_battle) {
         HurtCommand* command { HurtCommand::create() };
         this->pushCommand(command);
     }
@@ -410,9 +410,9 @@ void Character::onEventFinished()
 }
 
 // バトル開始時
-void Character::onBattleStart()
+void Character::onBattleStart(Battle* battle)
 {
-    MapObject::onBattleStart();
+    MapObject::onBattleStart(battle);
 
     if (_battleData) {
         _hitPoint->setMax(_battleData->getHitPoint());
