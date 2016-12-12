@@ -4,200 +4,172 @@
 	<dict>
 		<key>frames</key>
 		<dict>
-			<key>taihou_0_0.png</key>
+			<key>gakuran_daigoro_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1254},{29,31}}</string>
+				<string>{{22,68},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,1},{29,31}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_0_1.png</key>
+			<key>gakuran_daigoro_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1191},{29,31}}</string>
+				<string>{{66,34},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,1},{29,31}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_0_2.png</key>
+			<key>gakuran_daigoro_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1223},{29,30}}</string>
+				<string>{{66,0},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,2},{29,30}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_1_0.png</key>
+			<key>gakuran_daigoro_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1498},{22,31}}</string>
+				<string>{{44,68},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,1},{22,31}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_1_1.png</key>
+			<key>gakuran_daigoro_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1408},{22,29}}</string>
+				<string>{{44,34},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,3},{22,29}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_1_2.png</key>
+			<key>gakuran_daigoro_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1438},{22,29}}</string>
+				<string>{{44,0},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,2},{22,29}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,31}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_2_0.png</key>
+			<key>gakuran_daigoro_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1530},{22,30}}</string>
+				<string>{{66,68},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,2},{22,30}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_2_1.png</key>
+			<key>gakuran_daigoro_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1377},{23,30}}</string>
+				<string>{{22,34},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,2},{23,30}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_2_2.png</key>
+			<key>gakuran_daigoro_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1468},{22,29}}</string>
+				<string>{{22,0},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,3},{22,29}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_3_0.png</key>
+			<key>gakuran_daigoro_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1347},{27,29}}</string>
+				<string>{{0,68},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,3},{27,29}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_3_1.png</key>
+			<key>gakuran_daigoro_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1316},{27,30}}</string>
+				<string>{{0,34},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{1,2},{27,30}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
+				<string>{32,33}</string>
 			</dict>
 
-			<key>taihou_3_2.png</key>
+			<key>gakuran_daigoro_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1286},{28,29}}</string>
+				<string>{{0,0},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,3},{28,29}}</string>
+				<string>{{5,0},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,32}</string>
-			</dict>
-
-			<key>taihou_s_0.png</key>
-			<dict>
-				<key>frame</key>
-				<string>{{0,0},{543,1190}}</string>
-				<key>offset</key>
-				<string>{0,0}</string>
-				<key>rotated</key>
-				<false/>
-				<key>sourceColorRect</key>
-				<string>{{178,7},{543,1190}}</string>
-				<key>sourceSize</key>
-				<string>{800,1200}</string>
-			</dict>
-
-			<key>taihou_s_1.png</key>
-			<dict>
-				<key>frame</key>
-				<string>{{0,0},{543,1190}}</string>
-				<key>offset</key>
-				<string>{0,0}</string>
-				<key>rotated</key>
-				<false/>
-				<key>sourceColorRect</key>
-				<string>{{178,7},{543,1190}}</string>
-				<key>sourceSize</key>
-				<string>{800,1200}</string>
+				<string>{32,33}</string>
 			</dict>
 
 		</dict>
@@ -207,9 +179,9 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{1024,2048}</string>
+			<string>{128,128}</string>
 			<key>textureFileName</key>
-			<string>sprites.png</string>
+			<string>gakuran_daigoro.png</string>
 			</dict>
 		</dict>
 </plist>
