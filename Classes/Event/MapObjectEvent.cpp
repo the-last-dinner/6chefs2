@@ -319,6 +319,8 @@ bool SetMovableEvent::init(rapidjson::Value& json)
     
     _movable = _json[member::MOVABLE].GetBool();
     
+    if (_eventHelper->hasMember(_json, member::FILE)) _fileName = _json[member::FILE].GetString();
+    
     return true;
 }
 
@@ -327,5 +329,6 @@ void SetMovableEvent::run()
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
     
     target->setMovable(_movable);
+    if(_fileName != "") target->setMovingSoundFileName(_fileName);
     this->setDone();
 }

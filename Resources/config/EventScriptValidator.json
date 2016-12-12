@@ -345,7 +345,8 @@
             "require": ["objID"],
             "member": {
                 "objID": ["string"],
-                "movable": ["bool"]
+                "movable": ["bool"],
+                "file": ["string"]
             }
         },
         

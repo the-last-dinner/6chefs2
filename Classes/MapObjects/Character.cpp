@@ -326,8 +326,11 @@ void Character::onEnterMap()
     
     this->setDirection(this->getDirection());
     
-    if (_movePattern) _movePattern->start();
-    if (DungeonSceneManager::getInstance()->isEventRunning()) this->onEventStart();
+    if (DungeonSceneManager::getInstance()->isEventRunning()) {
+        this->onEventStart();
+    } else {
+        if (_movePattern) _movePattern->start();
+    }
 }
 
 // マップから削除された時
