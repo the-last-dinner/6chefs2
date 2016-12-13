@@ -58,18 +58,33 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     // ロゴ生成
     Sprite* logo {Sprite::createWithSpriteFrameName("the_last_dinner_log.png")};
     logo->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
-    logo->setScale(0.8f);
+    logo->setScale(1.6f);
     logo->setOpacity(0);
     this->addChild(logo);
     
     // 効果音
-    SoundManager::getInstance()->playSE(Resource::SE::LOGO, 0.3f);
+    SoundManager::getInstance()->playVoice(Resource::VOICE::THE_LAST_DINNER_NANIWO, 1.0f);
     
     // ロゴのアニメーション
-    logo->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f),EaseCubicActionOut::create(TintTo::create(1.0f, Color3B::RED))));
+    logo->runAction(
+            EaseCubicActionOut::create(
+                Spawn::createWithTwoActions(
+                    FadeIn::create(0.5f),
+                    ScaleTo::create(0.5f, 0.8f)
+            )
+        ));
     
     // シーンのアニメーション
-    this->runAction(Sequence::create(DelayTime::create(2.0f), TargetedAction::create(logo,FadeOut::create(1.0f)),CallFunc::create([](){Director::getInstance()->replaceScene(TitleScene::create());}), nullptr));
+    this->runAction(
+        Sequence::create(
+            DelayTime::create(1.5f),
+            TargetedAction::create(logo,FadeOut::create(1.0f)),
+            CallFunc::create([](){
+                Director::getInstance()->replaceScene(TitleScene::create());
+            }),
+            nullptr
+        )
+    );
 }
 
 // セーブデータの暗号化

@@ -8,12 +8,14 @@
 
 #include "MapObjects/Enemy.h"
 
+#include "Battle/Battle.h"
+
 #include "CocosStudio/CSNode.h"
 
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
-#include "MapOBjects/Party.h"
+#include "MapObjects/Party.h"
 
 #include "MapObjects/MovePatterns/MovePattern.h"
 #include "MapObjects/MovePatterns/MovePatternFactory.h"
@@ -22,12 +24,7 @@
 Enemy::Enemy() { FUNCLOG }
 
 // デストラクタ
-Enemy::~Enemy()
-{
-    FUNCLOG
-    
-    CC_SAFE_RELEASE_NULL(_attackBox);
-}
+Enemy::~Enemy() { FUNCLOG }
 
 // 初期化
 bool Enemy::init(const EnemyData& data)
@@ -48,7 +45,7 @@ bool Enemy::init(const EnemyData& data)
     
     // 攻撃判定を生成
     AttackBox* attackBox { AttackBox::create(this, _csNode->getCSChild(CS_ATTACK_NODE_NAME), nullptr) };
-    CC_SAFE_RETAIN(attackBox);
+    this->addChild(attackBox);
     _attackBox = attackBox;
     
     return true;
@@ -98,6 +95,19 @@ float Enemy::calcSummonDelay() const
 }
 
 #pragma mark -
+#pragma mark Battle
+
+bool Enemy::canAttack(MapObject* target) const
+{
+    if (!_battle) return true;
+    
+    for (MapObject* other : _battle->getTargetObjects()) {
+        if (other == target) return false;
+    }
+    return true;
+}
+
+#pragma mark -
 #pragma mark Interface
 
 // マップに配置された時
@@ -115,10 +125,11 @@ void Enemy::onExitMap()
 }
 
 // バトル開始時
-void Enemy::onBattleStart()
+void Enemy::onBattleStart(Battle* battle)
 {
-    Character::onBattleStart();
+    Character::onBattleStart(battle);
     _objectList->getAttackDetector()->removeAttackBox(_attackBox);
+    _attackBox->setVisible(false);
 }
 
 // バトル終了時
@@ -126,11 +137,12 @@ void Enemy::onBattleFinished()
 {
     Character::onBattleFinished();
     _objectList->getAttackDetector()->addAttackBox(_attackBox);
+    _attackBox->setVisible(true);
 }
 
 // イベント終了時
 void Enemy::onEventFinished()
 {
     Character::onEventFinished();
-    _movePattern->start();
+    if (_movePattern) _movePattern->start();
 }

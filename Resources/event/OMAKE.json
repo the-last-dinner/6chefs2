@@ -113,6 +113,17 @@
 			"y":24,
 			"direction":"LEFT",
 			"movePattern":"2"
+		},
+		{
+			"type":"createObject",
+			"objID":"10239",
+			"charaID":"13",
+			"trigger":"2",
+			"eventID":"13",
+			"x":20,
+			"y":34,
+			"direction":"DOWN",
+			"movePattern":"1"
 		}
 	],
 	"2":[
@@ -126,7 +137,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・孫一を観ますか？"],
+					"text":["「料理人としてのプライド」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -150,6 +161,30 @@
 												{
 													"type":"callEvent",
 													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"102",
+											"x":3,
+											"y":5,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"101",
+											"x":8,
+											"y":12,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
 												}
 											]
 										},
@@ -198,7 +233,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・撫子を観ますか？"],
+					"text":["「日常をくれた人」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -257,7 +292,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・蘭丸を観ますか？"],
+					"text":["「”強さ”の意味」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -265,6 +300,9 @@
 								{
 									"type":"sequence",
 									"action":[
+										{
+											"type":"stopBGM"
+										},
 										{
 											"type":"fadeout",
 											"time":2.0
@@ -280,6 +318,22 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"94",
+											"x":9,
+											"y":11,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -322,7 +376,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・真夏を観ますか？"],
+					"text":["「適材適所」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -335,6 +389,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"100",
 											"x":17,
@@ -345,6 +402,49 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"98",
+											"x":9,
+											"y":11,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"100",
+											"x":17,
+											"y":26,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"98",
+											"x":2,
+											"y":17,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"2"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -387,7 +487,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・暖暖を観ますか？"],
+					"text":["「ですぞ・DE・カウンセリング」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -400,10 +500,13 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"95",
-											"x":17,
-											"y":26,
+											"x":7,
+											"y":11,
 											"action":[
 												{
 													"type":"callEvent",
@@ -452,7 +555,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・ダイゴローを観ますか？"],
+					"text":["「ボーイミーツボーイ」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -465,10 +568,25 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"96",
 											"x":32,
 											"y":15,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"97",
+											"x":13,
+											"y":13,
 											"action":[
 												{
 													"type":"callEvent",
@@ -517,7 +635,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・雪を観ますか？"],
+					"text":["「”いきていく”ために」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -530,6 +648,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"98",
 											"x":9,
@@ -540,6 +661,25 @@
 													"eventID":"3"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"100",
+											"x":17,
+											"y":26,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"3"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein",
@@ -582,7 +722,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・朱花を観ますか？"],
+					"text":["「始まりと後悔」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -593,6 +733,9 @@
 										{
 											"type":"fadeout",
 											"time":2.0
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"createCamera",
@@ -647,7 +790,7 @@
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・タムケンを観ますか？"],
+					"text":["「奔放な挑戦者」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -662,6 +805,9 @@
 										{
 											"type":"changeHero",
 											"charaID":"8"
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"changeMap",
@@ -707,13 +853,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"trofyID":"10"
+					"trophy":"10"
 				}
 			],
 			"action":[
 				{
 					"type":"questionMsg",
-					"text":["エピソード・オブ・大宝を観ますか？"],
+					"text":["「アホくせぇ・・・」を観ますか？"],
 					"choices":[
 						{
 							"choice":"はい",
@@ -726,6 +872,9 @@
 											"time":2.0
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"90",
 											"x":15,
@@ -736,6 +885,25 @@
 													"eventID":"1"
 												}
 											]
+										},
+										{
+											"type":"createCamera",
+											"mapID":"99",
+											"x":12,
+											"y":13,
+											"action":[
+												{
+													"type":"callEvent",
+													"eventID":"1"
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
 										},
 										{
 											"type":"fadein"
@@ -755,7 +923,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"NtrofyID":"10"
+					"Ntrophy":"10"
 				}
 			],
 			"action":[
@@ -765,5 +933,59 @@
 				}
 			]
 		}
+	],
+	"13":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["この度は「6人の料理人と隻眼の少女」を\n手に取っていただき、ありがとうございます。","早速ですがルートAにたどり着く方法を\n教えましょう。"],
+					"charaID":"10",
+					"name":"最後の晩餐"
+				},
+				{
+					"type":"questionMsg",
+					"text":["聞きますか？"],
+					"choices":[
+						{
+							"choice":"聞く",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"charaMsg",
+											"file":"",
+											"text":["北森金鉱跡に針金を拾った坑道が\nありませんでしたか？","そこで坑道に入らず、\n地下病棟に戻り"],
+											"charaID":"10",
+											"name":"最後の晩餐"
+										},
+										{
+											"type":"charaMsg",
+											"file":"",
+											"text":["ここの扉を調べると\n新エリアへの道が・・・"],
+											"charaID":"10",
+											"name":"最後の晩餐"
+										}
+									]
+								}
+							]
+						},
+						{
+							"choice":"聞かない",
+							"action":[
+								{
+									"type":"charaMsg",
+									"text":["引き続き、おまけ部屋をお楽しみ下さい。"],
+									"charaID":"10",
+									"name":"最後の晩餐"
+								}
+							]
+						}
+					]
+				}
+			]
+		}	
 	]
 }

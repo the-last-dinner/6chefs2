@@ -125,8 +125,10 @@ void MessageLayer::nextPage()
 // メッセージレイヤを閉じる
 void MessageLayer::close()
 {
-    this->message->setCascadeOpacityEnabled(true);
-    this->frame->setCascadeOpacityEnabled(true);
+    if(!_closed) {
+        this->message->setCascadeOpacityEnabled(true);
+        this->frame->setCascadeOpacityEnabled(true);
+    }
     this->listener->setEnabled(false);
     this->runAction(FadeOut::create(0.2f));
     if (this->onClose) this->runAction(Sequence::createWithTwoActions(DelayTime::create(0.2f), CallFunc::create([this](){this->onClose(); this->removeFromParent();})));

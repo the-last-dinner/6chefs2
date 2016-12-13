@@ -26,7 +26,10 @@ class PlayerControlTask;
 class LoadingLayer;
 class Party;
 class StaminaBar;
+class CountDownDisplay;
 class EventListenerKeyboardLayer;
+
+class Battle;
 
 class DungeonScene : public BaseScene
 {
@@ -52,6 +55,7 @@ protected:
     
     Party* _party { nullptr };
     StaminaBar* _staminaBar { nullptr };
+    CountDownDisplay* _countDownDisplay { nullptr };
     
 // インスタンスメソッド
 protected:
@@ -62,6 +66,7 @@ protected:
 	virtual bool init(DungeonSceneData* data);
     virtual bool init(DungeonSceneData* data, EventListenerKeyboardLayer* listener);
     
+public:
 // コールバック
     virtual void onEnter() override;
 	virtual void onPreloadFinished(LoadingLayer* loadingLayer) override;
@@ -85,6 +90,9 @@ protected:
 public:
     virtual void onEnterPushedScene() override;
     virtual void onExitPushedScene() override;
+    void onBattleStart(Battle* battle);
+    void onBattleFinished(Battle* battle);
+    CountDownDisplay* getCountDownDisplay();
 };
 
 

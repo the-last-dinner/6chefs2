@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="7">
- <tileset firstgid="1" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="lower" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="lower" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="lower.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYKANMGWmDCMDCSBfG0jrkIl1gViMeWiZ5wmkvcjE3ljM02OkDI+aN2reYDKPDw8m1TwQ+MmEHf9iQuj5gUMNCBMDxJlRwwLkBnFmwvoGMwAAfpc+pQ==
+   eJxjYBgFgx0YMiIwOh8mRooZ5OBR80bNG87m4QPk6KGneQMJACR2IWc=
   </data>
  </layer>
  <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFpABWRgYGNkZM8VqgWB0WcUJAGahHBYu+2UCxOWSY5wjU44RF306g2C4yzIsH6kkgQ98oGAWjYPgDAPKHBUg=
+   eJxjYGBguAvEpxgpwwcYEGAtkK8NpHXIxLpAvJpxaJnnCaS9qGgeDHiRgb3xmEcuGDVv1Lzhat4dIO5jxI77kdT14lADwvuJtBfZ7SA3rKGCXwYSAABcnz1R
   </data>
  </layer>
- <layer name="CharaUe" width="20" height="20">
+ <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DggR0zZRgdxDBThtHBDGbKMDqoYqYMj4JRMBgAANldG4E=
+   eJxjYBgFpABWRgYGNkZM8VqgWB0WcUJAGahHBYu+2UCxOWSY5wjU44RF306g2C4yzIsH6kkgQ98oGAWjYPgDAPKHBUg=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -29,4 +38,9 @@
   <object id="5" x="0" y="96" width="32" height="160"/>
   <object id="6" x="32" y="192" width="256"/>
  </objectgroup>
+ <layer name="CharaUe" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DggR0zZRgdxDBThtHBDGbKMDqoYqYMj4JRMBgAANldG4E=
+  </data>
+ </layer>
 </map>

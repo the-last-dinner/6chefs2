@@ -21,6 +21,10 @@
 					"layer":"curryEat"
 				},
 				{
+					"type":"playBGM",
+					"file":"bgm_maoudamashii_healing13.mp3"
+				},
+				{
 					"type":"fadein",
 					"time":3.0
 				},
@@ -83,7 +87,7 @@
 							"type":"createObject",
 							"charaID":"17",
 							"objID":"10215",
-							"x":40,
+							"x":36,
 							"y":17,
 							"direction":"LEFT",
 							"movePattern":"1"
@@ -107,19 +111,19 @@
 									"name":"天パの男"
 								},
 								{
-									"text":["おぃ竹下！\nお前20辛イってみろや！"],
+									"text":["おぃナニヲ！\nお前20辛イってみろや！"],
 									"charaID":"10",
 									"name":"柄の悪い男"
 								},
 								{
 									"text":["ギャハハ\n上等じゃんよ"],
 									"charaID":"10",
-									"name":"竹下"
+									"name":"ナニヲ"
 								},
 								{
 									"text":["おぅコック！\n一番辛ぇの持って来んかい！"],
 									"charaID":"10",
-									"name":"竹下",
+									"name":"ナニヲ",
 									"option":"reaction"
 								},
 								{
@@ -130,7 +134,7 @@
 								{
 									"text":["早よせぃ！"],
 									"charaID":"10",
-									"name":"竹下",
+									"name":"ナニヲ",
 									"option":"reaction"
 								},
 								{
@@ -230,23 +234,26 @@
 					"layer":"curry"
 				},
 				{
+					"type":"fadein"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
 							"text":["なんじゃこら・・・"],
 							"charaID":"10",
-							"name":"竹下"
+							"name":"ナニヲ"
 						},
 						{
 							"text":["おぅコック！\nコレ全然辛ぁねぇぞ！"],
 							"charaID":"10",
-							"name":"竹下",
+							"name":"ナニヲ",
 							"option":"reaction"
 						},
 						{
 							"text":["もっと本気で殺しに来んかい！"],
 							"charaID":"10",
-							"name":"竹下"
+							"name":"ナニヲ"
 						}
 					]
 				},
@@ -272,7 +279,7 @@
 						{
 							"text":["ギャハハ！なんじゃコイツ\nなんぞ持って来よったわ。","おぅ\n食ったるわ。"],
 							"charaID":"10",
-							"name":"竹下"
+							"name":"ナニヲ"
 						}
 					]
 				},
@@ -286,7 +293,7 @@
 						{
 							"text":["むぅ・・・コイツぁ・・・","おぅコック・・・\n中々やるやないけ・・・"],
 							"charaID":"10",
-							"name":"竹下"
+							"name":"ナニヲ"
 						},
 						{
 							"text":["・・・","まさか・・・完食・・・"],
@@ -350,7 +357,7 @@
 						{
 							"text":["コックよぅ・・・お前の本気・・・\n見してもろたわ。","また来ちゃるわ。"],
 							"charaID":"10",
-							"name":"竹下"
+							"name":"ナニヲ"
 						},
 						{
 							"text":["あ、ありがとうございました・・・"],
@@ -366,18 +373,6 @@
 				{
 					"type":"storyMsg",
 					"text":["翌日・・・"]
-				},
-				{
-					"type":"createCamera",
-					"mapID":"102",
-					"x":3,
-					"y":5,
-					"action":[
-						{
-							"type":"callEvent",
-							"evntID":"1"
-						}
-					]
 				}
 			]
 		}
@@ -408,7 +403,7 @@
 				},
 				{
 					"type":"charaMsg",
-					"text":["昨日は完食されちゃったけど・・・\nコレなら竹下くんも倒せるかな・・・"],
+					"text":["昨日は完食されちゃったけど・・・\nコレならナニヲくんも倒せるかな・・・"],
 					"charaID":"25",
 					"imgID":"1"
 				},
@@ -417,8 +412,7 @@
 					"time":3.0
 				},
 				{
-					"type":"stopBGM",
-					"file":"curry.mp3"
+					"type":"stopBGM"
 				}
 			]
 		}

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="12">
- <tileset firstgid="1" name="ST-Cafe-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-Cafe-I01" tilewidth="16" tileheight="16" tilecount="1440" columns="16">
   <image source="ST-Cafe-I01.png" trans="aa55ff" width="256" height="1440"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="2945" name="Yatai-option1" tilewidth="16" tileheight="16">
+ <tileset firstgid="2945" name="Yatai-option1" tilewidth="16" tileheight="16" tilecount="885" columns="59">
   <image source="Yatai-option1.png" trans="aa55ff" width="944" height="255"/>
   <tile id="13">
    <properties>

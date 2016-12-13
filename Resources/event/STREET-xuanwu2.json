@@ -281,6 +281,10 @@
 					"layer":"shitai"
 				},
 				{
+					"type":"removeLayer",
+					"layer":"blood"
+				},
+				{
 					"type":"removeObject",
 					"objID":"181"
 				},
@@ -460,7 +464,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["6","6"],
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
 					"Nevent":["12","12"]
 				}
 			],
@@ -468,6 +478,44 @@
 				{
 					"type":"systemMsg",
 					"text":["よく見ると興味深い食べ物ばかりだ"]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["6","6"],
+					"Nevent":["12","12"],
+					"Nevent":["8","6"]
+				},
+				{
+					"event":["6","6"],
+					"Nevent":["12","12"],
+					"Nevent":["7","5"]
+				},
+				{
+					"event":["6","6"],
+					"Nevent":["12","12"],
+					"Nevent":["6","6"]
+				},
+				{
+					"event":["6","6"],
+					"Nevent":["12","12"],
+					"Nevent":["10","6"]
+				},
+				{
+					"event":["6","6"],
+					"Nevent":["12","12"],
+					"Nevent":["9","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["他の通りの屋台も見てみようよ！"],
+					"charaID":"1",
+					"imgID":"4"
 				}
 			]
 		},

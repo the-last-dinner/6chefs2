@@ -35,6 +35,7 @@ namespace member
     static const char* FILE = "file";
     static const char* CLASS_NAME = "className";
     static const char* ID = "id";
+    static const char* IMG = "img";
     static const char* IMGS = "imgs";
     static const char* IMG_ID = "imgID";
     static const char* INFO_ID = "infoID";
@@ -72,7 +73,7 @@ namespace member
     static const char* X = "x";
     static const char* Y = "y";
     static const char* VOICE = "voice";
-    
+    static const char* DISPLAY = "display";
 }
 
 #endif /* defined(__LastSupper__EventScriptMember__) */

@@ -15,7 +15,11 @@
 				{
 					"type":"storyMsg",
 					"text":["数年前・・・"]
-				}
+				},
+				{
+					"type":"playBGM",
+					"file":"omake_favo_daigoro.mp3"
+				},
 				{
 					"type":"fadein",
 					"time":3.0
@@ -268,18 +272,6 @@
 				{
 					"type":"storyMsg",
 					"text":["うぜぇ・・・","けどまぁタダで食えるなら行ってやるか。"]
-				},
-				{
-					"type":"createCamera",
-					"mapID":"97",
-					"x":13,
-					"y":13,
-					"action":[
-						{
-							"type":"callEvent",
-							"eventID":"1"
-						}
-					]
 				}
 			]
 		}

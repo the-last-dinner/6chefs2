@@ -202,11 +202,7 @@ void MapObjectList::removeById(const int objectId)
 {
     for (Enemy* enemy : _enemies) {
         if (enemy->getObjectId() != objectId) continue;
-        
-        _disableObjects.pushBack(enemy);
-        _enemies.eraseObject(enemy);
-        enemy->onExitMap();
-        enemy->removeFromParent();
+        this->removeEnemy(enemy);
     }
     
     for (MapObject* obj : _availableObjects) {
@@ -244,6 +240,7 @@ void MapObjectList::removeEnemyById(const int enemyId)
 void MapObjectList::removeEnemyByObjectId(const int objectId)
 {
     for (Enemy* enemy : _enemies) {
+        if (!enemy) continue;
         if (enemy->getObjectId() == objectId) {
             this->removeEnemy(enemy);
         }
@@ -253,7 +250,9 @@ void MapObjectList::removeEnemyByObjectId(const int objectId)
 // 対象の敵のオブジェクトを削除
 void MapObjectList::removeEnemy(Enemy *enemy)
 {
+    _disableObjects.pushBack(enemy);
     enemy->removeFromParent();
+    enemy->onExitMap();
     _enemies.eraseObject(enemy);
 }
 
@@ -279,7 +278,7 @@ void MapObjectList::setParty(Party* party)
     party->onPartyMoved = CC_CALLBACK_1(MapObjectList::onPartyMoved, this);
     
     // 主人公のHPがなくなった時のコールバックを設定
-    party->getMainCharacter()->setLostHPCallback([this](Character* chara) {
+    party->getMainCharacter()->setLostHPCallback([this](MapObject* obj) {
         this->unscheduleUpdate();
         if (!_onLostMainCharacterHP) return;
         _onLostMainCharacterHP();
@@ -392,14 +391,14 @@ void MapObjectList::onEventFinished()
 #pragma mark Battle
 
 // バトル開始時
-void MapObjectList::onBattleStart()
+void MapObjectList::onBattleStart(Battle* battle)
 {
     for (auto obj : _availableObjects) {
-        obj->onBattleStart();
+        obj->onBattleStart(battle);
     }
     
     for (auto enemy : _enemies) {
-        enemy->onBattleStart();
+        enemy->onBattleStart(battle);
     }
 }
 

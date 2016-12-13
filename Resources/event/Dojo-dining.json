@@ -72,18 +72,6 @@
 				},
 				{
 					"type":"fadeout"
-				},
-				{
-					"type":"createCamera",
-					"mapID":"100",
-					"x":17,
-					"y":26,
-					"action":[
-						{
-							"type":"callEvent",
-							"eventID":"2"
-						}
-					]
 				}
 			]
 		}
@@ -112,7 +100,7 @@
 				{
 					"type":"playSE",
 					"file":"telephone1.mp3"
-				}
+				},
 				{
 					"type":"fadein"
 				},
@@ -155,7 +143,7 @@
 				},
 				{
 					"type":"storyMsg",
-					"text":["ホント毎日毎日・・・","たまにくらい私が周りを振り回したっていいハズだわ。","・・・","とりあえずカレー食べて・・・\nそれで・・・"]
+					"text":["ホント毎日毎日・・・","たまにくらい私が周りを振り回したっていいハズだわ。","・・・","とりあえずカレーね！\nカレー・・・"]
 				}
 			]
 		}
@@ -237,11 +225,15 @@
 				},
 				{
 					"type":"removeObject",
-					"objID":"10184"
+					"objID":"10183"
 				},
 				{
 					"type":"removeObject",
 					"objID":"10185"
+				},
+				{
+					"type":"playBGM",
+					"file":"bgm_sad memory.mp3"
 				},
 				{
 					"type":"storyMsg",
@@ -250,34 +242,6 @@
 				{
 					"type":"fadein",
 					"time":3.0
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
 				},
 				{
 					"type":"charaMsg",
@@ -301,34 +265,6 @@
 					"type":"fadein"
 				},
 				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
 					"type":"storyMsg",
 					"text":["もう・・・おじぃさんとあそべない・・・","おとうさんにもあえない・・・"]
 				},
@@ -341,34 +277,6 @@
 				},
 				{
 					"type":"fadein"
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
 				},
 				{
 					"type":"storyMsg",
@@ -385,52 +293,12 @@
 					"type":"fadein"
 				},
 				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
-					"type":"spawn",
-					"action":[
-						{
-							"type":"playSE",
-							"file":"reaction.mp3"
-						},
-						{
-							"type":"displayImg",
-							"file":"death_shituji.png",
-							"time":1.0
-						}
-					]
-				},
-				{
 					"type":"storyMsg",
 					"text":["おかあさんがびょうきになったのもゆきのせい・・・"]
 				},
 				{
 					"type":"fadeout",
 					"time":3.0
-				},
-				{
-					"type":"createCamera",
-					"mapID":"100",
-					"x":17,
-					"y":26,
-					"action":[
-						{
-							"type":"callEvent",
-							"eventID":"3"
-						}
-					]
 				}
 			]
 		}

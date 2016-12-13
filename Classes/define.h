@@ -75,6 +75,7 @@ enum Priority
     TOP_COVER = 1000,
     LOADING_LAYER = 999,
     TROPHY_NOTIFICATION = 1000,
+    COUNT_DOWN_DISPLAY = 900,
     STAMINA_BAR = 800,
 	STORY_MESSAGE = 102,
 	SYSTEM_MESSAGE = 101,
@@ -166,6 +167,8 @@ enum struct EnemyMovePattern
     PERFECT_RANDOM,
     SCOUTER,
     CHASER,
+    BATTLE_MOB,
+    BATTLE_BOSS,
     
     SIZE,
 };

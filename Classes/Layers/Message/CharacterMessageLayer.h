@@ -23,6 +23,8 @@ private:
     static const float LEFT_MARGIN;
     static const float H_MARGIN_S;
     static const int REACTION_EFFECT_ZORDER;
+    static const int MAIN_FRAME_TAG;
+    static const int NAME_FRAME_TAG;
     
 // クラスメソッド
 public:

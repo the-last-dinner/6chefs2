@@ -3,7 +3,7 @@
 2,北森空港-ターミナル,AIRPORT-terminal
 3,北森空港-踊り場,AIRPORT-landing
 4,北森空港-エントランス,AIRPORT-entrance
-5,屋台街-玄武壱番街,STREET-xuanwu1
+5,ホテル街-玄武壱番街,STREET-xuanwu1
 6,屋台街-玄武弐番街,STREET-xuanwu2
 7,屋台街-白虎壱番街,STREET-tiger1
 8,屋台街-白虎弐番街,STREET-tiger2
@@ -92,7 +92,7 @@
 91,本棟-食堂,MAIN-Syokudou1
 92,中山宅-台所,NAKAYAMA-kitchen
 93,中山宅前,NAKAYAMA
-94,加岩流道場-一室,Dojo-rom
+94,加岩流道場-一室,Dojo-room
 95,カウンセリングルーム,counselingroom
 96,学校-屋上,SCHOOL-rooftop
 97,ハンバーグハウス「アッパーカット」,UPPERCUT

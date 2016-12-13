@@ -103,7 +103,6 @@ void RemoveEnemyEvent::run()
         DungeonSceneManager::getInstance()->removeEnemy(_enemyId);
     }
     if (_objectId != etoi(ObjectID::UNDIFINED)) {
-        cout << "removeEnemy" << _objectId << endl;
         DungeonSceneManager::getInstance()->removeEnemyByObjectId(_objectId);
     }
 }

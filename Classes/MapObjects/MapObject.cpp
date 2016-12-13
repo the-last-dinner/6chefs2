@@ -13,6 +13,7 @@
 #include "MapObjects/Command/MoveCommand.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
 #include "MapObjects/MapObjectList.h"
+#include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
 #include "MapObjects/TerrainState/TerrainStateCache.h"
 
@@ -20,6 +21,7 @@
 #include "Effects/Light.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/ConfigDataManager.h"
 
 // １マス動くのにかける時間の基準値
 const float MapObject::DURATION_MOVE_ONE_GRID = 0.1f;
@@ -30,6 +32,7 @@ MapObject::MapObject() {}
 // デストラクタ
 MapObject::~MapObject()
 {
+    CC_SAFE_RELEASE_NULL(_hitPoint);
     CC_SAFE_RELEASE_NULL(_terrainStateCache);
     CC_SAFE_RELEASE_NULL(_commandQueue);
 }
@@ -98,6 +101,9 @@ void MapObject::setTrigger(Trigger trigger) { _trigger = trigger; }
 // かいりきで押せるかをセット
 void MapObject::setMovable(bool isMovable) { _isMovable = isMovable; }
 
+// 押されたときに鳴らす音
+void MapObject::setMovingSoundFileName(const string& fileName) {_movingSoundFileName = fileName;}
+
 // マップオブジェクトのリストをセット
 void MapObject::setMapObjectList(MapObjectList* objectList) { _objectList = objectList; }
 
@@ -117,7 +123,7 @@ void MapObject::setSprite(Sprite* sprite)
     if(!sprite) return;
     _sprite = sprite;
     this->addChild(sprite);
-};
+}
 
 // 一時停止状態を設定
 void MapObject::setPaused(bool paused) { _paused = paused; }
@@ -221,6 +227,9 @@ bool MapObject::isHit(const MapObject* other) const
 // 動かせるかどうかを取得
 bool MapObject::isMovable() const {return _isMovable;}
 
+// 動かしたときの音を取得
+string MapObject::getMovingSoundFileName() const {return _movingSoundFileName;}
+
 // 指定の方向に対して当たり判定があるMapObjectのvectorを取得
 Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
 {
@@ -254,6 +263,34 @@ void MapObject::pushCommand(MapObjectCommand* command)
 void MapObject::clearCommandQueue()
 {
     _commandQueue->clear();
+}
+
+#pragma mark -
+#pragma mark HP
+
+HitPoint* MapObject::getHitPoint() const
+{
+    return _hitPoint;
+}
+
+void MapObject::setLostHPCallback(function<void(MapObject*)> callback)
+{
+    _onLostHP = callback;
+}
+
+void MapObject::onLostHP()
+{
+    if (_onLostHP) {
+        _onLostHP(this);
+    }
+}
+
+#pragma mark -
+#pragma mark Battle
+
+bool MapObject::canAttack(MapObject* target) const
+{
+    return false;
 }
 
 #pragma mark -
@@ -297,9 +334,10 @@ void MapObject::moveObject(const vector<Direction>& directions, function<void(bo
         // 当たったものが動かせるなら入力方向に1マス動かす
         if (this->isHit(direction)) {
             for (MapObject* obj : this->getHitObjects(direction)) {
-                if(obj->isMovable()) obj->moveBy({ direction }, [onMoved](bool movable) {
+                if(obj->isMovable()) obj->moveBy({ direction }, [onMoved, obj](bool movable) {
                     // 複数の物体が同時に接触した時に例外が出るのでキャッチ
                     try {
+                        if(movable && obj->getMovingSoundFileName() != "") SoundManager::getInstance()->playSE(obj->getMovingSoundFileName(),  1.f);
                         onMoved(movable);
                     } catch(exception e) {
                     }
@@ -326,9 +364,9 @@ void MapObject::move(const vector<Direction>& enableDirections, function<void()>
     this->setGridPosition(this->getGridPosition() + Vec2(movement.x, -movement.y) / GRID);
     
     // 移動開始
-    this->_isMoving = true;
+    _isMoving = true;
     this->runAction(Sequence::createWithTwoActions(MoveBy::create(DURATION_MOVE_ONE_GRID / speed, movement), CallFunc::create([this, onMoved] {
-        this->_isMoving = false;
+        _isMoving = false;
         if (this->onMoved) this->onMoved(this);
         if (onMoved) onMoved();
         _movingDirections.clear();
@@ -412,49 +450,6 @@ void MapObject::reaction(function<void()> callback)
 #pragma mark -
 #pragma mark Debug
 
-// デバッグ用に枠を描画
-void MapObject::drawDebugMask()
-{
-    Point vertices[]
-    {
-        Point::ZERO,
-        Point(0, this->getContentSize().height),
-        this->getContentSize(),
-        Point(this->getContentSize().width, 0),
-        Point::ZERO,
-    };
-    Color4F lineColor = Color4F::BLUE;
-    DrawNode* draw {DrawNode::create()};
-    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
-    draw->setPosition(this->getContentSize() / -2);
-    draw->setGlobalZOrder(Priority::DEBUG_MASK);
-    this->addChild(draw);
-    
-    this->drawDebugCollisionMask();
-}
-
-void MapObject::drawDebugCollisionMask()
-{
-    if (!_collision) return;
-    
-    Rect collisionRect { this->getCollisionRect() };
-    
-    Point vertices[]
-    {
-        Point::ZERO,
-        Point(0, collisionRect.size.height),
-        collisionRect.size,
-        Point(collisionRect.size.width, 0),
-        Point::ZERO
-    };
-    Color4F lineColor { Color4F::GREEN };
-    DrawNode* draw { DrawNode::create() };
-    draw->drawPolygon(vertices, 5, Color4F(0,0,0,0), 1, lineColor);
-    draw->setPosition(this->getContentSize() / -2);
-    draw->setGlobalZOrder(Priority::DEBUG_MASK);
-    this->addChild(draw);
-}
-
 void MapObject::drawDebugInfo()
 {
     if (!_collision) return;
@@ -465,10 +460,10 @@ void MapObject::drawDebugInfo()
     }
     
     string labelStr { "" };
-    labelStr += "grect  : (" + to_string(etoi(this->getGridPosition().x)) + ", " + to_string(etoi(this->getGridPosition().y));
-    labelStr += ", " + to_string(etoi(this->getGridSize().width)) + ", " + to_string(etoi(this->getGridSize().height)) + ")\n";
-    labelStr += "cgrect : (" + to_string(etoi(this->getGridCollisionRect().origin.x)) + ", " + to_string(etoi(this->getGridCollisionRect().origin.y));
-    labelStr += ", " + to_string(etoi(this->getGridCollisionRect().size.width)) + ", " + to_string(etoi(this->getGridCollisionRect().size.height)) + ")";
+    if (_hitPoint) {
+        labelStr += "HP : ";
+        labelStr += to_string(_hitPoint->getCurrent());
+    }
     
     Label* label { Label::createWithTTF(labelStr, Resource::Font::CONFIG, 11) };
     label->setGlobalZOrder(Priority::DEBUG_MASK);
@@ -483,6 +478,8 @@ void MapObject::drawDebugInfo()
 void MapObject::update(float delta)
 {
     _commandQueue->update(this, delta);
+    if (_collision) _collision->update(delta);
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) this->drawDebugInfo();
 }
 
 void MapObject::onEnterMap()
@@ -501,4 +498,14 @@ void MapObject::onExitMap()
     }
     
     this->unscheduleUpdate();
+}
+
+void MapObject::onBattleStart(Battle* battle)
+{
+    _battle = battle;
+}
+
+void MapObject::onBattleFinished()
+{
+    _battle = nullptr;
 }

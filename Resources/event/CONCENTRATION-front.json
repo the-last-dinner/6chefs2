@@ -104,7 +104,7 @@
 							"option":"reaction"
 						},
 						{
-							"type":"charaWalk",
+							"type":"charaWalkTo",
 							"objID":"10201",
 							"x":22,
 							"y":22,
@@ -116,21 +116,21 @@
 							"direction":"RIGHT"
 						},
 						{
-							"type":"charaWalk",
+							"type":"charaWalkTo",
 							"objID":"10203",
 							"x":22,
 							"y":22,
 							"speed":0.5
 						},
 						{
-							"type":"charaWalk",
+							"type":"charaWalkTo",
 							"objID":"10204",
 							"x":22,
 							"y":22,
 							"speed":0.5
 						},
 						{
-							"type":"charaWalk",
+							"type":"charaWalkTo",
 							"objID":"10205",
 							"x":22,
 							"y":22,

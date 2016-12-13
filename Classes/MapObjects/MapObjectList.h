@@ -21,6 +21,7 @@ class PathFinder;
 class PlainArea;
 class CollisionDetector;
 class AttackDetector;
+class Battle;
 
 class MapObjectList : public Node
 {
@@ -103,7 +104,7 @@ public:
     void onEventFinished();
     
     // 戦闘
-    void onBattleStart();
+    void onBattleStart(Battle* battle);
     void onBattleFinished();
 
     // 敵と主人公一行の衝突監視用updateメソッド

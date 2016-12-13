@@ -28,7 +28,9 @@ protected:
     
 // インターフェース
 public:
+    virtual void turn(Party* party, const Direction& direction, bool isDashKeyPressed) = 0;
     virtual void onEnterKeyPressed(Party* party) = 0;
+    virtual void move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed) = 0;
 };
 
 #endif /* PlayerControlState_h */

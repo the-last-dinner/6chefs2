@@ -66,11 +66,20 @@ bool TitleMainMenuLayer::init()
     title2->setColor(Color3B::WHITE);
     this->addChild(title2);
     
-    Label* title3 {Label::createWithTTF("隻眼の少女2", Resource::Font::SYSTEM, font_size)};
+    Label* title3 {Label::createWithTTF("隻眼の少女", Resource::Font::SYSTEM, font_size)};
     title3->setPosition(WINDOW_WIDTH/2, title2->getPosition().y - title3->getContentSize().height);
     title3->setColor(Color3B::Color3B(200,0,0));
     title3->setOpacity(0);
     this->addChild(title3);
+    
+    float titleNumberScale {0.33};
+    Sprite* titleNumber {Sprite::createWithSpriteFrameName("title_2.png")};
+    titleNumber->setPosition(
+        WINDOW_WIDTH/2 + title3->getContentSize().width/2 + titleNumber->getContentSize().width * titleNumberScale / 5,
+        title2->getPosition().y - title3->getContentSize().height
+    );
+    titleNumber->setOpacity(0);
+    this->addChild(titleNumber);
     
     // タイトルメニューを生成
 	int menuSize = 44.f;
@@ -92,11 +101,16 @@ bool TitleMainMenuLayer::init()
     this->runAction(Sequence::createWithTwoActions(DelayTime::create(duration + latency * etoi(MenuType::SIZE)), CallFunc::create(CC_CALLBACK_0(TitleMainMenuLayer::onEnterAnimationFinished, this))));
 	
     this->runAction(Sequence::create(
-                                     TargetedAction::create(title1, FadeIn::create(1.f)),
-                                     TargetedAction::create(title2,FadeTo::create(1.f, 200)),
-                                     TargetedAction::create(title3,FadeIn::create(1.f)),
-                                    nullptr
-                    ));
+        TargetedAction::create(title1, FadeIn::create(0.8f)),
+        TargetedAction::create(title2, FadeTo::create(0.8f, 200)),
+        TargetedAction::create(title3, FadeIn::create(0.8f)),
+        Spawn::create(
+            TargetedAction::create(titleNumber, FadeIn::create(0.8f)),
+            TargetedAction::create(titleNumber, EaseCubicActionOut::create(ScaleTo::create(0.6f, titleNumberScale))),
+            nullptr
+        ),
+        nullptr
+    ));
     
     // copyright
     Label* copyright {Label::createWithTTF("Copyright (C) 2014-2016 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
@@ -119,29 +133,6 @@ bool TitleMainMenuLayer::init()
     opr->setOpacity(0);
     this->addChild(opr);
     opr->runAction(FadeTo::create(1.2f, 200));
-    
-    // クリア時の立ち絵
-    float scale = 0.3f;
-    if (PlayerDataManager::getInstance()->getGlobalData()->getClearCount() > 0)
-    {
-        Sprite* left {Sprite::createWithSpriteFrameName("yuki_s_1.png")};
-        left->setScale(scale);
-        left->setOpacity(0);
-        left->setPosition(left->getContentSize().width * scale / 2, left->getContentSize().height * scale / 2 + copyright->getContentSize().height * 2);
-        this->addChild(left);
-        left->runAction(Sequence::createWithTwoActions(DelayTime::create(2.f), FadeTo::create(2.f, 128)));
-    }
-    
-    // トゥルーエンドを見た場合
-    if (PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(8))
-    {
-        Sprite* right {Sprite::createWithSpriteFrameName("magoichi_s_1.png")};
-        right->setScale(scale);
-        right->setOpacity(0);
-        right->setPosition(WINDOW_WIDTH - right->getContentSize().width * scale / 2, right->getContentSize().height * scale / 2 + copyright->getContentSize().height * 2);
-        this->addChild(right);
-        right->runAction(Sequence::createWithTwoActions(DelayTime::create(4.f), FadeTo::create(2.f, 128)));
-    }
     
 	return true;
 }

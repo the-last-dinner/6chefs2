@@ -12,6 +12,7 @@
 #include "define.h"
 
 class DungeonScene;
+class Battle;
 
 class DungeonSceneEventHandler : public Ref
 {
@@ -31,8 +32,8 @@ private:
     
 public:
     void onLostMainCharacterHP();
-    void onBattleStart();
-    void onBattleFinished();
+    void onBattleStart(Battle* battle);
+    void onBattleFinished(Battle* battle);
 };
 
 #endif /* DungeonSceneEventHandler_h */

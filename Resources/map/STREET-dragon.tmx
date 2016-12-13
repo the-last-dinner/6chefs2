@@ -9,6 +9,29 @@
  <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" width="480" height="1520"/>
  </tileset>
+ <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="man.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Base" width="22" height="110">
   <properties>
    <property name="z" value="-11"/>
@@ -30,7 +53,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztmCsOAkEQRPsAS/b+pwABgk9AgAUBgr+A4FixCBAgliKDw06RVFLvAE9Muqu7J8IYYxLDMmJU5vdu4dwRvOMiYlLk93bh7BG8SzhXBG8N543gZb0vy2s0UcudKWp3RqjfE5xngrf5OFv5vaw+fsL5cj6YL2r50Ebtdgj1O4dzQfBe4ay8R9H2qD6cA4J3DeeG4L3D+SB43RcJ14NRRm0eew4lfLckWPnrXE+w7sIDnEehe1Mtd9TyzGiitj/sMYMuhDmk5jXG/KKWZ/6HMcqo9du/eAOdKmu8
+   eJzt2L0OAUEYheHvAlb2/q+CgsJPKEhoKCj8hILENhQUFBQcGZ12juQk572Ap9jMfDOzEc45l+qWEb0yv7uGuSG4/SJiUOR3mzBbBHcOc0FwLzCvBJf1fVmu00xt7gyxdkeE9buHeSC4r49Zy++y9vED5tPzwX1Tmw91rN0GYf1OYc4I7gnm2fco2j2qDbNDcJcwVwT3BvNOcL0vUl4PTjm189jnUMrvlhRr/nqup1jvwi3MndB7U23uqM0zp5na/WGMM2hCOIdY7hFmRXCdc7+pzTP/h3HKqe23f/UGzvVraA==
   </data>
  </layer>
  <layer name="MonoUe2" width="22" height="110">
@@ -49,6 +72,14 @@
    eJzt1rENg0AQRcHLIKMK3Ag0YhqBRkytXmlDJMuBFwk8U8DL7t+2xj/rhtb64ffdMZqPgu4Uzbmg+4zmUtBdo7kVdF/R3Au6cAa7k+wOHFXtQ9U7tjvJ7gDci3s9+TcB4Hvuh+R+AM5mz5I9uyb3Q/Le+OQNln4gDg==
   </data>
  </layer>
+ <layer name="manhall" width="22" height="110">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzEkNACAQBLARsf7NcegACyTwIGkFNAEAAACAc62SXvffsc/54AUAAACAHywOhQPj
+  </data>
+ </layer>
  <objectgroup name="collision">
   <object id="2" x="240" y="160" width="112" height="1232"/>
   <object id="3" x="240" y="1472" width="112" height="288"/>
@@ -56,36 +87,6 @@
   <object id="5" x="0" y="576" width="80" height="1184"/>
   <object id="6" x="0" y="112" width="352" height="48"/>
   <object id="32" x="80" y="1728" width="160" height="48"/>
- </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="25" x="160" y="1040" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="2"/>
-    <property name="EventID" value="7"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1025"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="26" x="96" y="1040" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="3"/>
-    <property name="EventID" value="8"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1026"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="37" x="192" y="1280" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="13"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1030"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="event">
   <object id="7" x="80" y="160" width="16" height="16">
@@ -209,7 +210,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="36" x="128" y="848" width="32" height="32">
+  <object id="36" x="112" y="832" width="64" height="64">
    <properties>
     <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>

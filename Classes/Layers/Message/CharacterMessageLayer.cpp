@@ -15,6 +15,8 @@ const float CharacterMessageLayer::TOP_MARGIN { 50 };
 const float CharacterMessageLayer::LEFT_MARGIN {60};
 const float CharacterMessageLayer::H_MARGIN_S {30};
 const int CharacterMessageLayer::REACTION_EFFECT_ZORDER { -1 };
+const int CharacterMessageLayer::MAIN_FRAME_TAG { 1 };
+const int CharacterMessageLayer::NAME_FRAME_TAG { 2 };
 
 // コンストラクタ
 CharacterMessageLayer::CharacterMessageLayer(){FUNCLOG}
@@ -35,13 +37,13 @@ bool CharacterMessageLayer::init(const queue<CharacterMessageData*>& datas, func
     this->defaultMFramePosition = Point(WINDOW_WIDTH / 2, mFrameSize.height / 2 + 10);
     mainFrame->setPosition(this->defaultMFramePosition); // 30は縦方向の調整用
     mainFrame->setCascadeOpacityEnabled(true);
-    this->addChild(mainFrame);
+    this->addChild(mainFrame, 0, MAIN_FRAME_TAG);
     this->frame = mainFrame;
     
     // キャラクター名用枠を生成
     this->nameFrame = ui::Scale9Sprite::createWithSpriteFrameName("cm_frame_s.png", Rect(20, 0, 220, 68));
     this->nameFrame->setCascadeOpacityEnabled(true);
-    this->addChild(this->nameFrame);
+    this->addChild(this->nameFrame, 0, NAME_FRAME_TAG);
     
     this->setCascadeOpacityEnabled(true);
     
@@ -90,17 +92,27 @@ Label* CharacterMessageLayer::createMessage()
         this->charaImg->removeFromParent();
         this->charaImg = nullptr;
     }
-    string charaImgName = CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + ((data->isMiniChara())? "_m_" : "_s_") + to_string(data->getImgId()) + ".png" ;
-    Point charaImgPoint = (data->isMiniChara())? Point(WINDOW_WIDTH * 4 / 5, WINDOW_HEIGHT * 7 / 40) : Point(WINDOW_WIDTH * 3 / 4, 0);
-    
-	if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(charaImgName))
-    {
-        Sprite* img { Sprite::createWithSpriteFrameName(charaImgName)};
-        img->setPosition(charaImgPoint);
-        img->setLocalZOrder((data->isMiniChara()) ? 1 : -1);
+
+    if(data->getImageName() == "") {
+        string charaImgName = CsvDataManager::getInstance()->getCharacterData()->getFileName(data->getCharaId()) + ((data->isMiniChara())? "_m_" : "_s_") + to_string(data->getImgId()) + ".png" ;
+        Point charaImgPoint = (data->isMiniChara())? Point(WINDOW_WIDTH * 4 / 5, WINDOW_HEIGHT * 7 / 40) : Point(WINDOW_WIDTH * 3 / 4, 0);
+        
+        if(data->getCharaId() != -1 && SpriteFrameCache::getInstance()->getSpriteFrameByName(charaImgName))
+        {
+            Sprite* img { Sprite::createWithSpriteFrameName(charaImgName)};
+            img->setPosition(charaImgPoint);
+            img->setLocalZOrder((data->isMiniChara()) ? 1 : -1);
+            this->addChild(img);
+            this->charaImg = img;
+        }
+    } else {
+        Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + data->getImageName())};
+        img->setPosition(WINDOW_CENTER);
+        img->setLocalZOrder((data->isImageOnly()) ? 1 : -1);
         this->addChild(img);
-        this->charaImg = img;
-	}
+    }
+    
+    
 	// キャラクター名
 	this->nameFrame->removeAllChildren();
 	Label* name { Label::createWithTTF(data->getCharaName(), "fonts/cinecaption2.28.ttf", 26.f)};
@@ -125,6 +137,12 @@ Label* CharacterMessageLayer::createMessage()
         CC_SAFE_RELEASE(this->datas.front());
         this->datas.pop();
     }
+    
+    if(data->isImageOnly()){
+        this->removeChildByTag(MAIN_FRAME_TAG);
+        this->removeChildByTag(NAME_FRAME_TAG);
+        _closed = true;
+    }
 
     return message;
 }
@@ -134,3 +152,5 @@ bool CharacterMessageLayer::hasNextPage()
 {
     return !this->datas.empty();
 }
+
+

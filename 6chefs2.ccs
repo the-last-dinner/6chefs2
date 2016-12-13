@@ -4,6 +4,87 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="character">
+          <PlistImageFolder Image="boy.png" PListFile="boy.plist" Name=".boy_PList.Dir">
+            <PlistImageFile Name="boy_0_0.png" Key="boy_0_0.png" />
+            <PlistImageFile Name="boy_0_1.png" Key="boy_0_1.png" />
+            <PlistImageFile Name="boy_0_2.png" Key="boy_0_2.png" />
+            <PlistImageFile Name="boy_1_0.png" Key="boy_1_0.png" />
+            <PlistImageFile Name="boy_1_1.png" Key="boy_1_1.png" />
+            <PlistImageFile Name="boy_1_2.png" Key="boy_1_2.png" />
+            <PlistImageFile Name="boy_2_0.png" Key="boy_2_0.png" />
+            <PlistImageFile Name="boy_2_1.png" Key="boy_2_1.png" />
+            <PlistImageFile Name="boy_2_2.png" Key="boy_2_2.png" />
+            <PlistImageFile Name="boy_3_0.png" Key="boy_3_0.png" />
+            <PlistImageFile Name="boy_3_1.png" Key="boy_3_1.png" />
+            <PlistImageFile Name="boy_3_2.png" Key="boy_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="clerk.png" PListFile="clerk.plist" Name=".clerk_PList.Dir">
+            <PlistImageFile Name="clerk_0_0.png" Key="clerk_0_0.png" />
+            <PlistImageFile Name="clerk_0_1.png" Key="clerk_0_1.png" />
+            <PlistImageFile Name="clerk_0_2.png" Key="clerk_0_2.png" />
+            <PlistImageFile Name="clerk_1_0.png" Key="clerk_1_0.png" />
+            <PlistImageFile Name="clerk_1_1.png" Key="clerk_1_1.png" />
+            <PlistImageFile Name="clerk_1_2.png" Key="clerk_1_2.png" />
+            <PlistImageFile Name="clerk_2_0.png" Key="clerk_2_0.png" />
+            <PlistImageFile Name="clerk_2_1.png" Key="clerk_2_1.png" />
+            <PlistImageFile Name="clerk_2_2.png" Key="clerk_2_2.png" />
+            <PlistImageFile Name="clerk_3_0.png" Key="clerk_3_0.png" />
+            <PlistImageFile Name="clerk_3_1.png" Key="clerk_3_1.png" />
+            <PlistImageFile Name="clerk_3_2.png" Key="clerk_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="Ctaihou.png" PListFile="Ctaihou.plist" Name=".Ctaihou_PList.Dir">
+            <PlistImageFile Name="Ctaihou_0_0.png" Key="Ctaihou_0_0.png" />
+            <PlistImageFile Name="Ctaihou_0_1.png" Key="Ctaihou_0_1.png" />
+            <PlistImageFile Name="Ctaihou_0_2.png" Key="Ctaihou_0_2.png" />
+            <PlistImageFile Name="Ctaihou_1_0.png" Key="Ctaihou_1_0.png" />
+            <PlistImageFile Name="Ctaihou_1_1.png" Key="Ctaihou_1_1.png" />
+            <PlistImageFile Name="Ctaihou_1_2.png" Key="Ctaihou_1_2.png" />
+            <PlistImageFile Name="Ctaihou_2_0.png" Key="Ctaihou_2_0.png" />
+            <PlistImageFile Name="Ctaihou_2_1.png" Key="Ctaihou_2_1.png" />
+            <PlistImageFile Name="Ctaihou_2_2.png" Key="Ctaihou_2_2.png" />
+            <PlistImageFile Name="Ctaihou_3_0.png" Key="Ctaihou_3_0.png" />
+            <PlistImageFile Name="Ctaihou_3_1.png" Key="Ctaihou_3_1.png" />
+            <PlistImageFile Name="Ctaihou_3_2.png" Key="Ctaihou_3_2.png" />
+            <PlistImageFile Name="Ctaihou_m_0.png" Key="Ctaihou_m_0.png" />
+            <PlistImageFile Name="Ctaihou_m_1.png" Key="Ctaihou_m_1.png" />
+            <PlistImageFile Name="Ctaihou_m_2.png" Key="Ctaihou_m_2.png" />
+            <PlistImageFile Name="Ctaihou_m_3.png" Key="Ctaihou_m_3.png" />
+            <PlistImageFile Name="Ctaihou_m_4.png" Key="Ctaihou_m_4.png" />
+            <PlistImageFile Name="Ctaihou_m_5.png" Key="Ctaihou_m_5.png" />
+            <PlistImageFile Name="Ctaihou_m_6.png" Key="Ctaihou_m_6.png" />
+            <PlistImageFile Name="Ctaihou_m_7.png" Key="Ctaihou_m_7.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="daigoro.png" PListFile="daigoro.plist" Name=".daigoro_PList.Dir">
+            <PlistImageFile Name="daigoro_0_0.png" Key="daigoro_0_0.png" />
+            <PlistImageFile Name="daigoro_0_1.png" Key="daigoro_0_1.png" />
+            <PlistImageFile Name="daigoro_0_2.png" Key="daigoro_0_2.png" />
+            <PlistImageFile Name="daigoro_1_0.png" Key="daigoro_1_0.png" />
+            <PlistImageFile Name="daigoro_1_1.png" Key="daigoro_1_1.png" />
+            <PlistImageFile Name="daigoro_1_2.png" Key="daigoro_1_2.png" />
+            <PlistImageFile Name="daigoro_2_0.png" Key="daigoro_2_0.png" />
+            <PlistImageFile Name="daigoro_2_0_0.png" Key="daigoro_2_0_0.png" />
+            <PlistImageFile Name="daigoro_2_0_1.png" Key="daigoro_2_0_1.png" />
+            <PlistImageFile Name="daigoro_2_1.png" Key="daigoro_2_1.png" />
+            <PlistImageFile Name="daigoro_2_2.png" Key="daigoro_2_2.png" />
+            <PlistImageFile Name="daigoro_3_0.png" Key="daigoro_3_0.png" />
+            <PlistImageFile Name="daigoro_3_1.png" Key="daigoro_3_1.png" />
+            <PlistImageFile Name="daigoro_3_2.png" Key="daigoro_3_2.png" />
+            <PlistImageFile Name="daigoro_a_0_0.png" Key="daigoro_a_0_0.png" />
+            <PlistImageFile Name="daigoro_a_0_1.png" Key="daigoro_a_0_1.png" />
+            <PlistImageFile Name="daigoro_a_1_0.png" Key="daigoro_a_1_0.png" />
+            <PlistImageFile Name="daigoro_a_1_1.png" Key="daigoro_a_1_1.png" />
+            <PlistImageFile Name="daigoro_a_3_0.png" Key="daigoro_a_3_0.png" />
+            <PlistImageFile Name="daigoro_a_3_1.png" Key="daigoro_a_3_1.png" />
+            <PlistImageFile Name="daigoro_s_0.png" Key="daigoro_s_0.png" />
+            <PlistImageFile Name="daigoro_s_1.png" Key="daigoro_s_1.png" />
+            <PlistImageFile Name="daigoro_s_2.png" Key="daigoro_s_2.png" />
+            <PlistImageFile Name="daigoro_s_3.png" Key="daigoro_s_3.png" />
+            <PlistImageFile Name="daigoro_s_4.png" Key="daigoro_s_4.png" />
+            <PlistImageFile Name="daigoro_s_5.png" Key="daigoro_s_5.png" />
+            <PlistImageFile Name="daigoro_s_6.png" Key="daigoro_s_6.png" />
+            <PlistImageFile Name="daigoro_s_7.png" Key="daigoro_s_7.png" />
+            <PlistImageFile Name="effect_kick.png" Key="effect_kick.png" />
+          </PlistImageFolder>
           <PlistImageFolder Image="dandan.png" PListFile="dandan.plist" Name=".dandan_PList.Dir">
             <PlistImageFile Name="dandan_0_0.png" Key="dandan_0_0.png" />
             <PlistImageFile Name="dandan_0_1.png" Key="dandan_0_1.png" />
@@ -20,6 +101,124 @@
             <PlistImageFile Name="dandan_s_0.png" Key="dandan_s_0.png" />
             <PlistImageFile Name="dandan_s_1.png" Key="dandan_s_1.png" />
             <PlistImageFile Name="dandan_s_2.png" Key="dandan_s_2.png" />
+            <PlistImageFile Name="dandan_s_3.png" Key="dandan_s_3.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="fujin.png" PListFile="fujin.plist" Name=".fujin_PList.Dir">
+            <PlistImageFile Name="fujin_0_0.png" Key="fujin_0_0.png" />
+            <PlistImageFile Name="fujin_0_1.png" Key="fujin_0_1.png" />
+            <PlistImageFile Name="fujin_0_2.png" Key="fujin_0_2.png" />
+            <PlistImageFile Name="fujin_1_0.png" Key="fujin_1_0.png" />
+            <PlistImageFile Name="fujin_1_1.png" Key="fujin_1_1.png" />
+            <PlistImageFile Name="fujin_1_2.png" Key="fujin_1_2.png" />
+            <PlistImageFile Name="fujin_2_0.png" Key="fujin_2_0.png" />
+            <PlistImageFile Name="fujin_2_1.png" Key="fujin_2_1.png" />
+            <PlistImageFile Name="fujin_2_2.png" Key="fujin_2_2.png" />
+            <PlistImageFile Name="fujin_3_0.png" Key="fujin_3_0.png" />
+            <PlistImageFile Name="fujin_3_1.png" Key="fujin_3_1.png" />
+            <PlistImageFile Name="fujin_3_2.png" Key="fujin_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="gakuran_daigoro.png" PListFile="gakuran_daigoro.plist" Name=".gakuran_daigoro_PList.Dir">
+            <PlistImageFile Name="gakuran_daigoro_0_0.png" Key="gakuran_daigoro_0_0.png" />
+            <PlistImageFile Name="gakuran_daigoro_0_1.png" Key="gakuran_daigoro_0_1.png" />
+            <PlistImageFile Name="gakuran_daigoro_0_2.png" Key="gakuran_daigoro_0_2.png" />
+            <PlistImageFile Name="gakuran_daigoro_1_0.png" Key="gakuran_daigoro_1_0.png" />
+            <PlistImageFile Name="gakuran_daigoro_1_1.png" Key="gakuran_daigoro_1_1.png" />
+            <PlistImageFile Name="gakuran_daigoro_1_2.png" Key="gakuran_daigoro_1_2.png" />
+            <PlistImageFile Name="gakuran_daigoro_2_0.png" Key="gakuran_daigoro_2_0.png" />
+            <PlistImageFile Name="gakuran_daigoro_2_1.png" Key="gakuran_daigoro_2_1.png" />
+            <PlistImageFile Name="gakuran_daigoro_2_2.png" Key="gakuran_daigoro_2_2.png" />
+            <PlistImageFile Name="gakuran_daigoro_3_0.png" Key="gakuran_daigoro_3_0.png" />
+            <PlistImageFile Name="gakuran_daigoro_3_1.png" Key="gakuran_daigoro_3_1.png" />
+            <PlistImageFile Name="gakuran_daigoro_3_2.png" Key="gakuran_daigoro_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="girl.png" PListFile="girl.plist" Name=".girl_PList.Dir">
+            <PlistImageFile Name="girl_0_0.png" Key="girl_0_0.png" />
+            <PlistImageFile Name="girl_0_1.png" Key="girl_0_1.png" />
+            <PlistImageFile Name="girl_0_2.png" Key="girl_0_2.png" />
+            <PlistImageFile Name="girl_1_0.png" Key="girl_1_0.png" />
+            <PlistImageFile Name="girl_1_1.png" Key="girl_1_1.png" />
+            <PlistImageFile Name="girl_1_2.png" Key="girl_1_2.png" />
+            <PlistImageFile Name="girl_2_0.png" Key="girl_2_0.png" />
+            <PlistImageFile Name="girl_2_1.png" Key="girl_2_1.png" />
+            <PlistImageFile Name="girl_2_2.png" Key="girl_2_2.png" />
+            <PlistImageFile Name="girl_3_0.png" Key="girl_3_0.png" />
+            <PlistImageFile Name="girl_3_1.png" Key="girl_3_1.png" />
+            <PlistImageFile Name="girl_3_2.png" Key="girl_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="kenshin.png" PListFile="kenshin.plist" Name=".kenshin_PList.Dir">
+            <PlistImageFile Name="kenshin_0_0.png" Key="kenshin_0_0.png" />
+            <PlistImageFile Name="kenshin_0_1.png" Key="kenshin_0_1.png" />
+            <PlistImageFile Name="kenshin_0_2.png" Key="kenshin_0_2.png" />
+            <PlistImageFile Name="kenshin_1_0.png" Key="kenshin_1_0.png" />
+            <PlistImageFile Name="kenshin_1_1.png" Key="kenshin_1_1.png" />
+            <PlistImageFile Name="kenshin_1_2.png" Key="kenshin_1_2.png" />
+            <PlistImageFile Name="kenshin_2_0.png" Key="kenshin_2_0.png" />
+            <PlistImageFile Name="kenshin_2_1.png" Key="kenshin_2_1.png" />
+            <PlistImageFile Name="kenshin_2_2.png" Key="kenshin_2_2.png" />
+            <PlistImageFile Name="kenshin_3_0.png" Key="kenshin_3_0.png" />
+            <PlistImageFile Name="kenshin_3_1.png" Key="kenshin_3_1.png" />
+            <PlistImageFile Name="kenshin_3_2.png" Key="kenshin_3_2.png" />
+            <PlistImageFile Name="kenshin_a_0_0.png" Key="kenshin_a_0_0.png" />
+            <PlistImageFile Name="kenshin_a_0_1.png" Key="kenshin_a_0_1.png" />
+            <PlistImageFile Name="kenshin_a_0_2.png" Key="kenshin_a_0_2.png" />
+            <PlistImageFile Name="kenshin_a_1_0.png" Key="kenshin_a_1_0.png" />
+            <PlistImageFile Name="kenshin_a_1_1.png" Key="kenshin_a_1_1.png" />
+            <PlistImageFile Name="kenshin_a_1_2.png" Key="kenshin_a_1_2.png" />
+            <PlistImageFile Name="kenshin_a_2_0.png" Key="kenshin_a_2_0.png" />
+            <PlistImageFile Name="kenshin_a_2_1.png" Key="kenshin_a_2_1.png" />
+            <PlistImageFile Name="kenshin_a_2_2.png" Key="kenshin_a_2_2.png" />
+            <PlistImageFile Name="kenshin_a__3_0.png" Key="kenshin_a__3_0.png" />
+            <PlistImageFile Name="kenshin_a__3_1.png" Key="kenshin_a__3_1.png" />
+            <PlistImageFile Name="kenshin_a__3_2.png" Key="kenshin_a__3_2.png" />
+            <PlistImageFile Name="kenshin_s_0.png" Key="kenshin_s_0.png" />
+            <PlistImageFile Name="kenshin_s_1.png" Key="kenshin_s_1.png" />
+            <PlistImageFile Name="kenshin_s_2.png" Key="kenshin_s_2.png" />
+            <PlistImageFile Name="kenshin_s_3.png" Key="kenshin_s_3.png" />
+            <PlistImageFile Name="kenshin_s_4.png" Key="kenshin_s_4.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
+            <PlistImageFile Name="effect_1.png" Key="effect_1.png" />
+            <PlistImageFile Name="effect_2.png" Key="effect_2.png" />
+            <PlistImageFile Name="kyoujin_0_0.png" Key="kyoujin_0_0.png" />
+            <PlistImageFile Name="kyoujin_0_1.png" Key="kyoujin_0_1.png" />
+            <PlistImageFile Name="kyoujin_0_2.png" Key="kyoujin_0_2.png" />
+            <PlistImageFile Name="kyoujin_1_0.png" Key="kyoujin_1_0.png" />
+            <PlistImageFile Name="kyoujin_1_1.png" Key="kyoujin_1_1.png" />
+            <PlistImageFile Name="kyoujin_1_2.png" Key="kyoujin_1_2.png" />
+            <PlistImageFile Name="kyoujin_2_0.png" Key="kyoujin_2_0.png" />
+            <PlistImageFile Name="kyoujin_2_1.png" Key="kyoujin_2_1.png" />
+            <PlistImageFile Name="kyoujin_2_2.png" Key="kyoujin_2_2.png" />
+            <PlistImageFile Name="kyoujin_3_0.png" Key="kyoujin_3_0.png" />
+            <PlistImageFile Name="kyoujin_3_1.png" Key="kyoujin_3_1.png" />
+            <PlistImageFile Name="kyoujin_3_2.png" Key="kyoujin_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="lady.png" PListFile="lady.plist" Name=".lady_PList.Dir">
+            <PlistImageFile Name="lady_0_0.png" Key="lady_0_0.png" />
+            <PlistImageFile Name="lady_0_1.png" Key="lady_0_1.png" />
+            <PlistImageFile Name="lady_0_2.png" Key="lady_0_2.png" />
+            <PlistImageFile Name="lady_1_0.png" Key="lady_1_0.png" />
+            <PlistImageFile Name="lady_1_1.png" Key="lady_1_1.png" />
+            <PlistImageFile Name="lady_1_2.png" Key="lady_1_2.png" />
+            <PlistImageFile Name="lady_2_0.png" Key="lady_2_0.png" />
+            <PlistImageFile Name="lady_2_1.png" Key="lady_2_1.png" />
+            <PlistImageFile Name="lady_2_2.png" Key="lady_2_2.png" />
+            <PlistImageFile Name="lady_3_0.png" Key="lady_3_0.png" />
+            <PlistImageFile Name="lady_3_1.png" Key="lady_3_1.png" />
+            <PlistImageFile Name="lady_3_2.png" Key="lady_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="mafia.png" PListFile="mafia.plist" Name=".mafia_PList.Dir">
+            <PlistImageFile Name="mafia_0_0.png" Key="mafia_0_0.png" />
+            <PlistImageFile Name="mafia_0_1.png" Key="mafia_0_1.png" />
+            <PlistImageFile Name="mafia_0_2.png" Key="mafia_0_2.png" />
+            <PlistImageFile Name="mafia_1_0.png" Key="mafia_1_0.png" />
+            <PlistImageFile Name="mafia_1_1.png" Key="mafia_1_1.png" />
+            <PlistImageFile Name="mafia_1_2.png" Key="mafia_1_2.png" />
+            <PlistImageFile Name="mafia_2_0.png" Key="mafia_2_0.png" />
+            <PlistImageFile Name="mafia_2_1.png" Key="mafia_2_1.png" />
+            <PlistImageFile Name="mafia_2_2.png" Key="mafia_2_2.png" />
+            <PlistImageFile Name="mafia_3_0.png" Key="mafia_3_0.png" />
+            <PlistImageFile Name="mafia_3_1.png" Key="mafia_3_1.png" />
+            <PlistImageFile Name="mafia_3_2.png" Key="mafia_3_2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="magoichi.png" PListFile="magoichi.plist" Name=".magoichi_PList.Dir">
             <PlistImageFile Name="magoichi_0_0.png" Key="magoichi_0_0.png" />
@@ -38,6 +237,37 @@
             <PlistImageFile Name="magoichi_s_1.png" Key="magoichi_s_1.png" />
             <PlistImageFile Name="magoichi_s_2.png" Key="magoichi_s_2.png" />
             <PlistImageFile Name="magoichi_s_3.png" Key="magoichi_s_3.png" />
+            <PlistImageFile Name="magoichi_s_4.png" Key="magoichi_s_4.png" />
+            <PlistImageFile Name="swim_magoichi_0_0.png" Key="swim_magoichi_0_0.png" />
+            <PlistImageFile Name="swim_magoichi_0_1.png" Key="swim_magoichi_0_1.png" />
+            <PlistImageFile Name="swim_magoichi_0_2.png" Key="swim_magoichi_0_2.png" />
+            <PlistImageFile Name="swim_magoichi_1_0.png" Key="swim_magoichi_1_0.png" />
+            <PlistImageFile Name="swim_magoichi_1_1.png" Key="swim_magoichi_1_1.png" />
+            <PlistImageFile Name="swim_magoichi_1_2.png" Key="swim_magoichi_1_2.png" />
+            <PlistImageFile Name="swim_magoichi_2_0.png" Key="swim_magoichi_2_0.png" />
+            <PlistImageFile Name="swim_magoichi_2_1.png" Key="swim_magoichi_2_1.png" />
+            <PlistImageFile Name="swim_magoichi_2_2.png" Key="swim_magoichi_2_2.png" />
+            <PlistImageFile Name="swim_magoichi_3_0.png" Key="swim_magoichi_3_0.png" />
+            <PlistImageFile Name="swim_magoichi_3_1.png" Key="swim_magoichi_3_1.png" />
+            <PlistImageFile Name="swim_magoichi_3_2.png" Key="swim_magoichi_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="magoichi1.png" PListFile="magoichi1.plist" Name=".magoichi1_PList.Dir">
+            <PlistImageFile Name="magoichi1_0_0.png" Key="magoichi1_0_0.png" />
+            <PlistImageFile Name="magoichi1_0_1.png" Key="magoichi1_0_1.png" />
+            <PlistImageFile Name="magoichi1_0_2.png" Key="magoichi1_0_2.png" />
+            <PlistImageFile Name="magoichi1_1_0.png" Key="magoichi1_1_0.png" />
+            <PlistImageFile Name="magoichi1_1_1.png" Key="magoichi1_1_1.png" />
+            <PlistImageFile Name="magoichi1_1_2.png" Key="magoichi1_1_2.png" />
+            <PlistImageFile Name="magoichi1_2_0.png" Key="magoichi1_2_0.png" />
+            <PlistImageFile Name="magoichi1_2_1.png" Key="magoichi1_2_1.png" />
+            <PlistImageFile Name="magoichi1_2_2.png" Key="magoichi1_2_2.png" />
+            <PlistImageFile Name="magoichi1_3_0.png" Key="magoichi1_3_0.png" />
+            <PlistImageFile Name="magoichi1_3_1.png" Key="magoichi1_3_1.png" />
+            <PlistImageFile Name="magoichi1_3_2.png" Key="magoichi1_3_2.png" />
+            <PlistImageFile Name="magoichi1_s_0.png" Key="magoichi1_s_0.png" />
+            <PlistImageFile Name="magoichi1_s_1.png" Key="magoichi1_s_1.png" />
+            <PlistImageFile Name="magoichi1_s_2.png" Key="magoichi1_s_2.png" />
+            <PlistImageFile Name="magoichi1_s_3.png" Key="magoichi1_s_3.png" />
             <PlistImageFile Name="swim_magoichi_0_0.png" Key="swim_magoichi_0_0.png" />
             <PlistImageFile Name="swim_magoichi_0_1.png" Key="swim_magoichi_0_1.png" />
             <PlistImageFile Name="swim_magoichi_0_2.png" Key="swim_magoichi_0_2.png" />
@@ -67,6 +297,8 @@
             <PlistImageFile Name="manaka_s_0.png" Key="manaka_s_0.png" />
             <PlistImageFile Name="manaka_s_1.png" Key="manaka_s_1.png" />
             <PlistImageFile Name="manaka_s_2.png" Key="manaka_s_2.png" />
+            <PlistImageFile Name="manaka_s_3.png" Key="manaka_s_3.png" />
+            <PlistImageFile Name="manaka_s_4.png" Key="manaka_s_4.png" />
             <PlistImageFile Name="swim_manaka_0_0.png" Key="swim_manaka_0_0.png" />
             <PlistImageFile Name="swim_manaka_0_1.png" Key="swim_manaka_0_1.png" />
             <PlistImageFile Name="swim_manaka_0_2.png" Key="swim_manaka_0_2.png" />
@@ -79,6 +311,63 @@
             <PlistImageFile Name="swim_manaka_3_0.png" Key="swim_manaka_3_0.png" />
             <PlistImageFile Name="swim_manaka_3_1.png" Key="swim_manaka_3_1.png" />
             <PlistImageFile Name="swim_manaka_3_2.png" Key="swim_manaka_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="manaka1.png" PListFile="manaka1.plist" Name=".manaka1_PList.Dir">
+            <PlistImageFile Name="manaka1_0_0.png" Key="manaka1_0_0.png" />
+            <PlistImageFile Name="manaka1_0_1.png" Key="manaka1_0_1.png" />
+            <PlistImageFile Name="manaka1_0_2.png" Key="manaka1_0_2.png" />
+            <PlistImageFile Name="manaka1_1_0.png" Key="manaka1_1_0.png" />
+            <PlistImageFile Name="manaka1_1_1.png" Key="manaka1_1_1.png" />
+            <PlistImageFile Name="manaka1_1_2.png" Key="manaka1_1_2.png" />
+            <PlistImageFile Name="manaka1_2_0.png" Key="manaka1_2_0.png" />
+            <PlistImageFile Name="manaka1_2_1.png" Key="manaka1_2_1.png" />
+            <PlistImageFile Name="manaka1_2_2.png" Key="manaka1_2_2.png" />
+            <PlistImageFile Name="manaka1_3_0.png" Key="manaka1_3_0.png" />
+            <PlistImageFile Name="manaka1_3_1.png" Key="manaka1_3_1.png" />
+            <PlistImageFile Name="manaka1_3_2.png" Key="manaka1_3_2.png" />
+            <PlistImageFile Name="manaka1_s_0.png" Key="manaka1_s_0.png" />
+            <PlistImageFile Name="manaka1_s_1.png" Key="manaka1_s_1.png" />
+            <PlistImageFile Name="manaka1_s_2.png" Key="manaka1_s_2.png" />
+            <PlistImageFile Name="swim_manaka_0_0.png" Key="swim_manaka_0_0.png" />
+            <PlistImageFile Name="swim_manaka_0_1.png" Key="swim_manaka_0_1.png" />
+            <PlistImageFile Name="swim_manaka_0_2.png" Key="swim_manaka_0_2.png" />
+            <PlistImageFile Name="swim_manaka_1_0.png" Key="swim_manaka_1_0.png" />
+            <PlistImageFile Name="swim_manaka_1_1.png" Key="swim_manaka_1_1.png" />
+            <PlistImageFile Name="swim_manaka_1_2.png" Key="swim_manaka_1_2.png" />
+            <PlistImageFile Name="swim_manaka_2_0.png" Key="swim_manaka_2_0.png" />
+            <PlistImageFile Name="swim_manaka_2_1.png" Key="swim_manaka_2_1.png" />
+            <PlistImageFile Name="swim_manaka_2_2.png" Key="swim_manaka_2_2.png" />
+            <PlistImageFile Name="swim_manaka_3_0.png" Key="swim_manaka_3_0.png" />
+            <PlistImageFile Name="swim_manaka_3_1.png" Key="swim_manaka_3_1.png" />
+            <PlistImageFile Name="swim_manaka_3_2.png" Key="swim_manaka_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="merchant1.png" PListFile="merchant1.plist" Name=".merchant1_PList.Dir">
+            <PlistImageFile Name="merchant1_0_0.png" Key="merchant1_0_0.png" />
+            <PlistImageFile Name="merchant1_0_1.png" Key="merchant1_0_1.png" />
+            <PlistImageFile Name="merchant1_0_2.png" Key="merchant1_0_2.png" />
+            <PlistImageFile Name="merchant1_1_0.png" Key="merchant1_1_0.png" />
+            <PlistImageFile Name="merchant1_1_1.png" Key="merchant1_1_1.png" />
+            <PlistImageFile Name="merchant1_1_2.png" Key="merchant1_1_2.png" />
+            <PlistImageFile Name="merchant1_2_0.png" Key="merchant1_2_0.png" />
+            <PlistImageFile Name="merchant1_2_1.png" Key="merchant1_2_1.png" />
+            <PlistImageFile Name="merchant1_2_2.png" Key="merchant1_2_2.png" />
+            <PlistImageFile Name="merchant1_3_0.png" Key="merchant1_3_0.png" />
+            <PlistImageFile Name="merchant1_3_1.png" Key="merchant1_3_1.png" />
+            <PlistImageFile Name="merchant1_3_2.png" Key="merchant1_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="merchant2.png" PListFile="merchant2.plist" Name=".merchant2_PList.Dir">
+            <PlistImageFile Name="merchant2_0_0.png" Key="merchant2_0_0.png" />
+            <PlistImageFile Name="merchant2_0_1.png" Key="merchant2_0_1.png" />
+            <PlistImageFile Name="merchant2_0_2.png" Key="merchant2_0_2.png" />
+            <PlistImageFile Name="merchant2_1_0.png" Key="merchant2_1_0.png" />
+            <PlistImageFile Name="merchant2_1_1.png" Key="merchant2_1_1.png" />
+            <PlistImageFile Name="merchant2_1_2.png" Key="merchant2_1_2.png" />
+            <PlistImageFile Name="merchant2_2_0.png" Key="merchant2_2_0.png" />
+            <PlistImageFile Name="merchant2_2_1.png" Key="merchant2_2_1.png" />
+            <PlistImageFile Name="merchant2_2_2.png" Key="merchant2_2_2.png" />
+            <PlistImageFile Name="merchant2_3_0.png" Key="merchant2_3_0.png" />
+            <PlistImageFile Name="merchant2_3_1.png" Key="merchant2_3_1.png" />
+            <PlistImageFile Name="merchant2_3_2.png" Key="merchant2_3_2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="nadeshiko.png" PListFile="nadeshiko.plist" Name=".nadeshiko_PList.Dir">
             <PlistImageFile Name="nadeshiko_0_0.png" Key="nadeshiko_0_0.png" />
@@ -96,6 +385,39 @@
             <PlistImageFile Name="nadeshiko_s_0.png" Key="nadeshiko_s_0.png" />
             <PlistImageFile Name="nadeshiko_s_1.png" Key="nadeshiko_s_1.png" />
             <PlistImageFile Name="nadeshiko_s_2.png" Key="nadeshiko_s_2.png" />
+            <PlistImageFile Name="nadeshiko_s_3.png" Key="nadeshiko_s_3.png" />
+            <PlistImageFile Name="nadeshiko_s_4.png" Key="nadeshiko_s_4.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="nadeshiko1.png" PListFile="nadeshiko1.plist" Name=".nadeshiko1_PList.Dir">
+            <PlistImageFile Name="nadeshiko1_0_0.png" Key="nadeshiko1_0_0.png" />
+            <PlistImageFile Name="nadeshiko1_0_1.png" Key="nadeshiko1_0_1.png" />
+            <PlistImageFile Name="nadeshiko1_0_2.png" Key="nadeshiko1_0_2.png" />
+            <PlistImageFile Name="nadeshiko1_1_0.png" Key="nadeshiko1_1_0.png" />
+            <PlistImageFile Name="nadeshiko1_1_1.png" Key="nadeshiko1_1_1.png" />
+            <PlistImageFile Name="nadeshiko1_1_2.png" Key="nadeshiko1_1_2.png" />
+            <PlistImageFile Name="nadeshiko1_2_0.png" Key="nadeshiko1_2_0.png" />
+            <PlistImageFile Name="nadeshiko1_2_1.png" Key="nadeshiko1_2_1.png" />
+            <PlistImageFile Name="nadeshiko1_2_2.png" Key="nadeshiko1_2_2.png" />
+            <PlistImageFile Name="nadeshiko1_3_0.png" Key="nadeshiko1_3_0.png" />
+            <PlistImageFile Name="nadeshiko1_3_1.png" Key="nadeshiko1_3_1.png" />
+            <PlistImageFile Name="nadeshiko1_3_2.png" Key="nadeshiko1_3_2.png" />
+            <PlistImageFile Name="nadeshiko1_s_0.png" Key="nadeshiko1_s_0.png" />
+            <PlistImageFile Name="nadeshiko1_s_1.png" Key="nadeshiko1_s_1.png" />
+            <PlistImageFile Name="nadeshiko1_s_2.png" Key="nadeshiko1_s_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="Omanaka.png" PListFile="Omanaka.plist" Name=".Omanaka_PList.Dir">
+            <PlistImageFile Name="Omanaka_0_0.png" Key="Omanaka_0_0.png" />
+            <PlistImageFile Name="Omanaka_0_1.png" Key="Omanaka_0_1.png" />
+            <PlistImageFile Name="Omanaka_0_2.png" Key="Omanaka_0_2.png" />
+            <PlistImageFile Name="Omanaka_1_0.png" Key="Omanaka_1_0.png" />
+            <PlistImageFile Name="Omanaka_1_1.png" Key="Omanaka_1_1.png" />
+            <PlistImageFile Name="Omanaka_1_2.png" Key="Omanaka_1_2.png" />
+            <PlistImageFile Name="Omanaka_2_0.png" Key="Omanaka_2_0.png" />
+            <PlistImageFile Name="Omanaka_2_1.png" Key="Omanaka_2_1.png" />
+            <PlistImageFile Name="Omanaka_2_2.png" Key="Omanaka_2_2.png" />
+            <PlistImageFile Name="Omanaka_3_0.png" Key="Omanaka_3_0.png" />
+            <PlistImageFile Name="Omanaka_3_1.png" Key="Omanaka_3_1.png" />
+            <PlistImageFile Name="Omanaka_3_2.png" Key="Omanaka_3_2.png" />
           </PlistImageFolder>
           <Folder Name="plist">
             <Folder Name="daigoro">
@@ -124,32 +446,6 @@
               <Image Name="daigoro_s_2.png" />
               <Image Name="effect_kick.png" />
             </Folder>
-            <PlistImageFolder Image="daigoro.png" PListFile="daigoro.plist" Name=".daigoro_PList.Dir">
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_0.png" Key="character/plist/daigoro/daigoro_0_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_1.png" Key="character/plist/daigoro/daigoro_0_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_0_2.png" Key="character/plist/daigoro/daigoro_0_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_0.png" Key="character/plist/daigoro/daigoro_1_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_1.png" Key="character/plist/daigoro/daigoro_1_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_1_2.png" Key="character/plist/daigoro/daigoro_1_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_0.png" Key="character/plist/daigoro/daigoro_2_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_1.png" Key="character/plist/daigoro/daigoro_2_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_2_2.png" Key="character/plist/daigoro/daigoro_2_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_0.png" Key="character/plist/daigoro/daigoro_3_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_1.png" Key="character/plist/daigoro/daigoro_3_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_3_2.png" Key="character/plist/daigoro/daigoro_3_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_0.png" Key="character/plist/daigoro/daigoro_a_0_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_0_1.png" Key="character/plist/daigoro/daigoro_a_0_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_0.png" Key="character/plist/daigoro/daigoro_a_1_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_1_1.png" Key="character/plist/daigoro/daigoro_a_1_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_0.png" Key="character/plist/daigoro/daigoro_a_2_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_2_1.png" Key="character/plist/daigoro/daigoro_a_2_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_0.png" Key="character/plist/daigoro/daigoro_a_3_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_a_3_1.png" Key="character/plist/daigoro/daigoro_a_3_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_0.png" Key="character/plist/daigoro/daigoro_s_0.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_1.png" Key="character/plist/daigoro/daigoro_s_1.png" />
-              <PlistImageFile Name="character_plist_daigoro_daigoro_s_2.png" Key="character/plist/daigoro/daigoro_s_2.png" />
-              <PlistImageFile Name="character_plist_daigoro_effect_kick.png" Key="character/plist/daigoro/effect_kick.png" />
-            </PlistImageFolder>
             <Folder Name="kyoujin">
               <Image Name="effect_1.png" />
               <Image Name="effect_2.png" />
@@ -187,46 +483,23 @@
               <Image Name="kyoujin1_3_1.png" />
               <Image Name="kyoujin1_3_2.png" />
             </Folder>
-            <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
-              <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_0.png" Key="character/plist/kyoujin/kyoujin_a_0_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_1.png" Key="character/plist/kyoujin/kyoujin_a_0_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_2.png" Key="character/plist/kyoujin/kyoujin_a_0_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_3.png" Key="character/plist/kyoujin/kyoujin_a_0_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_4.png" Key="character/plist/kyoujin/kyoujin_a_0_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_5.png" Key="character/plist/kyoujin/kyoujin_a_0_5.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_6.png" Key="character/plist/kyoujin/kyoujin_a_0_6.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_0.png" Key="character/plist/kyoujin/kyoujin_a_1_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_1.png" Key="character/plist/kyoujin/kyoujin_a_1_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_2.png" Key="character/plist/kyoujin/kyoujin_a_1_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_3.png" Key="character/plist/kyoujin/kyoujin_a_1_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_4.png" Key="character/plist/kyoujin/kyoujin_a_1_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_0.png" Key="character/plist/kyoujin/kyoujin_a_2_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_1.png" Key="character/plist/kyoujin/kyoujin_a_2_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_2.png" Key="character/plist/kyoujin/kyoujin_a_2_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_3.png" Key="character/plist/kyoujin/kyoujin_a_2_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_4.png" Key="character/plist/kyoujin/kyoujin_a_2_4.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_0.png" Key="character/plist/kyoujin/kyoujin_a_3_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_1.png" Key="character/plist/kyoujin/kyoujin_a_3_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_2.png" Key="character/plist/kyoujin/kyoujin_a_3_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_3.png" Key="character/plist/kyoujin/kyoujin_a_3_3.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_0.png" Key="character/plist/kyoujin/kyoujin1_0_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_1.png" Key="character/plist/kyoujin/kyoujin1_0_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_2.png" Key="character/plist/kyoujin/kyoujin1_0_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_0.png" Key="character/plist/kyoujin/kyoujin1_1_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_1.png" Key="character/plist/kyoujin/kyoujin1_1_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_2.png" Key="character/plist/kyoujin/kyoujin1_1_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_0.png" Key="character/plist/kyoujin/kyoujin1_2_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_1.png" Key="character/plist/kyoujin/kyoujin1_2_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_2.png" Key="character/plist/kyoujin/kyoujin1_2_2.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_0.png" Key="character/plist/kyoujin/kyoujin1_3_0.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
-              <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
-            </PlistImageFolder>
             <PlistInfo Name="daigoro.csi" Type="Plist" />
             <PlistInfo Name="kyoujin.csi" Type="Plist" />
           </Folder>
+          <PlistImageFolder Image="producer.png" PListFile="producer.plist" Name=".producer_PList.Dir">
+            <PlistImageFile Name="producer_0_0.png" Key="producer_0_0.png" />
+            <PlistImageFile Name="producer_0_1.png" Key="producer_0_1.png" />
+            <PlistImageFile Name="producer_0_2.png" Key="producer_0_2.png" />
+            <PlistImageFile Name="producer_1_0.png" Key="producer_1_0.png" />
+            <PlistImageFile Name="producer_1_1.png" Key="producer_1_1.png" />
+            <PlistImageFile Name="producer_1_2.png" Key="producer_1_2.png" />
+            <PlistImageFile Name="producer_2_0.png" Key="producer_2_0.png" />
+            <PlistImageFile Name="producer_2_1.png" Key="producer_2_1.png" />
+            <PlistImageFile Name="producer_2_2.png" Key="producer_2_2.png" />
+            <PlistImageFile Name="producer_3_0.png" Key="producer_3_0.png" />
+            <PlistImageFile Name="producer_3_1.png" Key="producer_3_1.png" />
+            <PlistImageFile Name="producer_3_2.png" Key="producer_3_2.png" />
+          </PlistImageFolder>
           <PlistImageFolder Image="ranmaru.png" PListFile="ranmaru.plist" Name=".ranmaru_PList.Dir">
             <PlistImageFile Name="ranmaru_0_0.png" Key="ranmaru_0_0.png" />
             <PlistImageFile Name="ranmaru_0_1.png" Key="ranmaru_0_1.png" />
@@ -240,9 +513,214 @@
             <PlistImageFile Name="ranmaru_3_0.png" Key="ranmaru_3_0.png" />
             <PlistImageFile Name="ranmaru_3_1.png" Key="ranmaru_3_1.png" />
             <PlistImageFile Name="ranmaru_3_2.png" Key="ranmaru_3_2.png" />
+            <PlistImageFile Name="ranmaru__a_0_1.png" Key="ranmaru__a_0_1.png" />
+            <PlistImageFile Name="ranmaru_a_0_0.png" Key="ranmaru_a_0_0.png" />
+            <PlistImageFile Name="ranmaru_a_1_0.png" Key="ranmaru_a_1_0.png" />
+            <PlistImageFile Name="ranmaru_a_1_1.png" Key="ranmaru_a_1_1.png" />
+            <PlistImageFile Name="ranmaru_a_2_0.png" Key="ranmaru_a_2_0.png" />
+            <PlistImageFile Name="ranmaru_a_2_1.png" Key="ranmaru_a_2_1.png" />
+            <PlistImageFile Name="ranmaru_a_3_0.png" Key="ranmaru_a_3_0.png" />
+            <PlistImageFile Name="ranmaru_a_3_1.png" Key="ranmaru_a_3_1.png" />
             <PlistImageFile Name="ranmaru_s_0.png" Key="ranmaru_s_0.png" />
             <PlistImageFile Name="ranmaru_s_1.png" Key="ranmaru_s_1.png" />
             <PlistImageFile Name="ranmaru_s_2.png" Key="ranmaru_s_2.png" />
+            <PlistImageFile Name="ranmaru_s_3.png" Key="ranmaru_s_3.png" />
+            <PlistImageFile Name="ranmaru_s_4.png" Key="ranmaru_s_4.png" />
+            <PlistImageFile Name="ranmaru_s_5.png" Key="ranmaru_s_5.png" />
+            <PlistImageFile Name="ranmaru_s_6.png" Key="ranmaru_s_6.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="ranmaru1.png" PListFile="ranmaru1.plist" Name=".ranmaru1_PList.Dir">
+            <PlistImageFile Name="ranmaru1_0_0.png" Key="ranmaru1_0_0.png" />
+            <PlistImageFile Name="ranmaru1_0_1.png" Key="ranmaru1_0_1.png" />
+            <PlistImageFile Name="ranmaru1_0_2.png" Key="ranmaru1_0_2.png" />
+            <PlistImageFile Name="ranmaru1_1_0.png" Key="ranmaru1_1_0.png" />
+            <PlistImageFile Name="ranmaru1_1_1.png" Key="ranmaru1_1_1.png" />
+            <PlistImageFile Name="ranmaru1_1_2.png" Key="ranmaru1_1_2.png" />
+            <PlistImageFile Name="ranmaru1_2_0.png" Key="ranmaru1_2_0.png" />
+            <PlistImageFile Name="ranmaru1_2_1.png" Key="ranmaru1_2_1.png" />
+            <PlistImageFile Name="ranmaru1_2_2.png" Key="ranmaru1_2_2.png" />
+            <PlistImageFile Name="ranmaru1_3_0.png" Key="ranmaru1_3_0.png" />
+            <PlistImageFile Name="ranmaru1_3_1.png" Key="ranmaru1_3_1.png" />
+            <PlistImageFile Name="ranmaru1_3_2.png" Key="ranmaru1_3_2.png" />
+            <PlistImageFile Name="ranmaru1_s_0.png" Key="ranmaru1_s_0.png" />
+            <PlistImageFile Name="ranmaru1_s_1.png" Key="ranmaru1_s_1.png" />
+            <PlistImageFile Name="ranmaru1_s_2.png" Key="ranmaru1_s_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="reception.png" PListFile="reception.plist" Name=".reception_PList.Dir">
+            <PlistImageFile Name="reception_0_0.png" Key="reception_0_0.png" />
+            <PlistImageFile Name="reception_0_1.png" Key="reception_0_1.png" />
+            <PlistImageFile Name="reception_0_2.png" Key="reception_0_2.png" />
+            <PlistImageFile Name="reception_1_0.png" Key="reception_1_0.png" />
+            <PlistImageFile Name="reception_1_1.png" Key="reception_1_1.png" />
+            <PlistImageFile Name="reception_1_2.png" Key="reception_1_2.png" />
+            <PlistImageFile Name="reception_2_0.png" Key="reception_2_0.png" />
+            <PlistImageFile Name="reception_2_1.png" Key="reception_2_1.png" />
+            <PlistImageFile Name="reception_2_2.png" Key="reception_2_2.png" />
+            <PlistImageFile Name="reception_3_0.png" Key="reception_3_0.png" />
+            <PlistImageFile Name="reception_3_1.png" Key="reception_3_1.png" />
+            <PlistImageFile Name="reception_3_2.png" Key="reception_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="shituji.png" PListFile="shituji.plist" Name=".shituji_PList.Dir">
+            <PlistImageFile Name="shituji_0_0.png" Key="shituji_0_0.png" />
+            <PlistImageFile Name="shituji_0_1.png" Key="shituji_0_1.png" />
+            <PlistImageFile Name="shituji_0_2.png" Key="shituji_0_2.png" />
+            <PlistImageFile Name="shituji_1_0.png" Key="shituji_1_0.png" />
+            <PlistImageFile Name="shituji_1_1.png" Key="shituji_1_1.png" />
+            <PlistImageFile Name="shituji_1_2.png" Key="shituji_1_2.png" />
+            <PlistImageFile Name="shituji_2_0.png" Key="shituji_2_0.png" />
+            <PlistImageFile Name="shituji_2_1.png" Key="shituji_2_1.png" />
+            <PlistImageFile Name="shituji_2_2.png" Key="shituji_2_2.png" />
+            <PlistImageFile Name="shituji_3_0.png" Key="shituji_3_0.png" />
+            <PlistImageFile Name="shituji_3_1.png" Key="shituji_3_1.png" />
+            <PlistImageFile Name="shituji_3_2.png" Key="shituji_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="syuka.png" PListFile="syuka.plist" Name=".syuka_PList.Dir">
+            <PlistImageFile Name="syuka_0_0.png" Key="syuka_0_0.png" />
+            <PlistImageFile Name="syuka_0_1.png" Key="syuka_0_1.png" />
+            <PlistImageFile Name="syuka_0_2.png" Key="syuka_0_2.png" />
+            <PlistImageFile Name="syuka_1_0.png" Key="syuka_1_0.png" />
+            <PlistImageFile Name="syuka_1_1.png" Key="syuka_1_1.png" />
+            <PlistImageFile Name="syuka_1_2.png" Key="syuka_1_2.png" />
+            <PlistImageFile Name="syuka_2_0.png" Key="syuka_2_0.png" />
+            <PlistImageFile Name="syuka_2_1.png" Key="syuka_2_1.png" />
+            <PlistImageFile Name="syuka_2_2.png" Key="syuka_2_2.png" />
+            <PlistImageFile Name="syuka_3_0.png" Key="syuka_3_0.png" />
+            <PlistImageFile Name="syuka_3_1.png" Key="syuka_3_1.png" />
+            <PlistImageFile Name="syuka_3_2.png" Key="syuka_3_2.png" />
+            <PlistImageFile Name="syuka_s_0.png" Key="syuka_s_0.png" />
+            <PlistImageFile Name="syuka_s_1.png" Key="syuka_s_1.png" />
+            <PlistImageFile Name="syuka_s_2.png" Key="syuka_s_2.png" />
+            <PlistImageFile Name="syuka_s_3.png" Key="syuka_s_3.png" />
+            <PlistImageFile Name="syuka_s_4.png" Key="syuka_s_4.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="taihou.png" PListFile="taihou.plist" Name=".taihou_PList.Dir">
+            <PlistImageFile Name="a1taihou_a_0_0.png" Key="a1taihou_a_0_0.png" />
+            <PlistImageFile Name="a1taihou_a_0_1.png" Key="a1taihou_a_0_1.png" />
+            <PlistImageFile Name="a1taihou_a_0_2.png" Key="a1taihou_a_0_2.png" />
+            <PlistImageFile Name="a1taihou_a_0_3.png" Key="a1taihou_a_0_3.png" />
+            <PlistImageFile Name="a1taihou_a_0_4.png" Key="a1taihou_a_0_4.png" />
+            <PlistImageFile Name="a1taihou_a_0_5.png" Key="a1taihou_a_0_5.png" />
+            <PlistImageFile Name="a1taihou_a_1_0.png" Key="a1taihou_a_1_0.png" />
+            <PlistImageFile Name="a1taihou_a_1_1.png" Key="a1taihou_a_1_1.png" />
+            <PlistImageFile Name="a1taihou_a_1_2.png" Key="a1taihou_a_1_2.png" />
+            <PlistImageFile Name="a1taihou_a_2_0.png" Key="a1taihou_a_2_0.png" />
+            <PlistImageFile Name="a1taihou_a_2_1.png" Key="a1taihou_a_2_1.png" />
+            <PlistImageFile Name="a1taihou_a_2_2.png" Key="a1taihou_a_2_2.png" />
+            <PlistImageFile Name="a1taihou_a_3_0.png" Key="a1taihou_a_3_0.png" />
+            <PlistImageFile Name="a1taihou_a_3_1.png" Key="a1taihou_a_3_1.png" />
+            <PlistImageFile Name="a1taihou_a_3_2.png" Key="a1taihou_a_3_2.png" />
+            <PlistImageFile Name="a1taihou_a_3_4.png" Key="a1taihou_a_3_4.png" />
+            <PlistImageFile Name="a2taihou_a_0_0.png" Key="a2taihou_a_0_0.png" />
+            <PlistImageFile Name="a2taihou_a_0_1.png" Key="a2taihou_a_0_1.png" />
+            <PlistImageFile Name="a2taihou_a_0_2.png" Key="a2taihou_a_0_2.png" />
+            <PlistImageFile Name="a2taihou_a_0_3.png" Key="a2taihou_a_0_3.png" />
+            <PlistImageFile Name="a2taihou_a_0_4.png" Key="a2taihou_a_0_4.png" />
+            <PlistImageFile Name="a2taihou_a_0_5.png" Key="a2taihou_a_0_5.png" />
+            <PlistImageFile Name="a2taihou_a_1_0.png" Key="a2taihou_a_1_0.png" />
+            <PlistImageFile Name="a2taihou_a_1_1.png" Key="a2taihou_a_1_1.png" />
+            <PlistImageFile Name="a2taihou_a_1_2.png" Key="a2taihou_a_1_2.png" />
+            <PlistImageFile Name="a2taihou_a_1_3.png" Key="a2taihou_a_1_3.png" />
+            <PlistImageFile Name="a2taihou_a_1_4.png" Key="a2taihou_a_1_4.png" />
+            <PlistImageFile Name="a2taihou_a_1_5.png" Key="a2taihou_a_1_5.png" />
+            <PlistImageFile Name="a2taihou_a_2_0.png" Key="a2taihou_a_2_0.png" />
+            <PlistImageFile Name="a2taihou_a_2_1.png" Key="a2taihou_a_2_1.png" />
+            <PlistImageFile Name="a2taihou_a_2_2.png" Key="a2taihou_a_2_2.png" />
+            <PlistImageFile Name="a2taihou_a_2_3.png" Key="a2taihou_a_2_3.png" />
+            <PlistImageFile Name="a2taihou_a_2_4.png" Key="a2taihou_a_2_4.png" />
+            <PlistImageFile Name="a2taihou_a_2_5.png" Key="a2taihou_a_2_5.png" />
+            <PlistImageFile Name="a2taihou_a_3_0.png" Key="a2taihou_a_3_0.png" />
+            <PlistImageFile Name="a2taihou_a_3_1.png" Key="a2taihou_a_3_1.png" />
+            <PlistImageFile Name="a2taihou_a_3_2.png" Key="a2taihou_a_3_2.png" />
+            <PlistImageFile Name="a2taihou_a_3_3.png" Key="a2taihou_a_3_3.png" />
+            <PlistImageFile Name="a2taihou_a_3_4.png" Key="a2taihou_a_3_4.png" />
+            <PlistImageFile Name="a2taihou_a_3_5.png" Key="a2taihou_a_3_5.png" />
+            <PlistImageFile Name="taihou_0_0.png" Key="taihou_0_0.png" />
+            <PlistImageFile Name="taihou_0_1.png" Key="taihou_0_1.png" />
+            <PlistImageFile Name="taihou_0_2.png" Key="taihou_0_2.png" />
+            <PlistImageFile Name="taihou_1_0.png" Key="taihou_1_0.png" />
+            <PlistImageFile Name="taihou_1_1.png" Key="taihou_1_1.png" />
+            <PlistImageFile Name="taihou_1_2.png" Key="taihou_1_2.png" />
+            <PlistImageFile Name="taihou_2_0.png" Key="taihou_2_0.png" />
+            <PlistImageFile Name="taihou_2_1.png" Key="taihou_2_1.png" />
+            <PlistImageFile Name="taihou_2_2.png" Key="taihou_2_2.png" />
+            <PlistImageFile Name="taihou_3_0.png" Key="taihou_3_0.png" />
+            <PlistImageFile Name="taihou_3_1.png" Key="taihou_3_1.png" />
+            <PlistImageFile Name="taihou_3_2.png" Key="taihou_3_2.png" />
+            <PlistImageFile Name="taihou_s_0.png" Key="taihou_s_0.png" />
+            <PlistImageFile Name="taihou_s_1.png" Key="taihou_s_1.png" />
+            <PlistImageFile Name="taihou_s_2.png" Key="taihou_s_2.png" />
+            <PlistImageFile Name="taihou_s_3.png" Key="taihou_s_3.png" />
+            <PlistImageFile Name="taihou_s_4.png" Key="taihou_s_4.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="teacher.png" PListFile="teacher.plist" Name=".teacher_PList.Dir">
+            <PlistImageFile Name="teacher_0_0.png" Key="teacher_0_0.png" />
+            <PlistImageFile Name="teacher_0_1.png" Key="teacher_0_1.png" />
+            <PlistImageFile Name="teacher_0_2.png" Key="teacher_0_2.png" />
+            <PlistImageFile Name="teacher_1_0.png" Key="teacher_1_0.png" />
+            <PlistImageFile Name="teacher_1_1.png" Key="teacher_1_1.png" />
+            <PlistImageFile Name="teacher_1_2.png" Key="teacher_1_2.png" />
+            <PlistImageFile Name="teacher_2_0.png" Key="teacher_2_0.png" />
+            <PlistImageFile Name="teacher_2_1.png" Key="teacher_2_1.png" />
+            <PlistImageFile Name="teacher_2_2.png" Key="teacher_2_2.png" />
+            <PlistImageFile Name="teacher_3_0.png" Key="teacher_3_0.png" />
+            <PlistImageFile Name="teacher_3_1.png" Key="teacher_3_1.png" />
+            <PlistImageFile Name="teacher_3_2.png" Key="teacher_3_2.png" />
+            <PlistImageFile Name="teacher_m_0.png" Key="teacher_m_0.png" />
+            <PlistImageFile Name="teacher_m_1.png" Key="teacher_m_1.png" />
+            <PlistImageFile Name="teacher_m_2.png" Key="teacher_m_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="turckchara.png" PListFile="turckchara.plist" Name=".turckchara_PList.Dir">
+            <PlistImageFile Name="turckchara_0_0.png" Key="turckchara_0_0.png" />
+            <PlistImageFile Name="turckchara_0_1.png" Key="turckchara_0_1.png" />
+            <PlistImageFile Name="turckchara_0_2.png" Key="turckchara_0_2.png" />
+            <PlistImageFile Name="turckchara_1_0.png" Key="turckchara_1_0.png" />
+            <PlistImageFile Name="turckchara_1_1.png" Key="turckchara_1_1.png" />
+            <PlistImageFile Name="turckchara_1_2.png" Key="turckchara_1_2.png" />
+            <PlistImageFile Name="turckchara_2_0.png" Key="turckchara_2_0.png" />
+            <PlistImageFile Name="turckchara_2_1.png" Key="turckchara_2_1.png" />
+            <PlistImageFile Name="turckchara_2_2.png" Key="turckchara_2_2.png" />
+            <PlistImageFile Name="turckchara_3_0.png" Key="turckchara_3_0.png" />
+            <PlistImageFile Name="turckchara_3_1.png" Key="turckchara_3_1.png" />
+            <PlistImageFile Name="turckchara_3_2.png" Key="turckchara_3_2.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="yae.png" PListFile="yae.plist" Name=".yae_PList.Dir">
+            <PlistImageFile Name="yae_0_0.png" Key="yae_0_0.png" />
+            <PlistImageFile Name="yae_0_1.png" Key="yae_0_1.png" />
+            <PlistImageFile Name="yae_0_2.png" Key="yae_0_2.png" />
+            <PlistImageFile Name="yae_1_0.png" Key="yae_1_0.png" />
+            <PlistImageFile Name="yae_1_1.png" Key="yae_1_1.png" />
+            <PlistImageFile Name="yae_1_2.png" Key="yae_1_2.png" />
+            <PlistImageFile Name="yae_2_0.png" Key="yae_2_0.png" />
+            <PlistImageFile Name="yae_2_1.png" Key="yae_2_1.png" />
+            <PlistImageFile Name="yae_2_2.png" Key="yae_2_2.png" />
+            <PlistImageFile Name="yae_3_0.png" Key="yae_3_0.png" />
+            <PlistImageFile Name="yae_3_1.png" Key="yae_3_1.png" />
+            <PlistImageFile Name="yae_3_2.png" Key="yae_3_2.png" />
+            <PlistImageFile Name="yae_m_0.png" Key="yae_m_0.png" />
+            <PlistImageFile Name="yae_m_1.png" Key="yae_m_1.png" />
+            <PlistImageFile Name="yae_m_2.png" Key="yae_m_2.png" />
+            <PlistImageFile Name="yae_m_3.png" Key="yae_m_3.png" />
+            <PlistImageFile Name="yae_m_4.png" Key="yae_m_4.png" />
+            <PlistImageFile Name="yae_m_5.png" Key="yae_m_5.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="yoshitune.png" PListFile="yoshitune.plist" Name=".yoshitune_PList.Dir">
+            <PlistImageFile Name="yoshitune_0_0.png" Key="yoshitune_0_0.png" />
+            <PlistImageFile Name="yoshitune_0_1.png" Key="yoshitune_0_1.png" />
+            <PlistImageFile Name="yoshitune_0_2.png" Key="yoshitune_0_2.png" />
+            <PlistImageFile Name="yoshitune_1_0.png" Key="yoshitune_1_0.png" />
+            <PlistImageFile Name="yoshitune_1_1.png" Key="yoshitune_1_1.png" />
+            <PlistImageFile Name="yoshitune_1_2.png" Key="yoshitune_1_2.png" />
+            <PlistImageFile Name="yoshitune_2_0.png" Key="yoshitune_2_0.png" />
+            <PlistImageFile Name="yoshitune_2_1.png" Key="yoshitune_2_1.png" />
+            <PlistImageFile Name="yoshitune_2_2.png" Key="yoshitune_2_2.png" />
+            <PlistImageFile Name="yoshitune_3_0.png" Key="yoshitune_3_0.png" />
+            <PlistImageFile Name="yoshitune_3_1.png" Key="yoshitune_3_1.png" />
+            <PlistImageFile Name="yoshitune_3_2.png" Key="yoshitune_3_2.png" />
+            <PlistImageFile Name="yoshitune_m_0.png" Key="yoshitune_m_0.png" />
+            <PlistImageFile Name="yoshitune_m_1.png" Key="yoshitune_m_1.png" />
+            <PlistImageFile Name="yoshitune_m_2.png" Key="yoshitune_m_2.png" />
+            <PlistImageFile Name="yoshitune_m_3.png" Key="yoshitune_m_3.png" />
+            <PlistImageFile Name="yoshitune_m_4.png" Key="yoshitune_m_4.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="yuki.png" PListFile="yuki.plist" Name=".yuki_PList.Dir">
             <PlistImageFile Name="swim_yuki_0_0.png" Key="swim_yuki_0_0.png" />
@@ -271,52 +749,84 @@
             <PlistImageFile Name="yuki_3_2.png" Key="yuki_3_2.png" />
             <PlistImageFile Name="yuki_s_0.png" Key="yuki_s_0.png" />
             <PlistImageFile Name="yuki_s_1.png" Key="yuki_s_1.png" />
+            <PlistImageFile Name="yuki_a__0_0.png" Key="yuki_a__0_0.png" />
+            <PlistImageFile Name="yuki_a__0_1.png" Key="yuki_a__0_1.png" />
+            <PlistImageFile Name="yuki_a__0_2.png" Key="yuki_a__0_2.png" />
+            <PlistImageFile Name="yuki_a__1_0.png" Key="yuki_a__1_0.png" />
+            <PlistImageFile Name="yuki_a__1_1.png" Key="yuki_a__1_1.png" />
+            <PlistImageFile Name="yuki_a__1_2.png" Key="yuki_a__1_2.png" />
+            <PlistImageFile Name="yuki_a__2_0.png" Key="yuki_a__2_0.png" />
+            <PlistImageFile Name="yuki_a__2_1.png" Key="yuki_a__2_1.png" />
+            <PlistImageFile Name="yuki_a__2_2.png" Key="yuki_a__2_2.png" />
+            <PlistImageFile Name="yuki_a__3_0.png" Key="yuki_a__3_0.png" />
+            <PlistImageFile Name="yuki_a__3_1.png" Key="yuki_a__3_1.png" />
+            <PlistImageFile Name="yuki_a__3_2.png" Key="yuki_a__3_2.png" />
+            <PlistImageFile Name="yuki_s_2.png" Key="yuki_s_2.png" />
+            <PlistImageFile Name="yuki_s_3.png" Key="yuki_s_3.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="yuki1.png" PListFile="yuki1.plist" Name=".yuki1_PList.Dir">
+            <PlistImageFile Name="swim_yuki_0_0.png" Key="swim_yuki_0_0.png" />
+            <PlistImageFile Name="swim_yuki_0_1.png" Key="swim_yuki_0_1.png" />
+            <PlistImageFile Name="swim_yuki_0_2.png" Key="swim_yuki_0_2.png" />
+            <PlistImageFile Name="swim_yuki_1_0.png" Key="swim_yuki_1_0.png" />
+            <PlistImageFile Name="swim_yuki_1_1.png" Key="swim_yuki_1_1.png" />
+            <PlistImageFile Name="swim_yuki_1_2.png" Key="swim_yuki_1_2.png" />
+            <PlistImageFile Name="swim_yuki_2_0.png" Key="swim_yuki_2_0.png" />
+            <PlistImageFile Name="swim_yuki_2_1.png" Key="swim_yuki_2_1.png" />
+            <PlistImageFile Name="swim_yuki_2_2.png" Key="swim_yuki_2_2.png" />
+            <PlistImageFile Name="swim_yuki_3_0.png" Key="swim_yuki_3_0.png" />
+            <PlistImageFile Name="swim_yuki_3_1.png" Key="swim_yuki_3_1.png" />
+            <PlistImageFile Name="swim_yuki_3_2.png" Key="swim_yuki_3_2.png" />
+            <PlistImageFile Name="yuki1_0_0.png" Key="yuki1_0_0.png" />
+            <PlistImageFile Name="yuki1_0_1.png" Key="yuki1_0_1.png" />
+            <PlistImageFile Name="yuki1_0_2.png" Key="yuki1_0_2.png" />
+            <PlistImageFile Name="yuki1_1_0.png" Key="yuki1_1_0.png" />
+            <PlistImageFile Name="yuki1_1_1.png" Key="yuki1_1_1.png" />
+            <PlistImageFile Name="yuki1_1_2.png" Key="yuki1_1_2.png" />
+            <PlistImageFile Name="yuki1_2_0.png" Key="yuki1_2_0.png" />
+            <PlistImageFile Name="yuki1_2_1.png" Key="yuki1_2_1.png" />
+            <PlistImageFile Name="yuki1_2_2.png" Key="yuki1_2_2.png" />
+            <PlistImageFile Name="yuki1_3_0.png" Key="yuki1_3_0.png" />
+            <PlistImageFile Name="yuki1_3_1.png" Key="yuki1_3_1.png" />
+            <PlistImageFile Name="yuki1_3_2.png" Key="yuki1_3_2.png" />
+            <PlistImageFile Name="yuki1_s_0.png" Key="yuki1_s_0.png" />
+            <PlistImageFile Name="yuki1_s_1.png" Key="yuki1_s_1.png" />
+          </PlistImageFolder>
+          <Project Name="boy.csd" Type="Node" />
+          <Project Name="clerk.csd" Type="Node" />
+          <Project Name="Ctaihou.csd" Type="Node" />
           <Project Name="daigoro.csd" Type="Node" />
           <Project Name="dandan.csd" Type="Node" />
+          <Project Name="dDaigoro.csd" Type="Node" />
+          <Project Name="fujin.csd" Type="Node" />
+          <Project Name="gakuran_daigoro.csd" Type="Node" />
+          <Project Name="girl.csd" Type="Node" />
+          <Project Name="kenshin.csd" Type="Node" />
           <Project Name="kyoujin.csd" Type="Node" />
+          <Project Name="lady.csd" Type="Node" />
+          <Project Name="mafia.csd" Type="Node" />
           <Project Name="magoichi.csd" Type="Node" />
+          <Project Name="magoichi1.csd" Type="Node" />
           <Project Name="manaka.csd" Type="Node" />
+          <Project Name="manaka1.csd" Type="Node" />
+          <Project Name="merchant1.csd" Type="Node" />
+          <Project Name="merchant2.csd" Type="Node" />
           <Project Name="nadeshiko.csd" Type="Node" />
+          <Project Name="nadeshiko1.csd" Type="Node" />
+          <Project Name="Omanaka.csd" Type="Node" />
+          <Project Name="producer.csd" Type="Node" />
           <Project Name="ranmaru.csd" Type="Node" />
+          <Project Name="ranmaru1.csd" Type="Node" />
+          <Project Name="reception.csd" Type="Node" />
+          <Project Name="shituji.csd" Type="Node" />
+          <Project Name="syuka.csd" Type="Node" />
+          <Project Name="taihou.csd" Type="Node" />
+          <Project Name="teacher.csd" Type="Node" />
+          <Project Name="turckchara.csd" Type="Node" />
+          <Project Name="yae.csd" Type="Node" />
+          <Project Name="yoshitune.csd" Type="Node" />
           <Project Name="yuki.csd" Type="Node" />
-          <PlistImageFolder Image="kyoujin.png" PListFile="kyoujin.plist" Name=".kyoujin_PList.Dir">
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_0.png" Key="character/plist/kyoujin/kyoujin1_0_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_1.png" Key="character/plist/kyoujin/kyoujin1_0_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_0_2.png" Key="character/plist/kyoujin/kyoujin1_0_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_0.png" Key="character/plist/kyoujin/kyoujin1_1_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_1.png" Key="character/plist/kyoujin/kyoujin1_1_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_1_2.png" Key="character/plist/kyoujin/kyoujin1_1_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_0.png" Key="character/plist/kyoujin/kyoujin1_2_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_1.png" Key="character/plist/kyoujin/kyoujin1_2_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_2_2.png" Key="character/plist/kyoujin/kyoujin1_2_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_0.png" Key="character/plist/kyoujin/kyoujin1_3_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_1.png" Key="character/plist/kyoujin/kyoujin1_3_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin1_3_2.png" Key="character/plist/kyoujin/kyoujin1_3_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_0.png" Key="character/plist/kyoujin/kyoujin_a_0_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_1.png" Key="character/plist/kyoujin/kyoujin_a_0_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_2.png" Key="character/plist/kyoujin/kyoujin_a_0_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_3.png" Key="character/plist/kyoujin/kyoujin_a_0_3.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_4.png" Key="character/plist/kyoujin/kyoujin_a_0_4.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_5.png" Key="character/plist/kyoujin/kyoujin_a_0_5.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_0_6.png" Key="character/plist/kyoujin/kyoujin_a_0_6.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_0.png" Key="character/plist/kyoujin/kyoujin_a_1_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_1.png" Key="character/plist/kyoujin/kyoujin_a_1_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_2.png" Key="character/plist/kyoujin/kyoujin_a_1_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_3.png" Key="character/plist/kyoujin/kyoujin_a_1_3.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_1_4.png" Key="character/plist/kyoujin/kyoujin_a_1_4.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_0.png" Key="character/plist/kyoujin/kyoujin_a_2_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_1.png" Key="character/plist/kyoujin/kyoujin_a_2_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_2.png" Key="character/plist/kyoujin/kyoujin_a_2_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_3.png" Key="character/plist/kyoujin/kyoujin_a_2_3.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_2_4.png" Key="character/plist/kyoujin/kyoujin_a_2_4.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_0.png" Key="character/plist/kyoujin/kyoujin_a_3_0.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_1.png" Key="character/plist/kyoujin/kyoujin_a_3_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_2.png" Key="character/plist/kyoujin/kyoujin_a_3_2.png" />
-            <PlistImageFile Name="character_plist_kyoujin_kyoujin_a_3_3.png" Key="character/plist/kyoujin/kyoujin_a_3_3.png" />
-            <PlistImageFile Name="character_plist_kyoujin_effect_1.png" Key="character/plist/kyoujin/effect_1.png" />
-            <PlistImageFile Name="character_plist_kyoujin_effect_2.png" Key="character/plist/kyoujin/effect_2.png" />
-          </PlistImageFolder>
+          <Project Name="yuki1.csd" Type="Node" />
         </Folder>
         <Folder Name="detection">
           <PlistImageFolder Image="detection_box.png" PListFile="detection_box.plist" Name=".detection_box_PList.Dir">
@@ -324,6 +834,73 @@
             <PlistImageFile Name="collision.png" Key="collision.png" />
             <PlistImageFile Name="hit.png" Key="hit.png" />
           </PlistImageFolder>
+        </Folder>
+        <Folder Name="plist">
+          <Folder Name="daigoro">
+            <Image Name="daigoro_0_0.png" />
+            <Image Name="daigoro_0_1.png" />
+            <Image Name="daigoro_0_2.png" />
+            <Image Name="daigoro_1_0.png" />
+            <Image Name="daigoro_1_1.png" />
+            <Image Name="daigoro_1_2.png" />
+            <Image Name="daigoro_2_0.png" />
+            <Image Name="daigoro_2_1.png" />
+            <Image Name="daigoro_2_2.png" />
+            <Image Name="daigoro_3_0.png" />
+            <Image Name="daigoro_3_1.png" />
+            <Image Name="daigoro_3_2.png" />
+            <Image Name="daigoro_a_0_0.png" />
+            <Image Name="daigoro_a_0_1.png" />
+            <Image Name="daigoro_a_1_0.png" />
+            <Image Name="daigoro_a_1_1.png" />
+            <Image Name="daigoro_a_2_0.png" />
+            <Image Name="daigoro_a_2_1.png" />
+            <Image Name="daigoro_a_3_0.png" />
+            <Image Name="daigoro_a_3_1.png" />
+            <Image Name="daigoro_s_0.png" />
+            <Image Name="daigoro_s_1.png" />
+            <Image Name="daigoro_s_2.png" />
+            <Image Name="effect_kick.png" />
+          </Folder>
+          <Folder Name="kyoujin">
+            <Image Name="effect_1.png" />
+            <Image Name="effect_2.png" />
+            <Image Name="kyoujin_a_0_0.png" />
+            <Image Name="kyoujin_a_0_1.png" />
+            <Image Name="kyoujin_a_0_2.png" />
+            <Image Name="kyoujin_a_0_3.png" />
+            <Image Name="kyoujin_a_0_4.png" />
+            <Image Name="kyoujin_a_0_5.png" />
+            <Image Name="kyoujin_a_0_6.png" />
+            <Image Name="kyoujin_a_1_0.png" />
+            <Image Name="kyoujin_a_1_1.png" />
+            <Image Name="kyoujin_a_1_2.png" />
+            <Image Name="kyoujin_a_1_3.png" />
+            <Image Name="kyoujin_a_1_4.png" />
+            <Image Name="kyoujin_a_2_0.png" />
+            <Image Name="kyoujin_a_2_1.png" />
+            <Image Name="kyoujin_a_2_2.png" />
+            <Image Name="kyoujin_a_2_3.png" />
+            <Image Name="kyoujin_a_2_4.png" />
+            <Image Name="kyoujin_a_3_0.png" />
+            <Image Name="kyoujin_a_3_1.png" />
+            <Image Name="kyoujin_a_3_2.png" />
+            <Image Name="kyoujin_a_3_3.png" />
+            <Image Name="kyoujin1_0_0.png" />
+            <Image Name="kyoujin1_0_1.png" />
+            <Image Name="kyoujin1_0_2.png" />
+            <Image Name="kyoujin1_1_0.png" />
+            <Image Name="kyoujin1_1_1.png" />
+            <Image Name="kyoujin1_1_2.png" />
+            <Image Name="kyoujin1_2_0.png" />
+            <Image Name="kyoujin1_2_1.png" />
+            <Image Name="kyoujin1_2_2.png" />
+            <Image Name="kyoujin1_3_0.png" />
+            <Image Name="kyoujin1_3_1.png" />
+            <Image Name="kyoujin1_3_2.png" />
+          </Folder>
+          <PlistInfo Name="daigoro.csi" Type="Plist" />
+          <PlistInfo Name="kyoujin.csi" Type="Plist" />
         </Folder>
       </RootFolder>
     </Group>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="64" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="53">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="64" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="71">
  <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
@@ -20,7 +20,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt20EKwjAUhOFk7UG1B9Gs1INUD6K9lClafIS3NBN5/A+Gopvhc1cYU+K4390tp3TP389zfn+nvmfWZTG+h6jT3vp77+vzIMpkuhW9a99szHj79+8+GeU91udJlGK8it7ieLf+qMEbO3hjB2/s4NXkXLsuTa6C/lFe26vsx4sXL168ePHixYsXL168ePHixYsXL168ePHixYv3X7x2L7ntKaN6vb3kEtjr7ekmQS9evD3i7SWLoJe9SuzgjR28sYM3dtr3snbT2DN2L+ntKXtk1LXvf6P+T8fFvBfbjKje
+   eJzt20EOgjAQhWFYe1Blh/EMygo9CHoQ9EhuLJGGhjQWwtDS+k/yYjSE8TNG6xSzjKLk6p5n2SMf7jf59zHf9cz95WX4Wsexpcpb4PmZ1b3ee3V78JTC6O3q2/Tvh6X9GsOMd33vrk8o71ndXjylMryuvtq7tN/Yq/tvLdorcR682wtevCl523499i/e7vu5EDgPXj+pVa/rKLcf/WP3mn2n9O/WX9WE86biXaMvXrx4/Xhrx+d3at7Y15N48Y6PP1rWZHNzisTrmk9PTRmJV2JuaptP4sUbwisxFw85f2Y9iRcvXrx48eLFixcvXrxDX/N6SX09Zape2zxKYv9+q17bvEJifxcv3hBe2zxKYv9+q95QwZt28KYdvGnnn71dLd0/nxPzehvb9ZRrJFSNf/+F+j8dlWZ9ACu97QQ=
   </data>
  </layer>
  <layer name="Base2" width="60" height="64">
@@ -36,15 +36,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2VkKgzAUQNGQ9bcbaTdZvwsFm+nlkXN/BAUVjyQOpUiSpKgetZRnjVvOPq/vXte6d41b/mrW/vny5ct3tO+sdvWVJJ3Z7vPm6E6ZN7M9H/V22vNRtO/q40f7rj4+X7588/pGF31/re40X0nt7f6dOev/hday/l9ojS9fvnxHXb9svrvn/Ykv3/99V43Pd7fP9l01Pt/dns231z+bb68/X758+fI901fSvn0A50GJzg==
-  </data>
- </layer>
- <layer name="MonoChu" width="60" height="64">
-  <properties>
-   <property name="z" value="-10"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt1rsNgDAMBUCX2QT2gv1ngI4WRRaJyd0E8Ud5jgAAZrO1iL2NfsV3jrvWc6F6YQT/ypzMBQAevblYNU97c1GeAvBnVXO9l1wHAFiTu7cGcwIAWJM7MEdWH6vMI6uP7vJ3quxFFnsBXJFCDok=
+   eJzt1kEKgCAQQNHB89dF6pK1DoQIZcZ4fzPgRuGBGiFJkrLaWsTe6s1R53t23GtnqzdHnY9vDU++fPnyreLb66++vfjO3beq76x9+fJ1P7uf+fL94ju66r6j48uXL1//Z/9nvnz58uXLly9fvnz58uXLly/flX2zZpZv1uRbw4EvX7583777ktbpAuPXJ1s=
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="64">
@@ -55,15 +47,26 @@
    eJztz1EJACAMQMEF0AbrH1P8WAVB2O7gBXgR8N5Z1RR+e5v2m7sCAAAAAAAAAAAAAAAA4I8LHv0Iow==
   </data>
  </layer>
+ <layer name="MonoUe2" width="60" height="64">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2MENwyAMBVCYpVmk3X+o5ppDpQhcsNv3BiAGvgGlNQAgm0dv7ei7q1jnec719Ufz/bbo/GTPY3R+5JGVRvsre19+Mtpf+vKq6v6Psv/8Mv18le1evDvu6Pez3Yt3x3UuAwAAAMzxX7AG+wQAMKfKeyqqzirvqVV1Rq1rlRxFrWuVHO1WJRdR5AJ4A4/dDn0=
+  </data>
+ </layer>
  <objectgroup name="collision">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <object id="21" x="448" y="256" width="96" height="576"/>
   <object id="22" x="672" y="928" width="32" height="32"/>
   <object id="23" x="512" y="960" width="448" height="64"/>
   <object id="24" x="928" y="64" width="32" height="896"/>
-  <object id="25" x="768" y="864" width="32" height="32"/>
+  <object id="25" x="704" y="864" width="32" height="32"/>
   <object id="26" x="448" y="896" width="32" height="32"/>
-  <object id="27" x="608" y="480" width="32" height="32"/>
-  <object id="28" x="736" y="192" width="32" height="32"/>
+  <object id="27" x="608" y="352" width="32" height="32"/>
+  <object id="28" x="768" y="352" width="32" height="32"/>
   <object id="29" x="448" y="224" width="32" height="32"/>
   <object id="30" x="256" y="352" width="32" height="32"/>
   <object id="31" x="128" y="128" width="32" height="32"/>
@@ -74,7 +77,17 @@
   <object id="36" x="0" y="960" width="480" height="64"/>
   <object id="37" x="0" y="64" width="32" height="896"/>
   <object id="38" x="32" y="0" width="448" height="128"/>
-  <object id="39" x="512" y="0" width="416" height="128"/>
+  <object id="39" x="512" y="0" width="128" height="128"/>
+  <object id="54" x="864" y="320" width="32" height="32"/>
+  <object id="55" x="832" y="160" width="32" height="32"/>
+  <object id="56" x="672" y="224" width="32" height="32"/>
+  <object id="57" x="800" y="256" width="32" height="32"/>
+  <object id="61" x="640" y="0" width="32" height="288"/>
+  <object id="62" x="672" y="0" width="256" height="128"/>
+  <object id="64" x="640" y="352" width="32" height="160"/>
+  <object id="65" x="672" y="416" width="256" height="96"/>
+  <object id="67" x="512" y="160" width="32" height="32"/>
+  <object id="69" x="32" y="864" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="40" x="928" y="32" width="32" height="32">
@@ -102,18 +115,16 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="CharaUe" width="60" height="64">
-  <data encoding="base64" compression="zlib">
-   eJzt1rsNgDAMBUB32X8S2AuGgI4WRRbByd0E8Ud5jgCgoq1F7G30K75z3LWeC9ULI/hX/slcAODRm4tV87Q3F+UpADOrmuu95DoAwJrcvTWYEwDAmtyBObL6WGUeWX10l79TZS+y2AuAuV3luSfZ
-  </data>
- </layer>
  <objectgroup name="terrain">
-  <object id="44" type="slip" x="32" y="128" width="512" height="128"/>
-  <object id="47" type="slip" x="672" y="608" width="256" height="352"/>
-  <object id="48" type="slip" x="544" y="416" width="256" height="128"/>
-  <object id="49" type="slip" x="32" y="352" width="256" height="160"/>
-  <object id="50" type="slip" x="128" y="800" width="448" height="160"/>
-  <object id="51" type="slip" x="32" y="608" width="416" height="128"/>
-  <object id="52" type="slip" x="640" y="128" width="288" height="96"/>
+  <object id="59" type="slip" x="0" y="96" width="960" height="896"/>
+ </objectgroup>
+ <objectgroup name="item">
+  <object id="70" x="672" y="128" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="objID" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -26,11 +26,11 @@ private:
 // インスタンス変数
 private:
     // 時間計測開始時間(単位:ms)
-    double start_time {0.0};
+    double startTime {0.0};
     // 計測時間
     double time {0.0};
     // インターバルタイム
-    float interval_time {0.0};
+    float intervalTime {0.0};
     // カウントダウン用
     GameEvent* countDownEvent {nullptr};
     // カウントしている状態か
@@ -42,8 +42,8 @@ public:
 
 // インスタンスメソッド
 private:
-    bool init(const double& init_time);
-    bool init(const int init_time);
+    bool init(const double& initTime);
+    bool init(const int initTime);
 public:
     // 元の時間取得
     double getSecMs();
@@ -54,7 +54,7 @@ public:
     void tic();
     void toc();
     // スケジュール実行
-    void startCountDown(const float& interval_time);
+    void startCountDown(const float& intervalTime);
     void startCountDown();
     void stopCountDown();
     void scheduleFunction(float delta);

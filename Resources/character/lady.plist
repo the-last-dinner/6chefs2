@@ -7,211 +7,169 @@
 			<key>lady_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1522},{21,33}}</string>
+				<string>{{0,96},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,0},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1182},{22,33}}</string>
+				<string>{{26,33},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{22,33}}</string>
+				<string>{{4,1},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1216},{22,33}}</string>
+				<string>{{26,65},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,0},{22,33}}</string>
+				<string>{{4,1},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1454},{21,33}}</string>
+				<string>{{52,33},{22,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,0},{22,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1420},{21,33}}</string>
+				<string>{{50,97},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{3,1},{23,30}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1386},{21,33}}</string>
+				<string>{{26,97},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{3,1},{23,30}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1352},{21,33}}</string>
+				<string>{{52,65},{22,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{7,0},{22,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1556},{21,33}}</string>
+				<string>{{26,0},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{4,0},{25,32}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1488},{21,33}}</string>
+				<string>{{52,0},{24,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{4,0},{24,32}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1250},{21,33}}</string>
+				<string>{{0,64},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,0},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1318},{21,33}}</string>
+				<string>{{0,32},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,0},{21,33}}</string>
+				<string>{{4,1},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>lady_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1284},{21,33}}</string>
+				<string>{{0,0},{25,31}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{21,33}}</string>
+				<string>{{4,1},{25,31}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
-			</dict>
-
-			<key>lady_s_0.png</key>
-			<dict>
-				<key>frame</key>
-				<string>{{0,0},{296,1181}}</string>
-				<key>offset</key>
-				<string>{0,0}</string>
-				<key>rotated</key>
-				<false/>
-				<key>sourceColorRect</key>
-				<string>{{272,11},{296,1181}}</string>
-				<key>sourceSize</key>
-				<string>{800,1200}</string>
-			</dict>
-
-			<key>lady_s_1.png</key>
-			<dict>
-				<key>frame</key>
-				<string>{{0,0},{296,1181}}</string>
-				<key>offset</key>
-				<string>{0,0}</string>
-				<key>rotated</key>
-				<false/>
-				<key>sourceColorRect</key>
-				<string>{{272,11},{296,1181}}</string>
-				<key>sourceSize</key>
-				<string>{800,1200}</string>
-			</dict>
-
-			<key>lady_s_2.png</key>
-			<dict>
-				<key>frame</key>
-				<string>{{297,0},{295,1181}}</string>
-				<key>offset</key>
-				<string>{0,0}</string>
-				<key>rotated</key>
-				<false/>
-				<key>sourceColorRect</key>
-				<string>{{273,11},{295,1181}}</string>
-				<key>sourceSize</key>
-				<string>{800,1200}</string>
+				<string>{32,32}</string>
 			</dict>
 
 		</dict>
@@ -221,7 +179,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{1024,2048}</string>
+			<string>{128,128}</string>
 			<key>textureFileName</key>
 			<string>lady.png</string>
 			</dict>

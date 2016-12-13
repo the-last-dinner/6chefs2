@@ -22,6 +22,7 @@ public:
 // インスタンス変数
 protected:
     Sprite* frame { nullptr };
+     bool _closed {false};
 private:
     EventListenerKeyboardLayer* listener { nullptr };
     function<void()> onClose { nullptr };

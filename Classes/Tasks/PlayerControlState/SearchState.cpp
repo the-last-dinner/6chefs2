@@ -14,6 +14,8 @@
 
 #include "Managers/DungeonSceneManager.h"
 
+#include "MapObjects/Status/Stamina.h"
+
 #include "Tasks/PlayerControlTask.h"
 
 // コンストラクタ
@@ -32,6 +34,23 @@ bool SearchState::init(PlayerControlTask* task)
 #pragma mark -
 #pragma mark Interface
 
+// 振り向き
+void SearchState::turn(Party* party, const Direction& direction, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // 主人公の向きを変更
+    mainCharacter->setDirection(direction);
+    
+    // 主人公が移動中でなければ
+    if (!mainCharacter->isMoving()) {
+        // 一定時間後に歩行開始
+        if (!_task->isScheduled(PlayerControlTask::START_WALKING_SCHEDULE_KEY)) _task->scheduleOnce([this, party](float _) {
+            _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        }, 0.0f, PlayerControlTask::START_WALKING_SCHEDULE_KEY);
+    }
+}
+
 // 決定キーが押された時
 void SearchState::onEnterKeyPressed(Party* party)
 {
@@ -49,4 +68,38 @@ void SearchState::onEnterKeyPressed(Party* party)
             DungeonSceneManager::getInstance()->runEvent(obj->getEventId());
         }
     }
+}
+
+// 移動
+void SearchState::move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed)
+{
+    Character* mainCharacter { party->getMainCharacter() };
+    
+    // ダッシュキーが押されていたら、速度の倍率をあげる
+    bool dash { mainCharacter->isRunnable() ? isDashKeyPressed : false };
+    
+    // 入力から、使う方向の個数を決める
+    int directionCount { (directions.size() == 2 && !Direction::getVec2({directions.front(), directions.back()}).isZero()) ? 2 : 1 };
+    
+    vector<Direction> moveDirections {};
+    for (int i { 0 }; i < directions.size(); i++) {
+        if (directions.size() - directionCount > i) continue;
+        moveDirections.push_back(directions.at(i));
+    }
+    
+    // Trigger::WILLを持つオブジェクトを検索して実行
+    Rect gridRect { mainCharacter->getGridCollisionRect() };
+    gridRect.origin += Direction::getGridVec2(moveDirections);
+    for (MapObject* other : DungeonSceneManager::getInstance()->getMapObjectList()->getMapObjects(mainCharacter, moveDirections, Trigger::WILL)) {
+        DungeonSceneManager::getInstance()->runEvent(other->getEventId());
+    }
+    
+    Stamina* stamina { DungeonSceneManager::getInstance()->getStamina() };
+    
+    party->move(moveDirections, dash ? PlayerControlTask::DASH_SPEED_RATIO : 1.f, [this, party, stamina, dash](bool moved) {
+        if (!moved) return;
+        
+        stamina->setDecreasing(false);
+        _task->onPartyMovedOneGrid(party, dash);
+    });
 }

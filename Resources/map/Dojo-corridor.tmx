@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="9">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="oinarisama" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="oinarisama" tilewidth="16" tileheight="16" tilecount="400" columns="20">
   <image source="oinarisama.png" trans="aa55ff" width="320" height="320"/>
  </tileset>
- <tileset firstgid="881" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="881" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
  <layer name="Base" width="30" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUDHVQxMzAUAzEJcyo7BIkNjb5IiIxTD06mAQUmwzEzUC8CIoX0wDjsheEpzAj+NSiFxGwFyS3BEkdtWlc9tKKJmQvrfw56t/B499JSBiWxtHdPYlIdYT8O1IAAErvm/o=
   </data>
  </layer>
  <layer name="Base2" width="30" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFIwEIMzEwiDBBaFphkPnoQB0opsEEoWmFNbDYaw0Us2GC0LTCNljs9QeKBTBBaFrhACz2JjORhlOBOI1EPSlY7C1nIg1XAnEViXoqsNg7CkbBKBgFgx0AANv5K1k=
   </data>
  </layer>
  <layer name="MonoShita" width="30" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBiZwAiKjaHYBIoJicMAqephIACKA6E4CIoJicMAqepHwSgYBaNgFIyCUUB/AAAENgxd
   </data>
  </layer>
  <layer name="door" width="30" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFpABjKKY3CITiUTAKRsEoGAWjYBQMfgAALVgBCQ==
   </data>
  </layer>
  <layer name="MonoChu" width="30" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMBTAbsaBsfcmle0dLv4YBaMAHwAAspMDLQ==

@@ -6,17 +6,6 @@
 		},
 		{
 			"type":"createEnemy",
-			"objID":"1429",
-			"charaID":"13",
-			"x":44,
-			"y":59,
-			"direction":"DOWN",
-			"times":1,
-			"movePattern":"0",
-			"speed":0.8
-		},
-		{
-			"type":"createEnemy",
 			"objID":"1430",
 			"charaID":"13",
 			"x":26,
@@ -25,6 +14,23 @@
 			"times":1,
 			"movePattern":"0",
 			"speed":0.8
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["48","5"]
+				},
+				{
+					"event":["49","8"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"1"
+				}
+			]
 		}
 	],
 	"2":[
@@ -55,5 +61,75 @@
 			"type":"playSE",
 			"file":"agaa.mp3"
 		}
+	],
+	"5":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["うぅ・・・\n変な部屋・・・","寒いね・・・"],
+									"charaID":"7",
+									"imgID":"3"
+								},
+								{
+									"text":["氷の床・・・","おうちにあったのみたい・・・"],
+									"charaID":"6",
+									"imgID":"2"
+								},
+								{
+									"text":["おうち・・・\n晩餐館ですな？","しばらく帰れていないんでしたな・・・"],
+									"charaID":"4",
+									"imgID":"1"
+								},
+								{
+									"text":["うん・・・","おにぃちゃん・・・\nお母さんはその・・・","大丈夫？"],
+									"charaID":"6",
+									"imgID":"2"
+								},
+								{
+									"text":["うm・・・\n大分回復してきましたな。","また一緒に暮らせる日も近いですぞ！！"],
+									"charaID":"4",
+									"imgID":"1"
+								},
+								{
+									"text":["うん・・・\nでもその前に・・・"],
+									"charaID":"6",
+									"imgID":"3"
+								}
+							]
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"4"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"4"
+								}
+							]
+						},
+						
+						{
+							"type":"already"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1"
+						},
+						{
+							"type":"fadein"
+						}
+					]
+				}
 	]
 }

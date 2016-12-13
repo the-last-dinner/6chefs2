@@ -15,6 +15,9 @@
  <tileset firstgid="6977" name="ST-Fdshop-I01" tilewidth="16" tileheight="16" tilecount="1440" columns="16">
   <image source="ST-Fdshop-I01.png" trans="aa55ff" width="256" height="1440"/>
  </tileset>
+ <tileset firstgid="8417" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
+  <image source="death.png" width="384" height="256"/>
+ </tileset>
  <layer name="Base" width="44" height="108">
   <properties>
    <property name="z" value="-11"/>
@@ -63,7 +66,26 @@
    eJztzqERgEAMAMEUkr6gA+iA7wDKJi4WxUTsmrMXAQAAAAAA32wZsWd3uqMez+xOd9Xjyu50dz0+2QUAAAAAAAAAAAAAAOA/LwX1CLk=
   </data>
  </layer>
+ <layer name="blood" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt18dNA0EcRvEpgViAfSKYO1Ei3gmmB2IPxB6IPRDsHog9EHsgSjxuXHz8e2fR+0nv/h1WOzMpSZIk6ddWJaVt2qFd2qP9StGrWjtg2yEd0TGd0GnGe8/Ydk4XdEkNama894pt13RDt3RH9xnvfWDbIz3RM73Qa8Z739j2Th/0SV/0nfHejmpKndRF3dRDvdWiV7XWx7Z+GqBBqtFQxnsn2TZF0zRDszSX8V7Pi1hlOy/8HmKV7Xvw/hDL+0Ms7w+x/B5ile17kNQ+3tdjeV+P5X09lvezWN7PYnm+xfJ8i+X5FsvzLZbnmyRJxfM9FMv3UCzfQ7F8D8XyPaS/hvkXjNAojdE4TWT8f5hn2wIt0hLVaTnjvStsW6U1WqcN2sx4r/ezWN7PYnk/kyRJkvTf/ACj+fIp
+  </data>
+ </layer>
+ <layer name="shitai" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2rEVwjAMRdG/AkyglLAIbAGrhwZWCA1khEDjY+fewvWrXEhKAAAYwVzJoxpH/GCp5F2tKwD25zIl16l1xXa3tfXeUS/05FnJq1pXbPep9fEfAACDm8uMDwD432FKjh3NT05r67mjXgAAGJl7EgBgT+aylwUAAGAsX7DBFJA=
+  </data>
+ </layer>
  <objectgroup name="collision">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <object id="27" x="640" y="160" width="96" height="976"/>
   <object id="28" x="704" y="1136" width="32" height="560"/>
   <object id="29" x="512" y="1040" width="128" height="96"/>

@@ -334,7 +334,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["9","5"],
+					"event":[
+						["8","6"],
+						["7","5"],
+						["6","6"],
+						["10","6"],
+						["9","5"]
+					],
 					"Nevent":["12","12"]
 				}
 			],
@@ -342,6 +348,44 @@
 				{
 					"type":"systemMsg",
 					"text":["ここの屋台は肉系が多いな"]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["9","5"],
+					"Nevent":["12","12"],
+					"Nevent":["8","6"]
+				},
+				{
+					"event":["9","5"],
+					"Nevent":["12","12"],
+					"Nevent":["7","5"]
+				},
+				{
+					"event":["9","5"],
+					"Nevent":["12","12"],
+					"Nevent":["6","6"]
+				},
+				{
+					"event":["9","5"],
+					"Nevent":["12","12"],
+					"Nevent":["10","6"]
+				},
+				{
+					"event":["9","5"],
+					"Nevent":["12","12"],
+					"Nevent":["9","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["他の通りの屋台も見てみようよ！"],
+					"charaID":"1",
+					"imgID":"4"
 				}
 			]
 		},
@@ -568,7 +612,8 @@
 					"y":85,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.5
 				},
 				{
 					"type":"createEnemy",
@@ -578,7 +623,8 @@
 					"y":14,
 					"direction":"DOWN",
 					"times":1,
-					"movePattern":"1"
+					"movePattern":"0",
+					"speed":0.5
 				},
 				{
 					"type":"fadein",

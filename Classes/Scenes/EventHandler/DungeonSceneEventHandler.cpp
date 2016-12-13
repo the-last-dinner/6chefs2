@@ -17,6 +17,8 @@
 
 #include "Tasks/PlayerControlTask.h"
 
+#include "Battle/Battle.h"
+
 // コンストラクタ
 DungeonSceneEventHandler::DungeonSceneEventHandler() {}
 
@@ -40,15 +42,19 @@ void DungeonSceneEventHandler::onLostMainCharacterHP()
 }
 
 // バトル開始時
-void DungeonSceneEventHandler::onBattleStart()
+void DungeonSceneEventHandler::onBattleStart(Battle* battle)
 {
+    _scene->addChild(battle);
+    
     _scene->_playerControlTask->onBattleStart();
-    _scene->_mapLayer->getMapObjectList()->onBattleStart();
+    _scene->_mapLayer->getMapObjectList()->onBattleStart(battle);
 }
 
 // バトル終了時
-void DungeonSceneEventHandler::onBattleFinished()
+void DungeonSceneEventHandler::onBattleFinished(Battle* battle)
 {
     _scene->_mapLayer->getMapObjectList()->onBattleFinished();
     _scene->_playerControlTask->onBattleFinished();
+    
+    _scene->removeChild(battle);
 }

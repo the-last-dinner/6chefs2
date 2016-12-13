@@ -28,6 +28,10 @@ private:
     virtual bool init(MapObject* parent, const Rect& originRect) override;
 public:
     CollisionBox* clone(const Point& gridPosition = Point::ZERO) const;
+    
+// Debug
+private:
+    virtual Color4F getDebugMaskColor() const override;
 };
 
 #endif /* CollisionBox_h */

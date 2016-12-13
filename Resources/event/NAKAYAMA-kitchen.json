@@ -455,9 +455,15 @@
 									"objID":"10158",
 									"charaID":"26",
 									"x":14,
-									"y":10,
+									"y":8,
 									"direction":"DOWN",
 									"movePattern":"1"
+								},
+								{
+									"type":"charaWalk",
+									"objID":"10158",
+									"direction":"DOWN",
+									"steps":1.0
 								},
 								{
 									"type":"charaMsg",
@@ -488,7 +494,7 @@
 											"imgID":"4"
 										},
 										{
-											"text":["あ・・・","うん！待ってる！"],
+											"text":["あ・・・","うん！待ってるね！"],
 											"charaID":"26",
 											"imgID":"2"
 										}

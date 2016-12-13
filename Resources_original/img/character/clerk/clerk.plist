@@ -7,13 +7,13 @@
 			<key>clerk_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,26},{21,25}}</string>
+				<string>{{0,33},{27,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,4},{21,25}}</string>
+				<string>{{3,0},{27,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -21,13 +21,13 @@
 			<key>clerk_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{43,0},{19,25}}</string>
+				<string>{{28,33},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,5},{19,25}}</string>
+				<string>{{4,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -35,13 +35,13 @@
 			<key>clerk_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{81,26},{18,25}}</string>
+				<string>{{54,0},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,5},{18,25}}</string>
+				<string>{{5,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -49,13 +49,13 @@
 			<key>clerk_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{100,26},{17,25}}</string>
+				<string>{{78,66},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,4},{17,25}}</string>
+				<string>{{4,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -63,13 +63,13 @@
 			<key>clerk_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{82,0},{17,25}}</string>
+				<string>{{78,0},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,5},{17,25}}</string>
+				<string>{{3,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -77,13 +77,13 @@
 			<key>clerk_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{62,26},{18,25}}</string>
+				<string>{{54,33},{23,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,5},{18,25}}</string>
+				<string>{{4,0},{23,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -91,13 +91,13 @@
 			<key>clerk_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{63,0},{18,25}}</string>
+				<string>{{53,66},{24,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,4},{18,25}}</string>
+				<string>{{6,0},{24,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -105,13 +105,13 @@
 			<key>clerk_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{42,26},{19,25}}</string>
+				<string>{{28,0},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,5},{19,25}}</string>
+				<string>{{5,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -119,13 +119,13 @@
 			<key>clerk_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{100,0},{17,25}}</string>
+				<string>{{78,33},{22,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{7,5},{17,25}}</string>
+				<string>{{6,0},{22,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -133,27 +133,27 @@
 			<key>clerk_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{21,25}}</string>
+				<string>{{0,0},{27,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,6},{21,25}}</string>
+				<string>{{3,0},{27,32}}</string>
 				<key>sourceSize</key>
-				<string>{32,34}</string>
+				<string>{32,32}</string>
 			</dict>
 
 			<key>clerk_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{22,0},{20,25}}</string>
+				<string>{{0,66},{26,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,5},{20,25}}</string>
+				<string>{{3,0},{26,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -161,13 +161,13 @@
 			<key>clerk_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{22,26},{19,25}}</string>
+				<string>{{27,66},{25,32}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{6,5},{19,25}}</string>
+				<string>{{5,0},{25,32}}</string>
 				<key>sourceSize</key>
 				<string>{32,32}</string>
 			</dict>
@@ -179,7 +179,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{128,64}</string>
+			<string>{128,128}</string>
 			<key>textureFileName</key>
 			<string>clerk.png</string>
 			</dict>

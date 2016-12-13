@@ -29,6 +29,7 @@ class Enemy;
 class StopWatch;
 class Stamina;
 class CameraTask;
+class EventTask;
 
 // ダンジョンシーンのマップ間で共有すべき情報を持つシングルトンクラス
 class DungeonSceneManager
@@ -64,6 +65,7 @@ public:
     CommonEventScripts* getCommonEventScriptsObject();
     Party* getParty();
     AmbientLightLayer* getAmbientLayer() const;
+    EventTask* getEventTask() const;
     CameraTask* getCamera() const;
     
     // Scene

@@ -28,7 +28,7 @@ bool MovePatternFactory::init()
 
 MovePattern* MovePatternFactory::createMovePattern(const EnemyMovePattern type, Character* character)
 {
-    if(type == EnemyMovePattern::SIZE) return nullptr;
+    if (type == EnemyMovePattern::SIZE) return nullptr;
     
     map<EnemyMovePattern, function<MovePattern*(Character*)>> typeToFunc
     {
@@ -38,21 +38,21 @@ MovePattern* MovePatternFactory::createMovePattern(const EnemyMovePattern type, 
         {EnemyMovePattern::SCOUTER, Scouter::create},
     };
     
-    if(typeToFunc.count(type) == 0) return nullptr;
+    if (typeToFunc.count(type) == 0) return nullptr;
     
     return typeToFunc[type](character);
 }
 
 MovePattern* MovePatternFactory::createMovePattern(const CharacterMovePattern type, Character* character)
 {
-    if(type == CharacterMovePattern::SIZE) return nullptr;
+    if (type == CharacterMovePattern::SIZE) return nullptr;
     
     map<CharacterMovePattern, function<MovePattern*(Character*)>> typeToFunc
     {
         {CharacterMovePattern::RANDOM, MobRandom::create}
     };
     
-    if(typeToFunc.count(type) == 0) return nullptr;
+    if (typeToFunc.count(type) == 0) return nullptr;
     
     return typeToFunc[type](character);
     

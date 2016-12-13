@@ -38,3 +38,19 @@ void HitPoint::reduce(int damage)
         _onLost();
     }
 }
+
+bool HitPoint::isLost() const
+{
+    return _current == 0;
+}
+
+void HitPoint::setMax(int max)
+{
+    _max = max;
+    _current = max;
+}
+
+int HitPoint::getCurrent() const
+{
+    return _current;
+}

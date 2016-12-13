@@ -11,6 +11,8 @@
 
 #include "define.h"
 
+class GameEvent;
+
 class BattleData : public Ref
 {
 // クラスメソッド
@@ -20,6 +22,8 @@ public:
 // インスタンス変数
 private:
     vector<int> _targetObjectIds {};
+    GameEvent* _successCallbackEvent { nullptr };
+    GameEvent* _failureCallbackEvent { nullptr };
     
 // インスタンスメソッド
 private:
@@ -30,6 +34,12 @@ private:
 public:
     void setTargetObjectIds(const vector<int>& ids);
     vector<int> getTargetObjectIds() const;
+    
+    void setSuccessCallbackEvent(GameEvent* event);
+    GameEvent* getSuccessCallbackEvent() const;
+    
+    void setFailureCallbackEvent(GameEvent* event);
+    GameEvent* getFailureCallbackEvent() const;
 };
 
 #endif /* BattleData_h */
