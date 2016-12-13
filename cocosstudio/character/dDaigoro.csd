@@ -4,66 +4,26 @@
     <Content>
       <Animation Duration="140" Speed="1.0000" ActivedAnimationName="right">
         <Timeline ActionTag="2064821685" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_0_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="2" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_3_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="4" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_2_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_1_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="10" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_0_1.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="20" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_0_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="25" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_0_2.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="35" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_0_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="45" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_3_1.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="55" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_3_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="60" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_3_2.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="70" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_3_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="80" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_2_1.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="90" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_2_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="95" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_2_2.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="105" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_2_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="115" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_1_1.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="125" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_1_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="130" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_1_2.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="140" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="dDaigoro_1_0.png" Plist="character/dDaigoro.plist" />
-          </TextureFrame>
+          <TextureFrame FrameIndex="0" Tween="False" />
+          <TextureFrame FrameIndex="2" Tween="False" />
+          <TextureFrame FrameIndex="4" Tween="False" />
+          <TextureFrame FrameIndex="6" Tween="False" />
+          <TextureFrame FrameIndex="10" Tween="False" />
+          <TextureFrame FrameIndex="20" Tween="False" />
+          <TextureFrame FrameIndex="25" Tween="False" />
+          <TextureFrame FrameIndex="35" Tween="False" />
+          <TextureFrame FrameIndex="45" Tween="False" />
+          <TextureFrame FrameIndex="55" Tween="False" />
+          <TextureFrame FrameIndex="60" Tween="False" />
+          <TextureFrame FrameIndex="70" Tween="False" />
+          <TextureFrame FrameIndex="80" Tween="False" />
+          <TextureFrame FrameIndex="90" Tween="False" />
+          <TextureFrame FrameIndex="95" Tween="False" />
+          <TextureFrame FrameIndex="105" Tween="False" />
+          <TextureFrame FrameIndex="115" Tween="False" />
+          <TextureFrame FrameIndex="125" Tween="False" />
+          <TextureFrame FrameIndex="130" Tween="False" />
+          <TextureFrame FrameIndex="140" Tween="False" />
         </Timeline>
       </Animation>
       <AnimationList>
@@ -103,7 +63,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="dDaigoro_0_0.png" Plist="character/dDaigoro.plist" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">

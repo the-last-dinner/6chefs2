@@ -32,6 +32,20 @@
 				<string>{564,231}</string>
 			</dict>
 
+			<key>title_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{533,601},{320,287}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{303,191},{320,287}}</string>
+				<key>sourceSize</key>
+				<string>{880,696}</string>
+			</dict>
+
 		</dict>
 
 		<key>metadata</key>
