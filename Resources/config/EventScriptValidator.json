@@ -505,7 +505,8 @@
                     }
                 }],
                 "true": [["object"]],
-                "false": [["object"]]
+                "false": [["object"]],
+                "display": ["bool"]
             }
         },
         "stopCount": {

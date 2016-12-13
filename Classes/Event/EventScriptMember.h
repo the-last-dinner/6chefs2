@@ -73,7 +73,7 @@ namespace member
     static const char* X = "x";
     static const char* Y = "y";
     static const char* VOICE = "voice";
-    
+    static const char* DISPLAY = "display";
 }
 
 #endif /* defined(__LastSupper__EventScriptMember__) */
