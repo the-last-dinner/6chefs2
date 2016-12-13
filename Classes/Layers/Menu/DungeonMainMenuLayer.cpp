@@ -140,7 +140,7 @@ bool DungeonMainMenuLayer::init()
         
         // 通り名
         Label* street= Label::createWithTTF(CsvDataManager::getInstance()->getCharacterData()->getStreetName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 16);
-        street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 10);
+        street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 12);
         chara_panel->addChild(street);
         
         // キャラ名
