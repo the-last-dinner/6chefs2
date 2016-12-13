@@ -25,3 +25,6 @@ $ sh csd_mover.sh
 4. cocosstudioを開く
 File > import > importResources
 で対象のcocosstudio/character/のファイルをimportする
+
+5. Resources/charactersディレクトリにcsbファイルを書き出す
+問題がなければ上部の書き出しボタンで目的のディレクトリにcsbファイルを生成
