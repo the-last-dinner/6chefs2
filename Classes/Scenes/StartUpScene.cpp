@@ -58,7 +58,7 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     // ロゴ生成
     Sprite* logo {Sprite::createWithSpriteFrameName("the_last_dinner_log.png")};
     logo->setPosition(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
-    logo->setScale(1.6f);
+    logo->setScale(2.0f);
     logo->setOpacity(0);
     this->addChild(logo);
     
@@ -69,8 +69,8 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->runAction(
             EaseCubicActionOut::create(
                 Spawn::createWithTwoActions(
-                    FadeIn::create(0.5f),
-                    ScaleTo::create(0.5f, 0.8f)
+                    FadeIn::create(0.6f),
+                    ScaleTo::create(0.6f, 0.65f)
             )
         ));
     
