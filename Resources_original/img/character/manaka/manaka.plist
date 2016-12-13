@@ -7,181 +7,181 @@
 			<key>manaka_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1370},{27,33}}</string>
+				<string>{{0,1642},{24,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,0},{27,33}}</string>
+				<string>{{5,1},{24,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1472},{27,33}}</string>
+				<string>{{0,1607},{24,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,0},{27,33}}</string>
+				<string>{{5,1},{24,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1438},{27,33}}</string>
+				<string>{{0,1572},{25,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{27,33}}</string>
+				<string>{{4,1},{25,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1752},{24,33}}</string>
+				<string>{{0,1432},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,33}}</string>
+				<string>{{1,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1650},{24,33}}</string>
+				<string>{{0,1362},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,33}}</string>
+				<string>{{1,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1616},{24,33}}</string>
+				<string>{{0,1502},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,33}}</string>
+				<string>{{1,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1684},{24,33}}</string>
+				<string>{{0,1467},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,33}}</string>
+				<string>{{5,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1718},{24,33}}</string>
+				<string>{{0,1397},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,33}}</string>
+				<string>{{5,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1786},{24,33}}</string>
+				<string>{{0,1537},{26,34}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,33}}</string>
+				<string>{{5,0},{26,34}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1281},{27,33}}</string>
+				<string>{{0,1677},{21,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,0},{27,33}}</string>
+				<string>{{5,1},{21,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1404},{27,33}}</string>
+				<string>{{0,1711},{20,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{27,33}}</string>
+				<string>{{5,1},{20,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1247},{27,33}}</string>
+				<string>{{0,1745},{20,33}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{2,0},{27,33}}</string>
+				<string>{{5,1},{20,33}}</string>
 				<key>sourceSize</key>
-				<string>{32,33}</string>
+				<string>{32,35}</string>
 			</dict>
 
 			<key>manaka_s_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{348,0},{347,1192}}</string>
+				<string>{{0,0},{445,1141}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{205,8},{347,1192}}</string>
+				<string>{{156,44},{445,1141}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -189,13 +189,13 @@
 			<key>manaka_s_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{348,0},{347,1192}}</string>
+				<string>{{0,0},{445,1141}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{205,8},{347,1192}}</string>
+				<string>{{156,44},{445,1141}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -203,13 +203,41 @@
 			<key>manaka_s_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{347,1191}}</string>
+				<string>{{446,0},{445,1141}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{205,9},{347,1191}}</string>
+				<string>{{156,44},{445,1141}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>manaka_s_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{892,0},{445,1141}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{156,44},{445,1141}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>manaka_s_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1338,0},{445,1141}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{156,44},{445,1141}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -217,7 +245,7 @@
 			<key>swim_manaka_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1342},{27,27}}</string>
+				<string>{{0,1169},{27,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -231,7 +259,7 @@
 			<key>swim_manaka_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1342},{27,27}}</string>
+				<string>{{0,1169},{27,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -245,7 +273,7 @@
 			<key>swim_manaka_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1315},{27,26}}</string>
+				<string>{{0,1142},{27,26}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -259,7 +287,7 @@
 			<key>swim_manaka_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1533},{26,27}}</string>
+				<string>{{0,1252},{26,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -273,7 +301,7 @@
 			<key>swim_manaka_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1533},{26,27}}</string>
+				<string>{{0,1252},{26,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -287,7 +315,7 @@
 			<key>swim_manaka_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1589},{26,26}}</string>
+				<string>{{0,1307},{26,26}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -301,7 +329,7 @@
 			<key>swim_manaka_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1561},{26,27}}</string>
+				<string>{{0,1334},{26,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -315,7 +343,7 @@
 			<key>swim_manaka_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1561},{26,27}}</string>
+				<string>{{0,1334},{26,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -329,7 +357,7 @@
 			<key>swim_manaka_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1506},{26,26}}</string>
+				<string>{{0,1280},{26,26}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -343,7 +371,7 @@
 			<key>swim_manaka_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1219},{27,27}}</string>
+				<string>{{0,1224},{27,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -357,7 +385,7 @@
 			<key>swim_manaka_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1219},{27,27}}</string>
+				<string>{{0,1224},{27,27}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -371,7 +399,7 @@
 			<key>swim_manaka_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1192},{27,26}}</string>
+				<string>{{0,1197},{27,26}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -389,7 +417,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{1024,2048}</string>
+			<string>{2048,2048}</string>
 			<key>textureFileName</key>
 			<string>manaka.png</string>
 			</dict>

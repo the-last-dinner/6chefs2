@@ -91,6 +91,13 @@
                 "volume": ["double", "int"]
             }
         },
+        "playVoice": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "volume": ["double", "int"]
+            }
+        },
 
 
 

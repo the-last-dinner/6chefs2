@@ -120,29 +120,6 @@ bool TitleMainMenuLayer::init()
     this->addChild(opr);
     opr->runAction(FadeTo::create(1.2f, 200));
     
-    // クリア時の立ち絵
-    float scale = 0.3f;
-    if (PlayerDataManager::getInstance()->getGlobalData()->getClearCount() > 0)
-    {
-        Sprite* left {Sprite::createWithSpriteFrameName("yuki_s_1.png")};
-        left->setScale(scale);
-        left->setOpacity(0);
-        left->setPosition(left->getContentSize().width * scale / 2, left->getContentSize().height * scale / 2 + copyright->getContentSize().height * 2);
-        this->addChild(left);
-        left->runAction(Sequence::createWithTwoActions(DelayTime::create(2.f), FadeTo::create(2.f, 128)));
-    }
-    
-    // トゥルーエンドを見た場合
-    if (PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(8))
-    {
-        Sprite* right {Sprite::createWithSpriteFrameName("magoichi_s_1.png")};
-        right->setScale(scale);
-        right->setOpacity(0);
-        right->setPosition(WINDOW_WIDTH - right->getContentSize().width * scale / 2, right->getContentSize().height * scale / 2 + copyright->getContentSize().height * 2);
-        this->addChild(right);
-        right->runAction(Sequence::createWithTwoActions(DelayTime::create(4.f), FadeTo::create(2.f, 128)));
-    }
-    
 	return true;
 }
 

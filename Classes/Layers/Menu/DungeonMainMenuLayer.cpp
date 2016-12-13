@@ -127,7 +127,7 @@ bool DungeonMainMenuLayer::init()
     vector<CharacterData> charas = PlayerDataManager::getInstance()->getLocalData()->getPartyMemberAll();
     int party_count = charas.size();
     Size  cPanelSize = Size(fBg->getContentSize().width/5, fBg->getContentSize().height);
-    float stand_scale = 0.25;
+    float stand_scale = 0.35;
     for (int i = 0; i < party_count; i++)
     {
         float colum_position = cPanelSize.width * (5 - party_count + i) + cPanelSize.width / 2;
@@ -139,8 +139,8 @@ bool DungeonMainMenuLayer::init()
         fBg->addChild(chara_panel);
         
         // 通り名
-        Label* street= Label::createWithTTF("-" + CsvDataManager::getInstance()->getCharacterData()->getStreetName(charas[i].chara_id) + "-", "fonts/cinecaption2.28.ttf", 24);
-        street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 10);
+        Label* street= Label::createWithTTF(CsvDataManager::getInstance()->getCharacterData()->getStreetName(charas[i].chara_id), "fonts/cinecaption2.28.ttf", 16);
+        street->setPosition(cPanelSize.width / 2, cPanelSize.height - street->getContentSize().height / 2 - 12);
         chara_panel->addChild(street);
         
         // キャラ名
@@ -163,7 +163,7 @@ bool DungeonMainMenuLayer::init()
         {
             Sprite* img { Sprite::createWithSpriteFrameName(file_name)};
             img->setScale(stand_scale);
-            float img_y = img->getContentSize().height * stand_scale / 2 + fBg->getContentSize().height + 10;
+            float img_y = fBg->getContentSize().height * 1.2;
             inPosition = Point(colum_position, img_y);
             outPosition = Point(WINDOW_WIDTH + img->getContentSize().width * stand_scale / 2, img_y);
             SlideNode* stand {SlideNode::create(inPosition, outPosition)};
