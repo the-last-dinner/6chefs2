@@ -28,15 +28,5 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="character/daigoro.csd" />
-          <FilePathData Path="character/kyoujin.csd" />
-          <FilePathData Path="character/plist/kyoujin.csi" />
-        </OpenedDocuments>
-        <ActiveDocument Path="character/kyoujin.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>
