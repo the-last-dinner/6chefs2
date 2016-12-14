@@ -49,33 +49,51 @@
 		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
 		        },
 		        {
-		        	"type":"systemMsg",
-		        	"text":["君には・・・"]
+		        	"type":"spawn",
+		        	"action":[
+		        		{
+		        			"type":"playSE",
+		        			"file":"kiminiha.mp3"
+		        		},
+		        		{
+				        	"type":"systemMsg",
+				        	"text":["君には・・・"]
+				        }
+		        	]
 		        },
 		        {
-				   	"type":"questionMsg",
-				   	"text":["食べられる覚悟はあるかい・・・？"],
-				   	"choices":[
-				   		{
-				   			"choice":"ある",
-				   			"action":[
-				  				{
-				   					"type":"already",
-				   					"event":["1","17"]
-				   				}
-				   			]
-				   		},
-				   		{
-				  			"choice":"ない",
-				   			"action":[
-				   				{
-				   					"type":"already",
-				   					"event":["1","18"]
-				   				}
-				   			]
-				   		}
-				   	]
-				},
+		        	"type":"spawn",
+		        	"action":[
+		        		{
+		        			"type":"playSE",
+		        			"file":"tabekaku.mp3"
+		        		},
+		        		{
+						   	"type":"questionMsg",
+						   	"text":["食べられる覚悟はあるかい・・・？"],
+						   	"choices":[
+						   		{
+						   			"choice":"ある",
+						   			"action":[
+						  				{
+						   					"type":"already",
+						   					"event":["1","17"]
+						   				}
+						   			]
+						   		},
+						   		{
+						  			"choice":"ない",
+						   			"action":[
+						   				{
+						   					"type":"already",
+						   					"event":["1","18"]
+						   				}
+						   			]
+						   		}
+						   	]
+						}
+		        	]
+		        },
 		        {
 		        	"type":"playBGM",
 		        	"file":"Mozart-OboeConcerto-1.mp3"
