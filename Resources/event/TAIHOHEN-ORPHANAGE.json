@@ -122,7 +122,7 @@
 	],
 	"2":[
 		{
-			"type":"sequense",
+			"type":"sequence",
 			"action":[
 				{
 					"type":"createObject",
@@ -200,12 +200,16 @@
 					"type":"fadein"
 				},
 				{
+					"type":"playBGM",
+					"file":"taiho_1.mp3"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
 							"text":["はい、君達は今日から一緒に暮らす\n「オトモダチ」です。","仲良く、元気にいこうね！"],
 							"charaID":"33",
-							"imgID":"2",
+							"imgID":"1",
 							"miniChara":true
 						},
 						{
@@ -216,7 +220,7 @@
 						{
 							"text":["じゃ、じゃあ先生はお仕事があるから\n皆仲良く遊んでるんだよ！"],
 							"charaID":"33",
-							"imgID":"2",
+							"imgID":"1",
 							"miniChara":true
 						}
 					]
@@ -241,11 +245,70 @@
 					"y":21,
 					"action":[
 						{
-							"type":"sequense",
+							"type":"sequence",
 							"action":[
 								{
-									"type":"removeObject",
-									"objID":"10225"
+									"type":"createObject",
+									"objID":"10223",
+									"charaID":"31",
+									"movePattern":"1",
+									"x":11,
+									"y":21,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10224",
+									"charaID":"32",
+									"movePattern":"1",
+									"x":17,
+									"y":15,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10226",
+									"charaID":"20",
+									"movePattern":"2",
+									"x":17,
+									"y":21,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10227",
+									"charaID":"21",
+									"movePattern":"2",
+									"x":22,
+									"y":21,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10228",
+									"charaID":"20",
+									"movePattern":"2",
+									"x":6,
+									"y":15,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10229",
+									"charaID":"21",
+									"movePattern":"2",
+									"x":11,
+									"y":15,
+									"direction":"DOWN"
+								},
+								{
+									"type":"createObject",
+									"objID":"10230",
+									"charaID":"20",
+									"movePattern":"2",
+									"x":22,
+									"y":15,
+									"direction":"DOWN"
 								},
 								{
 									"type":"createObject",
@@ -297,7 +360,7 @@
 											"miniChara":true
 										},
 										{
-											"text":["さっき先生も言ってたでしょ？\n今日から一緒に暮らすんだから仲良くしましょうよ。"],
+											"text":["さっき先生も言ってたでしょ？\n今日から一緒に暮らすんだから\n仲良くしましょうよ。"],
 											"charaID":"31",
 											"name":"？？？",
 											"imgID":"2",
@@ -370,7 +433,7 @@
 											"text":["ほっとけ・・・"],
 											"charaID":"22",
 											"imgID":"2",
-											"miniChara":true,
+											"miniChara":true
 										}
 									]
 								},
@@ -393,7 +456,7 @@
 				},
 				{
 					"type":"storyMsg",
-					"text":["ヨシツネとヤエはうっとうしく\n毎日毎日つきまとってきた。\nヨシツネはオレなんかと違って\n皆から好かれてて・・・","アイツの周りにはいつも人がいて\nにぎやかだった。"]
+					"text":["あのうっとうしいやつらは\n”ヨシツネ”と”ヤエ”っていうらしい。","ヨシツネとヤエはうっとうしく\n毎日毎日つきまとってきた。\nヨシツネはオレなんかと違って\n皆から好かれてて・・・","アイツの周りにはいつも人がいて\nにぎやかだった。"]
 				},
 				{
 					"type":"already"
@@ -431,7 +494,7 @@
 			],
 			"action":[
 				{
-					"type":"sequense",
+					"type":"sequence",
 					"action":[
 						{
 							"type":"charaMsg",
@@ -548,7 +611,7 @@
 					"choice":"聞く",
 					"action":[
 						{
-							"type":"sequense",
+							"type":"sequence",
 							"action":[
 								{
 									"type":"fadeout"
@@ -618,7 +681,7 @@
 									"type":"spawn",
 									"action":[
 										{
-											"type":"sequense",
+											"type":"sequence",
 											"action":[
 												{
 													"type":"charaWalkTo",
@@ -872,7 +935,7 @@
 									"type":"charaWalkTo",
 									"objID":"10233",
 									"x":16,
-									"y":24,
+									"y":24
 								},
 								{
 									"type":"changeDirection",
@@ -1000,7 +1063,7 @@
 			],
 			"action":[
 				{
-					"type":"sequense",
+					"type":"sequence",
 					"action":[
 						{
 							"type":"charaMsg",
@@ -1008,7 +1071,7 @@
 							"charaID":"32",
 							"imgID":"2",
 							"miniChara":true
-						}
+						},
 						{
 							"type":"charaWalk",
 							"objID":"hero",
@@ -1032,7 +1095,7 @@
 	],
 	"9":[
 		{
-			"type":"sequense",
+			"type":"sequence",
 			"action":[
 				{
 					"type":"fadeout"

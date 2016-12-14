@@ -60,8 +60,8 @@
 	],
 	"4":[
 		{
-			"type":"displayImg",
-			"file":"map.png"
+			"type":"systemMsg",
+			"text":["「北森地下孤児院館内図」と書いてある"]
 		}
 	],
 	"5":[
