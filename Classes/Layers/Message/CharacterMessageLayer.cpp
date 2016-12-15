@@ -106,7 +106,7 @@ Label* CharacterMessageLayer::createMessage()
             this->charaImg = img;
         }
     } else {
-        Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + data->getImageName())};
+        Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + data->getImageName())};
         img->setPosition(WINDOW_CENTER);
         img->setLocalZOrder((data->isImageOnly()) ? 1 : -1);
         this->addChild(img);
