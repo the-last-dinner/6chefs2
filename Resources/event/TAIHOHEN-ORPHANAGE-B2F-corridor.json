@@ -18,13 +18,13 @@
 			"type":"if",
 			"condition":[
 				{
-					"flg":["107","3",1]
+					"flg":["107","4",0]
 				}
 			],
 			"action":[
 				{
 			      "type":"removeLayer",
-			      "layer":"toyBOX2"
+			      "layer":"toyBox2"
 			    },
 			    {
 			      "type":"removeLayer",
@@ -33,7 +33,17 @@
 			    {
 			    	"type":"removeObject",
 			    	"objID":"181"
-			    },
+			    }
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["107","4",1]
+				}
+			],
+			"action":[
 			    {
 			    	"type":"createEnemy",
 			    	"objID":"1454",
@@ -63,7 +73,7 @@
 			"y":27
 		}
 	],
-	"3":[
+	"4":[
 		{
 			"type":"if",
 			"condition":[
@@ -186,6 +196,6 @@
 					"text":["中に入っていたおもちゃは外に出されている"]
 				}
 			]
-		},
+		}
 	]
 }

@@ -110,15 +110,15 @@
 			],
 			"action":[
 				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
+				{
 					"type":"sequence",
 					"action":[
 						{
 							"type":"reaction",
 							"objID":"hero"
-						},
-						{
-							"type":"playSE",
-							"file":"door-old-open1.mp3"
 						},
 						{
 							"type":"charaMsg",

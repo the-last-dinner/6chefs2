@@ -446,9 +446,6 @@
 								{
 									"type":"removeObject",
 									"objID":"10222"
-								},
-								{
-									"type":"fadeout"
 								}
 							]
 						}
