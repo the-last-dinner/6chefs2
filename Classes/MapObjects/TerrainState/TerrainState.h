@@ -25,6 +25,8 @@ protected:
     bool _isRunnable { true };
     bool _consumeStaminaWalking { false };
     float _staminaConsumptionRatio { 1.0 };
+    map<int, bool> _directionIntToturnable {};
+
     
 // インスタンスメソッド
 protected:
@@ -35,6 +37,7 @@ public:
     bool isRunnable() const;
     bool consumeStaminaWalking() const;
     float getStaminaConsumptionRatio() const;
+    bool isTrunable(const Direction& direction) const;
 
 // インターフェース
 public:

@@ -85,9 +85,21 @@ void MapObject::setGridPosition(const Point& gridPosition) { _location.x = gridP
 // 方向をセット
 void MapObject::setDirection(const Direction& direction)
 {
-    if (direction.isNull()) return;
+    if (!this->isChangeableDirection(direction)) return;
+    
     _location.direction = direction;
 }
+
+// 方向を変えられるか
+bool MapObject::isChangeableDirection(const Direction& direction)
+{
+    if (direction.isNull()) return false;
+    
+    if (_terrainState != nullptr && !_terrainState->isTrunable(direction)) return false;
+    
+    return true;
+}
+
 
 // オブジェクトIDをセット
 void MapObject::setObjectId(int objectId) { _objectId = objectId; }

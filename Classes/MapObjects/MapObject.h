@@ -92,6 +92,7 @@ public:
     bool isPaused() const;
     vector<Direction> getMovingDirections() const;
     CollisionBox* getCollision() const;
+    bool isChangeableDirection(const Direction& direction);
     
 // collision
 public:

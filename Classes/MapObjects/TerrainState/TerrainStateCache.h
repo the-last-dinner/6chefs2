@@ -22,6 +22,7 @@ public:
         NORMAL,
         SLIP,
         SWIM,
+        LADDER,
     };
 
 // クラスメソッド
