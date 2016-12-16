@@ -127,6 +127,8 @@ void Character::setDirection(const Direction& direction)
 // アニメーション再生を中断させるかを指定できる
 void Character::setDirection(const Direction& direction, bool stopAnimation)
 {
+    if(!this->isChangeableDirection(direction)) return;
+    
     MapObject::setDirection(direction);
     
     if(!stopAnimation) return;
