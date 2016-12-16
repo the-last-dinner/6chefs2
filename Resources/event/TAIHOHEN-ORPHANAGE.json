@@ -4,7 +4,8 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["105","2"]
+					"event":["105","2"],
+					"Nflg":["104","5",1]
 				}
 			],
 			"action":[
@@ -91,10 +92,77 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","5"]
+					"event":["105","2"],
+					"flg":["104","5",1]
 				}
 			],
 			"action":[
+				{
+					"type":"createObject",
+					"objID":"10224",
+					"charaID":"32",
+					"movePattern":"1",
+					"eventID":"5",
+					"trigger":"2",
+					"x":8,
+					"y":21,
+					"direction":"DOWN"
+				},
+				{
+					"type":"createObject",
+					"objID":"10226",
+					"charaID":"20",
+					"movePattern":"2",
+					"eventID":"6",
+					"trigger":"2",
+					"x":17,
+					"y":21,
+					"direction":"DOWN"
+				},
+				{
+					"type":"createObject",
+					"objID":"10227",
+					"charaID":"21",
+					"movePattern":"2",
+					"eventID":"6",
+					"trigger":"2",
+					"x":22,
+					"y":21,
+					"direction":"DOWN"
+				},
+				{
+					"type":"createObject",
+					"objID":"10228",
+					"charaID":"20",
+					"movePattern":"2",
+					"eventID":"6",
+					"trigger":"2",
+					"x":6,
+					"y":15,
+					"direction":"DOWN"
+				},
+				{
+					"type":"createObject",
+					"objID":"10229",
+					"charaID":"21",
+					"movePattern":"2",
+					"eventID":"6",
+					"trigger":"2",
+					"x":11,
+					"y":15,
+					"direction":"DOWN"
+				},
+				{
+					"type":"createObject",
+					"objID":"10230",
+					"charaID":"20",
+					"movePattern":"2",
+					"eventID":"6",
+					"trigger":"2",
+					"x":22,
+					"y":15,
+					"direction":"DOWN"
+				},
 				{
 					"type":"createObject",
 					"objID":"10233",
@@ -102,8 +170,8 @@
 					"eventID":"8",
 					"trigger":"2",
 					"movePattern":"1",
-					"x":14,
-					"y":27,
+					"x":16,
+					"y":24,
 					"direction":"UP"
 				},
 				{
@@ -114,7 +182,7 @@
 					"trigger":"2",
 					"movePattern":"1",
 					"x":14,
-					"y":27,
+					"y":24,
 					"direction":"UP"
 				}
 			]
@@ -586,441 +654,468 @@
 	],
 	"5":[
 		{
-			"type":"questionMsg",
-			"text":["なぁ、おもしれぇ話があるんだが・・・\n聞いちまったら後もどりはできねぇぜ？","聞くカクゴはあるか？"],
-			"charaID":"32",
-			"imgID":"2",
-			"miniChara":"true",
-			"choices":[
+			"type":"if",
+			"condition":[
 				{
-					"choice":"聞かない",
-					"action":[
-						{
-							"type":"charaMsg",
-							"text":["いや、また今度にしとくわ・・・"],
-							"charaID":"22",
-							"imgID":"4",
-							"miniChara":"true"
-						}
-					]
-				},
+					"flg":0
+				}
+			],
+			"action":[
 				{
-					"choice":"聞く",
-					"action":[
+					"type":"questionMsg",
+					"text":["なぁ、おもしれぇ話があるんだが・・・\n聞いちまったら後もどりはできねぇぜ？","聞くカクゴはあるか？"],
+					"charaID":"32",
+					"imgID":"2",
+					"choices":[
 						{
-							"type":"sequence",
+							"choice":"聞かない",
 							"action":[
 								{
-									"type":"fadeout"
-								},
-								{
-									"type":"charaWarp",
-									"objID":"hero",
-									"x":17,
-									"y":11,
-									"direction":"DOWN"
-								},
-								{
-									"type":"charaWarp",
-									"objID":"10224",
-									"x":17,
-									"y":13,
-									"direction":"UP"
-								},
-								{
 									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["へへ、そうこなくっちゃな。","おいタイホウ、聞いたかよ？"],
-											"charaID":"32",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["なんだよ"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["金鉱跡に”テンゲンロウ”って建物ができるんだってよ。","そこには色んな「ウマい食い物」が\n集まるんだってよ。","なぁ、行ってみたくね？"],
-											"charaID":"32",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["え？でも外になんかなかなか出られないぜ？"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["だからよ・・・","ぬけ出すんだよ・・・\n皆がねたあとにな"],
-											"charaID":"32",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["まったくお前ってヤツは・・・"],
-											"charaID":"22",
-											"imgID":"4",
-											"miniChara":true
-										},
-										{
-											"text":["おもしろそうじゃねぇか!"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										}
-									]
-								},
+									"text":["いや、また今度にしとくわ・・・"],
+									"charaID":"22",
+									"imgID":"4",
+									"miniChara":true
+								}
+							]
+						},
+						{
+							"choice":"聞く",
+							"action":[
 								{
-									"type":"spawn",
+									"type":"sequence",
 									"action":[
 										{
-											"type":"sequence",
+											"type":"fadeout"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"hero",
+											"x":17,
+											"y":11,
+											"direction":"DOWN"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10224",
+											"x":17,
+											"y":13,
+											"direction":"UP"
+										},
+										{
+											"type":"fadein"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["へへ、そうこなくっちゃな。","おいタイホウ、聞いたかよ？"],
+													"charaID":"32",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["なんだよ"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["金鉱跡に”テンゲンロウ”って\n建物ができるんだってよ。","そこには色んな「ウマい食い物」が\n集まるんだってよ。","なぁ、行ってみたくね？"],
+													"charaID":"32",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["え？でも外になんか\nなかなか出られないぜ？"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["だからよ・・・","ぬけ出すんだよ・・・\n皆が寝たあとにな"],
+													"charaID":"32",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["まったくお前ってヤツは・・・"],
+													"charaID":"22",
+													"imgID":"4",
+													"miniChara":true
+												},
+												{
+													"text":["おもしろそうじゃねぇか!"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												}
+											]
+										},
+										{
+											"type":"spawn",
 											"action":[
 												{
-													"type":"charaWalkTo",
-													"objID":"10223",
-													"x":15,
-													"y":12
+													"type":"sequence",
+													"action":[
+														{
+															"type":"charaWalkTo",
+															"objID":"10223",
+															"x":15,
+															"y":12
+														},
+														{
+															"type":"changeDirection",
+															"objID":"10223",
+															"direction":"RIGHT"
+														}
+													]
+												}
+											]
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["おもしろそうな話してるじゃない。"],
+													"charaID":"31",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["ヤエ！？","ど、どっから聞いてたんだ？"],
+													"charaID":"32",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["ぜ・ん・ぶ・聞こえてたわよ。"],
+													"charaID":"31",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["せ、先生に言うのか？"],
+													"charaID":"32",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["言わないよ！\nただ・・・"],
+													"charaID":"31",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["ただ・・・？"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["わたしも連れてって・・・"],
+													"charaID":"31",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["え？"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["だから！\nわたしも行きたいの！連れて行って！"],
+													"charaID":"31",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["ふふ・・・"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["そうだな。\nオレ一人じゃヨシツネのアホの\n面倒を見きれねぇからな。","ヤエが来てくれるのは助かるぜ"],
+													"charaID":"22",
+													"imgID":"6",
+													"miniChara":true
+												},
+												{
+													"text":["おい！","・・・"],
+													"charaID":"32",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["まぁいいか！\nじゃあさっそく今日の夜\nさくせんかいぎだな！"],
+													"charaID":"32",
+													"imgID":"1",
+													"miniChara":true
+												}
+											]
+										},
+										{
+											"type":"fadeout",
+											"time":2.0
+										},
+										{
+											"type":"storyMsg",
+											"text":["次の日・・・"]
+										},
+										{
+											"type":"charaWarp",
+											"objID":"hero",
+											"x":6,
+											"y":21,
+											"direction":"RIGHT"
+										},
+										{
+											"type":"charaWarp",
+											"objID":"10224",
+											"x":8,
+											"y":21,
+											"direction":"LEFT"
+										},
+										{
+											"type":"removeObject",
+											"objID":"10223"
+										},
+										{
+											"type":"fadein"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["ねみぃ・・・"],
+													"charaID":"22",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["あぁ、遅くまで\n”さくせんかいぎ”してたからな"],
+													"charaID":"32",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["お？そういえば今日ヤエ見たか？"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												},
+												{
+													"text":["そういえば見てないな。\n部屋にもいなかったし・・・"],
+													"charaID":"32",
+													"imgID":"2",
+													"miniChara":true
+												},
+												{
+													"text":["はーい、\n今日はみんなにお知らせがありまーす。"],
+													"charaID":"33",
+													"imgID":"1",
+													"miniChara":true
+												}
+											]
+										},
+										{
+											"type":"spawn",
+											"action":[
+												{
+													"type":"reaction",
+													"objID":"hero"
+												},
+												{
+													"type":"reaction",
+													"objID":"10224"
+												},
+												{
+													"type":"reaction",
+													"objID":"10226"
+												},
+												{
+													"type":"reaction",
+													"objID":"10227"
+												},
+												{
+													"type":"reaction",
+													"objID":"10228"
+												},
+												{
+													"type":"reaction",
+													"objID":"10229"
+												},
+												{
+													"type":"reaction",
+													"objID":"10230"
 												},
 												{
 													"type":"changeDirection",
-													"objID":"10223",
-													"direction":"RIGHT"
+													"objID":"hero",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10224",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10226",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10227",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10228",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10229",
+													"direction":"DOWN"
+												},
+												{
+													"type":"changeDirection",
+													"objID":"10230",
+													"direction":"DOWN"
+												},
+												{
+													"type":"playSE",
+													"file":"reaction.mp3"
 												}
 											]
-										}
-									]
-								},
-								{
-									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["おもしろそうな話してるじゃない。"],
-											"charaID":"31",
-											"imgID":"2",
-											"miniChara":true
 										},
 										{
-											"text":["ヤエ！？","ど、どっから聞いてたんだ？"],
-											"charaID":"32",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["ぜ・ん・ぶ聞こえてたわよ。"],
-											"charaID":"31",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["せ、先生に言うのか？"],
-											"charaID":"32",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["言わないよ！\nただ・・・"],
-											"charaID":"31",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["ただ・・・？"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["わたしも連れてって・・・"],
-											"charaID":"31",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["え？"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["だから！\nわたしも行きたいの！連れて行って！"],
-											"charaID":"31",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["ふふ・・・"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["そうだな。\nオレ一人じゃヨシツネのアホの面倒を見きれねぇからな。","ヤエが来てくれるのは助かるぜ"],
-											"charaID":"22",
-											"imgID":"6",
-											"miniChara":true
-										},
-										{
-											"text":["おい！","・・・"],
-											"charaID":"32",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["まぁいいか！\nじゃあさっそく今日の夜\nさくせんかいぎだな！"],
-											"charaID":"32",
-											"imgID":"3",
-											"miniChara":true
-										}
-									]
-								},
-								{
-									"type":"fadeout",
-									"time":2.0
-								},
-								{
-									"type":"already"
-								},
-								{
-									"type":"storyMsg",
-									"text":["次の日・・・"]
-								},
-								{
-									"type":"charaWarp",
-									"objID":"hero",
-									"x":6,
-									"y":21,
-									"direction":"RIGHT"
-								},
-								{
-									"type":"charaWarp",
-									"objID":"10224",
-									"x":8,
-									"y":21,
-									"direction":"LEFT"
-								},
-								{
-									"type":"removeObject",
-									"objID":"10223"
-								},
-								{
-									"type":"fadein"
-								},
-								{
-									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["ねみぃ・・・"],
-											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["あぁ、遅くまで”さくせんかいぎしてたからな”"],
-											"charaID":"32",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["お？そういえば今日ヤエ見たか？"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
-										},
-										{
-											"text":["そういえば見てないな。\n部屋にもいなかったし・・・"],
-											"charaID":"32",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["はーい、今日はみんなにお知らせがありまーす。"],
+											"type":"createObject",
+											"objID":"10233",
 											"charaID":"33",
-											"imgID":"2",
-											"miniChara":true
-										}
-									]
-								},
-								{
-									"type":"spawn",
-									"action":[
-										{
-											"type":"reaction",
-											"objID":"hero"
+											"eventID":"8",
+											"trigger":"2",
+											"movePattern":"1",
+											"x":14,
+											"y":27,
+											"direction":"UP"
 										},
 										{
-											"type":"reaction",
-											"objID":"10224"
-										},
-										{
-											"type":"reaction",
-											"objID":"10226"
-										},
-										{
-											"type":"reaction",
-											"objID":"10227"
-										},
-										{
-											"type":"reaction",
-											"objID":"10228"
-										},
-										{
-											"type":"reaction",
-											"objID":"10229"
-										},
-										{
-											"type":"reaction",
-											"objID":"10230"
+											"type":"charaWalkTo",
+											"objID":"10233",
+											"x":16,
+											"y":24
 										},
 										{
 											"type":"changeDirection",
-											"objID":"hero",
-											"direction":"DOWN"
+											"objID":"10233",
+											"direction":"UP"
 										},
 										{
-											"type":"changeDirection",
-											"objID":"10224",
-											"direction":"DOWN"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10226",
-											"direction":"DOWN"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10227",
-											"direction":"DOWN"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10228",
-											"direction":"DOWN"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10229",
-											"direction":"DOWN"
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10230",
-											"direction":"DOWN"
-										},
-										{
-											"type":"playSE",
-											"file":"reaction.mp3"
-										}
-									]
-								},
-								{
-									"type":"createObject",
-									"objID":"10233",
-									"charaID":"33",
-									"eventID":"8",
-									"trigger":"2",
-									"movePattern":"1",
-									"x":14,
-									"y":27,
-									"direction":"UP"
-								},
-								{
-									"type":"charaWalkTo",
-									"objID":"10233",
-									"x":16,
-									"y":24
-								},
-								{
-									"type":"changeDirection",
-									"objID":"10233",
-									"direction":"UP"
-								},
-								{
-									"type":"createObject",
-									"objID":"10234",
-									"charaID":"31",
-									"eventID":"9",
-									"trigger":"2",
-									"movePattern":"1",
-									"x":14,
-									"y":27,
-									"direction":"UP"
-								},
-								{
-									"type":"charaWalk",
-									"objID":"10234",
-									"steps":1.5,
-									"direction":"UP"
-								},
-								{
-									"type":"charaMsg",
-									"text":["みんなにうれしいお知らせです！","ヤエちゃんに\n”あたらしいおうち”が見つかりました。"],
-									"charaID":"33",
-									"imgID":"2",
-									"miniChara":true
-								},
-								{
-									"type":"spawn",
-									"action":[
-										{
-											"type":"reaction",
-											"objID":"hero"
-										},
-										{
-											"type":"reaction",
-											"objID":"10224"
-										},
-										{
-											"type":"playSE",
-											"file":"reaction.mp3"
-										}
-									]
-								},
-								{
-									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["ま、まじか・・・"],
-											"charaID":"32",
-											"imgID":"3",
-											"miniChara":true
-										},
-										{
-											"text":["ヤエちゃんいいなぁ・・・"],
-											"charaID":"10",
-											"name":"孤児院の子供",
-											"miniChara":true
-										},
-										{
-											"text":["少し寂しくなるけど・・・\nお別れまでの間、仲良く遊ぼうね！"],
-											"charaID":"33",
-											"imgID":"2",
-											"miniChara":true
-										},
-										{
-											"text":["・・・"],
+											"type":"createObject",
+											"objID":"10234",
 											"charaID":"31",
-											"imgID":"3",
+											"eventID":"9",
+											"trigger":"2",
+											"movePattern":"1",
+											"x":14,
+											"y":27,
+											"direction":"UP"
+										},
+										{
+											"type":"charaWalk",
+											"objID":"10234",
+											"steps":1.5,
+											"direction":"UP"
+										},
+										{
+											"type":"charaMsg",
+											"text":["みんなにうれしいお知らせです！","ヤエちゃんに\n”あたらしいおうち”が見つかりました。"],
+											"charaID":"33",
+											"imgID":"1",
 											"miniChara":true
 										},
 										{
-											"text":["ヤエ・・・"],
-											"charaID":"22",
-											"imgID":"5",
-											"miniChara":true
+											"type":"spawn",
+											"action":[
+												{
+													"type":"reaction",
+													"objID":"hero"
+												},
+												{
+													"type":"reaction",
+													"objID":"10224"
+												},
+												{
+													"type":"playSE",
+													"file":"reaction.mp3"
+												}
+											]
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["ま、まじか・・・"],
+													"charaID":"32",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["ヤエちゃんいいなぁ・・・"],
+													"charaID":"10",
+													"name":"孤児院の子供",
+													"miniChara":true
+												},
+												{
+													"text":["少し寂しくなるけど・・・\nお別れまでのあと少し・・・\n思いっきり仲良く遊ぼうね！"],
+													"charaID":"33",
+													"imgID":"1",
+													"miniChara":true
+												},
+												{
+													"text":["・・・"],
+													"charaID":"31",
+													"imgID":"3",
+													"miniChara":true
+												},
+												{
+													"text":["ヤエ・・・"],
+													"charaID":"22",
+													"imgID":"5",
+													"miniChara":true
+												}
+											]
+										},
+										{
+											"type":"changeFlg",
+											"flg":1
 										}
 									]
-								},
-								{
-									"type":"already"
 								}
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":1
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["な・・・\n何がどうなってんだ・・・"],
+					"charaID":"32",
+					"imgID":"1",
+					"miniChara":true
 				}
 			]
 		}
@@ -1039,7 +1134,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["104","5"]
+					"Nflg":["104","5",1]
 				}
 			],
 			"action":[
@@ -1055,7 +1150,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","5"]
+					"flg":["104","5",1]
 				}
 			],
 			"action":[
@@ -1086,7 +1181,7 @@
 			"type":"charaMsg",
 			"text":["みんなも早くあたらしいおうち\n見つかるといいね"],
 			"charaID":"33",
-			"imgID":"2",
+			"imgID":"1",
 			"miniChara":true
 		}
 	],
@@ -1117,6 +1212,9 @@
 					"direction":"LEFT"
 				},
 				{
+					"type":"fadein"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -1134,7 +1232,7 @@
 						{
 							"text":["出発はいつなんだ？"],
 							"charaID":"22",
-							"imgID":"5",
+							"imgID":"1",
 							"miniChara":true
 						},
 						{
@@ -1146,7 +1244,7 @@
 						{
 							"text":["こ、今夜！？","じゃあテンゲンロウ行けねぇじゃねぇか！"],
 							"charaID":"32",
-							"imgID":"5",
+							"imgID":"3",
 							"miniChara":true,
 							"option":"reaction"
 						},
@@ -1187,7 +1285,7 @@
 							"miniChara":true
 						},
 						{
-							"text":["そうだぜ！\nヤエは新しいウチでウマいモン沢山食わしてもらえや"],
+							"text":["そうだぜ！\nヤエは新しいウチで\nウマいモン沢山食わしてもらえや"],
 							"charaID":"32",
 							"imgID":"2",
 							"miniChara":true
