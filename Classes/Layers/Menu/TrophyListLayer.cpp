@@ -11,6 +11,8 @@
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 #include "Managers/PlayerDataManager.h"
 #include "Models/PlayerData/GlobalPlayerData.h"
+#include "Utils/SpriteUtils.h"
+#include "UI/SlideNode.h"
 
 // 初期化
 bool TrophyListLayer::init()
@@ -200,11 +202,62 @@ void TrophyListLayer::onMenuKeyPressed()
 // スペースキーを押した時
 void TrophyListLayer::onEnterKeyPressed(int idx)
 {
-    TrophyData* trophyData { CsvDataManager::getInstance()->getTrophyData() };
-    string voiceFile = trophyData->getVoicePath(idx + 1);
-    if (voiceFile != "") {
-        SoundManager::getInstance()->playVoice(voiceFile);
+    int trophyId = idx + 1;
+
+    // トロフィー所持していない場合
+    if (!PlayerDataManager::getInstance()->getGlobalData()->hasTrophy(trophyId)) {
+        SoundManager::getInstance()->playSE(Resource::SE::FAILURE);
+        return;
     }
+    
+    // データ取得
+    TrophyData* trophyData { CsvDataManager::getInstance()->getTrophyData() };
+    string imgName = trophyData->getImagePath(trophyId);
+    string voiceFile = trophyData->getVoicePath(trophyId);
+    
+    // ボイスがない場合
+    if (voiceFile == "") {
+        SoundManager::getInstance()->playSE(Resource::SE::BACK);
+        return;
+    }
+    
+    // 画像がある場合
+    if (SpriteFrameCache::getInstance()->getSpriteFrameByName(imgName)) {
+        // 背景準備
+        SpriteUtils::Square square = SpriteUtils::Square(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+        SpriteUtils::Margin margin = SpriteUtils::Margin(0.0);
+        Sprite* background { SpriteUtils::getSquareSprite(square,margin) };
+        background->setColor(Color3B::BLACK);
+        background->setOpacity(172);
+        
+        // 画像とスライドノードの準備
+        Sprite* img { Sprite::createWithSpriteFrameName(imgName) };
+        Point outPosition { Point(WINDOW_WIDTH + img->getContentSize().width/2, 0) };
+        Point inPosition { Point(WINDOW_WIDTH - img->getContentSize().width/2, 0) };
+        SlideNode* slideBase { SlideNode::create(inPosition, outPosition) };
+        
+        // Spriteをセット
+        slideBase->addChild(img);
+        background->addChild(slideBase);
+        this->addChild(background);
+        
+        // アニメーション
+        this->listenerKeyboard->setEnabled(false);
+        slideBase->slideIn();
+        SoundManager::getInstance()->playVoice(voiceFile, 1.0, [this,slideBase,background](int voiceId, const string& fileName) {
+            slideBase->slideOut([this,background](SlideNode* slideBase) {
+                slideBase->removeAllChildren();
+                slideBase->removeFromParent();
+                background->removeFromParent();
+                this->listenerKeyboard->setEnabled(true);
+            });
+        });
+        
+        return;
+    }
+    
+    // サウンドだけ出す
+    SoundManager::getInstance()->playVoice(voiceFile);
 }
 
 // 選択対象が変わった時

@@ -228,7 +228,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
 {
     if (notification)
     {
-        SoundManager::getInstance()->playSE("back.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::BACK);
         this->notification->hide([this]{
             this->removeChild(this->notification);
             this->notification = nullptr;
@@ -238,7 +238,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
     else
     {
         this->setCursorEnable(false);
-        SoundManager::getInstance()->playSE("failure.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::FAILURE);
         NotificationBand* notification = NotificationBand::create(msg);
         notification->setBandColor(Color3B(64,0,0));
         this->addChild(notification);
