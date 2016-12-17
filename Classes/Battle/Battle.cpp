@@ -71,20 +71,18 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
 
 void Battle::setLostHPCallback(MapObject* target)
 {
-//    target->setLostHPCallback([this](MapObject* obj) {
-//        obj->runAction(Sequence::create(FadeOut::create(1.f), CallFunc::create([this, obj] {
-//            if (_objectList) _objectList->removeEnemyByObjectId(obj->getObjectId());
-//            obj->setOpacity(255);
-//        }), nullptr));
-//    });
+    target->setLostHPCallback([this](MapObject* obj) {
+        obj->runAction(Sequence::create(FadeOut::create(1.f), CallFunc::create([this, obj] {
+            if (_objectList) _objectList->removeEnemyByObjectId(obj->getObjectId());
+            _targetObjects.eraseObject(obj);
+            obj->setOpacity(255);
+        }), nullptr));
+    });
 }
 
 bool Battle::isAllTargetDestroyed() const
 {
-    for (MapObject* obj : _targetObjects) {
-        if (!obj->getHitPoint()->isLost()) return false;
-    }
-    return true;
+    return _targetObjects.empty();
 }
 
 bool Battle::isMainCharacterDestroyed() const

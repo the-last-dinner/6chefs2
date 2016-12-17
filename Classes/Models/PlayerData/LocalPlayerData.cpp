@@ -110,7 +110,7 @@ void LocalPlayerData::incrementSaveCount()
     };
     
     // トロフィーチェック
-    if (save_count >= GlobalPlayerData::CHIKEN_SAVE_COUNT) this->setTrophy(9);
+    if (save_count >= GlobalPlayerData::CHIKEN_SAVE_COUNT) this->setTrophy(GlobalPlayerData::CHIKEN_SAVE_COUNT_TROPHY_ID);
 }
 
 // セーブ回数を取得

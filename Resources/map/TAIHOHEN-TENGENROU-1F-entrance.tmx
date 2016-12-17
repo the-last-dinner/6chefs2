@@ -18,8 +18,14 @@
  <tileset firstgid="4097" name="BlackMagic01" tilewidth="16" tileheight="16" tilecount="264" columns="12">
   <image source="BlackMagic01.png" width="192" height="352"/>
  </tileset>
- <tileset firstgid="4361" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="shituji_0_0.png" width="32" height="33"/>
+ <tileset firstgid="4361" name="girl_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="girl_0_0.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="4365" name="boy_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="boy_0_0.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="4369" name="yae_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="yae_0_0.png" width="32" height="33"/>
  </tileset>
  <layer name="Base" width="55" height="42">
   <properties>
@@ -70,8 +76,27 @@
   </data>
  </layer>
  <layer name="chara" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1rENgDAUQ0G3gTTZf1myAflBQiDd1a9w6QQAAAAAgC9qIznG86bSveWcW/rNnpWm0gEA+/wSvwT4pwt/cAKV
+   eJzt1rkRACAQA7FLeRL6bxZKIGH4pArsbCMAAAAAADhRahG57V6xRhm/6qPfAOBXs+1yY+PMtovGAU7TAXj+AUs=
+  </data>
+ </layer>
+ <layer name="chara2" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1kkRACAMBMEY4Ih/s2CCAlLdCnZ+GwEAAAAAQHUtI3reXnHG2F2zaBsAvMKXAPjTAnDHAP0=
+  </data>
+ </layer>
+ <layer name="yae" width="55" height="42">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzwERABAUBcFX4aN/VkpgmN0EdwkAAAAAAK+qSlrdrtijr6/x6RsAAMAJE8U5AI8=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -163,8 +188,19 @@
   </data>
  </layer>
  <layer name="CharaUe2" width="55" height="42">
+  <properties>
+   <property name="z" value="26"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1isOwlAUhOFru/9NALUULBTbFgGChISHbhfBGBLMhXPa5Aj6f8m4ESMnJQAAAAAAAMBmUaS0VFZKWYzveHpR1tpQKRtlm9lj6Xh6UXbasFdq5ZDZY+l4elEabWiVTjlm9lg6nl6UizbclYdyzeyxdDy9SO89UzueXpReW4YfeywdTw+YI34Jv4RfEuf28SWeX37JSTkbfomlF4lfwi8B/tkLIJF1bQ==
+   eJztzqsOg2AQROHf8v4v0Rbbgi3U9mJJKsDDQzAGx6a7NFl1vmTcEVMKAAAAAAAA4HOqSjlrF62ujjeRLstVH25ao7XGH08T6bLc9aHTeu1h/PE0kS7LUx9e2lv7GH88TaTLMujDqE3a1/jjaSJdpu3Pv02kyzLry/Ljj6eJdAAAAACwZwWmnDrJ
+  </data>
+ </layer>
+ <layer name="CharaUe3" width="55" height="42">
+  <properties>
+   <property name="z" value="35"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzikOAkEYBeG2c/9LsFgWy2JZBAgSEhbLcgfKjOyZvxEdSOpLyj3xUpIkSZIkSZIkSZL+y6BJaUgjGjffb0p2tUz4MKUZzTN/IpuSXS0LPixpRevMn8imZFfLhg9b2tE+8yeyKdnVcuLDgY50zvyJbEp2tVz4cKUb3Tv+tJs+0V0ND3486UXvjk/tpk90J+m3fABd5j47
   </data>
  </layer>
  <layer name="shadow" width="55" height="42">

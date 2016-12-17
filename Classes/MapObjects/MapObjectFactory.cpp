@@ -21,6 +21,7 @@
 
 #include "MapObjects/TerrainObject/WaterArea.h"
 #include "MapObjects/TerrainObject/SlipFloor.h"
+#include "MapObjects/TerrainObject/LadderArea.h"
 
 // コンストラクタ
 MapObjectFactory::MapObjectFactory() {FUNCLOG};
@@ -306,6 +307,7 @@ MapObject* MapObjectFactory::createObjectOnTerrain(const ValueMap& info)
     {
         {"slip", SlipFloor::create},
         {"water", WaterArea::create},
+        {"ladder", LadderArea::create},
     };
     
     string typeStr {this->getObjectType(info)};

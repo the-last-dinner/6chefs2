@@ -11,6 +11,7 @@
 #include "MapObjects/TerrainState/Normal.h"
 #include "MapObjects/TerrainState/Slip.h"
 #include "MapObjects/TerrainState/Swim.h"
+#include "MapObjects/TerrainState/Ladder.h"
 
 USING_NS_MO_T_STATE
 
@@ -34,15 +35,18 @@ bool TerrainStateCache::init()
     TerrainState* normal { Normal::create() };
     TerrainState* slip { Slip::create() };
     TerrainState* swim { Swim::create() };
+    TerrainState* ladder { Ladder::create() };
     
     CC_SAFE_RETAIN(normal);
     CC_SAFE_RETAIN(slip);
     CC_SAFE_RETAIN(swim);
+    CC_SAFE_RETAIN(ladder);
     
     map<StateType, TerrainState*> typeToState {
         { StateType::NORMAL, normal },
         { StateType::SLIP,   slip   },
         { StateType::SWIM,   swim   },
+        { StateType::LADDER, ladder },
     };
     
     _typeToState = typeToState;

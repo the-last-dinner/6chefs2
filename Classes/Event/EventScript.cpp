@@ -61,3 +61,9 @@ rapidjson::Value EventScript::getScriptJson(const char* eventId)
     
     return json;
 }
+
+rapidjson::Document EventScript::getDocument()
+{
+    rapidjson::Document document(&_json.GetAllocator());
+    return document;
+}

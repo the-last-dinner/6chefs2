@@ -20,7 +20,9 @@ public:
         ID,
         NAME,
         CONDITION,
-        COMMENT
+        COMMENT,
+        IMAGE,
+        VOICE,
     };
     
     // Instance valiables
@@ -41,6 +43,8 @@ public:
     string getName(const int trophy_id);
     string getCondition(const int trophy_id);
     string getComment(const int trophy_id);
+    string getImagePath(const int trophy_id);
+    string getVoicePath(const int trophy_id);
     vector<int> getIdAll();
 };
 

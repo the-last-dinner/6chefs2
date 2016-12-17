@@ -42,8 +42,7 @@ bool GameEvent::init(rapidjson::Value& json)
     CC_SAFE_RETAIN(eventHelper);
     _eventHelper = eventHelper;
     
-    // NOTICE: これやると_jsonからしか参照できなくなる
-    _json = json;
+    _json.CopyFrom(json, DungeonSceneManager::getInstance()->getEventScript()->getDocument().GetAllocator());
     
     return true;
 }
@@ -323,6 +322,7 @@ void CallEvent::stop(int code)
 // Repeat
 bool EventRepeat::init(rapidjson::Value& json)
 {
+ 
     if (!GameEvent::init(json)) return false;
     
     if (!_eventHelper->hasMember(_json, member::TIMES)) return false;
@@ -334,6 +334,7 @@ bool EventRepeat::init(rapidjson::Value& json)
     if (_eventHelper->hasMember(_json, member::ID)) _code = stoi(_json[member::ID].GetString());
     
     _event = this->createSpawnFromIdOrAction(_json);
+    
     CC_SAFE_RETAIN(_event);
     
     return true;

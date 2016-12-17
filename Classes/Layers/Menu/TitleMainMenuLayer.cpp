@@ -72,7 +72,7 @@ bool TitleMainMenuLayer::init()
     title3->setOpacity(0);
     this->addChild(title3);
     
-    float titleNumberScale {0.33};
+    float titleNumberScale { 0.33f };
     Sprite* titleNumber {Sprite::createWithSpriteFrameName("title_2.png")};
     titleNumber->setPosition(
         WINDOW_WIDTH/2 + title3->getContentSize().width/2 + titleNumber->getContentSize().width * titleNumberScale / 5,
@@ -82,7 +82,7 @@ bool TitleMainMenuLayer::init()
     this->addChild(titleNumber);
     
     // タイトルメニューを生成
-	int menuSize = 44.f;
+	float menuSize = 44.f;
     float duration { 1.0f };
     float latency { 0.2f };
 	for(int i = 0; i < etoi(MenuType::SIZE); i++)
@@ -228,7 +228,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
 {
     if (notification)
     {
-        SoundManager::getInstance()->playSE("back.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::BACK);
         this->notification->hide([this]{
             this->removeChild(this->notification);
             this->notification = nullptr;
@@ -238,7 +238,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
     else
     {
         this->setCursorEnable(false);
-        SoundManager::getInstance()->playSE("failure.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::FAILURE);
         NotificationBand* notification = NotificationBand::create(msg);
         notification->setBandColor(Color3B(64,0,0));
         this->addChild(notification);

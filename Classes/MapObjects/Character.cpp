@@ -127,6 +127,8 @@ void Character::setDirection(const Direction& direction)
 // アニメーション再生を中断させるかを指定できる
 void Character::setDirection(const Direction& direction, bool stopAnimation)
 {
+    if(!this->isChangeableDirection(direction)) return;
+    
     MapObject::setDirection(direction);
     
     if(!stopAnimation) return;
@@ -276,7 +278,7 @@ void Character::onHurt(int damage)
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
     
-    if (_battle) {
+    if (_battle && !_hitPoint->isLost()) {
         HurtCommand* command { HurtCommand::create() };
         this->pushCommand(command);
     }

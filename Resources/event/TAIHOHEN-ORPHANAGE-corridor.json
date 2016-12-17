@@ -1,17 +1,14 @@
 {
-	"1":[
-		
-	],
 	"2":[
 		{
 			"type":"sequence",
 			"action":[
 				{
-					"type":"fadein"
-				},
-				{
 					"type":"spawn",
 					"action":[
+						{
+							"type":"fadein"
+						},
 						{
 							"type":"sequence",
 							"action":[
@@ -42,7 +39,9 @@
 					"objID":"10231",
 					"charaID":"32",
 					"x":9,
-					"y":19
+					"y":19,
+					"movePattern":"1",
+					"direction":"UP"
 				},
 				{
 					"type":"charaWalkTo",
@@ -105,14 +104,16 @@
 					"objID":"10232",
 					"charaID":"31",
 					"x":9,
-					"y":19
+					"y":19,
+					"movePattern":"1",
+					"direction":"UP"
 				},
 				{
 					"type":"charaMsg",
 					"text":["あれ？たのしそうじゃない！"],
 					"charaID":"31",
 					"imgID":"2",
-					"miniChara":true,
+					"miniChara":true
 				},
 				{
 					"type":"spawn",
@@ -124,7 +125,7 @@
 						},
 						{
 							"type":"reaction",
-							"objID":"10231",
+							"objID":"10231"
 						},
 						{
 							"type":"reaction",

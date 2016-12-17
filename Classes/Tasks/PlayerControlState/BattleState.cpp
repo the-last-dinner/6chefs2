@@ -91,7 +91,7 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
         StepCommand* command { StepCommand::create() };
         command->setDirections(directions);
         command->setCallback([this, party](bool moved) {
-            _task->onPartyMovedOneGrid(party, false);
+            if (_task) _task->onPartyMovedOneGrid(party, false);
         });
         
         mainCharacter->pushCommand(command);
@@ -100,7 +100,7 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
             if (!moved) return;
             
             stamina->setDecreasing(false);
-            _task->onPartyMovedOneGrid(party, false);
+            if (_task) _task->onPartyMovedOneGrid(party, false);
         });
     }
 }
