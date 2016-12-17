@@ -15,7 +15,7 @@
 	],
 	"3":[
 		{
-			"type":"sequense",
+			"type":"sequence",
 			"action":[
 				{
 					"type":"charaWalk",
@@ -72,7 +72,7 @@
 	],
 	"4":[
 		{
-			"type":"sequense",
+			"type":"sequence",
 			"action":[
 				{
 					"type":"fadeout"
@@ -124,6 +124,18 @@
 					]
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1455",
+					"charaID":"17",
+					"x":33,
+					"y":3,
+					"direction":"DOWN",
+					"movePattern":"5"
+				},
+				{
 					"type":"spawn",
 					"action":[
 						{
@@ -141,6 +153,12 @@
 					]
 				},
 				{
+					"type":"camera",
+					"nextX":34,
+					"nextY":3,
+					"time":0.5
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -152,19 +170,23 @@
 						{
 							"text":["子供が忍び込んでる！\n至急応援を頼む！"],
 							"charaID":"10",
-							"name":"警備員",
+							"name":"黒ずくめの男",
 							"option":"reaction"
 						}
 					]
 				},
 				{
-					"type":"createEnemy",
-					"objID":"1455",
-					"charaID":"17",
-					"x":33,
-					"y":3,
-					"direction":"DOWN",
-					"movePattern":"1"
+					"type":"fadeout"
+				},
+				{
+					"type":"playBGM",
+					"file":"lastBoss.mp3"
+				},
+				{
+					"type":"setCamera"
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"already"

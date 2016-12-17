@@ -148,7 +148,8 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"fadein"
+					"type":"fadein",
+					"time":2.0
 				},
 				{
 					"type":"charaMsg",

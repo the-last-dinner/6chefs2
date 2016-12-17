@@ -10,6 +10,10 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
 					"type":"spawn",
 					"action":[
 						{
@@ -63,16 +67,27 @@
 					"charaID":"33",
 					"x":17,
 					"y":13,
-					"direction":"UP"
+					"direction":"UP",
+					"movePattern":"1"
 				},
 				{
 					"type":"fadein"
 				},
 				{
-					"type":"reaction",
-					"objID":"hero"
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"reaction.mp3"
+						},
+						{
+							"type":"reaction",
+							"objID":"hero"
+						}
+					]
 				},
 				{
+					"type":"charaMsg",
 					"text":["せ、せんせい・・・？"],
 					"charaID":"22",
 					"imgID":"5",
@@ -110,15 +125,7 @@
 							"charaID":"22",
 							"imgID":"5",
 							"miniChara":true
-						}
-					]
-				},
-				{
-					"type":"stopBGM"
-				},
-				{
-					"type":"charaMsg",
-					"talk":[
+						},
 						{
 							"text":["そこで北森が目を付けたのは\n北森金鉱の崩落事故によって生まれた\n孤児・・・"],
 							"charaID":"33",
@@ -142,12 +149,15 @@
 					"type":"charaMsg",	
 					"text":["おいしいものにお金をかけるのは\nどこの国も同じみたいね・・・"],
 					"charaID":"33",
-					"imgID":"3",
+					"imgID":"2",
 					"miniChara":true
 				},
 				{
+					"type":"fadeout"
+				},
+				{
 					"type":"charaMsg",
-					"imgID":"yaeDeath.png",
+					"img":"yaeDeath.png",
 					"talk":[
 						{
 							"text":["さっき”出荷”されたアナタのオトモダチも\n高く売れたわ・・・"],
@@ -163,6 +173,9 @@
 					]
 				},
 				{
+					"type":"fadein"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -173,9 +186,9 @@
 							"option":"reaction"
 						},
 						{
-							"text":["人間には”食うもの”と”食われるもの”\nがいるのよ。北森のためなの・・・\n分かってくれるよね・・・","タイホウくん・・・？"],
+							"text":["ヒトには\n”食うもの”と”食われるもの”がいるのよ。","北森のためなの・・・\n分かってくれるよね・・・","タイホウくん・・・？"],
 							"charaID":"33",
-							"imgID":"3",
+							"imgID":"2",
 							"miniChara":true
 						},
 						{

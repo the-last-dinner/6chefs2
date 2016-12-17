@@ -4,7 +4,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","5"]
+					"event":["109","2"]
 				}
 			],
 			"action":[
@@ -49,10 +49,11 @@
 			    	"objID":"1454",
 			    	"charaID":"33",
 			    	"x":5,
-			    	"y":13,
+			    	"y":11,
 			    	"pathID":"1",
 			    	"movePattern":"4",
-			    	"speed":4.0
+			    	"speed":1.0,
+			    	"times":1
 			    }
 			]
 		}
@@ -78,7 +79,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"flg":["107","3",0],
+					"flg":["107","4",0],
 					"Nflg":["108","4",1]
 				}
 			],
@@ -101,8 +102,12 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"fadeout"
-						},
+					    	"type":"fadeout"
+					    },
+					    {
+					    	"type":"changeFlg",
+					    	"flg":1
+					    },
 						{
 							"type":"createLayer",
 							"layer":"toyBOX2"
@@ -150,16 +155,19 @@
 					    					"type":"charaMsg",
 					    					"text":["あら？何かしら・・・"],
 					    					"charaID":"33",
-					    					"imgID":"2",
+					    					"imgID":"1",
 					    					"miniChara":true
 					    				},
 					    				{
-					    					"type":"fadeout",
-					    					"time":1.0
+					    					"type":"fadeout"
 					    				}
 					    			]
 					    		}
 					    	]
+					    },
+					    {
+					    	"type":"fadein",
+					    	"time":1.0
 					    },
 					    {
 					    	"type":"charaMsg",
@@ -169,15 +177,15 @@
 					    	"miniChara":true
 					    },
 					    {
-					    	"type":"changeFlg",
-					    	"flg":1
+					    	"type":"fadeout",
+					    	"time":1.0
 					    },
 					    {
 					    	"type":"changeMap",
 					    	"mapID":"106",
 					    	"x":6,
 					    	"y":5,
-					    	"eventID":"6"
+					    	"eventID":"7"
 					    }
 					]
 				}
@@ -196,6 +204,24 @@
 					"text":["中に入っていたおもちゃは外に出されている"]
 				}
 			]
+		}
+	],
+	"5":[
+		{
+			"type":"systemMsg",
+			"text":["バカでかい城のおもちゃだ"]
+		}
+	],
+	"6":[
+		{
+			"type":"systemMsg",
+			"text":["チェス盤だ\nだがここにはルールがわかるやつがいねぇ・・・"]
+		}
+	],
+	"7":[
+		{
+			"type":"systemMsg",
+			"text":["木馬だ"]
 		}
 	]
 }

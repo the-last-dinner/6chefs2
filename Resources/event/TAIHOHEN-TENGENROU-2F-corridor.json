@@ -18,7 +18,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["112","4"]
+					"Nevent":["111","4"]
 				}
 			],
 			"action":[
@@ -35,7 +35,7 @@
 						{
 							"type":"charaWalk",
 							"objID":"hero",
-							"steps":"1.0",
+							"steps":1.0,
 							"direction":"RIGHT"
 						}
 					]
@@ -46,7 +46,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["112","4"]
+					"event":["111","4"]
 				}
 			],
 			"action":[
@@ -74,7 +74,8 @@
 							"type":"changeMap",
 							"mapID":"113",
 							"x":17,
-							"y":17
+							"y":17,
+							"eventID":"3"
 						}
 					]
 				}

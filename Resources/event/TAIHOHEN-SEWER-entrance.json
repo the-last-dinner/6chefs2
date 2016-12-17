@@ -30,8 +30,8 @@
 				},
 				{
 					"type":"camera",
-					"nextX":115,
-					"nextY":26,
+					"nextX":5,
+					"nextY":48,
 					"time":0.5
 				},
 				{
@@ -42,10 +42,9 @@
 							"talk":[
 								{
 									"text":["いたぞ！逃がすな！"],
-									"charaID":"32",
-									"imgID":"2",
-									"option":"reaction",
-									"miniChara":true
+									"charaID":"10",
+									"name":"黒ずくめの男達",
+									"option":"reaction"
 								}
 							]
 						},
@@ -56,7 +55,7 @@
 							"x":4,
 							"y":50,
 							"direction":"RIGHT",
-							"movePattern":"5",
+							"movePattern":"5"
 						},
 						{
 							"type":"createEnemy",
@@ -65,12 +64,18 @@
 							"x":4,
 							"y":48,
 							"direction":"RIGHT",
-							"movePattern":"5",
+							"movePattern":"5"
 						}
 					]
 				},
 				{
+					"type":"fadeout"
+				},
+				{
 					"type":"setCamera"
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"charaMsg",
@@ -83,7 +88,7 @@
 							"option":"reaction"
 						},
 						{
-							"text":["・・・\n見られちゃ困るモンがあった・・・ってことだろ","なぁ、さっきのってもしかして・・・"],
+							"text":["・・・\n見られちゃ困るモンがあった・・・\nってことだろ","なぁ、さっきのってもしかして・・・"],
 							"charaID":"22",
 							"imgID":"2",
 							"miniChara":true

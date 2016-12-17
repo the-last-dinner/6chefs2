@@ -514,6 +514,9 @@
 								{
 									"type":"removeObject",
 									"objID":"10222"
+								},
+								{
+									"type":"fadeout"
 								}
 							]
 						}
@@ -1204,7 +1207,7 @@
 					"objID":"10224",
 					"x":14,
 					"y":22,
-					"direction":"RIGHT"
+					"direction":"DOWN"
 				},
 				{
 					"type":"changeDirection",
@@ -1249,7 +1252,7 @@
 							"option":"reaction"
 						},
 						{
-							"text":["うん・・・\nごめんね・・・","どうしても今日じゃないとダメみたいなの"],
+							"text":["うん・・・\nごめん・・・","どうしても今日じゃないとダメみたいなの"],
 							"charaID":"31",
 							"imgID":"3",
 							"miniChara":true
@@ -1269,7 +1272,7 @@
 						{
 							"text":["え？"],
 							"charaID":"31",
-							"imgID":"2",
+							"imgID":"3",
 							"miniChara":true
 						},
 						{
@@ -1281,7 +1284,7 @@
 						{
 							"text":["タイホウ・・・"],
 							"charaID":"31",
-							"imgID":"2",
+							"imgID":"3",
 							"miniChara":true
 						},
 						{
@@ -1314,11 +1317,14 @@
 					"type":"fadeout"
 				},
 				{
-					"type":"displayImg",
-					"file":"cry_child.png"
+					"type":"already"
 				},
 				{
-					"type":"already"
+					"type":"stopBGM"
+				},
+				{
+					"type":"wait",
+					"time":1.0
 				},
 				{
 					"type":"changeMap",

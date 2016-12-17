@@ -45,9 +45,21 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"setAmbient",
+					"ambient":"night"
+				},
+				{
 					"type":"changeDirection",
 					"objID":"hero",
 					"direction":"RIGHT"
+				},
+				{
+					"type":"createLayer",
+					"layer":"chara"
+				},
+				{
+					"type":"createLayer",
+					"layer":"chara2"
 				},
 				{
 					"type":"createObject",
@@ -59,7 +71,12 @@
 					"direction":"LEFT"
 				},
 				{
-					"type":"fadein"
+					"type":"playBGM",
+					"file":"adv.mp3"
+				},
+				{
+					"type":"fadein",
+					"time":2.0
 				},
 				{
 					"type":"charaMsg",
@@ -124,7 +141,7 @@
 						{
 							"text":["おう、もっと慎重に行こうぜ"],
 							"charaID":"22",
-							"imgID":"",
+							"imgID":"1",
 							"miniChara":true
 						}
 					]
@@ -299,6 +316,40 @@
 					"x":9,
 					"y":21,
 					"eventID":"10"
+				}
+			]
+		}
+	],
+	"5":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"setAmbient",
+					"ambient":"night"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"chara"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"chara2"
 				}
 			]
 		}
