@@ -27,13 +27,12 @@ bool Ladder::init()
     _consumeStaminaWalking = false;
     _staminaConsumptionRatio = 1.f;
     // 上以外は方向転換させない
-    map<int, bool> directionIntToturnable {
+    map<int, bool> directionIntToturnable = {
         { Direction::UP.getInt(),   true  },
         { Direction::DOWN.getInt(), false },
         { Direction::RIGHT.getInt(),false },
         { Direction::LEFT.getInt(), false },
     };
-    
     _directionIntToturnable = directionIntToturnable;
     
     return true;
