@@ -1,6 +1,0 @@
-<PlistInfoProjectFile>
-  <PropertyGroup Name="daigoro" Type="Plist" ID="38c734c4-647e-46c8-b256-3d572947e772" Version="3.10.0.0" />
-  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
-    <MaxSize Width="2048" Height="2048" />
-  </Content>
-</PlistInfoProjectFile>
