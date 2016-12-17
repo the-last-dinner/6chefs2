@@ -30,37 +30,35 @@ bool SelectEventLayer::init(const string& message, const vector<string>& choices
     this->setCascadeOpacityEnabled(true);
     
     // Selectorの大きさ設定
-    int choiceCount = choices.size();
+    int choiceCount = (int) choices.size();
     int maxY = 22 + (choiceCount * 8);
+    int minY = 20;
     int maxStrLen {9};
     int temp {0};
     for (auto choice : choices)
     {
-        temp = choice.size();
+        temp = (int) choice.size();
         if (maxStrLen < temp) maxStrLen = temp;
     }
-    SpriteUtils::Square position = SpriteUtils::Square(88 - maxStrLen, 20, 95, maxY);
     
-    // datasが空ならシステムメッセージで質問文表示
-    if(datas.empty())
-    {
+    
+    if(datas.empty()) {
+        // datasが空ならシステムメッセージで質問文表示
         SystemMessageLayer* messageLayer { SystemMessageLayer::create(SystemMessageData::create(message), nullptr) };
         this->addChild(messageLayer);
-    }
-    else
-    {
+    } else {
         // 空でない時はキャラメッセージ
         CharacterMessageLayer* charaMessageLayer { CharacterMessageLayer::create(datas, nullptr) };
         this->addChild(charaMessageLayer);
-        position = SpriteUtils::Square(77, 33, 97, 53); // 位置修正
+        // 高さ調整
+        minY += 13;
+        maxY += 10;
     }
+    
     
     // 選択レイヤ表示
     Point index = Point(1,choices.size()); // 要素数
-    //Size parcent = Size(WINDOW_WIDTH/100, WINDOW_HEIGHT/100);
-    //Sprite* window {Sprite::createWithSpriteFrameName("question_selector.png")};
-    //window->setPosition(window->getContentSize().width/2 + parcent.width * 75, window->getContentSize().height/2 + parcent.height * 20);
-    //MiniSelector::SelectorWithSprite selector = MiniSelector::SelectorWithSprite(index, window, choices);
+    SpriteUtils::Square position { SpriteUtils::Square(88 - maxStrLen, minY, 95, maxY) };
     MiniSelector::Selector selector = MiniSelector::Selector(index, position, choices);
     MiniSelector* mini = {MiniSelector::create(selector)};
     mini->show();
