@@ -90,10 +90,20 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
     
     Vec2 gridVec { Direction::getGridVec2(directions) };
     Point parentGridPosition { _parent->getGridPosition() };
+    Rect gridRect { this->getGridRect(parentGridPosition) };
+    
+    gridRect.origin.x += gridVec.x;
+    gridRect.origin.y += gridVec.y;
+    
+    return gridRect;
+}
+
+Rect DetectionBox::getGridRect(const Point& parentGridPosition) const
+{
     Rect rect { this->getBoundingBox() };
     
-    float x { parentGridPosition.x + gridVec.x + rect.getMinX() / GRID };
-    float y { parentGridPosition.y + gridVec.y + rect.getMinY() / GRID };
+    float x { parentGridPosition.x + rect.getMinX() / GRID };
+    float y { parentGridPosition.y + rect.getMinY() / GRID };
     float width { rect.size.width / GRID };
     float height { rect.size.height / GRID };
     
