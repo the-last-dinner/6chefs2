@@ -334,6 +334,10 @@
 																			"file":"kagome.mp3"
 																		},
 																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
+																		},
+																		{
 																			"type":"already",
 																			"event":["77","5"]
 																		}
@@ -636,7 +640,7 @@
 																					"imgID":"3"
 																				},
 																				{
-																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかったわ\nありがとう"],
+																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかった！\nありがとう"],
 																					"charaID":"10",
 																					"name":"しろう"
 																				},
@@ -675,6 +679,10 @@
 																		{
 																			"type":"playBGM",
 																			"file":"kagome.mp3"
+																		},
+																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
 																		},
 																		{
 																			"type":"already",
@@ -960,7 +968,7 @@
 																					"imgID":"3"
 																				},
 																				{
-																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかったわ\nありがとう"],
+																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかった！\nありがとう"],
 																					"charaID":"10",
 																					"name":"しょうご"
 																				},
@@ -999,6 +1007,10 @@
 																		{
 																			"type":"playBGM",
 																			"file":"kagome.mp3"
+																		},
+																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
 																		},
 																		{
 																			"type":"already",
@@ -1284,7 +1296,7 @@
 																					"imgID":"3"
 																				},
 																				{
-																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかったわ\nありがとう"],
+																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかった！\nありがとう"],
 																					"charaID":"10",
 																					"name":"みろく"
 																				},
@@ -1323,6 +1335,10 @@
 																		{
 																			"type":"playBGM",
 																			"file":"kagome.mp3"
+																		},
+																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
 																		},
 																		{
 																			"type":"already",
@@ -1573,6 +1589,10 @@
 																			"file":"kagome.mp3"
 																		},
 																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
+																		},
+																		{
 																			"type":"already",
 																			"event":["77","5"]
 																		}
@@ -1799,7 +1819,7 @@
 																					"imgID":"3"
 																				},
 																				{
-																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかったわ\nありがとう"],
+																					"text":["へへへ\nおねぇちゃんこどもみたい","たのしかった！\nありがとう"],
 																					"charaID":"10",
 																					"name":"かずお"
 																				},
@@ -1838,6 +1858,10 @@
 																		{
 																			"type":"playBGM",
 																			"file":"kagome.mp3"
+																		},
+																		{
+																			"type":"playBGM",
+																			"file":"ORHANAGE.mp3"
 																		},
 																		{
 																			"type":"already",
@@ -2066,7 +2090,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"text":["あそこのへや・・・もう入った？\nいつもおじさんがこもってる・・・","なにかわかるかもしれない・・・"],
+							"text":["あそこにあるへや・・・もう入った？\nいつもおじさんがこもってる・・・","なにかわかるかもしれない・・・"],
 							"charaID":"10",
 							"name":"みろく"
 						},

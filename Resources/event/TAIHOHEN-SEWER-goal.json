@@ -252,10 +252,14 @@
 					"direction":"RIGHT"
 				},
 				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
 					"type":"changeMap",
 					"mapID":"78",
 					"x":16,
-					"y":15,
+					"y":14,
 					"eventID":"10"
 				}
 			]
