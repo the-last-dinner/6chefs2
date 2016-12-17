@@ -300,11 +300,11 @@ void DungeonScene::onExitDungeon()
 // ライトの管理
 void DungeonScene::setLight()
 {
-    if (PlayerDataManager::getInstance()->getLocalData()->isEquipedItem(1514)) {
-        _party->getMainCharacter()->setLight(Light::create(Light::Information(50)), _ambientLightLayer);
-    } else {
-        _party->getMainCharacter()->removeLight();
-    }
+//    if (PlayerDataManager::getInstance()->getLocalData()->isEquipedItem(1514)) {
+//        _party->getMainCharacter()->setLight(Light::create(Light::Information(50)), _ambientLightLayer);
+//    } else {
+//        _party->getMainCharacter()->removeLight();
+//    }
 }
 
 // イベントを実行する時
