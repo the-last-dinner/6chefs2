@@ -123,7 +123,7 @@
   <object id="237" x="224" y="320" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="dShituji.png"/>
+    <property name="img" value="box.png"/>
     <property name="objID" value="201"/>
    </properties>
   </object>
