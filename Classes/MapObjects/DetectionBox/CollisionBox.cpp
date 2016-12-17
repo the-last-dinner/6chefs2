@@ -29,17 +29,6 @@ bool CollisionBox::init(MapObject* parent, const Rect& originRect)
     return true;
 }
 
-CollisionBox* CollisionBox::clone(const Point& gridPosition) const
-{
-    Rect gridRect { this->getGridRect() };
-    
-    if (!gridPosition.isZero()) {
-        gridRect.origin = gridPosition;
-    }
-    
-    return CollisionBox::create(_parent, gridRect);
-}
-
 #pragma mark -
 #pragma mark Debug
 Color4F CollisionBox::getDebugMaskColor() const
