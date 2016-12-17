@@ -963,6 +963,9 @@
 							]
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"charaMsg",
 							"text":["ぜったいにゆるさない！"],
 							"file":"yuki_naguri.png",
@@ -1107,6 +1110,46 @@
 								{
 									"type":"getTrophy",
 									"trophyID":"9"
+								}
+							]
+						},
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playBGM",
+									"file":"ending2.mp3"
+								},
+								{
+									"type":"displayImg",
+									"file":"enddisp.png",
+									"time":27.0
+								}
+							]
+						},
+						{
+							"type":"createCamera",
+							"mapID":"117",
+							"x":25,
+							"y":19,
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"fadein"
+										},
+										{
+											"type":"camera",
+											"nextX":25,
+											"nextY":693,
+											"time":83
+										},
+										{
+											"type":"fadeout",
+											"time":3.0
+										}
+									]
 								}
 							]
 						},

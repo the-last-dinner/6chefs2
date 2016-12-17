@@ -23,16 +23,16 @@
 			],
 			"action":[
 				{
-					"type":"changeFlg",
-					"mapID":"64",
-					"eventID":"2",
-					"flg":1
-				},
-				{
 					"type":"sequence",
 					"action":[
 						{
 							"type":"fadeout"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"64",
+							"eventID":"2",
+							"flg":1
 						},
 						{
 							"type":"changeMap",
@@ -55,24 +55,29 @@
 			],
 			"action":[
 				{
-					"type":"changeFlg",
-					"mapID":"64",
-					"eventID":"2",
-					"flg":1
-				},
-				{
-					"type":"stopBGM"
-				},
-				{
-					"type":"playBGM",
-					"file":"tower.mp3"
-				},
-				{
-					"type":"changeMap",
-					"mapID":"40",
-					"x":7,
-					"y":54,
-					"eventID":"9"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"tower.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"64",
+							"eventID":"2",
+							"flg":1
+						},
+						{
+							"type":"changeMap",
+							"mapID":"40",
+							"x":7,
+							"y":54,
+							"eventID":"9"
+						}
+					]
 				}
 			]
 		},
@@ -402,7 +407,8 @@
 								{
 									"text":["なんつー息苦しさだココ・・・"],
 									"charaID":"8",
-									"imgID":"1"
+									"imgID":"1",
+									"option":"reaction"
 								},
 								{
 									"text":["・・・あの後よ・・・\nもういっぺん晩餐館に行ってみたんだわ。皆でよ。","あそこの地下は・・・まさに「地獄」\nって感じでよ。","色んな殺され方をしていた人、\n狂人病にかかっておかしくなっちまった人・・・","でもよ・・・あれから色々調べたんだけどよ・・・\n狂人病ってのは本来寝たきりになったりする奴が多くて\n晩餐館の地下にいた奴らやさっきの奴らみたいに","馬鹿力出せるようになるのは\n珍しいんだとよ。","じゃあ何であんなに沢山の人間がああなっちまったんだ？"],
