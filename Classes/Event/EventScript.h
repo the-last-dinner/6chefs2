@@ -32,5 +32,6 @@ public:
     rapidjson::Value getScriptJson(const int eventId);           // 該当IDスクリプトの取得
     rapidjson::Value getScriptJson(const char* eventId);
     rapidjson::Value getScriptJson(const string& eventId);
+    rapidjson::Document getDocument();
 };
 #endif /* defined(__LastSupper__EventScript__) */
