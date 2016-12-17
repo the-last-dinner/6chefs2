@@ -1675,10 +1675,37 @@
 					]
 				},
 				{
-					"type":"changeMap",
-					"mapID":"79",
-					"x":24,
-					"y":27
+					"type":"if",
+					"condition":[
+						{
+							"Nevent":["79","12"]
+						}
+					],
+					"action":[
+						{
+							"type":"changeMap",
+							"mapID":"79",
+							"x":24,
+							"y":27
+						}
+					]
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"event":["79","12"]
+						}
+					],
+					"action":[
+						{
+							"type":"changeMap",
+							"mapID":"79",
+							"x":24,
+							"y":27,
+							"eventID":"13"
+						}
+					]
 				}
 			]
 		}
