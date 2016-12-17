@@ -207,7 +207,7 @@
 							"action":[
 								{
 									"type":"getTrophy",
-									"trophy":"2"
+									"trophyID":"2"
 								}
 							]
 						},

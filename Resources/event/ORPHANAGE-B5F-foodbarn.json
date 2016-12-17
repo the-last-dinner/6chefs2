@@ -85,10 +85,6 @@
 					"type":"fadein"
 				},
 				{
-					"type":"systemMsg",
-					"text":["真夏解放"]
-				},
-				{
 					"type":"removeObject",
 					"objID":"1"
 				},
@@ -102,7 +98,7 @@
 					"action":[
 						{
 							"type":"getTrophy",
-							"trophy":"3"
+							"trophyID":"3"
 						}
 					]
 				},

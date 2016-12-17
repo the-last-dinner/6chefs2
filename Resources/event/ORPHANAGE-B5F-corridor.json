@@ -18,7 +18,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["79","2"]
+					"event":["79","6"]
 				}
 			],
 			"action":[

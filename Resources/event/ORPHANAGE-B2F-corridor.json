@@ -380,7 +380,8 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["73","13"]
+					"event":["73","13"],
+					"Nevent":["73","12"]
 				}
 			],
 			"action":[
