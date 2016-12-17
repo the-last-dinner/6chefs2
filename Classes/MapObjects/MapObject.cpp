@@ -50,6 +50,8 @@ bool MapObject::init()
     CC_SAFE_RETAIN(commandQueue);
     _commandQueue = commandQueue;
     
+    this->setCascadeOpacityEnabled(true);
+    
     return true;
 }
 

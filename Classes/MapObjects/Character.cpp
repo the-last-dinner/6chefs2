@@ -278,7 +278,7 @@ void Character::onHurt(int damage)
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
     
-    if (_battle) {
+    if (_battle && !_hitPoint->isLost()) {
         HurtCommand* command { HurtCommand::create() };
         this->pushCommand(command);
     }
