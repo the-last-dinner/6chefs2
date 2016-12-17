@@ -163,8 +163,8 @@ void DungeonSceneManager::fadeIn(const float duration, function<void()> callback
         return;
     }
     
-    CC_SAFE_RELEASE(this->cover);
     this->cover->runAction(Sequence::create(FadeOut::create(duration), CallFunc::create(callback), RemoveSelf::create(), nullptr));
+    CC_SAFE_RELEASE(this->cover);
     this->cover = nullptr;
 }
 
