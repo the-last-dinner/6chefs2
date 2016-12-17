@@ -156,6 +156,10 @@
 					"type":"fadeout"
 				},
 				{
+					"type":"playSE",
+					"file":"page1.mp3"
+				},
+				{
 					"type":"charaMsg",
 					"img":"yaeDeath.png",
 					"talk":[

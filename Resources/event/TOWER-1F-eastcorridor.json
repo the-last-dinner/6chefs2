@@ -66,12 +66,12 @@
 	],
 	"4":[
 		{
-			"type":"fadein",
-			"time":3.0
-		},
-		{
 			"type":"sequence",
 			"action":[
+				{
+					"type":"fadein",
+					"time":3.0
+				},
 				{
 					"type":"charaWalk",
 					"objID":"hero",
