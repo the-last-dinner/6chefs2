@@ -90,10 +90,20 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
     
     Vec2 gridVec { Direction::getGridVec2(directions) };
     Point parentGridPosition { _parent->getGridPosition() };
+    Rect gridRect { this->getGridRect(parentGridPosition) };
+    
+    gridRect.origin.x += gridVec.x;
+    gridRect.origin.y += gridVec.y;
+    
+    return gridRect;
+}
+
+Rect DetectionBox::getGridRect(const Point& parentGridPosition) const
+{
     Rect rect { this->getBoundingBox() };
     
-    float x { parentGridPosition.x + gridVec.x + rect.getMinX() / GRID };
-    float y { parentGridPosition.y + gridVec.y + rect.getMinY() / GRID };
+    float x { parentGridPosition.x + rect.getMinX() / GRID };
+    float y { parentGridPosition.y + rect.getMinY() / GRID };
     float width { rect.size.width / GRID };
     float height { rect.size.height / GRID };
     
@@ -106,6 +116,14 @@ bool DetectionBox::intersectsGrid(DetectionBox* other, const vector<Direction>& 
     if (!_parent->isHit(other->_parent)) return false;
     
     return this->intersectsGrid(other->getGridRect(), directions);
+}
+
+bool DetectionBox::intersectsGrid(DetectionBox* other, const Point& gridPosition) const
+{
+    if (other == this) return false;
+    if (!_parent->isHit(other->_parent)) return false;
+    
+    return MapUtils::intersectsGridRect(this->getGridRect(gridPosition), other->getGridRect());
 }
 
 bool DetectionBox::intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const

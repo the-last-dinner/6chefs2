@@ -332,11 +332,8 @@ void Character::update(float delta)
 // マップに配置された時
 void Character::onEnterMap()
 {
-    this->scheduleUpdate();
+    MapObject::onEnterMap();
     
-    if (_objectList) {
-        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
-    }
     this->enableHit(true);
     
     this->setDirection(this->getDirection());
@@ -351,19 +348,16 @@ void Character::onEnterMap()
 // マップから削除された時
 void Character::onExitMap()
 {
-    if (_objectList) {
-        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
-    }
-    this->enableHit(false);
+    MapObject::onExitMap();
     
-    this->unscheduleUpdate();
+    this->enableHit(false);
 }
 
 // 主人公一行に参加した時
 void Character::onJoinedParty()
 {
     if (_objectList) {
-        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
+        _objectList->getCollisionDetector()->removeCollision(this->getCollision());
     }
 }
 
@@ -371,7 +365,7 @@ void Character::onJoinedParty()
 void Character::onQuittedParty()
 {
     if (_objectList) {
-        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
+        _objectList->getCollisionDetector()->addCollision(this->getCollision());
     }
 }
 
