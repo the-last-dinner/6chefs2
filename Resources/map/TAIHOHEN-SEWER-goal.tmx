@@ -2,6 +2,11 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="36" height="26" tilewidth="16" tileheight="16" backgroundcolor="#ff00ff" nextobjectid="89">
  <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+  <tile id="138">
+   <properties>
+    <property name="z" value="-10"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="1505" name="water2" tilewidth="16" tileheight="16" tilecount="64" columns="8">
   <image source="water2.png" trans="aa55ff" width="128" height="128"/>
@@ -17,12 +22,20 @@
    eJztll2OwyAQg5PcAK7a3l/NahXJ+mIP0NWqLx1pHvIDeDzGsG2/0c/czzzObPI8m8fi/xzHcHjaQq7+34BpBg9rXl2POHXOa52ER78ljhwH7Cvn0fn4Xp8Zyt217khDWnNau4P7btbob/DjNFthdmOOMM+IH7fHqn5Vek14+M8sP6rjjuS7ih9qZoUfnc9pxOHROtp21yC1Q3wVP06v5MWt67StWJQn5XMGD3vB2itPYA+J69jufUh4nF6qfe34Y+3E5b4x6L/EUfWOvsC+vIvHjU+eT31zHxGv8x/1xVU81Di1RRzON1Q31BODc7mzlT1J+Fw/ydksnoYxul51jjmtOc8kntF9g/cC9otn5kj/5Cd5N2N0byHHyXNSPcmLRvxwnuT51JaOS73WWlSfbr9T+w4PvYPen7jVfj32u/c6PG5Pu/qrrPTzk8/dn9UOz18iaeBTcdX5jf+PFxk1GwA=
   </data>
  </layer>
+ <layer name="shadow" width="36" height="26">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1KERADAMA7Hs36VLig0aYiDdmT/yzN55a6Ena+sB2Gj7Mz2ZnkxPpidr64EfF5jJCcc=
+  </data>
+ </layer>
  <layer name="MonoShita" width="36" height="26">
   <properties>
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0s1Kw0AUhuHiptUbaOtWQdtthTa9BbV23z/3Vs2+arNUUOOyQn+81L7QBA7jJIRTcTbzwQMz50yYA5lSaZdLpStco4cb9JXMDJSGGGGMCW6VzNwpTXGPBzwiVDIzU3rCM14wR6T0a54DS/GfElrudjlPZLm7Qe0dH/g01nFGr+j5OPEq7n0TvS/LPAG1JVZYG+tNRq/o+U1iIe79Fr2fPf7NIY70n/956jh2PYRIA03XQ4gE6LoeQsS/n/z495OfE5yijDOco5LsK6JWtrD10po2LVygijY6qCX7mqhVLWy9tObj4+PjOlvwf159
+   eJzt0sFLAkEUx3Hpsqv/gGtXBbOrgdq/UJb31Lpn6t0gjwWVHhXK7U/1C63wGJ8iL2ku84MPzLy3u/NgJ5f7zZXRNdq4wS06Rm7ujLrooY97PBi5eTQa4AlDjDA2cjMxehbfeMHUaGueE6X4TxkrZ/ucZ6qcXaP2jg98OuvZjt6hz88yr+LcN9GbK/O0qH3hGytnne7oHfp8mlmIc5ei9/OHf5NHwf760VPCqe8hRGo49z2ESAuXvocQCfdnf8L92Z8yKohQxRnibB+LWqTQepuaNXVcoIgGmkiyfSJqRYXW29RCQkJCfGcNhR9dgg==
   </data>
  </layer>
  <layer name="MonoUe" width="36" height="26">
