@@ -132,16 +132,16 @@ Label* CharacterMessageLayer::createMessage()
 	message->setPosition(Point(message->getContentSize().width / 2 + LEFT_MARGIN, this->frame->getContentSize().height - message->getContentSize().height / 2 - TOP_MARGIN));
 	this->frame->addChild(message);
     
-    if(!this->datas.front()->hasNextPage())
-    {
-        CC_SAFE_RELEASE(this->datas.front());
-        this->datas.pop();
-    }
-    
     if(data->isImageOnly()){
         this->removeChildByTag(MAIN_FRAME_TAG);
         this->removeChildByTag(NAME_FRAME_TAG);
         _closed = true;
+    }
+
+    if(!this->datas.front()->hasNextPage())
+    {
+        CC_SAFE_RELEASE(this->datas.front());
+        this->datas.pop();
     }
 
     return message;
