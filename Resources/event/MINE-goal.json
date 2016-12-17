@@ -58,17 +58,17 @@
 					"type":"sequence",
 					"action":[
 						{
-							"type":"changeFlg",
-							"mapID":"64",
-							"eventID":"2",
-							"flg":1
-						},
-						{
 							"type":"stopBGM"
 						},
 						{
 							"type":"playBGM",
 							"file":"tower.mp3"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"64",
+							"eventID":"2",
+							"flg":1
 						},
 						{
 							"type":"changeMap",
