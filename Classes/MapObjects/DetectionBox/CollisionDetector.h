@@ -29,14 +29,16 @@ private:
     virtual ~CollisionDetector();
     virtual bool init() override;
     CollisionBox* getIntersectsCollision(const CollisionBox* collision, const vector<Direction>& directions) const;
-    CollisionBox* getIntersentsCollisionIncludeIngnorable(const CollisionBox* collision, const vector<Direction>& directions) const;
+    CollisionBox* getIntersectsCollisionIncludeIgnorable(const CollisionBox* collision, const vector<Direction>& directions) const;
+    CollisionBox* getIntersectsCollision(const CollisionBox* collision, const Point& gridPosition) const;
+    CollisionBox* getIntersectsCollisionIncludeIgnorable(const CollisionBox* collision, const Point& gridPosition) const;
 public:
     void addCollision(CollisionBox* collision);
     void removeCollision(CollisionBox* collision);
 public:
-    bool intersects(const CollisionBox* collision) const;
+    bool intersects(const CollisionBox* collision, const Point& gridPosition = Point::ZERO) const;
     bool intersects(const MapObject* mapObject, const vector<Direction>& directions) const;
-    bool intersectsExceptIgnorable(const CollisionBox* collision) const;
+    bool intersectsExceptIgnorable(const CollisionBox* collision, const Point& gridPosition = Point::ZERO) const;
     bool intersectsExceptIgnorable(const MapObject* mapObject, const vector<Direction>& directions) const;
     bool existsCollisionBetween(const MapObject* obj1, const MapObject* obj2) const;
 };
