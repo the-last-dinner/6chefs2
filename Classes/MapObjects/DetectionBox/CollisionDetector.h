@@ -21,8 +21,7 @@ public:
 
 // インスタンス変数
 private:
-    Vector<CollisionBox*> _collistionBoxes {};
-    Vector<CollisionBox*> _ignorableCollisionBoxes {};
+    Vector<CollisionBox*> _collisionBoxes {};
     
 // インスタンスメソッド
 private:
@@ -30,12 +29,10 @@ private:
     virtual ~CollisionDetector();
     virtual bool init() override;
     CollisionBox* getIntersectsCollision(const CollisionBox* collision, const vector<Direction>& directions) const;
-    CollisionBox* getIntersentsCollisionIncludeIngrable(const CollisionBox* collision, const vector<Direction>& directions) const;
+    CollisionBox* getIntersentsCollisionIncludeIngnorable(const CollisionBox* collision, const vector<Direction>& directions) const;
 public:
     void addCollision(CollisionBox* collision);
     void removeCollision(CollisionBox* collision);
-    void addIgnorableCollision(CollisionBox* collision);
-    void removeIgnorableCollision(CollisionBox* collision);
 public:
     bool intersects(const CollisionBox* collision) const;
     bool intersects(const MapObject* mapObject, const vector<Direction>& directions) const;
