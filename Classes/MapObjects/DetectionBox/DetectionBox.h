@@ -38,6 +38,7 @@ public:
     Rect getGridRect(const vector<Direction>& directions = {}) const;
     Rect getGridRect(const Point& parentGridPosition) const;
     bool intersectsGrid(DetectionBox* other, const vector<Direction>& directions = {}) const;
+    bool intersectsGrid(DetectionBox* other, const Point& gridPosition) const;
     bool intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const;
 public:
     Rect getRect() const;

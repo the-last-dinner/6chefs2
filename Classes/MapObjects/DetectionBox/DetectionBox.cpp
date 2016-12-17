@@ -118,6 +118,14 @@ bool DetectionBox::intersectsGrid(DetectionBox* other, const vector<Direction>& 
     return this->intersectsGrid(other->getGridRect(), directions);
 }
 
+bool DetectionBox::intersectsGrid(DetectionBox* other, const Point& gridPosition) const
+{
+    if (other == this) return false;
+    if (!_parent->isHit(other->_parent)) return false;
+    
+    return MapUtils::intersectsGridRect(this->getGridRect(gridPosition), other->getGridRect());
+}
+
 bool DetectionBox::intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const
 {
     return MapUtils::intersectsGridRect(this->getGridRect(directions), gridRect);
