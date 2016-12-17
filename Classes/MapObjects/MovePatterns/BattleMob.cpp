@@ -26,6 +26,9 @@ bool BattleMob::init(Character* character)
 {
     if (!MovePattern::init(character)) return false;
     
+    _subPattern = Chaser::create(character);
+    CC_SAFE_RETAIN(_subPattern);
+    
     return true;
 }
 
@@ -35,24 +38,35 @@ bool BattleMob::init(Character* character)
 void BattleMob::start()
 {
     MovePattern::start();
+    
+    if (_subPattern) _subPattern->start();
 }
 
 void BattleMob::pause()
 {
     MovePattern::pause();
+    
+    if (_subPattern) _subPattern->pause();
 }
 
 void BattleMob::resume()
 {
     MovePattern::resume();
+    
+    if (_subPattern) _subPattern->resume();
 }
 
 void BattleMob::onPartyMoved()
 {
-    
+    if (_subPattern) _subPattern->onPartyMoved();
 }
 
 bool BattleMob::canGoToNextMap() const
 {
     return false;
+}
+
+void BattleMob::update(float delta)
+{
+    
 }

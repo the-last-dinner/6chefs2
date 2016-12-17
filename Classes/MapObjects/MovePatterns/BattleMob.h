@@ -38,6 +38,7 @@ public:
     virtual void resume() override;
     virtual void onPartyMoved() override;
     virtual bool canGoToNextMap() const override;
+    virtual void update(float delta) override;
 };
 
 #endif /* BattleMob_h */

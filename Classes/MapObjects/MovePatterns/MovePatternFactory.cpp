@@ -13,6 +13,8 @@
 #include "MapObjects/MovePatterns/MobRandom.h"
 #include "MapObjects/MovePatterns/RandomMove.h"
 #include "MapObjects/MovePatterns/Scouter.h"
+#include "MapObjects/MovePatterns/BattleMob.h"
+#include "MapObjects/MovePatterns/BattleBoss.h"
 
 // コンストラクタ
 MovePatternFactory::MovePatternFactory() {FUNCLOG};
@@ -36,6 +38,7 @@ MovePattern* MovePatternFactory::createMovePattern(const EnemyMovePattern type, 
         {EnemyMovePattern::CHEAP_CHASER, CheapChaser::create},
         {EnemyMovePattern::PERFECT_RANDOM, RandomMove::create},
         {EnemyMovePattern::SCOUTER, Scouter::create},
+        {EnemyMovePattern::BATTLE_MOB, BattleMob::create}
     };
     
     if (typeToFunc.count(type) == 0) return nullptr;
