@@ -34,7 +34,11 @@ bool HurtCommand::isExecutable(MapObject* target) const
 void HurtCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
+    
+    if (!character) return;
+    
     character->enableHit(false);
+    this->setDone();
     
     character->runAction(
                          Sequence::create(Hide::create(),DelayTime::create(0.2f),
@@ -47,8 +51,6 @@ void HurtCommand::execute(MapObject* target)
                                           Hide::create(),
                                           DelayTime::create(0.2f),
                                           Show::create(),
-                                          CallFunc::create([character, this] {
-                             character->enableHit(true);
-                             this->setDone();
-                         }),nullptr));
+                                          CallFunc::create([character, this] { character->enableHit(true);}),
+                                          nullptr));
 }
