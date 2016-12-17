@@ -2,7 +2,7 @@
   <PropertyGroup Name="ranmaru" Type="Node" ID="a5cc43c4-31b8-47bf-baa1-155135a2527c" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="335" Speed="1.0000" ActivedAnimationName="attack_up">
+      <Animation Duration="335" Speed="1.0000" ActivedAnimationName="down">
         <Timeline ActionTag="-451910173" Property="VisibleForFrame">
           <BoolFrame FrameIndex="200" Tween="False" Value="False" />
           <BoolFrame FrameIndex="210" Tween="False" Value="True" />
@@ -228,16 +228,16 @@
           <RenderColor A="255" R="238" G="130" B="238" />
         </AnimationInfo>
         <AnimationInfo Name="attack_down" StartIndex="150" EndIndex="195">
-          <RenderColor A="150" R="230" G="230" B="250" />
+          <RenderColor A="255" R="230" G="230" B="250" />
         </AnimationInfo>
         <AnimationInfo Name="attack_up" StartIndex="200" EndIndex="245">
-          <RenderColor A="150" R="255" G="228" B="181" />
+          <RenderColor A="255" R="255" G="228" B="181" />
         </AnimationInfo>
         <AnimationInfo Name="attack_left" StartIndex="250" EndIndex="295">
-          <RenderColor A="150" R="255" G="245" B="238" />
+          <RenderColor A="255" R="255" G="245" B="238" />
         </AnimationInfo>
         <AnimationInfo Name="attack_right" StartIndex="300" EndIndex="345">
-          <RenderColor A="150" R="220" G="20" B="60" />
+          <RenderColor A="255" R="220" G="20" B="60" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" Tag="6" ctype="GameNodeObjectData">
@@ -254,15 +254,15 @@
             <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="615238074" Tag="7" IconVisible="False" RightMargin="-32.0000" TopMargin="-51.0000" BottomMargin="-13.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="64.0000" />
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="615238074" Tag="7" IconVisible="False" LeftMargin="2.0000" RightMargin="-34.0000" TopMargin="-34.0000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="34.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="19.0000" />
+            <Position X="18.0000" Y="17.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="ranmaru_a_3_0.png" Plist="character/ranmaru.plist" />
+            <FileData Type="PlistSubImage" Path="ranmaru_0_1.png" Plist="character/ranmaru.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" CanEdit="False" Visible="False" ActionTag="1020399682" Tag="15" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -298,10 +298,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="117975437" VisibleForFrame="False" Tag="57" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-82.0000" BottomMargin="-18.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="117975437" VisibleForFrame="False" Tag="57" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="32.0000" />
+            <Position X="16.0000" Y="-16.0000" />
             <Scale ScaleX="0.3000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
