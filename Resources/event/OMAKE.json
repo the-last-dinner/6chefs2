@@ -976,14 +976,14 @@
 									"action":[
 										{
 											"type":"charaMsg",
-											"file":"rootA1.png",
+											"img":"rootA1.png",
 											"text":["北森金鉱跡に針金を拾った坑道が\nありませんでしたか？","そこでこの坑道に入らず、\n地下病棟に戻り・・・"],
 											"charaID":"10",
 											"name":"最後の晩餐"
 										},
 										{
 											"type":"charaMsg",
-											"file":"rootA2.PNG",
+											"img":"rootA2.PNG",
 											"text":["ここの扉を調べると\n新エリアへの道が・・・"],
 											"charaID":"10",
 											"name":"最後の晩餐"
