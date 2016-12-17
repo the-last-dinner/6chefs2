@@ -200,6 +200,11 @@ void TrophyListLayer::onMenuKeyPressed()
 // スペースキーを押した時
 void TrophyListLayer::onEnterKeyPressed(int idx)
 {
+    TrophyData* trophyData { CsvDataManager::getInstance()->getTrophyData() };
+    string voiceFile = trophyData->getVoicePath(idx + 1);
+    if (voiceFile != "") {
+        SoundManager::getInstance()->playVoice(voiceFile);
+    }
 }
 
 // 選択対象が変わった時
