@@ -73,6 +73,7 @@ void Battle::setLostHPCallback(MapObject* target)
     target->setLostHPCallback([this](MapObject* obj) {
         obj->clearCommandQueue();
         obj->runAction(Sequence::create(FadeOut::create(1.f), CallFunc::create([this, obj] {
+            if (_isFinished) return;
             if (_objectList) _objectList->removeEnemyByObjectId(obj->getObjectId());
             _targetObjects.eraseObject(obj);
             obj->setOpacity(255);
@@ -92,6 +93,7 @@ bool Battle::isMainCharacterDestroyed() const
 
 void Battle::onFinish()
 {
+    _isFinished = true;
     this->unschedule(CC_SCHEDULE_SELECTOR(Battle::update));
     _eventTask->runEventQueue();
     _scene->onBattleFinished(this);

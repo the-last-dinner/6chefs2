@@ -31,6 +31,7 @@ private:
     EventTask* _eventTask { nullptr };
     DungeonScene* _scene { nullptr };
     MapObjectList* _objectList { nullptr };
+    bool _isFinished { false };
 public:
     function<void(Battle*)> _finishCallback {};
     

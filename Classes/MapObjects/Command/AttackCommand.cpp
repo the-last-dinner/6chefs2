@@ -54,6 +54,8 @@ void AttackCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
     if (!character) return;
+    if (!character->getBattleAttackBox()) return;
+    
     character->beInAttackMotion(true);
     character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
