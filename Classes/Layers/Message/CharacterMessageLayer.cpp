@@ -114,7 +114,9 @@ Label* CharacterMessageLayer::createMessage()
         Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + data->getImageName())};
         img->setPosition(WINDOW_CENTER);
         img->setLocalZOrder((data->isImageOnly()) ? 1 : -1);
+        img->setOpacity(0);
         this->addChild(img);
+        img->runAction(FadeIn::create(0.5f));
     }
     
     
