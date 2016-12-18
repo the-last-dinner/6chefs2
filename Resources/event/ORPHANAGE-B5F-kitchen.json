@@ -95,6 +95,10 @@
 	],
 	"2":[
 		{
+			"type":"playSE",
+			"file":"iron_door.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"84",
 			"x":9,

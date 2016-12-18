@@ -17,7 +17,7 @@
  </tileset>
  <layer name="Base" width="76" height="74" opacity="0.91">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztnE1OwzAQhdM1FwEOAhyE310RZ4CugINAD1I4EhscqYjEsj158YxrN++TnkpLm4QvI8fYTruOEDKH7arrTrpxPlaHPaaaoS8M+sKgLwz6wijl6/NIzoGVr+1gGzv389cg64bdWfq6c4/3Xh6Utn8oLH09u8cXLxul7f9045rNCVLvlr787ZaoXzRovbfsK1S/aNB6b9lXbPtSTl3OXM4HxzPl+t2/51C+ctuf7wxfFy6XLlf75/71G91vCV+57c/DTFd9rl1uXG73z5HjCO3X2tduf55y2p9NwkeM2PuR4wjt19pXfz5z6kNKDKv9afny29Xh+UzVx1J9+e1qqcSo3ZffrtJXnFT79ep+9x74ff/628SEPj/XF7LfUJ4K9SdCr08d98npr+bs14pH4Xzk9pO1fdUOfWHk+krVr9++Se2TRvtjjfU4+HD7LdSPhKUvfxyhhvY8F9YXBufxMOhrTGo8cK3Q/zo2pPk0+hojzafR15i5/z8ulSnj0fT1z5zx6BZ9Sde1qaR8xcajW/SltU5kzvhBq7401oksyZfG30Nf9BVC8jV1XAQZzztWX9K6jBrWnZVG6jfVvu6sNFK/qfZ1Z6XJmXehL/qSmHNdW7KvFLH1m/QVh74w6AuDvjDoC4O+MOgLg74w6AuDvjDoC4O+MKx9tb4O0If1hcH6wrD0hdznWiIa35Nh6Uvjfn+t/M3f5NS79Xihxv3+WunnbzTqPXWf+aHuZ7GK1vdbLMWX1vdbLMWXdejLzpc0b7eEaNwXl9tflT5fY3/4F/AHDpQ=
@@ -25,7 +25,7 @@
  </layer>
  <layer name="Base2" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0DENAAAIwDDwLwWTaOAihFbBsggAALijcrvgFr9m/JrxCwAAAAAAAAAAAAAAAAAAAAAA+K4B4DICsQ==
@@ -33,7 +33,7 @@
  </layer>
  <layer name="Base3" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0LENgDAQBMGP3H8JQCHgQoBCgACnvOQYBzPS5aeNAAAAAAAYw1Qi5rSl/P1qXGtrs6VVvbr21uZIO/XqulqbO+3RCwAAAAAAAAAAAAAAAAAAAD5eomET4Q==
@@ -41,7 +41,7 @@
  </layer>
  <layer name="MonoChu" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt270JgDAQgNGgaziJk2QVl3EUdTSFVCqEXOfPe3DVdV9xpElKAADwfHNfhjZ6xegVoxdAu6FLaTlu5nqZrS87zmpN9LrTK0avGL1i9IoZK01qu7/KlfdE1gsAAAAAAAAAgJea/EsAAAAAAAA+ZAdZDxEx
@@ -49,7 +49,7 @@
  </layer>
  <layer name="MonoUe" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0EENACAMALEl4N8IStDEBwd8t5FWweUiAAAAAAAAAODtjOwCAAAAAAAAAKhrzeyCXrZfAAAAAADARy5UPgJ7
@@ -57,7 +57,7 @@
  </layer>
  <layer name="steps" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzrENACAMBLGXsv8IhFVpqGlJYUvXXwIAAAAAAAAAAAAAMMOqpG+7ft8AAAAAAAAAAAAAwNsBewQChQ==
@@ -65,10 +65,18 @@
  </layer>
  <layer name="steps2" width="76" height="74">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzsEJACAMBMGD9F+CsVU/9iCSGdj/JgAAAAAAAAAAAAAA/GhV0rddr28AAAAAAAAAAAAA5jl+FwKF
+  </data>
+ </layer>
+ <layer name="steps3" width="76" height="74">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrEJADAMBLEH7z9CnFXTZAeDkeD6SwAAAAAAAAAAAAAAYL9TSf9uTd8AAAAAAAAAAAAAGzyBKgKF
   </data>
  </layer>
  <objectgroup name="event">
@@ -136,7 +144,7 @@
   <object id="239" x="672" y="384" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="dShituji.png"/>
+    <property name="img" value="box.png"/>
     <property name="objID" value="202"/>
    </properties>
   </object>
@@ -205,14 +213,6 @@
   <object id="245" x="0" y="528" width="32" height="208"/>
   <object id="246" x="32" y="688" width="96" height="48"/>
  </objectgroup>
- <layer name="steps3" width="76" height="74">
-  <properties>
-   <property name="cc_vertexz" value="-11"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJztzrEJADAMBLEH7z9CnFXTZAeDkeD6SwAAAAAAAAAAAAAAYL9TSf9uTd8AAAAAAAAAAAAAGzyBKgKF
-  </data>
- </layer>
  <layer name="CharaUe" width="76" height="74">
   <data encoding="base64" compression="zlib">
    eJzt1rEJACAAA8GI+++gDioWdoJgK9zBV1kgCQAAAAC8mSVpNelHo+4NAODF7U8AAAAAAAAAAAAAAAAAAAD8ZgGAtQmv

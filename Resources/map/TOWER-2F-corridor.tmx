@@ -89,7 +89,7 @@
  </objectgroup>
  <layer name="shadow" width="56" height="72">
   <data encoding="base64" compression="zlib">
-   eJzt1TESgzAUA1GK3JrLp0yLwA6rP7u1wH4Fw3GY/To/s8/V130u3ff0fvr2pC/breyfZ073vZG+7pq+vzvPr/CR/w/TfSvSl+1232PXe/Ux05ftaOnLdrT0ZTta+rIdLX3Zjpa+bEdLX7ajpS/b0dKX7WhN911NX3f6utPXXatv+v9PX7ajpS/b0dKX7Wjpy3a09GU7WvqyHa3pvqvp604f892EO+jbn77upvusqy+YVUD+
+   eJzt1TESg0AQA0EC/9qfd+gUYRaPtmZiwV0HFMdh9u392n2uvu5z6b5f76dvJn3Z7s6ePHO77x/p667p+7vy/B0+/w/Zbur56XP1PXOPqffqY6Yv29HSl+1o6ct2tPRlO1r6sh0tfdmOlr5sR0tftqOlL9vR2u47m77u9HWnr7tW3/b/n75sR0tftqOlL9vR0pftaOnLdrT0ZTta231n09edPua7CXfQN5++7rb7rKsPGk1Afw==
   </data>
  </layer>
  <layer name="CharaUe" width="56" height="72">

@@ -189,7 +189,7 @@
 							"action":[
 								{
 									"type":"charaMsg",
-									"file":"taihou_reign.png",
+									"img":"taihou_reign.png",
 									"talk":[
 										{
 											"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
@@ -242,7 +242,7 @@
 								{
 									"text":["ざけんな！"],
 									"charaID":"5",
-									"imgID":"1",
+									"imgID":"4",
 									"option":"reaction"
 								},
 								{
@@ -623,7 +623,7 @@
 													"type":"charaMsg",
 													"text":["ぶっ飛ばす！"],
 													"charaID":"5",
-													"imgID":"1",
+													"imgID":"7",
 													"option":"reaction"
 												},
 												{

@@ -39,7 +39,7 @@
   </tile>
  </tileset>
  <tileset firstgid="4922" name="nadeshiko_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="32"/>
+  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="33"/>
  </tileset>
  <layer name="Base" width="32" height="30">
   <properties>

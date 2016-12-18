@@ -15,6 +15,13 @@
 	],
 	"3":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower4.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"54",
 			"x":53,
@@ -211,10 +218,6 @@
 							"direction":"UP"
 						},
 						{
-							"type":"playBGM",
-							"file":"tower5"
-						},
-						{
 							"type":"fadein",
 							"time":3.0
 						},
@@ -288,6 +291,9 @@
 							"target":"hero"
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -310,6 +316,10 @@
 						},
 						{
 							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"tower5.mp3"
 						},
 						{
 							"type":"already"
