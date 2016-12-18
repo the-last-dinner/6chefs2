@@ -24,7 +24,6 @@ BattleMob::BattleMob() { FUNCLOG }
 BattleMob::~BattleMob()
 {
     FUNCLOG
-    
     CC_SAFE_RELEASE_NULL(_subPattern);
 }
 
@@ -35,7 +34,7 @@ bool BattleMob::init(Character* character)
     
     _subPattern = Chaser::create(character);
     CC_SAFE_RETAIN(_subPattern);
-    _subPattern->setSpeedRatio(0.5f);
+    _subPattern->setSpeedRatio(0.4f);
     
     return true;
 }
@@ -46,21 +45,19 @@ bool BattleMob::init(Character* character)
 void BattleMob::start()
 {
     MovePattern::start();
-    
+    if (_chara) _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     if (_subPattern) _subPattern->start();
 }
 
 void BattleMob::pause()
 {
     MovePattern::pause();
-    
     if (_subPattern) _subPattern->pause();
 }
 
 void BattleMob::resume()
 {
     MovePattern::resume();
-    
     if (_subPattern) _subPattern->resume();
 }
 
@@ -76,12 +73,16 @@ bool BattleMob::canGoToNextMap() const
 
 void BattleMob::update(float delta)
 {
+    if (_paused) return;
+    if (!_chara) return;
+    if (_chara->isInAttackMotion()) return;
+    if (!_chara->getBattle()) return;
+    
     Point forwardGridPos1 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() };
     Point forwardGridPos2 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() * 2 };
     
     if (_chara->getCollision()->intersectsGrid(this->getMainCharacter()->getCollision(), forwardGridPos1) ||
         _chara->getCollision()->intersectsGrid(this->getMainCharacter()->getCollision(), forwardGridPos2)) {
-        if (!_chara) return;
         _chara->clearCommandQueue();
         AttackCommand* command { AttackCommand::create() };
         command->setName("attack");

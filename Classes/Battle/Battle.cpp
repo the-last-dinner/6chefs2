@@ -78,8 +78,8 @@ void Battle::setLostHPCallback(MapObject* target)
                 _mainCharacter = nullptr;
                 return;
             }
-            _targetObjects.eraseObject(obj);
             obj->setOpacity(255);
+            _targetObjects.eraseObject(obj);
         }), nullptr));
     });
 }
@@ -106,7 +106,7 @@ void Battle::onFinish()
 void Battle::start()
 {
     _scene->onBattleStart(this);
-    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
+    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 1.f);
 }
 
 Vector<MapObject*> Battle::getTargetObjects() const

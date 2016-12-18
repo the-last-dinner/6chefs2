@@ -53,8 +53,10 @@ bool AttackCommand::isExecutable(MapObject* target) const
 void AttackCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
-    if (!character) return;
-    if (!character->getBattleAttackBox()) return;
+    if (!character || !character->getBattleAttackBox()) {
+        this->setDone();
+        return;
+    }
     
     character->beInAttackMotion(true);
     character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));

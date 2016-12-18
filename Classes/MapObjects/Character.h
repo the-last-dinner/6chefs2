@@ -85,6 +85,9 @@ public:
     void onHurt(int damage);
     bool canAttack(MapObject* target) const override;
     
+    // AttackBox
+    void enableBattleAttack(bool enableAttack);
+    
     // HitBox
     void enableHit(bool enableHit);
     
@@ -104,6 +107,7 @@ public:
     virtual void onEventFinished() override;
     virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
+    virtual void onLostHP() override;
     
     friend class TerrainObject;
     friend class TerrainState;

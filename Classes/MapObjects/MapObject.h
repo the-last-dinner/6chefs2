@@ -93,6 +93,7 @@ public:
     vector<Direction> getMovingDirections() const { return _movingDirections; }
     CollisionBox* getCollision() const { return _collision; }
     bool isChangeableDirection(const Direction& direction);
+    Battle* getBattle() const { return _battle; }
     
 // collision
 public:
@@ -117,7 +118,7 @@ private:
 public:
     HitPoint* getHitPoint() const;
     void setLostHPCallback(function<void(MapObject*)> callback);
-    void onLostHP();
+    virtual void onLostHP();
     
 // Battle
 public:

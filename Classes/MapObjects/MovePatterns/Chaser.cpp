@@ -72,7 +72,6 @@ void Chaser::resume()
 // 主人公一行が動いた時
 void Chaser::onPartyMoved()
 {
-    // if (_subPattern) _subPattern->onPartyMoved();
 }
 
 void Chaser::setSpeedRatio(float speed)
@@ -85,6 +84,7 @@ void Chaser::setSpeedRatio(float speed)
 void Chaser::move()
 {
     if (this->isPaused()) return;
+    _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     
     // 経路を取得
     deque<Direction> path { this->getPath() };
