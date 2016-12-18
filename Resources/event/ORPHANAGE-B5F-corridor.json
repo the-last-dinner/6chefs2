@@ -328,14 +328,14 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1064",
+											"objID":"10642",
 											"x":9,
 											"y":18,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1064",
+											"objID":"10642",
 											"direction":"UP"
 										}
 									]
@@ -345,14 +345,14 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1065",
+											"objID":"10652",
 											"x":3,
 											"y":18,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1065",
+											"objID":"10652",
 											"direction":"UP"
 										}
 									]
@@ -390,10 +390,25 @@
 							"file":"switch1.mp3"
 						},
 						{
-							"type":"charaMsg",
-							"text":["（すまねぇな・・・\nガキ共・・・）","じゃあな"],
-							"charaID":"9",
-							"imgID":"4"		
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"lastBoss.mp3"
+						},
+						{
+							"type":"playBGM",
+							"file":"ocean-wave.mp3"
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"setAmbient",
+							"ambient":"water"
+						},
+						{
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -401,6 +416,12 @@
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
+						},
+						{
+							"type":"charaMsg",
+							"text":["（すまねぇな・・・\nガキ共・・・）","じゃあな"],
+							"charaID":"9",
+							"imgID":"4"		
 						},
 						{
 							"type":"spawn",
@@ -427,19 +448,15 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1064",
+											"objID":"10642",
 											"x":32,
 											"y":29,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1064",
+											"objID":"10642",
 											"direction":"UP"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1064"
 										}
 									]
 								},
@@ -448,19 +465,15 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1065",
+											"objID":"10652",
 											"x":32,
 											"y":29,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1065",
+											"objID":"10652",
 											"direction":"UP"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1065"
 										}
 									]
 								}
@@ -645,7 +658,8 @@
 											"type":"charaWalkTo",
 											"objID":"hero",
 											"x":8,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -661,7 +675,8 @@
 											"type":"charaWalkTo",
 											"objID":"10119",
 											"x":10,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -677,7 +692,8 @@
 											"type":"charaWalkTo",
 											"objID":"10121",
 											"x":4,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -693,7 +709,8 @@
 											"type":"charaWalkTo",
 											"objID":"10122",
 											"x":6,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -714,7 +731,17 @@
 									"option":"reaction"
 								},
 								{
-									"text":["戸塚さん・・・","アナタのしていることは・・・\n悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
+									"text":["戸塚さん・・・"],
+									"charaID":"0",
+									"imgID":"1"
+								},
+								{
+									"text":["・・・"],
+									"charaID":"9",
+									"imgID":"4"
+								},
+								{
+									"text":["アナタのしていることは・・・\n悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
 									"charaID":"0",
 									"imgID":"1"
 								},
@@ -949,7 +976,7 @@
 						},
 						{
 							"type":"storyMsg",
-							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を何度も思い返しているようにも見えた。","とにかく、\n先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・というワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
+							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を\n何度も思い返しているようにも見えた。","とにかく、\n先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・\nというワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
 						},
 						{
 							"type":"already"
@@ -967,6 +994,18 @@
 									"trophyID":"9"
 								}
 							]
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10119"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10121"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10122"
 						},
 						{
 							"type":"spawn",

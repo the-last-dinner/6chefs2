@@ -769,6 +769,24 @@
 					]
 				},
 				{
+					"type":"addProfile",
+          			"charaID":"13",
+          			"infoID":"2"
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"mystery5.mp3"
+						},
+						{
+							"type":"systemMsg",
+							"text":["資料に”天弦楼(テンゲンロウ)”\nが追加された"]
+						}
+					]
+				},
+				{
 					"type":"already"
 				}
 			]

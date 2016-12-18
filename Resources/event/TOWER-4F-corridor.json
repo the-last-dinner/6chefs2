@@ -34,7 +34,8 @@
 				{
 					"type":"setMovable",
 					"objID":"201",
-					"movable":true
+					"movable":true,
+					"file":"kairiki_move.mp3"
 				}
 			]
 		},

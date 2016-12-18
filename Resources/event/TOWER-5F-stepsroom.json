@@ -22,10 +22,48 @@
 	],
 	"3":[
 		{
-			"type":"changeMap",
-			"mapID":"54",
-			"x":53,
-			"y":77
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["40","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"54",
+					"x":53,
+					"y":77
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["40","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["戸塚は地下にいるんだったな・・・\n1階に戻るか・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"DOWN",
+							"option":"back"
+						}
+					]
+				}
+			]
 		}
 	],
 	"4":[
