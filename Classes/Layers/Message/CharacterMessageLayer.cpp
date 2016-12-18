@@ -75,7 +75,12 @@ Label* CharacterMessageLayer::createMessage()
         Action* swingAction { RepeatForever::create(Sequence::createWithTwoActions(MoveBy::create(0.05f, Vec2(10.f, 0)), MoveBy::create(0.05f, Vec2(-10.f, 0)))) };
         this->frame->runAction(swingAction);
         
-        this->runAction(Sequence::create(DelayTime::create(1.5f), CallFunc::create([this, swingAction]{this->stopAction(swingAction); this->frame->setPosition(this->defaultMFramePosition);}), nullptr));
+        this->runAction(Sequence::create(DelayTime::create(1.5f),CallFunc::create([this, swingAction]
+            {
+                this->stopAction(swingAction);
+                if(_closed) return;
+                this->frame->setPosition(this->defaultMFramePosition);
+            }), nullptr));
         
         SoundManager::getInstance()->playSE("msg_reaction.mp3", 0.5f);
     }
