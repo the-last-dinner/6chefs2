@@ -316,6 +316,10 @@
 							"type":"sequence",
 							"action":[
 								{
+									"type":"setAmbient",
+									"ambient":"day"
+								},
+								{
 									"type":"createObject",
 									"objID":"10223",
 									"charaID":"31",
