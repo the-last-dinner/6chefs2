@@ -43,7 +43,8 @@
 					"event":[
 						["63","3"],
 						["82","5"]
-					]
+					],
+					"Nevent":["82","7"]
 				}
 			],
 			"action":[
@@ -767,8 +768,13 @@
 							"type":"sequence",
 							"action":[
 								{
-									"type":"setAmbient",
-									"ambient":"water"
+									"type":"fadeout"
+								},
+								{
+									"type":"createUnderwater"
+								},
+								{
+									"type":"fadein"
 								},
 								{
 									"type":"wait",

@@ -404,8 +404,7 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"setAmbient",
-							"ambient":"water"
+							"type":"createUnderwater"
 						},
 						{
 							"type":"fadein"
