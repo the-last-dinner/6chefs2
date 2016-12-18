@@ -21,20 +21,19 @@ const int Chaser::PATH_FINDING_THRESHOLD { 10 };
 const int Chaser::SHIFT_PATTERN_THRESHOLD { 10 };
 
 // コンストラクタ
-Chaser::Chaser() {FUNCLOG};
+Chaser::Chaser() { FUNCLOG }
 
 // デストラクタ
 Chaser::~Chaser()
 {
     FUNCLOG
-
     CC_SAFE_RELEASE_NULL(_subPattern);
-};
+}
 
 // 初期化
 bool Chaser::init(Character* character)
 {
-    if(!MovePattern::init(character)) return false;
+    if (!MovePattern::init(character)) return false;
     
     // サブアルゴリズム
     CheapChaser* sub { CheapChaser::create(_chara) };
@@ -75,19 +74,17 @@ void Chaser::onPartyMoved() {}
 // 動かす
 void Chaser::move()
 {
-    if(this->isPaused()) return;
+    if (this->isPaused()) return;
     
     // 経路を取得
     deque<Direction> path { this->getPath() };
     
     // 経路がない場合は、主人公に触れたとして無視。あとはMapObjectListがイベントを発動してゲームオーバー
-    if(path.size() == 0) return;
+    if (path.size() == 0) return;
     
     // サブアルゴリズムに切り替える必要があるか
-    if(this->needsShiftToSubPattern(path))
-    {
+    if (this->needsShiftToSubPattern(path)) {
         this->shiftToSubPattern();
-        
         return;
     }
     
@@ -120,7 +117,6 @@ void Chaser::shiftFromSubPattern()
 void Chaser::shiftToSubPattern()
 {
     _subPattern->setSpeedRatio(_speedRatio);
-    
     _subPattern->move(CC_CALLBACK_0(Chaser::shiftFromSubPattern, this));
 }
 
@@ -134,11 +130,10 @@ bool Chaser::needsShiftToSubPattern(const deque<Direction>& path)
 // 経路をカットする
 void Chaser::cutPath(deque<Direction>& path)
 {
-    if(path.size() < PATH_FINDING_THRESHOLD) return;
+    if (path.size() < PATH_FINDING_THRESHOLD) return;
     
     // 必要分だけ残す
-    for(int i {0}; i < path.size() - PATH_FINDING_THRESHOLD; i++)
-    {
+    for (int i {0}; i < path.size() - PATH_FINDING_THRESHOLD; i++) {
         path.pop_back();
     }
 }
@@ -147,7 +142,6 @@ void Chaser::cutPath(deque<Direction>& path)
 deque<Direction> Chaser::getPath() const
 {
     PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
-    
     deque<Direction> path { pathFinder->getPath(_chara, this->getMainCharacter()->getGridCollisionRect().origin) };
     
     return path;
