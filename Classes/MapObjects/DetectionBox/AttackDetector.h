@@ -12,22 +12,25 @@
 #include "MapObjects/DetectionBox/AttackBox.h"
 #include "MapObjects/DetectionBox/HitBox.h"
 
+class CollisionDetector;
+
 class AttackDetector : public Node
 {
 // クラスメソッド
 public:
-    CREATE_FUNC(AttackDetector)
+    CREATE_FUNC_WITH_PARAM(AttackDetector, CollisionDetector*);
     
 // インスタンス変数
 private:
     Vector<AttackBox*> _attackBoxes {};
     Vector<HitBox*> _hitBoxes {};
+    CollisionDetector* _collisionDetector { nullptr };
     
 // インスタンスメソッド
 private:
     AttackDetector();
     virtual ~AttackDetector();
-    virtual bool init() override;
+    virtual bool init(CollisionDetector* detector);
 public:
     void addAttackBox(AttackBox* attackBox);
     void removeAttackBox(AttackBox* attackBox);

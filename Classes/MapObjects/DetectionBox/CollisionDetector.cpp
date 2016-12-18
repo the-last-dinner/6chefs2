@@ -76,6 +76,17 @@ CollisionBox* CollisionDetector::getIntersectsCollisionIncludeIgnorable(const Co
     return nullptr;
 }
 
+CollisionBox* CollisionDetector::getIntersectsCollisionForPath(const CollisionBox* collision, const Point& gridPosition) const
+{
+    if (!collision) return nullptr;
+    
+    for (CollisionBox* other : _collisionBoxes) {
+        if (collision->intersectsGridForPath(other, gridPosition)) return other;
+    }
+    
+    return nullptr;
+}
+
 #pragma mark -
 #pragma mark Collection
 
@@ -101,6 +112,13 @@ bool CollisionDetector::intersects(const CollisionBox* collision, const Point& g
     if (!collision) return false;
     
     return this->getIntersectsCollisionIncludeIgnorable(collision, gridPosition);
+}
+
+bool CollisionDetector::intersectsForPath(const CollisionBox* collision, const Point& gridPosition) const
+{
+    if (!collision) return false;
+    
+    return this->getIntersectsCollisionForPath(collision, gridPosition);
 }
 
 bool CollisionDetector::intersects(const MapObject* mapObject, const vector<Direction>& directions) const

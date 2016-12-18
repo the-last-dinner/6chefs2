@@ -30,7 +30,6 @@ Battle::Battle() { FUNCLOG }
 Battle::~Battle()
 {
     FUNCLOG
-    
     CC_SAFE_RELEASE_NULL(_data);
 }
 
@@ -72,10 +71,15 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
 void Battle::setLostHPCallback(MapObject* target)
 {
     target->setLostHPCallback([this](MapObject* obj) {
+        obj->clearCommandQueue();
         obj->runAction(Sequence::create(FadeOut::create(1.f), CallFunc::create([this, obj] {
             if (_objectList) _objectList->removeEnemyByObjectId(obj->getObjectId());
-            _targetObjects.eraseObject(obj);
+            if (_mainCharacter == obj) {
+                _mainCharacter = nullptr;
+                return;
+            }
             obj->setOpacity(255);
+            _targetObjects.eraseObject(obj);
         }), nullptr));
     });
 }
@@ -87,7 +91,7 @@ bool Battle::isAllTargetDestroyed() const
 
 bool Battle::isMainCharacterDestroyed() const
 {
-    return _mainCharacter->getHitPoint()->isLost();
+    return !_mainCharacter;
 }
 
 void Battle::onFinish()
@@ -102,7 +106,7 @@ void Battle::onFinish()
 void Battle::start()
 {
     _scene->onBattleStart(this);
-    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 0.5f);
+    this->schedule(CC_SCHEDULE_SELECTOR(Battle::update), 1.f);
 }
 
 Vector<MapObject*> Battle::getTargetObjects() const

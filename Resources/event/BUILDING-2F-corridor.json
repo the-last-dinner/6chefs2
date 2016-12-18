@@ -308,7 +308,7 @@
 				{
 					"type":"charaWalkTo",
 					"objID":"149",
-					"x":75,
+					"x":74,
 					"y":22,
 					"speed":5.0
 				},

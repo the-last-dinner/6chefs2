@@ -8,6 +8,8 @@
 
 #include "MapObjects/DetectionBox/AttackDetector.h"
 
+#include "MapObjects/DetectionBox/CollisionDetector.h"
+
 // コンストラクタ
 AttackDetector::AttackDetector() { FUNCLOG }
 
@@ -21,9 +23,12 @@ AttackDetector::~AttackDetector()
 }
 
 // 初期化
-bool AttackDetector::init()
+bool AttackDetector::init(CollisionDetector* detector)
 {
-    if(!Node::init()) return false;
+    if (!Node::init()) return false;
+    if (!detector) return false;
+    
+    _collisionDetector = detector;
     
     return true;
 }
@@ -62,7 +67,8 @@ HitBox* AttackDetector::getIntersectHitBox(AttackBox* attackBox)
     
     for (HitBox* hitBox : _hitBoxes) {
         if (!hitBox->isEnabled()) continue;
-        if (hitBox->intersects(attackBox)) return hitBox;
+        if (!hitBox->intersects(attackBox)) continue;
+        if (!_collisionDetector->existsCollisionBetween(attackBox->getMOParent(), hitBox->getMOParent())) return hitBox;
     }
     
     return nullptr;

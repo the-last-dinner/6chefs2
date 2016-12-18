@@ -279,8 +279,22 @@ void Character::onHurt(int damage)
     _hitPoint->reduce(damage);
     
     if (_battle && !_hitPoint->isLost()) {
-        HurtCommand* command { HurtCommand::create() };
-        this->pushCommand(command);
+        this->enableHit(false);
+        this->enableBattleAttack(false);
+        
+        this->runAction(Sequence::create(Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         CallFunc::create([this] { this->enableHit(true); this->enableBattleAttack(true); }),
+                                         nullptr));
     }
 }
 
@@ -292,7 +306,22 @@ bool Character::canAttack(MapObject* target) const
 }
 
 #pragma mark -
+#pragma mark AttackBox
+
+void Character::enableBattleAttack(bool enableAttack)
+{
+    if (!_objectList) return;
+    
+    if (enableAttack) {
+        _objectList->getAttackDetector()->addAttackBox(_battleAttackBox);
+    } else {
+        _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
+    }
+}
+
+#pragma mark -
 #pragma mark HitBox
+
 void Character::enableHit(bool enableHit)
 {
     if (!_objectList) return;
@@ -351,6 +380,7 @@ void Character::onExitMap()
     MapObject::onExitMap();
     
     this->enableHit(false);
+    if (_movePattern) _movePattern->pause();
 }
 
 // 主人公一行に参加した時
@@ -428,10 +458,19 @@ void Character::onBattleFinished()
     _speed = 1.f;
     
     if (_battleAttackBox) {
+        _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
         this->removeChild(_battleAttackBox);
         _battleAttackBox = nullptr;
     }
-    _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
+}
+
+// HPを失った時
+void Character::onLostHP()
+{
+    MapObject::onLostHP();
+    
+    this->enableHit(false);
+    this->enableBattleAttack(false);
 }
 
 #pragma mark -

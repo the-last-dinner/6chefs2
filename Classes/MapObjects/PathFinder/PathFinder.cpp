@@ -96,7 +96,7 @@ PathNode* PathFinder::find(MapObject* target, PathNode* referenceNode, const Poi
         if (nodeMap.count(position) != 0 && nodeMap.at(position)->getState() == PathNode::State::CANT) continue;
         
         // 当たり判定があれば侵入不可座標として登録
-        if (_mapObjectList->getCollisionDetector()->intersects(target->getCollision(), position)) {
+        if (_mapObjectList->getCollisionDetector()->intersectsForPath(target->getCollision(), position)) {
             PathNode* node { this->createNode(position) };
             node->setState(PathNode::State::CANT);
             nodeMap.insert({position, node});
