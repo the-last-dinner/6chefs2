@@ -40,16 +40,16 @@ void HurtCommand::execute(MapObject* target)
     character->enableHit(false);
     this->setDone();
     
-    character->runAction(
-                         Sequence::create(Hide::create(),DelayTime::create(0.2f),
+    character->runAction(Sequence::create(Hide::create(),
+                                          DelayTime::create(0.15f),
                                           Show::create(),
-                                          DelayTime::create(0.2f),
+                                          DelayTime::create(0.15f),
                                           Hide::create(),
-                                          DelayTime::create(0.2f),
+                                          DelayTime::create(0.15f),
                                           Show::create(),
-                                          DelayTime::create(0.2f),
+                                          DelayTime::create(0.15f),
                                           Hide::create(),
-                                          DelayTime::create(0.2f),
+                                          DelayTime::create(0.15f),
                                           Show::create(),
                                           CallFunc::create([character, this] { character->enableHit(true);}),
                                           nullptr));

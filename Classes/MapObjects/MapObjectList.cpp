@@ -51,7 +51,7 @@ bool MapObjectList::init(const Size& mapSize)
     _collisionDetector = collisionDetector;
     
     // 攻撃判定を生成
-    AttackDetector* attackDetector { AttackDetector::create() };
+    AttackDetector* attackDetector { AttackDetector::create(collisionDetector) };
     CC_SAFE_RETAIN(attackDetector);
     _attackDetector = attackDetector;
     

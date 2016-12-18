@@ -30,7 +30,6 @@ Battle::Battle() { FUNCLOG }
 Battle::~Battle()
 {
     FUNCLOG
-    
     CC_SAFE_RELEASE_NULL(_data);
 }
 
@@ -72,6 +71,7 @@ bool Battle::init(BattleData* data, DungeonSceneManager* manager)
 void Battle::setLostHPCallback(MapObject* target)
 {
     target->setLostHPCallback([this](MapObject* obj) {
+        obj->clearCommandQueue();
         obj->runAction(Sequence::create(FadeOut::create(1.f), CallFunc::create([this, obj] {
             if (_objectList) _objectList->removeEnemyByObjectId(obj->getObjectId());
             _targetObjects.eraseObject(obj);

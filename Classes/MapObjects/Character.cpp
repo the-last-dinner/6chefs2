@@ -279,8 +279,21 @@ void Character::onHurt(int damage)
     _hitPoint->reduce(damage);
     
     if (_battle && !_hitPoint->isLost()) {
-        HurtCommand* command { HurtCommand::create() };
-        this->pushCommand(command);
+        this->enableHit(false);
+        
+        this->runAction(Sequence::create(Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         CallFunc::create([this] { this->enableHit(true); }),
+                                         nullptr));
     }
 }
 

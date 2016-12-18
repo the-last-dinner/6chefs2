@@ -32,7 +32,7 @@ public:
     virtual void onPartyMoved() {};
     virtual bool canGoToNextMap() const { return false; };
     virtual float calcSummonDelay() const { return 0.0f; };
-    void setSpeedRatio(float ratio);
+    virtual void setSpeedRatio(float ratio);
     void setStartPathId(const int pathId);
 protected:
     MovePattern();

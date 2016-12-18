@@ -12,15 +12,15 @@
 #include "MapObjects/Command/WalkCommand.h"
 
 // コンストラクタ
-CheapChaser::CheapChaser() {FUNCLOG};
+CheapChaser::CheapChaser() { FUNCLOG }
 
 // デストラクタ
-CheapChaser::~CheapChaser() {FUNCLOG};
+CheapChaser::~CheapChaser() { FUNCLOG }
 
 // 初期化
 bool CheapChaser::init(Character* character)
 {
-    if(!MovePattern::init(character)) return false;
+    if (!MovePattern::init(character)) return false;
     
     return true;
 }
@@ -36,7 +36,7 @@ void CheapChaser::start()
 void CheapChaser::onPartyMoved()
 {
     // もしキャラクタが動いていなければ、動かす
-    if(_chara->isMoving()) return;
+    if (_chara->isMoving()) return;
     this->move();
 }
 
@@ -59,14 +59,14 @@ float CheapChaser::calcSummonDelay() const
 // 移動
 void CheapChaser::move(function<void()> callback)
 {
-    if(_paused) return;
+    if (_paused) return;
     
     WalkCommand* command { WalkCommand::create() };
     command->setDirections(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - _chara->getGridPosition()));
     command->setSpeed(_speedRatio);
     command->setWalkCallback([this, callback](bool walked) {
         if (walked) {
-            this->move();
+            this->move(callback);
         } else {
             if (callback) callback();
         }

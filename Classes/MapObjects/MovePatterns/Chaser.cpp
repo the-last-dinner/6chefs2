@@ -13,12 +13,12 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/CheapChaser.h"
 #include "MapObjects/PathFinder/PathFinder.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 
 #include "Managers/DungeonSceneManager.h"
 
 // 定数
 const int Chaser::PATH_FINDING_THRESHOLD { 10 };
-const int Chaser::SHIFT_PATTERN_THRESHOLD { 10 };
 
 // コンストラクタ
 Chaser::Chaser() { FUNCLOG }
@@ -27,6 +27,7 @@ Chaser::Chaser() { FUNCLOG }
 Chaser::~Chaser()
 {
     FUNCLOG
+    _chara->unschedule(CC_SCHEDULE_SELECTOR(Chaser::onStuck));
     CC_SAFE_RELEASE_NULL(_subPattern);
 }
 
@@ -69,7 +70,16 @@ void Chaser::resume()
 }
 
 // 主人公一行が動いた時
-void Chaser::onPartyMoved() {}
+void Chaser::onPartyMoved()
+{
+    // if (_subPattern) _subPattern->onPartyMoved();
+}
+
+void Chaser::setSpeedRatio(float speed)
+{
+    MovePattern::setSpeedRatio(speed);
+    if (_subPattern) _subPattern->setSpeedRatio(speed);
+}
 
 // 動かす
 void Chaser::move()
@@ -90,7 +100,13 @@ void Chaser::move()
     
     this->cutPath(path);
     
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) {
+        if (walked) {
+            this->move();
+        } else {
+            _chara->scheduleOnce(CC_SCHEDULE_SELECTOR(Chaser::onStuck), 0.5f);
+        }
+    }, _speedRatio, false) };
     
     for (WalkCommand* command : commands) {
         _chara->pushCommand(command);
@@ -100,13 +116,21 @@ void Chaser::move()
 // サブアルゴリズムから自身へ移行
 void Chaser::shiftFromSubPattern()
 {
+    _chara->clearCommandQueue();
+    
     // 経路を取得
     deque<Direction> path { this->getPath() };
     
     // 経路をカット
     this->cutPath(path);
     
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) {
+        if (walked) {
+            this->move();
+        } else {
+            _chara->scheduleOnce(CC_SCHEDULE_SELECTOR(Chaser::onStuck), 0.5f);
+        }
+    }, _speedRatio, false) };
     
     for (WalkCommand* command : commands) {
         _chara->pushCommand(command);
@@ -116,6 +140,7 @@ void Chaser::shiftFromSubPattern()
 // サブアルゴリズムへ移行
 void Chaser::shiftToSubPattern()
 {
+    _chara->clearCommandQueue();
     _subPattern->setSpeedRatio(_speedRatio);
     _subPattern->move(CC_CALLBACK_0(Chaser::shiftFromSubPattern, this));
 }
@@ -123,8 +148,8 @@ void Chaser::shiftToSubPattern()
 // サブの移動アルゴリズムに切り替える必要があるか
 bool Chaser::needsShiftToSubPattern(const deque<Direction>& path)
 {
-    // 経路のステップ数が閾値以内ならばtrueを返す
-    return path.size() <= SHIFT_PATTERN_THRESHOLD;
+    // 主人公との間に当たり判定がなければtrueを返す
+    return !this->getMapObjectList()->getCollisionDetector()->existsCollisionBetween(_chara, this->getMainCharacter());
 }
 
 // 経路をカットする
@@ -147,8 +172,13 @@ deque<Direction> Chaser::getPath() const
     return path;
 }
 
+void Chaser::onStuck(float delta)
+{
+    this->move();
+}
+
 // マップ移動可能か
-bool Chaser::canGoToNextMap() const { return true; };
+bool Chaser::canGoToNextMap() const { return true; }
 
 // 出口までに掛る時間を計算
 float Chaser::calcSummonDelay() const

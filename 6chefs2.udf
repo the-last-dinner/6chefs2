@@ -28,5 +28,16 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="character/taihou.csd" />
+          <FilePathData Path="character/kenshin.csd" />
+          <FilePathData Path="character/ranmaru.csd" />
+          <FilePathData Path="character/yuki.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="character/yuki.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>
