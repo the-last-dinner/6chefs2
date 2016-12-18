@@ -58,7 +58,7 @@
 					"objID":"1073",
 					"charaID":"9",
 					"x":10,
-					"y":8,
+					"y":9,
 					"direction":"DOWN",
 					"movePattern":"1"
 				},
@@ -547,38 +547,58 @@
 			],
 			"action":[
 				{
-					"type":"fadeout"
-				},
-				{
-					"type":"createCamera",
-					"mapID":"54",
-					"x":53,
-					"y":68,
+					"type":"sequence",
 					"action":[
 						{
-							"type":"sequence",
+							"type":"stopBGM"
+						},
+						{
+							"type":"fadeout",
+							"time":1.0
+						},
+						{
+							"type":"createCamera",
+							"mapID":"54",
+							"x":53,
+							"y":68,
 							"action":[
 								{
-									"type":"fadein"
-								},
+									"type":"sequence",
+									"action":[
+										{
+											"type":"fadein",
+											"time":2.0
+										},
+										{
+											"type":"charaMsg",
+											"text":["あ・・・"],
+											"charaID":"1",
+											"imgID":"2"
+										},
+										{
+											"type":"fadeout",
+											"time":2.0
+										}
+									]
+								}
+							]
+						},
+						{
+							"type":"createCamera",
+							"mapID":"35",
+							"x":4,
+							"y":16,
+							"action":[
 								{
-									"type":"charaMsg",
-									"text":["あ・・・"],
-									"charaID":"1",
-									"imgID":"2"
-								},
-								{
-									"type":"fadeout",
-									"time":2.0
-								},
-								{
-									"type":"createCamera",
-									"mapID":"35",
-									"x":4,
-									"y":16,
+									"type":"sequence",
 									"action":[
 										{
 											"type":"createRain"
+										},
+										{
+											"type":"playBGM",
+											"file":"rain1.mp3",
+											"volume":0.2
 										},
 										{
 											"type":"spawn",
@@ -594,7 +614,7 @@
 												},
 												{
 													"type":"charaMsg",
-													"text":["雨・・・"],
+													"text":["雨・・・\n降ってきてるみたい・・・"],
 													"charaID":"1",
 													"imgID":"2"
 												}
@@ -607,15 +627,17 @@
 									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"type":"sequence",
-					"action":[
+						},
+						{
+							"type":"stopBGM"
+						},
 						{
 							"type":"spawn",
 							"action":[
+								{
+									"type":"fadein",
+									"time":1.0
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -692,7 +714,7 @@
 									"option":"reaction"
 								},
 								{
-									"text":["戸塚さん・・・\nアナタのしていることは悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
+									"text":["戸塚さん・・・","アナタのしていることは・・・\n悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
 									"charaID":"0",
 									"imgID":"1"
 								},
@@ -709,7 +731,7 @@
 								{
 									"text":["あぁ！？\n何言ってんだ・・・"],
 									"charaID":"5",
-									"imgID":"1"
+									"imgID":"7"
 								},
 								{
 									"text":["まさか！"],
@@ -765,6 +787,14 @@
 							"type":"fadein"
 						},
 						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"playBGM",
+							"file":"title_bgm.mp3"
+						},
+						{
 							"type":"charaMsg",
 							"talk":[
 								{
@@ -788,24 +818,20 @@
 							"type":"stopBGM"
 						},
 						{
+							"type":"fadeout"
+						},
+						{
 							"type":"charaMsg",
 							"text":["ぜったいにゆるさない！"],
-							"file":"yuki_naguri.png",
+							"img":"yuki_naguri.png",
 							"charaID":"10",
 							"name":"希﨑 雪",
 							"option":"reaction"
-						},
+						},	
 						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"fadeout"
-								},
-								{
-									"type":"storyMsg",
-									"text":["・・・","痛てぇ・・・","誰かに殴られたのなんて・・・\nいつぶりかね・・・","あぁ・・・","あんとき以来か・・・","でも・・・\nもう無理だ・・・無理なんだよ・・・","俺の”前”は・・・\n”後ろ”にしかないんだからよ・・・"]
-								}
-							]
+							"type":"storyMsg",
+							"text":["・・・","痛てぇ・・・","誰かに殴られたのなんて・・・\nいつぶりかね・・・","あぁ・・・","あんとき以来か・・・","でも・・・\nもう無理だ・・・無理なんだよ・・・","俺の”前”は・・・\n”後ろ”にしかないんだからよ・・・"]
+								
 						},
 						{
 							"type":"wait",
@@ -829,8 +855,12 @@
 							]
 						},
 						{
+							"type":"playBGM",
+							"file":"taiho_1.mp3"
+						},
+						{
 							"type":"charaMsg",
-							"file":"TaihoAndYae.png",
+							"img":"TaihoAndYae.png",
 							"talk":[
 								{
 									"text":["もう・・・いいんだよ・・・"],
@@ -901,7 +931,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"file":"taihou_doukoku.png",
+							"img":"taihou_doukoku.png",
 							"text":["ヤエ・・・ヨシツネ・・・","ちくしょう・・・"],
 							"charaID":"10",
 							"name":"戸塚 大宝"
@@ -915,8 +945,11 @@
 							"time":2.0
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"storyMsg",
-							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を何度も思い返しているようにも見えた。\nとにかく、先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・というワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
+							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を何度も思い返しているようにも見えた。","とにかく、\n先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・というワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
 						},
 						{
 							"type":"already"
@@ -939,7 +972,7 @@
 							"type":"spawn",
 							"action":[
 								{
-									"type":"playBGM",
+									"type":"playSE",
 									"file":"ending2.mp3"
 								},
 								{
@@ -950,34 +983,11 @@
 							]
 						},
 						{
-							"type":"createCamera",
+							"type":"changeMap",
 							"mapID":"117",
 							"x":25,
 							"y":19,
-							"action":[
-								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"camera",
-											"nextX":25,
-											"nextY":693,
-											"time":83
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
-										}
-									]
-								}
-							]
-						},
-						{
-							"type":"ending",
-							"id":"1"
+							"eventID":"1"
 						}
 					]
 				}

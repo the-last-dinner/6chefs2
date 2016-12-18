@@ -300,7 +300,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"file":"itadakimasu.png",
+							"img":"itadakimasu.png",
 							"text":["いただきます！"],
 							"charaID":"10",
 							"name":"一同"
@@ -310,7 +310,32 @@
 							"time":3.0
 						},
 						{
-							"type":エピソード孫一開放
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"10"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"10"
+								}
+							]
+						},
+						{
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"11"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"11"
+								}
+							]
 						},
 						{
 				          	"type":"backToTitle"

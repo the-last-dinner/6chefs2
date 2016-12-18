@@ -906,17 +906,50 @@
 			],
 			"action":[
 				{
-					"type":"stopBGM"
-				},
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"BASEMENT.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"64",
+							"x":15,
+							"y":3
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
 				{
-					"type":"playBGM",
-					"file":"BASEMENT.mp3"
-				},
+					"event":["54","3"]
+				}
+			],
+			"action":[
 				{
-					"type":"changeMap",
-					"mapID":"64",
-					"x":15,
-					"y":3
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"BASEMENT.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"64",
+							"x":15,
+							"y":3
+						}
+					]
 				}
 			]
 		}

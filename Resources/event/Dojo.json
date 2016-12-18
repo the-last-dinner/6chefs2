@@ -872,7 +872,7 @@
 								        	"type":"charaMsg",
 								        	"text":["へるけぽー！"],
 								        	"charaID":"7",
-								        	"imgID":"3",
+								        	"imgID":"4",
 								        	"option":"reaction"
 								        },
 								        {
@@ -1045,7 +1045,7 @@
 								        		{
 								        			"text":["行くわよ！加藤！"],
 								        			"charaID":"3",
-								        			"imgID":"2",
+								        			"imgID":"3",
 								        			"option":"reaction"
 								        		},
 								        		{
@@ -1066,7 +1066,7 @@
 								        		{
 								        			"text":["北森・・・火鍋・・・"],
 								        			"charaID":"4",
-								        			"imgID":"2"
+								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["どうしたの・・・"],
@@ -1190,17 +1190,17 @@
 								        		{
 								        			"text":["？"],
 								        			"charaID":"6",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		},
 												{
 								        			"text":["・・・"],
 								        			"charaID":"0",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		},
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"1",
-								        			"imgID":"3"
+								        			"imgID":"2"
 								        		},
 								        		{
 								        			"text":["・・・"],
@@ -1215,17 +1215,22 @@
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"5",
-								        			"imgID":"3"
+								        			"imgID":"1"
 								        		},
 								        		{
-								        			"text":["・・・","しゃーねぇな・・・雪！\nまぁその・・・なんだ・・・","皆で旅行だ。"],
+								        			"text":["・・・"],
+								        			"charaID":"2",
+								        			"imgID":"2"
+								        		},
+								        		{
+								        			"text":["しゃーねぇな・・・雪！\nまぁその・・・なんだ・・・","皆で旅行だ。"],
 								        			"charaID":"2",
 								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["りょこう？"],
 								        			"charaID":"6",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		}
 								        	]
 								        },
@@ -1266,7 +1271,7 @@
 					    },
 					    {
 					     	"type":"charaMsg",
-					       	"file":"airplane.png",
+					       	"img":"airplane.png",
 					       	"talk":[
 					       		{
 					       			"text":["ちょっと・・・加藤・・・\n重い・・・"],

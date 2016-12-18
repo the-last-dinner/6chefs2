@@ -20,7 +20,7 @@
 			"trigger":"2",
 			"movePattern":"1",
 			"direction":"DOWN",
-			"charaID":"14"
+			"charaID":"16"
 		},
 		{
 			"type":"createObject",
@@ -31,7 +31,7 @@
 			"trigger":"2",
 			"movePattern":"1",
 			"direction":"DOWN",
-			"charaID":"14"
+			"charaID":"16"
 		},
 		{
 			"type":"createObject",
@@ -69,15 +69,15 @@
 	"3":[
 		{
 			"type":"charaMsg",
-			"text":["なんだよ・・・\nなんなんだよ・・・"],
-			"charaID":"14"
+			"text":["なによ・・・\nなんなのよ・・・"],
+			"charaID":"16"
 		}
 	],
 	"4":[
 		{
 			"type":"charaMsg",
 			"text":["人が・・・簡単に・・・"],
-			"charaID":"14"
+			"charaID":"16"
 		}
 	],
 	"5":[
@@ -308,7 +308,7 @@
 				{
 					"type":"charaWalkTo",
 					"objID":"149",
-					"x":75,
+					"x":74,
 					"y":22,
 					"speed":5.0
 				},
