@@ -145,7 +145,7 @@ bool CollisionDetector::intersectsExceptIgnorable(const MapObject* mapObject, co
 bool CollisionDetector::existsCollisionBetween(const MapObject* obj1, const MapObject* obj2) const
 {
     for (CollisionBox* collision : _collisionBoxes) {
-        if (collision->isBetween(obj1, obj2)) return true;
+        if (collision->isBetween(obj1->getCollision(), obj2->getCollision())) return true;
     }
     
     return false;
