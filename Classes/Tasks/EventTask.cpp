@@ -23,36 +23,41 @@ EventTask::~EventTask()
     FUNCLOG
     
     // イベントキューが空でなかったら全て解放
-    if(!this->eventQueue.empty())
+    if(!_eventQueue.empty())
     {
-        for(int i {0}; i < this->eventQueue.size(); i++)
+        for(int i {0}; i < _eventQueue.size(); i++)
         {
-            CC_SAFE_RELEASE(this->getGameEvent(this->eventQueue.front()));
-            this->eventQueue.pop_front();
+            CC_SAFE_RELEASE(this->getGameEvent(_eventQueue.front()));
+            _eventQueue.pop_front();
         }
     }
     
     // 実行中のイベントを解放
-    CC_SAFE_RELEASE_NULL(this->runningEvent.second);
+    CC_SAFE_RELEASE_NULL(_runningEvent.second);
     
     // スクリプトを解放
-    CC_SAFE_RELEASE_NULL(this->eventScript);
+    CC_SAFE_RELEASE_NULL(_eventScript);
 }
 
 // 初期化
 bool EventTask::init()
 {
+    EventScript * eventScript { EventScript::create(CsvDataManager::getInstance()->getMapData()->getFileName(DungeonSceneManager::getInstance()->getLocation().map_id)) };
+    return this->init(eventScript);
+}
+
+bool EventTask::init(EventScript* eventScript)
+{
     if(!GameTask::init()) return false;
     
     // イベントスクリプト生成
-    EventScript* eventScript {EventScript::create(CsvDataManager::getInstance()->getMapData()->getFileName(DungeonSceneManager::getInstance()->getLocation().map_id))};
-    CC_SAFE_RETAIN(eventScript);
-    this->eventScript = eventScript;
+    _eventScript = eventScript;
+    CC_SAFE_RETAIN(_eventScript);
     
     // update開始
     this->scheduleUpdate();
-
-	return true;
+    
+    return true;
 }
 
 // イベントキューにあるイベントを実行開始
@@ -106,7 +111,7 @@ void EventTask::runEvent(vector<int> eventIds, function<void()> callback)
     // キューにあるイベントを先頭から実行
     this->runEventQueue();
     
-    this->callbackInfo = CallbackWithId({lastEventId, callback});
+    _callbackInfo = CallbackWithId({lastEventId, callback});
 }
 
 // イベントを実行
@@ -114,7 +119,7 @@ void EventTask::runEvent(GameEvent* event, function<void()> callback)
 {
     this->pushEventBack(event);
     
-    this->callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), callback});
+    _callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), callback});
     
     this->runEventQueue();
 }
@@ -125,7 +130,7 @@ void EventTask::runEventAsync(GameEvent *event)
     if(!event) return;
     
     event->run();
-    this->asyncEvents.push_back(event);
+    _asyncEvents.push_back(event);
 }
 
 // キューに指定IDイベントを後ろから詰める
@@ -133,7 +138,7 @@ bool EventTask::pushEventBack(int eventId)
 {
     GameEvent* event {this->createEventById(eventId)};
     if(!event) return false;
-    this->eventQueue.push_back({eventId, event});
+    _eventQueue.push_back({eventId, event});
     
     return true;
 }
@@ -143,7 +148,7 @@ bool EventTask::pushEventFront(int eventId)
 {
     GameEvent* event {this->createEventById(eventId)};
     if(!event) return false;
-    this->eventQueue.push_front({eventId, event});
+   _eventQueue.push_front({eventId, event});
     
     return true;
 }
@@ -153,7 +158,7 @@ void EventTask::pushEventBack(GameEvent* event)
 {
     if(!event) return;
     
-    this->eventQueue.push_back({etoi(EventID::UNDIFINED), event});
+    _eventQueue.push_back({etoi(EventID::UNDIFINED), event});
 }
 
 // キューにイベントを前から詰める、EventIDは現在実行中のものを使用
@@ -161,25 +166,25 @@ void EventTask::pushEventFront(GameEvent* event)
 {
     if(!event) return;
     
-    this->eventQueue.push_front({this->getEventId(this->runningEvent), event});
+    _eventQueue.push_front({this->getEventId(_runningEvent), event});
 }
 
 // 現在実行中のイベントがあるか
 bool EventTask::isEventRunning()
 {
-    return this->getGameEvent(this->runningEvent);
+    return this->getGameEvent(_runningEvent);
 }
 
 // キューにイベントが存在するか
 bool EventTask::existsEvent()
 {
-    return !this->eventQueue.empty();
+    return !_eventQueue.empty();
 }
 
 // EventScriptを取得
 EventScript* EventTask::getEventScript() const
 {
-    return this->eventScript;
+    return _eventScript;
 }
 
 // update
@@ -188,28 +193,28 @@ void EventTask::update(float delta)
     this->updateForAsync(delta);
     
     // 実行中イベントがnullptrなら無視
-    if(!this->getGameEvent(this->runningEvent)) return;
+    if(!this->getGameEvent(_runningEvent)) return;
     
     // 実行中イベントを更新
-    this->getGameEvent(this->runningEvent)->update(delta);
+    this->getGameEvent(_runningEvent)->update(delta);
     
     // 実行中イベントが終了していたら解放
-    if(this->getGameEvent(this->runningEvent)->isDone())
+    if(this->getGameEvent(_runningEvent)->isDone())
     {
-        if(this->callbackInfo.second && this->callbackInfo.first == this->getEventId(this->runningEvent))
+        if(_callbackInfo.second && _callbackInfo.first == this->getEventId(_runningEvent))
         {
-            function<void()> cb { this->callbackInfo.second };
-            this->callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
+            function<void()> cb { _callbackInfo.second };
+            _callbackInfo = CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
             cb();
         }
-        this->releaseEventIfNeeded(this->getGameEvent(this->runningEvent)) ;
-        this->runningEvent = EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
+        this->releaseEventIfNeeded(this->getGameEvent(_runningEvent)) ;
+        _runningEvent = EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr});
     }
         
     // キューが空になったらコールバック
-    if(this->eventQueue.empty() && !this->getGameEvent(this->runningEvent))
+    if(_eventQueue.empty() && !this->getGameEvent(_runningEvent))
     {
-        if(this->onEventFinished) this->onEventFinished();
+        if(_onEventFinished) _onEventFinished();
     }
     
     // イベントを実行
@@ -219,8 +224,8 @@ void EventTask::update(float delta)
 // 非同期イベント用update
 void EventTask::updateForAsync(float delta)
 {
-    vector<GameEvent*>::iterator itr = this->asyncEvents.begin();
-    while(itr != this->asyncEvents.end())
+    vector<GameEvent*>::iterator itr = _asyncEvents.begin();
+    while(itr != _asyncEvents.end())
     {
         // イベントを更新
         (*itr)->update(delta);
@@ -229,7 +234,7 @@ void EventTask::updateForAsync(float delta)
         if((*itr)->isDone())
         {
             this->releaseEventIfNeeded(*itr);
-            itr = this->asyncEvents.erase(itr);
+            itr = _asyncEvents.erase(itr);
         }
         else
         {
@@ -254,19 +259,19 @@ void EventTask::releaseEventIfNeeded(GameEvent *event)
 // 実行中のイベントIDを取得
 int EventTask::getRunningEventId() const
 {
-    return this->getEventId(this->runningEvent);
+    return this->getEventId(_runningEvent);
 }
 
 // 実行中のイベントを取得
 GameEvent* EventTask::getRunningEvent() const
 {
-    return this->getGameEvent(this->runningEvent);
+    return this->getGameEvent(_runningEvent);
 }
 
 // キューにあるイベントを全て取得
 deque<EventTask::EventWithId> EventTask::getEvents() const
 {
-    return this->eventQueue;
+    return _eventQueue;
 }
 
 #pragma mark -
@@ -282,12 +287,12 @@ void EventTask::run()
     if(!this->existsEvent()) return;
     
     // なければ先頭を実行
-    this->runningEvent = this->eventQueue.front();
-    this->eventQueue.pop_front();
-    this->getGameEvent(this->runningEvent)->run();
+    _runningEvent = _eventQueue.front();
+    _eventQueue.pop_front();
+    this->getGameEvent(_runningEvent)->run();
     
     // イベント開始をコールバック
-    if(this->onEventStart) this->onEventStart();
+    if(_onEventStart) _onEventStart();
 }
 
 // IDからイベントを生成
@@ -298,7 +303,7 @@ GameEvent* EventTask::createEventById(int eventId)
     
     DungeonSceneManager* manager {DungeonSceneManager::getInstance()};
     
-    rapidjson::Value json { this->eventScript->getScriptJson(eventId) };
+    rapidjson::Value json { _eventScript->getScriptJson(eventId) };
     GameEvent* event { manager->getEventFactory()->createGameEvent(json, nullptr) };
     CC_SAFE_RETAIN(event);
     

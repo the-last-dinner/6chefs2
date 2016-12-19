@@ -24,17 +24,18 @@ private:
 // クラスメソッド
 public:
     CREATE_FUNC(EventTask)
+    CREATE_FUNC_WITH_PARAM(EventTask, EventScript*)
 
 // インスタンス変数
 public:
-    function<void()> onEventStart { nullptr };
-    function<void()> onEventFinished { nullptr };
+    function<void()> _onEventStart { nullptr };
+    function<void()> _onEventFinished { nullptr };
 private:
-    EventScript* eventScript { nullptr };
-    deque<EventWithId> eventQueue {};
-    vector<GameEvent*> asyncEvents {};
-    EventWithId runningEvent {EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
-    CallbackWithId callbackInfo {CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
+    EventScript* _eventScript { nullptr };
+    deque<EventWithId> _eventQueue {};
+    vector<GameEvent*> _asyncEvents {};
+    EventWithId _runningEvent {EventWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
+    CallbackWithId _callbackInfo {CallbackWithId({static_cast<int>(EventID::UNDIFINED), nullptr})};
     
 // インスタンスメソッド
 public:
@@ -67,6 +68,7 @@ private:
     EventTask();
     ~EventTask();
     bool init();
+    bool init(EventScript* eventScript);
     
     void run();
     GameEvent* createEventById(int eventId);

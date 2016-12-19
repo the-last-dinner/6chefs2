@@ -1,0 +1,16 @@
+{
+    "countDownFailure":[
+        {
+            "type":"sequence",
+            "action":[
+                {
+                    "type":"createUnderwater"
+                },
+                
+                {
+                    "type":"gameover"
+                }
+            ]
+        }
+    ]
+}

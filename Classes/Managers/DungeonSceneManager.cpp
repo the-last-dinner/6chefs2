@@ -76,11 +76,11 @@ DungeonSceneManager::DungeonSceneManager()
     this->stamina = stamina;
     
     // 共通イベントスクリプト生成
-    CommonEventScripts* commonEventScript {CommonEventScripts::create()};
-    CC_SAFE_RETAIN(commonEventScript);
-    this->commonEventScripts = commonEventScript;
-    this->commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
-};
+    CommonEventScripts* commonEventScripts {CommonEventScripts::create()};
+    commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
+    CC_SAFE_RETAIN(commonEventScripts);
+    this->commonEventScripts = commonEventScripts;
+}
 
 // デストラクタ
 DungeonSceneManager::~DungeonSceneManager()
@@ -163,9 +163,14 @@ void DungeonSceneManager::fadeIn(const float duration, function<void()> callback
         return;
     }
     
-    this->cover->runAction(Sequence::create(FadeOut::create(duration), CallFunc::create(callback), RemoveSelf::create(), nullptr));
-    CC_SAFE_RELEASE(this->cover);
-    this->cover = nullptr;
+    this->cover->runAction(
+        Sequence::create(
+            FadeOut::create(duration),
+            CallFunc::create(callback),
+            CallFunc::create([this](){CC_SAFE_RELEASE_NULL(this->cover);}),
+            nullptr
+        )
+    );
 }
 
 // フェード用カバーを取得

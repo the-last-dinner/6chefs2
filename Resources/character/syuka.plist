@@ -7,7 +7,7 @@
 			<key>syuka_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3531},{31,29}}</string>
+				<string>{{0,3327},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -21,7 +21,7 @@
 			<key>syuka_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3501},{31,29}}</string>
+				<string>{{0,3297},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -35,7 +35,7 @@
 			<key>syuka_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3591},{31,29}}</string>
+				<string>{{0,3387},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -49,7 +49,7 @@
 			<key>syuka_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3681},{25,29}}</string>
+				<string>{{0,3477},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -63,7 +63,7 @@
 			<key>syuka_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3741},{25,29}}</string>
+				<string>{{0,3537},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -77,7 +77,7 @@
 			<key>syuka_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3651},{25,29}}</string>
+				<string>{{0,3447},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -91,7 +91,7 @@
 			<key>syuka_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3621},{25,29}}</string>
+				<string>{{0,3417},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -105,7 +105,7 @@
 			<key>syuka_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3711},{25,29}}</string>
+				<string>{{0,3507},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -119,7 +119,7 @@
 			<key>syuka_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3771},{25,29}}</string>
+				<string>{{0,3567},{25,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -133,7 +133,7 @@
 			<key>syuka_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3561},{31,29}}</string>
+				<string>{{0,3357},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -147,7 +147,7 @@
 			<key>syuka_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3471},{31,29}}</string>
+				<string>{{0,3267},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -161,7 +161,7 @@
 			<key>syuka_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,3441},{31,29}}</string>
+				<string>{{0,3237},{31,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -175,13 +175,13 @@
 			<key>syuka_s_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,2255},{504,1185}}</string>
+				<string>{{0,2153},{439,1083}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{154,0},{504,1185}}</string>
+				<string>{{154,102},{439,1083}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -189,13 +189,13 @@
 			<key>syuka_s_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,2255},{504,1185}}</string>
+				<string>{{0,2153},{439,1083}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{154,0},{504,1185}}</string>
+				<string>{{154,102},{439,1083}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -203,13 +203,13 @@
 			<key>syuka_s_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{505,1069},{504,1185}}</string>
+				<string>{{440,1069},{439,1083}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{154,0},{504,1185}}</string>
+				<string>{{154,102},{439,1083}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -217,13 +217,13 @@
 			<key>syuka_s_3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{505,2255},{504,1185}}</string>
+				<string>{{440,2153},{439,1083}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{154,0},{504,1185}}</string>
+				<string>{{154,102},{439,1083}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>
@@ -231,13 +231,13 @@
 			<key>syuka_s_4.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1069},{504,1185}}</string>
+				<string>{{0,1069},{439,1083}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{154,0},{504,1185}}</string>
+				<string>{{154,102},{439,1083}}</string>
 				<key>sourceSize</key>
 				<string>{800,1200}</string>
 			</dict>

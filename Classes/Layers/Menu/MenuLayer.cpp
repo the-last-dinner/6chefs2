@@ -20,7 +20,7 @@ MenuLayer::~MenuLayer(){FUNCLOG}
 bool MenuLayer::init(const Point& pageSize, const int itemCount, Node* basePanel)
 {
     int sizeX = itemCount < pageSize.x ? itemCount : pageSize.x;
-    int sizeY = itemCount < pageSize.x * pageSize.y ? floor((itemCount - 1) / pageSize.x / sizeX) : pageSize.y;
+    int sizeY = itemCount < pageSize.x * pageSize.y ? floor(itemCount / pageSize.x) + 1 : pageSize.y;
     this->pageCount = floor(abs(itemCount - 1) / (pageSize.x * pageSize.y)) + 1;
     
     // pagePanel生成

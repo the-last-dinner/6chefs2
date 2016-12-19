@@ -179,8 +179,8 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     if (DungeonSceneManager::getInstance()->existsStopWatch()) _countDownDisplay->slideIn();
     
     // イベント処理クラスにコールバック設定
-    eventTask->onEventStart = CC_CALLBACK_0(DungeonScene::onEventStart, this);
-    eventTask->onEventFinished = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
+    eventTask->_onEventStart = CC_CALLBACK_0(DungeonScene::onEventStart, this);
+    eventTask->_onEventFinished = CC_CALLBACK_0(DungeonScene::onEventFinished, this);
     
     // 敵処理クラスにコールバック設定
     enemyTask->onAllEnemyRemoved = CC_CALLBACK_0(DungeonScene::onAllEnemyRemoved, this);

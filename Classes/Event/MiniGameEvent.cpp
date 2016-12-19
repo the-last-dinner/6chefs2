@@ -244,13 +244,21 @@ bool CountDownEvent::init(rapidjson::Value& json)
         _display = _json[member::DISPLAY].GetBool();
     }
     
+    // コールバック設定
+    
+    _successCallbackEvent = _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this);
+    _failureCallbackEvent = _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this);
+    CC_SAFE_RETAIN(_successCallbackEvent);
+    CC_SAFE_RETAIN(_failureCallbackEvent);
+    
     return true;
 }
 
 void CountDownEvent::run()
 {
     StopWatch* stopWatch { DungeonSceneManager::getInstance()->getStopWatch() };
-    stopWatch->setCountDown(this);
+    stopWatch->setCountDownEvent(this);
+    this->setReusable(true);
     
     if (_display) {
         DungeonSceneManager::getInstance()->getScene()->getCountDownDisplay()->slideIn();
@@ -265,11 +273,10 @@ void CountDownEvent::run()
         
         // 条件を満たしていた場合
         if (condition) {
-            GameEvent* event { _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this) };
-            CC_SAFE_RETAIN(event);
-            _resultCallbackEvent = event;
-            event->run();
-            
+            if (_successCallbackEvent){
+                _resultCallbackEvent = _successCallbackEvent;
+                _resultCallbackEvent->run();
+            }
             return false;
         }
 
@@ -284,12 +291,10 @@ void CountDownEvent::run()
         
         // 時間切れチェック
         if (static_cast<float>(time) >= _second) {
-            GameEvent* event { _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this) };
-            CC_SAFE_RETAIN(event);
-            _resultCallbackEvent = event;
-            // 時間切れと同時にrunuすると落ちるの防止
-            if (event) event->run();
-            
+            if (_failureCallbackEvent) {
+                _resultCallbackEvent = _failureCallbackEvent;
+                _resultCallbackEvent->run();
+            }
             return false;
         }
         

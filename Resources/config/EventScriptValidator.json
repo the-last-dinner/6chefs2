@@ -299,14 +299,14 @@
             }
         },
         "chase": {
-            "target": ["objID"],
+            "require": ["objID"],
             "member": {
                 "objID": ["string"],
                 "target": ["string"]
             }
         },
         "releaseChase": {
-            "target": ["objID"],
+            "require": ["objID"],
             "member": {
                 "objID": ["string"]
             }
