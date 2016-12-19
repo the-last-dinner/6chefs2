@@ -17,10 +17,10 @@
 #include "MapObjects/MovePatterns/BattleBoss.h"
 
 // コンストラクタ
-MovePatternFactory::MovePatternFactory() {FUNCLOG};
+MovePatternFactory::MovePatternFactory() { FUNCLOG }
 
 // デストラクタ
-MovePatternFactory::~MovePatternFactory() {FUNCLOG};
+MovePatternFactory::~MovePatternFactory() { FUNCLOG }
 
 // 初期化
 bool MovePatternFactory::init()
@@ -38,7 +38,8 @@ MovePattern* MovePatternFactory::createMovePattern(const EnemyMovePattern type, 
         {EnemyMovePattern::CHEAP_CHASER, CheapChaser::create},
         {EnemyMovePattern::PERFECT_RANDOM, RandomMove::create},
         {EnemyMovePattern::SCOUTER, Scouter::create},
-        {EnemyMovePattern::BATTLE_MOB, BattleMob::create}
+        {EnemyMovePattern::BATTLE_MOB, BattleMob::create},
+        {EnemyMovePattern::BATTLE_BOSS, BattleBoss::create},
     };
     
     if (typeToFunc.count(type) == 0) return nullptr;
