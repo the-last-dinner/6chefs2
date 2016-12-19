@@ -161,14 +161,20 @@ Rect DetectionBox::getRect(const vector<Direction>& directions) const
     return Rect(rect.origin.x + 1 + vec2.x, rect.origin.y + 1 + vec2.y, rect.size.width - 2, rect.size.height - 2);
 }
 
-bool DetectionBox::isBetween(const MapObject* obj1, const MapObject* obj2) const
+bool DetectionBox::isBetween(const DetectionBox* other1, const DetectionBox* other2) const
 {
-    if (!obj1) return false;
-    if (!obj2) return false;
-    if (obj1 == _parent) return false;
-    if (obj2 == _parent) return false;
+    if (!other1) return false;
+    if (!other2) return false;
+    if (other1->_parent == _parent) return false;
+    if (other2->_parent == _parent) return false;
     
-    return MapUtils::isSegmentIntersectWithRect(obj1->getPosition(), obj2->getPosition(), this->getRect());
+    Rect other1Rect { other1->getRect() };
+    Rect other2Rect { other2->getRect() };
+    
+    Point other1Pos { other1Rect.getMidX(), other1Rect.getMidY() };
+    Point other2Pos { other2Rect.getMidX(), other2Rect.getMidY() };
+    
+    return MapUtils::isSegmentIntersectWithRect(other1Pos, other2Pos, this->getRect());
 }
 
 bool DetectionBox::intersects(const DetectionBox* other) const

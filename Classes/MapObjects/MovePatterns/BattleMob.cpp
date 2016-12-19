@@ -17,6 +17,9 @@
 
 #include "MapObjects/Command/AttackCommand.h"
 
+// 定数
+const string BattleMob::ATTACK_NAME { "attack" };
+
 // コンストラクタ
 BattleMob::BattleMob() { FUNCLOG }
 
@@ -45,7 +48,6 @@ bool BattleMob::init(Character* character)
 void BattleMob::start()
 {
     MovePattern::start();
-    if (_chara) _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     if (_subPattern) _subPattern->start();
 }
 
@@ -78,6 +80,10 @@ void BattleMob::update(float delta)
     if (_chara->isInAttackMotion()) return;
     if (!_chara->getBattle()) return;
     
+    if (!_chara->isMoving()) {
+        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
+    }
+    
     Point forwardGridPos1 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() };
     Point forwardGridPos2 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() * 2 };
     
@@ -85,7 +91,7 @@ void BattleMob::update(float delta)
         _chara->getCollision()->intersectsGrid(this->getMainCharacter()->getCollision(), forwardGridPos2)) {
         _chara->clearCommandQueue();
         AttackCommand* command { AttackCommand::create() };
-        command->setName("attack");
+        command->setName(ATTACK_NAME);
         command->setCallback([this](Character* character){ this->start(); });
         _chara->pushCommand(command);
     }

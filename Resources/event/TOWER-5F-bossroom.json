@@ -462,7 +462,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
+													"movePattern":"7"
 												},
 												{
 													"type":"stopBGM"
@@ -472,7 +472,8 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
+                                                    "false":[],
 													"true":[
 														{
 															"type":"sequence",
@@ -633,7 +634,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
+													"movePattern":"7"
 												},
 												{
 													"type":"stopBGM"
@@ -643,7 +644,8 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
+                                                    "false":[],
 													"true":[
 														{
 															"type":"sequence",

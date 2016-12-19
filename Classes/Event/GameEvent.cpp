@@ -157,6 +157,11 @@ void EventSequence::update(float delta)
     CC_SAFE_RETAIN(event);
     _currentEvent = event;
     
+    if (!event) {
+        this->setDone();
+        return;
+    }
+    
     // 次のイベントを実行
     event->run();
 }

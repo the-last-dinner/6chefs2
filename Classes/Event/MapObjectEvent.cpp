@@ -178,6 +178,7 @@ void WarpMapObjectEvent::run()
 {
     this->setDone();
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
+    if (!target) return;
     target->setGridPosition(_point);
     target->setDirection(_direction);
     DungeonSceneManager::getInstance()->setMapObjectPosition(target);

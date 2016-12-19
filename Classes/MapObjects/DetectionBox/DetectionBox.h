@@ -45,7 +45,7 @@ public:
     Rect getRect(const Direction& direction) const;
     Rect getRect(const vector<Direction>& directions) const;
 public:
-    bool isBetween(const MapObject* obj1, const MapObject* obj2) const;
+    bool isBetween(const DetectionBox* other1, const DetectionBox* other2) const;
 public:
     virtual bool intersects(const DetectionBox* other) const;
     
