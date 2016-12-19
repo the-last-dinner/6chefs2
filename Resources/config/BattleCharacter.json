@@ -34,8 +34,8 @@
     "9": {
         "name": "taihou",
         "attacks": {
-            "attack": 75,
-            "attack2": 75
+            "attack_1": 75,
+            "attack_2": 75
         },
         "hit_point": 125,
         "speed_ratio": 1.0
