@@ -78,6 +78,8 @@ private:
     bool _checkEquip { false };
     bool _display { false };
     GameEvent* _resultCallbackEvent { nullptr };
+    GameEvent* _successCallbackEvent { nullptr };
+    GameEvent* _failureCallbackEvent { nullptr };
 private:
     CountDownEvent() { FUNCLOG };
     ~CountDownEvent() {FUNCLOG};

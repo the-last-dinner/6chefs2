@@ -10,6 +10,11 @@
 #include "Event/GameEvent.h"
 #include "Event/SceneEvent.h"
 
+StopWatch::~StopWatch()
+{
+    CC_SAFE_RELEASE_NULL(this->countDownEvent);
+}
+
 #pragma mark -
 #pragma mark Init
 
@@ -110,12 +115,11 @@ void StopWatch::scheduleFunction(float delta)
     // カウントダウンをストップ
     if (!continueSchedule) {
         this->stopCountDown();
-        CC_SAFE_RELEASE_NULL(this->countDownEvent);
     }
 }
 
 // カウントダウンイベントの保持
-void StopWatch::setCountDown(GameEvent *event)
+void StopWatch::setCountDownEvent(GameEvent *event)
 {
     this->countDownEvent = event;
     CC_SAFE_RETAIN(this->countDownEvent);

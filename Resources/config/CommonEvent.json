@@ -1,2 +1,8 @@
 [
+  {
+    "name":"FinalEvent",
+    "chapter":{
+      "5":true
+    }
+  }
 ]

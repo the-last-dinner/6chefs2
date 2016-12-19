@@ -277,6 +277,11 @@ bool CallEvent::init(rapidjson::Value& json)
     if (!GameEvent::init(json)) return false;
     if (!_eventHelper->hasMember(_json, member::EVENT_ID)) return false;
     
+    /** @FIXME 本当はrunで格納したいけど、現状マップ移動するとjsonを維持できないからここで入れてる **/
+    _eventId = _json[member::EVENT_ID].GetString();
+    
+    _className = _eventHelper->hasMember(_json, member::CLASS_NAME) ? _json[member::CLASS_NAME].GetString() : "";
+    
     return true;
 }
 
@@ -284,19 +289,26 @@ void CallEvent::run()
 {
     EventScript* eventScript { nullptr };
     
-    if (_eventHelper->hasMember(_json, member::CLASS_NAME)) {
-        eventScript = DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(_json[member::CLASS_NAME].GetString());
+    if (_className != "") {
+        eventScript = DungeonSceneManager::getInstance()->getCommonEventScriptsObject()->getScript(_className);
     } else {
         eventScript = DungeonSceneManager::getInstance()->getEventScript();
     }
     
-    int eventId { stoi(_json[member::EVENT_ID].GetString()) };
-    rapidjson::Value eventJson { eventScript->getScriptJson(eventId) };
+    rapidjson::Value eventJson { eventScript->getScriptJson(_eventId) };
+    rapidjson::Value nullValue;
+    if (eventJson == nullValue) return;
+    
     _event = _factory->createGameEvent(eventJson, nullptr);
     CC_SAFE_RETAIN(_event);
     
     if (_event) {
-        _event->setEventId(eventId);
+        /** FIXME eventIDはstringで入れたいけど、今はintしか無理だから、現状callEventは-2で格納 **/
+        int eventIdInt = -2;
+        if (LastSupper::StringUtils::isNumericString(_eventId)) {
+            eventIdInt = stoi(_eventId);
+        }
+        _event->setEventId(eventIdInt);
         _event->run();
     }
 }

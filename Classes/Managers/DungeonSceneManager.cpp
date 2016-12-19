@@ -76,11 +76,11 @@ DungeonSceneManager::DungeonSceneManager()
     this->stamina = stamina;
     
     // 共通イベントスクリプト生成
-    CommonEventScripts* commonEventScript {CommonEventScripts::create()};
-    CC_SAFE_RETAIN(commonEventScript);
-    this->commonEventScripts = commonEventScript;
-    this->commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
-};
+    CommonEventScripts* commonEventScripts {CommonEventScripts::create()};
+    commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
+    CC_SAFE_RETAIN(commonEventScripts);
+    this->commonEventScripts = commonEventScripts;
+}
 
 // デストラクタ
 DungeonSceneManager::~DungeonSceneManager()
