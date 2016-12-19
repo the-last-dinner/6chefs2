@@ -9,6 +9,7 @@
 #include "MapObjects/Command/AttackCommand.h"
 
 #include "Datas/BattleCharacterData.h"
+#include "Datas/AttackData.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/DetectionBox/AttackBox.h"
 #include "MapObjects/Status/Stamina.h"
@@ -66,7 +67,7 @@ void AttackCommand::execute(MapObject* target)
     }
     
     character->beInAttackMotion(true);
-    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
+    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackData(_name)->power);
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
     
     if (_stamina) {

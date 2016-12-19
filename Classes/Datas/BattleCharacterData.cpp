@@ -8,6 +8,7 @@
 
 #include "Datas/BattleCharacterData.h"
 
+#include "Datas/AttackData.h"
 #include "Helpers/AssertHelper.h"
 #include "Utils/StringUtils.h"
 #include "Utils/JsonUtils.h"
@@ -15,8 +16,21 @@
 const char* BattleCharacterData::HIT_POINT {"hit_point"};
 const char* BattleCharacterData::SPEED_RATIO {"speed_ratio"};
 const char* BattleCharacterData::ATTACKS {"attacks"};
+const char* BattleCharacterData::STEP_INTERVAL_TIME {"step_interval_time"};
+const char* BattleCharacterData::STEP_STAMINA {"step_stamina"};
+const char* BattleCharacterData::POWER {"power"};
+const char* BattleCharacterData::STAMINA {"stamina"};
+const char* BattleCharacterData::INTERVAL_TIME {"interval_time"};
+
 
 rapidjson::Document BattleCharacterData::BATTLE_CHARACTER_DATA { rapidjson::Document() };
+
+BattleCharacterData::~BattleCharacterData()
+{
+    for (auto attack : _attacks) {
+        CC_SAFE_RELEASE_NULL(attack.second);
+    }
+}
 
 bool BattleCharacterData::init(const string &charaId)
 {
@@ -42,6 +56,8 @@ bool BattleCharacterData::init(const string &charaId)
     if (!this->setHitPoint(battleCharacterData)) return false;
     if (!this->setSpeedRatio(battleCharacterData)) return false;
     if (!this->setAttacks(battleCharacterData)) return false;
+    if (!this->setStepStamina(battleCharacterData)) return false;
+    if (!this->setStepIntervalTime(battleCharacterData)) return false;
     
     _charaId = charaId;
     
@@ -108,13 +124,79 @@ bool BattleCharacterData::setAttacks(const rapidjson::Value &battleCharacterData
     for (rapidjson::Value::ConstMemberIterator itr = attacks.MemberBegin();itr != attacks.MemberEnd(); itr++)
     {
         string attackName = itr->name.GetString();
-        if (!itr->value.IsInt()) {
-            _assertHelper->pushTextLineKeyValue("attack_name", attackName)
-                            ->fatalAssert("Type of atack_point should be int.");
+        AttackData*
+        attackData { AttackData::create(attackName) };
+        _assertHelper->pushTextLineKeyValue("attack_name", attackName);
+        
+        // power
+        if (!itr->value.HasMember(BattleCharacterData::POWER)) {
+            _assertHelper->fatalAssert("power is missing.");
             return false;
         }
-        _attacks[attackName] = itr->value.GetInt();
+        if (!itr->value[BattleCharacterData::POWER].IsInt()) {
+            _assertHelper->fatalAssert("Type of power should be int");
+            return false;
+        }
+        attackData->power = itr->value[BattleCharacterData::POWER].GetInt();
+        
+        // stamina
+        if (!itr->value.HasMember(BattleCharacterData::STAMINA)) {
+            _assertHelper->fatalAssert("stamina is missing.");
+            return false;
+        }
+        if (!itr->value[BattleCharacterData::STAMINA].IsDouble()) {
+            _assertHelper->fatalAssert("Type of stamina should be double");
+            return false;
+        }
+        attackData->stamina = itr->value[BattleCharacterData::STAMINA].GetDouble();
+        
+        // interval time
+        if (!itr->value.HasMember(BattleCharacterData::INTERVAL_TIME)) {
+            _assertHelper->fatalAssert("interval_time is missing.");
+            return false;
+        }
+        if (!itr->value[BattleCharacterData::INTERVAL_TIME].IsDouble()) {
+            _assertHelper->fatalAssert("Type of interval_time should be double");
+            return false;
+        }
+        attackData->intervalTime = itr->value[BattleCharacterData::INTERVAL_TIME].GetDouble();
+        
+        CC_SAFE_RETAIN(attackData);
+        _attacks[attackName] = attackData;
+        _assertHelper->popTextLine();
     }
+    return true;
+}
+
+bool BattleCharacterData::setStepStamina(const rapidjson::Value &battleCharacterData)
+{
+    if (!battleCharacterData.HasMember(BattleCharacterData::STEP_STAMINA)) {
+        _assertHelper->fatalAssert("step_stamina is missing.");
+        return false;
+    }
+    
+    if (!battleCharacterData[STEP_STAMINA].IsDouble()) {
+        _assertHelper->fatalAssert("Type of step_stamina should be double.");
+        return false;
+    }
+    
+    _stepStamina = battleCharacterData[STEP_STAMINA].GetDouble();
+    return true;
+}
+
+bool BattleCharacterData::setStepIntervalTime(const rapidjson::Value &battleCharacterData)
+{
+    if (!battleCharacterData.HasMember(BattleCharacterData::STEP_INTERVAL_TIME)) {
+        _assertHelper->fatalAssert("step_interval_time is missing.");
+        return false;
+    }
+    
+    if (!battleCharacterData[STEP_INTERVAL_TIME].IsDouble()) {
+        _assertHelper->fatalAssert("Type of step_interval_time should be double.");
+        return false;
+    }
+    
+    _stepIntervalTime = battleCharacterData[STEP_INTERVAL_TIME].GetDouble();
     return true;
 }
 
@@ -131,13 +213,22 @@ float BattleCharacterData::getSpeedRatio() const
     return _speedRatio;
 }
 
-int BattleCharacterData::getAttackPoint(const string &attackName) const
+float BattleCharacterData::getStepStamina() const
+{
+    return _stepStamina;
+}
+
+float BattleCharacterData::getStepIntervalTime() const
+{
+    return _stepIntervalTime;
+}
+
+AttackData* BattleCharacterData::getAttackData(const string &attackName) const
 {
     if (_attacks.count(attackName) == 0) {
         _assertHelper->pushTextLineKeyValue("attack_name", attackName)
-                            ->fatalAssert("attack_point is missing.");
-        return 0;
+        ->fatalAssert("attack data is missing.");
+        return nullptr;
     }
-    
     return _attacks.at(attackName);
 }

@@ -461,6 +461,7 @@
 		2672D5031D72F79700AC0E96 /* MasterConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterConfigData.h; path = ConfigData/MasterConfigData.h; sourceTree = "<group>"; };
 		2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventScriptValidator.cpp; sourceTree = "<group>"; };
 		2672D5071D734C7F00AC0E96 /* EventScriptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScriptValidator.h; sourceTree = "<group>"; };
+		268A35C91E0880DE00514032 /* AttackData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackData.h; sourceTree = "<group>"; };
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
@@ -1146,6 +1147,7 @@
 				DC0390611C871E1000C50E8E /* Scene */,
 				2613244B1DE2081200E39526 /* BattleCharacterData.cpp */,
 				2613244C1DE2081200E39526 /* BattleCharacterData.h */,
+				268A35C91E0880DE00514032 /* AttackData.h */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
