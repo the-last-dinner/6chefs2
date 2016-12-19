@@ -297,45 +297,45 @@
           <RenderColor A="255" R="152" G="251" B="152" />
         </AnimationInfo>
         <AnimationInfo Name="attack_1_down" StartIndex="150" EndIndex="215">
-          <RenderColor A="150" R="245" G="255" B="250" />
+          <RenderColor A="255" R="245" G="255" B="250" />
         </AnimationInfo>
         <AnimationInfo Name="attack_1_up" StartIndex="220" EndIndex="285">
-          <RenderColor A="150" R="138" G="43" B="226" />
+          <RenderColor A="255" R="138" G="43" B="226" />
         </AnimationInfo>
         <AnimationInfo Name="attack_1_left" StartIndex="290" EndIndex="355">
-          <RenderColor A="150" R="250" G="250" B="210" />
+          <RenderColor A="255" R="250" G="250" B="210" />
         </AnimationInfo>
         <AnimationInfo Name="attack_1_right" StartIndex="360" EndIndex="425">
-          <RenderColor A="150" R="255" G="245" B="238" />
+          <RenderColor A="255" R="255" G="245" B="238" />
         </AnimationInfo>
         <AnimationInfo Name="attack_2_down" StartIndex="430" EndIndex="495">
-          <RenderColor A="150" R="124" G="252" B="0" />
+          <RenderColor A="255" R="124" G="252" B="0" />
         </AnimationInfo>
         <AnimationInfo Name="attack_2_up" StartIndex="500" EndIndex="565">
-          <RenderColor A="150" R="0" G="255" B="255" />
+          <RenderColor A="255" R="0" G="255" B="255" />
         </AnimationInfo>
         <AnimationInfo Name="attack_2_left" StartIndex="570" EndIndex="635">
-          <RenderColor A="150" R="255" G="245" B="238" />
+          <RenderColor A="255" R="255" G="245" B="238" />
         </AnimationInfo>
         <AnimationInfo Name="attack_2_right" StartIndex="640" EndIndex="705">
-          <RenderColor A="150" R="248" G="248" B="255" />
+          <RenderColor A="255" R="248" G="248" B="255" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Node" Tag="3" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-47.0000" BottomMargin="-17.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="64.0000" />
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-31.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="15.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="a2taihou_a_1_5.png" Plist="character/taihou.plist" />
+            <FileData Type="PlistSubImage" Path="taihou_0_0.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" Visible="False" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -346,7 +346,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" Visible="False" ActionTag="805141725" Tag="7" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" CanEdit="False" Visible="False" ActionTag="805141725" Tag="7" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -357,7 +357,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" ActionTag="2119433232" Tag="25" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" CanEdit="False" Visible="False" ActionTag="2119433232" Tag="25" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -368,11 +368,11 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="8.0000" />
-            <Scale ScaleX="0.9000" ScaleY="0.7500" />
+            <Position X="16.0000" Y="-16.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
