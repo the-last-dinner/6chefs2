@@ -112,7 +112,7 @@
 					"action":[
 						{
 							"type":"fadeout"
-						},
+						},   
 						{
 							"type":"stopBGM"
 						},
@@ -355,50 +355,6 @@
 							"movePattern":"3"
 						},
 						{
-							"type":"createObject",
-							"objID":"10117",
-							"charaID":"1",
-							"eventID":"9",
-							"trigger":"2",
-							"x":88,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10119",
-							"charaID":"3",
-							"eventID":"15",
-							"trigger":"2",
-							"x":90,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10120",
-							"charaID":"4",
-							"eventID":"11",
-							"trigger":"2",
-							"x":92,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10123",
-							"charaID":"7",
-							"eventID":"13",
-							"trigger":"2",
-							"x":20,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
 							"type":"questionMsg",
 							"text":["誰で戦いますか？"],
 							"choices":[
@@ -462,7 +418,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"7"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
@@ -472,8 +428,7 @@
 												},
 												{
 													"type":"battle",
-													"objID":["1451"],
-                                                    "false":[],
+													"objID":"1451",
 													"true":[
 														{
 															"type":"sequence",
@@ -634,7 +589,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"7"
+													"movePattern":"6"
 												},
 												{
 													"type":"stopBGM"
