@@ -54,11 +54,15 @@ void Stamina::increase()
 // スタミナ減少
 void Stamina::decrease()
 {
+    this->decrease(DEFAULT_STEP * _ratio);
+}
+
+// スタミナ減少
+void Stamina::decrease(float value)
+{
     float percentage { _percentage };
     
-    percentage -= DEFAULT_STEP * _ratio;
-    
-    // 最低値以下になっていたら最低値にして、最小値になったら疲労状態へ
+    percentage -= value;
     if (percentage < MIN_VALUE) {
         percentage = MIN_VALUE;
         _exhausted = true;

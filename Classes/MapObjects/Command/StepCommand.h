@@ -12,6 +12,7 @@
 #include "MapObjects/Command/MapObjectCommand.h"
 
 class Character;
+class Stamina;
 
 class StepCommand : public MapObjectCommand
 {
@@ -29,6 +30,7 @@ private:
     function<void(bool)> _callback { nullptr };
     float _speed { 1.f };
     int _restGridNum { 0 };
+    Stamina* _stamina { nullptr };
     
 // インスタンスメソッド
 public:
@@ -36,6 +38,7 @@ public:
     void setDirections(const vector<Direction>& directions);
     void setCallback(function<void(bool)> callback);
     void setSpeed(const float speed);
+    void setStamina(Stamina* stamina);
 private:
     StepCommand();
     ~StepCommand();

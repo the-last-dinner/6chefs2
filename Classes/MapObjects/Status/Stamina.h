@@ -54,6 +54,7 @@ public:
     bool isEmpty() const;
     bool isWarn() const;
     bool isMax() const;
+    void decrease(float value);
     void update(float delta);
 };
 
