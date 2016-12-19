@@ -21,6 +21,7 @@ private:
     static const string SPIN_ATTACK_NAME;
     static const string FLASH_ATTACK_NAME;
     static const float RANDOM_MOVE_RATIO;
+    static const float SPIN_ATTACK_RATIO;
     
 // クラスメソッド
 public:
@@ -38,7 +39,8 @@ private:
 
 // コールバック
 private:
-    void onAttackCommandFinished(Character* character);
+    void onForwardAttackCommandFinished(Character* character);
+    void onSpinAttackCommandFinished(Character* charater);
     
 // インターフェース
 public:

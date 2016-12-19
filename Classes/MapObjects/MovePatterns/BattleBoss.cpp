@@ -19,6 +19,7 @@ const string BattleBoss::FORWARD_ATTACK_NAME { "attack_1" };
 const string BattleBoss::SPIN_ATTACK_NAME { "attack_2" };
 const string BattleBoss::FLASH_ATTACK_NAME { "attack_3" };
 const float BattleBoss::RANDOM_MOVE_RATIO { 0.3f };
+const float BattleBoss::SPIN_ATTACK_RATIO { 0.3f };
 
 // コンストラクタ
 BattleBoss::BattleBoss() { FUNCLOG }
@@ -41,10 +42,40 @@ bool BattleBoss::init(Character* character)
 #pragma mark -
 #pragma mark Callback
 
-void BattleBoss::onAttackCommandFinished(Character* character)
+void BattleBoss::onForwardAttackCommandFinished(Character* character)
 {
     if (this->isPaused()) return;
     
+    if (rand_0_1() <= RANDOM_MOVE_RATIO) {
+        WalkCommand* command1 { WalkCommand::create() };
+        WalkCommand* command2 { WalkCommand::create() };
+        int idx { random(0, int(Direction::getAll().size()) - 1) };
+        for (int i { 0 }; i < Direction::getAll().size(); i++) {
+            if (idx != i) continue;
+            command1->setDirection(Direction::getAll()[i]);
+            command2->setDirection(Direction::getAll()[i]);
+        }
+        command1->setSpeed(0.8f);
+        command2->setSpeed(0.2f);
+        command2->setWalkCallback([this](bool walked){ this->start(); });
+        character->pushCommand(command1);
+        character->pushCommand(command2);
+        return;
+    }
+    
+    if (rand_0_1() <= SPIN_ATTACK_RATIO) {
+        AttackCommand* command { AttackCommand::create() };
+        command->setName(SPIN_ATTACK_NAME);
+        command->setCallback(CC_CALLBACK_1(BattleBoss::onSpinAttackCommandFinished, this));
+        character->pushCommand(command);
+        return;
+    }
+    
+    this->start();
+}
+
+void BattleBoss::onSpinAttackCommandFinished(Character* character)
+{
     if (rand_0_1() <= RANDOM_MOVE_RATIO) {
         WalkCommand* command1 { WalkCommand::create() };
         WalkCommand* command2 { WalkCommand::create() };
@@ -115,7 +146,7 @@ void BattleBoss::update(float delta)
         _chara->clearCommandQueue();
         AttackCommand* command { AttackCommand::create() };
         command->setName(FORWARD_ATTACK_NAME);
-        command->setCallback(CC_CALLBACK_1(BattleBoss::onAttackCommandFinished, this));
+        command->setCallback(CC_CALLBACK_1(BattleBoss::onForwardAttackCommandFinished, this));
         _chara->pushCommand(command);
     }
 }
