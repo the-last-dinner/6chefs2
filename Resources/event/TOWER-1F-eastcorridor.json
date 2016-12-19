@@ -18,9 +18,9 @@
 					"charaID":"4",
 					"eventID":"7",
 					"trigger":"2",
-					"x":14,
-					"y":9,
-					"direction":"DOwn",
+					"x":6,
+					"y":45,
+					"direction":"DOWN",
 					"movePattern":"1"
 				},
 				{
@@ -95,13 +95,16 @@
 						{
 							"text":["どっかの建物の中か？"],
 							"charaID":"2",
-							"imgID":"1"
+							"imgID":"2"
 						}
 					]
 				},
 				{
 					"type":"fadeout",
 					"time":3.0
+				},
+				{
+					"type":"stopBGM"
 				},
 				{
 					"type":"spawn",
@@ -202,12 +205,12 @@
 										{
 											"text":["心してかかりますぞ・・・"],
 											"charaID":"4",
-											"imgID":"2"
+											"imgID":"1"
 										},
 										{
 											"text":["行くぞ・・・"],
 											"charaID":"5",
-											"imgID":"2"
+											"imgID":"7"
 										}
 									]
 								},
@@ -438,12 +441,12 @@
 						{
 							"text":["いや、とにかくココを離れようぜ"],
 							"charaID":"2",
-							"imgID":"1"
+							"imgID":"2"
 						},
 						{
 							"text":["真夏ちゃーん、蘭丸さーん"],
 							"charaID":"6",
-							"imgID":"2",
+							"imgID":"1",
 							"option":"reaction"
 						}
 					]
@@ -482,7 +485,7 @@
 					"charaID":"6",
 					"x":14,
 					"y":9,
-					"direction":"DOwn",
+					"direction":"DOWN",
 					"movePattern":"1"
 				},
 				{
@@ -671,13 +674,13 @@
 						},
 						{
 							"text":["おいよせ・・・\n危険だ"],
-							"charaID":"4",
+							"charaID":"2",
 							"imgID":"2"
 						},
 						{
 							"text":["ゆきも・・・いく！"],
 							"charaID":"6",
-							"imgID":"1"
+							"imgID":"3"
 						},
 						{
 							"text":["もちろんウチも行くよ！"],
@@ -687,7 +690,8 @@
 						{
 							"text":["おい！"],
 							"charaID":"2",
-							"imgID":"3"
+							"imgID":"3",
+							"option":"reaction"
 						},
 						{
 							"text":["よし！暖暖くん。\n蘭丸くんと真夏ちゃんを頼む"],
@@ -695,9 +699,9 @@
 							"imgID":"1"
 						},
 						{
-							"text":["蘭丸・・・お前は今回も頑張っただろうな\n一色を守って闘って・・・"],
+							"text":["蘭丸・・・お前は今回も頑張っただろうな\n皆を守って闘って・・・"],
 							"charaID":"5",
-							"imgID":"2"
+							"imgID":"1"
 						},
 						{
 							"text":["・・・"],
@@ -705,9 +709,9 @@
 							"imgID":"1"
 						},
 						{
-							"text":["俺にも守らせろ？","お前ばっか美味しいところ\n持って行きやがって！"],
+							"text":["俺にも守らせろ","お前ばっか美味しいところ\n持って行きやがって！"],
 							"charaID":"5",
-							"imgID":"2"
+							"imgID":"7"
 						},
 						{
 							"text":["だがあいつは・・・\n完全に殺すつもりで来てた・・・"],
@@ -727,7 +731,7 @@
 						{
 							"text":["うるせぇ！\n黙って休んどけ！","ケンさん行くッスよ"],
 							"charaID":"5",
-							"imgID":"2",
+							"imgID":"7",
 							"option":"reaction"
 						},
 						{
@@ -798,6 +802,10 @@
 					"type":"already"
 				},
 				{
+					"type":"playBGM",
+					"file":"tower.mp3"
+				},
+				{
 					"type":"fadein"
 				}
 			]
@@ -810,7 +818,7 @@
 				{
 					"text":["アイツはつえぇ・・・\n気をつけろよ。","田村！皆を頼むな。"],
 					"charaID":"2",
-					"imgID":"3"
+					"imgID":"2"
 				},
 				{
 					"text":["おう、任せろぃ！"],
@@ -906,17 +914,50 @@
 			],
 			"action":[
 				{
-					"type":"stopBGM"
-				},
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"BASEMENT.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"64",
+							"x":15,
+							"y":3
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
 				{
-					"type":"playBGM",
-					"file":"BASEMENT.mp3"
-				},
+					"event":["54","3"]
+				}
+			],
+			"action":[
 				{
-					"type":"changeMap",
-					"mapID":"64",
-					"x":15,
-					"y":3
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"BASEMENT.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"64",
+							"x":15,
+							"y":3
+						}
+					]
 				}
 			]
 		}

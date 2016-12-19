@@ -18,7 +18,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["79","2"]
+					"event":["79","6"]
 				}
 			],
 			"action":[
@@ -58,7 +58,7 @@
 					"objID":"1073",
 					"charaID":"9",
 					"x":10,
-					"y":8,
+					"y":9,
 					"direction":"DOWN",
 					"movePattern":"1"
 				},
@@ -146,6 +146,10 @@
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"iron_door.mp3"
+				},
 				{
 					"type":"changeMap",
 					"mapID":"80",
@@ -324,14 +328,14 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1064",
+											"objID":"10642",
 											"x":9,
 											"y":18,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1064",
+											"objID":"10642",
 											"direction":"UP"
 										}
 									]
@@ -341,14 +345,14 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1065",
+											"objID":"10652",
 											"x":3,
 											"y":18,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1065",
+											"objID":"10652",
 											"direction":"UP"
 										}
 									]
@@ -386,10 +390,24 @@
 							"file":"switch1.mp3"
 						},
 						{
-							"type":"charaMsg",
-							"text":["（すまねぇな・・・\nガキ共・・・）","じゃあな"],
-							"charaID":"9",
-							"imgID":"4"		
+							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"lastBoss.mp3"
+						},
+						{
+							"type":"playBGM",
+							"file":"ocean-wave.mp3"
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"createUnderwater"
+						},
+						{
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -397,6 +415,12 @@
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
+						},
+						{
+							"type":"charaMsg",
+							"text":["（すまねぇな・・・\nガキ共・・・）","じゃあな"],
+							"charaID":"9",
+							"imgID":"4"		
 						},
 						{
 							"type":"spawn",
@@ -423,19 +447,15 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1064",
+											"objID":"10642",
 											"x":32,
 											"y":29,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1064",
+											"objID":"10642",
 											"direction":"UP"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1064"
 										}
 									]
 								},
@@ -444,19 +464,15 @@
 									"action":[
 										{
 											"type":"charaWalkTo",
-											"objID":"1065",
+											"objID":"10652",
 											"x":32,
 											"y":29,
 											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
-											"objID":"1065",
+											"objID":"10652",
 											"direction":"UP"
-										},
-										{
-											"type":"removeObject",
-											"objID":"1065"
 										}
 									]
 								}
@@ -533,188 +549,6 @@
 			]
 		}
 	],
-	"9":[
-		{
-			"type":"if",
-			"condition":[
-				{
-					"event":["81","8"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"createObject",
-							"objID":"10106",
-							"charaID":"21",
-							"x":22,
-							"y":27,
-							"direction":"RIGHT",
-							"movePattern":"1"
-						},
-						{
-							"type":"fadein",
-							"time":3.0
-						},
-						{
-							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["わたしたちはみんな大人にすてられたの・・・\n中にはヒドイ事をされた子もいて・・・","にこちゃんやみかちゃんは北森の市場で\nお金で売られていたらしいわ。"],
-									"charaID":"10",
-									"name":"さとこ"
-								},
-								{
-									"text":["・・・"],
-									"charaID":"3",
-									"imgID":"2"
-								}
-							]
-						},
-						{
-							"type":"playBGM",
-							"file":"change.mp3"
-						},
-						{
-							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["だからわたしたちの中には・・・\n大人がきらいな子も多いの。","戸つかさんも大人をきらってるわ。\nだから・・・","この北森の大人たちをたくさんころそうと\nしてるみたい","でもわたしたちはそんな事してほしくない・・・\nそんな事しなくていいからしずかにくらしてたいの・・・","戸つかさんが「台所」って呼ぶところに行った子が\nもどってこなかったことがあったわ","お母さんにひきとられたんだって・・・\nでもそんな事ありえないのは分かってるわ・・・","おねぇちゃん！","いつか、戸つかさんの「おりょうり」になるんだとしても\nわたしたちは今が楽しい。\n今まですごしてきた中でも一ばんここがすき","だから・・・戸つかさんがとおくに行っちゃうのはいや\nおねえちゃん！戸つかさんを止めて。\n子どものわたしたちじゃできないの・・・","おねがい！"],
-									"charaID":"10",
-									"name":"さとこ"
-								},
-								{
-									"text":["・・・"],
-									"charaID":"3",
-									"imgID":"2"
-								},
-								{
-									"text":["任せなさい！\n戸塚はどこにいるの？"],
-									"charaID":"3",
-									"imgID":"1"
-								},
-								{
-									"text":["ありがとう。\n戸つかさんはいつもそこのドアから出てくるよ。","コレがそこのカギだから。"],
-									"charaID":"10",
-									"name":"さとこ"
-								}
-							]
-						},
-						{
-							"type":"getItem",
-							"itemID":"1514"
-						},
-						{
-							"type":"changeDirection",
-							"objID":"10106",
-							"direction":"UP"
-						},
-						{
-							"type":"playSE",
-							"file":"iron_door.mp3"
-						},
-						{
-							"type":"removeLayer",
-							"layer":"door4"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"door3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"door2"
-						},
-						{
-							"type":"removeObject",
-							"objID":"10106"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"createLayer",
-							"layer":"door2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"createLayer",
-							"layer":"door3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"createLayer",
-							"layer":"door4"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["なにしてたんだ？"],
-									"charaID":"10",
-									"name":"たけし"
-								},
-								{
-									"text":["ううん！何でもない！\nそれよりもっとあそぼ！"],
-									"charaID":"10",
-									"name":"さとこ"
-								}
-							]
-						},
-						{
-							"type":"stopBGM"
-						},
-						{
-							"type":"playBGM",
-							"file":"0hanaichi.mp3",
-							"volume":0.5
-						},
-						{
-							"type":"charaMsg",
-							"text":["勢いで返事しちゃったけど・・・\nこの騒ぎはあのアイツの仕業だったってワケね・・・","加藤に・・・\nいいえ、アイツには休んでもらわなくちゃ・・・"],
-							"charaID":"3",
-							"imgID":"1"
-						},
-						{
-							"type":"charaMsg",
-							"text":["気合入れろ！\nアタシ！"],
-							"charaID":"3",
-							"imgID":"3",
-							"option":"reaction"
-						},
-						{
-							"type":"playBGM",
-							"file":"ORHANAGE.mp3"
-						},
-						{
-							"type":"already"
-						}
-					]
-				}
-			]
-		}
-	],
 	"10":[
 		{
 			"type":"if",
@@ -725,38 +559,58 @@
 			],
 			"action":[
 				{
-					"type":"fadeout"
-				},
-				{
-					"type":"createCamera",
-					"mapID":"54",
-					"x":53,
-					"y":68,
+					"type":"sequence",
 					"action":[
 						{
-							"type":"sequence",
+							"type":"stopBGM"
+						},
+						{
+							"type":"fadeout",
+							"time":1.0
+						},
+						{
+							"type":"createCamera",
+							"mapID":"54",
+							"x":53,
+							"y":68,
 							"action":[
 								{
-									"type":"fadein"
-								},
+									"type":"sequence",
+									"action":[
+										{
+											"type":"fadein",
+											"time":2.0
+										},
+										{
+											"type":"charaMsg",
+											"text":["あ・・・"],
+											"charaID":"1",
+											"imgID":"2"
+										},
+										{
+											"type":"fadeout",
+											"time":2.0
+										}
+									]
+								}
+							]
+						},
+						{
+							"type":"createCamera",
+							"mapID":"35",
+							"x":4,
+							"y":16,
+							"action":[
 								{
-									"type":"charaMsg",
-									"text":["あ・・・"],
-									"charaID":"1",
-									"imgID":"2"
-								},
-								{
-									"type":"fadeout",
-									"time":2.0
-								},
-								{
-									"type":"createCamera",
-									"mapID":"35",
-									"x":4,
-									"y":16,
+									"type":"sequence",
 									"action":[
 										{
 											"type":"createRain"
+										},
+										{
+											"type":"playBGM",
+											"file":"rain1.mp3",
+											"volume":0.2
 										},
 										{
 											"type":"spawn",
@@ -772,7 +626,7 @@
 												},
 												{
 													"type":"charaMsg",
-													"text":["雨・・・"],
+													"text":["雨・・・\n降ってきてるみたい・・・"],
 													"charaID":"1",
 													"imgID":"2"
 												}
@@ -785,15 +639,17 @@
 									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"type":"sequence",
-					"action":[
+						},
+						{
+							"type":"stopBGM"
+						},
 						{
 							"type":"spawn",
 							"action":[
+								{
+									"type":"fadein",
+									"time":1.0
+								},
 								{
 									"type":"sequence",
 									"action":[
@@ -801,7 +657,8 @@
 											"type":"charaWalkTo",
 											"objID":"hero",
 											"x":8,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -817,7 +674,8 @@
 											"type":"charaWalkTo",
 											"objID":"10119",
 											"x":10,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -833,7 +691,8 @@
 											"type":"charaWalkTo",
 											"objID":"10121",
 											"x":4,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -849,7 +708,8 @@
 											"type":"charaWalkTo",
 											"objID":"10122",
 											"x":6,
-											"y":17
+											"y":17,
+											"speed":2.0
 										},
 										{
 											"type":"changeDirection",
@@ -870,7 +730,17 @@
 									"option":"reaction"
 								},
 								{
-									"text":["戸塚さん・・・\nアナタのしていることは悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
+									"text":["戸塚さん・・・"],
+									"charaID":"0",
+									"imgID":"1"
+								},
+								{
+									"text":["・・・"],
+									"charaID":"9",
+									"imgID":"4"
+								},
+								{
+									"text":["アナタのしていることは・・・\n悪いことです・・・","でも僕達がしていることが正しいかと言われると・・・\n分かりません・・・","でも・・・正しくても間違ってても\n命で遊ぶのは絶対にダメだ！"],
 									"charaID":"0",
 									"imgID":"1"
 								},
@@ -887,7 +757,7 @@
 								{
 									"text":["あぁ！？\n何言ってんだ・・・"],
 									"charaID":"5",
-									"imgID":"1"
+									"imgID":"7"
 								},
 								{
 									"text":["まさか！"],
@@ -943,6 +813,14 @@
 							"type":"fadein"
 						},
 						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"playBGM",
+							"file":"title_bgm.mp3"
+						},
+						{
 							"type":"charaMsg",
 							"talk":[
 								{
@@ -966,24 +844,20 @@
 							"type":"stopBGM"
 						},
 						{
+							"type":"fadeout"
+						},
+						{
 							"type":"charaMsg",
 							"text":["ぜったいにゆるさない！"],
-							"file":"yuki_naguri.png",
+							"img":"yuki_naguri.png",
 							"charaID":"10",
 							"name":"希﨑 雪",
 							"option":"reaction"
-						},
+						},	
 						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"fadeout"
-								},
-								{
-									"type":"storyMsg",
-									"text":["・・・","痛てぇ・・・","誰かに殴られたのなんて・・・\nいつぶりかね・・・","あぁ・・・","あんとき以来か・・・","でも・・・\nもう無理だ・・・無理なんだよ・・・","俺の”前”は・・・\n”後ろ”にしかないんだからよ・・・"]
-								}
-							]
+							"type":"storyMsg",
+							"text":["・・・","痛てぇ・・・","誰かに殴られたのなんて・・・\nいつぶりかね・・・","あぁ・・・","あんとき以来か・・・","でも・・・\nもう無理だ・・・無理なんだよ・・・","俺の”前”は・・・\n”後ろ”にしかないんだからよ・・・"]
+								
 						},
 						{
 							"type":"wait",
@@ -1007,8 +881,12 @@
 							]
 						},
 						{
+							"type":"playBGM",
+							"file":"taiho_1.mp3"
+						},
+						{
 							"type":"charaMsg",
-							"file":"TaihoAndYae.png",
+							"img":"TaihoAndYae.png",
 							"talk":[
 								{
 									"text":["もう・・・いいんだよ・・・"],
@@ -1079,7 +957,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"file":"taihou_doukoku.png",
+							"img":"taihou_doukoku.png",
 							"text":["ヤエ・・・ヨシツネ・・・","ちくしょう・・・"],
 							"charaID":"10",
 							"name":"戸塚 大宝"
@@ -1093,8 +971,11 @@
 							"time":2.0
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"storyMsg",
-							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を何度も思い返しているようにも見えた。\nとにかく、先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・というワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
+							"text":["その後僕と吾郎さんで戸塚さんを連れて行った。\nどうやら収容所に入れられるらしい・・・","戸塚さんは\n全てを諦めたような顔をしていたようにも見えたし、\n雪ちゃんの言葉を\n何度も思い返しているようにも見えた。","とにかく、\n先程まで見せていた狂気はの色の一切は消え、\n幾分か穏やかな顔になっていた。","今回の首謀者である戸塚さんは捕まり、\n騒動は収束した・・・\n全てが元通り・・・\nというワケにはいかないけれど、\n全てが終わった。","いや、終わりなんてのはないのかも知れない・・・\n戸塚さんの言うとおり、\n生きるということは殺すこと\n僕らが生きる以上、他の何かが死ぬ。","だから今は生きよう・・・\nいつか・・・自分の番が来るまでは・・・"]
 						},
 						{
 							"type":"already"
@@ -1114,10 +995,22 @@
 							]
 						},
 						{
+							"type":"releaseChase",
+							"objID":"10119"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10121"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10122"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
-									"type":"playBGM",
+									"type":"playSE",
 									"file":"ending2.mp3"
 								},
 								{
@@ -1128,34 +1021,11 @@
 							]
 						},
 						{
-							"type":"createCamera",
+							"type":"changeMap",
 							"mapID":"117",
 							"x":25,
 							"y":19,
-							"action":[
-								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"fadein"
-										},
-										{
-											"type":"camera",
-											"nextX":25,
-											"nextY":693,
-											"time":83
-										},
-										{
-											"type":"fadeout",
-											"time":3.0
-										}
-									]
-								}
-							]
-						},
-						{
-							"type":"ending",
-							"id":"1"
+							"eventID":"1"
 						}
 					]
 				}
@@ -1227,6 +1097,9 @@
 									"imgID":"2"
 								}
 							]
+						},
+						{
+							"type":"stopBGM"
 						},
 						{
 							"type":"playBGM",
@@ -1373,7 +1246,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["81","8"]
+					"Nevent":["81","13"]
 				}
 			],
 			"action":[
@@ -1532,6 +1405,11 @@
 					]
 				}
 			]
+		}
+	],
+	"13":[
+		{
+			"type":"fadein"
 		}
 	]
 }

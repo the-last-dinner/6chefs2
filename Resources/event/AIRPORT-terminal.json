@@ -266,7 +266,7 @@
 						{
 							"text":["タムケンって言うんじゃねぇ・・・","ぶっ殺す！"],
 							"charaID":"8",
-							"imgID":"2",
+							"imgID":"4",
 							"option":"reaction"
 						}
 					]
@@ -286,7 +286,7 @@
 					"type":"charaMsg",
 					"text":["ケンさん！"],
 					"charaID":"5",
-					"imgID":"3",
+					"imgID":"1",
 					"option":"reaction"
 				},
 				{

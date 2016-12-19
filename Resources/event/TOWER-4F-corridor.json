@@ -34,7 +34,8 @@
 				{
 					"type":"setMovable",
 					"objID":"201",
-					"movable":true
+					"movable":true,
+					"file":"kairiki_move.mp3"
 				}
 			]
 		},
@@ -154,23 +155,52 @@
 	],
 	"6":[
 		{
-			"type":"removeObject",
-			"objID":"181"
-		},
-		{
-			"type":"createLayer",
-			"layer":"steps"
-		},
-		{
-			"type":"playSE",
-			"file":"bus-door1.mp3"
-		},
-		{
-			"type":"changeFlg",
-			"mapID":"50",
-			"eventID":"6",
-			"flg":1
-		}		
+			"type":"sequence",
+			"action":[
+				{
+					"type":"camera",
+					"nextX":61,
+					"nextY":31,
+					"time":0.5
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"removeObject",
+							"objID":"181"
+						},
+						{
+							"type":"createLayer",
+							"layer":"steps"
+						},
+						{
+							"type":"playSE",
+							"file":"bus-door1.mp3"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"50",
+							"eventID":"6",
+							"flg":1
+						}
+					]
+				},
+				{
+					"type":"camera",
+					"nextX":42,
+					"nextY":25,
+					"time":0.5
+				},
+				{
+					"type":"setCamera"
+				}
+			]
+		}
 	],
 	"7":[
 		{

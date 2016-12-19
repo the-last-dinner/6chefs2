@@ -83,7 +83,7 @@
   <object id="194" x="32" y="512" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="dShituji.png"/>
+    <property name="img" value="box.png"/>
     <property name="objID" value="204"/>
    </properties>
   </object>

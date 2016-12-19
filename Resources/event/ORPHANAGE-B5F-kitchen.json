@@ -5,6 +5,18 @@
 		    "ambient":"night"
 		},
 		{
+			"type":"removeObject",
+			"objID":"181"
+		},
+		{
+			"type":"removeObject",
+			"objID":"182"
+		},
+		{
+			"type":"removeObject",
+			"objID":"183"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{
@@ -31,7 +43,8 @@
 					"event":[
 						["63","3"],
 						["82","5"]
-					]
+					],
+					"Nevent":["82","7"]
 				}
 			],
 			"action":[
@@ -95,10 +108,87 @@
 	],
 	"2":[
 		{
-			"type":"changeMap",
-			"mapID":"84",
-			"x":9,
-			"y":9
+			"type":"if",
+			"condition":[
+				{
+					"event":["82","5"],
+					"Nevent":["79","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["アイツを追うぞ！"],
+							"charaID":"8",
+							"imgID":"4",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"UP",
+							"option":"back"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["82","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"iron_door.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"84",
+							"x":9,
+							"y":9
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["82","5"],
+						["79","7"]
+					]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"iron_door.mp3"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"84",
+							"x":9,
+							"y":9
+						}
+					]
+				}
+			]
 		}
 	],
 	"3":[
@@ -147,7 +237,7 @@
 						{
 							"type":"charaWalk",
 							"objID":"hero",
-							"direction":"DOWN",
+							"direction":"RIGHT",
 							"steps":1.0
 						}
 					]
@@ -168,6 +258,9 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"createObject",
 							"objID":"1071",
 							"charaID":"9",
@@ -180,7 +273,7 @@
 							"type":"charaMsg",
 							"text":["戸塚ぁぁあああ！"],
 							"charaID":"5",
-							"imgID":"1",
+							"imgID":"7",
 							"option":"reaction"
 						},
 						{
@@ -188,28 +281,18 @@
 							"objID":"1067"
 						},
 						{
-							"type":"createEnemy",
-							"objID":"1458",
-							"charaID":"7",
-							"x":17,
-							"y":25,
-							"direction":"UP",
-							"movePattern":"6"
-						},
-						{
 							"type":"fadein"
 						},
 						{
-							"type":"charaMsg",
-							"file":"caught_magonade.png",
-							"talk":[
-								{
-									"text":["孫一！中山！！"],
-									"charaID":"10",
-									"name":"大善　吾郎",
-									"option":"reaction"
-								}
-							]
+							"type":"playBGM",
+							"file":"change.mp3"
+						},
+						{
+							"type":"charaMsg",	
+							"text":["孫一！中山！！"],
+							"charaID":"10",
+							"name":"大善　吾郎",
+							"option":"reaction"
 						},
 						{
 							"type":"charaWalk",
@@ -223,7 +306,7 @@
 								{
 									"text":["戸塚、お前ぇがやったんか？"],
 									"charaID":"5",
-									"imgID":"1"
+									"imgID":"4"
 								},
 								{
 									"text":["ほぅ・・・お前ぇらが来たか・・・\n意外だな・・・","あん？お前ぇは・・・希﨑のガキ・・・\nこりゃぁ面白ぇ奴が来たもんだ。"],
@@ -238,7 +321,7 @@
 								{
 									"text":["おい！\n無視してんじゃねぇ！"],
 									"charaID":"5",
-									"imgID":"1",
+									"imgID":"4",
 									"option":"reaction"
 								},
 								{
@@ -249,12 +332,12 @@
 								{
 									"text":["クソが！"],
 									"charaID":"5",
-									"imgID":"1",
+									"imgID":"4",
 									"option":"reaction"
 								},
 								{
 									"text":["ごちゃごちゃ言ってんじゃねぇ！\nやるんだろうが！かかってこんかいワレぇ！！"],
-									"charaID":"9",
+									"charaID":"8",
 									"imgID":"4",
 									"option":"reaction"
 								},
@@ -275,14 +358,52 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"charaWarp",
-							"objID":"1072",
-							"x":22,
-							"y":17,
-							"direction":"LEFT"
+							"type":"releaseChase",
+							"objID":"1064"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"1065"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1064"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1065"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1067"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1071"
+						},
+						{
+							"type":"createEnemy",
+							"objID":"1458",
+							"charaID":"9",
+							"x":14,
+							"y":20,
+							"direction":"DOWN",
+							"movePattern":"6"
 						},
 						{
 							"type":"fadein"
+						},
+						{
+							"type":"createObject",
+							"objID":"181"
+						},
+						{
+							"type":"createObject",
+							"objID":"182"
+						},
+						{
+							"type":"createObject",
+							"objID":"183"
 						},
 						{
 							"type":"already"
@@ -299,15 +420,57 @@
 											"time":3.0
 										},
 										{
-											"type":"createChara",
-											"objID":"1071",
+											"type":"stopBGM"
+										},
+										{
+											"type":"removeObject",
+											"objID":"181"
+										},
+										{
+											"type":"removeObject",
+											"objID":"182"
+										},
+										{
+											"type":"removeObject",
+											"objID":"183"
+										},
+										{
+											"type":"createObject",
+											"objID":"10642",
+											"charaID":"6",
+											"movePattern":"1",
+											"x":13,
+											"y":21,
+											"direction":"DOWN"
+										},
+										{
+											"type":"createObject",
+											"objID":"10652",
+											"charaID":"5",
+											"movePattern":"1",
+											"x":20,
+											"y":24,
+											"direction":"RIGHT"
+										},
+										{
+											"type":"createObject",
+											"objID":"1072",
 											"charaID":"7",
 											"eventID":"6",
 											"trigger":"2",
 											"movePattern":"1",
-											"x":14,
-											"y":23,
+											"x":20,
+											"y":12,
 											"direction":"RIGHT"
+										},
+										{
+											"type":"createObject",
+											"objID":"1071",
+											"charaID":"9",
+											"x":14,
+											"y":24,
+											"direction":"RIGHT",
+											"movePattern":"1"
 										},
 										{
 											"type":"charaWarp",
@@ -323,184 +486,203 @@
 											"y":56,
 											"action":[
 												{
-													"type":"fadein"
-												},
-												{
-													"type":"charaMsg",
-													"talk":[
+													"type":"sequence",
+													"action":[
 														{
-															"text":["ねぇ・・・あいつ等に任せて大丈夫かしら・・・\n雪も・・・心配ね・・・"],
-															"charaID":"3",
-															"imgID":"1"
+															"type":"fadein"
 														},
 														{
-															"text":["あぁ・・・大丈夫だろ。\n雪は強ぇよ。オレなんかよりよっぽどな。","ダイゴローもなかなか筋がいいしな。\nそれに田村・・・アイツは化け物だ・・・","アイツホントに武芸者じゃねぇのか？\n立ち姿見てるだけで分かる・・・","稀にいるんだよな。あぁいう天才ってのはよ。\n是非ウチにほしいもんだぜ・・・"],
-															"charaID":"2",
-															"imgID":"1"
+															"type":"charaMsg",
+															"talk":[
+																{
+																	"text":["ねぇ・・・あいつ等に任せて大丈夫かしら・・・\n雪も・・・心配ね・・・"],
+																	"charaID":"3",
+																	"imgID":"2"
+																},
+																{
+																	"text":["あぁ・・・大丈夫だろ。\n雪は強ぇよ。オレなんかよりよっぽどな。","ダイゴローもなかなか筋がいいしな。\nそれに田村・・・アイツは化け物だ・・・","アイツホントに武芸者じゃねぇのか？\n立ち姿見てるだけで分かる・・・","稀にいるんだよな。あぁいう天才ってのはよ。\n是非ウチにほしいもんだぜ・・・"],
+																	"charaID":"2",
+																	"imgID":"1"
+																}
+															]
+														},
+														{
+															"type":"fadeout",
+															"time":2.0
 														}
 													]
-												},
-												{
-													"type":"fadeout",
-													"time":2.0
 												}
 											]
-										}
-									]
-								},
-								{
-									"type":"fadein"
-								},
-								{
-									"type":"charaMsg",
-									"file":"uppercut.png",
-									"talk":[
+										},
 										{
+											"type":"fadein"
+										},
+										{
+											"type":"charaMsg",	
 											"text":["おらぁあああ！"],
-											"charaID":"10",
-											"name":"田村　剣神"
-										}
-									]
-								},
-								{
-									"type":"spawn",
-									"action":[
-										{
-											"type":"charaWalk",
-											"objID":"1071",
-											"direction":"LEFT",
-											"steps":4.5,
-											"option":"back",
-											"speed":3.0
-										},
-										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ふん・・・"],
-													"charaID":"9",
-													"imgID":"1"
-												},
-												{
-													"text":["へっ！"],
-													"charaID":"8",
-													"imgID":"1"
-												}
-											]
-										}
-									]
-								},
-								{
-									"type":"charaWalkTo",
-									"objID":"1064",
-									"x":5,
-									"y":21,
-									"speed":4.0
-								},
-								{
-									"type":"changeDirection",
-									"objID":"1064",
-									"direction":"DOWN"
-								},
-								{
-									"type":"playSE",
-									"file":"hit.mp3"
-								},
-								{
-									"type":"charaMsg",
-									"file":"yuki_hit.png",
-									"talk":[
-										{
-											"text":["今だ雪！"],
-											"charaID":"10",
-											"name":"大善　吾郎",
-											"option":"reaction"
-										},
-										{
-											"text":["！？"],
-											"charaID":"10",
-											"name":"戸塚　大宝"
-										}
-									]
-								},
-								{
-									"type":"charaWalk",
-									"objID":"1071",
-									"direction":"DOWN",
-									"steps":1.5,
-									"option":"back",
-									"speed":3.0
-								},
-								{
-									"type":"changeDirection",
-									"objID":"1071",
-									"direction":"UP"
-								},
-								{
-									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["ハァ・・・ハァ・・・"],
-											"charaID":"9",
-											"imgID":"3"
-										},
-										{
-											"text":["おじさん・・・"],
-											"charaID":"6",
-											"imgID":"3"
-										},
-										{
-											"text":["まったく・・・お前ぇら料理人だろう・・・？\nよくもまぁこんだけ武闘派が集まったもんだぜ・・・"],
-											"charaID":"9",
-											"imgID":"3"
-										},
-										{
-											"text":["おのれ・・・なかなかやるやないけ・・・\nなんじゃもう終いか？おぉん？"],
-											"charaID":"8",
-											"imgID":"4"
-										},
-										{
-											"text":["立たんかいワレぇ！！"],
 											"charaID":"8",
 											"imgID":"4",
 											"option":"reaction"
 										},
 										{
-											"text":["（こりゃぁダメだな・・・）","あぁ、そうみてぇだな・・・\n終わりだぜ・・・"],
-											"charaID":"9",
-											"imgID":"3"
-										}
-									]
-								},
-								{
-									"type":"charaWalkTo",
-									"objID":"1071",
-									"x":2,
-									"y":17,
-									"speed":2.0
-								},
-								{
-									"type":"removeObject",
-									"objID":"1071"
-								},
-								{
-									"type":"charaMsg",
-									"talk":[
-										{
-											"text":["待ちやがれ！"],
-											"charaID":"5",
-											"imgID":"1"
+											"type":"spawn",
+											"action":[
+												{
+													"type":"playSE",
+													"file":"kaihi.mp3"
+												},
+												{
+													"type":"charaWalk",
+													"objID":"1071",
+													"direction":"LEFT",
+													"steps":4.5,
+													"option":"back",
+													"speed":3.0
+												},
+												{
+													"type":"charaMsg",
+													"talk":[
+														{
+															"text":["ふん・・・"],
+															"charaID":"9",
+															"imgID":"1"
+														},
+														{
+															"text":["へっ！"],
+															"charaID":"8",
+															"imgID":"1"
+														}
+													]
+												}
+											]
 										},
 										{
-											"text":["ダイゴローくん！タムケン！\nまーくんとなでにゃんが！"],
-											"charaID":"7",
-											"imgID":"3",
-											"option":"reaction"
+											"type":"charaWalkTo",
+											"objID":"10642",
+											"x":5,
+											"y":21,
+											"speed":4.0
 										},
 										{
-											"text":["ワシらは奴を追う！\nココんことは任せる！"],
-											"charaID":"8",
-											"imgID":"4"
+											"type":"changeDirection",
+											"objID":"10642",
+											"direction":"DOWN"
+										},
+										{
+											"type":"playSE",
+											"file":"hit.mp3"
+										},
+										{
+											"type":"charaMsg",
+											"img":"yuki_naguri.png",
+											"talk":[
+												{
+													"text":["今だ雪！"],
+													"charaID":"10",
+													"name":"大善　吾郎",
+													"option":"reaction"
+												},
+												{
+													"text":["！？"],
+													"charaID":"10",
+													"name":"戸塚　大宝"
+												}
+											]
+										},
+										{
+											"type":"charaWalk",
+											"objID":"1071",
+											"direction":"DOWN",
+											"steps":1.5,
+											"option":"back",
+											"speed":3.0
+										},
+										{
+											"type":"changeDirection",
+											"objID":"1071",
+											"direction":"UP"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["ハァ・・・ハァ・・・"],
+													"charaID":"9",
+													"imgID":"3"
+												},
+												{
+													"text":["おじさん・・・"],
+													"charaID":"6",
+													"imgID":"3"
+												},
+												{
+													"text":["まったく・・・お前ぇら料理人だろう・・・？\nよくもまぁこんだけ武闘派が集まったもんだぜ・・・"],
+													"charaID":"9",
+													"imgID":"3"
+												},
+												{
+													"text":["おのれ・・・なかなかやるやないけ・・・\nなんじゃもう終いか？おぉん？"],
+													"charaID":"8",
+													"imgID":"4"
+												},
+												{
+													"text":["立たんかいワレぇ！！"],
+													"charaID":"8",
+													"imgID":"4",
+													"option":"reaction"
+												},
+												{
+													"text":["（こりゃぁダメだな・・・）","あぁ、そうみてぇだな・・・\n終わりだぜ・・・"],
+													"charaID":"9",
+													"imgID":"3"
+												}
+											]
+										},
+										{
+											"type":"charaWalkTo",
+											"objID":"1071",
+											"x":2,
+											"y":17,
+											"speed":2.0
+										},
+										{
+											"type":"removeObject",
+											"objID":"1071"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["待ちやがれ！"],
+													"charaID":"5",
+													"imgID":"1"
+												},
+												{
+													"text":["ダイゴローくん！タムケン！\nまーくんとなでにゃんが！"],
+													"charaID":"7",
+													"imgID":"3",
+													"option":"reaction"
+												},
+												{
+													"text":["ワシらは奴を追う！\nココんことは任せる！"],
+													"charaID":"8",
+													"imgID":"4"
+												}
+											]
+										},
+										{
+											"type":"chase",
+											"objID":"10642",
+											"target":"hero"
+										},
+										{
+											"type":"chase",
+											"objID":"10652",
+											"target":"hero"
+										},
+										{
+											"type":"playBGM",
+											"file":"ORHANAGE.mp3"
 										}
 									]
 								}
@@ -540,7 +722,7 @@
 						{
 							"text":["ほぇ？何？どうなって・・・"],
 							"charaID":"7",
-							"imgID":"4"
+							"imgID":"1"
 						},
 						{
 							"text":["じゃかぁしぃ！","吾郎、撫子を頼む。\n孫一はワシが！"],
@@ -572,10 +754,6 @@
 					"layer":"nadeshiko2"
 				},
 				{
-					"type":"systemMsg",
-					"text":["鉄砲水"]
-				},
-				{
 					"type":"already"
 				},
 				{
@@ -584,9 +762,28 @@
 				{
 					"type":"countDown",
 					"second":10.0,
+					"display":true,
 					"false":[
 						{
-							"type":"gameover"
+							"type":"sequence",
+							"action":[
+								{
+									"type":"fadeout"
+								},
+								{
+									"type":"createUnderwater"
+								},
+								{
+									"type":"fadein"
+								},
+								{
+									"type":"wait",
+									"time":2.0
+								},
+								{
+									"type":"gameover"
+								}
+							]
 						}
 					]	
 				}

@@ -380,7 +380,8 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["73","13"]
+					"event":["73","13"],
+					"Nevent":["73","12"]
 				}
 			],
 			"action":[
@@ -2109,7 +2110,7 @@
 											"condition":[
 												{
 													"Ntrophy":"6",
-													"event":["81","8"]
+													"event":["81","14"]
 												}
 											],
 											"action":[

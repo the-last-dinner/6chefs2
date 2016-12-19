@@ -152,7 +152,7 @@
    <properties>
     <property name="nextID" value="2"/>
     <property name="pathID" value="1"/>
-    <property name="previousID" value="0"/>
+    <property name="previousID" value="2"/>
    </properties>
   </object>
   <object id="59" x="192" y="992" width="32" height="32">

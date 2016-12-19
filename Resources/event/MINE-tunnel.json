@@ -111,10 +111,6 @@
 							"type":"fadeout"
 						},
 						{
-							"type":"removeEnemy",
-							"objID":"1450"
-						},
-						{
 							"type":"charaMsg",
 							"text":["お願い・・・動いて・・・"],
 							"charaID":"3",
@@ -123,6 +119,10 @@
 						{
 							"type":"playBGM",
 							"file":"enginestart.mp3"
+						},
+						{
+							"type":"removeEnemy",
+							"objID":"1450"
 						},
 						{
 							"type":"wait",
@@ -142,6 +142,10 @@
 							"charaID":"3",
 							"imgID":"1",
 							"option":"reaction"
+						},
+						{
+							"type":"removeLayer",
+							"layer":"MonoChu"
 						},
 						{
 							"type":"changeHero",
