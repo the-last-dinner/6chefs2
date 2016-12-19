@@ -434,11 +434,6 @@
 											"x":32,
 											"y":29,
 											"speed":2.0
-										},
-										{
-											"type":"changeDirection",
-											"objID":"hero",
-											"direction":"UP"
 										}
 									]
 								},
@@ -451,11 +446,6 @@
 											"x":32,
 											"y":29,
 											"speed":2.0
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10642",
-											"direction":"UP"
 										}
 									]
 								},
@@ -468,11 +458,6 @@
 											"x":32,
 											"y":29,
 											"speed":2.0
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10652",
-											"direction":"UP"
 										}
 									]
 								}

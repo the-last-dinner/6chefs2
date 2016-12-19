@@ -118,6 +118,9 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"stopCount"
+						},
+						{
 							"type":"fadeout",
 							"time":3.0
 						},

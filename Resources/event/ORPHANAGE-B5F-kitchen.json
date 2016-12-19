@@ -22,6 +22,9 @@
 				{
 					"event":["63","3"],
 					"Nevent":["82","5"]
+				},
+				{
+					"event":["82","7"]
 				}
 			],
 			"action":[
@@ -58,7 +61,20 @@
 					"y":12,
 					"direction":"LEFT",
 					"movePattern":"1"
-				},
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":[
+						["63","3"],
+						["82","5"]
+					]
+				}
+			],
+			"action":[
 				{
 					"type":"removeLayer",
 					"layer":"magoichi"
@@ -725,7 +741,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["じゃかぁしぃ！","吾郎、撫子を頼む。\n孫一はワシが！"],
+							"text":["じゃかましぃ！","吾郎、撫子を頼む。\n孫一はワシが！"],
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
@@ -765,26 +781,8 @@
 					"display":true,
 					"false":[
 						{
-							"type":"sequence",
-							"action":[
-								{
-									"type":"fadeout"
-								},
-								{
-									"type":"createUnderwater"
-								},
-								{
-									"type":"fadein"
-								},
-								{
-									"type":"wait",
-									"time":2.0
-								},
-								{
-									"type":"gameover"
-								}
-							]
-						}
+							"type":"gameover"
+						}	
 					]	
 				}
 			]
