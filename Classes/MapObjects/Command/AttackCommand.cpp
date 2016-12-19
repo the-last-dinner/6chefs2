@@ -11,6 +11,7 @@
 #include "Datas/BattleCharacterData.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/DetectionBox/AttackBox.h"
+#include "MapObjects/Status/Stamina.h"
 
 // コンストラクタ
 AttackCommand::AttackCommand() { FUNCLOG }
@@ -38,6 +39,12 @@ void AttackCommand::setCallback(function<void(Character*)> callback)
     _callback = callback;
 }
 
+// 操作対象のスタミナを設定
+void AttackCommand::setStamina(Stamina* stamina)
+{
+    _stamina = stamina;
+}
+
 #pragma mark -
 #pragma mark Interface
 
@@ -61,6 +68,10 @@ void AttackCommand::execute(MapObject* target)
     character->beInAttackMotion(true);
     character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
+    
+    if (_stamina) {
+        _stamina->decrease(5.f);
+    }
 }
 
 #pragma mark -

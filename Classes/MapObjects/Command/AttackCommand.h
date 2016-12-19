@@ -12,6 +12,7 @@
 #include "MapObjects/Command/MapObjectCommand.h"
 
 class Character;
+class Stamina;
 
 class AttackCommand : public MapObjectCommand
 {
@@ -23,11 +24,13 @@ public:
 private:
     string _name {};
     function<void(Character*)> _callback { nullptr };
+    Stamina* _stamina { nullptr };
     
 // インスタンスメソッド
 public:
     void setName(const string& name);
     void setCallback(function<void(Character*)> callback);
+    void setStamina(Stamina* stamina);
     
 private:
     AttackCommand();

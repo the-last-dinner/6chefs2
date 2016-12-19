@@ -11,6 +11,7 @@
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/DetectionBox/AttackDetector.h"
+#include "MapObjects/Status/Stamina.h"
 
 // 定数
 const int StepCommand::MOVE_GRID_NUM { 3 };
@@ -54,6 +55,11 @@ void StepCommand::setCallback(function<void(bool)> callback)
     _callback = callback;
 }
 
+void StepCommand::setStamina(Stamina* stamina)
+{
+    _stamina = stamina;
+}
+
 #pragma mark -
 #pragma mark Interface
 
@@ -89,6 +95,10 @@ void StepCommand::moveCharacter(Character* character)
     }, _speed * float(MOVE_GRID_NUM), true, false) };
     
     if (_restGridNum == MOVE_GRID_NUM - 1 && movable) {
+        if (_stamina) {
+            _stamina->decrease(5.f);
+        }
+        
         character->runAction(Sequence::createWithTwoActions(
             EaseQuadraticActionOut::create(MoveBy::create(MapObject::DURATION_MOVE_ONE_GRID / 2, Vec2(0, GRID))),
             EaseQuadraticActionIn::create(MoveBy::create(MapObject::DURATION_MOVE_ONE_GRID / 2, Vec2(0, -GRID)))

@@ -44,7 +44,6 @@ private:
     bool init();
     void increase();
     void decrease();
-    void decrease(float value);
     void setPercentage(const float percentage);
 public:
     void setPaused(bool paused);
@@ -55,6 +54,7 @@ public:
     bool isEmpty() const;
     bool isWarn() const;
     bool isMax() const;
+    void decrease(float value);
     void update(float delta);
 };
 
