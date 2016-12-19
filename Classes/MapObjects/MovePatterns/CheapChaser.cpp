@@ -59,7 +59,7 @@ float CheapChaser::calcSummonDelay() const
 // 移動
 void CheapChaser::move(function<void()> callback)
 {
-    if (_paused) return;
+    if (this->isPaused()) return;
     
     WalkCommand* command { WalkCommand::create() };
     command->setDirections(Direction::convertGridVec2(this->getMainCharacter()->getGridRect().origin - _chara->getGridPosition()));

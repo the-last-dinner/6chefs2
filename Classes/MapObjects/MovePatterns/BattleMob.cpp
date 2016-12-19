@@ -48,7 +48,6 @@ bool BattleMob::init(Character* character)
 void BattleMob::start()
 {
     MovePattern::start();
-    if (_chara) _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     if (_subPattern) _subPattern->start();
 }
 
@@ -80,6 +79,10 @@ void BattleMob::update(float delta)
     if (!_chara) return;
     if (_chara->isInAttackMotion()) return;
     if (!_chara->getBattle()) return;
+    
+    if (!_chara->isMoving()) {
+        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
+    }
     
     Point forwardGridPos1 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() };
     Point forwardGridPos2 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() * 2 };

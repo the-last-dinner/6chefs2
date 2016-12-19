@@ -20,6 +20,7 @@ private:
     static const string FORWARD_ATTACK_NAME;
     static const string SPIN_ATTACK_NAME;
     static const string FLASH_ATTACK_NAME;
+    static const float RANDOM_MOVE_RATIO;
     
 // クラスメソッド
 public:
@@ -34,7 +35,10 @@ private:
     BattleBoss();
     ~BattleBoss();
     virtual bool init(Character* character) override;
-    void move();
+
+// コールバック
+private:
+    void onAttackCommandFinished(Character* character);
     
 // インターフェース
 public:
