@@ -17,6 +17,9 @@
 
 #include "MapObjects/Command/AttackCommand.h"
 
+// 定数
+const string BattleMob::ATTACK_NAME { "attack" };
+
 // コンストラクタ
 BattleMob::BattleMob() { FUNCLOG }
 
@@ -85,7 +88,7 @@ void BattleMob::update(float delta)
         _chara->getCollision()->intersectsGrid(this->getMainCharacter()->getCollision(), forwardGridPos2)) {
         _chara->clearCommandQueue();
         AttackCommand* command { AttackCommand::create() };
-        command->setName("attack");
+        command->setName(ATTACK_NAME);
         command->setCallback([this](Character* character){ this->start(); });
         _chara->pushCommand(command);
     }
