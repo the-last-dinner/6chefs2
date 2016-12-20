@@ -28,5 +28,13 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="effect/dust.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="effect/dust.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>
