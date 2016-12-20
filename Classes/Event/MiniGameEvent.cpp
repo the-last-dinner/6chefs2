@@ -24,6 +24,7 @@
 #include "Models/StopWatch.h"
 
 #include "Scenes/DungeonScene.h"
+#include "Tasks/EventTask.h"
 
 #include "UI/CountDownDisplay.h"
 
@@ -226,6 +227,13 @@ void PasswordEvent::update(float delta)
 #pragma mark -
 #pragma mark CountDown
 
+CountDownEvent::~CountDownEvent()
+{
+    FUNCLOG
+    CC_SAFE_RELEASE(_successCallbackEvent);
+    CC_SAFE_RELEASE(_failureCallbackEvent);
+}
+
 bool CountDownEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
@@ -245,9 +253,8 @@ bool CountDownEvent::init(rapidjson::Value& json)
     }
     
     // コールバック設定
-    
     _successCallbackEvent = _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this);
-    _failureCallbackEvent = _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this);
+    _failureCallbackEvent = _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this);;
     CC_SAFE_RETAIN(_successCallbackEvent);
     CC_SAFE_RETAIN(_failureCallbackEvent);
     
@@ -273,10 +280,7 @@ void CountDownEvent::run()
         
         // 条件を満たしていた場合
         if (condition) {
-            if (_successCallbackEvent){
-                _resultCallbackEvent = _successCallbackEvent;
-                _resultCallbackEvent->run();
-            }
+            this->runResultCallbackEvent(_successCallbackEvent);
             return false;
         }
 
@@ -291,10 +295,7 @@ void CountDownEvent::run()
         
         // 時間切れチェック
         if (static_cast<float>(time) >= _second) {
-            if (_failureCallbackEvent) {
-                _resultCallbackEvent = _failureCallbackEvent;
-                _resultCallbackEvent->run();
-            }
+            this->runResultCallbackEvent(_failureCallbackEvent);
             return false;
         }
         
@@ -307,16 +308,13 @@ void CountDownEvent::run()
     this->setDone();
 }
 
-void CountDownEvent::update(float delta)
+void CountDownEvent::runResultCallbackEvent(GameEvent *callbackEvent)
 {
-    if (!_resultCallbackEvent) return;
     
-    _resultCallbackEvent->update(delta);
-    
-    if (!_resultCallbackEvent->isDone()) return;
-    
-    CC_SAFE_RELEASE_NULL(_resultCallbackEvent);
-    this->setDone();
+    if (!callbackEvent) return;
+    EventTask* eventTask { DungeonSceneManager::getInstance()->getEventTask() };
+    eventTask->pushEventBack(callbackEvent);
+    eventTask->runEventQueue();
 }
 
 #pragma mark -
