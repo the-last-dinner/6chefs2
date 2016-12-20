@@ -605,6 +605,18 @@
             <PlistImageFile Name="taihou_s_2.png" Key="taihou_s_2.png" />
             <PlistImageFile Name="taihou_s_3.png" Key="taihou_s_3.png" />
             <PlistImageFile Name="taihou_s_4.png" Key="taihou_s_4.png" />
+            <PlistImageFile Name="effect.png" Key="effect.png" />
+            <PlistImageFile Name="effect_1_0.png" Key="effect_1_0.png" />
+            <PlistImageFile Name="effect_1_1.png" Key="effect_1_1.png" />
+            <PlistImageFile Name="effect_1_2.png" Key="effect_1_2.png" />
+            <PlistImageFile Name="effect_1_3.png" Key="effect_1_3.png" />
+            <PlistImageFile Name="effect_1_4.png" Key="effect_1_4.png" />
+            <PlistImageFile Name="effect_1_5.png" Key="effect_1_5.png" />
+            <PlistImageFile Name="effect_1_6.png" Key="effect_1_6.png" />
+            <PlistImageFile Name="effect_1_7.png" Key="effect_1_7.png" />
+            <PlistImageFile Name="effect_1_8.png" Key="effect_1_8.png" />
+            <PlistImageFile Name="effect_1_9.png" Key="effect_1_9.png" />
+            <PlistImageFile Name="taihou_s_99.png" Key="taihou_s_99.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teacher.png" PListFile="teacher.plist" Name=".teacher_PList.Dir">
             <PlistImageFile Name="teacher_0_0.png" Key="teacher_0_0.png" />
@@ -788,6 +800,21 @@
             <PlistImageFile Name="collision.png" Key="collision.png" />
             <PlistImageFile Name="hit.png" Key="hit.png" />
           </PlistImageFolder>
+        </Folder>
+        <Folder Name="effect">
+          <PlistImageFolder Image="battle_effect.png" PListFile="battle_effect.plist" Name=".battle_effect_PList.Dir">
+            <PlistImageFile Name="effect_1_0.png" Key="effect_1_0.png" />
+            <PlistImageFile Name="effect_1_1.png" Key="effect_1_1.png" />
+            <PlistImageFile Name="effect_1_2.png" Key="effect_1_2.png" />
+            <PlistImageFile Name="effect_1_3.png" Key="effect_1_3.png" />
+            <PlistImageFile Name="effect_1_4.png" Key="effect_1_4.png" />
+            <PlistImageFile Name="effect_1_5.png" Key="effect_1_5.png" />
+            <PlistImageFile Name="effect_1_6.png" Key="effect_1_6.png" />
+            <PlistImageFile Name="effect_1_7.png" Key="effect_1_7.png" />
+            <PlistImageFile Name="effect_1_8.png" Key="effect_1_8.png" />
+            <PlistImageFile Name="effect_1_9.png" Key="effect_1_9.png" />
+          </PlistImageFolder>
+          <Project Name="dust.csd" Type="Node" />
         </Folder>
       </RootFolder>
     </Group>
