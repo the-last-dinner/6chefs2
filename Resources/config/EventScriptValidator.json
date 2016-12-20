@@ -453,6 +453,9 @@
         "createRain": {
         },
         "createUnderwater": {
+            "member": {
+                "waveIn": ["bool"]
+            }
         },
         
         
