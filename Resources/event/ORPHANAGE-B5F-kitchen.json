@@ -304,7 +304,7 @@
 							"file":"change.mp3"
 						},
 						{
-							"type":"charaMsg",
+							"type":"charaMsg",	
 							"text":["孫一！中山！！"],
 							"charaID":"10",
 							"name":"大善　吾郎",
@@ -534,7 +534,7 @@
 											"type":"fadein"
 										},
 										{
-											"type":"charaMsg",
+											"type":"charaMsg",	
 											"text":["おらぁあああ！"],
 											"charaID":"8",
 											"imgID":"4",
@@ -780,12 +780,10 @@
 					"second":10.0,
 					"display":true,
 					"false":[
-                        {
-                             "type":"callEvent",
-                             "className":"FinalEvent",
-                             "eventID":"countDownFailure"
-                        }
-					]
+						{
+							"type":"gameover"
+						}	
+					]	
 				}
 			]
 		}
