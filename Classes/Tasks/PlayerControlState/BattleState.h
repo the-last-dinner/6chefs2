@@ -15,6 +15,10 @@ class Character;
 
 class BattleState : public PlayerControlState
 {
+// 定数
+private:
+    static const float STEP_COOLDOWN_DURATION;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(BattleState, PlayerControlTask*);

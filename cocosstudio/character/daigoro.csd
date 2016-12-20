@@ -2,7 +2,7 @@
   <PropertyGroup Name="daigoro" Type="Node" ID="d3d29e04-ec24-4485-a773-618ffdb82511" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="right">
+      <Animation Duration="320" Speed="1.0000" ActivedAnimationName="attack_down">
         <Timeline ActionTag="-1399200398" Property="Position">
           <PointFrame FrameIndex="0" Tween="False" X="-27.9000" Y="20.2000" />
           <PointFrame FrameIndex="203" Tween="False" X="23.7000" Y="25.4000" />
@@ -28,10 +28,6 @@
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="203" Tween="False" Value="True" />
           <BoolFrame FrameIndex="213" Tween="False" Value="False" />
-        </Timeline>
-        <Timeline ActionTag="-1399200398" Property="FileData">
-          <TextureFrame FrameIndex="203" Tween="False" />
-          <TextureFrame FrameIndex="213" Tween="False" />
         </Timeline>
         <Timeline ActionTag="-1399200398" Property="BlendFunc">
           <BlendFuncFrame FrameIndex="203" Tween="False" Src="1" Dst="771" />
@@ -63,51 +59,119 @@
           <BoolFrame FrameIndex="210" Tween="False" Value="True" />
           <BoolFrame FrameIndex="220" Tween="False" Value="False" />
         </Timeline>
-        <Timeline ActionTag="-213310550" Property="FileData">
-          <TextureFrame FrameIndex="210" Tween="False" />
-          <TextureFrame FrameIndex="220" Tween="False" />
-        </Timeline>
         <Timeline ActionTag="-213310550" Property="BlendFunc">
           <BlendFuncFrame FrameIndex="210" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="220" Tween="False" Src="1" Dst="771" />
         </Timeline>
         <Timeline ActionTag="1549366830" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False" />
-          <TextureFrame FrameIndex="2" Tween="False" />
-          <TextureFrame FrameIndex="4" Tween="False" />
-          <TextureFrame FrameIndex="6" Tween="False" />
-          <TextureFrame FrameIndex="10" Tween="False" />
-          <TextureFrame FrameIndex="20" Tween="False" />
-          <TextureFrame FrameIndex="25" Tween="False" />
-          <TextureFrame FrameIndex="35" Tween="False" />
-          <TextureFrame FrameIndex="45" Tween="False" />
-          <TextureFrame FrameIndex="55" Tween="False" />
-          <TextureFrame FrameIndex="60" Tween="False" />
-          <TextureFrame FrameIndex="70" Tween="False" />
-          <TextureFrame FrameIndex="80" Tween="False" />
-          <TextureFrame FrameIndex="90" Tween="False" />
-          <TextureFrame FrameIndex="95" Tween="False" />
-          <TextureFrame FrameIndex="105" Tween="False" />
-          <TextureFrame FrameIndex="115" Tween="False" />
-          <TextureFrame FrameIndex="125" Tween="False" />
-          <TextureFrame FrameIndex="130" Tween="False" />
-          <TextureFrame FrameIndex="140" Tween="False" />
-          <TextureFrame FrameIndex="150" Tween="False" />
-          <TextureFrame FrameIndex="160" Tween="False" />
-          <TextureFrame FrameIndex="165" Tween="False" />
-          <TextureFrame FrameIndex="170" Tween="False" />
-          <TextureFrame FrameIndex="200" Tween="False" />
-          <TextureFrame FrameIndex="210" Tween="False" />
-          <TextureFrame FrameIndex="215" Tween="False" />
-          <TextureFrame FrameIndex="220" Tween="False" />
-          <TextureFrame FrameIndex="250" Tween="False" />
-          <TextureFrame FrameIndex="260" Tween="False" />
-          <TextureFrame FrameIndex="265" Tween="False" />
-          <TextureFrame FrameIndex="270" Tween="False" />
-          <TextureFrame FrameIndex="300" Tween="False" />
-          <TextureFrame FrameIndex="310" Tween="False" />
-          <TextureFrame FrameIndex="315" Tween="False" />
-          <TextureFrame FrameIndex="320" Tween="False" />
+          <TextureFrame FrameIndex="0" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="2" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="4" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="6" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="10" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="20" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="25" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_2.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="35" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="45" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="55" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="60" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_2.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="70" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="80" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="90" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="95" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_2.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="105" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="115" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="125" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="130" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_2.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="140" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="150" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="160" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_0_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="165" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="170" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="200" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="210" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_3_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="215" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="220" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_3_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="250" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="260" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="265" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="270" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_2_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="300" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="310" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_1_1.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="315" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_a_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="320" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="daigoro_1_0.png" Plist="character/daigoro.plist" />
+          </TextureFrame>
         </Timeline>
         <Timeline ActionTag="1549366830" Property="Position">
           <PointFrame FrameIndex="150" Tween="False" X="16.0000" Y="16.0000" />
@@ -216,12 +280,6 @@
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="440561340" Property="FileData">
-          <TextureFrame FrameIndex="253" Tween="False" />
-          <TextureFrame FrameIndex="263" Tween="False" />
-          <TextureFrame FrameIndex="303" Tween="False" />
-          <TextureFrame FrameIndex="313" Tween="False" />
-        </Timeline>
         <Timeline ActionTag="440561340" Property="BlendFunc">
           <BlendFuncFrame FrameIndex="253" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="263" Tween="False" Src="1" Dst="771" />
@@ -263,12 +321,6 @@
           <ScaleFrame FrameIndex="320" X="90.0000" Y="90.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-        </Timeline>
-        <Timeline ActionTag="-1310328428" Property="FileData">
-          <TextureFrame FrameIndex="260" Tween="False" />
-          <TextureFrame FrameIndex="270" Tween="False" />
-          <TextureFrame FrameIndex="310" Tween="False" />
-          <TextureFrame FrameIndex="320" Tween="False" />
         </Timeline>
         <Timeline ActionTag="-1310328428" Property="BlendFunc">
           <BlendFuncFrame FrameIndex="260" Tween="False" Src="1" Dst="771" />
@@ -327,7 +379,7 @@
       <ObjectData Name="Node" Tag="9" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="attack_effect_3" ActionTag="-1399200398" VisibleForFrame="False" Tag="34" IconVisible="False" LeftMargin="-59.9000" RightMargin="-4.1000" TopMargin="-52.2000" BottomMargin="-11.8000" FlipX="True" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_3" CanEdit="False" ActionTag="-1399200398" VisibleForFrame="False" Tag="34" IconVisible="False" LeftMargin="-59.9000" RightMargin="-4.1000" TopMargin="-52.2000" BottomMargin="-11.8000" FlipX="True" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-27.9000" Y="20.2000" />
@@ -335,7 +387,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="attack_effect_4" CanEdit="False" ActionTag="-213310550" VisibleForFrame="False" Tag="35" IconVisible="False" LeftMargin="-59.9000" RightMargin="-4.1000" TopMargin="-52.2000" BottomMargin="-11.8000" ctype="SpriteObjectData">
@@ -346,10 +398,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" ActionTag="1549366830" Tag="10" IconVisible="False" RightMargin="-32.0000" TopMargin="-32.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="1549366830" Tag="10" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-48.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="16.0000" />
@@ -357,7 +409,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="PlistSubImage" Path="daigoro_0_0.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-801586463" Tag="12" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -382,7 +434,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" ActionTag="1824182946" Tag="29" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" CanEdit="False" ActionTag="1824182946" Tag="29" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -393,10 +445,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="-683538257" VisibleForFrame="False" Tag="16" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-50.0000" BottomMargin="-50.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-683538257" VisibleForFrame="False" Tag="16" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-26.0000" BottomMargin="-74.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="16.0000" Y="-24.0000" />
             <Scale ScaleX="0.3000" ScaleY="0.4600" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -404,7 +456,7 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect_1" ActionTag="440561340" VisibleForFrame="False" Tag="32" RotationSkewX="45.0000" RotationSkewY="45.0000" IconVisible="False" LeftMargin="-18.0001" RightMargin="-45.9999" TopMargin="-33.1999" BottomMargin="-30.8001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_1" CanEdit="False" ActionTag="440561340" VisibleForFrame="False" Tag="32" RotationSkewX="45.0000" RotationSkewY="45.0000" IconVisible="False" LeftMargin="-18.0001" RightMargin="-45.9999" TopMargin="-33.1999" BottomMargin="-30.8001" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="13.9999" Y="1.1999" />
@@ -412,18 +464,18 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack_effect_2" ActionTag="-1310328428" VisibleForFrame="False" Tag="33" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-16.0000" BottomMargin="-48.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack_effect_2" CanEdit="False" ActionTag="-1310328428" VisibleForFrame="False" Tag="33" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-19.0000" BottomMargin="-45.0000" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="-16.0000" />
+            <Position X="16.0000" Y="-13.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

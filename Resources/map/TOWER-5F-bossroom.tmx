@@ -145,51 +145,15 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="60" x="816" y="736" width="96" height="16">
-   <properties>
-    <property name="EventID" value="18"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="61" x="816" y="768" width="96" height="16">
-   <properties>
-    <property name="EventID" value="18"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
   <object id="63" x="1344" y="752" width="64" height="16">
    <properties>
     <property name="EventID" value="19"/>
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="64" x="1328" y="768" width="96" height="16">
-   <properties>
-    <property name="EventID" value="20"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="65" x="1328" y="736" width="96" height="16">
-   <properties>
-    <property name="EventID" value="20"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
   <object id="66" x="320" y="752" width="64" height="16">
    <properties>
     <property name="EventID" value="21"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="67" x="304" y="768" width="96" height="16">
-   <properties>
-    <property name="EventID" value="22"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
-  <object id="68" x="304" y="736" width="96" height="16">
-   <properties>
-    <property name="EventID" value="22"/>
     <property name="trigger" value="1"/>
    </properties>
   </object>
@@ -229,15 +193,4 @@
    eJzt0dENwkAUxMDUQPs0SwVIVkDYIev/3I7yjmOttdZaa6211lprrbXWWmuttdY63/Px2+/evfOt9z4xXKHda/c6887uxdq9dq8z7+xerN3rHvf6l/2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2K4Q7tP1+r3WutdaYXUER/DQ==
   </data>
  </layer>
- <objectgroup name="chara">
-  <object id="69" name="10108" x="848" y="1120" width="32" height="32"/>
-  <object id="70" name="10110" x="896" y="1120" width="32" height="32"/>
-  <object id="71" name="hero" x="944" y="1120" width="32" height="32"/>
-  <object id="72" name="10112" x="800" y="1120" width="32" height="32"/>
-  <object id="74" name="10111" x="752" y="1120" width="32" height="32"/>
-  <object id="75" name="10109" x="992" y="1120" width="32" height="32"/>
-  <object id="76" name="10113" x="704" y="1120" width="32" height="32"/>
-  <object id="79" name="10115" x="1040" y="1120" width="32" height="32"/>
-  <object id="80" name="10114" x="656" y="1120" width="32" height="32"/>
- </objectgroup>
 </map>

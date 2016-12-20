@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="68">
- <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="69">
+ <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16">
   <image source="clear-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="129" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="129" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1633" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1633" name="ed4" tilewidth="16" tileheight="16">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2113" name="ST-Hospital-I01" tilewidth="16" tileheight="16" tilecount="1856" columns="16">
+ <tileset firstgid="2113" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
   <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
  </tileset>
  <layer name="Base" width="60" height="42">
@@ -233,17 +233,17 @@
     <property name="objID" value="183"/>
    </properties>
   </object>
-  <object id="58" x="608" y="528" width="32" height="32">
+  <object id="58" x="608" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="184"/>
    </properties>
   </object>
-  <object id="60" x="416" y="528" width="32" height="32">
+  <object id="60" x="416" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="185"/>
    </properties>
   </object>
-  <object id="63" x="224" y="528" width="32" height="32">
+  <object id="63" x="224" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="186"/>
    </properties>
@@ -298,6 +298,12 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
+  <object id="68" x="608" y="176" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="CharaUe" width="60" height="42">
   <data encoding="base64" compression="zlib">
@@ -315,7 +321,7 @@
   </data>
  </layer>
  <objectgroup name="item">
-  <object id="66" x="656" y="96" width="32" height="32">
+  <object id="66" x="160" y="560" width="32" height="32">
    <properties>
     <property name="EventID" value="12"/>
     <property name="objID" value="1511"/>

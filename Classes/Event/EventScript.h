@@ -24,13 +24,14 @@ private:
 //インスタンス変数
 private:
     rapidjson::Document _json;
+    string _fileName;
     
 // インスタンスメソッド
 public:
     bool init(const string& jsonFileName);              // 初期化
     vector<string> getPreLoadList(const string& type);         // 音楽などのリソースのプリロード
     rapidjson::Value getScriptJson(const int eventId);           // 該当IDスクリプトの取得
-    rapidjson::Value getScriptJson(const char* eventId);
     rapidjson::Value getScriptJson(const string& eventId);
+    rapidjson::Document getDocument();
 };
 #endif /* defined(__LastSupper__EventScript__) */

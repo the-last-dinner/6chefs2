@@ -37,21 +37,33 @@
 							"text":["北森金鉱で起きた落盤事故・・・\nアレによって身寄りのいなくなった子供は\n俺だけじゃなかった・・・・","しばらくして北森金鉱跡のすぐ近くに\n孤児院ができた。","北森の落盤事故のことを\n聞きつけたどこぞの国の金持ちが\n建てたらしい・・・"]
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
 							"type":"spawn",
 							"action":[
-								{
-									"type":"wait",
-									"time":5.0
-								},
 								{
 									"type":"changeChapter",
 									"chapterID":"8"
 								},
 								{
-									"type":"playSE",
+									"type":"displayImg",
+									"file":"CHILD in the BOX.png",
+									"time":5.0
+								},
+								{
+									"type":"playBGM",
 									"file":"chapter3.mp3"
 								}
 							]
+						},
+						{
+							"type":"wait",
+							"time":0.5
 						},
 						{
 							"type":"stopBGM"
@@ -61,8 +73,8 @@
 							"charaID":"22"
 						},
 						{
-							"type":"playBGM",
-							"file":"bgm_sad memory.mp3"
+							"type":"wait",
+							"time":0.5
 						},
 						{
 							"type":"changeDirection",
@@ -136,7 +148,8 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"fadein"
+					"type":"fadein",
+					"time":2.0
 				},
 				{
 					"type":"charaMsg",

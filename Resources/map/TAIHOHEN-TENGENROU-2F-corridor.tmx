@@ -11,7 +11,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlUEKwjAQRSdrj6Du1RuIe/Um6k7xDu7Ug6gX8UqCOLuWsUSS2hh//odH0jJp+6aBiJSXh3J32Gxd5XvTeV9ZCyYb5RLhO/jTnjT5rjp836/7lNo3pAdd9Ka0/zt0775T5SBxPCPXpWLW4NsTbOiLTcm+Urtvr1Eo2be0/UxfPOiLTd13p/NTYs6eHh+/UG/Zm/PIl6v7TOizfHvKnpWh9Tkm9PvpS9+cQ1/6tqnPLfSlb5v63EJffN+RjmPDRHB95zouDEvB9GXS5AU2ezuu
+   eJztkkEKwjAURH/WHkHdqzcQ9+pN1J3iHdypB6lexCsJ4ocilrS0JDVpnM7AI1n8tHnTivQvT+VhsNmbr+9d90NlK5jslMzDd/SnnVT5bgK+r+ueYvu6dBCim75937Ep+86Vk/jx8jwXi0WF70CwoS829M35pOv70TeMLyr0xYa+2BR9D7q/ROZa0/H5B/M2x4JvU26mGddn1f1TmSmfcZlPMa73py99Uw596dtmPrXQl75t5lMLffF9J7pOLWaC67vUdWWxFkxfJk7eJas9Cg==
   </data>
  </layer>
  <layer name="MonoChu" width="60" height="36">
@@ -23,8 +23,11 @@
   </data>
  </layer>
  <layer name="MonoShita" width="60" height="36">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJztzzENAAAIBDFkI58FBQws3yYn4KoAAICr3lKk/QIAAAAAfBlRZwHh
+   eJztzzENAAAIwDDw7xEtHDjg4KFNJmARAADAVuX0xbdfAAAAAIArDatYA30=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -66,7 +69,7 @@
  </objectgroup>
  <layer name="shadow" width="60" height="36">
   <data encoding="base64" compression="zlib">
-   eJzt07ENwCAAA0GU/TdgWVZIhAmW/Ve74EGMgQbzuX2Cf9Gbjd5s9GajN1tbL5Ck7f/Sm62t94avd/xm7/xu9O7v6fVxotcZvdq9G3q1ezf0avdu6NXu3dCr3aPPAuo/HXE=
+   eJzt08ENwCAQA0GU9ikhzaYGJItz7J23HyyItdDgfaZPcBe92ejNRm82erO19W56o7X1tv1ferO19U44veO/vwm92r0berV7N/Rq927o1e7d0Kvdu6FXu3dDr3aPPh/Wtxyk
   </data>
  </layer>
 </map>

@@ -49,33 +49,51 @@
 		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
 		        },
 		        {
-		        	"type":"systemMsg",
-		        	"text":["君には・・・"]
+		        	"type":"spawn",
+		        	"action":[
+		        		{
+		        			"type":"playSE",
+		        			"file":"kiminiha.mp3"
+		        		},
+		        		{
+				        	"type":"systemMsg",
+				        	"text":["君には・・・"]
+				        }
+		        	]
 		        },
 		        {
-				   	"type":"questionMsg",
-				   	"text":["食べられる覚悟はあるかい・・・？"],
-				   	"choices":[
-				   		{
-				   			"choice":"ある",
-				   			"action":[
-				  				{
-				   					"type":"already",
-				   					"event":["1","17"]
-				   				}
-				   			]
-				   		},
-				   		{
-				  			"choice":"ない",
-				   			"action":[
-				   				{
-				   					"type":"already",
-				   					"event":["1","18"]
-				   				}
-				   			]
-				   		}
-				   	]
-				},
+		        	"type":"spawn",
+		        	"action":[
+		        		{
+		        			"type":"playSE",
+		        			"file":"tabekaku.mp3"
+		        		},
+		        		{
+						   	"type":"questionMsg",
+						   	"text":["食べられる覚悟はあるかい・・・？"],
+						   	"choices":[
+						   		{
+						   			"choice":"ある",
+						   			"action":[
+						  				{
+						   					"type":"already",
+						   					"event":["1","17"]
+						   				}
+						   			]
+						   		},
+						   		{
+						  			"choice":"ない",
+						   			"action":[
+						   				{
+						   					"type":"already",
+						   					"event":["1","18"]
+						   				}
+						   			]
+						   		}
+						   	]
+						}
+		        	]
+		        },
 		        {
 		        	"type":"playBGM",
 		        	"file":"Mozart-OboeConcerto-1.mp3"
@@ -495,6 +513,32 @@
 							]
 						},
 						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"mystery5.mp3"
+								},
+								{
+									"type":"systemMsg",
+									"text":["資料に”咲賀谷 朱花(サキガヤ　シュカ)”\nが追加された"]
+								}
+							]
+						},
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"mystery5.mp3"
+								},
+								{
+									"type":"systemMsg",
+									"text":["資料に”田村 剣神(タムラ ケンシン)”\nが追加された"]
+								}
+							]
+						},
+						{
 							"type":"already",
 							"event":["1","7"]
 						}
@@ -854,7 +898,7 @@
 								        	"type":"charaMsg",
 								        	"text":["へるけぽー！"],
 								        	"charaID":"7",
-								        	"imgID":"3",
+								        	"imgID":"4",
 								        	"option":"reaction"
 								        },
 								        {
@@ -1027,7 +1071,7 @@
 								        		{
 								        			"text":["行くわよ！加藤！"],
 								        			"charaID":"3",
-								        			"imgID":"2",
+								        			"imgID":"3",
 								        			"option":"reaction"
 								        		},
 								        		{
@@ -1048,7 +1092,7 @@
 								        		{
 								        			"text":["北森・・・火鍋・・・"],
 								        			"charaID":"4",
-								        			"imgID":"2"
+								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["どうしたの・・・"],
@@ -1074,10 +1118,6 @@
 										        	"movePattern":"1"
 										        }
 								        	]
-								        },
-								        {
-								        	"type":"displayImg",
-								        	"file":"yuki_stand.png"
 								        },
 								        {
 								        	"type":"spawn",
@@ -1162,6 +1202,10 @@
 								        	]
 								        },
 								        {
+								        	"type":"displayImg",
+								        	"file":"yuki_stand.png"
+								        },
+								        {
 								        	"type":"charaMsg",
 								        	"talk":[
 								        		{
@@ -1172,17 +1216,17 @@
 								        		{
 								        			"text":["？"],
 								        			"charaID":"6",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		},
 												{
 								        			"text":["・・・"],
 								        			"charaID":"0",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		},
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"1",
-								        			"imgID":"3"
+								        			"imgID":"2"
 								        		},
 								        		{
 								        			"text":["・・・"],
@@ -1192,22 +1236,27 @@
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"4",
-								        			"imgID":"2"
+								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"5",
-								        			"imgID":"3"
+								        			"imgID":"1"
 								        		},
 								        		{
-								        			"text":["・・・","しゃーねぇな・・・雪！\nまぁその・・・なんだ・・・","皆で旅行だ。"],
+								        			"text":["・・・"],
+								        			"charaID":"2",
+								        			"imgID":"2"
+								        		},
+								        		{
+								        			"text":["しゃーねぇな・・・雪！\nまぁその・・・なんだ・・・","皆で旅行だ。"],
 								        			"charaID":"2",
 								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["りょこう？"],
 								        			"charaID":"6",
-								        			"imgID":"1"
+								        			"imgID":"2"
 								        		}
 								        	]
 								        },
@@ -1233,22 +1282,25 @@
 							"text":["かつて金鉱で栄えた国だったが\n現在は大規模な落盤事故により閉山\n今は金鉱跡に建った大型施設を中心に立ち並ぶ\n飲食店が世界でも注目され\n食の大国として栄えている"]
 						},
 						{
-					       	"type":"spawn",
-					       	"action":[
-					       		{
-					       			"type":"displayImg",
-					       			"file":"prologue.png",
-					       			"time":5.0
-					    		},
-					       		{
-					       			"type":"playBGM",
-					       			"file":"town.mp3"
-					       		}
-					       	]
-					    },
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"mystery5.mp3"
+								},
+								{
+									"type":"systemMsg",
+									"text":["資料に”食の大国「北森」(ベイセン)”\nが追加された"]
+								}
+							]
+						},
+						{
+			       			"type":"playBGM",
+			       			"file":"town.mp3"
+			       		},
 					    {
 					     	"type":"charaMsg",
-					       	"file":"airplane.png",
+					       	"img":"airplane.png",
 					       	"talk":[
 					       		{
 					       			"text":["ちょっと・・・加藤・・・\n重い・・・"],
@@ -1321,350 +1373,107 @@
 	],
 	"16":[
 		{
-			"type":"if",
-			"condition":[
-				{
-					"event":["36","4"]
-				}
-			],
+			"type":"sequence",
 			"action":[
 				{
-					"type":"sequence",
-					"action":[
+					"type":"removeLayer",
+					"layer":"MonoShita"
+				},
+				{
+					"type":"createObject",
+					"objID":"1080",
+					"charaID":"2",
+					"x":17,
+					"y":28,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10241",
+					"charaID":"6",
+					"x":17,
+					"y":24,
+					"direction":"DOWN",
+					"movePattern":"1"
+				},
+				{
+					"type":"storyMsg",
+					"text":["数日後・・・"]
+				},
+				{
+					"type":"fadein",
+					"time":3.0
+				},
+				{
+					"type":"playBGM",
+					"file":"couseling.mp3"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
 						{
-							"type":"sequence",
-							"action":[
-								{
-									"type":"createCamera",
-									"x":17,
-									"y":25,
-									"action":[
-										{
-											"type":"sequence",
-											"action":[
-												{
-													"type":"removeLayer",
-													"layer":"monoshita"
-												},
-												{
-													"type":"createObject",
-													"objID":"1080",
-													"charaID":"2",
-													"x":17,
-													"y":28,
-													"direction":"UP",
-													"movePattern":"1"
-												},
-												{
-													"type":"storyMsg",
-													"text":["数日後・・・"]
-												},
-												{
-													"type":"fadein",
-													"time":3.0
-												},
-												{
-													"type":"charaMsg",
-													"talk":[
-														{
-															"text":["おぃ雪！\n動きに無駄が多い！拳に集中しろ！"],
-															"charaMsg":"2",
-															"imgID":"3",
-															"option":"reaction"
-														},
-														{
-															"text":["ハイ！"],
-															"charaMsg":"6",
-															"imgID":"3",
-															"option":"reaction"
-														}
-													]
-												},
-												{
-													"type":"playSE",
-													"file":"fusuma-open1.mp3"
-												},
-												{
-													"type":"createObject",
-													"objID":"1081",
-													"charaID":"5",
-													"x":2,
-													"y":13,
-													"direction":"RIGHT",
-													"movePattern":"1"
-												},
-												{
-													"type":"wait",
-													"time":0.5
-												},
-												{
-													"type":"charaMsg",
-													"talk":[
-														{
-															"text":["お！ダイゴローじゃねぇか！"],
-															"charaMsg":"2",
-															"imgID":"1"
-														},
-														{
-															"text":["蘭丸・・・\nちょっといいか・・・"],
-															"charaMsg":"5",
-															"imgID":"2"
-														},
-														{
-															"text":["？\nあぁ・・・","雪！\nちっと休憩だ。"],
-															"charaMsg":"2",
-															"imgID":"1"
-														},
-														{
-															"text":["ハイ！"],
-															"charaMsg":"6",
-															"imgID":"3"
-														}
-													]
-												},
-												{
-													"type":"fadeout",
-													"time":3.0
-												},
-												{
-													"type":"createCamera",
-													"mapID":"85",
-													"x":14,
-													"y":12,
-													"action":[
-														{
-															"type":"sequence",
-															"action":[
-																{
-																	"type":"createObject",
-																	"objID":"1082",
-																	"charaID":"2",
-																	"x":10,
-																	"y":6,
-																	"direction":"DOWN",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"1083",
-																	"charaID":"5",
-																	"x":14,
-																	"y":12,
-																	"direction":"DOWN",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"fadein"
-																},
-																{
-																	"type":"charaMsg",
-																	"talk":[
-																		{
-																			"text":["やっぱお前ぇ・・・\nまだ引きずってんのか・・・"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["・・・","俺はよ・・・喧嘩こそしても\n命の取り合いなんかはしたことがねぇからよ・・・","キツイもんだな・・・仲間が死ぬってのはよ・・・"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["あぁ・・・そうだな・・・","でもオレ達がいつも他の生き物にしてることだ。\n今回オレ達にソレが回ってきちまったんだよ。"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["俺はそんな風には割り切れねぇ・・・","お前はよく平気だな・・・"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["平気なモンかよ・・・","けど、つれぇけど生きていかなきゃなんねぇだろうよ。\nあいつ等や、今まで殺してきた生き物の分までよ。"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["・・・","生きるって・・・なんだろうなぁ・・・"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["そりゃあお前ぇ・・・\n食って寝ることだろ"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["・・・","じゃあよ・・・","死ぬって・・・\nなんだろうな・・・"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["・・・"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["知らん"],
-																			"charaMsg":"2",
-																			"imgID":"1"
-																		},
-																		{
-																			"text":["・・・","へっ","あーあ","珍しく真面目なこと考えてたら腹減ったわ"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["お！\nさっき雪と獲ってきた大鷲があるぜ！"],
-																			"charaMsg":"2",
-																			"imgID":"5"
-																		},
-																		{
-																			"text":["お！いいなぁ！"],
-																			"charaMsg":"5",
-																			"imgID":"3"
-																		}
-																	]
-																},
-																{
-																	"type":"charaWalkTo",
-																	"objID":"1083",
-																	"x":14,
-																	"y":6
-																},
-																{
-																	"type":"createObject",
-																	"objID":"1084",
-																	"charaID":"4",
-																	"x":3,
-																	"y":6,
-																	"direction":"RiGHT",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"spawn",
-																	"action":[
-																		{
-																			"type":"playSE",
-																			"file":"reaction.mp3",
-																			"volume":0.25
-																		},
-																		{
-																			"type":"reaction",
-																			"objID":"1082"
-																		},
-																		{
-																			"type":"changeDirection",
-																			"objID":"1082",
-																			"direction":"LEFT"
-																		},
-																		{
-																			"type":"reaction",
-																			"objID":"1083"
-																		},
-																		{
-																			"type":"changeDirection",
-																			"objID":"1083",
-																			"direction":"LEFT"
-																		}
-																	]
-																},
-																{
-																	"type":"charaMsg",
-																	"talk":[
-																		{
-																			"text":["お、暖暖！"],
-																			"charaMsg":"2",
-																			"imgID":"1"
-																		},
-																		{
-																			"text":["加藤氏・・・\n人が生きていくとはこれすなわち・・・"],
-																			"charaMsg":"5",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["アホゥ、その話は\nもう終わったんだよ","んなことより飯食おーぜ。"],
-																			"charaMsg":"2",
-																			"imgID":"2"
-																		},
-																		{
-																			"text":["え？ちょ、\nま、待つですぞ～"],
-																			"charaMsg":"6",
-																			"imgID":"3"
-																		}
-																	]
-																},
-																{
-																	"type":"spawn",
-																	"action":[
-																		{
-																			"type":"fadeout",
-																			"time":3.0
-																		},
-																		{
-																			"type":"sequence",
-																			"action":[
-																				{
-																					"type":"charaWalkto",
-																					"objID":"1082",
-																					"x":28,
-																					"y":5
-																				},
-																				{
-																					"type":"removeObject",
-																					"objID":"1082"
-																				}
-																			]
-																		},
-																		{
-																			"type":"sequence",
-																			"action":[
-																				{
-																					"type":"charaWalkto",
-																					"objID":"1083",
-																					"x":28,
-																					"y":5
-																				},
-																				{
-																					"type":"removeObject",
-																					"objID":"1083"
-																				}
-																			]
-																		},
-																		{
-																			"type":"sequence",
-																			"action":[
-																				{
-																					"type":"charaWalkto",
-																					"objID":"1084",
-																					"x":28,
-																					"y":5
-																				},
-																				{
-																					"type":"removeObject",
-																					"objID":"1084"
-																				}
-																			]
-																		}
-																	]
-																}
-															]
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
+							"text":["おぃ雪！\n動きに無駄が多い！拳に集中しろ！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
 						},
 						{
-					      	"type":"backToTitle"
+							"text":["ハイ！"],
+							"charaID":"6",
+							"imgID":"3",
+							"option":"reaction"
 						}
 					]
+				},
+				{
+					"type":"playSE",
+					"file":"fusuma-open1.mp3"
+				},
+				{
+					"type":"createObject",
+					"objID":"1081",
+					"charaID":"5",
+					"x":2,
+					"y":13,
+					"direction":"RIGHT",
+					"movePattern":"1"
+				},
+				{
+					"type":"wait",
+					"time":0.5
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["お！ダイゴローじゃねぇか！"],
+							"charaID":"2",
+							"imgID":"1"
+						},
+						{
+							"text":["蘭丸・・・\nちょっといいか・・・"],
+							"charaID":"5",
+							"imgID":"2"
+						},
+						{
+							"text":["？\nあぁ・・・","雪！\nちっと休憩だ。"],
+							"charaID":"2",
+							"imgID":"1"
+						},
+						{
+							"text":["ハイ！"],
+							"charaID":"6",
+							"imgID":"3"
+						}
+					]
+				},
+				{
+					"type":"fadeout",
+					"time":3.0
 				}
 			]
-		}
+		}			
 	],
 	"17":"ルート希望",
 	"18":"ルート絶望"

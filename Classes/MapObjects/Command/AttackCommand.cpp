@@ -9,8 +9,10 @@
 #include "MapObjects/Command/AttackCommand.h"
 
 #include "Datas/BattleCharacterData.h"
+#include "Datas/AttackData.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/DetectionBox/AttackBox.h"
+#include "MapObjects/Status/Stamina.h"
 
 // コンストラクタ
 AttackCommand::AttackCommand() { FUNCLOG }
@@ -38,6 +40,12 @@ void AttackCommand::setCallback(function<void(Character*)> callback)
     _callback = callback;
 }
 
+// 操作対象のスタミナを設定
+void AttackCommand::setStamina(Stamina* stamina)
+{
+    _stamina = stamina;
+}
+
 #pragma mark -
 #pragma mark Interface
 
@@ -53,10 +61,18 @@ bool AttackCommand::isExecutable(MapObject* target) const
 void AttackCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
-    if (!character) return;
+    if (!character || !character->getBattleAttackBox()) {
+        this->setDone();
+        return;
+    }
+    
     character->beInAttackMotion(true);
-    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
+    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackData(_name)->power);
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
+    
+    if (_stamina) {
+        _stamina->decrease(character->getBattleCharacterData()->getAttackData(_name)->stamina);
+    }
 }
 
 #pragma mark -
@@ -65,11 +81,14 @@ void AttackCommand::execute(MapObject* target)
 // 攻撃モーション再生終了時
 void AttackCommand::onAttackAnimationFinished(Character* character)
 {
-    character->beInAttackMotion(false);
-    character->clearCommandQueue();
-    this->setDone();
-    if (_callback) {
-        _callback(character);
-    }
+    AttackData* attackData { character->getBattleCharacterData()->getAttackData(_name) };
+    character->runAction(Sequence::createWithTwoActions(DelayTime::create(attackData->intervalTime), CallFunc::create([this, character] {
+        character->beInAttackMotion(false);
+        character->clearCommandQueue();
+        this->setDone();
+        if (_callback) {
+            _callback(character);
+        }
+    })));
 }
 

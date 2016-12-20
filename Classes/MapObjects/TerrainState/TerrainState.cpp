@@ -38,3 +38,11 @@ float TerrainState::getStaminaConsumptionRatio() const
 {
     return _staminaConsumptionRatio;
 }
+
+bool TerrainState::isTrunable(const Direction& direction) const
+{
+    
+    if(_directionIntToturnable.count(direction.getInt()) == 0) return true;
+    
+    return _directionIntToturnable.at(direction.getInt());
+}

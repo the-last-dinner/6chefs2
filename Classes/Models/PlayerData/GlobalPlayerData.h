@@ -38,6 +38,12 @@ public:
     static const int CHIKEN_SAVE_COUNT;
     static const int FAST_CLEAR_TIME;
     
+    // trophy_id
+    static const int CHIKEN_SAVE_COUNT_TROPHY_ID;
+    static const int NO_SAVE_CLEAR_TROPHY_ID;
+    static const int FAST_CLEAR_TIME_TROPHY_ID;
+    static const int TROPHY_COMPLETE_TROPHY_ID;
+    
 public:
     CREATE_FUNC(GlobalPlayerData)
 private:

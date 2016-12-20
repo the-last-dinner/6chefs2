@@ -126,7 +126,7 @@
 						{
 							"text":["な、孫一！？撫子！？"],
 							"charaID":"2",
-							"imgID":"1",
+							"imgID":"2",
 							"option":"reaction"
 						},
 						{
@@ -211,11 +211,14 @@
 				},
 				{
 					"type":"storyMsg",
-					"text":["その後、\n北森の町にの狂人病患者達は制圧された。\n天弦楼の地下からは大勢の狂人病患者、子供の水死体。\nそして戸塚大宝の水死体が見つかった。\nこの世の全てを恨んで恨んで呪い尽くした・・・\nそんな凄まじい形相だったらしい。","反対に佐々木　孫一、中山　撫子両名の死体は\n丁寧な処理が施されていた。"]
+					"text":["その後、\n北森の町の狂人病患者達は制圧された。\n北森地下孤児院からは\n大勢の狂人病患者と子供の水死体。\nそして戸塚 大宝の水死体が見つかった。\nこの世の全てを恨んで恨んで呪い尽くした・・・\nそんな凄まじい形相だったらしい。","反対に佐々木　孫一、中山　撫子両名の死体は\n丁寧な処理が施されていた。"]
 				},
 				{
 					"type":"wait",
 					"time":2.0
+				},
+				{
+					"type":"stopBGM"
 				},
 				{
 					"type":"if",
@@ -232,8 +235,248 @@
 					]
 				},
 				{
-					"type":"ending",
-					"id":"2"
+					"type":"createCamera",
+					"mapID":"1",
+					"x":17,
+					"y":28,
+					"action":[
+						{
+							"type":"callEvent",
+							"eventID":"16"
+						}
+					]
+				},
+				{
+					"type":"createCamera",
+					"mapID":"85",
+					"x":14,
+					"y":12,
+					"action":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"createObject",
+									"objID":"1082",
+									"charaID":"2",
+									"x":10,
+									"y":6,
+									"direction":"DOWN",
+									"movePattern":"1"
+								},
+								{
+									"type":"createObject",
+									"objID":"1083",
+									"charaID":"5",
+									"x":14,
+									"y":12,
+									"direction":"DOWN",
+									"movePattern":"1"
+								},
+								{
+									"type":"fadein"
+								},
+								{
+									"type":"charaMsg",
+									"talk":[
+										{
+											"text":["やっぱお前ぇ・・・\nまだ引きずってんのか・・・"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["・・・","俺はよ・・・喧嘩こそしても\n命の取り合いなんかは\nしたことがねぇからよ・・・","キツイもんだな・・・\n仲間が死ぬってのはよ・・・"],
+											"charaID":"5",
+											"imgID":"2"
+										},
+										{
+											"text":["あぁ・・・そうだな・・・","でもオレ達がいつも他の生き物にしてることだ。\n今回オレ達にソレが回ってきちまったんだよ。"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["俺はそんな風には割り切れねぇ・・・","お前はよく平気だな・・・"],
+											"charaID":"5",
+											"imgID":"2"
+										},
+										{
+											"text":["平気なモンかよ・・・","けど、つれぇけど生きていかなきゃなんねぇだろうよ。\nあいつ等や、今まで殺してきた生き物の分までよ。"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["・・・","生きるって・・・なんだろうなぁ・・・"],
+											"charaID":"5",
+											"imgID":"2"
+										},
+										{
+											"text":["そりゃあお前ぇ・・・\n食って寝ることだろ"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["・・・","じゃあよ・・・","死ぬって・・・\nなんだろうな・・・"],
+											"charaID":"5",
+											"imgID":"7"
+										},
+										{
+											"text":["・・・"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["知らん"],
+											"charaID":"2",
+											"imgID":"5"
+										},
+										{
+											"text":["・・・","へっ","あーあ","珍しく真面目なこと考えてたら腹減ったわ"],
+											"charaID":"5",
+											"imgID":"2"
+										},
+										{
+											"text":["お！\nさっき雪と獲ってきた大鷲があるぜ！"],
+											"charaID":"2",
+											"imgID":"5"
+										},
+										{
+											"text":["お！いいなぁ！"],
+											"charaID":"5",
+											"imgID":"3"
+										}
+									]
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"1083",
+									"x":14,
+									"y":6
+								},
+								{
+									"type":"createObject",
+									"objID":"1084",
+									"charaID":"4",
+									"x":3,
+									"y":6,
+									"direction":"RIGHT",
+									"movePattern":"1"
+								},
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"playSE",
+											"file":"reaction.mp3",
+											"volume":0.25
+										},
+										{
+											"type":"reaction",
+											"objID":"1082"
+										},
+										{
+											"type":"changeDirection",
+											"objID":"1082",
+											"direction":"LEFT"
+										},
+										{
+											"type":"reaction",
+											"objID":"1083"
+										},
+										{
+											"type":"changeDirection",
+											"objID":"1083",
+											"direction":"LEFT"
+										}
+									]
+								},
+								{
+									"type":"charaMsg",
+									"talk":[
+										{
+											"text":["お、暖暖！"],
+											"charaID":"2",
+											"imgID":"1"
+										},
+										{
+											"text":["加藤氏・・・\n人が生きていくとはこれすなわち・・・"],
+											"charaID":"4",
+											"imgID":"1"
+										},
+										{
+											"text":["アホゥ、その話は\nもう終わったんだよ","んなことより飯食おーぜ。"],
+											"charaID":"2",
+											"imgID":"5"
+										},
+										{
+											"text":["え？ちょ、\nま、待つ以外あり得ませんな～"],
+											"charaID":"4",
+											"imgID":"3"
+										}
+									]
+								},
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"fadeout",
+											"time":3.0
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1082",
+													"x":28,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1082"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1083",
+													"x":28,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1083"
+												}
+											]
+										},
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"charaWalkTo",
+													"objID":"1084",
+													"x":28,
+													"y":5
+												},
+												{
+													"type":"removeObject",
+													"objID":"1084"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type":"stopBGM"
+				},
+				{
+			      	"type":"backToTitle"
 				}
 			]
 		}

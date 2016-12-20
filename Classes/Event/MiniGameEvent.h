@@ -77,13 +77,14 @@ private:
     int _equip { 0 };
     bool _checkEquip { false };
     bool _display { false };
-    GameEvent* _resultCallbackEvent { nullptr };
+    GameEvent* _successCallbackEvent { nullptr };
+    GameEvent* _failureCallbackEvent { nullptr };
 private:
     CountDownEvent() { FUNCLOG };
-    ~CountDownEvent() {FUNCLOG};
+    ~CountDownEvent();
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
-    virtual void update(float delta) override;
+    void runResultCallbackEvent(GameEvent* callbackEvent);
 };
 
 // StopCountイベント

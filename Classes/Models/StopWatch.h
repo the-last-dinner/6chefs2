@@ -21,7 +21,7 @@ public:
     CREATE_FUNC_WITH_PARAM(StopWatch, const int)
 private:
     StopWatch(){FUNCLOG};
-    ~StopWatch(){FUNCLOG};
+    ~StopWatch();
 
 // インスタンス変数
 private:
@@ -58,7 +58,7 @@ public:
     void startCountDown();
     void stopCountDown();
     void scheduleFunction(float delta);
-    void setCountDown(GameEvent* event);
+    void setCountDownEvent(GameEvent* event);
 };
 
 #endif /* StopWatch_h */

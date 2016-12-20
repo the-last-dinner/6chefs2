@@ -74,5 +74,4 @@ bool MovePattern::isPaused() const
 
 void MovePattern::update(float delta)
 {
-    
 }

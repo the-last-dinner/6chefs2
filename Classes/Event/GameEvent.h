@@ -123,6 +123,8 @@ public:
     CREATE_FUNC_WITH_PARAM(CallEvent, rapidjson::Value&)
 private:
     GameEvent* _event { nullptr };
+    string _eventId;
+    string _className;
 private:
     CallEvent() {FUNCLOG};
     ~CallEvent() {FUNCLOG};

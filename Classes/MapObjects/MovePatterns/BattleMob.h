@@ -15,6 +15,10 @@ class Chaser;
 
 class BattleMob : public MovePattern
 {
+// 定数
+private:
+    static const string ATTACK_NAME;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(BattleMob, Character*)
@@ -22,14 +26,12 @@ public:
 // インスタンス変数
 private:
     Chaser* _subPattern { nullptr };
-    deque<Direction> _path {};
     
 // インスタンスメソッド
 private:
     BattleMob();
     ~BattleMob();
     virtual bool init(Character* character) override;
-    void move();
     
 // インターフェース
 public:
@@ -38,6 +40,7 @@ public:
     virtual void resume() override;
     virtual void onPartyMoved() override;
     virtual bool canGoToNextMap() const override;
+    virtual void update(float delta) override;
 };
 
 #endif /* BattleMob_h */

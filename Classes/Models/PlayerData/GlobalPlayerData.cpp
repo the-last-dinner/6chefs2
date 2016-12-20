@@ -35,6 +35,12 @@ const char* GlobalPlayerData::DASH_KEY {"dash_key"};
 const int GlobalPlayerData::CHIKEN_SAVE_COUNT {50};
 const int GlobalPlayerData::FAST_CLEAR_TIME {1800};
 
+
+const int GlobalPlayerData::FAST_CLEAR_TIME_TROPHY_ID {14};
+const int GlobalPlayerData::NO_SAVE_CLEAR_TROPHY_ID {15};
+const int GlobalPlayerData::CHIKEN_SAVE_COUNT_TROPHY_ID {16};
+const int GlobalPlayerData::TROPHY_COMPLETE_TROPHY_ID {17};
+
 #pragma mark GlobalDataFile
 
 // 初期化
@@ -112,7 +118,7 @@ bool GlobalPlayerData::isCleared(){return this->getClearCount() > 0 ? true : fal
 void GlobalPlayerData::setBestSaveCount(const int save_count)
 {
     // トロフィーチェック
-    if (save_count == 0) this->setTrophy(11); // マエストロ
+    if (save_count == 0) this->setTrophy(GlobalPlayerData::NO_SAVE_CLEAR_TROPHY_ID); // マエストロ
     
     if (save_count > this->getBestSaveCount()) return;
     this->globalData[BEST_SAVE_COUNT].SetInt(save_count);
@@ -131,7 +137,7 @@ void GlobalPlayerData::setBestClearTime(const int play_time)
     this->globalData[BEST_CLEAR_TIME].SetInt(play_time);
     
     // トロフィーチェック
-    if (play_time < FAST_CLEAR_TIME) this->setTrophy(10); // 3分クッキング
+    if (play_time < FAST_CLEAR_TIME) this->setTrophy(GlobalPlayerData::FAST_CLEAR_TIME_TROPHY_ID); // 3分クッキング
 }
 
 // 最短クリア時間を取得

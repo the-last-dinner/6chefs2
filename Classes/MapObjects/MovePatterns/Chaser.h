@@ -17,9 +17,8 @@ class CheapChaser;
 class Chaser : public MovePattern
 {
 // 定数
-public:
+private:
     static const int PATH_FINDING_THRESHOLD;
-    static const int SHIFT_PATTERN_THRESHOLD;
     
 // クラスメソッド
 public:
@@ -36,6 +35,7 @@ public:
     virtual void pause() override;
     virtual void resume() override;
     virtual void onPartyMoved() override;
+    virtual void setSpeedRatio(float speed) override;
     virtual void move();
 private:
     Chaser();
@@ -46,6 +46,7 @@ private:
     bool needsShiftToSubPattern(const deque<Direction>& path);
     void cutPath(deque<Direction>& path);
     deque<Direction> getPath() const;
+    void onStuck(float delta);
     virtual bool canGoToNextMap() const override;
     virtual float calcSummonDelay() const override;
 };

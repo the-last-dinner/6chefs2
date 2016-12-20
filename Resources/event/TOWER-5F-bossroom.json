@@ -189,7 +189,7 @@
 							"action":[
 								{
 									"type":"charaMsg",
-									"file":"taihou_reign.png",
+									"img":"taihou_reign.png",
 									"talk":[
 										{
 											"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
@@ -242,7 +242,7 @@
 								{
 									"text":["ざけんな！"],
 									"charaID":"5",
-									"imgID":"1",
+									"imgID":"7",
 									"option":"reaction"
 								},
 								{
@@ -350,50 +350,6 @@
 							"objID":"10116",
 							"charaID":"0",
 							"x":86,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10117",
-							"charaID":"1",
-							"eventID":"9",
-							"trigger":"2",
-							"x":88,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10119",
-							"charaID":"3",
-							"eventID":"15",
-							"trigger":"2",
-							"x":90,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10120",
-							"charaID":"4",
-							"eventID":"11",
-							"trigger":"2",
-							"x":92,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10123",
-							"charaID":"7",
-							"eventID":"13",
-							"trigger":"2",
-							"x":20,
 							"y":75,
 							"direction":"UP",
 							"movePattern":"3"
@@ -623,7 +579,7 @@
 													"type":"charaMsg",
 													"text":["ぶっ飛ばす！"],
 													"charaID":"5",
-													"imgID":"1",
+													"imgID":"7",
 													"option":"reaction"
 												},
 												{
@@ -643,7 +599,7 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -737,6 +693,8 @@
 																}
 															]
 														}
+													],
+													"false":[
 													]
 												}
 											]
@@ -1165,7 +1123,7 @@
 	"14":[
 		{
 			"type":"charaMsg",
-			"text":["ぬぁ～くそ！アイツ\nワシの必殺パンチ躱しおった～"],
+			"text":["ぬぁ～くそ！アイツ\nワシの必殺パンチかわしおった～"],
 			"charaID":"8",
 			"imgID":"4"
 		}
@@ -1296,7 +1254,7 @@
 				},
 				{
 					"type":"charaMsg",
-					"file":"taihou_kill.png",
+					"img":"taihou_kill.png",
 					"talk":[
 						{
 							"text":["ぐぁ！"],
@@ -1478,7 +1436,7 @@
 						{
 							"text":["ふー・・・\nぷふ-・・・"],
 							"charaID":"5",
-							"imgID":"1"
+							"imgID":"7"
 						},
 						{
 							"text":["ハァ・・・\nお前達料理人だろう？","よくこんだけ武闘派が集まったモンだぜ・・・"],
@@ -1700,7 +1658,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["雪。","アイツは・・・戸塚は家族を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・","雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
+							"text":["雪。","アイツは・・・戸塚は\n大切な人を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・","雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
 							"charaID":"2",
 							"imgID":"2"
 						},

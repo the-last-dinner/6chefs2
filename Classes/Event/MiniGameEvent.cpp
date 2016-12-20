@@ -24,6 +24,7 @@
 #include "Models/StopWatch.h"
 
 #include "Scenes/DungeonScene.h"
+#include "Tasks/EventTask.h"
 
 #include "UI/CountDownDisplay.h"
 
@@ -226,6 +227,13 @@ void PasswordEvent::update(float delta)
 #pragma mark -
 #pragma mark CountDown
 
+CountDownEvent::~CountDownEvent()
+{
+    FUNCLOG
+    CC_SAFE_RELEASE(_successCallbackEvent);
+    CC_SAFE_RELEASE(_failureCallbackEvent);
+}
+
 bool CountDownEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
@@ -244,13 +252,20 @@ bool CountDownEvent::init(rapidjson::Value& json)
         _display = _json[member::DISPLAY].GetBool();
     }
     
+    // コールバック設定
+    _successCallbackEvent = _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this);
+    _failureCallbackEvent = _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this);;
+    CC_SAFE_RETAIN(_successCallbackEvent);
+    CC_SAFE_RETAIN(_failureCallbackEvent);
+    
     return true;
 }
 
 void CountDownEvent::run()
 {
     StopWatch* stopWatch { DungeonSceneManager::getInstance()->getStopWatch() };
-    stopWatch->setCountDown(this);
+    stopWatch->setCountDownEvent(this);
+    this->setReusable(true);
     
     if (_display) {
         DungeonSceneManager::getInstance()->getScene()->getCountDownDisplay()->slideIn();
@@ -265,11 +280,7 @@ void CountDownEvent::run()
         
         // 条件を満たしていた場合
         if (condition) {
-            GameEvent* event { _eventHelper->createMiniGameSuccessCallbackEvent(_json, _factory, this) };
-            CC_SAFE_RETAIN(event);
-            _resultCallbackEvent = event;
-            event->run();
-            
+            this->runResultCallbackEvent(_successCallbackEvent);
             return false;
         }
 
@@ -284,12 +295,7 @@ void CountDownEvent::run()
         
         // 時間切れチェック
         if (static_cast<float>(time) >= _second) {
-            GameEvent* event { _eventHelper->createMiniGameFailureCallbackEvent(_json, _factory, this) };
-            CC_SAFE_RETAIN(event);
-            _resultCallbackEvent = event;
-            // 時間切れと同時にrunuすると落ちるの防止
-            if (event) event->run();
-            
+            this->runResultCallbackEvent(_failureCallbackEvent);
             return false;
         }
         
@@ -302,16 +308,13 @@ void CountDownEvent::run()
     this->setDone();
 }
 
-void CountDownEvent::update(float delta)
+void CountDownEvent::runResultCallbackEvent(GameEvent *callbackEvent)
 {
-    if (!_resultCallbackEvent) return;
     
-    _resultCallbackEvent->update(delta);
-    
-    if (!_resultCallbackEvent->isDone()) return;
-    
-    CC_SAFE_RELEASE_NULL(_resultCallbackEvent);
-    this->setDone();
+    if (!callbackEvent) return;
+    EventTask* eventTask { DungeonSceneManager::getInstance()->getEventTask() };
+    eventTask->pushEventBack(callbackEvent);
+    eventTask->runEventQueue();
 }
 
 #pragma mark -
