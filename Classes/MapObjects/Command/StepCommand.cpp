@@ -8,6 +8,8 @@
 
 #include "MapObjects/Command/StepCommand.h"
 
+#include "Datas/BattleCharacterData.h"
+
 #include "MapObjects/Character.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/DetectionBox/AttackDetector.h"
@@ -86,9 +88,12 @@ void StepCommand::moveCharacter(Character* character)
     character->enableHit(false);
     bool movable { character->walkBy(_directions, [this, character](bool moved) {
         if (_callback && _restGridNum == 0) {
-            character->enableHit(true);
-            _callback(moved);
-            this->setDone();
+            BattleCharacterData* data { character->getBattleCharacterData() };
+            character->runAction(Sequence::createWithTwoActions(DelayTime::create(data->getStepIntervalTime()), CallFunc::create([this, character, moved] {
+                character->enableHit(true);
+                _callback(moved);
+                this->setDone();
+            })));
         } else if (_restGridNum > 0) {
             this->moveCharacter(character);
         }
@@ -96,7 +101,7 @@ void StepCommand::moveCharacter(Character* character)
     
     if (_restGridNum == MOVE_GRID_NUM - 1 && movable) {
         if (_stamina) {
-            _stamina->decrease(5.f);
+            _stamina->decrease(character->getBattleCharacterData()->getStepStamina());
         }
         
         character->runAction(Sequence::createWithTwoActions(
