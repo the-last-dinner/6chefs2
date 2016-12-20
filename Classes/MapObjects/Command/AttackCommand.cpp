@@ -71,7 +71,7 @@ void AttackCommand::execute(MapObject* target)
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
     
     if (_stamina) {
-        _stamina->decrease(5.f);
+        _stamina->decrease(character->getBattleCharacterData()->getAttackData(_name)->stamina);
     }
 }
 
@@ -81,11 +81,14 @@ void AttackCommand::execute(MapObject* target)
 // 攻撃モーション再生終了時
 void AttackCommand::onAttackAnimationFinished(Character* character)
 {
-    character->beInAttackMotion(false);
-    character->clearCommandQueue();
-    this->setDone();
-    if (_callback) {
-        _callback(character);
-    }
+    AttackData* attackData { character->getBattleCharacterData()->getAttackData(_name) };
+    character->runAction(Sequence::createWithTwoActions(DelayTime::create(attackData->intervalTime), CallFunc::create([this, character] {
+        character->beInAttackMotion(false);
+        character->clearCommandQueue();
+        this->setDone();
+        if (_callback) {
+            _callback(character);
+        }
+    })));
 }
 
