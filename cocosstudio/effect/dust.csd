@@ -58,7 +58,7 @@
       <ObjectData Name="Node" Tag="9" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="sprite" ActionTag="1762870166" Alpha="0" Tag="10" IconVisible="False" LeftMargin="-60.0000" RightMargin="-60.0000" TopMargin="-60.0000" BottomMargin="-60.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" ActionTag="1762870166" Tag="10" IconVisible="False" LeftMargin="-60.0000" RightMargin="-60.0000" TopMargin="-60.0000" BottomMargin="-60.0000" ctype="SpriteObjectData">
             <Size X="120.0000" Y="120.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -66,7 +66,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="effect_1_9.png" Plist="effect/battle_effect.plist" />
+            <FileData Type="PlistSubImage" Path="effect_1_5.png" Plist="effect/battle_effect.plist" />
             <BlendFunc Src="770" Dst="1" />
           </AbstractNodeData>
         </Children>
