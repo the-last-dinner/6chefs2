@@ -401,6 +401,20 @@
 							"file":"ocean-wave.mp3"
 						},
 						{
+							"type":"animation",
+							"time":0.15,
+							"imgs":[
+								"water1.png",
+								"water2.png",
+								"water3.png",
+								"water4.png",
+								"water5.png",
+								"water6.png",
+								"water7.png",
+								"water8.png"
+							]
+						},
+						{
 							"type":"fadeout"
 						},
 						{

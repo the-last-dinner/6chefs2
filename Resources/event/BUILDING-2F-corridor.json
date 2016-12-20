@@ -190,6 +190,11 @@
 					"time":0.1
 				},
 				{
+					"type":"changeDirection",
+					"objID":"1040",
+					"direction":"RIGHT"
+				},
+				{
 					"type":"playSE",
 					"file":"himei_girl.mp3",
 					"volume":10.0

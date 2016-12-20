@@ -1120,10 +1120,6 @@
 								        	]
 								        },
 								        {
-								        	"type":"displayImg",
-								        	"file":"yuki_stand.png"
-								        },
-								        {
 								        	"type":"spawn",
 								        	"action":[
 								        		{
@@ -1206,6 +1202,10 @@
 								        	]
 								        },
 								        {
+								        	"type":"displayImg",
+								        	"file":"yuki_stand.png"
+								        },
+								        {
 								        	"type":"charaMsg",
 								        	"talk":[
 								        		{
@@ -1236,7 +1236,7 @@
 								        		{
 								        			"text":["・・・"],
 								        			"charaID":"4",
-								        			"imgID":"2"
+								        			"imgID":"1"
 								        		},
 								        		{
 								        			"text":["・・・"],
@@ -1295,19 +1295,9 @@
 							]
 						},
 						{
-					       	"type":"spawn",
-					       	"action":[
-					       		{
-					       			"type":"displayImg",
-					       			"file":"prologue.png",
-					       			"time":5.0
-					    		},
-					       		{
-					       			"type":"playBGM",
-					       			"file":"town.mp3"
-					       		}
-					       	]
-					    },
+			       			"type":"playBGM",
+			       			"file":"town.mp3"
+			       		},
 					    {
 					     	"type":"charaMsg",
 					       	"img":"airplane.png",

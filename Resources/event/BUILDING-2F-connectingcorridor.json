@@ -4,7 +4,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["22","2"]
+					"Nflg":["22","2",2]
 				}
 			],
 			"action":[
@@ -17,80 +17,149 @@
 	],
 	"2":[
 		{
-			"type":"countDown",
-			"second":1.5,
-			"false":[
+			"type":"if",
+			"condition":[
 				{
-					"type":"createEnemy",
-					"objID":"1410",
-					"charaID":"13",
-					"x":5,
-					"y":50,
-					"speed":5.0,
-					"movePattern":"5"
-				},
-				{
-					"type":"charaMsg",
-					"text":["来た・・・"],
-					"charaID":"0",
-					"imgID":"3"
-				},
-				{
-					"type":"changeDirection",
-					"objID":"hero",
-					"direction":"DOWN"
+					"flg":0
 				}
-			]
-		},
-		{
-			"type":"already"
-		}
-	],
-	"3":[
-		{
-			"type":"sequence",
+			],
 			"action":[
 				{
-					"type":"stopCount"
-				},
-				{
-					"type":"createLayer",
-					"layer":"shutterA"
-				},
-				{
-					"type":"playSE",
-					"file":"door_don.mp3"
-				},
-				{
-					"type":"wait",
-					"time":1.0
-				},
-				{
-					"type":"charaMsg",
-					"talk":[
+					"type":"countDown",
+					"second":3.0,
+					"false":[
 						{
-							"text":["はぁ・・・はぁ・・・"],
+							"type":"createEnemy",
+							"objID":"1410",
+							"charaID":"13",
+							"x":5,
+							"y":50,
+							"speed":1.5,
+							"movePattern":"5"
+						},
+						{
+							"type":"charaMsg",
+							"text":["来た・・・"],
 							"charaID":"0",
 							"imgID":"3"
 						},
 						{
-							"text":["ここは渡り廊下みたいですから・・・\nさっきみたいに窓から入ってくることはないと思います。"],
-							"charaID":"0",
-							"imgID":"2"
+							"type":"changeDirection",
+							"objID":"hero",
+							"direction":"DOWN"
 						},
 						{
-							"text":["でも・・・\nさっきの人たち・・・"],
-							"charaID":"1",
-							"imgID":"2"
+							"type":"changeFlg",
+							"mapID":"22",
+							"eventID":"2",
+							"flg":1
 						}
 					]
-				},
+				}
+			]
+		}
+	],
+	"3":[
+		{
+			"type":"if",
+			"condition":[
 				{
-					"type":"playBGM",
-					"file":"dark_chapter1.mp3"
-				},
+					"flg":["22","2",0]
+				}
+			],
+			"action":[
 				{
-					"type":"already"
+					"type":"sequence",
+					"action":[
+						{
+							"type":"stopCount"
+						},
+						{
+							"type":"createLayer",
+							"layer":"shutterA"
+						},
+						{
+							"type":"playSE",
+							"file":"door_don.mp3"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["はぁ・・・はぁ・・・"],
+									"charaID":"0",
+									"imgID":"3"
+								},
+								{
+									"text":["ここは渡り廊下みたいですから・・・\nさっきみたいに窓から入ってくることはないと思います。"],
+									"charaID":"0",
+									"imgID":"2"
+								},
+								{
+									"text":["でも・・・\nさっきの人たち・・・"],
+									"charaID":"1",
+									"imgID":"2"
+								}
+							]
+						},
+						{
+							"type":"playBGM",
+							"file":"dark_chapter1.mp3"
+						},
+						{
+							"type":"already"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"22",
+							"eventID":"2",
+							"flg":2
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["22","2",1]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"createLayer",
+							"layer":"shutterA"
+						},
+						{
+							"type":"playSE",
+							"file":"door_don.mp3"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"charaMsg",
+							"text":["このシャッターを閉めても\nもう遅い！"],
+							"charaID":"0",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"22",
+							"eventID":"2",
+							"flg":2
+						}
+					]
 				}
 			]
 		}
@@ -321,7 +390,50 @@
 							"mapID":"7",
 							"x":34,
 							"y":59,
-							"eventID":"7"
+							"eventID":"10"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["22","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"UP"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"1035",
+									"direction":"UP"
+								}
+							]
+						},
+						{
+							"type":"charaMsg",
+							"text":["そんな・・・ここにもシャッター・・・\n行き止まり・・・","何か・・・何かないのか・・・"],
+							"charaID":"0",
+							"imgID":"3"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"DOWN",
+							"option":"back"
 						}
 					]
 				}
