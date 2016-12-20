@@ -65,7 +65,7 @@
             },
             "attack_2": {
                 "power": 75,
-                "stamina": 5,
+                "stamina": 5.0,
                 "interval_time": 0.5
             }
         },
