@@ -4,10 +4,136 @@
 	<dict>
 		<key>frames</key>
 		<dict>
+			<key>water1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1602,602},{800,320}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,320}}</string>
+				<key>sourceSize</key>
+				<string>{800,320}</string>
+			</dict>
+
+			<key>water2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1602,321},{800,280}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,280}}</string>
+				<key>sourceSize</key>
+				<string>{800,280}</string>
+			</dict>
+
+			<key>water3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1602,0},{800,320}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,320}}</string>
+				<key>sourceSize</key>
+				<string>{800,320}</string>
+			</dict>
+
+			<key>water4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{801,602},{800,280}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,280}}</string>
+				<key>sourceSize</key>
+				<string>{800,280}</string>
+			</dict>
+
+			<key>water5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{801,281},{800,320}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,320}}</string>
+				<key>sourceSize</key>
+				<string>{800,320}</string>
+			</dict>
+
+			<key>water6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{801,0},{800,280}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,280}}</string>
+				<key>sourceSize</key>
+				<string>{800,280}</string>
+			</dict>
+
+			<key>water7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,582},{800,320}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,320}}</string>
+				<key>sourceSize</key>
+				<string>{800,320}</string>
+			</dict>
+
+			<key>water8.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,301},{800,280}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,280}}</string>
+				<key>sourceSize</key>
+				<string>{800,280}</string>
+			</dict>
+
+			<key>water9.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{800,300}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{800,300}}</string>
+				<key>sourceSize</key>
+				<string>{800,300}</string>
+			</dict>
+
 			<key>wheat1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{641,194},{634,99}}</string>
+				<string>{{0,923},{634,99}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -21,7 +147,7 @@
 			<key>wheat2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{641,0},{639,193}}</string>
+				<string>{{3044,0},{639,193}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -35,7 +161,7 @@
 			<key>wheat3.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{640,710},{639,221}}</string>
+				<string>{{3043,710},{639,221}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -49,7 +175,7 @@
 			<key>wheat4.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{640,480},{639,229}}</string>
+				<string>{{3043,480},{639,229}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -63,7 +189,7 @@
 			<key>wheat5.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,720},{639,239}}</string>
+				<string>{{2403,720},{639,239}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -77,7 +203,7 @@
 			<key>wheat6.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,480},{639,239}}</string>
+				<string>{{2403,480},{639,239}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -91,7 +217,7 @@
 			<key>wheat7.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,240},{640,239}}</string>
+				<string>{{2403,240},{640,239}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -105,7 +231,7 @@
 			<key>wheat8.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{640,239}}</string>
+				<string>{{2403,0},{640,239}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -123,7 +249,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{2048,1024}</string>
+			<string>{4096,1024}</string>
 			<key>textureFileName</key>
 			<string>animation.png</string>
 			</dict>
