@@ -21,6 +21,10 @@ const char* BattleCharacterData::STEP_STAMINA {"step_stamina"};
 const char* BattleCharacterData::POWER {"power"};
 const char* BattleCharacterData::STAMINA {"stamina"};
 const char* BattleCharacterData::INTERVAL_TIME {"interval_time"};
+const char* BattleCharacterData::MOTION_SOUND {"motion_sound"};
+const char* BattleCharacterData::MOTION_SOUND_VOLUME {"motion_sound_volume"};
+const char* BattleCharacterData::HIT_SOUND {"hit_sound"};
+const char* BattleCharacterData::HIT_SOUND_VOLUME {"hit_sound_volume"};
 
 
 rapidjson::Document BattleCharacterData::BATTLE_CHARACTER_DATA { rapidjson::Document() };
@@ -160,6 +164,44 @@ bool BattleCharacterData::setAttacks(const rapidjson::Value &battleCharacterData
             return false;
         }
         attackData->intervalTime = itr->value[BattleCharacterData::INTERVAL_TIME].GetDouble();
+        
+        // motion sound
+        if (itr->value.HasMember(BattleCharacterData::MOTION_SOUND)) {
+            if (!itr->value[BattleCharacterData::MOTION_SOUND].IsString()) {
+                _assertHelper->fatalAssert("Type of motion sound should be string.");
+                return false;
+            }
+            attackData->motionSound = itr->value[BattleCharacterData::MOTION_SOUND].GetString();
+        } else {
+            attackData->motionSound = "";
+        }
+        
+        if (itr->value.HasMember(BattleCharacterData::MOTION_SOUND_VOLUME)) {
+            if (!itr->value[BattleCharacterData::MOTION_SOUND_VOLUME].IsDouble()) {
+                _assertHelper->fatalAssert("Type of motion sound volume should be string.");
+                return false;
+            }
+            attackData->motionSoundVolume = itr->value[BattleCharacterData::MOTION_SOUND_VOLUME].GetDouble();
+        }
+        
+        // hit sound
+        if (itr->value.HasMember(BattleCharacterData::HIT_SOUND)) {
+            if (!itr->value[BattleCharacterData::HIT_SOUND].IsString()) {
+                _assertHelper->fatalAssert("Type of motion sound should be string.");
+                return false;
+            }
+            attackData->hitSound = itr->value[BattleCharacterData::HIT_SOUND].GetString();
+        } else {
+            attackData->hitSound = "";
+        }
+        
+        if (itr->value.HasMember(BattleCharacterData::HIT_SOUND_VOLUME)) {
+            if (!itr->value[BattleCharacterData::HIT_SOUND_VOLUME].IsDouble()) {
+                _assertHelper->fatalAssert("Type of motion sound volume should be string.");
+                return false;
+            }
+            attackData->hitSoundVolume = itr->value[BattleCharacterData::HIT_SOUND_VOLUME].GetDouble();
+        }
         
         CC_SAFE_RETAIN(attackData);
         _attacks[attackName] = attackData;
