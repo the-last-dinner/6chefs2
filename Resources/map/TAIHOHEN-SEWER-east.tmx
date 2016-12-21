@@ -30,10 +30,16 @@
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <tileset firstgid="2049" name="yoshituneDeath" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="yoshituneDeath.png" width="32" height="32"/>
+  <image source="yoshituneDeath.png" width="32" height="33"/>
  </tileset>
- <tileset firstgid="2053" name="マフィア" tilewidth="16" tileheight="16" tilecount="48" columns="6">
-  <image source="マフィア.png" width="96" height="128"/>
+ <tileset firstgid="2053" name="mafia_2_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="mafia_2_0.png" width="32" height="33"/>
+ </tileset>
+ <tileset firstgid="2057" name="mafia_1_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="mafia_1_0.png" width="32" height="33"/>
+ </tileset>
+ <tileset firstgid="2061" name="mafia_3_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+  <image source="mafia_3_0.png" width="32" height="33"/>
  </tileset>
  <layer name="Base" width="80" height="44">
   <properties>
@@ -48,7 +54,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0DtOgkEYRuFJoBPEHkR78dILSi+KPRfdiEvQHcgOdAe6A1mTZ3pIJn6JP7+eJznNTPPlTUmS9Jc900vVR9TYK62qPqLG3ui96iNq7IM+t/ztNVNqUZv2qUMHzd+8bvd90XrD+6SRUpetenRIfTqiY/crkvc7YasBndIZndOF+xXJ+12y1ZBGdEXXNHa/Inm/G7aa0C3d0ZTu3a9I3m/GVnNa0JIe6NH9iuT99HPuF+N+Me4X434x7hfjfjHuF+N+Me4X434x7hfjfpIk6b96so1JkiRJ0q74BoFUNpo=
+   eJzt0DtOgkEYRuFJoEPFXgV78dKDSs+1F9QN4Q50B7oD2AGuyTO9JhO/hJ+fnCc5zUzz5U1JknTIVvRW9RE19k4fVR9RY5/0VfURNbamzR9/rWZKR3RMJ9Sm0+Yur9t/W/r+5X3cSOmMrc7pgjrUpUv3K5L3u2KrHl3TDd3SnfsVyfv12WpA9/RAjzR0vyJ5vxFbjWlCU5rR3P2K5P2e2GpBS3qmF3p1vyJ5P/2f+8W4X4z7xbhfjPvFuF+M+8W4X4z7xbhfjPvFuJ8kSZIkSZIkaR/9AOyjFGw=
   </data>
  </layer>
  <layer name="MonoUe" width="80" height="44">
@@ -93,20 +99,36 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="mafia" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1MEJACAMBMF81PRfsYIlBJHATAXHPTYCAAAA4BoZMfP3ir7W+S79By3pX43+QV/6V6N/AAAAAAAA8N4GwxIArw==
+  </data>
+ </layer>
  <layer name="mafia2" width="80" height="44">
   <properties>
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1zsOwkAMBNBtgOWPBE24QtLA/Q/HCG2PyBaI6L3GbqYZyYVLAQAAAJbmWku51e9zYzLTjNzSDOngPqOHRzJP/dHJ/fZxv/yS++3jfgEAAP7TKj/Zuv1lm8za9m3mzr/20T4dHVpPx8xT28+ZF/0BAADA2wtQqQTb
+   eJzt1LkRACAMA0GHfP3XCz04ADO7FWgUXAQAAAC8p7eI0W6vqGue75b/oCT9y9E/qEv/cvQPAAAAAAAA+NUGQ7oA3w==
   </data>
  </layer>
- <layer name="hide2" width="80" height="44">
+ <layer name="mafia3" width="80" height="44">
   <properties>
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1TEKgDAQBMDL27XRVht9rSnTBCQRhThTXXPNwrIRAAAAwGimFDGn9/5Gs+UM9oYcWv+gpL999Jcv6W8f/QXgSUvehtU+NDtydqf8ALip3N3aTV25u7UbAAAA/u4C/NgWVQ==
+   eJzt0KkRACAQBMGVZ3jyjxYSgCo03Wr0JAAAAAAAAAAAAPCuVdLr3pyN/WjWvQEAAOB3C9+AAQ8=
+  </data>
+ </layer>
+ <layer name="hide" width="80" height="44">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1UEKgzAQBVD1BvbKdVO3dtOe1gE32QTKBGut70Egm4EwZOZ3HQAAAHvo4wxHP+LExji3ox9xYvf4gFP/vbp/s0QPnok+ZOugZH7bZOdQbreR2xvz2yY7h/J3k51D+6+N/Qe/6xELbpYPaa/o3Vv/APhQmbu1O3Vl7tbuAAAAcHUr2QMUmw==
   </data>
  </layer>
 </map>

@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="132">
- <tileset firstgid="1" name="ed2" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="136">
+ <tileset firstgid="1" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16">
+ <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" trans="aa55ff" width="480" height="1520"/>
  </tileset>
- <tileset firstgid="5347" name="gendai-soto2_2" tilewidth="16" tileheight="16">
+ <tileset firstgid="5347" name="gendai-soto2_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
   <image source="gendai-soto2_2.png" trans="aa55ff" width="960" height="512"/>
+ </tileset>
+ <tileset firstgid="7267" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
+  <image source="death.png" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="44" height="108">
   <properties>
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0qENACAQBMF3BPpvki4QFIAi92IuWT/iqu7G6tVraR8vLy8vb494eXl5eXl58/Hy8vLy8vLm2/PG6w+8vLy8vLy8PeLl5eXl5eXNx8vLy8vLy5uPl5eXl5eXNx8vLy8vLy9vPl5eXl5eXt58vLy8fbz2ZwddrgFA
+   eJzt2iEOgDAQRNE6Qu9/SW6BaNCYkhmSN8n3T6zcMdaO2dXb0j5eXl5e3o54eXl5eXl58/Hy8vLy8vLmu84Vr3vg5eXl5eXl7YiXl5eXl5c3Hy8vLy8vL28+Xl5eXl5e3ny8vLy8vF3e528q7ePt8P7tfnl5eXl5eXl5eXl3eO2b3VOyBuw=
   </data>
  </layer>
  <layer name="MonoShita" width="44" height="108">
@@ -76,7 +79,31 @@
    eJzt0+sJwjAUBtD+C+4o2A10DOfRDXST6iBWKhhK86gtKHgOfATKTXK5pE0zOIWmOYdh/YWUXPqaaxjWb+W4eadk19e0m/e6JPFZuUzVPL8dKvt9Zv+qX5J9tI4z7i/+3kZn1PQ7df7SHEazT9WM15LU+Z8mN//S3m3lfEv3zH0TqVmWUtvvWsn9t7k92yi172GtN5uaZW7PnH67MOTW516RmrpUTRfK9wEAAAAAAAAAAAAAAAAAAADAP3oA0tXF9A==
   </data>
  </layer>
+ <layer name="blood" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2sdNRDEYReEHQ+6A8EgdkEMHxJmhA3LogBw6IIdqOV6xZfNrbDifdPZ3ZVmWq0qSJEmSOqurrqpualAP9VIf9dMADdJQ3emVP4bZMkKjNEY1jdMETdIUTWe0d4YtszRH87RAi7REy7RCqxntXWPLOm3QJm3RNjWpRW3ayWjvLlv2aJ8O6JCO6JhO6JTOMtp7zpYLuqQruqYbuqU7uqeHjPY+suWJnumFXumN3umDPukro72SJEmSJEkqW0lv1UlJb9VJSW/VSUlv1UlJb9VJSW/ViW/VkiTpr/P/Tiz/78Ty/06s0v7veJ7F8jyL5XkWq7TzTJKk3/D+G8v7byzvv7G8/0rS//INVwGO0g==
+  </data>
+ </layer>
+ <layer name="death" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2rENgDAMRUEPku2ggRWggRVgCxiSjICgiBzdTfDKL8sRAAAAfDGViLm0rnhvq617ol4AAAAAAPpzlIgz0a36qq13ol4AAAAA+uNfFQCgraFumzHRvllq65qoFwD47wHBlwmp
+  </data>
+ </layer>
+ <layer name="hide" width="44" height="108">
+  <data encoding="base64" compression="zlib">
+   eJzt2kEKgzAUBuFsvf8ptZcobxEIXZhKK/4T5gNXbsZga3zYmiRJkqRvHVtr+/Z0xTWU3n07P5LMWtOa7b3XSr3j+RTp63mG0ilJ0soOn8eSJGlx40wnFWFmNqLM+TrSbLLQew9Yb3JrITSOaL0dqVWSpKsI70QdYS9B36+v0JvUTOstpNZC6l3tXkjrLaRe2v/DbLaT3JveWmatL0hvqs/G5NZCWdeO0PiLtOvzG5770X57hNZC6KXsGzryftLe/1uldzyfJH09Z4i9kvSkN/YGRFU=
+  </data>
+ </layer>
  <objectgroup name="collision">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <object id="27" x="384" y="144" width="256" height="352"/>
   <object id="30" x="0" y="1696" width="704" height="32"/>
   <object id="36" x="0" y="1440" width="224" height="256"/>
@@ -468,6 +495,12 @@
   <object id="131" x="80" y="288" width="16" height="16">
    <properties>
     <property name="objID" value="63"/>
+   </properties>
+  </object>
+  <object id="133" x="352" y="464" width="32" height="560">
+   <properties>
+    <property name="EventID" value="11"/>
+    <property name="trigger" value="1"/>
    </properties>
   </object>
  </objectgroup>

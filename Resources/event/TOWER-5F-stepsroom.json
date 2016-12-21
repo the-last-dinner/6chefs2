@@ -7,6 +7,13 @@
 	],
 	"2":[
 		{
+			"type":"stopBGM"
+		},
+		{
+			"type":"playBGM",
+			"file":"tower4.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"50",
 			"x":61,
@@ -15,10 +22,48 @@
 	],
 	"3":[
 		{
-			"type":"changeMap",
-			"mapID":"54",
-			"x":53,
-			"y":77
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["40","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"54",
+					"x":53,
+					"y":77
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["40","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["戸塚は地下にいるんだったな・・・\n1階に戻るか・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"DOWN",
+							"option":"back"
+						}
+					]
+				}
+			]
 		}
 	],
 	"4":[
@@ -211,10 +256,6 @@
 							"direction":"UP"
 						},
 						{
-							"type":"playBGM",
-							"file":"tower5"
-						},
-						{
 							"type":"fadein",
 							"time":3.0
 						},
@@ -288,6 +329,9 @@
 							"target":"hero"
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -310,6 +354,10 @@
 						},
 						{
 							"type":"stopBGM"
+						},
+						{
+							"type":"playBGM",
+							"file":"tower5.mp3"
 						},
 						{
 							"type":"already"

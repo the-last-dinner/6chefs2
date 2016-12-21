@@ -1,0 +1,25 @@
+{
+    "countDownFailure":[
+        {
+            "type":"sequence",
+            "action":[
+                {
+                    "type":"fadeout"
+                },
+                {
+                    "type":"createUnderwater"
+                },
+                {
+                    "type":"fadein"
+                },
+                {
+                    "type":"wait",
+                    "time":1.0
+                },
+                {
+                    "type":"gameover"
+                }
+            ]
+        }
+    ]
+}

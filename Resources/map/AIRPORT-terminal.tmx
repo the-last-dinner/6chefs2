@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="97">
- <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
   <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16" tilecount="1280" columns="16">
+ <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16">
   <image source="ST-Convi-I01.png" trans="aa55ff" width="256" height="1280"/>
  </tileset>
- <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="80">
@@ -33,7 +33,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0NFpAkEUBdDZGtRC1EKMtViAn/lOCzHkN6SDJMRvK7EHR7KLg8yQuK7EgXPgwvBmGd7dEH48NiG8VpRR3HncZhJO0nnuvvPf+1+aadx51mae9EjnuXt964i++uqrby25tu93U0+2MYu480ObZdIjnefuO89NZnhnXgbcUd/rvRfOfeX6rv84O3eLvrvCua9c301h79K8c4u++8K5r1LfVebb3/p+xPvPgfPVDPt++l7a6+miv1avY9dj3jJzAAAAAAAAAAAAAAAAAACo0QGFxmkP
+   eJzt0N2JwkAUBtBJDWohaiFqLRawjz5vC6v4agsqWo49OLIJO8gE/yLrwDnwQbg3hPslhF+LKoR1QenFm/t1BuFPOs/tG/99/6MZxptHdcZJj3Se2+tbRvTVV199S8mrfQ9VOTnGTOLN0zqzpEc6z+0bP1Vm+GFWHd6o7+fJ9f26c3at1L7Llrvb5o139D21PD+rre888+6tvtu433WcfdXt99Pvpb2+H/pr5bp0vWSTmQMAAAAAAAAAAAAAAAAAQInO5NNmDw==
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="80">
@@ -347,6 +347,11 @@
  <layer name="CharaUe3" width="60" height="80">
   <data encoding="base64" compression="zlib">
    eJzt2LdRA1EUQNGfATIxJsN77z0ZNIIVEiR4msE0AFIDmGYwDWACbgbIAAoACe6ZubPzRwr2bbJvNgRJkiRJkr5PMhJCKvJ6lSRJkiRJkv6jimgIlVRFkehv301hZ/EQzilNmXj+/8xz/wvR3Otb1ZxrqJbqSnjeC2a8pCu6LjCv9F1uYiHc0h3dx3LPf80DMz3SEz3Hcs+SJJWiDXbETfdESZKkgurZlRqokZqomVqoldqonTqok7qom3qol/rKcM/q554HaJCGaJhGaJTGaJwmaJKmaJpmaJbmipg3+zllfzc6omM6odM853KT/Zyyvxud0TmlKZPn/JFFfl+iZVqhVVqjBK2X4bP6zBYzbdMO7dIe7dMBHf7BeSVJX5fgHbtOSUr9wB5W7J5Y7ordEyVJkvTeC6GGSDE=
+  </data>
+ </layer>
+ <layer name="CharaUe4" width="60" height="80">
+  <data encoding="base64" compression="zlib">
+   eJztxjENAAAIAzD8u0EJllCwn5D2ahUAAHBBh3814QAAAAAAAAAAAAAAAAAAAPy36+QDAQ==
   </data>
  </layer>
  <layer name="shadow" width="60" height="80">

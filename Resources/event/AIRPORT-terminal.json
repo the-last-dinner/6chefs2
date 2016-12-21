@@ -266,7 +266,7 @@
 						{
 							"text":["タムケンって言うんじゃねぇ・・・","ぶっ殺す！"],
 							"charaID":"8",
-							"imgID":"2",
+							"imgID":"4",
 							"option":"reaction"
 						}
 					]
@@ -286,7 +286,7 @@
 					"type":"charaMsg",
 					"text":["ケンさん！"],
 					"charaID":"5",
-					"imgID":"3",
+					"imgID":"1",
 					"option":"reaction"
 				},
 				{
@@ -337,6 +337,24 @@
 				{
 					"type":"removeObject",
 					"objID":"1010"
+				},
+				{
+					"type":"addProfile",
+  					"charaID":"10",
+  					"infoID":"2"
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"mystery5.mp3"
+						},
+						{
+							"type":"systemMsg",
+							"text":["資料に”番組プロデューサー(バングミプロデューサー)”\nが追加された"]
+						}
+					]
 				},
 				{
 					"type":"charaMsg",
@@ -522,7 +540,7 @@
 										{
 											"text":["あ・・・中山さんごめんなさい・・・","この前借りた傘・・・\nまだ返してませんでしたね・・・","北森から帰ったらまた返しに行きますね。"],
 											"charaID":"0",
-											"imgID":"1"
+											"imgID":"2"
 										},
 										{
 											"text":["あ・・・うん\n分かった。大丈夫だよ。","蓮が佐々木くんのカレー\nすっごく気に入ったみたい"],
@@ -537,7 +555,7 @@
 										{
 											"text":["ありがとう！"],
 											"charaID":"1",
-											"imgID":"1"
+											"imgID":"4"
 										}
 									]
 								},

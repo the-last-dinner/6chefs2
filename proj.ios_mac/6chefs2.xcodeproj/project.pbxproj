@@ -89,6 +89,10 @@
 		9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
 		9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
 		9FB79E721D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
+		9FD0206A1E03ACE100803F3B /* Ladder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD020681E03A97400803F3B /* Ladder.cpp */; };
+		9FD0206B1E03ACE200803F3B /* Ladder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD020681E03A97400803F3B /* Ladder.cpp */; };
+		9FD0206C1E03ACEA00803F3B /* LadderArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD020661E03A79900803F3B /* LadderArea.cpp */; };
+		9FD0206D1E03ACEB00803F3B /* LadderArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD020661E03A79900803F3B /* LadderArea.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -457,6 +461,7 @@
 		2672D5031D72F79700AC0E96 /* MasterConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterConfigData.h; path = ConfigData/MasterConfigData.h; sourceTree = "<group>"; };
 		2672D5061D734C7F00AC0E96 /* EventScriptValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventScriptValidator.cpp; sourceTree = "<group>"; };
 		2672D5071D734C7F00AC0E96 /* EventScriptValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventScriptValidator.h; sourceTree = "<group>"; };
+		268A35C91E0880DE00514032 /* AttackData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackData.h; sourceTree = "<group>"; };
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
@@ -509,6 +514,10 @@
 		9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertUtils.cpp; sourceTree = "<group>"; };
 		9FB79E6F1D363073004E81CF /* AssertScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertScene.cpp; sourceTree = "<group>"; };
 		9FB79E701D363073004E81CF /* AssertScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertScene.h; sourceTree = "<group>"; };
+		9FD020661E03A79900803F3B /* LadderArea.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LadderArea.cpp; sourceTree = "<group>"; };
+		9FD020671E03A79900803F3B /* LadderArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LadderArea.h; sourceTree = "<group>"; };
+		9FD020681E03A97400803F3B /* Ladder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Ladder.cpp; path = TerrainState/Ladder.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		9FD020691E03A97400803F3B /* Ladder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ladder.h; path = TerrainState/Ladder.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1124,6 +1133,8 @@
 				DC01828C1D75E3B800E556D1 /* TerrainState.h */,
 				DC01829F1D7AC52F00E556D1 /* TerrainStateCache.cpp */,
 				DC0182A01D7AC52F00E556D1 /* TerrainStateCache.h */,
+				9FD020681E03A97400803F3B /* Ladder.cpp */,
+				9FD020691E03A97400803F3B /* Ladder.h */,
 			);
 			name = TerrainState;
 			sourceTree = "<group>";
@@ -1136,6 +1147,7 @@
 				DC0390611C871E1000C50E8E /* Scene */,
 				2613244B1DE2081200E39526 /* BattleCharacterData.cpp */,
 				2613244C1DE2081200E39526 /* BattleCharacterData.h */,
+				268A35C91E0880DE00514032 /* AttackData.h */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -1436,6 +1448,8 @@
 				DC0390FF1C871E1000C50E8E /* TerrainObject.h */,
 				DC0391001C871E1000C50E8E /* WaterArea.cpp */,
 				DC0391011C871E1000C50E8E /* WaterArea.h */,
+				9FD020661E03A79900803F3B /* LadderArea.cpp */,
+				9FD020671E03A79900803F3B /* LadderArea.h */,
 			);
 			path = TerrainObject;
 			sourceTree = "<group>";
@@ -1846,6 +1860,7 @@
 				DCEF71F31DE5DC8400FA1291 /* Battle.cpp in Sources */,
 				DC0392031C871E1000C50E8E /* PathObject.cpp in Sources */,
 				DC0392091C871E1000C50E8E /* TerrainObject.cpp in Sources */,
+				9FD0206A1E03ACE100803F3B /* Ladder.cpp in Sources */,
 				DC0392231C871E1000C50E8E /* EndingScene.cpp in Sources */,
 				DC03924D1C871E1000C50E8E /* JsonUtils.cpp in Sources */,
 				DC0391711C871E1000C50E8E /* AppDelegate.cpp in Sources */,
@@ -1898,6 +1913,7 @@
 				DC0392391C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
 				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
+				9FD0206C1E03ACEA00803F3B /* LadderArea.cpp in Sources */,
 				26460B981D72EBC800F0336C /* LocalPlayerData.cpp in Sources */,
 				DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */,
 				9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */,
@@ -2091,6 +2107,7 @@
 				DC0392241C871E1000C50E8E /* EndingScene.cpp in Sources */,
 				DC03920C1C871E1000C50E8E /* WaterArea.cpp in Sources */,
 				DC0391881C871E1000C50E8E /* TitleSceneData.cpp in Sources */,
+				9FD0206D1E03ACEB00803F3B /* LadderArea.cpp in Sources */,
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				26460B9E1D72EDA600F0336C /* TrophyData.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
@@ -2150,6 +2167,7 @@
 				DC0391A41C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC7F6E211DA0B20D007AE8B5 /* HitPoint.cpp in Sources */,
 				26460B9D1D72EDA200F0336C /* MapData.cpp in Sources */,
+				9FD0206B1E03ACE200803F3B /* Ladder.cpp in Sources */,
 				DC03924E1C871E1000C50E8E /* JsonUtils.cpp in Sources */,
 				DC0391A81C871E1000C50E8E /* SceneEvent.cpp in Sources */,
 				DC0391781C871E1000C50E8E /* StoryMessageData.cpp in Sources */,

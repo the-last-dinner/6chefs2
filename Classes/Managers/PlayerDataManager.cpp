@@ -91,21 +91,21 @@ void PlayerDataManager::cryptSaveData()
 void PlayerDataManager::setGameClear(const int end_id)
 {
     // エンディングチェック
-    int trophy_id;
-    switch (end_id)
-    {
-        case etoi(EndingScene::END_ID::NORMAL_END):
-            trophy_id = 7;
-            break;
-        case etoi(EndingScene::END_ID::TRUE_END):
-            trophy_id = 8;
-            break;
-        default:
-            // default bad_end
-            trophy_id = 6;
-            break;
-    }
-    this->globalData->setTrophy(trophy_id);
+//    int trophy_id;
+//    switch (end_id)
+//    {
+//        case etoi(EndingScene::END_ID::NORMAL_END):
+//            trophy_id = 7;
+//            break;
+//        case etoi(EndingScene::END_ID::TRUE_END):
+//            trophy_id = 8;
+//            break;
+//        default:
+//            // default bad_end
+//            trophy_id = 6;
+//            break;
+//    }
+//    this->globalData->setTrophy(trophy_id);
 
     // クリアデータの更新
     this->globalData->setBestSaveCount(this->localData->getSaveCount());

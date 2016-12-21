@@ -26,7 +26,8 @@
 				{
 					"type":"setMovable",
 					"objID":"205",
-					"movable":true
+					"movable":true,
+					"file":"kairiki_move.mp3"
 				},
 				{
 					"type":"removeObject",

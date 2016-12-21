@@ -127,6 +127,8 @@ void Character::setDirection(const Direction& direction)
 // アニメーション再生を中断させるかを指定できる
 void Character::setDirection(const Direction& direction, bool stopAnimation)
 {
+    if(!this->isChangeableDirection(direction)) return;
+    
     MapObject::setDirection(direction);
     
     if(!stopAnimation) return;
@@ -276,9 +278,23 @@ void Character::onHurt(int damage)
     if (!_hitPoint) return;
     _hitPoint->reduce(damage);
     
-    if (_battle) {
-        HurtCommand* command { HurtCommand::create() };
-        this->pushCommand(command);
+    if (_battle && !_hitPoint->isLost()) {
+        this->enableHit(false);
+        this->enableBattleAttack(false);
+        
+        this->runAction(Sequence::create(Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         DelayTime::create(0.15f),
+                                         Hide::create(),
+                                         DelayTime::create(0.15f),
+                                         Show::create(),
+                                         CallFunc::create([this] { this->enableHit(true); this->enableBattleAttack(true); }),
+                                         nullptr));
     }
 }
 
@@ -290,7 +306,22 @@ bool Character::canAttack(MapObject* target) const
 }
 
 #pragma mark -
+#pragma mark AttackBox
+
+void Character::enableBattleAttack(bool enableAttack)
+{
+    if (!_objectList) return;
+    
+    if (enableAttack) {
+        _objectList->getAttackDetector()->addAttackBox(_battleAttackBox);
+    } else {
+        _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
+    }
+}
+
+#pragma mark -
 #pragma mark HitBox
+
 void Character::enableHit(bool enableHit)
 {
     if (!_objectList) return;
@@ -330,11 +361,8 @@ void Character::update(float delta)
 // マップに配置された時
 void Character::onEnterMap()
 {
-    this->scheduleUpdate();
+    MapObject::onEnterMap();
     
-    if (_objectList) {
-        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
-    }
     this->enableHit(true);
     
     this->setDirection(this->getDirection());
@@ -349,19 +377,17 @@ void Character::onEnterMap()
 // マップから削除された時
 void Character::onExitMap()
 {
-    if (_objectList) {
-        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
-    }
-    this->enableHit(false);
+    MapObject::onExitMap();
     
-    this->unscheduleUpdate();
+    this->enableHit(false);
+    if (_movePattern) _movePattern->pause();
 }
 
 // 主人公一行に参加した時
 void Character::onJoinedParty()
 {
     if (_objectList) {
-        _objectList->getCollisionDetector()->removeIgnorableCollision(this->getCollision());
+        _objectList->getCollisionDetector()->removeCollision(this->getCollision());
     }
 }
 
@@ -369,7 +395,7 @@ void Character::onJoinedParty()
 void Character::onQuittedParty()
 {
     if (_objectList) {
-        _objectList->getCollisionDetector()->addIgnorableCollision(this->getCollision());
+        _objectList->getCollisionDetector()->addCollision(this->getCollision());
     }
 }
 
@@ -432,10 +458,19 @@ void Character::onBattleFinished()
     _speed = 1.f;
     
     if (_battleAttackBox) {
+        _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
         this->removeChild(_battleAttackBox);
         _battleAttackBox = nullptr;
     }
-    _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
+}
+
+// HPを失った時
+void Character::onLostHP()
+{
+    MapObject::onLostHP();
+    
+    this->enableHit(false);
+    this->enableBattleAttack(false);
 }
 
 #pragma mark -

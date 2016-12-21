@@ -26,8 +26,6 @@ private:
     virtual ~CollisionBox();
     virtual bool init(MapObject* parent, Node* origin) override;
     virtual bool init(MapObject* parent, const Rect& originRect) override;
-public:
-    CollisionBox* clone(const Point& gridPosition = Point::ZERO) const;
     
 // Debug
 private:

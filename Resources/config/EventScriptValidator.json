@@ -301,7 +301,8 @@
         "chase": {
             "require": ["objID"],
             "member": {
-                "objID": ["string"]
+                "objID": ["string"],
+                "target": ["string"]
             }
         },
         "releaseChase": {

@@ -20,6 +20,8 @@
 
 #include "MapObjects/Command/StepCommand.h"
 
+const float BattleState::STEP_COOLDOWN_DURATION { 0.6f };
+
 // コンストラクタ
 BattleState::BattleState() { FUNCLOG }
 
@@ -63,6 +65,7 @@ void BattleState::onEnterKeyPressed(Party* party)
     
     AttackCommand* command { AttackCommand::create() };
     command->setName("attack");
+    command->setStamina(DungeonSceneManager::getInstance()->getStamina());
     command->setCallback([this, party](Character* c) {
         this->onAttackCommandFinished(party);
     });
@@ -90,8 +93,9 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
     if (step) {
         StepCommand* command { StepCommand::create() };
         command->setDirections(directions);
+        command->setStamina(DungeonSceneManager::getInstance()->getStamina());
         command->setCallback([this, party](bool moved) {
-            _task->onPartyMovedOneGrid(party, false);
+            if (_task) _task->onPartyMovedOneGrid(party, false);
         });
         
         mainCharacter->pushCommand(command);
@@ -100,7 +104,7 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
             if (!moved) return;
             
             stamina->setDecreasing(false);
-            _task->onPartyMovedOneGrid(party, false);
+            if (_task) _task->onPartyMovedOneGrid(party, false);
         });
     }
 }

@@ -120,7 +120,9 @@
 									]
 								},
 								{
-									"choice":"いいえ"
+									"choice":"いいえ",
+									"action":[
+									]
 								}
 							]
 						}
@@ -192,7 +194,9 @@
 									]
 								},
 								{
-									"choice":"いいえ"
+									"choice":"いいえ",
+									"action":[
+									]
 								}
 							]
 						}
@@ -264,7 +268,9 @@
 									]
 								},
 								{
-									"choice":"いいえ"
+									"choice":"いいえ",
+									"action":[
+									]
 								}
 							]
 						}
@@ -336,7 +342,9 @@
 									]
 								},
 								{
-									"choice":"いいえ"
+									"choice":"いいえ",
+									"action":[
+									]
 								}
 							]
 						}
@@ -408,7 +416,9 @@
 									]
 								},
 								{
-									"choice":"いいえ"
+									"choice":"いいえ",
+									"action":[
+									]
 								}
 							]
 						}
@@ -666,7 +676,7 @@
 																								},
 																								{
 																									"type":"playBGM",
-																									"file":"ORHANAE.mp3"
+																									"file":"ORHANAGE.mp3"
 																								},
 																								{
 																									"type":"already",
@@ -1262,6 +1272,9 @@
 																																									"type":"fadein"
 																																								},
 																																								{
+																																									"type":"stopBGM"
+																																								},
+																																								{
 																																									"type":"charaMsg",
 																																									"talk":[
 																																										{
@@ -1293,79 +1306,108 @@
 																																								},
 																																								{
 																																									"type":"charaMsg",
-																																									"talk":[
-																																										{
-																																											"text":["おねぇちゃんありがとう！\nおねぇちゃんのおかげでさとこにかてたよ！"],
-																																											"charaID":"10",
-																																											"name":"たけし"
-																																										},
-																																										{
-																																											"text":["やったわね！","・・・","そうだ！\nみろくって子から少し話を聞いたんだけれど・・・","アナタ達、ここが何の建物なのか分かる？"],
-																																											"charaID":"3",
-																																											"imgID":"1"
-																																										},
-																																										{
-																																											"text":["ここは孤児院だよ。"],
-																																											"charaID":"10",
-																																											"name":"さとこ"
-																																										}
-																																									]
+																																									"text":["おねぇちゃんありがとう！\nおねぇちゃんのおかげで\nさとこにかてたよ！"],
+																																									"charaID":"10",
+																																									"name":"たけし"		
 																																								},
 																																								{
-																																									"type":"spawn",
+																																									"type":"if",
+																																									"condition":[
+																																										{
+																																											"Nevent":["79","12"]
+																																										}
+																																									],
 																																									"action":[
 																																										{
-																																						                  "type":"playSE",
-																																						                  "file":"reaction.mp3",
-																																						                  "volume":0.25
-																																						                },
-																																										{
-																																											"type":"reaction",
-																																											"objID":"10101"
-																																										},
-																																										{
-																																											"type":"changeDirection",
-																																											"objID":"10101",
-																																											"direction":"LEFT"
-																																										},
-																																										{
-																																											"type":"reaction",
-																																											"objID":"10107"
-																																										},
-																																										{
-																																											"type":"changeDirection",
-																																											"objID":"10107",
-																																											"direction":"LEFT"
+																																											"type":"sequence",
+																																											"action":[
+																																												{
+																																													"type":"charaMsg",
+																																													"talk":[
+																																														{
+																																															"text":["やったわね！"],
+																																															"charaID":"3",
+																																															"imgID":"3"
+																																														},
+																																														{
+																																															"text":["・・・","そうだ！\nみろくって子から少し話を聞いたんだけれど・・・","アナタ達、ここが何の建物なのか分かる？"],
+																																															"charaID":"3",
+																																															"imgID":"1"
+																																														},
+																																														{
+																																															"text":["ここは孤児院だよ。"],
+																																															"charaID":"10",
+																																															"name":"さとこ"
+																																														}
+																																													]
+																																												},
+																																												{
+																																													"type":"spawn",
+																																													"action":[
+																																														{
+																																										                  "type":"playSE",
+																																										                  "file":"reaction.mp3",
+																																										                  "volume":0.25
+																																										                },
+																																														{
+																																															"type":"reaction",
+																																															"objID":"10101"
+																																														},
+																																														{
+																																															"type":"changeDirection",
+																																															"objID":"10101",
+																																															"direction":"LEFT"
+																																														},
+																																														{
+																																															"type":"reaction",
+																																															"objID":"10107"
+																																														},
+																																														{
+																																															"type":"changeDirection",
+																																															"objID":"10107",
+																																															"direction":"LEFT"
+																																														}
+																																													]
+																																												},
+																																												{
+																																													"type":"charaMsg",
+																																													"talk":[
+																																														{
+																																															"text":["孤児院・・・\nやっぱり・・・"],
+																																															"charaID":"3",
+																																															"imgID":"1"
+																																														},
+																																														{
+																																															"text":["そう。\nわたしたちは色んなりゆうで","お父さんやお母さんとくらせなくなったの。\nだからそのかわりに戸つかさんが面倒を見てくれてるの。"],
+																																															"charaID":"10",
+																																															"name":"さとこ"
+																																														},
+																																														{
+																																															"text":["・・・"],
+																																															"charaID":"3",
+																																															"imgID":"1"
+																																														},
+																																														{
+																																															"text":["ちょっと外に出ましょう。"],
+																																															"charaID":"10",
+																																															"name":"さとこ"
+																																														}
+																																													]
+																																												}
+																																											]
 																																										}
 																																									]
 																																								},
 																																								{
-																																									"type":"charaMsg",
-																																									"talk":[
-																																										{
-																																											"text":["孤児院・・・\nやっぱり・・・"],
-																																											"charaID":"3",
-																																											"imgID":"1"
-																																										},
-																																										{
-																																											"text":["そう。\nわたしたちは色んなりゆうで","お父さんやお母さんとくらせなくなったの。\nだからそのかわりに戸つかさんが面倒を見てくれてるの。"],
-																																											"charaID":"10",
-																																											"name":"さとこ"
-																																										},
-																																										{
-																																											"text":["・・・"],
-																																											"charaID":"3",
-																																											"imgID":"1"
-																																										},
-																																										{
-																																											"text":["ちょっと外に出ましょう。"],
-																																											"charaID":"10",
-																																											"name":"さとこ"
-																																										}
-																																									]
+																																									"type":"fadeout"
 																																								},
 																																								{
-																																									"type":"already"
+																																									"type":"playBGM",
+																																									"file":"ORHANAGE.mp3"
+																																								},
+																																								{
+																																									"type":"already",
+																																									"event":["81","14"]
 																																								}
 																																							]
 																																						}
@@ -1665,10 +1707,38 @@
 					]
 				},
 				{
-					"type":"changeMap",
-					"mapID":"79",
-					"x":24,
-					"y":27
+					"type":"if",
+					"condition":[
+						{
+							"Nevent":["79","12"]
+						}
+					],
+					"action":[
+						{
+							"type":"changeMap",
+							"mapID":"79",
+							"x":24,
+							"y":27,
+							"eventID":"12"
+						}
+					]
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"event":["79","12"]
+						}
+					],
+					"action":[
+						{
+							"type":"changeMap",
+							"mapID":"79",
+							"x":24,
+							"y":27,
+							"eventID":"13"
+						}
+					]
 				}
 			]
 		}
@@ -2130,6 +2200,7 @@
 		}
 	],
 	"13":"はないち負けたチェック",
+	"14":"はないち勝ったチェック",
 	"91":[
 		{
 			"type":"spawn",

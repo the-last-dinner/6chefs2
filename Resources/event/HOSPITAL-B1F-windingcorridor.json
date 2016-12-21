@@ -56,21 +56,20 @@
 							]
 						},
 						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"changeDirection",
-									"objID":"hero",
-									"direction":"DOWN"	
-								},
-								{
-									"type":"charaMsg",
-									"text":["ちょっと聞いてる・・・"],
-									"charaID":"3",
-									"imgID":"1"
-								}
-							]
+							"type":"changeDirection",
+							"objID":"hero",
+							"direction":"DOWN"	
 						},
+						{
+							"type":"wait",
+							"time":0.5
+						},
+						{
+							"type":"charaMsg",
+							"text":["ちょっと聞いてる・・・"],
+							"charaID":"3",
+							"imgID":"1"
+						},	
 						{
 							"type":"spawn",
 							"action":[

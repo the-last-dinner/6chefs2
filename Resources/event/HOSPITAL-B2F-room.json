@@ -379,7 +379,7 @@
 									"y":10,
 									"direction":"DOWN",
 									"times":1,
-									"movePattern":"3"
+									"movePattern":"6"
 								},
 								{
 									"type":"createEnemy",
@@ -389,39 +389,16 @@
 									"y":36,
 									"direction":"DOWN",
 									"times":1,
-									"movePattern":"3"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"3"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"3"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"3"
+									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":14,
+							"y":16,
+							"direction":"DOWN"
 						},
 						{
 							"type":"fadein"
@@ -430,89 +407,14 @@
 				          "type":"releaseChase",
 				          "objID":"1049"
 				        },
-						{
+				        {
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"3",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","3",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"removeObject",
-							"objID":"181"
 						},
 						{
-							"type":"removeLayer",
-							"layer":"doorA3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorA2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorA1"
-						},
-						{
-							"type":"barrage",
-							"limit":1.0,
-							"times":1,
+							"type":"battle",
+							"objID":["1442","1443","1444","1445"],
 							"true":[
-								{
-									"type":"removeEnemy",
-									"objID":"1442"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1443"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1444"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1445"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1446"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1447"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1448"
-								},
 								{
 									"type":"sequence",
 									"action":[
@@ -520,63 +422,31 @@
 											"type":"fadeout"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"hero",
-											"x":37,
-											"y":23,
-											"direction":"RIGHT"
+											"type":"createObject",
+											"objID":"181"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"1049",
-											"x":39,
-											"y":23,
-											"direction":"LEFT"
+											"type":"createLayer",
+											"layer":"doorA1"
 										},
 										{
-											"type":"fadein"
+											"type":"createLayer",
+											"layer":"doorA2"
 										},
 										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-													"charaID":"2",
-													"imgID":"4"
-												},
-												{
-													"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-													"charaID":"2",
-													"imgID":"3"
-												},
-												{
-													"text":["・・・","えぇ・・・"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-													"charaID":"2",
-													"imgID":"4",
-													"option":"reaction"
-												}
-											]
+											"type":"createLayer",
+											"layer":"doorA3"
 										},
 										{
-						                  "type": "chase",
-						                  "objID": "1049",
-						                  "target": "hero"
-						                }
+											"type":"callEvent",
+											"eventID":"13"
+										}
 									]
-								},
+								}
+							],
+							"false":[
 								{
-									"type":"already",
-									"event":["68","10"]
+									"type":"gameover"
 								}
 							]
 						}
@@ -727,38 +597,15 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":26,
+							"y":16,
+							"direction":"DOWN"
 						},
 						{
 							"type":"fadein"
@@ -767,156 +614,50 @@
 				          "type":"releaseChase",
 				          "objID":"1049"
 				        },
-						{
+				        {
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"4",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","4",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-							"type":"sequence",
-							"action":[
+						},
+						{
+							"type":"battle",
+							"objID":["1442","1443","1444","1445"],
+							"true":[
 								{
-									"type":"removeObject",
-									"objID":"182"
-								},
-								{
-									"type":"removeLayer",
-									"layer":"doorB3"
-								},
-								{
-									"type":"wait",
-									"time":0.2
-								},
-								{
-									"type":"removeLayer",
-									"layer":"doorB2"
-								},
-								{
-									"type":"wait",
-									"time":0.2
-								},
-								{
-									"type":"removeLayer",
-									"layer":"doorB1"
-								},
-								{
-									"type":"battle",
-									"objID":["1442","1443","1444","1445","1446","1447","1448"],
-									"true":[
+									"type":"sequence",
+									"action":[
 										{
-											"type":"removeEnemy",
-											"objID":"1442"
+											"type":"fadeout"
 										},
 										{
-											"type":"removeEnemy",
-											"objID":"1443"
+											"type":"createObject",
+											"objID":"182"
 										},
 										{
-											"type":"removeEnemy",
-											"objID":"1444"
+											"type":"createLayer",
+											"layer":"doorB1"
 										},
 										{
-											"type":"removeEnemy",
-											"objID":"1445"
+											"type":"createLayer",
+											"layer":"doorB2"
 										},
 										{
-											"type":"removeEnemy",
-											"objID":"1446"
+											"type":"createLayer",
+											"layer":"doorB3"
 										},
 										{
-											"type":"removeEnemy",
-											"objID":"1447"
-										},
-										{
-											"type":"removeEnemy",
-											"objID":"1448"
-										},
-										{
-											"type":"sequence",
-											"action":[
-												{
-													"type":"fadeout"
-												},
-												{
-													"type":"charaWarp",
-													"objID":"hero",
-													"x":37,
-													"y":23,
-													"direction":"RIGHT"
-												},
-												{
-													"type":"charaWarp",
-													"objID":"1049",
-													"x":39,
-													"y":23,
-													"direction":"LEFT"
-												},
-												{
-													"type":"fadein"
-												},
-												{
-													"type":"charaMsg",
-													"talk":[
-														{
-															"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-															"charaID":"2",
-															"imgID":"4"
-														},
-														{
-															"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-															"charaID":"3",
-															"imgID":"2"
-														},
-														{
-															"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-															"charaID":"2",
-															"imgID":"3"
-														},
-														{
-															"text":["・・・","えぇ・・・"],
-															"charaID":"3",
-															"imgID":"2"
-														},
-														{
-															"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-															"charaID":"2",
-															"imgID":"4",
-															"option":"reaction"
-														}
-													]
-												},
-												{
-								                  "type": "chase",
-								                  "objID": "1049",
-								                  "target": "hero"
-								                }
-											]
-										},
-										{
-											"type":"already",
-											"event":["68","10"]
+											"type":"callEvent",
+											"eventID":"13"
 										}
 									]
 								}
+							],
+							"false":[
+								{
+									"type":"gameover"
+								}
 							]
+						}
+					]
 				}
 			]
 		}
@@ -1063,38 +804,15 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":38,
+							"y":16,
+							"direction":"DOWN"
 						},
 						{
 							"type":"fadein"
@@ -1103,88 +821,14 @@
 				          "type":"releaseChase",
 				          "objID":"1049"
 				        },
-						{
+				        {
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"5",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","5",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"removeObject",
-							"objID":"183"
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorC3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorC2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorC1"
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
-								{
-									"type":"removeEnemy",
-									"objID":"1442"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1443"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1444"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1445"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1446"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1447"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1448"
-								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1192,63 +836,31 @@
 											"type":"fadeout"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"hero",
-											"x":37,
-											"y":23,
-											"direction":"RIGHT"
+											"type":"createObject",
+											"objID":"183"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"1049",
-											"x":39,
-											"y":23,
-											"direction":"LEFT"
+											"type":"createLayer",
+											"layer":"doorC1"
 										},
 										{
-											"type":"fadein"
+											"type":"createLayer",
+											"layer":"doorC2"
 										},
 										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-													"charaID":"2",
-													"imgID":"4"
-												},
-												{
-													"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-													"charaID":"2",
-													"imgID":"3"
-												},
-												{
-													"text":["・・・","えぇ・・・"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-													"charaID":"2",
-													"imgID":"4",
-													"option":"reaction"
-												}
-											]
+											"type":"createLayer",
+											"layer":"doorC3"
 										},
 										{
-						                  "type": "chase",
-						                  "objID": "1049",
-						                  "target": "hero"
-						                }
+											"type":"callEvent",
+											"eventID":"13"
+										}
 									]
-								},
+								}
+							],
+							"false":[
 								{
-									"type":"already",
-									"event":["68","10"]
+									"type":"gameover"
 								}
 							]
 						}
@@ -1399,38 +1011,15 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":38,
-									"y":22,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":38,
+							"y":30,
+							"direction":"UP"
 						},
 						{
 							"type":"fadein"
@@ -1439,88 +1028,14 @@
 				          "type":"releaseChase",
 				          "objID":"1049"
 				        },
-						{
+				        {
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"6",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","6",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"removeObject",
-							"objID":"184"
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorD3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorD2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorD1"
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
-								{
-									"type":"removeEnemy",
-									"objID":"1442"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1443"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1444"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1445"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1446"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1447"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1448"
-								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1528,63 +1043,31 @@
 											"type":"fadeout"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"hero",
-											"x":37,
-											"y":23,
-											"direction":"RIGHT"
+											"type":"removeObject",
+											"objID":"184"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"1049",
-											"x":39,
-											"y":23,
-											"direction":"LEFT"
+											"type":"removeLayer",
+											"layer":"doorD1"
 										},
 										{
-											"type":"fadein"
+											"type":"removeLayer",
+											"layer":"doorD2"
 										},
 										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-													"charaID":"2",
-													"imgID":"4"
-												},
-												{
-													"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-													"charaID":"2",
-													"imgID":"3"
-												},
-												{
-													"text":["・・・","えぇ・・・"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-													"charaID":"2",
-													"imgID":"4",
-													"option":"reaction"
-												}
-											]
+											"type":"removeLayer",
+											"layer":"doorD3"
 										},
 										{
-						                  "type": "chase",
-						                  "objID": "1049",
-						                  "target": "hero"
-						                }
+											"type":"callEvent",
+											"eventID":"13"
+										}
 									]
-								},
+								}
+							],
+							"false":[
 								{
-									"type":"already",
-									"event":["68","10"]
+									"type":"gameover"
 								}
 							]
 						}
@@ -1735,38 +1218,15 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":25,
-									"y":21,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":26,
+							"y":30,
+							"direction":"UP"
 						},
 						{
 							"type":"fadein"
@@ -1775,88 +1235,14 @@
 				          "type":"releaseChase",
 				          "objID":"1049"
 				        },
-						{
+				        {
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"7",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","7",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"removeObject",
-							"objID":"185"
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorE3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorE2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorE1"
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
-								{
-									"type":"removeEnemy",
-									"objID":"1442"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1443"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1444"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1445"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1446"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1447"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1448"
-								},
 								{
 									"type":"sequence",
 									"action":[
@@ -1864,63 +1250,31 @@
 											"type":"fadeout"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"hero",
-											"x":37,
-											"y":23,
-											"direction":"RIGHT"
+											"type":"removeObject",
+											"objID":"185"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"1049",
-											"x":39,
-											"y":23,
-											"direction":"LEFT"
+											"type":"removeLayer",
+											"layer":"doorE1"
 										},
 										{
-											"type":"fadein"
+											"type":"removeLayer",
+											"layer":"doorE2"
 										},
 										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-													"charaID":"2",
-													"imgID":"4"
-												},
-												{
-													"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-													"charaID":"2",
-													"imgID":"3"
-												},
-												{
-													"text":["・・・","えぇ・・・"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-													"charaID":"2",
-													"imgID":"4",
-													"option":"reaction"
-												}
-											]
+											"type":"removeLayer",
+											"layer":"doorE3"
 										},
 										{
-						                  "type": "chase",
-						                  "objID": "1049",
-						                  "target": "hero"
-						                }
+											"type":"callEvent",
+											"eventID":"13"
+										}
 									]
-								},
+								}
+							],
+							"false":[
 								{
-									"type":"already",
-									"event":["68","10"]
+									"type":"gameover"
 								}
 							]
 						}
@@ -2071,38 +1425,15 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":14,
+							"y":30,
+							"direction":"UP"
 						},
 						{
 							"type":"fadein"
@@ -2114,85 +1445,11 @@
 						{
 							"type":"already",
 							"event":["68","9"]
-						}
-					]
-				},
-				{
-					"type":"changeFlg",
-					"mapID":"68",
-					"eventID":"8",
-					"flg":1
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"flg":["68","8",1],
-					"Nevent":["68","10"]
-				}
-			],
-			"action":[
-				{
-					"type":"sequence",
-					"action":[
-						{
-							"type":"removeObject",
-							"objID":"186"
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorF3"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorF2"
-						},
-						{
-							"type":"wait",
-							"time":0.2
-						},
-						{
-							"type":"removeLayer",
-							"layer":"doorF1"
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
-								{
-									"type":"removeEnemy",
-									"objID":"1442"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1443"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1444"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1445"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1446"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1447"
-								},
-								{
-									"type":"removeEnemy",
-									"objID":"1448"
-								},
 								{
 									"type":"sequence",
 									"action":[
@@ -2200,63 +1457,31 @@
 											"type":"fadeout"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"hero",
-											"x":37,
-											"y":23,
-											"direction":"RIGHT"
+											"type":"removeObject",
+											"objID":"186"
 										},
 										{
-											"type":"charaWarp",
-											"objID":"1049",
-											"x":39,
-											"y":23,
-											"direction":"LEFT"
+											"type":"removeLayer",
+											"layer":"doorF1"
 										},
 										{
-											"type":"fadein"
+											"type":"removeLayer",
+											"layer":"doorF2"
 										},
 										{
-											"type":"charaMsg",
-											"talk":[
-												{
-													"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
-													"charaID":"2",
-													"imgID":"4"
-												},
-												{
-													"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
-													"charaID":"2",
-													"imgID":"3"
-												},
-												{
-													"text":["・・・","えぇ・・・"],
-													"charaID":"3",
-													"imgID":"2"
-												},
-												{
-													"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
-													"charaID":"2",
-													"imgID":"4",
-													"option":"reaction"
-												}
-											]
+											"type":"removeLayer",
+											"layer":"doorF3"
 										},
 										{
-						                  "type": "chase",
-						                  "objID": "1049",
-						                  "target": "hero"
-						                }
+											"type":"callEvent",
+											"eventID":"13"
+										}
 									]
-								},
+								}
+							],
+							"false":[
 								{
-									"type":"already",
-									"event":["68","10"]
+									"type":"gameover"
 								}
 							]
 						}
@@ -2309,5 +1534,85 @@
 		{
 			"type":"already"
 		}
+	],
+	"13":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"removeEnemy",
+					"objID":"1442"
+				},
+				{
+					"type":"removeEnemy",
+					"objID":"1443"
+				},
+				{
+					"type":"removeEnemy",
+					"objID":"1444"
+				},
+				{
+					"type":"removeEnemy",
+					"objID":"1445"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"hero",
+					"x":37,
+					"y":23,
+					"direction":"RIGHT"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"1049",
+					"x":39,
+					"y":23,
+					"direction":"LEFT"
+				},
+				{
+					"type":"fadein"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["ハァ・・・ハァ・・・\nもう大丈夫だ。"],
+							"charaID":"2",
+							"imgID":"4"
+						},
+						{
+							"text":["加藤・・・アンタ顔色悪いわよ？\n少し休む？"],
+							"charaID":"3",
+							"imgID":"2"
+						},
+						{
+							"text":["大丈夫だ・・・\nそれより先を急ごうぜ。"],
+							"charaID":"2",
+							"imgID":"3"
+						},
+						{
+							"text":["・・・","えぇ・・・"],
+							"charaID":"3",
+							"imgID":"2"
+						},
+						{
+							"text":["(チィ！\nけっこー重いの喰らっちまったな・・・)"],
+							"charaID":"2",
+							"imgID":"4",
+							"option":"reaction"
+						}
+					]
+				},
+				{
+                  "type": "chase",
+                  "objID": "1049",
+                  "target": "hero"
+                },
+				{
+					"type":"already",
+					"event":["68","10"]
+				}	
+			]
+		}	
 	]
 }

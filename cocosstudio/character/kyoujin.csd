@@ -2,7 +2,7 @@
   <PropertyGroup Name="kyoujin" Type="Node" ID="1a37ad7c-ac34-49b4-8be1-a31db36a55b8" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="433" Speed="1.0000" ActivedAnimationName="down">
+      <Animation Duration="433" Speed="1.0000" ActivedAnimationName="attack_up">
         <Timeline ActionTag="-315007894" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="260" Tween="False" Value="True" />
@@ -30,100 +30,100 @@
         </Timeline>
         <Timeline ActionTag="-1108922162" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_0_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="2" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_3_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_3_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="4" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_2_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_2_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_1_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_1_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="10" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_1.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_0_1.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="20" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_0_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="25" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_2.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_0_2.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="35" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_0_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="45" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_3_1.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_3_1.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="55" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_3_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_3_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="60" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_3_2.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_3_2.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="70" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_3_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_3_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="80" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_2_1.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_2_1.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="90" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_2_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_2_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="95" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_2_2.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_2_2.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="105" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_2_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_2_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="115" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_1_1.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_1_1.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="125" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_1_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_1_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="130" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_1_2.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_1_2.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="140" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_1_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_1_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="150" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_0_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="180" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_4.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_0_5.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="182" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_0_6.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_0_6.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="230" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_3_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_3_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="260" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_3_2.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_3_2.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="262" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_3_3.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_3_3.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="310" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_2_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="340" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_3.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_2_3.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="342" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_2_4.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="390" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_0.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_1_0.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="420" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_3.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_1_3.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="422" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin_a_1_4.png" Plist="character/kyoujin.plist" />
+            <TextureFile Type="PlistSubImage" Path="kyoujin_a_1_4.png" Plist="character/kyoujin.plist" />
           </TextureFrame>
         </Timeline>
         <Timeline ActionTag="-1108922162" Property="BlendFunc">
@@ -282,7 +282,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_1.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="effect_1.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="attack_effect4" CanEdit="False" ActionTag="-2065993288" VisibleForFrame="False" Tag="10" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-64.0000" FlipX="True" ctype="SpriteObjectData">
@@ -293,10 +293,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_2.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="effect_2.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" ActionTag="-1108922162" Tag="3" IconVisible="False" RightMargin="-32.0000" TopMargin="-32.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="-1108922162" Tag="3" IconVisible="False" LeftMargin="-7.0000" RightMargin="-39.0000" TopMargin="-39.0000" BottomMargin="-7.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="16.0000" />
@@ -304,10 +304,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/kyoujin1_0_0.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="kyoujin_a_3_0.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" CanEdit="False" Visible="False" ActionTag="890663147" Tag="3" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -318,7 +318,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" Visible="False" ActionTag="-1281559338" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" CanEdit="False" Visible="False" ActionTag="-1281559338" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -329,7 +329,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" CanEdit="False" ActionTag="-181749095" Tag="27" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -340,7 +340,7 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="662120565" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="-16.0000" />
@@ -359,7 +359,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_1.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="effect_1.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="attack_effect2" CanEdit="False" ActionTag="-1749614145" VisibleForFrame="False" Tag="8" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-16.0000" RightMargin="-48.0000" TopMargin="-32.0000" BottomMargin="-32.0000" FlipX="True" ctype="SpriteObjectData">
@@ -370,7 +370,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="character/plist/kyoujin/effect_2.png" Plist="character/kyoujin.plist" />
+            <FileData Type="PlistSubImage" Path="effect_2.png" Plist="character/kyoujin.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

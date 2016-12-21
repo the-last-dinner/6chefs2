@@ -23,7 +23,6 @@ Stamina::Stamina() {FUNCLOG};
 Stamina::~Stamina()
 {
     FUNCLOG
-    
     Director::getInstance()->getScheduler()->unscheduleAllForTarget(this);
 };
 
@@ -38,16 +37,14 @@ bool Stamina::init()
 // スタミナ回復
 void Stamina::increase()
 {
-    float percentage {this->percentage};
+    float percentage { _percentage };
     
     percentage += DEFAULT_STEP * INCREASE_STEP_RATIO;
     
     // 最大値以上になっていたら、最大値にして、歳立ちになったら疲労状態解除
-    if(percentage > MAX_VALUE)
-    {
+    if (percentage > MAX_VALUE) {
         percentage = MAX_VALUE;
-        
-        this->exhausted = false;
+        _exhausted = false;
     }
     
     // メンバ変数にセット
@@ -57,16 +54,18 @@ void Stamina::increase()
 // スタミナ減少
 void Stamina::decrease()
 {
-    float percentage { this->percentage };
+    this->decrease(DEFAULT_STEP * _ratio);
+}
+
+// スタミナ減少
+void Stamina::decrease(float value)
+{
+    float percentage { _percentage };
     
-    percentage -= DEFAULT_STEP * this->ratio;
-    
-    // 最低値以下になっていたら最低値にして、最小値になったら疲労状態へ
-    if(percentage < MIN_VALUE)
-    {
+    percentage -= value;
+    if (percentage < MIN_VALUE) {
         percentage = MIN_VALUE;
-        
-        this->exhausted = true;
+        _exhausted = true;
     }
     
     this->setPercentage(percentage);
@@ -75,7 +74,7 @@ void Stamina::decrease()
 // スタミナを設定
 void Stamina::setPercentage(const float percentage)
 {
-    this->percentage = percentage;
+    _percentage = percentage;
     
     if(this->onPercentageChanged) this->onPercentageChanged(percentage);
     if(this->isMax() && this->onIncreasedMax) this->onIncreasedMax();
@@ -85,63 +84,60 @@ void Stamina::setPercentage(const float percentage)
 void Stamina::setDecreasing(const bool decreasing)
 {
     // 減少中状態へ
-    this->decreasing = decreasing;
+    _decreasing = decreasing;
 }
 
 // ％を取得
 float Stamina::getPercentage() const
 {
-    return this->percentage;
+    return _percentage;
 }
 
 // 停止状態フラグを設定
 void Stamina::setPaused(bool paused)
 {
-    this->paused = paused;
+    _paused = paused;
 }
 
 // スタミナ減少の速度倍率を設定
 void Stamina::setStepRatio(const float ratio)
 {
-    this->ratio = ratio;
+    _ratio = ratio;
 }
 
 // 疲労状態かどうか
 bool Stamina::isExhausted() const
 {
-    return this->exhausted;
+    return _exhausted;
 }
 
 // スタミナがあるかどうか
 bool Stamina::isEmpty() const
 {
-    return this->percentage == MIN_VALUE;
+    return _percentage == MIN_VALUE;
 }
 
 // スタミナが危険状態か
 bool Stamina::isWarn() const
 {
-    return this->percentage < WARN_PERCENTAGE_THRESHOLD;
+    return _percentage < WARN_PERCENTAGE_THRESHOLD;
 }
 
 // スタミナが最大かどうか
 bool Stamina::isMax() const
 {
-    return this->percentage == MAX_VALUE;
+    return _percentage == MAX_VALUE;
 }
 
 // update
 void Stamina::update(float delta)
 {
-    if(this->paused) return;
+    if (_paused) return;
     
     // 減少状態と、回復状態で場合分け
-    if(this->decreasing)
-    {
+    if (_decreasing) {
         this->decrease();
-        
-        if(this->isEmpty()) this->setDecreasing(false);
-        
+        if (this->isEmpty()) this->setDecreasing(false);
         return;
     }
     

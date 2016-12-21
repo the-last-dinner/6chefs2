@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="76">
- <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="78">
+ <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
+ <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16">
   <image source="chinaTown.png" width="480" height="1520"/>
  </tileset>
- <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+ <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16">
   <image source="man.png" width="32" height="32"/>
   <tile id="0">
    <properties>
@@ -408,6 +408,18 @@
   <object id="75" x="288" y="1584" width="16" height="16">
    <properties>
     <property name="objID" value="51"/>
+   </properties>
+  </object>
+  <object id="76" x="80" y="1104" width="160" height="32">
+   <properties>
+    <property name="EventID" value="13"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="77" x="80" y="576" width="160" height="32">
+   <properties>
+    <property name="EventID" value="14"/>
+    <property name="trigger" value="1"/>
    </properties>
   </object>
  </objectgroup>

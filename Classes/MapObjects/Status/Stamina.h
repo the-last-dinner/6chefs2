@@ -28,11 +28,11 @@ public:
     
 // インスタンス変数
 private:
-    float percentage { MAX_VALUE };
-    float ratio { 1.0f };
-    bool decreasing {false};
-    bool exhausted {false};
-    bool paused {false};
+    float _percentage { MAX_VALUE };
+    float _ratio { 1.0f };
+    bool _decreasing {false};
+    bool _exhausted {false};
+    bool _paused {false};
 public:
     function<void(float)> onPercentageChanged { nullptr };
     function<void()> onIncreasedMax { nullptr };
@@ -54,6 +54,7 @@ public:
     bool isEmpty() const;
     bool isWarn() const;
     bool isMax() const;
+    void decrease(float value);
     void update(float delta);
 };
 

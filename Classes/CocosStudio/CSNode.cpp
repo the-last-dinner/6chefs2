@@ -28,6 +28,7 @@ bool CSNode::init(const string& filepath)
     
     if(!csbNode) return false;
     
+    csbNode->setCascadeOpacityEnabled(true);
     this->addChild(csbNode);
     _csbNode = csbNode;
     
@@ -38,6 +39,8 @@ bool CSNode::init(const string& filepath)
     
     csbNode->runAction(timeline);
     _timeline = timeline;
+    
+    this->setCascadeOpacityEnabled(true);
     
     return true;
 }
