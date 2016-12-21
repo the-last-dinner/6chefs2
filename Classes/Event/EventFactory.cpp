@@ -122,7 +122,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"changeChapter", ChangeChapterEvent::create},          // チャプターを切り替える
     {"changeStatus", ChangeLikabilityRatingEvent::create},  // キャラクタの好感度を変更
     {"changeFlg", ChangeEventStatusEvent::create},          // イベントステータス(固有フラグ)を変更
-    
+    {"setGameClear", SetGameClearEvent::create},            // ゲームクリア回数をインクリメント
     {"getTrophy", GetTrophyEvent::create},                  // トロフィーを取得
 };
 

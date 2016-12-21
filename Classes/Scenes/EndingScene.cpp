@@ -217,7 +217,7 @@ void EndingScene::onEndingFinished()
     this->runAction(Sequence::create(
                                      TargetedAction::create(black, FadeIn::create(2.f)),
                                      CallFunc::create([this](){
-            PlayerDataManager::getInstance()->setGameClear(_end_id);
+            PlayerDataManager::getInstance()->setGameClear();
             Director::getInstance()->popScene();
         }), nullptr));
 }
