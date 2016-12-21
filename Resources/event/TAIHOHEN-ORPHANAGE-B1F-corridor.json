@@ -90,7 +90,8 @@
 			"condition":[
 				{
 					"Nitem":"1516",
-					"Nevent":["107","3"]
+					"Nevent":["107","3"],
+					"event":["109","2"]
 				}
 			],
 			"action":[
@@ -133,6 +134,24 @@
 							"flg":1
 						}
 					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
+					"type":"systemMsg",
+					"text":["開かない・・・"]
 				}
 			]
 		},

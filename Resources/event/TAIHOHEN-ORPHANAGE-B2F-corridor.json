@@ -94,7 +94,8 @@
 			"type":"if",
 			"condition":[
 				{
-					"flg":["108","4",1]
+					"flg":["108","4",1],
+					"flg":["107","4",0]
 				}
 			],
 			"action":[
@@ -129,6 +130,15 @@
 					    		{
 					    			"type":"sequence",
 					    			"action":[
+					    				{
+											"type":"createObject",
+											"objID":"10236",
+											"charaID":"33",
+											"x":8,
+											"y":8,
+											"movePattern":"1",
+											"direction":"UP"
+										},
 					    				{
 					    					"type":"fadein",
 					    					"time":1.0
@@ -195,7 +205,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"flg":["107","3",1]
+					"flg":["107","4",1]
 				}
 			],
 			"action":[

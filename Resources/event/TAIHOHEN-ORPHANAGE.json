@@ -793,7 +793,8 @@
 													"text":["ヤエ！？","ど、どっから聞いてたんだ？"],
 													"charaID":"32",
 													"imgID":"3",
-													"miniChara":true
+													"miniChara":true,
+													"option":"reaction"
 												},
 												{
 													"text":["ぜ・ん・ぶ・聞こえてたわよ。"],
@@ -850,7 +851,14 @@
 													"miniChara":true
 												},
 												{
-													"text":["おい！","・・・"],
+													"text":["おい！"],
+													"charaID":"32",
+													"imgID":"3",
+													"miniChara":true,
+													"option":"reaction"
+												},
+												{
+													"text":["・・・"],
 													"charaID":"32",
 													"imgID":"3",
 													"miniChara":true
