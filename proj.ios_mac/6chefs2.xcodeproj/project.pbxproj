@@ -426,6 +426,7 @@
 		DCEF71FE1DFBC54900FA1291 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = DCEF71FD1DFBC54900FA1291 /* voice */; };
 		DCF9469B1E0ACC5400BD8744 /* DustEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF946991E0ACC5400BD8744 /* DustEffect.cpp */; };
 		DCF9469C1E0ACC5400BD8744 /* DustEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF946991E0ACC5400BD8744 /* DustEffect.cpp */; };
+		DCF9469E1E0AE72300BD8744 /* effect in Resources */ = {isa = PBXBuildFile; fileRef = DCF9469D1E0AE72300BD8744 /* effect */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -849,6 +850,7 @@
 		DCEF71FD1DFBC54900FA1291 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; path = voice; sourceTree = "<group>"; };
 		DCF946991E0ACC5400BD8744 /* DustEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DustEffect.cpp; sourceTree = "<group>"; };
 		DCF9469A1E0ACC5400BD8744 /* DustEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DustEffect.h; sourceTree = "<group>"; };
+		DCF9469D1E0AE72300BD8744 /* effect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effect; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -1014,6 +1016,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DCF9469D1E0AE72300BD8744 /* effect */,
 				DCEF71FD1DFBC54900FA1291 /* voice */,
 				DC0182A51D7BCCE900E556D1 /* character */,
 				269211551CE89FB5005C0E5A /* config */,
@@ -1805,6 +1808,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF9469E1E0AE72300BD8744 /* effect in Resources */,
 				DCEF71FE1DFBC54900FA1291 /* voice in Resources */,
 				DC0182A61D7BCCE900E556D1 /* character in Resources */,
 				269211571CE8A9A9005C0E5A /* config in Resources */,
