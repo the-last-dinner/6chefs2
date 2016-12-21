@@ -365,15 +365,15 @@
             <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" LeftMargin="-0.5000" RightMargin="-31.5000" TopMargin="-52.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="64.0000" />
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-31.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="15.5000" Y="20.0000" />
+            <Position X="16.0000" Y="15.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="a1taihou_a_3_2.png" Plist="character/taihou.plist" />
+            <FileData Type="PlistSubImage" Path="taihou_0_0.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -409,10 +409,10 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-82.0000" BottomMargin="-18.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="32.0000" />
+            <Position X="16.0000" Y="-16.0000" />
             <Scale ScaleX="0.9000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
