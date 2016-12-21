@@ -369,6 +369,7 @@ void Character::onEnterMap()
     
     if (DungeonSceneManager::getInstance()->isEventRunning()) {
         this->onEventStart();
+        if (_movePattern) _movePattern->pause();
     } else {
         if (_movePattern) _movePattern->start();
     }

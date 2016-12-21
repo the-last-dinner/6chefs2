@@ -36,6 +36,7 @@ private:
     virtual bool init(Character* chara) override;
     virtual void start() override;
     virtual void pause() override;
+    virtual void resume() override;
     void move();
     void scheduleMove();
 };
