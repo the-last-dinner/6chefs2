@@ -27,7 +27,7 @@ private:
 // インスタンスメソッド
 public:
     void initLocalData();
-    void setGameClear(const int end_id);
+    void setGameClear();
     void setGameStart(const int local_id);
     void save(const int local_id);
     void cryptSaveData();

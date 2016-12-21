@@ -263,3 +263,19 @@ void GiveItemEvent::run()
     }
     this->setDone();
 }
+
+#pragma mark -
+#pragma mark SetGameClearEvent
+
+bool SetGameClearEvent::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init(json)) return false;
+    
+    return true;
+}
+
+void SetGameClearEvent::run()
+{
+    this->setDone();
+    PlayerDataManager::getInstance()->setGameClear();
+}

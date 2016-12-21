@@ -584,6 +584,8 @@
             "member": {
                 "trophyID": ["stoi"]
             }
+        },
+        "setGameClear": {
         }
     }
 }
