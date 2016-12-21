@@ -141,18 +141,44 @@ bool CreateUnderwaterEvent::init(rapidjson::Value& json)
 {
     if (!GameEvent::init(json)) return false;
     
+    if (_eventHelper->hasMember(_json, member::WAVE_IN)) {
+        _waveIn = _json[member::WAVE_IN].GetBool();
+    }
+    
     return true;
 }
 
 void CreateUnderwaterEvent::run()
 {
     this->setDone();
-    
     auto waterLayer = LayerColor::create(Color4B(88,255,255,128 ));
     ParticleSystemQuad* bubble = ParticleSystemQuad::create("img/bubble.plist");
-    
     waterLayer->addChild(bubble);
-    DungeonSceneManager::getInstance()->getScene()->addChild(waterLayer);
+    waterLayer->setScale(0.99);
+    auto nodeGrid = NodeGrid::create();
+    nodeGrid->runAction(RepeatForever::create(Waves::create(10.f, Size(60, 60), 10, 5.0f, true, true)));
+    nodeGrid->addChild(waterLayer);
+    
+    if (this->_waveIn) {
+        float layerHeight { waterLayer->getContentSize().height };
+        waterLayer->setPosition(waterLayer->getPosition().x, - layerHeight);
+        waterLayer->runAction(
+            Sequence::create(
+                EaseSineInOut::create(MoveBy::create(1.0f, Vec2(0.f, 2 * layerHeight / 10))),
+                Repeat::create(
+                    Sequence::createWithTwoActions(
+                        EaseSineInOut::create(MoveBy::create(0.5f, Vec2(0.f, - layerHeight / 10))),
+                        EaseSineInOut::create(MoveBy::create(1.0f, Vec2(0.f, 3 * layerHeight / 10)))
+                ), 4),
+                CallFunc::create([this](){this->setDone();}),
+                nullptr
+            )
+        );
+    } else {
+        this->setDone();
+    }
+    
+    DungeonSceneManager::getInstance()->getScene()->addChild(nodeGrid);
 }
 
 
