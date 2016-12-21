@@ -3,6 +3,20 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["79","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"createUnderwater",
+					"waveIn":true 
+				}
+			]
 		}
 	],
 	"2":[

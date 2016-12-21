@@ -2058,7 +2058,7 @@
 											"action":[
 												{
 													"type":"getTrophy",
-													"trophy":"6"
+													"trophyID":"6"
 												}
 											]
 										},

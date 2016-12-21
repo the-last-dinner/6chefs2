@@ -317,6 +317,11 @@
 							"steps":1.0
 						},
 						{
+							"type":"changeDirection",
+							"objID":"1071",
+							"direction":"DOWN"
+						},
+						{
 							"type":"charaMsg",
 							"talk":[
 								{
@@ -637,7 +642,7 @@
 													"imgID":"3"
 												},
 												{
-													"text":["おのれ・・・なかなかやるやないけ・・・\nなんじゃもう終いか？おぉん？"],
+													"text":["おどれ・・・なかなかやるやないけ・・・\nなんじゃもう終いか？おぉん？"],
 													"charaID":"8",
 													"imgID":"4"
 												},
@@ -773,13 +778,24 @@
 					"type":"already"
 				},
 				{
+					"type":"createUnderwater",
+					"waveIn":true 
+				},
+				{
 					"type":"fadein"
 				},
-                {
-                      "type":"callEvent",
-                      "className":"FinalEvent",
-                      "eventID":"warterCountDown"
-                }
+				{
+					"type":"countDown",
+					"second":10.0,
+					"display":true,
+					"false":[
+						{
+		                      "type":"callEvent",
+		                      "className":"FinalEvent",
+		                      "eventID":"countDownFailure"
+		                }
+					]
+				}
 			]
 		}
 	],
@@ -804,10 +820,6 @@
 								{
 									"type":"playSE",
 									"file":"despair.mp3"
-								},
-								{
-									"type":"displayImg",
-									"file":"caught_magonade.png"
 								},
 								{
 									"type":"charaMsg",

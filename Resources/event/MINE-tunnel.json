@@ -215,6 +215,10 @@
 							"type":"already"
 						},
 						{
+							"type":"stopBGM",
+							"file":"6kucya.mp3"
+						},
+						{
 							"type":"changeMap",
 							"mapID":"63",
 							"x":17,

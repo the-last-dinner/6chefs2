@@ -1,10 +1,6 @@
  {
 	"1":[
 		{
-		    "type":"setAmbient",
-		    "ambient":"room"
-		},
-		{
 			"type":"if",
 			"condition":[
 				{
@@ -92,10 +88,45 @@
 	],
 	"2":[
 		{
-			"type":"changeMap",
-			"mapID":"53",
-			"x":9,
-			"y":5
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["54","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["戻っている場合ではない！"]
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"UP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"53",
+					"x":9,
+					"y":5
+				}
+			]
 		}
 	],
 	"3":[
@@ -216,7 +247,8 @@
 								{
 									"type":"camera",
 									"nextX":53,
-									"nextY":63
+									"nextY":63,
+									"time":0.5
 								},
 								{
 									"type":"fadein"
@@ -308,6 +340,9 @@
 						{
 							"type":"fadeout",
 							"time":3.0
+						},
+						{
+							"type":"setCamera"
 						},
 						{
 							"type":"removeObject",
@@ -428,7 +463,7 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -522,6 +557,8 @@
 																}
 															]
 														}
+													],
+													"false":[
 													]
 												}
 											]
@@ -757,7 +794,7 @@
 												{
 													"type":"createEnemy",
 													"objID":"1451",
-													"charaID":"9",
+													"charaID":"13",
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
@@ -771,7 +808,7 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -865,6 +902,8 @@
 																}
 															]
 														}
+													],
+													"false":[
 													]
 												}
 											]
@@ -942,7 +981,7 @@
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -1036,6 +1075,8 @@
 																}
 															]
 														}
+													],
+													"false":[
 													]
 												}
 											]
@@ -1254,7 +1295,6 @@
 				},
 				{
 					"type":"charaMsg",
-					"img":"taihou_kill.png",
 					"talk":[
 						{
 							"text":["ぐぁ！"],
@@ -1302,10 +1342,6 @@
 				{
 					"type":"playSE",
 					"file":"down1.mp3"
-				},
-				{
-					"type":"systemMsg",
-					"text":["蘭丸10118を膝まづかせる"]
 				},
 				{
 					"type":"charaWalkTo",
@@ -1357,8 +1393,8 @@
 								{
 									"type":"charaWalkTo",
 									"objID":"10122",
-									"x":63,
-									"y":65,
+									"x":57,
+									"y":66,
 									"speed":3.0
 								},
 								{
@@ -1396,18 +1432,10 @@
 					"file":"big_hit.mp3"
 				},
 				{
-					"type":"displayImg",
-					"file":"yuki_hit.png"
-				},
-				{
 					"type":"charaWalk",
 					"objID":"10125",
 					"steps":1.0,
 					"direction":"LEFT"
-				},
-				{
-					"type":"systemMsg",
-					"text":["大宝を膝まづかせる"]
 				},
 				{
 					"type":"charaMsg",
@@ -1658,9 +1686,15 @@
 							"imgID":"1"
 						},
 						{
-							"text":["雪。","アイツは・・・戸塚は\n大切な人を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・","雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
+							"text":["雪。","アイツは・・・戸塚は\n大切な人を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・"],
 							"charaID":"2",
 							"imgID":"2"
+						},
+						{
+							"text":["雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
+							"charaID":"2",
+							"imgID":"1",
+							"option":"reaction"
 						},
 						{
 							"text":["うん！"],
