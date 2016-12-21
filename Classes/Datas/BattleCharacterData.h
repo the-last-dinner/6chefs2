@@ -25,6 +25,10 @@ public:
     static const char* POWER;
     static const char* STAMINA;
     static const char* INTERVAL_TIME;
+    static const char* MOTION_SOUND;
+    static const char* MOTION_SOUND_VOLUME;
+    static const char* HIT_SOUND;
+    static const char* HIT_SOUND_VOLUME;
     
 private:
     static rapidjson::Document BATTLE_CHARACTER_DATA;

@@ -20,6 +20,10 @@ public:
     int power { 50 };
     float stamina { 5.0f };
     float intervalTime { 0.5f };
+    string motionSound {};
+    float motionSoundVolume { 1.0f };
+    string hitSound {};
+    float hitSoundVolume { 1.0f };
 
 private:
     AttackData(){};
