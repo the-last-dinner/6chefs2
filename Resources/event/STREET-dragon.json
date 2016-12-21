@@ -751,5 +751,65 @@
 				}
 			]
 		}
+	],
+	"13":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["なっ！！向こうからも！？\nどっか他に逃げ道はねぇのか！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"UP"
+						}
+					]
+				}
+			]
+		}
+	],
+	"14":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["なっ！！向こうからも！？\nどっか他に逃げ道はねぇのか！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"DOWN"
+						}
+					]
+				}
+			]
+		}
 	]
 }

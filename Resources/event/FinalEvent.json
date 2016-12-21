@@ -1,19 +1,5 @@
 {
-    "warterCountDown":[
-        {
-            "type":"countDown",
-            "second":10.0,
-            "display":true,
-            "false":[
-                {
-                    "type":"callEvent",
-                    "className":"FinalEvent",
-                    "eventID":"warterCountDownFailure"
-                }
-            ]
-        }
-    ],
-    "warterCountDownFailure":[
+    "countDownFailure":[
         {
             "type":"sequence",
             "action":[
@@ -28,7 +14,7 @@
                 },
                 {
                     "type":"wait",
-                    "time":2.0
+                    "time":1.0
                 },
                 {
                     "type":"gameover"

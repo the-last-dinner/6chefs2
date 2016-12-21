@@ -1225,35 +1225,6 @@
 												}
 							       			]
 							            },
-							            {
-											"type":"createObject",
-											"objID":"1086",
-											"charaID":"20",
-											"eventID":"7",
-											"trigger":"2",
-											"x":17,
-											"y":21,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-													"type":"createObject",
-													"objID":"1087",
-													"charaID":"21",
-													"x":15,
-													"y":23,
-													"direction":"UP",
-													"movePattern":"1"
-										},
-										{
-													"type":"createObject",
-													"objID":"1088",
-													"charaID":"20",
-													"x":19,
-													"y":23,
-													"direction":"UP",
-													"movePattern":"1"
-										},
 										{
 											"type":"fadein"
 										},
@@ -2075,35 +2046,6 @@
 									       			]
 									       		}
 											]
-										},
-										{
-											"type":"createObject",
-											"objID":"1086",
-											"charaID":"20",
-											"eventID":"7",
-											"trigger":"2",
-											"x":17,
-											"y":21,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1087",
-											"charaID":"21",
-											"x":15,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1088",
-											"charaID":"20",
-											"x":19,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
 										},
 										{
 											"type":"if",
@@ -2996,35 +2938,6 @@
 											]
 										},
 										{
-											"type":"createObject",
-											"objID":"1086",
-											"charaID":"20",
-											"eventID":"7",
-											"trigger":"2",
-											"x":17,
-											"y":21,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1087",
-											"charaID":"21",
-											"x":15,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1088",
-											"charaID":"20",
-											"x":19,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
 											"type":"fadein"
 										},
 										{
@@ -3846,35 +3759,6 @@
 											]
 										},
 										{
-											"type":"createObject",
-											"objID":"1086",
-											"charaID":"20",
-											"eventID":"7",
-											"trigger":"2",
-											"x":17,
-											"y":21,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1087",
-											"charaID":"21",
-											"x":15,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
-											"type":"createObject",
-											"objID":"1088",
-											"charaID":"20",
-											"x":19,
-											"y":23,
-											"direction":"UP",
-											"movePattern":"1"
-										},
-										{
 											"type":"fadein"
 										},
 										{
@@ -3912,6 +3796,14 @@
 					]
 				}
 			]
+		}
+	],
+	"14":[
+		{
+			"type":"charaMsg",
+			"text":["うで・・・つかれる・・・"],
+			"charaID":"10",
+			"name":"門番役の子供"
 		}
 	]
 }

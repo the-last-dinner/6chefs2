@@ -27,6 +27,10 @@
 			],
 			"action":[
 				{
+					"type":"playBGM",
+					"file":"6kucya.mp3"
+				},
+				{
 					"type":"createEnemy",
 					"objID":"1449",
 					"charaID":"13",
@@ -51,6 +55,10 @@
 	],
 	"2":[
 		{
+			"type":"stopBGM",
+			"file":"6kucya.mp3"
+		},
+		{
 			"type":"changeMap",
 			"mapID":"61",
 			"x":36,
@@ -58,6 +66,10 @@
 		}
 	],
 	"3":[
+		{
+			"type":"stopBGM",
+			"file":"6kucya.mp3"
+		},
 		{
 			"type":"changeMap",
 			"mapID":"63",
@@ -225,6 +237,34 @@
 		},
 		{
 			"type":"already"
+		}
+	],
+	"6":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["63","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["狂人がいる・・・\n近づくのはよそう・・・"]
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"RIGHT",
+							"option":"back"
+						}
+					]
+				}
+			]
 		}
 	]
 }

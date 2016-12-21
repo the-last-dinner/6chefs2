@@ -390,36 +390,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -443,7 +413,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -627,36 +597,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -680,7 +620,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -864,36 +804,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -917,7 +827,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -1101,36 +1011,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":38,
-									"y":22,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -1154,7 +1034,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -1338,36 +1218,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":25,
-									"y":21,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -1391,7 +1241,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -1575,36 +1425,6 @@
 									"direction":"DOWN",
 									"times":1,
 									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1446",
-									"charaID":"13",
-									"x":28,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1447",
-									"charaID":"13",
-									"x":40,
-									"y":36,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
-								},
-								{
-									"type":"createEnemy",
-									"objID":"1448",
-									"charaID":"13",
-									"x":48,
-									"y":25,
-									"direction":"DOWN",
-									"times":1,
-									"movePattern":"6"
 								}
 							]
 						},
@@ -1628,7 +1448,7 @@
 						},
 						{
 							"type":"battle",
-							"objID":["1442","1443","1444","1445","1446","1447","1448"],
+							"objID":["1442","1443","1444","1445"],
 							"true":[
 								{
 									"type":"sequence",
@@ -1734,18 +1554,6 @@
 				{
 					"type":"removeEnemy",
 					"objID":"1445"
-				},
-				{
-					"type":"removeEnemy",
-					"objID":"1446"
-				},
-				{
-					"type":"removeEnemy",
-					"objID":"1447"
-				},
-				{
-					"type":"removeEnemy",
-					"objID":"1448"
 				},
 				{
 					"type":"charaWarp",

@@ -80,6 +80,24 @@
 							"type":"stopBGM"
 						},
 						{
+							"type":"addProfile",
+          					"charaID":"9",
+          					"infoID":"1"
+						},
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"mystery5.mp3"
+								},
+								{
+									"type":"systemMsg",
+									"text":["”戸塚 大宝(トツカ タイホウ)”の資料に\n情報が追加された"]
+								}
+							]
+						},
+						{
 							"type":"playBGM",
 							"file":"ORHANAGE.mp3"
 						},

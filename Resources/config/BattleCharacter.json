@@ -3,15 +3,15 @@
         "name": "ranmaru",
         "attacks": {
             "attack": {
-                "power": 30,
+                "power": 50,
                 "stamina": 5.0,
-                "interval_time": 0.5
+                "interval_time": 0.3
             }
         },
-        "hit_point": 100,
-        "step_stamina": 5.0,
-        "step_interval_time": 0.5,
-        "speed_ratio": 1.0
+        "hit_point": 120,
+        "step_stamina": 10.0,
+        "step_interval_time": 0.1,
+        "speed_ratio": 0.9
     },
     "5": {
         "name": "daigoro",
@@ -24,7 +24,7 @@
         },
         "hit_point": 100,
         "step_stamina": 5.0,
-        "step_interval_time": 0.5,
+        "step_interval_time": 0.1,
         "speed_ratio": 1.0
     },
     "6": {
@@ -38,7 +38,7 @@
         },
         "hit_point": 100,
         "step_stamina": 5.0,
-        "step_interval_time": 0.5,
+        "step_interval_time": 0.1,
         "speed_ratio": 1.0
     },
     "8": {
@@ -50,10 +50,10 @@
                 "interval_time": 0.5
             }
         },
-        "hit_point": 100,
-        "step_stamina": 5.0,
-        "step_interval_time": 0.5,
-        "speed_ratio": 1.0
+        "hit_point": 110,
+        "step_stamina": 4.0,
+        "step_interval_time": 0.1,
+        "speed_ratio": 1.1
     },
     "9": {
         "name": "taihou",
@@ -71,16 +71,16 @@
         },
         "hit_point": 125,
         "step_stamina": 5.0,
-        "step_interval_time": 0.5,
+        "step_interval_time": 0.1,
         "speed_ratio": 1.0
     },
     "13": {
         "name": "kyoujin",
         "attacks":{
             "attack": {
-                "power": 50,
+                "power": 25,
                 "stamina": 5.0,
-                "interval_time": 0.5
+                "interval_time": 0.9
             }
         },
         "hit_point": 75,
