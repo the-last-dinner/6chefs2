@@ -425,7 +425,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"text":["マジか！\nおい、走れ！"],
+							"text":["鉄砲水！？\nマジか！\nおい、走れ！"],
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
@@ -1004,20 +1004,6 @@
 						{
 							"type":"releaseChase",
 							"objID":"10122"
-						},
-						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"playSE",
-									"file":"ending2.mp3"
-								},
-								{
-									"type":"displayImg",
-									"file":"enddisp.png",
-									"time":27.0
-								}
-							]
 						},
 						{
 							"type":"changeMap",

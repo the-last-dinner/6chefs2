@@ -69,19 +69,19 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="17" x="96" y="80" width="32" height="32">
+  <object id="17" x="80" y="128" width="32" height="32">
    <properties>
     <property name="EventID" value="3"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="18" x="64" y="80" width="32" height="32">
+  <object id="18" x="352" y="80" width="32" height="32">
    <properties>
     <property name="EventID" value="4"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="19" x="32" y="80" width="32" height="32">
+  <object id="19" x="32" y="80" width="96" height="32">
    <properties>
     <property name="EventID" value="5"/>
     <property name="trigger" value="2"/>

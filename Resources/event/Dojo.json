@@ -1277,9 +1277,27 @@
           					"infoID":"2"
 						},
 						{
+							"type":"addProfile",
+          					"charaID":"6",
+          					"infoID":"2"
+						},
+						{
 							"type":"storyMsg",
 							"title":"食の大国「北森」",
 							"text":["かつて金鉱で栄えた国だったが\n現在は大規模な落盤事故により閉山\n今は金鉱跡に建った大型施設を中心に立ち並ぶ\n飲食店が世界でも注目され\n食の大国として栄えている"]
+						},
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"playSE",
+									"file":"mystery5.mp3"
+								},
+								{
+									"type":"systemMsg",
+									"text":["資料に”希﨑 雪(キザキ ユキ)”\nが追加された"]
+								}
+							]
 						},
 						{
 							"type":"spawn",

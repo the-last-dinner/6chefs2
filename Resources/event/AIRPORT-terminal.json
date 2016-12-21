@@ -339,6 +339,24 @@
 					"objID":"1010"
 				},
 				{
+					"type":"addProfile",
+  					"charaID":"10",
+  					"infoID":"2"
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"mystery5.mp3"
+						},
+						{
+							"type":"systemMsg",
+							"text":["資料に”番組プロデューサー(バングミプロデューサー)”\nが追加された"]
+						}
+					]
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{

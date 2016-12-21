@@ -5,15 +5,32 @@
 		    "ambient":"night"
 		},
 		{
-			"type":"createEnemy",
-			"objID":"1452",
-			"charaID":"13",
-			"x":11,
-			"y":64,
-			"direction":"UP",
-			"times":1,
-			"pathID":"1",
-			"movePattern":"4"
+			"type":"if",
+			"condition":[
+				{
+					"Nflg":["50","6",1]
+
+				},
+				{
+					"Nflg":["51","3",1]
+				},
+				{
+					"Nflg":["52","3",1]
+				}
+			],
+			"action":[
+				{
+					"type":"createEnemy",
+					"objID":"1452",
+					"charaID":"13",
+					"x":11,
+					"y":64,
+					"direction":"UP",
+					"times":1,
+					"pathID":"1",
+					"movePattern":"4"
+				}
+			]
 		},
 		{
 			"type":"if",
@@ -241,7 +258,7 @@
 							"type":"charaMsg",
 							"text":["咲賀谷氏！\n何やらあそこのガラス・・・割れていますが・・・"],
 							"charaID":"4",
-							"imgID":"2"
+							"imgID":"1"
 						},
 						{
 							"type":"charaWalk",
@@ -346,7 +363,7 @@
 								{
 									"text":["一体何をどうしたらあんな状況に・・・"],
 									"charaID":"4",
-									"imgID":"2"
+									"imgID":"1"
 								},
 								{
 									"text":["向かいの天弦楼に逃げ込んだんだけど\nそこにもいっぱい入ってきてな・・・","出口からは出られそうになかったから\nこの塔に避難しようと思ってよ。"],
@@ -512,6 +529,10 @@
 		{
 			"type":"removeLayer",
 			"layer":"steps"
+		},
+		{
+			"type":"playSE",
+			"file":"bus-door1.mp3"
 		},
 		{
 			"type":"changeFlg",

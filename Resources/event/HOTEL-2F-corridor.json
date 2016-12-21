@@ -358,6 +358,24 @@
 					"file":"dark_chapter1.mp3"
 				},
 				{
+					"type":"addProfile",
+  					"charaID":"12",
+  					"infoID":"2"
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"mystery5.mp3"
+						},
+						{
+							"type":"systemMsg",
+							"text":["資料に”狂人病(キョウジンビョウ)”\nが追加された"]
+						}
+					]
+				},
+				{
 					"type":"already"
 				}
 			]
