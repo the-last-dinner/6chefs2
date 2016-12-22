@@ -470,12 +470,11 @@
 												{
 													"type":"createEnemy",
 													"objID":"1451",
-													"charaID":"9",
-													"x":53,
-													"y":56,
-													"times":1,
+													"charaID":"13",
+													"x":48,
+													"y":63,
 													"direction":"DOWN",
-													"movePattern":"7"
+													"movePattern":"6"
 												},
 												{
 													"type":"fadein"
@@ -499,6 +498,9 @@
 														}
 													],
 													"false":[
+														{
+															"type":"gameover"
+														}
 													]
 												}
 											]
@@ -557,6 +559,9 @@
 														}
 													],
 													"false":[
+														{
+															"type":"gameover"
+														}
 													]
 												}
 											]
@@ -614,6 +619,9 @@
 														}
 													],
 													"false":[
+														{
+															"type":"gameover"
+														}
 													]
 												}
 											]
@@ -672,6 +680,9 @@
 														}
 													],
 													"false":[
+														{
+															"type":"gameover"
+														}
 													]
 												}
 											]
