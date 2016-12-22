@@ -424,6 +424,11 @@
 		DCEF71FB1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
 		DCEF71FC1DF2776C00FA1291 /* StepCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */; };
 		DCEF71FE1DFBC54900FA1291 /* voice in Resources */ = {isa = PBXBuildFile; fileRef = DCEF71FD1DFBC54900FA1291 /* voice */; };
+		DCF9469B1E0ACC5400BD8744 /* DustEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF946991E0ACC5400BD8744 /* DustEffect.cpp */; };
+		DCF9469C1E0ACC5400BD8744 /* DustEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF946991E0ACC5400BD8744 /* DustEffect.cpp */; };
+		DCF9469E1E0AE72300BD8744 /* effect in Resources */ = {isa = PBXBuildFile; fileRef = DCF9469D1E0AE72300BD8744 /* effect */; };
+		DCF946A11E0BE41300BD8744 /* FastMoveCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF9469F1E0BE41300BD8744 /* FastMoveCommand.cpp */; };
+		DCF946A21E0BE41300BD8744 /* FastMoveCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCF9469F1E0BE41300BD8744 /* FastMoveCommand.cpp */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -845,6 +850,11 @@
 		DCEF71F91DF2776C00FA1291 /* StepCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepCommand.cpp; path = Command/StepCommand.cpp; sourceTree = "<group>"; };
 		DCEF71FA1DF2776C00FA1291 /* StepCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepCommand.h; path = Command/StepCommand.h; sourceTree = "<group>"; };
 		DCEF71FD1DFBC54900FA1291 /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; path = voice; sourceTree = "<group>"; };
+		DCF946991E0ACC5400BD8744 /* DustEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DustEffect.cpp; sourceTree = "<group>"; };
+		DCF9469A1E0ACC5400BD8744 /* DustEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DustEffect.h; sourceTree = "<group>"; };
+		DCF9469D1E0AE72300BD8744 /* effect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effect; sourceTree = "<group>"; };
+		DCF9469F1E0BE41300BD8744 /* FastMoveCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FastMoveCommand.cpp; path = Command/FastMoveCommand.cpp; sourceTree = "<group>"; };
+		DCF946A01E0BE41300BD8744 /* FastMoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastMoveCommand.h; path = Command/FastMoveCommand.h; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -1010,6 +1020,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DCF9469D1E0AE72300BD8744 /* effect */,
 				DCEF71FD1DFBC54900FA1291 /* voice */,
 				DC0182A51D7BCCE900E556D1 /* character */,
 				269211551CE89FB5005C0E5A /* config */,
@@ -1208,6 +1219,8 @@
 				DC0390771C871E1000C50E8E /* Light.h */,
 				DC37D80D1CDEFD3D0014418A /* FocusLightLayer.cpp */,
 				DC37D80E1CDEFD3D0014418A /* FocusLightLayer.h */,
+				DCF946991E0ACC5400BD8744 /* DustEffect.cpp */,
+				DCF9469A1E0ACC5400BD8744 /* DustEffect.h */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -1631,6 +1644,8 @@
 				DCEF71FA1DF2776C00FA1291 /* StepCommand.h */,
 				DCDB71C91DFE7F0C0015A434 /* HurtCommand.cpp */,
 				DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */,
+				DCF9469F1E0BE41300BD8744 /* FastMoveCommand.cpp */,
+				DCF946A01E0BE41300BD8744 /* FastMoveCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1799,6 +1814,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF9469E1E0AE72300BD8744 /* effect in Resources */,
 				DCEF71FE1DFBC54900FA1291 /* voice in Resources */,
 				DC0182A61D7BCCE900E556D1 /* character in Resources */,
 				269211571CE8A9A9005C0E5A /* config in Resources */,
@@ -1837,6 +1853,7 @@
 				DC0391791C871E1000C50E8E /* SystemMessageData.cpp in Sources */,
 				DC0391C51C871E1000C50E8E /* SaveDataSelector.cpp in Sources */,
 				DC5D1D531D7F0E100034DD8F /* DetectionBox.cpp in Sources */,
+				DCF946A11E0BE41300BD8744 /* FastMoveCommand.cpp in Sources */,
 				DC0392291C871E1000C50E8E /* TitleScene.cpp in Sources */,
 				DC0391D31C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
 				DC0391B51C871E1000C50E8E /* EventListenerKeyboardLayer.cpp in Sources */,
@@ -1933,6 +1950,7 @@
 				DC0391AD1C871E1000C50E8E /* DisplayImageLayer.cpp in Sources */,
 				DC0391D11C871E1000C50E8E /* SystemMessageLayer.cpp in Sources */,
 				268E3FA91D64BFD90098B235 /* ConfigDataManager.cpp in Sources */,
+				DCF9469B1E0ACC5400BD8744 /* DustEffect.cpp in Sources */,
 				DC0392311C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DCDB71C31DFD88F40015A434 /* BattleMob.cpp in Sources */,
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
@@ -2052,6 +2070,7 @@
 				2672D5091D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */,
 				DC0392281C871E1000C50E8E /* StartUpScene.cpp in Sources */,
 				DC8C4D321D8FC13700FF0A1E /* AttackBox.cpp in Sources */,
+				DCF946A21E0BE41300BD8744 /* FastMoveCommand.cpp in Sources */,
 				DC03922C1C871E1000C50E8E /* CameraTask.cpp in Sources */,
 				DC8C4D361D8FD57C00FF0A1E /* AttackDetector.cpp in Sources */,
 				DC0392341C871E1000C50E8E /* FollowType.cpp in Sources */,
@@ -2063,6 +2082,7 @@
 				DC0391C01C871E1000C50E8E /* MenuLayer.cpp in Sources */,
 				26460B9A1D72ED8900F0336C /* CharacterMasterData.cpp in Sources */,
 				DC5D1D581D84FA7D0034DD8F /* CollisionBox.cpp in Sources */,
+				DCF9469C1E0ACC5400BD8744 /* DustEffect.cpp in Sources */,
 				DCEF71F81DE5DCA700FA1291 /* BattleData.cpp in Sources */,
 				DCCDBC1E1DE186FF0026AF5C /* SearchState.cpp in Sources */,
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,

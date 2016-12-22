@@ -453,6 +453,9 @@
         "createRain": {
         },
         "createUnderwater": {
+            "member": {
+                "waveIn": ["bool"]
+            }
         },
         
         
@@ -581,6 +584,8 @@
             "member": {
                 "trophyID": ["stoi"]
             }
+        },
+        "setGameClear": {
         }
     }
 }

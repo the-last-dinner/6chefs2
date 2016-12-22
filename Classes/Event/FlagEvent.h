@@ -140,4 +140,15 @@ private:
     virtual void run() override;
 };
 
+class SetGameClearEvent : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(SetGameClearEvent, rapidjson::Value&)
+private:
+    SetGameClearEvent() { FUNCLOG };
+    ~SetGameClearEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__FlagEvent__) */

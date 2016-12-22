@@ -31,6 +31,7 @@ PlayerControlTask::PlayerControlTask() { FUNCLOG }
 PlayerControlTask::~PlayerControlTask()
 {
     FUNCLOG
+    this->unschedule(CC_SCHEDULE_SELECTOR(PlayerControlTask::update));
     CC_SAFE_RELEASE_NULL(_state);
 }
 
@@ -42,6 +43,8 @@ bool PlayerControlTask::init()
     this->setCurrentState(SearchState::create(this));
     
     DungeonSceneManager::getInstance()->getStamina()->onIncreasedMax = CC_CALLBACK_0(PlayerControlTask::onStaminaIncreasedMax, this);
+    
+    this->schedule(CC_SCHEDULE_SELECTOR(PlayerControlTask::update), 0.1f);
     
     return true;
 }
@@ -153,4 +156,13 @@ void PlayerControlTask::onBattleStart()
 void PlayerControlTask::onBattleFinished()
 {
     this->setCurrentState(SearchState::create(this));
+}
+
+// update
+void PlayerControlTask::update(float delta)
+{
+    // DASHキーが押されていない場合はスタミナ減少を止める
+    if (!DungeonSceneManager::getInstance()->isPressed(Key::DASH)) {
+        DungeonSceneManager::getInstance()->getStamina()->setDecreasing(false);
+    }
 }

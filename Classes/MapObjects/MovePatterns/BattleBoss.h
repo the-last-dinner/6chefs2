@@ -41,6 +41,7 @@ private:
 private:
     void onForwardAttackCommandFinished(Character* character);
     void onSpinAttackCommandFinished(Character* charater);
+    void onFastMoveCommandFinished();
     
 // インターフェース
 public:
