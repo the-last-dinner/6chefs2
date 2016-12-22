@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="26" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="25">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="2465" name="ed4_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
+  <image source="ed4_2.png" width="960" height="512"/>
+  <tile id="410">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="411">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="412">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="413">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="414">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
+  <tile id="415">
+   <properties>
+    <property name="z" value="-11"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Base" width="26" height="26">
   <properties>
@@ -22,7 +55,15 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFtABPmRgYnjHhpqkFmJkZGFiYEXQ0EMcg0bFAHIeFJgZsB6rbAVWrCKSVmBF0JRBXIdHVQFyDhcYFgpggGAR+MzIw/GGEsO2BehyYcdMzgXgWFpoYe0Yq2ENkfI9EMH80bPCC53TKO6xI8ZAMZKdAcSqV40cZh3nzcIg3jKaPUTBAQB2Y9jRGWPoDAMPEIJk=
+   eJxjYBgFwxnEMjMwxDFj0qSC7UA9O/DoqwbK1TBj0rhAEBMEo4PfjAwMfxhx65sJNHMWMyZNqj0jCewhI75HCpg/GjZ4wXM65R1WpHhIBrJToDiVyvHDisO8eTjEG8i0H5c91AbKdLLHkU72xI/mRzhQB4aFxggLDwCGbBPn
+  </data>
+ </layer>
+ <layer name="yari" width="26" height="26">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlcsNwDAIQ7lnpH7SUdii7XYerW+GHFwp4Um+ITkCQyKKYh22FrGjA52oo6uN1xXFzJD5dPh0kw/7nK/Bi9uRj8GHO5W3qXerwy6InIr/QORIzFj0X3+/ayY+UjwPjQ==
   </data>
  </layer>
  <objectgroup name="collision">
@@ -31,10 +72,10 @@
   <object id="3" x="32" y="384" width="320" height="32"/>
   <object id="5" x="272" y="368" width="32" height="16"/>
   <object id="6" x="0" y="0" width="32" height="416"/>
-  <object id="8" x="32" y="240" width="16" height="48"/>
+  <object id="8" x="32" y="240" width="16" height="96"/>
   <object id="9" x="32" y="96" width="32" height="32"/>
   <object id="10" x="32" y="32" width="320" height="64"/>
-  <object id="11" x="80" y="96" width="32" height="16"/>
+  <object id="11" x="128" y="96" width="32" height="16"/>
   <object id="13" x="80" y="256" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="event">
@@ -50,19 +91,19 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="18" x="128" y="64" width="224" height="32">
+  <object id="18" x="256" y="64" width="96" height="32">
    <properties>
     <property name="EventID" value="3"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="20" x="80" y="80" width="32" height="32">
+  <object id="20" x="128" y="80" width="32" height="32">
    <properties>
     <property name="EventID" value="4"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="23" x="32" y="240" width="16" height="48">
+  <object id="23" x="32" y="240" width="16" height="96">
    <properties>
     <property name="EventID" value="5"/>
     <property name="trigger" value="2"/>
