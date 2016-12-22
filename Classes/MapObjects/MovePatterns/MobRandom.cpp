@@ -48,13 +48,6 @@ void MobRandom::pause()
     _chara->stopActionByTag(SCHEDULE_ACTION_TAG);
 }
 
-void MobRandom::resume()
-{
-    MovePattern::resume();
-    
-    this->scheduleMove();
-}
-
 void MobRandom::move()
 {
     if(this->isPaused()) return;

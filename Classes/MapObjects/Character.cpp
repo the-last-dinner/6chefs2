@@ -369,7 +369,6 @@ void Character::onEnterMap()
     
     if (DungeonSceneManager::getInstance()->isEventRunning()) {
         this->onEventStart();
-        if (_movePattern) _movePattern->pause();
     } else {
         if (_movePattern) _movePattern->start();
     }
@@ -424,7 +423,10 @@ void Character::onEventStart()
 void Character::onEventFinished()
 {
     this->setPaused(false);
-    if (_movePattern && _movePattern->isPaused()) _movePattern->resume();
+    if (_movePattern) {
+        if (!_movePattern->hasSterted()) _movePattern->start();
+        if (_movePattern->isPaused()) _movePattern->resume();
+    }
     this->getActionManager()->resumeTarget(this);
 }
 
