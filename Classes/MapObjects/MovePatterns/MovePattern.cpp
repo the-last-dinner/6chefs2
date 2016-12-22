@@ -31,7 +31,10 @@ bool MovePattern::init(Character* chara)
 }
 
 // 動き開始
-void MovePattern::start() {}
+void MovePattern::start()
+{
+    _started = true;
+}
 
 // 一時停止
 void MovePattern::pause()
@@ -67,6 +70,11 @@ MapObjectList* MovePattern::getMapObjectList() const { return _chara->_objectLis
 bool MovePattern::isPaused() const
 {
     return _paused;
+}
+
+bool MovePattern::hasSterted() const
+{
+    return _started;
 }
 
 #pragma mark -
