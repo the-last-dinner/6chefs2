@@ -401,6 +401,13 @@
 							"file":"ocean-wave.mp3"
 						},
 						{
+							"type":"fadeout"
+						},
+						{
+							"type":"playSE",
+							"file":"gun_water.mp3"
+						},
+						{
 							"type":"animation",
 							"time":0.15,
 							"imgs":[
@@ -415,10 +422,8 @@
 							]
 						},
 						{
-							"type":"fadeout"
-						},
-						{
-							"type":"createUnderwater"
+							"type":"createUnderwater",
+							"waveIn":true 
 						},
 						{
 							"type":"fadein"
@@ -948,7 +953,7 @@
 									"name":"戸塚 大宝"
 								},
 								{
-									"text":["あ、そうそう。”テンゲンロウ”\nできたみたいね","タイホウと、ヨシツネと\n行きたかったなぁ・・・"],
+									"text":["あ、そうそう。”テンゲンロウ”\nできたみたいね","タイホウと、ヨシツネと","行きたかったなぁ・・・"],
 									"charaID":"10",
 									"name":"ヤエ"
 								}

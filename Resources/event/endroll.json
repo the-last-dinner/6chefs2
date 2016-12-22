@@ -4,6 +4,9 @@
 			"type":"sequence",
 			"action":[
 				{
+				    "type": "setGameClear"
+				},
+				{
 					"type":"spawn",
 					"action":[
 						{
@@ -62,6 +65,9 @@
 		{
 			"type":"sequence",
 			"action":[
+				{
+				    "type": "setGameClear"
+				},
 				{
 					"type":"createCamera",
 					"mapID":"1",

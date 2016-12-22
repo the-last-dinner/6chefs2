@@ -199,7 +199,7 @@
 						{
 							"text":["お待たせしましたぞ！"],
 							"charaID":"4",
-							"imgID":"2"
+							"imgID":"1"
 						},
 						{
 							"text":["おう、待ってたぜぇ！\n暖暖！"],
@@ -250,7 +250,7 @@
 						{
 							"text":["ささ！\n早く座って下され！"],
 							"charaID":"4",
-							"imgID":"2"
+							"imgID":"1"
 						},
 						{
 							"text":["・・・"],
@@ -328,7 +328,8 @@
 					"type":"charaMsg",
 					"text":["いただきます！"],
 					"charaID":"10",
-					"name":"一同"
+					"name":"一同",
+					"option":"reaction"
 				},
 				{
 					"type":"fadeout",
