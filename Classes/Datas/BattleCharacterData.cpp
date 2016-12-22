@@ -268,8 +268,9 @@ float BattleCharacterData::getStepIntervalTime() const
 AttackData* BattleCharacterData::getAttackData(const string &attackName) const
 {
     if (_attacks.count(attackName) == 0) {
-        _assertHelper->pushTextLineKeyValue("attack_name", attackName)
-        ->fatalAssert("attack data is missing.");
+        // ここでエラー出しちゃうと都合が悪いので取得する側で判断する
+        //_assertHelper->pushTextLineKeyValue("attack_name", attackName)
+        //->fatalAssert("attack data is missing.");
         return nullptr;
     }
     return _attacks.at(attackName);

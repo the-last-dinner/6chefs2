@@ -67,7 +67,15 @@ void AttackCommand::execute(MapObject* target)
     }
     
     character->beInAttackMotion(true);
-    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackData(_name)->power);
+    
+    AttackData* attackData { character->getBattleCharacterData()->getAttackData(_name) };
+    if (!attackData) {
+        LastSupper::AssertUtils::fatalAssert("AttackData is missing.\n You should check move pattern.\ncharaID: "
+                                             + to_string(character->getCharacterId()) + "\nattackName: " + _name);
+        return;
+    }
+    
+    character->getBattleAttackBox()->setPower(attackData->power);
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
     
     if (_stamina) {
