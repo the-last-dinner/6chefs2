@@ -254,18 +254,18 @@
             <FileData Type="PlistSubImage" Path="effect_kick.png" Plist="character/daigoro.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="615238074" Tag="7" IconVisible="False" LeftMargin="2.0000" RightMargin="-34.0000" TopMargin="-34.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="615238074" Tag="7" IconVisible="False" RightMargin="-32.0000" TopMargin="-34.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="34.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="18.0000" Y="17.0000" />
+            <Position X="16.0000" Y="17.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="ranmaru_0_1.png" Plist="character/ranmaru.plist" />
+            <FileData Type="PlistSubImage" Path="ranmaru_0_0.png" Plist="character/ranmaru.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" CanEdit="False" Visible="False" ActionTag="1020399682" Tag="15" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" CanEdit="False" ActionTag="1020399682" Tag="15" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -276,7 +276,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" CanEdit="False" Visible="False" ActionTag="235587308" Tag="20" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" CanEdit="False" ActionTag="235587308" Tag="20" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
