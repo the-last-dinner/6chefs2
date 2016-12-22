@@ -148,12 +148,6 @@
 							"type":"stopBGM"
 						},
 						{
-							"type":"camera",
-							"nextX":53,
-							"nextY":63,
-							"time":0.5
-						},
-						{
 							"type":"spawn",
 							"action":[
 								{
@@ -222,42 +216,49 @@
 							]
 						},
 						{
-							"type":"playBGM",
-							"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
+							"type": "releaseChase",
+							"objID":"10108"
 						},
 						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"charaMsg",
-									"img":"taihou_reign.png",
-									"talk":[
-										{
-											"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
-											"charaID":"10",
-											"name":"戸塚　大宝"
-										},
-										{
-											"text":["おじさん・・・"],
-											"charaID":"10",
-											"name":"希崎　雪"
-										},
-										{
-											"text":["お前が戸塚か・・・"],
-											"charaID":"10",
-											"name":"加藤　蘭丸"
-										},
-										{
-											"text":["・・・"],
-											"charaID":"10",
-											"name":"中山　撫子"
-										}
-									]
-								},
-								{
-									"type":"fadein"
-								}
-							]
+							"type": "releaseChase",
+							"objID":"10109"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10110"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10111"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10112"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10113"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10114"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10115"
+						},
+						{
+							"type":"camera",
+							"nextX":53,
+							"nextY":63,
+							"time":0.5
+						},
+						{
+							"type":"fadein"
+						},
+						{
+							"type":"playBGM",
+							"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
 						},
 						{
 							"type":"wait",
@@ -266,6 +267,26 @@
 						{
 							"type":"charaMsg",
 							"talk":[
+								{
+									"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
+									"charaID":"9",
+									"imgID":"1"
+								},
+								{
+									"text":["おじさん・・・"],
+									"charaID":"6",
+									"imgID":"2"
+								},
+								{
+									"text":["お前が戸塚か・・・"],
+									"charaID":"2",
+									"imgID":"2"
+								},
+								{
+									"text":["・・・"],
+									"charaID":"1",
+									"imgID":"1"
+								},
 								{
 									"text":["で・・・何の用だ？\n茶でも出すか？"],
 									"charaID":"9",
@@ -411,10 +432,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
@@ -472,10 +490,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
@@ -528,14 +543,11 @@
 												{
 													"type":"createEnemy",
 													"objID":"1451",
-													"charaID":"13",
+													"charaID":"9",
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
@@ -593,10 +605,7 @@
 													"x":53,
 													"y":55,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
@@ -1044,7 +1053,7 @@
 								{
 									"type":"changeDirection",
 									"objID":"10122",
-									"direction":"LEFT"
+									"direction":"UP"
 								}
 							]
 						}
@@ -1070,6 +1079,11 @@
 							"imgID":"4"
 						}
 					]
+				},
+				{
+					"type":"changeDirection",
+					"objID":"10122",
+					"direction":"LEFT"
 				},
 				{
 					"type":"playSE",
@@ -1128,8 +1142,14 @@
 					]
 				},
 				{
+					"type":"fadeout"
+				},
+				{
 					"type":"setCamera",
 					"objID":"10125"
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"charaWalkTo",
