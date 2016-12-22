@@ -209,10 +209,48 @@
 	],
 	"3":[
 		{
-			"type":"changeMap",
-			"mapID":"83",
-			"x":2,
-			"y":11
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["79","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"83",
+					"x":2,
+					"y":11
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["79","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["おい！やべぇ！\n逃げるぞ！"],
+							"charaID":"8",
+							"imgID":"4",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"LEFT",
+							"steps":1.0
+						}
+					]
+				}
+			]
 		}
 	],
 	"4":[
@@ -245,7 +283,7 @@
 					"action":[
 						{
 							"type":"charaMsg",
-							"text":["おい、朱花！やべぇ！\n逃げるぞ！"],
+							"text":["おい！やべぇ！\n逃げるぞ！"],
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"

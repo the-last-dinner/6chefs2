@@ -470,11 +470,11 @@
 												{
 													"type":"createEnemy",
 													"objID":"1451",
-													"charaID":"13",
+													"charaID":"9",
 													"x":48,
 													"y":63,
 													"direction":"DOWN",
-													"movePattern":"6"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
