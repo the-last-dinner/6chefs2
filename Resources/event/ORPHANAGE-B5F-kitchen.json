@@ -447,7 +447,7 @@
 							"x":14,
 							"y":20,
 							"direction":"DOWN",
-							"movePattern":"6"
+							"movePattern":"7"
 						},
 						{
 							"type":"fadein"
