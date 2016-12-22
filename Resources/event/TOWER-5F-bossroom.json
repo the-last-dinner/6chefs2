@@ -4,6 +4,48 @@
 			"type":"if",
 			"condition":[
 				{
+					"event":["54","17"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door1"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","19"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door2"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","21"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door3"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
 					"event":["69","2"],
 					"Nevent":["54","3"]
 				}
@@ -430,7 +472,8 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
+													"times":1,
 													"direction":"DOWN",
 													"movePattern":"7"
 												},
@@ -488,7 +531,7 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
 													"movePattern":"7"
 												},
@@ -545,7 +588,7 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
 													"movePattern":"7"
 												},
@@ -603,7 +646,7 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
 													"movePattern":"7"
 												},
@@ -745,6 +788,9 @@
 		{
 			"type":"removeLayer",
 			"layer":"door1"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"18":[
@@ -765,6 +811,9 @@
 		{
 			"type":"removeLayer",
 			"layer":"door2"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"20":[
@@ -775,6 +824,9 @@
 		{
 			"type":"createLayer",
 			"layer":"door2"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"21":[

@@ -6,9 +6,9 @@
                 "power": 50,
                 "stamina": 5.0,
                 "interval_time": 0.3,
-                "motion_sound": "",
+                "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "punch-middle2.mp3",
                 "hit_sound_volume": 1.0
             }
         },
@@ -24,9 +24,9 @@
                 "power": 30,
                 "stamina": 20.0,
                 "interval_time": 0.5,
-                "motion_sound": "",
+                "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "big_hit.mp3",
                 "hit_sound_volume": 1.0
             }
         },
@@ -42,9 +42,9 @@
                 "power": 25,
                 "stamina": 25.0,
                 "interval_time": 0.1,
-                "motion_sound": "",
+                "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "punch-middle2.mp3",
                 "hit_sound_volume": 1.0
             }
         },
@@ -60,9 +60,9 @@
                 "power": 30,
                 "stamina": 20.0,
                 "interval_time": 0.5,
-                "motion_sound": "",
+                "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "punch-middle2.mp3",
                 "hit_sound_volume": 1.0
             }
         },
@@ -78,18 +78,18 @@
                 "power": 50,
                 "stamina": 5.0,
                 "interval_time": 0.5,
-                "motion_sound": "",
+                "motion_sound": "taihou_attack1.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "busu.mp3",
                 "hit_sound_volume": 1.0
             },
             "attack_2": {
                 "power": 50,
                 "stamina": 5.0,
                 "interval_time": 0.5,
-                "motion_sound": "",
+                "motion_sound": "taihou_attack2.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "taihou_hit2.mp3",
                 "hit_sound_volume": 1.0
             }
         },
@@ -105,9 +105,9 @@
                 "power": 25,
                 "stamina": 5.0,
                 "interval_time": 0.9,
-                "motion_sound": "",
+                "motion_sound": "taihou_attack2.mp3",
                 "motion_sound_volume": 1.0,
-                "hit_sound": "",
+                "hit_sound": "blood.mp3",
                 "hit_sound_volume": 1.0
             }
         },
