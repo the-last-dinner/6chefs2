@@ -293,7 +293,7 @@ void SetLightEvent::run()
 }
 
 #pragma mark -
-#pragma mark RemvoeLightEvent
+#pragma mark RemoveLightEvent
 
 bool RemoveLightEvent::init(rapidjson::Value& json)
 {

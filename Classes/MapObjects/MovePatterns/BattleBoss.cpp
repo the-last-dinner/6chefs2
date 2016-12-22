@@ -8,11 +8,18 @@
 
 #include "MapObjects/MovePatterns/BattleBoss.h"
 
+#include "Effects/DustEffect.h"
+
 #include "MapObjects/Character.h"
 #include "MapObjects/Command/AttackCommand.h"
+#include "MapObjects/Command/FastMoveCommand.h"
 #include "MapObjects/Command/WalkCommand.h"
 #include "MapObjects/DetectionBox/CollisionBox.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/Chaser.h"
+
+#include "Managers/DungeonSceneManager.h"
 
 // 定数
 const string BattleBoss::FORWARD_ATTACK_NAME { "attack_1" };
@@ -96,6 +103,15 @@ void BattleBoss::onSpinAttackCommandFinished(Character* character)
     this->start();
 }
 
+void BattleBoss::onFastMoveCommandFinished()
+{
+    _chara->clearCommandQueue();
+    AttackCommand* command { AttackCommand::create() };
+    command->setName(FORWARD_ATTACK_NAME);
+    command->setCallback(CC_CALLBACK_1(BattleBoss::onForwardAttackCommandFinished, this));
+    _chara->pushCommand(command);
+}
+
 #pragma mark -
 #pragma mark Interface
 
@@ -134,10 +150,6 @@ void BattleBoss::update(float delta)
     if (_chara->isInAttackMotion()) return;
     if (!_chara->getBattle()) return;
     
-    if (!_chara->isMoving()) {
-        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
-    }
-    
     Point forwardGridPos1 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() };
     Point forwardGridPos2 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() * 2 };
     
@@ -148,5 +160,25 @@ void BattleBoss::update(float delta)
         command->setName(FORWARD_ATTACK_NAME);
         command->setCallback(CC_CALLBACK_1(BattleBoss::onForwardAttackCommandFinished, this));
         _chara->pushCommand(command);
+        return;
+    }
+    
+    Point charaGridPos { _chara->getGridPosition() };
+    Point targetGridPos { this->getMainCharacter()->getGridPosition() };
+    vector<Direction> directions { Direction::convertGridVec2(targetGridPos - charaGridPos) };
+    bool existsCollisionBetween { this->getMapObjectList()->getCollisionDetector()->existsCollisionBetween(_chara, this->getMainCharacter()) };
+    
+    if (existsCollisionBetween) return;
+    if (directions.size() == 1 && directions.front().getInt() == _chara->getDirection().getInt()) {
+        _chara->clearCommandQueue();
+        Direction direction { _chara->getDirection().getOppositeDirection() };
+        Point gridPos { this->getMainCharacter()->getGridPosition() + direction.getGridVec2() * 2 };
+        
+        FastMoveCommand* command { FastMoveCommand::create() };
+        command->setGridPosition(gridPos);
+        command->setDelayTime(0.4f);
+        command->setCallback(CC_CALLBACK_0(BattleBoss::onFastMoveCommandFinished, this));
+        _chara->pushCommand(command);
+        return;
     }
 }

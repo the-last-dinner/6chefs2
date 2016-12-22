@@ -15,6 +15,8 @@
 #include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/Status/Stamina.h"
 
+#include "Effects/DustEffect.h"
+
 // 定数
 const int StepCommand::MOVE_GRID_NUM { 3 };
 
@@ -108,5 +110,10 @@ void StepCommand::moveCharacter(Character* character)
             EaseQuadraticActionOut::create(MoveBy::create(MapObject::DURATION_MOVE_ONE_GRID / 2, Vec2(0, GRID))),
             EaseQuadraticActionIn::create(MoveBy::create(MapObject::DURATION_MOVE_ONE_GRID / 2, Vec2(0, -GRID)))
         ));
+        
+        DustEffect* effect { DustEffect::create() };
+        effect->setPosition(character->getPosition());
+        character->getParent()->addChild(effect);
+        effect->animate([character](DustEffect* e){ character->getParent()->removeChild(e); });
     }
 }

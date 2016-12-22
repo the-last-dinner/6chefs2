@@ -2,7 +2,12 @@
   <PropertyGroup Name="taihou" Type="Node" ID="282c99bc-c69a-4edb-88d7-6f36092d6dc7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="690" Speed="1.0000" ActivedAnimationName="attack_2_right">
+      <Animation Duration="690" Speed="1.0000" ActivedAnimationName="attack_1_up">
+        <Timeline ActionTag="-1443239574" Property="VisibleForFrame">
+          <BoolFrame FrameIndex="220" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="255" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="260" Tween="False" Value="False" />
+        </Timeline>
         <Timeline ActionTag="2064821685" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="PlistSubImage" Path="taihou_0_0.png" Plist="character/taihou.plist" />
@@ -270,6 +275,31 @@
           <BoolFrame FrameIndex="670" Tween="False" Value="True" />
           <BoolFrame FrameIndex="690" Tween="False" Value="False" />
         </Timeline>
+        <Timeline ActionTag="-1514576561" Property="Position">
+          <PointFrame FrameIndex="150" Tween="False" X="16.0000" Y="-16.0000" />
+          <PointFrame FrameIndex="290" Tween="False" X="-16.0000" Y="16.0000" />
+          <PointFrame FrameIndex="360" X="48.0000" Y="16.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="-1514576561" Property="RotationSkew">
+          <ScaleFrame FrameIndex="150" Tween="False" X="0.0000" Y="0.0000" />
+          <ScaleFrame FrameIndex="290" Tween="False" X="90.0000" Y="90.0000" />
+          <ScaleFrame FrameIndex="360" X="-90.0000" Y="-90.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-1514576561" Property="VisibleForFrame">
+          <BoolFrame FrameIndex="150" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="185" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="190" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="290" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="325" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="330" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="360" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="395" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="400" Tween="False" Value="False" />
+        </Timeline>
       </Animation>
       <AnimationList>
         <AnimationInfo Name="down" StartIndex="0" EndIndex="1">
@@ -324,6 +354,17 @@
       <ObjectData Name="Node" Tag="3" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
+          <AbstractNodeData Name="battle_effect_2" CanEdit="False" ActionTag="-1443239574" VisibleForFrame="False" Tag="8" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.0000" RightMargin="-64.0000" TopMargin="-74.0000" BottomMargin="10.0000" ctype="SpriteObjectData">
+            <Size X="96.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="16.0000" Y="42.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
           <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-31.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -377,6 +418,17 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="battle_effect_1" CanEdit="False" ActionTag="-1514576561" VisibleForFrame="False" Tag="7" IconVisible="False" LeftMargin="-32.0000" RightMargin="-64.0000" TopMargin="-16.0000" BottomMargin="-48.0000" ctype="SpriteObjectData">
+            <Size X="96.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="16.0000" Y="-16.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
