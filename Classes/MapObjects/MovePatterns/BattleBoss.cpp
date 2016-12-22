@@ -150,10 +150,6 @@ void BattleBoss::update(float delta)
     if (_chara->isInAttackMotion()) return;
     if (!_chara->getBattle()) return;
     
-    if (!_chara->isMoving()) {
-        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
-    }
-    
     Point forwardGridPos1 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() };
     Point forwardGridPos2 { _chara->getGridPosition() + _chara->getDirection().getGridVec2() * 2 };
     
