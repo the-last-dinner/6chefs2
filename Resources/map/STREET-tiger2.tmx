@@ -92,7 +92,7 @@
    eJzt2UEVgDAMRMF4IFUB/g1RF3CgEnoLeW9GwT/vRgAAAMC/3Rkxs7pi37Na30a9AAAAAFDF9gcAANDLMSJyVFfsO1fr1agXAAAA6Mn3DQBU+gDyoAz9
   </data>
  </layer>
- <layer name="hide" width="44" height="108" visible="0">
+ <layer name="hide" width="44" height="108">
   <properties>
    <property name="z" value="-11"/>
   </properties>

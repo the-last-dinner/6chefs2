@@ -148,6 +148,12 @@
 							"type":"stopBGM"
 						},
 						{
+							"type":"camera",
+							"nextX":53,
+							"nextY":63,
+							"time":0.5
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -216,6 +222,10 @@
 							]
 						},
 						{
+							"type":"playBGM",
+							"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
+						},
+						{
 							"type":"spawn",
 							"action":[
 								{
@@ -245,19 +255,9 @@
 									]
 								},
 								{
-									"type":"camera",
-									"nextX":53,
-									"nextY":63,
-									"time":0.5
-								},
-								{
 									"type":"fadein"
 								}
 							]
-						},
-						{
-							"type":"playBGM",
-							"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
 						},
 						{
 							"type":"wait",
@@ -381,15 +381,6 @@
 							"objID":"10125"
 						},
 						{
-							"type":"createObject",
-							"objID":"10116",
-							"charaID":"0",
-							"x":86,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
 							"type":"questionMsg",
 							"text":["誰で戦いますか？"],
 							"choices":[
@@ -406,39 +397,6 @@
 												{
 													"type":"already",
 													"event":["54","5"]
-												},
-												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
 												},
 												{
 													"type":"charaMsg",
@@ -473,85 +431,6 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10118",
-																	"charaID":"2",
-																	"eventID":"10",
-																	"trigger":"2",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
@@ -578,39 +457,6 @@
 												{
 													"type":"already",
 													"event":["54","6"]
-												},
-												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
 												},
 												{
 													"type":"charaMsg",
@@ -646,85 +492,6 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10121",
-																	"charaID":"5",
-																	"eventID":"12",
-																	"trigger":"2",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
@@ -751,39 +518,6 @@
 												{
 													"type":"already",
 													"event":["54","7"]
-												},
-												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
 												},
 												{
 													"type":"charaMsg",
@@ -818,85 +552,6 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10122",
-																	"charaID":"6",
-																	"eventID":"16",
-																	"trigger":"2",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
@@ -923,39 +578,6 @@
 												{
 													"type":"already",
 													"event":["54","8"]
-												},
-												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
 												},
 												{
 													"type":"charaMsg",
@@ -989,85 +611,6 @@
 																{
 																	"type":"fadeout",
 																	"time":3.0
-																},
-																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10124",
-																	"charaID":"8",
-																	"eventID":"14",
-																	"trigger":"2",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT",
-																	"movePattern":"1"
 																},
 																{
 																	"type":"callEvent",
@@ -1249,6 +792,107 @@
 		{
 			"type":"sequence",
 			"action":[
+				{
+					"type":"changeHero",
+					"charaID":"0"
+				},
+				{
+					"type":"removeEnemy",
+					"objID":"1451"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"hero",
+					"x":60,
+					"y":75,
+					"direction":"UP"
+				},
+				{
+					"type":"createObject",
+					"objID":"10117",
+					"charaID":"1",
+					"eventID":"9",
+					"trigger":"2",
+					"x":68,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10119",
+					"charaID":"3",
+					"x":66,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10120",
+					"charaID":"4",
+					"eventID":"11",
+					"trigger":"2",
+					"x":64,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10123",
+					"charaID":"7",
+					"eventID":"13",
+					"trigger":"2",
+					"x":62,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10118",
+					"charaID":"2",
+					"eventID":"10",
+					"trigger":"2",
+					"x":53,
+					"y":67,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10121",
+					"charaID":"5",
+					"eventID":"12",
+					"trigger":"2",
+					"x":47,
+					"y":70,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10122",
+					"charaID":"6",
+					"eventID":"16",
+					"trigger":"2",
+					"x":56,
+					"y":72,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10124",
+					"charaID":"8",
+					"eventID":"14",
+					"trigger":"2",
+					"x":43,
+					"y":62,
+					"direction":"RIGHT",
+					"movePattern":"1"
+				},
 				{
 					"type":"createObject",
 					"objID":"10125",
