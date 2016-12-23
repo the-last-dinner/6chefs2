@@ -282,9 +282,9 @@
 					"type":"createEnemy",
 					"objID":"1422",
 					"charaID":"13",
-					"x":9,
-					"y":99,
-					"direction":"UP",
+					"x":11,
+					"y":40,
+					"direction":"DOWN",
 					"times":1,
 					"pathID":"1",
 					"movePattern":"4"

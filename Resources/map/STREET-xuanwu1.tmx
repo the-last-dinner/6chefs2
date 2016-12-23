@@ -150,13 +150,6 @@
  <objectgroup name="path">
   <object id="58" x="176" y="1376" width="32" height="32">
    <properties>
-    <property name="nextID" value="2"/>
-    <property name="pathID" value="1"/>
-    <property name="previousID" value="2"/>
-   </properties>
-  </object>
-  <object id="59" x="192" y="992" width="32" height="32">
-   <properties>
     <property name="nextID" value="1"/>
     <property name="pathID" value="2"/>
     <property name="previousID" value="1"/>
@@ -164,16 +157,9 @@
   </object>
   <object id="60" x="208" y="320" width="32" height="32">
    <properties>
-    <property name="nextID" value="4"/>
-    <property name="pathID" value="3"/>
-    <property name="previousID" value="4"/>
-   </properties>
-  </object>
-  <object id="61" x="192" y="816" width="32" height="32">
-   <properties>
-    <property name="nextID" value="3"/>
-    <property name="pathID" value="4"/>
-    <property name="previousID" value="3"/>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="2"/>
    </properties>
   </object>
  </objectgroup>

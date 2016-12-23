@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="91">
- <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16">
+ <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" trans="aa55ff" width="480" height="1520"/>
  </tileset>
- <tileset firstgid="5347" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="5347" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="24" height="110">
@@ -399,42 +399,18 @@
   </object>
  </objectgroup>
  <objectgroup name="path">
-  <object id="39" x="144" y="1536" width="32" height="32">
+  <object id="41" x="176" y="688" width="32" height="32">
    <properties>
     <property name="nextID" value="2"/>
     <property name="pathID" value="1"/>
-    <property name="previousID" value="0"/>
-   </properties>
-  </object>
-  <object id="40" x="224" y="1024" width="32" height="32">
-   <properties>
-    <property name="nextID" value="3"/>
-    <property name="pathID" value="2"/>
-    <property name="previousID" value="1"/>
-   </properties>
-  </object>
-  <object id="41" x="128" y="768" width="32" height="32">
-   <properties>
-    <property name="nextID" value="4"/>
-    <property name="pathID" value="3"/>
     <property name="previousID" value="2"/>
    </properties>
   </object>
-  <object id="42" x="144" y="1024" width="32" height="32">
+  <object id="42" x="176" y="1280" width="32" height="32">
    <properties>
     <property name="nextID" value="1"/>
-    <property name="pathID" value="4"/>
-    <property name="previousID" value="3"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="37" x="192" y="272" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="6"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1029"/>
+    <property name="pathID" value="2"/>
+    <property name="previousID" value="1"/>
    </properties>
   </object>
  </objectgroup>

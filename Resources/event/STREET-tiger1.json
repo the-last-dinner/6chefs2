@@ -321,11 +321,11 @@
 					"type":"createEnemy",
 					"objID":"1416",
 					"charaID":"13",
-					"x":20,
-					"y":101,
+					"x":19,
+					"y":66,
 					"direction":"UP",
 					"times":1,
-					"pathID":"3",
+					"pathID":"4",
 					"movePattern":"4"
 				}
 			]
@@ -792,11 +792,11 @@
 					"type":"createEnemy",
 					"objID":"1416",
 					"charaID":"13",
-					"x":20,
-					"y":101,
+					"x":19,
+					"y":55,
 					"direction":"UP",
 					"times":1,
-					"pathID":"3",
+					"pathID":"4",
 					"movePattern":"4"
 				},
 				{
