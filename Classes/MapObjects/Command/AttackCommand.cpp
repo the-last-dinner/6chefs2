@@ -68,6 +68,8 @@ void AttackCommand::execute(MapObject* target)
     
     AttackData* data { character->getBattleCharacterData()->getAttackData(_name) };
     
+    character->setAttackHitCallback([this, character](MapObject* mo){ this->onAttackHitted(character, mo); });
+    
     character->beInAttackMotion(true);
 
     if (!data) {
@@ -98,6 +100,7 @@ void AttackCommand::onAttackAnimationFinished(Character* character)
     character->runAction(Sequence::createWithTwoActions(DelayTime::create(attackData->intervalTime), CallFunc::create([this, character] {
         character->beInAttackMotion(false);
         character->clearCommandQueue();
+        character->setAttackHitCallback(nullptr);
         this->setDone();
         if (_callback) {
             _callback(character);
@@ -105,3 +108,11 @@ void AttackCommand::onAttackAnimationFinished(Character* character)
     })));
 }
 
+// 攻撃ヒット時
+void AttackCommand::onAttackHitted(Character* character, MapObject* hittedObject)
+{
+    AttackData* data { character->getBattleCharacterData()->getAttackData(_name) };
+    if (data->hitSound != "") {
+        SoundManager::getInstance()->playSE(data->hitSound, data->hitSoundVolume);
+    }
+}
