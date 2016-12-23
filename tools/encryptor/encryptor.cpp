@@ -40,6 +40,10 @@ string strReplace(const string& pattern, const string& replacement, string targe
 // main
 int main(int argc, char *argv[])
 {
+    // シェルで必要ファイル生成
+    system("sh prepare.sh");
+
+    // 変数準備
     string dirs[] = {
         "event",
         "config",
@@ -51,11 +55,11 @@ int main(int argc, char *argv[])
     printf("%s\n", rootPath.c_str());
 
     // リストから暗号化
-    for (string dir : dirs) {
+    for (string dir:dirs) {
         path = "tmp/" + dir + ".list";
         vector<string> fileNames = readTextFile(path);
         printf("%s\n", dir.c_str());
-        for (string file : fileNames) {
+        for (string file:fileNames) {
             file = rootPath + dir + "/" + file;
             printf("%s\n", file.c_str());
             if (dir == "csv") {
@@ -68,6 +72,10 @@ int main(int argc, char *argv[])
             }
         }
     }
+
+    // 暗号化が終わった証拠を作成
+    string makeFileCommand = "touch " + rootPath + "config/Encrypted.json";
+    system(makeFileCommand.c_str());
 
     return 0;
 }
@@ -226,7 +234,7 @@ rapidjson::Document csvMapToJson(CsvMap& csvMap)
         const char* idChar = to_string(itr.first).c_str();
         writer.Key(idChar);
         writer.StartArray();
-        for (string val　:　itr.second) {
+        for (string val:itr.second) {
             writer.String(val.c_str());
         }
         writer.EndArray();
