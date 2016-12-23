@@ -26,7 +26,7 @@ bool CommonEventScripts::getEventScriptsConfig()
 {
     string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::COMMON_EVENT);
     if (path == "") return false;
-    this->config = LastSupper::JsonUtils::readJsonFile(path);
+    this->config = LastSupper::JsonUtils::readJsonCrypted(path);
     return true;
 }
 

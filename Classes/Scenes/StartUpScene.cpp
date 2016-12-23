@@ -32,21 +32,12 @@ bool StartUpScene::init()
 // シーン生成直後
 void StartUpScene::onEnter()
 {
-    // マスターデータ準備
-    CsvDataManager::getInstance();
-    
-    // 暗号化が必要な場合は暗号化
-    if (ConfigDataManager::getInstance()->getDebugConfigData()->needInitialCrypt())
-    {
-        this->ecnryptCsvFiles();
-        this->encryptSaveFiles();
-        this->encryptEventScripts();
-        ConfigDataManager::getInstance()->getDebugConfigData()->setCrypted();
-    }
-    
-    // セーブデータ準備
-    PlayerDataManager::getInstance();
     BaseScene::onEnter();
+    
+    // データ準備
+    ConfigDataManager::getInstance();
+    CsvDataManager::getInstance();
+    PlayerDataManager::getInstance();
 }
 
 // データ読み込み後
@@ -85,65 +76,4 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
             nullptr
         )
     );
-}
-
-// セーブデータの暗号化
-void StartUpScene::encryptSaveFiles()
-{
-    vector<string> files= {
-        "global_template",
-        "global",
-        "local_template",
-        "local1",
-        "local2",
-        "local3",
-        "local4",
-        "local5",
-        "local6",
-        "local7",
-        "local8",
-        "local9",
-        "local10",
-    };
-    string path = "";
-    for (string file : files)
-    {
-        path = FileUtils::getInstance()->fullPathForFilename("save/" + file + SAVE_EXTENSION);
-        if (path != "") LastSupper::JsonUtils::enctyptJsonFile(path);
-    }
-}
-
-// イベントスクリプトの暗号化
-void StartUpScene::encryptEventScripts()
-{
-    vector<string> fileNames = CsvDataManager::getInstance()->getMapData()->getFileNameAll();
-    rapidjson::Document common = LastSupper::JsonUtils::readJsonFile(FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::COMMON_EVENT));
-    for (int i = 0; i < common.Size(); i++)
-    {
-        fileNames.push_back(common[i]["name"].GetString());
-    }
-    string path = "";
-    for(string file : fileNames)
-    {
-        path = FileUtils::getInstance()->fullPathForFilename("event/" + file + ES_EXTENSION);
-        LastSupper::JsonUtils::enctyptJsonFile(path);
-    }
-}
-
-// CSVの暗号化
-void StartUpScene::ecnryptCsvFiles()
-{
-    vector<string> files = {
-        "character",
-        "chapter",
-        "item",
-        "map",
-        "trophy",
-    };
-    string path = "";
-    for(string file : files)
-    {
-        path = FileUtils::getInstance()->fullPathForFilename("csv/" + file + CSV_EXTENSION);
-        CsvUtils::encryptCsvToJson(path);
-    }
 }

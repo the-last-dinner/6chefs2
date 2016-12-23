@@ -48,7 +48,7 @@ bool BattleCharacterData::init(const string &charaId)
             _assertHelper->fatalAssert(Resource::ConfigFiles::BATTLE_CHARACTER + "is missing");
             return false;
         }
-        BattleCharacterData::BATTLE_CHARACTER_DATA = LastSupper::JsonUtils::readJsonFile(path);
+        BattleCharacterData::BATTLE_CHARACTER_DATA = LastSupper::JsonUtils::readJsonCrypted(path);
     }
     
     // charaIDに対応するデータを取得

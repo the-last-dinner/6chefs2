@@ -9,6 +9,7 @@
 #include <fstream>
 #include "AudioEngine.h"
 #include "resources.h"
+#include "env.h"
 #include "Models/Direction.h"
 
 // rapidjson
@@ -33,9 +34,6 @@ typedef GenericStringBuffer< UTF8<> > StringBuffer;
 
 // おまけ部屋のセーブデータID
 #define SPECIAL_ROOM_SAVE_ID 99
-
-// 暗号キー
-#define C_KEY 4545
 
 // ゲームウインドウ横幅、縦幅
 #define WINDOW_WIDTH 800
@@ -67,6 +65,9 @@ using namespace std;
 
 // セーブデータの個数
 #define MAX_SAVE_COUNT 10
+
+// 暗号化状態の判別
+#define IS_ENCRYPTED (FileUtils::getInstance()->fullPathForFilename("config/IsEncrypted.json") != "")
 
 // レイヤーのZORDER値
 enum Priority

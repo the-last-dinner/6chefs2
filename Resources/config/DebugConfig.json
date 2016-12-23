@@ -1,7 +1,5 @@
 {
 	"stats":false,
 	"debug_mask":false,
-	"invincible_mode":false,
-    "plain_data":true,
-    "crypt_trigger":false
+	"invincible_mode":false
 }

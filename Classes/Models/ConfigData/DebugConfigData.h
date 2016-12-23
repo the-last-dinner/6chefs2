@@ -35,9 +35,7 @@ public:
     static const char* DEBUG_MASK;
     static const char* STATS;
     static const char* INVINCIBLE_MODE;
-    static const char* PLAIN_DATA;
-    static const char* CRYPT_TRIGGER;
-    
+
     // Instance valiables
 private:
     string filePath {};
@@ -49,9 +47,6 @@ public:
     bool init();
     bool getBoolValue(const char* key);
     bool isDebugMode();
-    bool needInitialCrypt();
-    bool needCrypt();
-    void setCrypted();
 private:
     void writeConfig();
 };
