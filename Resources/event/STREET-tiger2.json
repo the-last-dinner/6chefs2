@@ -961,6 +961,10 @@
 									"type":"fadein"
 								},
 								{
+									"type":"playBGM",
+									"file":"party_hubbub1.mp3"
+								},
+								{
 									"type":"camera",
 									"nextX":21,
 									"nextY":10,
