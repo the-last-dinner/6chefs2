@@ -77,6 +77,7 @@ private:
     int _equip { 0 };
     bool _checkEquip { false };
     bool _display { false };
+    bool _isTimeUp { false };
     GameEvent* _successCallbackEvent { nullptr };
     GameEvent* _failureCallbackEvent { nullptr };
 private:

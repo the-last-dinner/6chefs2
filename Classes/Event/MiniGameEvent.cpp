@@ -272,6 +272,9 @@ void CountDownEvent::run()
     }
     
     stopWatch->scheduleCallback = [this](double time) {
+        
+        if (_isTimeUp) return false;
+        
         // 条件チェック
         bool condition = false;
         if (_checkEquip) {
@@ -310,8 +313,10 @@ void CountDownEvent::run()
 
 void CountDownEvent::runResultCallbackEvent(GameEvent *callbackEvent)
 {
+    _isTimeUp = true;
     
     if (!callbackEvent) return;
+    
     EventTask* eventTask { DungeonSceneManager::getInstance()->getEventTask() };
     eventTask->pushEventBack(callbackEvent);
     eventTask->runEventQueue();
