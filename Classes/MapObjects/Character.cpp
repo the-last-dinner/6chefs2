@@ -105,6 +105,11 @@ bool Character::init(const CharacterData& data)
     BattleCharacterData* battleData { BattleCharacterData::create(data.chara_id) };
     CC_SAFE_RETAIN(battleData);
     _battleData = battleData;
+    
+    Node* attackOriginNode { _csNode->getCSChild(CS_ATTACK_NODE_NAME) };
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) {
+        if (attackOriginNode) attackOriginNode->setOpacity(0);
+    }
 	
     return true;
 }
@@ -456,7 +461,6 @@ void Character::onBattleStart(Battle* battle)
     }
     
     Node* attackOriginNode { _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME) };
-    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) attackOriginNode->setOpacity(0);
     AttackBox* box { AttackBox::create(this, attackOriginNode, CC_CALLBACK_1(Character::onAttackHitted, this)) };
     if (box) {
         _objectList->getAttackDetector()->addAttackBox(box);
