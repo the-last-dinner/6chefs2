@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <map>
 #include <iostream>
 #include <fstream>
 
@@ -12,12 +13,18 @@
 #include "rapidjson/filewritestream.h"
 #include "rapidjson/prettywriter.h"
 #include "rapidjson/error/en.h"
+#include "rapidjson/rapidjson.h"
 
 #include "../../Classes/env.h"
 
 // namespace
 using namespace std;
 using namespace rapidjson;
+typedef GenericDocument< UTF8<> > Document;
+typedef GenericValue< UTF8<> > Value;
+typedef GenericStringStream< UTF8<> > StringStream;
+typedef GenericStringBuffer< UTF8<> > StringBuffer;
+using CsvMap = map<int, vector<string> >;
 
 // header
 void encryptXor(string& str);
@@ -25,15 +32,20 @@ void writeJsonFile(const string& path, const rapidjson::Document& doc);
 void writeJsonCrypt(const string &path, const rapidjson::Document &doc);
 rapidjson::Document readJsonFile(const string& path);
 rapidjson::Document readJsonCrypted(const string& path);
-void encryptCsvFile(const string& path);
-void encryptListJson(string& listName);
-void encryptListCsv(string& listName);
+rapidjson::Document csvMapToJson(CsvMap& csvMap);
+CsvMap readCsvFile(const string& path);
 vector<string> readTextFile(string& listName);
+string strReplace(const string& pattern, const string& replacement, string target);
 
 // main
 int main(int argc, char *argv[])
 {
-    string dirs[] = {"event", "config", "save", "csv"};
+    string dirs[] = {
+        //"event",
+        //"config",
+        //"save",
+        "csv",
+    };
     string path = "tmp/root_path.txt";
     string rootPath = readTextFile(path).front();
     printf("%s\n", rootPath.c_str());
@@ -47,24 +59,17 @@ int main(int argc, char *argv[])
             file = rootPath + dir + "/" + file;
             printf("%s\n", file.c_str());
             if (dir == "csv") {
-                encryptCsvFile(file);
+                CsvMap csvMap = readCsvFile(file);
+                rapidjson::Document doc = csvMapToJson(csvMap);
+                writeJsonCrypt(file, doc);
             } else {
-                writeJsonCrypt(file);
+                rapidjson::Document doc = readJsonFile(file);
+                writeJsonCrypt(file, doc);
             }
         }
     }
 
     return 0;
-}
-
-void encryptListJson(string& listName)
-{
-
-}
-
-void encryptListCsv(string& listName)
-{
-
 }
 
 // 暗号化するファイルのリストを読み込む
@@ -158,24 +163,78 @@ void writeJsonCrypt(const string &path, const rapidjson::Document &doc)
     ofs.close();
 }
 
-// CSVファイルをXOR暗号化して書き出し
-void encryptCsvFile(const string& path)
+// csvファイルの読み込み
+CsvMap readCsvFile(const string& path)
 {
     // ファイル読み込み
-    ifstream ifs(path);
-
-    // 文字列を暗号化
+    ifstream file(path);
+    CsvMap values;
     string str;
-    getline(ifs, str);
-    ofstream ofs;
-    ofs.open(path);
-    while(getline(ifs, str))
-    {
-        encryptXor(str);
-        ofs << str << endl;
+    int p, i, dataId;
+    int headerCount = 1;
+
+    // 1行目のheaderの要素数をカウント
+    string header;
+    getline(file, header);
+    while( (p = header.find(",")) != header.npos ) {
+        header = header.substr(p+1);
+        ++headerCount;
     }
-    ifs.close();
-    ofs.close();
+
+    // csvデータ格納
+    while(getline(file, str)) {
+        vector<string> inner;
+        i = 1;
+        // キャリッジリターンを削除
+        str = strReplace("\r", "", str);
+        // カンマがあるかを探し、そこまでをvaluesに格納
+        while( (p = str.find(",")) != str.npos ) {
+            if (i == 1) {
+                dataId = stoi(str.substr(0, p));
+            }
+            inner.push_back(str.substr(0, p));
+            // strの中身は","の1文字を飛ばす
+            str = str.substr(p+1);
+            i++;
+        }
+        inner.push_back(str);
+
+        // 要素数チェック
+        if (i != headerCount) {
+            string fileName = path;
+            while ((p = fileName.find("/")) != fileName.npos) {
+                fileName = fileName.substr(p+1);
+            }
+            fileName = fileName.substr(p+1);
+            return values;
+        }
+        values[dataId] = inner;
+    }
+    return values;
+}
+
+// csvMapをjsonオブジェクトに変換
+rapidjson::Document csvMapToJson(CsvMap& csvMap)
+{
+    rapidjson::Document json;
+    StringBuffer s;
+    Writer<StringBuffer> writer(s);
+    writer.StartObject();
+
+    for (auto itr:csvMap) {
+        rapidjson::Value idStr (kStringType);
+        const char* idChar = to_string(itr.first).c_str();
+        writer.Key(idChar);
+        writer.StartArray();
+        for (string val　:　itr.second) {
+            writer.String(val.c_str());
+        }
+        writer.EndArray();
+    }
+    writer.EndObject();
+
+    json.Parse(s.GetString());
+    return json;
 }
 
 // 暗号化
@@ -184,4 +243,16 @@ void encryptXor(string& str)
     for (int i = 0; i < strlen(str.c_str()); i++) {
         str[i] ^= C_KEY;
     }
+}
+
+// 文字列の置換
+string strReplace(const string& pattern, const string& replacement, string target)
+{
+    std::string::size_type Pos(target.find(pattern));
+    while( Pos != std::string::npos )
+    {
+        target.replace( Pos, pattern.length(), replacement);
+        Pos = target.find( pattern, Pos + replacement.length() );
+    }
+    return target;
 }
