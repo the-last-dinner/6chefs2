@@ -2422,12 +2422,13 @@ public:
         return true;
     }
 
-private:
+// private:
     //! Prohibit copying
     GenericDocument(const GenericDocument&);
     //! Prohibit assignment
     GenericDocument& operator=(const GenericDocument&);
 
+private:
     void ClearStack() {
         if (Allocator::kNeedFree)
             while (stack_.GetSize() > 0)    // Here assumes all elements in stack array are GenericValue (Member is actually 2 GenericValue objects)
