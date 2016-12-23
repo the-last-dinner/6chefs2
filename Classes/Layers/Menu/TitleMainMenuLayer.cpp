@@ -13,6 +13,8 @@
 #include "UI/Cloud.h"
 #include "UI/NotificationBand.h"
 
+const string TitleMainMenuLayer::VERSION { "Ver.1.0β" };
+
 // コンストラクタ
 TitleMainMenuLayer::TitleMainMenuLayer(){FUNCLOG}
 
@@ -113,7 +115,7 @@ bool TitleMainMenuLayer::init()
     ));
     
     // copyright
-    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2016 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
+    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2017 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
     copyright->setPosition(Point(WINDOW_WIDTH - copyright->getContentSize().width * 0.52f, copyright->getContentSize().height));
     copyright->setOpacity(0);
     this->addChild(copyright);
@@ -133,6 +135,14 @@ bool TitleMainMenuLayer::init()
     opr->setOpacity(0);
     this->addChild(opr);
     opr->runAction(FadeTo::create(1.2f, 200));
+    
+    // バージョン表記
+    Label* version { Label::createWithTTF(TitleMainMenuLayer::VERSION, Resource::Font::MESSAGE, 18) };
+    version->setPosition(Point(version->getContentSize().width/2, version->getContentSize().height));
+    version->setColor(Color3B::WHITE);
+    version->setOpacity(0);
+    this->addChild(version);
+    version->runAction(FadeTo::create(1.2f, 200));
     
 	return true;
 }
