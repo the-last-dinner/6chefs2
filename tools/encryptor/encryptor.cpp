@@ -41,9 +41,9 @@ string strReplace(const string& pattern, const string& replacement, string targe
 int main(int argc, char *argv[])
 {
     string dirs[] = {
-        //"event",
-        //"config",
-        //"save",
+        "event",
+        "config",
+        "save",
         "csv",
     };
     string path = "tmp/root_path.txt";
