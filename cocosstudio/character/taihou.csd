@@ -516,18 +516,18 @@
             <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" LeftMargin="-3.5000" RightMargin="-28.5000" TopMargin="-47.0000" BottomMargin="-17.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="64.0000" />
+          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-31.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="33.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="12.5000" Y="15.0000" />
+            <Position X="16.0000" Y="15.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
+            <FileData Type="PlistSubImage" Path="taihou_1_0.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="collision" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -538,7 +538,7 @@
             <FileData Type="PlistSubImage" Path="collision.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hit" CanEdit="False" Visible="False" ActionTag="805141725" Tag="7" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hit" Visible="False" ActionTag="805141725" Tag="7" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -549,7 +549,7 @@
             <FileData Type="PlistSubImage" Path="hit.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attack" CanEdit="False" Visible="False" ActionTag="2119433232" Tag="25" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="attack" Visible="False" ActionTag="2119433232" Tag="25" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="16.0000" Y="8.0000" />
@@ -560,21 +560,21 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="8.0000" />
-            <Scale ScaleX="0.9000" ScaleY="0.7500" />
+            <Position X="16.0000" Y="-16.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_effect_1" CanEdit="False" ActionTag="-1514576561" VisibleForFrame="False" Tag="7" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" RightMargin="-96.0000" TopMargin="-48.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_effect_1" CanEdit="False" ActionTag="-1514576561" VisibleForFrame="False" Tag="7" IconVisible="False" LeftMargin="-32.0000" RightMargin="-64.0000" TopMargin="-16.0000" BottomMargin="-48.0000" ctype="SpriteObjectData">
             <Size X="96.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="48.0000" Y="16.0000" />
+            <Position X="16.0000" Y="-16.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -582,10 +582,10 @@
             <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spin_effect" ActionTag="190307116" VisibleForFrame="False" Tag="19" RotationSkewX="-72.0000" RotationSkewY="-72.0005" IconVisible="False" LeftMargin="-24.0999" RightMargin="-44.9001" TopMargin="-34.6000" BottomMargin="-19.4000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spin_effect" CanEdit="False" ActionTag="190307116" VisibleForFrame="False" Tag="19" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-18.5000" RightMargin="-50.5000" TopMargin="-35.0000" BottomMargin="-19.0000" ctype="SpriteObjectData">
             <Size X="69.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="10.4001" Y="7.6000" />
+            <Position X="16.0000" Y="8.0000" />
             <Scale ScaleX="1.5000" ScaleY="1.5000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
