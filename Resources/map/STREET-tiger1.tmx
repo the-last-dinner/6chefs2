@@ -96,6 +96,9 @@
   </data>
  </layer>
  <layer name="hide" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt2kEKgzAUBuFsc/9Tai9R3iIghcYWEf8J84ErN2OwVZ+2JkmSJOlXe29t609X/IfSu/X5luSsNa3Z3nut1Hvcn4Kwpt/QeguxV5Kkmd1rhSRJWtxxppOKNt+hzPkG0myy0Ht3WG9ya6F0DrTeIfkdgCRJVxGeiQbCfQT9fn2F3qRmWm8htRZS72rnQlpvIfXS/h/OZjvJvemt5az1BepN9NmX2jkQ1vSI0HhF2vH5Dc/9aL89Qmsh9JKvb4R2e++1Uu/Yn4SwpjO0ZkKjpLW9ARSpVGc=
   </data>
@@ -107,7 +110,7 @@
   <object id="27" x="384" y="144" width="256" height="352"/>
   <object id="30" x="0" y="1696" width="704" height="32"/>
   <object id="36" x="0" y="1440" width="224" height="256"/>
-  <object id="38" x="0" y="160" width="224" height="336"/>
+  <object id="38" x="0" y="160" width="224" height="368"/>
   <object id="39" x="0" y="528" width="224" height="864"/>
   <object id="44" x="384" y="528" width="160" height="400"/>
   <object id="45" x="384" y="992" width="256" height="704"/>

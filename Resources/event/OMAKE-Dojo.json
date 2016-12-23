@@ -514,7 +514,46 @@
 					],
 					"false":[
 						{
-							"type":"gameover"
+							"type":"sequence",
+							"action":[
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"fadeout"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["だらっしゃあああぁぁぁぁあぁぁ！"],
+													"charaID":"8",
+													"imgID":"4",
+													"option":"reaction"
+												},
+												{
+													"text":["ぅおぉおおらぁぁぁあああ！"],
+													"charaID":"2",
+													"imgID":"3",
+													"option":"reaction"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"UP"
+								},
+								{
+									"type":"changeMap",
+									"mapID":"97",
+									"x":17,
+									"y":9,
+									"eventID":"2"
+								}
+							]
 						}
 					]
 				}

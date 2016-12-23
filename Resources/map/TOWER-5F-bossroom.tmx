@@ -142,19 +142,19 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="59" x="832" y="752" width="64" height="16">
+  <object id="59" x="832" y="720" width="64" height="48">
    <properties>
     <property name="EventID" value="17"/>
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="63" x="1344" y="752" width="64" height="16">
+  <object id="63" x="1344" y="720" width="64" height="48">
    <properties>
     <property name="EventID" value="19"/>
     <property name="trigger" value="1"/>
    </properties>
   </object>
-  <object id="66" x="320" y="752" width="64" height="16">
+  <object id="66" x="320" y="720" width="64" height="48">
    <properties>
     <property name="EventID" value="21"/>
     <property name="trigger" value="1"/>
@@ -197,6 +197,11 @@
  <layer name="shadow" width="108" height="80">
   <data encoding="base64" compression="zlib">
    eJzt0dENwkAUxMDUQPs0SwVIVkDYIev/3I7yjmOttdZaa6211lprrbXWWmuttdY63/Px2+/evfOt9z4xXKHda/c6887uxdq9dq8z7+xerN3rHvf6l/2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2KgWZb7f2K4Q7tP1+r3WutdaYXUER/DQ==
+  </data>
+ </layer>
+ <layer name="CharaUe4" width="108" height="80">
+  <data encoding="base64" compression="zlib">
+   eJzt3DFOQkEARVFI3Bm6cJfgEtyJDQ3dzzfRc+GdZGpu3lBMA5fLzMzMzMzMzMzMzMzMzMxM0+fbfxcYDRXCVkJDhbCV0FAhbCU0VAhbCQ0VwlZCQ4Ww1RfQUCHc1zfQUCHcl9BQIWwlNFQIWwkNFcJWe28cJ9zX3hvHCfclNFQIWwkNFcJWQkOFsNXeG8cJ97X3xnHCfQkNFcJWQkOFsJXQUCFstffGccJ9CQ0VwlZCQ4WwldBQIWwlNPyF9+vjOeM3W93un3u7n7PONnxcH88rEL7bQkOFsJXQUCFsJTRUCFsJDRXCVkJDhbCV0FAhbCU0VAhbCQ0VwlZCQ4WwldBQIWwlNFQIWwkNFcJWQkOFsJXQUCFsJTRUCFsJDRXCVkJDhbCV0FAhbCU0VAhbCQ0VwlZCQ4WwldBQIWwlNFQIWwkNFcJWQkOFsJXQUCFsJTRUCFsJDRXCVkJDhfBbVKGhQvjvC6FhZmbmWfwA4dtdgg==
   </data>
  </layer>
 </map>
