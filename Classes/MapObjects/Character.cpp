@@ -266,10 +266,17 @@ bool Character::isInAttackMotion() const
     return _isInAttackMotion;
 }
 
+void Character::setAttackHitCallback(function<void(MapObject*)> callback)
+{
+    _onAttackHitted = callback;
+}
+
 // 自分の攻撃が誰かに当たった時
 void Character::onAttackHitted(MapObject* hittedObject)
 {
-    
+    if (_onAttackHitted) {
+        _onAttackHitted(hittedObject);
+    }
 }
 
 // 攻撃を受けた時

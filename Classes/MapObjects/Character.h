@@ -46,6 +46,7 @@ protected:
     bool _isInAttackMotion { nullptr };
     float _speed { 1.f };
     BattleCharacterData* _battleData { nullptr };
+    function<void(MapObject*)> _onAttackHitted  { nullptr };
     
 // インスタンスメソッド
 public:
@@ -81,6 +82,7 @@ public:
     // Battle
     void beInAttackMotion(bool isInAttackMotion);
     bool isInAttackMotion() const;
+    void setAttackHitCallback(function<void(MapObject*)> callback);
     void onAttackHitted(MapObject* hittedObject);
     void onHurt(int damage);
     bool canAttack(MapObject* target) const override;
