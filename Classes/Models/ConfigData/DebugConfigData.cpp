@@ -15,8 +15,6 @@
 const char* DebugConfigData::STATS {"stats"};
 const char* DebugConfigData::DEBUG_MASK {"debug_mask"};
 const char* DebugConfigData::INVINCIBLE_MODE {"invincible_mode"};
-const char* DebugConfigData::PLAIN_DATA {"plain_data"};
-const char* DebugConfigData::CRYPT_TRIGGER {"crypt_trigger"};
 
 bool DebugConfigData::init()
 {
