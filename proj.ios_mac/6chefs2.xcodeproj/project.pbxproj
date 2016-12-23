@@ -442,6 +442,7 @@
 		2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonEventScripts.h; sourceTree = "<group>"; };
 		2613244B1DE2081200E39526 /* BattleCharacterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharacterData.cpp; sourceTree = "<group>"; };
 		2613244C1DE2081200E39526 /* BattleCharacterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCharacterData.h; sourceTree = "<group>"; };
+		26214C221E0D80CD002466E3 /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
 		2626AEC41D99895E00D5623B /* AssertHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssertHelper.cpp; path = Helpers/AssertHelper.cpp; sourceTree = "<group>"; };
 		2626AEC51D99895E00D5623B /* AssertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssertHelper.h; path = Helpers/AssertHelper.h; sourceTree = "<group>"; };
 		26460B811D72EBB600F0336C /* ChapterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChapterData.cpp; path = CsvData/ChapterData.cpp; sourceTree = "<group>"; };
@@ -1062,6 +1063,7 @@
 				DC0391401C871E1000C50E8E /* Tasks */,
 				DC0391561C871E1000C50E8E /* UI */,
 				DC0391661C871E1000C50E8E /* Utils */,
+				26214C221E0D80CD002466E3 /* env.h */,
 			);
 			name = Classes;
 			path = ../Classes;
