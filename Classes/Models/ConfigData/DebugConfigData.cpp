@@ -23,7 +23,7 @@ bool DebugConfigData::init()
     FUNCLOG
     this->filePath = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::DEBUG_CONFIG);
     if (this->filePath == "") return true;
-    this->debugConfig = LastSupper::JsonUtils::readJsonFile(this->filePath);
+    this->debugConfig = LastSupper::JsonUtils::readJsonCrypted(this->filePath);
     this->hasDebugConfig = true;
     return true;
 }
@@ -51,37 +51,7 @@ bool DebugConfigData::getBoolValue(const char* key)
 // デバッグモードかどうか
 bool DebugConfigData::isDebugMode()
 {
-    return this->getBoolValue(DebugConfigData::PLAIN_DATA);
-}
-
-// 暗号初期化が必要かどうか
-bool DebugConfigData::needInitialCrypt()
-{
-    return (this->getBoolValue(DebugConfigData::PLAIN_DATA) && this->getBoolValue(DebugConfigData::CRYPT_TRIGGER));
-}
-
-// 暗号化が必要かどうか
-bool DebugConfigData::needCrypt()
-{
-    return (!this->getBoolValue(DebugConfigData::PLAIN_DATA) || this->getBoolValue(DebugConfigData::CRYPT_TRIGGER));
-}
-
-// 暗号化したことを記録
-void DebugConfigData::setCrypted()
-{
-    if (!this->hasDebugConfig) return;
-    
-    if (this->debugConfig.HasMember(PLAIN_DATA))
-    {
-        this->debugConfig[PLAIN_DATA].SetBool(false);
-    }
-    
-    if (this->debugConfig.HasMember(CRYPT_TRIGGER))
-    {
-        this->debugConfig[CRYPT_TRIGGER].SetBool(false);
-    }
-    
-    this->writeConfig();
+    return !IS_ENCRYPTED;
 }
 
 // DebugConfigの書き出し

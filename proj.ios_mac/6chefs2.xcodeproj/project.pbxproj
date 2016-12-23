@@ -215,8 +215,6 @@
 		DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390C41C871E1000C50E8E /* ShaderLayer.cpp */; };
 		DC0391D51C871E1000C50E8E /* CsvDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390C71C871E1000C50E8E /* CsvDataManager.cpp */; };
 		DC0391D61C871E1000C50E8E /* CsvDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390C71C871E1000C50E8E /* CsvDataManager.cpp */; };
-		DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390C91C871E1000C50E8E /* DebugManager.cpp */; };
-		DC0391D81C871E1000C50E8E /* DebugManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390C91C871E1000C50E8E /* DebugManager.cpp */; };
 		DC0391D91C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390CB1C871E1000C50E8E /* DungeonSceneManager.cpp */; };
 		DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390CB1C871E1000C50E8E /* DungeonSceneManager.cpp */; };
 		DC0391DB1C871E1000C50E8E /* NotificationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0390CD1C871E1000C50E8E /* NotificationManager.cpp */; };
@@ -651,8 +649,6 @@
 		DC0390C51C871E1000C50E8E /* ShaderLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderLayer.h; sourceTree = "<group>"; };
 		DC0390C71C871E1000C50E8E /* CsvDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvDataManager.cpp; sourceTree = "<group>"; };
 		DC0390C81C871E1000C50E8E /* CsvDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvDataManager.h; sourceTree = "<group>"; };
-		DC0390C91C871E1000C50E8E /* DebugManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugManager.cpp; sourceTree = "<group>"; };
-		DC0390CA1C871E1000C50E8E /* DebugManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugManager.h; sourceTree = "<group>"; };
 		DC0390CB1C871E1000C50E8E /* DungeonSceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DungeonSceneManager.cpp; sourceTree = "<group>"; };
 		DC0390CC1C871E1000C50E8E /* DungeonSceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonSceneManager.h; sourceTree = "<group>"; };
 		DC0390CD1C871E1000C50E8E /* NotificationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NotificationManager.cpp; sourceTree = "<group>"; };
@@ -1369,8 +1365,6 @@
 			children = (
 				DC0390C71C871E1000C50E8E /* CsvDataManager.cpp */,
 				DC0390C81C871E1000C50E8E /* CsvDataManager.h */,
-				DC0390C91C871E1000C50E8E /* DebugManager.cpp */,
-				DC0390CA1C871E1000C50E8E /* DebugManager.h */,
 				DC0390CB1C871E1000C50E8E /* DungeonSceneManager.cpp */,
 				DC0390CC1C871E1000C50E8E /* DungeonSceneManager.h */,
 				DC0390CD1C871E1000C50E8E /* NotificationManager.cpp */,
@@ -1931,7 +1925,6 @@
 				26E301571DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */,
 				DC0392391C871E1000C50E8E /* VerticalFollow.cpp in Sources */,
 				DC03918F1C871E1000C50E8E /* CharacterEvent.cpp in Sources */,
-				DC0391D71C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				9FD0206C1E03ACEA00803F3B /* LadderArea.cpp in Sources */,
 				26460B981D72EBC800F0336C /* LocalPlayerData.cpp in Sources */,
 				DC0391971C871E1000C50E8E /* EventScript.cpp in Sources */,
@@ -2057,7 +2050,6 @@
 				DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
 				DC0391DE1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC0391841C871E1000C50E8E /* SceneData.cpp in Sources */,
-				DC0391D81C871E1000C50E8E /* DebugManager.cpp in Sources */,
 				DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,

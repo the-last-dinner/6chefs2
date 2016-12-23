@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     }
 
     // 暗号化が終わった証拠を作成
-    string makeFileCommand = "touch " + rootPath + "config/Encrypted.json";
+    string makeFileCommand = "touch " + rootPath + "config/IsEncrypted.json";
     system(makeFileCommand.c_str());
 
     return 0;

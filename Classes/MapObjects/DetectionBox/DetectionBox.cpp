@@ -10,7 +10,8 @@
 
 #include "MapObjects/MapObject.h"
 
-#include "Managers/DebugManager.h"
+#include "Managers/ConfigDataManager.h"
+#include "Models/ConfigData/DebugConfigData.h"
 
 // コンストラクタ
 DetectionBox::DetectionBox() {}
@@ -76,7 +77,7 @@ void DetectionBox::update(float delta)
 {
     if (_origin) this->setOriginInfo(_origin);
     
-    if (DebugManager::getInstance()->displayDebugMask()) {
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) {
         this->drawDebugMask();
     }
 }

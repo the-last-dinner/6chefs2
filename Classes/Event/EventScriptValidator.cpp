@@ -47,7 +47,7 @@ bool EventScriptValidator::init(const string& mapName, const string& eventName)
     if (EventScriptValidator::VALIDATE_CONFIG == rapidjson::Document()) {
         string path = FileUtils::getInstance()->fullPathForFilename(Resource::ConfigFiles::EVENT_SCRIPT_VALIDATOR);
         if (path == "") return false;
-        EventScriptValidator::VALIDATE_CONFIG = LastSupper::JsonUtils::readJsonFile(path);
+        EventScriptValidator::VALIDATE_CONFIG = LastSupper::JsonUtils::readJsonCrypted(path);
     }
     
     _assertHelper = AssertHelper::create();

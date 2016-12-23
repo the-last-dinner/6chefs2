@@ -49,9 +49,6 @@ public:
     bool init();
     bool getBoolValue(const char* key);
     bool isDebugMode();
-    bool needInitialCrypt();
-    bool needCrypt();
-    void setCrypted();
 private:
     void writeConfig();
 };

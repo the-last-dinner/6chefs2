@@ -57,7 +57,7 @@ void LastSupper::JsonUtils::writeJsonFile(const string& path, const rapidjson::D
 rapidjson::Document LastSupper::JsonUtils::readJsonCrypted(const string &path)
 {
     // 暗号化の必要がない場合は通常の読み込み
-    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::PLAIN_DATA))
+    if (!IS_ENCRYPTED)
     {
         return LastSupper::JsonUtils::readJsonFile(path);
     }
@@ -96,7 +96,7 @@ void LastSupper::JsonUtils::writeJsonCrypt(const string &path, const rapidjson::
     LastSupper::JsonUtils::writeJsonFile(path, doc);
 
     // 暗号化必須かチェック
-    if (!ConfigDataManager::getInstance()->getDebugConfigData()->needCrypt()) return;
+    if (!IS_ENCRYPTED) return;
     
     // ファイル読み込み
     ifstream ifs(path);
