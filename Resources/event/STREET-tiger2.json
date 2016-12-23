@@ -344,24 +344,13 @@
 				},
 				{
 					"type":"createEnemy",
-					"objID":"1417",
+					"objID":"1418",
 					"charaID":"13",
-					"x":19,
-					"y":53,
+					"x":21,
+					"y":82,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
-					"movePattern":"4"
-				},
-				{
-					"type":"createEnemy",
-					"objID":"1418",
-					"charaID":"13",
-					"x":20,
-					"y":100,
-					"direction":"UP",
-					"times":1,
-					"pathID":"3",
 					"movePattern":"4"
 				}
 			]

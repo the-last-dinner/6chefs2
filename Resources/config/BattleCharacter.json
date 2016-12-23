@@ -23,7 +23,7 @@
             "attack": {
                 "power": 30,
                 "stamina": 20.0,
-                "interval_time": 0.2,
+                "interval_time": 0.1,
                 "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
                 "hit_sound": "big_hit.mp3",
@@ -31,7 +31,7 @@
             }
         },
         "hit_point": 100,
-        "step_stamina": 15.0,
+        "step_stamina": 5.0,
         "step_interval_time": 0.1,
         "speed_ratio": 1.0
     },
@@ -40,7 +40,7 @@
         "attacks": {
             "attack": {
                 "power": 25,
-                "stamina": 20.0,
+                "stamina": 25.0,
                 "interval_time": 0.1,
                 "motion_sound": "punch-swing1.mp3",
                 "motion_sound_volume": 1.0,
@@ -49,9 +49,9 @@
             }
         },
         "hit_point": 100,
-        "step_stamina": 10.0,
+        "step_stamina": 5.0,
         "step_interval_time": 0.1,
-        "speed_ratio": 1.6
+        "speed_ratio": 2.0
     },
     "8": {
         "name": "tamuken",
@@ -67,15 +67,15 @@
             }
         },
         "hit_point": 130,
-        "step_stamina": 20.0,
+        "step_stamina": 3.0,
         "step_interval_time": 0.1,
-        "speed_ratio": 1.3
+        "speed_ratio": 1.5
     },
     "9": {
         "name": "taihou",
         "attacks": {
             "attack_1": {
-                "power": 10,
+                "power": 30,
                 "stamina": 5.0,
                 "interval_time": 0.5,
                 "motion_sound": "taihou_attack1.mp3",
@@ -93,16 +93,16 @@
                 "hit_sound_volume": 1.0
             }
         },
-        "hit_point": 300,
+        "hit_point": 125,
         "step_stamina": 5.0,
         "step_interval_time": 0.1,
-        "speed_ratio": 1.2
+        "speed_ratio": 1.0
     },
     "13": {
         "name": "kyoujin",
         "attacks":{
             "attack": {
-                "power": 25,
+                "power": 15,
                 "stamina": 5.0,
                 "interval_time": 0.9,
                 "motion_sound": "taihou_attack2.mp3",

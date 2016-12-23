@@ -577,5 +577,57 @@
 				}
 			]
 		}
+	],
+	"9":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"camera",
+							"nextX":9,
+							"nextY":87,
+							"time":0.5
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["一旦あそこにあるビルに\n隠れよう！"],
+									"charaID":"0",
+									"imgID":"2",
+									"option":"reaction"
+								},
+								{
+									"text":["うん！"],
+									"charaID":"1",
+									"imgID":"2",
+									"option":"reaction"
+								}
+							]
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"setCamera"
+						},
+						{
+							"type":"fadein"
+						},
+						{
+							"type":"already"
+						}
+					]
+				}
+			]
+		}
 	]
 }
