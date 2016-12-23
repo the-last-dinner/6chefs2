@@ -27,7 +27,6 @@ Chaser::Chaser() { FUNCLOG }
 Chaser::~Chaser()
 {
     FUNCLOG
-    _chara->unschedule(CC_SCHEDULE_SELECTOR(Chaser::onStuck));
     CC_SAFE_RELEASE_NULL(_subPattern);
 }
 
@@ -111,7 +110,7 @@ void Chaser::moveProc()
         if (walked) {
             this->move();
         } else {
-            _chara->scheduleOnce(CC_SCHEDULE_SELECTOR(Chaser::onStuck), 0.5f);
+            _chara->runAction(Sequence::createWithTwoActions(DelayTime::create(0.5f), CallFunc::create(CC_CALLBACK_0(Chaser::onStuck, this))));
         }
     }, _speedRatio, false) };
     
@@ -162,7 +161,7 @@ deque<Direction> Chaser::getPath() const
     return path;
 }
 
-void Chaser::onStuck(float delta)
+void Chaser::onStuck()
 {
     this->move();
 }

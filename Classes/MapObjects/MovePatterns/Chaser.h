@@ -46,7 +46,7 @@ private:
     bool needsShiftToSubPattern() const;
     void cutPath(deque<Direction>& path);
     deque<Direction> getPath() const;
-    void onStuck(float delta);
+    void onStuck();
     virtual bool canGoToNextMap() const override;
     virtual float calcSummonDelay() const override;
 };
