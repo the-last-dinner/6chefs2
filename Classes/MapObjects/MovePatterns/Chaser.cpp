@@ -84,19 +84,26 @@ void Chaser::setSpeedRatio(float speed)
 void Chaser::move()
 {
     if (this->isPaused()) return;
-    _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     
-    // 経路を取得
-    deque<Direction> path { this->getPath() };
-    
-    // 経路がない場合は、主人公に触れたとして無視。あとはMapObjectListがイベントを発動してゲームオーバー
-    if (path.size() == 0) return;
-    
+    if (!_chara->isMoving()) {
+        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
+    }
+
     // サブアルゴリズムに切り替える必要があるか
-    if (this->needsShiftToSubPattern(path)) {
+    if (this->needsShiftToSubPattern()) {
         this->shiftToSubPattern();
         return;
     }
+    
+    _chara->clearCommandQueue();
+    this->moveProc();
+}
+
+// 動かす内部実装
+void Chaser::moveProc()
+{
+    // 経路を取得
+    deque<Direction> path { this->getPath() };
     
     this->cutPath(path);
     
@@ -117,24 +124,7 @@ void Chaser::move()
 void Chaser::shiftFromSubPattern()
 {
     _chara->clearCommandQueue();
-    
-    // 経路を取得
-    deque<Direction> path { this->getPath() };
-    
-    // 経路をカット
-    this->cutPath(path);
-    
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) {
-        if (walked) {
-            this->move();
-        } else {
-            _chara->scheduleOnce(CC_SCHEDULE_SELECTOR(Chaser::onStuck), 0.5f);
-        }
-    }, _speedRatio, false) };
-    
-    for (WalkCommand* command : commands) {
-        _chara->pushCommand(command);
-    }
+    this->moveProc();
 }
 
 // サブアルゴリズムへ移行
@@ -146,7 +136,7 @@ void Chaser::shiftToSubPattern()
 }
 
 // サブの移動アルゴリズムに切り替える必要があるか
-bool Chaser::needsShiftToSubPattern(const deque<Direction>& path)
+bool Chaser::needsShiftToSubPattern() const
 {
     // 主人公との間に当たり判定がなければtrueを返す
     return !this->getMapObjectList()->getCollisionDetector()->existsCollisionBetween(_chara, this->getMainCharacter());
