@@ -45,6 +45,7 @@ public:
 // コールバック
 public:
     void onAttackAnimationFinished(Character* character);
+    void onAttackHitted(Character* character, MapObject* hittedObject);
 };
 
 #endif /* AttackCommand_h */

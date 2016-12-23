@@ -812,6 +812,16 @@
             <PlistImageFile Name="effect_1_7.png" Key="effect_1_7.png" />
             <PlistImageFile Name="effect_1_8.png" Key="effect_1_8.png" />
             <PlistImageFile Name="effect_1_9.png" Key="effect_1_9.png" />
+            <PlistImageFile Name="pipo-btleffect124_01.png" Key="pipo-btleffect124_01.png" />
+            <PlistImageFile Name="pipo-btleffect124_02.png" Key="pipo-btleffect124_02.png" />
+            <PlistImageFile Name="pipo-btleffect124_03.png" Key="pipo-btleffect124_03.png" />
+            <PlistImageFile Name="pipo-btleffect124_04.png" Key="pipo-btleffect124_04.png" />
+            <PlistImageFile Name="pipo-btleffect124_05.png" Key="pipo-btleffect124_05.png" />
+            <PlistImageFile Name="pipo-btleffect124_07.png" Key="pipo-btleffect124_07.png" />
+            <PlistImageFile Name="pipo-btleffect124_08.png" Key="pipo-btleffect124_08.png" />
+            <PlistImageFile Name="pipo-btleffect124_09.png" Key="pipo-btleffect124_09.png" />
+            <PlistImageFile Name="pipo-btleffect124_10.png" Key="pipo-btleffect124_10.png" />
+            <PlistImageFile Name="pipo-btleffect124_11.png" Key="pipo-btleffect124_11.png" />
           </PlistImageFolder>
           <Project Name="dust.csd" Type="Node" />
         </Folder>

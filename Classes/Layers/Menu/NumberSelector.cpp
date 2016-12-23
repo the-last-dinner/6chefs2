@@ -13,7 +13,7 @@
 bool NumberSelector::init(SpriteUtils::Square& square)
 {
     Point indexSize {Point(3,4)};
-    if (!MenuLayer::init(indexSize.x, indexSize.y)) return false;
+    int buttonCount { 11 };
     
     // ウインドウ作成
     SpriteUtils::Margin margin = SpriteUtils::Margin(3.0);
@@ -22,6 +22,8 @@ bool NumberSelector::init(SpriteUtils::Square& square)
     window->setOpacity(0);
     Size windowSize = window->getContentSize();
     this->addChild(window);
+    
+    if (!MenuLayer::init(indexSize, buttonCount, window)) return false;
     
     // ウインドウの中にボタンの生成
     float buttonMargin = 6.f;

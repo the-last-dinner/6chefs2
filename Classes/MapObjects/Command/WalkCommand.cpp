@@ -24,6 +24,7 @@ Vector<WalkCommand*> WalkCommand::create(const vector<Direction>& directions, in
         command->setSpeed(speed);
         command->setBack(back);
         command->setIgnoreCollision(ignoreCollision);
+        command->setWalkCallback([cb](bool moved){ if (!moved && cb) cb(false); });
         
         commands.pushBack(command);
     }
@@ -43,6 +44,7 @@ Vector<WalkCommand*> WalkCommand::create(const deque<Direction>& directions, fun
         command->setSpeed(speed);
         command->setBack(back);
         command->setIgnoreCollision(ignoreCollision);
+        command->setWalkCallback([cb](bool moved){ if (!moved && cb) cb(false); });
         
         commands.pushBack(command);
     }

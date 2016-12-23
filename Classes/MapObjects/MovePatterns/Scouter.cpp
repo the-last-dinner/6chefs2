@@ -102,6 +102,7 @@ void Scouter::move(const int pathObjId)
         walkCallback();
     }, destObj->getSpeedRatio(), false) };
     
+    _chara->clearCommandQueue();
     for (WalkCommand* command : commands) {
         _chara->pushCommand(command);
     }

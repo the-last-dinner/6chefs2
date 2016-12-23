@@ -27,7 +27,6 @@ public:
 // インスタンス変数
 private:
     CheapChaser* _subPattern { nullptr };
-    int _partyMoveCount { 0 };
 
 // インスタンスメソッド
 public:
@@ -37,13 +36,14 @@ public:
     virtual void onPartyMoved() override;
     virtual void setSpeedRatio(float speed) override;
     virtual void move();
+    void moveProc();
 private:
     Chaser();
     ~Chaser();
     virtual bool init(Character* character) override;
     void shiftFromSubPattern();
     void shiftToSubPattern();
-    bool needsShiftToSubPattern(const deque<Direction>& path);
+    bool needsShiftToSubPattern() const;
     void cutPath(deque<Direction>& path);
     deque<Direction> getPath() const;
     void onStuck(float delta);

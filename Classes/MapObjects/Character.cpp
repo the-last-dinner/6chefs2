@@ -81,10 +81,14 @@ bool Character::init(const CharacterData& data)
 
     // サイズ、衝突判定範囲をセット
     this->setContentSize(spriteNode->getContentSize());
-    this->setCollision(CollisionBox::create(this, csNode->getCSChild(CS_COLLISION_NODE_NAME)));
+    Node* collisionOriginNode { csNode->getCSChild(CS_COLLISION_NODE_NAME) };
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) collisionOriginNode->setOpacity(0);
+    this->setCollision(CollisionBox::create(this, collisionOriginNode));
     
     // くらい判定生成
-    HitBox* hitBox { HitBox::create(this, _csNode->getCSChild(CS_HIT_NODE_NAME), CC_CALLBACK_1(Character::onHurt, this)) };
+    Node* hitOriginNode { csNode->getCSChild(CS_HIT_NODE_NAME) };
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) hitOriginNode->setOpacity(0);
+    HitBox* hitBox { HitBox::create(this, hitOriginNode, CC_CALLBACK_1(Character::onHurt, this)) };
     this->addChild(hitBox);
     _hitBox = hitBox;
     
@@ -266,10 +270,17 @@ bool Character::isInAttackMotion() const
     return _isInAttackMotion;
 }
 
+void Character::setAttackHitCallback(function<void(MapObject*)> callback)
+{
+    _onAttackHitted = callback;
+}
+
 // 自分の攻撃が誰かに当たった時
 void Character::onAttackHitted(MapObject* hittedObject)
 {
-    
+    if (_onAttackHitted) {
+        _onAttackHitted(hittedObject);
+    }
 }
 
 // 攻撃を受けた時
@@ -444,7 +455,9 @@ void Character::onBattleStart(Battle* battle)
         this->removeChild(_battleAttackBox);
     }
     
-    AttackBox* box { AttackBox::create(this, _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME), CC_CALLBACK_1(Character::onAttackHitted, this)) };
+    Node* attackOriginNode { _csNode->getCSChild(CS_BATTLE_ATTACK_NODE_NAME) };
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) attackOriginNode->setOpacity(0);
+    AttackBox* box { AttackBox::create(this, attackOriginNode, CC_CALLBACK_1(Character::onAttackHitted, this)) };
     if (box) {
         _objectList->getAttackDetector()->addAttackBox(box);
         this->addChild(box);

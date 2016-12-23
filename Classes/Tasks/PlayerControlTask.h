@@ -36,7 +36,7 @@ private:
 private:
     PlayerControlTask();
     ~PlayerControlTask();
-    bool init();
+    bool init() override;
     void setCurrentState(PlayerControlState* state);
 public:
     void turn(const Key& key, Party* party);
