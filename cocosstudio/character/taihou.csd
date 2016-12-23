@@ -2,7 +2,7 @@
   <PropertyGroup Name="taihou" Type="Node" ID="282c99bc-c69a-4edb-88d7-6f36092d6dc7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="690" Speed="1.0000" ActivedAnimationName="attack_1_up">
+      <Animation Duration="705" Speed="1.0000" ActivedAnimationName="attack_2_up">
         <Timeline ActionTag="-1443239574" Property="VisibleForFrame">
           <BoolFrame FrameIndex="220" Tween="False" Value="False" />
           <BoolFrame FrameIndex="255" Tween="False" Value="True" />
@@ -114,74 +114,74 @@
           <TextureFrame FrameIndex="430" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="460" Tween="False">
+          <TextureFrame FrameIndex="475" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_4.png" Plist="character/taihou.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="465" Tween="False">
+          <TextureFrame FrameIndex="480" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_2.png" Plist="character/taihou.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="470" Tween="False">
+          <TextureFrame FrameIndex="485" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_3.png" Plist="character/taihou.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="475" Tween="False">
+          <TextureFrame FrameIndex="490" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_4.png" Plist="character/taihou.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="480" Tween="False">
+          <TextureFrame FrameIndex="495" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_5.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="500" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_3_1.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="530" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_4.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="535" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_3_2.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="540" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_3_3.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="545" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_3_4.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_4.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="550" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_3_5.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_2.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="555" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_3.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="560" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_4.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="565" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_5.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="570" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_5.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="600" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_1.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="605" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_2.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="610" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_3.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="615" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_4.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_4.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="620" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_2_5.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_2.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="625" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_3.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="630" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_4.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="635" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_5.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="640" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_5.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="670" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_1.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="675" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_2.png" Plist="character/taihou.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="680" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_3.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="685" Tween="False">
             <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_4.png" Plist="character/taihou.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="690" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="a2taihou_a_1_5.png" Plist="character/taihou.plist" />
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_2.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="695" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_3.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="700" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_4.png" Plist="character/taihou.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="705" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="a2taihou_a_0_5.png" Plist="character/taihou.plist" />
           </TextureFrame>
         </Timeline>
         <Timeline ActionTag="2064821685" Property="Position">
@@ -199,31 +199,29 @@
           <PointFrame FrameIndex="395" Tween="False" X="24.0000" Y="15.0000" />
           <PointFrame FrameIndex="400" Tween="False" X="20.0000" Y="15.0000" />
           <PointFrame FrameIndex="430" Tween="False" X="12.5000" Y="15.0000" />
-          <PointFrame FrameIndex="460" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="465" Tween="False" X="18.0000" Y="15.0000" />
-          <PointFrame FrameIndex="470" Tween="False" X="16.0000" Y="17.0000" />
-          <PointFrame FrameIndex="475" Tween="False" X="13.0000" Y="15.0000" />
-          <PointFrame FrameIndex="480" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="500" Tween="False" X="19.5000" Y="15.0000" />
-          <PointFrame FrameIndex="530" Tween="False" X="16.0000" Y="17.5000" />
-          <PointFrame FrameIndex="535" Tween="False" X="13.0000" Y="15.0000" />
-          <PointFrame FrameIndex="540" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="545" Tween="False" X="18.0000" Y="15.0000" />
-          <PointFrame FrameIndex="550" Tween="False" X="14.0000" Y="15.0000" />
-          <PointFrame FrameIndex="570" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="600" Tween="False" X="13.0000" Y="15.0000" />
-          <PointFrame FrameIndex="605" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="610" Tween="False" X="19.0000" Y="15.0000" />
-          <PointFrame FrameIndex="615" Tween="False" X="16.0000" Y="17.0000" />
-          <PointFrame FrameIndex="620" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="640" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="670" Tween="False" X="19.0000" Y="15.0000" />
-          <PointFrame FrameIndex="675" Tween="False" X="16.0000" Y="17.0000" />
-          <PointFrame FrameIndex="680" Tween="False" X="13.0000" Y="15.0000" />
+          <PointFrame FrameIndex="475" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="480" Tween="False" X="18.0000" Y="15.0000" />
+          <PointFrame FrameIndex="485" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="490" Tween="False" X="13.0000" Y="15.0000" />
+          <PointFrame FrameIndex="495" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="500" Tween="False" X="12.5000" Y="15.0000" />
+          <PointFrame FrameIndex="545" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="550" Tween="False" X="18.0000" Y="15.0000" />
+          <PointFrame FrameIndex="555" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="560" Tween="False" X="13.0000" Y="15.0000" />
+          <PointFrame FrameIndex="565" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="570" Tween="False" X="12.5000" Y="15.0000" />
+          <PointFrame FrameIndex="615" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="620" Tween="False" X="18.0000" Y="15.0000" />
+          <PointFrame FrameIndex="625" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="630" Tween="False" X="13.0000" Y="15.0000" />
+          <PointFrame FrameIndex="635" Tween="False" X="16.0000" Y="15.0000" />
+          <PointFrame FrameIndex="640" Tween="False" X="12.5000" Y="15.0000" />
           <PointFrame FrameIndex="685" Tween="False" X="16.0000" Y="15.0000" />
-          <PointFrame FrameIndex="690" X="16.0000" Y="15.0000">
-            <EasingData Type="0" />
-          </PointFrame>
+          <PointFrame FrameIndex="690" Tween="False" X="18.0000" Y="15.0000" />
+          <PointFrame FrameIndex="695" Tween="False" X="16.0000" Y="17.0000" />
+          <PointFrame FrameIndex="700" Tween="False" X="13.0000" Y="15.0000" />
+          <PointFrame FrameIndex="705" Tween="False" X="16.0000" Y="15.0000" />
         </Timeline>
         <Timeline ActionTag="-778978562" Property="Position">
           <PointFrame FrameIndex="150" Tween="False" X="16.0000" Y="-16.0000" />
@@ -233,6 +231,15 @@
           <PointFrame FrameIndex="430" X="16.0000" Y="8.0000">
             <EasingData Type="0" />
           </PointFrame>
+          <PointFrame FrameIndex="500" X="16.0000" Y="8.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="570" X="16.0000" Y="8.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="640" X="16.0000" Y="8.0000">
+            <EasingData Type="0" />
+          </PointFrame>
         </Timeline>
         <Timeline ActionTag="-778978562" Property="Scale">
           <ScaleFrame FrameIndex="150" Tween="False" X="0.9000" Y="0.3000" />
@@ -240,6 +247,15 @@
           <ScaleFrame FrameIndex="290" Tween="False" X="0.3000" Y="0.9000" />
           <ScaleFrame FrameIndex="360" Tween="False" X="0.3000" Y="0.9000" />
           <ScaleFrame FrameIndex="430" X="0.9000" Y="0.7500">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="500" X="0.9000" Y="0.7500">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="570" X="0.9000" Y="0.7500">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="640" X="0.9000" Y="0.7500">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -263,17 +279,17 @@
           <BoolFrame FrameIndex="395" Tween="False" Value="True" />
           <BoolFrame FrameIndex="400" Tween="False" Value="False" />
           <BoolFrame FrameIndex="430" Tween="False" Value="False" />
-          <BoolFrame FrameIndex="460" Tween="False" Value="True" />
-          <BoolFrame FrameIndex="480" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="475" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="495" Tween="False" Value="False" />
           <BoolFrame FrameIndex="500" Tween="False" Value="False" />
-          <BoolFrame FrameIndex="530" Tween="False" Value="True" />
-          <BoolFrame FrameIndex="550" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="545" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="565" Tween="False" Value="False" />
           <BoolFrame FrameIndex="570" Tween="False" Value="False" />
-          <BoolFrame FrameIndex="600" Tween="False" Value="True" />
-          <BoolFrame FrameIndex="620" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="615" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="635" Tween="False" Value="False" />
           <BoolFrame FrameIndex="640" Tween="False" Value="False" />
-          <BoolFrame FrameIndex="670" Tween="False" Value="True" />
-          <BoolFrame FrameIndex="690" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="685" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="705" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="-1514576561" Property="Position">
           <PointFrame FrameIndex="150" Tween="False" X="16.0000" Y="-16.0000" />
@@ -365,15 +381,15 @@
             <FileData Type="PlistSubImage" Path="effect.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprite" CanEdit="False" ActionTag="2064821685" Tag="4" IconVisible="False" RightMargin="-32.0000" TopMargin="-31.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="33.0000" />
+          <AbstractNodeData Name="sprite" ActionTag="2064821685" Tag="4" IconVisible="False" LeftMargin="-3.5000" RightMargin="-28.5000" TopMargin="-47.0000" BottomMargin="-17.0000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="15.0000" />
+            <Position X="12.5000" Y="15.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="taihou_0_0.png" Plist="character/taihou.plist" />
+            <FileData Type="PlistSubImage" Path="a2taihou_a_0_1.png" Plist="character/taihou.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="collision" CanEdit="False" ActionTag="-2121198832" Tag="6" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
@@ -409,21 +425,21 @@
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-34.0000" BottomMargin="-66.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_attack" CanEdit="False" ActionTag="-778978562" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="-34.0000" RightMargin="-66.0000" TopMargin="-58.0000" BottomMargin="-42.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="-16.0000" />
-            <Scale ScaleX="0.9000" ScaleY="0.3000" />
+            <Position X="16.0000" Y="8.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.7500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="PlistSubImage" Path="attack.png" Plist="detection/detection_box.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_effect_1" CanEdit="False" ActionTag="-1514576561" VisibleForFrame="False" Tag="7" IconVisible="False" LeftMargin="-32.0000" RightMargin="-64.0000" TopMargin="-16.0000" BottomMargin="-48.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="battle_effect_1" CanEdit="False" ActionTag="-1514576561" VisibleForFrame="False" Tag="7" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" RightMargin="-96.0000" TopMargin="-48.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
             <Size X="96.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.0000" Y="-16.0000" />
+            <Position X="48.0000" Y="16.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
