@@ -41,7 +41,6 @@ protected:
     MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
-    HitBox* _hitBox { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
     float _speed { 1.f };
@@ -89,9 +88,6 @@ public:
     
     // AttackBox
     void enableBattleAttack(bool enableAttack);
-    
-    // HitBox
-    void enableHit(bool enableHit);
     
     // Sight
     bool isInSight(MapObject* mapObject);

@@ -296,7 +296,6 @@ void Character::onHurt(int damage)
     
     if (_battle && !_hitPoint->isLost()) {
         this->enableHit(false);
-        this->enableBattleAttack(false);
         
         this->runAction(Sequence::create(Hide::create(),
                                          DelayTime::create(0.15f),
@@ -309,7 +308,7 @@ void Character::onHurt(int damage)
                                          Hide::create(),
                                          DelayTime::create(0.15f),
                                          Show::create(),
-                                         CallFunc::create([this] { this->enableHit(true); this->enableBattleAttack(true); }),
+                                         CallFunc::create([this] { this->enableHit(true); }),
                                          nullptr));
     }
 }
@@ -332,22 +331,6 @@ void Character::enableBattleAttack(bool enableAttack)
         _objectList->getAttackDetector()->addAttackBox(_battleAttackBox);
     } else {
         _objectList->getAttackDetector()->removeAttackBox(_battleAttackBox);
-    }
-}
-
-#pragma mark -
-#pragma mark HitBox
-
-void Character::enableHit(bool enableHit)
-{
-    if (!_objectList) return;
-    
-    if (enableHit) {
-        _objectList->getAttackDetector()->addHitBox(_hitBox);
-        _hitBox->setVisible(true);
-    } else {
-        _objectList->getAttackDetector()->removeHitBox(_hitBox);
-        _hitBox->setVisible(false);
     }
 }
 
