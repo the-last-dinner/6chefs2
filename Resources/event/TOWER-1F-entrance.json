@@ -235,6 +235,20 @@
 					]
 				},
 				{
+					"type":"if",
+					"condition":[
+						{
+							"Ntrophy":"11"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophyID":"11"
+						}
+					]
+				},
+				{
 					"type":"changeMap",
 					"mapID":"117",
 					"x":25,
