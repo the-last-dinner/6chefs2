@@ -238,13 +238,28 @@
 					"type":"if",
 					"condition":[
 						{
-							"Ntrophy":"11"
+							"Ntrophy":"12"
 						}
 					],
 					"action":[
 						{
 							"type":"getTrophy",
-							"trophyID":"11"
+							"trophyID":"12"
+						}
+					]
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"trophy":["11","12"],
+							"Ntrophy":"13"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophyID":"13"
 						}
 					]
 				},

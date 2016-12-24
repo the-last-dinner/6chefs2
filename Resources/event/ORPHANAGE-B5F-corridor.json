@@ -999,6 +999,35 @@
 							]
 						},
 						{
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"11"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"11"
+								}
+							]
+						},
+						{
+							"type":"if",
+							"condition":[
+								{
+									"trophy":["11","12"],
+									"Ntrophy":"13"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"13"
+								}
+							]
+						},
+						{
 							"type":"releaseChase",
 							"objID":"10119"
 						},

@@ -17,15 +17,6 @@
 					"file":"omake_ranmaru.mp3"
 				},
 				{
-					"type":"repeat",
-					"times":-1,
-					"action":[
-						{
-							"type":"蘭丸の正拳突き"
-						}
-					]
-				},
-				{
 					"type":"storyMsg",
 					"text":["負けた・・・"]
 				},
