@@ -34,10 +34,6 @@ public:
     virtual void turn(Party* party, const Direction& direction, bool isDashKeyPressed) override;
     virtual void onEnterKeyPressed(Party* party) override;
     virtual void move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed) override;
-
-// コールバック
-public:
-    void onAttackCommandFinished(Party* party);
 };
 
 #endif /* BattleState_h */

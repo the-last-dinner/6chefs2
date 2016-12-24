@@ -67,7 +67,8 @@ void BattleState::onEnterKeyPressed(Party* party)
     command->setName("attack");
     command->setStamina(DungeonSceneManager::getInstance()->getStamina());
     command->setCallback([this, party](Character* c) {
-        this->onAttackCommandFinished(party);
+        if (!_task) return;
+        _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
     });
     
     mainCharacter->pushCommand(command);
@@ -107,14 +108,4 @@ void BattleState::move(Party* party, const vector<Direction>& directions, bool i
             if (_task) _task->onPartyMovedOneGrid(party, false);
         });
     }
-}
-
-#pragma mark -
-#pragma mark Callback
-
-// 攻撃コマンド終了時
-void BattleState::onAttackCommandFinished(Party* party)
-{
-    if (!_task) return;
-    _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
 }
