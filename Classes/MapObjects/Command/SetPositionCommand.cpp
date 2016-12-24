@@ -49,6 +49,7 @@ bool SetPositionCommand::isExecutable(MapObject* target) const
 void SetPositionCommand::execute(MapObject* target)
 {
     target->setGridPosition(_gridPosition);
+    target->setDirection(_direction);
     DungeonSceneManager::getInstance()->setMapObjectPosition(target);
     
     this->setDone();
