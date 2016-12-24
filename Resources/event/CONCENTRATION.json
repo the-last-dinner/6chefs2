@@ -90,7 +90,7 @@
 				},
 				{
 					"type":"charaMsg",
-					"file":"taihou_walk.png",
+					"img":"taihou_walk.png",
 					"text":["あの自然体の脱力姿勢・・・\nアレは最も効率的に身体を動かせる姿勢だ。"],
 					"charaID":"10",
 					"name":"加藤　蘭丸"
