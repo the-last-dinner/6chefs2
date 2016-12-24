@@ -335,6 +335,8 @@
 		DC23C86D1D8BD9A7008E57F3 /* PathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC23C86A1D8BD9A7008E57F3 /* PathFinder.cpp */; };
 		DC23C8701D8BD9D0008E57F3 /* PathNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC23C86E1D8BD9D0008E57F3 /* PathNode.cpp */; };
 		DC23C8711D8BD9D0008E57F3 /* PathNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC23C86E1D8BD9D0008E57F3 /* PathNode.cpp */; };
+		DC25948B1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2594891E0E4EF80098FCDA /* SetPositionCommand.cpp */; };
+		DC25948C1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2594891E0E4EF80098FCDA /* SetPositionCommand.cpp */; };
 		DC328A691C87194E00675131 /* BGM in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5D1C87194E00675131 /* BGM */; };
 		DC328A6A1C87194E00675131 /* BGM in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5D1C87194E00675131 /* BGM */; };
 		DC328A6B1C87194E00675131 /* csv in Resources */ = {isa = PBXBuildFile; fileRef = DC328A5E1C87194E00675131 /* csv */; };
@@ -770,6 +772,8 @@
 		DC23C86B1D8BD9A7008E57F3 /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathFinder.h; path = PathFinder/PathFinder.h; sourceTree = "<group>"; };
 		DC23C86E1D8BD9D0008E57F3 /* PathNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathNode.cpp; path = PathFinder/PathNode.cpp; sourceTree = "<group>"; };
 		DC23C86F1D8BD9D0008E57F3 /* PathNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathNode.h; path = PathFinder/PathNode.h; sourceTree = "<group>"; };
+		DC2594891E0E4EF80098FCDA /* SetPositionCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SetPositionCommand.cpp; path = Command/SetPositionCommand.cpp; sourceTree = "<group>"; };
+		DC25948A1E0E4EF80098FCDA /* SetPositionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetPositionCommand.h; path = Command/SetPositionCommand.h; sourceTree = "<group>"; };
 		DC328A5D1C87194E00675131 /* BGM */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BGM; sourceTree = "<group>"; };
 		DC328A5E1C87194E00675131 /* csv */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csv; sourceTree = "<group>"; };
 		DC328A601C87194E00675131 /* event */ = {isa = PBXFileReference; lastKnownFileType = folder; path = event; sourceTree = "<group>"; };
@@ -1642,6 +1646,8 @@
 				DCDB71CA1DFE7F0C0015A434 /* HurtCommand.h */,
 				DCF9469F1E0BE41300BD8744 /* FastMoveCommand.cpp */,
 				DCF946A01E0BE41300BD8744 /* FastMoveCommand.h */,
+				DC2594891E0E4EF80098FCDA /* SetPositionCommand.cpp */,
+				DC25948A1E0E4EF80098FCDA /* SetPositionCommand.h */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -1934,6 +1940,7 @@
 				26460B911D72EBB600F0336C /* MapData.cpp in Sources */,
 				2607CB171CE8516E00F7E8C3 /* CommonEventScripts.cpp in Sources */,
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
+				DC25948B1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */,
 				DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
@@ -2091,6 +2098,7 @@
 				DC03922A1C871E1000C50E8E /* TitleScene.cpp in Sources */,
 				DC0392401C871E1000C50E8E /* Cloud.cpp in Sources */,
 				DC8C4D2E1D8FBE1300FF0A1E /* HitBox.cpp in Sources */,
+				DC25948C1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */,
 				DC03920E1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0392201C871E1000C50E8E /* DungeonMenuScene.cpp in Sources */,
 				DC0182921D7A97D700E556D1 /* Slip.cpp in Sources */,
