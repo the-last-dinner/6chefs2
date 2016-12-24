@@ -336,22 +336,6 @@ void Character::enableBattleAttack(bool enableAttack)
 }
 
 #pragma mark -
-#pragma mark HitBox
-
-void Character::enableHit(bool enableHit)
-{
-    if (!_objectList) return;
-    
-    if (enableHit) {
-        _objectList->getAttackDetector()->addHitBox(_hitBox);
-        _hitBox->setVisible(true);
-    } else {
-        _objectList->getAttackDetector()->removeHitBox(_hitBox);
-        _hitBox->setVisible(false);
-    }
-}
-
-#pragma mark -
 #pragma mark Sight
 
 bool Character::isInSight(MapObject* mapObject)

@@ -61,15 +61,12 @@ void FastMoveCommand::execute(MapObject* target)
     effect->animate([this, target](DustEffect* e){ target->getParent()->removeChild(e); });
     
     target->setVisible(false);
+    target->enableHit(false);
     target->runAction(Sequence::createWithTwoActions(DelayTime::create(_delayTime), CallFunc::create([this, target] {
         target->setGridPosition(_gridPosition);
         DungeonSceneManager::getInstance()->setMapObjectPosition(target);
         target->setVisible(true);
-        
-        DustEffect* effect { DustEffect::create() };
-        effect->setPosition(target->getPosition());
-        target->getParent()->addChild(effect);
-        effect->animate([this, target](DustEffect* e){ target->getParent()->removeChild(e); });
+        target->enableHit(true);
         
         this->setDone();
         if (_callback) _callback();
