@@ -11,7 +11,9 @@
 #include "MapObjects/Command/MapObjectCommand.h"
 #include "MapObjects/Command/MapObjectCommandQueue.h"
 #include "MapObjects/Command/MoveCommand.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/DetectionBox/HitBox.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
@@ -50,6 +52,8 @@ bool MapObject::init()
     CC_SAFE_RETAIN(commandQueue);
     _commandQueue = commandQueue;
     
+    this->setCascadeOpacityEnabled(true);
+    
     return true;
 }
 
@@ -85,9 +89,21 @@ void MapObject::setGridPosition(const Point& gridPosition) { _location.x = gridP
 // 方向をセット
 void MapObject::setDirection(const Direction& direction)
 {
-    if (direction.isNull()) return;
+    if (!this->isChangeableDirection(direction)) return;
+    
     _location.direction = direction;
 }
+
+// 方向を変えられるか
+bool MapObject::isChangeableDirection(const Direction& direction)
+{
+    if (direction.isNull()) return false;
+    
+    if (_terrainState != nullptr && !_terrainState->isTrunable(direction)) return false;
+    
+    return true;
+}
+
 
 // オブジェクトIDをセット
 void MapObject::setObjectId(int objectId) { _objectId = objectId; }
@@ -155,36 +171,6 @@ void MapObject::removeLight(function<void()> callback)
     light->runAction(Sequence::create(FadeOut::create(0.5f), CallFunc::create(callback), RemoveSelf::create(), nullptr));
 }
 
-// Locationを取得
-Location MapObject::getLocation() const {return _location;}
-
-// オブジェクトIDを取得
-int MapObject::getObjectId() const {return _objectId;}
-
-// イベントIDを取得
-int MapObject::getEventId() const {return _eventId;}
-
-// triggerを取得
-Trigger MapObject::getTrigger() const {return _trigger;}
-
-// 移動中かどうか
-bool MapObject::isMoving() const {return _isMoving;}
-
-// 現在キャラが向いている方向を取得
-Direction MapObject::getDirection() const {return _location.direction;}
-
-// Spriteを取得
-Sprite* MapObject::getSprite() const { return _sprite;};
-
-// 一時停止状態か
-bool MapObject::isPaused() const { return _paused; };
-
-// 移動方向を取得
-vector<Direction> MapObject::getMovingDirections() const { return _movingDirections; };
-
-// 当たり判定を取得
-CollisionBox* MapObject::getCollision() const { return _collision; }
-
 // 衝突判定用Rectを取得
 Rect MapObject::getCollisionRect() const
 {
@@ -192,9 +178,6 @@ Rect MapObject::getCollisionRect() const
     
     return _collision->getRect();
 }
-
-// 当たり判定の有無を取得
-bool MapObject::isHit() const {return _collision;}
 
 // 指定の方向に対して当たり判定があるか
 bool MapObject::isHit(const Direction& direction, bool ignoreCollision) const
@@ -223,12 +206,6 @@ bool MapObject::isHit(const MapObject* other) const
 {
     return other;
 }
-
-// 動かせるかどうかを取得
-bool MapObject::isMovable() const {return _isMovable;}
-
-// 動かしたときの音を取得
-string MapObject::getMovingSoundFileName() const {return _movingSoundFileName;}
 
 // 指定の方向に対して当たり判定があるMapObjectのvectorを取得
 Vector<MapObject*> MapObject::getHitObjects(const Direction& direction) const
@@ -263,6 +240,22 @@ void MapObject::pushCommand(MapObjectCommand* command)
 void MapObject::clearCommandQueue()
 {
     _commandQueue->clear();
+}
+
+#pragma mark -
+#pragma mark HitBox
+
+void MapObject::enableHit(bool enableHit)
+{
+    if (!_objectList) return;
+    
+    if (enableHit) {
+        _objectList->getAttackDetector()->addHitBox(_hitBox);
+        _hitBox->setVisible(true);
+    } else {
+        _objectList->getAttackDetector()->removeHitBox(_hitBox);
+        _hitBox->setVisible(false);
+    }
 }
 
 #pragma mark -

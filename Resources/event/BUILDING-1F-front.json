@@ -15,15 +15,25 @@
 			]
 		},
 		{
-			"type":"createEnemy",
-			"objID":"148",
-			"x":28,
-			"y":20,
-			"charaID":"13",
-			"movePattern":"4",
-			"pathID":"1",
-			"direction":"LEFT",
-			"times":1
+			"type":"if",
+			"condition":[
+				{
+					"event":["18","6"]
+				}
+			],
+			"action":[
+				{
+					"type":"createEnemy",
+					"objID":"148",
+					"x":28,
+					"y":20,
+					"charaID":"13",
+					"movePattern":"4",
+					"pathID":"1",
+					"direction":"LEFT",
+					"times":1
+				}
+			]
 		},
 		{
 			"type":"if",

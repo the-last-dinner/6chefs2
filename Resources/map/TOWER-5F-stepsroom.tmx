@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="39">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="961" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="30">
@@ -85,7 +85,7 @@
  </objectgroup>
  <layer name="shadow" width="20" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgaoJpl6JpHjl30NI8cMGreqHmj5o2aN2reqLrBoG6wAgBNexBg
+   eJxjYBgaoJpl6JpHjl1D2b+j5o2aN2reqHmj5o2qo5e6wQoAfu8P4Q==
   </data>
  </layer>
  <objectgroup name="chara">

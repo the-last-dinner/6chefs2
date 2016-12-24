@@ -102,6 +102,7 @@ void Scouter::move(const int pathObjId)
         walkCallback();
     }, destObj->getSpeedRatio(), false) };
     
+    _chara->clearCommandQueue();
     for (WalkCommand* command : commands) {
         _chara->pushCommand(command);
     }
@@ -121,7 +122,7 @@ deque<Direction> Scouter::getPath(PathObject* pathObject)
 void Scouter::shiftToSubPattern()
 {
     MovePattern::pause();
-    
+    _chara->clearCommandQueue();
     _subPattern->start();
     
     _chara->reaction();

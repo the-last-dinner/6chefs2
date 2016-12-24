@@ -3,6 +3,11 @@
 		{
 			"type":"setAmbient",
 			"ambient":"night"
+		},
+		{
+			"type":"changeVolume",
+			"file":"lastBoss.mp3",
+			"volume":0.5
 		}
 	],
 	"2":[
@@ -13,8 +18,27 @@
 					"type":"spawn",
 					"action":[
 						{
+							"type":"removeEnemy",
+							"objID":"1455"
+						},
+						{
+							"type":"removeEnemy",
+							"objID":"1456"
+						},
+						{
+							"type":"removeEnemy",
+							"objID":"1457"
+						},
+						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"playSE",
 							"file":"gun1.mp3"
+						},
+						{
+							"type":"releaseChase",
+							"objID":"10235"
 						},
 						{
 							"type":"removeObject",
@@ -59,6 +83,10 @@
 							"direction":"DOWN"
 						},
 						{
+							"type":"playSE",
+							"file":"reaction.mp3"
+						},
+						{
 							"type":"reaction",
 							"objID":"hero"
 						}
@@ -86,8 +114,8 @@
 							"name":"黒ずくめの男達"
 						},
 						{
-							"text":["タイホウ・・・にげろ・・・\nこいつら・・・やっぱりおかしい・・・"],
-							"charaID":"31",
+							"text":["タイホウ・・・逃げろ・・・\nこいつら・・・やっぱりおかしい・・・"],
+							"charaID":"32",
 							"imgID":"4",
 							"miniChara":true
 						},
@@ -99,8 +127,8 @@
 							"option":"reaction"
 						},
 						{
-							"text":["お前はそこの穴からにげて・・・助けを呼んできてくれ・・・","だいじょうぶだ。\n二人で捕まるよりマシだろ？"],
-							"charaID":"31",
+							"text":["お前はそこの穴から逃げて・・・\n助けを呼んできてくれ・・・","だいじょうぶだ。\n二人で捕まるよりマシだろ？"],
+							"charaID":"32",
 							"imgID":"4",
 							"miniChara":true
 						},
@@ -111,7 +139,7 @@
 							"miniChara":true
 						},
 						{
-							"text":["ちくしょう"],
+							"text":["ちくしょう！"],
 							"charaID":"22",
 							"imgID":"7",
 							"miniChara":true,
@@ -123,7 +151,7 @@
 					"type":"charaWalkTo",
 					"objID":"hero",
 					"x":67,
-					"y":11,
+					"y":13,
 					"speed":2.0
 				},
 				{
@@ -144,7 +172,7 @@
 				{
 					"type":"wait",
 					"time":0.5
-				}
+				},
 				{
 					"type":"playSE",
 					"file":"machinegun1.mp3"

@@ -30,24 +30,13 @@
 			"action":[
 				{
 					"type":"createEnemy",
-					"objID":"1411",
+					"objID":"1412",
 					"charaID":"13",
-					"x":11,
-					"y":89,
+					"x":13,
+					"y":19,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
-					"movePattern":"4"
-				},
-				{
-					"type":"createEnemy",
-					"objID":"1412",
-					"charaID":"13",
-					"x":12,
-					"y":54,
-					"direction":"UP",
-					"times":1,
-					"pathID":"3",
 					"movePattern":"4"
 				}
 			]
@@ -471,24 +460,11 @@
 					"objID":"1411",
 					"charaID":"13",
 					"x":11,
-					"y":87,
+					"y":89,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
-					"movePattern":"4",
-					"speed":1.4
-				},
-				{
-					"type":"createEnemy",
-					"objID":"1412",
-					"charaID":"13",
-					"x":13,
-					"y":21,
-					"direction":"UP",
-					"times":1,
-					"pathID":"3",
-					"movePattern":"4",
-					"speed":1.4
+					"movePattern":"4"
 				},
 				{
 					"type":"changeDirection",

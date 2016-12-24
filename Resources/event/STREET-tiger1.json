@@ -302,7 +302,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["12","12"]
+					"event":["7","7"]
 				}
 			],
 			"action":[
@@ -321,12 +321,26 @@
 					"type":"createEnemy",
 					"objID":"1416",
 					"charaID":"13",
-					"x":20,
-					"y":101,
+					"x":19,
+					"y":66,
 					"direction":"UP",
 					"times":1,
-					"pathID":"3",
+					"pathID":"4",
 					"movePattern":"4"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"hide"
 				}
 			]
 		}
@@ -674,29 +688,6 @@
 			"type":"sequence",
 			"action":[
 				{
-					"type":"playBGM",
-					"file":"chapter2.mp3",
-					"volume":0.5
-				},
-				{
-					"type":"createObject",
-					"objID":"1043",
-					"x":36,
-					"y":59,
-					"movePattern":"1",
-					"direction":"LEFT",
-					"charaID":"8"
-				},
-				{
-					"type":"chase",
-					"objID":"1043"
-				},
-				{
-					"type":"changeDirection",
-					"objID":"hero",
-					"direction":"RIGHT"
-				},
-				{
 					"type":"fadein"
 				},
 				{
@@ -769,6 +760,46 @@
 					]
 				},
 				{
+					"type":"addProfile",
+          			"charaID":"13",
+          			"infoID":"2"
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"playSE",
+							"file":"mystery5.mp3"
+						},
+						{
+							"type":"systemMsg",
+							"text":["資料に”天弦楼(テンゲンロウ)”\nが追加された"]
+						}
+					]
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1415",
+					"charaID":"13",
+					"x":21,
+					"y":17,
+					"direction":"DOWN",
+					"times":1,
+					"pathID":"1",
+					"movePattern":"4"
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1416",
+					"charaID":"13",
+					"x":19,
+					"y":55,
+					"direction":"UP",
+					"times":1,
+					"pathID":"4",
+					"movePattern":"4"
+				},
+				{
 					"type":"already"
 				}
 			]
@@ -788,7 +819,7 @@
 					"action":[
 						{
 							"type":"charaMsg",
-							"text":["吾郎よ、\n天弦楼はそっちじゃないぜ？"],
+							"text":["吾郎よ、\nそっちじゃないぜ？"],
 							"charaID":"8",
 							"imgID":"1"
 						},
@@ -832,6 +863,156 @@
 						{
 							"type":"already",
 							"event":["5","6"]
+						}
+					]
+				}
+			]
+		}
+	],
+	"10":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"playBGM",
+					"file":"chapter2.mp3",
+					"volume":0.5
+				},
+				{
+					"type":"createObject",
+					"objID":"1043",
+					"x":36,
+					"y":59,
+					"movePattern":"1",
+					"direction":"LEFT",
+					"charaID":"8"
+				},
+				{
+					"type":"chase",
+					"objID":"1043"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"RIGHT"
+				},
+				{
+					"type":"fadein"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["あれが狂人病か・・・"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"text":["ウス・・・\n晩餐館の地下にいたやつらと\n同じッスわ・・・"],
+							"charaID":"5",
+							"imgID":"1"
+						},
+						{
+							"text":["面倒だな・・・\n何体いる？"],
+							"charaID":"8",
+							"imgID":"1"
+						},
+						{
+							"text":["ちと見てみますわ・・・"],
+							"charaID":"5",
+							"imgID":"1"
+						}
+					]
+				},
+				{
+					"type":"already"
+				}
+			]
+		}
+	],
+	"11":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["7","10"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"createCamera",
+							"mapID":"7",
+							"x":18,
+							"y":16,
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"createObject",
+											"objID":"10242",
+											"charaID":"13",
+											"x":18,
+											"y":14,
+											"direction":"DOWN",
+											"movePattern":"2"
+										},
+										{
+											"type":"createObject",
+											"objID":"10243",
+											"charaID":"13",
+											"x":18,
+											"y":97,
+											"direction":"UP",
+											"movePattern":"2"
+										},
+										{
+											"type":"spawn",
+											"action":[
+												{
+													"type":"fadein"
+												},
+												{
+													"type":"camera",
+													"nextX":18,
+													"nextY":97,
+													"time":5.0
+												}
+											]
+										},
+										{
+											"type":"fadeout"
+										}
+									]
+								}
+							]
+						},
+						{
+							"type":"charaWarp",
+							"objID":"hero",
+							"x":34,
+							"y":59,
+							"direction":"LEFT"
+						},
+						{
+							"type":"charaWarp",
+							"objID":"1043",
+							"x":36,
+							"y":59,
+							"direction":"LEFT"
+						},
+						{
+							"type":"already"
+						},
+						{
+							"type":"callEvent",
+							"eventID":"7"
 						}
 					]
 				}

@@ -446,6 +446,20 @@
 					]
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["マンホールのフタが外れかかっている\n地下水道につながってるみたい・・・"]
+				}
+			]
 		}
 	],
 	"7":[
@@ -534,7 +548,7 @@
 								{
 									"text":["咲賀谷「さん」か\n「おねーさん」でしょ！"],
 									"charaID":"7",
-									"imgID":"2"
+									"imgID":"1"
 								},
 								{
 									"text":["ん？何でだ？？"],
@@ -544,7 +558,7 @@
 								{
 									"text":["何でって・・・\n何でも！！"],
 									"charaID":"7",
-									"imgID":"2",
+									"imgID":"1",
 									"option":"reaction"
 								}
 							]
@@ -576,7 +590,7 @@
 						{
 							"text":["（この子達ホントに・・・）"],
 							"charaID":"7",
-							"imgID":"2"
+							"imgID":"1"
 						}
 					]
 				}
@@ -746,6 +760,66 @@
 						{
 							"type":"already",
 							"event":["5","6"]
+						}
+					]
+				}
+			]
+		}
+	],
+	"13":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["なっ！！向こうからも！？\nどっか他に逃げ道はねぇのか！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"UP"
+						}
+					]
+				}
+			]
+		}
+	],
+	"14":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["12","12"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["なっ！！向こうからも！？\nどっか他に逃げ道はねぇのか！"],
+							"charaID":"2",
+							"imgID":"3",
+							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"DOWN"
 						}
 					]
 				}

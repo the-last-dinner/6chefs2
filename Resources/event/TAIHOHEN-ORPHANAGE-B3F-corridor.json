@@ -4,41 +4,31 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","5"]
+					"event":["109","2"]
 				}
 			],
 			"action":[
 				{
 			      "type":"setAmbient",
 			      "ambient":"night"
-			    }
+			    },
+			    {
+					"type":"removeObject",
+					"objID":"182"
+				}
 			]
 		},
 		{
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","9"]
+					"Nevent":["109","2"]
 				}
 			],
 			"action":[
 				{
 					"type":"removeObject",
 					"objID":"181"
-				}
-			]
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"Nevent":["104","9"]
-				}
-			],
-			"action":[
-				{
-					"type":"removeObject",
-					"objID":"182"
 				}
 			]
 		}
@@ -105,20 +95,20 @@
 			"type":"if",
 			"condition":[
 				{
-					"Nevent":["104","5"]
+					"Nevent":["109","2"]
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
 				{
 					"type":"sequence",
 					"action":[
 						{
 							"type":"reaction",
 							"objID":"hero"
-						},
-						{
-							"type":"playSE",
-							"file":"door-old-open1.mp3"
 						},
 						{
 							"type":"charaMsg",
@@ -135,10 +125,20 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["104","5"]
+					"event":["109","2"],
+					"Nflg":["108","4",1]
+				},
+				{
+					"event":["109","2"],
+					"flg":["108","4",1],
+					"flg":["107","4",1]
 				}
 			],
 			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
 				{
 					"type":"sequence",
 					"action":[
@@ -147,25 +147,43 @@
 							"objID":"hero"
 						},
 						{
-							"type":"playSE",
-							"file":"door-old-open1.mp3"
+							"type":"charaMsg",
+							"text":["おい！、あんま音たてんなよ"],
+							"charaID":"32",
+							"imgID":"3",
+							"miniChara":true
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"],
+					"flg":["108","4",1],
+					"Nflg":["107","4",1]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"reaction",
+							"objID":"10235"
 						},
 						{
 							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["ココの床・・・\nきしんで変な音が鳴るな・・・"],
-									"charaID":"22",
-									"imgID":"2",
-									"miniChara":true
-								},
-								{
-									"text":["おい！、あんま音たてんなよ"],
-									"charaID":"32",
-									"imgID":"2",
-									"miniChara":true
-								}
-							]
+							"text":["流石にここからじゃ\n聞こえないんじゃねぇか？"],
+							"charaID":"32",
+							"imgID":"3",
+							"miniChara":true
 						}
 					]
 				}
@@ -174,7 +192,38 @@
 	],
 	"6":[
 		{
-			"type":"fadein"
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"text":["おぃ、そんなことより早く行こうぜ。"],
+					"charaID":"32",
+					"imgID":"1"
+				}
+			]
+		}
+	],
+	"7":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"fadein",
+					"time":1.0
+				},
+				{
+					"type":"charaMsg",
+					"text":["よし、ここからは\nさらに慎重にいくぞ。"],
+					"charaID":"22",
+					"imgID":"1",
+					"miniChara":true
+				}
+			]
 		}
 	]
 }

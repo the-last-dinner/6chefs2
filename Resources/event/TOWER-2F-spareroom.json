@@ -74,18 +74,6 @@
 						{
 							"type":"password",
 							"pass":"3124",
-							"false":[
-								{
-									"type":"charaMsg",
-									"text":["うーんなんだろ・・・"],
-									"charaID":"7",
-									"imgID":"1"
-								},
-								{
-									"type":"changeFlg",
-									"flg":1
-								}
-							],
 							"true":[
 								{
 									"type":"sequence",
@@ -143,6 +131,18 @@
 											"type":"already"
 										}
 									]
+								}
+							],
+							"false":[
+								{
+									"type":"charaMsg",
+									"text":["うーんなんだろ・・・"],
+									"charaID":"7",
+									"imgID":"1"
+								},
+								{
+									"type":"changeFlg",
+									"flg":1
 								}
 							]
 						}
@@ -255,7 +255,7 @@
 	"5":[
 		{
 			"type":"systemMsg",
-			"text":["「矢が示すままに」\n教訓のようなものが刻まれている"]
+			"text":["「矢の示すまま槍の示す数に従え」\n教訓のようなものが刻まれている"]
 		}
 	]
 }

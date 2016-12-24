@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="54" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="54">
@@ -25,7 +25,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztz7ENADAIwDDUk7mEk9k7IzrUviCJAAAAAAAAAAAAAOCW53XBrvrsFwCY1R2rAQc=
+   eJztz0ERAAAEAEEjsiQia8HDboK7CAAAAAAAAAAA4FLldcGufvYLAADwwQDftgEH
   </data>
  </layer>
  <layer name="MonoChu" width="60" height="54">
@@ -41,9 +41,9 @@
   <object id="2" x="800" y="64" width="128" height="32"/>
   <object id="3" x="928" y="16" width="32" height="832"/>
   <object id="4" x="160" y="464" width="768" height="368"/>
-  <object id="5" x="32" y="800" width="128" height="32"/>
+  <object id="5" x="32" y="832" width="128" height="32"/>
   <object id="7" x="0" y="288" width="32" height="544"/>
-  <object id="11" x="144" y="704" width="16" height="32"/>
+  <object id="11" x="144" y="608" width="16" height="32"/>
   <object id="12" x="0" y="832" width="528" height="48"/>
   <object id="18" x="800" y="48" width="128" height="48"/>
  </objectgroup>
@@ -60,16 +60,16 @@
     <property name="trigger" value="3"/>
    </properties>
   </object>
-  <object id="10" x="144" y="704" width="16" height="32">
+  <object id="10" x="144" y="608" width="16" height="32">
    <properties>
     <property name="EventID" value="3"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="16" x="32" y="768" width="128" height="32">
+  <object id="16" x="32" y="800" width="128" height="32">
    <properties>
     <property name="EventID" value="4"/>
-    <property name="trigger" value="2"/>
+    <property name="trigger" value="1"/>
    </properties>
   </object>
   <object id="17" x="800" y="256" width="128" height="32">
@@ -81,7 +81,7 @@
  </objectgroup>
  <layer name="CharaUe" width="60" height="54">
   <data encoding="base64" compression="zlib">
-   eJztzjERAAAIBKA/O9m/mhEcdYAEJAAAAAAAAAAAAAC7rusBAABfDWIwADg=
+   eJztzjERAAAIBKA/O9m/mhmcdIAEJAAAAAAAAAAA8EvX9QAAAADYGJefADg=
   </data>
  </layer>
  <layer name="shadow" width="60" height="54">

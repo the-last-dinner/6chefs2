@@ -2,37 +2,7 @@
 	"1":[
 		{
 		    "type":"setAmbient",
-		    "ambient":"night"
-		},
-		{
-			"type":"if",
-			"condition":[
-				{
-					"Nevent":["23","9"]
-				}
-			],
-			"action":[
-				{
-					"type":"createEnemy",
-					"objID":"1424",
-					"charaID":"13",
-					"x":17,
-					"y":18,
-					"direction":"UP",
-					"times":1,
-					"movePattern":"6"
-				},
-				{
-					"type":"createEnemy",
-					"objID":"1425",
-					"charaID":"13",
-					"x":43,
-					"y":37,
-					"direction":"UP",
-					"times":1,
-					"movePattern":"6"
-				}
-			]
+		    "ambient":"room"
 		},
 		{
 			"type":"if",
@@ -111,7 +81,7 @@
 						{
 							"text":["あん？コレはエレベーターか・・・"],
 							"charaID":"5",
-							"imgID":"5"
+							"imgID":"1"
 						},
 						{
 							"text":["鍵がねぇと動かねぇみたいだな。\n探して来ようぜ。"],
@@ -181,7 +151,9 @@
 	            		     		]
 	                    		},
 	                    		{
-	                        		"choice":"いいえ"	
+	                        		"choice":"いいえ"	,
+	                        		"action":[
+	                        		]
 	                    		}
 	                		]
 	                	}
@@ -234,7 +206,9 @@
 	            		     		]
 	                    		},
 	                    		{
-	                        		"choice":"いいえ"	
+	                        		"choice":"いいえ"	,
+	                        		"action":[
+	                        		]
 	                    		}
 	                		]
 	                	}
@@ -256,6 +230,15 @@
 					"type":"spawn",
 					"action":[
 						{
+							"type":"createObject",
+							"objID":"10244",
+							"charaID":"13",
+							"x":43,
+							"y":37,
+							"direction":"UP",
+							"movePattern":"2"
+						},
+						{
 		                  "type":"playSE",
 		                  "file":"reaction.mp3",
 		                  "volume":0.25
@@ -266,7 +249,8 @@
 						},
 						{
 							"type":"changeDirection",
-							"objID":"hero"
+							"objID":"hero",
+							"direction":"RIGHT"
 						},
 						{
 							"type":"reaction",
@@ -274,7 +258,8 @@
 						},
 						{
 							"type":"changeDirection",
-							"objID":"1043"
+							"objID":"1043",
+							"direction":"RIGHT"
 						}
 					]
 				},
@@ -300,16 +285,133 @@
 					]
 				},
 				{
+					"type":"fadeout"
+				},
+				{
+					"type":"removeObject",
+					"objID":"10244"
+				},
+				{
+					"type":"releaseChase",
+					"objID":"1043"
+				},
+				{
+					"type":"removeObject",
+					"objID":"1043"
+				},
+				{
+					"type":"questionMsg",
+					"charaID":"8",
+					"imgID":"3",
+					"text":["おう、喧嘩のやり方は忘れてねぇじゃろうなぁ？"],
+					"choices":[
+						{
+							"choice":"鈍ってるかもしんねッス",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"displayImg",
+											"file":"howtoatack.png"
+										},
+										{
+											"type":"displayImg",
+											"file":"howtoescape.png"
+										}
+									]
+								}
+							]
+						},
+						{
+							"choice":"余裕ッス",
+							"action":[
+
+							]
+						}
+					]
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1424",
+					"charaID":"13",
+					"x":17,
+					"y":18,
+					"direction":"UP",
+					"times":1,
+					"movePattern":"6"
+				},
+				{
+					"type":"createEnemy",
+					"objID":"1425",
+					"charaID":"13",
+					"x":43,
+					"y":37,
+					"direction":"UP",
+					"times":1,
+					"movePattern":"6"
+				},
+				{
+					"type":"fadein"
+				},
+				{
 					"type":"battle",
 					"objID":["1424","1425"],
 					"true":[
 						{
-							"type":"already"
+							"type":"sequence",
+							"action":[
+								{
+									"type":"fadeout",
+									"time":2.0
+								},
+								{
+									"type":"charaWarp",
+									"objID":"hero",
+									"x":27,
+									"y":35,
+									"direction":"UP"
+								},
+								{
+									"type":"createObject",
+									"charaID":"8",
+									"objID":"1043",
+									"x":29,
+									"y":35,
+									"direction":"LEFT",
+									"movePattern":"1"
+								},
+								{
+									"type":"fadein"
+								},
+								{
+									"type":"charaMsg",
+									"talk":[
+										{
+											"text":["ハァ・・・ハァ・・・\n流石にキツかったッスわ・・・"],
+											"charaID":"5",
+											"imgID":"7"
+										},
+										{
+											"text":["あぁ・・・\n確かにありゃやべぇわ・・・","なるべく戦わない方が\nいいかもしれねぇな。"],
+											"charaID":"8",
+											"imgID":"1"
+										}
+									]
+								},
+								{
+									"type":"chase",
+									"objID":"1043"
+								},
+								{
+									"type":"already"
+								}
+							]
 						}
 					],
 					"false":[
 						{
-							"type":"already"
+							"type":"gameover"
 						}
 					]
 				}

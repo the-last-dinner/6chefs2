@@ -70,7 +70,7 @@ void SoundManager::playSE(const string& fileName, float volume)
 }
 
 // voiceを再生
-void SoundManager::playVoice(const string &fileName, float volume)
+void SoundManager::playVoice(const string &fileName, float volume, const std::function<void(int,const std::string&)>& onVoiceFinished)
 {
     if (VOLUME_CONFIG.count(fileName) != 0) volume *= VOLUME_CONFIG.at(fileName);
     
@@ -81,11 +81,17 @@ void SoundManager::playVoice(const string &fileName, float volume)
     }
     
     int voiceId { AudioEngine::play2d(filePath, false, volume * PlayerDataManager::getInstance()->getGlobalData()->getVoiceVolume())};
+    AudioEngine::setFinishCallback(voiceId, onVoiceFinished);
+    
     mtx.lock();
     
     this->seIdMap.insert({voiceId, fileName});
     
     mtx.unlock();
+}
+void SoundManager::playVoice(const string &filePath, float volume)
+{
+    this->playVoice(filePath, volume, nullptr);
 }
 
 // BGMを再生

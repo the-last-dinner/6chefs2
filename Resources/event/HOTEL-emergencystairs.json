@@ -5,26 +5,22 @@
 		    "ambient":"night"
 		},
 		{
-			"type":"createEnemy",
+			"type":"createObject",
 			"objID":"141",
 			"charaID":"13",
 			"x":18,
 			"y":29,
 			"direction":"UP",
-			"speed":0.3,
-			"times":1,
-			"movePattern":"3"
+			"movePattern":"1"
 		},
 		{
-			"type":"createEnemy",
+			"type":"createObject",
 			"objID":"142",
 			"charaID":"13",
 			"x":24,
 			"y":4,
-			"direction":"UP",
-			"speed":0.3,
-			"times":1,
-			"movePattern":"3"
+			"direction":"DOWN",
+			"movePattern":"1"
 		}
 	],
 	"2":[
@@ -58,6 +54,10 @@
 						},
 						{
 							"type":"reaction",
+							"objID":"141"
+						},
+						{
+							"type":"reaction",
 							"objID":"142"
 						}
 					]
@@ -68,45 +68,75 @@
 					"direction":"UP"
 				},
 				{
-					"type":"barrage",
-					"times":28,
-					"limit":5.0,
-					"event":[
+					"type":"spawn",
+					"action":[
 						{
-							"type":"playSE",
-							"file":"iron_door_unopen.mp3"
-						},
-						{
-							"type":"quakeMap",
-							"x":0,
-							"y":12,
-							"time":0.12
-						}
-					],
-					"true":[
-						{
-							"type":"sequence",
+							"type":"repeat",
+							"times":1,
+							"id":"1",
 							"action":[
 								{
-									"type":"already"
+									"type":"charaWalkTo",
+									"objID":"141",
+									"x":18,
+									"y":19,
+									"speed":0.2
 								},
 								{
-									"type":"playSE",
-									"file":"hit.mp3"
-								},
-								{
-									"type":"changeMap",
-									"mapID":"12",
-									"x":80,
-									"y":21,
-									"eventID":"13"
+									"type":"charaWalkTo",
+									"objID":"142",
+									"x":24,
+									"y":19,
+									"speed":0.3
 								}
 							]
-						}
-					],
-					"false":[
+						},
 						{
-							"type":"gameover"
+							"type":"barrage",
+							"times":28,
+							"limit":5.0,
+							"event":[
+								{
+									"type":"playSE",
+									"file":"iron_door_unopen.mp3"
+								},
+								{
+									"type":"quakeMap",
+									"x":0,
+									"y":12,
+									"time":0.12
+								}
+							],
+							"true":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"already"
+										},
+										{
+											"type":"stopEvent",
+											"id":"1"
+										},
+										{
+											"type":"playSE",
+											"file":"hit.mp3"
+										},
+										{
+											"type":"changeMap",
+											"mapID":"12",
+											"x":80,
+											"y":21,
+											"eventID":"13"
+										}
+									]
+								}
+							],
+							"false":[
+								{
+									"type":"gameover"
+								}
+							]
 						}
 					]
 				}

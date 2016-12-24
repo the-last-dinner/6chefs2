@@ -284,10 +284,6 @@
 					]
 				},
 				{
-					"type":"fadeout",
-					"time":2.0
-				},
-				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -316,8 +312,8 @@
 				{
 					"type":"charaWarp",
 					"objID":"10211",
-					"x":16,
-					"y":16,
+					"x":38,
+					"y":19,
 					"direction":"RIGHT"
 				},
 				{
@@ -347,9 +343,6 @@
 					"x":40,
 					"y":17,
 					"direction":"RIGHT"
-				},
-				{
-					"type":"fadein"
 				},
 				{
 					"type":"charaMsg",

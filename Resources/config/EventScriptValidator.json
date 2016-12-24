@@ -301,7 +301,8 @@
         "chase": {
             "require": ["objID"],
             "member": {
-                "objID": ["string"]
+                "objID": ["string"],
+                "target": ["string"]
             }
         },
         "releaseChase": {
@@ -452,6 +453,9 @@
         "createRain": {
         },
         "createUnderwater": {
+            "member": {
+                "waveIn": ["bool"]
+            }
         },
         
         
@@ -580,6 +584,8 @@
             "member": {
                 "trophyID": ["stoi"]
             }
+        },
+        "setGameClear": {
         }
     }
 }

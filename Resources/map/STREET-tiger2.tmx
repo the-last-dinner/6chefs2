@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="108" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="154">
- <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2017" name="chinaTown" tilewidth="16" tileheight="16">
+ <tileset firstgid="2017" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" trans="aa55ff" width="480" height="1520"/>
  </tileset>
- <tileset firstgid="4867" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="4867" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="5347" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
+  <image source="death.png" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="44" height="108">
   <properties>
@@ -73,6 +76,30 @@
    eJzt0LkJAmEUhdE/m35VMFfBPkzEpQGXyERcGnApxjtgMImhOCPnwMdLL68U+I5eVUo/Dd63blj9etVno2wbp0njTjuwt1kX9nblv7NsW6RlWqV1mrd4b22Tfdu0S/uWbz1k3ymd0yVd07Hlm2/Zd0+P9Gz5VgAAAAAAAAAAAAAAAAAAAAD+3wth0Rwo
   </data>
  </layer>
+ <layer name="blood" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2MdNREEUBdGGEIAeTIh4yABvMhg8ZIA3ESA8RIB3IeALzYavzw5a04s6Uu3v9r0QJEmSJCkvnTGELuqmHuqlPuqnARqM9V5YNMyeERqlMRqnCZqkKZrObO8Me2ZpjuZpgRZpiZZpJbO9a+xZpw3apC3aph3apb3M9h6w55CO6JhO6JTO6JwuMtt7zZ4buqU7uqcHeqQnes5s7wt7XumN3umDPr83VkJooMZKvRcWNbGnmVooUoVaqY3aqSOzvZIkSZIk/Td/fWn560vLX19a/vokSZL0V96caXlzpuXNmZY3pyRJkiTVDMXyTyJn1Vj+SeRsNZZ/Ejnbj7WfxM+/RM4u2XcVi38JSZL0uy/xiKUM
+  </data>
+ </layer>
+ <layer name="death" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2UEVgDAMRMF4IFUB/g1RF3CgEnoLeW9GwT/vRgAAAMC/3Rkxs7pi37Na30a9AAAAAFDF9gcAANDLMSJyVFfsO1fr1agXAAAA6Mn3DQBU+gDyoAz9
+  </data>
+ </layer>
+ <layer name="hide" width="44" height="108">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt17ENgEAMBMEPof+GaYEPVmCYkZxvdvJaAADwrPO4d2+ht6W3pbelt6W3pRcAAPiraf+F3pbelt6W3pbell4AvmjaXuht6W3pbelt6W3pBQB2TdtjvS29Lb0tvS29Lb0A+y5aIiKJ
+  </data>
+ </layer>
  <objectgroup name="collision">
   <object id="27" x="432" y="160" width="272" height="1232"/>
   <object id="36" x="48" y="1472" width="224" height="256"/>
@@ -90,28 +117,6 @@
    </properties>
   </object>
   <object id="139" x="224" y="1104" width="48" height="272"/>
- </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="122" x="384" y="480" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="8"/>
-    <property name="EventID" value="7"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1022"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
-  <object id="124" x="320" y="480" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="5"/>
-    <property name="EventID" value="8"/>
-    <property name="direction" value="UP"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1023"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="event">
   <object id="60" x="224" y="1664" width="256" height="48">
@@ -510,32 +515,18 @@
   </object>
  </objectgroup>
  <objectgroup name="path">
-  <object id="132" x="304" y="800" width="32" height="32">
-   <properties>
-    <property name="nextID" value="2"/>
-    <property name="pathID" value="1"/>
-    <property name="previousID" value="0"/>
-   </properties>
-  </object>
-  <object id="133" x="352" y="1216" width="32" height="32">
+  <object id="133" x="352" y="608" width="32" height="32">
    <properties>
     <property name="nextID" value="1"/>
     <property name="pathID" value="2"/>
     <property name="previousID" value="1"/>
    </properties>
   </object>
-  <object id="134" x="320" y="1552" width="32" height="32">
+  <object id="134" x="336" y="1248" width="32" height="32">
    <properties>
-    <property name="nextID" value="4"/>
-    <property name="pathID" value="3"/>
-    <property name="previousID" value="0"/>
-   </properties>
-  </object>
-  <object id="135" x="272" y="1136" width="32" height="32">
-   <properties>
-    <property name="nextID" value="3"/>
-    <property name="pathID" value="4"/>
-    <property name="previousID" value="3"/>
+    <property name="nextID" value="2"/>
+    <property name="pathID" value="1"/>
+    <property name="previousID" value="2"/>
    </properties>
   </object>
  </objectgroup>

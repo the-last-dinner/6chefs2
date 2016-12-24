@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="56" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="202">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="56" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="203">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16" tilecount="6400" columns="32">
+ <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16">
   <image source="ST-Temp-E01_2.png" trans="aa55ff" width="512" height="3200"/>
  </tileset>
- <tileset firstgid="6881" name="syakanyorai2" tilewidth="16" tileheight="16" tilecount="96" columns="12">
+ <tileset firstgid="6881" name="syakanyorai2" tilewidth="16" tileheight="16">
   <image source="syakanyorai2.png" trans="aa55ff" width="192" height="128"/>
  </tileset>
- <tileset firstgid="6977" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="6977" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="8481" name="magoichi_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+ <tileset firstgid="8481" name="magoichi_0_0" tilewidth="16" tileheight="16">
   <image source="magoichi_0_0.png" trans="aa55ff" width="32" height="32"/>
   <tile id="0">
    <properties>
@@ -35,8 +35,8 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="8485" name="nadeshiko_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
-  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="32"/>
+ <tileset firstgid="8485" name="nadeshiko_0_0" tilewidth="16" tileheight="16">
+  <image source="nadeshiko_0_0.png" trans="aa55ff" width="32" height="33"/>
   <tile id="0">
    <properties>
     <property name="cc_vertexz" value="-11"/>
@@ -151,6 +151,12 @@
   <object id="199" x="304" y="864" width="64" height="32">
    <properties>
     <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="202" x="304" y="144" width="64" height="32">
+   <properties>
+    <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>

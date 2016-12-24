@@ -26,7 +26,7 @@ bool MasterConfigData::init()
         LastSupper::AssertUtils::fatalAssert(Resource::ConfigFiles::MASTER_CONFIG + "is missing.");
         return false;
     }
-    this->masterConfig = LastSupper::JsonUtils::readJsonFile(this->filePath);
+    this->masterConfig = LastSupper::JsonUtils::readJsonCrypted(this->filePath);
     return true;
 }
 

@@ -5,15 +5,32 @@
 		    "ambient":"night"
 		},
 		{
-			"type":"createEnemy",
-			"objID":"1452",
-			"charaID":"13",
-			"x":11,
-			"y":64,
-			"direction":"UP",
-			"times":1,
-			"pathID":"1",
-			"movePattern":"4"
+			"type":"if",
+			"condition":[
+				{
+					"Nflg":["50","6",1]
+
+				},
+				{
+					"Nflg":["51","3",1]
+				},
+				{
+					"Nflg":["52","3",1]
+				}
+			],
+			"action":[
+				{
+					"type":"createEnemy",
+					"objID":"1452",
+					"charaID":"13",
+					"x":11,
+					"y":64,
+					"direction":"UP",
+					"times":1,
+					"pathID":"1",
+					"movePattern":"4"
+				}
+			]
 		},
 		{
 			"type":"if",
@@ -34,7 +51,8 @@
 				{
 					"type":"setMovable",
 					"objID":"201",
-					"movable":true
+					"movable":true,
+					"file":"kairiki_move.mp3"
 				}
 			]
 		},
@@ -154,23 +172,52 @@
 	],
 	"6":[
 		{
-			"type":"removeObject",
-			"objID":"181"
-		},
-		{
-			"type":"createLayer",
-			"layer":"steps"
-		},
-		{
-			"type":"playSE",
-			"file":"bus-door1.mp3"
-		},
-		{
-			"type":"changeFlg",
-			"mapID":"50",
-			"eventID":"6",
-			"flg":1
-		}		
+			"type":"sequence",
+			"action":[
+				{
+					"type":"camera",
+					"nextX":61,
+					"nextY":31,
+					"time":0.5
+				},
+				{
+					"type":"spawn",
+					"action":[
+						{
+							"type":"removeObject",
+							"objID":"181"
+						},
+						{
+							"type":"createLayer",
+							"layer":"steps"
+						},
+						{
+							"type":"playSE",
+							"file":"bus-door1.mp3"
+						},
+						{
+							"type":"wait",
+							"time":1.0
+						},
+						{
+							"type":"changeFlg",
+							"mapID":"50",
+							"eventID":"6",
+							"flg":1
+						}
+					]
+				},
+				{
+					"type":"camera",
+					"nextX":42,
+					"nextY":25,
+					"time":0.5
+				},
+				{
+					"type":"setCamera"
+				}
+			]
+		}
 	],
 	"7":[
 		{
@@ -211,7 +258,7 @@
 							"type":"charaMsg",
 							"text":["咲賀谷氏！\n何やらあそこのガラス・・・割れていますが・・・"],
 							"charaID":"4",
-							"imgID":"2"
+							"imgID":"1"
 						},
 						{
 							"type":"charaWalk",
@@ -316,7 +363,7 @@
 								{
 									"text":["一体何をどうしたらあんな状況に・・・"],
 									"charaID":"4",
-									"imgID":"2"
+									"imgID":"1"
 								},
 								{
 									"text":["向かいの天弦楼に逃げ込んだんだけど\nそこにもいっぱい入ってきてな・・・","出口からは出られそうになかったから\nこの塔に避難しようと思ってよ。"],
@@ -482,6 +529,10 @@
 		{
 			"type":"removeLayer",
 			"layer":"steps"
+		},
+		{
+			"type":"playSE",
+			"file":"bus-door1.mp3"
 		},
 		{
 			"type":"changeFlg",

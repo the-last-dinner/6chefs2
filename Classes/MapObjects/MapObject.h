@@ -21,6 +21,7 @@ class TerrainStateCache;
 class CollisionBox;
 class MapObjectCommand;
 class MapObjectCommandQueue;
+class HitBox;
 class HitPoint;
 class Battle;
 
@@ -53,6 +54,7 @@ protected:
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };
     MapObjectCommandQueue* _commandQueue { nullptr };
+    HitBox* _hitBox { nullptr };
     HitPoint* _hitPoint { nullptr };
     Battle* _battle { nullptr };
 public:
@@ -78,32 +80,38 @@ public:
 	void setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
 	void removeLight(function<void()> callback = nullptr);
 	
-    Location getLocation() const;
+    Location getLocation() const { return _location; }
     Size  getGridSize() const;
 	Point getGridPosition() const;
     Rect getGridRect(const vector<Direction>& directions = {}) const;
     Rect getGridCollisionRect(const vector<Direction>& directions = {}) const;
-    int getObjectId() const;
-	int getEventId() const;
-	Trigger getTrigger() const;
-    bool isMoving() const;
-    Direction getDirection() const;
-    Sprite* getSprite() const;
-    bool isPaused() const;
-    vector<Direction> getMovingDirections() const;
-    CollisionBox* getCollision() const;
+    int getObjectId() const { return _objectId; }
+    int getEventId() const { return _eventId; }
+    Trigger getTrigger() const { return _trigger; }
+    bool isMoving() const { return _isMoving; }
+    Direction getDirection() const { return _location.direction; }
+    Sprite* getSprite() const { return _sprite; }
+    bool isPaused() const { return _paused; }
+    vector<Direction> getMovingDirections() const { return _movingDirections; }
+    CollisionBox* getCollision() const { return _collision; }
+    bool isChangeableDirection(const Direction& direction);
+    Battle* getBattle() const { return _battle; }
     
 // collision
 public:
     Rect getCollisionRect() const;
-    bool isHit() const;
+    bool isHit() const { return _collision; }
     bool isHit(const Direction& direction, bool ignoreCollision = false) const;
     virtual bool isHit(const vector<Direction>& directions, bool ignoreCollision = false) const;
     virtual bool isHit(const MapObject* other) const;
-    bool isMovable() const;
-    string getMovingSoundFileName() const;
+    bool isMovable() const { return _isMovable; }
+    string getMovingSoundFileName() const { return _movingSoundFileName; }
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
+    
+// hit
+public:
+    void enableHit(bool enable);
     
 // command
 public:
@@ -116,7 +124,7 @@ private:
 public:
     HitPoint* getHitPoint() const;
     void setLostHPCallback(function<void(MapObject*)> callback);
-    void onLostHP();
+    virtual void onLostHP();
     
 // Battle
 public:

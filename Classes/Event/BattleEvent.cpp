@@ -52,8 +52,13 @@ bool BattleStartEvent::init(rapidjson::Value& json)
 
 void BattleStartEvent::run()
 {
-    _successCallbackEvent->setEventId(this->getEventId());
-    _failureCallbackEvent->setEventId(this->getEventId());
+    if (_successCallbackEvent) {
+        _successCallbackEvent->setEventId(this->getEventId());
+    }
+    
+    if (_failureCallbackEvent) {
+        _failureCallbackEvent->setEventId(this->getEventId());
+    }
     
     _battle->start();
     this->setDone();

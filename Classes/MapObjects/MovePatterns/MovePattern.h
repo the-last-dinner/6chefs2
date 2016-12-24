@@ -20,6 +20,7 @@ class MovePattern : public Ref
 protected:
     Character* _chara { nullptr };
     float _speedRatio { 1.0f };
+    bool _started { false };
     bool _paused { false };
     int _startPathId { -1 };
 
@@ -29,10 +30,11 @@ public:
     virtual void pause();
     virtual void resume();
     bool isPaused() const;
+    bool hasSterted() const;
     virtual void onPartyMoved() {};
     virtual bool canGoToNextMap() const { return false; };
     virtual float calcSummonDelay() const { return 0.0f; };
-    void setSpeedRatio(float ratio);
+    virtual void setSpeedRatio(float ratio);
     void setStartPathId(const int pathId);
 protected:
     MovePattern();

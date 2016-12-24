@@ -28,5 +28,15 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="effect/dust.csd" />
+          <FilePathData Path="character/taihou.csd" />
+          <FilePathData Path="character/ranmaru.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="character/taihou.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

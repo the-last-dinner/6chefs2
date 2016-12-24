@@ -13,28 +13,27 @@
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/MovePatterns/CheapChaser.h"
 #include "MapObjects/PathFinder/PathFinder.h"
+#include "MapObjects/DetectionBox/CollisionDetector.h"
 
 #include "Managers/DungeonSceneManager.h"
 
 // 定数
 const int Chaser::PATH_FINDING_THRESHOLD { 10 };
-const int Chaser::SHIFT_PATTERN_THRESHOLD { 10 };
 
 // コンストラクタ
-Chaser::Chaser() {FUNCLOG};
+Chaser::Chaser() { FUNCLOG }
 
 // デストラクタ
 Chaser::~Chaser()
 {
     FUNCLOG
-
     CC_SAFE_RELEASE_NULL(_subPattern);
-};
+}
 
 // 初期化
 bool Chaser::init(Character* character)
 {
-    if(!MovePattern::init(character)) return false;
+    if (!MovePattern::init(character)) return false;
     
     // サブアルゴリズム
     CheapChaser* sub { CheapChaser::create(_chara) };
@@ -70,30 +69,50 @@ void Chaser::resume()
 }
 
 // 主人公一行が動いた時
-void Chaser::onPartyMoved() {}
+void Chaser::onPartyMoved()
+{
+}
+
+void Chaser::setSpeedRatio(float speed)
+{
+    MovePattern::setSpeedRatio(speed);
+    if (_subPattern) _subPattern->setSpeedRatio(speed);
+}
 
 // 動かす
 void Chaser::move()
 {
-    if(this->isPaused()) return;
+    if (this->isPaused()) return;
     
-    // 経路を取得
-    deque<Direction> path { this->getPath() };
-    
-    // 経路がない場合は、主人公に触れたとして無視。あとはMapObjectListがイベントを発動してゲームオーバー
-    if(path.size() == 0) return;
-    
+    if (!_chara->isMoving()) {
+        _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
+    }
+
     // サブアルゴリズムに切り替える必要があるか
-    if(this->needsShiftToSubPattern(path))
-    {
+    if (this->needsShiftToSubPattern()) {
         this->shiftToSubPattern();
-        
         return;
     }
     
+    _chara->clearCommandQueue();
+    this->moveProc();
+}
+
+// 動かす内部実装
+void Chaser::moveProc()
+{
+    // 経路を取得
+    deque<Direction> path { this->getPath() };
+    
     this->cutPath(path);
     
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
+    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) {
+        if (walked) {
+            this->move();
+        } else {
+            _chara->runAction(Sequence::createWithTwoActions(DelayTime::create(0.5f), CallFunc::create(CC_CALLBACK_0(Chaser::onStuck, this))));
+        }
+    }, _speedRatio, false) };
     
     for (WalkCommand* command : commands) {
         _chara->pushCommand(command);
@@ -103,42 +122,32 @@ void Chaser::move()
 // サブアルゴリズムから自身へ移行
 void Chaser::shiftFromSubPattern()
 {
-    // 経路を取得
-    deque<Direction> path { this->getPath() };
-    
-    // 経路をカット
-    this->cutPath(path);
-    
-    Vector<WalkCommand*> commands { WalkCommand::create(path, [this](bool walked) { if (walked) this->move(); }, _speedRatio, false) };
-    
-    for (WalkCommand* command : commands) {
-        _chara->pushCommand(command);
-    }
+    _chara->clearCommandQueue();
+    this->moveProc();
 }
 
 // サブアルゴリズムへ移行
 void Chaser::shiftToSubPattern()
 {
+    _chara->clearCommandQueue();
     _subPattern->setSpeedRatio(_speedRatio);
-    
     _subPattern->move(CC_CALLBACK_0(Chaser::shiftFromSubPattern, this));
 }
 
 // サブの移動アルゴリズムに切り替える必要があるか
-bool Chaser::needsShiftToSubPattern(const deque<Direction>& path)
+bool Chaser::needsShiftToSubPattern() const
 {
-    // 経路のステップ数が閾値以内ならばtrueを返す
-    return path.size() <= SHIFT_PATTERN_THRESHOLD;
+    // 主人公との間に当たり判定がなければtrueを返す
+    return !this->getMapObjectList()->getCollisionDetector()->existsCollisionBetween(_chara, this->getMainCharacter());
 }
 
 // 経路をカットする
 void Chaser::cutPath(deque<Direction>& path)
 {
-    if(path.size() < PATH_FINDING_THRESHOLD) return;
+    if (path.size() < PATH_FINDING_THRESHOLD) return;
     
     // 必要分だけ残す
-    for(int i {0}; i < path.size() - PATH_FINDING_THRESHOLD; i++)
-    {
+    for (int i {0}; i < path.size() - PATH_FINDING_THRESHOLD; i++) {
         path.pop_back();
     }
 }
@@ -147,14 +156,18 @@ void Chaser::cutPath(deque<Direction>& path)
 deque<Direction> Chaser::getPath() const
 {
     PathFinder* pathFinder { DungeonSceneManager::getInstance()->getMapObjectList()->getPathFinder() };
-    
     deque<Direction> path { pathFinder->getPath(_chara, this->getMainCharacter()->getGridCollisionRect().origin) };
     
     return path;
 }
 
+void Chaser::onStuck()
+{
+    this->move();
+}
+
 // マップ移動可能か
-bool Chaser::canGoToNextMap() const { return true; };
+bool Chaser::canGoToNextMap() const { return true; }
 
 // 出口までに掛る時間を計算
 float Chaser::calcSummonDelay() const

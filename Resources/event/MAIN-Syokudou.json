@@ -13,8 +13,8 @@
 			"type":"createObject",
 			"objID":"10127",
 			"charaID":"2",
-			"x":27,
-			"y":20,
+			"x":26,
+			"y":19,
 			"direction":"LEFT",
 			"movePattern":"1"
 		},
@@ -23,7 +23,7 @@
 			"objID":"10128",
 			"charaID":"3",
 			"x":14,
-			"y":20,
+			"y":19,
 			"direction":"RIGHT",
 			"movePattern":"1"
 		},
@@ -41,8 +41,8 @@
 			"objID":"10131",
 			"charaID":"6",
 			"x":14,
-			"y":25,
-			"direction":"DOWN",
+			"y":24,
+			"direction":"RIGHT",
 			"movePattern":"1"
 		},
 		{
@@ -59,7 +59,7 @@
 			"objID":"10133",
 			"charaID":"8",
 			"x":24,
-			"y":32,
+			"y":31,
 			"direction":"UP",
 			"movePattern":"1"
 		}
@@ -68,6 +68,10 @@
 		{
 			"type":"sequence",
 			"action":[
+				{
+					"type":"playBGM",
+					"file":"epirogue.mp3"
+				},
 				{
 					"type":"charaWarp",
 					"objID":"hero",
@@ -157,166 +161,214 @@
 									"imgID":"4"
 								}
 							]
-						},
+						}
+					]
+				},
+				{
+					"type":"charaWalkTo",
+					"objID":"10126",
+					"x":26,
+					"y":14
+				},
+				{
+					"type":"changeDirection",
+					"objID":"10126",
+					"direction":"LEFT"
+				},
+				{
+					"type":"playSE",
+					"file":"door_don.mp3"
+				},
+				{
+					"type":"createObject",
+					"objID":"10129",
+					"charaID":"4",
+					"x":20,
+					"y":39,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"10127",
+					"direction":"DOWN"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
 						{
-							"type":"charaWalkTo",
-							"objID":"10126",
-							"x":26,
-							"y":15
-						},
-						{
-							"type":"changeDirection",
-							"objID":"10126",
-							"direction":"LEFT"
-						},
-						{
-							"type":"playSE",
-							"file":"door_don.mp3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10129",
+							"text":["お待たせしましたぞ！"],
 							"charaID":"4",
-							"x":20,
-							"y":39,
-							"direction":"UP",
-							"movePattern":"1"
+							"imgID":"1"
 						},
 						{
-							"type":"changeDirection",
-							"objID":"10127",
-							"direction":"DOWN"
+							"text":["おう、待ってたぜぇ！\n暖暖！"],
+							"charaID":"2",
+							"imgID":"5"
+						}
+					]
+				},
+				{
+					"type":"camera",
+					"nextX":20,
+					"nextY":39,
+					"time":0.5
+				},
+				{
+					"type":"charaWalk",
+					"objID":"10129",
+					"steps":2.0,
+					"direction":"UP"
+				},
+				{
+					"type":"createObject",
+					"objID":"10134",
+					"charaID":"23",
+					"x":20,
+					"y":39,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"10129",
+					"direction":"DOWN"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"10131",
+					"direction":"DOWN"
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["お母さん！"],
+							"charaID":"6",
+							"imgID":"2"
 						},
 						{
-							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["お待たせしましたぞ！"],
-									"charaID":"4",
-									"imgID":"2"
-								},
-								{
-									"text":["おう、待ってたぜぇ！\n暖暖！"],
-									"charaID":"4",
-									"imgID":"2"
-								}
-							]
+							"text":["ささ！\n早く座って下され！"],
+							"charaID":"4",
+							"imgID":"1"
 						},
 						{
-							"type":"charaWalk",
-							"objID":"10129",
-							"steps":2.0,
-							"direction":"UP"
-						},
+							"text":["・・・"],
+							"charaID":"23"
+						}
+					]
+				},
+				{
+					"type":"setCamera",
+					"objID":"10134"
+				},
+				{
+					"type":"spawn",
+					"action":[
 						{
-							"type":"createObject",
-							"objID":"10134",
-							"charaID":"23",
-							"x":20,
-							"y":39,
-							"direction":"UP",
-							"movePattern":"1"
-						},
-						{
-							"type":"changeDirection",
-							"objID":"10129",
-							"direction":"DOWN"
-						},
-						{
-							"type":"charaMsg",
-							"talk":[
-								{
-									"text":["お母さん！"],
-									"charaID":"6",
-									"imgID":"2"
-								},
-								{
-									"text":["ささ！\n早く座って下され！"],
-									"charaID":"4",
-									"imgID":"2"
-								},
-								{
-									"text":["・・・"],
-									"charaID":"23"
-								}
-							]
-						},
-						{
-							"type":"spawn",
+							"type":"sequence",
 							"action":[
 								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"10129",
-											"x":26,
-											"y":24
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10129",
-											"direction":"LEFT"
-										}
-									]
-								},
-								{
-									"type":"sequence",
-									"action":[
-										{
-											"type":"charaWalkTo",
-											"objID":"10134",
-											"x":20,
-											"y":11
-										},
-										{
-											"type":"changeDirection",
-											"objID":"10134",
-											"direction":"DOWN"
-										}
-									]
+									"type":"charaWalkTo",
+									"objID":"10129",
+									"x":26,
+									"y":24
 								},
 								{
 									"type":"changeDirection",
-									"objID":"10127",
+									"objID":"10129",
 									"direction":"LEFT"
 								}
 							]
 						},
 						{
-							"type":"charaMsg",
-							"talk":[
+							"type":"sequence",
+							"action":[
 								{
-									"text":["準備はいい？"],
-									"charaID":"7",
-									"imgID":"2"
+									"type":"charaWalkTo",
+									"objID":"10134",
+									"x":14,
+									"y":29
 								},
 								{
-									"text":["せーの！"],
-									"charaID":"7",
-									"imgID":"4"
+									"type":"changeDirection",
+									"objID":"10134",
+									"direction":"RIGHT"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"10131",
+									"direction":"RIGHT"
 								}
 							]
 						},
 						{
-							"type":"charaMsg",
-							"file":"itadakimasu.png",
-							"text":["いただきます！"],
-							"charaID":"10",
-							"name":"一同"
-						},
-						{
-							"type":"fadeout",
-							"time":3.0
-						},
-						{
-							"type":エピソード孫一開放
-						},
-						{
-				          	"type":"backToTitle"
-					    }
+							"type":"changeDirection",
+							"objID":"10127",
+							"direction":"LEFT"
+						}
 					]
-				}
+				},
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["準備はいい？"],
+							"charaID":"7",
+							"imgID":"2"
+						},
+						{
+							"text":["せーの！"],
+							"charaID":"7",
+							"imgID":"4"
+						}
+					]
+				},
+				{
+					"type":"charaMsg",
+					"text":["いただきます！"],
+					"charaID":"10",
+					"name":"一同",
+					"option":"reaction"
+				},
+				{
+					"type":"fadeout",
+					"time":3.0
+				},
+				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"Ntrophy":"10"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophyID":"10"
+						}
+					]
+				},
+				{
+					"type":"if",
+					"condition":[
+						{
+							"Ntrophy":"11"
+						}
+					],
+					"action":[
+						{
+							"type":"getTrophy",
+							"trophyID":"11"
+						}
+					]
+				},
+				{
+		          	"type":"backToTitle"
+			    }
 			]
 		}
 	]

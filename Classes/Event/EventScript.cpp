@@ -8,6 +8,7 @@
 
 #include "Event/EventScript.h"
 #include "Utils/JsonUtils.h"
+#include "Helpers/AssertHelper.h"
 
 // コンストラクタ
 EventScript::EventScript() {FUNCLOG}
@@ -18,6 +19,7 @@ EventScript::~EventScript() {FUNCLOG}
 // 初期化
 bool EventScript::init(const string& jsonFileName)
 {
+    _fileName = jsonFileName;
     _json = LastSupper::JsonUtils::readJsonCrypted(FileUtils::getInstance()->fullPathForFilename("event/" + jsonFileName + ES_EXTENSION));
     
     return true;
@@ -39,19 +41,18 @@ vector<string> EventScript::getPreLoadList(const string& type){
 // 該当idのスクリプトを取得
 rapidjson::Value EventScript::getScriptJson(const int eventId)
 {
-    return getScriptJson(to_string(eventId).c_str());
+    return getScriptJson(to_string(eventId));
 }
 
 rapidjson::Value EventScript::getScriptJson(const string& eventId)
 {
-    return getScriptJson(eventId.c_str());
-}
-
-rapidjson::Value EventScript::getScriptJson(const char* eventId)
-{
-    rapidjson::Value::MemberIterator itr { _json.FindMember(eventId) };
+    rapidjson::Value::MemberIterator itr { _json.FindMember(eventId.c_str()) };
     
     if (itr == _json.MemberEnd()) {
+        AssertHelper* assert { AssertHelper::create() };
+        assert->pushTextLineKeyValue("file", _fileName)
+              ->pushTextLineKeyValue("eventID", eventId)
+              ->warningAssert("eventID missing error");
         rapidjson::Value nullValue;
         return nullValue;
     }
@@ -60,4 +61,10 @@ rapidjson::Value EventScript::getScriptJson(const char* eventId)
     json.CopyFrom(itr->value, _json.GetAllocator());
     
     return json;
+}
+
+rapidjson::Document EventScript::getDocument()
+{
+    rapidjson::Document document(&_json.GetAllocator());
+    return document;
 }

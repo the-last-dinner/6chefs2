@@ -90,7 +90,8 @@
 			"condition":[
 				{
 					"Nitem":"1516",
-					"Nevent":["107","3"]
+					"Nevent":["107","3"],
+					"event":["109","2"]
 				}
 			],
 			"action":[
@@ -115,13 +116,13 @@
 									"miniChara":true
 								},
 								{
-									"text":["(じゃぁ作戦通りカギ、取りに行くぞ。)"],
+									"text":["(じゃぁ作戦通りカギ、取りに行くぞ。)","(カギは職員室にあるハズだ・・・)"],
 									"charaID":"22",
-									"imgID":"5",
+									"imgID":"1",
 									"miniChara":true
 								},
 								{
-									"text":["(おう・・・んじゃ、下の階で\n”ものおと”をたてて先生を部屋からおびきだすぞ。)"],
+									"text":["(おう・・・んじゃ、\n下の階で”ものおと”をたてて\n先生を部屋からおびき出すぞ)"],
 									"charaID":"32",
 									"imgID":"2",
 									"miniChara":true
@@ -133,6 +134,24 @@
 							"flg":1
 						}
 					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door_unopen.mp3"
+				},
+				{
+					"type":"systemMsg",
+					"text":["開かない・・・"]
 				}
 			]
 		},
@@ -204,9 +223,195 @@
 						{
 							"type":"changeMap",
 							"mapID":"112",
-							"x":2,
+							"x":6,
 							"y":13,
 							"eventID":"4"
+						}
+					]
+				}
+			]
+		}
+	],
+	"5":[
+		{
+			"type":"changeMap",
+			"mapID":"110",
+			"x":3,
+			"y":23
+		}
+	],
+	"6":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"reaction",
+							"objID":"hero"
+						},
+						{
+							"type":"charaMsg",
+							"text":["ココの床・・・\nきしんで変な音が鳴るな・・・"],
+							"charaID":"22",
+							"imgID":"2",
+							"miniChara":true
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"],
+					"Nflg":["107","4",1]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
+				{
+					"type":"reaction",
+					"objID":"hero"
+				},
+				{
+					"type":"reaction",
+					"objID":"10235"
+				},
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"createObject",
+							"objID":"10240",
+							"charaID":"33",
+							"x":16,
+							"y":15,
+							"direction":"LEFT",
+							"movePattern":"1"
+						},
+						{
+							"type":"playSE",
+							"file":"reaction.mp3"
+						},
+						{
+							"type":"reaction",
+							"objID":"10240"
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["おいバカ・・・"],
+									"charaID":"32",
+									"imgID":"3",
+									"miniChara":true
+								},
+								{
+									"text":["こら、君たち！\nもう遅いんだから寝てないと\nダメじゃない！","ほら！\n寝室に戻って！"],
+									"charaID":"33",
+									"imgID":"1",
+									"miniChara":true,
+									"option":"reaction"
+								}
+							]
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"109",
+							"x":9,
+							"y":12,
+							"eventID":"3"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"],
+					"flg":["107","4",1]
+				}
+			],
+			"action":[
+				{
+					"type":"playSE",
+					"file":"door-old-open1.mp3"
+				},
+				{
+					"type":"reaction",
+					"objID":"hero"
+				},
+				{
+					"type":"reaction",
+					"objID":"10235"
+				},
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"createObject",
+							"objID":"10240",
+							"charaID":"33",
+							"x":9,
+							"y":27,
+							"direction":"UP",
+							"movePattern":"1"
+						},
+						{
+							"type":"playSE",
+							"file":"reaction.mp3"
+						},
+						{
+							"type":"reaction",
+							"objID":"10240"
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["おいバカ・・・"],
+									"charaID":"32",
+									"imgID":"3",
+									"miniChara":true
+								},
+								{
+									"text":["こら、君たち！\nもう遅いんだから寝てないと\nダメじゃない！","ほら！\n寝室に戻って！"],
+									"charaID":"33",
+									"imgID":"1",
+									"miniChara":true,
+									"option":"reaction"
+								}
+							]
+						},
+						{
+							"type":"fadeout"
+						},
+						{
+							"type":"changeMap",
+							"mapID":"109",
+							"x":9,
+							"y":12,
+							"eventID":"3"
 						}
 					]
 				}

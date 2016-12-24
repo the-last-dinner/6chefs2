@@ -53,7 +53,8 @@ void CountDownDisplay::setSecondsLeft(const float& secondsLeft)
 {
     if (!_secondsLabel) return;
     char secondsLeftCharas[10];
-    sprintf(secondsLeftCharas, "%.2f", secondsLeft);
+    float displaySecondsLeft = secondsLeft > 0.0f ? secondsLeft : 0.0f;
+    sprintf(secondsLeftCharas, "%.2f", displaySecondsLeft);
     string secondsLeftString = secondsLeftCharas;
     _secondsLabel->setString(secondsLeftString);
 }

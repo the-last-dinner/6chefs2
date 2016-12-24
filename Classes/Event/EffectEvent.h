@@ -70,6 +70,8 @@ class CreateUnderwaterEvent : public GameEvent
 public:
     CREATE_FUNC_WITH_PARAM(CreateUnderwaterEvent, rapidjson::Value&)
 private:
+    bool _waveIn { false };
+private:
     CreateUnderwaterEvent() { FUNCLOG };
     ~CreateUnderwaterEvent() { FUNCLOG };
     virtual bool init(rapidjson::Value& json) override;

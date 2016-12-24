@@ -1,8 +1,46 @@
  {
 	"1":[
 		{
-		    "type":"setAmbient",
-		    "ambient":"room"
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","17"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door1"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","19"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door2"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","21"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"door3"
+				}
+			]
 		},
 		{
 			"type":"if",
@@ -92,10 +130,45 @@
 	],
 	"2":[
 		{
-			"type":"changeMap",
-			"mapID":"53",
-			"x":9,
-			"y":5
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["54","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"systemMsg",
+							"text":["戻っている場合ではない！"]
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"steps":1.0,
+							"direction":"UP"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["54","3"]
+				}
+			],
+			"action":[
+				{
+					"type":"changeMap",
+					"mapID":"53",
+					"x":9,
+					"y":5
+				}
+			]
 		}
 	],
 	"3":[
@@ -185,43 +258,45 @@
 							]
 						},
 						{
-							"type":"spawn",
-							"action":[
-								{
-									"type":"charaMsg",
-									"file":"taihou_reign.png",
-									"talk":[
-										{
-											"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
-											"charaID":"10",
-											"name":"戸塚　大宝"
-										},
-										{
-											"text":["おじさん・・・"],
-											"charaID":"10",
-											"name":"希崎　雪"
-										},
-										{
-											"text":["お前が戸塚か・・・"],
-											"charaID":"10",
-											"name":"加藤　蘭丸"
-										},
-										{
-											"text":["・・・"],
-											"charaID":"10",
-											"name":"中山　撫子"
-										}
-									]
-								},
-								{
-									"type":"camera",
-									"nextX":53,
-									"nextY":63
-								},
-								{
-									"type":"fadein"
-								}
-							]
+							"type": "releaseChase",
+							"objID":"10108"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10109"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10110"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10111"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10112"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10113"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10114"
+						},
+						{
+							"type": "releaseChase",
+							"objID":"10115"
+						},
+						{
+							"type":"camera",
+							"nextX":53,
+							"nextY":63,
+							"time":0.5
+						},
+						{
+							"type":"fadein"
 						},
 						{
 							"type":"playBGM",
@@ -235,6 +310,26 @@
 							"type":"charaMsg",
 							"talk":[
 								{
+									"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
+									"charaID":"9",
+									"imgID":"1"
+								},
+								{
+									"text":["おじさん・・・"],
+									"charaID":"6",
+									"imgID":"2"
+								},
+								{
+									"text":["お前が戸塚か・・・"],
+									"charaID":"2",
+									"imgID":"2"
+								},
+								{
+									"text":["・・・"],
+									"charaID":"1",
+									"imgID":"1"
+								},
+								{
 									"text":["で・・・何の用だ？\n茶でも出すか？"],
 									"charaID":"9",
 									"imgID":"1"
@@ -242,7 +337,7 @@
 								{
 									"text":["ざけんな！"],
 									"charaID":"5",
-									"imgID":"1",
+									"imgID":"7",
 									"option":"reaction"
 								},
 								{
@@ -310,6 +405,9 @@
 							"time":3.0
 						},
 						{
+							"type":"setCamera"
+						},
+						{
 							"type":"removeObject",
 							"objID":"10108"
 						},
@@ -346,59 +444,6 @@
 							"objID":"10125"
 						},
 						{
-							"type":"createObject",
-							"objID":"10116",
-							"charaID":"0",
-							"x":86,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10117",
-							"charaID":"1",
-							"eventID":"9",
-							"trigger":"2",
-							"x":88,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10119",
-							"charaID":"3",
-							"eventID":"15",
-							"trigger":"2",
-							"x":90,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10120",
-							"charaID":"4",
-							"eventID":"11",
-							"trigger":"2",
-							"x":92,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
-							"type":"createObject",
-							"objID":"10123",
-							"charaID":"7",
-							"eventID":"13",
-							"trigger":"2",
-							"x":20,
-							"y":75,
-							"direction":"UP",
-							"movePattern":"3"
-						},
-						{
 							"type":"questionMsg",
 							"text":["誰で戦いますか？"],
 							"choices":[
@@ -417,39 +462,6 @@
 													"event":["54","5"]
 												},
 												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
 													"type":"charaMsg",
 													"text":["行くぞ・・・"],
 													"charaID":"2",
@@ -459,20 +471,17 @@
 													"type":"createEnemy",
 													"objID":"1451",
 													"charaID":"9",
-													"x":53,
-													"y":55,
+													"x":48,
+													"y":63,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -482,89 +491,15 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10118",
-																	"charaID":"2",
-																	"eventID":"10",
-																	"trigger":"2",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
 															]
+														}
+													],
+													"false":[
+														{
+															"type":"gameover"
 														}
 													]
 												}
@@ -587,43 +522,10 @@
 													"event":["54","6"]
 												},
 												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
 													"type":"charaMsg",
 													"text":["ぶっ飛ばす！"],
 													"charaID":"5",
-													"imgID":"1",
+													"imgID":"7",
 													"option":"reaction"
 												},
 												{
@@ -631,19 +533,16 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -653,89 +552,15 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10121",
-																	"charaID":"5",
-																	"eventID":"12",
-																	"trigger":"2",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
 															]
+														}
+													],
+													"false":[
+														{
+															"type":"gameover"
 														}
 													]
 												}
@@ -758,39 +583,6 @@
 													"event":["54","7"]
 												},
 												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10124",
-													"charaID":"8",
-													"eventID":"14",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
 													"type":"charaMsg",
 													"text":["おじさん・・・"],
 													"charaID":"6",
@@ -801,19 +593,16 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -823,89 +612,15 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10122",
-																	"charaID":"6",
-																	"eventID":"16",
-																	"trigger":"2",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP",
-																	"movePattern":"1"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10124",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
 															]
+														}
+													],
+													"false":[
+														{
+															"type":"gameover"
 														}
 													]
 												}
@@ -928,39 +643,6 @@
 													"event":["54","8"]
 												},
 												{
-													"type":"createObject",
-													"objID":"10121",
-													"charaID":"5",
-													"eventID":"12",
-													"trigger":"2",
-													"x":18,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10122",
-													"charaID":"6",
-													"eventID":"16",
-													"trigger":"2",
-													"x":16,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
-													"type":"createObject",
-													"objID":"10118",
-													"charaID":"2",
-													"eventID":"10",
-													"trigger":"2",
-													"x":14,
-													"y":75,
-													"direction":"UP",
-													"movePattern":"3"
-												},
-												{
 													"type":"charaMsg",
 													"text":["そん腐った根性・・・\n叩き直したる！"],
 													"charaID":"8",
@@ -972,19 +654,16 @@
 													"objID":"1451",
 													"charaID":"9",
 													"x":53,
-													"y":55,
+													"y":56,
 													"direction":"DOWN",
-													"movePattern":"6"
-												},
-												{
-													"type":"stopBGM"
+													"movePattern":"7"
 												},
 												{
 													"type":"fadein"
 												},
 												{
 													"type":"battle",
-													"objID":"1451",
+													"objID":["1451"],
 													"true":[
 														{
 															"type":"sequence",
@@ -994,89 +673,15 @@
 																	"time":3.0
 																},
 																{
-																	"type":"changeHero",
-																	"charaID":"0"
-																},
-																{
-																	"type":"removeObject",
-																	"objID":"10116"
-																},
-																{
-																	"type":"removeEnemy",
-																	"objID":"1451"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"hero",
-																	"x":60,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10117",
-																	"x":68,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10119",
-																	"x":66,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10120",
-																	"x":64,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10123",
-																	"x":62,
-																	"y":75,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10118",
-																	"x":53,
-																	"y":67,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10121",
-																	"x":47,
-																	"y":70,
-																	"direction":"UP"
-																},
-																{
-																	"type":"charaWarp",
-																	"objID":"10122",
-																	"x":56,
-																	"y":72,
-																	"direction":"UP"
-																},
-																{
-																	"type":"createObject",
-																	"objID":"10124",
-																	"charaID":"8",
-																	"eventID":"14",
-																	"trigger":"2",
-																	"x":43,
-																	"y":62,
-																	"direction":"RIGHT",
-																	"movePattern":"1"
-																},
-																{
 																	"type":"callEvent",
 																	"eventID":"23"
 																}
 															]
+														}
+													],
+													"false":[
+														{
+															"type":"gameover"
 														}
 													]
 												}
@@ -1133,7 +738,7 @@
 	"10":[
 		{
 			"type":"charaMsg",
-			"text":["雪・・・\n気合い入れろよ・・・","孫一、真夏\n雪を頼むな。"],
+			"text":["雪・・・\n気合い入れろよ・・・","孫一、真夏\n雪を頼むな。","地下へは来た道を戻れば\n行けるハズだ。","一階-東廊下の床下だな。"],
 			"charaID":"2",
 			"imgID":"4"
 		}
@@ -1165,7 +770,7 @@
 	"14":[
 		{
 			"type":"charaMsg",
-			"text":["ぬぁ～くそ！アイツ\nワシの必殺パンチ躱しおった～"],
+			"text":["ぬぁ～くそ！アイツ\nワシの必殺パンチかわしおった～"],
 			"charaID":"8",
 			"imgID":"4"
 		}
@@ -1194,6 +799,9 @@
 		{
 			"type":"removeLayer",
 			"layer":"door1"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"18":[
@@ -1214,6 +822,9 @@
 		{
 			"type":"removeLayer",
 			"layer":"door2"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"20":[
@@ -1224,6 +835,9 @@
 		{
 			"type":"createLayer",
 			"layer":"door2"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"21":[
@@ -1250,6 +864,107 @@
 		{
 			"type":"sequence",
 			"action":[
+				{
+					"type":"changeHero",
+					"charaID":"0"
+				},
+				{
+					"type":"removeEnemy",
+					"objID":"1451"
+				},
+				{
+					"type":"charaWarp",
+					"objID":"hero",
+					"x":60,
+					"y":75,
+					"direction":"UP"
+				},
+				{
+					"type":"createObject",
+					"objID":"10117",
+					"charaID":"1",
+					"eventID":"9",
+					"trigger":"2",
+					"x":68,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10119",
+					"charaID":"3",
+					"x":66,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10120",
+					"charaID":"4",
+					"eventID":"11",
+					"trigger":"2",
+					"x":64,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10123",
+					"charaID":"7",
+					"eventID":"13",
+					"trigger":"2",
+					"x":62,
+					"y":75,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10118",
+					"charaID":"2",
+					"eventID":"10",
+					"trigger":"2",
+					"x":53,
+					"y":67,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10121",
+					"charaID":"5",
+					"eventID":"12",
+					"trigger":"2",
+					"x":47,
+					"y":70,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10122",
+					"charaID":"6",
+					"eventID":"16",
+					"trigger":"2",
+					"x":56,
+					"y":72,
+					"direction":"UP",
+					"movePattern":"1"
+				},
+				{
+					"type":"createObject",
+					"objID":"10124",
+					"charaID":"8",
+					"eventID":"14",
+					"trigger":"2",
+					"x":43,
+					"y":62,
+					"direction":"RIGHT",
+					"movePattern":"1"
+				},
 				{
 					"type":"createObject",
 					"objID":"10125",
@@ -1296,7 +1011,6 @@
 				},
 				{
 					"type":"charaMsg",
-					"file":"taihou_kill.png",
 					"talk":[
 						{
 							"text":["ぐぁ！"],
@@ -1344,10 +1058,6 @@
 				{
 					"type":"playSE",
 					"file":"down1.mp3"
-				},
-				{
-					"type":"systemMsg",
-					"text":["蘭丸10118を膝まづかせる"]
 				},
 				{
 					"type":"charaWalkTo",
@@ -1399,14 +1109,14 @@
 								{
 									"type":"charaWalkTo",
 									"objID":"10122",
-									"x":63,
-									"y":65,
+									"x":57,
+									"y":66,
 									"speed":3.0
 								},
 								{
 									"type":"changeDirection",
 									"objID":"10122",
-									"direction":"LEFT"
+									"direction":"UP"
 								}
 							]
 						}
@@ -1434,22 +1144,19 @@
 					]
 				},
 				{
-					"type":"playSE",
-					"file":"big_hit.mp3"
+					"type":"changeDirection",
+					"objID":"10122",
+					"direction":"LEFT"
 				},
 				{
-					"type":"displayImg",
-					"file":"yuki_hit.png"
+					"type":"playSE",
+					"file":"big_hit.mp3"
 				},
 				{
 					"type":"charaWalk",
 					"objID":"10125",
 					"steps":1.0,
 					"direction":"LEFT"
-				},
-				{
-					"type":"systemMsg",
-					"text":["大宝を膝まづかせる"]
 				},
 				{
 					"type":"charaMsg",
@@ -1478,7 +1185,7 @@
 						{
 							"text":["ふー・・・\nぷふ-・・・"],
 							"charaID":"5",
-							"imgID":"1"
+							"imgID":"7"
 						},
 						{
 							"text":["ハァ・・・\nお前達料理人だろう？","よくこんだけ武闘派が集まったモンだぜ・・・"],
@@ -1498,8 +1205,14 @@
 					]
 				},
 				{
+					"type":"fadeout"
+				},
+				{
 					"type":"setCamera",
 					"objID":"10125"
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"charaWalkTo",
@@ -1700,9 +1413,15 @@
 							"imgID":"1"
 						},
 						{
-							"text":["雪。","アイツは・・・戸塚は家族を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・","雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
+							"text":["雪。","アイツは・・・戸塚は\n大切な人を無茶苦茶にされて・・・\nソレをいまだに引きずってるんだろう・・・","そんな状態でアイツはずっと一人で闘ってたんだ・・・"],
 							"charaID":"2",
 							"imgID":"2"
+						},
+						{
+							"text":["雪！いっちょ強烈なのぶちかまして\nアイツの目ぇ覚まさせてやれ！"],
+							"charaID":"2",
+							"imgID":"1",
+							"option":"reaction"
 						},
 						{
 							"text":["うん！"],

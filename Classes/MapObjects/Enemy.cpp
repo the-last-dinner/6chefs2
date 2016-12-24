@@ -44,7 +44,9 @@ bool Enemy::init(const EnemyData& data)
     if (_movePattern) _movePattern->setStartPathId(data.start_path_id);
     
     // 攻撃判定を生成
-    AttackBox* attackBox { AttackBox::create(this, _csNode->getCSChild(CS_ATTACK_NODE_NAME), nullptr) };
+    Node* attackOriginNode { _csNode->getCSChild(CS_ATTACK_NODE_NAME) };
+    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) attackOriginNode->setOpacity(0);
+    AttackBox* attackBox { AttackBox::create(this, attackOriginNode, nullptr) };
     this->addChild(attackBox);
     _attackBox = attackBox;
     

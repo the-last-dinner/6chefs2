@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="68">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="70">
  <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="clear-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
@@ -233,17 +233,17 @@
     <property name="objID" value="183"/>
    </properties>
   </object>
-  <object id="58" x="608" y="528" width="32" height="32">
+  <object id="58" x="608" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="184"/>
    </properties>
   </object>
-  <object id="60" x="416" y="528" width="32" height="32">
+  <object id="60" x="416" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="185"/>
    </properties>
   </object>
-  <object id="63" x="224" y="528" width="32" height="32">
+  <object id="63" x="224" y="496" width="32" height="64">
    <properties>
     <property name="objID" value="186"/>
    </properties>
@@ -298,6 +298,18 @@
     <property name="trigger" value="1"/>
    </properties>
   </object>
+  <object id="68" x="608" y="176" width="32" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="69" x="128" y="240" width="32" height="256">
+   <properties>
+    <property name="EventID" value="14"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="CharaUe" width="60" height="42">
   <data encoding="base64" compression="zlib">
@@ -306,7 +318,7 @@
  </layer>
  <layer name="shadow" width="60" height="42">
   <data encoding="base64" compression="zlib">
-   eJzt2LENgDAMRNEgxmGE7N8xFAuEFIHT2fF/9UXyl6hoDSP3GWuvRq93r0avd69Gr3evRq93r1atF0A+1+G+YK4v3vf2jt5Y6P32jt5Y6NW+y4reHKp9z1nvXkXv3qr14h/V/tfR692r0evdq9Hr3avR692rVevdxQMWDzbh
+   eJzt2LENgDAMRNEgxmEE9u8YigWAwuR0dvxffZH8JSrGwJNrz7VXo9e7V6PXu1ej17tXo9e7V+vWC6CeY3Nf8O0M3vf2jt5c6P33jt5cZvdm1603it4aun3PVe+Oondt3XoxR7f/dfR692r0evdq9Hr3avR692rdeldxA7kUNrU=
   </data>
  </layer>
  <layer name="CharaUe2" width="60" height="42">
@@ -315,7 +327,7 @@
   </data>
  </layer>
  <objectgroup name="item">
-  <object id="66" x="656" y="96" width="32" height="32">
+  <object id="66" x="160" y="560" width="32" height="32">
    <properties>
     <property name="EventID" value="12"/>
     <property name="objID" value="1511"/>

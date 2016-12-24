@@ -9,8 +9,10 @@
 #include "MapObjects/Command/AttackCommand.h"
 
 #include "Datas/BattleCharacterData.h"
+#include "Datas/AttackData.h"
 #include "MapObjects/Character.h"
 #include "MapObjects/DetectionBox/AttackBox.h"
+#include "MapObjects/Status/Stamina.h"
 
 // コンストラクタ
 AttackCommand::AttackCommand() { FUNCLOG }
@@ -38,6 +40,12 @@ void AttackCommand::setCallback(function<void(Character*)> callback)
     _callback = callback;
 }
 
+// 操作対象のスタミナを設定
+void AttackCommand::setStamina(Stamina* stamina)
+{
+    _stamina = stamina;
+}
+
 #pragma mark -
 #pragma mark Interface
 
@@ -53,10 +61,33 @@ bool AttackCommand::isExecutable(MapObject* target) const
 void AttackCommand::execute(MapObject* target)
 {
     Character* character { dynamic_cast<Character*>(target) };
-    if (!character) return;
+    if (!character || !character->getBattleAttackBox()) {
+        this->setDone();
+        return;
+    }
+    
+    AttackData* data { character->getBattleCharacterData()->getAttackData(_name) };
+    
+    character->setAttackHitCallback([this, character](MapObject* mo){ this->onAttackHitted(character, mo); });
+    
     character->beInAttackMotion(true);
-    character->getBattleAttackBox()->setPower(character->getBattleCharacterData()->getAttackPoint(_name));
+
+    if (!data) {
+        LastSupper::AssertUtils::fatalAssert("AttackData is missing.\n You should check move pattern.\ncharaID: "
+                                             + to_string(character->getCharacterId()) + "\nattackName: " + _name);
+        return;
+    }
+    
+    character->getBattleAttackBox()->setPower(data->power);
     character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
+    
+    if (data->motionSound != "") {
+        SoundManager::getInstance()->playSE(data->motionSound, data->motionSoundVolume);
+    }
+    
+    if (_stamina) {
+        _stamina->decrease(data->stamina);
+    }
 }
 
 #pragma mark -
@@ -65,11 +96,23 @@ void AttackCommand::execute(MapObject* target)
 // 攻撃モーション再生終了時
 void AttackCommand::onAttackAnimationFinished(Character* character)
 {
-    character->beInAttackMotion(false);
-    character->clearCommandQueue();
-    this->setDone();
-    if (_callback) {
-        _callback(character);
-    }
+    AttackData* attackData { character->getBattleCharacterData()->getAttackData(_name) };
+    character->runAction(Sequence::createWithTwoActions(DelayTime::create(attackData->intervalTime), CallFunc::create([this, character] {
+        character->beInAttackMotion(false);
+        character->clearCommandQueue();
+        character->setAttackHitCallback(nullptr);
+        this->setDone();
+        if (_callback) {
+            _callback(character);
+        }
+    })));
 }
 
+// 攻撃ヒット時
+void AttackCommand::onAttackHitted(Character* character, MapObject* hittedObject)
+{
+    AttackData* data { character->getBattleCharacterData()->getAttackData(_name) };
+    if (data->hitSound != "") {
+        SoundManager::getInstance()->playSE(data->hitSound, data->hitSoundVolume);
+    }
+}

@@ -99,11 +99,15 @@
 				{
 					"type":"createObject",
 					"objID":"10169",
-					"charaID":"3",
+					"charaID":"27",
 					"x":11,
 					"y":20,
 					"direction":"RIGHT",
 					"movePattern":"1"
+				},
+				{
+					"type":"removeObject",
+					"objID":"10166"
 				},
 				{
 					"type":"fadein"
@@ -443,7 +447,7 @@
 					"x":17,
 					"y":29,
 					"direction":"UP",
-					"movePattern":"2"
+					"movePattern":"6"
 				},
 				{
 					"type":"fadein",
@@ -466,7 +470,7 @@
 					]
 				},
 				{
-					"type":"barrage",
+					"type":"battle",
 					"objID":["10207"],
 					"true":[
 						{
@@ -477,6 +481,54 @@
 									"action":[
 										{
 											"type":"fadeout"
+										},
+										{
+											"type":"charaMsg",
+											"talk":[
+												{
+													"text":["だらっしゃあああぁぁぁぁあぁぁ！"],
+													"charaID":"8",
+													"imgID":"4",
+													"option":"reaction"
+												},
+												{
+													"text":["ぅおぉおおらぁぁぁあああ！"],
+													"charaID":"2",
+													"imgID":"3",
+													"option":"reaction"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"UP"
+								},
+								{
+									"type":"changeMap",
+									"mapID":"97",
+									"x":17,
+									"y":9,
+									"eventID":"2"
+								}
+							]
+						}
+					],
+					"false":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"fadeout"
+										},
+										{
+											"type":"removeEnemy",
+											"objID":"10207"
 										},
 										{
 											"type":"charaMsg",

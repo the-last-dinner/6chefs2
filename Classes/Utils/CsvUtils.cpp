@@ -31,7 +31,7 @@ CsvUtils::CsvMap CsvUtils::readCsvFile(const string& path)
     }
     
     // jsonで暗号化されている場合の複合化
-    if (!ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::PLAIN_DATA))
+    if (IS_ENCRYPTED)
     {
         return CsvUtils::readJsonForCsv(path);
     }

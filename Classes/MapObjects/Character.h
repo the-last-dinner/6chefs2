@@ -41,11 +41,11 @@ protected:
     MovePattern* _movePattern { nullptr };
     CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
-    HitBox* _hitBox { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
     float _speed { 1.f };
     BattleCharacterData* _battleData { nullptr };
+    function<void(MapObject*)> _onAttackHitted  { nullptr };
     
 // インスタンスメソッド
 public:
@@ -81,12 +81,13 @@ public:
     // Battle
     void beInAttackMotion(bool isInAttackMotion);
     bool isInAttackMotion() const;
+    void setAttackHitCallback(function<void(MapObject*)> callback);
     void onAttackHitted(MapObject* hittedObject);
     void onHurt(int damage);
     bool canAttack(MapObject* target) const override;
     
-    // HitBox
-    void enableHit(bool enableHit);
+    // AttackBox
+    void enableBattleAttack(bool enableAttack);
     
     // Sight
     bool isInSight(MapObject* mapObject);
@@ -104,6 +105,7 @@ public:
     virtual void onEventFinished() override;
     virtual void onBattleStart(Battle* battle) override;
     virtual void onBattleFinished() override;
+    virtual void onLostHP() override;
     
     friend class TerrainObject;
     friend class TerrainState;

@@ -3,6 +3,20 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["79","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"createUnderwater",
+					"waveIn":true 
+				}
+			]
 		}
 	],
 	"2":[
@@ -19,7 +33,7 @@
 			"condition":[
 				{
 					"event":["63","3"],
-					"Nevent":["84","5"]
+					"Nevent":["82","5"]
 				}
 			],
 			"action":[
@@ -52,27 +66,26 @@
 						},
 						{
 							"type":"charaMsg",
-							"text":["吾郎よ"],
-							"charaID":"8",
-							"imgID":"1"
-						},
-						{
-							"type":"charaMsg",
 							"talk":[
 								{
-									"text":["二人で喧嘩なんて久しぶりだな。\nいつぶりだ？"],
+									"text":["吾郎よ"],
 									"charaID":"8",
 									"imgID":"1"
 								},
 								{
-									"text":["そうっスね。\nあのエバりくさってたアホに屋上呼び出された時以来っスかね。"],
+									"text":["二人で喧嘩なんて久しぶりだな。\nいつぶりじゃろう？"],
+									"charaID":"8",
+									"imgID":"3"
+								},
+								{
+									"text":["そうっスね。\nあのエバりくさってたアホに\n屋上呼び出された時以来っスかね。"],
 									"charaID":"5",
 									"imgID":"1"
 								},
 								{
-									"text":["へっ"],
+									"text":["ダッハハハハ。"],
 									"charaID":"8",
-									"imgID":"1"
+									"imgID":"3"
 								},
 								{
 									"text":["（ウチら無いものとして扱われてない？）"],
@@ -80,7 +93,7 @@
 									"imgID":"3"
 								},
 								{
-									"text":["入るぞ。\n雪、朱花、邪魔にならないようにしとけや。"],
+									"text":["入るで。\n雪、朱花、邪魔にならないようにしとけや。"],
 									"charaID":"8",
 									"imgID":"4"
 								},
@@ -111,7 +124,7 @@
 			"condition":[
 				{
 					"event":["63","3"],
-					"event":["84","5"]
+					"event":["82","5"]
 				}
 			],
 			"action":[
@@ -122,7 +135,8 @@
 							"type":"charaMsg",
 							"text":["戻ってる場合じゃねぇ！"],
 							"charaID":"8",
-							"imgID":"1"
+							"imgID":"4",
+							"option":"reaction"
 						},
 						{
 							"type":"charaWalk",

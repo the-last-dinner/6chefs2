@@ -36,7 +36,7 @@ private:
 private:
     PlayerControlTask();
     ~PlayerControlTask();
-    bool init();
+    bool init() override;
     void setCurrentState(PlayerControlState* state);
 public:
     void turn(const Key& key, Party* party);
@@ -48,6 +48,7 @@ public:
     void onStaminaIncreasedMax();
     void onBattleStart();
     void onBattleFinished();
+    void update(float delta) override;
 };
 
 #endif /* defined(__LastSupper__ControlMainCharacterTask__) */

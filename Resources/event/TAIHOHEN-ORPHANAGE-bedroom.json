@@ -1,15 +1,65 @@
 {
 	"1":[
-
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"playSE",
+					"file":"iron_door.mp3"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door2"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door3"
+				},
+				{
+					"type":"wait",
+					"time":0.2
+				},
+				{
+					"type":"changeMap",
+					"mapID":"106",
+					"x":6,
+					"y":33
+				}
+			]
+		}
 	],
 	"2":[
 		{
 			"type":"sequence",
 			"action":[
 				{
+					"type":"setAmbient",
+					"ambient":"night"
+				},
+				{
 					"type":"changeDirection",
 					"objID":"hero",
 					"direction":"RIGHT"
+				},
+				{
+					"type":"createLayer",
+					"layer":"chara"
+				},
+				{
+					"type":"createLayer",
+					"layer":"chara2"
 				},
 				{
 					"type":"createObject",
@@ -21,13 +71,18 @@
 					"direction":"LEFT"
 				},
 				{
-					"type":"fadein"
+					"type":"playBGM",
+					"file":"adv.mp3"
+				},
+				{
+					"type":"fadein",
+					"time":2.0
 				},
 				{
 					"type":"charaMsg",
 					"talk":[
 						{
-							"text":["ヤエがいなくなって少し作戦が変わっちまったが・・・\n先生や警備員に見つからないように\nテンゲンロウにたどり着く。","さぁいこうぜ"],
+							"text":["ヤエがいなくなって\n少し作戦が変わっちまったが・・・","先生や警備員に見つからないように\nテンゲンロウにたどり着く。","さぁいこうぜ"],
 							"charaID":"32",
 							"imgID":"2",
 							"miniChara":true
@@ -86,7 +141,7 @@
 						{
 							"text":["おう、もっと慎重に行こうぜ"],
 							"charaID":"22",
-							"imgID":"",
+							"imgID":"1",
 							"miniChara":true
 						}
 					]
@@ -105,6 +160,11 @@
 					"x":8,
 					"y":17,
 					"direction":"RIGHT"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"DOWN"
 				},
 				{
 					"type":"fadein"
@@ -146,11 +206,15 @@
 					"action":[
 						{
 							"type":"charaMsg",
-							"file":"haori.png",
-							"text":["ほら。"],
-							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"img":"haori.png",
+							"talk":[
+								{			
+									"text":["ほら。"],
+									"charaID":"31",
+									"imgID":"3",
+									"miniChara":true
+								}
+							]
 						},
 						{
 							"type":"playSE",
@@ -198,7 +262,7 @@
 							"miniChara":true
 						},
 						{
-							"text":["でね、その”二ホン”って国には\nおいしいものが沢山あってね。","私はおいしゃさんになっておかあさんを元気にして\n一緒においしいものをたくさん食べたいんだぁ"],
+							"text":["でね、その”二ホン”って国には\nおいしいものが沢山あってね。","私はおいしゃさんになって\nおかあさんを元気にして","一緒においしいものを\nたくさん食べたいんだぁ"],
 							"charaID":"31",
 							"imgID":"5",
 							"miniChara":true
@@ -210,9 +274,9 @@
 							"miniChara":true
 						},
 						{
-							"text":["タイホウ・・・私とちがって両親が死んじゃったアンタは\n今までサイアクの人生だったかもしれない・・・","でもね・・・","そんなこと言ってたって仕方ないじゃない。\n後ろばっか見てないで・・・"],
+							"text":["タイホウ・・・\n私とちがって両親が死んじゃったアンタは","今まで\nサイアクの人生だったかもしれない・・・","でもね・・・","そんなこと言ってたって仕方ないじゃない。\n後ろばっか見てないで・・・"],
 							"charaID":"31",
-							"imgID":"5",
+							"imgID":"1",
 							"miniChara":true
 						},
 						{
@@ -252,6 +316,40 @@
 					"x":9,
 					"y":21,
 					"eventID":"10"
+				}
+			]
+		}
+	],
+	"5":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"setAmbient",
+					"ambient":"night"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["109","2"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"chara"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"chara2"
 				}
 			]
 		}

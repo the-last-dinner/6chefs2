@@ -35,6 +35,18 @@ string TrophyData::getComment(const int trophy_id)
     return this->data[trophy_id][etoi(TrophyData::Keys::COMMENT)];
 }
 
+// トロフィーの立ち絵画像パスを取得
+string TrophyData::getImagePath(const int trophy_id)
+{
+    return this->data[trophy_id][etoi(TrophyData::Keys::IMAGE)];
+}
+
+// トロフィーのボイスパスを取得
+string TrophyData::getVoicePath(const int trophy_id)
+{
+    return this->data[trophy_id][etoi(TrophyData::Keys::VOICE)];
+}
+
 // トロフィーを全て取得
 vector<int> TrophyData::getIdAll()
 {

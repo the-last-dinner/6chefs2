@@ -31,7 +31,10 @@ bool MovePattern::init(Character* chara)
 }
 
 // 動き開始
-void MovePattern::start() {}
+void MovePattern::start()
+{
+    _started = true;
+}
 
 // 一時停止
 void MovePattern::pause()
@@ -69,10 +72,14 @@ bool MovePattern::isPaused() const
     return _paused;
 }
 
+bool MovePattern::hasSterted() const
+{
+    return _started;
+}
+
 #pragma mark -
 #pragma mark Interface
 
 void MovePattern::update(float delta)
 {
-    
 }

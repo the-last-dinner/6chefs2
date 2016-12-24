@@ -13,6 +13,8 @@
 #include "UI/Cloud.h"
 #include "UI/NotificationBand.h"
 
+const string TitleMainMenuLayer::VERSION { "Ver.1.0β" };
+
 // コンストラクタ
 TitleMainMenuLayer::TitleMainMenuLayer(){FUNCLOG}
 
@@ -72,7 +74,7 @@ bool TitleMainMenuLayer::init()
     title3->setOpacity(0);
     this->addChild(title3);
     
-    float titleNumberScale {0.33};
+    float titleNumberScale { 0.33f };
     Sprite* titleNumber {Sprite::createWithSpriteFrameName("title_2.png")};
     titleNumber->setPosition(
         WINDOW_WIDTH/2 + title3->getContentSize().width/2 + titleNumber->getContentSize().width * titleNumberScale / 5,
@@ -82,7 +84,7 @@ bool TitleMainMenuLayer::init()
     this->addChild(titleNumber);
     
     // タイトルメニューを生成
-	int menuSize = 44.f;
+	float menuSize = 44.f;
     float duration { 1.0f };
     float latency { 0.2f };
 	for(int i = 0; i < etoi(MenuType::SIZE); i++)
@@ -113,7 +115,7 @@ bool TitleMainMenuLayer::init()
     ));
     
     // copyright
-    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2016 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
+    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2017 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
     copyright->setPosition(Point(WINDOW_WIDTH - copyright->getContentSize().width * 0.52f, copyright->getContentSize().height));
     copyright->setOpacity(0);
     this->addChild(copyright);
@@ -133,6 +135,14 @@ bool TitleMainMenuLayer::init()
     opr->setOpacity(0);
     this->addChild(opr);
     opr->runAction(FadeTo::create(1.2f, 200));
+    
+    // バージョン表記
+    Label* version { Label::createWithTTF(TitleMainMenuLayer::VERSION, Resource::Font::MESSAGE, 18) };
+    version->setPosition(Point(version->getContentSize().width/2, version->getContentSize().height));
+    version->setColor(Color3B::WHITE);
+    version->setOpacity(0);
+    this->addChild(version);
+    version->runAction(FadeTo::create(1.2f, 200));
     
 	return true;
 }
@@ -228,7 +238,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
 {
     if (notification)
     {
-        SoundManager::getInstance()->playSE("back.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::BACK);
         this->notification->hide([this]{
             this->removeChild(this->notification);
             this->notification = nullptr;
@@ -238,7 +248,7 @@ void TitleMainMenuLayer::prohibitNotification(const string& msg)
     else
     {
         this->setCursorEnable(false);
-        SoundManager::getInstance()->playSE("failure.mp3");
+        SoundManager::getInstance()->playSE(Resource::SE::FAILURE);
         NotificationBand* notification = NotificationBand::create(msg);
         notification->setBandColor(Color3B(64,0,0));
         this->addChild(notification);

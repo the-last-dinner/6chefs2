@@ -339,25 +339,18 @@
 			],
 			"action":[
 				{
-					"type":"createEnemy",
-					"objID":"1417",
-					"charaID":"13",
-					"x":19,
-					"y":53,
-					"direction":"UP",
-					"times":1,
-					"pathID":"1",
-					"movePattern":"4"
+					"type":"removeLayer",
+					"layer":"hide"
 				},
 				{
 					"type":"createEnemy",
 					"objID":"1418",
 					"charaID":"13",
-					"x":20,
-					"y":100,
+					"x":21,
+					"y":82,
 					"direction":"UP",
 					"times":1,
-					"pathID":"3",
+					"pathID":"1",
 					"movePattern":"4"
 				}
 			]
@@ -430,7 +423,7 @@
 								{
 									"text":["おいしい！"],
 									"charaID":"1",
-									"imgID":"3"
+									"imgID":"4"
 								},
 								{
 									"text":["すごいなこの人・・・"],
@@ -589,7 +582,7 @@
 										{
 											"text":["もうタムケンって言うんじゃねぇぞ！"],
 											"charaID":"8",
-											"imgID":"2",
+											"imgID":"4",
 											"option":"reaction"
 										},
 										{
@@ -955,6 +948,10 @@
 							"action":[
 								{
 									"type":"fadein"
+								},
+								{
+									"type":"playBGM",
+									"file":"party_hubbub1.mp3"
 								},
 								{
 									"type":"camera",

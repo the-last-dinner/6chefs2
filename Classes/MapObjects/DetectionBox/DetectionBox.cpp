@@ -10,7 +10,8 @@
 
 #include "MapObjects/MapObject.h"
 
-#include "Managers/DebugManager.h"
+#include "Managers/ConfigDataManager.h"
+#include "Models/ConfigData/DebugConfigData.h"
 
 // コンストラクタ
 DetectionBox::DetectionBox() {}
@@ -76,7 +77,7 @@ void DetectionBox::update(float delta)
 {
     if (_origin) this->setOriginInfo(_origin);
     
-    if (DebugManager::getInstance()->displayDebugMask()) {
+    if (ConfigDataManager::getInstance()->getDebugConfigData()->getBoolValue(DebugConfigData::DEBUG_MASK)) {
         this->drawDebugMask();
     }
 }
@@ -90,10 +91,20 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
     
     Vec2 gridVec { Direction::getGridVec2(directions) };
     Point parentGridPosition { _parent->getGridPosition() };
+    Rect gridRect { this->getGridRect(parentGridPosition) };
+    
+    gridRect.origin.x += gridVec.x;
+    gridRect.origin.y += gridVec.y;
+    
+    return gridRect;
+}
+
+Rect DetectionBox::getGridRect(const Point& parentGridPosition) const
+{
     Rect rect { this->getBoundingBox() };
     
-    float x { parentGridPosition.x + gridVec.x + rect.getMinX() / GRID };
-    float y { parentGridPosition.y + gridVec.y + rect.getMinY() / GRID };
+    float x { parentGridPosition.x + rect.getMinX() / GRID };
+    float y { parentGridPosition.y + rect.getMinY() / GRID };
     float width { rect.size.width / GRID };
     float height { rect.size.height / GRID };
     
@@ -103,14 +114,23 @@ Rect DetectionBox::getGridRect(const vector<Direction>& directions) const
 bool DetectionBox::intersectsGrid(DetectionBox* other, const vector<Direction>& directions) const
 {
     if (other == this) return false;
-    if (!_parent->isHit(other->_parent)) return false;
     
-    return this->intersectsGrid(other->getGridRect(), directions);
+    return MapUtils::intersectsGridRect(this->getGridRect(directions), other->getGridRect());
 }
 
-bool DetectionBox::intersectsGrid(const Rect& gridRect, const vector<Direction>& directions) const
+bool DetectionBox::intersectsGrid(DetectionBox* other, const Point& gridPosition) const
 {
-    return MapUtils::intersectsGridRect(this->getGridRect(directions), gridRect);
+    if (other == this) return false;
+    
+    return MapUtils::intersectsGridRect(this->getGridRect(gridPosition), other->getGridRect());
+}
+
+bool DetectionBox::intersectsGridForPath(DetectionBox* other, const Point& gridPosition) const
+{
+    if (other == this) return false;
+    if (!_parent->isHit(other->_parent)) return false;
+    
+    return MapUtils::intersectsGridRect(this->getGridRect(gridPosition), other->getGridRect());
 }
 
 #pragma mark -
@@ -142,14 +162,20 @@ Rect DetectionBox::getRect(const vector<Direction>& directions) const
     return Rect(rect.origin.x + 1 + vec2.x, rect.origin.y + 1 + vec2.y, rect.size.width - 2, rect.size.height - 2);
 }
 
-bool DetectionBox::isBetween(const MapObject* obj1, const MapObject* obj2) const
+bool DetectionBox::isBetween(const DetectionBox* other1, const DetectionBox* other2) const
 {
-    if (!obj1) return false;
-    if (!obj2) return false;
-    if (obj1 == _parent) return false;
-    if (obj2 == _parent) return false;
+    if (!other1) return false;
+    if (!other2) return false;
+    if (other1->_parent == _parent) return false;
+    if (other2->_parent == _parent) return false;
     
-    return MapUtils::isSegmentIntersectWithRect(obj1->getPosition(), obj2->getPosition(), this->getRect());
+    Rect other1Rect { other1->getRect() };
+    Rect other2Rect { other2->getRect() };
+    
+    Point other1Pos { other1Rect.getMidX(), other1Rect.getMidY() };
+    Point other2Pos { other2Rect.getMidX(), other2Rect.getMidY() };
+    
+    return MapUtils::isSegmentIntersectWithRect(other1Pos, other2Pos, this->getRect());
 }
 
 bool DetectionBox::intersects(const DetectionBox* other) const

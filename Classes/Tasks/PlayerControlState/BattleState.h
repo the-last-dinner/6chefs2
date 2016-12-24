@@ -15,6 +15,10 @@ class Character;
 
 class BattleState : public PlayerControlState
 {
+// 定数
+private:
+    static const float STEP_COOLDOWN_DURATION;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(BattleState, PlayerControlTask*);
@@ -30,10 +34,6 @@ public:
     virtual void turn(Party* party, const Direction& direction, bool isDashKeyPressed) override;
     virtual void onEnterKeyPressed(Party* party) override;
     virtual void move(Party* party, const vector<Direction>& directions, bool isDashKeyPressed) override;
-
-// コールバック
-public:
-    void onAttackCommandFinished(Party* party);
 };
 
 #endif /* BattleState_h */

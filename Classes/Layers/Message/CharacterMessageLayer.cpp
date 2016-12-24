@@ -75,7 +75,12 @@ Label* CharacterMessageLayer::createMessage()
         Action* swingAction { RepeatForever::create(Sequence::createWithTwoActions(MoveBy::create(0.05f, Vec2(10.f, 0)), MoveBy::create(0.05f, Vec2(-10.f, 0)))) };
         this->frame->runAction(swingAction);
         
-        this->runAction(Sequence::create(DelayTime::create(1.5f), CallFunc::create([this, swingAction]{this->stopAction(swingAction); this->frame->setPosition(this->defaultMFramePosition);}), nullptr));
+        this->runAction(Sequence::create(DelayTime::create(1.5f),CallFunc::create([this, swingAction]
+            {
+                this->stopAction(swingAction);
+                if(_closed) return;
+                this->frame->setPosition(this->defaultMFramePosition);
+            }), nullptr));
         
         SoundManager::getInstance()->playSE("msg_reaction.mp3", 0.5f);
     }
@@ -106,10 +111,12 @@ Label* CharacterMessageLayer::createMessage()
             this->charaImg = img;
         }
     } else {
-        Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + data->getImageName())};
+        Sprite* img {Sprite::create(Resource::SpriteFrame::BASE_PATH + "disp/" + data->getImageName())};
         img->setPosition(WINDOW_CENTER);
         img->setLocalZOrder((data->isImageOnly()) ? 1 : -1);
+        img->setOpacity(0);
         this->addChild(img);
+        img->runAction(FadeIn::create(0.5f));
     }
     
     
@@ -132,16 +139,16 @@ Label* CharacterMessageLayer::createMessage()
 	message->setPosition(Point(message->getContentSize().width / 2 + LEFT_MARGIN, this->frame->getContentSize().height - message->getContentSize().height / 2 - TOP_MARGIN));
 	this->frame->addChild(message);
     
-    if(!this->datas.front()->hasNextPage())
-    {
-        CC_SAFE_RELEASE(this->datas.front());
-        this->datas.pop();
-    }
-    
     if(data->isImageOnly()){
         this->removeChildByTag(MAIN_FRAME_TAG);
         this->removeChildByTag(NAME_FRAME_TAG);
         _closed = true;
+    }
+
+    if(!this->datas.front()->hasNextPage())
+    {
+        CC_SAFE_RELEASE(this->datas.front());
+        this->datas.pop();
     }
 
     return message;

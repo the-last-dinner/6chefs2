@@ -81,7 +81,7 @@
   <object id="61" x="320" y="368" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="dShituji.png"/>
+    <property name="img" value="box.png"/>
     <property name="objID" value="205"/>
    </properties>
   </object>
@@ -94,7 +94,7 @@
   <object id="63" x="288" y="544" width="32" height="32">
    <properties>
     <property name="hit" value="true"/>
-    <property name="img" value="dShituji.png"/>
+    <property name="img" value="box.png"/>
     <property name="objID" value="206"/>
    </properties>
   </object>

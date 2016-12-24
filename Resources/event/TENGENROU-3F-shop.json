@@ -64,7 +64,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["ウス！\n俺だってアッパーの親父やケンさんに負けっぱなしじゃ\nいられないッスからね。"],
+							"text":["ウス！\n俺だってあの店の親父やケンさんに負けっぱなしじゃ\nいられないッスからね。"],
 							"charaID":"5",
 							"imgID":"1"
 						}
@@ -74,13 +74,13 @@
 					"type":"if",
 					"condition":[
 						{
-							"Ntrophy":"8"
+							"Ntrophy":"5"
 						}
 					],
 					"action":[
 						{
 							"type":"getTrophy",
-							"trophyID":"8"
+							"trophyID":"5"
 						}
 					]
 				},

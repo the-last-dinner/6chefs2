@@ -93,6 +93,6 @@
   </object>
  </objectgroup>
  <objectgroup name="terrain">
-  <object id="17" type="ladder" x="240" y="32" width="32" height="64"/>
+  <object id="17" type="ladder" x="240" y="0" width="32" height="112"/>
  </objectgroup>
 </map>
