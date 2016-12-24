@@ -51,7 +51,7 @@
         "hit_point": 100,
         "step_stamina": 5.0,
         "step_interval_time": 0.1,
-        "speed_ratio": 2.0
+        "speed_ratio": 1.5
     },
     "8": {
         "name": "tamuken",
@@ -69,7 +69,7 @@
         "hit_point": 130,
         "step_stamina": 3.0,
         "step_interval_time": 0.1,
-        "speed_ratio": 1.5
+        "speed_ratio": 1.2
     },
     "9": {
         "name": "taihou",
