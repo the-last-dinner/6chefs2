@@ -308,27 +308,33 @@
 						},
 						{
 							"type":"charaMsg",
+							"img":"taihou_reign.png",
 							"talk":[
 								{
 									"text":["クックック・・・お前たちか・・・\n歓迎するぜ"],
-									"charaID":"9",
-									"imgID":"1"
+									"charaID":"10",
+									"name":"戸塚 大宝"
 								},
 								{
 									"text":["おじさん・・・"],
-									"charaID":"6",
-									"imgID":"2"
+									"charaID":"10",
+									"name":"希﨑 雪"
 								},
 								{
 									"text":["お前が戸塚か・・・"],
-									"charaID":"2",
-									"imgID":"2"
+									"charaID":"10",
+									"name":"加藤 蘭丸"
 								},
 								{
 									"text":["・・・"],
-									"charaID":"1",
-									"imgID":"1"
-								},
+									"charaID":"10",
+									"name":"中山 撫子"
+								}
+							]
+						},
+						{
+							"type":"charaMsg",
+							"talk":[
 								{
 									"text":["で・・・何の用だ？\n茶でも出すか？"],
 									"charaID":"9",
