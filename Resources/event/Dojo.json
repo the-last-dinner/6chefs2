@@ -1316,9 +1316,9 @@
 			       			"type":"playBGM",
 			       			"file":"town.mp3"
 			       		},
-					    {
+			       		 {
 					     	"type":"charaMsg",
-					       	"img":"airplane.png",
+					       	"img":"airport1.png",
 					       	"talk":[
 					       		{
 					       			"text":["ちょっと・・・加藤・・・\n重い・・・"],
@@ -1329,7 +1329,13 @@
 					       			"text":["ガァァァァァァ～\nごぉぉぉぉぉぉぉ～"],
 					       			"charaID":"10",
 					       			"name":"加藤　蘭丸"
-					       		},
+					       		}
+					    	]
+						},
+					    {
+					     	"type":"charaMsg",
+					       	"img":"airport2.png",
+					       	"talk":[
 					       		{
 					       			"text":["中山さん、何か飲みます？"],
 					      			"charaID":"10",
@@ -1339,7 +1345,13 @@
 					       			"text":["うん！ありがとう。"],
 					       			"charaID":"10",
 					       			"name":"中山　撫子"
-					       		},
+					       		}
+					    	]
+						},
+						{
+					     	"type":"charaMsg",
+					       	"img":"airport3.png",
+					       	"talk":[
 					       		{
 					      			"text":["そんでよ！そんでよ！\n・・・"],
 					       			"charaID":"10",
@@ -1349,7 +1361,13 @@
 					       			"text":["マジか！\nハハハ"],
 					       			"charaID":"10",
 					       			"name":"田村　剣神"
-					       		},
+					       		}
+					    	]
+						},
+						{
+					     	"type":"charaMsg",
+					       	"img":"airport4.png",
+					       	"talk":[
 					       		{
 					       			"text":["ねぇ！ゆきりん見て見て！\n海だよ！クジラだよ！"],
 					       			"charaID":"10",
