@@ -16,6 +16,7 @@
 #include "MapObjects/MapObject.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Command/MoveCommand.h"
+#include "MapObjects/Command/SetPositionCommand.h"
 #include "Mapobjects/Party.h"
 #include "MapObjects/PathFinder/PathFinder.h"
 
@@ -179,9 +180,15 @@ void WarpMapObjectEvent::run()
     this->setDone();
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
     if (!target) return;
-    target->setGridPosition(_point);
-    target->setDirection(_direction);
-    DungeonSceneManager::getInstance()->setMapObjectPosition(target);
+    
+    target->getActionManager()->resumeTarget(target);
+    target->clearCommandQueue();
+    
+    SetPositionCommand* command { SetPositionCommand::create() };
+    command->setGridPosition(_point);
+    command->setDirection(_direction);
+    
+    target->pushCommand(command);
 }
 
 #pragma mark -

@@ -33,6 +33,11 @@ void SetPositionCommand::setGridPosition(const Point& gridPosition)
     _gridPosition = gridPosition;
 }
 
+void SetPositionCommand::setDirection(const Direction& direction)
+{
+    _direction = direction;
+}
+
 #pragma mark -
 #pragma mark Interface
 

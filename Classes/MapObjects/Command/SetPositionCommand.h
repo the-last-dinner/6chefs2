@@ -20,6 +20,7 @@ public:
 // インスタンス変数
 private:
     Point _gridPosition { Point::ZERO };
+    Direction _direction { Direction::NONE };
     
 // インスタンスメソッド
 private:
@@ -28,6 +29,7 @@ private:
     bool init() override;
 public:
     void setGridPosition(const Point& gridPosition);
+    void setDirection(const Direction& direction);
     
 // インターフェース
 public:
