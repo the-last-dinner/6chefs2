@@ -17,6 +17,20 @@
 					"objID":"181"
 				}
 			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["82","8"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"ranmaru"
+				}
+			]
 		}
 	],
 	"2":[
