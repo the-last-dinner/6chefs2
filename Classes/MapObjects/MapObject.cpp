@@ -11,7 +11,9 @@
 #include "MapObjects/Command/MapObjectCommand.h"
 #include "MapObjects/Command/MapObjectCommandQueue.h"
 #include "MapObjects/Command/MoveCommand.h"
+#include "MapObjects/DetectionBox/AttackDetector.h"
 #include "MapObjects/DetectionBox/CollisionDetector.h"
+#include "MapObjects/DetectionBox/HitBox.h"
 #include "MapObjects/MapObjectList.h"
 #include "MapObjects/Status/HitPoint.h"
 #include "MapObjects/TerrainState/TerrainState.h"
@@ -238,6 +240,22 @@ void MapObject::pushCommand(MapObjectCommand* command)
 void MapObject::clearCommandQueue()
 {
     _commandQueue->clear();
+}
+
+#pragma mark -
+#pragma mark HitBox
+
+void MapObject::enableHit(bool enableHit)
+{
+    if (!_objectList) return;
+    
+    if (enableHit) {
+        _objectList->getAttackDetector()->addHitBox(_hitBox);
+        _hitBox->setVisible(true);
+    } else {
+        _objectList->getAttackDetector()->removeHitBox(_hitBox);
+        _hitBox->setVisible(false);
+    }
 }
 
 #pragma mark -

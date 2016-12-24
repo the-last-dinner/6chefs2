@@ -21,6 +21,7 @@ class TerrainStateCache;
 class CollisionBox;
 class MapObjectCommand;
 class MapObjectCommandQueue;
+class HitBox;
 class HitPoint;
 class Battle;
 
@@ -53,6 +54,7 @@ protected:
     TerrainState* _terrainState { nullptr };
     TerrainStateCache* _terrainStateCache { nullptr };
     MapObjectCommandQueue* _commandQueue { nullptr };
+    HitBox* _hitBox { nullptr };
     HitPoint* _hitPoint { nullptr };
     Battle* _battle { nullptr };
 public:
@@ -106,6 +108,10 @@ public:
     string getMovingSoundFileName() const { return _movingSoundFileName; }
     Vector<MapObject*> getHitObjects(const Direction& direction) const;
     Vector<MapObject*> getHitObjects(const vector<Direction>& directions) const;
+    
+// hit
+public:
+    void enableHit(bool enable);
     
 // command
 public:
