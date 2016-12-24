@@ -296,7 +296,6 @@ void Character::onHurt(int damage)
     
     if (_battle && !_hitPoint->isLost()) {
         this->enableHit(false);
-        this->enableBattleAttack(false);
         
         this->runAction(Sequence::create(Hide::create(),
                                          DelayTime::create(0.15f),
@@ -309,7 +308,7 @@ void Character::onHurt(int damage)
                                          Hide::create(),
                                          DelayTime::create(0.15f),
                                          Show::create(),
-                                         CallFunc::create([this] { this->enableHit(true); this->enableBattleAttack(true); }),
+                                         CallFunc::create([this] { this->enableHit(true); }),
                                          nullptr));
     }
 }
