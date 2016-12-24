@@ -523,6 +523,10 @@
 											"type":"fadeout"
 										},
 										{
+											"type":"removeEnemy",
+											"objID":"10207"
+										},
+										{
 											"type":"charaMsg",
 											"talk":[
 												{
