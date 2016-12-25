@@ -284,6 +284,9 @@
 					]
 				},
 				{
+					"type":"fadeout"
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{
@@ -343,6 +346,9 @@
 					"x":40,
 					"y":17,
 					"direction":"RIGHT"
+				},
+				{
+					"type":"fadein"
 				},
 				{
 					"type":"charaMsg",
