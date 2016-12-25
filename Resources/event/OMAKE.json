@@ -976,7 +976,7 @@
 									"action":[
 										{
 											"type":"charaMsg",
-											"img":"rootA1.png",
+											"img":"rootA1.PNG",
 											"talk":[
 												{
 													"text":["北森金鉱跡に針金を拾った坑道が\nありませんでしたか？","そこでこの坑道に入らず、\n地下病棟に戻り・・・"],
@@ -987,7 +987,7 @@
 										},
 										{
 											"type":"charaMsg",
-											"img":"rootA2.png",
+											"img":"rootA2.PNG",
 											"talk":[
 												{
 													"text":["ここの扉を調べると\n新エリアへの道が・・・"],
