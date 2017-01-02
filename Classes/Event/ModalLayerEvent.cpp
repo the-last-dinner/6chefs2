@@ -19,11 +19,17 @@
 #include "Datas/Message/SystemMessageData.h"
 
 #include "Layers/Dungeon/DisplayImageLayer.h"
+#include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Message/CharacterMessagelayer.h"
 #include "Layers/Message/StoryMessagelayer.h"
 #include "Layers/Message/SystemMessagelayer.h"
 
 #include "Managers/DungeonSceneManager.h"
+
+#include "MapObjects/Character.h"
+#include "MapObjects/Party.h"
+
+#include "Models/PlayerData/LocalPlayerData.h"
 
 #pragma mark ModalLayerEvent
 
@@ -255,3 +261,80 @@ void DispImageEvent::run()
     DungeonSceneManager::getInstance()->getScene()->addChild(layer, Priority::DISP_IMAGE_LAYER);
 }
 
+#pragma mark -
+#pragma mark DisplaySaveMenu
+
+bool DisplaySaveMenu::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init(json)) return false;
+    
+    _saveMenu = SaveDataSelector::create(true);
+    _saveMenu->setVisible(false);
+    _saveMenu->onSaveDataSelectCancelled = CC_CALLBACK_0(DisplaySaveMenu::onExitedSaveMenu, this);
+    
+    return true;
+}
+
+void DisplaySaveMenu::run()
+{
+    LocalPlayerData* localPlayerData { PlayerDataManager::getInstance()->getLocalData() };
+    Location location { localPlayerData->getLocation() };
+    
+    if (_eventHelper->hasMember(_json, member::MAP_ID)) {
+        location.map_id = stoi(_json[member::MAP_ID].GetString());
+    }
+    
+    if (_eventHelper->hasMember(_json, member::X)) {
+        location.x = _json[member::X].GetInt();
+    }
+    
+    if (_eventHelper->hasMember(_json, member::Y)) {
+        location.y = _json[member::Y].GetInt();
+    }
+        
+    if (_eventHelper->hasMember(_json, member::DIRECTION)) {
+        location.direction = _eventHelper->getDirection(_json);
+    }
+    
+    if (_eventHelper->hasMember(_json, member::EVENT_ID)) {
+        _initEventId = _json[member::EVENT_ID].GetString();
+        localPlayerData->setInitEventId(_initEventId);
+    } else {
+        _initEventId = nullptr;
+    }
+    
+    // 主人公一行の位置を登録
+    vector<CharacterData> members { DungeonSceneManager::getInstance()->getParty()->getMembersData() };
+    int membersSize { static_cast<int>(members.size()) };
+    for (int i = 0; i < membersSize; i++) {
+        members[i].location = location;
+    }
+    localPlayerData->setLocation(members);
+    
+    this->display();
+}
+
+void DisplaySaveMenu::display()
+{
+    if (!_saveMenu) {
+        this->setDone();
+        return;
+    }
+    
+    DungeonSceneManager::getInstance()->getScene()->addChild(_saveMenu, Priority::SELECT_LAYER);
+    SoundManager::getInstance()->playSE(Resource::SE::TITLE_ENTER);
+    _saveMenu->show();
+}
+
+void DisplaySaveMenu::onExitedSaveMenu()
+{
+    SoundManager::getInstance()->playSE(Resource::SE::BACK);
+    _saveMenu->runAction(
+        Sequence::createWithTwoActions(
+            CallFunc::create([this](){this->_saveMenu->hide();}),
+            DelayTime::create(0.3f)
+        )
+    );
+    PlayerDataManager::getInstance()->getLocalData()->removeInitEventId();
+    this->setDone();
+}

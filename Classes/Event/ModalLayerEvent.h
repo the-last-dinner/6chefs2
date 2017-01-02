@@ -91,4 +91,22 @@ private:
     virtual void run() override;
 };
 
+// DisplaySaveイベント
+class SaveDataSelector;
+class DisplaySaveMenu : public GameEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(DisplaySaveMenu, rapidjson::Value&);
+private:
+    SaveDataSelector* _saveMenu { nullptr };
+    string _initEventId {};
+private:
+    DisplaySaveMenu() { FUNCLOG };
+    ~DisplaySaveMenu() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+    void display();
+    void onExitedSaveMenu();
+};
+
 #endif /* defined(__LastSupper__MessageEvent__) */

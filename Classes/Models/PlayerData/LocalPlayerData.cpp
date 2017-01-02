@@ -33,6 +33,7 @@ const char* LocalPlayerData::ITEM {"item"};
 const char* LocalPlayerData::ITEMS {"items"};
 const char* LocalPlayerData::BGM {"bgm"};
 const char* LocalPlayerData::SPECIAL_ROOM {"special_room"};
+const char* LocalPlayerData::INIT_EVENT_ID {"init_event_id"};
 
 const int LocalPlayerData::MAX_COUNT {999};
 const int LocalPlayerData::MAX_PLAY_TIME {35999};
@@ -651,6 +652,44 @@ vector<string> LocalPlayerData::getBgmAll()
         bgms.push_back(bgmList[i].GetString());
     }
     return bgms;
+}
+
+// init_event_idをセット
+void LocalPlayerData::setInitEventId(const string &initEventId)
+{
+    // 既存メンバ上書き
+    if (this->localData.HasMember(LocalPlayerData::INIT_EVENT_ID)) {
+        this->localData[LocalPlayerData::INIT_EVENT_ID].SetString(initEventId.c_str(), strlen(initEventId.c_str()));
+        return;
+    }
+    
+    // 新規メンバ作成
+    rapidjson::Value eventIdJsonValue  (kStringType);
+    eventIdJsonValue.SetString(initEventId.c_str(), strlen(initEventId.c_str()), this->localData.GetAllocator());
+    
+    rapidjson::Value initEventIdKey (kStringType);
+    initEventIdKey.SetString(LocalPlayerData::INIT_EVENT_ID, strlen(LocalPlayerData::INIT_EVENT_ID), this->localData.GetAllocator());
+    
+    this->localData.AddMember(initEventIdKey, eventIdJsonValue, this->localData.GetAllocator());
+
+}
+
+// init_event_idを削除
+void LocalPlayerData::removeInitEventId()
+{
+    if (this->localData.HasMember(LocalPlayerData::INIT_EVENT_ID)) {
+        this->localData.RemoveMember(LocalPlayerData::INIT_EVENT_ID);
+    }
+}
+
+// init_event_idを取得、なければ空文字
+string LocalPlayerData::getInitEventId()
+{
+    if (this->localData.HasMember(LocalPlayerData::INIT_EVENT_ID)) {
+        return this->localData[LocalPlayerData::INIT_EVENT_ID].GetString();
+    }
+    
+    return "";
 }
 
 #pragma mark -

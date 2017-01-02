@@ -149,6 +149,15 @@
                 "time": ["double", "int"]
             }
         },
+        "displaySaveMenu": {
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"],
+                "eventID": ["stoi"]
+            }
+        },
 
         
         
@@ -518,6 +527,8 @@
         
         
         
+        
+        
         "battle": {
             "require": ["objID", "true", "false"],
             "member": {
@@ -526,6 +537,8 @@
                 "false": [["object"]]
             }
         },
+        
+        
         
         
         

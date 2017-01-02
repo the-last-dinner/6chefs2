@@ -107,6 +107,8 @@ void TitleScene::onSaveDataSelectCancelled()
 	this->saveDataSelector->hide();
 	this->mainMenu->show();
 }
+
+// おまけ部屋が選択された時
 void TitleScene::onSpecialRoomSelected()
 {
     FUNCLOG
