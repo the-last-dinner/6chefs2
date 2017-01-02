@@ -19,6 +19,7 @@
 #include "Datas/Message/SystemMessageData.h"
 
 #include "Layers/Dungeon/DisplayImageLayer.h"
+#include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Message/CharacterMessagelayer.h"
 #include "Layers/Message/StoryMessagelayer.h"
 #include "Layers/Message/SystemMessagelayer.h"
@@ -255,3 +256,35 @@ void DispImageEvent::run()
     DungeonSceneManager::getInstance()->getScene()->addChild(layer, Priority::DISP_IMAGE_LAYER);
 }
 
+#pragma mark -
+#pragma mark DisplaySaveMenu
+
+bool DisplaySaveMenu::init(rapidjson::Value& json)
+{
+    if (!GameEvent::init(json)) return false;
+    
+    _saveMenu = SaveDataSelector::create(true);
+    _saveMenu->setVisible(false);
+    _saveMenu->onSaveDataSelectCancelled = CC_CALLBACK_0(DisplaySaveMenu::onExitedSaveMenu, this);
+    
+    return true;
+}
+
+void DisplaySaveMenu::run()
+{
+    DungeonSceneManager::getInstance()->getScene()->addChild(_saveMenu, Priority::SELECT_LAYER);
+    SoundManager::getInstance()->playSE(Resource::SE::TITLE_ENTER);
+    _saveMenu->show();
+}
+
+void DisplaySaveMenu::onExitedSaveMenu()
+{
+    SoundManager::getInstance()->playSE(Resource::SE::BACK);
+    _saveMenu->runAction(
+                         Sequence::createWithTwoActions(
+                                                        CallFunc::create([this](){this->_saveMenu->hide();}),
+                                                        DelayTime::create(0.3f)
+                                                        )
+                         );
+    this->setDone();
+}
