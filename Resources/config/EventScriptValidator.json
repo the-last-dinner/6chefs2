@@ -149,6 +149,15 @@
                 "time": ["double", "int"]
             }
         },
+        "displaySaveMenu": {
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"],
+                "eventID": ["stoi"]
+            }
+        },
 
         
         
@@ -515,8 +524,8 @@
         },
         "stopCount": {
         },
-        "displaySaveMenu": {
-        },
+        
+        
         
         
         
@@ -528,6 +537,8 @@
                 "false": [["object"]]
             }
         },
+        
+        
         
         
         

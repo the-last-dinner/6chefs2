@@ -253,17 +253,24 @@ void SaveDataSelector::onEnterKeyPressed(int idx)
             // ロード
             SoundManager::getInstance()->playSE(Resource::SE::LOAD);
             PlayerDataManager::getInstance()->setGameStart(idx);
+            LocalPlayerData* localData { PlayerDataManager::getInstance()->getLocalData() };
             
             // 保存されているBGMの再生
             SoundManager::getInstance()->stopBGMAll();
-            vector<string> bgms {PlayerDataManager::getInstance()->getLocalData()->getBgmAll()};
+            vector<string> bgms { localData->getBgmAll() };
             for(string bgm : bgms)
             {
                 SoundManager::getInstance()->playBGM(bgm);
             }
             
             // シーン移動
-            Director::getInstance()->replaceScene(DungeonScene::create(DungeonSceneData::create(PlayerDataManager::getInstance()->getLocalData()->getLocation())));
+            DungeonSceneData* dungeonData { DungeonSceneData::create(localData->getLocation()) };
+            string initEventId = localData->getInitEventId();
+            if (initEventId != "") {
+                dungeonData->setInitialEventId(stoi(initEventId));
+            }
+            PlayerDataManager::getInstance()->getLocalData()->removeInitEventId();
+            Director::getInstance()->replaceScene(DungeonScene::create(dungeonData));
         }
         else
         {

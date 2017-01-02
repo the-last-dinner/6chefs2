@@ -36,6 +36,7 @@ class LocalPlayerData : public Ref
     static const char* CHARA;
     static const char* BGM;
     static const char* SPECIAL_ROOM;
+    static const char* INIT_EVENT_ID;
     
     static const int MAX_COUNT;
     static const int MAX_PLAY_TIME;
@@ -136,6 +137,11 @@ public:
     bool removeBgm(const string& bgm_name);
     void removeBgmAll();
     vector<string> getBgmAll();
+    
+    // InitEvent
+    void setInitEventId(const string& initEventId);
+    void removeInitEventId();
+    string getInitEventId();
     
 // inner class
 private:
