@@ -50,6 +50,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"storyMsg", StoryMessage::create},             // ストーリーメッセージ
     {"systemMsg", SystemMessage::create},           // システムのメッセージ
     {"displayImg", DispImageEvent::create},         // 画像表示
+    {"displaySaveMenu", DisplaySaveMenu::create},   // セーブメニュー表示
     
     // シーン系
     {"changeMap", ChangeMapEvent::create},          // マップ移動
@@ -109,7 +110,6 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"password", PasswordEvent::create},            // パスワードイベント
     {"countDown", CountDownEvent::create},          // カウントダウン
     {"stopCount", StopCountEvent::create},          // ストップカウント
-    {"displaySaveMenu", DisplaySaveMenu::create},   // セーブメニュー表示
     
     // 戦闘系
     {"battle", BattleStartEvent::create},           // 戦闘開始
