@@ -109,6 +109,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"password", PasswordEvent::create},            // パスワードイベント
     {"countDown", CountDownEvent::create},          // カウントダウン
     {"stopCount", StopCountEvent::create},          // ストップカウント
+    {"displaySaveMenu", DisplaySaveMenu::create},   // セーブメニュー表示
     
     // 戦闘系
     {"battle", BattleStartEvent::create},           // 戦闘開始
