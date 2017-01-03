@@ -450,7 +450,15 @@
 							"movePattern":"7"
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"fadein"
+						},
+						{
+							"type":"playBGM",
+							"file":"battle_taiho.mp3",
+							"volume":0.5
 						},
 						{
 							"type":"createObject",
@@ -539,6 +547,9 @@
 											"direction":"LEFT"
 										},
 										{
+											"type":"stopBGM"
+										},
+										{
 											"type":"createCamera",
 											"mapID":"40",
 											"x":7,
@@ -572,6 +583,10 @@
 													]
 												}
 											]
+										},
+										{
+											"type":"playBGM",
+											"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
 										},
 										{
 											"type":"fadein"

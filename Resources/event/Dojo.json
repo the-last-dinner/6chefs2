@@ -44,6 +44,11 @@
 		          "time":3.0
 		        },
 		        {
+		          "type":"displayImg",
+		          "file":"warning2.png",
+		          "time":4.0
+		        },
+		        {
 		          "type":"storyMsg",
 		          "title":"操作説明",
 		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
@@ -903,7 +908,8 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"syuka_stand.png"
+								        	"file":"syuka_stand.png",
+		       							 	"time":2.0
 								        },
 								        {
 								        	"type":"charaWalk",
@@ -937,7 +943,8 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"tamuken_stand.png"
+								        	"file":"tamuken_stand.png",
+		      							  	"time":2.0
 								        },
 								        {
 								        	"type":"charaMsg",
@@ -1203,7 +1210,8 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"yuki_stand.png"
+								        	"file":"yuki_stand.png",
+		       							 	"time":2.0
 								        },
 								        {
 								        	"type":"charaMsg",

@@ -591,6 +591,10 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"wait",
+							"time":0.5
+						},
+						{
 							"type":"camera",
 							"nextX":9,
 							"nextY":87,

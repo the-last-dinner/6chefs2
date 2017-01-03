@@ -483,7 +483,15 @@
 													"movePattern":"7"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"fadein"
+												},
+												{
+													"type":"playBGM",
+													"file":"battle_taiho.mp3",
+													"volume":0.5
 												},
 												{
 													"type":"battle",
@@ -544,7 +552,15 @@
 													"movePattern":"7"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"fadein"
+												},
+												{
+													"type":"playBGM",
+													"file":"battle_taiho.mp3",
+													"volume":0.5
 												},
 												{
 													"type":"battle",
@@ -604,7 +620,15 @@
 													"movePattern":"7"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"fadein"
+												},
+												{
+													"type":"playBGM",
+													"file":"battle_taiho.mp3",
+													"volume":0.5
 												},
 												{
 													"type":"battle",
@@ -665,7 +689,15 @@
 													"movePattern":"7"
 												},
 												{
+													"type":"stopBGM"
+												},
+												{
 													"type":"fadein"
+												},
+												{
+													"type":"playBGM",
+													"file":"battle_taiho.mp3",
+													"volume":0.5
 												},
 												{
 													"type":"battle",
@@ -981,8 +1013,15 @@
 					"movePattern":"1"
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
 					"type":"fadein",
 					"time":3.0
+				},
+				{
+					"type":"playBGM",
+					"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
 				},
 				{
 					"type":"charaMsg",
@@ -1017,6 +1056,7 @@
 				},
 				{
 					"type":"charaMsg",
+					"img":"kirituke.png",
 					"talk":[
 						{
 							"text":["ぐぁ！"],

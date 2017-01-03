@@ -41,7 +41,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYKAt6GKlDkYGuazY7SIHZCOZNWruqLmj5o6aO2ruqLkDaS4I+LHixv5Ian3xqPMj0X3I/kF3z3ABAAHLIck=
+   eJxjYKAdmMvCwNDFSh3cwIIwN5eVem7MRjJr1NxRc0fNHTV31NxRcwfS3DnAus6PFTf2R1Lri0cdCNezYNqFCyD7J5uKfhtMAAARRCQR
   </data>
  </layer>
  <objectgroup name="collision">

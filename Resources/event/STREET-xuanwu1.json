@@ -318,6 +318,10 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"playSE",
+							"file":"autodoor-open1.mp3"
+						},
+						{
 							"type":"removeLayer",
 							"layer":"door"
 						},

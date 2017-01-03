@@ -39,7 +39,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt17mRAkEQRcFWOMQpkzicAR84HOBwAnzZBSfAEkqeUgmihcyIJ1RLX+3WAAAAAAAAAAAAAADo0Wlo7ZxdsutQ79785ab/7JE9h3r3ZhKtTbNZNo9692aRm5bZKltHvXuzy0377JAdo94AAADfth39NTZR33pyH227RX3ryXu07RX1DQAA+K0PHcoaCQ==
+   eJzt17lNBDEYhmEnHOGYXoCFjKMZ6IGjAY4moBeOJqALYEF8wQar8Uo7SAQOnkd65fmtkeVwphQAAAAAAAAAAAAAAHp0M5Rym+7S/dDOvXnKnZ7TS3od2rk3G7WUzbSVtms79+YodzpOJ+m0tnNvLnKny3SVrms7AwAA/Lfz0b/GWW33evI4uttDbfd68j6621tt9wAA4K8+8k35mb7SfLGuar60fq95nvre+MyfCd+3uzul7KX9NFusq5otrQdrnqe+Nz7zMP0C+MdKLQ==
   </data>
  </layer>
  <layer name="MonoUe" width="44" height="108">
@@ -47,7 +47,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzskJgDAURdG0kTIcGnCowBLU/mswYJYG4iIgeA7cRchfvBBuXQyhb9yQGnO19yVT+psbt6TWXO19yRa/mb322mvv2717rO9InQ/vFgEAAAAAAAAAAAAAAAAAAADAn1yyxJpP
+   eJztzskJgDAURdG0oV04NOBQidq3rRgwSwNxERA8B+4i5C9eCLeuCaGv3BAbU6X3OVP8myu3xNZU6X3O2X4ze+211963e7emvD12PLxrBAAAAAAAAAAAAAAAAAAAAAB/cgH6Ly3q
   </data>
  </layer>
  <layer name="door2" width="44" height="108">

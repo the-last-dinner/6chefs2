@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="110" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="78">
- <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
   <image source="temple_out.png" trans="aa55ff" width="256" height="2016"/>
  </tileset>
- <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="2017" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16">
+ <tileset firstgid="2497" name="chinaTown" tilewidth="16" tileheight="16" tilecount="2850" columns="30">
   <image source="chinaTown.png" width="480" height="1520"/>
  </tileset>
- <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16">
+ <tileset firstgid="5347" name="man" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="man.png" width="32" height="32"/>
   <tile id="0">
    <properties>
@@ -45,7 +45,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="MonoUe" width="22" height="110">
@@ -61,7 +61,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzssJgDAQRdEo6s4SrFutQNvx04CfCrQBR2IgDHFjVsI98AjMhMcYYw25MaNk8t5ZzUJx/8rERltkt3rZJPvz6tnqzd2sSmy0M49Lm9n8vfeQXZP9p/fu/NrrOt/ujbm1fu7S0iIunXT2gV4AAAAAAAAAAAAAAAAg5AKSM5EL
+   eJztzNEJwjAUBdBUrH45grs6Rp3ArtPqAtYO0kAshJA/60fhHLg8uAk3hGRoQxhjntl9FV0t679Lk1J6x7cpyydm/t6ym7J+7a5NSul23iZ297d7P/5nt6vsHk6/5RE3+8ouAAAAAAAAAADULM4bYL4=
   </data>
  </layer>
  <layer name="Monoue3" width="22" height="110">
