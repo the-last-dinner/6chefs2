@@ -871,7 +871,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophy":"10"
+					"trophy":"9"
 				}
 			],
 			"action":[
@@ -943,7 +943,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Ntrophy":"10"
+					"Ntrophy":"9"
 				}
 			],
 			"action":[

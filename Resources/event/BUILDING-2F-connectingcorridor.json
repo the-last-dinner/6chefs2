@@ -148,7 +148,7 @@
 						},
 						{
 							"type":"charaMsg",
-							"text":["このシャッターを閉めても\nもう遅い！"],
+							"text":["このシャッターを閉めても\nもうダメだ！"],
 							"charaID":"0",
 							"imgID":"3",
 							"option":"reaction"
