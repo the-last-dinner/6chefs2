@@ -119,7 +119,7 @@
   <object id="59" type="slip" x="0" y="96" width="960" height="896"/>
  </objectgroup>
  <objectgroup name="item">
-  <object id="70" x="672" y="128" width="32" height="32">
+  <object id="70" x="672" y="112" width="32" height="32">
    <properties>
     <property name="EventID" value="5"/>
     <property name="objID" value="1"/>

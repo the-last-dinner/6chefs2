@@ -8,18 +8,24 @@
  </tileset>
  <layer name="Base" width="78" height="44">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztlM0RwiAUBkMTnrQQtSD1pmMP3qKFRBuxJS+Sk04GgTwIP3F35ptEQ+CxAZoGpLx0nor45Kg+3h76fqeve2LNQaf7U29Llc5byFi1xGeOKxV3vZnGnMJ17u83t306lc9hv3Pzliq1esu992Ofb7515T6fQiNZb/2cS5n3mDpi1hxrn5biMVVqPd9SZrgm+t+m822ts9G5NL/jeu7Tdvj/mD5tY/n0GzJW/+7W4G1BvII3vOGt/OANb3grP3jDG97KD97CvZ30/TVxbpba2gjtp8r5y1sObGu8M9Q2tr2Lu+Md1/Nc5PZWK3iTgTcZeJOBNxl4k4E3GXiTgTcZeJOBNxl4k4E3GXiTgTcAf97yqW5d
   </data>
  </layer>
  <layer name="MonoShita" width="78" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjEOgCAURMEfOBcn8frCOSBReyskMpNss9WLAAAAAHZX8rtvtlW7HsdoOVNEvdfS9X1t1S4AAAAAAAAAAPijDrozCbE=
   </data>
  </layer>
  <layer name="MonoChu" width="78" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt17EJACAMRNHYO4n7D2hhKwTSaOC9CY7fXQQAAADQ3RyvF/zv1mjpltIIAKA/fyHnL9RoBAAAAAAAxwaYvgDh
   </data>

@@ -42,7 +42,7 @@
 			"action":[
 				{
 					"type":"removeLayer",
-					"layer":"steps"
+					"layer":"steps3"
 				},
 				{
 					"type":"removeObject",
@@ -66,7 +66,7 @@
 			"action":[
 				{
 					"type":"removeObject",
-					"objID":"181"
+					"objID":"183"
 				},
 				{
 					"type":"removeObject",
@@ -112,7 +112,7 @@
 			"action":[
 				{
 					"type":"removeLayer",
-					"layer":"steps3"
+					"layer":"steps"
 				}
 			]
 		},
@@ -126,7 +126,7 @@
 			"action":[
 				{
 					"type":"removeObject",
-					"objID":"183"
+					"objID":"181"
 				}
 			]
 		}
@@ -185,11 +185,11 @@
 					"action":[
 						{
 							"type":"removeObject",
-							"objID":"181"
+							"objID":"183"
 						},
 						{
 							"type":"createLayer",
-							"layer":"steps"
+							"layer":"steps3"
 						},
 						{
 							"type":"playSE",
@@ -208,13 +208,13 @@
 					]
 				},
 				{
-					"type":"camera",
-					"nextX":42,
-					"nextY":25,
-					"time":0.5
+					"type":"fadeout"
 				},
 				{
 					"type":"setCamera"
+				},
+				{
+					"type":"fadein"
 				}
 			]
 		}
@@ -524,11 +524,11 @@
 	"9":[
 		{
 			"type":"createObject",
-			"objID":"181"
+			"objID":"183"
 		},
 		{
 			"type":"removeLayer",
-			"layer":"steps"
+			"layer":"steps3"
 		},
 		{
 			"type":"playSE",

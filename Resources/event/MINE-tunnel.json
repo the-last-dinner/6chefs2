@@ -67,14 +67,43 @@
 	],
 	"3":[
 		{
-			"type":"stopBGM",
-			"file":"6kucya.mp3"
-		},
-		{
-			"type":"changeMap",
-			"mapID":"63",
-			"x":17,
-			"y":191
+			"type":"sequence",
+			"action":[
+				{
+					"type":"if",
+					"condition":[
+						{
+							"Nevent":["63","3"]
+						}
+					],
+					"action":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaMsg",
+									"text":["ぐっ・・・\nこの先は暗くて長そうだな・・・"],
+									"charaID":"2",
+									"imgID":"2"
+								},
+								{
+									"type":"displaySaveMenu"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type":"stopBGM",
+					"file":"6kucya.mp3"
+				},
+				{
+					"type":"changeMap",
+					"mapID":"63",
+					"x":17,
+					"y":191
+				}
+			]
 		}
 	],
 	"4":[

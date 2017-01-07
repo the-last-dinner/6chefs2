@@ -23,7 +23,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt10EOwiAQBVBYac+lF7Eb3RrPoDv1INqLeCqHtJNMCIgolDH+n0wmlFJeCJsa81t5WJ0lM9B4S32nsG7CCiec2gpOOOH8X+eR+klh+c610Vlwwuly9cYuZ3p2seOcFucQcLp37rbteb/r5Dk44WzpfBU44YQTTjjhhBPOls6lGWsuH+/3qbO2198n17mi3gW+U8vXTZXr3FDvxfpS3pivnyrHuRf/x7z+W2/Kx//khwxnSW9NXwnvnL5Q3N1dmLS3lY/DZ5s631a+WGJeLT6Z0P3V5PMj74RGX408ATuDGUM=
+   eJzt10EOgjAQBdB2J+fSi8hGlxLPoDv0IOpFvJIbh9iJZFILQygdkz/JTwuF9mV2de5/6kV5eps5+K/zQfMdjXuDucEJJ5xwGguccHbOE41ng5HOjbMZOOFsaH7tPXO19O4S1iw4uaeyum/uvmy/xzp5DU44SzpTBSeccMIJJ5xwwlnSuXKfLOXj86Y6c3vlOVrnmsYqsk8uXxWidW5prHv/z+X95atDNM5G3I/n8A75+E5+VDhjXt5P683pS3nH9ndJX8o71N8Svinekj6N14JPVsxrySeLvVZ9OeoNWrsbpA==
   </data>
  </layer>
  <layer name="MonoShita" width="42" height="50">
@@ -119,7 +119,7 @@
  </layer>
  <layer name="shadow" width="42" height="50">
   <data encoding="base64" compression="zlib">
-   eJztz8EJgEAQwMB72b4tiw0cPiK6MFNBshZvOI+vC57R2dLZ0tnS2dLZ0tnS2ZrSedu1/ulDZ0tna0rnjs6WzpbOls6WzpbOls6WztaUTgBmugBK4Roy
+   eJzt1NEJwCAQBFG/0rYlpOVgA0cCE7yVeRWMK9wY+sN97S54x06WnSw7WXay7GTZybKTldK5VK2z0Tuqzk57n7Cnnd+ldFbsZKV0drqflZQ97WTZybKT5f1kuScrpTPl3yVJmR5tcRkS
   </data>
  </layer>
 </map>

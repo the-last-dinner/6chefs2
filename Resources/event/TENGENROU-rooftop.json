@@ -228,12 +228,12 @@
 								},
 								{
 									"type":"playSE",
-									"file":"chapter3.mp3"
+									"file":"chapter32.mp3"
 								},	
 								{
 									"type":"displayImg",
 									"file":"chapter3.png",
-									"time":14.0
+									"time":9.0
 								}
 							]
 						},

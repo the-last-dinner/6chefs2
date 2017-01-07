@@ -516,9 +516,9 @@
 		}
 	],
 	"10":[
-		
-										{
-											"type":"displaySaveMenu"
-										}
+		{
+			"type":"systemMsg",
+			"text":["あそこのシャッターは開けない方がいい・・・"]
+		}
 	]
 }
