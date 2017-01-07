@@ -297,10 +297,7 @@ void DisplaySaveMenu::run()
     }
     
     if (_eventHelper->hasMember(_json, member::EVENT_ID)) {
-        _initEventId = _json[member::EVENT_ID].GetString();
-        localPlayerData->setInitEventId(_initEventId);
-    } else {
-        _initEventId = nullptr;
+        localPlayerData->setInitEventId(_json[member::EVENT_ID].GetString());
     }
     
     // 主人公一行の位置を登録
