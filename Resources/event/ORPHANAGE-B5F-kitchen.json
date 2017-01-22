@@ -517,7 +517,7 @@
 											"movePattern":"1",
 											"x":20,
 											"y":24,
-											"direction":"RIGHT"
+											"direction":"LEFT"
 										},
 										{
 											"type":"createObject",
@@ -585,6 +585,22 @@
 											]
 										},
 										{
+											"type":"removeLayer",
+											"layer":"magoichi"
+										},
+										{
+											"type":"removeLayer",
+											"layer":"nadeshiko"
+										},
+										{
+											"type":"createLayer",
+											"layer":"magoichi2"
+										},
+										{
+											"type":"createLayer",
+											"layer":"nadeshiko2"
+										},
+										{
 											"type":"playBGM",
 											"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
 										},
@@ -643,10 +659,6 @@
 											"direction":"DOWN"
 										},
 										{
-											"type":"playSE",
-											"file":"hit.mp3"
-										},
-										{
 											"type":"charaMsg",
 											"img":"yuki_naguri.png",
 											"talk":[
@@ -662,6 +674,10 @@
 													"name":"戸塚　大宝"
 												}
 											]
+										},
+										{
+											"type":"playSE",
+											"file":"hit.mp3"
 										},
 										{
 											"type":"charaWalk",
@@ -753,6 +769,9 @@
 											"type":"chase",
 											"objID":"10652",
 											"target":"hero"
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"playBGM",

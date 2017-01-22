@@ -79,7 +79,7 @@
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2KkNgFAQRdHxFEDyCQYUu2LvvxUogAZ4BSAQBIbknuSaUU+PGfCsLZjt4esV9xw/2fkXUfL1gntiZzvTiz2ZbrmznQAAAAAAwL8iMStVpWrVqFZ1zv4MvfYMalSTmtWiVmc7AQAAAADvOAEZpwhQ
+   eJzt1asNgEAQRdH1FECyBAOKv+LffytQAA3wCkCsINmB3JNcM+q5cQ541+GdO33sFWGuj+z8iiSLvSBMamxn/rCn0K00thMAAISr9Mdr1ahWdapXg7H/PmrPpGa1qFVtaje2EwAAAAAAAADwbzcIcwhQ
   </data>
  </layer>
  <layer name="magoichi" width="42" height="56">
@@ -120,7 +120,7 @@
   <object id="190" x="640" y="64" width="32" height="800"/>
   <object id="192" x="352" y="0" width="288" height="128"/>
   <object id="193" x="0" y="0" width="320" height="128"/>
-  <object id="194" x="304" y="528" width="64" height="32"/>
+  <object id="194" x="304" y="320" width="64" height="32"/>
   <object id="195" x="0" y="128" width="32" height="736"/>
   <object id="200" x="304" y="864" width="64" height="32">
    <properties>
@@ -154,7 +154,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="202" x="304" y="528" width="64" height="32">
+  <object id="202" x="304" y="320" width="64" height="32">
    <properties>
     <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>
@@ -173,7 +173,7 @@
  </layer>
  <layer name="CharaUe2" width="42" height="56">
   <data encoding="base64" compression="zlib">
-   eJztzjkOgmAUAOHXuFCK2EAUvP+pVCxlKXFJnAPQ82vmS6afCEmSJEmSJP2zSxlxpRu1dC+XPpr34KujngYaE/2c+HrSi970SfRzVUWsaUNbyqqlj+bt+MppTwUdEv088nWimho6J/opSZIkSdIv+gJtQhI6
+   eJztzjsOglAUANHb+KEUsYEosP9VoViqUPpLnAVQUMkr5iTTT4QkSZL+oSsjznShnq7l0kfTbnzd6UEDjYl+Pvl60Zs+9E30c1VFrGlDW8qqpY+m7fjKaU8FHRL9PPJ1opoaahP9lCRJkiRJkiRJ8/0A7J8SOg==
   </data>
  </layer>
 </map>

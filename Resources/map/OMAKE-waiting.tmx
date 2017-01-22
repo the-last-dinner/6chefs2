@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" nextobjectid="7">
+ <tileset firstgid="1" name="ST-Fdshop-I01" tilewidth="16" tileheight="16" tilecount="1440" columns="16">
+  <image source="ST-Fdshop-I01.png" width="256" height="1440"/>
+ </tileset>
+ <tileset firstgid="1441" name="ST-Town-I01" tilewidth="16" tileheight="16" tilecount="1600" columns="16">
+  <image source="ST-Town-I01.png" width="256" height="1600"/>
+ </tileset>
+ <tileset firstgid="3041" name="ST-Fdshop-I01" tilewidth="16" tileheight="16" tilecount="1440" columns="16">
+  <image source="ST-Fdshop-I01.png" width="256" height="1440"/>
+ </tileset>
+ <tileset firstgid="4481" name="chip10e_glas" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+  <image source="chip10e_glas.png" width="480" height="256"/>
+ </tileset>
+ <layer name="Base" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztjtsNgmAMhf9lYAPZAXABLgsoLKCwAJcFRIe1DSVpjg0xgcee5Eu/89KcENakRCbkyrGjM9fwm4IohUo5dnSmNv7diLvQKMeOzrTGvwfxFDrl2NGZ3vg3EKMwKceOzszGvxexCG/l2NGZj/EvIuIDF3MhkgPX9/k+3+f7fJ/vO2PfXrYdZ2Xb8U++DbZqKw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztyqERACEMRNE1MJP4o/+moAPoAPRF4jaa2We++YDcugHDeLNmvMt4s3a8x3izigPVebO+eJvzioiIvOwHWLwdyg==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztizsKgEAQQ6fy/tfw2y+ovaD2gmsvqGcwgsUyMIy15MErEhIRklJlIjVsYPFawjzpn/yVFtsO9uoTjN5jxH6Cs/oNRu+xYh/hpn6L0Xsc2J/wUr/d6AkhhJA/cgOzgxtu
+  </data>
+ </layer>
+ <layer name="MonoUe" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlMkKwjAURfMF+WeHhT/gR+jOEXTnLOhGrbMbZ7fOLj2LCoVWm5osivjg0MBLDrmQVyH+FcaKSCGiELOJQ0J+7xtzNgkDsGAIIw1fi7NNWMMGtrDTvN8EznCBK9w079e2z0/5zjRcTl8Hupoup28OC4M+UxUkb4p+WrrXXj6VvCX6Zelee/n8KsOeLOQgDwUofvD55a3Qq0IN6tCw5+Cdzy9vj15fYS5V8y7Zs1KYS9W8R3onhbn8pfccxBfWvK//qam8exwHg3nvOB4G84a1nhDAa5E=
+  </data>
+ </layer>
+ <layer name="MonoUe2" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZQEGIgUERDSsJkW9eDFBvLBqOo8C8UTAKRsEoGAWjYBQMXQAA/uoDzQ==
+  </data>
+ </layer>
+ <layer name="MonoUe3" width="20" height="30">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBiZ4JIgA8NlINYRYmDQFYKwrwiSbx4f0Ax+IPYCYm8oW0CIeu4dBaNgFIyCUTAKRsHQAQDpAQVL
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="320" height="128"/>
+  <object id="2" x="0" y="128" width="64" height="352"/>
+  <object id="3" x="64" y="448" width="80" height="32"/>
+  <object id="4" x="288" y="128" width="32" height="352"/>
+  <object id="5" x="176" y="448" width="112" height="32"/>
+  <object id="6" x="192" y="240" width="96" height="64"/>
+ </objectgroup>
+ <layer name="CharaUe" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAroA07yMTCc4sNkkwtuAvXf4sNkj4JRMNAAABkVBv0=
+  </data>
+ </layer>
+</map>

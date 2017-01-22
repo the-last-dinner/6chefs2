@@ -95,26 +95,31 @@
 			],
 			"action":[
 				{
-					"type":"charaMsg",
-					"talk":[
-						{
-							"text":["俺の力でも開かねぇな・・・\nオレより力がある奴って言や・・・"],
-							"charaID":"8",
-							"imgID":"1"
-						}
-					]
-				},
-				{
-					"type":"if",
-					"condition":[
-						{
-							"Ntrophy":"8"
-						}
-					],
+					"type":"sequence",
 					"action":[
 						{
-							"type":"getTrophy",
-							"trophyID":"8"
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["俺の力でも開かねぇな・・・\nオレより力がある奴って言や・・・"],
+									"charaID":"8",
+									"imgID":"1"
+								}
+							]
+						},
+						{
+							"type":"if",
+							"condition":[
+								{
+									"Ntrophy":"8"
+								}
+							],
+							"action":[
+								{
+									"type":"getTrophy",
+									"trophyID":"8"
+								}
+							]
 						}
 					]
 				}
