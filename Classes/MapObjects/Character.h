@@ -13,7 +13,6 @@
 
 struct CharacterData;
 class MovePattern;
-class CSNode;
 class HitPoint;
 class AttackBox;
 class HitBox;
@@ -39,7 +38,6 @@ private:
     int _charaId { static_cast<int>(CharacterID::UNDIFINED) };
 protected:
     MovePattern* _movePattern { nullptr };
-    CSNode* _csNode { nullptr };
     AttackBox* _battleAttackBox { nullptr };
     Sight* _sight { nullptr };
     bool _isInAttackMotion { nullptr };
@@ -65,12 +63,6 @@ public:
     bool walkBy(const vector<Direction>& directions, function<void(bool)> cb, float speed, bool back, bool ignoreCollision);
     void lookAround(function<void()> callback);
     void lookAround(function<void()> callback, Direction direction);
-    
-    // CSNode
-    bool isAnimationPlaying() const;
-    void playAnimation(const string& name, float speed, bool loop = false);
-    void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
-    void playAnimation(const string& name, function<void(Character*)> callback);
     
     // TerrainState
     void stamp(const Direction direction, const float ratio = 1.0f);
