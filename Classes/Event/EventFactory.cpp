@@ -86,6 +86,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"setLight", SetLightEvent::create},                // オブジェクトに光をセット
     {"removeLight", RemoveLightEvent::create},          // オブジェクトから光を消す
     {"setMovable", SetMovableEvent::create},            // オブジェクトに動かせるかどうかをセット
+    {"objAnimate", MapObjectAnimateEvent::create},      // 登録されているアニメーションを再生
     
     // キャラクター系
     {"changeDirection", ChangeDirectionEvent::create},  // 方向転換
