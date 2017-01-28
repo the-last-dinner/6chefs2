@@ -395,6 +395,17 @@
 		DCA4496A1DA2445A005C5F9A /* CameraEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449671DA2445A005C5F9A /* CameraEvent.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
+		DCC5208C1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */; };
+		DCC5208D1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */; };
+		DCC520941E3C7613008F5B5A /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5208E1E3C7613008F5B5A /* libavcodec.a */; };
+		DCC520951E3C7613008F5B5A /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5208F1E3C7613008F5B5A /* libavdevice.a */; };
+		DCC520961E3C7613008F5B5A /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC520901E3C7613008F5B5A /* libavfilter.a */; };
+		DCC520971E3C7613008F5B5A /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC520911E3C7613008F5B5A /* libavformat.a */; };
+		DCC520981E3C7613008F5B5A /* libavresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC520921E3C7613008F5B5A /* libavresample.a */; };
+		DCC520991E3C7613008F5B5A /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC520931E3C7613008F5B5A /* libavutil.a */; };
+		DCC5209D1E3C7847008F5B5A /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5209A1E3C7847008F5B5A /* libpostproc.a */; };
+		DCC5209E1E3C7847008F5B5A /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5209B1E3C7847008F5B5A /* libswresample.a */; };
+		DCC5209F1E3C7847008F5B5A /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5209C1E3C7847008F5B5A /* libswscale.a */; };
 		DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
 		DCCA52571C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */; };
 		DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */; };
@@ -824,6 +835,17 @@
 		DCA449681DA2445A005C5F9A /* CameraEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraEvent.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
+		DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoSprite.cpp; path = Video/VideoSprite.cpp; sourceTree = "<group>"; };
+		DCC520851E3C6D0C008F5B5A /* VideoSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoSprite.h; path = Video/VideoSprite.h; sourceTree = "<group>"; };
+		DCC5208E1E3C7613008F5B5A /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../lib/ffmpeg/lib/libavcodec.a; sourceTree = "<group>"; };
+		DCC5208F1E3C7613008F5B5A /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../lib/ffmpeg/lib/libavdevice.a; sourceTree = "<group>"; };
+		DCC520901E3C7613008F5B5A /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../lib/ffmpeg/lib/libavfilter.a; sourceTree = "<group>"; };
+		DCC520911E3C7613008F5B5A /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../lib/ffmpeg/lib/libavformat.a; sourceTree = "<group>"; };
+		DCC520921E3C7613008F5B5A /* libavresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavresample.a; path = ../lib/ffmpeg/lib/libavresample.a; sourceTree = "<group>"; };
+		DCC520931E3C7613008F5B5A /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../lib/ffmpeg/lib/libavutil.a; sourceTree = "<group>"; };
+		DCC5209A1E3C7847008F5B5A /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpostproc.a; path = ../lib/ffmpeg/lib/libpostproc.a; sourceTree = "<group>"; };
+		DCC5209B1E3C7847008F5B5A /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../lib/ffmpeg/lib/libswresample.a; sourceTree = "<group>"; };
+		DCC5209C1E3C7847008F5B5A /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ../lib/ffmpeg/lib/libswscale.a; sourceTree = "<group>"; };
 		DCCA52541C945625004769E1 /* KeyconfigMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigMenuLayer.cpp; sourceTree = "<group>"; };
 		DCCA52551C945625004769E1 /* KeyconfigMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigMenuLayer.h; sourceTree = "<group>"; };
 		DCCDBC171DE181D50026AF5C /* PlayerControlState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerControlState.cpp; path = PlayerControlState/PlayerControlState.cpp; sourceTree = "<group>"; };
@@ -901,6 +923,15 @@
 				5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */,
 				5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */,
 				2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */,
+				DCC520941E3C7613008F5B5A /* libavcodec.a in Frameworks */,
+				DCC520951E3C7613008F5B5A /* libavdevice.a in Frameworks */,
+				DCC520961E3C7613008F5B5A /* libavfilter.a in Frameworks */,
+				DCC520971E3C7613008F5B5A /* libavformat.a in Frameworks */,
+				DCC520981E3C7613008F5B5A /* libavresample.a in Frameworks */,
+				DCC520991E3C7613008F5B5A /* libavutil.a in Frameworks */,
+				DCC5209D1E3C7847008F5B5A /* libpostproc.a in Frameworks */,
+				DCC5209E1E3C7847008F5B5A /* libswresample.a in Frameworks */,
+				DCC5209F1E3C7847008F5B5A /* libswscale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +1032,15 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCC5209A1E3C7847008F5B5A /* libpostproc.a */,
+				DCC5209B1E3C7847008F5B5A /* libswresample.a */,
+				DCC5209C1E3C7847008F5B5A /* libswscale.a */,
+				DCC5208E1E3C7613008F5B5A /* libavcodec.a */,
+				DCC5208F1E3C7613008F5B5A /* libavdevice.a */,
+				DCC520901E3C7613008F5B5A /* libavfilter.a */,
+				DCC520911E3C7613008F5B5A /* libavformat.a */,
+				DCC520921E3C7613008F5B5A /* libavresample.a */,
+				DCC520931E3C7613008F5B5A /* libavutil.a */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
@@ -1556,6 +1596,7 @@
 		DC0391561C871E1000C50E8E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DCC520711E3C6915008F5B5A /* Video */,
 				DC0391571C871E1000C50E8E /* Cloud.cpp */,
 				DC0391581C871E1000C50E8E /* Cloud.h */,
 				DC0391591C871E1000C50E8E /* Notification */,
@@ -1678,6 +1719,15 @@
 				DCA4495C1DA0EAA0005C5F9A /* DungeonSceneEventHandler.h */,
 			);
 			name = EventHandler;
+			sourceTree = "<group>";
+		};
+		DCC520711E3C6915008F5B5A /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */,
+				DCC520851E3C6D0C008F5B5A /* VideoSprite.h */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		DCCDBC161DE181A10026AF5C /* PlayerControlState */ = {
@@ -1948,6 +1998,7 @@
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC25948B1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */,
 				DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */,
+				DCC5208C1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391EB1C871E1000C50E8E /* ItemObject.cpp in Sources */,
@@ -2138,6 +2189,7 @@
 				DC0391881C871E1000C50E8E /* TitleSceneData.cpp in Sources */,
 				9FD0206D1E03ACEB00803F3B /* LadderArea.cpp in Sources */,
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
+				DCC5208D1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */,
 				26460B9E1D72EDA600F0336C /* TrophyData.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
 				DC0182A21D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */,
@@ -2324,9 +2376,13 @@
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
+					"$(SRCROOT)/../lib/ffmpeg/include",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
+					"$(SRCROOT)/../lib/ffmpeg/lib",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -2356,9 +2412,13 @@
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
+					"$(SRCROOT)/../lib/ffmpeg/include",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
+					"$(SRCROOT)/../lib/ffmpeg/lib",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
