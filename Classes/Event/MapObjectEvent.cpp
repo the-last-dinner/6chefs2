@@ -340,3 +340,23 @@ void SetMovableEvent::run()
     if(_fileName != "") target->setMovingSoundFileName(_fileName);
     this->setDone();
 }
+
+#pragma mark -
+#pragma mark MapObjectAnimateEvent
+
+bool MapObjectAnimateEvent::init(rapidjson::Value& json)
+{
+    if (!MapObjectEvent::init(json)) return false;
+    if (!_eventHelper->hasMember(_json, member::NAME)) return false;
+    
+    _animationName = _json[member::NAME].GetString();
+    if (_eventHelper->hasMember(_json, member::SPEED)) _speed = static_cast<float>(_json[member::SPEED].GetDouble());
+    
+    return true;
+}
+
+void MapObjectAnimateEvent::run()
+{
+    MapObject* target { _eventHelper->getMapObjectById(_objectId) };
+    target->playAnimation(_animationName, [this](MapObject* obj){ this->setDone(); });
+}

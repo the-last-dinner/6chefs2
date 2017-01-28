@@ -79,7 +79,10 @@ void AttackCommand::execute(MapObject* target)
     }
     
     character->getBattleAttackBox()->setPower(data->power);
-    character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), CC_CALLBACK_1(AttackCommand::onAttackAnimationFinished, this));
+    character->playAnimation(Character::AnimationName::getAttack(_name, character->getDirection()), [character, this](MapObject* obj)
+    {
+        this->onAttackAnimationFinished(character);
+    });
     
     if (data->motionSound != "") {
         SoundManager::getInstance()->playSE(data->motionSound, data->motionSoundVolume);
