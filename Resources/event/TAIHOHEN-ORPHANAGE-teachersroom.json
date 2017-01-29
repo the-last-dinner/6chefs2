@@ -71,38 +71,32 @@
 								{
 									"text":["あら、タイホウ君。どうしたの？"],
 									"charaID":"33",
-									"imgID":"1",
-									"miniChara":true
+									"imgID":"1"
 								},
 								{
 									"text":["なんでもないけど、なにしてんのかなって。"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								},
 								{
 									"text":["あのね、子供を「引き取りたい」って人から\n連絡が来はじめてね","少し寂しくなるけど\nやっぱりずっと\nここにいるわけにもいかないから・・・","皆の新しいおうちを探す\nお仕事をしてるんだよ","悪い人のところに行ったりしないようにね。"],
 									"charaID":"33",
-									"imgID":"1",
-									"miniChara":true
+									"imgID":"1"
 								},
 								{
 									"text":["もうここには住めねぇのか？"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								},
 								{
 									"text":["そんなことないわ。\nでも何人かはもうすぐ\nお別れしちゃうことになるかもしれないね。"],
 									"charaID":"33",
-									"imgID":"1",
-									"miniChara":true
+									"imgID":"1"
 								},
 								{
 									"text":["そうか・・・"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								}
 							]
 						},
@@ -134,8 +128,7 @@
 							"type":"charaMsg",
 							"text":["さぁ、今日も一日がんばるぞ！"],
 							"charaID":"33",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						},
 						{
 							"type":"changeDirection",
@@ -205,8 +198,7 @@
 							"type":"charaMsg",
 							"text":["あら、きみ達・・・\nダメじゃないの。もう寝る時間よ。"],
 							"charaID":"33",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						},
 						{
 							"type":"fadeout"

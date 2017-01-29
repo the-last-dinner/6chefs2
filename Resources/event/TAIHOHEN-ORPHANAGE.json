@@ -277,8 +277,7 @@
 						{
 							"text":["はい、君達は今日から一緒に暮らす\n「オトモダチ」です。","仲良く、元気にいこうね！"],
 							"charaID":"33",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						},
 						{
 							"text":["・・・"],
@@ -288,8 +287,7 @@
 						{
 							"text":["じゃ、じゃあ先生はお仕事があるから\n皆仲良く遊んでるんだよ！"],
 							"charaID":"33",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						}
 					]
 				},
@@ -397,8 +395,7 @@
 									"type":"charaMsg",
 									"charaID":"22",
 									"imgID":"2",
-									"text":["・・・"],
-									"miniChara":true
+									"text":["・・・"]
 								},
 								{
 									"type":"charaWalk",
@@ -422,27 +419,23 @@
 											"text":["ねぇアンタ。\nなんでそんなコワイ顔してんの？"],
 											"charaID":"31",
 											"name":"？？？",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										},
 										{
 											"text":["・・・\nあ？"],
 											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										},
 										{
 											"text":["さっき先生も言ってたでしょ？\n今日から一緒に暮らすんだから\n仲良くしましょうよ。"],
 											"charaID":"31",
 											"name":"？？？",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										},
 										{
 											"text":["・・・"],
 											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										}
 									]
 								},
@@ -470,42 +463,36 @@
 											"charaID":"32",
 											"name":"？？？",
 											"imgID":"2",
-											"miniChara":true,
 											"option":"reaction"
 										},
 										{
 											"text":["・・・なんだよ・・・"],
 											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										},
 										{
 											"text":["お前だよ！お前！\nオレはヨシツネってんだ！"],
 											"charaID":"32",
 											"name":"？？？",
 											"imgID":"2",
-											"miniChara":true,
 											"option":"reaction"
 										},
 										{
 											"text":["・・・聞いてねぇよ"],
 											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										},
 										{
 											"text":["ちょっと！ヨシツネ！\n私が話してるんだから！"],
 											"charaID":"31",
 											"name":"？？？",
 											"imgID":"2",
-											"miniChara":true,
 											"option":"reaction"
 										},
 										{
 											"text":["ほっとけ・・・"],
 											"charaID":"22",
-											"imgID":"2",
-											"miniChara":true
+											"imgID":"2"
 										}
 									]
 								},
@@ -574,52 +561,44 @@
 								{
 									"text":["ねぇ・・・タイホウ・・・\nアンタって将来の夢とか・・・","そういうのあるの？"],
 									"charaID":"31",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["あ？将来の夢・・・？","・・・","(考えた・・・こともなかったな・・・)"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								},
 								{
 									"text":["ちょっと・・・何よそのアホ面！","どうせ先のことなんて\n何も考えてなかったんでしょ！\nもう、しょうがないわね。"],
 									"charaID":"31",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["いや・・・というより・・・","将来とか・・・"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								},
 								{
 									"text":["・・・"],
 									"charaID":"31",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["!!!"],
 									"charaID":"31",
 									"imgID":"2",
-									"miniChara":true,
 									"option":"reaction"
 								},
 								{
 									"text":["イテ！なにしやがんだ！"],
 									"charaID":"22",
 									"imgID":"3",
-									"miniChara":true,
 									"option":"reaction"
 								},
 								{
 									"text":["ちょっとついて来なさい！"],
 									"charaID":"31",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								}
 							]
 						},
@@ -653,8 +632,7 @@
 					"type":"charaMsg",
 					"text":["ちゃんと先のことも考えなさいよね！"],
 					"charaID":"31",
-					"imgID":"2",
-					"miniChara":true
+					"imgID":"2"
 				}		
 			]
 		}
@@ -681,8 +659,7 @@
 									"type":"charaMsg",
 									"text":["いや、また今度にしとくわ・・・"],
 									"charaID":"22",
-									"imgID":"4",
-									"miniChara":true
+									"imgID":"4"
 								}
 							]
 						},
@@ -718,44 +695,37 @@
 												{
 													"text":["へへ、そうこなくっちゃな。","おいタイホウ、聞いたかよ？"],
 													"charaID":"32",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["なんだよ"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["金鉱跡に”テンゲンロウ”って\n建物ができるんだってよ。","そこには色んな「ウマい食い物」が\n集まるんだってよ。","なぁ、行ってみたくね？"],
 													"charaID":"32",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["え？でも外になんか\nなかなか出られないぜ？"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["だからよ・・・","ぬけ出すんだよ・・・\n皆が寝たあとにな"],
 													"charaID":"32",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["まったくお前ってヤツは・・・"],
 													"charaID":"22",
-													"imgID":"4",
-													"miniChara":true
+													"imgID":"4"
 												},
 												{
 													"text":["おもしろそうじゃねぇか!"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												}
 											]
 										},
@@ -786,88 +756,74 @@
 												{
 													"text":["おもしろそうな話してるじゃない。"],
 													"charaID":"31",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["ヤエ！？","ど、どっから聞いてたんだ？"],
 													"charaID":"32",
 													"imgID":"3",
-													"miniChara":true,
 													"option":"reaction"
 												},
 												{
 													"text":["ぜ・ん・ぶ・聞こえてたわよ。"],
 													"charaID":"31",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["せ、先生に言うのか？"],
 													"charaID":"32",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["言わないよ！\nただ・・・"],
 													"charaID":"31",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["ただ・・・？"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["わたしも連れてって・・・"],
 													"charaID":"31",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["え？"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["だから！\nわたしも行きたいの！連れて行って！"],
 													"charaID":"31",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["ふふ・・・"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["そうだな。\nオレ一人じゃヨシツネのアホの\n面倒を見きれねぇからな。","ヤエが来てくれるのは助かるぜ"],
 													"charaID":"22",
-													"imgID":"6",
-													"miniChara":true
+													"imgID":"6"
 												},
 												{
 													"text":["おい！"],
 													"charaID":"32",
 													"imgID":"3",
-													"miniChara":true,
 													"option":"reaction"
 												},
 												{
 													"text":["・・・"],
 													"charaID":"32",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["まぁいいか！\nじゃあさっそく今日の夜\nさくせんかいぎだな！"],
 													"charaID":"32",
-													"imgID":"1",
-													"miniChara":true
+													"imgID":"1"
 												}
 											]
 										},
@@ -906,32 +862,27 @@
 												{
 													"text":["ねみぃ・・・"],
 													"charaID":"22",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["あぁ、遅くまで\n”さくせんかいぎ”してたからな"],
 													"charaID":"32",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["お？そういえば今日ヤエ見たか？"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												},
 												{
 													"text":["そういえば見てないな。\n部屋にもいなかったし・・・"],
 													"charaID":"32",
-													"imgID":"2",
-													"miniChara":true
+													"imgID":"2"
 												},
 												{
 													"text":["はーい、\n今日はみんなにお知らせがありまーす。"],
 													"charaID":"33",
-													"imgID":"1",
-													"miniChara":true
+													"imgID":"1"
 												}
 											]
 										},
@@ -1050,8 +1001,7 @@
 											"type":"charaMsg",
 											"text":["みんなにうれしいお知らせです！","ヤエちゃんに\n”あたらしいおうち”が見つかりました。"],
 											"charaID":"33",
-											"imgID":"1",
-											"miniChara":true
+											"imgID":"1"
 										},
 										{
 											"type":"spawn",
@@ -1076,32 +1026,27 @@
 												{
 													"text":["ま、まじか・・・"],
 													"charaID":"32",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["ヤエちゃんいいなぁ・・・"],
 													"charaID":"10",
-													"name":"孤児院の子供",
-													"miniChara":true
+													"name":"孤児院の子供"
 												},
 												{
 													"text":["少し寂しくなるけど・・・\nお別れまでのあと少し・・・\n思いっきり仲良く遊ぼうね！"],
 													"charaID":"33",
-													"imgID":"1",
-													"miniChara":true
+													"imgID":"1"
 												},
 												{
 													"text":["・・・"],
 													"charaID":"31",
-													"imgID":"3",
-													"miniChara":true
+													"imgID":"3"
 												},
 												{
 													"text":["ヤエ・・・"],
 													"charaID":"22",
-													"imgID":"5",
-													"miniChara":true
+													"imgID":"5"
 												}
 											]
 										},
@@ -1129,8 +1074,7 @@
 					"type":"charaMsg",
 					"text":["な・・・\n何がどうなってんだ・・・"],
 					"charaID":"32",
-					"imgID":"1",
-					"miniChara":true
+					"imgID":"1"
 				}
 			]
 		}
@@ -1140,8 +1084,7 @@
 			"type":"charaMsg",
 			"text":["今日のゴハンはなんだろうな？"],
 			"charaID":"10",
-			"name":"孤児院の子供",
-			"miniChara":true
+			"name":"孤児院の子供"
 		}
 	],
 	"7":[
@@ -1176,8 +1119,7 @@
 							"type":"charaMsg",
 							"text":["おい、ヤエに話聞こうぜ"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"type":"charaWalk",
@@ -1196,8 +1138,7 @@
 			"type":"charaMsg",
 			"text":["みんなも早くあたらしいおうち\n見つかるといいね"],
 			"charaID":"33",
-			"imgID":"1",
-			"miniChara":true
+			"imgID":"1"
 		}
 	],
 	"9":[
@@ -1235,93 +1176,78 @@
 						{
 							"text":["おい、さっきの話って・・・\nまじか？"],
 							"charaID":"32",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["うん・・・"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["出発はいつなんだ？"],
 							"charaID":"22",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						},
 						{
 							"text":["それが・・・今夜なの・・・"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["こ、今夜！？","じゃあテンゲンロウ行けねぇじゃねぇか！"],
 							"charaID":"32",
 							"imgID":"3",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["うん・・・\nごめん・・・","どうしても今日じゃないとダメみたいなの"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["行ってこい！"],
 							"charaID":"22",
-							"imgID":"6",
-							"miniChara":true
+							"imgID":"6"
 						},
 						{
 							"text":["え？"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["行って・・・\nオレ達の分まで幸せになってこい！","オレ達はオレ達で今夜\nウマいモンたらふく食ってくるからよ！"],
 							"charaID":"22",
-							"imgID":"6",
-							"miniChara":true
+							"imgID":"6"
 						},
 						{
 							"text":["タイホウ・・・"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["そうだぜ！\nヤエは新しいウチで\nウマいモン沢山食わしてもらえや"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["ヨシツネ・・・","・・・"],
 							"charaID":"31",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["ありがとう"],
 							"charaID":"31",
-							"imgID":"4",
-							"miniChara":true
+							"imgID":"4"
 						},
 						{
 							"text":["泣くなよ・・・"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						}
 					]
 				},

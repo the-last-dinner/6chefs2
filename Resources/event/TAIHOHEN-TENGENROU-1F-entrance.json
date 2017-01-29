@@ -53,14 +53,12 @@
 						{
 							"text":["なんか・・・思ってたのと違うな・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["まぁ少し見てみようぜ"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						}
 					]
 				},
@@ -100,20 +98,17 @@
 						{
 							"text":["うん・・・？おい、これって・・・","人・・・間・・・？"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["しかもこれって・・・\nなんか誰かに似てねぇか？"],
 							"charaID":"32",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["なにやってんだお前たち！！"],
@@ -164,8 +159,7 @@
 						{
 							"text":["やべ！警備員だ！\nズラかるぞ！"],
 							"charaID":"32",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["子供が忍び込んでる！\n至急応援を頼む！"],

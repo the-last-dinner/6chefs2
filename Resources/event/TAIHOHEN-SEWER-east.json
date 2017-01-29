@@ -98,14 +98,12 @@
 						{
 							"text":["なんだよ・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["なんなんだよお前ら！！"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
@@ -116,33 +114,28 @@
 						{
 							"text":["タイホウ・・・逃げろ・・・\nこいつら・・・やっぱりおかしい・・・"],
 							"charaID":"32",
-							"imgID":"4",
-							"miniChara":true
+							"imgID":"4"
 						},
 						{
 							"text":["ヨシツネ！"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["お前はそこの穴から逃げて・・・\n助けを呼んできてくれ・・・","だいじょうぶだ。\n二人で捕まるよりマシだろ？"],
 							"charaID":"32",
-							"imgID":"4",
-							"miniChara":true
+							"imgID":"4"
 						},
 						{
 							"text":["ヨシツネ・・・"],
 							"charaID":"22",
-							"imgID":"7",
-							"miniChara":true
+							"imgID":"7"
 						},
 						{
 							"text":["ちくしょう！"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]

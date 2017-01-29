@@ -32,14 +32,12 @@
 								{
 									"text":["誰か・・・誰か・・・"],
 									"charaID":"22",
-									"imgID":"7",
-									"miniChara":true
+									"imgID":"7"
 								},
 								{
 									"text":["ぐっ！"],
 									"charaID":"22",
 									"imgID":"7",
-									"miniChara":true,
 									"option":"reaction"
 								}
 							]
@@ -90,8 +88,7 @@
 					"type":"charaMsg",
 					"text":["せ、せんせい・・・？"],
 					"charaID":"22",
-					"imgID":"5",
-					"miniChara":true
+					"imgID":"5"
 				},
 				{
 					"type":"changeDirection",
@@ -104,39 +101,33 @@
 						{
 							"text":["あら・・・タイホウくん・・・\nダメじゃない、もう寝る時間でしょ？"],
 							"charaID":"33",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["先生！ヨシツネが・・・\nそれと・・・ヤエは・・・！？"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["何を言ってるか分からないわ・・・","タイホウくん・・・","この北森はね・・・\n金鉱が閉じてからお金がないのよ・・・"],
 							"charaID":"33",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["なんだよ・・・そんなことより・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["そこで北森が目を付けたのは\n北森金鉱の崩落事故によって生まれた\n孤児・・・"],
 							"charaID":"33",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["先生！"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]
@@ -149,8 +140,7 @@
 					"type":"charaMsg",	
 					"text":["おいしいものにお金をかけるのは\nどこの国も同じみたいね・・・"],
 					"charaID":"33",
-					"imgID":"2",
-					"miniChara":true
+					"imgID":"2"
 				},
 				{
 					"type":"fadeout"
@@ -186,20 +176,17 @@
 							"text":["どういうことだよ！？"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["ヒトには\n”食うもの”と”食われるもの”がいるのよ。","北森のためなの・・・\n分かってくれるよね・・・","タイホウくん・・・？"],
 							"charaID":"33",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["・・・！？"],
 							"charaID":"22",
 							"imgID":"7",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]
