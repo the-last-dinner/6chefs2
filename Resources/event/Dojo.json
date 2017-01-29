@@ -205,8 +205,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"ranmaru_stand.png",
-		        	"time":2.0
+		        	"file":"ranmaru_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -216,8 +215,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"magoichi_stand.png",
-		        	"time":2.0
+		        	"file":"magoichi_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -227,8 +225,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"dandan_stand.png",
-		        	"time":2.0
+		        	"file":"dandan_stand.png"
 		        },
 		        {
 		        	"type":"spawn",
@@ -259,8 +256,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"manaka_stand.png",
-		        	"time":2.0
+		        	"file":"manaka_stand.png"
 		        },
 		        {
 		        	"type":"charaWalkTo",
@@ -281,8 +277,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"nadeshiko_stand.png",
-		        	"time":2.0
+		        	"file":"nadeshiko_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -292,8 +287,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"daigoro_stand.png",
-		        	"time":2.0
+		        	"file":"daigoro_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -908,8 +902,7 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"syuka_stand.png",
-		       							 	"time":2.0
+								        	"file":"syuka_stand.png"
 								        },
 								        {
 								        	"type":"charaWalk",
@@ -943,8 +936,7 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"tamuken_stand.png",
-		      							  	"time":2.0
+								        	"file":"tamuken_stand.png"
 								        },
 								        {
 								        	"type":"charaMsg",
@@ -1210,8 +1202,7 @@
 								        },
 								        {
 								        	"type":"displayImg",
-								        	"file":"yuki_stand.png",
-		       							 	"time":2.0
+								        	"file":"yuki_stand.png"
 								        },
 								        {
 								        	"type":"charaMsg",
