@@ -24,6 +24,7 @@ class MapObjectCommandQueue;
 class HitBox;
 class HitPoint;
 class Battle;
+class CSNode;
 
 class MapObject : public Node
 {
@@ -57,6 +58,7 @@ protected:
     HitBox* _hitBox { nullptr };
     HitPoint* _hitPoint { nullptr };
     Battle* _battle { nullptr };
+    CSNode* _csNode { nullptr };
 public:
     function<void(MapObject*)> onMoved { nullptr };
 	
@@ -129,6 +131,12 @@ public:
 // Battle
 public:
     virtual bool canAttack(MapObject* target) const;
+    
+// CSNode
+public:
+    void playAnimation(const string& name, float speed, bool loop = false);
+    void playAnimationIfNotPlaying(const string& name, float speed = 1.f);
+    void playAnimation(const string& name, function<void(MapObject*)> callback);
 
 // move
 public:

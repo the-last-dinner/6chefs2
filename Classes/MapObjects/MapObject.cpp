@@ -8,6 +8,8 @@
 
 #include "MapObjects/MapObject.h"
 
+#include "CocosStudio/CSNode.h"
+
 #include "MapObjects/Command/MapObjectCommand.h"
 #include "MapObjects/Command/MapObjectCommandQueue.h"
 #include "MapObjects/Command/MoveCommand.h"
@@ -284,6 +286,28 @@ void MapObject::onLostHP()
 bool MapObject::canAttack(MapObject* target) const
 {
     return false;
+}
+
+#pragma mark -
+#pragma mark CSNode
+
+// アニメーションを再生
+void MapObject::playAnimation(const string& name, float speed, bool loop)
+{
+    if (!_csNode) return;
+    _csNode->play(name, speed, loop);
+}
+
+void MapObject::playAnimationIfNotPlaying(const string& name, float speed)
+{
+    if (!_csNode) return;
+    _csNode->playIfNotPlaying(name, speed);
+}
+
+void MapObject::playAnimation(const string& name, function<void(MapObject*)> callback)
+{
+    if (!_csNode) return;
+    _csNode->play(name, [this, callback]{ callback(this); });
 }
 
 #pragma mark -
