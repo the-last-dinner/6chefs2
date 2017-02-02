@@ -7,13 +7,13 @@
 			<key>Ctaihou_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{26,0},{25,32}}</string>
+				<string>{{0,4038},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{25,32}}</string>
+				<string>{{4,3},{23,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -21,13 +21,13 @@
 			<key>Ctaihou_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{26,33},{25,33}}</string>
+				<string>{{0,4067},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{25,33}}</string>
+				<string>{{4,3},{23,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -35,13 +35,13 @@
 			<key>Ctaihou_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{26,67},{25,33}}</string>
+				<string>{{24,3945},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{4,0},{25,33}}</string>
+				<string>{{4,3},{23,28}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -49,13 +49,13 @@
 			<key>Ctaihou_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{52,66},{24,32}}</string>
+				<string>{{24,4034},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,32}}</string>
+				<string>{{5,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -63,13 +63,13 @@
 			<key>Ctaihou_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{77,33},{24,32}}</string>
+				<string>{{46,3974},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,32}}</string>
+				<string>{{5,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -77,13 +77,13 @@
 			<key>Ctaihou_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{77,0},{24,32}}</string>
+				<string>{{24,4064},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{24,32}}</string>
+				<string>{{5,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -91,13 +91,13 @@
 			<key>Ctaihou_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{77,66},{24,32}}</string>
+				<string>{{46,4004},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,32}}</string>
+				<string>{{6,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -105,13 +105,13 @@
 			<key>Ctaihou_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{52,0},{24,32}}</string>
+				<string>{{24,3974},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,32}}</string>
+				<string>{{6,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -119,13 +119,13 @@
 			<key>Ctaihou_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{52,33},{24,32}}</string>
+				<string>{{24,4004},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{5,0},{24,32}}</string>
+				<string>{{6,4},{21,29}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -133,13 +133,13 @@
 			<key>Ctaihou_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,68},{25,32}}</string>
+				<string>{{0,4007},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{25,32}}</string>
+				<string>{{4,3},{23,30}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -147,13 +147,13 @@
 			<key>Ctaihou_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,34},{25,33}}</string>
+				<string>{{0,3976},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{25,33}}</string>
+				<string>{{4,3},{23,30}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
 			</dict>
@@ -161,15 +161,239 @@
 			<key>Ctaihou_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{25,33}}</string>
+				<string>{{0,3945},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{3,0},{25,33}}</string>
+				<string>{{4,3},{23,30}}</string>
 				<key>sourceSize</key>
 				<string>{32,33}</string>
+			</dict>
+
+			<key>Ctaihou_m_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{187,3351},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{187,3351},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{187,3351},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{187,3153},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3747},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3549},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3351},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_m_7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3153},{186,197}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{7,1},{186,197}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>Ctaihou_s_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2102},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2102},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2102},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{400,1051},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{400,0},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{400,2102},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,1051},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>Ctaihou_s_7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{399,1050}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{142,135},{399,1050}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
 			</dict>
 
 		</dict>
@@ -179,7 +403,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{128,128}</string>
+			<string>{1024,4096}</string>
 			<key>textureFileName</key>
 			<string>Ctaihou.png</string>
 			</dict>
