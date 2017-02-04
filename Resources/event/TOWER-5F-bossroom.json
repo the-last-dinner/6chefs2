@@ -11,6 +11,10 @@
 				{
 					"type":"removeLayer",
 					"layer":"door1"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door12"
 				}
 			]
 		},
@@ -25,6 +29,10 @@
 				{
 					"type":"removeLayer",
 					"layer":"door2"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door22"
 				}
 			]
 		},
@@ -39,6 +47,10 @@
 				{
 					"type":"removeLayer",
 					"layer":"door3"
+				},
+				{
+					"type":"removeLayer",
+					"layer":"door32"
 				}
 			]
 		},
@@ -296,15 +308,8 @@
 							"time":0.5
 						},
 						{
-							"type":"fadein"
-						},
-						{
 							"type":"playBGM",
 							"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
-						},
-						{
-							"type":"wait",
-							"time":1.0
 						},
 						{
 							"type":"charaMsg",
@@ -331,6 +336,9 @@
 									"name":"中山 撫子"
 								}
 							]
+						},
+						{
+							"type":"fadein"
 						},
 						{
 							"type":"charaMsg",
@@ -839,6 +847,10 @@
 			"layer":"door1"
 		},
 		{
+			"type":"removeLayer",
+			"layer":"door12"
+		},
+		{
 			"type":"already"
 		}
 	],
@@ -860,6 +872,10 @@
 		{
 			"type":"removeLayer",
 			"layer":"door2"
+		},
+		{
+			"type":"removeLayer",
+			"layer":"door22"
 		},
 		{
 			"type":"already"
@@ -886,6 +902,13 @@
 		{
 			"type":"removeLayer",
 			"layer":"door3"
+		},
+		{
+			"type":"removeLayer",
+			"layer":"door32"
+		},
+		{
+			"type":"already"
 		}
 	],
 	"22":[

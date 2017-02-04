@@ -25,7 +25,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2m0KgjAAh/HdYN7/DuVBqjPUV+sKCTEqEB2+7L/pNp4f7FNq2wNFuoyBqrfGPJv9x8MevfKvLev3zfnW7D9n53LQ+45tWb9vzvRbfyz9puinoZ+Gfhr6aeinoZ9ma7/r6Hj6rT+2+92HhJ4fU4n9UpwfqpZ+zrmZjnZw3ZPn9TWjnZlbTf2WrhuyVvc9Oze32vvFQD8N/TT009BPU1u//++QoZT7H6+ZuXWJ3jPmHMdyun8rUU7PD0pEPw39NPTT0E9DPw39NPTT0E9DPw39NL5+bxu2t5Fy+PZNQvdgYo57Jv/5XOL7TOTyvKsE9NPQD1j2AS1dA5M=
+   eJztmlEOgjAQBXsDuP8dlIOoZ9Bf9AqSKFETAhVKXwttM5PsF23ZnQRCuxgDKl1lzL3ePm7V3pV/WFO/LedLvX3OPaed7jtmTf22nPHnPhZ/U/CngT8N/GngTwN/GvjTWOvvPBqPP/ex7Xcf4js/JDn6izHfl1L8Pd974mM9jWaw7sFy3SWamdxK8eeyrk+t/Xt2LrfS/YUAfxr408CfBv40SvP3+w4ZErP/8ZjJrY10z5A5jklp/5YjKZ0f5Aj+NPCngT8N/GngTwN/GvjTwJ8G/jTwp2Hz96//sWfY+ia+PZiQcU3kn88lbM9EKuddOYA/DfwBLPMCEKAEng==
   </data>
  </layer>
  <layer name="door" width="80" height="40">

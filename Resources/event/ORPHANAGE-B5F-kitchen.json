@@ -258,6 +258,11 @@
 			"type":"if",
 			"condition":[
 				{
+					"event":["40","9"],
+					"Nevent":["79","7"]
+				},
+				{
+					"Nevent":["82","8"],
 					"Nevent":["79","7"]
 				}
 			],
@@ -287,6 +292,34 @@
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"RIGHT",
+							"steps":1.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["82","8"],
+					"Nevent":["40","9"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["とっとと戸塚をとっ捕まえようぜ"],
+							"charaID":"2",
+							"imgID":"2"
 						},
 						{
 							"type":"charaWalk",

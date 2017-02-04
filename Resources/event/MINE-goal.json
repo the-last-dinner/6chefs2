@@ -140,14 +140,26 @@
 						},
 						{
 							"type":"releaseChase",
-							"objID":"1064"
+							"objID":"10642"
 						},
 						{
 							"type":"releaseChase",
-							"objID":"1065"
+							"objID":"10652"
 						},
 						{
 							"type":"releaseChase",
+							"objID":"1072"
+						},
+						{
+							"type":"removeObject",
+							"objID":"10642"
+						},
+						{
+							"type":"removeObject",
+							"objID":"10652"
+						},
+						{
+							"type":"removeObject",
 							"objID":"1072"
 						},
 						{

@@ -1408,30 +1408,51 @@
 	],
 	"16":[
 		{
-			"type":"sequence",
+			"type":"removeLayer",
+			"layer":"MonoShita"
+		},
+		{
+			"type":"createObject",
+			"objID":"1080",
+			"charaID":"2",
+			"x":17,
+			"y":28,
+			"direction":"UP",
+			"movePattern":"1"
+		},
+		{
+			"type":"createObject",
+			"objID":"10241",
+			"charaID":"6",
+			"x":17,
+			"y":24,
+			"direction":"DOWN",
+			"movePattern":"1"
+		},
+		{
+			"type":"repeat",
+			"times":-1,
+			"id":"1",
 			"action":[
 				{
-					"type":"removeLayer",
-					"layer":"MonoShita"
-				},
-				{
-					"type":"createObject",
-					"objID":"1080",
-					"charaID":"2",
-					"x":17,
-					"y":28,
-					"direction":"UP",
-					"movePattern":"1"
-				},
-				{
-					"type":"createObject",
-					"objID":"10241",
-					"charaID":"6",
-					"x":17,
-					"y":24,
-					"direction":"DOWN",
-					"movePattern":"1"
-				},
+					"type":"sequence",
+					"action":[
+						{
+							"type":"objAnimate",
+							"objID":"10241",
+							"name":"attack_down"
+						},
+						{
+							"type":"wait",
+							"time":0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"sequence",
+			"action":[
 				{
 					"type":"storyMsg",
 					"text":["数日後・・・"]
@@ -1502,6 +1523,10 @@
 							"imgID":"3"
 						}
 					]
+				},
+				{
+					"type":"stopEvent",
+					"id":"1"
 				},
 				{
 					"type":"fadeout",
