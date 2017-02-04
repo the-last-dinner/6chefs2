@@ -165,19 +165,15 @@ void CreateUnderwaterEvent::run()
         float layerHeight { waterLayer->getContentSize().height };
         waterLayer->setPosition(waterLayer->getPosition().x, - layerHeight);
         waterLayer->runAction(
-            Sequence::create(
+            Sequence::createWithTwoActions(
                 EaseSineInOut::create(MoveBy::create(1.0f, Vec2(0.f, 2 * layerHeight / 10))),
                 Repeat::create(
                     Sequence::createWithTwoActions(
                         EaseSineInOut::create(MoveBy::create(0.5f, Vec2(0.f, - layerHeight / 10))),
                         EaseSineInOut::create(MoveBy::create(1.0f, Vec2(0.f, 3 * layerHeight / 10)))
-                ), 4),
-                CallFunc::create([this](){this->setDone();}),
-                nullptr
+                ), 4)
             )
         );
-    } else {
-        this->setDone();
     }
     
     DungeonSceneManager::getInstance()->getScene()->addChild(nodeGrid);
