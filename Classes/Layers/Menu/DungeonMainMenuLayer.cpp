@@ -16,6 +16,7 @@
 
 // 定数
 const float DungeonMainMenuLayer::SLIDE_TIME {0.3f};
+const int DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT {4};
 
 // コンストラクタ
 DungeonMainMenuLayer::DungeonMainMenuLayer(){FUNCLOG}
@@ -125,12 +126,14 @@ bool DungeonMainMenuLayer::init()
     
     // キャラ表示
     vector<CharacterData> charas = PlayerDataManager::getInstance()->getLocalData()->getPartyMemberAll();
-    int party_count = charas.size();
+    int partyCount = static_cast<int>(charas.size());
+    int partyDisplayLimit = DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT < partyCount ?
+                                        DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT : partyCount;
     Size  cPanelSize = Size(fBg->getContentSize().width/5, fBg->getContentSize().height);
     float stand_scale = 0.35;
-    for (int i = 0; i < party_count; i++)
+    for (int i = 0; i < partyDisplayLimit; i++)
     {
-        float colum_position = cPanelSize.width * (5 - party_count + i) + cPanelSize.width / 2;
+        float colum_position = cPanelSize.width * (5 - partyDisplayLimit + i) + cPanelSize.width / 2;
         // キャラ毎にパネルを作成
         Sprite* chara_panel {Sprite::create()};
         chara_panel->setTextureRect(Rect(0,0, cPanelSize.width, cPanelSize.height));

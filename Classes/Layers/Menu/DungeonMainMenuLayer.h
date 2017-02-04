@@ -31,6 +31,7 @@ public:
     // 定数
 public:
     static const float SLIDE_TIME;
+    static const int PARTY_DISPLAY_LIMIT;
 	
 	// クラスメソッド
 public:
