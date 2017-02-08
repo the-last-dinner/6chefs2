@@ -2377,11 +2377,13 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 					"$(SRCROOT)/../lib/ffmpeg/include",
+					/usr/local/include,
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
 					"$(SRCROOT)/../lib/ffmpeg/lib",
+					/usr/local/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
@@ -2413,11 +2415,13 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 					"$(SRCROOT)/../lib/ffmpeg/include",
+					/usr/local/include,
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
 					"$(SRCROOT)/../lib/ffmpeg/lib",
+					/usr/local/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",

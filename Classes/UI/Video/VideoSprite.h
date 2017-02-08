@@ -11,28 +11,20 @@
 
 #include "define.h"
 
-namespace cv {
-    class VideoCapture;
-}
-class AVCodecContext;
-class AVFormatContext;
-class SDL_Mutex;
-class SDL_cond;
-
 class VideoSprite : public Sprite
 {
+// 定数
+private:
+    static const int SDL_AUDIO_BUFFER_SIZE;
+    static const int MAX_AUDIO_FRAME_SIZE;
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(VideoSprite, const string&)
     
 // インスタンス変数
 private:
-    // visual
-    cv::VideoCapture* _videoCapture { nullptr };
     Texture2D* _currentTexture { nullptr };
-    
-    // sound
-    
     bool _isPlaying { false };
     function<void(VideoSprite*)> _playFinishCallback { nullptr };
     
@@ -41,9 +33,9 @@ private:
     VideoSprite();
     virtual ~VideoSprite();
     virtual bool init(const string& filename);
+    void audioCallback(void *userdata, uint8_t* stream, int len);
 public:
     void play();
-    void update(float delta) override;
 };
 
 
