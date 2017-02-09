@@ -651,6 +651,11 @@
 											"type":"spawn",
 											"action":[
 												{
+													"type":"objAnimate",
+													"objID":"hero",
+													"name":"attack_left"
+												},
+												{
 													"type":"playSE",
 													"file":"kaihi.mp3"
 												},

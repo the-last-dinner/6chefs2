@@ -12,9 +12,12 @@
  <tileset firstgid="809" name="Skull" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="Skull.png" trans="aa55ff" width="64" height="64"/>
  </tileset>
+ <tileset firstgid="825" name="temple_out" tilewidth="16" tileheight="16" tilecount="2016" columns="16">
+  <image source="temple_out.png" width="256" height="2016"/>
+ </tileset>
  <layer name="Base" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2DggRwjA4M8BZgRiJmQ+AxQMXLNQQc2QDFbCt3XC8R9UNxPpvtAWAGL+ygNPxBejWTuWgrMweY+WPhRgkHuW8OIcB+55thhcR/HIMOj7htZ7hsF5AEAFr8dqg==
@@ -22,7 +25,7 @@
  </layer>
  <layer name="MonoShita" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRQAowZGZgMGIeaFfgBqZAt5kNYveNglFADQAAwkoA2w==
@@ -30,7 +33,7 @@
  </layer>
  <layer name="rail" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRQC3AyMTAwATEzDhofHIgmtZAEWiHEhAr46DxySnTwX2jYBQQCwAHWQKN
@@ -38,7 +41,7 @@
  </layer>
  <layer name="rail2" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRQA2gwcTAoMk00K7ADTyAbvMcxO4bBaOAFAAAzj4A6w==
@@ -46,7 +49,7 @@
  </layer>
  <layer name="rail3" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRQA3gxsTA4M400K4YBaNgZAAA+hcAkg==
@@ -54,10 +57,26 @@
  </layer>
  <layer name="MonoChu" width="40" height="14">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjILhDz4zMTB8ZRpoV+AGf4Bu+zeI3TcKRsFgAwC+pwPr
+  </data>
+ </layer>
+ <layer name="rakuseki" width="40" height="14">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaAg7GgXYBfqAGdJ8LELMOUneyA92VxDh4wxHkLjZGSDgORqAGjVv2Qeq+UUAeAAAjkwFc
+  </data>
+ </layer>
+ <layer name="rakuseki2" width="40" height="14">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzicOgFAQANHV31I91VM91VPvfxLGcQQ2YSd5fkQsy7L+m+dEfAQIESF2X1+9JbykyJCjQKnor+KlRoMWHXpFfwMvIybMWLAq+tt42XHgxIVb0Z/mHuFpB3I=
   </data>
  </layer>
  <objectgroup name="collision">

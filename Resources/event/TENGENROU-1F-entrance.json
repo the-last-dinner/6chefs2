@@ -358,6 +358,13 @@
 					"type":"fadein"
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"battle_kyoujin.mp3"
+				},
+				{
 					"type":"battle",
 					"objID":["1424","1425"],
 					"true":[
@@ -367,6 +374,13 @@
 								{
 									"type":"fadeout",
 									"time":2.0
+								},
+								{
+									"type":"playBGM",
+									"file":"battle_kyoujin.mp3"
+								},
+								{
+									"type":"stopBGM"
 								},
 								{
 									"type":"charaWarp",
@@ -405,6 +419,10 @@
 								{
 									"type":"chase",
 									"objID":"1043"
+								},
+								{
+									"type":"playBGM",
+									"file":"TENGENROU.mp3"
 								},
 								{
 									"type":"already"
