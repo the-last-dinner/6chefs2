@@ -108,4 +108,19 @@ private:
     void onExitedSaveMenu();
 };
 
+// 動画再生
+class PlayVideoEvent : public ModalLayerEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(PlayVideoEvent, rapidjson::Value&)
+private:
+    string _fileName {};
+    bool _skip { false };
+private:
+    PlayVideoEvent() {FUNCLOG};
+    ~PlayVideoEvent() {FUNCLOG};
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__MessageEvent__) */

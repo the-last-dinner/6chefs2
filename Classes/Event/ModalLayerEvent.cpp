@@ -19,6 +19,7 @@
 #include "Datas/Message/SystemMessageData.h"
 
 #include "Layers/Dungeon/DisplayImageLayer.h"
+#include "Layers/Dungeon/VideoLayer.h"
 #include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Message/CharacterMessagelayer.h"
 #include "Layers/Message/StoryMessagelayer.h"
@@ -334,4 +335,36 @@ void DisplaySaveMenu::onExitedSaveMenu()
     );
     PlayerDataManager::getInstance()->getLocalData()->removeInitEventId();
     this->setDone();
+}
+
+#pragma mark -
+#pragma mark PlayVideoEvent
+
+bool PlayVideoEvent::init(rapidjson::Value& json)
+{
+    if (!ModalLayerEvent::init(json)) return false;
+    
+    // ファイル名
+    if (!_eventHelper->hasMember(_json, member::FILE)) return false;
+    
+    _fileName = _json[member::FILE].GetString();
+    
+    // スキップ可能か
+    if (_eventHelper->hasMember(_json, member::SKIP))
+        _skip = _json[member::SKIP].GetBool();
+    
+    return true;
+}
+
+void PlayVideoEvent::run()
+{
+    VideoLayer* layer { VideoLayer::create(_fileName, _skip, [this]{this->setDone();}) };
+    
+    if (!layer) {
+        this->setDone();
+        
+        return;
+    }
+    
+    DungeonSceneManager::getInstance()->getScene()->addChild(layer, Priority::VIDEO_LAYER);
 }
