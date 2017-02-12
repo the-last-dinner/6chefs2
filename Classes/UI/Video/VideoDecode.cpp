@@ -252,7 +252,8 @@ bool VideoDecode::decode()
                 return false;
             }
         }
-        av_free_packet(&packet);
+        //av_free_packet(&packet);
+        av_packet_unref(&packet);
     }
 
     if(m_pFrame == NULL)
@@ -307,7 +308,8 @@ bool VideoDecode::decode()
         //av_seek_frame(m_pFormatCtx, m_videoStream , 0, AVSEEK_FLAG_ANY);
         m_frameCount = -1;
     }
-    av_free_packet(&packet);
+    //av_free_packet(&packet);
+    av_packet_unref(&packet);
     return true;
 }
 
