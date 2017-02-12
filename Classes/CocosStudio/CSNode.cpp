@@ -82,13 +82,6 @@ void CSNode::playIfNotPlaying(const string& animationName, float speed)
     this->play(animationName, speed);
 }
 
-// 1フレームアニメーション再生用メソッド
-// なぜか1フレームのアニメーションを設定すると終了した事にならないので作成
-void CSNode::playSingleFrame(const string& animationName)
-{
-    _timeline->play(animationName, false);
-}
-
 #pragma mark -
 #pragma mark Getter
 
