@@ -1,5 +1,5 @@
 
-#include "VideoLayer.h"
+#include "VideoSprite.h"
 #include "VideoTextureCache.h"
 #include "VideoDecode.h"
 
@@ -9,9 +9,9 @@ extern "C" {
     #include "libswscale/swscale.h"  
 }  
 
-VideoLayer* VideoLayer::create(const char* path)
+VideoSprite* VideoSprite::create(const char* path)
 {
-    VideoLayer* video = new VideoLayer();
+    VideoSprite* video = new VideoSprite();
 
     if (video && video->init(path)) {  
          video->autorelease();
@@ -21,7 +21,7 @@ VideoLayer* VideoLayer::create(const char* path)
     return NULL;  
 }  
 
-VideoLayer::VideoLayer()
+VideoSprite::VideoSprite()
 {
     FUNCLOG;
     m_frameRate = 1.0 / 31;
@@ -32,21 +32,21 @@ VideoLayer::VideoLayer()
     m_playEndScriptHandler = 0;
 }  
 
-VideoLayer::~VideoLayer()
+VideoSprite::~VideoSprite()
 {  
     FUNCLOG;
     VideoTextureCache::sharedTextureCache()->removeVideo(m_strFileName.c_str());
     unregisterPlayScriptHandler();
 }
 
-bool VideoLayer::init(const char* path)
+bool VideoSprite::init(const char* path)
 {  
     m_strFileName = path;
 
     VideoDecode *pVideoDecode = VideoTextureCache::sharedTextureCache()->addVideo(path);
     if(!pVideoDecode)
     {
-        CCLOGERROR("videoDecode get error in %s", "CCVideoLayer");
+        CCLOGERROR("videoDecode get error in %s", "VideoSprite");
         return false;
     }
 
@@ -74,24 +74,24 @@ bool VideoLayer::init(const char* path)
     return true;  
 }
 
-void VideoLayer::playVideo()
+void VideoSprite::playVideo()
 {  
     update(0);
-    this->schedule(schedule_selector(VideoLayer::update), m_frameRate);
+    this->schedule(schedule_selector(VideoSprite::update), m_frameRate);
 }  
 
-void VideoLayer::stopVideo(void)
+void VideoSprite::stopVideo(void)
 {  
     this->unscheduleAllCallbacks();
 }  
 
-void VideoLayer::seek(int frame)
+void VideoSprite::seek(int frame)
 {  
     m_frame_count = frame;
     update(0);
 }  
 
-void VideoLayer::update(float dt)
+void VideoSprite::update(float dt)
 {
 
     Texture2D *texture = NULL;
@@ -110,28 +110,28 @@ void VideoLayer::update(float dt)
                 ScriptEngineManager::getInstance()->getScriptEngine()->reallocateScriptHandler(m_playEndScriptHandler);
         }  
     } else {
-        CCLOG("表示失敗 CCVideoLayer::update filename = %s , now_frame = %d, total_frame = %d", m_strFileName.c_str(), m_frame_count, m_frames);
+        CCLOG("表示失敗 VideoSprite::update filename = %s , now_frame = %d, total_frame = %d", m_strFileName.c_str(), m_frame_count, m_frames);
     }
 
 }
 
-void VideoLayer::registerPlayScriptHandler(int nHandler)
+void VideoSprite::registerPlayScriptHandler(int nHandler)
 {
     unregisterPlayScriptHandler();
     m_playEndScriptHandler = nHandler;
-    LUALOG("[LUA] Add CCVideoLayer event handler: %d", m_playEndScriptHandler);
+    LUALOG("[LUA] Add VideoSprite event handler: %d", m_playEndScriptHandler);
 }
 
-void VideoLayer::unregisterPlayScriptHandler(void)
+void VideoSprite::unregisterPlayScriptHandler(void)
 {
     if (m_playEndScriptHandler) {
         ScriptEngineManager::getInstance()->getScriptEngine()->removeScriptHandler(m_playEndScriptHandler);
-        LUALOG("[LUA] Remove CCVideoLayer event handler: %d", m_playEndScriptHandler);
+        LUALOG("[LUA] Remove VideoSprite event handler: %d", m_playEndScriptHandler);
         m_playEndScriptHandler = 0;
     }
 }
 
-void VideoLayer::setVideoEndCallback(function<void(void)> func)
+void VideoSprite::setVideoEndCallback(function<void()> func)
 {  
     m_videoEndCallback = func;  
 }

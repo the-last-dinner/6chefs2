@@ -1,15 +1,15 @@
 
-#ifndef VideoLayer_h
-#define VideoLayer_h
+#ifndef VideoSprite_h
+#define VideoSprite_h
 
 #include "define.h"
 
-class VideoLayer : public Sprite
+class VideoSprite : public Sprite
 {  
 public:
-    static VideoLayer* create(const char* path);
-    VideoLayer();
-    virtual ~VideoLayer();
+    static VideoSprite* create(const char* path);
+    VideoSprite();
+    virtual ~VideoSprite();
       
     bool init(const char* path);  
     void playVideo(void);  
@@ -34,4 +34,4 @@ private:
     function<void()> m_videoEndCallback;
 };  
 
-#endif /* VideoLayer_h */
+#endif /* VideoSprite_h */

@@ -51,6 +51,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"systemMsg", SystemMessage::create},           // システムのメッセージ
     {"displayImg", DispImageEvent::create},         // 画像表示
     {"displaySaveMenu", DisplaySaveMenu::create},   // セーブメニュー表示
+    {"playVideo", PlayVideoEvent::create},          // 動画再生
     
     // シーン系
     {"changeMap", ChangeMapEvent::create},          // マップ移動
