@@ -5,5 +5,7 @@
         "two_icon": true,
         "friendship": false,
         "special_room": true
-    }
+    },
+    "opening_video_file": "OPmovie.mp4",
+    "opening_bgm_file": "OPBGM.mp3"
 }

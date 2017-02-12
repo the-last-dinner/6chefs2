@@ -28,6 +28,8 @@ public:
     static const char* TWO_ICON;
     static const char* FRIENDSHIP;
     static const char* SPECIAL_ROOM;
+    static const char* OPENING_VIDEO_FILE;
+    static const char* OPENING_BGM_FILE;
     
     // instance valiables
 private:
