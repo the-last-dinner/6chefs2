@@ -17,6 +17,8 @@ const char* TrophyConfigData::NO_SAVE_CLEAR {"no_save_clear"};
 const char* TrophyConfigData::CHIKEN_SAVE {"chiken_save"};
 const char* TrophyConfigData::TROPHY_COMPLETE {"trophy_complete"};
 const char* TrophyConfigData::TROPHY_ID {"trophyID"};
+const char* TrophyConfigData::COUNT {"count"};
+const char* TrophyConfigData::TIME {"time"};
 
 // コンストラクタ
 bool TrophyConfigData::init()

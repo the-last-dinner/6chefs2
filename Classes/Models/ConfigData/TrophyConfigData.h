@@ -27,6 +27,8 @@ public:
     static const char* CHIKEN_SAVE;
     static const char* TROPHY_COMPLETE;
     static const char* TROPHY_ID;
+    static const char* TIME;
+    static const char* COUNT;
     
     // instance valiables
 private:
