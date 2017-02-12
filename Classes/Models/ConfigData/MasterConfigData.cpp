@@ -18,6 +18,7 @@ const char* MasterConfigData::DISPLAY {"display"};
 const char* MasterConfigData::TWO_ICON {"two_icon"};
 const char* MasterConfigData::FRIENDSHIP {"friendship"};
 const char* MasterConfigData::SPECIAL_ROOM {"special_room"};
+const char* MasterConfigData::OPENING_SCENE {"opening_scene"};
 const char* MasterConfigData::OPENING_VIDEO_FILE {"opening_video_file"};
 const char* MasterConfigData::OPENING_BGM_FILE {"opening_bgm_file"};
 
