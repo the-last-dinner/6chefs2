@@ -1,17 +1,8 @@
-/**
- * 视频解码类
- * 目前只支持视频流、不包括音频
- */
-//#ifndef __CCVIDEO_DECODE_H__
-//#define __CCVIDEO_DECODE_H__
-
 #ifndef VideoDecode_h
 #define VideoDecode_h
 
 #include "define.h"
 
-//#include "cocoa/CCObject.h"
-//#include "textures/CCTexture2D.h"
 extern "C" { 
     #include "libavcodec/avcodec.h"
     #include "libavformat/avformat.h"  
@@ -25,17 +16,12 @@ struct AVFrame;
 struct AVPicture;  
 struct SwsContext; 
 
-
-//NS_CC_BEGIN
-
-//class CCVideoPic : public CCObject
+// 動画の１枚毎の画像
 class VideoPic : public Ref
 {
 	public:
-		//CCVideoPic();
         VideoPic();
 		bool init(const char *path, int frame,unsigned int width,  unsigned int height, unsigned char* data);
-		//virtual ~CCVideoPic();
         virtual ~VideoPic();
 		const char *m_path;
 		int m_frame;
@@ -45,8 +31,7 @@ class VideoPic : public Ref
         unsigned int m_length;
 };
 
- 
-//class CC_DLL CCVideoDecode : public CCObject
+// 動画を画像に変換
 class CC_DLL VideoDecode : public Ref
 {
 	private:
@@ -57,16 +42,14 @@ class CC_DLL VideoDecode : public Ref
 	    int m_videoStream;
 	    SwsContext *m_pSwsCtx;
 
-	    int m_frameCount;   //解码到第几帧
-	    const char *m_filepath; //视频文件路径
-	    double m_frameRate; //帧率
-	    unsigned int m_frames;   // 总帧数
+	    int m_frameCount;
+	    const char *m_filepath;
+	    double m_frameRate;
+	    unsigned int m_frames;
 	    unsigned int m_width;  
     	unsigned int m_height;   
 	public:
-		//CCVideoDecode();
         VideoDecode();
-		//virtual ~CCVideoDecode();
         virtual ~VideoDecode();
 		bool decode();
 		bool init(const char *path);
@@ -77,6 +60,4 @@ class CC_DLL VideoDecode : public Ref
 		const char* getFilePath(); 
 };
 
-//NS_CC_END
 #endif /* VideoDecode_h */
-//#endif //__CCVIDEO_DECODE_H__

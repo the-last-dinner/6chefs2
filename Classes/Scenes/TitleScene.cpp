@@ -75,7 +75,11 @@ void TitleScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     
     VideoLayer *p = VideoLayer::create("video/OPmovie.mp4");
-    p->setPosition(Vec2(100, 100));
+    p->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+    p->setVideoEndCallback([p](){
+        p->stopVideo();
+        p->removeFromParent();
+    });
     this->addChild(p);
     p->playVideo();
 }
