@@ -33,7 +33,7 @@ const char* GlobalPlayerData::ENTER_KEY {"enter_key"};
 const char* GlobalPlayerData::DASH_KEY {"dash_key"};
 
 const int GlobalPlayerData::CHIKEN_SAVE_COUNT {50};
-const int GlobalPlayerData::FAST_CLEAR_TIME {1800};
+const int GlobalPlayerData::FAST_CLEAR_TIME {1980};
 
 
 const int GlobalPlayerData::FAST_CLEAR_TIME_TROPHY_ID {14};
