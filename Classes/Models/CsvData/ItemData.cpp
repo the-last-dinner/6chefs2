@@ -18,13 +18,31 @@ bool ItemData::init()
 }
 
 // アイテム名の取得
-string ItemData::getItemName(const int item_id)
+string ItemData::getItemName(const int itemId)
 {
-    return (item_id >= 0) ? this->data[item_id][etoi(ItemData::Keys::NAME)] : "アイテムがありません";
+    return (itemId > 0) ? this->data[itemId][etoi(ItemData::Keys::NAME)] : "アイテムがありません";
 }
 
 // アイテム説明の取得
-string ItemData::getItemDiscription(const int item_id)
+string ItemData::getItemDiscription(const int itemId)
 {
-    return (item_id >= 0) ? this->data[item_id][etoi(ItemData::Keys::DISCRIPTION)] : "アイテムがありません";
+    return (itemId > 0) ? this->data[itemId][etoi(ItemData::Keys::DISCRIPTION)] : "アイテムがありません";
+}
+
+// アイテム装備時のイベント
+string ItemData::getItemEquipInitEvent(const int itemId)
+{
+    return (itemId > 0) ? this->data[itemId][etoi(ItemData::Keys::EQUIP_INIT_EVENT)] : "";
+}
+
+// アイテム装備中のマップ移動時のイベント
+string ItemData::getItemEquipUpdateEvent(const int itemId)
+{
+    return (itemId > 0) ? this->data[itemId][etoi(ItemData::Keys::EQUIP_UPDATE_EVENT)] : "";
+}
+
+// アイテム装備解除時イベント
+string ItemData::getItemEquipEndEvent(const int itemId)
+{
+    return (itemId > 0) ? this->data[itemId][etoi(ItemData::Keys::EQUIP_END_EVENT)] : "";
 }
