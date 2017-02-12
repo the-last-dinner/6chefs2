@@ -137,7 +137,7 @@ void VideoLayer::playVideo()
 //void CCVideoLayer::stopVideo(void)
 void VideoLayer::stopVideo(void)
 {  
-    this->unscheduleAllSelectors();
+    this->unscheduleAllCallbacks();
 }  
   
 
@@ -151,7 +151,7 @@ void VideoLayer::seek(int frame)
   
 //void CCVideoLayer::update(float dt)
 void VideoLayer::update(float dt)
-{ 
+{
 
     //CCTexture2D *texture = NULL;
     Texture2D *texture = NULL;
