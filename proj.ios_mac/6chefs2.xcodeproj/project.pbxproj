@@ -93,6 +93,8 @@
 		9F462BEB1E4EDA94007A1DEB /* VideoLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE41E4EC9D1007A1DEB /* VideoLayer.cpp */; };
 		9F462BEC1E4EDA99007A1DEB /* VideoDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE21E4EC9D1007A1DEB /* VideoDecode.cpp */; };
 		9F462BED1E4EDA9C007A1DEB /* VideoTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */; };
+		9F462BF11E503642007A1DEB /* video in Resources */ = {isa = PBXBuildFile; fileRef = 9F462BF01E503642007A1DEB /* video */; };
+		9F462BF21E503642007A1DEB /* video in Resources */ = {isa = PBXBuildFile; fileRef = 9F462BF01E503642007A1DEB /* video */; };
 		9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
 		9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
 		9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
@@ -541,6 +543,7 @@
 		9F462BE51E4EC9D1007A1DEB /* VideoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoLayer.h; path = Video/VideoLayer.h; sourceTree = "<group>"; };
 		9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoTextureCache.cpp; path = Video/VideoTextureCache.cpp; sourceTree = "<group>"; };
 		9F462BE71E4EC9D1007A1DEB /* VideoTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoTextureCache.h; path = Video/VideoTextureCache.h; sourceTree = "<group>"; };
+		9F462BF01E503642007A1DEB /* video */ = {isa = PBXFileReference; lastKnownFileType = folder; path = video; sourceTree = "<group>"; };
 		9FB79E681D362D6C004E81CF /* AssertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssertUtils.h; sourceTree = "<group>"; };
 		9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertUtils.cpp; sourceTree = "<group>"; };
 		9FB79E6F1D363073004E81CF /* AssertScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertScene.cpp; sourceTree = "<group>"; };
@@ -1075,6 +1078,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F462BF01E503642007A1DEB /* video */,
 				DCF9469D1E0AE72300BD8744 /* effect */,
 				DCEF71FD1DFBC54900FA1291 /* voice */,
 				DC0182A51D7BCCE900E556D1 /* character */,
@@ -1862,6 +1866,7 @@
 				DC328A711C87194E00675131 /* fonts in Resources */,
 				DC328A751C87194E00675131 /* map in Resources */,
 				DC328A7B1C87194E00675131 /* se in Resources */,
+				9F462BF11E503642007A1DEB /* video in Resources */,
 				DC328A731C87194E00675131 /* img in Resources */,
 				DC328A7F1C87194E00675131 /* story in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -1884,6 +1889,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F462BF21E503642007A1DEB /* video in Resources */,
 				DCF9469E1E0AE72300BD8744 /* effect in Resources */,
 				DCEF71FE1DFBC54900FA1291 /* voice in Resources */,
 				DC0182A61D7BCCE900E556D1 /* character in Resources */,
