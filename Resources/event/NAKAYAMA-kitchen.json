@@ -394,6 +394,11 @@
 									"movePattern":"1"
 								},
 								{
+									"type":"playBGM",
+									"file":"rain1.mp3",
+									"volume":0.2
+								},
+								{
 									"type":"createRain"
 								},
 								{

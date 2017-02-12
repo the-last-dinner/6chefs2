@@ -1274,7 +1274,7 @@
 						{
 							"text":["ハァ・・・\nお前達料理人だろう？","よくこんだけ武闘派が集まったモンだぜ・・・"],
 							"charaID":"9",
-							"imgID":"3"
+							"imgID":"5"
 						},
 						{
 							"text":["何だ？泣き言か・・・？"],
@@ -1284,7 +1284,7 @@
 						{
 							"text":["・・・"],
 							"charaID":"9",
-							"imgID":"3"
+							"imgID":"6"
 						}
 					]
 				},
@@ -1308,6 +1308,10 @@
 				{
 					"type":"playSE",
 					"file":"fusuma-open1.mp3"
+				},
+				{
+					"type":"already",
+					"event":["54","17"]
 				},
 				{
 					"type":"removeLayer",
@@ -1334,7 +1338,7 @@
 						{
 							"text":["・・・"],
 							"charaID":"9",
-							"imgID":"3"
+							"imgID":"6"
 						}
 					]
 				},
@@ -1547,6 +1551,13 @@
 				{
 					"type":"already",
 					"event":["54","3"]
+				},
+				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"tower5.mp3"
 				}
 			]
 		}
