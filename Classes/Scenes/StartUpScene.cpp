@@ -8,6 +8,7 @@
 
 #include "Scenes/StartUpScene.h"
 #include "Scenes/TitleScene.h"
+#include "Scenes/OpeningScene.h"
 #include "Datas/Scene/StartUpSceneData.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
@@ -68,7 +69,11 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
             DelayTime::create(1.5f),
             TargetedAction::create(logo,FadeOut::create(1.0f)),
             CallFunc::create([](){
-                Director::getInstance()->replaceScene(TitleScene::create());
+                if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::OPENING_SCENE)) {
+                    Director::getInstance()->replaceScene(OpeningScene::create());
+                } else {
+                    Director::getInstance()->replaceScene(TitleScene::create());
+                }
             }),
             nullptr
         )
