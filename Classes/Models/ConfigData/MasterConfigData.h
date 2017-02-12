@@ -22,7 +22,10 @@ private:
     
     // constants
 public:
+    static const char* VERSION;
+    static const char* COPYRIGHT;
     static const char* DISPLAY;
+    static const char* TWO_ICON;
     static const char* FRIENDSHIP;
     static const char* SPECIAL_ROOM;
     
@@ -35,6 +38,7 @@ private:
 public:
     bool init();
     bool isDisplay(const char* targetProperty);
+    string getString(const char* targetProperty);
 };
 
 #endif /* MasterConfigData_hpp */

@@ -10,9 +10,13 @@
 
 #include "Utils/JsonUtils.h"
 #include "Utils/AssertUtils.h"
+#include "Utils/StringUtils.h"
 
 // 定数
+const char* MasterConfigData::VERSION {"version"};
+const char* MasterConfigData::COPYRIGHT {"copyright"};
 const char* MasterConfigData::DISPLAY {"display"};
+const char* MasterConfigData::TWO_ICON {"two_icon"};
 const char* MasterConfigData::FRIENDSHIP {"friendship"};
 const char* MasterConfigData::SPECIAL_ROOM {"special_room"};
 
@@ -28,6 +32,18 @@ bool MasterConfigData::init()
     }
     this->masterConfig = LastSupper::JsonUtils::readJsonCrypted(this->filePath);
     return true;
+}
+
+
+// 文字列を取得
+string MasterConfigData::getString(const char *targetProperty)
+{
+    if (!this->masterConfig.HasMember(VERSION)) {
+        string msg = "MasterConfig property is missing.";
+        LastSupper::AssertUtils::fatalAssert(msg);
+        return msg;
+    }
+    return this->masterConfig[targetProperty].GetString();
 }
 
 // ディスプレイ系のコンフィグを取得

@@ -27,7 +27,6 @@ public:
         
 		SIZE
 	};
-    static const string VERSION;
 	
 // クラスメソッド
 public:
