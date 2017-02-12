@@ -11,9 +11,6 @@
 #include "Datas/Scene/StartUpSceneData.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
-#include "Utils/JsonUtils.h"
-#include "Utils/CsvUtils.h"
-#include "Utils/AssertUtils.h"
 
 // 初期化
 bool StartUpScene::init()
