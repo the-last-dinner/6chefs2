@@ -7,6 +7,8 @@
 //
 
 #include "Models/PlayerData/LocalPlayerData.h"
+
+#include "Managers/ConfigDataManager.h"
 #include "Models/PlayerData/GlobalPlayerData.h"
 #include "Utils/AssertUtils.h"
 #include "Utils/JsonUtils.h"
@@ -111,7 +113,10 @@ void LocalPlayerData::incrementSaveCount()
     };
     
     // トロフィーチェック
-    if (save_count >= GlobalPlayerData::CHIKEN_SAVE_COUNT) this->setTrophy(GlobalPlayerData::CHIKEN_SAVE_COUNT_TROPHY_ID);
+    TrophyConfigData* trophyConfigData { ConfigDataManager::getInstance()->getTrophyConfigData() };
+    int chikenSaveCount = trophyConfigData->getTrophyIntegerProperty(TrophyConfigData::CHIKEN_SAVE, TrophyConfigData::COUNT);
+    int chikenSaveTrophyId = trophyConfigData->getTrophyId(TrophyConfigData::CHIKEN_SAVE);
+    if (save_count >= chikenSaveCount) this->setTrophy(chikenSaveTrophyId);
 }
 
 // セーブ回数を取得

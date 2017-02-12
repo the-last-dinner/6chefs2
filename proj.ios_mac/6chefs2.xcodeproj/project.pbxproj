@@ -41,6 +41,8 @@
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
+		26B6DA4C1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
+		26B6DA4D1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
 		26E301571DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
 		26E301581DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -471,6 +473,8 @@
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
+		26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrophyConfigData.cpp; path = ConfigData/TrophyConfigData.cpp; sourceTree = "<group>"; };
+		26B6DA4B1E50A9FE008BC70A /* TrophyConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrophyConfigData.h; path = ConfigData/TrophyConfigData.h; sourceTree = "<group>"; };
 		26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CountDownDisplay.cpp; sourceTree = "<group>"; };
 		26E301561DF2D6B7000E585D /* CountDownDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownDisplay.h; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -943,6 +947,8 @@
 				26460BA31D72EF1500F0336C /* DebugConfigData.h */,
 				2672D5021D72F79700AC0E96 /* MasterConfigData.cpp */,
 				2672D5031D72F79700AC0E96 /* MasterConfigData.h */,
+				26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */,
+				26B6DA4B1E50A9FE008BC70A /* TrophyConfigData.h */,
 			);
 			name = ConfigData;
 			sourceTree = "<group>";
@@ -2018,6 +2024,7 @@
 				DC668C2B1D966C8900ED569C /* MapObjectCommandQueue.cpp in Sources */,
 				DC03923B1C871E1000C50E8E /* GameTask.cpp in Sources */,
 				DC0391951C871E1000C50E8E /* EventFactory.cpp in Sources */,
+				26B6DA4C1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */,
 				DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */,
 				DCA4495D1DA0EAA0005C5F9A /* DungeonSceneEventHandler.cpp in Sources */,
 			);
@@ -2182,6 +2189,7 @@
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
 				DC0391E01C871E1000C50E8E /* SoundManager.cpp in Sources */,
 				DC0392481C871E1000C50E8E /* NotificationBand.cpp in Sources */,
+				26B6DA4D1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */,
 				DC0391BA1C871E1000C50E8E /* DocumentMenuLayer.cpp in Sources */,
 				DC0391CC1C871E1000C50E8E /* CharacterMessageLayer.cpp in Sources */,
 				DC01829E1D7A9D8900E556D1 /* Normal.cpp in Sources */,

@@ -13,6 +13,7 @@
 
 #include "Models/ConfigData/DebugConfigData.h"
 #include "Models/ConfigData/MasterConfigData.h"
+#include "Models/ConfigData/TrophyConfigData.h"
 
 class ConfigDataManager
 {
@@ -30,11 +31,13 @@ private:
 private:
     DebugConfigData* debugConfigData {};
     MasterConfigData* masterConfigData {};
+    TrophyConfigData* trophyConfigData {};
     
     // インスタンスメソッド
 public:
     DebugConfigData* getDebugConfigData();
     MasterConfigData* getMasterConfigData();
+    TrophyConfigData* getTrophyConfigData();
 };
 
 #endif /* ConfigDataManager_hpp */
