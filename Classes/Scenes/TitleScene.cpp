@@ -74,7 +74,7 @@ void TitleScene::onPreloadFinished(LoadingLayer* loadingLayer)
     SoundManager::getInstance()->playBGM("title_bgm.mp3", true, 0.7f);
     
     
-    VideoLayer *p = VideoLayer::create("img/video.mp4");
+    VideoLayer *p = VideoLayer::create("video/video.mp4");
     p->setPosition(Vec2(100, 100));
     this->addChild(p);
     p->playVideo();
