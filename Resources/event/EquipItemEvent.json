@@ -1,0 +1,36 @@
+{
+    "torchInit": [
+        {
+            "type": "playSE",
+            "file": "fire_ignition.mp3"
+        },
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 50
+        }
+    ],
+    "torchUpdate": [
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 50
+        }
+    ],
+    "torchEnd": [
+        {
+            "type": "playSE",
+            "file": "fire_vanish.mp3"
+        },
+        {
+            "type": "removeLight",
+            "objID": "hero"
+        }
+    ],
+    "flashlightInit": [
+    ],
+    "flashlightUpdate": [
+    ],
+    "flashlightEnd": [
+    ]
+}
