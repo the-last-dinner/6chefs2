@@ -19,6 +19,8 @@
 
 #include "Models/PlayerData/GlobalPlayerData.h"
 
+#include "UI/Video/VideoLayer.h"
+
 // コンストラクタ
 TitleScene::TitleScene(){FUNCLOG}
 
@@ -70,6 +72,12 @@ void TitleScene::onPreloadFinished(LoadingLayer* loadingLayer)
     
     // BGM
     SoundManager::getInstance()->playBGM("title_bgm.mp3", true, 0.7f);
+    
+    
+    VideoLayer *p = VideoLayer::create("img/video.mp4");
+    p->setPosition(Vec2(100, 100));
+    this->addChild(p);
+    p->playVideo();
 }
 
 // 最初からが選ばれた時

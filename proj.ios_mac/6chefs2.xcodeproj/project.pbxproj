@@ -87,6 +87,12 @@
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		67264650BD08F5A9E8B7ED1D /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		9F462BE81E4EC9D1007A1DEB /* VideoDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE21E4EC9D1007A1DEB /* VideoDecode.cpp */; };
+		9F462BE91E4EC9D1007A1DEB /* VideoLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE41E4EC9D1007A1DEB /* VideoLayer.cpp */; };
+		9F462BEA1E4EC9D1007A1DEB /* VideoTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */; };
+		9F462BEB1E4EDA94007A1DEB /* VideoLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE41E4EC9D1007A1DEB /* VideoLayer.cpp */; };
+		9F462BEC1E4EDA99007A1DEB /* VideoDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE21E4EC9D1007A1DEB /* VideoDecode.cpp */; };
+		9F462BED1E4EDA9C007A1DEB /* VideoTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */; };
 		9FB79E6D1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
 		9FB79E6E1D362EBE004E81CF /* AssertUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */; };
 		9FB79E711D363073004E81CF /* AssertScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB79E6F1D363073004E81CF /* AssertScene.cpp */; };
@@ -395,8 +401,6 @@
 		DCA4496A1DA2445A005C5F9A /* CameraEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCA449671DA2445A005C5F9A /* CameraEvent.cpp */; };
 		DCB075441C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
 		DCB075451C9417B900D69F72 /* KeyconfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */; };
-		DCC5208C1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */; };
-		DCC5208D1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */; };
 		DCC520941E3C7613008F5B5A /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5208E1E3C7613008F5B5A /* libavcodec.a */; };
 		DCC520951E3C7613008F5B5A /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5208F1E3C7613008F5B5A /* libavdevice.a */; };
 		DCC520961E3C7613008F5B5A /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC520901E3C7613008F5B5A /* libavfilter.a */; };
@@ -531,6 +535,12 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9F462BE21E4EC9D1007A1DEB /* VideoDecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoDecode.cpp; path = Video/VideoDecode.cpp; sourceTree = "<group>"; };
+		9F462BE31E4EC9D1007A1DEB /* VideoDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoDecode.h; path = Video/VideoDecode.h; sourceTree = "<group>"; };
+		9F462BE41E4EC9D1007A1DEB /* VideoLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoLayer.cpp; path = Video/VideoLayer.cpp; sourceTree = "<group>"; };
+		9F462BE51E4EC9D1007A1DEB /* VideoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoLayer.h; path = Video/VideoLayer.h; sourceTree = "<group>"; };
+		9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoTextureCache.cpp; path = Video/VideoTextureCache.cpp; sourceTree = "<group>"; };
+		9F462BE71E4EC9D1007A1DEB /* VideoTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoTextureCache.h; path = Video/VideoTextureCache.h; sourceTree = "<group>"; };
 		9FB79E681D362D6C004E81CF /* AssertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssertUtils.h; sourceTree = "<group>"; };
 		9FB79E6B1D362EBE004E81CF /* AssertUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertUtils.cpp; sourceTree = "<group>"; };
 		9FB79E6F1D363073004E81CF /* AssertScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertScene.cpp; sourceTree = "<group>"; };
@@ -835,8 +845,6 @@
 		DCA449681DA2445A005C5F9A /* CameraEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraEvent.h; sourceTree = "<group>"; };
 		DCB075421C9417B900D69F72 /* KeyconfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyconfigManager.cpp; sourceTree = "<group>"; };
 		DCB075431C9417B900D69F72 /* KeyconfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyconfigManager.h; sourceTree = "<group>"; };
-		DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoSprite.cpp; path = Video/VideoSprite.cpp; sourceTree = "<group>"; };
-		DCC520851E3C6D0C008F5B5A /* VideoSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoSprite.h; path = Video/VideoSprite.h; sourceTree = "<group>"; };
 		DCC5208E1E3C7613008F5B5A /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../lib/ffmpeg/lib/libavcodec.a; sourceTree = "<group>"; };
 		DCC5208F1E3C7613008F5B5A /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../lib/ffmpeg/lib/libavdevice.a; sourceTree = "<group>"; };
 		DCC520901E3C7613008F5B5A /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../lib/ffmpeg/lib/libavfilter.a; sourceTree = "<group>"; };
@@ -1724,8 +1732,12 @@
 		DCC520711E3C6915008F5B5A /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				DCC520841E3C6D0C008F5B5A /* VideoSprite.cpp */,
-				DCC520851E3C6D0C008F5B5A /* VideoSprite.h */,
+				9F462BE21E4EC9D1007A1DEB /* VideoDecode.cpp */,
+				9F462BE31E4EC9D1007A1DEB /* VideoDecode.h */,
+				9F462BE41E4EC9D1007A1DEB /* VideoLayer.cpp */,
+				9F462BE51E4EC9D1007A1DEB /* VideoLayer.h */,
+				9F462BE61E4EC9D1007A1DEB /* VideoTextureCache.cpp */,
+				9F462BE71E4EC9D1007A1DEB /* VideoTextureCache.h */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -1977,10 +1989,12 @@
 				DC0392471C871E1000C50E8E /* NotificationBand.cpp in Sources */,
 				DC0391F91C871E1000C50E8E /* MovePattern.cpp in Sources */,
 				DCEF71E61DE5D76900FA1291 /* BattleEvent.cpp in Sources */,
+				9F462BE81E4EC9D1007A1DEB /* VideoDecode.cpp in Sources */,
 				DC0392351C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				26460B901D72EBB600F0336C /* ItemData.cpp in Sources */,
 				DC0391E71C871E1000C50E8E /* EventObject.cpp in Sources */,
 				DC0392431C871E1000C50E8E /* NotificationNode.cpp in Sources */,
+				9F462BEA1E4EC9D1007A1DEB /* VideoTextureCache.cpp in Sources */,
 				DC03918D1C871E1000C50E8E /* Light.cpp in Sources */,
 				DC03918B1C871E1000C50E8E /* Fog.cpp in Sources */,
 				2613244D1DE2081200E39526 /* BattleCharacterData.cpp in Sources */,
@@ -1998,7 +2012,6 @@
 				DC0391DD1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC25948B1E0E4EF80098FCDA /* SetPositionCommand.cpp in Sources */,
 				DCCDBC191DE181D50026AF5C /* PlayerControlState.cpp in Sources */,
-				DCC5208C1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */,
 				DC0391A91C871E1000C50E8E /* SoundEvent.cpp in Sources */,
 				DC37D80F1CDEFD3D0014418A /* FocusLightLayer.cpp in Sources */,
 				DC0391EB1C871E1000C50E8E /* ItemObject.cpp in Sources */,
@@ -2045,6 +2058,7 @@
 				DC7F6E1B1D96736A007AE8B5 /* WalkCommand.cpp in Sources */,
 				DC0391CF1C871E1000C50E8E /* StoryMessageLayer.cpp in Sources */,
 				DC01027E1C945F2F0076810F /* EventListenerKeyboardManager.cpp in Sources */,
+				9F462BE91E4EC9D1007A1DEB /* VideoLayer.cpp in Sources */,
 				DCCDBC211DE1882E0026AF5C /* BattleState.cpp in Sources */,
 				DC0391991C871E1000C50E8E /* GameEventHelper.cpp in Sources */,
 				DC0391DF1C871E1000C50E8E /* SoundManager.cpp in Sources */,
@@ -2115,6 +2129,7 @@
 				DC668C281D966B4200ED569C /* MapObjectCommand.cpp in Sources */,
 				DC0391DE1C871E1000C50E8E /* PlayerDataManager.cpp in Sources */,
 				DC0391841C871E1000C50E8E /* SceneData.cpp in Sources */,
+				9F462BED1E4EDA9C007A1DEB /* VideoTextureCache.cpp in Sources */,
 				DC0391DA1C871E1000C50E8E /* DungeonSceneManager.cpp in Sources */,
 				DCDB71CC1DFE7F0C0015A434 /* HurtCommand.cpp in Sources */,
 				DC0392381C871E1000C50E8E /* NeverFollow.cpp in Sources */,
@@ -2176,6 +2191,7 @@
 				DC0392441C871E1000C50E8E /* NotificationNode.cpp in Sources */,
 				DC0391B41C871E1000C50E8E /* TiledMapLayer.cpp in Sources */,
 				DC0391FA1C871E1000C50E8E /* MovePattern.cpp in Sources */,
+				9F462BEB1E4EDA94007A1DEB /* VideoLayer.cpp in Sources */,
 				26460B9F1D72EDAF00F0336C /* GlobalPlayerData.cpp in Sources */,
 				26460BA01D72EDB400F0336C /* LocalPlayerData.cpp in Sources */,
 				DC0391CA1C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
@@ -2189,7 +2205,6 @@
 				DC0391881C871E1000C50E8E /* TitleSceneData.cpp in Sources */,
 				9FD0206D1E03ACEB00803F3B /* LadderArea.cpp in Sources */,
 				DC03923C1C871E1000C50E8E /* GameTask.cpp in Sources */,
-				DCC5208D1E3C6D0C008F5B5A /* VideoSprite.cpp in Sources */,
 				26460B9E1D72EDA600F0336C /* TrophyData.cpp in Sources */,
 				DC0391D41C871E1000C50E8E /* ShaderLayer.cpp in Sources */,
 				DC0182A21D7AC52F00E556D1 /* TerrainStateCache.cpp in Sources */,
@@ -2239,6 +2254,7 @@
 				DCDB71C41DFD88F40015A434 /* BattleMob.cpp in Sources */,
 				DC0392261C871E1000C50E8E /* GameOverScene.cpp in Sources */,
 				DC0391BC1C871E1000C50E8E /* DungeonMainMenuLayer.cpp in Sources */,
+				9F462BEC1E4EDA99007A1DEB /* VideoDecode.cpp in Sources */,
 				DC0391E01C871E1000C50E8E /* SoundManager.cpp in Sources */,
 				DC0392481C871E1000C50E8E /* NotificationBand.cpp in Sources */,
 				26B6DA4D1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */,
