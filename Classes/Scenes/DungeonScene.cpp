@@ -28,6 +28,7 @@
 #include "Managers/DungeonSceneManager.h"
 #include "Managers/NotificationManager.h"
 
+#include "Models/EquipItemEvent.h"
 #include "Models/StopWatch.h"
 
 #include "Scenes/EventHandler/DungeonSceneEventHandler.h"
@@ -200,13 +201,15 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
 // Trigger::INITのイベント実行後
 void DungeonScene::onInitEventFinished(LoadingLayer* loadingLayer)
 {
-    this->setLight();
     _cameraTask->setTarget( _party->getMainCharacter() );
     
     _enemyTask->start(this->getData()->getInitialLocation().map_id);
     
     // ローディング終了
     loadingLayer->onLoadFinished();
+    
+    // 装備イベントの実行
+    DungeonSceneManager::getInstance()->getEquipItemEvent()->updateEquipmentEvent();
     
     // Trigger::AFTER_INITを実行
     _eventTask->runEvent(_mapLayer->getMapObjectList()->getEventIds(Trigger::AFTER_INIT), CC_CALLBACK_0(DungeonScene::onAfterInitEventFinished, this));
@@ -265,8 +268,11 @@ void DungeonScene::onPopMenuScene()
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
     
-    // たいまつを装備していればライトをつける
-    this->setLight();
+    // 装備チェンジイベント実行
+    DungeonSceneManager::getInstance()->getEquipItemEvent()->onChangeEquipment(
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionRight()),
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionLeft())
+    );
     
     // 操作可能に戻す
     _listener->setEnabled(true);
@@ -295,16 +301,6 @@ void DungeonScene::onExitDungeon()
 {
     DungeonSceneManager::destroy();
     SoundManager::getInstance()->stopBGMAll();
-}
-
-// ライトの管理
-void DungeonScene::setLight()
-{
-//    if (PlayerDataManager::getInstance()->getLocalData()->isEquipedItem(1514)) {
-//        _party->getMainCharacter()->setLight(Light::create(Light::Information(50)), _ambientLightLayer);
-//    } else {
-//        _party->getMainCharacter()->removeLight();
-//    }
 }
 
 // イベントを実行する時

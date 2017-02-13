@@ -11,6 +11,7 @@
 
 #include "define.h"
 
+class CommonEventScripts;
 class EventScript;
 
 class EquipItemEvent : public Ref
@@ -19,7 +20,7 @@ public:
     static const string EVENT_SCRIPT_NAME;
     // クラスメソッド
 public:
-    CREATE_FUNC(EquipItemEvent)
+    CREATE_FUNC_WITH_PARAM(EquipItemEvent, CommonEventScripts*)
 private:
     EquipItemEvent(){FUNCLOG};
     ~EquipItemEvent(){FUNCLOG};
@@ -33,11 +34,11 @@ public:
     
     // インスタンスメソッド
 private:
-    bool init();
+    bool init(CommonEventScripts* commonEventScripts);
     
 public:
-    void resetEquipmentCache();
-    void updateEquipment();
+    void setEquipmentCache(const int rightItemId, const int leftItemId);
+    void updateEquipmentEvent();
     void onChangeEquipment(const int rightItemId, const int leftItemId);
     void onReleaseItem(const int targetCache, const int rightItemId, const int leftItemId);
     void onEquipItem(const int targetItemId);

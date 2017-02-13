@@ -13,33 +13,37 @@
 #include "Event/GameEvent.h"
 #include "Managers/DungeonSceneManager.h"
 #include "Models/CommonEventScripts.h"
-#include "Models/PlayerData/LocalPlayerData.h"
 #include "Tasks/EventTask.h"
 
 // 定数
 const string EquipItemEvent::EVENT_SCRIPT_NAME {"EquipItemEvent"};
 
 // 初期化
-bool EquipItemEvent::init()
+bool EquipItemEvent::init(CommonEventScripts* commonEventScripts)
 {
-    CommonEventScripts* scripts {DungeonSceneManager::getInstance()->getCommonEventScriptsObject()};
-    EventScript* equipItemEvent {scripts->getScript(EVENT_SCRIPT_NAME)};
+    EventScript* equipItemEvent {commonEventScripts->getScript(EVENT_SCRIPT_NAME)};
     
     if (!equipItemEvent) return false;
     
     _equipItemEvent = equipItemEvent;
     
-    this->resetEquipmentCache();
+    this->setEquipmentCache(etoi(ItemID::UNDIFINED), etoi(ItemID::UNDIFINED));
     
     return true;
 }
 
 // 装備のキャッシュをリセット
-void EquipItemEvent::resetEquipmentCache()
+void EquipItemEvent::setEquipmentCache(const int rightItemId, const int leftItemId)
 {
-    LocalPlayerData* localPlayerData {PlayerDataManager::getInstance()->getLocalData()};
-    _rightItemIdCache = localPlayerData->getItemEquipment(DirectionRight());
-    _leftItemIdCache = localPlayerData->getItemEquipment(DirectionLeft());
+    _rightItemIdCache = rightItemId;
+    _leftItemIdCache = leftItemId;
+}
+
+// 装備状態でマップ移動時のイベント
+void EquipItemEvent::updateEquipmentEvent()
+{
+    this->runCallbackEvent(CsvDataManager::getInstance()->getItemData()->getItemEquipUpdateEvent(_rightItemIdCache));
+    this->runCallbackEvent(CsvDataManager::getInstance()->getItemData()->getItemEquipUpdateEvent(_leftItemIdCache));
 }
 
 // 装備変更時の処理
@@ -54,8 +58,7 @@ void EquipItemEvent::onChangeEquipment(const int rightItemId, const int leftItem
     this->onEquipItem(leftItemId);
     
     // キャッシュを上書き
-    _rightItemIdCache = rightItemId;
-    _leftItemIdCache = leftItemId;
+    this->setEquipmentCache(rightItemId, leftItemId);
 }
 
 // 装備解除時のイベント
@@ -79,7 +82,11 @@ void EquipItemEvent::onEquipItem(const int targetItemId)
 // イベント実行
 void EquipItemEvent::runCallbackEvent(const string &eventName)
 {
+    if (eventName == "") return;
+    
     DungeonSceneManager* manager {DungeonSceneManager::getInstance()};
+    EventFactory* factory {manager->getEventFactory()};
     rapidjson::Value eventJson {_equipItemEvent->getScriptJson(eventName)};
-    manager->getEventTask()->runEventAsync(manager->getEventFactory()->createGameEvent(eventJson, nullptr));
+    GameEvent* event {factory->createGameEvent(eventJson, nullptr)};
+    manager->getEventTask()->runEventAsync(event);
 }
