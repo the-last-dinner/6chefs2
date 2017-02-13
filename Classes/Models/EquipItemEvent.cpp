@@ -88,5 +88,6 @@ void EquipItemEvent::runCallbackEvent(const string &eventName)
     EventFactory* factory {manager->getEventFactory()};
     rapidjson::Value eventJson {_equipItemEvent->getScriptJson(eventName)};
     GameEvent* event {factory->createGameEvent(eventJson, nullptr)};
-    manager->getEventTask()->runEventAsync(event);
+    CC_SAFE_RETAIN(event);
+    manager->getEventTask()->runEvent(event);
 }
