@@ -51,6 +51,9 @@ private:
     CommonEventScripts* commonEventScripts { nullptr };
     EquipItemEvent* equipItemEvent { nullptr };
     
+public:
+    bool onReturnFromDungeonMenuScene { false };
+    
 // インスタンスメソッド
 private:
     DungeonSceneManager();                                                  // コンストラクタ

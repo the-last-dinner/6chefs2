@@ -92,6 +92,15 @@ void DungeonScene::onEnter()
 {
     BaseScene::onEnter();
     
+    if (DungeonSceneManager::getInstance()->onReturnFromDungeonMenuScene) {
+        // 装備チェンジイベント実行
+        DungeonSceneManager::getInstance()->getEquipItemEvent()->onChangeEquipment(
+            PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionRight()),
+            PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionLeft())
+        );
+        DungeonSceneManager::getInstance()->onReturnFromDungeonMenuScene = false;
+    }
+    
     // フェード用カバー
     Sprite* cover { DungeonSceneManager::getInstance()->getCover() };
     
@@ -268,11 +277,8 @@ void DungeonScene::onPopMenuScene()
     // カウントダウンをしれてば再開
     DungeonSceneManager::getInstance()->startStopWatch();
     
-    // 装備チェンジイベント実行
-    DungeonSceneManager::getInstance()->getEquipItemEvent()->onChangeEquipment(
-        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionRight()),
-        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionLeft())
-    );
+    // 装備チェンジイベント実行可能状態に
+    DungeonSceneManager::getInstance()->onReturnFromDungeonMenuScene = true;
     
     // 操作可能に戻す
     _listener->setEnabled(true);
