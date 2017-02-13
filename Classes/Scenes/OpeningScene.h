@@ -31,7 +31,6 @@ private:
     void setVideoLayer();
     void setVideoLayerDummy();
     void setVideoBgm();
-    void setVideoBgmDummy();
     
 public:
     OpeningScene() {FUNCLOG};

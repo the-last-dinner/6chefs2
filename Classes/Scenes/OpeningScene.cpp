@@ -41,8 +41,7 @@ void OpeningScene::onPreloadFinished(LoadingLayer *loadingLayer)
     
     //this->setVideoLayer();
     this->setVideoLayerDummy();
-    //this->setVideoBgm();
-    this->setVideoBgmDummy();
+    this->setVideoBgm();
     this->setPressEnter();
 }
 
@@ -77,13 +76,7 @@ void OpeningScene::setVideoLayerDummy()
 // BGMのセット
 void OpeningScene::setVideoBgm()
 {
-    SoundManager::getInstance()->playBGM(_bgmFileName, false);
-}
-
-// BGMのダミーセット
-void OpeningScene::setVideoBgmDummy()
-{
-    SoundManager::getInstance()->playBGM("idol.mp3", false, 1.0);
+    SoundManager::getInstance()->playBGM(_bgmFileName, false, 2.5);
 }
 
 // PRESS ENTERをセット
