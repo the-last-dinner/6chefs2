@@ -150,6 +150,11 @@ enum struct MapID
     UNDIFINED = -1,
 };
 
+enum struct ItemID
+{
+    UNDIFINED = 0,
+};
+
 // 味方キャラクタの動き方
 enum struct CharacterMovePattern
 {
