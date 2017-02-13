@@ -78,7 +78,6 @@ public:
     void onBackToTitleSelected();
     void onAllEnemyRemoved();
     void onExitDungeon();
-    void setLight();
     void onEventStart();
     void onEventFinished();
     

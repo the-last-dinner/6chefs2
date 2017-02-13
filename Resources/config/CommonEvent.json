@@ -1,8 +1,11 @@
 [
-  {
-    "name":"FinalEvent",
-    "chapter":{
+ {
+    "name": "EquipItemEvent"
+ },
+ {
+    "name": "FinalEvent",
+    "chapter": {
       "5":true
     }
-  }
+ }
 ]
