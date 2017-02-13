@@ -2,7 +2,12 @@
 	"1":[
 		{
 		    "type":"setAmbient",
-		    "ambient":"night"
+		    "ambient":"basement"
+		},
+		{
+			"type":"setTorch",
+			"objID":"1518",
+			"direction":"DOWN"
 		},
 		{
 			"type":"if",
@@ -15,6 +20,20 @@
 				{
 					"type":"removeObject",
 					"objID":"181"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["36","6",1]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"1518"
 				}
 			]
 		}
@@ -141,6 +160,10 @@
 							"option":"reaction"
 						}
 					]
+				},
+				{
+				    "type":"setAmbient",
+				    "ambient":"night"
 				},
 				{
 					"type":"fadein"
@@ -295,8 +318,83 @@
 	],
 	"6":[
 		{
-			"type":"systemMsg",
-			"text":["大きな仏像・・・"]
+			"type":"if",
+			"condition":[
+				{
+					"flg":["36","6",0]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"talk":[
+								{
+									"text":["んん？何やら光ってますな？"],
+									"charaID":"4",
+									"imgID":"1"
+								},
+								{
+									"text":["さ、流石に暗いから持ってっちゃおう！"],
+									"charaID":"7",
+									"imgID":"1"
+								}
+							]
+						},
+						{
+							"type":"questionMsg",
+							"text":["明かりを取りますか？"],
+							"choices":[
+								{
+									"choise":"持っていく",
+									"action":[
+										{
+											"type":"sequence",
+											"action":[
+												{
+													"type":"getItem",
+													"itemID":"1518"
+												},
+												{
+													"type":"removeObject",
+													"objID":"1518"
+												},
+												{
+													"type":"changeFlg",
+													"mapID":"36",
+													"eventID":"6",
+													"flg":1
+												}
+											]
+										}
+									]
+								},
+								{
+									"choise":"そのままにしておく",
+									"action":[
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["36","6",1]
+				}
+			],
+			"action":[
+				{
+					"type":"systemMsg",
+					"text":["大きな仏像・・・"]
+				}
+			]
 		}
 	]
 }
