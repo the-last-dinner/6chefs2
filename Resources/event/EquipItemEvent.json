@@ -2,28 +2,28 @@
     "torchInit": [
         {
             "type": "playSE",
-            "file": "fire_ignition.mp3"
+            "file": "switch1.mp3"
         },
         {
-            "type": "setLight",
+            "type": "setFlashlight",
             "objID": "hero",
-            "range": 50
+            "range": 5
         }
     ],
     "torchUpdate": [
         {
-            "type": "setLight",
+            "type": "setFlashlight",
             "objID": "hero",
-            "range": 50
+            "range": 5
         }
     ],
     "torchEnd": [
         {
             "type": "playSE",
-            "file": "fire_vanish.mp3"
+            "file": "switch1.mp3"
         },
         {
-            "type": "removeLight",
+            "type": "removesetFlashlight",
             "objID": "hero"
         }
     ],

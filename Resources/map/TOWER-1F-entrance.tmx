@@ -176,11 +176,4 @@
    eJztzjsOglAUANHb+KEUsYEosP9VoViqUPpLnAVQUMkr5iTTT4QkSZL+oSsjznShnq7l0kfTbnzd6UEDjYl+Pvl60Zs+9E30c1VFrGlDW8qqpY+m7fjKaU8FHRL9PPJ1opoaahP9lCRJkiRJkiRJ8/0A7J8SOg==
   </data>
  </layer>
- <objectgroup name="item">
-  <object id="204" x="320" y="272" width="32" height="16">
-   <properties>
-    <property name="objID" value="1518"/>
-   </properties>
-  </object>
- </objectgroup>
 </map>
