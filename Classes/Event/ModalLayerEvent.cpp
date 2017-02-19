@@ -19,7 +19,6 @@
 #include "Datas/Message/SystemMessageData.h"
 
 #include "Layers/Dungeon/DisplayImageLayer.h"
-#include "Layers/Dungeon/VideoLayer.h"
 #include "Layers/Menu/SaveDataSelector.h"
 #include "Layers/Message/CharacterMessagelayer.h"
 #include "Layers/Message/StoryMessagelayer.h"
@@ -29,6 +28,8 @@
 
 #include "MapObjects/Character.h"
 #include "MapObjects/Party.h"
+
+#include "UI/Video/VideoPlayer.h"
 
 #include "Models/PlayerData/LocalPlayerData.h"
 
@@ -358,7 +359,7 @@ bool PlayVideoEvent::init(rapidjson::Value& json)
 
 void PlayVideoEvent::run()
 {
-    VideoLayer* layer { VideoLayer::create(_fileName, _skip, [this]{this->setDone();}) };
+    VideoPlayer* layer { VideoPlayer::create(_fileName, _skip, [this]{this->setDone();}) };
     
     if (!layer) {
         this->setDone();

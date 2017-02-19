@@ -1,19 +1,19 @@
 //
-//  VideoLayer.h
+//  VideoPlayer.h
 //  6chefs2
 //
 //  Created by Sota Inami on 2017/2/12.
 //
 //
 
-#ifndef VideoLayer_h
-#define VideoLayer_h
+#ifndef VideoPlayer_h
+#define VideoPlayer_h
 
 #include "Common.h"
 
 #include "UI/Video/VideoSprite.h"
 
-class VideoLayer : public Layer
+class VideoPlayer : public Layer
 {
 // 定数
 private:
@@ -23,14 +23,14 @@ private:
     
 // クラスメソッド
 public:
-    static VideoLayer* create(const string& fileName, const bool skip, function<void()> onEnd);
+    static VideoPlayer* create(const string& fileName, const bool skip, function<void()> onEnd);
     
 private:
-    VideoLayer();
-    ~VideoLayer();
+    VideoPlayer();
+    ~VideoPlayer();
     bool init(const string& fileName, const bool skip, function<void()> onEnd);
     
     void remove(function<void()> callback);
 };
 
-#endif /* VideoLayer_h */
+#endif /* VideoPlayer_h */

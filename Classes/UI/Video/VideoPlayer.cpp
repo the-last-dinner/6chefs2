@@ -1,30 +1,30 @@
 //
-//  DisplayImageLayer.cpp
-//  LastSupper
+//  VideoPlayer.cpp
+//  6chefs2
 //
-//  Created by Kohei Asami on 2015/11/09.
+//  Created by Sota Inami on 2017/2/12.
 //
 //
 
-#include "Layers/Dungeon/VideoLayer.h"
+#include "UI/Video/VideoPlayer.h"
 
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 
 // 定数
-const string VideoLayer::DISP_VIDEO_PATH = "video/";
-const float VideoLayer::SHOW_DURATION = 0.1f;
-const float VideoLayer::HIDE_DURATION = 0.1f;
+const string VideoPlayer::DISP_VIDEO_PATH = "video/";
+const float VideoPlayer::SHOW_DURATION = 0.1f;
+const float VideoPlayer::HIDE_DURATION = 0.1f;
 
 // コンストラクタ
-VideoLayer::VideoLayer() {FUNCLOG};
+VideoPlayer::VideoPlayer() {FUNCLOG};
 
 //デストラクタ
-VideoLayer::~VideoLayer() {FUNCLOG};
+VideoPlayer::~VideoPlayer() {FUNCLOG};
 
 // create関数
-VideoLayer* VideoLayer::create(const string& fileName, const bool skip, function<void()> onEnd)
+VideoPlayer* VideoPlayer::create(const string& fileName, const bool skip, function<void()> onEnd)
 {
-    VideoLayer* p {new(nothrow) VideoLayer()};
+    VideoPlayer* p {new(nothrow) VideoPlayer()};
     
     if(p && p->init(fileName, skip, onEnd)) {
         CC_SAFE_RETAIN(p);
@@ -37,7 +37,7 @@ VideoLayer* VideoLayer::create(const string& fileName, const bool skip, function
 }
 
 // 初期化
-bool VideoLayer::init(const string& fileName, const bool skip, function<void()> onEnd)
+bool VideoPlayer::init(const string& fileName, const bool skip, function<void()> onEnd)
 {
     if(!Layer::init()) return false;
     
@@ -78,7 +78,7 @@ bool VideoLayer::init(const string& fileName, const bool skip, function<void()> 
 }
 
 // 消す
-void VideoLayer::remove(function<void()> callback)
+void VideoPlayer::remove(function<void()> callback)
 {
     this->runAction(Sequence::create(FadeOut::create(HIDE_DURATION), CallFunc::create(callback), RemoveSelf::create(), nullptr));
 }
