@@ -55,6 +55,7 @@ namespace member
     static const char* PATH_ID = "pathID";
     static const char* RANGE = "range";
     static const char* SECOND = "second";
+    static const char* SKIP = "skip";
     static const char* SPEED = "speed";
     static const char* STATUS = "status";
     static const char* STEPS = "steps";

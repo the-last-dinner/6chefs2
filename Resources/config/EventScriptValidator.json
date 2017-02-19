@@ -149,6 +149,13 @@
                 "time": ["double", "int"]
             }
         },
+        "playVideo": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "skip": ["bool"]
+            }
+        },
         "displaySaveMenu": {
             "member": {
                 "mapID": ["stoi"],
