@@ -48,27 +48,21 @@ void CSNode::play(const string& animationName, bool loop)
     this->play(animationName, 1.f, loop);
 }
 
-void CSNode::play(const string& animationName, float speed, bool loop)
+void CSNode::play(const string& animationName, function<void()> callback)
+{
+    this->play(animationName, 1.f, false, callback);
+}
+
+void CSNode::play(const string& animationName, float speed, bool loop, function<void()> callback)
 {
     this->setPlaying(animationName, true);
-    _timeline->setAnimationEndCallFunc(animationName, [this, animationName] {
+    _timeline->setAnimationEndCallFunc(animationName, [this, animationName, callback] {
         this->setPlaying(animationName, false);
         _timeline->setAnimationEndCallFunc(animationName, nullptr);
+        if (callback) callback();
     });
     _timeline->setTimeSpeed(speed);
     _timeline->play(animationName, loop);
-}
-
-void CSNode::play(const string& animationName, function<void()> animationCallback)
-{
-    this->setPlaying(animationName, true);
-    _timeline->setAnimationEndCallFunc(animationName, [this, animationName, animationCallback] {
-        this->setPlaying(animationName, false);
-        _timeline->setAnimationEndCallFunc(animationName, nullptr);
-        if (animationCallback) animationCallback();
-    });
-    _timeline->setTimeSpeed(1.f);
-    _timeline->play(animationName, false);
 }
 
 void CSNode::playIfNotPlaying(const string& animationName, float speed)
@@ -79,12 +73,12 @@ void CSNode::playIfNotPlaying(const string& animationName, float speed)
 
 void CSNode::pause()
 {
-    _csbNode->getActionManager()->pauseTarget(_csbNode);
+    _csbNode->pause();
 }
 
 void CSNode::resume()
 {
-    _csbNode->getActionManager()->resumeTarget(_csbNode);
+    _csbNode->resume();
 }
 
 #pragma mark -
@@ -92,19 +86,12 @@ void CSNode::resume()
 
 bool CSNode::isPlaying() const
 {
-    bool playing = false;
-    for (pair<string, bool> p : _isPlayingWithAnimationName) {
-        if (!p.second) continue;
-        playing = true;
-        break;
-    }
-    return playing;
+    return !_currentAnimationInfo.isNull();
 }
 
 bool CSNode::isPlaying(const string& animationName) const
 {
-    if (_isPlayingWithAnimationName.count(animationName) == 0) return false;
-    return _isPlayingWithAnimationName.at(animationName);
+    return _currentAnimationInfo.name == animationName;
 }
 
 Node* CSNode::getCSChild(const string& name) const
@@ -118,8 +105,17 @@ Node* CSNode::getCSChild(const string& name) const
 
 void CSNode::setPlaying(const string& animationName, bool playing)
 {
-    for (pair<string, bool> p : _isPlayingWithAnimationName) {
-        if (animationName != p.first) _isPlayingWithAnimationName[p.first] = false;
+    if (!playing) {
+        _currentAnimationInfo = AnimationInfo();
+        return;
     }
-    _isPlayingWithAnimationName[animationName] = playing;
+    
+    cocostudio::timeline::AnimationInfo originInfo { _timeline->getAnimationInfo(animationName) };
+    AnimationInfo info {};
+    info.name = animationName;
+    info.startIndex = originInfo.startIndex;
+    info.endIndex = originInfo.endIndex;
+    info.clipEndCallBack = originInfo.clipEndCallBack;
+    
+    _currentAnimationInfo = info;
 }

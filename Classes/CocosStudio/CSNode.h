@@ -20,7 +20,17 @@ namespace cocostudio
 }
 
 class CSNode : public Node
-{    
+{
+private:
+    struct AnimationInfo
+    {
+        std::string name;
+        int startIndex;
+        int endIndex;
+        std::function<void()> clipEndCallBack;
+        bool isNull() const { return name == ""; }
+    };
+    
 // クラスメソッド
 public:
     CREATE_FUNC_WITH_PARAM(CSNode, const string&)
@@ -29,7 +39,7 @@ public:
 private:
     Node* _csbNode { nullptr };
     cocostudio::timeline::ActionTimeline* _timeline { nullptr };
-    map<string, bool> _isPlayingWithAnimationName {};
+    AnimationInfo _currentAnimationInfo {};
     
 // インスタンスメソッド
 private:
@@ -38,8 +48,8 @@ private:
     virtual bool init(const string& filepath);
 public:
     void play(const string& animationName, bool loop = false);
-    void play(const string& animationName, float speed, bool loop = false);
-    void play(const string& animationName, function<void()> animationCallback);
+    void play(const string& animationName, function<void()> callback);
+    void play(const string& animationName, float speed, bool loop = false, function<void()> callback = nullptr);
     
     void playIfNotPlaying(const string& animationName, float speed = 1.f);
     
