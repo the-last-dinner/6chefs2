@@ -42,6 +42,9 @@ public:
     void play(const string& animationName, function<void()> animationCallback);
     
     void playIfNotPlaying(const string& animationName, float speed = 1.f);
+    
+    void resume();
+    void pause();
 public:
     bool isPlaying() const;
     bool isPlaying(const string& animationName) const;
