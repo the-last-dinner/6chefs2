@@ -51,3 +51,8 @@ void BattleManager::onBattleFinished(Battle* finishedBattle)
 {
     CC_SAFE_RELEASE_NULL(_battle);
 }
+
+bool BattleManager::isInBattle() const
+{
+    return _battle;
+}
