@@ -1,8 +1,40 @@
 {
 	"1":[
 		{
-		    "type":"setAmbient",
-		    "ambient":"night"
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["50","8"]
+				}
+			],
+			"action":[
+				{
+				    "type":"setAmbient",
+				    "ambient":"basement"
+				},
+				{
+					"type":"setLight",
+					"objID":"1"
+				},
+				{
+					"type":"setLight",
+					"objID":"2"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["50","8"]
+				}
+			],
+			"action":[
+				{
+				    "type":"setAmbient",
+				    "ambient":"night"
+				}
+			]
 		},
 		{
 			"type":"if",

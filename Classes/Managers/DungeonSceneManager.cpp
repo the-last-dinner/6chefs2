@@ -24,6 +24,7 @@
 #include "MapObjects/Status/Stamina.h"
 
 #include "Models/CommonEventScripts.h"
+#include "Models/EquipItemEvent.h"
 #include "Models/StopWatch.h"
 
 #include "Scenes/DungeonScene.h"
@@ -80,6 +81,15 @@ DungeonSceneManager::DungeonSceneManager()
     commonEventScripts->loadEventScripts(PlayerDataManager::getInstance()->getLocalData()->getChapterId());
     CC_SAFE_RETAIN(commonEventScripts);
     this->commonEventScripts = commonEventScripts;
+    
+    // 装備イベント生成
+    EquipItemEvent* equipItemEvent {EquipItemEvent::create(commonEventScripts)};
+    equipItemEvent->setEquipmentCache(
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionRight()),
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionLeft())
+    );
+    CC_SAFE_RETAIN(equipItemEvent);
+    this->equipItemEvent = equipItemEvent;
 }
 
 // デストラクタ
@@ -91,6 +101,7 @@ DungeonSceneManager::~DungeonSceneManager()
     CC_SAFE_RELEASE_NULL(this->gameEventHelper);
     CC_SAFE_RELEASE_NULL(this->stamina);
     CC_SAFE_RELEASE_NULL(this->commonEventScripts);
+    CC_SAFE_RELEASE_NULL(this->equipItemEvent);
 };
 
 #pragma mark -
@@ -128,6 +139,9 @@ EventTask* DungeonSceneManager::getEventTask() const { return this->getScene()->
 
 // カメラを取得
 CameraTask* DungeonSceneManager::getCamera() const { return this->getScene()->_cameraTask; };
+
+// アイテム装備イベントを取得
+EquipItemEvent* DungeonSceneManager::getEquipItemEvent() const { return this->equipItemEvent; };
 
 #pragma mark -
 #pragma mark Scene

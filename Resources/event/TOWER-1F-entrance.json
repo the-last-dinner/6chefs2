@@ -5,6 +5,11 @@
 		    "ambient":"night"
 		},
 		{
+			"type":"setTorch",
+			"objID":"1518",
+			"direction":"DOWN"
+		},
+		{
 			"type":"if",
 			"condition":[
 				{
@@ -15,6 +20,20 @@
 				{
 					"type":"removeObject",
 					"objID":"181"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["36","6",1]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"1518"
 				}
 			]
 		}
@@ -141,6 +160,10 @@
 							"option":"reaction"
 						}
 					]
+				},
+				{
+				    "type":"setAmbient",
+				    "ambient":"night"
 				},
 				{
 					"type":"fadein"

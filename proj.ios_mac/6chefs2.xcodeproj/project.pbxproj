@@ -43,6 +43,8 @@
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		26B6DA4C1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
 		26B6DA4D1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
+		26E22CF91E51F26D0018A55C /* EquipItemEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */; };
+		26E22CFA1E51F26D0018A55C /* EquipItemEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */; };
 		26E301571DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
 		26E301581DF2D6B7000E585D /* CountDownDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */; };
 		26E950B81CDA50C30018BF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E950B61CDA50C30018BF93 /* InfoPlist.strings */; };
@@ -494,6 +496,8 @@
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
 		26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrophyConfigData.cpp; path = ConfigData/TrophyConfigData.cpp; sourceTree = "<group>"; };
 		26B6DA4B1E50A9FE008BC70A /* TrophyConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrophyConfigData.h; path = ConfigData/TrophyConfigData.h; sourceTree = "<group>"; };
+		26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EquipItemEvent.cpp; sourceTree = "<group>"; };
+		26E22CF81E51F26D0018A55C /* EquipItemEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipItemEvent.h; sourceTree = "<group>"; };
 		26E301551DF2D6B7000E585D /* CountDownDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CountDownDisplay.cpp; sourceTree = "<group>"; };
 		26E301561DF2D6B7000E585D /* CountDownDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownDisplay.h; sourceTree = "<group>"; };
 		26E950B91CDA51200018BF93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "6chefs2-desktop/Images.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -1545,6 +1549,8 @@
 				DC0391101C871E1000C50E8E /* StopWatch.h */,
 				2607CB151CE8516E00F7E8C3 /* CommonEventScripts.cpp */,
 				2607CB161CE8516E00F7E8C3 /* CommonEventScripts.h */,
+				26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */,
+				26E22CF81E51F26D0018A55C /* EquipItemEvent.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2049,6 +2055,7 @@
 				2672D5081D734C7F00AC0E96 /* EventScriptValidator.cpp in Sources */,
 				DC0392051C871E1000C50E8E /* PlainArea.cpp in Sources */,
 				DC8C4D311D8FC13700FF0A1E /* AttackBox.cpp in Sources */,
+				26E22CF91E51F26D0018A55C /* EquipItemEvent.cpp in Sources */,
 				DC0392371C871E1000C50E8E /* NeverFollow.cpp in Sources */,
 				DC03921D1C871E1000C50E8E /* DungeonCameraScene.cpp in Sources */,
 				DC0392451C871E1000C50E8E /* TrophyNotification.cpp in Sources */,
@@ -2275,6 +2282,7 @@
 				DC0391CC1C871E1000C50E8E /* CharacterMessageLayer.cpp in Sources */,
 				9F462BF61E505FC9007A1DEB /* VideoLayer.cpp in Sources */,
 				DC01829E1D7A9D8900E556D1 /* Normal.cpp in Sources */,
+				26E22CFA1E51F26D0018A55C /* EquipItemEvent.cpp in Sources */,
 				DC03921A1C871E1000C50E8E /* StopWatch.cpp in Sources */,
 				DC0391A41C871E1000C50E8E /* MiniGameEvent.cpp in Sources */,
 				DC7F6E211DA0B20D007AE8B5 /* HitPoint.cpp in Sources */,
