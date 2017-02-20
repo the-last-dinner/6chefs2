@@ -13,7 +13,7 @@
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/EventListener/EventListenerKeyboardLayer.h"
 #include "Layers/LoadingLayer.h"
-// #include "Layers/Dungeon/VideoLayer.h"
+#include "UI/Video/VideoPlayer.h"
 
 // 初期化
 bool OpeningScene::init()
@@ -39,8 +39,8 @@ void OpeningScene::onPreloadFinished(LoadingLayer *loadingLayer)
     // ローディング終了
     loadingLayer->onLoadFinished();
     
-    //this->setVideoLayer();
-    this->setVideoLayerDummy();
+    this->setVideoLayer();
+    //this->setVideoLayerDummy();
     this->setVideoBgm();
     this->setPressEnter();
 }
@@ -48,19 +48,18 @@ void OpeningScene::onPreloadFinished(LoadingLayer *loadingLayer)
 // 動画レイヤーをセット
 void OpeningScene::setVideoLayer()
 {
-    // VideoLayer* videoLayer { VideoLayer::create(_videoFileName, true, [this]{
-    //         SoundManager::getInstance()->stopBgmAll();
-    //         Director::getInstance()->replaceScene(TitleScene::create());
-    //     }) };
-    // videoLayer->setPosition(WINDOW_CENTER);
-    // this->addChild(videoLayer);
+     VideoPlayer* videoPlayer { VideoPlayer::create(_videoFileName, true, [this]{
+            SoundManager::getInstance()->stopBGMAll();
+            Director::getInstance()->replaceScene(TitleScene::create());
+         }) };
+     this->addChild(videoPlayer);
 }
 
-// 動画レイヤーのダミー
+// 動画レイヤーのダミー(テスト用に残しておく)
 void OpeningScene::setVideoLayerDummy()
 {
     // ダミー動画レイヤー
-    Label* videoLayer {Label::createWithTTF("動画再生なう\nBGMはループしないようにしたよ", Resource::Font::MESSAGE, 40)};
+    Label* videoLayer {Label::createWithTTF("動画再生なう", Resource::Font::MESSAGE, 40)};
     videoLayer->setPosition(WINDOW_CENTER);
     this->addChild(videoLayer);
     
