@@ -26,15 +26,15 @@ AmbientLightLayer::~AmbientLightLayer()
 {
     FUNCLOG
 
-    for(pair<Light*, Light*> element : this->lightMap)
+    for(pair<Light*, LightSource*> element : _lightMap)
     {
         if(!element.first) continue;
         
         CC_SAFE_RELEASE_NULL(element.first);
     }
     
-    if(this->renderTexture) this->renderTexture->autorelease();
-    if(this->ambientLight) this->ambientLight->autorelease();
+    if(_renderTexture) _renderTexture->autorelease();
+    if(_ambientLight) _ambientLight->autorelease();
 }
 
 // 初期化
@@ -51,7 +51,7 @@ bool AmbientLightLayer::init(const Color3B& color)
     ambientSprite->setColor(color);
     ambientSprite->setPosition(winSize / 2);
     this->addChild(ambientSprite);
-    this->ambientLight = ambientSprite;
+    _ambientLight = ambientSprite;
     CC_SAFE_RETAIN(ambientSprite); // crash fix
     
     this->setCascadeColorEnabled(true);
@@ -60,7 +60,7 @@ bool AmbientLightLayer::init(const Color3B& color)
     // レンダーテクスチャを生成
     RenderTexture* renderTexture { RenderTexture::create(winSize.width, winSize.height) };
     this->addChild(renderTexture);
-    this->renderTexture = renderTexture;
+    _renderTexture = renderTexture;
     CC_SAFE_RETAIN(renderTexture); // crash fix
     
     // レンダーテクスチャ用Sprite
@@ -86,50 +86,52 @@ void AmbientLightLayer::onExit()
 // 環境光の色を設定
 void AmbientLightLayer::setAmbient(const Color3B& color)
 {
-    this->ambientLight->setColor(color);
+    _ambientLight->setColor(color);
 }
 
 // 光源を追加
-void AmbientLightLayer::addLightSource(Light* lightSource)
+void AmbientLightLayer::addLightSource(LightSource* lightSource)
 {
     if(!lightSource) return;
     
-    Light::Information info {lightSource->getInformation()};
-    
     CC_SAFE_RETAIN(lightSource);
-    Color3B color { Color3B(info.color.r * 1.3f, info.color.g * 1.3f, info.color.b * 1.3f)};
-    float radius {info.radius * 7.0f};
     
-    Light* light {Light::create(Light::Information(color, radius, info.type))};
-    light->setPosition(lightSource->convertToWorldSpace(lightSource->getPosition()));
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
-    this->ambientLight->addChild(light);
+    _ambientLight->addChild(lightSource->getOuterLight());
     
-    float duration {0.5f};
-    light->runAction(FadeIn::create(duration));
-    
-    this->lightMap.insert({lightSource, light});
+    _lightMap.insert({lightSource->getInnerLight(), lightSource});
 }
 
 // 光源を削除
-void AmbientLightLayer::removeLightSource(Light* lightSource)
+void AmbientLightLayer::removeLightSource(LightSource* lightSource)
 {
     if(!lightSource) return;
     
-    if(this->lightMap.count(lightSource) == 0) return;
-    Light* light {this->lightMap.at(lightSource)};
-    light->runAction(Sequence::create(FadeOut::create(0.5f), RemoveSelf::create(), CallFunc::create([this, lightSource](){this->lightMap.erase(lightSource); CC_SAFE_RELEASE(lightSource);}), nullptr));
+    Light* light {lightSource->getInnerLight()};
+    
+    if(_lightMap.count(light) == 0) return;
+
+    lightSource->remove();
+    lightSource->getOuterLight()->runAction(
+        Sequence::create(
+            FadeOut::create(0.5f),
+            RemoveSelf::create(),
+            CallFunc::create([this, light, lightSource](){
+                _lightMap.erase(light);
+                CC_SAFE_RELEASE(lightSource);
+            }),
+            nullptr
+        )
+    );
 }
 
 void AmbientLightLayer::update(float delta)
 {
     // 光の状態、位置を更新
-    for(pair<Light*, Light*> element : this->lightMap)
+    for(pair<Light*, LightSource*> element : _lightMap)
     {
-        Light* lightSource {element.first};
-        Light* light {element.second};
-        if(lightSource->getReferenceCount() == 1)
+        Light* light {element.first};
+        LightSource* lightSource {element.second};
+        if(light->getReferenceCount() == 2)
         {
             this->removeLightSource(lightSource);
             
@@ -139,18 +141,18 @@ void AmbientLightLayer::update(float delta)
     }
     
     // レンダーテクスチャに焼き込み
-    this->renderTexture->beginWithClear(0.f, 0.f, 0.f, 0.f);
+    _renderTexture->beginWithClear(0.f, 0.f, 0.f, 0.f);
     for (Node* child : this->getChildren())
     {
-        if (child == this->renderTexture) continue;
+        if (child == _renderTexture) continue;
         child->visit();
     }
-    this->renderTexture->end();
+    _renderTexture->end();
 }
 
 void AmbientLightLayer::visit(Renderer* renderer, const Mat4& parentTransform, uint32_t parentFlags)
 {
     if (!this->isVisible()) return;
     
-    this->renderTexture->getSprite()->visit(renderer, parentTransform, parentFlags);
+    _renderTexture->getSprite()->visit(renderer, parentTransform, parentFlags);
 }

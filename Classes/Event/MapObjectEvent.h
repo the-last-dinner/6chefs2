@@ -13,6 +13,9 @@
 
 class MapObject;
 class Light;
+class LightSource;
+class Torch;
+class Flashlight;
 
 // マップオブジェクトに関わるイベント
 // 基底クラス
@@ -144,7 +147,7 @@ class SetLightEvent : public MapObjectEvent
 public:
     CREATE_FUNC_WITH_PARAM(SetLightEvent, rapidjson::Value&)
 private:
-    Light* _light { nullptr };
+    Torch* _torch { nullptr };
 private:
     SetLightEvent() { FUNCLOG };
     ~SetLightEvent() { FUNCLOG };

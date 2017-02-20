@@ -22,7 +22,7 @@
 #include "MapObjects/TerrainState/TerrainStateCache.h"
 
 #include "Effects/AmbientLightLayer.h"
-#include "Effects/Light.h"
+#include "Effects/LightSources/LightSource.h"
 
 #include "Managers/DungeonSceneManager.h"
 #include "Managers/ConfigDataManager.h"
@@ -147,19 +147,19 @@ void MapObject::setSprite(Sprite* sprite)
 void MapObject::setPaused(bool paused) { _paused = paused; }
 
 // ライトをセット
-void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback)
+void MapObject::setLight(LightSource* lightSource, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
     if(_light) return;
     
-    // ライトを追加
-    _light = light;
-    this->addChild(light);
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
-    light->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
+    // 自身にライトを追加
+    _light = lightSource->getInnerLight();
+    this->addChild(_light);
     
     // 環境光レイヤーに光源として追加
-    ambientLightLayer->addLightSource(light);
+    ambientLightLayer->addLightSource(lightSource);
+    
+    // 点灯開始
+    lightSource->start(callback);
 }
 
 // ライトを消す

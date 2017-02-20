@@ -11,7 +11,7 @@
 
 #include "Common.h"
 
-#include "Effects/Light.h"
+#include "Effects/LightSources/LightSource.h"
 
 class Light;
 
@@ -32,15 +32,15 @@ public:
     
 // インスタンス変数
 private:
-    Sprite* ambientLight { nullptr };
-    map<Light*, Light*> lightMap {};
-    RenderTexture* renderTexture { nullptr };
+    Sprite* _ambientLight { nullptr };
+    map<Light*, LightSource*> _lightMap {};
+    RenderTexture* _renderTexture { nullptr };
 
 // インスタンスメソッド
 public:
     void setAmbient(const Color3B& color);
-    void addLightSource(Light* lightSource);
-    void removeLightSource(Light* lightSource);
+    void addLightSource(LightSource* lightSource);
+    void removeLightSource(LightSource* lightSource);
     void update(float delta) override;
     virtual void visit(Renderer* renderer, const Mat4& parentTransform, uint32_t parentFlags) override;
 private:

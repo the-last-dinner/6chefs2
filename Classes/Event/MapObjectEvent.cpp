@@ -8,7 +8,9 @@
 
 #include "MapObjectEvent.h"
 
-#include "Effects/Light.h"
+#include "Effects/LightSources/LightSource.h"
+#include "Effects/LightSources/Torch.h"
+#include "Effects/LightSources/Flashlight.h"
 
 #include "Event/GameEventHelper.h"
 #include "Event/EventScriptMember.h"
@@ -283,9 +285,9 @@ bool SetLightEvent::init(rapidjson::Value& json)
     if (_eventHelper->hasMember(_json, member::COLOR)) info.color = _eventHelper->getColor(_json);
     
     // 光生成
-    Light* light { Light::create(info) };
-    CC_SAFE_RETAIN(light);
-    _light = light;
+    Torch* torch { Torch::create() };
+    CC_SAFE_RETAIN(torch);
+    _torch = torch;
     
     return true;
 }
@@ -294,9 +296,10 @@ void SetLightEvent::run()
 {
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
     
-    target->setLight(_light, DungeonSceneManager::getInstance()->getAmbientLayer(), [this]{this->setDone();});
+    target->setLight(_torch, DungeonSceneManager::getInstance()->getAmbientLayer(), [this]{});
+    this->setDone();
     
-    CC_SAFE_RELEASE_NULL(_light);
+    CC_SAFE_RELEASE_NULL(_torch);
 }
 
 #pragma mark -

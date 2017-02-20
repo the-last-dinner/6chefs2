@@ -25,6 +25,7 @@ class HitBox;
 class HitPoint;
 class Battle;
 class CSNode;
+class LightSource;
 
 class MapObject : public Node
 {
@@ -79,7 +80,7 @@ public:
     void setPaused(bool paused);
     void setCollision(CollisionBox* collision);
     
-	void setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
+	void setLight(LightSource* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
 	void removeLight(function<void()> callback = nullptr);
 	
     Location getLocation() const { return _location; }

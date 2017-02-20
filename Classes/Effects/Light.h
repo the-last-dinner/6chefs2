@@ -13,16 +13,13 @@
 
 class Light : public Node
 {
-// 定数
-public:
-    static const Color3B TORCH_COLOR;
-    
 // 列挙型
 public:
     enum struct Type
     {
         NORMAL,
         TORCH,
+        FLASHLIGHT,
         
         SIZE
     };
@@ -33,11 +30,19 @@ public:
     {
         Color3B color {TORCH_COLOR};
         float radius {0};
-        Type type {Type::TORCH};
+        Light::Type type {Light::Type::TORCH};
+        string fileName {};
         Information(){};
         Information(float radius):radius(radius){};
-        Information(const Color3B color, float radius, const Type& type):color(color), radius(radius), type(type){};
+        Information(const Color3B color, float radius, Light::Type type):color(color), radius(radius), type(type){};
+        Information(const Color3B color, float radius, string fileName):color(color), radius(radius), fileName(fileName){};
     };
+    
+// 定数
+public:
+    static const Color3B TORCH_COLOR;
+    static const Color3B FLASHLIGHT_COLOR;
+    static const map<Type, Information> TYPE_TO_INFO;
     
 // クラスメソッド
 public:

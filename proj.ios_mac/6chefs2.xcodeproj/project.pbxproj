@@ -41,6 +41,11 @@
 		268E3FAA1D64BFD90098B235 /* ConfigDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */; };
 		269211561CE89FB5005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
 		269211571CE8A9A9005C0E5A /* config in Resources */ = {isa = PBXBuildFile; fileRef = 269211551CE89FB5005C0E5A /* config */; };
+		26AD55AA1E598C4E0082C324 /* LightSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26AD55A81E598C4E0082C324 /* LightSource.cpp */; };
+		26AD55AB1E598C4E0082C324 /* LightSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26AD55A81E598C4E0082C324 /* LightSource.cpp */; };
+		26AD55AE1E598D180082C324 /* Torch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26AD55AC1E598D180082C324 /* Torch.cpp */; };
+		26AD55AF1E598D180082C324 /* Torch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26AD55AC1E598D180082C324 /* Torch.cpp */; };
+		26AD55B61E59B3720082C324 /* Flashlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26AD55B41E59B3720082C324 /* Flashlight.cpp */; };
 		26B6DA4C1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
 		26B6DA4D1E50A9FE008BC70A /* TrophyConfigData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */; };
 		26E22CF91E51F26D0018A55C /* EquipItemEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */; };
@@ -498,6 +503,12 @@
 		268E3FA71D64BFD90098B235 /* ConfigDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigDataManager.cpp; sourceTree = "<group>"; };
 		268E3FA81D64BFD90098B235 /* ConfigDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataManager.h; sourceTree = "<group>"; };
 		269211551CE89FB5005C0E5A /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
+		26AD55A81E598C4E0082C324 /* LightSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightSource.cpp; path = LightSources/LightSource.cpp; sourceTree = "<group>"; };
+		26AD55A91E598C4E0082C324 /* LightSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSource.h; path = LightSources/LightSource.h; sourceTree = "<group>"; };
+		26AD55AC1E598D180082C324 /* Torch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Torch.cpp; path = LightSources/Torch.cpp; sourceTree = "<group>"; };
+		26AD55AD1E598D180082C324 /* Torch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Torch.h; path = LightSources/Torch.h; sourceTree = "<group>"; };
+		26AD55B41E59B3720082C324 /* Flashlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Flashlight.cpp; path = LightSources/Flashlight.cpp; sourceTree = "<group>"; };
+		26AD55B51E59B3720082C324 /* Flashlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flashlight.h; path = LightSources/Flashlight.h; sourceTree = "<group>"; };
 		26B6DA4A1E50A9FE008BC70A /* TrophyConfigData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrophyConfigData.cpp; path = ConfigData/TrophyConfigData.cpp; sourceTree = "<group>"; };
 		26B6DA4B1E50A9FE008BC70A /* TrophyConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrophyConfigData.h; path = ConfigData/TrophyConfigData.h; sourceTree = "<group>"; };
 		26E22CF71E51F26D0018A55C /* EquipItemEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EquipItemEvent.cpp; sourceTree = "<group>"; };
@@ -1011,6 +1022,19 @@
 			name = ConfigData;
 			sourceTree = "<group>";
 		};
+		26AD55A71E598C090082C324 /* LightSouces */ = {
+			isa = PBXGroup;
+			children = (
+				26AD55A81E598C4E0082C324 /* LightSource.cpp */,
+				26AD55A91E598C4E0082C324 /* LightSource.h */,
+				26AD55AC1E598D180082C324 /* Torch.cpp */,
+				26AD55AD1E598D180082C324 /* Torch.h */,
+				26AD55B41E59B3720082C324 /* Flashlight.cpp */,
+				26AD55B51E59B3720082C324 /* Flashlight.h */,
+			);
+			name = LightSouces;
+			sourceTree = "<group>";
+		};
 		26CEE23F1D71A5FB00956ED3 /* PlayerData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1289,6 +1313,7 @@
 		DC0390711C871E1000C50E8E /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				26AD55A71E598C090082C324 /* LightSouces */,
 				DC0390721C871E1000C50E8E /* AmbientLightLayer.cpp */,
 				DC0390731C871E1000C50E8E /* AmbientLightLayer.h */,
 				DC0390741C871E1000C50E8E /* Fog.cpp */,
@@ -1963,6 +1988,7 @@
 				DC0392331C871E1000C50E8E /* FollowType.cpp in Sources */,
 				DC8916CD1DB31505005BC516 /* EventQueue.cpp in Sources */,
 				DC03922B1C871E1000C50E8E /* CameraTask.cpp in Sources */,
+				26AD55B61E59B3720082C324 /* Flashlight.cpp in Sources */,
 				DCCA52561C945625004769E1 /* KeyconfigMenuLayer.cpp in Sources */,
 				DC03920F1C871E1000C50E8E /* Direction.cpp in Sources */,
 				26460B921D72EBB600F0336C /* TrophyData.cpp in Sources */,
@@ -2021,6 +2047,7 @@
 				DC0391F91C871E1000C50E8E /* MovePattern.cpp in Sources */,
 				DCEF71E61DE5D76900FA1291 /* BattleEvent.cpp in Sources */,
 				9F462BE81E4EC9D1007A1DEB /* VideoDecode.cpp in Sources */,
+				26AD55AA1E598C4E0082C324 /* LightSource.cpp in Sources */,
 				DC0392351C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				26460B901D72EBB600F0336C /* ItemData.cpp in Sources */,
 				DC0391E71C871E1000C50E8E /* EventObject.cpp in Sources */,
@@ -2059,6 +2086,7 @@
 				DC03920D1C871E1000C50E8E /* ChangeMapHistory.cpp in Sources */,
 				DC0391C11C871E1000C50E8E /* MiniSelector.cpp in Sources */,
 				DC0391C91C871E1000C50E8E /* TrophyListLayer.cpp in Sources */,
+				26AD55AE1E598D180082C324 /* Torch.cpp in Sources */,
 				DCA449651DA21698005C5F9A /* Stamina.cpp in Sources */,
 				DC0391E11C871E1000C50E8E /* TextureManager.cpp in Sources */,
 				DC0391BD1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
@@ -2195,6 +2223,7 @@
 				DCEF71F81DE5DCA700FA1291 /* BattleData.cpp in Sources */,
 				DCCDBC1E1DE186FF0026AF5C /* SearchState.cpp in Sources */,
 				DC0391BE1C871E1000C50E8E /* ItemMenuLayer.cpp in Sources */,
+				26AD55AB1E598C4E0082C324 /* LightSource.cpp in Sources */,
 				DC0392361C871E1000C50E8E /* HorizontalFollow.cpp in Sources */,
 				DC8916CE1DB31505005BC516 /* EventQueue.cpp in Sources */,
 				DCDD5D561CA26B6C0042C204 /* ConfigEventListenerLayer.cpp in Sources */,
@@ -2212,6 +2241,7 @@
 				DC0182921D7A97D700E556D1 /* Slip.cpp in Sources */,
 				DC0392321C871E1000C50E8E /* BothFollow.cpp in Sources */,
 				DC03919C1C871E1000C50E8E /* FlagEvent.cpp in Sources */,
+				26AD55AF1E598D180082C324 /* Torch.cpp in Sources */,
 				DC0391C21C871E1000C50E8E /* MiniSelector.cpp in Sources */,
 				DCDB71C81DFD8E4C0015A434 /* BattleBoss.cpp in Sources */,
 				DC0392541C871E1000C50E8E /* StringUtils.cpp in Sources */,
