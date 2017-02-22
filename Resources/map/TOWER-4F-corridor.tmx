@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="76" height="74" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="249">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="961" name="cyber2" tilewidth="16" tileheight="16">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="cave" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1441" name="cave" tilewidth="16" tileheight="16">
   <image source="cave.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1921" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="1921" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="76" height="74" opacity="0.91">
@@ -163,7 +163,7 @@
   </object>
   <object id="248" x="944" y="608" width="16" height="16">
    <properties>
-    <property name="objID" value="1"/>
+    <property name="objID" value="2"/>
    </properties>
   </object>
  </objectgroup>
