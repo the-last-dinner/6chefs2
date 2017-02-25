@@ -1,4 +1,4 @@
-prefix=./win
+prefix=./win/
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -9,6 +9,6 @@ Version: 57.81.100
 Requires: libswresample >= 2.4.100, libavutil >= 55.47.100
 Requires.private: 
 Conflicts:
-Libs: -L${libdir}  -lavcodec -lws2_32 -lavicap32 -lgdi32 -liconv -lm -lpsapi -ladvapi32 -lshell32
+Libs: -L${libdir}  -lavcodec ws2_32.lib vfw32.lib user32.lib gdi32.lib psapi.lib ole32.lib strmiids.lib uuid.lib oleaut32.lib shlwapi.lib user32.lib secur32.lib psapi.lib advapi32.lib shell32.lib
 Libs.private: 
 Cflags: -I${includedir}

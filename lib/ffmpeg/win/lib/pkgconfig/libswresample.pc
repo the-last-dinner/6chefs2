@@ -1,4 +1,4 @@
-prefix=./win
+prefix=./win/
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -9,6 +9,6 @@ Version: 2.4.100
 Requires: libavutil >= 55.47.100
 Requires.private: 
 Conflicts:
-Libs: -L${libdir}  -lswresample -lm
+Libs: -L${libdir}  -lswresample 
 Libs.private: 
 Cflags: -I${includedir}
