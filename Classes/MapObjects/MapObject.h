@@ -40,7 +40,7 @@ private:
 	Trigger _trigger { Trigger::SIZE };
     bool _isMovable { false };
     string _movingSoundFileName {};
-	Light* _light { nullptr };
+	LightSource* _lightSource { nullptr };
     bool _isMoving { false };
     Sprite* _sprite { nullptr };
     bool _paused { false };

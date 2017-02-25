@@ -10,10 +10,14 @@
 
 #include "Effects/AmbientLightLayer.h"
 
-bool Torch::init()
+const Color3B Torch::COLOR {Color3B(195, 110, 60)};
+const string Torch::IMAGE {"light.png"};
+
+bool Torch::init(Light::Information& info)
 {
-    this->createInnerLight();
+    this->createInnerLight(info);
     this->createOuterLight();
+    this->readyLight();
     
     return true;
 }
@@ -23,22 +27,11 @@ void Torch::update()
     
 }
 
-void Torch::remove()
+void Torch::createInnerLight(Light::Information& info)
 {
-    LightSource::remove();
-    CC_SAFE_RELEASE_NULL(_innerLight);
-    CC_SAFE_RELEASE_NULL(_outerLight);
-    this->removeFromParent();
-}
-
-void Torch::createInnerLight()
-{
-    Light::Information innerInfo {Light::TYPE_TO_INFO.at(Light::Type::TORCH)};
-    _innerLight = Light::create(innerInfo);
-    _innerLight->setOpacity(0);
-    _innerLight->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
-    
-    CC_SAFE_RETAIN(_innerLight);
+    info.image = Torch::IMAGE;
+    info.type = Light::Type::TORCH;
+    _innerLight = Light::create(info);
 }
 
 void Torch::createOuterLight()
@@ -49,13 +42,6 @@ void Torch::createOuterLight()
     Color3B color { Color3B(innerInfo.color.r * 1.3f, innerInfo.color.g * 1.3f, innerInfo.color.b * 1.3f)};
     float radius {innerInfo.radius * 7.0f};
     
-    Light::Information outerInfo {Light::Information(color, radius, innerInfo.fileName)};
+    Light::Information outerInfo {Light::Information(color, radius, innerInfo.image)};
     _outerLight = Light::create(outerInfo);
-    
-    _outerLight->setPosition(_innerLight->convertToWorldSpace(_innerLight->getPosition()));
-    _outerLight->setOpacity(0);
-    _outerLight->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
-    //_innerLight->ambientLight->addChild(_outerLight);
-    
-    CC_SAFE_RETAIN(_outerLight);
 }

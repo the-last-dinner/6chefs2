@@ -13,7 +13,9 @@
 
 class Flashlight : public LightSource
 {
-    
+public:
+    static const Color3B COLOR;
+    static const string IMAGE;
 };
 
 #endif /* Flashlight_hpp */

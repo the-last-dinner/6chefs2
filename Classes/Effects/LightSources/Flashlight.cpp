@@ -7,3 +7,8 @@
 //
 
 #include "Effects/LightSources/Flashlight.h"
+
+#include "Effects/AmbientLightLayer.h"
+
+const Color3B Torch::COLOR {Color3B(195, 110, 60)};
+const string Torch::IMAGE {"flashlight.png"};

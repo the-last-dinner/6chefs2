@@ -8,15 +8,6 @@
 
 #include "Effects/Light.h"
 
-// 定数
-const Color3B Light::TORCH_COLOR {Color3B(195, 110, 60)};
-const Color3B Light::FLASHLIGHT_COLOR {Color3B(195, 110, 60)};
-const map<Light::Type, Light::Information> Light::TYPE_TO_INFO {
-    {Light::Type::NORMAL, Light::Information(Light::TORCH_COLOR, 10 * GRID, "light.png")},
-    {Light::Type::TORCH, Light::Information(Light::TORCH_COLOR, 10 * GRID, "light.png")},
-    {Light::Type::FLASHLIGHT, Light::Information(Light::FLASHLIGHT_COLOR, 10 * GRID, "flashlight.png")},
-};
-
 // コンストラクタ
 Light::Light() { FUNCLOG }
 
@@ -30,7 +21,7 @@ bool Light::init(const Information& info)
     
     this->info = info;
 	
-	Sprite* light {Sprite::createWithSpriteFrameName(info.fileName)};
+	Sprite* light {Sprite::createWithSpriteFrameName(info.image)};
 	light->setColor(info.color);
 	float scale {(info.radius * 2) / light->getContentSize().width};
 	light->setScale(scale);

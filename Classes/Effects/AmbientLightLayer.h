@@ -14,6 +14,7 @@
 #include "Effects/LightSources/LightSource.h"
 
 class Light;
+class MapObject;
 
 class AmbientLightLayer : public Layer
 {
@@ -33,14 +34,14 @@ public:
 // インスタンス変数
 private:
     Sprite* _ambientLight { nullptr };
-    map<Light*, LightSource*> _lightMap {};
+    map<MapObject*, LightSource*> _lightMap {};
     RenderTexture* _renderTexture { nullptr };
 
 // インスタンスメソッド
 public:
     void setAmbient(const Color3B& color);
-    void addLightSource(LightSource* lightSource);
-    void removeLightSource(LightSource* lightSource);
+    void addLightSource(MapObject* mapObject, LightSource* lightSource);
+    void removeLightSource(MapObject* mapObject);
     void update(float delta) override;
     virtual void visit(Renderer* renderer, const Mat4& parentTransform, uint32_t parentFlags) override;
 private:

@@ -11,19 +11,24 @@
 
 #include "Effects/LightSources/LightSource.h"
 
+class Light;
+
 class Torch : public LightSource
 {
 public:
-    CREATE_FUNC(Torch);
+    static const Color3B COLOR;
+    static const string IMAGE;
+    
+public:
+    CREATE_FUNC_WITH_PARAM(Torch, Light::Information&);
     Torch(){FUNCLOG};
     ~Torch(){FUNCLOG};
     
 public:
-    bool init() override;
+    bool init(Light::Information& info) override;
     void update() override;
-    void remove() override;
 protected:
-    void createInnerLight() override;
+    void createInnerLight(Light::Information& info) override;
     void createOuterLight() override;
 };
 

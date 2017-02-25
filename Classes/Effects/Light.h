@@ -28,21 +28,15 @@ public:
 public:
     struct Information
     {
-        Color3B color {TORCH_COLOR};
+        Color3B color {Color3B::WHITE};
         float radius {0};
-        Light::Type type {Light::Type::TORCH};
-        string fileName {};
+        Light::Type type {Light::Type::NORMAL};
+        string image {};
         Information(){};
         Information(float radius):radius(radius){};
         Information(const Color3B color, float radius, Light::Type type):color(color), radius(radius), type(type){};
-        Information(const Color3B color, float radius, string fileName):color(color), radius(radius), fileName(fileName){};
+        Information(const Color3B color, float radius, string image):color(color), radius(radius), image(image){};
     };
-    
-// 定数
-public:
-    static const Color3B TORCH_COLOR;
-    static const Color3B FLASHLIGHT_COLOR;
-    static const map<Type, Information> TYPE_TO_INFO;
     
 // クラスメソッド
 public:

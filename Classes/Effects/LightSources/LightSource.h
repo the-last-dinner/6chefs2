@@ -16,7 +16,7 @@
 class LightSource : public Node
 {
 public:
-    CREATE_FUNC(LightSource);
+    CREATE_FUNC_WITH_PARAM(LightSource, Light::Information&);
     LightSource(){FUNCLOG};
     ~LightSource(){FUNCLOG};
     
@@ -25,14 +25,15 @@ protected:
     Light* _outerLight {nullptr};
     
 public:
-    virtual bool init();
+    virtual bool init(Light::Information& info);
     virtual void update(){};
     virtual void remove();
-    void start(function<void()> callback);
+    void lightUp(function<void()> callback);
+    void readyLight();
     Light* getInnerLight();
     Light* getOuterLight();
 protected:
-    virtual void createInnerLight(){};
+    virtual void createInnerLight(Light::Information& info){};
     virtual void createOuterLight(){};
 };
 

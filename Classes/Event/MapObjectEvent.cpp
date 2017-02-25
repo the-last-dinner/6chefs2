@@ -285,7 +285,7 @@ bool SetLightEvent::init(rapidjson::Value& json)
     if (_eventHelper->hasMember(_json, member::COLOR)) info.color = _eventHelper->getColor(_json);
     
     // 光生成
-    Torch* torch { Torch::create() };
+    Torch* torch { Torch::create(info) };
     CC_SAFE_RETAIN(torch);
     _torch = torch;
     

@@ -149,28 +149,27 @@ void MapObject::setPaused(bool paused) { _paused = paused; }
 // ライトをセット
 void MapObject::setLight(LightSource* lightSource, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
-    if(_light) return;
+    if(_lightSource) return;
     
     // 自身にライトを追加
-    _light = lightSource->getInnerLight();
-    this->addChild(_light);
+    _lightSource = lightSource;
     
     // 環境光レイヤーに光源として追加
-    ambientLightLayer->addLightSource(lightSource);
+    ambientLightLayer->addLightSource(this, lightSource);
     
     // 点灯開始
-    lightSource->start(callback);
+    lightSource->lightUp(callback);
 }
 
 // ライトを消す
 void MapObject::removeLight(function<void()> callback)
 {
-    if(!_light) return;
+    if(!_lightSource) return;
     
-    Light* light { _light };
-    _light = nullptr;
+    LightSource* lightSource { _lightSource };
+    _lightSource = nullptr;
     
-    light->runAction(Sequence::create(FadeOut::create(0.5f), CallFunc::create(callback), RemoveSelf::create(), nullptr));
+    lightSource->runAction(Sequence::create(FadeOut::create(0.5f), CallFunc::create(callback), RemoveSelf::create(), nullptr));
 }
 
 // 衝突判定用Rectを取得
