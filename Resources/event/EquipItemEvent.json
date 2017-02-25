@@ -1,0 +1,60 @@
+{
+    "torchInit": [
+        {
+            "type": "playSE",
+            "file": "fire_ignition.mp3"
+        },
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "torchUpdate": [
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "torchEnd": [
+        {
+            "type": "playSE",
+            "file": "fire_vanish.mp3"
+        },
+        {
+            "type": "removeLight",
+            "objID": "hero"
+        }
+    ],
+    "flashlightInit": [
+        {
+            "type": "playSE",
+            "file": "switch1.mp3"
+        },
+        {
+            "type": "setLight",
+            "option": "flashlight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "flashlightUpdate": [
+        {
+            "type": "setLight",
+            "option": "flashlight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "flashlightEnd": [
+        {
+            "type": "playSE",
+            "file": "switch1.mp3"
+        },
+        {
+            "type": "removeLight",
+            "objID": "hero"
+        }
+    ]
+}

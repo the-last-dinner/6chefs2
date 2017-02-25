@@ -44,9 +44,14 @@
 		          "time":3.0
 		        },
 		        {
+		          "type":"displayImg",
+		          "file":"warning2.png",
+		          "time":4.0
+		        },
+		        {
 		          "type":"storyMsg",
 		          "title":"操作説明",
-		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュキー・・・Shiftキー\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
+		          "text":["移動　　　　・・・↑←↓→、wasd\nダッシュ　　・・・Shiftを押しながら移動\nメニュー　　・・・xキー\n決定、選択  ・・・Spaceキー、Enterキー、zキー\nF4　　　　　・・・画面サイズ切り替え\nF1　　　　　・・・キーコンフィグ（操作設定）"]
 		        },
 		        {
 		        	"type":"spawn",
@@ -101,7 +106,7 @@
 		        {
 		          "type":"storyMsg",
 		          "title":"前作のあらすじ",
-		          "text":["若き料理人の登竜門「晩餐会」に出場した\n佐々木　孫一　　　　中山　撫子\n加藤　蘭丸　　　　　一色　真夏\n荒間田　暖暖　　　　大善　吾郎","だが晩餐会の真の目的は\n人肉しか食べられなくなってしまった主催者の娘\n「希崎　雪」が\n食べることの出来る料理を見つけることだった。"]
+		          "text":["若き料理人の登竜門「晩餐会」に出場した\n佐々木　孫一　　　　中山　撫子\n加藤　蘭丸　　　　　一色　真夏\n荒間田　暖暖　　　　大善　吾郎","だが晩餐会の真の目的は\n人肉しか食べられなくなってしまった主催者の娘\n「希崎 雪」が\n食べることの出来る料理を見つけることだった。"]
 		        },
 		        {
 		        	"type":"spawn",
@@ -200,8 +205,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"ranmaru_stand.png",
-		        	"time":2.0
+		        	"file":"ranmaru_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -211,8 +215,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"magoichi_stand.png",
-		        	"time":2.0
+		        	"file":"magoichi_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -222,8 +225,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"dandan_stand.png",
-		        	"time":2.0
+		        	"file":"dandan_stand.png"
 		        },
 		        {
 		        	"type":"spawn",
@@ -254,8 +256,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"manaka_stand.png",
-		        	"time":2.0
+		        	"file":"manaka_stand.png"
 		        },
 		        {
 		        	"type":"charaWalkTo",
@@ -276,8 +277,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"nadeshiko_stand.png",
-		        	"time":2.0
+		        	"file":"nadeshiko_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -287,8 +287,7 @@
 		        },
 		        {
 		        	"type":"displayImg",
-		        	"file":"daigoro_stand.png",
-		        	"time":2.0
+		        	"file":"daigoro_stand.png"
 		        },
 		        {
 		        	"type":"charaMsg",
@@ -521,7 +520,7 @@
 								},
 								{
 									"type":"systemMsg",
-									"text":["資料に”咲賀谷 朱花(サキガヤ　シュカ)”\nが追加された"]
+									"text":["資料に”咲賀谷 朱花(サキガヤ シュカ)”\nが追加された"]
 								}
 							]
 						},
@@ -949,7 +948,7 @@
 								        			"option":"reaction"
 								        		},
 								        		{
-								        			"text":["おう、ゴロー！元気そうだな。"],
+								        			"text":["おう、吾郎！元気そうだな。"],
 								        			"charaID":"8",
 								        			"imgID":"2"
 								        		},
@@ -1020,7 +1019,7 @@
 								        },
 								        {
 								        	"type":"storyMsg",
-								        	"text":["咲賀谷の話をまとめるとこうだ","晩餐会での事件以来、\n料理界以外からも晩餐会は注目されていた。","美食家「希崎夫人」の隠居。\n晩餐会の終わり。\nそして、結果的に雪が食べられる料理を作り上げた\n農ガール「一色　真夏」の優勝。","そこに目をつけたテレビ局が、\n歴代晩餐会の優秀者と\n悲劇の晩餐会の生き残りを集めて\n海外ロケをする。\nという企画を持ち込んできたらしい。"]
+								        	"text":["咲賀谷の話をまとめるとこうだ","晩餐会での事件以来、\n料理界以外からも晩餐会は注目されていた。","美食家「希崎夫人」の隠居。\n晩餐会の終わり。\nそして、結果的に雪が食べられる料理を作り上げた\n農ガール「一色 真夏」の優勝。","そこに目をつけたテレビ局が、\n歴代晩餐会の優秀者と\n悲劇の晩餐会の生き残りを集めて\n海外ロケをする。\nという企画を持ち込んできたらしい。"]
 								        },
 								        {
 								        	"type":"fadein"
@@ -1308,7 +1307,7 @@
 								},
 								{
 									"type":"systemMsg",
-									"text":["資料に”食の大国「北森」(ベイセン)”\nが追加された"]
+									"text":["資料に”食の大国「北森(ベイセン)」”\nが追加された"]
 								}
 							]
 						},
@@ -1323,12 +1322,12 @@
 					       		{
 					       			"text":["ちょっと・・・加藤・・・\n重い・・・"],
 					       			"charaID":"10",
-					       			"name":"一色　真夏"
+					       			"name":"一色 真夏"
 					       		},
 					       		{
 					       			"text":["ガァァァァァァ～\nごぉぉぉぉぉぉぉ～"],
 					       			"charaID":"10",
-					       			"name":"加藤　蘭丸"
+					       			"name":"加藤 蘭丸"
 					       		}
 					    	]
 						},
@@ -1339,12 +1338,12 @@
 					       		{
 					       			"text":["中山さん、何か飲みます？"],
 					      			"charaID":"10",
-					       			"name":"佐々木　孫一"
+					       			"name":"佐々木 孫一"
 					       		},
 					       		{
 					       			"text":["うん！ありがとう。"],
 					       			"charaID":"10",
-					       			"name":"中山　撫子"
+					       			"name":"中山 撫子"
 					       		}
 					    	]
 						},
@@ -1355,12 +1354,12 @@
 					       		{
 					      			"text":["そんでよ！そんでよ！\n・・・"],
 					       			"charaID":"10",
-					       			"name":"大善　吾郎"
+					       			"name":"大善 吾郎"
 					       		},
 					       		{
 					       			"text":["マジか！\nハハハ"],
 					       			"charaID":"10",
-					       			"name":"田村　剣神"
+					       			"name":"田村 剣神"
 					       		}
 					    	]
 						},
@@ -1371,18 +1370,18 @@
 					       		{
 					       			"text":["ねぇ！ゆきりん見て見て！\n海だよ！クジラだよ！"],
 					       			"charaID":"10",
-					       			"name":"咲賀谷　朱花",
+					       			"name":"咲賀谷 朱花",
 					       			"option":"reaction"
 					       		},
 					       		{
 					       			"text":["わぁ・・・すごい・・・"],
 					       			"charaID":"10",
-					       			"name":"希崎　雪"
+					       			"name":"希崎 雪"
 					       		},
 					       		{
 					       			"text":["うぷっ・・・"],
 					       			"charaID":"10",
-					       			"name":"荒間田　暖暖"
+					       			"name":"荒間田 暖暖"
 					       		}
 					    	]
 						},
@@ -1409,30 +1408,51 @@
 	],
 	"16":[
 		{
-			"type":"sequence",
+			"type":"removeLayer",
+			"layer":"MonoShita"
+		},
+		{
+			"type":"createObject",
+			"objID":"1080",
+			"charaID":"2",
+			"x":17,
+			"y":28,
+			"direction":"UP",
+			"movePattern":"1"
+		},
+		{
+			"type":"createObject",
+			"objID":"10241",
+			"charaID":"6",
+			"x":17,
+			"y":24,
+			"direction":"DOWN",
+			"movePattern":"1"
+		},
+		{
+			"type":"repeat",
+			"times":-1,
+			"id":"1",
 			"action":[
 				{
-					"type":"removeLayer",
-					"layer":"MonoShita"
-				},
-				{
-					"type":"createObject",
-					"objID":"1080",
-					"charaID":"2",
-					"x":17,
-					"y":28,
-					"direction":"UP",
-					"movePattern":"1"
-				},
-				{
-					"type":"createObject",
-					"objID":"10241",
-					"charaID":"6",
-					"x":17,
-					"y":24,
-					"direction":"DOWN",
-					"movePattern":"1"
-				},
+					"type":"sequence",
+					"action":[
+						{
+							"type":"objAnimate",
+							"objID":"10241",
+							"name":"attack_down"
+						},
+						{
+							"type":"wait",
+							"time":0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"sequence",
+			"action":[
 				{
 					"type":"storyMsg",
 					"text":["数日後・・・"]
@@ -1503,6 +1523,10 @@
 							"imgID":"3"
 						}
 					]
+				},
+				{
+					"type":"stopEvent",
+					"id":"1"
 				},
 				{
 					"type":"fadeout",

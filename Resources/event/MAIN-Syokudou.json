@@ -4,9 +4,9 @@
 			"type":"createObject",
 			"objID":"10126",
 			"charaID":"1",
-			"x":23,
-			"y":11,
-			"direction":"DOWN",
+			"x":20,
+			"y":32,
+			"direction":"UP",
 			"movePattern":"1"
 		},
 		{
@@ -14,7 +14,7 @@
 			"objID":"10127",
 			"charaID":"2",
 			"x":26,
-			"y":19,
+			"y":15,
 			"direction":"LEFT",
 			"movePattern":"1"
 		},
@@ -23,17 +23,17 @@
 			"objID":"10128",
 			"charaID":"3",
 			"x":14,
-			"y":19,
-			"direction":"RIGHT",
+			"y":21,
+			"direction":"DOWN",
 			"movePattern":"1"
 		},
 		{
 			"type":"createObject",
 			"objID":"10130",
 			"charaID":"5",
-			"x":26,
-			"y":29,
-			"direction":"LEFT",
+			"x":16,
+			"y":11,
+			"direction":"RIGHT",
 			"movePattern":"1"
 		},
 		{
@@ -49,18 +49,18 @@
 			"type":"createObject",
 			"objID":"10132",
 			"charaID":"7",
-			"x":16,
-			"y":31,
-			"direction":"UP",
+			"x":24,
+			"y":11,
+			"direction":"DOWN",
 			"movePattern":"1"
 		},
 		{
 			"type":"createObject",
 			"objID":"10133",
 			"charaID":"8",
-			"x":24,
-			"y":31,
-			"direction":"UP",
+			"x":20,
+			"y":11,
+			"direction":"DOWN",
 			"movePattern":"1"
 		}
 	],
@@ -75,9 +75,15 @@
 				{
 					"type":"charaWarp",
 					"objID":"hero",
-					"x":14,
-					"y":14,
-					"direction":"RIGHT"
+					"x":26,
+					"y":26,
+					"direction":"LEFT"
+				},
+				{
+					"type":"camera",
+					"nextX":20,
+					"nextY":24,
+					"time":0.5
 				},
 				{
 					"type":"fadein",
@@ -89,7 +95,7 @@
 						{
 							"type":"changeDirection",
 							"objID":"10127",
-							"direction":"UP"
+							"direction":"DOWN"
 						},
 						{
 							"type":"charaMsg",
@@ -123,7 +129,7 @@
 								{
 									"type":"changeDirection",
 									"objID":"10126",
-									"direction":"RIGHT"
+									"direction":"UP"
 								}
 							]
 						},
@@ -165,15 +171,50 @@
 					]
 				},
 				{
-					"type":"charaWalkTo",
-					"objID":"10126",
-					"x":26,
-					"y":14
+					"type":"spawn",
+					"action":[
+						{
+							"type":"changeDirection",
+							"objID":"10130",
+							"direction":"DOWN"
+						},
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10128",
+									"x":14,
+									"y":14
+								},
+								{
+									"type":"changeDirection",
+									"objID":"10128",
+									"direction":"RIGHT"
+								}
+							]
+						},
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10126",
+									"x":26,
+									"y":20
+								},
+								{
+									"type":"changeDirection",
+									"objID":"10126",
+									"direction":"LEFT"
+								}
+							]
+						}
+					]
 				},
 				{
-					"type":"changeDirection",
-					"objID":"10126",
-					"direction":"LEFT"
+					"type":"wait",
+					"time":0.5
 				},
 				{
 					"type":"playSE",
@@ -187,11 +228,6 @@
 					"y":39,
 					"direction":"UP",
 					"movePattern":"1"
-				},
-				{
-					"type":"changeDirection",
-					"objID":"10127",
-					"direction":"DOWN"
 				},
 				{
 					"type":"charaMsg",
@@ -271,13 +307,13 @@
 								{
 									"type":"charaWalkTo",
 									"objID":"10129",
-									"x":26,
-									"y":24
+									"x":14,
+									"y":29
 								},
 								{
 									"type":"changeDirection",
 									"objID":"10129",
-									"direction":"LEFT"
+									"direction":"RIGHT"
 								}
 							]
 						},
@@ -285,22 +321,40 @@
 							"type":"sequence",
 							"action":[
 								{
+									"type":"charaWalk",
+									"objID":"10134",
+									"steps":2.0,
+									"direction":"UP"
+								},
+								{
+									"type":"charaWalk",
+									"objID":"10134",
+									"steps":5.0,
+									"direction":"LEFT"
+								},
+								{
+									"type":"charaWalk",
+									"objID":"10134",
+									"steps":8.0,
+									"direction":"UP"
+								},
+								{
 									"type":"charaWalkTo",
 									"objID":"10134",
 									"x":14,
-									"y":29
+									"y":19
 								},
 								{
 									"type":"changeDirection",
 									"objID":"10134",
 									"direction":"RIGHT"
-								},
-								{
-									"type":"changeDirection",
-									"objID":"10131",
-									"direction":"RIGHT"
 								}
 							]
+						},
+						{
+							"type":"changeDirection",
+							"objID":"10131",
+							"direction":"RIGHT"
 						},
 						{
 							"type":"changeDirection",
@@ -325,15 +379,20 @@
 					]
 				},
 				{
-					"type":"charaMsg",
-					"text":["いただきます！"],
-					"charaID":"10",
-					"name":"一同",
-					"option":"reaction"
-				},
-				{
-					"type":"fadeout",
-					"time":3.0
+					"type":"spawn",
+					"action":[
+						{
+							"type":"charaMsg",
+							"img":"dinner.png",
+							"text":["いただきます！"],
+							"charaID":"10",
+							"name":"一同",
+							"option":"reaction"
+						},
+						{
+							"type":"fadeout"
+						}
+					]
 				},
 				{
 					"type":"stopBGM"

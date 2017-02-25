@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="50" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="30">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
-  <image source="ed.png" trans="aa55ff" width="480" height="256"/>
- </tileset>
- <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
-  <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
- </tileset>
- <tileset firstgid="961" name="roop" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="roop" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="roop.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
+ <tileset firstgid="481" name="shituji_0_0" tilewidth="16" tileheight="16" tilecount="4" columns="2">
   <image source="shituji_0_0.png" trans="aa55ff" width="32" height="33"/>
  </tileset>
- <tileset firstgid="1445" name="tidamari" tilewidth="16" tileheight="16" tilecount="48" columns="6">
+ <tileset firstgid="485" name="tidamari" tilewidth="16" tileheight="16" tilecount="48" columns="6">
   <image source="tidamari.png" trans="aa55ff" width="96" height="128"/>
  </tileset>
- <tileset firstgid="1493" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="533" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
+ </tileset>
+ <tileset firstgid="2037" name="shopArea" tilewidth="16" tileheight="16" tilecount="851" columns="37">
+  <image source="shopArea.png" width="592" height="368"/>
  </tileset>
  <layer name="Base" width="42" height="50">
   <properties>
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt10EOwiAQBVBYac+lF7Eb3RrPoDv1INqLeCqHtJNMCIgolDH+n0wmlFJeCJsa81t5WJ0lM9B4S32nsG7CCiec2gpOOOH8X+eR+klh+c610Vlwwuly9cYuZ3p2seOcFucQcLp37rbteb/r5Dk44WzpfBU44YQTTjjhhBPOls6lGWsuH+/3qbO2198n17mi3gW+U8vXTZXr3FDvxfpS3pivnyrHuRf/x7z+W2/Kx//khwxnSW9NXwnvnL5Q3N1dmLS3lY/DZ5s631a+WGJeLT6Z0P3V5PMj74RGX408ATuDGUM=
-  </data>
- </layer>
- <layer name="MonoShita" width="42" height="50">
-  <properties>
-   <property name="z" value="-10"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJztzrENADAIwDAk/n+ht3ZmZyjUlrInAgAA2OBk7VU+e/nsNeUTAAAA4AcXVoUPGQ==
+   eJzVmMmO00AQhn2DOG8AHACBZt4CuCBBlqdgEbckfgqWqyd+ChZxmxk/C8s7AAdAoqzp0vwpqrrabg8TLP2qpGN3f66llxTF/3M9L4vi4XQ/9aI853xDn2dXi2JOWpAOSIfBDlXO84eBY0m6Od3lXFHbmrQB3nmiDpTvsq2PFoGjUjhrajsibYF3rYjfdyxpY2wCR+NwjhF3L/4cW4vf4syJe5+ckLFdGMqNe1/NI7GNKcWfGC9ptZjGLHJ59+PnlPzEuEsrYzemxc8pnBh3aWXsxrSyzcvPmEV59/a1sk3z5zG1nZBOHYvy7u1rZVurcH6its+kL45Feff2tbLtq8I5I82DHaLu2QVp6bT17euveYm0Drav5DhWW6o6jg2pUjhr0lGwlrx353FqZWyvX+yn49iSGoXzmHQSrCbLJxZzjqy4f6Dvv0nfrhTF96AfpJ/U9iv8pvkE2SRnlSGLs7tu0/drVF/Xg26EWrs1PfutNnwsOTXfNiDL/3iPx3mP2O4HPYA5ofuN2brcOFXG0mpIq3fMF/y9BXmcT4jtadAzhZMZWyU3tRrS6kyrm6Xo2+N8SWyvgl47nLXCx7lRA69k0mqt6sn5ltjeBb2PcM4Cj+STsnyHfFXIyVTO2CU5V8Ch8fF9WGvafMB10wpOvCeHU/JJP+OYzCfXGeZrlWdwDhjKiSySEf0l5y1e77blrg/rCGebwblS+tViqnHjM8tIe05+Yi1rfvT2QJKHa2hsTisfuU9vDyR5uIY0fpwbhsYd8xTfO7YfwrkLmbQaaspx6t3itPZZsXlL4xyr3q3a0cZjyX2gnGOtOT6n3iUnru8pe2wtVzkXvXPHUE65vqfssbU85VzU9gND5yVcO2dlfH1nafsAWeONwpgzL+HaOSvt+kBZ6yzOTxijHH/emRTF3clunVpnNcnkvQfmKIvH68v5iJ55PDl/Xps3LZ+lnInYj9w/jzckP7t9hMUbiymejaz/IyQfPzO03j1eTdZ5SePD/VTf+bM7N/P5WPrM4tViimcPi4/75TP5xzKdM4e3KXfnxYvkS+H18uFf8qXwWv69DL4hvJfJl8LLZ7d94Ivx8tltn/jkxbz7yncR1x+npBxx
   </data>
  </layer>
  <layer name="MonoChu" width="42" height="50">
@@ -39,7 +28,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzrENABAABMBv7D8GDTOygUYi4m6CSwAAAAD4US1JK7cXe30dxwNPAAAAzpqPzQK/
+   eJztzsENABAABLCz/6B8mIENfCQi2gmaAAAAAPCjWpJWbi/2+jqOB54AAACcNQEMjwOv
   </data>
  </layer>
  <layer name="shitai" width="42" height="50">
@@ -47,7 +36,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzjkNACAABLBb8K+BRyg4YCEhhFZBEwAAAABOqiVp5fZir6/jeOAJAADAnyZ93QKf
+   eJztzlkJACAABbBn/5QeQbSBP4KIW4IlAAAAAJxUS9LK7cVeX8fxwBMAAIA/TZgfA48=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -109,17 +98,17 @@
  </objectgroup>
  <layer name="CharaUe" width="42" height="50">
   <data encoding="base64" compression="zlib">
-   eJztzjEBADAIA7Ae+Lc5ZCCBcweJgiQAAADAda+Srt+LnScAAADcMZb4BYY=
+   eJztzjEBADAIA7CiZvhXiATOHSQKkgAAAADXvUq6fi92ngAAAHDHAFdXAPQ=
   </data>
  </layer>
  <layer name="shitai2" width="42" height="50">
   <data encoding="base64" compression="zlib">
-   eJztzjkNACAABLBb8K+BRyg4YCEhhFZBEwAAAABOqiVp5fZir6/jeOAJAADAnyZ93QKf
+   eJztzlkJACAABbBn/5QeQbSBP4KIW4IlAAAAAJxUS9LK7cVeX8fxwBMAAIA/TZgfA48=
   </data>
  </layer>
  <layer name="shadow" width="42" height="50">
   <data encoding="base64" compression="zlib">
-   eJztz8EJgEAQwMB72b4tiw0cPiK6MFNBshZvOI+vC57R2dLZ0tnS2dLZ0tnS2ZrSedu1/ulDZ0tna0rnjs6WzpbOls6WzpbOls6WztaUTgBmugBK4Roy
+   eJzt1IEJwCAQBEFJ/z1ZQloKNvAksME/2algPeHH0B/ua3fBO3ay7GTZybKTZSfLTpadrJTOpWqdjd5RdXba+4Q97fwupbNiJyuls9P9rKTsaSfLTpadLO8nyz1ZKZ0p/y5JyvQAod0jng==
   </data>
  </layer>
 </map>

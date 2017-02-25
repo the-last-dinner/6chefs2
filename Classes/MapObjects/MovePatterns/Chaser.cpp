@@ -84,7 +84,7 @@ void Chaser::move()
 {
     if (this->isPaused()) return;
     
-    if (!_chara->isMoving()) {
+    if (!_chara->isMoving() && !_chara->isInAttackMotion()) {
         _chara->setDirection(Direction::convertVec2(this->getMainCharacter()->getPosition() - _chara->getPosition()));
     }
 

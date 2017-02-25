@@ -8,7 +8,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["17","6"]
+					"flg":["17","6",1]
 				}
 			],
 			"action":[
@@ -216,7 +216,7 @@
 							"type":"changeMap",
 							"mapID":"5",
 							"x":38,
-							"y":15,
+							"y":35,
 							"eventID":"5"
 						}
 					]
@@ -250,15 +250,68 @@
 	],
 	"6":[
 		{
-			"type":"setLight",
-			"objID":"1"
+			"type":"if",
+			"condition":[
+				{
+					"flg":0
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"setLight",
+									"objID":"1"
+								},
+								{
+									"type":"playSE",
+									"file":"switch1.mp3"
+								}
+							]
+						},
+						{
+							"type":"changeFlg",
+							"flg":1
+						}
+					]
+				}
+			]
 		},
 		{
-			"type":"playSE",
-			"file":"switch1.mp3"
-		},
-		{
-			"type":"already"
+			"type":"if",
+			"condition":[
+				{
+					"flg":1
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"spawn",
+							"action":[
+								{
+									"type":"removeLight",
+									"objID":"1"
+								},
+								{
+									"type":"playSE",
+									"file":"switch1.mp3"
+								}
+							]
+						},
+						{
+							"type":"changeFlg",
+							"flg":0
+						}
+					]
+				}
+			]
 		}
 	]
 }

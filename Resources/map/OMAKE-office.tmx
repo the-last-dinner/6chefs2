@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="8">
+ <tileset firstgid="1" name="ST-Fdshop-I01" tilewidth="16" tileheight="16" tilecount="1440" columns="16">
+  <image source="ST-Fdshop-I01.png" width="256" height="1440"/>
+ </tileset>
+ <layer name="Base" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztjjkKgEAQBPc3+gP9jmfuseaeued7bZBNtBmENZItKKY7GVqpiwjGMIGpkDPSc/WkgCWsYC1kTXpD/rWwgz0chDySPpF/M1zgCjch76Qf5J8HfYt7J4ChxXX73D637/0+CbPjK8yOP3ACgiVDMw==
+  </data>
+ </layer>
+ <layer name="MonoShita" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzKsOg0AUhOHDLuDbAu//OuBoC0lxXD1XzW8b3B7JTvIlY2ZEfHz+kxuRwly7a37sG3PtLinZvvHBFxVqxV/LtkOPASMmxd/MdsGKDTsOxV9gRQwsQkSIrfvfg+0TLyRIkSn+fO6dE4DZF24=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object id="1" x="0" y="0" width="320" height="64"/>
+  <object id="2" x="288" y="64" width="32" height="256"/>
+  <object id="3" x="0" y="64" width="32" height="256"/>
+  <object id="4" x="32" y="256" width="112" height="64"/>
+  <object id="5" x="176" y="256" width="112" height="64"/>
+  <object id="6" x="144" y="288" width="32" height="32"/>
+  <object id="7" x="192" y="128" width="96" height="64"/>
+ </objectgroup>
+ <layer name="CharaUe" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjCTwkomB4RUTJptc8BOo/xcTJnsUDH8AAAooB50=
+  </data>
+ </layer>
+</map>

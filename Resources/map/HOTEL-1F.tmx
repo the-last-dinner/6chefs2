@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="72" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="58">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="72" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="59">
  <tileset firstgid="1" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
  </tileset>
@@ -63,7 +63,7 @@
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0EEKgDAMBMB8Ih8ufYj2pR6tx0IxgjOw5+wmAgAAYE3L6ga3/kIXe+vYu9/f9h7TjTNrMz70ewAAAAAAAAAAAAAAAJ4uKXoeHQ==
+   eJztz8ENgCAQBECauIaJhQiV4o83ET0TZ5L73u6WAgAAsKZGdoPpeKGLvXns3e9ve88ro924Hs/8AgAAAAAAAAAAAAAA4FsGhIYeHQ==
   </data>
  </layer>
  <layer name="MonoUe" width="60" height="72">
@@ -90,6 +90,14 @@
    eJztzslRgkEABeE/DLIRUTQEEBVDUNkMARHUEHCFEAQUDEE2IR06hDlMDZf+qvr66mWZJEmSlMZBLsvydEgFOqJjKtIJnebSbKRS4kuZzqhC53RBl1Slq4CvMTZSuebLDd1SjerUoCa16C7ga4yNVNp8uacOPVCXevRIT/Qc8DXGRip9vrzQK73RO33QJw1oGPA1xkYqX3wZ0Zgm9E0/NKUZ/QZ8jbGRyh9f5rSgJa1oTf+0oW3A1xgbkiRJkiRJkiRJkiRJkiRJkiRJ0r7sALZTUDs=
   </data>
  </layer>
+ <layer name="death" width="60" height="72">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztz7ENgDAQA8DfIvtXZIuwAtkiTME36eheQkK6623ZEQAAAMCbo0X0Vuu4Mj+LHV8ZufMsbl2Zv3/yFwAAAAAAAAAAAAAAALYHFdcG/Q==
+  </data>
+ </layer>
  <layer name="hide1" width="60" height="72">
   <properties>
    <property name="z" value="-10"/>
@@ -103,7 +111,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztz7ENACAMA0G32X8CmJQVKAgS4q75yoUTAADoNyqZtd/T+9t++wsAAAAAAAAAAAAAAAAAL1soZh/5
+   eJztz7kNACAMA8C0GQ82hElhBCSehrvGlSU7AgAA7msZ0XM9T/df++1vmRtqrufpPgAAAAAAAAAAAAAAAADsGG/8KHU=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -123,10 +131,11 @@
   <object id="18" x="832" y="832" width="96" height="16"/>
   <object id="19" x="672" y="832" width="96" height="16"/>
   <object id="23" x="96" y="208" width="16" height="96"/>
-  <object id="24" x="144" y="288" width="496" height="16"/>
+  <object id="24" x="112" y="288" width="256" height="16"/>
   <object id="25" x="656" y="208" width="16" height="96"/>
   <object id="26" x="640" y="288" width="16" height="16"/>
   <object id="57" x="752" y="576" width="96" height="16"/>
+  <object id="58" x="400" y="288" width="256" height="16"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="21" x="0" y="912" width="32" height="32">

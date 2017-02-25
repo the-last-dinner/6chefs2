@@ -29,8 +29,7 @@
 							"type":"charaMsg",
 							"text":["ハァ・・・ハァ・・・"],
 							"charaID":"22",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						}
 					]
 				},
@@ -57,21 +56,18 @@
 							"text":["さぁ・・・今日こそ教えてもらうぞ！"],
 							"charaID":"32",
 							"imgID":"2",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["わ、わかった！わかったから・・・"],
 							"charaID":"22",
 							"imgID":"3",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["タイホウだ・・・","ったく！毎日毎日そんなことのために\n追い回しやがって・・・・"],
 							"charaID":"22",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						}
 					]
 				},
@@ -87,14 +83,12 @@
 						{
 							"text":["タイホウ！よろしくな！\nオレはヨシツネだ！"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["知ってるわ！"],
 							"charaID":"22",
 							"imgID":"3",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]
@@ -112,8 +106,7 @@
 					"type":"charaMsg",
 					"text":["あれ？たのしそうじゃない！"],
 					"charaID":"31",
-					"imgID":"2",
-					"miniChara":true
+					"imgID":"2"
 				},
 				{
 					"type":"spawn",
@@ -146,7 +139,6 @@
 					"text":["げっ！ヤエ・・・"],
 					"charaID":"32",
 					"imgID":"3",
-					"miniChara":true,
 					"option":"reaction"
 				},
 				{
@@ -163,14 +155,12 @@
 							"text":["げって何よ！！"],
 							"charaID":"31",
 							"imgID":"2",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["はぁ・・・"],
 							"charaID":"22",
 							"imgID":"4",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]

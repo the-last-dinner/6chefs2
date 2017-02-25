@@ -50,6 +50,8 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"storyMsg", StoryMessage::create},             // ストーリーメッセージ
     {"systemMsg", SystemMessage::create},           // システムのメッセージ
     {"displayImg", DispImageEvent::create},         // 画像表示
+    {"displaySaveMenu", DisplaySaveMenu::create},   // セーブメニュー表示
+    {"playVideo", PlayVideoEvent::create},          // 動画再生
     
     // シーン系
     {"changeMap", ChangeMapEvent::create},          // マップ移動
@@ -85,6 +87,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"setLight", SetLightEvent::create},                // オブジェクトに光をセット
     {"removeLight", RemoveLightEvent::create},          // オブジェクトから光を消す
     {"setMovable", SetMovableEvent::create},            // オブジェクトに動かせるかどうかをセット
+    {"objAnimate", MapObjectAnimateEvent::create},      // 登録されているアニメーションを再生
     
     // キャラクター系
     {"changeDirection", ChangeDirectionEvent::create},  // 方向転換

@@ -41,7 +41,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYKAvOCVAG4wM1gpgt5saYDWS2aP2jNozas+oPaP2jNozas/QsQcE+gQI434kPb1EqO8jw/1rBFD9DXLnGhqGw2AHALM6P2U=
+   eJxjYKAfuMvPwHBKgDb4AD/CnrUCtPPDaiSzR+0ZtWfUnlF7Ru0ZtWfUnqFjzx1gW6FPgDDuR9LTS4R6EN7Pj2k3PrBGANXfIHeuoWE4DHYAAHHGQtk=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -101,7 +101,7 @@
  </layer>
  <layer name="shadow" width="26" height="26">
   <data encoding="base64" compression="zlib">
-   eJxjYBieYLbgqD3DwR5K3TPY/DNqz6g9o/aM2jNqz8DaQywYqf4eKAAAyCQPdQ==
+   eJxjYBieYLbgqD2j9ozaM2rPqD2j9ozaM2oPeWCk+nugAAByqg7J
   </data>
  </layer>
 </map>

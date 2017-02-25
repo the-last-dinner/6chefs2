@@ -13,6 +13,7 @@
 #include "MapObjects/Command/AttackCommand.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Managers/BattleManager.h"
 
 #include "MapObjects/Status/Stamina.h"
 
@@ -67,8 +68,8 @@ void BattleState::onEnterKeyPressed(Party* party)
     command->setName("attack");
     command->setStamina(DungeonSceneManager::getInstance()->getStamina());
     command->setCallback([this, party](Character* c) {
-        if (!_task) return;
-        _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
+        if (!BattleManager::getInstance()->isInBattle()) return;
+        if (_task) _task->move(DungeonSceneManager::getInstance()->getPressedCursorKeys(), party);
     });
     
     mainCharacter->pushCommand(command);

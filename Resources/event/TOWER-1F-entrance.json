@@ -143,6 +143,10 @@
 					]
 				},
 				{
+				    "type":"setAmbient",
+				    "ambient":"night"
+				},
+				{
 					"type":"fadein"
 				},
 				{
@@ -296,7 +300,7 @@
 	"6":[
 		{
 			"type":"systemMsg",
-			"text":["大きな仏像・・・\n何かを守るように座っている・・・"]
+			"text":["大きな仏像・・・"]
 		}
 	]
 }

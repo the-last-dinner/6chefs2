@@ -16,6 +16,7 @@
 
 // 定数
 const float DungeonMainMenuLayer::SLIDE_TIME {0.3f};
+const int DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT {4};
 
 // コンストラクタ
 DungeonMainMenuLayer::DungeonMainMenuLayer(){FUNCLOG}
@@ -117,20 +118,22 @@ bool DungeonMainMenuLayer::init()
     // 装備品表示
     int right_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::RIGHT);
     int left_id = PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(Direction::LEFT);
-    string right = (right_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(right_id) : "なし";
-    string left = (left_id != 0) ? CsvDataManager::getInstance()->getItemData()->getItemName(left_id) : "なし";
+    string right = (right_id != etoi(ItemID::UNDIFINED)) ? CsvDataManager::getInstance()->getItemData()->getItemName(right_id) : "なし";
+    string left = (left_id != etoi(ItemID::UNDIFINED)) ? CsvDataManager::getInstance()->getItemData()->getItemName(left_id) : "なし";
     Label* equipment = Label::createWithTTF("装備\n右手 : " + right + "\n左手 : " + left, "fonts/cinecaption2.28.ttf", 26);
     equipment->setPosition(equipment->getContentSize().width / 2 + 15, fBg->getContentSize().height - equipment->getContentSize().height / 2 - 15);
     fBg->addChild(equipment);
     
     // キャラ表示
     vector<CharacterData> charas = PlayerDataManager::getInstance()->getLocalData()->getPartyMemberAll();
-    int party_count = charas.size();
+    int partyCount = static_cast<int>(charas.size());
+    int partyDisplayLimit = DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT < partyCount ?
+                                        DungeonMainMenuLayer::PARTY_DISPLAY_LIMIT : partyCount;
     Size  cPanelSize = Size(fBg->getContentSize().width/5, fBg->getContentSize().height);
     float stand_scale = 0.35;
-    for (int i = 0; i < party_count; i++)
+    for (int i = 0; i < partyDisplayLimit; i++)
     {
-        float colum_position = cPanelSize.width * (5 - party_count + i) + cPanelSize.width / 2;
+        float colum_position = cPanelSize.width * (5 - partyDisplayLimit + i) + cPanelSize.width / 2;
         // キャラ毎にパネルを作成
         Sprite* chara_panel {Sprite::create()};
         chara_panel->setTextureRect(Rect(0,0, cPanelSize.width, cPanelSize.height));

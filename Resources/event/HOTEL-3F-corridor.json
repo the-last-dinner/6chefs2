@@ -307,8 +307,18 @@
 									"objID":"hero"
 								},
 								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"RIGHT"
+								},
+								{
 									"type":"reaction",
 									"objID":"1035"
+								},
+								{
+									"type":"changeDirection",
+									"objID":"1035",
+									"direction":"RIGHT"
 								},
 								{
 									"type":"charaMsg",

@@ -7,7 +7,7 @@
 			<key>cloud.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{400,160}}</string>
+				<string>{{0,401},{400,160}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -18,16 +18,58 @@
 				<string>{400,160}</string>
 			</dict>
 
+			<key>flashlight.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{400,400}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{400,400}}</string>
+				<key>sourceSize</key>
+				<string>{400,400}</string>
+			</dict>
+
 			<key>light.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,161},{372,379}}</string>
+				<string>{{401,0},{372,379}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
 				<string>{{13,11},{372,379}}</string>
+				<key>sourceSize</key>
+				<string>{400,400}</string>
+			</dict>
+
+			<key>light_black.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,562},{397,397}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{3,0},{397,397}}</string>
+				<key>sourceSize</key>
+				<string>{400,400}</string>
+			</dict>
+
+			<key>light_white.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{398,562},{381,381}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{6,14},{381,381}}</string>
 				<key>sourceSize</key>
 				<string>{400,400}</string>
 			</dict>
@@ -39,7 +81,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{512,1024}</string>
+			<string>{1024,1024}</string>
 			<key>textureFileName</key>
 			<string>ui.png</string>
 			</dict>

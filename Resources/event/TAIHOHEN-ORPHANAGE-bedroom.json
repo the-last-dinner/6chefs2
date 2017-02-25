@@ -84,14 +84,12 @@
 						{
 							"text":["ヤエがいなくなって\n少し作戦が変わっちまったが・・・","先生や警備員に見つからないように\nテンゲンロウにたどり着く。","さぁいこうぜ"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["あぁ・・・\n楽しみだな。"],
 							"charaID":"22",
-							"imgID":"6",
-							"miniChara":true
+							"imgID":"6"
 						}
 					]
 				},
@@ -135,14 +133,12 @@
 						{
 							"text":["ったく・・・\nまだあきらめねぇぞ。"],
 							"charaID":"32",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["おう、もっと慎重に行こうぜ"],
 							"charaID":"22",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						}
 					]
 				}
@@ -175,20 +171,17 @@
 						{
 							"text":["なんなんだよ急に・・・"],
 							"charaID":"22",
-							"imgID":"4",
-							"miniChara":true
+							"imgID":"4"
 						},
 						{
 							"text":["ちょっと待ってなさい。"],
 							"charaID":"31",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["・・・"],
 							"charaID":"22",
-							"imgID":"4",
-							"miniChara":true
+							"imgID":"4"
 						}
 					]
 				},
@@ -211,8 +204,7 @@
 								{			
 									"text":["ほら。"],
 									"charaID":"31",
-									"imgID":"3",
-									"miniChara":true
+									"imgID":"3"
 								}
 							]
 						},
@@ -228,75 +220,63 @@
 						{
 							"text":["なんだよコレ・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["キレイでしょ？\nそれは・・・私のおかあさんのなの・・・"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["言っとくけど死んでないからね！"],
 							"charaID":"31",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["おかあさんは体が弱くて・・・\n”二ホン”っていう国でおいしゃさんに\nみてもらってるのよ。"],
 							"charaID":"31",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						},
 						{
 							"text":["・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["でね、その”二ホン”って国には\nおいしいものが沢山あってね。","私はおいしゃさんになって\nおかあさんを元気にして","一緒においしいものを\nたくさん食べたいんだぁ"],
 							"charaID":"31",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["ヤエ・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
 							"text":["タイホウ・・・\n私とちがって両親が死んじゃったアンタは","今まで\nサイアクの人生だったかもしれない・・・","でもね・・・","そんなこと言ってたって仕方ないじゃない。\n後ろばっか見てないで・・・"],
 							"charaID":"31",
-							"imgID":"1",
-							"miniChara":true
+							"imgID":"1"
 						},
 						{
 							"text":["！！"],
 							"charaID":"31",
 							"imgID":"2",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["イテ・・・"],
 							"charaID":"22",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						},
 						{
-							"text":["前を向いて生きなさい！"],
+							"text":["”前”を向いて生きなさい！"],
 							"charaID":"31",
-							"imgID":"5",
-							"miniChara":true
+							"imgID":"5"
 						}
 					]
 				},
@@ -305,7 +285,7 @@
 				},
 				{
 					"type":"storyMsg",
-					"text":["将来・・・か・・・","・・・","ありがとう・・・"]
+					"text":["”前”・・・か・・・","・・・","ありがとう・・・"]
 				},
 				{
 					"type":"already"

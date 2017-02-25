@@ -264,7 +264,7 @@
 					"objID":"1029",
 					"charaID":"6",
 					"x":12,
-					"y":18,
+					"y":38,
 					"direction":"UP",
 					"movePattern":"1"
 				}
@@ -283,7 +283,7 @@
 					"objID":"1422",
 					"charaID":"13",
 					"x":11,
-					"y":40,
+					"y":60,
 					"direction":"DOWN",
 					"times":1,
 					"pathID":"1",
@@ -319,7 +319,7 @@
 			"type":"changeMap",
 			"mapID":"9",
 			"x":2,
-			"y":34
+			"y":54
 		}
 	],
 	"3":[
@@ -613,13 +613,13 @@
 									"type":"charaWalkTo",
 									"objID":"hero",
 									"x":12,
-									"y":20
+									"y":40
 								},
 								{
 									"type":"charaWalkTo",
 									"objID":"1014",
 									"x":12,
-									"y":22
+									"y":42
 								}
 							]
 						},
@@ -667,7 +667,7 @@
 									"imgID":"1"
 								},
 								{
-									"text":["真夏ちゃんも蘭丸さんも\nはぐれちゃった・・・"],
+									"text":["真夏ちゃんもらんまるさんも\nはぐれちゃった・・・"],
 									"charaID":"6",
 									"imgID":"2"
 								},
@@ -758,7 +758,7 @@
 							"type":"createCamera",
 							"mapID":"8",
 							"x":21,
-							"y":37,
+							"y":57,
 							"action":[
 								{
 									"type":"sequence",
@@ -776,7 +776,7 @@
 											"objID":"10218",
 											"charaID":"8",
 											"x":24,
-											"y":31,
+											"y":51,
 											"eventID":"7",
 											"trigger":"2",
 											"direction":"UP",
@@ -787,7 +787,7 @@
 											"objID":"10219",
 											"charaID":"5",
 											"x":20,
-											"y":31,
+											"y":51,
 											"eventID":"8",
 											"trigger":"2",
 											"direction":"UP",
@@ -890,7 +890,7 @@
 							"type":"createCamera",
 							"mapID":"9",
 							"x":9,
-							"y":68,
+							"y":88,
 							"action":[
 								{
 									"type":"sequence",
@@ -908,7 +908,7 @@
 											"objID":"10220",
 											"charaID":"2",
 											"x":8,
-											"y":66,
+											"y":86,
 											"eventID":"7",
 											"trigger":"2",
 											"direction":"UP",
@@ -919,7 +919,7 @@
 											"objID":"10221",
 											"charaID":"3",
 											"x":6,
-											"y":64,
+											"y":84,
 											"eventID":"8",
 											"trigger":"2",
 											"direction":"UP",
@@ -1026,7 +1026,7 @@
 							"type":"createCamera",
 							"mapID":"8",
 							"x":20,
-							"y":31,
+							"y":51,
 							"action":[
 								{
 									"type":"sequence",
@@ -1044,7 +1044,7 @@
 											"objID":"10218",
 											"charaID":"8",
 											"x":24,
-											"y":31,
+											"y":51,
 											"eventID":"7",
 											"trigger":"2",
 											"direction":"DOWN",
@@ -1055,7 +1055,7 @@
 											"objID":"10219",
 											"charaID":"5",
 											"x":20,
-											"y":31,
+											"y":51,
 											"eventID":"8",
 											"trigger":"2",
 											"direction":"DOWN",
@@ -1221,7 +1221,7 @@
 					"objID":"1044",
 					"charaID":"4",
 					"x":14,
-					"y":20,
+					"y":40,
 					"direction":"UP",
 					"movePattern":"1"
 				},
@@ -1230,7 +1230,7 @@
 					"objID":"1045",
 					"charaID":"6",
 					"x":12,
-					"y":18,
+					"y":38,
 					"direction":"DOWN",
 					"movePattern":"1"
 				},

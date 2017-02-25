@@ -15,6 +15,9 @@
  <tileset firstgid="1473" name="oinarisama" tilewidth="16" tileheight="16" tilecount="400" columns="20">
   <image source="oinarisama.png" trans="aa55ff" width="320" height="320"/>
  </tileset>
+ <tileset firstgid="1873" name="shopArea" tilewidth="16" tileheight="16" tilecount="851" columns="37">
+  <image source="shopArea.png" width="592" height="368"/>
+ </tileset>
  <layer name="Base" width="30" height="50">
   <properties>
    <property name="z" value="-10"/>
@@ -53,6 +56,14 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1jEKgDAMAMBAf6L+QT+ii///h10ELViwQ0W4gywJJJAsiQAA6GNIEVO658bUFqUzX/a/2is1ns15b8sHu1vzzM3NAAC6Gxp/9DdR+9vhzw7SHQg0
+  </data>
+ </layer>
+ <layer name="door" width="30" height="50">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzbEJwCAABMDvdK7g/o1kF0mlM1gogbsFLgEA4A96Sd5y/h3r/C68T01aPf8CAADsmof3BE0=
   </data>
  </layer>
  <layer name="rope" width="30" height="50">

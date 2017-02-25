@@ -22,6 +22,7 @@
 #include "Tasks/CameraTask.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Models/EquipItemEvent.h"
 
 #pragma mark CharacterEvent
 
@@ -189,4 +190,11 @@ void ChangeHeroEvent::run()
     party->addMember(chara);
     DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
     DungeonSceneManager::getInstance()->getCamera()->setTarget(party->getMainCharacter());
-}
+    
+    // 装備データをセット
+    LocalPlayerData* localPlayerData {PlayerDataManager::getInstance()->getLocalData()};
+    DungeonSceneManager::getInstance()->getEquipItemEvent()->setEquipmentCache(
+        localPlayerData->getItemEquipment(DirectionRight()),
+        localPlayerData->getItemEquipment(DirectionLeft())
+    );
+ }

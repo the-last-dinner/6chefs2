@@ -6,20 +6,40 @@
  <tileset firstgid="481" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <layer name="Base" width="78" height="44">
+ <tileset firstgid="961" name="shopArea" tilewidth="16" tileheight="16" tilecount="851" columns="37">
+  <image source="shopArea.png" width="592" height="368"/>
+ </tileset>
+ <tileset firstgid="1812" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+  <image source="ST-Sewer-01.png" width="256" height="1504"/>
+ </tileset>
+ <layer name="BaseNew" width="78" height="44">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlM0RwiAUBkMTnrQQtSD1pmMP3qKFRBuxJS+Sk04GgTwIP3F35ptEQ+CxAZoGpLx0nor45Kg+3h76fqeve2LNQaf7U29Llc5byFi1xGeOKxV3vZnGnMJ17u83t306lc9hv3Pzliq1esu992Ofb7515T6fQiNZb/2cS5n3mDpi1hxrn5biMVVqPd9SZrgm+t+m822ts9G5NL/jeu7Tdvj/mD5tY/n0GzJW/+7W4G1BvII3vOGt/OANb3grP3jDG97KD97CvZ30/TVxbpba2gjtp8r5y1sObGu8M9Q2tr2Lu+Md1/Nc5PZWK3iTgTcZeJOBNxl4k4E3GXiTgTcZeJOBNxl4k4E3GXiTgTcAf97yqW5d
+   eJztWFtOwzAQtEQb/pGgCddA/EE4C49rIP54nIXHNYC7lKpQDsBGasTK2rXjtd1Y0Y402q61ttPxbBLFGIUUJ5UxB/vKITyt/nVbwe/FzJga2AA3e+Pzt5D1u7pel2Pg0tLtDMbOge1Wv7HZFLJ+g3S5IHS7hLEr4PW2btfszxYz535tQF2vyw2hG/Yb9rH9XzBz94d0b9/cULr6FPsN+7hxUNofQ69Xune/h2t+CF19iv1mR47S/hh6vdK92wHzQ+jqU+w3u0+5XuvvQamuzyZ1HSF7cvNDo0s3/B5CRepZlCPmXDs2+t5DqEg9i3LEnGvHRt97CBUxuZoUMefasZHq03sYewA+MhGTq0kRc64dG58I3Z5h7AX4ykRMriZFzLl2bHwjdFvD2DfwB7iZac7ltm6Hc2OOgAtgPdecy9Vvafy2JmpLON/ScqpPbd1KON/Scl+fqt9k9zf1m8xvdSHnW1quz9M8frPzUs577Dz0vbeU8x47x7rdwu+PHfOz4s/pPUF9Lt4h3cZA53HufLsz/ari6qeKlcM/S0KD0Pqpwuef2PqpQv0mg/pNBvWbDOo3GdRvMqjfZFC/yaB+k0H9JoP6TQb1mwz4W6n9rYvTLaR+qsDfSu1vpJxuIfUKxZTwB/uTc6o=
+  </data>
+ </layer>
+ <layer name="Obi" width="78" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0VlOQkEUBuFOLrvA2Y2AE25EBMSN4AgbYRR2hohDKJO+CWEBdD/Ul9Tz+ZMTgrR/yyKET/rNoBV90Zq+6SeDTf/9Fam/JEmStlUrIRzQIR3RceyETumMzivu2lXjdp0u6JKuYtd0Qw26TbAv112lO2436Z5a1I516IG69JhgX667Sj1uP9EzvdBr7I3eqU+DBPty3VUacntEY5rQNDajD5rTIsG+XHdJkiRJkiRJkiRJkiRJ0q4NUJx0eg==
   </data>
  </layer>
  <layer name="MonoShita" width="78" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjEOgCAURMEfOBcn8frCOSBReyskMpNss9WLAAAAAHZX8rtvtlW7HsdoOVNEvdfS9X1t1S4AAAAAAAAAAPijDrozCbE=
   </data>
  </layer>
  <layer name="MonoChu" width="78" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt17EJACAMRNHYO4n7D2hhKwTSaOC9CY7fXQQAAADQ3RyvF/zv1mjpltIIAKA/fyHnL9RoBAAAAAAAxwaYvgDh
   </data>
@@ -103,4 +123,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="shadow" width="78" height="44">
+  <data encoding="base64" compression="zlib">
+   eJzt18ENwzAMBEH/0n9DLsElpBY/WAH34cDITAXC4UhJxwHPOz+/PsE7XXJL9K2RWyO3Rm6N3Bq5Nd4hjb41+tboW6NvzVduiTlt5NbYb42+NfrW6Fsjt8acNt6977HdDXbJ2O4Gu2Rsd4O+jW0O+ja2Obi7hjltzGljThtz2pjTZpuDvo3tnOrb8D9t/E8bfWv0rdneC969/KsbttAuXg==
+  </data>
+ </layer>
 </map>

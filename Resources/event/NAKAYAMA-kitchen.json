@@ -126,14 +126,19 @@
 							"type":"charaWalkTo",
 							"objID":"10156",
 							"x":10,
-							"y":5
+							"y":6
 						}
 					]
 				},
 				{
 					"type":"changeDirection",
 					"objID":"10156",
-					"direction":"RIGHT"
+					"direction":"UP"
+				},
+				{
+					"type":"changeDirection",
+					"objID":"hero",
+					"direction":"DOWN"
 				},
 				{
 					"type":"charaMsg",
@@ -193,16 +198,6 @@
 					"type":"playBGM",
 					"file":"bgm_maoudamashii_healing13.mp3",
 					"volume":0.5
-				},
-				{
-					"type":"changeDirection",
-					"objID":"hero",
-					"direction":"LEFT"
-				},
-				{
-					"type":"changeDirection",
-					"objID":"10156",
-					"direction":"RIGHT"
 				},
 				{
 					"type":"charaMsg",
@@ -397,6 +392,11 @@
 									"y":10,
 									"direction":"DOWN",
 									"movePattern":"1"
+								},
+								{
+									"type":"playBGM",
+									"file":"rain1.mp3",
+									"volume":0.2
 								},
 								{
 									"type":"createRain"

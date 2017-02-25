@@ -13,8 +13,6 @@
 #include "UI/Cloud.h"
 #include "UI/NotificationBand.h"
 
-const string TitleMainMenuLayer::VERSION { "Ver.1.0β" };
-
 // コンストラクタ
 TitleMainMenuLayer::TitleMainMenuLayer(){FUNCLOG}
 
@@ -41,6 +39,8 @@ bool TitleMainMenuLayer::init()
     }
     
 	if(!MenuLayer::init(1, typeToString.size())) return false;
+    
+    MasterConfigData* masterConfigData {ConfigDataManager::getInstance()->getMasterConfigData()};
     
     this->animating = true;
 	
@@ -74,14 +74,22 @@ bool TitleMainMenuLayer::init()
     title3->setOpacity(0);
     this->addChild(title3);
     
-    float titleNumberScale { 0.33f };
-    Sprite* titleNumber {Sprite::createWithSpriteFrameName("title_2.png")};
-    titleNumber->setPosition(
-        WINDOW_WIDTH/2 + title3->getContentSize().width/2 + titleNumber->getContentSize().width * titleNumberScale / 5,
-        title2->getPosition().y - title3->getContentSize().height
-    );
-    titleNumber->setOpacity(0);
-    this->addChild(titleNumber);
+    // 2のアイコン
+    Spawn* titleNumberAction { nullptr };
+    if (masterConfigData->isDisplay(MasterConfigData::TWO_ICON)) {
+        float titleNumberScale { 0.33f };
+        Sprite* titleNumber {Sprite::createWithSpriteFrameName("title_2.png")};
+        titleNumber->setPosition(
+            WINDOW_WIDTH/2 + title3->getContentSize().width/2 + titleNumber->getContentSize().width * titleNumberScale / 5,
+            title2->getPosition().y - title3->getContentSize().height
+        );
+        titleNumber->setOpacity(0);
+        this->addChild(titleNumber);
+        titleNumberAction = Spawn::createWithTwoActions(
+                                TargetedAction::create(titleNumber, FadeIn::create(0.8f)),
+                                TargetedAction::create(titleNumber, EaseCubicActionOut::create(ScaleTo::create(0.6f, titleNumberScale)))
+                            );
+    }
     
     // タイトルメニューを生成
 	float menuSize = 44.f;
@@ -106,16 +114,12 @@ bool TitleMainMenuLayer::init()
         TargetedAction::create(title1, FadeIn::create(0.8f)),
         TargetedAction::create(title2, FadeTo::create(0.8f, 200)),
         TargetedAction::create(title3, FadeIn::create(0.8f)),
-        Spawn::create(
-            TargetedAction::create(titleNumber, FadeIn::create(0.8f)),
-            TargetedAction::create(titleNumber, EaseCubicActionOut::create(ScaleTo::create(0.6f, titleNumberScale))),
-            nullptr
-        ),
+        titleNumberAction,
         nullptr
     ));
     
     // copyright
-    Label* copyright {Label::createWithTTF("Copyright (C) 2014-2017 最後の晩餐 All Rights Reserved.", Resource::Font::MESSAGE, 16)};
+    Label* copyright {Label::createWithTTF(masterConfigData->getString(MasterConfigData::COPYRIGHT), Resource::Font::MESSAGE, 16)};
     copyright->setPosition(Point(WINDOW_WIDTH - copyright->getContentSize().width * 0.52f, copyright->getContentSize().height));
     copyright->setOpacity(0);
     this->addChild(copyright);
@@ -137,7 +141,7 @@ bool TitleMainMenuLayer::init()
     opr->runAction(FadeTo::create(1.2f, 200));
     
     // バージョン表記
-    Label* version { Label::createWithTTF(TitleMainMenuLayer::VERSION, Resource::Font::MESSAGE, 18) };
+    Label* version { Label::createWithTTF(masterConfigData->getString(MasterConfigData::VERSION), Resource::Font::MESSAGE, 18) };
     version->setPosition(Point(version->getContentSize().width/2, version->getContentSize().height));
     version->setColor(Color3B::WHITE);
     version->setOpacity(0);

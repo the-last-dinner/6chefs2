@@ -2,14 +2,14 @@
 	"1":[
 		{
 		    "type":"setAmbient",
-		    "ambient":"night"
+		    "ambient":"basement"
 		}
 	],
 	"2":[
 		{
 			"type":"changeMap",
 			"mapID":"26",
-			"x":32,
+			"x":31,
 			"y":10
 		}
 	],

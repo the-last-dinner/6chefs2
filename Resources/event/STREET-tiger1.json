@@ -311,7 +311,7 @@
 					"objID":"1415",
 					"charaID":"13",
 					"x":21,
-					"y":17,
+					"y":27,
 					"direction":"DOWN",
 					"times":1,
 					"pathID":"1",
@@ -322,7 +322,7 @@
 					"objID":"1416",
 					"charaID":"13",
 					"x":19,
-					"y":66,
+					"y":86,
 					"direction":"UP",
 					"times":1,
 					"pathID":"4",
@@ -350,7 +350,7 @@
 			"type":"changeMap",
 			"mapID":"8",
 			"x":40,
-			"y":89
+			"y":109
 		}
 	],
 	"3":[
@@ -366,7 +366,7 @@
 					"type":"changeMap",
 					"mapID":"6",
 					"x":4,
-					"y":29
+					"y":49
 				}
 			]
 		}
@@ -782,7 +782,7 @@
 					"objID":"1415",
 					"charaID":"13",
 					"x":21,
-					"y":17,
+					"y":37,
 					"direction":"DOWN",
 					"times":1,
 					"pathID":"1",
@@ -793,7 +793,7 @@
 					"objID":"1416",
 					"charaID":"13",
 					"x":19,
-					"y":55,
+					"y":75,
 					"direction":"UP",
 					"times":1,
 					"pathID":"4",
@@ -882,7 +882,7 @@
 					"type":"createObject",
 					"objID":"1043",
 					"x":36,
-					"y":59,
+					"y":79,
 					"movePattern":"1",
 					"direction":"LEFT",
 					"charaID":"8"
@@ -949,7 +949,7 @@
 							"type":"createCamera",
 							"mapID":"7",
 							"x":18,
-							"y":16,
+							"y":36,
 							"action":[
 								{
 									"type":"sequence",
@@ -959,7 +959,7 @@
 											"objID":"10242",
 											"charaID":"13",
 											"x":18,
-											"y":14,
+											"y":34,
 											"direction":"DOWN",
 											"movePattern":"2"
 										},
@@ -968,7 +968,7 @@
 											"objID":"10243",
 											"charaID":"13",
 											"x":18,
-											"y":97,
+											"y":117,
 											"direction":"UP",
 											"movePattern":"2"
 										},
@@ -997,14 +997,14 @@
 							"type":"charaWarp",
 							"objID":"hero",
 							"x":34,
-							"y":59,
+							"y":79,
 							"direction":"LEFT"
 						},
 						{
 							"type":"charaWarp",
 							"objID":"1043",
 							"x":36,
-							"y":59,
+							"y":79,
 							"direction":"LEFT"
 						},
 						{

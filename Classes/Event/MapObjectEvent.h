@@ -144,7 +144,8 @@ class SetLightEvent : public MapObjectEvent
 public:
     CREATE_FUNC_WITH_PARAM(SetLightEvent, rapidjson::Value&)
 private:
-    Light* _light { nullptr };
+    Light* _innerLight { nullptr };
+    Light* _outerLight { nullptr };
 private:
     SetLightEvent() { FUNCLOG };
     ~SetLightEvent() { FUNCLOG };
@@ -175,6 +176,21 @@ private:
 private:
     SetMovableEvent() { FUNCLOG };
     ~SetMovableEvent() { FUNCLOG };
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
+// アニメーション再生
+class MapObjectAnimateEvent : public MapObjectEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(MapObjectAnimateEvent, rapidjson::Value&);
+private:
+    string _animationName {};
+    float _speed { 1.f };
+private:
+    MapObjectAnimateEvent() { FUNCLOG }
+    ~MapObjectAnimateEvent() { FUNCLOG }
     virtual bool init(rapidjson::Value& json) override;
     virtual void run() override;
 };

@@ -13,16 +13,13 @@
 
 class Light : public Node
 {
-// 定数
-public:
-    static const Color3B TORCH_COLOR;
-    
 // 列挙型
 public:
     enum struct Type
     {
         NORMAL,
         TORCH,
+        FLASHLIGHT,
         
         SIZE
     };
@@ -31,13 +28,21 @@ public:
 public:
     struct Information
     {
-        Color3B color {TORCH_COLOR};
+        Color3B color {Color3B::WHITE};
         float radius {0};
         Type type {Type::TORCH};
+        string image {};
+        float angle {0};
         Information(){};
         Information(float radius):radius(radius){};
         Information(const Color3B color, float radius, const Type& type):color(color), radius(radius), type(type){};
+        Information(const Color3B color, float radius, const string& image):color(color), radius(radius), image(image){};
     };
+    
+// 定数
+public:
+    static const Color3B TORCH_COLOR;
+    static const map<Type, Information> TYPE_TO_INFO;
     
 // クラスメソッド
 public:
@@ -55,6 +60,7 @@ public:
 	bool init(const Information& info);						  // 初期化
     Information getInformation();
     void setBlendFunc(const BlendFunc& blendFunc);
+    void changeAngleTo(const float& angle);
 };
 
 #endif /* defined(_Light__) */

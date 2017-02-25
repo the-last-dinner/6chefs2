@@ -20,6 +20,7 @@ namespace Resource
         static const std::string MASTER_CONFIG = BASE_PATH + "MasterConfig.json";
         static const std::string EVENT_SCRIPT_VALIDATOR = BASE_PATH + "EventScriptValidator.json";
         static const std::string BATTLE_CHARACTER = BASE_PATH + "BattleCharacter.json";
+        static const std::string TROPHY_CONFIG = BASE_PATH + "TrophyConfig.json";
     };
     
     namespace CsvFiles

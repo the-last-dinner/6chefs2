@@ -73,15 +73,14 @@ END
 // remains consistent on all systems.
 GLFW_ICON               ICON                    "res\\game.ico"
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,0,0
- PRODUCTVERSION 1,2,0,0
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -97,13 +96,13 @@ BEGIN
         BLOCK "041104b0"
         BEGIN
             VALUE "CompanyName", "?????"
-            VALUE "FileDescription", "6???????????"
-            VALUE "FileVersion", "1.2.0.0"
-            VALUE "InternalName", "6???????????"
-            VALUE "LegalCopyright", "Copyright 2016 ????? All Right Reserved."
-            VALUE "OriginalFilename", "6chefs.exe"
-            VALUE "ProductName", "6???????????"
-            VALUE "ProductVersion", "1.2.0.0"
+            VALUE "FileDescription", "6???????????2"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "6???????????2"
+            VALUE "LegalCopyright", "Copyright 2017 ????? All Right Reserved."
+            VALUE "OriginalFilename", "6chefs2_1.0.exe"
+            VALUE "ProductName", "6???????????2"
+            VALUE "ProductVersion", "1.0.0.0"
         END
     END
     BLOCK "VarFileInfo"

@@ -253,7 +253,7 @@
 								{
 									"type":"charaWalkTo",
 									"objID":"1040",
-									"x":76,
+									"x":75,
 									"y":16,
 									"speed":2.0
 								},
@@ -415,13 +415,13 @@
 				{
 					"type":"charaWalkTo",
 					"objID":"1038",
-					"x":74,
-					"y":22
+					"x":75,
+					"y":16
 				},
 				{
 					"type":"changeDirection",
 					"objID":"1038",
-					"direction":"DOWN"
+					"direction":"RIGHT"
 				},
 				{
 					"type":"fadeout"
@@ -513,6 +513,12 @@
 					"option":"reaction"
 				}
 			]
+		}
+	],
+	"10":[
+		{
+			"type":"systemMsg",
+			"text":["あそこのシャッターは開けない方がいい・・・"]
 		}
 	]
 }

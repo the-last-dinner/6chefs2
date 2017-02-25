@@ -8,12 +8,10 @@
 
 #include "Scenes/StartUpScene.h"
 #include "Scenes/TitleScene.h"
+#include "Scenes/OpeningScene.h"
 #include "Datas/Scene/StartUpSceneData.h"
 #include "Layers/EventListener/ConfigEventListenerLayer.h"
 #include "Layers/LoadingLayer.h"
-#include "Utils/JsonUtils.h"
-#include "Utils/CsvUtils.h"
-#include "Utils/AssertUtils.h"
 
 // 初期化
 bool StartUpScene::init()
@@ -53,8 +51,16 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->setOpacity(0);
     this->addChild(logo);
     
-    // 効果音
-    SoundManager::getInstance()->playVoice(Resource::VOICE::THE_LAST_DINNER_NANIWO, 1.0f);
+    // タイトルコール(乱数でナニヲ率高め)
+    string titleCallFile = Resource::VOICE::THE_LAST_DINNER_NANIWO;
+    int ranum = arc4random() % 100;
+    if (ranum < 10) {
+        titleCallFile = Resource::VOICE::THE_LAST_DINNER_ERI;
+    } else if (ranum < 20) {
+        titleCallFile = Resource::VOICE::THE_LAST_DINNER_UEHARA;
+    }
+    
+    SoundManager::getInstance()->playVoice(titleCallFile, 1.0f);
     
     // ロゴのアニメーション
     logo->runAction(
@@ -71,7 +77,11 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
             DelayTime::create(1.5f),
             TargetedAction::create(logo,FadeOut::create(1.0f)),
             CallFunc::create([](){
-                Director::getInstance()->replaceScene(TitleScene::create());
+                if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::OPENING_SCENE)) {
+                    Director::getInstance()->replaceScene(OpeningScene::create());
+                } else {
+                    Director::getInstance()->replaceScene(TitleScene::create());
+                }
             }),
             nullptr
         )

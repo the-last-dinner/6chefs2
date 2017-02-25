@@ -20,14 +20,6 @@
    eJzt1TlOA0EQheFhH1XGTspO6hVSsCHHtsixLXJsi5zlAiwXwHABlgPyS3ZU09GMukRQJX0a1WuN1EFLL0n+55TSJCmjgur0a6GGepq9zynZGRpoTr8WznERuM8lWSunNjoF/rsK3OearJtTD/0C/90E7nNLNshpiFGB/+5C70d4P2igKfZ75v2QtdBGR+z3zPsh66KHvtjvmfdDNsAQI7Hf9dyTPeART2K/63kme8Er3sR+1/NONsYHPsV+1/NF9o0f/Ir9rmeGbBZzmMcCFrGEVOKf61kmW8Eq1rCODWxiS+Kf69km28Eu9rCPAxziSOKf6ymRlVFBFTXUcYwTiX+ux/vL+8v7y/vL+2sy3l/eX95f3l/eX5Px/vL+8v6K118+4fkDXzwAAA==
   </data>
  </layer>
- <layer name="MonoShita" width="36" height="44" visible="0">
-  <properties>
-   <property name="z" value="-11"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt1NENABAQRMFTCn3Rfxm0cAkhMvO92c8XAQB71RLRyrl9Vl/fI/Gf3QPv0B/gFv0BbtEf4GcT09cIEQ==
-  </data>
- </layer>
  <layer name="MonoChu" width="36" height="44">
   <properties>
    <property name="z" value="-11"/>

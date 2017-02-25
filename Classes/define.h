@@ -81,6 +81,7 @@ enum Priority
 	STORY_MESSAGE = 102,
 	SYSTEM_MESSAGE = 101,
     CHARACTER_MESSAGE = 100,
+    VIDEO_LAYER = 93,
     SELECT_LAYER = 92,
     BUTTON_MASHING_LAYER = 91,
     DISP_IMAGE_LAYER = 90,
@@ -148,6 +149,11 @@ enum struct EnemyID
 enum struct MapID
 {
     UNDIFINED = -1,
+};
+
+enum struct ItemID
+{
+    UNDIFINED = 0,
 };
 
 // 味方キャラクタの動き方

@@ -22,42 +22,22 @@
 			"type":"if",
 			"condition":[
 				{
-					"event":["63","3"]
+					"Nevent":["63","3"]
 				}
 			],
 			"action":[
 				{
-					"type":"playBGM",
-					"file":"6kucya.mp3"
+					"type":"removeLayer",
+					"layer":"rakuseki"
 				},
 				{
-					"type":"createEnemy",
-					"objID":"1449",
-					"charaID":"13",
-					"x":2,
-					"y":11,
-					"direction":"UP",
-					"times":1,
-					"movePattern":"2"
-				},
-				{
-					"type":"createEnemy",
-					"objID":"1453",
-					"charaID":"13",
-					"x":2,
-					"y":9,
-					"direction":"DOWN",
-					"times":1,
-					"movePattern":"2"
+					"type":"removeLayer",
+					"layer":"rakuseki2"
 				}
 			]
 		}
 	],
 	"2":[
-		{
-			"type":"stopBGM",
-			"file":"6kucya.mp3"
-		},
 		{
 			"type":"changeMap",
 			"mapID":"61",
@@ -67,14 +47,107 @@
 	],
 	"3":[
 		{
-			"type":"stopBGM",
-			"file":"6kucya.mp3"
-		},
-		{
-			"type":"changeMap",
-			"mapID":"63",
-			"x":17,
-			"y":191
+			"type":"sequence",
+			"action":[
+				{
+					"type":"if",
+					"condition":[
+						{
+							"Nevent":["63","3"]
+						}
+					],
+					"action":[
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"spawn",
+									"action":[
+										{
+											"type":"createLayer",
+											"layer":"rakuseki"
+										},
+										{
+											"type":"createLayer",
+											"layer":"rakuseki2"
+										},
+										{
+											"type":"playSE",
+											"file":"bakibaki.mp3"
+										},
+										{
+											"type":"playSE",
+											"file":"reaction.mp3"
+										},
+										{
+											"type":"reaction",
+											"objID":"hero"
+										},
+										{
+											"type":"reaction",
+											"objID":"1049"
+										},
+										{
+											"type":"changeDirection",
+											"objID":"hero",
+											"direction":"LEFT"
+										},
+										{
+											"type":"changeDirection",
+											"objID":"1049",
+											"direction":"LEFT"
+										}
+									]
+								},
+								{
+									"type":"wait",
+									"time":1.0
+								},
+								{
+									"type":"displaySaveMenu"
+								},
+								{
+									"type":"charaMsg",
+									"talk":[
+										{
+											"text":["・・・"],
+											"charaID":"3",
+											"imgID":"2"
+										},
+										{
+											"text":["くそっ・・・\nもう戻れねぇな・・・"],
+											"charaID":"2",
+											"imgID":"2"
+										},
+										{
+											"text":["先に進むしかないわね・・・"],
+											"charaID":"3",
+											"imgID":"2"
+										}
+									]
+								},
+								{
+									"type":"changeDirection",
+									"objID":"hero",
+									"direction":"UP"
+								},
+								{
+									"type":"changeMap",
+									"mapID":"63",
+									"x":17,
+									"y":191
+								}
+							]
+						}
+					]
+				},
+				{
+					"type":"changeMap",
+					"mapID":"63",
+					"x":17,
+					"y":191
+				}
+			]
 		}
 	],
 	"4":[
@@ -215,10 +288,6 @@
 							"type":"already"
 						},
 						{
-							"type":"stopBGM",
-							"file":"6kucya.mp3"
-						},
-						{
 							"type":"changeMap",
 							"mapID":"63",
 							"x":17,
@@ -257,7 +326,7 @@
 					"action":[
 						{
 							"type":"systemMsg",
-							"text":["狂人がいる・・・\n近づくのはよそう・・・"]
+							"text":["いつまた崩れるか分からねぇ・・・\n近づくのはよそう・・・"]
 						},
 						{
 							"type":"charaWalk",

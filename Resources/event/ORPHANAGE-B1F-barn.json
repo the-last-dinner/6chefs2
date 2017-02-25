@@ -39,5 +39,29 @@
 			"type":"removeObject",
 			"objID":"1512"
 		}
+	],
+	"4":[
+		{
+			"type":"systemMsg",
+			"text":["掃除用具入れね・・・\nなんか学校みたい・・・"]
+		}
+	],
+	"5":[
+		{
+			"type":"systemMsg",
+			"text":["ブリキのバケツ・・・"]
+		}
+	],
+	"6":[
+		{
+			"type":"systemMsg",
+			"text":["モップね・・・なんか牛乳臭いわ・・・"]
+		}
+	],
+	"7":[
+		{
+			"type":"systemMsg",
+			"text":["傘穴開いてるわね・・・"]
+		}
 	]
 }

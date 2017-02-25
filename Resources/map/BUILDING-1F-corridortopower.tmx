@@ -22,7 +22,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1tEJwCAUQ1HBeesibQfRKdsBXhVNChFywT+Rg8LDlPao5f6a3cfsJp57/mC0D8s+LPuw2L6LbGT66mB+r8x3pg8tun8lXw3uUckXpeZTft8o+7Dsw7IPS8l3vJYiPP++/j8la6zdegB72DsE
+   eJzt18EJgDAMheGQzquLqDPoVWfQ3RSk4CEY8aXwDvmhtyIfLUQqwt+hIlt5XzVv36Lxvqn4e742BH6rlj6s9GGlDyvaNwYbI32rM7//zPdIH5p1/ky+ev7PmHxWbD7m+7VKH1b6sNKHxeTrLktPPP+s/++ut5lhzQ3epy07ASWdPmY=
   </data>
  </layer>
  <objectgroup name="collision">

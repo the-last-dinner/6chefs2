@@ -871,7 +871,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"trophy":"10"
+					"trophy":"9"
 				}
 			],
 			"action":[
@@ -943,7 +943,7 @@
 			"type":"if",
 			"condition":[
 				{
-					"Ntrophy":"10"
+					"Ntrophy":"9"
 				}
 			],
 			"action":[
@@ -960,23 +960,23 @@
 			"action":[
 				{
 					"type":"charaMsg",
-					"text":["この度は「6人の料理人と隻眼の少女」を\n手に取っていただき、ありがとうございます。","早速ですがルートAにたどり着く方法を\n教えましょう。"],
+					"text":["この度は「6人の料理人と隻眼の少女」を\n手に取っていただき、ありがとうございます。"],
 					"charaID":"10",
 					"name":"最後の晩餐"
 				},
 				{
 					"type":"questionMsg",
-					"text":["聞きますか？"],
+					"text":["どうしますか？"],
 					"choices":[
 						{
-							"choice":"聞く",
+							"choice":"ルートAへの行き方を聞く",
 							"action":[
 								{
 									"type":"sequence",
 									"action":[
 										{
 											"type":"charaMsg",
-											"img":"rootA1.png",
+											"img":"howtoRootA1.png",
 											"talk":[
 												{
 													"text":["北森金鉱跡に針金を拾った坑道が\nありませんでしたか？","そこでこの坑道に入らず、\n地下病棟に戻り・・・"],
@@ -987,7 +987,7 @@
 										},
 										{
 											"type":"charaMsg",
-											"img":"rootA2.png",
+											"img":"howtoRootA2.png",
 											"talk":[
 												{
 													"text":["ここの扉を調べると\n新エリアへの道が・・・"],
@@ -1001,7 +1001,88 @@
 							]
 						},
 						{
-							"choice":"聞かない",
+							"choice":"　トロコン特典「二つが一つになった時」を見る　　",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"password",
+											"pass":"2525",
+											"true":[
+												{
+													"type":"sequence",
+													"action":[
+														{
+															"type":"fadeout"
+														},
+														{
+															"type":"stopBGM"
+														},
+														{
+															"type":"createCamera",
+															"mapID":"118",
+															"x":9,
+															"y":10,
+															"action":[
+																{
+																	"type":"callEvent",
+																	"eventID":"1"
+																}
+															]
+														},
+														{
+															"type":"createCamera",
+															"mapID":"100",
+															"x":17,
+															"y":23,
+															"action":[
+																{
+																	"type":"callEvent",
+																	"eventID":"5"
+																}
+															]
+														},
+														{
+															"type":"createCamera",
+															"mapID":"119",
+															"x":9,
+															"y":18,
+															"action":[
+																{
+																	"type":"callEvent",
+																	"eventID":"1"
+																}
+															]
+														},
+														{
+															"type":"stopBGM"
+														},
+														{
+															"type":"playBGM",
+															"file":"OMAKE.mp3"
+														},
+														{
+															"type":"fadein"
+														}	
+													]
+												}	
+											],
+											"false":[
+												{
+													"type":"charaMsg",
+													"charaID":"10",
+													"name":"最後の晩餐",
+													"text":["6人の料理人と隻眼の少女、\n6人の料理人と隻眼の少女2で","全トロフィーを取ると見られるパスワードを\n続けて入力して下さい。","ぜひ頑張ってみてください。"]
+												}	
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"choice":"何もしない",
 							"action":[
 								{
 									"type":"charaMsg",

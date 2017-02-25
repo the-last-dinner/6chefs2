@@ -82,7 +82,7 @@
  </objectgroup>
  <layer name="shadow" width="16" height="22">
   <data encoding="base64" compression="zlib">
-   eJxjYBhcIJtlVD8lZgwG+wfC/TB9I10/uWCk6x8oAACrcgrY
+   eJxjYBhcIJtlVD8lZgwG+wfC/TB9Q10/uWBUP2X6BwoAANRXCmk=
   </data>
  </layer>
  <layer name="CharaUe" width="16" height="22">

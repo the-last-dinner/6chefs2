@@ -161,7 +161,7 @@
  </objectgroup>
  <layer name="shadow" width="32" height="30">
   <data encoding="base64" compression="zlib">
-   eJzt0LEJADAIRUH3XynLpU0bED4m93o9sUpni8/n85vmbvfxZ/pdpf3fS/+fz+fPKH1r2n+hDThcF2E=
+   eJzt0bEJADAIRUH3XynLpbUNBD7KvV5PsEq9w+fz+Z/mXvfxZ/raUfr/fD5/Rulb0/6GLskyFqY=
   </data>
  </layer>
  <layer name="nadeshiko" width="32" height="30">

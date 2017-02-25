@@ -84,7 +84,7 @@
 							"imgID":"1"
 						},
 						{
-							"text":["鍵がねぇと動かねぇみたいだな。\n探して来ようぜ。"],
+							"text":["鍵がねぇと動かんみてぇじゃな。\n探して来ようや。"],
 							"charaID":"8",
 							"imgID":"1"
 						}
@@ -273,7 +273,7 @@
 							"option":"reaction"
 						},
 						{
-							"text":["けど外にもウジャウジャいるぜ？"],
+							"text":["けど外にもウジャウジャいるで？"],
 							"charaID":"8",
 							"imgID":"1"
 						},
@@ -283,6 +283,9 @@
 							"imgID":"1"
 						}
 					]
+				},
+				{
+					"type":"displaySaveMenu"
 				},
 				{
 					"type":"fadeout"
@@ -355,6 +358,13 @@
 					"type":"fadein"
 				},
 				{
+					"type":"stopBGM"
+				},
+				{
+					"type":"playBGM",
+					"file":"battle_kyoujin.mp3"
+				},
+				{
 					"type":"battle",
 					"objID":["1424","1425"],
 					"true":[
@@ -364,6 +374,13 @@
 								{
 									"type":"fadeout",
 									"time":2.0
+								},
+								{
+									"type":"playBGM",
+									"file":"battle_kyoujin.mp3"
+								},
+								{
+									"type":"stopBGM"
 								},
 								{
 									"type":"charaWarp",
@@ -393,7 +410,7 @@
 											"imgID":"7"
 										},
 										{
-											"text":["あぁ・・・\n確かにありゃやべぇわ・・・","なるべく戦わない方が\nいいかもしれねぇな。"],
+											"text":["あぁ・・・\n確かにありゃやべぇわ・・・","なるだけ戦わん方が\nええかもしれんな。"],
 											"charaID":"8",
 											"imgID":"1"
 										}
@@ -402,6 +419,10 @@
 								{
 									"type":"chase",
 									"objID":"1043"
+								},
+								{
+									"type":"playBGM",
+									"file":"TENGENROU.mp3"
 								},
 								{
 									"type":"already"
