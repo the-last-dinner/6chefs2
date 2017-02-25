@@ -164,6 +164,8 @@ public:
     virtual void onEventFinished() {};                       // イベント終了時
     virtual void onBattleStart(Battle* battle);              // バトル開始時
     virtual void onBattleFinished();                         // バトル終了時
+    virtual void pauseAnimation();
+    virtual void resumeAnimation();
 
 // デバッグ
 public:

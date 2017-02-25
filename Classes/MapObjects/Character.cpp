@@ -386,10 +386,6 @@ void Character::onSearched(MapObject* mainChara)
 void Character::onEventStart()
 {
     this->setPaused(true);
-    this->getActionManager()->pauseTarget(this);
-    if (_csNode) {
-        _csNode->pause();
-    }
 }
 
 // イベント終了時
@@ -399,10 +395,6 @@ void Character::onEventFinished()
     if (_movePattern) {
         if (!_movePattern->hasSterted()) _movePattern->start();
         if (_movePattern->isPaused()) _movePattern->resume();
-    }
-    this->getActionManager()->resumeTarget(this);
-    if (_csNode) {
-        _csNode->resume();
     }
 }
 

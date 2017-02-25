@@ -103,7 +103,7 @@ void WalkByEvent::run()
     }
     
     target->pauseAi();
-    target->getActionManager()->resumeTarget(target);
+    target->resumeAnimation();
     
     if (target->isPaused()) target->setPaused(false);
     
@@ -143,7 +143,7 @@ void WalkToEvent::run()
     
     // NOTICE: イベントからの命令のみで動かしたいのでAIを一時停止
     target->pauseAi();
-    target->getActionManager()->resumeTarget(target);
+    target->resumeAnimation();
     
     if (target->isPaused()) target->setPaused(false);
     
