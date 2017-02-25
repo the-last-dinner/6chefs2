@@ -32,7 +32,7 @@ class VideoPic : public Ref
 };
 
 // 動画を画像に変換
-class CC_DLL VideoDecode : public Ref
+class VideoDecode : public Ref
 {
 	private:
 		AVFormatContext *m_pFormatCtx;  
