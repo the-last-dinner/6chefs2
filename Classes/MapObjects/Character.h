@@ -83,6 +83,8 @@ public:
     
     // Sight
     bool isInSight(MapObject* mapObject);
+    
+    void setSpeed(const float& speed);
 
 public:
     // Interface

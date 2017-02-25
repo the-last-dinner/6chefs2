@@ -88,4 +88,18 @@ private:
     virtual void run() override;
 };
 
+// キャラクターのスピードを変更
+class ChangeSpeedEvent : public CharacterEvent
+{
+public:
+    CREATE_FUNC_WITH_PARAM(ChangeSpeedEvent, rapidjson::Value&);
+private:
+    float _speed { 1.f };
+private:
+    ChangeSpeedEvent() { FUNCLOG }
+    ~ChangeSpeedEvent() { FUNCLOG }
+    virtual bool init(rapidjson::Value& json) override;
+    virtual void run() override;
+};
+
 #endif /* defined(__LastSupper__CharacterEvent__) */

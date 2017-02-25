@@ -198,3 +198,31 @@ void ChangeHeroEvent::run()
         localPlayerData->getItemEquipment(DirectionLeft())
     );
  }
+
+#pragma mark -
+#pragma mark ChangeSpeedEvent
+
+bool ChangeSpeedEvent::init(rapidjson::Value& json)
+{
+    if (!CharacterEvent::init(json)) return false;
+    
+    if (!json.HasMember(member::SPEED)) return false;
+    
+    _speed = _json[member::SPEED].GetDouble();
+    
+    return true;
+}
+
+void ChangeSpeedEvent::run()
+{
+    if (_objectId == "hero") {
+        Vector<Character*> members { DungeonSceneManager::getInstance()->getMapObjectList()->getParty()->getMembers() };
+        for (Character* chara : members) {
+            chara->setSpeed(_speed);
+        }
+    } else {
+        Character* target { _eventHelper->getMapObjectById<Character*>(_objectId) };
+        target->setSpeed(_speed);
+    }
+    this->setDone();
+}

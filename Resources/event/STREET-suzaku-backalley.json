@@ -674,10 +674,11 @@
 					"type":"sequence",
 					"action":[
 						{
-							"getItem":"1519"
+                              "type": "getItem",
+                              "itemID": "1519"
 						},
 						{
-							"type":"setFlg",
+							"type":"changeFlg",
 							"mapID":"35",
 							"eventID":"11",
 							"flg":1
