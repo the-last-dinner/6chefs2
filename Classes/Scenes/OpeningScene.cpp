@@ -42,7 +42,7 @@ void OpeningScene::onPreloadFinished(LoadingLayer *loadingLayer)
     this->setVideoLayer();
     //this->setVideoLayerDummy();
     this->setVideoBgm();
-    this->setPressEnter();
+    //this->setPressEnter();
 }
 
 // 動画レイヤーをセット
@@ -82,7 +82,7 @@ void OpeningScene::setVideoBgm()
 void OpeningScene::setPressEnter()
 {
     // PRESS ENTER
-    Label* pressEnter {Label::createWithTTF("PRESS ENTER", Resource::Font::MESSAGE, 16)};
+    Label* pressEnter {Label::createWithTTF("PRESS ENTER", Resource::Font::MESSAGE, 18)};
     pressEnter->setPosition(Point(WINDOW_WIDTH/2, pressEnter->getContentSize().height * 2));
     pressEnter->setOpacity(0);
     pressEnter->setLocalZOrder(999);
