@@ -150,7 +150,15 @@ void MapObject::setSprite(Sprite* sprite)
 }
 
 // 一時停止状態を設定
-void MapObject::setPaused(bool paused) { _paused = paused; }
+void MapObject::setPaused(bool paused)
+{
+    _paused = paused;
+    if (paused) {
+        this->pauseAnimation();
+        return;
+    }
+    this->resumeAnimation();
+}
 
 // ライトをセット
 void MapObject::setLight(Light* innerLight, Light* outerLight, AmbientLightLayer* ambientLightLayer, function<void()> callback)
@@ -529,4 +537,20 @@ void MapObject::onBattleStart(Battle* battle)
 void MapObject::onBattleFinished()
 {
     _battle = nullptr;
+}
+
+void MapObject::pauseAnimation()
+{
+    this->getActionManager()->pauseTarget(this);
+    if (_csNode) {
+        _csNode->pause();
+    }
+}
+
+void MapObject::resumeAnimation()
+{
+    this->getActionManager()->resumeTarget(this);
+    if (_csNode) {
+        _csNode->resume();
+    }
 }
