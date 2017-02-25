@@ -90,27 +90,18 @@ void AmbientLightLayer::setAmbient(const Color3B& color)
 }
 
 // 光源を追加
-void AmbientLightLayer::addLightSource(Light* lightSource)
+void AmbientLightLayer::addLightSource(Light* innerLight, Light* outerLight)
 {
-    if(!lightSource) return;
+    if(!innerLight || !outerLight) return;
     
-    Light::Information info {lightSource->getInformation()};
+    CC_SAFE_RETAIN(innerLight);
     
-    CC_SAFE_RETAIN(lightSource);
-    Color3B color { Color3B(info.color.r * 1.3f, info.color.g * 1.3f, info.color.b * 1.3f)};
-    
-    float radius {info.radius * 7.0f};
-    
-    Light* light {Light::create(Light::Information(color, radius, info.image))};
-    light->setPosition(lightSource->convertToWorldSpace(lightSource->getPosition()));
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
-    this->ambientLight->addChild(light);
+    this->ambientLight->addChild(outerLight);
     
     float duration {0.5f};
-    light->runAction(FadeIn::create(duration));
+    outerLight->runAction(FadeIn::create(duration));
     
-    this->lightMap.insert({lightSource, light});
+    this->lightMap.insert({innerLight, outerLight});
 }
 
 // 光源を削除

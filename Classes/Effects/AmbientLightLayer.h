@@ -39,7 +39,7 @@ private:
 // インスタンスメソッド
 public:
     void setAmbient(const Color3B& color);
-    void addLightSource(Light* lightSource);
+    void addLightSource(Light* innerLight, Light* outerLight);
     void removeLightSource(Light* lightSource);
     void changeLightDirection(Light* lightSource, const float& angle);
     void update(float delta) override;

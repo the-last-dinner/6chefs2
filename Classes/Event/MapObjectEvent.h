@@ -144,7 +144,8 @@ class SetLightEvent : public MapObjectEvent
 public:
     CREATE_FUNC_WITH_PARAM(SetLightEvent, rapidjson::Value&)
 private:
-    Light* _light { nullptr };
+    Light* _innerLight { nullptr };
+    Light* _outerLight { nullptr };
 private:
     SetLightEvent() { FUNCLOG };
     ~SetLightEvent() { FUNCLOG };
