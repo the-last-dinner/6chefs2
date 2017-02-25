@@ -93,6 +93,13 @@ enum Priority
 	MAP = 0,
 };
 
+// updateの優先度値
+enum UpdatePriority
+{
+    FIRST = -1,
+    LAST = 9999,
+};
+
 // ゲームで使うキーの種類
 enum struct Key
 {
