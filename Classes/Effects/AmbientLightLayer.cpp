@@ -74,7 +74,7 @@ bool AmbientLightLayer::init(const Color3B& color)
 void AmbientLightLayer::onEnter()
 {
     Layer::onEnter();
-    this->scheduleUpdate();
+    this->scheduleUpdateWithPriority(UpdatePriority::LAST);
 }
 
 void AmbientLightLayer::onExit()
