@@ -94,6 +94,7 @@ const map<string, function<GameEvent*(rapidjson::Value&)>> EventFactory::_typeTo
     {"charaWalkTo", WalkToEvent::create},               // 指定座標へ歩行
     {"charaWalk", WalkByEvent::create},                 // 方向、歩数をして歩行
     {"changeHero", ChangeHeroEvent::create},            // 主人公を変更
+    {"changeSpeed", ChangeSpeedEvent::create},          // 移動スピードを変更
     
     // 敵系
     {"createEnemy", CreateEnemyEvent::create},          // 敵生成

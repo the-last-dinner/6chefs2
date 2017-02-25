@@ -56,5 +56,35 @@
             "type": "removeLight",
             "objID": "hero"
         }
+    ],
+    "madbullInit": [
+        {
+            "type": "sequence",
+            "action": [
+                {
+                    "type": "playSE",
+                    "file": "drink.mp3"
+                },
+                {
+                    "type": "charaMsg",
+                    "text":["おいしい！\n翼を授かったように速く走れそうな気分になったよ！"],
+                    "charaID":"7",
+                    "imgID":"1"
+                },
+                {
+                    "type": "playSE",
+                    "file": "favorite.mp3"
+                }
+            ]
+        },
+        {
+            "type": "changeSpeed",
+            "objID": "hero",
+            "speed": 2.5
+        },
+        {
+            "type": "removeItem",
+            "itemID": "1519"
+        }
     ]
 }

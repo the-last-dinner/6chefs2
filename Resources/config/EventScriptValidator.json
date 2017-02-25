@@ -379,6 +379,13 @@
                 "file": ["string"]
             }
         },
+        "changeSpeed": {
+            "require": ["objID", "speed"],
+            "member": {
+                "objID": ["string"],
+                "speed": ["double"]
+            }
+        },
         
         
         

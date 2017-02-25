@@ -453,6 +453,12 @@ void Character::onLostHP()
     this->enableBattleAttack(false);
 }
 
+// スピードのセット
+void Character::setSpeed(const float &speed)
+{
+    _speed = speed;
+}
+
 #pragma mark -
 #pragma mark AnimationName
 string Character::AnimationName::getTurn(const Direction& direction)
