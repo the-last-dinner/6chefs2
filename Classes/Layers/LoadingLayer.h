@@ -15,7 +15,8 @@ class LoadingLayer : public Layer
 {
 // クラスメソッド
 public:
-	CREATE_FUNC(LoadingLayer);
+    CREATE_FUNC(LoadingLayer);
+	CREATE_FUNC_WITH_PARAM(LoadingLayer, const Color4B&);
     
 // インスタンス変数
 private:
@@ -24,7 +25,8 @@ private:
 private:
 	LoadingLayer();
 	~LoadingLayer();
-	virtual bool init();
+    virtual bool init();
+    virtual bool init(const Color4B& bgColor);
 public:
 	void onLoadFinished();
 };

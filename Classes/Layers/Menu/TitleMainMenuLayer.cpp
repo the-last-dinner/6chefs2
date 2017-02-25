@@ -47,11 +47,7 @@ bool TitleMainMenuLayer::init()
 	// 背景画像を生成
 	Sprite* titleBg = Sprite::createWithSpriteFrameName("background.png");
 	titleBg->setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-	titleBg->setOpacity(0);
 	this->addChild(titleBg);
-    
-    // タイトル背景画像をフェードイン
-    this->runAction(TargetedAction::create(titleBg, FadeIn::create(1.f)));
     
     // タイトル文字を生成
     float font_size = 56.f;

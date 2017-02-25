@@ -53,7 +53,7 @@ void BaseScene::onEnter()
     if(_isPreloaded) return;
     
     // ロード画面レイヤー
-    LoadingLayer* loadingLayer = LoadingLayer::create();
+    LoadingLayer* loadingLayer { this->createLoadingLayer() };
     loadingLayer->setLocalZOrder(Priority::LOADING_LAYER);
     this->addChild(loadingLayer);
     
@@ -68,4 +68,10 @@ void BaseScene::onEnter()
             this->onPreloadFinished(loadingLayer);
         }
     });
+}
+
+// ローディングレイヤを生成
+LoadingLayer* BaseScene::createLoadingLayer()
+{
+    return LoadingLayer::create();
 }
