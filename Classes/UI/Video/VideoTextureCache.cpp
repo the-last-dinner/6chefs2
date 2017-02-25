@@ -2,13 +2,13 @@
 #include "VideoTextureCache.h"
 #include "VideoDecode.h"
 
-static pthread_mutex_t      s_asyncVideoPicQueueMutex;
-
 static queue<VideoPic*>* s_pAsyncVideoPicQueue = NULL;
 
 static VideoTextureCache *g_sharedTextureCache = NULL;
 
-static pthread_t s_decodeThread;
+static mutex mtx;
+
+static thread thread;
 
 static void *videoDecode(void *data)
 {
@@ -45,7 +45,6 @@ VideoTextureCache::VideoTextureCache()
 VideoTextureCache::~VideoTextureCache()
 {
     FUNCLOG;
-    pthread_mutex_destroy(&s_asyncVideoPicQueueMutex);
 }
 
 VideoDecode* VideoTextureCache::addVideo(const char *path)
@@ -56,13 +55,16 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
         pVideoDecode = new VideoDecode();
         if(pVideoDecode->init(path)) {
             m_pVideoDecodes->insert(path, pVideoDecode);
-            pthread_create(&s_decodeThread, NULL, videoDecode, pVideoDecode);
+            
+            auto t = std::thread([this](void *data){
+                videoDecode(data);
+            },pVideoDecode);
+            t.detach();
             pVideoDecode->release();
 
             if (s_pAsyncVideoPicQueue == NULL) {
                 
                 s_pAsyncVideoPicQueue = new queue<VideoPic*>();
-                pthread_mutex_init(&s_asyncVideoPicQueueMutex, NULL);
                 
                 Director::getInstance()->getScheduler()->schedule(schedule_selector(VideoTextureCache::picToTexture), this, 0, false);
             }
@@ -79,9 +81,9 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
 
 void VideoTextureCache::addPicData(VideoPic *pVideoPic)
 {
-    pthread_mutex_lock(&s_asyncVideoPicQueueMutex);
+    mtx.lock();
     s_pAsyncVideoPicQueue->push(pVideoPic);
-    pthread_mutex_unlock(&s_asyncVideoPicQueueMutex);
+    mtx.unlock();
 }
 
 void VideoTextureCache::picToTexture(float fd)
@@ -89,11 +91,11 @@ void VideoTextureCache::picToTexture(float fd)
     VideoPic *pVideoPic = NULL;
     int length = m_pVideoDecodes->size();
     for(int i = 0; i < length; i++) {
-        pthread_mutex_lock(&s_asyncVideoPicQueueMutex);
+        mtx.lock();
         if (!s_pAsyncVideoPicQueue->empty()) {
             pVideoPic = s_pAsyncVideoPicQueue->front();
             s_pAsyncVideoPicQueue->pop();
-            pthread_mutex_unlock(&s_asyncVideoPicQueueMutex);
+            mtx.unlock();
             if(pVideoPic) {
                 addImageWidthData(pVideoPic->m_path, pVideoPic->m_frame,
                                   pVideoPic->m_pPicture,pVideoPic->m_length,
@@ -104,7 +106,7 @@ void VideoTextureCache::picToTexture(float fd)
                 pVideoPic->release();
             }
         } else {
-            pthread_mutex_unlock(&s_asyncVideoPicQueueMutex);
+            mtx.unlock();
             break;
         }
     }

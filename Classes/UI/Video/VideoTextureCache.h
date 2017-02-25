@@ -6,7 +6,7 @@
 
 #include "VideoDecode.h"
 
-class CC_DLL VideoTextureCache : public Ref
+class VideoTextureCache : public Ref
 {
 	protected:
         Map<string, Ref *>* m_pTextures;
