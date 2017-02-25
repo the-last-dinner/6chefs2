@@ -51,8 +51,16 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     logo->setOpacity(0);
     this->addChild(logo);
     
-    // 効果音
-    SoundManager::getInstance()->playVoice(Resource::VOICE::THE_LAST_DINNER_NANIWO, 1.0f);
+    // タイトルコール(乱数でナニヲ率高め)
+    string titleCallFile = Resource::VOICE::THE_LAST_DINNER_NANIWO;
+    int ranum = arc4random() % 100;
+    if (ranum < 10) {
+        titleCallFile = Resource::VOICE::THE_LAST_DINNER_ERI;
+    } else if (ranum < 20) {
+        titleCallFile = Resource::VOICE::THE_LAST_DINNER_UEHARA;
+    }
+    
+    SoundManager::getInstance()->playVoice(titleCallFile, 1.0f);
     
     // ロゴのアニメーション
     logo->runAction(

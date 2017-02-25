@@ -93,6 +93,12 @@ void MapObject::setDirection(const Direction& direction)
 {
     if (!this->isChangeableDirection(direction)) return;
     
+    if (_light) {
+        float angle {this->getDirection().getAngle()};
+        _light->changeAngleTo(angle);
+        DungeonSceneManager::getInstance()->getAmbientLayer()->changeLightAngleTo(_light, angle);
+    }
+    
     _location.direction = direction;
 }
 
@@ -147,19 +153,17 @@ void MapObject::setSprite(Sprite* sprite)
 void MapObject::setPaused(bool paused) { _paused = paused; }
 
 // ライトをセット
-void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback)
+void MapObject::setLight(Light* innerLight, Light* outerLight, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
     if(_light) return;
     
     // ライトを追加
-    _light = light;
-    this->addChild(light);
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
-    light->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
+    _light = innerLight;
+    this->addChild(innerLight);
+    innerLight->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
     
     // 環境光レイヤーに光源として追加
-    ambientLightLayer->addLightSource(light);
+    ambientLightLayer->addLightSource(innerLight, outerLight);
 }
 
 // ライトを消す

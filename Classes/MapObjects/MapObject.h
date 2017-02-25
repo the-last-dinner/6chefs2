@@ -79,7 +79,7 @@ public:
     void setPaused(bool paused);
     void setCollision(CollisionBox* collision);
     
-	void setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
+	void setLight(Light* innerLight, Light* outerLight, AmbientLightLayer* ambientLightLayer, function<void()> callback = nullptr);
 	void removeLight(function<void()> callback = nullptr);
 	
     Location getLocation() const { return _location; }

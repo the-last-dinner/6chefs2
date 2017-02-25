@@ -53,6 +53,7 @@ public:
 protected:
     bool _isNull { true };
     int _int { -1 };
+    float _angle { 0 };
     string _upcaseString {};
     string _downcaseString {};
     Vec2 _unitVec2 { cocos2d::Vec2(0, 0) };
@@ -67,6 +68,7 @@ public:
     
     bool isNull() const;
     int getInt() const;
+    float getAngle() const;
     string getUpcaseString() const;
     string getDowncaseString() const;
     Vec2 getUnitVec2() const;

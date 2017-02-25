@@ -271,7 +271,9 @@ bool SetLightEvent::init(rapidjson::Value& json)
 {
     if (!MapObjectEvent::init(json)) return false;
     
-    Light::Information info {};
+    Light::Type type = Light::Type::TORCH;
+    
+    Light::Information info {Light::TYPE_TO_INFO.at(type)};
     
     int range {1};
     
@@ -282,10 +284,42 @@ bool SetLightEvent::init(rapidjson::Value& json)
     // 色
     if (_eventHelper->hasMember(_json, member::COLOR)) info.color = _eventHelper->getColor(_json);
     
+    // 方向
+    if (_eventHelper->hasMember(_json, member::DIRECTION)) info.angle = _eventHelper->getDirection(_json).getAngle();
+    
+    // 現在のマップオブジェクトの方向があれば上書きする
+    Direction direction {_eventHelper->getMapObjectById(_objectId)->getDirection()};
+    if (!direction.isNull()) info.angle = direction.getAngle();
+    
     // 光生成
-    Light* light { Light::create(info) };
-    CC_SAFE_RETAIN(light);
-    _light = light;
+    Light* innerLight { Light::create(info) };
+    innerLight->setOpacity(0);
+    innerLight->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
+    CC_SAFE_RETAIN(innerLight);
+    _innerLight = innerLight;
+    
+    // 外側の光
+    Color3B color { Color3B(info.color.r * 1.3f, info.color.g * 1.3f, info.color.b * 1.3f)};
+    float radius {info.radius * 7.0f};
+    
+    if (_eventHelper->hasMember(_json, member::OPTION)) {
+        string option = _json[member::OPTION].GetString();
+        if (option == "flashlight") {
+            type = Light::Type::FLASHLIGHT;
+        }
+    }
+    Light::Information outerInfo {Light::TYPE_TO_INFO.at(type)};
+    outerInfo.color = color;
+    outerInfo.radius = radius;
+    outerInfo.angle = info.angle;
+    
+    Light* outerLight {Light::create(outerInfo)};
+    outerLight->setPosition(innerLight->convertToWorldSpace(innerLight->getPosition()));
+    outerLight->setOpacity(0);
+    outerLight->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
+    CC_SAFE_RETAIN(outerLight);
+    
+    _outerLight = outerLight;
     
     return true;
 }
@@ -294,9 +328,10 @@ void SetLightEvent::run()
 {
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
     
-    target->setLight(_light, DungeonSceneManager::getInstance()->getAmbientLayer(), [this]{this->setDone();});
+    target->setLight(_innerLight, _outerLight, DungeonSceneManager::getInstance()->getAmbientLayer(), [this]{this->setDone();});
     
-    CC_SAFE_RELEASE_NULL(_light);
+    CC_SAFE_RELEASE_NULL(_innerLight);
+    CC_SAFE_RELEASE_NULL(_outerLight);
 }
 
 #pragma mark -
