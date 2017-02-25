@@ -271,7 +271,7 @@ bool SetLightEvent::init(rapidjson::Value& json)
 {
     if (!MapObjectEvent::init(json)) return false;
     
-    Light::Information info {};
+    Light::Information info {Light::TYPE_TO_INFO.at(Light::Type::TORCH)};
     
     int range {1};
     
@@ -281,6 +281,7 @@ bool SetLightEvent::init(rapidjson::Value& json)
     
     // 色
     if (_eventHelper->hasMember(_json, member::COLOR)) info.color = _eventHelper->getColor(_json);
+    cout << info.image << endl;
     
     // 光生成
     Light* light { Light::create(info) };
