@@ -32,6 +32,7 @@ bool Light::init(const Information& info)
 	float scale {(info.radius * 2) / light->getContentSize().width};
 	light->setScale(scale);
 	this->setContentSize(light->getContentSize() * scale);
+    this->setRotation(45);
 	this->addChild(light);
     this->sprite = light;
     
