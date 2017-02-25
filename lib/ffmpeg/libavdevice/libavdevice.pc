@@ -1,0 +1,14 @@
+prefix=./mac/
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavdevice
+Description: FFmpeg device handling library
+Version: 57.2.100
+Requires: libavfilter >= 6.74.100, libswscale >= 4.3.101, libavformat >= 57.66.102, libavcodec >= 57.81.100, libswresample >= 2.4.100, libavutil >= 55.47.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavdevice -framework QuartzCore -framework QuartzCore -framework AppKit -framework OpenGL -framework QuartzCore -framework AppKit -framework OpenGL -framework QTKit -framework Foundation -framework QuartzCore -framework CoreVideo -framework Foundation -framework AVFoundation -framework CoreMedia -framework CoreFoundation -framework VideoToolbox -framework CoreMedia -framework CoreVideo -framework CoreFoundation -framework AudioToolbox -framework CoreMedia -framework VideoDecodeAcceleration -framework CoreFoundation -framework QuartzCore -liconv -Wl,-framework,CoreFoundation -Wl,-framework,Security -L/usr/local/lib -lSDL2 -framework CoreGraphics -lm -lbz2 -lz -pthread -framework CoreServices
+Libs.private: 
+Cflags: -I${includedir}

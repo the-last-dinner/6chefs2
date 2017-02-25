@@ -65,7 +65,7 @@ bool VideoDecode::init(const char *path)
    
     for(int i=0; i < m_pFormatCtx->nb_streams; i++) {  
         
-        if(m_pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO) {
+        if(m_pFormatCtx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
             m_videoStream = i; 
             break;
         }
