@@ -32,6 +32,7 @@ public:
         float radius {0};
         Type type {Type::TORCH};
         string image {};
+        float angle {0};
         Information(){};
         Information(float radius):radius(radius){};
         Information(const Color3B color, float radius, const Type& type):color(color), radius(radius), type(type){};
@@ -59,6 +60,7 @@ public:
 	bool init(const Information& info);						  // 初期化
     Information getInformation();
     void setBlendFunc(const BlendFunc& blendFunc);
+    void changeAngleTo(const float& angle);
 };
 
 #endif /* defined(_Light__) */

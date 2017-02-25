@@ -94,23 +94,9 @@ void MapObject::setDirection(const Direction& direction)
     if (!this->isChangeableDirection(direction)) return;
     
     if (_light) {
-        int directionNumber {direction.getInt()};
-        float angle = 45.f;
-        switch (directionNumber) {
-            case 1:
-                angle += 90;
-                break;
-            case 0:
-                angle += 180;
-                break;
-            case 2:
-                angle += 270;
-                break;
-            default:
-                break;
-        }
-        _light->runAction(RotateTo::create(0.1f, angle));
-        DungeonSceneManager::getInstance()->getAmbientLayer()->changeLightDirection(_light, angle);
+        float angle {this->getDirection().getAngle()};
+        _light->changeAngleTo(angle);
+        DungeonSceneManager::getInstance()->getAmbientLayer()->changeLightAngleTo(_light, angle);
     }
     
     _location.direction = direction;

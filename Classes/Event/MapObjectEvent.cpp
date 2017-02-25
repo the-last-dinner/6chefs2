@@ -284,6 +284,13 @@ bool SetLightEvent::init(rapidjson::Value& json)
     // 色
     if (_eventHelper->hasMember(_json, member::COLOR)) info.color = _eventHelper->getColor(_json);
     
+    // 方向
+    if (_eventHelper->hasMember(_json, member::DIRECTION)) info.angle = _eventHelper->getDirection(_json).getAngle();
+    
+    // 現在のマップオブジェクトの方向があれば上書きする
+    Direction direction {_eventHelper->getMapObjectById(_objectId)->getDirection()};
+    if (!direction.isNull()) info.angle = direction.getAngle();
+    
     // 光生成
     Light* innerLight { Light::create(info) };
     innerLight->setOpacity(0);
@@ -304,6 +311,7 @@ bool SetLightEvent::init(rapidjson::Value& json)
     Light::Information outerInfo {Light::TYPE_TO_INFO.at(type)};
     outerInfo.color = color;
     outerInfo.radius = radius;
+    outerInfo.angle = info.angle;
     
     Light* outerLight {Light::create(outerInfo)};
     outerLight->setPosition(innerLight->convertToWorldSpace(innerLight->getPosition()));

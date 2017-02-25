@@ -32,7 +32,7 @@ bool Light::init(const Information& info)
 	float scale {(info.radius * 2) / light->getContentSize().width};
 	light->setScale(scale);
 	this->setContentSize(light->getContentSize() * scale);
-    this->setRotation(45);
+    this->setRotation(info.angle + 45);
 	this->addChild(light);
     this->sprite = light;
     
@@ -52,4 +52,10 @@ Light::Information Light::getInformation()
 void Light::setBlendFunc(const BlendFunc& blendFunc)
 {
     this->sprite->setBlendFunc(blendFunc);
+}
+
+// 角度をアニメーションで変更
+void Light::changeAngleTo(const float &angle)
+{
+    this->runAction(RotateTo::create(.1f, angle + 45));
 }

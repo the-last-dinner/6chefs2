@@ -166,6 +166,11 @@ int Direction::getInt() const
     return _int;
 }
 
+float Direction::getAngle() const
+{
+    return _angle;
+}
+
 string Direction::getUpcaseString() const
 {
     return _upcaseString;
@@ -228,6 +233,7 @@ DirectionUp::DirectionUp()
 {
     _isNull = false;
     _int = 3;
+    _angle = 0;
     _upcaseString = "UP";
     _downcaseString = "up";
     _unitVec2 = Vec2(0, 1);
@@ -243,6 +249,7 @@ DirectionDown::DirectionDown()
 {
     _isNull = false;
     _int = 0;
+    _angle = 180;
     _upcaseString = "DOWN";
     _downcaseString = "down";
     _unitVec2 = Vec2(0, -1);
@@ -258,6 +265,7 @@ DirectionRight::DirectionRight()
 {
     _isNull = false;
     _int = 1;
+    _angle = 90;
     _upcaseString = "RIGHT";
     _downcaseString = "right";
     _unitVec2 = Vec2(1, 0);
@@ -272,6 +280,7 @@ DirectionLeft::DirectionLeft()
 {
     _isNull = false;
     _int = 2;
+    _angle = 270;
     _upcaseString = "LEFT";
     _downcaseString = "left";
     _unitVec2 = Vec2(-1, 0);

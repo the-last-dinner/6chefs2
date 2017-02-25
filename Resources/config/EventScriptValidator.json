@@ -361,7 +361,8 @@
                 "objID": ["string"],
                 "range": ["int"],
                 "color": [["int", "int", "int"]],
-                "option": ["lightOption"]
+                "option": ["lightOption"],
+                "direction": ["direction"]
             }
         },
         "removeLight": {

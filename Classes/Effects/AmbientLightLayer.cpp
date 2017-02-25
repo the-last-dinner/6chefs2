@@ -147,9 +147,9 @@ void AmbientLightLayer::visit(Renderer* renderer, const Mat4& parentTransform, u
     this->renderTexture->getSprite()->visit(renderer, parentTransform, parentFlags);
 }
 
-void AmbientLightLayer::changeLightDirection(Light *lightSource, const float &angle)
+void AmbientLightLayer::changeLightAngleTo(Light *lightSource, const float &angle)
 {
     if (this->lightMap.count(lightSource) != 1) return;
     
-    this->lightMap.at(lightSource)->runAction(RotateTo::create(0.1f, angle));
+    this->lightMap.at(lightSource)->changeAngleTo(angle);
 }
