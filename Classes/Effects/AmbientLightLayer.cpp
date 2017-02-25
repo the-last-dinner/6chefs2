@@ -98,9 +98,10 @@ void AmbientLightLayer::addLightSource(Light* lightSource)
     
     CC_SAFE_RETAIN(lightSource);
     Color3B color { Color3B(info.color.r * 1.3f, info.color.g * 1.3f, info.color.b * 1.3f)};
+    
     float radius {info.radius * 7.0f};
     
-    Light* light {Light::create(Light::Information(color, radius, "light.png"))};
+    Light* light {Light::create(Light::Information(color, radius, info.image))};
     light->setPosition(lightSource->convertToWorldSpace(lightSource->getPosition()));
     light->setOpacity(0);
     light->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});

@@ -52,7 +52,7 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     this->addChild(logo);
     
     // 効果音
-    SoundManager::getInstance()->playVoice(Resource::VOICE::THE_LAST_DINNER_NANIWO, 1.0f);
+    SoundManager::getInstance()->playVoice(Resource::VOICE::THE_LAST_DINNER_ERI, 1.0f);
     
     // ロゴのアニメーション
     logo->runAction(

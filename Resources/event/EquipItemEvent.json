@@ -7,14 +7,14 @@
         {
             "type": "setLight",
             "objID": "hero",
-            "range": 10
+            "range": 5
         }
     ],
     "torchUpdate": [
         {
             "type": "setLight",
             "objID": "hero",
-            "range": 10
+            "range": 5
         }
     ],
     "torchEnd": [
@@ -33,16 +33,18 @@
             "file": "switch1.mp3"
         },
         {
-            "type": "setFlashlight",
+            "type": "setLight",
+            "option": "flashlight",
             "objID": "hero",
-            "range": 10
+            "range": 5
         }
     ],
     "flashlightUpdate": [
         {
-            "type": "setFlashlight",
+            "type": "setLight",
+            "option": "flashlight",
             "objID": "hero",
-            "range": 10
+            "range": 5
         }
     ],
     "flashlightEnd": [
@@ -51,7 +53,7 @@
             "file": "switch1.mp3"
         },
         {
-            "type": "removeFlashlight",
+            "type": "removeLight",
             "objID": "hero"
         }
     ]
