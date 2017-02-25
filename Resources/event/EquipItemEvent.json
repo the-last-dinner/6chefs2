@@ -7,14 +7,14 @@
         {
             "type": "setLight",
             "objID": "hero",
-            "range": 5
+            "range": 3
         }
     ],
     "torchUpdate": [
         {
             "type": "setLight",
             "objID": "hero",
-            "range": 5
+            "range": 3
         }
     ],
     "torchEnd": [
@@ -36,7 +36,7 @@
             "type": "setLight",
             "option": "flashlight",
             "objID": "hero",
-            "range": 5
+            "range": 3
         }
     ],
     "flashlightUpdate": [
@@ -44,7 +44,7 @@
             "type": "setLight",
             "option": "flashlight",
             "objID": "hero",
-            "range": 5
+            "range": 3
         }
     ],
     "flashlightEnd": [

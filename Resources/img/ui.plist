@@ -7,7 +7,7 @@
 			<key>cloud.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,581},{400,160}}</string>
+				<string>{{0,601},{400,160}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -21,13 +21,13 @@
 			<key>flashlight.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{592,580}}</string>
+				<string>{{0,0},{600,600}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
 				<false/>
 				<key>sourceColorRect</key>
-				<string>{{8,20},{592,580}}</string>
+				<string>{{0,0},{600,600}}</string>
 				<key>sourceSize</key>
 				<string>{600,600}</string>
 			</dict>
@@ -35,7 +35,7 @@
 			<key>light.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1522},{372,379}}</string>
+				<string>{{0,1542},{372,379}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -49,7 +49,7 @@
 			<key>light_black.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,742},{397,397}}</string>
+				<string>{{0,762},{397,397}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -63,7 +63,7 @@
 			<key>light_white.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,1140},{381,381}}</string>
+				<string>{{0,1160},{381,381}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
