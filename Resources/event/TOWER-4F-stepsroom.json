@@ -38,8 +38,9 @@
 			],
 			"action":[
 				{
-					"type":"setFlashlight",
+					"type":"setLight",
 					"objID":"1518",
+					"option":"flashlight",
 					"direction":"DOWN"
 				}
 			]
@@ -109,6 +110,10 @@
 												{
 													"type":"getItem",
 													"itemID":"1518"
+												},
+												{
+													"type":"removeLight",
+													"objID":"1518"
 												},
 												{
 													"type":"removeObject",

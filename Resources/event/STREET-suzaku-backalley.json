@@ -3,6 +3,20 @@
 		{
 		    "type":"setAmbient",
 		    "ambient":"night"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":["35","11",1]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"1519"
+				}
+			]
 		}
 	],
 	"2":[
@@ -645,6 +659,53 @@
 		{
 			"type":"systemMsg",
 			"text":["汚いごみ袋・・・"]
+		}
+	],
+	"11":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":0
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"getItem":"1519"
+						},
+						{
+							"type":"setFlg",
+							"mapID":"35",
+							"eventID":"11",
+							"flg":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"flg":1
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["マッドブルは2本も飲めないよ・・・"],
+							"charaID":"7",
+							"imgID":"1"
+						}
+					]
+				}
+			]
 		}
 	]
 }

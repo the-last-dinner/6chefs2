@@ -82,6 +82,10 @@
 					"itemID":"1517"
 				},
 				{
+					"type":"removeLight",
+					"objID":"1517"
+				},
+				{
 					"type":"removeObject",
 					"objID":"1517"
 				},

@@ -1,11 +1,11 @@
-この度は「６人の料理人と隻眼の少女」をダウンロードして頂きありがとうございます。
+この度は「6人の料理人と隻眼の少女2」をダウンロードして頂きありがとうございます。
 
 ---------------------------------------------------------------------------------
 
-タイトル　　　　：６人の料理人と隻眼の少女
+タイトル　　　　：6人の料理人と隻眼の少女2
 ジャンル　　　　：ホラーアドベンチャー
 製作　　　　　　：最後の晩餐
-バージョン　　　：1.4
+バージョン　　　：2.1
 開発環境　　　　：C++/Cocos2d-x3.10
 対象年齢　　　　：15歳以上
 
@@ -63,21 +63,21 @@
 　　・中傷目的の動画の投稿
 　　・他人を不快にさせる行為
 
-　動画のタイトルにはゲーム名の「6人の料理人と隻眼の少女2」を入れてください。
+　
+　可能であれば動画のタイトルにはゲーム名の「6人の料理人と隻眼の少女2」を入れてください。
 　また、動画の説明文にはこのゲームページURL(http://the-last-dinner.club/6chefs/)か作者サイトURL(http://the-last-dinner.club)を入れてください。
-
+　難しい場合は構いません。
+　
 　公式サイトの実況動画紹介ページにて、
 　6人の料理人と隻眼の少女に関する実況動画の特集・紹介を行いたいと思っています。
 　掲載をご希望の実況者様はホームページのお問合わせ
 　もしくは、最後の晩餐Twitterアカウントまでご連絡ください。
-
+　
+　
 ---------------------------------------------------------------------------------
 
 ●素材提供
 　※二次配布・無断転載は禁止しています。
-
-【サウンド】
-
 
 First Seed Material　様
 http://www.tekepon.net/fsm
@@ -93,7 +93,7 @@ http://nanikasiratkool.web.fc2.com/index.html
 ■　Looseleaf　http://www.mogunet.net/~mack/
 の素材を加工したもの)
 
-制作者 うなうなぎ(旧名 クリボー) 様
+うなうなぎ(旧名 クリボー) 様
 http://park2.wakwak.com/~kuribo/
 
 尾羽の小屋　様
@@ -110,13 +110,16 @@ http://hi79.web.fc2.com/
 http://www.tekepon.net/fsm/
 の素材を加工したもの)
 
+背景写真補完の会　様
+http://masato.ciao.jp/haikei/furemu.html
+
 
 ○音素材
 
 効果音ラボ　様
 http://soundeffect-lab.info/sound/machine/machine2.html
 
-効果音素材：ポケットサウンド　様
+ポケットサウンド　様
 http://pocket-se.info/
 
 龍的交響楽　様
@@ -125,6 +128,11 @@ http://d-symphony.com/
 フリー音楽素材 Senses Circuit　様
 http://www.senses-circuit.com
 
+音楽素材屋-煉獄庭園-　様
+http://www.rengoku-teien.com/
+
+こんとどぅふぇ HiLi　様
+http://conte-de-fees.com/
 
 魔王魂　様
 http://maoudamashii.jokersounds.com/ 
@@ -134,7 +142,16 @@ http://classical-sound.seesaa.net/
 
 フリー音楽素材 H/MIX GALLERY
 秋山裕和　様
-http://www.hmix.net/
+httpww.hmix.net/
+
+d-elf.com　様
+http://www.d-elf.com/free-bgm
+
+---------------------------------------------------------------------------------
+
+●ゲームの攻略方法
+↓下記ページに攻略方法を載せています。ネタバレを含むので本当に行き詰った時以外は見ないようにしましょう
+http://the-last-dinner.club/6chefs2/hint
 
 
 ---------------------------------------------------------------------------------
