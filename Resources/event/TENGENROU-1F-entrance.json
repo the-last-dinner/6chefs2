@@ -297,6 +297,12 @@
 							"text":["セーブしますか？"],
 							"choices":[
 								{
+									"choice":"いいえ",
+									"action":[
+
+									]						
+								},
+								{
 									"choice":"はい",
 									"action":[
 										{
@@ -310,12 +316,6 @@
 											"y":39,
 											"direction":"RIGHT"
 										}
-									]						
-								},
-								{
-									"choice":"いいえ",
-									"action":[
-
 									]						
 								}
 							]
