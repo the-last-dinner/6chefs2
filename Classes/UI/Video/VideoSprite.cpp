@@ -86,7 +86,6 @@ void VideoSprite::stopVideo(void)
 {
     this->unscheduleAllCallbacks();
     VideoTextureCache::sharedTextureCache()->removeAllTextures();
-    
 }  
 
 void VideoSprite::seek(int frame)
