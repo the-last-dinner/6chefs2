@@ -36,49 +36,47 @@ VideoTextureCache::~VideoTextureCache()
 
 VideoDecode* VideoTextureCache::addVideo(const char *path)
 {
-    VideoDecode* pVideoDecode = (VideoDecode*)m_pVideoDecodes->at(path);
 
-    if(!pVideoDecode) {
-        pVideoDecode = new VideoDecode();
-        if(pVideoDecode->init(path)) {
-            m_pVideoDecodes->insert(path, pVideoDecode);
-            
-            std::thread thread = std::thread([this](void *data){
-                VideoDecode *p = (VideoDecode *) data;
-                if(p) {
-                    while(p->decode()) {
-                        //sleep ?
-                        if(_threadEnd)
-                            break;
-                        
+    VideoDecode* pVideoDecode = (VideoDecode*)m_pVideoDecodes->at(path);
+    
+    pVideoDecode = new VideoDecode();
+    if(pVideoDecode->init(path)) {
+        m_pVideoDecodes->insert(path, pVideoDecode);
+        
+        _threadEnd = false;
+        std::thread thread = std::thread([this](void *data){
+            VideoDecode *p = (VideoDecode *) data;
+            if(p) {
+                while(!_threadEnd && p->decode()) {
+                    //sleep ?
+                    if(_threadEnd)
+                        break;
+                    
+                    mtx.lock();
+                    int size = (int)m_pTextures->size();
+                    mtx.unlock();
+                    while (size > 30) {
                         mtx.lock();
-                        int size = (int)m_pTextures->size();
+                        size = (int)m_pTextures->size();
                         mtx.unlock();
-                        while (size > 30) {
-                            mtx.lock();
-                            size = (int)m_pTextures->size();
-                            mtx.unlock();
-                        }
                     }
                 }
-                CC_SAFE_RELEASE_NULL(p);
-            },pVideoDecode);
-            thread.detach();
-            pVideoDecode->release();
-
-            if (s_pAsyncVideoPicQueue == NULL) {
-                
-                s_pAsyncVideoPicQueue = new queue<VideoPic*>();
-                
-                Director::getInstance()->getScheduler()->schedule(schedule_selector(VideoTextureCache::picToTexture), this, 0, false);
             }
+            CC_SAFE_RELEASE_NULL(p);
+        },pVideoDecode);
+        thread.detach();
+        pVideoDecode->release();
+
+        s_pAsyncVideoPicQueue = new queue<VideoPic*>();
+                
+        Director::getInstance()->getScheduler()->schedule(schedule_selector(VideoTextureCache::picToTexture), this, 0, false);
+    
         } else {
             CCLOGERROR("CCVideoDecode init error in CCVideoTextureCache");
             return NULL;
         }
-    } else {
-        pVideoDecode->retain();
-    }
+    
+    pVideoDecode->retain();
 
     return pVideoDecode;
 }
@@ -95,6 +93,7 @@ void VideoTextureCache::picToTexture(float fd)
     VideoPic *pVideoPic = NULL;
     int length = m_pVideoDecodes->size();
     m_pTextures->erase(_delKey);
+
     for(int i = 0; i < length; i++) {
         mtx.lock();
         if (!s_pAsyncVideoPicQueue->empty()) {
@@ -119,6 +118,7 @@ void VideoTextureCache::picToTexture(float fd)
 
 void VideoTextureCache::removeVideo(const char *path)
 {
+    _threadEnd = true;
     VideoDecode* pVideoDecode = (VideoDecode*)m_pVideoDecodes->at(path);
     if(pVideoDecode) {
         unsigned int rcount =  pVideoDecode->getReferenceCount();
@@ -141,7 +141,7 @@ Texture2D* VideoTextureCache::getTexture(const char *filename, int frame)
     Texture2D * texture = NULL;
     texture = (Texture2D*)m_pTextures->at(keystream.str());
     ostringstream delKeystream;
-    delKeystream << filename << "_" << (frame - 1);
+    delKeystream << filename << "_" << (frame - 5);
     _delKey = delKeystream.str();
 	return texture;
 }
@@ -174,6 +174,7 @@ Texture2D* VideoTextureCache::addImageWidthData(const char *filename, int frame,
 void VideoTextureCache::removeAllTextures()
 {
     _threadEnd = true;
+    Director::getInstance()->getScheduler()->unschedule(schedule_selector(VideoTextureCache::picToTexture), this);
     m_pTextures->clear();
 }
 
