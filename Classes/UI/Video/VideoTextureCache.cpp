@@ -50,8 +50,14 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
                         //sleep ?
                         if(_threadEnd)
                             break;
-                        while (m_pTextures->size() > 30) {
-                    
+                        
+                        mtx.lock();
+                        int size = (int)m_pTextures->size();
+                        mtx.unlock();
+                        while (size > 30) {
+                            mtx.lock();
+                            size = (int)m_pTextures->size();
+                            mtx.unlock();
                         }
                     }
                 }
