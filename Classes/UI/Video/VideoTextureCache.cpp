@@ -2,8 +2,6 @@
 #include "VideoTextureCache.h"
 #include "VideoDecode.h"
 
-#include "unistd.h"
-
 static queue<VideoPic*>* s_pAsyncVideoPicQueue = NULL;
 
 static VideoTextureCache *g_sharedTextureCache = NULL;
@@ -53,7 +51,7 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
                         if(_threadEnd)
                             break;
                         while (m_pTextures->size() > 30) {
-                            usleep(1);
+                    
                         }
                     }
                 }
