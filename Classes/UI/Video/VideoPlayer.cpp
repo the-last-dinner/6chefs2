@@ -80,5 +80,5 @@ bool VideoPlayer::init(const string& fileName, const bool skip, function<void()>
 // 消す
 void VideoPlayer::remove(function<void()> callback)
 {
-    this->runAction(Sequence::create(FadeOut::create(HIDE_DURATION), CallFunc::create(callback), RemoveSelf::create(), nullptr));
+    this->runAction(Sequence::create(CallFunc::create(callback), RemoveSelf::create(), nullptr));
 }

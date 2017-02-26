@@ -17,6 +17,11 @@ LoadingLayer::~LoadingLayer(){FUNCLOG}
 // 初期化
 bool LoadingLayer::init()
 {
+    return this->init(Color4B::BLACK);
+}
+
+bool LoadingLayer::init(const Color4B& bgColor)
+{
 	if(!Layer::init()) return false;
     
 	// plistを読み込み
@@ -25,7 +30,8 @@ bool LoadingLayer::init()
     // カバー生成
     Sprite* cover { Sprite::create() };
     cover->setTextureRect(Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
-    cover->setColor(Color3B::BLACK);
+    cover->setColor(Color3B(bgColor.r, bgColor.g, bgColor.b));
+    cover->setOpacity(bgColor.a);
     cover->setPosition(cover->getContentSize() / 2);
     this->addChild(cover);
 	
@@ -58,5 +64,5 @@ bool LoadingLayer::init()
 void LoadingLayer::onLoadFinished()
 {
     this->setCascadeOpacityEnabled(true);
-    this->runAction(Sequence::createWithTwoActions(FadeOut::create(0.5f), RemoveSelf::create()));
+    this->runAction(Sequence::createWithTwoActions(FadeTo::create(0.5f, 0), RemoveSelf::create()));
 }

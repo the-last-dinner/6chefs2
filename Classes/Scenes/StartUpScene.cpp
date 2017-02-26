@@ -53,7 +53,8 @@ void StartUpScene::onPreloadFinished(LoadingLayer *loadingLayer)
     
     // タイトルコール(乱数でナニヲ率高め)
     string titleCallFile = Resource::VOICE::THE_LAST_DINNER_NANIWO;
-    int ranum = arc4random() % 100;
+    srand((int)time(0));
+    int ranum = rand() % 100;
     if (ranum < 10) {
         titleCallFile = Resource::VOICE::THE_LAST_DINNER_ERI;
     } else if (ranum < 20) {

@@ -31,6 +31,7 @@ protected:
 	virtual ~BaseScene();
 	bool init(SceneData* data);
     virtual void onEnter() override;
+    virtual LoadingLayer* createLoadingLayer();
 public:
     virtual void onEnterPushedScene(){};
     virtual void onExitPushedScene(){};

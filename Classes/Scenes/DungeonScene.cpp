@@ -165,6 +165,12 @@ void DungeonScene::onPreloadFinished(LoadingLayer* loadingLayer)
     // 主人公にフォーカス光を当てる
     focusLightLayer->addTarget(party->getMainCharacter());
     
+    // 装備イベントキャッシュの更新
+    DungeonSceneManager::getInstance()->getEquipItemEvent()->setEquipmentCache(
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionRight()),
+        PlayerDataManager::getInstance()->getLocalData()->getItemEquipment(DirectionLeft())
+    );
+    
     // スタミナバー生成
     StaminaBar* staminaBar { StaminaBar::create() };
     staminaBar->setLocalZOrder(Priority::STAMINA_BAR);
