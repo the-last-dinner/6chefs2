@@ -393,5 +393,6 @@ bool MapObjectAnimateEvent::init(rapidjson::Value& json)
 void MapObjectAnimateEvent::run()
 {
     MapObject* target { _eventHelper->getMapObjectById(_objectId) };
+    target->resumeAnimation();
     target->playAnimation(_animationName, [this](MapObject* obj){ this->setDone(); });
 }
