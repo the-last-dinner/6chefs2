@@ -104,9 +104,6 @@
 									"time":1.0
 								},
 								{
-									"type":"displaySaveMenu"
-								},
-								{
 									"type":"charaMsg",
 									"talk":[
 										{
@@ -334,6 +331,46 @@
 							"steps":1.0,
 							"direction":"RIGHT",
 							"option":"back"
+						}
+					]
+				}
+			]
+		}
+	],
+	"7":[
+		{
+			"type":"sequence",
+			"action":[
+				{
+					"type":"already"
+				},
+				{
+					"type":"charaMsg",
+					"text":["う・・・死体・・・\nこっからはさらに慎重に行ったほうがいいな・・・"],
+					"charaID":"2",
+					"imgID":"2"
+				},
+				{
+					"type":"questionMsg",
+					"text":["セーブしますか？"],
+					"choices":[
+						{
+							"choice":"いいえ",
+							"action":[
+
+							]						
+						},
+						{
+							"choice":"はい",
+							"action":[
+								{
+									"type":"displaySaveMenu",
+									"mapID":"62",
+									"x":2,
+									"y":10,
+									"direction":"RIGHT"
+								}
+							]						
 						}
 					]
 				}

@@ -91,7 +91,7 @@
   <object id="1" x="352" y="240" width="256" height="400"/>
   <object id="2" x="576" y="16" width="32" height="224"/>
   <object id="3" x="128" y="16" width="320" height="112"/>
-  <object id="4" x="128" y="128" width="96" height="16"/>
+  <object id="4" x="128" y="128" width="112" height="16"/>
   <object id="5" x="304" y="128" width="96" height="16"/>
   <object id="6" x="448" y="32" width="48" height="112"/>
   <object id="8" x="80" y="192" width="64" height="16"/>
@@ -167,7 +167,7 @@
  </objectgroup>
  <layer name="shadow" width="38" height="70">
   <data encoding="base64" compression="zlib">
-   eJzt0LENgEAMBMFP6b8cmqMBCFZIYL1mYgd7XguY5jz+Lri3S1e5f7N5l399RVejq5na9WRqr65GV6Or0dXoanQ1uhpdAAAAAADs7AJSExY1
+   eJztzjENwDAQALGs4Q+n5EogHW7Kq7IReC1gmmffHpx5NV6NV+PVTH19mfr1arwar8ar8Wq8Gq/GCwAAAACAP3sBZ80UrQ==
   </data>
  </layer>
 </map>

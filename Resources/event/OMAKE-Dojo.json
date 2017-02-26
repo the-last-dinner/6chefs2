@@ -6,7 +6,7 @@
 				{
 					"type":"createObject",
 					"objID":"10166",
-					"charaID":"27",
+					"charaID":"3",
 					"x":27,
 					"y":26,
 					"direction":"DOWN",
@@ -62,7 +62,7 @@
 						},
 						{
 							"text":["ハァ・・・\nまぁ期待してなかったけど、また肉なのね・・・"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1"
 						},
 						{
@@ -99,7 +99,7 @@
 				{
 					"type":"createObject",
 					"objID":"10169",
-					"charaID":"27",
+					"charaID":"3",
 					"x":11,
 					"y":20,
 					"direction":"RIGHT",

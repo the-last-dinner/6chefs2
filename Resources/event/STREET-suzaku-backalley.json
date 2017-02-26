@@ -674,8 +674,12 @@
 					"type":"sequence",
 					"action":[
 						{
-                              "type": "getItem",
-                              "itemID": "1519"
+							"type":"getItem",
+							"itemID":"1519"
+						},
+						{
+							"type":"removeObject",
+							"objID":"1519"
 						},
 						{
 							"type":"changeFlg",

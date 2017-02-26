@@ -6,7 +6,7 @@
 				{
 					"type":"createObject",
 					"objID":"10170",
-					"charaID":"27",
+					"charaID":"3",
 					"x":9,
 					"y":13,
 					"direction":"UP",
@@ -29,7 +29,7 @@
 					"talk":[
 						{
 							"text":["やっぱり肉以外はダメなのね・・・\n雪・・・"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1"
 						},
 						{
@@ -39,13 +39,13 @@
 						},
 						{
 							"text":["！？","ア・ン・タねぇ・・・\nアタシにそれ聞く？"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1",
 							"option":"reaction"
 						},
 						{
 							"text":["大体何でそんな事気にしてんのよ！？"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1"
 						},
 						{
@@ -55,7 +55,7 @@
 						},
 						{
 							"text":["・・・","やっぱり加藤もその・・・","大きい方が好みなのかしらね・・・"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1"
 						},
 						{
@@ -65,7 +65,7 @@
 						},
 						{
 							"text":["・・・"],
-							"charaID":"27",
+							"charaID":"3",
 							"imgID":"1"
 						}
 					]

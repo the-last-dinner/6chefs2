@@ -285,7 +285,42 @@
 					]
 				},
 				{
-					"type":"displaySaveMenu"
+					"type":"if",
+					"condition":[
+						{
+							"Nevent":["23","13"]
+						}
+					],
+					"action":[
+						{
+							"type":"questionMsg",
+							"text":["セーブしますか？"],
+							"choices":[
+								{
+									"choice":"はい",
+									"action":[
+										{
+											"type":"already",
+											"event":["23","13"]
+										},
+										{
+											"type":"displaySaveMenu",
+											"mapID":"23",
+											"x":27,
+											"y":39,
+											"direction":"RIGHT"
+										}
+									]						
+								},
+								{
+									"choice":"いいえ",
+									"action":[
+
+									]						
+								}
+							]
+						}
+					]
 				},
 				{
 					"type":"fadeout"
@@ -525,5 +560,6 @@
 				}
 			]
 		}
-	]
+	],
+	"13":"セーブウインドウ呼び出した"
 }

@@ -100,7 +100,7 @@
  </objectgroup>
  <layer name="shadow" width="48" height="42">
   <data encoding="base64" compression="zlib">
-   eJzt0bENgEAMBMHvvxVKoDkq+AiJ9aOZ0NGevBaT3XXAS/pbp/TvOvV/Q3/rr/2n0N/S37o291N26W/pn0l/S39Lf0t/S39LP5P5L0DjAWdFHl8=
+   eJztz7ENgDAAA8HsvwojsBw9UiqkfILuSlfvMdjZXQd8pL91Sv+sU/8a+lt/7T+F/pb+1jXZT/mlv6V/T/pb+lv6W/pb+lv6AYC3B2KJHaQ=
   </data>
  </layer>
 </map>

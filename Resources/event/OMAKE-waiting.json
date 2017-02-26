@@ -209,16 +209,18 @@
 				},
 				{
 					"type":"playBGM",
-					"file":"people-people-studio-kyaa1.mp3"
+					"file":"people-people-studio-kyaa1.mp3",
+					"volume":0.4
 				},
 				{
 					"type":"playBGM",
-					"file":"people-people-stadium-cheer1.mp3"
+					"file":"people-people-stadium-cheer1.mp3",
+					"volume":0.4
 				},
 				{
 					"type":"playBGM",
 					"file":"idol.mp3",
-					"volume":0.4
+					"volume":0.7
 				},
 				{
 					"type":"wait",
