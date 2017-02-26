@@ -8,19 +8,6 @@ static VideoTextureCache *g_sharedTextureCache = NULL;
 
 static mutex mtx;
 
-static thread thread;
-
-static void *videoDecode(void *data)
-{
-    VideoDecode *p = (VideoDecode *) data;
-    if(p) {
-        while(p->decode()) {
-            //sleep ?
-        }
-    }
-    return 0;
-}
-
 VideoTextureCache * VideoTextureCache::sharedTextureCache()
 {
     if (!g_sharedTextureCache) {
@@ -56,10 +43,27 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
         if(pVideoDecode->init(path)) {
             m_pVideoDecodes->insert(path, pVideoDecode);
             
-            auto t = std::thread([this](void *data){
-                videoDecode(data);
+            std::thread thread = std::thread([this](void *data){
+                VideoDecode *p = (VideoDecode *) data;
+                if(p) {
+                    while(p->decode()) {
+                        //sleep ?
+                        if(_threadEnd)
+                            break;
+                        
+                        mtx.lock();
+                        int size = (int)m_pTextures->size();
+                        mtx.unlock();
+                        while (size > 30) {
+                            mtx.lock();
+                            size = (int)m_pTextures->size();
+                            mtx.unlock();
+                        }
+                    }
+                }
+                CC_SAFE_RELEASE_NULL(p);
             },pVideoDecode);
-            t.detach();
+            thread.detach();
             pVideoDecode->release();
 
             if (s_pAsyncVideoPicQueue == NULL) {
@@ -90,6 +94,7 @@ void VideoTextureCache::picToTexture(float fd)
 {
     VideoPic *pVideoPic = NULL;
     int length = m_pVideoDecodes->size();
+    m_pTextures->erase(_delKey);
     for(int i = 0; i < length; i++) {
         mtx.lock();
         if (!s_pAsyncVideoPicQueue->empty()) {
@@ -135,6 +140,9 @@ Texture2D* VideoTextureCache::getTexture(const char *filename, int frame)
     keystream << filename << "_" << frame;
     Texture2D * texture = NULL;
     texture = (Texture2D*)m_pTextures->at(keystream.str());
+    ostringstream delKeystream;
+    delKeystream << filename << "_" << (frame - 1);
+    _delKey = delKeystream.str();
 	return texture;
 }
 
@@ -142,14 +150,15 @@ Texture2D* VideoTextureCache::addImageWidthData(const char *filename, int frame,
 {
     ostringstream keystream;
     keystream << filename << "_" << frame;
-
     string key = keystream.str();
+    
     Texture2D * texture = NULL;
     texture = (Texture2D*)m_pTextures->at(key);
 	if(!texture) {
         texture = new Texture2D();
         if( texture && 
         	texture->initWithData(data, dataLen, pixelFormat, pixelsWide, pixelsHigh, contentSize) ) {
+            
             m_pTextures->insert(key, texture);
             texture->release();
 		} else {
@@ -164,6 +173,7 @@ Texture2D* VideoTextureCache::addImageWidthData(const char *filename, int frame,
 
 void VideoTextureCache::removeAllTextures()
 {
+    _threadEnd = true;
     m_pTextures->clear();
 }
 

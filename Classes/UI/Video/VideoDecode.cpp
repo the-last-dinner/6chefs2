@@ -231,9 +231,11 @@ bool VideoDecode::decode()
     }
     
     // メモリ解放
-    av_free(m_pFrameRGB);
+    av_freep(m_pFrameRGB);
     av_free(m_pFrame);
     av_packet_unref(&packet);
+    av_freep(&packet);
+    sws_freeContext(m_pSwsCtx);
     return true;
 }
 
