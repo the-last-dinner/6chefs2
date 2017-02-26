@@ -11,6 +11,7 @@ class VideoTextureCache : public Ref
 	protected:
         Map<string, Ref *>* m_pTextures;
         Map<string, Ref *>* m_pVideoDecodes;
+        bool _threadEnd = false;
 	public:
         VideoTextureCache();
         virtual ~VideoTextureCache();

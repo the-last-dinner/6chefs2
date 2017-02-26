@@ -35,8 +35,10 @@ VideoSprite::VideoSprite()
 VideoSprite::~VideoSprite()
 {  
     FUNCLOG;
-    VideoTextureCache::sharedTextureCache()->removeVideo(m_strFileName.c_str());
+    VideoTextureCache* video = VideoTextureCache::sharedTextureCache();
+    video->removeVideo(m_strFileName.c_str());
     unregisterPlayScriptHandler();
+    CC_SAFE_RELEASE_NULL(video);
 }
 
 bool VideoSprite::init(const char* path)
@@ -81,8 +83,10 @@ void VideoSprite::playVideo()
 }  
 
 void VideoSprite::stopVideo(void)
-{  
+{
     this->unscheduleAllCallbacks();
+    VideoTextureCache::sharedTextureCache()->removeAllTextures();
+    
 }  
 
 void VideoSprite::seek(int frame)
@@ -99,10 +103,8 @@ void VideoSprite::update(float dt)
     if(texture) {
         m_frame_count++;
         setTexture(texture);
-        //this->stop();
         if(m_frame_count >= m_frames) {
-            m_frame_count = 1; 
-            //this->stop();  
+            m_frame_count = 1;
             if (m_videoEndCallback)
                 m_videoEndCallback();
             

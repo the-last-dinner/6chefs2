@@ -8,19 +8,6 @@ static VideoTextureCache *g_sharedTextureCache = NULL;
 
 static mutex mtx;
 
-static thread thread;
-
-static void *videoDecode(void *data)
-{
-    VideoDecode *p = (VideoDecode *) data;
-    if(p) {
-        while(p->decode()) {
-            //sleep ?
-        }
-    }
-    return 0;
-}
-
 VideoTextureCache * VideoTextureCache::sharedTextureCache()
 {
     if (!g_sharedTextureCache) {
@@ -56,10 +43,18 @@ VideoDecode* VideoTextureCache::addVideo(const char *path)
         if(pVideoDecode->init(path)) {
             m_pVideoDecodes->insert(path, pVideoDecode);
             
-            auto t = std::thread([this](void *data){
-                videoDecode(data);
+            std::thread thread = std::thread([this](void *data){
+                VideoDecode *p = (VideoDecode *) data;
+                if(p) {
+                    while(p->decode()) {
+                        //sleep ?
+                        if(_threadEnd)
+                            break;
+                    }
+                }
+                CC_SAFE_RELEASE_NULL(p);
             },pVideoDecode);
-            t.detach();
+            thread.detach();
             pVideoDecode->release();
 
             if (s_pAsyncVideoPicQueue == NULL) {
@@ -164,6 +159,7 @@ Texture2D* VideoTextureCache::addImageWidthData(const char *filename, int frame,
 
 void VideoTextureCache::removeAllTextures()
 {
+    _threadEnd = true;
     m_pTextures->clear();
 }
 
