@@ -104,37 +104,73 @@
 							"option":"reaction"
 						},
 						{
-							"type":"charaWalkTo",
-							"objID":"10201",
-							"x":22,
-							"y":22,
-							"speed":0.5
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10201",
+									"x":22,
+									"y":22,
+									"speed":0.5
+								},
+								{
+									"type":"removeObject",
+									"objID":"10201"
+								}
+							]
+						},
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10203",
+									"x":22,
+									"y":22,
+									"speed":0.5
+								},
+								{
+									"type":"removeObject",
+									"objID":"10203"
+								}
+							]
+						},
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10204",
+									"x":22,
+									"y":22,
+									"speed":0.5
+								},
+								{
+									"type":"removeObject",
+									"objID":"10204"
+								}
+							]
+						},
+						{
+							"type":"sequence",
+							"action":[
+								{
+									"type":"charaWalkTo",
+									"objID":"10205",
+									"x":22,
+									"y":22,
+									"speed":0.5
+								},
+								{
+									"type":"removeObject",
+									"objID":"10205"
+								}
+							]
 						},
 						{
 							"type":"changeDirection",
 							"objID":"10202",
 							"direction":"RIGHT"
-						},
-						{
-							"type":"charaWalkTo",
-							"objID":"10203",
-							"x":22,
-							"y":22,
-							"speed":0.5
-						},
-						{
-							"type":"charaWalkTo",
-							"objID":"10204",
-							"x":22,
-							"y":22,
-							"speed":0.5
-						},
-						{
-							"type":"charaWalkTo",
-							"objID":"10205",
-							"x":22,
-							"y":22,
-							"speed":0.5
 						},
 						{
 							"type":"fadeout",
