@@ -61,10 +61,6 @@ bool CommonEventScripts::loadEventScripts(const int chapter)
 // イベントスクリプトの解放
 void CommonEventScripts::releaseEventScripts()
 {
-    for (auto itr = this->eventScripts.begin(); itr != this->eventScripts.end(); ++itr)
-    {
-        CC_SAFE_RELEASE_NULL(itr->second);
-    }
     this->eventScripts.clear();
 }
 
