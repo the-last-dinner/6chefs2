@@ -126,7 +126,8 @@
 						},
 						{
 							"type":"playSE",
-							"file":"reaction.mp3"
+							"file":"reaction.mp3",
+							"volume":0.5
 						}
 					]
 				},
@@ -160,8 +161,7 @@
 						{
 							"text":["はぁ・・・"],
 							"charaID":"22",
-							"imgID":"4",
-							"option":"reaction"
+							"imgID":"4"
 						}
 					]
 				},

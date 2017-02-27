@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="36" height="44" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="36">
- <tileset firstgid="1" name="ed_2" tilewidth="16" tileheight="16" tilecount="1920" columns="60">
+ <tileset firstgid="1" name="ed_2" tilewidth="16" tileheight="16">
   <image source="ed_2.png" trans="aa55ff" width="960" height="512"/>
  </tileset>
- <tileset firstgid="1921" name="ST-Washitu-I01" tilewidth="16" tileheight="16" tilecount="1600" columns="16">
+ <tileset firstgid="1921" name="ST-Washitu-I01" tilewidth="16" tileheight="16">
   <image source="ST-Washitu-I01.png" trans="aa55ff" width="256" height="1600"/>
  </tileset>
- <tileset firstgid="3521" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="3521" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="4001" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
+ <tileset firstgid="4001" name="ST-Sewer-01" tilewidth="16" tileheight="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="36" height="44">
@@ -33,7 +33,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzrENACAMxEA2yGYsgliEqSloUJDchsInffGdWztW1O42068wrgZ7XvYwe5g9zB5mD7OH2cPsYfYwe5g9zB5mD7OH2cPsYfYwe5g9bKSGHrX71QZT0UYn
+   eJzt0LEJgEAQBdFfgbai2IeNiI3Y0jXnJcIFx6RrMA8+bDhskrQledbabX2fe7irXPYge5g9zB5mD7OH2cPsYfYwe5g9zB5mD7OH2cPsYfYwe5g9zB429uz9Pot3/OAnMy8ksEex
   </data>
  </layer>
  <layer name="MonoUe" width="36" height="44">

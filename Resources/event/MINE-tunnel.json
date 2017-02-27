@@ -342,6 +342,10 @@
 			"type":"sequence",
 			"action":[
 				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
 					"type":"already"
 				},
 				{

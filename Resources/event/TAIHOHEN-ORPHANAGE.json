@@ -954,7 +954,8 @@
 												},
 												{
 													"type":"playSE",
-													"file":"reaction.mp3"
+													"file":"reaction.mp3",
+													"volume":0.5
 												}
 											]
 										},
@@ -1016,7 +1017,8 @@
 												},
 												{
 													"type":"playSE",
-													"file":"reaction.mp3"
+													"file":"reaction.mp3",
+													"volume":0.5
 												}
 											]
 										},

@@ -932,12 +932,12 @@
 										{
 											"type":"changeDirection",
 											"objID":"10221",
-											"direction":"RIGHT"
+											"direction":"DOWN"
 										},
 										{
 											"type":"changeDirection",
 											"objID":"10220",
-											"direction":"LEFT"
+											"direction":"UP"
 										},
 										{
 											"type":"charaMsg",

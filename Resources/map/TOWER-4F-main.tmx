@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="36" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="195">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16" tilecount="6400" columns="32">
+ <tileset firstgid="481" name="ST-Temp-E01_2" tilewidth="16" tileheight="16">
   <image source="ST-Temp-E01_2.png" trans="aa55ff" width="512" height="3200"/>
  </tileset>
- <tileset firstgid="6881" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+ <tileset firstgid="6881" name="cyber2" tilewidth="16" tileheight="16">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
  <layer name="Base" width="42" height="36" opacity="0.91">
@@ -14,7 +14,7 @@
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlU0KgzAQhSdre5C2B9EexP4dpLrrRawHqb1UJ5hgcBcyDiO8Bx8BF8NnCPOIEIv5OKKRqWhmcPM36UyunF/i+RWYN63+09/Dnc9HIU9aPKXmDYmr93zx2RXSJ55S89aeFdkEnvvzPDKnwNmwZ800gQs8i2mZa+Bm2FMCeMLTkudByFNid2vcp8ROhOeCxO7W8NQGnvCEJzy3IvZtbtdqe8Yey+0wbc/YY7kdhve5nafP29lkb/kDoUq2LA==
+   eJztlc0NwjAMRp1zGQQ6CDAIP+0NxAzAjUUKgwAj9VJXTdSotyiu5UqfpadEOVgvUeSPCGWx3o7owxQ00LjhTLJa5ufy+UeeX4F+PZforv07nHmtMqlp9JTq10w877w+MnlGnlL9pp4F2QSey/NcMxtPadhzy+w8e3hmc2COnpNhTwngCU9LnishT4nZrfGeEjMRniMSs1vDUxt4whOe8JyLkLepWavtGXIsNcO0PUOOpWYY/ud8nlfev4xyizyXUB0HE7h+
   </data>
  </layer>
  <layer name="MonoShita" width="42" height="36">

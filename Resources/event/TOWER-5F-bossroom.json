@@ -1306,10 +1306,6 @@
 					"speed":3.0
 				},
 				{
-					"type":"playSE",
-					"file":"fusuma-open1.mp3"
-				},
-				{
 					"type":"already",
 					"event":["54","17"]
 				},
