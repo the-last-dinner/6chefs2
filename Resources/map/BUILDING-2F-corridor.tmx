@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1985" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2465" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="2945" name="SC-DoorI01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2945" name="SC-DoorI01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-DoorI01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
- <tileset firstgid="3073" name="death" tilewidth="16" tileheight="16">
+ <tileset firstgid="3073" name="death" tilewidth="16" tileheight="16" tilecount="384" columns="24">
   <image source="death.png" trans="aa55ff" width="384" height="256"/>
  </tileset>
  <layer name="Base" width="80" height="24">
@@ -26,12 +26,20 @@
    eJzt1bENgDAMBVEzADAI0MIMkEWQ2L8nacFElhIEUe5L17l6jUUY+36trzfedZWnOQ2+yeAX7sbK05zwy+M3NyJLJPzwww+/ksMvv9/qcwa/cLdVnlP8YmZ0Dz/88Cs3/PD7kx/TdzzEbAtW+yX87MMvbfilDb+08T/e3QmlF+ZH
   </data>
  </layer>
+ <layer name="MonoShita" width="80" height="24">
+  <properties>
+   <property name="z" value="-10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0DENAAAIwDBO9KEE/xcyCKRVsCwCAAAAAPikcrvgtvYPADhsAMYxANM=
+  </data>
+ </layer>
  <layer name="MonoChu" width="80" height="24">
   <properties>
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt07ERgCAQBVHy60ULQRux/wIMTOACxFmN3DfzM6KdoxS94Yhrs+/+vtY+0U292jSz33P2Y+zH2I+xH2M/xn6M/Rj7MfZj7MfYj7EfYz+mpmZLuLx1cFe5n3pbjP+l/e7Zj7EfYz/Gft87AQ2JPPE=
+   eJzt0zEOQDAcRvH/3N6Fg+AOZmfg7gYRZSjyYvJ+yTe100sbIWpJEVPedme/9/eN6WgyPOims65oZr/37MfYj7EfYz/Gfoz9GPsx9mPsx9iPsR9jP8Z+TNlvThFNdte1lXfVVc4U0ef6v7TfPfsx9mPsx9jveysvGD5o
   </data>
  </layer>
  <layer name="MonoUe" width="80" height="24">
@@ -97,6 +105,7 @@
   <object id="4" x="0" y="0" width="32" height="272"/>
   <object id="5" x="32" y="0" width="32" height="176"/>
   <object id="8" x="1152" y="368" width="96" height="32"/>
+  <object id="17" x="1232" y="240" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="12" x="1088" y="352" width="32" height="32">
@@ -129,6 +138,12 @@
     <property name="trigger" value="4"/>
    </properties>
   </object>
+  <object id="18" x="1232" y="240" width="16" height="32">
+   <properties>
+    <property name="EventID" value="10"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="shadow" width="80" height="24">
   <data encoding="base64" compression="zlib">
@@ -138,6 +153,11 @@
  <layer name="shutter" width="80" height="24">
   <data encoding="base64" compression="zlib">
    eJzt0DEJAAAIAEFH+9ezjAUEBdc7+AIfAQAAAAAAAFxVznHj38/2rwFxTw/3
+  </data>
+ </layer>
+ <layer name="CharaUe" width="80" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzkENAAAIBKB7WsD+VY2hbpCABAAAAABu6doeAADATwNlowAe
   </data>
  </layer>
 </map>

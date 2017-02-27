@@ -30,6 +30,7 @@ class StopWatch;
 class Stamina;
 class CameraTask;
 class EventTask;
+class EquipItemEvent;
 
 // ダンジョンシーンのマップ間で共有すべき情報を持つシングルトンクラス
 class DungeonSceneManager
@@ -47,7 +48,11 @@ private:
     vector<SummonData> summonDatas {};
     StopWatch* stopWatch { nullptr };
     Stamina* stamina { nullptr };
-    CommonEventScripts* commonEventScripts;
+    CommonEventScripts* commonEventScripts { nullptr };
+    EquipItemEvent* equipItemEvent { nullptr };
+    
+public:
+    bool onReturnFromDungeonMenuScene { false };
     
 // インスタンスメソッド
 private:
@@ -67,6 +72,7 @@ public:
     AmbientLightLayer* getAmbientLayer() const;
     EventTask* getEventTask() const;
     CameraTask* getCamera() const;
+    EquipItemEvent* getEquipItemEvent() const;
     
     // Scene
     void fadeOut(const Color3B& color, const float duration, function<void()> callback);

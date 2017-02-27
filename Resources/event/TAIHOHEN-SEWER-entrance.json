@@ -84,20 +84,17 @@
 							"text":["おい！おかしいだろ！\n子供相手に・・・"],
 							"charaID":"32",
 							"imgID":"3",
-							"miniChara":true,
 							"option":"reaction"
 						},
 						{
 							"text":["・・・\n見られちゃ困るモンがあった・・・\nってことだろ","なぁ、さっきのってもしかして・・・"],
 							"charaID":"22",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						},
 						{
 							"text":["いいから走るぞ！"],
 							"charaID":"32",
 							"imgID":"3",
-							"miniChara":true,
 							"option":"reaction"
 						}
 					]

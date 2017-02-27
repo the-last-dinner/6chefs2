@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="56" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="203">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="56" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="205">
  <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
@@ -63,7 +63,7 @@
    <property name="cc_vertexz" value="-14"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0bENgCAQRuFjN3ZRB1E7FzEOIi4lxEJCy5H8xbvkhe74UDNGda5gFu3rDGPuSKG/p3LeDvtS89byHaZ8zp0t9ju99tX/Bae/c83n1tleOb32tc5omuHEiROnWjhx4sSpFk6cOHGqhRMnTpxq4cSJE6daOHHixKkWTpxljtBfOyN2qs8LQAOGzw==
+   eJzt0DEOQEAURdE/e7MXdMQa0NmIWAiWpDGiMBHdfMkr7k9uqF4OZpzqLcGssLs5+O8fsS3ktyfO1WHvqkm+9/oPZXxWmdX2OL32Zpy/Ovv4HDIbE6fX3ttZmGY4ceLEqRZOnDhxqoUTJ06cauHEiROnWjhx4sSpFk6cOHGqhRNnG98nh97nsdl97CrfCVBaiSE=
   </data>
  </layer>
  <layer name="MonoShita" width="42" height="56">
@@ -79,7 +79,7 @@
    <property name="cc_vertexz" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzrsJgEAURNGXW4CwYqKR/8h//61oATbggKmBgbC7cA/cZKIxA/51OLPT+X7xzRXJz1gkme8H36SB/cxf/hTaysB+VvpTq0a1qlO9GgL7OerPpGa1qFVtag/sJwAAAAAAAAAAAADgcQNwBQhQ
+   eJzt1asNgEAQRdH1FECyBAOKv+LffytQAA3wCkCsINmB3JNcM+q5cQ541+GdO33sFWGuj+z8iiSLvSBMamxn/rCn0K00thMAAISr9Mdr1ahWdapXg7H/PmrPpGa1qFVtaje2EwAAAAAAAADwbzcIcwhQ
   </data>
  </layer>
  <layer name="magoichi" width="42" height="56">
@@ -120,7 +120,7 @@
   <object id="190" x="640" y="64" width="32" height="800"/>
   <object id="192" x="352" y="0" width="288" height="128"/>
   <object id="193" x="0" y="0" width="320" height="128"/>
-  <object id="194" x="304" y="144" width="64" height="32"/>
+  <object id="194" x="304" y="320" width="64" height="32"/>
   <object id="195" x="0" y="128" width="32" height="736"/>
   <object id="200" x="304" y="864" width="64" height="32">
    <properties>
@@ -154,7 +154,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="202" x="304" y="144" width="64" height="32">
+  <object id="202" x="304" y="320" width="64" height="32">
    <properties>
     <property name="EventID" value="6"/>
     <property name="trigger" value="2"/>
@@ -163,7 +163,7 @@
  </objectgroup>
  <layer name="shadow" width="42" height="56">
   <data encoding="base64" compression="zlib">
-   eJzt2MEJgEAQBEHzMP8o/RiCCq0uR1UAQ3Ov5baNyY7974J73u6s9nW2+zq/2a/obOls6WzpbOls6Wyt0jnlXlvlPafQ2dLZ0tnS2dLZ+vsOuWtKxxWdLZ0tnS2dLZ2tVTr9hzyjs6WTiU7wDEI/
+   eJztzkENwDAQwLDyGH+U+5TCHql6k2wAUdZisve5ffDN6c+q77Pt/+XzNJ8tny2fLZ8tny2fLZ8tny2fLZ8tny2fLZ8tny2fLZ8tny2fLZ8tny2fLZ8tn0y0ASuZO7s=
   </data>
  </layer>
  <layer name="CharaUe" width="42" height="56">
@@ -173,7 +173,7 @@
  </layer>
  <layer name="CharaUe2" width="42" height="56">
   <data encoding="base64" compression="zlib">
-   eJztzjsOglAUANHb+KEUsYEosP9VoViqUPpLnAVQkRheMSeZfiKk+boy4kwX6ulaLn007cbXnR400Jjo55OvF73pQ99EP1dVxJo2tKWsWvpo2o6vnPZU0CHRzyNfJ6qpoTbRT0mSJEmSJEmSJEmS/uEHf9MSOg==
+   eJztzjsOglAUANHb+KEUsYEosP9VoViqUPpLnAVQUMkr5iTTT4QkSZL+oSsjznShnq7l0kfTbnzd6UEDjYl+Pvl60Zs+9E30c1VFrGlDW8qqpY+m7fjKaU8FHRL9PPJ1opoaahP9lCRJkiRJkiRJ8/0A7J8SOg==
   </data>
  </layer>
 </map>

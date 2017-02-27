@@ -17,22 +17,32 @@ class TrophyListLayer;
 
 class TitleScene : public BaseScene
 {
-	// 列挙型
+// 列挙型
+private:
 	enum struct MenuType
 	{
 		BEGINING,
 		FINISH,
 		SIZE,
 	};
-	// クラスメソッド
+
+// クラスメソッド
 public:
 	CREATE_FUNC(TitleScene);
-	
-	// インスタンスメソッド
+    
+// インスタンス変数
 private:
-	virtual bool init();
-    virtual void onEnter();
-	void onPreloadFinished(LoadingLayer* loadingLayer);
+    TitleMainMenuLayer* mainMenu { nullptr };
+    SaveDataSelector* saveDataSelector { nullptr };
+    TrophyListLayer* trophyList { nullptr };
+	
+// インスタンスメソッド
+private:
+    TitleScene();
+    ~TitleScene();
+	virtual bool init() override;
+    virtual void onEnter() override;
+	void onPreloadFinished(LoadingLayer* loadingLayer) override;
 	void onStartSelected();
 	void onContinueSelected();
 	void onExitSelected();
@@ -43,14 +53,9 @@ private:
     void createTrophyListLayer();
     void onTrophyListSelected();
     void onTrophyListCanceled();
-public:
-	TitleScene();
-	~TitleScene();
-	
-	// インスタンス変数
-	TitleMainMenuLayer* mainMenu { nullptr };
-	SaveDataSelector* saveDataSelector { nullptr };
-    TrophyListLayer* trophyList {nullptr};
+// インターフェース
+protected:
+    LoadingLayer* createLoadingLayer() override;
 };
 
 #endif // __TITLE_SCENE_H__

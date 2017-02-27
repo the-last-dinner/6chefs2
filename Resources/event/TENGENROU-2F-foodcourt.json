@@ -2,13 +2,13 @@
 	"1":[
 		{
 		    "type":"setAmbient",
-		    "ambient":"night"
+		    "ambient":"basement"
 		},
 		{
 			"type":"if",
 			"condition":[
 				{
-					"event":["25","4"]
+					"event":["29","4"]
 				}
 			],
 			"action":[
@@ -73,12 +73,6 @@
 		{
 			"type":"systemMsg",
 			"text":["団子の店だ"]
-		}
-	],
-	"6":[
-		{
-			"type":"systemMsg",
-			"text":["営業時間らしき漢数字が書いてある"]
 		}
 	]
 }

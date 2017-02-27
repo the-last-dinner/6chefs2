@@ -89,7 +89,34 @@
    eJzt2cEJACAMA8BOILiH+8/nAiIIfVi9GyDfBBIBAAAAAAAAAAAAAMAPRr8zCwB29BcAFekvACpqiZ2TmcWavQEAAAAAAMDLTj4sfxcAAAAAAAAAAADkmNB8AqE=
   </data>
  </layer>
+ <layer name="door32" width="108" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrkNADAMxLCD18iz/5jxFE5DAuqVAAAAAAAAAAAAAAAAAAAAAAAAAACrkt2d7tbvGwAAAAAAAAAAAAAAAACY8QDpTgB7
+  </data>
+ </layer>
+ <layer name="door22" width="108" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzrkNACAQxMDVtcHTf5lcFRAwIzl3AgAAAAAAAAAAAAAAAAAAAAAAAAD8blQyu9Xten0DAAAAAAAAAAAAAAAAwC0Hb04Aew==
+  </data>
+ </layer>
+ <layer name="door12" width="108" height="80">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0ckJgEAURMHvZOEyav4ZerMjEDwNShW8e0NXAQAAAAAAAAAAAAAAAAAAAAAAADy7ptELeMNf3zK3qiWtaUs97elIZxu9DgAAAAAAAAAAAAAAAIC/uwEGeQLp
+  </data>
+ </layer>
  <objectgroup name="collision">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <object id="1" x="736" y="816" width="240" height="16"/>
   <object id="2" x="976" y="864" width="32" height="16"/>
   <object id="3" x="976" y="816" width="32" height="16"/>
@@ -136,12 +163,6 @@
     <property name="trigger" value="3"/>
    </properties>
   </object>
-  <object id="28" x="848" y="1216" width="32" height="32">
-   <properties>
-    <property name="EventID" value="4"/>
-    <property name="trigger" value="1"/>
-   </properties>
-  </object>
   <object id="59" x="832" y="720" width="64" height="48">
    <properties>
     <property name="EventID" value="17"/>
@@ -181,17 +202,17 @@
  </layer>
  <layer name="door1" width="108" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt0bkOggAURNGHJajUuOH//6EL6tBa2BEszkluP8lUAQAAAAAAAAAAAAAAAAAAAAAAAPx2a6ru6ZGeaUqv9E61WXsd3+a/2vzSpW3apX3q56/89XeGfHJIx3RK53RJY7r6CwAAAAAAAAAAAAAAAICFfQAqGQk1
+   eJzt0TsOgzAURFHbJYGw/6VC+GQQHQUtFOdI126fNKUAAAAAAAAAAAAAAAAAAAAAAAAA3NtrnlbKL/+S1rSlKc316eu4GrPVsdcn9WlI33bu1bWnrwMAAAAAAAAAAAAAAAAA3uQPsl4IQQ==
   </data>
  </layer>
  <layer name="door2" width="108" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt0TkKgFAQRMHxpy4XcLn/HV1wxNzQr1AFL2/oCAAAAAAAAAAAAAAAAAAAAAAAAIB/WJuILduzo6m9hifXP22J6LI+G8r9H9815kdTNmdLqb0GAAAAAAAAAAAAAAAAgLec2KQGpg==
+   eJzt0TkKgEAURMGeSV3uf9dR8Yu5qQpV8PKGTgAAAAAAAAAAAAAAAAAAAAAAAAD+YbRkq/bqaG+v4cn1z9STuVqqtd//AQAAAAAAAAAAAAAAAADfcgLwVgYs
   </data>
  </layer>
  <layer name="door3" width="108" height="80">
   <data encoding="base64" compression="zlib">
-   eJzt0TkKgFAQRMHxpy4XcLn/Gd1wwNzQr1AFL2/oCAAAAAAAAAAAAAAAAAAAAAAAAOAvtiZiz47sbGqv4cma/7Qlosv6bCj3f3zXmB9N2ZwtpfYaAAAAAAAAAAAAAAAAAHjHBZmuBqI=
+   eJzt0TkKgEAURMGeSV3uf9ZxwQ/mpipUwcsbOgEAAAAAAAAAAAAAAAAAAAAAAAD+YmvJXh3V2d5ew5NR/0w9maulWvv9HwAAAAAAAAAAAAAAAADAl1w3YAYo
   </data>
  </layer>
  <layer name="shadow" width="108" height="80">

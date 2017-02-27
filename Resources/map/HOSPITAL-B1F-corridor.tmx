@@ -20,7 +20,7 @@
    <property name="cc_vertexz" value="-14"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlGEKwjAMhXMXd4Js9z/Ahh5gQy8gegFRzA8DXWky3NQ8oR98dFAoj5e1RJU19OKY2DsOC/trtNA808s8Y553/LAWg6N33pTpdexpkZ//jktdbJnj+YtumeMtWIud2ASuFq3YBa6ofe3FA2BfR/EE2NdFvNa+/rYvzXUXH0B9ab6Gyu9FF9RXm2Qsva+aOaI3L1fkfdTv0hyj76NF9PtlgdoX03zOKht7v+rLyodCmouDs6RoLp0fCkzzfwoFzkQBNVfF5wnK1w1F
+   eJztlGEKwjAMRnMXd4J29z/Ahh5gQy8gegFxLD8MxNBkuOkSoQ8eLQzKx5e1AJU1dOjA7Az7he9r1KA840uZUeYdvqxGb2idNwqtji015PmfuNTFljlef+iWOT6c1TigjeOqkdHWcY3a1xE9BezrjF4C9nVD77Wvv+2Lcj3RKVBflK+B8nvROvWVWcbS+0qZPXqzcnneR9qX5uh9HzW83y8Na+5yv2dfCd7nbP0De/al5YsCz5Wcs3AoV4J4ucjsnIWThFGImqtiMwPPbw1G
   </data>
  </layer>
  <layer name="MonoShita" width="38" height="32">
@@ -36,7 +36,7 @@
    <property name="cc_vertexz" value="-12"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1bENgDAMRNFswCTAIMAgsP8A4IIGnYsrElz8J6VJmq9YSlqr7Zr+XcqR7I+0iQa6cnR56PJU7TrFO1ahS6HLQ5eHLg9dHrpy89OwFPyH4t/ei3Z9Ve0KMdtVnL1z770yMVt1b2ruI9HloQs93HOkKho=
+   eJzt17ENgCAQheGbACZRB1Fn0FZn0N31oiYGj+IV4BXvS6ho/nAJBBG/9iCyxn/XHL5dY6x/FqneaGBXHrsw7MJ47Vrue+zNQ5eFXRh2YdiFYReGXXnN2dA6fIf03R6cdqW8dm3hmm1n7D1zL70m45+mdLbWuVlzr4ldGHZRCQd4ciwK
   </data>
  </layer>
  <layer name="door" width="38" height="32">

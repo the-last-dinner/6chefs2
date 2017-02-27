@@ -6,12 +6,26 @@
  <tileset firstgid="1505" name="SC-Door-Metal01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="SC-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
+ <tileset firstgid="1633" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
+  <image source="ed4.png" width="480" height="256"/>
+ </tileset>
+ <tileset firstgid="2113" name="ed4" tilewidth="16" tileheight="16" tilecount="1" columns="30">
+  <image source="../../../../../ed4.png" width="480" height="256"/>
+ </tileset>
  <layer name="Base" width="80" height="44">
   <properties>
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztmc9PVDEQx7fZv1TxF+gFUXS5IYgCXpRFRbwoKu7qRVHAH3f8D/CKohATTVAUYqJxmteG2WFeO307D3WzTT7pdmin3zdvukvbSqVbuuXvl/lqxsMOwz/TiuONw39edbzNYYXBjqNlqZqx3GH4Z6JxWkU1tXPtVfI3Wuj76RRWUK0Fl3+xPP5foXmmAZd/G9WMzQ5jA9VabDLx26lm7HYYO6jWYpeJX4/JOILgbEXR9pXqs4cZF7Jx2H5HgWNmf/wGTMYZBGcriravVJ8DzLiQjcP2OwsMMvEbMRmjCM5WFG1fqT5HmHEhG4ftdxEYC8SvCFSjFlo+/XOfNq15JB17ISF+3HvOe5f/UozymALqwDQThykBdTQ+FD/av860sV0LbX8hrpF4FtE6nRO/OZNxD0Hb2K6Ftr8Qd9Gc9wtqteMeMPFbMBnPELSN7Vpo+wvxFM35vKBWO26RiV8Z+0TJPpKbM1WHpL/GPLH9r/Y+UbKP5OZM1SHprzFPbP+rvU+U7CO5OVN1SPprzIPH0VLGPlGyj+TmTNUh6a8xDx5Hy3H4TjwB9Dr6HL2oxvY+ph2iN0KqP8l8Mf0SXRynmN+Pc2A7D9QcQ44aqrF9iGmHqEVI9SeZL6ZfoovjcSR+1u+EYxzV48g+wbRDjEdI9SeZL6ZfootDEr9bHcIM0HD1DPP3JvnccPUMg+0zC9wWxE+63jTXnGQ9toOPZTMA7utj1jDp8ZOuN801J1mP7dCI0GT6+vyMxe8G2C4jnVz+0lzOWxNlrcN2fTQT+k6a1lyNxW9e8H7ou2qY+HpIITafhn9p31nmWW39yPC/H4fAdtjI7gFCSO8ScH97n3DJtOY/96wTLi+umExvT4Lm2L2HRHfo/qPf7J3PtoP0LgH3HyTxC/1v4+PX78ZLNcfuPSS6Q/cfOH7tnPemnifb/mNmf/5Noja12/gNm+w8rt6Grti9CD6v9uSdP+P4Sc9jqZZRk36e7PPP/n7dNK3f075N7fb7m+ZfTFsd2UfN/rNvTjc+r/ZI4qeRV6n5Z/ffeXtUzEmT7T+HTWuOlAXN0bz4DSMtXJ6UdU9h/V4HloBl4AXwEniFPlP7a+Cqac2RsqA5Ou300nLH7N0PcJR1T2H92vuEL6Dhk5DPTu9cRLOWPvw57/7jidm7H+Ao657C+l108fspwMbvl9O7ENGspQ9/zrv/WAPeAe+BdVeXxTriA/Cxkp5/a0TrQWn2emnZAr4C34BtV5fFtgPr+V1Jy78t9FwHqfk78IOJH80/P4Z7xxo1l38+PkXz7yA0p+RfmXXR/LOE8q9szUXyj+ZMiJS+ofcZK7H8K0tzkfzD8Y+R0jf0PmNlK0dr2ZqL6u2Wbimj/AFrgQTo
+  </data>
+ </layer>
+ <layer name="Base2" width="80" height="44">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztw0EJAAAIBLB7msX+AY0ggs8NlvChy0sAAAAAAAAAAAAAAACAzQATiw7Z
   </data>
  </layer>
  <layer name="MonoShita" width="80" height="44">
@@ -133,6 +147,6 @@
   </object>
  </objectgroup>
  <objectgroup name="terrain">
-  <object id="27" type="ladder" x="768" y="576" width="32" height="96"/>
+  <object id="27" type="ladder" x="768" y="544" width="32" height="128"/>
  </objectgroup>
 </map>

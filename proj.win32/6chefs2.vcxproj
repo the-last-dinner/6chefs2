@@ -71,11 +71,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot);$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot);$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);..\lib\ffmpeg\win\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -86,7 +86,7 @@
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END);..\lib\ffmpeg\win\lib;..\lib\ffmpeg\win\bin;</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -109,14 +109,18 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <Outputs>$(TargetName).cab</Outputs>
       <Inputs>$(TargetFileName)</Inputs>
     </CustomBuildStep>
+    <ClCompile>
+      <AdditionalUsingDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AdditionalUsingDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(EngineRoot);$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot);$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);..\lib\ffmpeg\win\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -124,11 +128,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libcurl_imp.lib;websockets.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END);..\lib\ffmpeg\win\lib;..\lib\ffmpeg\win\bin;</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -149,8 +155,12 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ResourceCompile Include="game.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\Algorithm\PathFinder.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Battle\Battle.cpp" />
+    <ClCompile Include="..\Classes\Battle\BattleData.cpp" />
+    <ClCompile Include="..\Classes\CocosStudio\CSNode.cpp" />
+    <ClCompile Include="..\Classes\Datas\AttackData.cpp" />
+    <ClCompile Include="..\Classes\Datas\BattleCharacterData.cpp" />
     <ClCompile Include="..\Classes\Datas\Message\CharacterMessageData.cpp" />
     <ClCompile Include="..\Classes\Datas\Message\MessageData.cpp" />
     <ClCompile Include="..\Classes\Datas\Message\StoryMessageData.cpp" />
@@ -159,26 +169,34 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Datas\Scene\DungeonSceneData.cpp" />
     <ClCompile Include="..\Classes\Datas\Scene\EndingSceneData.cpp" />
     <ClCompile Include="..\Classes\Datas\Scene\GameOverSceneData.cpp" />
+    <ClCompile Include="..\Classes\Datas\Scene\OpeningSceneData.cpp" />
     <ClCompile Include="..\Classes\Datas\Scene\SceneData.cpp" />
     <ClCompile Include="..\Classes\Datas\Scene\StartUpSceneData.cpp" />
     <ClCompile Include="..\Classes\Datas\Scene\TitleSceneData.cpp" />
     <ClCompile Include="..\Classes\Effects\AmbientLightLayer.cpp" />
+    <ClCompile Include="..\Classes\Effects\DustEffect.cpp" />
+    <ClCompile Include="..\Classes\Effects\FocusLightLayer.cpp" />
     <ClCompile Include="..\Classes\Effects\Fog.cpp" />
     <ClCompile Include="..\Classes\Effects\Light.cpp" />
+    <ClCompile Include="..\Classes\Event\BattleEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\CameraEvent.cpp" />
     <ClCompile Include="..\Classes\Event\CharacterEvent.cpp" />
     <ClCompile Include="..\Classes\Event\EffectEvent.cpp" />
     <ClCompile Include="..\Classes\Event\EnemyEvent.cpp" />
     <ClCompile Include="..\Classes\Event\EventFactory.cpp" />
+    <ClCompile Include="..\Classes\Event\EventQueue.cpp" />
     <ClCompile Include="..\Classes\Event\EventScript.cpp" />
     <ClCompile Include="..\Classes\Event\EventScriptValidator.cpp" />
     <ClCompile Include="..\Classes\Event\FlagEvent.cpp" />
     <ClCompile Include="..\Classes\Event\GameEvent.cpp" />
+    <ClCompile Include="..\Classes\Event\GameEventHelper.cpp" />
     <ClCompile Include="..\Classes\Event\MapEvent.cpp" />
     <ClCompile Include="..\Classes\Event\MapObjectEvent.cpp" />
     <ClCompile Include="..\Classes\Event\MiniGameEvent.cpp" />
     <ClCompile Include="..\Classes\Event\ModalLayerEvent.cpp" />
     <ClCompile Include="..\Classes\Event\SceneEvent.cpp" />
     <ClCompile Include="..\Classes\Event\SoundEvent.cpp" />
+    <ClCompile Include="..\Classes\Helpers\AssertHelper.cpp" />
     <ClCompile Include="..\Classes\Layers\Dungeon\ButtonMashingLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Dungeon\DisplayImageLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Dungeon\PasswordEventLayer.cpp" />
@@ -187,7 +205,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Layers\EventListener\ConfigEventListenerLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\EventListener\EventListenerKeyboardLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\LoadingLayer.cpp" />
-    <ClCompile Include="..\Classes\Layers\Menu\CharacterMenuLayer.cpp" />
+    <ClCompile Include="..\Classes\Layers\Menu\DocumentMenuLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Menu\DungeonMainMenuLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Menu\ItemMenuLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Menu\KeyconfigMenuLayer.cpp" />
@@ -202,8 +220,9 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Layers\Message\StoryMessageLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Message\SystemMessageLayer.cpp" />
     <ClCompile Include="..\Classes\Layers\Shader\ShaderLayer.cpp" />
+    <ClCompile Include="..\Classes\Managers\BattleManager.cpp" />
+    <ClCompile Include="..\Classes\Managers\ConfigDataManager.cpp" />
     <ClCompile Include="..\Classes\Managers\CsvDataManager.cpp" />
-    <ClCompile Include="..\Classes\Managers\DebugManager.cpp" />
     <ClCompile Include="..\Classes\Managers\DungeonSceneManager.cpp" />
     <ClCompile Include="..\Classes\Managers\EventListenerKeyboardManager.cpp" />
     <ClCompile Include="..\Classes\Managers\KeyconfigManager.cpp" />
@@ -211,7 +230,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Managers\PlayerDataManager.cpp" />
     <ClCompile Include="..\Classes\Managers\SoundManager.cpp" />
     <ClCompile Include="..\Classes\Managers\TextureManager.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\AttackCommand.cpp" />
     <ClCompile Include="..\Classes\MapObjects\Character.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\AttackCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\FastMoveCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\HurtCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\MapObjectCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\MapObjectCommandQueue.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\MoveCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\SetPositionCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\StepCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Command\WalkCommand.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\AttackBox.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\AttackDetector.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\CollisionBox.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\CollisionDetector.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\DetectionBox.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\DetectionBox\HitBox.cpp" />
     <ClCompile Include="..\Classes\MapObjects\Enemy.cpp" />
     <ClCompile Include="..\Classes\MapObjects\EventObject.cpp" />
     <ClCompile Include="..\Classes\MapObjects\GhostObject.cpp" />
@@ -219,6 +254,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\MapObjects\MapObject.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MapObjectFactory.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MapObjectList.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\BattleBoss.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\MovePatterns\BattleMob.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MovePatterns\Chaser.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MovePatterns\CheapChaser.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MovePatterns\MobRandom.cpp" />
@@ -227,29 +264,48 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\MapObjects\MovePatterns\RandomMove.cpp" />
     <ClCompile Include="..\Classes\MapObjects\MovePatterns\Scouter.cpp" />
     <ClCompile Include="..\Classes\MapObjects\Party.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\PathFinder\PathFinder.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\PathFinder\PathNode.cpp" />
     <ClCompile Include="..\Classes\MapObjects\PathObject.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Status\HitPoint.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Status\Sight.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\Status\Stamina.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainObject\LadderArea.cpp" />
     <ClCompile Include="..\Classes\MapObjects\TerrainObject\PlainArea.cpp" />
     <ClCompile Include="..\Classes\MapObjects\TerrainObject\SlipFloor.cpp" />
     <ClCompile Include="..\Classes\MapObjects\TerrainObject\TerrainObject.cpp" />
     <ClCompile Include="..\Classes\MapObjects\TerrainObject\WaterArea.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\Ladder.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\Normal.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\Slip.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\Swim.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\TerrainState.cpp" />
+    <ClCompile Include="..\Classes\MapObjects\TerrainState\TerrainStateCache.cpp" />
     <ClCompile Include="..\Classes\Models\ChangeMapHistory.cpp" />
-    <ClCompile Include="..\Classes\Models\ChapterData.cpp" />
-    <ClCompile Include="..\Classes\Models\CharacterMasterData.cpp" />
+    <ClCompile Include="..\Classes\Models\CommonEventScripts.cpp" />
+    <ClCompile Include="..\Classes\Models\ConfigData\DebugConfigData.cpp" />
+    <ClCompile Include="..\Classes\Models\ConfigData\MasterConfigData.cpp" />
+    <ClCompile Include="..\Classes\Models\ConfigData\TrophyConfigData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\ChapterData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\CharacterMasterData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\DocumentData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\ItemData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\MapData.cpp" />
+    <ClCompile Include="..\Classes\Models\CsvData\TrophyData.cpp" />
     <ClCompile Include="..\Classes\Models\Direction.cpp" />
-    <ClCompile Include="..\Classes\Models\GlobalPlayerData.cpp" />
-    <ClCompile Include="..\Classes\Models\ItemData.cpp" />
-    <ClCompile Include="..\Classes\Models\LocalPlayerData.cpp" />
-    <ClCompile Include="..\Classes\Models\MapData.cpp" />
-    <ClCompile Include="..\Classes\Models\Sight.cpp" />
-    <ClCompile Include="..\Classes\Models\Stamina.cpp" />
+    <ClCompile Include="..\Classes\Models\EquipItemEvent.cpp" />
+    <ClCompile Include="..\Classes\Models\PlayerData\GlobalPlayerData.cpp" />
+    <ClCompile Include="..\Classes\Models\PlayerData\LocalPlayerData.cpp" />
     <ClCompile Include="..\Classes\Models\StopWatch.cpp" />
-    <ClCompile Include="..\Classes\Models\TrophyData.cpp" />
+    <ClCompile Include="..\Classes\Scenes\AssertScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\BaseScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\DungeonCameraScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\DungeonMenuScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\DungeonScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\EndingScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\EventHandler\DungeonSceneEventHandler.cpp" />
     <ClCompile Include="..\Classes\Scenes\GameOverScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\OpeningScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\StartUpScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\Tasks\CameraTask.cpp" />
@@ -261,14 +317,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Tasks\FollowType\NeverFollow.cpp" />
     <ClCompile Include="..\Classes\Tasks\FollowType\VerticalFollow.cpp" />
     <ClCompile Include="..\Classes\Tasks\GameTask.cpp" />
+    <ClCompile Include="..\Classes\Tasks\PlayerControlState\BattleState.cpp" />
+    <ClCompile Include="..\Classes\Tasks\PlayerControlState\PlayerControlState.cpp" />
+    <ClCompile Include="..\Classes\Tasks\PlayerControlState\SearchState.cpp" />
     <ClCompile Include="..\Classes\Tasks\PlayerControlTask.cpp" />
     <ClCompile Include="..\Classes\UI\Cloud.cpp" />
+    <ClCompile Include="..\Classes\UI\CountDownDisplay.cpp" />
     <ClCompile Include="..\Classes\UI\NotificationBand.cpp" />
     <ClCompile Include="..\Classes\UI\Notification\MapNameNotification.cpp" />
     <ClCompile Include="..\Classes\UI\Notification\NotificationNode.cpp" />
     <ClCompile Include="..\Classes\UI\Notification\TrophyNotification.cpp" />
     <ClCompile Include="..\Classes\UI\SlideNode.cpp" />
     <ClCompile Include="..\Classes\UI\StaminaBar.cpp" />
+    <ClCompile Include="..\Classes\UI\Video\VideoDecode.cpp" />
+    <ClCompile Include="..\Classes\UI\Video\VideoPlayer.cpp" />
+    <ClCompile Include="..\Classes\UI\Video\VideoSprite.cpp" />
+    <ClCompile Include="..\Classes\UI\Video\VideoTextureCache.cpp" />
+    <ClCompile Include="..\Classes\Utils\AssertUtils.cpp" />
     <ClCompile Include="..\Classes\Utils\CsvUtils.cpp" />
     <ClCompile Include="..\Classes\Utils\JsonUtils.cpp" />
     <ClCompile Include="..\Classes\Utils\MapUtils.cpp" />
@@ -277,9 +342,13 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\Algorithm\PathFinder.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Battle\Battle.h" />
+    <ClInclude Include="..\Classes\Battle\BattleData.h" />
+    <ClInclude Include="..\Classes\CocosStudio\CSNode.h" />
     <ClInclude Include="..\Classes\Common.h" />
+    <ClInclude Include="..\Classes\Datas\AttackData.h" />
+    <ClInclude Include="..\Classes\Datas\BattleCharacterData.h" />
     <ClInclude Include="..\Classes\Datas\MapObject\CharacterData.h" />
     <ClInclude Include="..\Classes\Datas\MapObject\EnemyData.h" />
     <ClInclude Include="..\Classes\Datas\Message\CharacterMessageData.h" />
@@ -290,28 +359,37 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Datas\Scene\DungeonSceneData.h" />
     <ClInclude Include="..\Classes\Datas\Scene\EndingSceneData.h" />
     <ClInclude Include="..\Classes\Datas\Scene\GameOverSceneData.h" />
+    <ClInclude Include="..\Classes\Datas\Scene\OpeningSceneData.h" />
     <ClInclude Include="..\Classes\Datas\Scene\SceneData.h" />
     <ClInclude Include="..\Classes\Datas\Scene\StartUpSceneData.h" />
     <ClInclude Include="..\Classes\Datas\Scene\TitleSceneData.h" />
     <ClInclude Include="..\Classes\define.h" />
     <ClInclude Include="..\Classes\Effects\AmbientLightLayer.h" />
+    <ClInclude Include="..\Classes\Effects\DustEffect.h" />
+    <ClInclude Include="..\Classes\Effects\FocusLightLayer.h" />
     <ClInclude Include="..\Classes\Effects\Fog.h" />
     <ClInclude Include="..\Classes\Effects\Light.h" />
+    <ClInclude Include="..\Classes\env.h" />
+    <ClInclude Include="..\Classes\Event\BattleEvent.h" />
+    <ClInclude Include="..\Classes\Event\CameraEvent.h" />
     <ClInclude Include="..\Classes\Event\CharacterEvent.h" />
     <ClInclude Include="..\Classes\Event\EffectEvent.h" />
     <ClInclude Include="..\Classes\Event\EnemyEvent.h" />
     <ClInclude Include="..\Classes\Event\EventFactory.h" />
+    <ClInclude Include="..\Classes\Event\EventQueue.h" />
     <ClInclude Include="..\Classes\Event\EventScript.h" />
     <ClInclude Include="..\Classes\Event\EventScriptMember.h" />
     <ClInclude Include="..\Classes\Event\EventScriptValidator.h" />
     <ClInclude Include="..\Classes\Event\FlagEvent.h" />
     <ClInclude Include="..\Classes\Event\GameEvent.h" />
+    <ClInclude Include="..\Classes\Event\GameEventHelper.h" />
     <ClInclude Include="..\Classes\Event\MapEvent.h" />
     <ClInclude Include="..\Classes\Event\MapObjectEvent.h" />
     <ClInclude Include="..\Classes\Event\MiniGameEvent.h" />
     <ClInclude Include="..\Classes\Event\ModalLayerEvent.h" />
     <ClInclude Include="..\Classes\Event\SceneEvent.h" />
     <ClInclude Include="..\Classes\Event\SoundEvent.h" />
+    <ClInclude Include="..\Classes\Helpers\AssertHelper.h" />
     <ClInclude Include="..\Classes\Layers\Dungeon\ButtonMashingLayer.h" />
     <ClInclude Include="..\Classes\Layers\Dungeon\DisplayImageLayer.h" />
     <ClInclude Include="..\Classes\Layers\Dungeon\PasswordEventLayer.h" />
@@ -320,7 +398,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Layers\EventListener\ConfigEventListenerLayer.h" />
     <ClInclude Include="..\Classes\Layers\EventListener\EventListenerKeyboardLayer.h" />
     <ClInclude Include="..\Classes\Layers\LoadingLayer.h" />
-    <ClInclude Include="..\Classes\Layers\Menu\CharacterMenuLayer.h" />
+    <ClInclude Include="..\Classes\Layers\Menu\DocumentMenuLayer.h" />
     <ClInclude Include="..\Classes\Layers\Menu\DungeonMainMenuLayer.h" />
     <ClInclude Include="..\Classes\Layers\Menu\ItemMenuLayer.h" />
     <ClInclude Include="..\Classes\Layers\Menu\KeyconfigMenuLayer.h" />
@@ -335,8 +413,9 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Layers\Message\StoryMessageLayer.h" />
     <ClInclude Include="..\Classes\Layers\Message\SystemMessageLayer.h" />
     <ClInclude Include="..\Classes\Layers\Shader\ShaderLayer.h" />
+    <ClInclude Include="..\Classes\Managers\BattleManager.h" />
+    <ClInclude Include="..\Classes\Managers\ConfigDataManager.h" />
     <ClInclude Include="..\Classes\Managers\CsvDataManager.h" />
-    <ClInclude Include="..\Classes\Managers\DebugManager.h" />
     <ClInclude Include="..\Classes\Managers\DungeonSceneManager.h" />
     <ClInclude Include="..\Classes\Managers\EventListenerKeyboardManager.h" />
     <ClInclude Include="..\Classes\Managers\KeyconfigManager.h" />
@@ -344,7 +423,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Managers\PlayerDataManager.h" />
     <ClInclude Include="..\Classes\Managers\SoundManager.h" />
     <ClInclude Include="..\Classes\Managers\TextureManager.h" />
+    <ClInclude Include="..\Classes\MapObjects\AttackCommand.hpp" />
     <ClInclude Include="..\Classes\MapObjects\Character.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\AttackCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\FastMoveCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\HurtCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\MapObjectCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\MapObjectCommandQueue.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\MoveCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\SetPositionCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\StepCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\Command\WalkCommand.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\AttackBox.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\AttackDetector.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\CollisionBox.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\CollisionDetector.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\DetectionBox.h" />
+    <ClInclude Include="..\Classes\MapObjects\DetectionBox\HitBox.h" />
     <ClInclude Include="..\Classes\MapObjects\Enemy.h" />
     <ClInclude Include="..\Classes\MapObjects\EventObject.h" />
     <ClInclude Include="..\Classes\MapObjects\GhostObject.h" />
@@ -352,6 +447,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\MapObjects\MapObject.h" />
     <ClInclude Include="..\Classes\MapObjects\MapObjectFactory.h" />
     <ClInclude Include="..\Classes\MapObjects\MapObjectList.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\BattleBoss.h" />
+    <ClInclude Include="..\Classes\MapObjects\MovePatterns\BattleMob.h" />
     <ClInclude Include="..\Classes\MapObjects\MovePatterns\Chaser.h" />
     <ClInclude Include="..\Classes\MapObjects\MovePatterns\CheapChaser.h" />
     <ClInclude Include="..\Classes\MapObjects\MovePatterns\MobRandom.h" />
@@ -360,30 +457,49 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\MapObjects\MovePatterns\RandomMove.h" />
     <ClInclude Include="..\Classes\MapObjects\MovePatterns\Scouter.h" />
     <ClInclude Include="..\Classes\MapObjects\Party.h" />
+    <ClInclude Include="..\Classes\MapObjects\PathFinder\PathFinder.h" />
+    <ClInclude Include="..\Classes\MapObjects\PathFinder\PathNode.h" />
     <ClInclude Include="..\Classes\MapObjects\PathObject.h" />
+    <ClInclude Include="..\Classes\MapObjects\Status\HitPoint.h" />
+    <ClInclude Include="..\Classes\MapObjects\Status\Sight.h" />
+    <ClInclude Include="..\Classes\MapObjects\Status\Stamina.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainObject\LadderArea.h" />
     <ClInclude Include="..\Classes\MapObjects\TerrainObject\PlainArea.h" />
     <ClInclude Include="..\Classes\MapObjects\TerrainObject\SlipFloor.h" />
     <ClInclude Include="..\Classes\MapObjects\TerrainObject\TerrainObject.h" />
     <ClInclude Include="..\Classes\MapObjects\TerrainObject\WaterArea.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\Ladder.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\Normal.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\Slip.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\Swim.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\TerrainState.h" />
+    <ClInclude Include="..\Classes\MapObjects\TerrainState\TerrainStateCache.h" />
     <ClInclude Include="..\Classes\Models\ChangeMapHistory.h" />
-    <ClInclude Include="..\Classes\Models\ChapterData.h" />
-    <ClInclude Include="..\Classes\Models\CharacterMasterData.h" />
+    <ClInclude Include="..\Classes\Models\CommonEventScripts.h" />
+    <ClInclude Include="..\Classes\Models\ConfigData\DebugConfigData.h" />
+    <ClInclude Include="..\Classes\Models\ConfigData\MasterConfigData.h" />
+    <ClInclude Include="..\Classes\Models\ConfigData\TrophyConfigData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\ChapterData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\CharacterMasterData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\DocumentData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\ItemData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\MapData.h" />
+    <ClInclude Include="..\Classes\Models\CsvData\TrophyData.h" />
     <ClInclude Include="..\Classes\Models\Direction.h" />
-    <ClInclude Include="..\Classes\Models\GlobalPlayerData.h" />
-    <ClInclude Include="..\Classes\Models\ItemData.h" />
-    <ClInclude Include="..\Classes\Models\LocalPlayerData.h" />
-    <ClInclude Include="..\Classes\Models\MapData.h" />
-    <ClInclude Include="..\Classes\Models\Sight.h" />
-    <ClInclude Include="..\Classes\Models\Stamina.h" />
+    <ClInclude Include="..\Classes\Models\EquipItemEvent.h" />
+    <ClInclude Include="..\Classes\Models\PlayerData\GlobalPlayerData.h" />
+    <ClInclude Include="..\Classes\Models\PlayerData\LocalPlayerData.h" />
     <ClInclude Include="..\Classes\Models\StopWatch.h" />
-    <ClInclude Include="..\Classes\Models\TrophyData.h" />
     <ClInclude Include="..\Classes\resources.h" />
+    <ClInclude Include="..\Classes\Scenes\AssertScene.h" />
     <ClInclude Include="..\Classes\Scenes\BaseScene.h" />
     <ClInclude Include="..\Classes\Scenes\DungeonCameraScene.h" />
     <ClInclude Include="..\Classes\Scenes\DungeonMenuScene.h" />
     <ClInclude Include="..\Classes\Scenes\DungeonScene.h" />
     <ClInclude Include="..\Classes\Scenes\EndingScene.h" />
+    <ClInclude Include="..\Classes\Scenes\EventHandler\DungeonSceneEventHandler.h" />
     <ClInclude Include="..\Classes\Scenes\GameOverScene.h" />
+    <ClInclude Include="..\Classes\Scenes\OpeningScene.h" />
     <ClInclude Include="..\Classes\Scenes\StartUpScene.h" />
     <ClInclude Include="..\Classes\Scenes\TitleScene.h" />
     <ClInclude Include="..\Classes\Tasks\CameraTask.h" />
@@ -395,14 +511,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Tasks\FollowType\NeverFollow.h" />
     <ClInclude Include="..\Classes\Tasks\FollowType\VerticalFollow.h" />
     <ClInclude Include="..\Classes\Tasks\GameTask.h" />
+    <ClInclude Include="..\Classes\Tasks\PlayerControlState\BattleState.h" />
+    <ClInclude Include="..\Classes\Tasks\PlayerControlState\PlayerControlState.h" />
+    <ClInclude Include="..\Classes\Tasks\PlayerControlState\SearchState.h" />
     <ClInclude Include="..\Classes\Tasks\PlayerControlTask.h" />
     <ClInclude Include="..\Classes\UI\Cloud.h" />
+    <ClInclude Include="..\Classes\UI\CountDownDisplay.h" />
     <ClInclude Include="..\Classes\UI\NotificationBand.h" />
     <ClInclude Include="..\Classes\UI\Notification\MapNameNotification.h" />
     <ClInclude Include="..\Classes\UI\Notification\NotificationNode.h" />
     <ClInclude Include="..\Classes\UI\Notification\TrophyNotification.h" />
     <ClInclude Include="..\Classes\UI\SlideNode.h" />
     <ClInclude Include="..\Classes\UI\StaminaBar.h" />
+    <ClInclude Include="..\Classes\UI\Video\VideoDecode.h" />
+    <ClInclude Include="..\Classes\UI\Video\VideoPlayer.h" />
+    <ClInclude Include="..\Classes\UI\Video\VideoSprite.h" />
+    <ClInclude Include="..\Classes\UI\Video\VideoTextureCache.h" />
+    <ClInclude Include="..\Classes\Utils\AssertUtils.h" />
     <ClInclude Include="..\Classes\Utils\CsvUtils.h" />
     <ClInclude Include="..\Classes\Utils\JsonUtils.h" />
     <ClInclude Include="..\Classes\Utils\MapUtils.h" />

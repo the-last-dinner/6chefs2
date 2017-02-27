@@ -75,7 +75,6 @@ void TitleScene::onPreloadFinished(LoadingLayer* loadingLayer)
 // 最初からが選ばれた時
 void TitleScene::onStartSelected()
 {
-	FUNCLOG
     SoundManager::getInstance()->stopBGMAll();
     SoundManager::getInstance()->playSE(Resource::SE::GAME_START);
 	PlayerDataManager::getInstance()->setGameStart(0);
@@ -85,7 +84,6 @@ void TitleScene::onStartSelected()
 // 続きからが選ばれた時
 void TitleScene::onContinueSelected()
 {
-	FUNCLOG
     SoundManager::getInstance()->playSE(Resource::SE::TITLE_ENTER);
 	this->mainMenu->hide();
 	this->saveDataSelector->show();
@@ -94,7 +92,6 @@ void TitleScene::onContinueSelected()
 // 終了が選ばれた時
 void TitleScene::onExitSelected()
 {
-	FUNCLOG
     SoundManager::getInstance()->playSE(Resource::SE::BACK);
 	Director::getInstance()->end();
 }
@@ -102,14 +99,14 @@ void TitleScene::onExitSelected()
 // セーブデータ選択をキャンセルした時
 void TitleScene::onSaveDataSelectCancelled()
 {
-	FUNCLOG
     SoundManager::getInstance()->playSE(Resource::SE::BACK);
 	this->saveDataSelector->hide();
 	this->mainMenu->show();
 }
+
+// おまけ部屋が選択された時
 void TitleScene::onSpecialRoomSelected()
 {
-    FUNCLOG
     SoundManager::getInstance()->playSE(Resource::SE::LOAD);
     PlayerDataManager::getInstance()->setGameStart(SPECIAL_ROOM_SAVE_ID);
     
@@ -131,7 +128,7 @@ void TitleScene::onSpecialRoomSelected()
 // トロフィーリストを生成
 void TitleScene::createTrophyListLayer()
 {
-    TrophyListLayer* trophyList {TrophyListLayer::create()};
+    TrophyListLayer* trophyList { TrophyListLayer::create() };
     trophyList->onTrophyListCanceled = CC_CALLBACK_0(TitleScene::onTrophyListCanceled, this);
     trophyList->setVisible(false);
     this->addChild(trophyList);
@@ -159,3 +156,9 @@ void TitleScene::onTrophyListCanceled()
     this->mainMenu->show();
 }
 
+#pragma mark -
+#pragma mark Interface
+LoadingLayer* TitleScene::createLoadingLayer()
+{
+    return LoadingLayer::create(Color4B(0, 0, 0, 0));
+}

@@ -8,6 +8,8 @@
 
 #include "MapObjects/MapObject.h"
 
+#include "CocosStudio/CSNode.h"
+
 #include "MapObjects/Command/MapObjectCommand.h"
 #include "MapObjects/Command/MapObjectCommandQueue.h"
 #include "MapObjects/Command/MoveCommand.h"
@@ -91,6 +93,12 @@ void MapObject::setDirection(const Direction& direction)
 {
     if (!this->isChangeableDirection(direction)) return;
     
+    if (_light) {
+        float angle {this->getDirection().getAngle()};
+        _light->changeAngleTo(angle);
+        DungeonSceneManager::getInstance()->getAmbientLayer()->changeLightAngleTo(_light, angle);
+    }
+    
     _location.direction = direction;
 }
 
@@ -142,22 +150,28 @@ void MapObject::setSprite(Sprite* sprite)
 }
 
 // 一時停止状態を設定
-void MapObject::setPaused(bool paused) { _paused = paused; }
+void MapObject::setPaused(bool paused)
+{
+    _paused = paused;
+    if (paused) {
+        this->pauseAnimation();
+        return;
+    }
+    this->resumeAnimation();
+}
 
 // ライトをセット
-void MapObject::setLight(Light* light, AmbientLightLayer* ambientLightLayer, function<void()> callback)
+void MapObject::setLight(Light* innerLight, Light* outerLight, AmbientLightLayer* ambientLightLayer, function<void()> callback)
 {
     if(_light) return;
     
     // ライトを追加
-    _light = light;
-    this->addChild(light);
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{ GL_SRC_ALPHA, GL_ONE });
-    light->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
+    _light = innerLight;
+    this->addChild(innerLight);
+    innerLight->runAction(Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create(callback)));
     
     // 環境光レイヤーに光源として追加
-    ambientLightLayer->addLightSource(light);
+    ambientLightLayer->addLightSource(innerLight, outerLight);
 }
 
 // ライトを消す
@@ -284,6 +298,28 @@ void MapObject::onLostHP()
 bool MapObject::canAttack(MapObject* target) const
 {
     return false;
+}
+
+#pragma mark -
+#pragma mark CSNode
+
+// アニメーションを再生
+void MapObject::playAnimation(const string& name, float speed, bool loop)
+{
+    if (!_csNode) return;
+    _csNode->play(name, speed, loop);
+}
+
+void MapObject::playAnimationIfNotPlaying(const string& name, float speed)
+{
+    if (!_csNode) return;
+    _csNode->playIfNotPlaying(name, speed);
+}
+
+void MapObject::playAnimation(const string& name, function<void(MapObject*)> callback)
+{
+    if (!_csNode) return;
+    _csNode->play(name, [this, callback]{ callback(this); });
 }
 
 #pragma mark -
@@ -501,4 +537,20 @@ void MapObject::onBattleStart(Battle* battle)
 void MapObject::onBattleFinished()
 {
     _battle = nullptr;
+}
+
+void MapObject::pauseAnimation()
+{
+    this->getActionManager()->pauseTarget(this);
+    if (_csNode) {
+        _csNode->pause();
+    }
+}
+
+void MapObject::resumeAnimation()
+{
+    this->getActionManager()->resumeTarget(this);
+    if (_csNode) {
+        _csNode->resume();
+    }
 }

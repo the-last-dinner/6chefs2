@@ -865,6 +865,10 @@
 																																							"type":"sequence",
 																																							"action":[
 																																								{
+																																									"type":"stopBGM",
+																																									"file":"0hanaichi.mp3"
+																																								},
+																																								{
 																																									"type":"fadeout"
 																																								},
 																																								{

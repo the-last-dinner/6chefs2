@@ -56,7 +56,7 @@
 					"type":"charaMsg",
 					"text":["崩れて下には降りれねぇな・・・"],
 					"charaID":"2",
-					"imgID":"1"
+					"imgID":"2"
 				}
 			]
 		},
@@ -139,7 +139,7 @@
 					"type":"charaMsg",
 					"text":["崩れて下には降りれねぇな・・・"],
 					"charaID":"2",
-					"imgID":"1"
+					"imgID":"2"
 				}
 			]
 		},

@@ -1,6 +1,12 @@
 {
+    "version": "Ver.1.1",
+    "copyright": "Copyright (C) 2014-2017 最後の晩餐 All Rights Reserved.",
     "display": {
+        "two_icon": true,
         "friendship": false,
-        "special_room": true
-    }
+        "special_room": true,
+        "opening_scene": true
+    },
+    "opening_video_file": "OPmovie.mp4",
+    "opening_bgm_file": "OPBGM.mp3"
 }

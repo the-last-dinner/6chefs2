@@ -258,6 +258,11 @@
 			"type":"if",
 			"condition":[
 				{
+					"event":["40","9"],
+					"Nevent":["79","7"]
+				},
+				{
+					"Nevent":["82","8"],
 					"Nevent":["79","7"]
 				}
 			],
@@ -287,6 +292,34 @@
 							"charaID":"8",
 							"imgID":"4",
 							"option":"reaction"
+						},
+						{
+							"type":"charaWalk",
+							"objID":"hero",
+							"direction":"RIGHT",
+							"steps":1.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["82","8"],
+					"Nevent":["40","9"]
+				}
+			],
+			"action":[
+				{
+					"type":"sequence",
+					"action":[
+						{
+							"type":"charaMsg",
+							"text":["とっとと戸塚をとっ捕まえようぜ"],
+							"charaID":"2",
+							"imgID":"2"
 						},
 						{
 							"type":"charaWalk",
@@ -450,7 +483,15 @@
 							"movePattern":"7"
 						},
 						{
+							"type":"stopBGM"
+						},
+						{
 							"type":"fadein"
+						},
+						{
+							"type":"playBGM",
+							"file":"battle_taiho.mp3",
+							"volume":0.5
 						},
 						{
 							"type":"createObject",
@@ -509,7 +550,7 @@
 											"movePattern":"1",
 											"x":20,
 											"y":24,
-											"direction":"RIGHT"
+											"direction":"LEFT"
 										},
 										{
 											"type":"createObject",
@@ -537,6 +578,9 @@
 											"x":16,
 											"y":23,
 											"direction":"LEFT"
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"createCamera",
@@ -574,6 +618,26 @@
 											]
 										},
 										{
+											"type":"removeLayer",
+											"layer":"magoichi"
+										},
+										{
+											"type":"removeLayer",
+											"layer":"nadeshiko"
+										},
+										{
+											"type":"createLayer",
+											"layer":"magoichi2"
+										},
+										{
+											"type":"createLayer",
+											"layer":"nadeshiko2"
+										},
+										{
+											"type":"playBGM",
+											"file":"Rachmaninov-PianoConcerto-No2-1st-2013.mp3"
+										},
+										{
 											"type":"fadein"
 										},
 										{
@@ -586,6 +650,11 @@
 										{
 											"type":"spawn",
 											"action":[
+												{
+													"type":"objAnimate",
+													"objID":"hero",
+													"name":"attack_left"
+												},
 												{
 													"type":"playSE",
 													"file":"kaihi.mp3"
@@ -628,10 +697,6 @@
 											"direction":"DOWN"
 										},
 										{
-											"type":"playSE",
-											"file":"hit.mp3"
-										},
-										{
 											"type":"charaMsg",
 											"img":"yuki_naguri.png",
 											"talk":[
@@ -647,6 +712,10 @@
 													"name":"戸塚　大宝"
 												}
 											]
+										},
+										{
+											"type":"playSE",
+											"file":"hit.mp3"
 										},
 										{
 											"type":"charaWalk",
@@ -667,7 +736,7 @@
 												{
 													"text":["ハァ・・・ハァ・・・"],
 													"charaID":"9",
-													"imgID":"3"
+													"imgID":"6"
 												},
 												{
 													"text":["おじさん・・・"],
@@ -677,7 +746,7 @@
 												{
 													"text":["まったく・・・お前ぇら料理人だろう・・・？\nよくもまぁこんだけ武闘派が集まったもんだぜ・・・"],
 													"charaID":"9",
-													"imgID":"3"
+													"imgID":"6"
 												},
 												{
 													"text":["おどれ・・・なかなかやるやないけ・・・\nなんじゃもう終いか？おぉん？"],
@@ -693,7 +762,7 @@
 												{
 													"text":["（こりゃぁダメだな・・・）","あぁ、そうみてぇだな・・・\n終わりだぜ・・・"],
 													"charaID":"9",
-													"imgID":"3"
+													"imgID":"7"
 												}
 											]
 										},
@@ -738,6 +807,9 @@
 											"type":"chase",
 											"objID":"10652",
 											"target":"hero"
+										},
+										{
+											"type":"stopBGM"
 										},
 										{
 											"type":"playBGM",

@@ -311,7 +311,7 @@
 					"objID":"1022",
 					"charaID":"8",
 					"x":24,
-					"y":31,
+					"y":51,
 					"eventID":"7",
 					"trigger":"2",
 					"direction":"UP",
@@ -322,7 +322,7 @@
 					"objID":"1023",
 					"charaID":"5",
 					"x":20,
-					"y":31,
+					"y":51,
 					"eventID":"8",
 					"trigger":"2",
 					"direction":"UP",
@@ -347,7 +347,7 @@
 					"objID":"1418",
 					"charaID":"13",
 					"x":21,
-					"y":82,
+					"y":102,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
@@ -379,7 +379,7 @@
 			"type":"changeMap",
 			"mapID":"9",
 			"x":19,
-			"y":90
+			"y":110
 		}
 	],
 	"4":[
@@ -387,7 +387,7 @@
 			"type":"changeMap",
 			"mapID":"7",
 			"x":2,
-			"y":88
+			"y":108
 		}
 	],
 	"5":[
@@ -411,7 +411,7 @@
 									"imgID":"2"
 								},
 								{
-									"text":["胡椒餅給一個"],
+									"text":["胡餅給一個"],
 									"charaID":"1",
 									"imgID":"3"
 								},
@@ -680,7 +680,7 @@
 								{
 									"type":"camera",
 									"nextX":21,
-									"nextY":9,
+									"nextY":16,
 									"time":0.5
 								},
 								{
@@ -748,6 +748,36 @@
 		}
 	],
 	"9":[
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["7","7"]
+				}
+			],
+			"action":[
+				{
+					"type":"charaMsg",
+					"talk":[
+						{
+							"text":["ここは・・・？"],
+							"charaID":"0",
+							"imgID":"2"
+						},
+						{
+							"text":["”天弦楼”っていう建物みたい。\n今日はお休みみたいだけど・・・","中にはいろいろなお店があるんだって。"],
+							"charaID":"1",
+							"imgID":"2"
+						},
+						{
+							"text":["へぇ・・・大きいですね・・・"],
+							"charaID":"0",
+							"imgID":"2"
+						}
+					]
+				}
+			]
+		},
 		{
 			"type":"if",
 			"condition":[
@@ -956,7 +986,7 @@
 								{
 									"type":"camera",
 									"nextX":21,
-									"nextY":10,
+									"nextY":16,
 									"time":10.0
 								},
 								{

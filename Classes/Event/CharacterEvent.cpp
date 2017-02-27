@@ -22,6 +22,7 @@
 #include "Tasks/CameraTask.h"
 
 #include "Managers/DungeonSceneManager.h"
+#include "Models/EquipItemEvent.h"
 
 #pragma mark CharacterEvent
 
@@ -102,7 +103,7 @@ void WalkByEvent::run()
     }
     
     target->pauseAi();
-    target->getActionManager()->resumeTarget(target);
+    target->resumeAnimation();
     
     if (target->isPaused()) target->setPaused(false);
     
@@ -142,7 +143,7 @@ void WalkToEvent::run()
     
     // NOTICE: イベントからの命令のみで動かしたいのでAIを一時停止
     target->pauseAi();
-    target->getActionManager()->resumeTarget(target);
+    target->resumeAnimation();
     
     if (target->isPaused()) target->setPaused(false);
     
@@ -189,4 +190,39 @@ void ChangeHeroEvent::run()
     party->addMember(chara);
     DungeonSceneManager::getInstance()->getMapLayer()->setParty(party);
     DungeonSceneManager::getInstance()->getCamera()->setTarget(party->getMainCharacter());
+    
+    // 装備データをセット
+    LocalPlayerData* localPlayerData {PlayerDataManager::getInstance()->getLocalData()};
+    DungeonSceneManager::getInstance()->getEquipItemEvent()->setEquipmentCache(
+        localPlayerData->getItemEquipment(DirectionRight()),
+        localPlayerData->getItemEquipment(DirectionLeft())
+    );
+ }
+
+#pragma mark -
+#pragma mark ChangeSpeedEvent
+
+bool ChangeSpeedEvent::init(rapidjson::Value& json)
+{
+    if (!CharacterEvent::init(json)) return false;
+    
+    if (!json.HasMember(member::SPEED)) return false;
+    
+    _speed = _json[member::SPEED].GetDouble();
+    
+    return true;
+}
+
+void ChangeSpeedEvent::run()
+{
+    if (_objectId == "hero") {
+        Vector<Character*> members { DungeonSceneManager::getInstance()->getMapObjectList()->getParty()->getMembers() };
+        for (Character* chara : members) {
+            chara->setSpeed(_speed);
+        }
+    } else {
+        Character* target { _eventHelper->getMapObjectById<Character*>(_objectId) };
+        target->setSpeed(_speed);
+    }
+    this->setDone();
 }

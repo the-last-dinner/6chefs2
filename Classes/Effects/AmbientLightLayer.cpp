@@ -74,7 +74,7 @@ bool AmbientLightLayer::init(const Color3B& color)
 void AmbientLightLayer::onEnter()
 {
     Layer::onEnter();
-    this->scheduleUpdate();
+    this->scheduleUpdateWithPriority(UpdatePriority::LAST);
 }
 
 void AmbientLightLayer::onExit()
@@ -90,26 +90,18 @@ void AmbientLightLayer::setAmbient(const Color3B& color)
 }
 
 // 光源を追加
-void AmbientLightLayer::addLightSource(Light* lightSource)
+void AmbientLightLayer::addLightSource(Light* innerLight, Light* outerLight)
 {
-    if(!lightSource) return;
+    if(!innerLight || !outerLight) return;
     
-    Light::Information info {lightSource->getInformation()};
+    CC_SAFE_RETAIN(innerLight);
     
-    CC_SAFE_RETAIN(lightSource);
-    Color3B color { Color3B(info.color.r * 1.3f, info.color.g * 1.3f, info.color.b * 1.3f)};
-    float radius {info.radius * 7.0f};
-    
-    Light* light {Light::create(Light::Information(color, radius, info.type))};
-    light->setPosition(lightSource->convertToWorldSpace(lightSource->getPosition()));
-    light->setOpacity(0);
-    light->setBlendFunc(BlendFunc{GL_SRC_COLOR, GL_ONE});
-    this->ambientLight->addChild(light);
+    this->ambientLight->addChild(outerLight);
     
     float duration {0.5f};
-    light->runAction(FadeIn::create(duration));
+    outerLight->runAction(FadeIn::create(duration));
     
-    this->lightMap.insert({lightSource, light});
+    this->lightMap.insert({innerLight, outerLight});
 }
 
 // 光源を削除
@@ -153,4 +145,11 @@ void AmbientLightLayer::visit(Renderer* renderer, const Mat4& parentTransform, u
     if (!this->isVisible()) return;
     
     this->renderTexture->getSprite()->visit(renderer, parentTransform, parentFlags);
+}
+
+void AmbientLightLayer::changeLightAngleTo(Light *lightSource, const float &angle)
+{
+    if (this->lightMap.count(lightSource) != 1) return;
+    
+    this->lightMap.at(lightSource)->changeAngleTo(angle);
 }

@@ -1,0 +1,90 @@
+{
+    "torchInit": [
+        {
+            "type": "playSE",
+            "file": "fire_ignition.mp3"
+        },
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "torchUpdate": [
+        {
+            "type": "setLight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "torchEnd": [
+        {
+            "type": "playSE",
+            "file": "fire_vanish.mp3"
+        },
+        {
+            "type": "removeLight",
+            "objID": "hero"
+        }
+    ],
+    "flashlightInit": [
+        {
+            "type": "playSE",
+            "file": "switch1.mp3"
+        },
+        {
+            "type": "setLight",
+            "option": "flashlight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "flashlightUpdate": [
+        {
+            "type": "setLight",
+            "option": "flashlight",
+            "objID": "hero",
+            "range": 3
+        }
+    ],
+    "flashlightEnd": [
+        {
+            "type": "playSE",
+            "file": "switch1.mp3"
+        },
+        {
+            "type": "removeLight",
+            "objID": "hero"
+        }
+    ],
+    "madbullInit": [
+        {
+            "type": "sequence",
+            "action": [
+                {
+                    "type": "playSE",
+                    "file": "drink.mp3"
+                },
+                {
+                    "type": "charaMsg",
+                    "text":["なんか翼が生えたみたいに\n体が軽くなったよ！"],
+                    "charaID":"7",
+                    "imgID":"4"
+                },
+                {
+                    "type": "playSE",
+                    "file": "favorite.mp3"
+                }
+            ]
+        },
+        {
+            "type": "changeSpeed",
+            "objID": "hero",
+            "speed": 2.5
+        },
+        {
+            "type": "removeItem",
+            "itemID": "1519"
+        }
+    ]
+}

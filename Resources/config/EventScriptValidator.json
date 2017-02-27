@@ -2,7 +2,8 @@
     "enums": {
         "messageOption": ["reaction"],
         "walkOption": ["back"],
-        "direction": ["RIGHT", "LEFT", "UP", "DOWN"]
+        "direction": ["RIGHT", "LEFT", "UP", "DOWN"],
+        "lightOption": ["torch", "flashlight"]
     },
     "events": {
         "sequence": {
@@ -147,6 +148,22 @@
             "member": {
                 "file": ["string"],
                 "time": ["double", "int"]
+            }
+        },
+        "playVideo": {
+            "require": ["file"],
+            "member": {
+                "file": ["string"],
+                "skip": ["bool"]
+            }
+        },
+        "displaySaveMenu": {
+            "member": {
+                "mapID": ["stoi"],
+                "x": ["int"],
+                "y": ["int"],
+                "direction": ["direction"],
+                "eventID": ["stoi"]
             }
         },
 
@@ -343,7 +360,9 @@
             "member": {
                 "objID": ["string"],
                 "range": ["int"],
-                "color": [["int", "int", "int"]]
+                "color": [["int", "int", "int"]],
+                "option": ["lightOption"],
+                "direction": ["direction"]
             }
         },
         "removeLight": {
@@ -358,6 +377,13 @@
                 "objID": ["string"],
                 "movable": ["bool"],
                 "file": ["string"]
+            }
+        },
+        "changeSpeed": {
+            "require": ["objID", "speed"],
+            "member": {
+                "objID": ["string"],
+                "speed": ["double"]
             }
         },
         
@@ -518,6 +544,8 @@
         
         
         
+        
+        
         "battle": {
             "require": ["objID", "true", "false"],
             "member": {
@@ -525,6 +553,10 @@
                 "true": [["object"]],
                 "false": [["object"]]
             }
+        },
+        
+        "objAnimate": {
+           
         },
         
         

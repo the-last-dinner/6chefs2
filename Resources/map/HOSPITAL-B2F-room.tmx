@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="70">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="42" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="71">
  <tileset firstgid="1" name="clear-Door-Metal01" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="clear-Door-Metal01.png" trans="aa55ff" width="128" height="256"/>
  </tileset>
@@ -248,6 +248,7 @@
     <property name="objID" value="186"/>
    </properties>
   </object>
+  <object id="70" x="0" y="192" width="96" height="32"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="45" x="736" y="96" width="32" height="32">

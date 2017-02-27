@@ -24,7 +24,7 @@
 				{
 					"type":"createObject",
 					"objID":"10199",
-					"charaID":"2",
+					"charaID":"8",
 					"x":16,
 					"y":21,
 					"direction":"UP",
@@ -33,7 +33,7 @@
 				{
 					"type":"createObject",
 					"objID":"10200",
-					"charaID":"8",
+					"charaID":"2",
 					"x":12,
 					"y":21,
 					"direction":"UP",
@@ -75,29 +75,20 @@
 				},
 				{
 					"type":"charaMsg",
-					"talk":[
-						{
-							"text":["お前ら・・・","何しに来やがった・・・"],
-							"charaID":"9",
-							"imgID":"4"
-						},
-						{
-							"text":["おい戸塚！\nお前のあの構え・・・"],
-							"charaID":"2",
-							"imgID":"5"
-						}
-					]
+					"img":"3baka.png",
+					"text":["お前ら・・・","何しに来やがった・・・"],
+					"charaID":"10",
+					"name":"戸塚 大宝"
 				},
 				{
 					"type":"charaMsg",
-					"img":"taihou_walk.png",
-					"text":["あの自然体の脱力姿勢・・・\nアレは最も効率的に身体を動かせる姿勢だ。"],
-					"charaID":"10",
-					"name":"加藤　蘭丸"
+					"text":["おい戸塚！\nお前のあの構え・・・","あの自然体の脱力姿勢・・・\nアレは最も効率的に身体を動かせる姿勢だ。"],
+					"charaID":"2",
+					"imgID":"1"
 				},
 				{
 					"type":"charaWalk",
-					"objID":"10199",
+					"objID":"10200",
 					"steps":1.0,
 					"direction":"UP"
 				},
@@ -124,9 +115,13 @@
 				},
 				{
 					"type":"charaWalk",
-					"objID":"10200",
+					"objID":"10199",
 					"steps":1.0,
 					"direction":"UP"
+				},
+				{
+					"type":"playSE",
+					"file":"down1.mp3"
 				},
 				{
 					"type":"createLayer",

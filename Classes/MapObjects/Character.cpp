@@ -205,35 +205,6 @@ void Character::lookAround(function<void()> callback, Direction direction)
 }
 
 #pragma mark -
-#pragma mark CSNode
-
-// アニメーションが再生されているか
-bool Character::isAnimationPlaying() const
-{
-    if (!_csNode) return false;
-    return _csNode->isPlaying();
-}
-
-// アニメーションを再生
-void Character::playAnimation(const string& name, float speed, bool loop)
-{
-    if (!_csNode) return;
-    _csNode->play(name, speed, loop);
-}
-
-void Character::playAnimationIfNotPlaying(const string& name, float speed)
-{
-    if (!_csNode) return;
-    _csNode->playIfNotPlaying(name, speed);
-}
-
-void Character::playAnimation(const string& name, function<void(Character*)> callback)
-{
-    if (!_csNode) return;
-    _csNode->play(name, [this, callback]{ callback(this); });
-}
-
-#pragma mark -
 #pragma mark TerrainState
 
 // 足踏み
@@ -415,7 +386,6 @@ void Character::onSearched(MapObject* mainChara)
 void Character::onEventStart()
 {
     this->setPaused(true);
-    this->getActionManager()->pauseTarget(this);
 }
 
 // イベント終了時
@@ -426,7 +396,6 @@ void Character::onEventFinished()
         if (!_movePattern->hasSterted()) _movePattern->start();
         if (_movePattern->isPaused()) _movePattern->resume();
     }
-    this->getActionManager()->resumeTarget(this);
 }
 
 // バトル開始時
@@ -474,6 +443,12 @@ void Character::onLostHP()
     
     this->enableHit(false);
     this->enableBattleAttack(false);
+}
+
+// スピードのセット
+void Character::setSpeed(const float &speed)
+{
+    _speed = speed;
 }
 
 #pragma mark -

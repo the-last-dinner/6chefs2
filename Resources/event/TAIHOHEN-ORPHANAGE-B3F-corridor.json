@@ -114,8 +114,7 @@
 							"type":"charaMsg",
 							"text":["ココの床・・・\nきしんで変な音が鳴るな・・・"],
 							"charaID":"22",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						}
 					]
 				}
@@ -150,8 +149,7 @@
 							"type":"charaMsg",
 							"text":["おい！、あんま音たてんなよ"],
 							"charaID":"32",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						}
 					]
 				}
@@ -182,8 +180,7 @@
 							"type":"charaMsg",
 							"text":["流石にここからじゃ\n聞こえないんじゃねぇか？"],
 							"charaID":"32",
-							"imgID":"3",
-							"miniChara":true
+							"imgID":"3"
 						}
 					]
 				}
@@ -220,8 +217,7 @@
 					"type":"charaMsg",
 					"text":["よし、ここからは\nさらに慎重にいくぞ。"],
 					"charaID":"22",
-					"imgID":"1",
-					"miniChara":true
+					"imgID":"1"
 				}
 			]
 		}

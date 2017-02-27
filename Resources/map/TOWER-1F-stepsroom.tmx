@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="23">
- <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ed" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed2" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ed2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="20" height="22">
@@ -17,7 +17,7 @@
    <property name="cc_vertexz" value="-13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYKAtOMVIHsYG1gLF04F0Bok4E4hXYzETZp4MI0QdjKbUPJg6dPOwmQ8Sk2XEbV4rkG7Dgq0YcYtb4zHPhYE8PGreyDIPlAdPU9E8UL7IJNMsepgnzUhd8yyB/HYqmkeuOfQyr4+RMkwrAACLL3b7
+   eJxjYKAd+A3EpxjJwwWMmOatBYqlA+kMEnEmEK/GY54MI0QdjKbUPJg6dPOwmQ8Sk2XEbV4rkG7Dgq0YcYtb4zHPhYE8PGreyDIPlAdPU9E8UL7IJNMsepgnzUhd8yyB/HYqmkeuOfQyr4+RMlyMJT1TAwAA3Mh42w==
   </data>
  </layer>
  <layer name="MonoShita" width="20" height="22">
@@ -25,7 +25,7 @@
    <property name="cc_vertexz" value="-12"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFyOApEwPDMybc8h7M+PXHAuXjkNQwA9ksePSkETCvGihfg6RGEchWIqAHH5gJ1DsLSb89kO1AgXkjDewEhtWuIRBe6kA3agCxJhBrUeBeVir7VZnK5jkOgbgYBQMHAI9RCO8=
+   eJxjYBgFyOApEwPDMyYI24OZdP2xQD1xSPqYgWwWKD+NDPOqgXpqkPQpAtlKZJgDAzOBemch6bcHsh0oMG+kgZ3AsNo1BMJLHehGDSDWBGItCtzLSmW/KlPZPMchEBejYOAAAJ1hCO8=
   </data>
  </layer>
  <layer name="steps" width="20" height="22">
@@ -116,7 +116,7 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="22" x="256" y="48" width="32" height="48">
+  <object id="22" x="160" y="48" width="48" height="48">
    <properties>
     <property name="EventID" value="10"/>
     <property name="trigger" value="2"/>

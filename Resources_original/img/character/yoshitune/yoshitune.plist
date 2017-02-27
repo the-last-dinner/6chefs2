@@ -7,7 +7,7 @@
 			<key>yoshitune_0_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,93},{23,28}}</string>
+				<string>{{0,3851},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -21,7 +21,7 @@
 			<key>yoshitune_0_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{24,0},{23,28}}</string>
+				<string>{{0,3911},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -35,7 +35,7 @@
 			<key>yoshitune_0_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{24,29},{23,28}}</string>
+				<string>{{0,3940},{23,28}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -49,7 +49,7 @@
 			<key>yoshitune_1_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{46,58},{21,29}}</string>
+				<string>{{0,4029},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -63,7 +63,7 @@
 			<key>yoshitune_1_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{48,0},{21,29}}</string>
+				<string>{{22,3999},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -77,7 +77,7 @@
 			<key>yoshitune_1_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{46,88},{21,29}}</string>
+				<string>{{0,4059},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -91,7 +91,7 @@
 			<key>yoshitune_2_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{68,30},{21,29}}</string>
+				<string>{{0,3999},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -105,7 +105,7 @@
 			<key>yoshitune_2_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{24,58},{21,29}}</string>
+				<string>{{0,3969},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -119,7 +119,7 @@
 			<key>yoshitune_2_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{24,88},{21,29}}</string>
+				<string>{{22,3969},{21,29}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -133,7 +133,7 @@
 			<key>yoshitune_3_0.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,62},{23,30}}</string>
+				<string>{{0,3880},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -147,7 +147,7 @@
 			<key>yoshitune_3_1.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,31},{23,30}}</string>
+				<string>{{0,3820},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -161,7 +161,7 @@
 			<key>yoshitune_3_2.png</key>
 			<dict>
 				<key>frame</key>
-				<string>{{0,0},{23,30}}</string>
+				<string>{{0,3789},{23,30}}</string>
 				<key>offset</key>
 				<string>{0,0}</string>
 				<key>rotated</key>
@@ -172,6 +172,146 @@
 				<string>{32,33}</string>
 			</dict>
 
+			<key>yoshitune_m_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3590},{198,198}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{198,198}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>yoshitune_m_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3590},{198,198}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{198,198}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>yoshitune_m_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3590},{198,198}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{198,198}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>yoshitune_m_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3391},{198,198}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{198,198}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>yoshitune_m_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,3192},{198,198}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{198,198}}</string>
+				<key>sourceSize</key>
+				<string>{198,198}</string>
+			</dict>
+
+			<key>yoshitune_s_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2128},{472,1063}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{144,122},{472,1063}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>yoshitune_s_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2128},{472,1063}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{144,122},{472,1063}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>yoshitune_s_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,2128},{472,1063}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{144,122},{472,1063}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>yoshitune_s_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,1064},{472,1063}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{144,122},{472,1063}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
+			<key>yoshitune_s_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{472,1063}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{144,122},{472,1063}}</string>
+				<key>sourceSize</key>
+				<string>{800,1200}</string>
+			</dict>
+
 		</dict>
 
 		<key>metadata</key>
@@ -179,7 +319,7 @@
 			<key>format</key>
 			<integer>2</integer>
 			<key>size</key>
-			<string>{128,128}</string>
+			<string>{512,4096}</string>
 			<key>textureFileName</key>
 			<string>yoshitune.png</string>
 			</dict>

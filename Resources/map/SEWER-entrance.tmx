@@ -33,7 +33,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2DEKgCAYQOFWD1MdpLpI3X8vtyAo40H+yfvAyeWpg2jX/dOa6o47y8N8bfYx9jH2MfYx9jH2MfYx9jH2MfYxkfvmFLsvvz23wH2SpG/1x50wnEY0U8CmM/sY+xj7GPsY+xj7GPsY+xj7GPvaFn3/Svvy23issJbSvlr/z2/O176rlvpUbgcxZyN+
+   eJzt2EEKgCAUAFGXdZjqINVF6gzdvdoFQRkD+Yt54MrNqAvRlL5nqVKa6rLjyngzX5p9jH2MfYx9jH2MfYx9jH2MfYx9TOS+oY7dt78958B9kqR3Ndud0B5GNH3ApiP7GPsY+xj7GPsY+xj7GPsY+xj7/i36/uX27W/jrsBacvtK/T8/OV/7zv7Up3wrQ1YkAw==
   </data>
  </layer>
  <layer name="MonoChu" width="40" height="66">
@@ -41,7 +41,7 @@
    <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztmFlOwlAUQAuIU1RIHBJxgB8Vi4n+qAwuQEGjnw5rwYWpK0BXoK5AF6GH2ITaRDvcV/o+7klOWgi9PQwNL3UcRRlRwAncwSnP6cB+8PHkGPsWcQmPsYnLEY5ZSbXoN7vojvF8cWlhO+sIj+FvrB7YbuF2llEe54XRb8y/PcSjP46p5/j+0cVG7v/5M3nHmc3L+uLSpKmFbeyE9K3SVhlz3ylNZ9jFXkiflCR91zTd4C3eWdCX5D2YQvtkpNVXKjpOuRj/uCTnTtJXpa1mcd8+bQcW930NF2faF/k1QS5pu7K4zxTaJ0P7ZGifjKz6Sqz5yxHW/Vn1VWmrWdwXFdv7oqB9MrRPhvbJ0D4Z2ifD9r64zLMuWRDcM02bDdo2Le5TFFt54Lp5xCdLr58BXc/4EtLX97wP7Pv1P2+KV7re8N3g52fy/+ODrk+cMzjTZF+FWWu4bmmfy6wG7lna12ZWB08s7esyq1f4mXlhaG4W66u+zzD0/ovs3NonO7f2KVK+AY25Nuo=
+   eJztmFlOwlAUQAsVp6iQOCTiAD8qgon+qFBcgIJGPx3WggtTV4CuQF2BLkIPsQm1ibbwXtv7cU9y0kLCfSfQJuU5jqIMcXECd3DKdzp0Hn49mWLfIi7hMTZxOcZnVhIt+s0u1lNcb1Ra6GUd4TO4xmqh4xZuZxnlc+4Or7Hg8RCP/vhMLcfvj3Vs5P6fP5N3nNm8Wd+oNGlqoYftiL5V2sop953SdIYd7Eb0mTJO3zVNN3iLdwL70kT7zEiqr1hwnFLBfE5SfRXaqoL79mk7ENz3NXg4076xuaTtSnCfLbTPDO0zQ/vMyKqvyDN/KcZzf1Z9FdqqgvviIr1PURRFUZR4zPNcsmCwZ5o0G7RtCu5TFKk8cN884pPQ+6dP1zO+RPT1fO9D50GD79vila43fLf4/dn8D/VB1yfOWZxps6/MrDVcF9pXZ1YD94T2ecxq44nQvg6zuu7PzAtLc7PYY+gFjCLLPZA4a2uf2draZ7a27hHK5xuQKS1Z
   </data>
  </layer>
  <layer name="MonoUe" width="40" height="66">
@@ -50,6 +50,14 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzrsRwjAQRdG1O+Cb883Bhi6hA+gAOoAOoAeDoQ5eIM0oUsR4Hdwzc4NVomcG9M9BHb1HZJzU2XtExkVdvUdk3NTde0TGQz29RwBATzWF2Uu9Q21yt0kf9S263zcozYZqpMaheKfvEzUtu983059ztVDLULzT95VaO+zb6M+tqlQdinf6vlN7h30AAAAAAAAAAAAA8E8/so4Wug==
+  </data>
+ </layer>
+ <layer name="MonoUe2" width="40" height="66">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzkEJACAAADHBevbPYwM/J4iwJdgYAMBP1nw9OPNr/Bq/xq/xa/wav8av8Wv8Gr/Gr/Fr/Bo/AAAAuGMDJtAJkg==
   </data>
  </layer>
  <layer name="door3" width="40" height="66">
@@ -239,6 +247,6 @@
   </object>
  </objectgroup>
  <objectgroup name="terrain">
-  <object id="50" type="ladder" x="448" y="256" width="32" height="64"/>
+  <object id="50" type="ladder" x="448" y="224" width="32" height="96"/>
  </objectgroup>
 </map>

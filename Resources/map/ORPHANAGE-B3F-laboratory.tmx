@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="18">
- <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="20">
+ <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
- <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="1505" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1985" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1985" name="ST-Hospital-I01" tilewidth="16" tileheight="16" tilecount="1856" columns="16">
   <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
  </tileset>
  <layer name="Base" width="20" height="20">
@@ -69,6 +69,18 @@
   <object id="15" x="64" y="80" width="96" height="32">
    <properties>
     <property name="EventID" value="3"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="18" x="192" y="160" width="64" height="16">
+   <properties>
+    <property name="EventID" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="19" x="192" y="112" width="64" height="32">
+   <properties>
+    <property name="EventID" value="5"/>
     <property name="trigger" value="2"/>
    </properties>
   </object>

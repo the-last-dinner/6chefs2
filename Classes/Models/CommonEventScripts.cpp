@@ -8,6 +8,7 @@
 
 #include "Event/EventScript.h"
 #include "Models/CommonEventScripts.h"
+#include "Utils/AssertUtils.h"
 #include "Utils/JsonUtils.h"
 
 const char* CommonEventScripts::NAME {"name"};
@@ -60,15 +61,15 @@ bool CommonEventScripts::loadEventScripts(const int chapter)
 // イベントスクリプトの解放
 void CommonEventScripts::releaseEventScripts()
 {
-    for (auto itr = this->eventScripts.begin(); itr != this->eventScripts.end(); ++itr)
-    {
-        CC_SAFE_RELEASE_NULL(itr->second);
-    }
     this->eventScripts.clear();
 }
 
 // イベントスクリプトを取得
 EventScript* CommonEventScripts::getScript(const string &fileName)
 {
+    if (this->eventScripts.count(fileName) == 0) {
+        LastSupper::AssertUtils::fatalAssert("CommonEventScriptError\n" + fileName + " is missing.");
+        return nullptr;
+    }
     return this->eventScripts[fileName];
 }

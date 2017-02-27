@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="54" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="19">
- <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber2" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber2.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16">
+ <tileset firstgid="961" name="ed4" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="ed4.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1441" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="54">
@@ -33,7 +33,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2LENgDAQBEESlweNYBqBpoEM6QJsIu68I332yVqOfpoA/MlW3nfWhh0X9Cp6fY3UW8u33r34ztHZ2/I+7ujNRm82erPRm43ebPRmozcbvdnozdbbO187i/E8td73asg/GOl+e6NX0euLXkWvL3oVvb7oVfT6olfR64teRa8velVSL3KdPdBVow==
+   eJzt2LERgCAQRFECKE8bEWsw1xrsVYkvEDJ3+W/mskv+DREpAfiTvXzvbB07KuiN6NU1U28t4713TuksunMN9vbcRx293uj1Rq83er3R641eb/R6o9cbvd5Ge5d3ZxWeI4/1tvtUk3cw0/9tQ29Ery56I3p10RvRq4veiF5d9Eb06qI3olcXvZFTL3w9TUZWxw==
   </data>
  </layer>
  <objectgroup name="collision">

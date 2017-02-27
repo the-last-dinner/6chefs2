@@ -1,0 +1,16 @@
+{
+    "fast_clear": {
+        "trophyID": 14,
+        "time": 1980
+    },
+    "no_save_clear": {
+        "trophyID": 15
+    },
+    "chiken_save": {
+        "trophyID": 16,
+        "count": 50
+    },
+    "trophy_complete": {
+        "trophyID": 17
+    }
+}

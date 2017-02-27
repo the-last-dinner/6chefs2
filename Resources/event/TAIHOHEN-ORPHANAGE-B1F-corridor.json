@@ -65,14 +65,12 @@
 								{
 									"text":["(おい、すぐそこは職員室だ。\n絶対に音をたてるなよ)"],
 									"charaID":"32",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["(あぁ、分かってる。)"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								}
 							]
 						},
@@ -112,20 +110,17 @@
 								{
 									"text":["(やっぱりカギがかかってるな・・・)"],
 									"charaID":"32",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["(じゃぁ作戦通りカギ、取りに行くぞ。)","(カギは職員室にあるハズだ・・・)"],
 									"charaID":"22",
-									"imgID":"1",
-									"miniChara":true
+									"imgID":"1"
 								},
 								{
 									"text":["(おう・・・んじゃ、\n下の階で”ものおと”をたてて\n先生を部屋からおびき出すぞ)"],
 									"charaID":"32",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								}
 							]
 						},
@@ -200,14 +195,12 @@
 								{
 									"text":["よし、いくぞ！"],
 									"charaID":"32",
-									"imgID":"2",
-									"miniChara":true
+									"imgID":"2"
 								},
 								{
 									"text":["おう"],
 									"charaID":"22",
-									"imgID":"5",
-									"miniChara":true
+									"imgID":"5"
 								}
 							]
 						},
@@ -264,8 +257,7 @@
 							"type":"charaMsg",
 							"text":["ココの床・・・\nきしんで変な音が鳴るな・・・"],
 							"charaID":"22",
-							"imgID":"2",
-							"miniChara":true
+							"imgID":"2"
 						}
 					]
 				}
@@ -318,14 +310,12 @@
 								{
 									"text":["おいバカ・・・"],
 									"charaID":"32",
-									"imgID":"3",
-									"miniChara":true
+									"imgID":"3"
 								},
 								{
 									"text":["こら、君たち！\nもう遅いんだから寝てないと\nダメじゃない！","ほら！\n寝室に戻って！"],
 									"charaID":"33",
 									"imgID":"1",
-									"miniChara":true,
 									"option":"reaction"
 								}
 							]
@@ -391,14 +381,12 @@
 								{
 									"text":["おいバカ・・・"],
 									"charaID":"32",
-									"imgID":"3",
-									"miniChara":true
+									"imgID":"3"
 								},
 								{
 									"text":["こら、君たち！\nもう遅いんだから寝てないと\nダメじゃない！","ほら！\n寝室に戻って！"],
 									"charaID":"33",
 									"imgID":"1",
-									"miniChara":true,
 									"option":"reaction"
 								}
 							]

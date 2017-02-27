@@ -33,7 +33,7 @@
 					"objID":"1412",
 					"charaID":"13",
 					"x":13,
-					"y":19,
+					"y":39,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",
@@ -65,7 +65,7 @@
 			"type":"changeMap",
 			"mapID":"6",
 			"x":40,
-			"y":100
+			"y":120
 		}
 	],
 	"3":[
@@ -318,6 +318,10 @@
 					"type":"sequence",
 					"action":[
 						{
+							"type":"playSE",
+							"file":"autodoor-open1.mp3"
+						},
+						{
 							"type":"removeLayer",
 							"layer":"door"
 						},
@@ -393,14 +397,14 @@
 				{
 					"type":"createCamera",
 					"x":12,
-					"y":11,
+					"y":31,
 					"action":[
 						{
 							"type":"createObject",
 							"objID":"101411",
 							"charaID":"13",
 							"x":11,
-							"y":87,
+							"y":107,
 							"direction":"UP",
 							"movePattern":"2"
 						},
@@ -409,7 +413,7 @@
 							"objID":"101412",
 							"charaID":"13",
 							"x":13,
-							"y":21,
+							"y":41,
 							"direction":"UP",
 							"movePattern":"2"
 						},
@@ -425,7 +429,7 @@
 										{
 											"type":"camera",
 											"nextX":12,
-											"nextY":103,
+											"nextY":123,
 											"time":6.0
 										},
 										{
@@ -460,7 +464,7 @@
 					"objID":"1411",
 					"charaID":"13",
 					"x":11,
-					"y":89,
+					"y":109,
 					"direction":"UP",
 					"times":1,
 					"pathID":"1",

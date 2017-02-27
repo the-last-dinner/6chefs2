@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="22" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="11">
- <tileset firstgid="1" name="ST-Hospital-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ST-Hospital-I01" tilewidth="16" tileheight="16" tilecount="1856" columns="16">
   <image source="ST-Hospital-I01.png" trans="aa55ff" width="256" height="1856"/>
  </tileset>
  <layer name="Base" width="22" height="22">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztzDkKgEAMRuHcxZO49q6949K7nt8Hlg4IQRiL/PAVKfJE7sVIkCJDrrgLea5EhRoNWsXdebo9HAaMmBT37OkuWLFhx6G4T083+oh1rWtd64buvk37F6r7l11jjjy9
@@ -13,18 +13,26 @@
  </layer>
  <layer name="MonoShita" width="22" height="22">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztkjlSAkEUhh8wNItCKqupitxA7oEsOWvOZg4u99Ab6A30BnIDqIIcBAO/ZGRwpuygawKq+Ku+qu735v+CrhHxN6uwyBq+YBPezctK5BYqUIUa1JW+ZyfCt1GIQdzRa3BuQgva0IGu0vfsnDFLQRoyjn2Pcx8GMIQR3Cl9z84Fs0u4goJjP+Y8gXt4gEd4UvqeneeAyEvAPTfNK843H7zvOD8MvIugyDLonn/inBp4tzi/Nd6EJZK09vcn3E8td+93H2Ifcs+d75Cnf/7HkeWe+8ebxZnz8Jq+wzXOood3hnNu4L3BWfLwrnCuffjPjjnmEPMDsecqhA==
   </data>
  </layer>
- <layer name="MonoChu" width="22" height="22">
+ <layer name="MonoShita1" width="22" height="22">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFowAT6LMzMBiwU99ce6CZDjQwl1bgPSMDwwdG6pv7H2QmE/XNHQWjYBQMXQAAoAID3g==
+   eJxjYBgFo2B4gu2MDAw7GKlv7nGgmSdoYO51oJk3aGDuc6CZL2hg7negmT9oYO4oGAUjFQAAgFUIdg==
+  </data>
+ </layer>
+ <layer name="MonoChu" width="22" height="22">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowAT6LMzMBiwU99ce6CZDjQwFxvQZwP6gY0yM94zMjB8YEQVswea6UChuf9BZjJRZsYoGAWjYHgBAPNmBNQ=
   </data>
  </layer>
  <objectgroup name="collision">

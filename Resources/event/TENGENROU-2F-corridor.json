@@ -2,7 +2,7 @@
 	"1":[
 		{
 		    "type":"setAmbient",
-		    "ambient":"night"
+		    "ambient":"basement"
 		},
 		{
 			"type":"setLight",
@@ -19,6 +19,34 @@
 		{
 			"type":"setLight",
 			"objID":"4"
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"Nevent":["27","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"setLight",
+					"objID":"1517"
+				}
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
+					"event":["27","5"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeObject",
+					"objID":"1517"
+				}
+			]
 		}
 	],
 	"2":[
@@ -43,6 +71,41 @@
 			"mapID":"24",
 			"x":4,
 			"y":3
+		}
+	],
+	"5":[
+		{
+			"type":"sequence",
+			"action":[			
+				{
+					"type":"getItem",
+					"itemID":"1517"
+				},
+				{
+					"type":"removeLight",
+					"objID":"1517"
+				},
+				{
+					"type":"removeObject",
+					"objID":"1517"
+				},
+				{
+					"type":"already"
+				},
+				{
+					"type":"storyMsg",
+					"title":"アイテムの使用",
+					"text":["一部のアイテムは装備しないと使用できません。\nアイテムを使用したくなったら\n装備するようにしましょう。"]
+				}
+			]
+		}
+	],
+	"6":[
+		{
+			"type":"charaMsg",
+			"text":["う！くせぇ・・・\nドブみてぇな臭いがしやがる・・・","下は・・・\n下水道にでも繋がってんのか？"],
+			"charaID":"5",
+			"imgID":"7"
 		}
 	]
 }

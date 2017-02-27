@@ -152,7 +152,8 @@
 					    						},
 					    						{
 					    							"type":"playSE",
-					    							"file":"reaction.mp3"
+					    							"file":"reaction.mp3",
+													"volume":0.5
 					    						},
 					    						{
 					    							"type":"changeDirection",
@@ -165,8 +166,7 @@
 					    					"type":"charaMsg",
 					    					"text":["あら？何かしら・・・"],
 					    					"charaID":"33",
-					    					"imgID":"1",
-					    					"miniChara":true
+					    					"imgID":"1"
 					    				},
 					    				{
 					    					"type":"fadeout"
@@ -183,8 +183,7 @@
 					    	"type":"charaMsg",
 					    	"text":["よし、いったんかくれるぞ！"],
 					    	"charaID":"32",
-					    	"imgID":"2",
-					    	"miniChara":true
+					    	"imgID":"2"
 					    },
 					    {
 					    	"type":"fadeout",

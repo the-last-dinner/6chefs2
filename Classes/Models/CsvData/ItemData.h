@@ -20,6 +20,9 @@ public:
         ID,
         NAME,
         DISCRIPTION,
+        EQUIP_INIT_EVENT,
+        EQUIP_UPDATE_EVENT,
+        EQUIP_END_EVENT,
     };
     
 // Instance valiables
@@ -37,8 +40,11 @@ private:
 private:
     bool init();
 public:
-    string getItemName(const int item_id);
-    string getItemDiscription(const int item_id);
+    string getItemName(const int itemId);
+    string getItemDiscription(const int itemId);
+    string getItemEquipInitEvent(const int itemId);
+    string getItemEquipUpdateEvent(const int itemId);
+    string getItemEquipEndEvent(const int itemId);
 };
 
 #endif /* ItemData_hpp */

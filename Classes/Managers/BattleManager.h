@@ -33,6 +33,7 @@ private:
 public:
     void setBattleInstance(Battle* battle);
     void onBattleFinished(Battle* finishedBattle);
+    bool isInBattle() const;
 };
 
 #endif /* BattleManager_h */
