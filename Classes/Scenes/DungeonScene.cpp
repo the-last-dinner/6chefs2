@@ -252,7 +252,10 @@ void DungeonScene::onMenuKeyPressed()
     if (_eventTask->isEventRunning() || _eventTask->existsEvent()) return;
     
     // 敵が存在すれば無視
-    if (_enemyTask->existsEnemy()) return;
+    if (_enemyTask->existsEnemy()) {
+        SoundManager::getInstance()->playSE(Resource::SE::FAILURE, 0.5);
+        return;
+    }
     
     // リスナーを停止
     _listener->setEnabled(false);
