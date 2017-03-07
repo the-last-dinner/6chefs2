@@ -33,6 +33,7 @@ public:
     {
         ARROW,
         WASD,
+        VIM,
         
         SIZE
     };
