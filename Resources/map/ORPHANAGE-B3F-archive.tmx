@@ -41,7 +41,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzLkNgDAMQFFPkJaz5+wJR8+5/xqMAL/HRaSU+EuvsWyL/LPEiaTIkKNA6b57tzLTqtir0aBFh165fQL/Dex5jJgwYwm81Vq53bDjwIkr4p9lWZYV1wv5JQf/
+   eJxjYBgF+MB7Puqa95/K5o2CUTAKRsEoGJoAALPIAgs=
   </data>
  </layer>
  <objectgroup name="collision">
@@ -51,7 +51,6 @@
   <object id="5" x="0" y="0" width="32" height="320"/>
   <object id="6" x="32" y="0" width="256" height="96"/>
   <object id="7" x="192" y="96" width="64" height="16"/>
-  <object id="8" x="32" y="96" width="96" height="16"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="9" x="288" y="0" width="32" height="32">
@@ -72,19 +71,13 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
-  <object id="14" x="32" y="64" width="96" height="48">
-   <properties>
-    <property name="EventID" value="4"/>
-    <property name="trigger" value="2"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="shadow" width="20" height="24">
   <properties>
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgaYPeoeUTZQ6o+aptHLhg1b9S8UfOGrnn0tIuebqc1AADXcBGJ
+   eJxjYBgaYPeoeRTpGyzmkWrPqHmj5o2aN/jNo6dd9HQ7rQEAk4gQEw==
   </data>
  </layer>
 </map>
