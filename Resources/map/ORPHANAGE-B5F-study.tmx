@@ -17,7 +17,7 @@
  </tileset>
  <layer name="Base" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBga4B0QvyITv8Vi3j8g/kUm/jsE3cfHyMDARSbmZcQ0Tw4oJkUmlsViXhcjZXjUvFHzhrN5gxUAAMxhles=
@@ -25,7 +25,7 @@
  </layer>
  <layer name="Base2" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-13"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYKA+eKnLwHBNjzJ8Rhdh3k49yt20HcmMUfNGzRs1b9S8oWLeC2BZOEuPMnxaF7ddlAAAD+09nQ==
@@ -33,20 +33,23 @@
  </layer>
  <layer name="MonoShita" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztz7kNgDAQRNHhzO3mQOJo0CSc3YH4NbAW0X7phTuyJc/zvO+lIC0h314TpTbad27e9KBiq0aB0rDbcdtjwowBo2Fv5XbDjgMnrgz//rMXmWgLRg==
   </data>
  </layer>
  <layer name="MonoChu" width="20" height="20">
+  <properties>
+   <property name="z" value="-11"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztyrkNgDAQRNFtyhWAgRwM5Jw5PiifXwMrJIL90ktGI2L9scqJ1PBo0KJz738924CAERNmxW9hW7Fhx4FT8bvYIhIyCm7Fz7Ks73sAowIbeQ==
   </data>
  </layer>
  <layer name="door" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFtAaubAwMbmzUM88XaJYfFc0LBZoVRkXzYoFmxVHRvFEwCkbB4AQA6aUCvQ==
@@ -54,7 +57,7 @@
  </layer>
  <layer name="door2" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFtAaqbAwMamzUM08XaJYeFc0zBZplRkXzbIFm2VHRvFEwCkbB4AQAh2kBvQ==
@@ -62,7 +65,7 @@
  </layer>
  <layer name="door3" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFtAasbAwMbGzUM48XaBYfFc0TBZolRkXzZIFmyVHRvFEwCkbB4AQAJS0AvQ==
@@ -70,7 +73,7 @@
  </layer>
  <layer name="door4" width="20" height="20">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFtAZPWRkYnrFSz7y3QLPeUdG8r0CzvlHRvL9As/5R0bxRMApGweAEALHnB7U=
