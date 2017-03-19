@@ -425,6 +425,11 @@
 						}
 					]
 				},
+				
+				{
+					"type":"wait",
+					"time":3.0
+				},
 				{
 		          	"type":"backToTitle"
 			    }

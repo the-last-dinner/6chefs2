@@ -365,7 +365,8 @@
 									"charaID":"13",
 									"movePattern":"0",
 									"direction":"DOWN",
-									"times":1
+									"times":1,
+									"speed":2.0
 								},
 								{
 									"type":"charaWalk",
