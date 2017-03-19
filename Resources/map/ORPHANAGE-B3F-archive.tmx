@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="15">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="17">
  <tileset firstgid="1" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
@@ -41,7 +41,7 @@
    <property name="z" value="-10"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztzLkNgDAMQFFPkJaz5+wJR8+5/xqMAL/HRaSU+EuvsWyL/LPEiaTIkKNA6b57tzLTqtir0aBFh165fQL/Dex5jJgwYwm81Vq53bDjwIkr4p9lWZYV1wv5JQf/
+   eJzt0ykOgEAMQNGeYCyrZ/WsnvX+1+AI8D0Vk2Ag9CfPTNq6EflngRMJESFGgtTd5w7lTStjLkeBEhVqZff0vNcw16JDjwGj567WxO6MBSs27A/uWdYXsn9kvbkL92QLuQ==
   </data>
  </layer>
  <objectgroup name="collision">
@@ -52,6 +52,7 @@
   <object id="6" x="32" y="0" width="256" height="96"/>
   <object id="7" x="192" y="96" width="64" height="16"/>
   <object id="8" x="32" y="96" width="96" height="16"/>
+  <object id="15" x="192" y="240" width="96" height="32"/>
  </objectgroup>
  <objectgroup name="event">
   <object id="9" x="288" y="0" width="32" height="32">
@@ -78,6 +79,12 @@
     <property name="trigger" value="2"/>
    </properties>
   </object>
+  <object id="16" x="192" y="256" width="96" height="16">
+   <properties>
+    <property name="EventID" value="5"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="shadow" width="20" height="24">
   <properties>
@@ -85,6 +92,11 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgaYPeoeUTZQ6o+aptHLhg1b9S8UfOGrnn0tIuebqc1AADXcBGJ
+  </data>
+ </layer>
+ <layer name="CharaUe" width="20" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzLkRACAMA0FX4JQ35+2/Pq4GSAh0MxtKZkopdVdws4iEjILq93+NbcfAxMJ++FPq5w7E0gI7
   </data>
  </layer>
 </map>
