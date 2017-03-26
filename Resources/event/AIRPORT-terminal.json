@@ -12,6 +12,20 @@
 			"type":"if",
 			"condition":[
 				{
+					"event":["2","4"]
+				}
+			],
+			"action":[
+				{
+					"type":"removeLayer",
+					"layer":"hide"
+				}		
+			]
+		},
+		{
+			"type":"if",
+			"condition":[
+				{
 					"Nevent":["2","4"]
 				}
 			],
