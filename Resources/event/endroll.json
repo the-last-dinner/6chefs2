@@ -25,41 +25,38 @@
 					"ambient":"day"
 				},
 				{
-					"type":"fadein"
-				},
-				{
-					"type":"wait",
-					"time":1.0
-				},
-				{
 					"type":"spawn",
 					"action":[
 						{
-							"type":"wait",
-							"time":124.0
+							"type":"fadein"
 						},
 						{
-							"type":"charaWalkTo",
-							"objID":"hero",
-							"x":25,
-							"y":695,
-							"speed":0.68
+							"type":"sequence",
+							"action":[
+								{
+									"type":"wait",
+									"time":1.0
+								},
+								{
+									"type":"charaWalkTo",
+									"objID":"hero",
+									"x":24,
+									"y":134,
+									"speed":0.7
+								}
+							]
 						}
 					]
 				},
 				{
-					"type":"already"
-				},
-				{
-					"type":"fadeout",
-					"time":2.0
+					"type":"fadeout"
 				},
 				{
 					"type":"changeMap",
-					"mapID":"88",
-					"x":5,
-					"y":25,
-					"eventID":"2"
+					"mapID":"120",
+					"x":24,
+					"y":18,
+					"eventID":"1"
 				}
 			]
 		}
@@ -311,6 +308,10 @@
 				},
 				{
 					"type":"stopBGM"
+				},
+				{
+					"type":"wait",
+					"time":3.0
 				},
 				{
 			      	"type":"backToTitle"

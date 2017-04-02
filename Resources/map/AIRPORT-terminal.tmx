@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="80" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="97">
- <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cyber" tilewidth="16" tileheight="16" tilecount="480" columns="30">
   <image source="cyber.png" trans="aa55ff" width="480" height="256"/>
  </tileset>
- <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="481" name="ST-MsionR-I01" tilewidth="16" tileheight="16" tilecount="1984" columns="16">
   <image source="ST-MsionR-I01.png" trans="aa55ff" width="256" height="1990"/>
  </tileset>
- <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16">
+ <tileset firstgid="2465" name="ST-Convi-I01" tilewidth="16" tileheight="16" tilecount="1280" columns="16">
   <image source="ST-Convi-I01.png" trans="aa55ff" width="256" height="1280"/>
  </tileset>
- <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16">
+ <tileset firstgid="3745" name="ST-Sewer-01" tilewidth="16" tileheight="16" tilecount="1504" columns="16">
   <image source="ST-Sewer-01.png" trans="aa55ff" width="256" height="1504"/>
  </tileset>
  <layer name="Base" width="60" height="80">
@@ -121,96 +121,6 @@
   <object id="51" x="576" y="1104" width="64" height="64"/>
   <object id="68" x="800" y="0" width="32" height="32"/>
   <object id="96" x="544" y="544" width="384" height="32"/>
- </objectgroup>
- <objectgroup name="Chara(object)">
-  <object id="54" x="736" y="288" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="1"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1011"/>
-   </properties>
-  </object>
-  <object id="56" x="832" y="288" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="2"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1012"/>
-   </properties>
-  </object>
-  <object id="57" x="736" y="352" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="3"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1013"/>
-   </properties>
-  </object>
-  <object id="60" x="832" y="352" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="5"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1015"/>
-   </properties>
-  </object>
-  <object id="61" x="864" y="256" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="6"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1016"/>
-   </properties>
-  </object>
-  <object id="62" x="800" y="448" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="7"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1017"/>
-   </properties>
-  </object>
-  <object id="63" x="848" y="416" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="8"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1018"/>
-   </properties>
-  </object>
-  <object id="64" x="768" y="384" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="10"/>
-    <property name="direction" value="DOWN"/>
-    <property name="movePattern" value="2"/>
-    <property name="objID" value="1010"/>
-   </properties>
-  </object>
-  <object id="86" x="864" y="720" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="11"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1019"/>
-   </properties>
-  </object>
-  <object id="87" x="128" y="832" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="11"/>
-    <property name="direction" value="RIGHT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1020"/>
-   </properties>
-  </object>
-  <object id="93" x="832" y="192" width="32" height="32">
-   <properties>
-    <property name="CharaID" value="12"/>
-    <property name="direction" value="LEFT"/>
-    <property name="movePattern" value="1"/>
-    <property name="objID" value="1021"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="event">
   <object id="65" x="928" y="48" width="32" height="32">

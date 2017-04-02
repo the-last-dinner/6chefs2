@@ -82,6 +82,10 @@
 					"type":"fadein"
 				},
 				{
+					"type":"wait",
+					"time":1.0
+				},
+				{
 					"type":"charaMsg",
 					"talk":[
 						{

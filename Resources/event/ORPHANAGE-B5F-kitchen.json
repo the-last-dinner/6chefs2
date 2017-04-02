@@ -439,7 +439,7 @@
 									"imgID":"1"
 								},
 								{
-									"text":["朱花！孫一と撫子を頼む！"],
+									"text":["朱花！孫一と中山を頼む！"],
 									"charaID":"5",
 									"imgID":"4",
 									"option":"reaction"
@@ -698,37 +698,46 @@
 										},
 										{
 											"type":"charaMsg",
-											"img":"yuki_naguri.png",
 											"talk":[
 												{
 													"text":["今だ雪！"],
-													"charaID":"10",
-													"name":"大善　吾郎",
+													"charaID":"5",
+													"imgID":"7",
 													"option":"reaction"
 												},
 												{
 													"text":["！？"],
-													"charaID":"10",
-													"name":"戸塚　大宝"
+													"charaID":"9",
+													"imgID":"4"
 												}
 											]
 										},
 										{
-											"type":"playSE",
-											"file":"hit.mp3"
-										},
-										{
-											"type":"charaWalk",
-											"objID":"1071",
-											"direction":"DOWN",
-											"steps":1.5,
-											"option":"back",
-											"speed":3.0
-										},
-										{
-											"type":"changeDirection",
-											"objID":"1071",
-											"direction":"UP"
+											"type":"spawn",
+											"action":[
+												{
+													"type":"playSE",
+													"file":"hit.mp3"
+												},
+												{
+													"type":"objAnimate",
+													"objID":"10642",
+													"name":"attack_down"
+												},
+												{
+													"type":"charaWalk",
+													"objID":"1071",
+													"direction":"DOWN",
+													"steps":1.5,
+													"option":"back",
+													"speed":3.0
+												},
+												{
+													"type":"changeDirection",
+													"objID":"1071",
+													"direction":"UP"
+												}
+											]
 										},
 										{
 											"type":"charaMsg",

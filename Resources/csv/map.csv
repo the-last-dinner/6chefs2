@@ -81,7 +81,7 @@
 80,地下孤児院B5F-書斎,ORPHANAGE-B5F-study
 81,地下孤児院B5F-子供部屋,ORPHANAGE-B5F-childroom
 82,地下孤児院B5F-調理場,ORPHANAGE-B5F-kitchen
-83,地下孤児院B5F-食在庫,ORPHANAGE-B5F-foodbarn
+83,地下孤児院B5F-食材庫,ORPHANAGE-B5F-foodbarn
 84,地下-通路,ORPHANAGE-B5F-togoal
 85,加岩流道場-廊下,Dojo-corridor
 86,地下孤児院B3F-書斎,ORPHANAGE-B3F-archive
@@ -118,3 +118,7 @@
 117,スタッフロール,endroll
 118,事務所,OMAKE-office
 119,控室,OMAKE-waiting
+120,スタッフロール,endroll2
+121,スタッフロール,endroll3
+122,スタッフロール,endroll4
+123,スタッフロール,endroll5

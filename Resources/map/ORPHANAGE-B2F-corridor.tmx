@@ -17,7 +17,7 @@
  </tileset>
  <layer name="Base" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztmkEKwjAQRdOtUA9QqAf1CD1qQQ9QUIwLQaYDiSUT8yf/w9tk0cnLbLr4ITAeco+sTrgpfs/I5oSH4sf94aDt7zyEcHLCOOz9LvFscsKs+F3j2eKI3vz+fR/60Y9+fqAfNvTDhn7Y0A8b+mFDP2zohw39sKEfNr35WaWVe1iFftihH3boh51W/LT+hMyRHkPKz6K3ofUn3nNkD0HmSI8h5Veyt7F+zdX8Sr9jjl/JuR/PWv2X2vur3X8ZM/6DrebKWPRf5gw/q7kyqXugQT9s6IdNb36/ptR3Wo13P6aNvAD91jjm
@@ -25,7 +25,7 @@
  </layer>
  <layer name="Base2" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-12"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt2kEOwiAURdG/Atj/IqoLqa5Bp+oWbGIaByVEIxRQH70nYeLg68WmUVKz/k3O7Or7Wme39B397/a2lTFook8Pfdro00afNvq00aeNPm30aaNPG33a6NNGnzb6tNGnjT5tW+q7O7Odr7/2Cfs2rJwbvxbPObnP710q5bqY9/mQef28mjtmzqghta/GXPrqa9X3L3rum+8Zre4vud49/xLLfQbllvC5L5kzef7laUu/X+jTQ582+rTRp40+bSXnL+G5yprzk2+skvOX8PtW/f8GDQ+vggXH
@@ -33,7 +33,7 @@
  </layer>
  <layer name="door" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztz7ENgDAMAEE3pIs70iX7j4kbRkBI1t0E/xEAAAAAAAAAAADQ15URI/+u+M6st2z8d9fbavy36+00/gMAeD0JxgD9
@@ -41,7 +41,7 @@
  </layer>
  <layer name="door2" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztz7ENwCAMAEEvwP4TJh3pQkeEm4yAkKy7Cf4jAAAAAAAAAAAAoK6rRdztdMU+Pd+ewn9vvo3CfzPfvsJ/AAC/BaXHB/U=
@@ -49,7 +49,7 @@
  </layer>
  <layer name="door3" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztz7ENwCAMAEEvwP4TJR3pQkdmwU1GQEjW3QT/EQAAAAAAAAAAAFDX1SLudrpin55vT+G/N99G4b+Zb1/hPwCA3wJfMQb1
@@ -57,7 +57,7 @@
  </layer>
  <layer name="door4" width="56" height="58">
   <properties>
-   <property name="cc\vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJztz7ENwCAMAEEvwP4TJB3pQkdmw01GQEjW3QT/EQAAAAAAAAAAAFDX1SLudrpin55vT+G/N99G4b+Zb1/hPwCA3wIYmwX1
@@ -65,7 +65,7 @@
  </layer>
  <layer name="steps" width="56" height="58">
   <properties>
-   <property name="cc_vertexz" value="-11"/>
+   <property name="z" value="-11"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt1MEJg0AQhlELcPs0WIGpQLCBQG4BGxDsL95E1pO3/XkPhoW5fbBM1wEAAAAAAADAc69ynTT62pbeB8nmvt4tN7tWpfcNpb7BY9AdTu/79HXfN+h//m761qC+7WiZjqZ3Od89qA8AaNcfFZoZNA==

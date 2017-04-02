@@ -21,6 +21,7 @@ const map<KeyconfigManager::CursorKeyType, string> KeyconfigManager::CursorKeyTy
 {
     {CursorKeyType::ARROW, "カーソルキー"},
     {CursorKeyType::WASD, "WASD"},
+    {CursorKeyType::VIM, "VimMode"},
 };
 
 const map<KeyconfigManager::DashKeyType, EventKeyboard::KeyCode> KeyconfigManager::dashKeys
@@ -45,6 +46,14 @@ const map<KeyconfigManager::CursorKeyType, KeyconfigManager::Keyconfig> Keyconfi
             {EventKeyboard::KeyCode::KEY_A, Key::LEFT},
             {EventKeyboard::KeyCode::KEY_S, Key::DOWN},
             {EventKeyboard::KeyCode::KEY_D, Key::RIGHT},
+        }
+    },
+    {CursorKeyType::VIM,
+        {
+            {EventKeyboard::KeyCode::KEY_K, Key::UP},
+            {EventKeyboard::KeyCode::KEY_H, Key::LEFT},
+            {EventKeyboard::KeyCode::KEY_J, Key::DOWN},
+            {EventKeyboard::KeyCode::KEY_L, Key::RIGHT},
         }
     }
 };

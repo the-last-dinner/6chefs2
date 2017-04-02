@@ -1082,6 +1082,46 @@
 							]
 						},
 						{
+							"choice":"OPムービーを見る",
+							"action":[
+								{
+									"type":"sequence",
+									"action":[
+										{
+											"type":"fadeout"
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"spawn",
+											"action":[
+												{
+													"type":"playBGM",
+													"file":"OPBGM.mp3"
+												},
+												{
+													"type":"playVideo",
+													"file":"OPmovie.mp4",
+													"skip":true
+												}
+											]
+										},
+										{
+											"type":"stopBGM"
+										},
+										{
+											"type":"playBGM",
+											"file":"OMAKE.mp3"
+										},
+										{
+											"type":"fadein"
+										}
+									]
+								}	
+							]
+						},
+						{
 							"choice":"何もしない",
 							"action":[
 								{

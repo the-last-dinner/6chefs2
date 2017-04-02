@@ -111,7 +111,7 @@
 					    },
 						{
 							"type":"createLayer",
-							"layer":"toyBOX2"
+							"layer":"toyBox2"
 					    },
 					    {
 					      "type":"createLayer",
