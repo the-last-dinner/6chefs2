@@ -24,7 +24,7 @@
 									"type":"charaWalkTo",
 									"objID":"hero",
 									"x":24,
-									"y":56,
+									"y":58,
 									"speed":0.4
 								}
 							]
