@@ -368,7 +368,7 @@
 								},
 								{
 									"type":"playSE",
-									"file":"chapter2.mp3"
+									"file":"chapter2_2.mp3"
 								},	
 								{
 									"type":"displayImg",
@@ -379,7 +379,7 @@
 						},
 						{
 							"type":"stopBGM",
-							"file":"chapter2.mp3"
+							"file":"chapter2_2.mp3"
 						},
 						{
 							"type":"changeHero",

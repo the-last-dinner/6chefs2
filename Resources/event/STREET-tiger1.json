@@ -875,7 +875,7 @@
 			"action":[
 				{
 					"type":"playBGM",
-					"file":"chapter2.mp3",
+					"file":"chapter2_2.mp3",
 					"volume":0.5
 				},
 				{
