@@ -22,20 +22,18 @@ TitleMainMenuLayer::~TitleMainMenuLayer(){FUNCLOG}
 // 初期化
 bool TitleMainMenuLayer::init()
 {
+    this->specialRoomTitle = PlayerDataManager::getInstance()->getGlobalData()->isCleared() ? "おまけ" : "? ? ?";
     map<MenuType, string> typeToString
     {
         {MenuType::START, "はじめから"},
         {MenuType::CONTINUE, "つづきから"},
         {MenuType::TROPHY, "トロフィ"},
+        // {MenuType::SPECIAL_ROOM, "おまけ"},
+        // {MenuType::EXIT, "終了"},
     };
-    this->specialRoomTitle = PlayerDataManager::getInstance()->getGlobalData()->isCleared() ? "おまけ" : "? ? ?";
     if (ConfigDataManager::getInstance()->getMasterConfigData()->isDisplay(MasterConfigData::SPECIAL_ROOM))
     {
         typeToString.insert({MenuType::SPECIAL_ROOM, this->specialRoomTitle});
-    }
-    else
-    {
-        typeToString.insert({MenuType::EXIT, "終了"});
     }
     
 	if(!MenuLayer::init(1, typeToString.size())) return false;
