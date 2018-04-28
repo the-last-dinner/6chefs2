@@ -64,6 +64,47 @@
 									"type":"spawn",
 									"action":[
 										{
+											"type":"sequence",
+											"action":[	
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												},
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												},
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												},
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												},
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												},
+												{
+													"type":"quakeMap",
+													"x":12,
+													"y":0,
+													"time":0.12
+												}
+											]
+										},
+										{
 											"type":"createLayer",
 											"layer":"rakuseki"
 										},

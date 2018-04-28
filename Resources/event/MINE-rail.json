@@ -776,7 +776,7 @@
 					"x":115,
 					"y":13,
 					"direction":"DOWN",
-					"speed":1.1,
+					"speed":1.3,
 					"movePattern":"5"
 				},
 				{
